@@ -11,4 +11,4 @@ METASOURCES = AUTO
 noinst_HEADERS = kcmkdesu.h
 
 messages:
-	$(XGETTEXT) -C -ki18n -x $(includedir)/kde.pot $(kcmkdesu_SOURCES) && mv messages.po ../../po/kcmkdesu.pot
+	$(XGETTEXT) -C -ki18n -x $(includedir)/kde.pot $(libkcm_kdesu_la_SOURCES) && mv messages.po ../../po/kcmkdesu.pot
