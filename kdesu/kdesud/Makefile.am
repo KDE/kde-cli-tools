@@ -23,4 +23,3 @@ install-exec-local:
 	|| echo "Error: Could not install kdesud as setgid nogroup!!\n" \
 	"The password caching feature is disabled."
 
-messages:
