@@ -60,7 +60,7 @@ public:
     /**
      * Check the password. This is dony by trying to executing "true".
      */
-    int checkPass(char *pass) { return exec(pass, true); }
+    int checkPass(const char *pass) { return exec((char *) pass, true); }
 
 private:
     int SetupTTY(const char *ttyname);
