@@ -44,7 +44,7 @@ int main(int argc, char **argv)
 {
 	KAboutData aboutData("kreadconfig", I18N_NOOP("KReadConfig"),
 		"1.0.0",
-		"Read KGlobal::config() entries - for use in shell scripts",
+		I18N_NOOP("Read KGlobal::config() entries - for use in shell scripts"),
 		KAboutData::License_GPL,
 		"(c) 2001 Red Hat, Inc.");
 	aboutData.addAuthor("Bernhard Rosenkraenzer", 0, "bero@redhat.com");
