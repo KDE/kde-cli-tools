@@ -181,7 +181,7 @@ static KCmdLineOptions options[] =
   { "alldesktops", I18N_NOOP("Make the window appear on all desktops"), 0 },
   { "iconify", I18N_NOOP("Iconify the window"), 0 },
   { "maximize", I18N_NOOP("Maximize the window"), 0 },
-  { "type <type>", I18N_NOOP("The window type: Normal, Desktop, Dock, Tool, \nMenu, Dialog or Override"), 0 },
+  { "type <type>", I18N_NOOP("The window type: Normal, Desktop, Dock, Tool, \nMenu, Dialog, TopMenu or Override"), 0 },
   { "activate", I18N_NOOP("Jump to the window even if it is started on a \n"
                           "different virtual desktop"), 0 },
   { "ontop", I18N_NOOP("Make the window always stay on top of any other window"), 0 },
@@ -246,6 +246,8 @@ int main( int argc, char *argv[] )
 	  windowtype = NET::Dialog;
       else if ( s == "override" )
 	  windowtype = NET::Override;
+      else if ( s == "topmenu" )
+	  windowtype = NET::TopMenu;
       else
 	  windowtype = NET::Normal;
   }
