@@ -42,6 +42,20 @@ SocketSecurity::SocketSecurity(int sockfd)
 }
 
 #else
+# if defined(HAVE_GETPEEREID)
+SocketSecurity::SocketSecurity(int sockfd)
+{
+    uid_t euid;
+    gid_t egid;
+    if (getpeereid(sockfd, &euid, &egid) == 0) {
+	cred.uid = euid;
+	cred.gid = egid;
+	cred.pid = -1;
+	ok = true;
+    }
+}
+
+# else
 
 
 /**
@@ -63,4 +77,5 @@ SocketSecurity::SocketSecurity(int sockfd)
     ok = true;
 }
 
+# endif
 #endif

@@ -35,3 +35,4 @@ AC_TRY_RUN([
 nogroup=65534, nogroup=65534), nogroup=65534)
 AC_MSG_RESULT($nogroup)
 AC_SUBST(nogroup)
+AC_CHECK_FUNCS(getpeereid)
