@@ -74,8 +74,7 @@ FileTypesView::FileTypesView(QWidget *p, const char *name)
 
   iconButton = new KIconLoaderButton(this);
   iconButton->setIconType(KIcon::Desktop, KIcon::MimeType);
-  connect(iconButton, SIGNAL(iconChanged(const QString &)),
-          SLOT(updateIcon(const QString &)));
+  connect(iconButton, SIGNAL(iconChanged(QString)), SLOT(updateIcon(QString)));
 
   iconButton->setFixedSize(50, 50);
   hBox->addWidget(iconButton);
@@ -322,7 +321,7 @@ void FileTypesView::updateDisplay(QListViewItem *item)
   }
 }
 
-void FileTypesView::updateIcon(const QString &icon)
+void FileTypesView::updateIcon(QString icon)
 {
   if (extensionLB->currentItem() == 0)
     return;

@@ -33,7 +33,7 @@ protected slots:
   void addExtension();
   void removeExtension();
   void updateDisplay(QListViewItem *);
-  void updateIcon(const QString &icon);
+  void updateIcon(QString icon);
   void updateDescription(const QString &desc);
   void promoteService();
   void demoteService();
