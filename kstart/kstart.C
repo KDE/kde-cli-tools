@@ -124,7 +124,7 @@ int main( int argc, char *argv[] )
        "\n started on a different virtual desktop"
        "\n "
        "\n Usage:"
-       "\n %s <command> [-window <regular expression>] [-desktop <number>]"
+       "\n %1 <command> [-window <regular expression>] [-desktop <number>]"
        "\n              [-sticky] [-iconify] [-maximize] "
        "\n              [-decoration tiny|none] [-activate] [-nofocus] [-staysontop]"
        "\n "
@@ -132,13 +132,13 @@ int main( int argc, char *argv[] )
        "\n then the very first window to appear will be taken. Not recommended!"
        "\n "
        "\n Example usage:"
-       "\n %s \"xclock -geometry 80x80-0+0\" -window xclock \\"
+       "\n %2 \"xclock -geometry 80x80-0+0\" -window xclock \\"
        "\n        -decoration tiny -sticky -nofocus -staysontop"
        "\n puts a tiny decorated, sticky xclock on the top right corner of the screen,"
        "\n that does not even get focus (and therefore has no entry in the taskbar)."
        "\n Note that you can still close it with the right mouse button."
        "\n "
-       "\n "), argv[0], argv[0]);
+       "\n ").arg(argv[0]).arg(argv[0]));
 
       ::exit(0);
   }
