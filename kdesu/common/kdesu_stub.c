@@ -233,24 +233,8 @@ int main(int argc, char **argv)
 
     /* Rebuild ksycoca */
 
-    if (strcmp(params[P_SYCOCA].value, "no")) {
-	sycoca = 0;
-	if (!strcmp(params[P_SYCOCA].value, "check")) {
-	    home = getenv("HOME");
-	    if (!home) {
-		pw = getpwuid(getuid());
-		if (pw)
-		    home = pw->pw_dir;
-	    }
-	    if (home) {
-		sprintf(buf, "%s/.kde/share/config/ksycoca", home);
-		if (!access(buf, R_OK))
-		    sycoca = 1;
-	    }
-	}
-	if (!sycoca && system("kded --check"))
-	    printf("kdesu_stub: unable to create sycoca\n");
-    }
+    if (strcmp(params[P_SYCOCA].value, "no") && system("kded --check"))
+	printf("kdesu_stub: unable to create sycoca\n");
 
 
     /* Execute the command */

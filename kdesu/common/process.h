@@ -37,18 +37,13 @@ public:
     void setCommand(QCString command) { m_Command = command; }
 
     /**
-     * Enable/disable build of syscoca for the target.
-     */
-    void setBuildSycoca(bool build) { m_bSycoca = build; }
-
-    /**
      * Enable terminal output.
      * @param bool True if terminal output is wanted, false otherwise.
      */
     void setTerminal(bool terminal) { m_bTerminal = terminal; }
 
     /**
-     * Set to "x only" mode: DCOP is not forwarded and the sycoca is not
+     * Set to "X only mode": DCOP is not forwarded and the sycoca is not
      * built.
      */
     void setXOnly(bool xonly) { m_bXOnly = xonly; }
@@ -73,7 +68,7 @@ protected:
     virtual QStringList dcopAuth() { return m_pCookie->dcopAuth(); }
     virtual QStringList iceAuth() { return m_pCookie->iceAuth(); }
 
-    bool m_bTerminal, m_bSycoca;
+    bool m_bTerminal;
     bool m_bErase, m_bXOnly;
     int m_Pid, m_Fd;
     QCString m_TTY, m_Command, m_Exit;

@@ -78,6 +78,12 @@ int main(int argc, char *argv[])
 	exit(1);
     }
 
+    // Configure found su?
+    if (!strcmp(__PATH_SU, "false")) {
+	kDebugFatal("su was not found by configure");
+	exit(1);
+    }
+
     // Get target uid
     QCString user = args->getOption("u");
     struct passwd *pw = getpwnam(user);
@@ -157,7 +163,7 @@ int main(int argc, char *argv[])
     // Read configuration
     KConfig *config = KGlobal::config();
     config->setGroup("Passwords");
-    int pw_timeout = config->readNumEntry("Timeout", defTimeout);
+    int timeout = config->readNumEntry("Timeout", defTimeout);
 
      // Start the dialog
     QCString password;
@@ -186,15 +192,10 @@ int main(int argc, char *argv[])
 
     if (k && have_daemon) {
 	client.setUser(user);
-	client.setPass(password, pw_timeout);
+	client.setPass(password, timeout);
 	return client.exec(command);
     } else {
 	SuProcess proc;
-	QCString key = QCString("*") + user + "*ksycoca";
-	if (client.getVar(key) == "yes")
-	    proc.setBuildSycoca(false);
-	else
-	    client.setVar(key, "yes");
 	proc.setTerminal(terminal);
 	proc.setErase(true);
 	proc.setUser(user);

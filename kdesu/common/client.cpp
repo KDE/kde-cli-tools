@@ -32,7 +32,7 @@
 #ifdef __GNUC__
 #define ID __PRETTY_FUNCTION__
 #else
-#define ID __FILE__
+#define ID "KDEsuClient"
 #endif
 
 KDEsuClient::KDEsuClient()

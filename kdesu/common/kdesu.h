@@ -3,17 +3,15 @@
  * $Id$
  *
  * This file is part of the KDE project, module kdesu.
- * Copyright (C) 1999 Geert Jansen <g.t.jansen@stud.tue.nl>
+ * Copyright (C) 1999,2000 Geert Jansen <jansen@kde.org>
  */
 
-#ifndef __KDESu_h_included__
-#define __KDESu_h_included__
+#ifndef __KDEsu_h_included__
+#define __KDEsu_h_included__
 
-enum echoModes { OneStar, ThreeStars, NoStars };
-
-const int defEchomode= OneStar;
-const bool defKeep = false;
 const int defTimeout = 120*60;
+const int defEchoMode = 0;
+const int defKeep = false;
 
 /**
  * I got a bug report from a user that SUN_LEN does not exist in his Linux

@@ -29,15 +29,18 @@
 #include "su.h"
 #include "kcookie.h"
 
+
 #ifdef __GNUC__
 #define ID __PRETTY_FUNCTION__
 #else
-#define ID __FILE__
+#define ID "SuProcess"
 #endif
 
+
 #ifndef __PATH_SU
-#define __PATH_SU "[su was not found by configure]"
+#define __PATH_SU "false"
 #endif
+
 
 SuProcess::SuProcess(QCString user, QCString command)
 {

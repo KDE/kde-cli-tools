@@ -1,3 +1,3 @@
 
-SUBDIRS = common kdesu kdesud pics kcmkdesu
+SUBDIRS = common kdesu kdesud pics kcmkdesu kdessh
 

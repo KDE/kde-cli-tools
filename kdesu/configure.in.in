@@ -1,16 +1,9 @@
-dnl Check for su, ssh
+dnl Check for su
 AC_PATH_PROG(path_su, "su", "no")
 if test "$path_su" = "no"; then
     AC_MSG_WARN(su was not found)
 else
     AC_DEFINE_UNQUOTED(__PATH_SU, "$path_su", [path to su])
-fi
-
-AC_PATH_PROG(path_ssh, "ssh", "no")
-if test "$path_ssh" = "no"; then
-    AC_MSG_WARN(ssh was not found)
-else
-    AC_DEFINE_UNQUOTED(__PATH_SSH, "$path_ssh", [path to ssh])
 fi
 
 dnl Check for "struct ucred"

@@ -177,20 +177,6 @@ int ConnectionHandler::doCommand()
 	} else
 	    pass = pdata->value;
 
-	// Check if we need to rebuild the sycoca.
-	bool build_sycoca = true;
-	key = makeKey(1, m_Host, m_User, "ksycoca");
-	pdata = repo->find(key);
-	if (pdata && (pdata->value == "yes")) {
-	    kDebugInfo("kdesud: NOT building sycoca");
-	    build_sycoca = false;
-	} else {
-	    kDebugInfo("kdesud: building sycoca");
-	    data.value = QCString("yes");
-	    data.timeout = 86400;
-	    repo->add(key, data);
-	}
-
 	// Execute the command asynchronously
 	kDebugInfo("Executing command: %s", command.data());
 	pid_t pid = fork();
@@ -209,13 +195,11 @@ int ConnectionHandler::doCommand()
 	int ret;
 	if (m_Host.isEmpty()) {
 	    SuProcess proc;
-	    proc.setBuildSycoca(build_sycoca);
 	    proc.setCommand(command);
 	    proc.setUser(m_User);
 	    ret = proc.exec(pass.data());
 	} else {
 	    SshProcess proc;
-	    proc.setBuildSycoca(build_sycoca);
 	    proc.setCommand(command);
 	    proc.setUser(m_User);
 	    proc.setHost(m_Host);

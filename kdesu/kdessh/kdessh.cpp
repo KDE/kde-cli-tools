@@ -1,6 +1,6 @@
 /* vi: ts=8 sts=4 sw=4
  *
- * $Id: $
+ * $Id$
  *
  * This file is part of the KDE project, module kdesu.
  * Copyright (C) 2000 Geert Jansen <jansen@kde.org>
@@ -72,6 +72,12 @@ int main(int argc, char *argv[])
 	exit(1);
     }
 
+    // Check if ssh is available
+    if (KStandardDirs::findExe("ssh").isEmpty()) {
+	kDebugFatal("ssh not found");
+	exit(1);
+    }
+
     // Get remote userid
     QCString user = args->getOption("u");
     if (user.isNull()) {
@@ -127,9 +133,9 @@ int main(int argc, char *argv[])
     KApplication *app = new KApplication;
 
     // Read configuration
-    KConfig *config = new KConfig("kdesurc");
+    KConfig *config = KGlobal::config();
     config->setGroup("Passwords");
-    int pw_timeout = config->readNumEntry("KeepPasswordTimeout", defTimeout);
+    int timeout = config->readNumEntry("Timeout", defTimeout);
 
     SshProcess proc(host, user);
     QString prompt = proc.checkNeedPassword();
@@ -161,15 +167,10 @@ int main(int argc, char *argv[])
     if (keep && have_daemon) {
 	client.setUser(user);
 	client.setHost(host);
-	client.setPass(password, pw_timeout);
+	client.setPass(password, timeout);
 	return client.exec(command);
     } else {
 	SshProcess proc(host, user, command);
-	QCString key = host + "*" + user + "*ksycoca";
-	if (client.getVar(key) == "yes")
-	    proc.setBuildSycoca(false);
-	else
-	    client.setVar(key, "yes");
 	proc.setTerminal(terminal);
 	proc.setErase(true);
 	return proc.exec(password);

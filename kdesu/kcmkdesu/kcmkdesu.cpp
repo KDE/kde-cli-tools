@@ -1,7 +1,7 @@
 /* vi: ts=8 sts=4 sw=4
  *
  * This file is part of the KDE project, module kdesu.
- * Copyright (C) 1999 Geert Jansen <g.t.jansen@stud.tue.nl>
+ * Copyright (C) 1999,2000 Geert Jansen <jansen@kde.org>
  */
 
 #include <qwidget.h>
@@ -18,6 +18,7 @@
 #include <kglobal.h>
 #include <klocale.h>
 #include <kcmodule.h>
+#include <kpassdlg.h>
 
 #include "kcmkdesu.h"
 #include "kdesu.h"
@@ -43,26 +44,31 @@ KDEsuConfig::KDEsuConfig(QWidget *parent, const char *name)
     QVBoxLayout *top = new QVBoxLayout(this, 10, 10);
 
     // Echo mode
-    m_EMGroup = new QButtonGroup(i18n("Echo mode"), this);
+    m_EMGroup = new QButtonGroup(i18n("Echo characters as"), this);
     top->addWidget(m_EMGroup);
     QVBoxLayout *vbox = new QVBoxLayout(m_EMGroup, 10, 10);
     vbox->addSpacing(10);
-    QRadioButton *rb = new QRadioButton(i18n("One star"), m_EMGroup);
+    QRadioButton *rb = new QRadioButton(i18n("1 star"), m_EMGroup);
     vbox->addWidget(rb, 0, AlignLeft);
-    rb = new QRadioButton(i18n("Three stars"), m_EMGroup);
+    rb = new QRadioButton(i18n("3 stars"), m_EMGroup);
     vbox->addWidget(rb, 0, AlignLeft);
-    rb = new QRadioButton(i18n("No echo"), m_EMGroup);
+    rb = new QRadioButton(i18n("no echo"), m_EMGroup);
     vbox->addWidget(rb, 0, AlignLeft);
     connect(m_EMGroup, SIGNAL(clicked(int)), SLOT(slotEchoMode(int)));
 
     // Keep password
+
+    m_KeepBut = new QCheckBox(i18n("&Remember passwords"), this);
+    connect(m_KeepBut, SIGNAL(toggled(bool)), SLOT(slotKeep(bool)));
+    top->addWidget(m_KeepBut);
     QHBoxLayout *hbox = new QHBoxLayout();
     top->addLayout(hbox);
-
-    m_KeepBut = new QCheckBox(i18n("&Remember password for"), this);
-    connect(m_KeepBut, SIGNAL(toggled(bool)), SLOT(slotKeep(bool)));
-    hbox->addWidget(m_KeepBut);
+    QLabel *lbl = new QLabel(i18n("&Timeout"), this);
+    lbl->setFixedSize(lbl->sizeHint());
+    hbox->addSpacing(20);
+    hbox->addWidget(lbl);
     m_TimeoutEdit = new QSpinBox(this);
+    lbl->setBuddy(m_TimeoutEdit);
     m_TimeoutEdit->setRange(5, 1200);
     m_TimeoutEdit->setSteps(5, 10);
     m_TimeoutEdit->setSuffix(i18n(" minutes"));
@@ -73,33 +79,32 @@ KDEsuConfig::KDEsuConfig(QWidget *parent, const char *name)
     top->addStretch();
 
     setButtons(buttons());
-    m_pConfig = new KConfig("kdesurc");
+    m_pConfig = KGlobal::config();
     load();
 }
 
 
 KDEsuConfig::~KDEsuConfig()
 {
-    delete m_pConfig;
 }
 
 
 void KDEsuConfig::load()
 {
-    m_pConfig->setGroup("Common");
+    KConfigGroupSaver saver(m_pConfig, "Passwords");
 
     QString val = m_pConfig->readEntry("EchoMode", "x");
     if (val == "OneStar")
-	m_Echo = OneStar;
+	m_Echo = KPasswordEdit::OneStar;
     else if (val == "ThreeStars")
-	m_Echo = ThreeStars;
-    else if (val == "NoStars")
-	m_Echo = NoStars;
+	m_Echo = KPasswordEdit::ThreeStars;
+    else if (val == "NoEcho")
+	m_Echo = KPasswordEdit::NoEcho;
     else
-	m_Echo = defEchomode;
+	m_Echo = defEchoMode;
 
-    m_bKeep = m_pConfig->readBoolEntry("KeepPassword", defKeep);
-    m_Timeout = m_pConfig->readNumEntry("KeepPasswordTimeout", defTimeout);
+    m_bKeep = m_pConfig->readBoolEntry("Keep", defKeep);
+    m_Timeout = m_pConfig->readNumEntry("Timeout", defTimeout);
 
     apply();
     emit changed(false);
@@ -108,20 +113,20 @@ void KDEsuConfig::load()
 
 void KDEsuConfig::save()
 {
-    m_pConfig->setGroup("Common");
+    KConfigGroupSaver saver(m_pConfig, "Passwords");
 
     QString val;
-    if (m_Echo == OneStar)
+    if (m_Echo == KPasswordEdit::OneStar)
 	val = "OneStar";
-    else if (m_Echo == ThreeStars)
+    else if (m_Echo == KPasswordEdit::ThreeStars)
 	val = "ThreeStars";
     else 
-	val = "NoStars";
-    m_pConfig->writeEntry("EchoMode", val);
+	val = "NoEcho";
+    m_pConfig->writeEntry("EchoMode", val, true, true);
 
-    m_pConfig->writeEntry("KeepPassword", m_bKeep);
+    m_pConfig->writeEntry("Keep", m_bKeep, true, true);
     m_Timeout = m_TimeoutEdit->value()*60;
-    m_pConfig->writeEntry("KeepPasswordTimeout", m_Timeout);
+    m_pConfig->writeEntry("Timeout", m_Timeout, true, true);
 
     m_pConfig->sync();
 
@@ -137,7 +142,7 @@ void KDEsuConfig::save()
 
 void KDEsuConfig::defaults()
 {
-    m_Echo = defEchomode;
+    m_Echo = defEchoMode;
     m_bKeep = defKeep;
     m_Timeout = defTimeout;
 

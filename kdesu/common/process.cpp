@@ -47,7 +47,7 @@
 #ifdef __GNUC__
 #define ID __PRETTY_FUNCTION__
 #else
-#define ID __FILE__
+#define ID "PtyProcess"
 #endif
 
 
@@ -55,7 +55,6 @@ PtyProcess::PtyProcess()
 {
     m_bTerminal = false;
     m_bErase = false;
-    m_bSycoca = true;
     m_bXOnly = false;
     m_pPTY = 0L;
 }
@@ -226,10 +225,8 @@ int PtyProcess::ConverseStub(bool check_only)
 	    } else if (!strcmp(line, "build_sycoca")) {
 		if (m_bXOnly)
 		    write(m_Fd, "no\n", 3);
-		else if (m_bSycoca)
-		    write(m_Fd, "yes\n", 4);
 		else
-		    write(m_Fd, "check\n", 6);
+		    write(m_Fd, "yes\n", 4);
 	    } else if (!strcmp(line, "end")) {
 		return 0;
 	    } else {

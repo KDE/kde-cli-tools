@@ -37,15 +37,9 @@
 #ifdef __GNUC__
 #define ID __PRETTY_FUNCTION__
 #else
-#define ID __FILE__
+#define ID "SshProcess"
 #endif
 
-
-// Don't break compilation in case ssh was not found.
-
-#ifndef __PATH_SSH
-#define __PATH_SSH "[ssh was not found by configure]"
-#endif
 
 SshProcess::SshProcess(QCString host, QCString user, QCString command)
 {
@@ -125,15 +119,20 @@ int SshProcess::exec(const char *password, int check)
     } else {
 	if (SetupTTY(slave) < 0)
 	    _exit(1);
+	QString path = KStandardDirs::findExe("ssh");
+	if (path.isEmpty()) {
+	    kDebugError("ssh not found!");
+	    _exit(1);
+	}
 	if (m_bXOnly)
-	    execl(__PATH_SSH, "ssh", "-l", m_User.data(), 
+	    execl(path.latin1(), "ssh", "-l", m_User.data(), 
 		"-o", "StrictHostKeyChecking no", m_Host.data(), 
 		"kdesu_stub", 0L);
 	else
-	    execl(__PATH_SSH, "ssh", "-R", fwd.latin1(), "-l", m_User.data(), 
+	    execl(path.latin1(), "ssh", "-R", fwd.latin1(), "-l", m_User.data(), 
 		"-o", "StrictHostKeyChecking no", m_Host.data(), 
 		"kdesu_stub", 0L);
-	kDebugPError("%s: execl(\"%s\")", ID, __PATH_SSH);
+	kDebugPError("%s: execl(\"%s\")", ID, path.latin1());
 	_exit(1);
     }
 
