@@ -323,7 +323,7 @@ bool FileTypesView::sync( QValueList<TypesListItem *>& itemsModified )
     didIt = true;
     KMimeType::Ptr m_ptr = KMimeType::mimeType(*it);
 
-    loc = *it + ".desktop";
+    loc = m_ptr->desktopEntryPath();
     loc = locateLocal("mime", loc);
 
     KDesktopFile config(loc, false, "mime");

@@ -208,7 +208,7 @@ void TypesListItem::sync()
     config.writeEntry( QString::fromLatin1("embed-")+m_major, m_autoEmbed == 0 );
     return;
   }
-  QString loc = name() + ".desktop";
+  QString loc = m_mimetype->desktopEntryPath();
   loc = locateLocal("mime", loc);
 
   KSimpleConfig config( loc );
