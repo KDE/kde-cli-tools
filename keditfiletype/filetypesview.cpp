@@ -252,23 +252,27 @@ void FileTypesView::addType()
 void FileTypesView::removeType()
 {
   TypesListItem *current = (TypesListItem *) typesLV->currentItem();
-  QListViewItem *li = 0L;
 
   if ( !current )
       return;
 
-  if ( !current->isMeta() )
-  {
-    li = current->itemAbove();
-    if (!li)
+  // Can't delete groups
+  if ( current->isMeta() )
+      return;
+  // nor essential mimetypes
+  if ( current->isEssential() )
+      return;
+
+  QListViewItem *li = current->itemAbove();
+  if (!li)
       li = current->itemBelow();
-    if (!li)
+  if (!li)
       li = current->parent();
-    removedList.append(current->name());
-    current->parent()->takeItem(current);
-    m_itemList.removeRef( current );
-    setDirty(true);
-  }
+
+  removedList.append(current->name());
+  current->parent()->takeItem(current);
+  m_itemList.removeRef( current );
+  setDirty(true);
 
   if ( li )
       typesLV->setSelected(li, true);
@@ -302,7 +306,7 @@ void FileTypesView::updateDisplay(QListViewItem *item)
   {
     m_widgetStack->raiseWidget( m_details );
     m_details->setTypeItem( tlitem );
-    m_removeTypeB->setEnabled(true);
+    m_removeTypeB->setEnabled( !tlitem->isEssential() );
   }
 
   // Updating the display indirectly called change(true)

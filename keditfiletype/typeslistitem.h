@@ -32,9 +32,17 @@ public:
   void setMinor(QString m) { m_minor = m; }
   QString comment() const { return m_comment; }
   void setComment(QString c) { m_comment = c; }
+  /**
+   * Returns true if "this" is a group
+   */
   bool isMeta() const { return metaType; }
+  /**
+   * Returns true if the type is essential, i.e. can't be deleted
+   * (see KMimeType::checkEssentialMimeTypes)
+   */
+  bool isEssential() const;
   QString icon() const { return m_icon; }
-  void setIcon(const QString& i); 
+  void setIcon(const QString& i);
   QStringList patterns() const { return m_patterns; }
   void setPatterns(const QStringList &p) { m_patterns = p; }
   QStringList appServices() const;

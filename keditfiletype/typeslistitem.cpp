@@ -78,15 +78,15 @@ void TypesListItem::init(KMimeType::Ptr mimetype)
   m_autoEmbed = v.isValid() ? (v.toBool() ? 0 : 1) : 2;
 }
 
-QStringList TypesListItem::appServices() const 
-{ 
+QStringList TypesListItem::appServices() const
+{
   if (!m_bFullInit)
   {
      TypesListItem *that = const_cast<TypesListItem *>(this);
      that->getServiceOffers(that->m_appServices, that->m_embedServices);
      that->m_bFullInit = true;
   }
-  return m_appServices; 
+  return m_appServices;
 }
 
 QStringList TypesListItem::embedServices() const
@@ -116,7 +116,7 @@ void TypesListItem::getServiceOffers( QStringList & appServices, QStringList & e
 
 bool TypesListItem::isDirty() const
 {
-  if ( !m_bFullInit) 
+  if ( !m_bFullInit)
   {
     return false;
   }
@@ -375,4 +375,30 @@ void TypesListItem::setIcon( const QString& icon )
 {
   m_icon = icon;
   setPixmap( 0, SmallIcon( icon ) );
+}
+
+bool TypesListItem::isEssential() const
+{
+    QString n = name();
+    if ( n == "application/octet-stream" )
+        return true;
+    if ( n == "inode/directory" )
+        return true;
+    if ( n == "inode/directory-locked" )
+        return true;
+    if ( n == "inode/blockdevice" )
+        return true;
+    if ( n == "inode/chardevice" )
+        return true;
+    if ( n == "inode/socket" )
+        return true;
+    if ( n == "inode/fifo" )
+        return true;
+    if ( n == "application/x-shellscript" )
+        return true;
+    if ( n == "application/x-executable" )
+        return true;
+    if ( n == "application/x-desktop" )
+        return true;
+    return false;
 }
