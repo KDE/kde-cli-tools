@@ -108,10 +108,7 @@ void KStart::applyStyle(Window w, NETWinInfo & info) {
 	XSync(qt_xdisplay(), False);
     }
     if (activate)
-    {
-      NETRootInfo rinfo( qt_xdisplay(), NET::CurrentDesktop );
-      rinfo.setCurrentDesktop( desktop );
-    }
+      KWin::setCurrentDesktop( desktop );
 
     XSync(qt_xdisplay(), False);
 }
