@@ -13,6 +13,7 @@
 #include <stdlib.h>
 
 #include <qregexp.h>
+#include <qtimer.h>
 
 #include <kdebug.h>
 #include <kprocess.h>
@@ -240,5 +241,7 @@ int main( int argc, char *argv[] )
   args->clear();
 
   KStart start;
+  
+  QTimer::singleShot( 120 * 1000, &app, SLOT( quit())); // quit if nothing happens in 2 minutes
   return app.exec();
 }
