@@ -294,7 +294,7 @@ void TypesListItem::saveServices( KSimpleConfig & profile, QStringList services,
   for (int i = services.count(); it != services.end(); ++it, i--) {
 
     KService::Ptr pService = KService::serviceByDesktopPath(*it);
-    ASSERT(pService);
+    Q_ASSERT(pService);
 
     // Find a group header. The headers are just dummy names as far as
     // KUserProfile is concerned, but using the mimetype makes it a

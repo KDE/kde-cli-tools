@@ -34,7 +34,7 @@ KServiceListItem::KServiceListItem( QString &_desktopPath )
 {
     KService::Ptr pService = KService::serviceByDesktopPath( _desktopPath );
 
-    ASSERT(pService);
+    Q_ASSERT(pService);
 
     setText( pService->name() );
 }
@@ -207,7 +207,7 @@ void KServiceListWidget::addService()
 
       service = dlg.service();
 
-      ASSERT(service);
+      Q_ASSERT(service);
       if (!service)
           return; // Don't crash if KOpenWith wasn't able to create service.
   }
@@ -217,7 +217,7 @@ void KServiceListWidget::addService()
       if (dlg.exec() == false)
           return;
        service = dlg.service();
-       ASSERT(service);
+       Q_ASSERT(service);
        if (!service)
            return;
   }

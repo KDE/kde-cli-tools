@@ -52,7 +52,7 @@ FileGroupDetails::FileGroupDetails(QWidget *parent, const char *name )
 
 void FileGroupDetails::setTypeItem( TypesListItem * item )
 {
-  ASSERT( item->isMeta() );
+  Q_ASSERT( item->isMeta() );
   m_item = item;
   m_autoEmbed->setButton( item ? item->autoEmbed() : -1 );
 }
