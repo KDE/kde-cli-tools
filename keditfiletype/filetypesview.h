@@ -61,7 +61,7 @@ private:
   QStringList removedList;
   bool m_dirty;
   QMap<QString,TypesListItem*> m_majorMap;
-  QList<TypesListItem> m_itemList;
+  QPtrList<TypesListItem> m_itemList;
 };
 
 #endif

@@ -181,7 +181,7 @@ void FileTypesView::slotFilter(const QString & patternFilter)
     }
 
     // insert all items and their group that match the filter
-    QListIterator<TypesListItem> it( m_itemList );
+    QPtrListIterator<TypesListItem> it( m_itemList );
     while ( it.current() ) {
 	if ( patternFilter.isEmpty() ||
 	     !((*it)->patterns().grep( patternFilter, false )).isEmpty() ) {
