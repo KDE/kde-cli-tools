@@ -60,6 +60,7 @@
 
 #include <qvector.h>
 #include <qfile.h>
+#include <qregexp.h>
 
 #include <kinstance.h>
 #include <kdebug.h>
