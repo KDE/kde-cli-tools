@@ -19,9 +19,9 @@
 // `struct ucred' is not defined in glibc 2.0.
 
 struct ucred {
-    int32_t   pid;
-    int32_t   uid;
-    int32_t   gid;
+    pid_t     pid;
+    uid_t     uid;
+    gid_t     gid;
 };
 
 #endif // HAVE_STRUCT_UCRED
