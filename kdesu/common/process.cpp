@@ -94,7 +94,7 @@ PtyProcess::~PtyProcess()
  * one time.
  */
 
-QCString PtyProcess::readLine()
+QCString PtyProcess::readLine(bool block)
 {
     int pos;
     QCString ret;
@@ -111,6 +111,20 @@ QCString PtyProcess::readLine()
 	return ret;
     }
 
+    int flags = fcntl(m_Fd, F_GETFL);
+    if (flags < 0) {
+	kDebugPError("%s: fcntl(F_GETFL)", ID);
+	return ret;
+    }
+    if (block)
+	flags &= ~O_NONBLOCK;
+    else
+	flags |= O_NONBLOCK;
+    if (fcntl(m_Fd, F_SETFL, flags) < 0) {
+	kDebugPError("%s: fcntl(F_SETFL)", ID);
+	return ret;
+    }
+
     int nbytes;
     char buf[256];
     while (1) {
@@ -118,6 +132,8 @@ QCString PtyProcess::readLine()
 	if (nbytes == -1) {
 	    if (errno == EINTR)
 		continue;
+	    else if (errno == EAGAIN) 
+		break;
 	    else {
 		kDebugPError("%s: read()", ID);
 		break;
@@ -366,14 +382,15 @@ int PtyProcess::waitForChild()
 	}
 
 	if (ret) {
-	    line = readLine();
-	    if (!line.isEmpty()) {
+	    line = readLine(false);
+	    while (!line.isNull()) {
 		if (!m_Exit.isEmpty() && !strnicmp(line, m_Exit, m_Exit.length()))
 		    kill(m_Pid, SIGTERM);
 		if (m_bTerminal) {
 		    fputs(line, stdout);
 		    fputc('\n', stdout);
 		}
+		line = readLine(false);
 	    }
 	}
 

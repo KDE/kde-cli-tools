@@ -47,7 +47,7 @@ public:
      * is read. This does not return with EINTR when the read() system call
      * is interrupted by a signal.
      */
-    QCString readLine();
+    QCString readLine(bool block=true);
 
     /**
      * Write a line of text to the pty.
