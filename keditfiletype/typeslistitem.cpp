@@ -3,8 +3,12 @@
 #include <kiconloader.h>
 #include <kstandarddirs.h>
 #include <kdesktopfile.h>
+#include <kstaticdeleter.h>
 
 #include "typeslistitem.h"
+
+QMap< QString, QStringList >* TypesListItem::s_changedServices;
+static KStaticDeleter< QMap< QString, QStringList > > deleter;
 
 TypesListItem::TypesListItem(QListView *parent, const QString & major)
   : QListViewItem(parent), metaType(true), m_bNewItem(false)
@@ -278,7 +282,10 @@ void TypesListItem::sync()
         // The service was in m_appServices but has been removed
         // create a new .desktop file without this mimetype
 
-        QStringList serviceTypeList = pService->serviceTypes();
+        if( s_changedServices == NULL )
+            deleter.setObject( s_changedServices, new QMap< QString, QStringList > );
+        QStringList serviceTypeList = s_changedServices->contains( pService->desktopEntryPath())
+            ? (*s_changedServices)[ pService->desktopEntryPath() ] : pService->serviceTypes();
 
         if ( serviceTypeList.contains( name() ) ) {
           // The mimetype is listed explicitly in the .desktop files, so
@@ -297,6 +304,10 @@ void TypesListItem::sync()
           
           serviceTypeList.remove(name());
           desktop->writeEntry("MimeType", serviceTypeList, ';');
+          
+        // if two or more types have been modified, and they use the same service,
+        // accumulate the changes
+          (*s_changedServices)[ pService->desktopEntryPath() ] = serviceTypeList;
 
           desktop->sync();
           delete desktop;
@@ -405,4 +416,10 @@ void TypesListItem::refresh()
 {
     kdDebug() << "TypesListItem refresh " << name() << endl;
     m_mimetype = KMimeType::mimeType( name() );
+}
+
+void TypesListItem::reset()
+{
+    if( s_changedServices )
+        s_changedServices->clear();
 }

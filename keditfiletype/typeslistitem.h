@@ -59,6 +59,7 @@ public:
   void refresh(); // update m_mimetype from ksycoca when Apply is pressed
 
   static bool defaultEmbeddingSetting(  const QString& major );
+  static void reset();
 
 private:
   void getServiceOffers( QStringList & appServices, QStringList & embedServices ) const;
@@ -76,6 +77,7 @@ private:
   QStringList m_patterns;
   QStringList m_appServices;
   QStringList m_embedServices;
+  static QMap< QString, QStringList >* s_changedServices;
 };
 
 #endif
