@@ -26,15 +26,17 @@
 #include "typeslistitem.h"
 
 FileTypeDetails::FileTypeDetails( QWidget * parent, const char * name )
-  : QWidget( parent, name ), m_item( 0L )
+  : QTabWidget( parent, name ), m_item( 0L )
 {
   QString wtstr;
-  QVBoxLayout *rightLayout = new QVBoxLayout(this);
+  // First tab - General
+  QWidget * firstWidget = new QWidget(this);
+  QVBoxLayout *firstLayout = new QVBoxLayout(firstWidget);
 
   QHBoxLayout *hBox = new QHBoxLayout();
-  rightLayout->addLayout(hBox, 2);
+  firstLayout->addLayout(hBox, 2);
 
-  iconButton = new KIconButton(this);
+  iconButton = new KIconButton(firstWidget);
   iconButton->setIconType(KIcon::Desktop, KIcon::MimeType);
   connect(iconButton, SIGNAL(iconChanged(QString)), SLOT(updateIcon(QString)));
 
@@ -44,7 +46,7 @@ FileTypeDetails::FileTypeDetails( QWidget * parent, const char * name )
   QWhatsThis::add( iconButton, i18n("This button displays the icon associated"
     " with the selected file type. Click on it to choose a different icon.") );
 
-  QGroupBox *gb = new QGroupBox(i18n("Filename Patterns"), this);
+  QGroupBox *gb = new QGroupBox(i18n("Filename Patterns"), firstWidget);
   hBox->addWidget(gb);
 
   QGridLayout *grid = new QGridLayout(gb, 3, 2, KDialog::marginHint(),
@@ -77,8 +79,8 @@ FileTypeDetails::FileTypeDetails( QWidget * parent, const char * name )
 
   QWhatsThis::add( removeExtButton, i18n("Remove the selected filename pattern.") );
 
-  gb = new QGroupBox(i18n("Description"), this);
-  rightLayout->addWidget(gb);
+  gb = new QGroupBox(i18n("Description"), firstWidget);
+  firstLayout->addWidget(gb);
 
   gb->setColumnLayout(1, Qt::Horizontal);
   description = new KLineEdit(gb);
@@ -91,9 +93,25 @@ FileTypeDetails::FileTypeDetails( QWidget * parent, const char * name )
   QWhatsThis::add( gb, wtstr );
   QWhatsThis::add( description, wtstr );
 
-  serviceListWidget = new KServiceListWidget( KServiceListWidget::SERVICELIST_APPLICATIONS, this );
+  serviceListWidget = new KServiceListWidget( KServiceListWidget::SERVICELIST_APPLICATIONS, firstWidget );
   connect( serviceListWidget, SIGNAL(changed(bool)), this, SIGNAL(changed(bool)));
-  rightLayout->addWidget(serviceListWidget, 1);
+  firstLayout->addWidget(serviceListWidget, 1);
+
+  // Second tab - Embedding
+  QWidget * secondWidget = new QWidget(this);
+  QVBoxLayout *secondLayout = new QVBoxLayout(secondWidget);
+
+  // TODO embed checkbox
+
+  QWidget * dummyWidget = new QWidget( secondWidget );
+  secondLayout->addWidget( dummyWidget, 10 );
+
+  embedServiceListWidget = new KServiceListWidget( KServiceListWidget::SERVICELIST_SERVICES, secondWidget );
+  connect( embedServiceListWidget, SIGNAL(changed(bool)), this, SIGNAL(changed(bool)));
+  secondLayout->addWidget(embedServiceListWidget, 1);
+
+  addTab( firstWidget, i18n("&General") );
+  addTab( secondWidget, i18n("&Embedding") );
 }
 
 void FileTypeDetails::updateIcon(QString icon)

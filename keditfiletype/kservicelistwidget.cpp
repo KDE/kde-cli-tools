@@ -51,11 +51,19 @@ KServiceListWidget::KServiceListWidget(int kind, QWidget *parent, const char *na
   connect(servicesLB, SIGNAL(highlighted(int)), SLOT(enableMoveButtons(int)));
   grid->addMultiCellWidget(servicesLB, 1, 4, 0, 0);
 
-  QString wtstr = i18n("This is a list of applications associated with files of the selected"
-    " file type. This list is shown in Konqueror's context menus when you select"
-    " \"Open with...\". If more than one application is associated with this file type,"
-    " then the list is ordered by priority with the uppermost item taking precedence"
-    " over the others.");
+  QString wtstr =
+    (kind == SERVICELIST_APPLICATIONS ?
+     i18n("This is a list of applications associated with files of the selected"
+          " file type. This list is shown in Konqueror's context menus when you select"
+          " \"Open with...\". If more than one application is associated with this file type,"
+          " then the list is ordered by priority with the uppermost item taking precedence"
+          " over the others.") :
+     i18n("This is a list of services associated with files of the selected"
+          " file type. This list is shown in Konqueror's context menus when you select"
+          " a \"Preview with...\" option. If more than one application is associated with this file type,"
+          " then the list is ordered by priority with the uppermost item taking precedence"
+          " over the others."));
+
   QWhatsThis::add( gb, wtstr );
   QWhatsThis::add( servicesLB, wtstr );
 
@@ -64,44 +72,59 @@ KServiceListWidget::KServiceListWidget(int kind, QWidget *parent, const char *na
   connect(servUpButton, SIGNAL(clicked()), SLOT(promoteService()));
   grid->addWidget(servUpButton, 1, 1);
 
-  QWhatsThis::add( servUpButton, i18n("Assigns a higher priority to the selected\n"
-                              "application, moving it up in the list. Note:  This\n"
-                              "only affects the selected application if the file type is\n"
-			      "associated with more than one application."));
+  QWhatsThis::add( servUpButton, kind == SERVICELIST_APPLICATIONS ?
+                   i18n("Assigns a higher priority to the selected\n"
+                        "application, moving it up in the list. Note:  This\n"
+                        "only affects the selected application if the file type is\n"
+                        "associated with more than one application.") :
+                   i18n("Assigns a higher priority to the selected\n"
+                        "service, moving it up in the list."));
 
   servDownButton = new QPushButton(i18n("Move &Down"), gb);
   servDownButton->setEnabled(false);
   connect(servDownButton, SIGNAL(clicked()), SLOT(demoteService()));
   grid->addWidget(servDownButton, 2, 1);
 
-  QWhatsThis::add( servDownButton, i18n("Assigns a lower priority to the selected\n"
-			  "application, moving it down on the list.  Note:  This \n"
-			  "only affects the selected application if the file type is\n"
-			  "associated with more than one application."));
+  QWhatsThis::add( servDownButton, kind == SERVICELIST_APPLICATIONS ?
+                   i18n("Assigns a lower priority to the selected\n"
+                        "application, moving it down in the list.  Note:  This \n"
+                        "only affects the selected application if the file type is\n"
+                        "associated with more than one application."):
+                   i18n("Assigns a lower priority to the selected\n"
+                        "service, moving it down in the list."));
 
-  servNewButton = new QPushButton(i18n("Add..."), gb);
-  servNewButton->setEnabled(false);
-  connect(servNewButton, SIGNAL(clicked()), SLOT(addService()));
-  grid->addWidget(servNewButton, 3, 1);
+  if ( kind == SERVICELIST_APPLICATIONS )
+  {
+    servNewButton = new QPushButton(i18n("Add..."), gb);
+    servNewButton->setEnabled(false);
+    connect(servNewButton, SIGNAL(clicked()), SLOT(addService()));
+    grid->addWidget(servNewButton, 3, 1);
 
-  QWhatsThis::add( servNewButton, i18n( "Add a new application for this file type." ) );
+    QWhatsThis::add( servNewButton, i18n( "Add a new application for this file type." ) );
 
-  servRemoveButton = new QPushButton(i18n("Remove"), gb);
-  servRemoveButton->setEnabled(false);
-  connect(servRemoveButton, SIGNAL(clicked()), SLOT(removeService()));
-  grid->addWidget(servRemoveButton, 4, 1);
+    servRemoveButton = new QPushButton(i18n("Remove"), gb);
+    servRemoveButton->setEnabled(false);
+    connect(servRemoveButton, SIGNAL(clicked()), SLOT(removeService()));
+    grid->addWidget(servRemoveButton, 4, 1);
 
-  QWhatsThis::add( servRemoveButton, i18n( "Remove the selected application from the list." ) );
+    QWhatsThis::add( servRemoveButton, i18n( "Remove the selected application from the list." ) );
+  } else
+  {
+    servNewButton = 0L;
+    servRemoveButton = 0L;
+  }
 }
 
 void KServiceListWidget::setTypeItem( TypesListItem * item )
 {
   m_item = item;
-  servNewButton->setEnabled(true);
+  if ( servNewButton )
+    servNewButton->setEnabled(true);
   // will need a selection
   servUpButton->setEnabled(false);
   servDownButton->setEnabled(false);
-  servRemoveButton->setEnabled(false);
+  if ( servRemoveButton )
+    servRemoveButton->setEnabled(false);
   servicesLB->clear();
   servicesLB->setEnabled(false);
 
@@ -211,7 +234,7 @@ void KServiceListWidget::removeService()
     emit changed(true);
   }
 
-  if ( servicesLB->currentItem() == -1 )
+  if ( servRemoveButton && servicesLB->currentItem() == -1 )
     servRemoveButton->setEnabled(false);
 
 }
@@ -253,7 +276,8 @@ void KServiceListWidget::enableMoveButtons(int index)
     servDownButton->setEnabled(true);
   }
 
-  servRemoveButton->setEnabled(true);
+  if ( servRemoveButton )
+    servRemoveButton->setEnabled(true);
 }
 
 #include "kservicelistwidget.moc"

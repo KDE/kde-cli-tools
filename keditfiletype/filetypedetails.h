@@ -1,7 +1,7 @@
 #ifndef _FILETYPEDETAILS_H
 #define _FILETYPEDETAILS_H
 
-#include <qwidget.h>
+#include <qtabwidget.h>
 #include <qgroupbox.h>
 class TypesListItem;
 class KIconButton;
@@ -11,12 +11,12 @@ class QPushButton;
 class KServiceListWidget;
 
 /**
- * This widget contains all the right part of the main kcmfiletypes
+ * This widget contains the first tab of the file type configuration
  * dialog. It is implemented as a separate class so that it can be
  * used by the keditfiletype program to show the details of a single
  * mimetype.
  */
-class FileTypeDetails : public QWidget
+class FileTypeDetails : public QTabWidget
 {
   Q_OBJECT
 public:
@@ -37,11 +37,16 @@ protected slots:
 private:
   TypesListItem * m_item;
 
+  // First tab - General
   KIconButton *iconButton;
   QListBox *extensionLB;
   QPushButton *addExtButton, *removeExtButton;
   QLineEdit *description;
   KServiceListWidget *serviceListWidget;
+
+  // Second tab - Embedding
+  KServiceListWidget *embedServiceListWidget;
+
 };
 
 #endif
