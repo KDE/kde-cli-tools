@@ -54,7 +54,7 @@ int main(int argc, char *argv[])
 {
     KAboutData aboutData("kdesu", I18N_NOOP("KDE su"),
 	    Version, I18N_NOOP("Runs a program under a different uid."),
-	    KAboutData::Artistic, 
+	    KAboutData::License_Artistic, 
 	    "Copyright (c) 1998-2000 Geert Jansen, Pietro Iglio");
     aboutData.addAuthor("Geert Jansen", I18N_NOOP("Maintainer"),
 	    "jansen@kde.org", "http://www.stack.nl/~geertj/");
