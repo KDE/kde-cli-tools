@@ -25,7 +25,9 @@
 #include <kdebug.h>
 #include <kcmdlineargs.h>
 #include <ksycoca.h>
-#if defined Q_WS_X11
+
+#ifdef Q_WS_X11
+#include <X11/Xlib.h>
 #include <X11/Xutil.h>
 #endif
 
