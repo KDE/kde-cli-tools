@@ -330,15 +330,28 @@ bool FileTypesView::sync( QValueList<TypesListItem *>& itemsModified )
   }
 
   // now go through all entries and sync those which are dirty.
-  QListViewItemIterator it2(typesLV);
-  for (; it2.current(); ++it2) {
-    TypesListItem *tli = (TypesListItem *) it2.current();
+  // don't use typesLV, it may be filtered
+  QMapIterator<QString,TypesListItem*> it1 = m_majorMap.begin();
+  while ( it1 != m_majorMap.end() ) {
+    TypesListItem *tli = *it1;
     if (tli->isDirty()) {
       kdDebug() << "Entry " << tli->name() << " is dirty. Saving." << endl;
       tli->sync();
       itemsModified.append( tli );
       didIt = true;
     }
+    ++it1;
+  }
+  QPtrListIterator<TypesListItem> it2( m_itemList );
+  while ( it2.current() ) {
+    TypesListItem *tli = *it2;
+    if (tli->isDirty()) {
+      kdDebug() << "Entry " << tli->name() << " is dirty. Saving." << endl;
+      tli->sync();
+      itemsModified.append( tli );
+      didIt = true;
+    }
+    ++it2;
   }
   setDirty(false);
   return didIt;
