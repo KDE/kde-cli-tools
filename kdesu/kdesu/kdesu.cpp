@@ -223,12 +223,10 @@ int main(int argc, char *argv[])
     QCString options;
     if (!new_dcop)
     {
-        QCString iceauth = "ICEAUTHORITY="+QFile::encodeName(QDir::homeDirPath())+"/.ICEauthority";
-        QCString dcop = "DCOPSERVER="+dcopNetworkId();	    
         QCString ksycoca = "KDESYCOCA="+QFile::encodeName(locateLocal("tmp", "ksycoca"));
-        env << iceauth << dcop << ksycoca;
+        env << ksycoca;
         
-        options += "x"; // X-only
+        options += "xf"; // X-only, dcop forwarding enabled.
     }
 
     if (keep && !terminal && !just_started) 
@@ -316,6 +314,7 @@ int main(int argc, char *argv[])
 	if (!new_dcop)
 	{
 	    proc.setXOnly(true);
+	    proc.setDCOPForwarding(true);
 	    proc.setEnvironment(env);
 	}
 	proc.setPriority(priority);

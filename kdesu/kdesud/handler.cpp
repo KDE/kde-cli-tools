@@ -294,6 +294,8 @@ int ConnectionHandler::doCommand(QCString buf)
 	    proc.setUser(user);
 	    if (options.contains('x'))
 	       proc.setXOnly(true);
+	    if (options.contains('f'))
+	       proc.setDCOPForwarding(true);
 	    proc.setPriority(m_Priority);
 	    proc.setScheduler(m_Scheduler);
 	    proc.setEnvironment(env);
