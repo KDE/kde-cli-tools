@@ -116,13 +116,14 @@ FileTypeDetails::FileTypeDetails( QWidget * parent, const char * name )
   // The order of those three items is very important. If you change it, fix typeslistitem.cpp !
   bgLay->addWidget( new QRadioButton( i18n("Show file in embedded viewer"), m_autoEmbed ) );
   bgLay->addWidget( new QRadioButton( i18n("Show file in separate viewer"), m_autoEmbed ) );
-  bgLay->addWidget( new QRadioButton( i18n("Use group settings"), m_autoEmbed ) );
+  m_rbGroupSettings = new QRadioButton( i18n("Use settings for '%1' group"), m_autoEmbed );
+  bgLay->addWidget( m_rbGroupSettings );
   connect(m_autoEmbed, SIGNAL( clicked( int ) ), SLOT( slotAutoEmbedClicked( int ) ));
 
   QWhatsThis::add( m_autoEmbed, i18n("Here you can configure what the Konqueror file manager"
     " will do when you click on a file of this type. Konqueror can display the file in"
-    " an embedded viewer or start up a separate application. If set to 'Use group settings',"
-    " Konqueror will behave according to the settings of the group this type belongs to,"
+    " an embedded viewer or start up a separate application. If set to 'Use settings for G group',"
+    " Konqueror will behave according to the settings of the group G this type belongs to,"
     " for instance 'image' if the current file type is image/png.") );
 
   secondLayout->addSpacing(10);
@@ -204,6 +205,8 @@ void FileTypeDetails::setTypeItem( TypesListItem * tlitem )
   else
     iconButton->resetIcon();
   description->setText(tlitem ? tlitem->comment() : QString::null);
+  if ( tlitem )
+    m_rbGroupSettings->setText( i18n("Use settings for '%1' group").arg( tlitem->majorType() ) );
   extensionLB->clear();
   addExtButton->setEnabled(true);
   removeExtButton->setEnabled(false);

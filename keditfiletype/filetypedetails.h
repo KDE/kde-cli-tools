@@ -7,6 +7,7 @@ class KIconButton;
 class QLineEdit;
 class QListBox;
 class QButtonGroup;
+class QRadioButton;
 class QPushButton;
 class KServiceListWidget;
 
@@ -48,6 +49,7 @@ private:
   // Second tab - Embedding
   QButtonGroup *m_autoEmbed;
   KServiceListWidget *embedServiceListWidget;
+  QRadioButton *m_rbGroupSettings;
 
 };
 
