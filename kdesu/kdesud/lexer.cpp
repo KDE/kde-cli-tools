@@ -104,6 +104,8 @@ int Lexer::lex()
 		return Tok_delCmd;
 	    if (m_Output == "PING")
 		return Tok_ping;
+	    if (m_Output == "EXIT")
+		return Tok_exit;
 	    if (m_Output == "STOP")
 		return Tok_stop;
 	    if (m_Output == "SET")

@@ -31,7 +31,7 @@ public:
     Tok_ping, Tok_str, Tok_num , Tok_stop,
     Tok_set, Tok_get, Tok_delVar, Tok_delGroup,
     Tok_host, Tok_prio, Tok_sched, Tok_getKeys,
-    Tok_chkGroup, Tok_delSpecialKey
+    Tok_chkGroup, Tok_delSpecialKey, Tok_exit
     };
 
 private:

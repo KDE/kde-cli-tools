@@ -38,7 +38,7 @@ extern Repository *repo;
 void kdesud_cleanup();
 
 ConnectionHandler::ConnectionHandler(int fd)
-	: SocketSecurity(fd)
+	: SocketSecurity(fd), m_exitCode(0), m_hasExitCode(false), m_needExitCode(false), m_pid(0)
 {
     m_Fd = fd;
     m_Priority = 50;
@@ -111,6 +111,18 @@ QCString ConnectionHandler::makeKey(int _namespace, QCString s1,
     res += "*";
     res += s1 + "*" + s2 + "*" + s3;
     return res;
+}
+
+void ConnectionHandler::sendExitCode()
+{
+    if (!m_needExitCode)
+       return;
+    QCString buf;
+    buf.setNum(m_exitCode);
+    buf.prepend("OK ");
+    buf.append("\n");
+
+    send(m_Fd, buf.data(), buf.length(), 0);
 }
 
 void ConnectionHandler::respond(int ok, QCString s)
@@ -279,6 +291,7 @@ int ConnectionHandler::doCommand(QCString buf)
 	    break;
 	} else if (pid > 0)
 	{
+	    m_pid = pid;
 	    respond(Res_OK);
 	    break;
 	}
@@ -461,6 +474,15 @@ int ConnectionHandler::doCommand(QCString buf)
 	if (tok != '\n')
 	    goto parse_error;
 	respond(Res_OK);
+	break;
+
+    case Lexer::Tok_exit:  // "EXIT\n"
+	tok = l->lex();
+	if (tok != '\n')
+	    goto parse_error;
+	m_needExitCode = true;
+        if (m_hasExitCode)
+           sendExitCode();
 	break;
 
     case Lexer::Tok_stop:  // "STOP\n"

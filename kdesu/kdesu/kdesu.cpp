@@ -79,6 +79,8 @@ QCString dcopNetworkId()
     return result;
 }
 
+static int startApp();
+
 int main(int argc, char *argv[])
 {
     // FIXME: this can be considered a poor man's solution, as it's not
@@ -90,43 +92,54 @@ int main(int argc, char *argv[])
         options[3].def = duser;
 
     KAboutData aboutData("kdesu", I18N_NOOP("KDE su"),
-	    Version, I18N_NOOP("Runs a program with elevated privileges."),
-	    KAboutData::License_Artistic,
-	    "Copyright (c) 1998-2000 Geert Jansen, Pietro Iglio");
+            Version, I18N_NOOP("Runs a program with elevated privileges."),
+            KAboutData::License_Artistic,
+            "Copyright (c) 1998-2000 Geert Jansen, Pietro Iglio");
     aboutData.addAuthor("Geert Jansen", I18N_NOOP("Maintainer"),
-	    "jansen@kde.org", "http://www.stack.nl/~geertj/");
+            "jansen@kde.org", "http://www.stack.nl/~geertj/");
     aboutData.addAuthor("Pietro Iglio", I18N_NOOP("Original author"),
-	    "iglio@fub.it");
+            "iglio@fub.it");
 
     KCmdLineArgs::init(argc, argv, &aboutData);
     KCmdLineArgs::addCmdLineOptions(options);
-    KCmdLineArgs *args = KCmdLineArgs::parsedArgs();
     KApplication::disableAutoDcopRegistration();
-
     KApplication *app = new KApplication;
     
     {
-    KStartupInfoId id;
-    id.initId( app->startupId());
-    id.setupStartupEnv(); // make KDE_STARTUP_ENV env. var. available again
+        KStartupInfoId id;
+        id.initId( app->startupId());
+        id.setupStartupEnv(); // make KDE_STARTUP_ENV env. var. available again
     }
 
+    int result = startApp();
+
+    if (result == 127)
+    {
+        KMessageBox::sorry(0, i18n("Command '%1' not found.").arg(command));
+    }
+
+    return result;
+}
+
+static int startApp()
+{
+    KCmdLineArgs *args = KCmdLineArgs::parsedArgs();
     // Stop daemon and exit?
     if (args->isSet("s"))
     {
-	KDEsuClient client;
-	if (client.ping() == -1)
-	{
-	    kdError(1206) << "Daemon not running -- nothing to stop\n";
-	    exit(1);
-	}
-	if (client.stopServer() != -1)
-	{
-	    kdDebug(1206) << "Daemon stopped\n";
-	    exit(0);
-	}
-	kdError(1206) << "Could not stop daemon\n";
-	exit(1);
+        KDEsuClient client;
+        if (client.ping() == -1)
+        {
+            kdError(1206) << "Daemon not running -- nothing to stop\n";
+            exit(1);
+        }
+        if (client.stopServer() != -1)
+        {
+            kdDebug(1206) << "Daemon stopped\n";
+            exit(0);
+        }
+        kdError(1206) << "Could not stop daemon\n";
+        exit(1);
     }
 
     // Get target uid
@@ -135,8 +148,8 @@ int main(int argc, char *argv[])
     struct passwd *pw = getpwnam(user);
     if (pw == 0L)
     {
-	kdError(1206) << "User " << user << " does not exist\n";
-	exit(1);
+        kdError(1206) << "User " << user << " does not exist\n";
+        exit(1);
     }
     bool change_uid = (getuid() != pw->pw_uid);
 
@@ -144,24 +157,24 @@ int main(int argc, char *argv[])
     QString file = QFile::decodeName(args->getOption("f"));
     if (change_uid && !file.isEmpty())
     {
-	if (file.at(0) != '/')
-	{
-	    KStandardDirs dirs;
-	    dirs.addKDEDefaults();
-	    file = dirs.findResource("config", file);
-	    if (file.isEmpty())
-	    {
-		kdError(1206) << "Config file not found: " << file << "\n";
-		exit(1);
-	    }
-	}
-	QFileInfo fi(file);
-	if (!fi.exists())
-	{
-	    kdError(1206) << "File does not exist: " << file << "\n";
-	    exit(1);
-	}
-	change_uid = !fi.isWritable();
+        if (file.at(0) != '/')
+        {
+            KStandardDirs dirs;
+            dirs.addKDEDefaults();
+            file = dirs.findResource("config", file);
+            if (file.isEmpty())
+            {
+                kdError(1206) << "Config file not found: " << file << "\n";
+                exit(1);
+            }
+        }
+        QFileInfo fi(file);
+        if (!fi.exists())
+        {
+            kdError(1206) << "File does not exist: " << file << "\n";
+            exit(1);
+        }
+        change_uid = !fi.isWritable();
     }
 
     // Get priority/scheduler
@@ -170,52 +183,54 @@ int main(int argc, char *argv[])
     int priority = tmp.toInt(&ok);
     if (!ok || (priority < 0) || (priority > 100))
     {
-	KCmdLineArgs::usage(i18n("Illegal priority: %1").arg(tmp));
-	exit(1);
+        KCmdLineArgs::usage(i18n("Illegal priority: %1").arg(tmp));
+        exit(1);
     }
     int scheduler = SuProcess::SchedNormal;
     if (args->isSet("r"))
-	scheduler = SuProcess::SchedRealtime;
+        scheduler = SuProcess::SchedRealtime;
     if ((priority > 50) || (scheduler != SuProcess::SchedNormal))
     {
-	change_uid = true;
-	auth_user = "root";
+        change_uid = true;
+        auth_user = "root";
     }
 
     // Get command
     if (args->isSet("c"))
     {
-    command = args->getOption("c");
-    for (int i=0; i<args->count(); i++)
-    {
-        QString arg = QFile::decodeName(args->arg(i));
-        KRun::shellQuote(arg);
-	command += " ";
-	command += QFile::encodeName(arg);
+        command = args->getOption("c");
+        for (int i=0; i<args->count(); i++)
+        {
+            QString arg = QFile::decodeName(args->arg(i));
+            KRun::shellQuote(arg);
+            command += " ";
+            command += QFile::encodeName(arg);
+        }
     }
-    }
-    else {
-    if( args->count() == 0 )
+    else 
     {
-	KCmdLineArgs::usage(i18n("No command specified!"));
-	exit(1);
+        if( args->count() == 0 )
+        {
+            KCmdLineArgs::usage(i18n("No command specified!"));
+            exit(1);
+        }
+        command = args->arg(0);
+        for (int i=1; i<args->count(); i++)
+        {
+            QString arg = QFile::decodeName(args->arg(i));
+            KRun::shellQuote(arg);
+            command += " ";
+            command += QFile::encodeName(arg);
+        }
     }
-    command = args->arg(0);
-    for (int i=1; i<args->count(); i++)
-    {
-        QString arg = QFile::decodeName(args->arg(i));
-        KRun::shellQuote(arg);
-	command += " ";
-	command += QFile::encodeName(arg);
-    }}
-
-//  CJM - Test lines remove when working
-//    kdWarning(1206) << args->count();
-//    kdWarning(1206) << command;
 
     // Don't change uid if we're don't need to.
     if (!change_uid)
-	return system(command);
+    {
+        int result = system(command);
+        result = WEXITSTATUS(result);
+        return result;
+    }
 
     // Check for daemon and start if necessary
     bool just_started = false;
@@ -223,16 +238,17 @@ int main(int argc, char *argv[])
     KDEsuClient client;
     if (!client.isServerSGID())
     {
-	kdWarning(1206) << "Daemon not safe (not sgid), not using it.\n";
-	have_daemon = false;
-    } else if (client.ping() == -1)
+        kdWarning(1206) << "Daemon not safe (not sgid), not using it.\n";
+        have_daemon = false;
+    }
+    else if (client.ping() == -1)
     {
-	if (client.startServer() == -1)
-	{
-	    kdWarning(1206) << "Could not start daemon, reduced functionality.\n";
-	    have_daemon = false;
-	}
-	just_started = true;
+        if (client.startServer() == -1)
+        {
+            kdWarning(1206) << "Could not start daemon, reduced functionality.\n";
+            have_daemon = false;
+        }
+        just_started = true;
     }
 
     // Try to exec the command with kdesud.
@@ -269,10 +285,14 @@ int main(int argc, char *argv[])
 
     if (keep && !terminal && !just_started)
     {
-	client.setPriority(priority);
-	client.setScheduler(scheduler);
-	if (client.exec(command, user, options, env) != -1)
-	    return 0;
+        client.setPriority(priority);
+        client.setScheduler(scheduler);
+        int result = client.exec(command, user, options, env);
+        if (result == 0)
+        {
+           result = client.exitCode();
+           return result;
+        }
     }
 
     // Set core dump size to 0 because we will have
@@ -281,8 +301,8 @@ int main(int argc, char *argv[])
     rlim.rlim_cur = rlim.rlim_max = 0;
     if (setrlimit(RLIMIT_CORE, &rlim))
     {
-	kdError(1206) << "rlimit(): " << ERR << "\n";
-	exit(1);
+        kdError(1206) << "rlimit(): " << ERR << "\n";
+        exit(1);
     }
 
     // Read configuration
@@ -296,14 +316,14 @@ int main(int argc, char *argv[])
     int needpw = proc.checkNeedPassword();
     if (needpw < 0)
     {
-	QString err = i18n("Su returned with an error!\n");
-	KMessageBox::error(0L, err);
-	exit(1);
+        QString err = i18n("Su returned with an error!\n");
+        KMessageBox::error(0L, err);
+        exit(1);
     }
     if (needpw == 0)
     {
-	keep = 0;
-	kdDebug() << "Don't need password!!\n";
+        keep = 0;
+        kdDebug() << "Don't need password!!\n";
     }
 
     // Start the dialog
@@ -311,63 +331,73 @@ int main(int argc, char *argv[])
     if (needpw)
     {
         KStartupInfoId id;
-        id.initId( app->startupId());
-	KStartupInfoData data;
-	data.setSilent( KStartupInfoData::Yes );
-	KStartupInfo::sendChange( id, data );
-	KDEsuDialog dlg(user, auth_user, keep && !terminal);
-	dlg.addLine(i18n("Command:"), command);
-	if ((priority != 50) || (scheduler != SuProcess::SchedNormal))
-	{
-	    QString prio;
-	    if (scheduler == SuProcess::SchedRealtime)
-		prio += i18n("realtime: ");
-	    prio += QString("%1/100").arg(priority);
-	    dlg.addLine(i18n("Priority:"), prio);
-	}
-	int ret = dlg.exec();
-	if (ret == KDEsuDialog::Rejected)
-	{
-	    KStartupInfo::sendFinish( id );
-	    exit(0);
-	}
-	if (ret == KDEsuDialog::AsUser)
-	    change_uid = false;
-	password = dlg.password();
-	keep = dlg.keep();
-	data.setSilent( KStartupInfoData::No );
-	KStartupInfo::sendChange( id, data );
+        id.initId( kapp->startupId());
+        KStartupInfoData data;
+        data.setSilent( KStartupInfoData::Yes );
+        KStartupInfo::sendChange( id, data );
+        KDEsuDialog dlg(user, auth_user, keep && !terminal);
+        dlg.addLine(i18n("Command:"), command);
+        if ((priority != 50) || (scheduler != SuProcess::SchedNormal))
+        {
+            QString prio;
+            if (scheduler == SuProcess::SchedRealtime)
+                prio += i18n("realtime: ");
+            prio += QString("%1/100").arg(priority);
+            dlg.addLine(i18n("Priority:"), prio);
+        }
+        int ret = dlg.exec();
+        if (ret == KDEsuDialog::Rejected)
+        {
+            KStartupInfo::sendFinish( id );
+            exit(0);
+        }
+        if (ret == KDEsuDialog::AsUser)
+            change_uid = false;
+        password = dlg.password();
+        keep = dlg.keep();
+        data.setSilent( KStartupInfoData::No );
+        KStartupInfo::sendChange( id, data );
     }
 
     // Some events may need to be handled (like a button animation)
-    app->processEvents();
-
-    if (!change_uid)
-	return system(command);
+    kapp->processEvents();
 
     // Run command
-    if (keep && have_daemon)
+    if (!change_uid)
     {
-	client.setPass(password, timeout);
-	client.setPriority(priority);
-	client.setScheduler(scheduler);
-	return client.exec(command, user, options, env);
+        int result = system(command);
+        result = WEXITSTATUS(result);
+        return result;
+    }
+    else if (keep && have_daemon)
+    {
+        client.setPass(password, timeout);
+        client.setPriority(priority);
+        client.setScheduler(scheduler);
+        int result = client.exec(command, user, options, env);
+        if (result == 0)
+        {
+            result = client.exitCode();
+            return result;
+        }
     } else
     {
-	SuProcess proc;
-	proc.setTerminal(terminal);
-	proc.setErase(true);
-	proc.setUser(user);
-	if (!new_dcop)
-	{
-	    proc.setXOnly(true);
-	    proc.setDCOPForwarding(true);
-	}
-	proc.setEnvironment(env);
-	proc.setPriority(priority);
-	proc.setScheduler(scheduler);
-	proc.setCommand(command);
-	return proc.exec(password);
+        SuProcess proc;
+        proc.setTerminal(terminal);
+        proc.setErase(true);
+        proc.setUser(user);
+        if (!new_dcop)
+        {
+            proc.setXOnly(true);
+            proc.setDCOPForwarding(true);
+        }
+        proc.setEnvironment(env);
+        proc.setPriority(priority);
+        proc.setScheduler(scheduler);
+        proc.setCommand(command);
+        int result = proc.exec(password);
+        return result;
     }
+    return -1;
 }
 

@@ -55,7 +55,7 @@
 #include <sys/resource.h>
 #include <sys/wait.h>
 #ifdef HAVE_SYS_SELECT_H
-#include <sys/select.h>		// Needed on some systems.
+#include <sys/select.h>                // Needed on some systems.
 #endif
 
 #include <qptrvector.h>
@@ -90,6 +90,7 @@ Repository *repo;
 const char *Version = "1.01";
 QCString sock;
 Display *x11Display;
+int pipeOfDeath[2];
 
 
 void kdesud_cleanup()
@@ -115,17 +116,17 @@ int initXconnection()
     x11Display = XOpenDisplay(NULL);
     if (x11Display != 0L) 
     {
-	XSetIOErrorHandler(xio_errhandler);
-	XCreateSimpleWindow(x11Display, DefaultRootWindow(x11Display), 
-		0, 0, 1, 1, 0,
-		BlackPixelOfScreen(DefaultScreenOfDisplay(x11Display)),
-		BlackPixelOfScreen(DefaultScreenOfDisplay(x11Display)));
-	return XConnectionNumber(x11Display);
+        XSetIOErrorHandler(xio_errhandler);
+        XCreateSimpleWindow(x11Display, DefaultRootWindow(x11Display), 
+                0, 0, 1, 1, 0,
+                BlackPixelOfScreen(DefaultScreenOfDisplay(x11Display)),
+                BlackPixelOfScreen(DefaultScreenOfDisplay(x11Display)));
+        return XConnectionNumber(x11Display);
     } else 
     {
-	kdWarning(1205) << "Can't connect to the X Server.\n";
-	kdWarning(1205) << "Might not terminate at end of session.\n";
-	return -1;
+        kdWarning(1205) << "Can't connect to the X Server.\n";
+        kdWarning(1205) << "Might not terminate at end of session.\n";
+        return -1;
     }
 }
 
@@ -143,16 +144,8 @@ void signal_exit(int sig)
 
 void sigchld_handler(int)
 {
-    int status;
-    pid_t pid;
-
-    while (1) 
-    {
-	pid = waitpid((pid_t) -1, &status, WNOHANG);
-	if (pid <= 0)
-	    break;
-	kdDebug(1205) << "PID " << (int) pid << " exited\n";
-    }
+    char c = ' ';
+    write(pipeOfDeath[1], &c, 1);
 }
 
 /**
@@ -168,8 +161,8 @@ int create_socket()
     QCString display(getenv("DISPLAY"));
     if (display.isEmpty())
     {
-	kdWarning(1205) << "$DISPLAY is not set\n";
-	return -1;
+        kdWarning(1205) << "$DISPLAY is not set\n";
+        return -1;
     }
 
     // strip the screen number from the display
@@ -178,37 +171,37 @@ int create_socket()
     sock = QFile::encodeName(locateLocal("socket", QString("kdesud_%1").arg(display)));
     int stat_err=lstat(sock, &s);
     if(!stat_err && S_ISLNK(s.st_mode)) {
-	kdWarning(1205) << "Someone is running a symlink attack on you\n";
-	if(unlink(sock)) {
-	    kdWarning(1205) << "Could not delete symlink\n";
-	    return -1;
-	}
+        kdWarning(1205) << "Someone is running a symlink attack on you\n";
+        if(unlink(sock)) {
+            kdWarning(1205) << "Could not delete symlink\n";
+            return -1;
+        }
     }
 
     if (!access(sock, R_OK|W_OK)) 
     {
-	KDEsuClient client;
-	if (client.ping() == -1) 
-	{
-	    kdWarning(1205) << "stale socket exists\n";
-	    if (unlink(sock)) 
-	    {
-		kdWarning(1205) << "Could not delete stale socket\n";
-		return -1;
-	    }
-	} else 
-	{
-	    kdWarning(1205) << "kdesud is already running\n";
-	    return -1;
-	}
+        KDEsuClient client;
+        if (client.ping() == -1) 
+        {
+            kdWarning(1205) << "stale socket exists\n";
+            if (unlink(sock)) 
+            {
+                kdWarning(1205) << "Could not delete stale socket\n";
+                return -1;
+            }
+        } else 
+        {
+            kdWarning(1205) << "kdesud is already running\n";
+            return -1;
+        }
 
     }
 
     sockfd = socket(PF_UNIX, SOCK_STREAM, 0);
     if (sockfd < 0) 
     {
-	kdError(1205) << "socket(): " << ERR << "\n";
-	return -1;
+        kdError(1205) << "socket(): " << ERR << "\n";
+        return -1;
     }
 
     struct sockaddr_un addr;
@@ -218,32 +211,32 @@ int create_socket()
     addrlen = SUN_LEN(&addr);
     if (bind(sockfd, (struct sockaddr *)&addr, addrlen) < 0) 
     {
-	kdError(1205) << "bind(): " << ERR << "\n";
-	return -1;
+        kdError(1205) << "bind(): " << ERR << "\n";
+        return -1;
     }
 
     struct linger lin;
     lin.l_onoff = lin.l_linger = 0;
     if (setsockopt(sockfd, SOL_SOCKET, SO_LINGER, (char *) &lin,
-		   sizeof(linger)) < 0) 
+                   sizeof(linger)) < 0) 
     {
-	kdError(1205) << "setsockopt(SO_LINGER): " << ERR << "\n";
-	return -1;
+        kdError(1205) << "setsockopt(SO_LINGER): " << ERR << "\n";
+        return -1;
     }
 
     int opt = 1;
     if (setsockopt(sockfd, SOL_SOCKET, SO_REUSEADDR, (char *) &opt,
-		   sizeof(opt)) < 0) 
+                   sizeof(opt)) < 0) 
     {
-	kdError(1205) << "setsockopt(SO_REUSEADDR): " << ERR << "\n";
-	return -1;
+        kdError(1205) << "setsockopt(SO_REUSEADDR): " << ERR << "\n";
+        return -1;
     }
     opt = 1;
     if (setsockopt(sockfd, SOL_SOCKET, SO_KEEPALIVE, (char *) &opt,
-		   sizeof(opt)) < 0) 
+                   sizeof(opt)) < 0) 
     {
-	kdError(1205) << "setsockopt(SO_KEEPALIVE): " << ERR << "\n";
-	return -1;
+        kdError(1205) << "setsockopt(SO_KEEPALIVE): " << ERR << "\n";
+        return -1;
     }
     chmod(sock, 0600);
     return sockfd;
@@ -257,11 +250,11 @@ int create_socket()
 int main(int argc, char *argv[])
 {
     KAboutData aboutData("kdesud", I18N_NOOP("KDE su daemon"),
-	    Version, I18N_NOOP("Daemon used by kdesu"),
-	    KAboutData::License_Artistic,
-	    "Copyright (c) 1999,2000 Geert Jansen");
+            Version, I18N_NOOP("Daemon used by kdesu"),
+            KAboutData::License_Artistic,
+            "Copyright (c) 1999,2000 Geert Jansen");
     aboutData.addAuthor("Geert Jansen", I18N_NOOP("Author"),
-	    "jansen@kde.org", "http://www.stack.nl/~geertj/");
+            "jansen@kde.org", "http://www.stack.nl/~geertj/");
     KCmdLineArgs::init(argc, argv, &aboutData);
     KInstance instance(&aboutData);
 
@@ -270,19 +263,19 @@ int main(int argc, char *argv[])
     rlim.rlim_cur = rlim.rlim_max = 0;
     if (setrlimit(RLIMIT_CORE, &rlim) < 0) 
     {
-	kdError(1205) << "setrlimit(): " << ERR << "\n";
-	exit(1);
+        kdError(1205) << "setrlimit(): " << ERR << "\n";
+        exit(1);
     }
 
     // Create the Unix socket.
     int sockfd = create_socket();
     if (sockfd < 0)
-	exit(1);
+        exit(1);
     if (listen(sockfd, 1) < 0) 
     {
-	kdError(1205) << "listen(): " << ERR << "\n";
-	kdesud_cleanup();
-	exit(1);
+        kdError(1205) << "listen(): " << ERR << "\n";
+        kdesud_cleanup();
+        exit(1);
     }
     int maxfd = sockfd;
 
@@ -290,12 +283,12 @@ int main(int argc, char *argv[])
     pid_t pid = fork();
     if (pid == -1) 
     {
-	kdError(1205) << "fork():" << ERR << "\n";
-	kdesud_cleanup();
-	exit(1);
+        kdError(1205) << "fork():" << ERR << "\n";
+        kdesud_cleanup();
+        exit(1);
     }
     if (pid)
-	exit(0);
+        exit(0);
 
     // Make sure we exit when the display gets closed.
     int x11Fd = initXconnection();
@@ -304,6 +297,9 @@ int main(int argc, char *argv[])
     repo = new Repository;
     QPtrVector<ConnectionHandler> handler;
     handler.setAutoDelete(true);
+
+    pipe(pipeOfDeath);
+    maxfd = QMAX(maxfd, pipeOfDeath[0]);
 
     // Signal handlers 
     struct sigaction sa;
@@ -325,65 +321,91 @@ int main(int argc, char *argv[])
 
     ksize_t addrlen;
     struct sockaddr_un clientname;
-    struct timeval tv;
 
     fd_set tmp_fds, active_fds;
     FD_ZERO(&active_fds);
     FD_SET(sockfd, &active_fds);
+    FD_SET(pipeOfDeath[0], &active_fds);
     if (x11Fd != -1)
-	FD_SET(x11Fd, &active_fds);
+        FD_SET(x11Fd, &active_fds);
 
     while (1) 
     {
-	tmp_fds = active_fds;
-	tv.tv_sec = 5; tv.tv_usec = 0;
-	if (select(maxfd+1, &tmp_fds, 0L, 0L, &tv) < 0) 
-	{
-	    if (errno == EINTR)
-		continue;
-	    kdError(1205) << "select(): " << ERR << "\n";
-	    exit(1);
-	}
-	repo->expire();
-	for (int i=0; i<=maxfd; i++) 
-	{
-	    if (!FD_ISSET(i, &tmp_fds)) 
-		continue;
+        tmp_fds = active_fds;
+        if (select(maxfd+1, &tmp_fds, 0L, 0L, 0L) < 0) 
+        {
+            if (errno == EINTR) continue;
+            
+            kdError(1205) << "select(): " << ERR << "\n";
+            exit(1);
+        }
+        repo->expire();
+        for (int i=0; i<=maxfd; i++) 
+        {
+            if (!FD_ISSET(i, &tmp_fds)) 
+                continue;
 
-	    if (i == x11Fd) 
-	    {
-		// Discard X events
-		XEvent event_return;
-		if (x11Display)
-		    XNextEvent(x11Display, &event_return);
-	    }
+            if (i == pipeOfDeath[0])
+            {
+                char buf[101];
+                read(pipeOfDeath[0], buf, 100);
+                pid_t result;
+                do
+                {
+                    int status;
+                    result = waitpid((pid_t)-1, &status, WNOHANG);
+                    if (result > 0)
+                    {
+                        for(int j=handler.size(); j--;)
+                        {
+                            if (handler[j] && (handler[j]->m_pid == result))
+                            {
+                                handler[j]->m_exitCode = WEXITSTATUS(status);
+                                handler[j]->m_hasExitCode = true;
+                                handler[j]->sendExitCode();
+                                handler[j]->m_pid = 0;
+                                break;
+                            }
+                        }
+                    }
+                }
+                while(result > 0);
+            }
 
-	    if (i == sockfd) 
-	    {
-		// Accept new connection
-		int fd;
-		addrlen = 64;
-		fd = accept(sockfd, (struct sockaddr *) &clientname, &addrlen);
-		if (fd < 0) 
-		{
-		    kdError(1205) << "accept():" << ERR << "\n";
-		    continue;
-		}
-		if (fd+1 > (int) handler.size())
-		    handler.resize(fd+1);
-		handler.insert(fd, new ConnectionHandler(fd));
-		maxfd = QMAX(maxfd, fd);
-		FD_SET(fd, &active_fds);
-		continue;
-	    }
+            if (i == x11Fd) 
+            {
+                // Discard X events
+                XEvent event_return;
+                if (x11Display)
+                    XNextEvent(x11Display, &event_return);
+            }
 
-	    // handle alreay established connection
-	    if (handler[i] && handler[i]->handle() < 0) 
-	    {
-		handler.remove(i);
-		FD_CLR(i, &active_fds);
-	    }
-	}
+            if (i == sockfd) 
+            {
+                // Accept new connection
+                int fd;
+                addrlen = 64;
+                fd = accept(sockfd, (struct sockaddr *) &clientname, &addrlen);
+                if (fd < 0) 
+                {
+                    kdError(1205) << "accept():" << ERR << "\n";
+                    continue;
+                }
+                if (fd+1 > (int) handler.size())
+                    handler.resize(fd+1);
+                handler.insert(fd, new ConnectionHandler(fd));
+                maxfd = QMAX(maxfd, fd);
+                FD_SET(fd, &active_fds);
+                continue;
+            }
+
+            // handle alreay established connection
+            if (handler[i] && handler[i]->handle() < 0) 
+            {
+                handler.remove(i);
+                FD_CLR(i, &active_fds);
+            }
+        }
     }
     kdWarning(1205) << "???\n";
 }
