@@ -39,16 +39,25 @@ public:
     int expire();
 
     /** Add a data element */
-    void add(const QCString &key, Data_entry &data);
+    void add(const QCString& key, Data_entry& data);
 
     /** Delete a data element. */
     int remove(const QCString& key);
 
-    /** Delete all data entries having a given group.  */
+    /** Delete all data entries having the given group.  */
     int removeGroup(const QCString& group);
 
+    /** Delete all data entries based on key. */
+    int removeSpecialKey(const QCString& key );
+
+    /** Checks for the existence of the specified group. */
+    int hasGroup(const QCString &group) const;
+
     /** Return a data value.  */
-    QCString find(const QCString &key) const;
+    QCString find(const QCString& key) const;
+
+    /** Returns the key values for the given group. */
+    QCString findKeys(const QCString& group, const char *sep= "-") const;
 
 private:
 

@@ -65,21 +65,21 @@ int ConnectionHandler::handle()
     char tmpbuf[100];
     nbytes = recv(m_Fd, tmpbuf, 99, 0);
 
-    if (nbytes < 0) 
+    if (nbytes < 0)
     {
 	if (errno == EINTR)
 	    return 0;
 	// read error
 	return -1;
-    } else if (nbytes == 0) 
+    } else if (nbytes == 0)
     {
 	// eof
-	kdDebug(1205) << "eof on fd " << m_Fd << "\n";
+	kdDebug(1205) << "eof on fd " << m_Fd << endl;
 	return -1;
     }
     tmpbuf[nbytes] = '\000';
 
-    if (m_Buf.length()+nbytes > 1024) 
+    if (m_Buf.length()+nbytes > 1024)
     {
 	kdWarning(1205) << "line too long";
 	return -1;
@@ -87,11 +87,11 @@ int ConnectionHandler::handle()
 
     m_Buf.append(tmpbuf);
     memset(tmpbuf, 'x', nbytes);
-    
+
     // Do we have a complete command yet?
     int n;
     QCString newbuf;
-    while ((n = m_Buf.find('\n')) != -1) 
+    while ((n = m_Buf.find('\n')) != -1)
     {
 	newbuf = m_Buf.left(n+1);
 	m_Buf.fill('x', n+1);
@@ -104,7 +104,7 @@ int ConnectionHandler::handle()
     return 0;
 }
 
-QCString ConnectionHandler::makeKey(int _namespace, QCString s1, 
+QCString ConnectionHandler::makeKey(int _namespace, QCString s1,
 	QCString s2, QCString s3)
 {
     QCString res;
@@ -128,7 +128,7 @@ void ConnectionHandler::respond(int ok, QCString s)
 	break;
     }
 
-    if (!s.isEmpty()) 
+    if (!s.isEmpty())
     {
 	buf += ' ';
 	buf += s;
@@ -139,25 +139,26 @@ void ConnectionHandler::respond(int ok, QCString s)
 }
 
 /*
- * Parse and do one command. On a parse error, return -1. This will 
+ * Parse and do one command. On a parse error, return -1. This will
  * close the socket in the main accept loop.
  */
 
 int ConnectionHandler::doCommand(QCString buf)
 {
-    if ((uid_t) peerUid() != getuid()) 
+    if ((uid_t) peerUid() != getuid())
     {
 	kdWarning(1205) << "Peer uid not equal to me\n";
-	kdWarning(1205) << "Peer: " << peerUid() << " Me: " << getuid() << "\n";
+	kdWarning(1205) << "Peer: " << peerUid() << " Me: " << getuid() << endl;
 	return -1;
     }
 
     QCString key, command, pass, name, user, value;
     Data_entry data;
 
+    // kdDebug(1205) << "Received command: " << buf << endl;
     Lexer *l = new Lexer(buf);
     int tok = l->lex();
-    switch (tok) 
+    switch (tok)
     {
     case Lexer::Tok_pass:  // "PASS password:string timeout:int\n"
 	tok = l->lex();
@@ -182,7 +183,7 @@ int ConnectionHandler::doCommand(QCString buf)
 	m_Host = l->lval();
 	if (l->lex() != '\n')
 	    goto parse_error;
-	kdDebug(1205) << "Host set to " << m_Host << "\n";
+	kdDebug(1205) << "Host set to " << m_Host << endl;
 	respond(Res_OK);
 	break;
 
@@ -193,7 +194,7 @@ int ConnectionHandler::doCommand(QCString buf)
 	m_Priority = l->lval().toInt();
 	if (l->lex() != '\n')
 	    goto parse_error;
-	kdDebug(1205) << "priority set to " << m_Priority << "\n";
+	kdDebug(1205) << "priority set to " << m_Priority << endl;
 	respond(Res_OK);
 	break;
 
@@ -204,7 +205,7 @@ int ConnectionHandler::doCommand(QCString buf)
 	m_Scheduler = l->lval().toInt();
 	if (l->lex() != '\n')
 	    goto parse_error;
-	kdDebug(1205) << "Scheduler set to " << m_Scheduler << "\n";
+	kdDebug(1205) << "Scheduler set to " << m_Scheduler << endl;
 	respond(Res_OK);
 	break;
 
@@ -230,7 +231,7 @@ int ConnectionHandler::doCommand(QCString buf)
 	pass = repo->find(key);
 	if (pass.isNull())
 	{
-	    if (m_Pass.isNull()) 
+	    if (m_Pass.isNull())
 	    {
 		respond(Res_NO);
 		break;
@@ -242,14 +243,14 @@ int ConnectionHandler::doCommand(QCString buf)
 	}
 
 	// Execute the command asynchronously
-	kdDebug(1205) << "Executing command: " << command << "\n";
+	kdDebug(1205) << "Executing command: " << command << endl;
 	pid_t pid = fork();
-	if (pid < 0) 
+	if (pid < 0)
 	{
-	    kdDebug(1205) << "fork(): " << strerror(errno) << "\n";
+	    kdDebug(1205) << "fork(): " << strerror(errno) << endl;
 	    respond(Res_NO);
 	    break;
-	} else if (pid > 0) 
+	} else if (pid > 0)
 	{
 	    respond(Res_OK);
 	    break;
@@ -259,7 +260,7 @@ int ConnectionHandler::doCommand(QCString buf)
 	signal(SIGCHLD, SIG_DFL);
 
 	int ret;
-	if (m_Host.isEmpty()) 
+	if (m_Host.isEmpty())
 	{
 	    SuProcess proc;
 	    proc.setCommand(command);
@@ -267,7 +268,7 @@ int ConnectionHandler::doCommand(QCString buf)
 	    proc.setPriority(m_Priority);
 	    proc.setScheduler(m_Scheduler);
 	    ret = proc.exec(pass.data());
-	} else 
+	} else
 	{
 	    SshProcess proc;
 	    proc.setCommand(command);
@@ -276,116 +277,174 @@ int ConnectionHandler::doCommand(QCString buf)
 	    ret = proc.exec(pass.data());
 	}
 
-	kdDebug(1205) << "Command completed: " << command << "\n";
+	kdDebug(1205) << "Command completed: " << command << endl;
 	_exit(ret);
     }
 
     case Lexer::Tok_delCmd:  // "DEL command:string user:string\n"
-	tok = l->lex();
-	if (tok != Lexer::Tok_str)
-	    goto parse_error;
-	command = l->lval();
-	tok = l->lex();
-	if (tok != Lexer::Tok_str)
-	    goto parse_error;
-	user = l->lval();
-	if (l->lex() != '\n')
-	    goto parse_error;
-	key = makeKey(0, m_Host, user, command);
-	if (repo->remove(key) < 0)
-	{
-	    kdDebug(1205) << "Unknown command: " << command << "\n";
-	    respond(Res_NO);
-	} else
-	{
-	    kdDebug(1205) << "Deleted command: " << command << ", user = " 
-		          << user << "\n";
-	    respond(Res_OK);
-	}
-	break;
+    tok = l->lex();
+    if (tok != Lexer::Tok_str)
+        goto parse_error;
+    command = l->lval();
+    tok = l->lex();
+    if (tok != Lexer::Tok_str)
+        goto parse_error;
+    user = l->lval();
+    if (l->lex() != '\n')
+        goto parse_error;
+    key = makeKey(0, m_Host, user, command);
+    if (repo->remove(key) < 0) {
+        kdDebug(1205) << "Unknown command: " << command << endl;
+        respond(Res_NO);
+    }
+    else {
+        kdDebug(1205) << "Deleted command: " << command << ", user = "
+                      << user << endl;
+        respond(Res_OK);
+    }
+    break;
 
-    case Lexer::Tok_delVar:  // "DELV name:string\n"
-	tok = l->lex();
-	if (tok != Lexer::Tok_str)
-	    goto parse_error;
-	name = l->lval();
-	tok = l->lex();
-	if (tok != '\n')
-	    goto parse_error;
-	key = makeKey(1, name);
-	if (repo->remove(key) < 0)
-	{
-	    kdDebug(1205) << "Unknown name: " << name << "\n";
-	    respond(Res_NO);
-	} else
-	{
-	    kdDebug(1205) << "Deleted name: " << name << "\n";
-	    respond(Res_OK);
-	}
-	break;
+    case Lexer::Tok_delVar:  // "DELV name:string \n"
+    {
+    tok = l->lex();
+    if (tok != Lexer::Tok_str)
+        goto parse_error;
+    name = l->lval();
+    tok = l->lex();
+    if (tok != '\n')
+        goto parse_error;
+    key = makeKey(1, name);
+    if (repo->remove(key) < 0)
+    {
+        kdDebug(1205) << "Unknown name: " << name << endl;
+        respond(Res_NO);
+    }
+    else {
+        kdDebug(1205) << "Deleted name: " << name << endl;
+        respond(Res_OK);
+    }
+    break;
+    }
 
     case Lexer::Tok_delGroup:  // "DELG group:string\n"
-	tok = l->lex();
-	if (tok != Lexer::Tok_str)
-	    goto parse_error;
-	name = l->lval();
-	if (repo->removeGroup(name) < 0)
-	{
-	    kdDebug(1205) << "No keys for group: " << name << "\n";
-	    respond(Res_NO);
-	} else
-	{
-	    kdDebug(1205) << "Removed group: " << name << "\n";
-	    respond(Res_OK);
-	}
-	break;
+    tok = l->lex();
+    if (tok != Lexer::Tok_str)
+        goto parse_error;
+    name = l->lval();
+    if (repo->removeGroup(name) < 0)
+    {
+        kdDebug(1205) << "No keys found under group: " << name << endl;
+        respond(Res_NO);
+    }
+    else
+    {
+        kdDebug(1205) << "Removed all keys under group: " << name << endl;
+        respond(Res_OK);
+    }
+    break;
 
-    case Lexer::Tok_set:  // "SET name:string value:string timeout:int group:string\n"
+    case Lexer::Tok_delSpecialKey:  // "DELS special_key:string\n"
+    tok = l->lex();
+    if (tok != Lexer::Tok_str)
+        goto parse_error;
+    name = l->lval();
+    kdDebug(1205) << "Special Key to be used for deletion: " << name << endl;
+    if (repo->removeSpecialKey(name) < 0)
+    {
+        kdDebug(1205) << "Unable to remove cached keys for: " << name << endl;
+        respond(Res_NO);
+    }
+    else
+    {
+        kdDebug(1205) << "Removed all cached keys for: " << name << endl;
+        respond(Res_OK);
+    }
+    break;
+
+    case Lexer::Tok_set:  // "SET name:string value:string group:string timeout:int\n"
+    tok = l->lex();
+    if (tok != Lexer::Tok_str)
+        goto parse_error;
+    name = l->lval();
+    tok = l->lex();
+    if (tok != Lexer::Tok_str)
+        goto parse_error;
+    data.value = l->lval();
+    tok = l->lex();
+    if (tok != Lexer::Tok_str)
+        goto parse_error;
+    data.group = l->lval();
+    tok = l->lex();
+    if (tok != Lexer::Tok_num)
+        goto parse_error;
+    data.timeout = l->lval().toInt();
+    if (l->lex() != '\n')
+        goto parse_error;
+    key = makeKey(1, name);
+    repo->add(key, data);
+    kdDebug(1205) << "Stored key: " << key << endl;
+    respond(Res_OK);
+    break;
+
+    case Lexer::Tok_get:  // "GET name:string\n"
+    tok = l->lex();
+    if (tok != Lexer::Tok_str)
+        goto parse_error;
+    name = l->lval();
+    if (l->lex() != '\n')
+        goto parse_error;
+    key = makeKey(1, name);
+    kdDebug(1205) << "Request for key: " << key << endl;
+    value = repo->find(key);
+    if (!value.isEmpty())
+        respond(Res_OK, value);
+    else
+        respond(Res_NO);
+    break;
+
+    case Lexer::Tok_getKeys:  // "GETK groupname:string\n"
 	tok = l->lex();
 	if (tok != Lexer::Tok_str)
 	    goto parse_error;
 	name = l->lval();
-	tok = l->lex();
-	if (tok != Lexer::Tok_str)
-	    goto parse_error;
-	data.value = l->lval();
-	tok = l->lex();
-	if (tok != Lexer::Tok_num)
-	    goto parse_error;
-	data.timeout = l->lval().toInt();
-	tok = l->lex();
-	if (tok != Lexer::Tok_str)
-	    goto parse_error;
-	data.group = l->lval();
 	if (l->lex() != '\n')
 	    goto parse_error;
-	key = makeKey(1, name);
-	repo->add(key, data);
-	kdDebug(1205) << "stored key: " << name << "\n";
-	respond(Res_OK);
-	break;
-
-    case Lexer::Tok_get:  // "GET name\n"
-	tok = l->lex();
-	if (tok != Lexer::Tok_str)
-	    goto parse_error;
-	name = l->lval();
-	if (l->lex() != '\n')
-	    goto parse_error;
-	key = makeKey(1, name);
-	kdDebug(1205) << "request for key: " << name << "\n";
-	value = repo->find(key);
+	kdDebug(1205) << "Request for group key: " << name << endl;
+	value = repo->findKeys(name);
 	if (!value.isEmpty())
+    {
+        kdDebug(1205) << "Requested value: " << value << endl;
 	    respond(Res_OK, value);
+    }
 	else
 	    respond(Res_NO);
 	break;
-	
+
+    case Lexer::Tok_chkGroup:  // "CHKG groupname:string\n"
+	tok = l->lex();
+	if (tok != Lexer::Tok_str)
+	    goto parse_error;
+	name = l->lval();
+	if (l->lex() != '\n')
+	    goto parse_error;
+	kdDebug(1205) << "Checking for group key: " << name << endl;
+	if ( repo->hasGroup( name ) < 0 )
+    {
+        kdDebug(1205) << "Group key NOT found!" << endl;
+	    respond(Res_NO);
+    }
+	else
+    {
+        kdDebug(1205) << "Group key found!" << endl;
+	    respond(Res_OK);
+    }
+	break;
+
     case Lexer::Tok_ping:  // "PING\n"
 	tok = l->lex();
 	if (tok != '\n')
 	    goto parse_error;
-	kdDebug(1205) << "PING\n";
+	kdDebug(1205) << "PING" << endl;
 	respond(Res_OK);
 	break;
 
@@ -393,13 +452,13 @@ int ConnectionHandler::doCommand(QCString buf)
 	tok = l->lex();
 	if (tok != '\n')
 	    goto parse_error;
-	kdDebug(1205) << "Stopping by command\n";
+	kdDebug(1205) << "Stopping by command" << endl;
 	respond(Res_OK);
 	kdesud_cleanup();
 	exit(0);
 
     default:
-	kdWarning(1205) << "Uknown command: " << l->lval() << "\n";
+	kdWarning(1205) << "Unknown command: " << l->lval() << endl;
 	respond(Res_NO);
 	goto parse_error;
     }
@@ -408,7 +467,7 @@ int ConnectionHandler::doCommand(QCString buf)
     return 0;
 
 parse_error:
-    kdWarning(1205) << "Parse error\n";
+    kdWarning(1205) << "Parse error" << endl;
     delete l;
     return -1;
 }

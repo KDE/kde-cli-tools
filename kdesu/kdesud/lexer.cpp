@@ -120,6 +120,12 @@ int Lexer::lex()
 		return Tok_delVar;
 	    if (m_Output == "DELG")
 		return Tok_delGroup;
+	    if (m_Output == "DELS")
+		return Tok_delSpecialKey;
+        if (m_Output == "GETK")
+        return Tok_getKeys;
+        if (m_Output == "CHKG")
+        return Tok_chkGroup;
 	}
 
 	return Tok_str;
