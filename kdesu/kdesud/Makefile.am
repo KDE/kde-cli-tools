@@ -10,6 +10,7 @@ noinst_HEADERS = repo.h handler.h lexer.h secure.h
 
 ## kdesud needs to be suid or sgid something
 install-data-local:
+	@echo "********************************************************"
 	@echo ""
 	@echo "For security reasons, kdesud is intalled setgid nogroup."
 	@echo "Kdesud is the daemon that implements the password caching."
@@ -17,6 +18,7 @@ install-data-local:
 	@echo "You should NOT use the password caching feature if kdesud is"
 	@echo "not installed setgid nogroup."
 	@echo ""
+	@echo "********************************************************"
 
 install-exec-local: install-binPROGRAMS
 	@(chown root.@nogroup@ $(bindir)/kdesud && chmod 2755  $(bindir)/kdesud) \

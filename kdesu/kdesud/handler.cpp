@@ -34,7 +34,7 @@
 
 // Global repository
 extern Repository *repo;
-
+void kdesud_cleanup();
 
 ConnectionHandler::ConnectionHandler(int fd)
 	: SocketSecurity(fd)
@@ -48,6 +48,7 @@ ConnectionHandler::~ConnectionHandler()
 {
     m_Buf.fill('x');
     m_Pass.fill('x');
+    close(m_Fd);
 }
 
 void ConnectionHandler::respond(int ok, QCString s)
@@ -310,6 +311,7 @@ int ConnectionHandler::doCommand()
 	    goto parse_error;
 	respond(Res_OK);
 	kDebugInfo("kdesud: Stopping by command");
+	kdesud_cleanup();
 	exit(0);
 
     default:

@@ -55,7 +55,7 @@
 #include <sys/resource.h>
 #include <sys/wait.h>
 
-#include <qglobal.h>
+#include <qvector.h>
 
 #include <kapp.h>
 #include <kdebug.h>
@@ -66,10 +66,16 @@
 #include "repo.h"
 #include "handler.h"
 #include "client.h"
-#include "kdesu.h"
+#include "defaults.h"
 
 #include <X11/X.h>
 #include <X11/Xlib.h>
+
+#ifndef SUN_LEN
+#define SUN_LEN(ptr) ((ksize_t) (((struct sockaddr_un *) 0)->sun_path) \
+                     + strlen ((ptr)->sun_path))   
+#endif
+
 
 // Globals
 
@@ -79,7 +85,7 @@ QCString sock;
 Display *x11Display;
 
 
-void cleanup(void)
+void kdesud_cleanup()
 {
     unlink(sock);
 }
@@ -90,7 +96,7 @@ void cleanup(void)
 int xio_errhandler(Display *)
 {
     kDebugError("kdesud: Fatal IO error, exiting...");
-    cleanup();
+    kdesud_cleanup();
     exit(1);
 }
 
@@ -114,7 +120,7 @@ int initXconnection()
 void signal_exit(int sig)
 {
     kDebugError("Exiting on signal %d", sig); 
-    cleanup();
+    kdesud_cleanup();
     exit(1);
 }
 
@@ -232,15 +238,16 @@ int main(int argc, char *argv[])
 	exit(1);
     if (listen(sockfd, 1) < 0) {
 	kDebugPError("listen()");
-	cleanup();
+	kdesud_cleanup();
 	exit(1);
     }
+    int maxfd = sockfd;
 
     // Ok, we're accepting connections. Fork to the background.
     pid_t pid = fork();
     if (pid == -1) {
 	kDebugPError("fork()");
-	cleanup();
+	kdesud_cleanup();
 	exit(1);
     }
     if (pid)
@@ -248,19 +255,17 @@ int main(int argc, char *argv[])
 
     // Make sure we exit when the display gets closed.
     int x11Fd = initXconnection();
+    maxfd = QMAX(maxfd, x11Fd);
 
-    // Allocate the repository 
     repo = new Repository;
-
-    // connection handlers
-    ConnectionHandler *handler[FD_SETSIZE];
+    QVector<ConnectionHandler> handler;
+    handler.setAutoDelete(true);
 
     // Signal handlers 
     struct sigaction sa;
     sa.sa_handler = signal_exit;
     sigemptyset(&sa.sa_mask);
     sa.sa_flags = 0;
-
     sigaction(SIGHUP, &sa, 0L);
     sigaction(SIGINT, &sa, 0L);
     sigaction(SIGTERM, &sa, 0L);
@@ -269,7 +274,6 @@ int main(int argc, char *argv[])
     sa.sa_handler = sigchld_handler;
     sa.sa_flags = SA_NOCLDSTOP;
     sigaction(SIGCHLD, &sa, 0L);
-
     sa.sa_handler = SIG_IGN;
     sigaction(SIGPIPE, &sa, 0L);
 
@@ -284,20 +288,18 @@ int main(int argc, char *argv[])
     FD_SET(sockfd, &active_fds);
     if (x11Fd != -1)
 	FD_SET(x11Fd, &active_fds);
-    while (1) {
 
+    while (1) {
 	tmp_fds = active_fds;
 	tv.tv_sec = 5; tv.tv_usec = 0;
-	if (select(FD_SETSIZE, &tmp_fds, 0L, 0L, &tv) < 0) {
+	if (select(maxfd+1, &tmp_fds, 0L, 0L, &tv) < 0) {
 	    if (errno == EINTR)
 		continue;
 	    kDebugPError("select()");
 	    exit(1);
 	}
-	
 	repo->expire();
-
-	for (int i=0; i<FD_SETSIZE; i++) {
+	for (int i=0; i<=maxfd; i++) {
 	    if (!FD_ISSET(i, &tmp_fds)) 
 		continue;
 
@@ -309,7 +311,7 @@ int main(int argc, char *argv[])
 	    }
 
 	    if (i == sockfd) {
-		// new connection
+		// Accept new connection
 		int fd;
 		addrlen = 64;
 		fd = accept(sockfd, (struct sockaddr *) &clientname, &addrlen);
@@ -317,16 +319,17 @@ int main(int argc, char *argv[])
 		    kDebugPError("accept()");
 		    continue;
 		}
-		handler[fd] = new ConnectionHandler(fd);
+		if (fd+1 > (int) handler.size())
+		    handler.resize(fd+1);
+		handler.insert(fd, new ConnectionHandler(fd));
+		maxfd = QMAX(maxfd, fd);
 		FD_SET(fd, &active_fds);
-		kDebugInfo("kdesud: Accepted new connection on fd %d", fd);
 		continue;
 	    }
 
 	    // handle alreay established connection
 	    if (handler[i]->handle() < 0) {
-		delete handler[i];
-		close(i);
+		handler.remove(i);
 		FD_CLR(i, &active_fds);
 	    }
 	}
