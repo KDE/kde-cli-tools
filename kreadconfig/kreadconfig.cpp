@@ -34,6 +34,7 @@
 
 static KCmdLineOptions options[] =
 {
+	{ "file <file>", I18N_NOOP("Use <file> instead of global config"), 0 },
 	{ "group <group>", I18N_NOOP("Group to look in"), "KDE" },
         { "key <key>", I18N_NOOP("Key to look for"), 0 },
         { "default <default>", I18N_NOOP("Default value"), 0 },
@@ -54,12 +55,18 @@ int main(int argc, char **argv)
 
 	QString group=QString::fromLatin1(args->getOption("group"));
 	QString key=QString::fromLatin1(args->getOption("key"));
+	QString file=QString::fromLatin1(args->getOption("file"));
 	QCString dflt=args->getOption("default");
 	QCString type=args->getOption("type").lower();
 
-	KApplication app( false, false ); // no styles, no gui
+	KInstance inst(&aboutData);
 
-	KConfig *konfig=KGlobal::config();
+	KConfig *konfig;
+	if (file.isEmpty())
+	   konfig = KGlobal::config();
+	else
+	   konfig = new KConfig(file, true, false);
+	   
 	konfig->setGroup(group);
 	if(type=="bool") {
 		dflt=dflt.lower();
