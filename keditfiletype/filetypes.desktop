@@ -7,6 +7,7 @@ DocPath=kcontrol/filetypes/index.html
 
 X-KDE-ModuleType=Library
 X-KDE-Library=filetypes
+X-KDE-ParentApp=kcontrol
 
 Name=File Associations
 Name[af]=lêer assosiasies
@@ -37,7 +38,6 @@ Name[ja]=ファイルの関連付け
 Name[ko]=파일 접근 권한
 Name[lt]=Bylų asociacijos
 Name[lv]=Failu Asociācijas
-Name[mi]=Whakahoanga Könae
 Name[mk]=Асоцирање на датотеки
 Name[mt]=Assoċjazzjonijiet tal-Fajls
 Name[nb]=Filtilknytninger
@@ -133,7 +133,6 @@ Keywords[eo]=dosiertipoj,asocioj,MIME,dosieroj,ŝablonoj,dosieroj,MIME-tipoj
 Keywords[es]=Tipos de archivo,Asociaciones de archivo,Tipos MIME,Patrones de archivo,Archivos,Patrón
 Keywords[et]=Failitüübid,Failide seosed,Mime tüübid,faili mustrid,failid,mustrid
 Keywords[fi]=Tiedostotyypit,Tiedostosidokset,Mimetyypit,Tiedostokuviot,Tiedostot,Kuvio
-Keywords[fo]=fíla,fílir,fíluslag
 Keywords[fr]=types de fichiers,associations de fichiers,types MIME,motifs de fichier,fichiers,motif,extension,extensions de fichiers,applications
 Keywords[he]=תבניות קבצים,קבצים,תבנית,סוגי קבצים,שיוכי קבצים,טיפוסי Mime
 Keywords[hr]=Tipovi datoteka,Asocijacije datoteka,Mime tipovi,Datoteke
