@@ -1,6 +1,6 @@
 INCLUDES= $(all_includes)
 
-libkcm_filetypes_la_LIBADD	= $(LIB_KSYCOCA) $(LIB_KDEUI)
+libkcm_filetypes_la_LIBADD	= $(LIB_KSYCOCA) $(LIB_KDEUI) $(LIB_KFILE)
 libkcm_filetypes_la_LDFLAGS = $(all_libraries) -module -avoid-version -no-undefined
 libkcm_filetypes_la_METASOURCES = AUTO
 
