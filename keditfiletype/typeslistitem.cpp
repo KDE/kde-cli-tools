@@ -101,7 +101,7 @@ void TypesListItem::sync()
     profile.writeEntry("AllowAsDefault", true);
     profile.writeEntry("Preference", i);
     
-    KService::Ptr pService = KService::service(*it);
+    KService::Ptr pService = KService::serviceByName(*it);
     ASSERT(pService);
 
     QString serviceLoc = locateLocal("apps", pService->desktopEntryPath());
