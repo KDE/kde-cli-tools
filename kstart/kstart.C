@@ -74,7 +74,7 @@ KStart::KStart()
         if( space != -1 )
             bin = bin.left( space );
         data.setBin( bin.mid( bin.findRev( '/' ) + 1 ));
-        KStartupInfo::sendStartup( id, data );
+        KStartupInfo::sendChange( id, data );
     }
     else
         KStartupInfo::sendFinish( id ); // failed to start
