@@ -107,6 +107,7 @@ int main(int argc, char *argv[])
     KCmdLineArgs::addCmdLineOptions(options);
     KApplication::disableAutoDcopRegistration();
     KApplication *app = new KApplication;
+    app->disableSessionManagement(); // but still pass SESSION_MANAGER to started app
     
     {
         KStartupInfoId id;
