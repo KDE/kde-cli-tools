@@ -291,7 +291,7 @@ void FileTypesView::defaults()
 {
 }
 
-QString FileTypesView::quickHelp()
+QString FileTypesView::quickHelp() const
 {
   return i18n("<h1>File Associations</h1>"
     " This module allows you to choose which applications are associated"
