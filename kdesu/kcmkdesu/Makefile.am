@@ -2,12 +2,12 @@
 
 INCLUDES= $(all_includes) -I$(top_srcdir)/kdesu/common
 
-bin_PROGRAMS = kcmkdesu
-kcmkdesu_SOURCES = kcmkdesu.cpp 
-kcmkdesu_LDFLAGS = $(all_libraries) $(KDE_RPATH)
-kcmkdesu_LDADD   = $(LIB_KDEUI) $(top_builddir)/kdesu/common/libkdesu.a
-kcmkdesu_METASOURCES = AUTO
+lib_LTLIBRARIES = libkcm_kdesu.la
+libkcm_kdesu_la_SOURCES = kcmkdesu.cpp
+libkcm_kdesu_la_LDFLAGS = -module -avoid-version $(all_libraries) $(KDE_RPATH)
+libkcm_kdesu_la_LIBADD = $(LIB_KDEUI) $(top_builddir)/kdesu/common/libkdesu.la
 
+METASOURCES = AUTO
 noinst_HEADERS = kcmkdesu.h
 
 messages:

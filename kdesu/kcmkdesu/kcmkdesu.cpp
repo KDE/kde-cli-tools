@@ -4,211 +4,175 @@
  * Copyright (C) 1999 Geert Jansen <g.t.jansen@stud.tue.nl>
  */
 
-#include <assert.h>
-#include <stdlib.h>
-#include <iostream>
-
 #include <qwidget.h>
 #include <qlayout.h>
 #include <qcheckbox.h>
 #include <qradiobutton.h>
 #include <qbuttongroup.h>
 #include <qstring.h>
-#include <qlineedit.h>
+#include <qspinbox.h>
 #include <qlabel.h>
-#include <qslider.h>
 
 #include <kapp.h>
 #include <kconfig.h>
 #include <klocale.h>
+#include <kcmodule.h>
 
 #include "kcmkdesu.h"
 #include "kdesu.h"
 #include "client.h"
 
 
+/**
+ * DLL interface.
+ */
+extern "C" {
+    KCModule *create_kdesu(QWidget *parent, const char *name) {
+	return new KDEsuConfig(parent, name);
+    }
+}
+
+
+/**** KDEsuConfig ****/
+
 KDEsuConfig::KDEsuConfig(QWidget *parent, const char *name)
-    : KConfigWidget(parent, name)
+    : KCModule(parent, name)
 {
-    QVBoxLayout *top_lay = new QVBoxLayout(this, 10);
+    QVBoxLayout *top = new QVBoxLayout(this, 10, 10);
 
     // Echo mode
-    em_group = new QButtonGroup(i18n("Echo mode"), this);
-    QVBoxLayout *v_lay = new QVBoxLayout(em_group, 10);
-    v_lay->addSpacing(10);
-
-    QRadioButton *rb = new QRadioButton(i18n("One star"), em_group);
-    v_lay->addStretch(4);
-    rb->setFixedSize(rb->sizeHint());
-    v_lay->addWidget(rb, 0, AlignLeft);
-    v_lay->addStretch(12);
-    rb = new QRadioButton(i18n("Three stars"), em_group);
-    rb->setFixedSize(rb->sizeHint());
-    v_lay->addWidget(rb, 0, AlignLeft);
-    v_lay->addStretch(12);
-    rb = new QRadioButton(i18n("No echo"), em_group);
-    rb->setFixedSize(rb->sizeHint());
-    v_lay->addWidget(rb, 0, AlignLeft);
-    v_lay->addStretch(4);
-    v_lay->activate();
-
-    em_group->setMinimumSize(em_group->childrenRect().size());
-    connect(em_group, SIGNAL(clicked(int)), SLOT(slotEchoMode(int)));
-
-    top_lay->addWidget(em_group, 3);
-    top_lay->addStretch(3);
+    m_EMGroup = new QButtonGroup(i18n("Echo mode"), this);
+    top->addWidget(m_EMGroup);
+    QVBoxLayout *vbox = new QVBoxLayout(m_EMGroup, 10, 10);
+    vbox->addSpacing(10);
+    QRadioButton *rb = new QRadioButton(i18n("One star"), m_EMGroup);
+    vbox->addWidget(rb, 0, AlignLeft);
+    rb = new QRadioButton(i18n("Three stars"), m_EMGroup);
+    vbox->addWidget(rb, 0, AlignLeft);
+    rb = new QRadioButton(i18n("No echo"), m_EMGroup);
+    vbox->addWidget(rb, 0, AlignLeft);
+    connect(m_EMGroup, SIGNAL(clicked(int)), SLOT(slotEchoMode(int)));
 
     // Keep password
-    QHBoxLayout *h_lay = new QHBoxLayout();
-    top_lay->addLayout(h_lay);
+    QHBoxLayout *hbox = new QHBoxLayout();
+    top->addLayout(hbox);
 
-    keep_but = new QCheckBox(i18n("&Remember password for"), this);
-    keep_but->setFixedSize(keep_but->sizeHint());
-    connect(keep_but, SIGNAL(toggled(bool)), SLOT(slotKeep(bool)));
-    h_lay->addWidget(keep_but);
+    m_KeepBut = new QCheckBox(i18n("&Remember password for"), this);
+    connect(m_KeepBut, SIGNAL(toggled(bool)), SLOT(slotKeep(bool)));
+    hbox->addWidget(m_KeepBut);
+    m_TimeoutEdit = new QSpinBox(this);
+    m_TimeoutEdit->setRange(5, 1200);
+    m_TimeoutEdit->setSteps(5, 10);
+    m_TimeoutEdit->setSuffix(i18n(" minutes"));
+    m_TimeoutEdit->setFixedSize(m_TimeoutEdit->sizeHint());
+    hbox->addWidget(m_TimeoutEdit);
+    hbox->addStretch();
 
-    timeout_edit = new QLineEdit(this);
-    timeout_edit->setText("999999");
-    timeout_edit->setFixedSize(timeout_edit->sizeHint());
-    timeout_edit->setText("");
-    h_lay->addWidget(timeout_edit);
+    top->addStretch();
 
-    QLabel *lbl = new QLabel(i18n("minutes."), this);
-    lbl->setFixedSize(lbl->sizeHint());
-    h_lay->addWidget(lbl);
-    h_lay->addStretch(12);
-
-    top_lay->addStretch(12);
-
-    config = new KConfig("kdesurc", "kdesurc");
-
-    loadSettings();
+    setButtons(buttons());
+    m_pConfig = new KConfig("kdesurc");
+    load();
 }
 
 
 KDEsuConfig::~KDEsuConfig()
 {
+    delete m_pConfig;
 }
 
-void KDEsuConfig::loadSettings()
-{
-    config->setGroup("Common");
 
-    QString val = config->readEntry("EchoMode", "x");
+void KDEsuConfig::load()
+{
+    m_pConfig->setGroup("Common");
+
+    QString val = m_pConfig->readEntry("EchoMode", "x");
     if (val == "OneStar")
-	echo_mode = OneStar;
+	m_Echo = OneStar;
     else if (val == "ThreeStars")
-	echo_mode = ThreeStars;
+	m_Echo = ThreeStars;
     else if (val == "NoStars")
-	echo_mode = NoStars;
+	m_Echo = NoStars;
     else
-	echo_mode = defEchomode;
+	m_Echo = defEchomode;
 
-    keep_pw = config->readBoolEntry("KeepPassword", defKeep);
-    pw_timeout = config->readNumEntry("KeepPasswordTimeout", defTimeout);
+    m_bKeep = m_pConfig->readBoolEntry("KeepPassword", defKeep);
+    m_Timeout = m_pConfig->readNumEntry("KeepPasswordTimeout", defTimeout);
 
-    updateSettings();
+    apply();
+    emit changed(false);
 }
 
 
-void KDEsuConfig::applySettings()
+void KDEsuConfig::save()
 {
-    config->setGroup("Common");
+    m_pConfig->setGroup("Common");
 
     QString val;
-    if (echo_mode == OneStar)
+    if (m_Echo == OneStar)
 	val = "OneStar";
-    else if (echo_mode == ThreeStars)
+    else if (m_Echo == ThreeStars)
 	val = "ThreeStars";
-    else if (echo_mode == NoStars)
+    else 
 	val = "NoStars";
-    assert(!val.isNull());
-    config->writeEntry("EchoMode", val);
+    m_pConfig->writeEntry("EchoMode", val);
 
-    config->writeEntry("KeepPassword", keep_pw);
-    pw_timeout = atoi(timeout_edit->text())*60;
-    config->writeEntry("KeepPasswordTimeout", pw_timeout);
+    m_pConfig->writeEntry("KeepPassword", m_bKeep);
+    m_Timeout = m_TimeoutEdit->value()*60;
+    m_pConfig->writeEntry("KeepPasswordTimeout", m_Timeout);
 
-    config->sync();
+    m_pConfig->sync();
 
-    if (!keep_pw) {
+    if (!m_bKeep) {
 	// Try to stop daemon
 	KDEsuClient client;
 	if (client.ping() != -1)
 	    client.stopServer();
     }
+    emit changed(false);
 }
 
-void KDEsuConfig::defaultSettings()
-{
-    echo_mode = defEchomode;
-    keep_pw = defKeep;
-    pw_timeout = defTimeout;
 
-    updateSettings();
+void KDEsuConfig::defaults()
+{
+    m_Echo = defEchomode;
+    m_bKeep = defKeep;
+    m_Timeout = defTimeout;
+
+    apply();
+    emit changed(true);
 }
 
-void KDEsuConfig::updateSettings()
-{
-    em_group->setButton(echo_mode);
-    keep_but->setChecked(keep_pw);
 
-    QString tmp;
-    tmp.setNum(pw_timeout/60);
-    timeout_edit->setText(tmp);
-    timeout_edit->setEnabled(keep_pw);
+void KDEsuConfig::apply()
+{
+    m_EMGroup->setButton(m_Echo);
+    m_KeepBut->setChecked(m_bKeep);
+
+    m_TimeoutEdit->setValue(m_Timeout/60);
+    m_TimeoutEdit->setEnabled(m_bKeep);
 }
     
+
 void KDEsuConfig::slotEchoMode(int i)
 {
-    echo_mode = i;
+    m_Echo = i;
+    emit changed(true);
 }
 
-void KDEsuConfig::slotKeep(bool _keep)
+
+void KDEsuConfig::slotKeep(bool keep)
 {
-    keep_pw = _keep;
-    updateSettings();
+    m_bKeep = keep;
+    m_TimeoutEdit->setEnabled(m_bKeep);
+    emit changed(true);
 }
 
-//
-// KDEsuApplication
-//
 
-KDEsuApplication::KDEsuApplication(int &argc, char *argv[], const char *name) : 
-    KControlApplication(argc, argv, name)
+int KDEsuConfig::buttons()
 {
-    kdesu = new KDEsuConfig(dialog, "kdesu");
-
-    addPage(kdesu, "KDE su", "kcmkdesu-1.html");
-    dialog->show();
+    qDebug("buttons called");
+    return KCModule::Help | KCModule::Default | KCModule::Reset |
+	   KCModule::Cancel | KCModule::Ok;
 }
 
-void KDEsuApplication::init()
-{
-    kdesu->loadSettings();
-}
-
-
-void KDEsuApplication::apply()
-{
-    kdesu->applySettings();
-}
-
-void KDEsuApplication::defaultValues()
-{
-    kdesu->defaultSettings();
-}
-
-//
-// Main application
-//
-
-int main(int argc, char **argv)
-{
-    KDEsuApplication app(argc, argv, "kcmkdesu");
-
-    if (app.runGUI())
-	return app.exec();
-    else
-	return 0;
-}
