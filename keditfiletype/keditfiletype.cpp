@@ -24,8 +24,6 @@
 #include <kaboutdata.h>
 #include <kdebug.h>
 #include <kcmdlineargs.h>
-#include <klocale.h>
-#include <kglobal.h>
 
 FileTypeDialog::FileTypeDialog( KMimeType::Ptr mime )
   : KDialogBase( 0L, 0, true, QString::null, /* Help | */ Cancel | Apply | Ok,
