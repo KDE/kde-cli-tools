@@ -74,8 +74,8 @@ FileTypesView::FileTypesView(QWidget *p, const char *name)
   QWhatsThis::add( removeTypeB, i18n("Click here to remove the selected file type.") );
 
   m_details = new FileTypeDetails( this );
-  connect( m_details, SIGNAL( dirty() ),
-           this, SLOT( setDirty() ) );
+  connect( m_details, SIGNAL( changed(bool) ),
+           this, SLOT( setDirty(bool) ) );
   topLayout->addWidget( m_details, 100 );
 
   init();

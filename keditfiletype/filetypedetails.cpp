@@ -170,7 +170,7 @@ void FileTypeDetails::updateIcon(QString icon)
 
   m_item->setIcon(icon);
 
-  emit dirty();
+  emit changed(true);
 }
 
 void FileTypeDetails::updateDescription(const QString &desc)
@@ -180,7 +180,7 @@ void FileTypeDetails::updateDescription(const QString &desc)
 
   m_item->setComment(desc);
 
-  emit dirty();
+  emit changed(true);
 }
 
 void FileTypeDetails::addExtension()
@@ -196,7 +196,7 @@ void FileTypeDetails::addExtension()
       patt += m.text();
       m_item->setPatterns(patt);
 
-      emit dirty();
+      emit changed(true);
     }
   }
 }
@@ -212,7 +212,7 @@ void FileTypeDetails::removeExtension()
   m_item->setPatterns(patt);
   extensionLB->removeItem(extensionLB->currentItem());
 
-  emit dirty();
+  emit changed(true);
 }
 
 void FileTypeDetails::setTypeItem( TypesListItem * tlitem )
@@ -276,7 +276,7 @@ void FileTypeDetails::promoteService()
 
   updatePreferredServices();
 
-  emit dirty();
+  emit changed(true);
 }
 
 void FileTypeDetails::demoteService()
@@ -299,7 +299,7 @@ void FileTypeDetails::demoteService()
 
   updatePreferredServices();
 
-  emit dirty();
+  emit changed(true);
 }
 
 void FileTypeDetails::addService()
@@ -331,7 +331,7 @@ void FileTypeDetails::addService()
 
   updatePreferredServices();
 
-  emit dirty();
+  emit changed(true);
 }
 
 void FileTypeDetails::removeService()
@@ -342,7 +342,7 @@ void FileTypeDetails::removeService()
     servicesLB->removeItem( selected );
     updatePreferredServices();
 
-    emit dirty();
+    emit changed(true);
   }
 
   if ( servicesLB->currentItem() == -1 )

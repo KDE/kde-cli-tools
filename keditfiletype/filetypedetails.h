@@ -23,7 +23,7 @@ public:
   void setTypeItem( TypesListItem * item );
 
 signals:
-  void dirty();
+  void changed(bool);
 
 protected slots:
   void updateIcon(QString icon);

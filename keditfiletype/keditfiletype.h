@@ -23,6 +23,9 @@ protected slots:
   virtual void slotOk();
   void clientChanged(bool state);
 
+protected:
+  void save();
+
 private:
   FileTypeDetails * m_details;
   TypesListItem * m_item;

@@ -3,6 +3,7 @@
 #include "typeslistitem.h"
 #include "keditfiletype.h"
 
+#include <dcopclient.h>
 #include <kapp.h>
 #include <kaboutdata.h>
 #include <kdebug.h>
@@ -26,16 +27,23 @@ FileTypeDialog::FileTypeDialog( KMimeType::Ptr mime )
   enableButton(Apply, false);
 }
 
-// Why doesn't kcmshell filetypes have Reset ? Weird.
+void FileTypeDialog::save()
+{
+  if (m_item->isDirty()) {
+    m_item->sync();
+    DCOPClient *dcc = kapp->dcopClient();
+    dcc->send("kded", "kbuildsycoca", "recreate()", QByteArray());
+  }
+}
 
 void FileTypeDialog::slotApply()
 {
-  // save();
+  save();
 }
 
 void FileTypeDialog::slotOk()
 {
-  // save();
+  save();
   accept();
 }
 
@@ -68,7 +76,7 @@ int main(int argc, char ** argv)
   KApplication app;
   KCmdLineArgs *args = KCmdLineArgs::parsedArgs();
   KGlobal::locale()->insertCatalogue("filetypes");
-  
+
   KMimeType::Ptr mime = KMimeType::mimeType( args->arg(0) );
   if (!mime)
     kdFatal() << "Mimetype " << args->arg(0) << " not found" << endl;
