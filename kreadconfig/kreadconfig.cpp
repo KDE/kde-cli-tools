@@ -1,4 +1,4 @@
-/* Read KGlobal::config() entries - for use in shell scripts.
+/* Read KConfig() entries - for use in shell scripts.
  * (c) 2001 Red Hat, Inc.
  * Programmed by Bernhard Rosenkraenzer <bero@redhat.com>
  *
@@ -44,8 +44,8 @@ static KCmdLineOptions options[] =
 int main(int argc, char **argv)
 {
 	KAboutData aboutData("kreadconfig", I18N_NOOP("KReadConfig"),
-		"1.0.0",
-		I18N_NOOP("Read KGlobal::config() entries - for use in shell scripts"),
+		"1.0.1",
+		I18N_NOOP("Read KConfig entries - for use in shell scripts"),
 		KAboutData::License_GPL,
 		"(c) 2001 Red Hat, Inc.");
 	aboutData.addAuthor("Bernhard Rosenkraenzer", 0, "bero@redhat.com");
@@ -53,11 +53,16 @@ int main(int argc, char **argv)
 	KCmdLineArgs::addCmdLineOptions(options);
 	KCmdLineArgs *args=KCmdLineArgs::parsedArgs();
 
-	QString group=QString::fromLatin1(args->getOption("group"));
-	QString key=QString::fromLatin1(args->getOption("key"));
-	QString file=QString::fromLatin1(args->getOption("file"));
+	QString group=QString::fromLocal8Bit(args->getOption("group"));
+	QString key=QString::fromLocal8Bit(args->getOption("key"));
+	QString file=QString::fromLocal8Bit(args->getOption("file"));
 	QCString dflt=args->getOption("default");
 	QCString type=args->getOption("type").lower();
+
+	if (key.isNull()) {
+		KCmdLineArgs::usage();
+		return 1;
+	}
 
 	KInstance inst(&aboutData);
 
@@ -80,3 +85,4 @@ int main(int argc, char **argv)
 		return 0;
 	}
 }
+
