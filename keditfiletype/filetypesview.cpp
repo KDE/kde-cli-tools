@@ -29,7 +29,7 @@
 
 #include "filetypesview.h"
 
-class ServiceListItem : public QListBoxText 
+class ServiceListItem : public QListBoxText
 {
 public:
 	ServiceListItem( QString &desktopPath );
@@ -37,7 +37,7 @@ public:
 	QString desktopPath;
 };
 
-ServiceListItem::ServiceListItem( QString &_desktopPath ) 
+ServiceListItem::ServiceListItem( QString &_desktopPath )
 	: QListBoxText(), desktopPath(_desktopPath)
 {
     KService::Ptr pService = KService::serviceByDesktopPath( _desktopPath );
@@ -61,16 +61,16 @@ FileTypesView::FileTypesView(QWidget *p, const char *name)
 
   QLabel *patternFilterLBL = new QLabel( i18n("Find filename pattern"), this );
   leftLayout->addWidget(patternFilterLBL, 0, 0);
-  
+
   patternFilterLE = new QLineEdit(this);
   leftLayout->addWidget(patternFilterLE, 0, 1);
-  
+
   connect(patternFilterLE, SIGNAL(textChanged(const QString &)),
 	  this, SLOT(slotFilter(const QString &)));
-  
+
   wtstr = i18n("Enter a part of a filename pattern. Only file types with a "
 	       "matching file pattern will appear in the list.");
-  
+
   QWhatsThis::add( patternFilterLE, wtstr );
   QWhatsThis::add( patternFilterLBL, wtstr );
 
@@ -193,7 +193,7 @@ FileTypesView::FileTypesView(QWidget *p, const char *name)
   QWhatsThis::add( servUpButton, i18n("Assigns a higher priority to the selected\n"
                               "application, moving it up in the list. Note:  This\n"
                               "only affects the selected application if the file type is\n"
-			      "associated with more than one application."));   
+			      "associated with more than one application."));
 
   servDownButton = new QPushButton(i18n("Move &Down"), gb);
   servDownButton->setEnabled(false);
@@ -218,7 +218,7 @@ FileTypesView::FileTypesView(QWidget *p, const char *name)
   grid->addWidget(servRemoveButton, 4, 1);
 
   QWhatsThis::add( servRemoveButton, i18n( "Remove the selected application from the list." ) );
-  
+
   init();
   setDirty(false);
 }
@@ -246,14 +246,14 @@ void FileTypesView::slotFilter(const QString &patternFilter)
 void FileTypesView::readFileTypes(const QString &patternFilter)
 {
     typesLV->clear();
-    
+
     KMimeType::List mimetypes = KMimeType::allMimeTypes();
     QValueListIterator<KMimeType::Ptr> it2(mimetypes.begin());
     for (; it2 != mimetypes.end(); ++it2) {
 	bool add = true;
 	
 	if ( !patternFilter.isEmpty() ) {
-	    QStringList matches = (*it2)->patterns().grep( patternFilter, 
+	    QStringList matches = (*it2)->patterns().grep( patternFilter,
 							   false );
 	    add = !matches.isEmpty();
 	}
@@ -263,7 +263,7 @@ void FileTypesView::readFileTypes(const QString &patternFilter)
 	    int index = mimetype.find("/");
 	    QString maj = mimetype.left(index);
 	    QString min = mimetype.right(mimetype.length() - index+1);
-	    
+	
 	    QListViewItemIterator it(typesLV);
 	    for (; it.current(); ++it) {
 		TypesListItem *current = (TypesListItem *) it.current();
@@ -401,9 +401,9 @@ void FileTypesView::updateDisplay(QListViewItem *item)
 
 
   servicesLB->clear();
-  
+
   QStringList services = tlitem->defaultServices();
-  
+
   if (services.count() == 0) {
     servicesLB->insertItem("None");
     servicesLB->setEnabled(false);
@@ -411,7 +411,7 @@ void FileTypesView::updateDisplay(QListViewItem *item)
     servDownButton->setEnabled(false);
   } else {
     for ( QStringList::Iterator it = services.begin();
-          it != services.end(); it++ ) 
+          it != services.end(); it++ )
     {
       servicesLB->insertItem( new ServiceListItem(*it) );
     }
@@ -462,7 +462,7 @@ void FileTypesView::promoteService()
   servicesLB->takeItem(selItem);
   servicesLB->insertItem(selItem, selIndex-1);
   servicesLB->setCurrentItem(selIndex - 1);
-  
+
   updatePreferredServices();
 
   setDirty(true);
@@ -485,9 +485,9 @@ void FileTypesView::demoteService()
   servicesLB->takeItem(selItem);
   servicesLB->insertItem(selItem, selIndex+1);
   servicesLB->setCurrentItem(selIndex + 1);
-  
+
   updatePreferredServices();
-  
+
   setDirty(true);
 }
 
@@ -576,9 +576,7 @@ void FileTypesView::addService()
   if (!item)
       return;
 
-  QStringList list;
-  list.append(i18n("File Type: %1").arg(item->name()));
-  KOpenWithDlg dlg(list, i18n("Add Application"), QString::null, (QWidget*)0);
+  KOpenWithDlg dlg(item->name(), QString::null, 0L);
   if (dlg.exec() == false)
     return;
 
@@ -597,7 +595,7 @@ void FileTypesView::addService()
       servicesLB->setEnabled(true);
   }
   QString desktopPath = service->desktopEntryPath();
-  
+
   servicesLB->insertItem( new ServiceListItem(desktopPath) );
 
   updatePreferredServices();
@@ -607,7 +605,7 @@ void FileTypesView::addService()
 
 void FileTypesView::removeService()
 {
-	int selected = servicesLB->currentItem(); 
+	int selected = servicesLB->currentItem();
 
 	if ( selected >= 0 ) {
 		servicesLB->removeItem( selected );
@@ -616,7 +614,7 @@ void FileTypesView::removeService()
 		setDirty(true);
 	}
 
-	if ( servicesLB->currentItem() == -1 ) 
+	if ( servicesLB->currentItem() == -1 )
 		servRemoveButton->setEnabled(false);
 
 }
