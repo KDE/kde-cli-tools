@@ -35,7 +35,7 @@ private:
 
     int doCommand(QCString buf);
     void respond(int ok, QCString s=0);
-    QCString makeKey(int namspace, QCString s1, QCString s1=0, QCString s3=0);
+    QCString makeKey(int namspace, QCString s1, QCString s2=0, QCString s3=0);
 
     int m_Fd, m_Timeout;
     int m_Priority, m_Scheduler;
