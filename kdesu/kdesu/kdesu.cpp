@@ -54,8 +54,7 @@ static KCmdLineOptions options[] = {
     { "+command", I18N_NOOP("Specifies the command to run."), 0 },
     { "c <command>", I18N_NOOP("Specifies the command to run."), "" },
     { "f <file>", I18N_NOOP("Run command under target uid if <file> is not writeable."), "" },
-    // FIXME 3.1: add dot at eol for consistency
-    { "u <user>", I18N_NOOP("Specifies the target uid"), "root" },
+    { "u <user>", I18N_NOOP("Specifies the target uid."), "root" },
     { "n", I18N_NOOP("Do not keep password."), 0 },
     { "s", I18N_NOOP("Stop the daemon (forgets all passwords)."), 0 },
     { "t", I18N_NOOP("Enable terminal output (no password keeping)."), 0 },
