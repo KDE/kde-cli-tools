@@ -68,14 +68,16 @@ void TypesListItem::init(KMimeType::Ptr mimetype)
 
   QValueListIterator<KServiceOffer> it(offerList.begin());
 
+  // warning: code duplicated in isDirty
   for (; it != offerList.end(); ++it) {
     if ((*it).service()->type() == "Application") {
       if ((*it).allowAsDefault())
         m_appServices.append((*it).service()->desktopEntryPath());
     }
-    else {
+    else /////// This else shouldn't exist, but at the moment we can't handle
+              // one service being present in both lists (we would save the
+              // preference twice !)
       m_embedServices.append((*it).service()->desktopEntryPath());
-    }
   }
 
   QVariant v = mimetype->property( "X-KDE-AutoEmbed" );
@@ -128,9 +130,10 @@ bool TypesListItem::isDirty() const
         if ((*it).allowAsDefault())
           oldAppServices.append((*it).service()->desktopEntryPath());
       }
-      else {
+     else /////// This else shouldn't exist, but at the moment we can't handle
+               // one service being present in both lists (we would save the
+               // preference twice !)
         oldEmbedServices.append((*it).service()->desktopEntryPath());
-      }
     }
 
     if (oldAppServices != m_appServices)
