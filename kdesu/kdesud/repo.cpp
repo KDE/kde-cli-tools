@@ -65,7 +65,6 @@ int Repository::removeSpecialKey(const QCString &key)
         {
             group = it.data().group;
             if (  key.find( group ) == 0 &&
-                  key.length() > group.length() &&
                   it.key().find( key ) >= 0 )
             {
 	        kdDebug(1205) << "Removed key: " << it.key() << endl;
@@ -87,7 +86,7 @@ int Repository::removeGroup(const QCString &group)
         {
             if (it.data().group == group)
             {
-                kdDebug(1205) << "Removed key: " << it.key() << endl;	       
+                kdDebug(1205) << "Removed key: " << it.key() << endl;
                 repo.remove(it);
                 if(!found) found = true;
             }
@@ -115,32 +114,31 @@ QCString Repository::findKeys(const QCString &group, const char *sep ) const
     QCString list="";
     if( !group.isEmpty() )
     {
+        kdDebug(1205) << "Looking for matching key with group key: " << group << endl;
         int pos;
         QCString key;
         RepoCIterator it;
         for (it=repo.begin(); it!=repo.end(); it++)
         {
-            kdDebug(1205) << "Group key: " << it.data().group << endl;
             if (it.data().group == group)
             {
                 key = it.key().copy();
+                kdDebug(1205) << "Matching key found: " << key << endl;
                 pos = key.findRev(sep);
                 key.truncate( pos );
                 key.remove(0, 2);
-                kdDebug(1205) << "Matching group key found: " << key << endl;
-                if (list.isEmpty())
+                if (!list.isEmpty())
                 {
-                    list = key;
-                }
-                else
-                {
-                    // Add the same key sequence only once please :)
+                    // Add the same keys only once please :)
                     if( !list.contains(key) )
                     {
-                        list += '\007';
+                        kdDebug(1205) << "Key added to list: " << key << endl;
+                        list += '\007'; // I do not know
                         list.append(key);
                     }
                 }
+                else
+                    list = key;
             }
         }
     }
