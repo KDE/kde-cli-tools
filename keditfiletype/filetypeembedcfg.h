@@ -23,6 +23,7 @@ class TypesListItem;
 class KIconButton;
 class QLineEdit;
 class QListBox;
+class KServiceListWidget;
 
 /**
  * This widget contains the second page of the file configuration
