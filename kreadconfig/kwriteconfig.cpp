@@ -41,7 +41,7 @@ int main(int argc, char **argv)
 	QString file=QString::fromLocal8Bit(args->getOption("file"));
 	QCString type=args->getOption("type").lower();
 
-	
+
 	if (key.isNull() || !args->count()) {
 		KCmdLineArgs::usage();
 		return 1;
@@ -67,6 +67,7 @@ int main(int argc, char **argv)
 		konfig->writeEntry( key, QString::fromLocal8Bit( value ) );
 	}
 	konfig->sync();
+        delete konfig;
 	return 0;
 }
 
