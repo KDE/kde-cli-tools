@@ -36,7 +36,8 @@ public:
 	Tok_exec=256, Tok_pass, 
 	Tok_user, Tok_del, 
 	Tok_ping, Tok_str, 
-	Tok_num , Tok_stop
+	Tok_num , Tok_stop,
+	Tok_set, Tok_get
     };
 
 private:

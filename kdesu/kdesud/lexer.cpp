@@ -104,6 +104,10 @@ int Lexer::lex()
 		return Tok_stop;
 	    if (m_Output == "USER")
 		return Tok_user;
+	    if (m_Output == "SET")
+		return Tok_set;
+	    if (m_Output == "GET")
+		return Tok_get;
 	}
 
 	return Tok_str;

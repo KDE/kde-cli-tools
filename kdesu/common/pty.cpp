@@ -32,8 +32,9 @@
 #include <qglobal.h>
 #include <qcstring.h>
 
+#include <kdebug.h>
+#include <kstddirs.h>
 #include "pty.h"
-#include "pathsearch.h"
 
 // stdlib.h is meant to declare the prototypes but doesn't :(
 #ifdef HAVE_GRANTPT
@@ -46,6 +47,12 @@ extern "C" char * ptsname(int fd);
 
 #ifdef HAVE_UNLOCKPT
 extern "C" int unlockpt(int fd);
+#endif
+
+#ifdef __GNUC__
+#define ID __PRETTY_FUNCTION__
+#else
+#define ID __FILE__
 #endif
 
 PTY::PTY()
@@ -121,7 +128,7 @@ linux_out:
     // Other systems ??
 
     ptyfd = -1;
-    qWarning("PTY::getpt(): Unknown system or all methods failed");
+    kDebugError("%s: Unknown system or all methods failed", ID);
     return -1;
 
 #endif // HAVE_GETPT
@@ -145,9 +152,8 @@ int PTY::grantpt()
 	return 0;
 
     // Use konsole_grantpty:
-    PathSearch PS;
-    if (PS.locate("konsole_grantpty").isEmpty()) {
-	qWarning("PTY::grantpt(): konsole_grantpty not found");
+    if (KStandardDirs::findExe("konsole_grantpty").isEmpty()) {
+	kDebugError("%s: konsole_grantpty not found", ID);
 	return -1;
     }
 
@@ -156,17 +162,17 @@ int PTY::grantpt()
 
     pid_t pid;
     if ((pid = fork()) == -1) {
-	qWarning("PTY::grantpt(): fork(): %s", strerror(errno));
+	kDebugError("%s: fork(): %m", ID);
 	return -1;
     }
 
     if (pid) {
 	// Parent: wait for child
 	int ret;
-	waitpid (pid, &ret, 0);
+	waitpid(pid, &ret, 0);
     	if (WIFEXITED(ret) && !WEXITSTATUS(ret))
 	    return 0;
-	qWarning("PTY::grantpt(): konsole_grantpty returned with error: %d", 
+	kDebugError("konsole_grantpty returned with error: %d", 
 		WEXITSTATUS(ret));
 	return -1;
     } else {
@@ -174,8 +180,7 @@ int PTY::grantpt()
 	if (ptyfd != pty_fileno && dup2(ptyfd, pty_fileno) < 0) 
 	    _exit(1);
 	execlp("konsole_grantpty", "konsole_grantpty", "--grant", NULL);
-	qWarning("PTY::grantpt(): exec(\"konsole_grantpty\"): %s",
-		strerror(errno));
+	kDebugError("%s: exec(): %m", ID);
 	_exit(1);
     }
 

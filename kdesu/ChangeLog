@@ -1,3 +1,10 @@
+Wed, 26 Jan 00    Geert Jansen <g.t.jansen@stud.tue.nl>
+
+    * Build sycoca for target process.
+    * Use standard debug facilities.
+    * Use KCmdLineArgs for argument parsing.
+    * Dialog updated to use KDialogBase.
+
 Sat, 18 Dec 99    Geert Jansen <g.t.jansen@stud.tue.nl>
 
     * Add DCOP authentication cookies.

@@ -5,7 +5,7 @@
  * This file is part of the KDE project, module kdesu.
  * Copyright (C) 1999 Geert Jansen <g.t.jansen@stud.tue.nl>
  * 
- * client.h: defines for KDEsuClient, a client to access kdesud.
+ * client.h: client to access kdesud.
  */
 
 #include <sys/types.h>
@@ -16,6 +16,7 @@
 
 /**
  * A client class to access kdesud, the KDE su daemon.
+ * It can execute commands for you, and store variables.
  */
 
 class KDEsuClient {
@@ -31,7 +32,7 @@ public:
      * @param command The command to execute.
      * @return Zero on success, -1 on failure.
      */
-    int exec(const char *command);
+    int exec(QCString command);
 
     /**
      * Set root's password, lasts one session.
@@ -45,14 +46,28 @@ public:
     /**
      * Set the target user.
      */
-    int setUser(const char *user=0L);
+    int setUser(QCString user);
 
     /**
      * Remove a command and it's password from kdesud.
      * @param command The command to remove.
      * @return zero on success, -1 on an error
      */
-    int delCommand(const char *command);
+    int delCommand(QCString command);
+
+    /**
+     * Set a persistent variable.
+     * @param key The name of the variable.
+     * @param value Its value.
+     */
+    int setVar(QCString key, QCString value);
+
+    /**
+     * Get a persistent variable.
+     * @param key The name of the variable.
+     * @return Its value.
+     */
+    QCString getVar(QCString key);
 
     /**
      * Ping kdesud. This can be used for diagnostics.
@@ -77,16 +92,10 @@ public:
 
 private:
 
-    enum Commands {
-	Cmd_pass, Cmd_exec,
-	Cmd_user, Cmd_del, 
-	Cmd_stop, Cmd_ping
-    };
-
     int sockfd;
     QCString sock;
 
-    int command(int code, const char *arg1=0, int arg2=0);
-    QCString escape(const char *str);
+    int command(QCString cmd, QCString *result=0L);
+    QCString escape(QCString str);
 };
 

@@ -3,12 +3,12 @@
  * $Id$
  *
  * This file is part of the KDE project, module kdesu.
- * Copyright (C) 1999 Geert Jansen <g.t.jansen@stud.tue.nl>
+ * Copyright (C) 1999,2000 Geert Jansen <g.t.jansen@stud.tue.nl>
  * 
  */
 
-#ifndef __Process_h_included__
-#define __Process_h_included__
+#ifndef __Process_h_Included__
+#define __Process_h_Included__
 
 
 #include <qcstring.h>
@@ -46,6 +46,11 @@ public:
     void setErase(bool erase) { m_bErase = erase; }
 
     /**
+     * Enable/disable build of syscoca for the target.
+     */
+    void setBuildSycoca(bool build) { m_bSycoca = build; }
+
+    /**
      * Set the user to su to.
      */
     void setUser(const char *user) { m_User = user; }
@@ -63,43 +68,18 @@ public:
     int checkPass(const char *pass) { return exec((char *) pass, true); }
 
 private:
-    int SetupTTY(const char *ttyname);
-    int WaitSlave(const char *ttyname);
-    int ConverseSU(int fd, const char *password, const char *tty);
-    int ConverseStub(int fd, const char *command);
-    int CopyOutput(int fd, bool echo);
+    int SetupTTY();
+    int disableLocalEcho();
+    int WaitSlave();
+    int ConverseSU(const char *password);
+    int ConverseStub();
+    int waitForChild(bool echo);
     QCString commaSeparatedList(QStringList);
 
-    QCString m_Command, m_User;
-    bool m_bOk, m_bTerminal;
+    int m_Pid, m_Fd;
+    QCString m_TTY, m_Command, m_User;
+    bool m_bOk, m_bTerminal, m_bSycoca;
     bool m_bWait, m_bErase;
-};
-
-
-/**
- * Execute a command as a normal user.
- */
-class UserProcess
-{
-public:
-    /**
-     * Constructs a User_process object.
-     * @param command The command to execute.
-     */
-    UserProcess(const char *command=0L);
-
-    /**
-     * Set the command to execute.
-     */
-    void setCommand(const char *command) { m_Command = command; }
-
-    /**
-     * Execute and wait for the command.
-     */
-    int exec();
-
-private:
-    QCString m_Command;
 };
 
 #endif

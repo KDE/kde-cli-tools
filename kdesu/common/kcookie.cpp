@@ -1,6 +1,6 @@
 /* vi: ts=8 sts=4 sw=4
  *
- * $Id: $
+ * $Id$
  *
  * This file is part of the KDE project, module kdesu.
  * Copyright (C) 1999 Geert Jansen <g.t.jansen@stud.tue.nl>
@@ -15,8 +15,14 @@
 #include <qstringlist.h>
 #include <qglobal.h>
 
+#include <kdebug.h>
 #include "kcookie.h"
 
+#ifdef __GNUC__
+#define ID __PRETTY_FUNCTION__
+#else
+#define ID __FILE__
+#endif
 
 KCookie::KCookie()
 {
@@ -32,22 +38,22 @@ void KCookie::getXCookie()
 
     m_Display = getenv("DISPLAY");
     if (m_Display.isEmpty()) {
-	qWarning("KCookie::getXCookie(): DISPLAY is not set");
+	kDebugError("%s: $DISPLAY is not set", ID);
 	return;
     }
     QString cmd = QString("xauth list %1").arg(m_Display);
     if (!(f = popen(cmd.latin1(), "r"))) {
-	qWarning("KCookie::getXCookie(): popen() failed");
+	kDebugError("%s: popen(): %m", ID);
 	return;
     }
     QString output = QString(fgets(buf, 1024, f)).simplifyWhiteSpace();
     if (pclose(f) < 0) {
-	qWarning("KCookie::getXCookie(): could not run xauth");
+	kDebugError("%s: Could not run xauth", ID);
 	return;
     }
     QStringList lst = QStringList::split(' ', output);
     if (lst.count() != 3) {
-	qWarning("KCookie::getXCookie(): parse error");
+	kDebugError("%s: parse error", ID);
 	return;
     }
     m_DisplayAuth = (lst[1] + ' ' + lst[2]);
@@ -63,11 +69,11 @@ void KCookie::getICECookie()
     if (dcopsrv.isEmpty()) {
 	QString home(getenv("HOME"));
 	if (home.isEmpty()) {
-	    qWarning("KCookie::getICECookie(): cannot find DCOP server");
+	    kDebugError("%s: Cannot find DCOP server.", ID);
 	    return;
 	}
 	if (!(f = fopen(home + "/.DCOPserver", "r"))) {
-	    qWarning("KCookie::getICECookie(): cannot open ~/.DCOPserver");
+	    kDebugError("%s: Cannot open ~/.DCOPserver.", ID);
 	    return;
 	}
 	dcopsrv = QString(fgets(buf, 1024, f)).stripWhiteSpace();
@@ -81,14 +87,14 @@ void KCookie::getICECookie()
     for (it=m_DCOPSrv.begin(); it != m_DCOPSrv.end(); it++) {
 	QString cmd = QString("iceauth list netid=%1").arg(*it);
 	if (!(f = popen(cmd.latin1(), "r"))) {
-	    qWarning("KCookie::getICECookie(): popen() failed");
+	    kDebugError("%s: popen(): %m", ID);
 	    break;
 	}
 	QStringList output;
 	while (fgets(buf, 1024, f) > 0)
 	    output += QString(buf);
 	if (pclose(f) < 0) {
-	    qWarning("KCookie::getICECookie(): could not run iceauth");
+	    kDebugError("%s: Could not run iceauth.", ID);
 	    break;
 	}
 	QStringList::Iterator it;
@@ -96,7 +102,7 @@ void KCookie::getICECookie()
 	    QStringList lst = QStringList::split(' ',
 		    (*it).simplifyWhiteSpace());
 	    if (lst.count() != 5) {
-		qWarning("KCookie::getICECookie(): parse error");
+		kDebugError("%s: parse error", ID);
 		break;
 	    }
 	    if (lst[0] == "DCOP")
@@ -104,8 +110,7 @@ void KCookie::getICECookie()
 	    else if (lst[0] == "ICE")
 		m_ICEAuth += (lst[3] + ' ' + lst[4]);
 	    else 
-		qWarning("KCookie::getICECookie(): unknown protocol: %s",
-			lst[0].latin1());
+		kDebugError("%s: unknown protocol: %s", ID, lst[0].latin1());
 	}
     }
 }

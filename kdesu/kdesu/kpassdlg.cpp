@@ -59,6 +59,7 @@ KPasswordEdit::~KPasswordEdit()
 
 void KPasswordEdit::erase()
 {
+    m_length = 0;
     for (int i=0; i<PassLen; i++)
 	m_Password[i] = '\000';
     setText("");
@@ -155,9 +156,9 @@ KDEsuDialog::KDEsuDialog(QString command, QString user, int keep)
     grid->addWidget(lbl, 1, 0, AlignLeft);
 
     lbl = new QLabel(main);
-    lbl->setText(m_Command);
+    // By making it richtext, the lines are wrapped if they are too long
+    lbl->setText(QString("<qt>") + m_Command + "</qt>");
     lbl->setFixedWidth(size.width());
-    lbl->setFixedHeight(lbl->sizeHint().height());
     grid->addWidget(lbl, 1, 2, AlignLeft);
 	    
     // Password label + line editor

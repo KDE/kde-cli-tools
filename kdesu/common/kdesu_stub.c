@@ -21,13 +21,15 @@
  * - ice_auth        ICE authentication  csl of "type cookie" pairs for ICE
  * - command         Command to run      string
  * - path            PATH env. var       string
+ * - build_sycoca    Rebuild sycoca?     "yes" | "no"
  */
 
 #include <stdio.h>
 #include <stdlib.h>
 #include <unistd.h>
 #include <string.h>
-#include <fcntl.h>
+#include <errno.h>
+#include <pwd.h>
 #include <termios.h>
 
 #include <sys/types.h>
@@ -52,6 +54,7 @@ struct param_struct params[] = {
     {"ice_auth", 0L},
     {"command", 0L},
     {"path", 0L},
+    {"build_sycoca", 0L},
 };
 
 #define P_DISPLAY 0
@@ -61,7 +64,8 @@ struct param_struct params[] = {
 #define P_ICE_AUTH 4
 #define P_COMMAND 5
 #define P_PATH 6
-#define P_LAST 7
+#define P_SYCOCA 7
+#define P_LAST 8
 
 
 /**
@@ -137,28 +141,39 @@ char **xstrsep(char *str)
  * The main program
  */
 
-int main()
+int main(int argc, char **argv)
 {
     char buf[1024];
     char command[200], xauthority[200], iceauthority[200];
-    char **host, **auth, *fname;
-    int i, res;
-    struct termios tio, tip;
+    char **host, **auth, *fname, *home;
+    int i, res, sycoca;
+    pid_t pid;
     FILE *fout;
+    struct passwd *pw;
+    struct termios tio;
 
-    /* Get startup parameters. Disable local echo: this this makes 
-     * the parsing in process.cpp easier */
+    /* --verify is to test the installation */
+
+    if ((argc == 2) && !strcmp(argv[1], "--verify"))
+	exit(0);
+
+    /* Set terminal mode: disable OPOST and ECHO. This makes the parsing 
+     * on the other end much easier. */
 
     if (tcgetattr(0, &tio) < 0) {
-	printf("end\n"); perror("Fatal: tcgetattr()");
+	printf("end\n"); printf("tcgetattr(): %s", strerror(errno));
 	exit(1);
     }
-    tip = tio;
+    tio.c_oflag &= ~OPOST;
     tio.c_lflag &= ~ECHO;
     if (tcsetattr(0, TCSANOW, &tio) < 0) {
-	printf("end\n"); perror("Fatal: tcsetattr()");
+	printf("end\n"); printf("tcsetattr(): %s", strerror(errno));
 	exit(1);
     }
+
+    /* Get startup parameters. */
+
+    printf("kdesu_stub\n");
     for (i=0; i<P_LAST; i++) {
 	printf("%s\n", params[i].name);
 	if (fgets(buf, 1024, stdin) == 0L) {
@@ -168,9 +183,8 @@ int main()
 	params[i].value = xstrdup(buf);
     }
     printf("end\n");
-    if (tcsetattr(0, TCSANOW, &tip) < 0)
-	printf("Warning: cannot restore terminal mode");
     
+    xsetenv("PATH", params[P_PATH].value);
 
     /* Handle display */
 
@@ -216,16 +230,59 @@ int main()
 	xsetenv("ICEAUTHORITY", iceauthority);
 	sprintf(command, "iceauth source %s >/dev/null 2>&1", fname);
 	if (system(command))
-	    printf("Warning: failed to add DCOP authentication");
+	    printf("Warning: failed to add DCOP authentication\n");
 	unlink(fname);
     }
  
 
+    /* Rebuild ksycoca */
+
+    sycoca = 0;
+    home = getenv("HOME");
+    if (!home) {
+	pw = getpwuid(getuid());
+	if (pw)
+	    home = pw->pw_dir;
+    }
+    if (home) {
+	sprintf(buf, "%s/.kde/share/config/ksycoca", home);
+	if (!access(buf, R_OK))
+	    sycoca = 1;
+    }
+    if (!sycoca || !strcmp(params[P_SYCOCA].value, "yes"))
+	if (system("kbuildsycoca --nosignal"))
+	    printf("Warning: unable to create sycoca\n");
+
     /* Execute the command */
 
-    xsetenv("PATH", params[P_PATH].value);
-    i = system(params[P_COMMAND].value);
-    unlink(xauthority);
-    unlink(iceauthority);
-    return i;
+    pid = fork();
+    if (pid == -1) {
+	printf("Error: fork(): %s\n", strerror(errno));
+	exit(1);
+    }
+    if (pid) {
+	// Parent: wait for child, delete tempfiles and return.
+	int ret, state, xit = 1;
+	while (1) {
+	    ret = waitpid(pid, &state, 0);
+	    if (ret == -1) {
+		if (errno == EINTR)
+		    continue;
+		printf("Error: waitpid(): %s\n", strerror(errno));
+		break;
+	    }
+	    if (WIFEXITED(state))
+		xit = WEXITSTATUS(state);
+	}
+
+	unlink(xauthority);
+	unlink(iceauthority);
+	exit(state);
+
+    } else {
+	// Child: exec command
+	execl("/bin/sh", "sh", "-c", params[P_COMMAND].value, 0L);
+	printf("Error: exec(): %s\n", strerror(errno));
+	_exit(1);
+    }
 }

@@ -57,6 +57,12 @@
 
 #include <qglobal.h>
 
+#include <kapp.h>
+#include <kdebug.h>
+#include <klocale.h>
+#include <kcmdlineargs.h>
+#include <kaboutdata.h>
+
 #include "repo.h"
 #include "handler.h"
 #include "client.h"
@@ -65,11 +71,7 @@
 // Globals
 
 Repository *repo;
-int _show_dbg = 0;
-int _show_wrn = 1;
-const char *Version = VERSION;
-const char *Help = "Try `kdesud -h' for more information.";
-const char *Email = "<g.t.jansen@stud.tue.nl";
+const char *Version = "1.01";
 QCString sock;
 
 
@@ -99,7 +101,7 @@ void sigchld_handler(int)
 	pid = waitpid((pid_t) -1, &status, WNOHANG);
 	if (pid <= 0)
 	    break;
-	qDebug("PID %d exited", (int) pid);
+	kDebugInfo("PID %d exited", (int) pid);
     }
 }
 
@@ -116,7 +118,7 @@ int create_socket()
 
     display = getenv("DISPLAY");
     if (!display) {
-	qWarning("DISPLAY is not set");
+	kDebugWarning("DISPLAY is not set");
 	return -1;
     }
 
@@ -125,13 +127,13 @@ int create_socket()
     if (!access(sock, R_OK|W_OK)) {
 	KDEsuClient client;
 	if (client.ping() == -1) {
-	    qWarning("stale socket exists");
+	    kDebugWarning("stale socket exists");
 	    if (unlink(sock)) {
-		qWarning("Could not delete stale socket");
+		kDebugWarning("Could not delete stale socket");
 		return -1;
 	    }
 	} else {
-	    qWarning("kdesud is already running");
+	    kDebugWarning("kdesud is already running");
 	    return -1;
 	}
 
@@ -139,17 +141,17 @@ int create_socket()
 
     sockfd = socket(PF_UNIX, SOCK_STREAM, 0);
     if (sockfd < 0) {
-	qWarning("socket(): %s", strerror(errno));
+	kDebugWarning("socket(): %s", strerror(errno));
 	return -1;
     }
-    qDebug("Created socket: %s", (const char *) sock);
+    kDebugInfo("Created socket: %s", (const char *) sock);
 
     struct sockaddr_un addr;
     addr.sun_family = AF_UNIX;
     strcpy(addr.sun_path, sock);
     addrlen = SUN_LEN(&addr);
     if (bind(sockfd, (struct sockaddr *)&addr, addrlen) < 0) {
-	qWarning("bind(): %s", strerror(errno));
+	kDebugWarning("bind(): %s", strerror(errno));
 	return -1;
     }
 
@@ -159,50 +161,27 @@ int create_socket()
     lin.l_onoff = lin.l_linger = 0;
     if (setsockopt(sockfd, SOL_SOCKET, SO_LINGER, (char *) &lin,
 		   sizeof(linger)) < 0) {
-	qWarning("setsockopt(SO_LINGER): %s", strerror(errno));
+	kDebugWarning("setsockopt(SO_LINGER): %s", strerror(errno));
 	return -1;
     }
 
     int opt = 1;
     if (setsockopt(sockfd, SOL_SOCKET, SO_REUSEADDR, (char *) &opt,
 		   sizeof(opt)) < 0) {
-	qWarning("setsockopt(SO_REUSEADDR): %s", strerror(errno));
+	kDebugWarning("setsockopt(SO_REUSEADDR): %s", strerror(errno));
 	return -1;
     }
     opt = 1;
     if (setsockopt(sockfd, SOL_SOCKET, SO_KEEPALIVE, (char *) &opt,
 		   sizeof(opt)) < 0) {
-	qWarning("setsockopt(SO_KEEPALIVE): %s", strerror(errno));
+	kDebugWarning("setsockopt(SO_KEEPALIVE): %s", strerror(errno));
 	return -1;
     }
 
     chmod(sock, 0600);
-    qDebug("Chmod to 0600");
+    kDebugInfo("Chmod to 0600");
 
     return sockfd;
-}
-
-
-/*
- * Message handler
- */
-void msgHandler(QtMsgType type, const char *msg)
-{
-    switch (type) {
-    case QtDebugMsg:
-	if (_show_dbg)
-	    fprintf(stderr, "Debug: %s\n", msg);
-	break;
-
-    case QtWarningMsg:
-	if (_show_wrn)
-	    fprintf(stderr, "Warning: %s\n", msg);
-	break;
-
-    case QtFatalMsg:
-	fprintf(stderr, "Fatal: %s\n", msg);
-	exit(1);
-    }
 }
 
 
@@ -212,46 +191,19 @@ void msgHandler(QtMsgType type, const char *msg)
 
 int main(int argc, char *argv[])
 {
-    qInstallMsgHandler(msgHandler);
-
-    int c;
-    while ((c = getopt(argc, argv, "hvdq")) != -1) {
-	switch (c) {
-	case 'h':
-	    printf("kdesud [OPTIONS]...\n");
-	    printf("KDE su daemon (password keeper for KDE su).\n");
-	    printf("\n");
-	    printf("Options:\n");
-	    printf("  -d      Give debug information\n");
-	    printf("  -q      Be quiet (no warnings)\n");
-	    printf("  -v      Show verion information\n");
-	    printf("\n");
-	    printf("Please report bugs to %s\n", Email);
-	    exit(0);
-	case 'v':
-	    printf("kdesud version %s\n", Version);
-	    printf("\n");
-	    printf("  Copyright (c) 1999 Geert Jansen %s\n", Email);
-	    printf("\n");
-	    exit(0);
-	case 'd':
-	    _show_dbg++;
-	    break;
-	case 'q':
-	    _show_wrn = 0;
-	    break;
-	case '?': default:
-	    printf("kdesud: invalid option\n");
-	    printf("%s\n", Help);
-	    exit(1);
-	}
-    }
+    KAboutData aboutData("kdesud", I18N_NOOP("KDE su daemon"),
+	    Version, I18N_NOOP("Daemon used by kdesu"),
+	    KAboutData::License_Artistic,
+	    "Copyright (c) 1999,2000 Geert Jansen");
+    aboutData.addAuthor("Geert Jansen", I18N_NOOP("Author"),
+	    "jansen@kde.org", "http://www.stack.nl/~geertj/");
+    KCmdLineArgs::init(argc, argv, &aboutData);
 
     // Set core dump size to 0
     struct rlimit rlim;
     rlim.rlim_cur = rlim.rlim_max = 0;
     if (setrlimit(RLIMIT_CORE, &rlim) < 0) {
-	qWarning("setrlimit(): %s", strerror(errno));
+	kDebugWarning("setrlimit(): %s", strerror(errno));
 	exit(1);
     }
 
@@ -260,10 +212,19 @@ int main(int argc, char *argv[])
     if (sockfd < 0)
 	exit(1);
     if (listen(sockfd, 1) < 0) {
-	qWarning("listen(): %s", strerror(errno));
+	kDebugWarning("listen(): %s", strerror(errno));
 	exit(1);
     }
 
+    // Ok, we're accepting connections. Fork to the background.
+    pid_t pid = fork();
+    if (pid == -1) {
+	kDebugFatal("fork(): %m");
+	exit(1);
+    }
+    if (pid)
+	_exit(0);
+	
     // Allocate the repository 
     repo = new Repository;
 
@@ -301,7 +262,8 @@ int main(int argc, char *argv[])
 	if (select(FD_SETSIZE, &tmp_fds, 0L, 0L, &tv) < 0) {
 	    if (errno == EINTR)
 		continue;
-	    qFatal("select(): %s", strerror(errno));
+	    kDebugFatal("select(): %s", strerror(errno));
+	    exit(1);
 	}
 	
 	repo->expire();
@@ -316,12 +278,12 @@ int main(int argc, char *argv[])
 		addrlen = 64;
 		fd = accept(sockfd, (struct sockaddr *) &clientname, &addrlen);
 		if (fd < 0) {
-		    qWarning("accept(): %s", strerror(errno));
+		    kDebugWarning("accept(): %s", strerror(errno));
 		    continue;
 		}
 		handler[fd] = new ConnectionHandler(fd);
 		FD_SET(fd, &active_fds);
-		qDebug("Accepted new connection on fd %d", fd);
+		kDebugInfo("Accepted new connection on fd %d", fd);
 		continue;
 	    }
 
@@ -333,6 +295,6 @@ int main(int argc, char *argv[])
 	    }
 	}
     }
-    qWarning("???");
+    kDebugWarning("???");
 }
 

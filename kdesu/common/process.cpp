@@ -3,7 +3,7 @@
  * $Id$
  *
  * This file is part of the KDE project, module kdesu.
- * Copyright (C) 1999 Geert Jansen <g.t.jansen@stud.tue.nl>
+ * Copyright (C) 1999,2000 Geert Jansen <g.t.jansen@stud.tue.nl>
  * 
  * This file contains code from TEShell.C of the KDE konsole. 
  * Copyright (c) 1997,1998 by Lars Doelle <lars.doelle@on-line.de> 
@@ -44,11 +44,18 @@
 #include <qglobal.h>
 #include <qcstring.h>
 
+#include <kdebug.h>
+#include <kstddirs.h>
+
 #include "process.h"
 #include "pty.h"
 #include "kcookie.h"
-#include "pathsearch.h"
 
+#ifdef __GNUC__
+#define ID __PRETTY_FUNCTION__
+#else
+#define ID __FILE__
+#endif
 
 SuProcess::SuProcess(const char *command)
 {
@@ -56,6 +63,7 @@ SuProcess::SuProcess(const char *command)
     m_User = "root";
     m_bTerminal = false;
     m_bErase = false;
+    m_bSycoca = true;
 }
 
 
@@ -67,129 +75,131 @@ int SuProcess::exec(char *password, bool check_only)
 {
     // Open a pty/tty pair.
     PTY *pty = new PTY();
-    int master = pty->getpt();
-    if (master < 0)
+    m_Fd = pty->getpt();
+    if (m_Fd < 0)
 	return -1;
     if ((pty->grantpt() < 0) || (pty->unlockpt() < 0)) {
-	qWarning("SuProcess::exec(): master setup failed");
+	kDebugWarning("%s: Master setup failed.", ID);
 	return -1;
     }
+    m_TTY = pty->ptsname();
 
-    pid_t pid;
-    if ((pid = fork()) == -1) {
-	qWarning("SuProcess::exec(): fork(): %s", strerror(errno));
+    if ((m_Pid = fork()) == -1) {
+	kDebugWarning("%s: fork(): %m", ID);
 	return -1;
     }
-
-    if (pid) {
-	// Parent: Have the necessary conversations.
-
-	if (ConverseSU(master, password, pty->ptsname()) < 0) {
-	    qWarning("SuProcess::exec(): Conversation with su failed");
+    if (m_Pid) {
+	if (ConverseSU(password) < 0) {
+	    kDebugWarning("%s: Conversation with su failed", ID);
 	    return -1;
 	} 
 	if (m_bErase) {
 	    int len = strlen(password);
 	    for (int i=0; i<len; i++)
-		password[i] = 'x';
+		password[i] = '\000';
 	}
-	if (!check_only && (ConverseStub(master, m_Command) < 0)) {
-	    qWarning("SuProcess::exec(): Converstation with kdesu_stub failed");
+	if (!check_only && (ConverseStub() < 0)) {
+	    kDebugWarning("%s: Converstation with kdesu_stub failed", ID);
 	    return -1;
 	}
-	CopyOutput(master, check_only || m_bTerminal);
-
-	int ret;
-	waitpid(pid, &ret, 0);
-
+	int ret = waitForChild(check_only || m_bTerminal);
 	delete pty;
-
-    	if (WIFEXITED(ret) && (!WEXITSTATUS(ret)))
-	   return 0;
-	return -1;
+	return ret;
 
     } else {
 
-	const char *prog;
-	if (check_only) 
-	    prog = "true";
-	else
-	    prog = "kdesu_stub";
-
-	PathSearch PS;
-	QCString path = PS.locate(prog);
-	if (path.isEmpty()) {
-	    qWarning("SuProcess::exec(): %s not found", prog);
+	QString stub = KStandardDirs::findExe("kdesu_stub");
+	if (stub.isEmpty()) {
+	    kDebugError("%s: kdesu_stub not found", ID);
 	    _exit(1);
 	}
+	if (check_only)
+	    stub += " --verify";
 
-	if (SetupTTY(pty->ptsname()) < 0)
+	if (SetupTTY() < 0)
 	    _exit(1);
 
 	// Terminal output will go through the tty from now on. It is visible
 	// only if the user uses the '-t' switch.
 
-	execl(_PATH_SU, "su", (const char *) m_User, "-c", 
-		(const char *) path, 0L);
+	execl(_PATH_SU, "su", m_User.data(), "-c", stub.latin1(), 0L);
 
 	// Exec failed..
-	qWarning("SuProcess::exec(): execl(\"%s\"): %s", _PATH_SU, 
-		strerror(errno));
+	kDebugWarning("%s: execl(\"%s\"): %m", ID, _PATH_SU);
 	_exit(1);
     }
 
     return 0;
 }
 
-/**
- * Copy output to stdout until end of file or error.
+/*
+ * Wait until the terminal is set into no echo mode. At least one su 
+ * (RH6 w/ Linux-PAM patches) sets noecho mode AFTER writing the Password: 
+ * prompt, using TCSAFLUSH. This flushes the terminal I/O queues, possibly 
+ * taking the password  with it. So we wait until no echo mode is set 
+ * before writing the password.
+ * Note that this is done on the slave fd. While Linux allows tcgetattr() on
+ * the master side, Solaris doesn't.
  */
-int SuProcess::CopyOutput(int fd, bool echo)
+
+int SuProcess::WaitSlave()
 {
-    char buf[256];
-    int nbytes;
-    while (1) {
-	nbytes = read(fd, buf, 255);
-	if (nbytes == -1) {
-	    if (errno == EINTR) continue;
-	    else break;
-	}
-	if (nbytes == 0)
-	    break;
-	if (echo)
-	    fwrite(buf, sizeof(char), nbytes, stdout);
+    int slave = open(m_TTY, O_RDWR);
+    if (slave < 0) {
+	kDebugWarning("Could not open slave side: %m");
+	return -1;
     }
+
+    struct termios tio;
+    struct timeval tv;
+    while (1) {
+	if (tcgetattr(slave, &tio) < 0) {
+	    kDebugWarning("%s: tcgetattr(): %m", ID);
+	    close(slave);
+	    return -1;
+	}
+	if (tio.c_lflag & ECHO) {
+	    kDebugInfo("%s: Echo mode still on.", ID);
+	    // sleep 1/10 sec
+	    tv.tv_sec = 0; tv.tv_usec = 100000;
+	    select(slave, 0L, 0L, 0L, &tv);
+	    continue;
+	}
+	break;
+    }
+    close(slave);
     return 0;
 }
-
-
-/**
+	
+/*
  * Conversation with su: feed the password.
  */
-int SuProcess::ConverseSU(int fd, const char *password, 
-	const char *tty)
+
+int SuProcess::ConverseSU(const char *password)
 {	
     char buf[256]; 
     int nbytes, i;
     int state = 0;
 
     while (state < 2) {
-	nbytes = read(fd, buf, 255);
+	nbytes = read(m_Fd, buf, 255);
 	if (nbytes == -1) {
 	    if (errno == EINTR) continue;
-	    else return -1;
+	    else {
+		kDebugError("%s: read(): %m", ID);
+		return -1;
+	    }
 	}
 	if (nbytes == 0)
 	    return -1;
 	buf[nbytes] = '\000';
-
 	switch (state) {
 	case 0:
 	    // Write password
 	    if (strchr(buf, ':')) {
-		WaitSlave(tty);
-		write(fd, password, strlen(password));
-		write(fd, "\n", 1);
+		WaitSlave();
+		write(m_Fd, password, strlen(password));
+		write(m_Fd, "\n", 1);
 		state++;
 	    } 
 	    break;
@@ -201,7 +211,6 @@ int SuProcess::ConverseSU(int fd, const char *password,
 	    break;
 	}
     }
-
     return 0;
 }
 
@@ -227,14 +236,15 @@ QCString SuProcess::commaSeparatedList(QStringList lst)
  * priviliges.
  */
 
-int SuProcess::ConverseStub(int fd, const char *command)
+int SuProcess::ConverseStub()
 {
+    bool got_header = false, done = false;
     char buf[256];
     int nbytes;
     KCookie c;
 
-    while (1) {
-	nbytes = read(fd, buf, 255);
+    while (!done) {
+	nbytes = read(m_Fd, buf, 255);
 	if (nbytes == -1) {
 	    if (errno == EINTR) continue;
 	    else return -1;
@@ -244,95 +254,125 @@ int SuProcess::ConverseStub(int fd, const char *command)
 	buf[nbytes] = '\000';
 
 	if (buf[nbytes-1] != '\n') {
-	    qWarning("SuProcess::ConverseStub(): request from kdesu_stub too long");
+	    kDebugWarning("%s: Request from kdesu_stub too long.", ID);
 	    return -1;
 	}
-	buf[nbytes-1] = '\000';
-	if (buf[nbytes-2] == '\r')
-	    buf[nbytes-2] = '\000';
-	
-	if (!strcmp(buf, "display")) {
-	    write(fd, c.display().latin1(), c.display().length());
-	    write(fd, "\n", 1);
-	} else if (!strcmp(buf, "display_auth")) {
-	    write(fd, c.displayAuth().latin1(), c.displayAuth().length());
-	    write(fd, "\n", 1);
-	} else if (!strcmp(buf, "dcopserver")) {
-	    QCString str = commaSeparatedList(c.dcopServer());
-	    write(fd, str, str.length());
-	    write(fd, "\n", 1);
-	} else if (!strcmp(buf, "dcop_auth")) {
-	    QCString str = commaSeparatedList(c.dcopAuth());
-	    write(fd, str, str.length());
-	    write(fd, "\n", 1);
-	} else if (!strcmp(buf, "ice_auth")) {
-	    QCString str = commaSeparatedList(c.iceAuth());
-	    write(fd, str, str.length());
-	    write(fd, "\n", 1);
-	} else if (!strcmp(buf, "command")) {
-	    write(fd, command, strlen(command));
-	    write(fd, "\n", 1);
-	} else if (!strcmp(buf, "path")) {
-	    char *path = getenv("PATH");
-	    if (path)
-		write(fd, path, strlen(path));
-	    write(fd, "\n", 1);
-	} else if (!strcmp(buf, "end")) {
-	    break;
-	} else {
-	    qWarning("SuProcess::ConverseStub(): unknown request: %s", buf);
-	    return -1;
+
+	char *req = buf, *ptr;
+	while ((ptr = strchr(req, '\n'))) {
+	    *ptr = '\000';
+
+	    // Require a header first.
+	    if (!got_header) {
+		if (!strcmp(req, "kdesu_stub"))
+		    got_header = true;
+		req = ptr+1;
+		continue;
+	    }
+
+	    // Requests:
+	    if (!strcmp(req, "display")) {
+		QCString str = c.display().latin1();
+		write(m_Fd, str, str.length());
+		write(m_Fd, "\n", 1);
+	    } else if (!strcmp(req, "display_auth")) {
+		QCString str = c.displayAuth().latin1();
+		write(m_Fd, str, str.length());
+		write(m_Fd, "\n", 1);
+	    } else if (!strcmp(req, "dcopserver")) {
+		QCString str = commaSeparatedList(c.dcopServer());
+		write(m_Fd, str, str.length());
+		write(m_Fd, "\n", 1);
+	    } else if (!strcmp(req, "dcop_auth")) {
+		QCString str = commaSeparatedList(c.dcopAuth());
+		write(m_Fd, str, str.length());
+		write(m_Fd, "\n", 1);
+	    } else if (!strcmp(req, "ice_auth")) {
+		QCString str = commaSeparatedList(c.iceAuth());
+		write(m_Fd, str, str.length());
+		write(m_Fd, "\n", 1);
+	    } else if (!strcmp(req, "command")) {
+		write(m_Fd, m_Command, m_Command.length());
+		write(m_Fd, "\n", 1);
+	    } else if (!strcmp(req, "path")) {
+		char *path = getenv("PATH");
+		if (path)
+		    write(m_Fd, path, strlen(path));
+		write(m_Fd, "\n", 1);
+	    } else if (!strcmp(req, "build_sycoca")) {
+		if (m_bSycoca)
+		    write(m_Fd, "yes\n", 4);
+		else
+		    write(m_Fd, "no\n", 3);
+	    } else if (!strcmp(req, "end")) {
+		done = true;
+		break;
+	    } else {
+		kDebugWarning("%s: Unknown request: %s", ID, req);
+		return -1;
+	    }
+
+	    req = ptr+1;
 	}
     }
 
     return 0;
 }
 
-    
-    
 /*
- * WaitSlave: Wait until the terminal is set into no echo mode.
- *	      At least one su (RH6 w/ Linux-PAM patches) sets noecho mode 
- *	      AFTER writing the "Password: " prompt, using TCSAFLUSH. This 
- *	      flushes the terminal I/O queues, possibly taking the password 
- *	      with it. So we wait until no echo mode is set before writing
- *	      the password.
+ * Copy output to stdout until the child process exists.
+ * We really have to test with waitpid() here. Merely waiting for EOF on the
+ * pty does not work, because the target process may have children still
+ * attached to the terminal.
+ * I'd prefer doing this asynchronously with SIGCHLD, but I think its
+ * cleaner not to mess with global state variables.
  */
 
-int SuProcess::WaitSlave(const char *ttyname)
+int SuProcess::waitForChild(bool echo)
 {
-    struct termios tio;
+    char buf[256];
+    int ret, nbytes, state = 1;
     struct timeval tv;
 
-    int fd = open(ttyname, O_RDWR|O_NOCTTY);
-    if (fd < 0)
-	return -1;
+    fd_set fds;
+    FD_ZERO(&fds);
 
     while (1) {
-	if (tcgetattr(fd, &tio) < 0) {
-	    qWarning("SuProcess::WaitSlave(): tcgetattr(): %s",
-		    strerror(errno));
-	    close(fd);
-	    return -1;
+	tv.tv_sec = 0; tv.tv_usec = 500000;
+	FD_SET(m_Fd, &fds);
+	ret = select(m_Fd+1, &fds, 0L, 0L, &tv);
+	if (ret == -1) {
+	    if (errno == EINTR) continue;
+	    else {
+		kDebugError("%s: select(): %m", ID);
+		return -1;
+	    }
 	}
-	if (tio.c_lflag & ECHO) {
-	    qDebug("SuProcess::WaitSlave(): echo mode still on");
-	    // sleep 1/10 sec
-	    tv.tv_sec = 0; tv.tv_usec = 100000;
-	    select(fd, 0L, 0L, 0L, &tv);
-	    continue;
+	if (ret > 0) {
+	    nbytes = read(m_Fd, buf, 255);
+	    if ((nbytes > 0) && echo)
+		fwrite(buf, sizeof(char), nbytes, stdout);
 	}
-	break;
+	ret = waitpid(m_Pid, &state, WNOHANG);
+	if (ret < 0) {
+	    kDebugError("%s: waitpid(): %m", ID);
+	    break;
+	}
+	if (ret == m_Pid) {
+	    if (WIFEXITED(state))
+		state = WEXITSTATUS(state);
+	    break;
+	}
     }
-    close(fd);
-    return 0;
+
+    return -state;
 }
-	    
+   
 /*
  * SetupTTY: Creates a new session.
  */
 
-int SuProcess::SetupTTY(const char *ttyname)
+int SuProcess::SetupTTY()
 {    
     // Reset signal handlers
     for (int sig = 1; sig < NSIG; sig++)
@@ -345,61 +385,30 @@ int SuProcess::SetupTTY(const char *ttyname)
     for (int i = 0; i < (int)rlp.rlim_cur; i++)
 	close(i); 
 
+    // Open slave. This will make it our controlling terminal
+    int slave = open(m_TTY, O_RDWR);
+    if (slave < 0) {
+	kDebugWarning("%s: Could not open slave side: %m", ID);
+	return -1;
+    }
+
     // Create a new session.
     setsid();
-
-    // Open the pty slave. This will make it our controlling terminal.
-    int fd = open(ttyname, O_RDWR);
-    if (fd < 0)
-	return -1;
 
 #if defined(__SVR4) && defined(sun)
 
     // Solaris STREAMS environment.
     // Push these modules to make the stream look like a terminal.
-    ioctl(fd, I_PUSH, "ptem");
-    ioctl(fd, I_PUSH, "ldterm");
+    ioctl(slave, I_PUSH, "ptem");
+    ioctl(slave, I_PUSH, "ldterm");
 
 #endif
 
     // Connect stdin, stdout and stderr
-    dup2(fd, 0); dup2(fd, 1); dup2(fd, 2);
-    if (fd > 2) 
-	close(fd);
+    dup2(slave, 0); dup2(slave, 1); dup2(slave, 2);
+    if (slave > 2) 
+	close(slave);
 
     return 0;
 }
-
-
-UserProcess::UserProcess(const char *command)
-	: m_Command(command)
-{
-}
-
-int UserProcess::exec()
-{
-    if (m_Command.isEmpty())
-	return -1;
-
-    pid_t pid;
-    if ((pid = fork()) == -1) {
-	qWarning("UserProcess::exec(): fork(): %s", strerror(errno));
-	return -1;
-    }
-
-    if (pid) {
-	// Parent
-	int ret;
-	waitpid(pid, &ret, 0);
-    	if (WIFEXITED(ret) && !WEXITSTATUS(ret))
-	    return 0;
-	return -1;
-    } else {
-	execl("/bin/sh", "sh", "-c", (const char *) m_Command, 0L);
-	qWarning("UserProcess::exec(): exec(\"/bin/sh\"): %s",
-		strerror(errno));
-	_exit(1);
-    }
-}
-
 

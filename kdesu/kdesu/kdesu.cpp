@@ -78,6 +78,18 @@ int main(int argc, char *argv[])
 	exit(1);
     }
 
+    // Check for daemon and start if necessary
+    bool just_started = false;
+    bool have_daemon = true;
+    KDEsuClient client;
+    if (client.ping() == -1) {
+	just_started = true;
+	if (client.startServer() == -1) {
+	    kDebugWarning("Could not start daemon, reduced functionality.");
+	    have_daemon = false;
+	}
+    }
+
     // Get target uid
     QCString user = args->getOption("u");
     struct passwd *pw = getpwnam(user);
@@ -118,26 +130,16 @@ int main(int argc, char *argv[])
     }
 
     // Don't change uid if we're don't need to.
-    if (!change_uid) {
-	UserProcess proc(command);
-	return proc.exec();
-    }
+    if (!change_uid)
+	return system(command);
 
     // Try to exec the command with kdesud.
-    bool keep = true;
-    if (args->isSet("n"))
-	keep = false;
+    bool keep = !args->isSet("n");
     bool terminal = args->isSet("t");
-    if (keep && !terminal) {
-	KDEsuClient client;
-	if (client.ping() != -1) {
-	    client.setUser(user);
-	    if (client.exec(command) != -1)
-		return 0;
-	} else
-	    // The user has to enter a password and this very probably 
-	    // gives enough time to start up the daemon.
-	    keep = (client.startServer() != -1);
+    if (keep && !terminal && !just_started) {
+	client.setUser(user);
+	if (client.exec(command) != -1)
+	    return 0;
     }
 
     // Set core dump size to 0 because we will have 
@@ -145,7 +147,7 @@ int main(int argc, char *argv[])
     struct rlimit rlim;
     rlim.rlim_cur = rlim.rlim_max = 0;
     if (setrlimit(RLIMIT_CORE, &rlim)) {
-	kDebugFatal("rlimit(): %s", strerror(errno));
+	kDebugFatal("rlimit(): %m");
 	exit(1);
     }
 
@@ -156,32 +158,22 @@ int main(int argc, char *argv[])
     KConfig *config = KGlobal::config();
     config->setGroup("Common");
     QString val = config->readEntry("EchoMode", "x");
-    int echo_mode;
+    int echoMode;
     if (val == "OneStar")
-	echo_mode = OneStar;
+	echoMode = OneStar;
     else if (val == "ThreeStars")
-	echo_mode = ThreeStars;
+	echoMode = ThreeStars;
     else if (val == "NoStars")
-	echo_mode = NoStars;
+	echoMode = NoStars;
     else
-	echo_mode = defEchomode;
+	echoMode = defEchomode;
     bool keep_cfg = config->readBoolEntry("KeepPassword", defKeep);
     int pw_timeout = config->readNumEntry("KeepPasswordTimeout", defTimeout);
 
      // Start the dialog
-    QString txt;
-    if (user == "root")
-	txt = i18n("The action you requested needs root priviliges.\n"
-		   "Please enter root's password below or click\n"
-		   "Ignore to continue with your current priviliges.");
-    else
-	txt = i18n("The action you requested needs additional priviliges.\n"
-		   "Please enter the password for \"%1\" below or click\n"
-		   "Ignore to continue with your current privileges.").arg(user);
-
     KDEsuDialog *dlg = new KDEsuDialog(command, user, 
 	    ((keep&&!terminal) ? 1+keep_cfg : 0));
-    dlg->setEchoMode(echo_mode);
+    dlg->setEchoMode(echoMode);
     dlg->exec();
 
     char *pass = new char[KPasswordEdit::PassLen];
@@ -203,27 +195,36 @@ int main(int argc, char *argv[])
     // This destroys the Qt event loop and makes sure the dialog goes away.
     delete app;
 
-    if (!change_uid) {
-	UserProcess proc(command);
-	return proc.exec();
+    if (!change_uid)
+	return system(command);
+
+    if (just_started && have_daemon) {
+	client.connect();
+	if (client.ping() == -1) {
+	    kDebugWarning("Could not connect to daemon.");
+	    have_daemon = false;
+	}
     }
 
-    // Change uid
-    if (keep) {
-	KDEsuClient client;
-	if (client.ping() != -1) {
-	    client.setUser(user);
-	    client.setPass(pass, pw_timeout);
-	    return client.exec(command);
-	} else
-	    qWarning("Cannot connect to daemon -- not keeping password");
-    } 
+    // Run command
 
-    SuProcess proc;
-    proc.setCommand(command);
-    proc.setUser(user);
-    proc.setTerminal(terminal);
-    proc.setErase(true);
-    return proc.exec(pass);
+    if (keep && have_daemon) {
+	client.setUser(user);
+	client.setPass(pass, pw_timeout);
+	return client.exec(command);
+    } else {
+	SuProcess proc;
+	QCString key = "ksycoca_";
+	key += user;
+	if (client.getVar(key) == "yes")
+	    proc.setBuildSycoca(false);
+	else
+	    client.setVar(key, "yes");
+	proc.setTerminal(terminal);
+	proc.setErase(true);
+	proc.setUser(user);
+	proc.setCommand(command);
+	return proc.exec(pass);
+    }
 }
 

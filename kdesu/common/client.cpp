@@ -23,18 +23,23 @@
 #include <qglobal.h>
 #include <qcstring.h>
 
-#include "kdesu.h"
-#include "process.h"
-#include "client.h"
-#include "pathsearch.h"
+#include <kdebug.h>
+#include <kstddirs.h>
 
+#include "client.h"
+
+#ifdef __GNUC__
+#define ID __PRETTY_FUNCTION__
+#else
+#define ID __FILE__
+#endif
 
 KDEsuClient::KDEsuClient()
 {
     sockfd = -1;
     char *dpy = getenv("DISPLAY");
     if (dpy == 0L) {
-	qWarning("DISPLAY is not set");
+	kDebugWarning("%s: $DISPLAY is not set", ID);
 	return;
     }
     sock.sprintf("/tmp/kdesud_%d_%s", (int) getuid(), dpy);
@@ -60,14 +65,14 @@ int KDEsuClient::connect()
 
     sockfd = socket(PF_UNIX, SOCK_STREAM, 0);
     if (sockfd < 0) {
-	qWarning("KDEsuClient::connect(): socket(): %s", strerror(errno));
+	kDebugWarning("%s: socket(): %m", ID);
 	return -1;
     }
     struct sockaddr_un addr;
     addr.sun_family = AF_UNIX;
     strcpy(addr.sun_path, sock);
     if (::connect(sockfd, (struct sockaddr *) &addr, SUN_LEN(&addr)) < 0) {
-	qWarning("KDEsuClient::connect(): connect(): %s", strerror(errno));
+	kDebugWarning("%s: connect(): %m", ID);
 	close(sockfd); sockfd = -1;
 	return -1;
     }
@@ -75,9 +80,9 @@ int KDEsuClient::connect()
 }
 
 
-QCString KDEsuClient::escape(const char *str)
+QCString KDEsuClient::escape(QCString str)
 {
-    QCString copy(str);
+    QCString copy = str;
 
     int n = 0;
     while ((n = copy.find("\\", n)) != -1) {
@@ -97,106 +102,119 @@ QCString KDEsuClient::escape(const char *str)
 }
 
 
-int KDEsuClient::command(int code, const char *arg1, int arg2)
+int KDEsuClient::command(QCString cmd, QCString *result)
 {
     if (sockfd < 0)
 	return -1;
 
-    QCString cmd;
-
-    switch (code) {
-    case Cmd_pass:
-	cmd.sprintf("PASS %s %d\n", (const char *) escape(arg1), arg2);
-	break;
-    case Cmd_user:
-	cmd.sprintf("USER %s\n", (const char *) escape(arg1));
-	break;
-    case Cmd_exec:
-	cmd.sprintf("EXEC %s\n", (const char *) escape(arg1));
-	break;
-    case Cmd_del:
-	cmd.sprintf("DEL %s\n", (const char *) escape(arg1));
-	break;
-    case Cmd_ping:
-	cmd = "PING\n";
-	break;
-    case Cmd_stop:
-	cmd = "STOP\n";
-	break;
-    }
-
     if (send(sockfd, cmd, cmd.length(), 0) != (int) cmd.length())
 	return -1;
     
-    char buf[100];
-    int nbytes = recv(sockfd, buf, 99, 0);
+    char buf[200];
+    int nbytes = recv(sockfd, buf, 199, 0);
     if (nbytes <= 0) {
-	qWarning("KDEsuClient::command(): no reply");
+	kDebugWarning("%s: no reply from daemon", ID);
 	return -1;
     }
     buf[nbytes] = '\000';
 
-    QString reply = buf;
-    if (reply != "OK\n")
+    QCString reply = buf;
+    if (reply.left(2) != "OK") 
 	return -1;
 
+    if (result)
+	*result = reply.mid(2).stripWhiteSpace();
     return 0;
 }
 
 
 int KDEsuClient::setPass(const char *pass, int timeout)
 {
-    return command(Cmd_pass, pass, timeout);
+    QCString cmd = "PASS ";
+    cmd += escape(pass);
+    cmd += " ";
+    cmd += QCString().setNum(timeout);
+    cmd += "\n";
+    return command(cmd);
 }
 
-int KDEsuClient::setUser(const char *user)
+
+int KDEsuClient::setUser(QCString user)
 {
-    if (user == 0L)
-	user = "root";
-
-    return command(Cmd_user, user);
+    QCString cmd = "USER ";
+    cmd += escape(user);
+    cmd += "\n";
+    return command(cmd);
 }
 
-int KDEsuClient::exec(const char *cmd)
+
+int KDEsuClient::exec(QCString key)
 {
-    return command(Cmd_exec, cmd);
+    QCString cmd;
+    cmd = "EXEC ";
+    cmd += escape(key);
+    cmd += "\n";
+    return command(cmd);
 }
 
-int KDEsuClient::delCommand(const char *cmd)
+
+int KDEsuClient::delCommand(QCString key)
 {
-    return command(Cmd_del, cmd);
+    QCString cmd = "DEL ";
+    cmd += escape(key);
+    cmd += "\n";
+    return command(cmd);
 }
+
+
+int KDEsuClient::setVar(QCString key, QCString value)
+{
+    QCString cmd = "SET ";
+    cmd += escape(key);
+    cmd += " ";
+    cmd += escape(value);
+    cmd += "\n";
+    return command(cmd);
+}
+
+
+QCString KDEsuClient::getVar(QCString key)
+{
+    QCString cmd = "GET ";
+    cmd += escape(key);
+    cmd += "\n";
+    QCString reply;
+    command(cmd, &reply);
+    return reply;
+}
+
 
 int KDEsuClient::ping()
 {
-    return command(Cmd_ping);
+    return command("PING\n");
 }
+
 
 int KDEsuClient::stopServer()
 {
-    return command(Cmd_stop);
+    return command("STOP\n");
 }
 
 int KDEsuClient::startServer()
 {
-    PathSearch PS;
-
-    QCString daemon = PS.locate("kdesud");
-    if (daemon.isEmpty()) {
-	qWarning("KDEsuClient::startServer(): kdesud not found -- no password keeping");
+    QString daemon = KStandardDirs::findExe("kdesud");
+    if (daemon.isEmpty())
 	return -1;
-    }
+
     struct stat sbuf;
-    if (stat(daemon, &sbuf) < 0) {
-	qWarning("KDEsuClient::startServer(): stat(\"%s\"): %s", 
-		(const char *) daemon, strerror(errno));
+    if (stat(daemon.latin1(), &sbuf) < 0) {
+	kDebugWarning("%s: stat(): %m", ID);
 	return -1;
     }
     if (!(sbuf.st_mode & S_ISGID)) {
-	qWarning("KDEsuClient::startServer(): kdesud not setgid -- no password keeping");
+	kDebugWarning("%s: kdesud not setgid: not using it", ID);
 	return -1;
     }
 
-    UserProcess proc("kdesud &");
-    return proc.exec();
+    return system("kdesud");
 }

@@ -23,6 +23,7 @@
 
 #include <qcstring.h>
 
+#include <kdebug.h>
 #include "handler.h"
 #include "repo.h"
 #include "lexer.h"
@@ -101,7 +102,7 @@ int ConnectionHandler::doCommand()
 
     int tok = l->lex();
 
-    QCString key, command;
+    QCString key, command, pass;
     Data_entry data;
     const Data_entry *pdata;
 
@@ -116,11 +117,10 @@ int ConnectionHandler::doCommand()
 	if (tok != Lexer::Tok_num)
 	    goto parse_error;
 	mTimeout = l->lval().toInt();
-	tok = l->lex();
-	if (tok != '\n')
+	if (l->lex() != '\n')
 	    goto parse_error;
 	respond(Res_OK);
-	qDebug("Password set!");
+	kDebugInfo("Password set!");
 	break;
 
     case Lexer::Tok_user:
@@ -129,11 +129,10 @@ int ConnectionHandler::doCommand()
 	    goto parse_error;
 	mUser = l->lval();
 	mbUser = true;
-	tok = l->lex();
-	if (tok != '\n')
+	if (l->lex() != '\n')
 	    goto parse_error;
 	respond(Res_OK);
-	qDebug("User set to %s", (const char *) mUser);
+	kDebugInfo("User set to %s", (const char *) mUser);
 	break;
 
     case Lexer::Tok_exec:
@@ -142,8 +141,7 @@ int ConnectionHandler::doCommand()
 	if (tok != Lexer::Tok_str)
 	    goto parse_error;
 	command = l->lval();
-	tok = l->lex();
-	if (tok != '\n')
+	if (l->lex() != '\n')
 	    goto parse_error;
 
 	if (!mbUser)
@@ -161,11 +159,26 @@ int ConnectionHandler::doCommand()
 	    data.value = mPass;
 	    data.timeout = mTimeout;
 	    repo->add(key, data);
-	    pdata = &data;
+	    pass = mPass;
+	} else
+	    pass = pdata->value;
+
+	// Check if we need to rebuild the sycoca.
+	bool build_sycoca = true;
+	key = QCString("ksycoca_") + mUser;
+	pdata = repo->find(key);
+	if (pdata && (pdata->value == "yes")) {
+	    kDebugInfo("kdesud: NOT building sycoca");
+	    build_sycoca = false;
+	} else {
+	    kDebugInfo("kdesud: building sycoca");
+	    data.value = QCString("yes");
+	    data.timeout = 86400;
+	    repo->add(key, data);
 	}
 
 	// Execute the command asynchronously
-	qDebug("Executing command: %s", (const char *) command);
+	kDebugInfo("Executing command: %s", (const char *) command);
 	pid_t pid = fork();
 	if (pid < 0) {
 	    qWarning("fork(): %s", strerror(errno));
@@ -180,10 +193,11 @@ int ConnectionHandler::doCommand()
 	signal(SIGCHLD, SIG_DFL);
 
 	SuProcess proc;
+	proc.setBuildSycoca(build_sycoca);
 	proc.setCommand(command);
 	proc.setUser(mUser);
-	int ret = proc.exec((char *) pdata->value.data());
-	qDebug("Command completed");
+	int ret = proc.exec(pass.data());
+	kDebugInfo("Command completed");
 	_exit(ret);
     }
 
@@ -192,8 +206,7 @@ int ConnectionHandler::doCommand()
 	if (tok != Lexer::Tok_str)
 	    goto parse_error;
 	command = l->lval();
-	tok = l->lex();
-	if (tok != '\n')
+	if (l->lex() != '\n')
 	    goto parse_error;
 	
 	if (!mbUser)
@@ -209,15 +222,47 @@ int ConnectionHandler::doCommand()
 	}
 	repo->remove(key);
 	respond(Res_OK);
-	qDebug("Deleted key: %s", (const char *) key);
+	kDebugInfo("Deleted key: %s", (const char *) key);
 	break;
 
+    case Lexer::Tok_set:
+	tok = l->lex();
+	if (tok != Lexer::Tok_str)
+	    goto parse_error;
+	key = l->lval();
+	tok = l->lex();
+	if (tok != Lexer::Tok_str)
+	    goto parse_error;
+	data.value = l->lval();
+	if (l->lex() != '\n')
+	    goto parse_error;
+	data.timeout = 86400;
+	repo->add(key, data);
+	kDebugInfo("stored key: %s", key.data());
+	respond(Res_OK);
+	break;
+
+    case Lexer::Tok_get:
+	tok = l->lex();
+	if (tok != Lexer::Tok_str)
+	    goto parse_error;
+	key = l->lval();
+	if (l->lex() != '\n')
+	    goto parse_error;
+	kDebugInfo("request for key: %s", key.data());
+	pdata = repo->find(key);
+	if (pdata)
+	    respond(Res_OK, pdata->value);
+	else
+	    respond(Res_NO);
+	break;
+	
     case Lexer::Tok_ping:
 	tok = l->lex();
 	if (tok != '\n')
 	    goto parse_error;
 	respond(Res_OK);
-	qDebug("PING");
+	kDebugInfo("PING");
 	break;
 
     case Lexer::Tok_stop:
@@ -225,11 +270,11 @@ int ConnectionHandler::doCommand()
 	if (tok != '\n')
 	    goto parse_error;
 	respond(Res_OK);
-	qDebug("Stopping by command");
+	kDebugInfo("Stopping by command");
 	exit(0);
 
     default:
-	qDebug("Uknown command: %s", (const char *) l->lval());
+	kDebugInfo("Uknown command: %s", (const char *) l->lval());
 	goto parse_error;
     }
 
@@ -237,7 +282,7 @@ int ConnectionHandler::doCommand()
     return 0;
 
 parse_error:
-    qDebug("Parse error");
+    kDebugInfo("Parse error");
     delete l;
     return -1;
 }
@@ -263,7 +308,7 @@ int ConnectionHandler::handle()
 	return -1;
     } else if (nbytes == 0) {
 	// eof
-	qDebug("eof on fd %d", mFd);
+	kDebugInfo("eof on fd %d", mFd);
 	return -1;
     }
     tmpbuf[nbytes] = '\000';
