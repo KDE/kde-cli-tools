@@ -23,13 +23,16 @@
 #include <kapp.h>
 #include <kaboutdata.h>
 #include <kcmdlineargs.h>
+#include <kstartupinfo.h>
 
 #include <netwm.h>
 
-void execute(const QString & cmd){
+pid_t execute(const QString & cmd){
   KShellProcess proc;
   proc << cmd;
-  proc.start(KShellProcess::DontCare);
+  if( proc.start(KShellProcess::DontCare))
+      return proc.pid();
+  return -1;
 }
 
 
@@ -54,8 +57,27 @@ KStart::KStart()
     if (window)
 	kwinmodule->doNotManage( window );
 
+    // propagate the app startup notification info to the started app
+    KStartupInfoId id;
+    id.initId( kapp->startupId());
+    id.setupStartupEnv();
+    
     //finally execute the comand
-    execute(command);
+    pid_t pid = execute(command);
+    
+    if( pid >= 0 ) {
+        KStartupInfoData data;
+        data.addPid( pid );
+        data.setName( command );
+        QCString bin = command; 
+        int space = bin.find( ' ' ); // try to get the name of the binary
+        if( space != -1 )
+            bin = bin.left( space );
+        data.setBin( bin.mid( bin.findRev( '/' ) + 1 ));
+        KStartupInfo::sendStartup( id, data );
+    }
+    else
+        KStartupInfo::sendFinish( id ); // failed to start
 }
 
 void KStart::windowAdded(WId w){
