@@ -54,6 +54,9 @@
 #include <sys/un.h>
 #include <sys/resource.h>
 #include <sys/wait.h>
+#ifdef HAVE_SYS_SELECT_H
+#include <sys/select.h>		// Needed on some systems.
+#endif
 
 #include <qvector.h>
 
