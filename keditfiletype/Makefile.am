@@ -13,10 +13,6 @@ libkcm_filetypes_la_SOURCES = \
 noinst_HEADERS = filetypesview.h typeslistitem.h \
 	extensiondlg.h newtypedlg.h
 
-datadir   = $(kde_appsdir)/Settings/System
-data_DATA = filetypes.desktop
-#KDE_ICON = filetypes
-
 DISTCLEANFILES = $(libkcm_filetypes_la_METASOURCES)
 
 messages:
