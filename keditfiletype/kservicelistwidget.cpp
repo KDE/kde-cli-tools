@@ -66,7 +66,7 @@ KServiceListWidget::KServiceListWidget(int kind, QWidget *parent, const char *na
   servUpButton = new QPushButton(i18n("Move &Up"), gb);
   servUpButton->setEnabled(false);
   connect(servUpButton, SIGNAL(clicked()), SLOT(promoteService()));
-  grid->addWidget(servUpButton, 1, 1);
+  grid->addWidget(servUpButton, 2, 1);
 
   QWhatsThis::add( servUpButton, kind == SERVICELIST_APPLICATIONS ?
                    i18n("Assigns a higher priority to the selected\n"
@@ -79,7 +79,7 @@ KServiceListWidget::KServiceListWidget(int kind, QWidget *parent, const char *na
   servDownButton = new QPushButton(i18n("Move &Down"), gb);
   servDownButton->setEnabled(false);
   connect(servDownButton, SIGNAL(clicked()), SLOT(demoteService()));
-  grid->addWidget(servDownButton, 2, 1);
+  grid->addWidget(servDownButton, 3, 1);
 
   QWhatsThis::add( servDownButton, kind == SERVICELIST_APPLICATIONS ?
                    i18n("Assigns a lower priority to the selected\n"
@@ -92,7 +92,7 @@ KServiceListWidget::KServiceListWidget(int kind, QWidget *parent, const char *na
   servNewButton = new QPushButton(i18n("Add..."), gb);
   servNewButton->setEnabled(false);
   connect(servNewButton, SIGNAL(clicked()), SLOT(addService()));
-  grid->addWidget(servNewButton, 3, 1);
+  grid->addWidget(servNewButton, 1, 1);
 
   QWhatsThis::add( servNewButton, i18n( "Add a new application for this file type." ) );
 
