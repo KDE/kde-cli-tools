@@ -21,6 +21,7 @@
 #include <fcntl.h>
 #include <unistd.h>
 #include <string.h>
+#include <stdlib.h>
 #include <errno.h>
 
 #include <sys/types.h>
@@ -33,6 +34,19 @@
 
 #include "pty.h"
 #include "pathsearch.h"
+
+// stdlib.h is meant to declare the prototypes but doesn't :(
+#ifdef HAVE_GRANTPT
+extern "C" int grantpt(int fd);
+#endif
+
+#ifdef HAVE_PTSNAME
+extern "C" char * ptsname(int fd);
+#endif
+
+#ifdef HAVE_UNLOCKPT
+extern "C" int unlockpt(int fd);
+#endif
 
 PTY::PTY()
 {

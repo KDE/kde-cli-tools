@@ -25,7 +25,7 @@
 
 class KPasswordEdit: public QLineEdit
 {
-    Q_OBJECT;
+    Q_OBJECT
 
 public:
     KPasswordEdit(QWidget *parent=0, const char *name=0);
@@ -58,7 +58,7 @@ private:
 
 class KPasswordDlg: public QDialog
 {
-    Q_OBJECT;
+    Q_OBJECT
 
 public: 
     /**
