@@ -39,7 +39,6 @@ static KCmdLineOptions options[] =
         { "key <key>", I18N_NOOP("Key to look for"), 0 },
         { "default <default>", I18N_NOOP("Default value"), 0 },
 	{ "type <type>", I18N_NOOP("Type of variable"), 0 },
-	{ "usekdeglobals", I18N_NOOP("Read KDE global config. Also ensures kiosk settings are honored"), "KDE" },
         KCmdLineLastOption
 };
 int main(int argc, char **argv)
@@ -66,6 +65,7 @@ int main(int argc, char **argv)
 	}
 
 	KInstance inst(&aboutData);
+	KGlobal::config();
 
 	KConfig *konfig;
         bool configMustDeleted = false;
@@ -73,7 +73,7 @@ int main(int argc, char **argv)
 	   konfig = KGlobal::config();
 	else
         {
-	   konfig = new KConfig(file, true, args->isSet("usekdeglobals"));
+	   konfig = new KConfig(file, true, false);
            configMustDeleted=true;
         }
 	konfig->setGroup(group);
