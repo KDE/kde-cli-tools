@@ -79,11 +79,18 @@ QCString sock;
 Display *x11Display;
 
 
+void cleanup(void)
+{
+    unlink(sock);
+}
+
+
 // Borrowed from kdebase/kaudio/kaudioserver.cpp
 
 int xio_errhandler(Display *)
 {
     kDebugError("kdesud: Fatal IO error, exiting...");
+    cleanup();
     exit(1);
 }
 
@@ -104,15 +111,12 @@ int initXconnection()
     }
 }
 
-// Global signal handler
-
 void signal_exit(int sig)
 {
     kDebugError("Exiting on signal %d", sig); 
+    cleanup();
     exit(1);
 }
-
-// SIGCHLD handler
 
 void sigchld_handler(int)
 {
@@ -125,13 +129,6 @@ void sigchld_handler(int)
 	    break;
 	kDebugInfo("kdesud: PID %d exited", (int) pid);
     }
-}
-
-// Cleanup atexit()
-
-void cleanup(void)
-{
-    unlink(sock);
 }
 
 /**
@@ -181,7 +178,6 @@ int create_socket()
 	kDebugPError("bind()");
 	return -1;
     }
-    atexit(cleanup);
 
     struct linger lin;
     lin.l_onoff = lin.l_linger = 0;
@@ -236,6 +232,7 @@ int main(int argc, char *argv[])
 	exit(1);
     if (listen(sockfd, 1) < 0) {
 	kDebugPError("listen()");
+	cleanup();
 	exit(1);
     }
 
@@ -243,6 +240,7 @@ int main(int argc, char *argv[])
     pid_t pid = fork();
     if (pid == -1) {
 	kDebugPError("fork()");
+	cleanup();
 	exit(1);
     }
     if (pid)
