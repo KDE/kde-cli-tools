@@ -106,12 +106,16 @@ int main(int argc, char *argv[])
     KCmdLineArgs::init(argc, argv, &aboutData);
     KCmdLineArgs::addCmdLineOptions(options);
     KApplication::disableAutoDcopRegistration();
-    KApplication *app = new KApplication;
-    app->disableSessionManagement(); // but still pass SESSION_MANAGER to started app
+    // kdesu doesn't process SM events, so don't even connect to ksmserver
+    QCString session_manager = getenv( "SESSION_MANAGER" );
+    unsetenv( "SESSION_MANAGER" );
+    KApplication app;
+    // but propagate it to the started app
+    setenv( "SESSION_MANAGER", session_manager.data(), 1 );
     
     {
         KStartupInfoId id;
-        id.initId( app->startupId());
+        id.initId( kapp->startupId());
         id.setupStartupEnv(); // make KDE_STARTUP_ENV env. var. available again
     }
 
