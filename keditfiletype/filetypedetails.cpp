@@ -1,27 +1,13 @@
-#include <qstringlist.h>
-#include <qpushbutton.h>
 #include <qbuttongroup.h>
 #include <qradiobutton.h>
 #include <qlayout.h>
-#include <qgroupbox.h>
-#include <qlistbox.h>
 #include <qwhatsthis.h>
-#include <qlabel.h>
 
-#include <kbuttonbox.h>
 #include <kdebug.h>
-#include <kdialog.h>
 #include <kicondialog.h>
-#include <kiconloader.h>
 #include <klineedit.h>
 #include <klineeditdlg.h>
 #include <klocale.h>
-#include <kopenwith.h>
-#include <kmimetype.h>
-#include <krun.h>
-#include <kservice.h>
-#include <kservicetype.h>
-#include <kuserprofile.h>
 
 #include "kservicelistwidget.h"
 #include "filetypedetails.h"

@@ -1,12 +1,7 @@
-#include <qstring.h>
-#include <qtooltip.h>
 
 #include <kdebug.h>
 #include <kiconloader.h>
-#include <kservice.h>
-#include <kuserprofile.h>
-#include <kglobal.h>
-#include <kstddirs.h>
+#include <kstandarddirs.h>
 #include <kdesktopfile.h>
 
 #include "typeslistitem.h"

@@ -20,7 +20,6 @@
 #include "kserviceselectdlg.moc"
 #include <qvbox.h>
 #include <qlayout.h>
-#include <klistbox.h>
 
 KServiceSelectDlg::KServiceSelectDlg( const QString& /*serviceType*/, const QString& /*value*/, QWidget *parent )
     : KDialogBase( parent, "serviceSelectDlg", true,

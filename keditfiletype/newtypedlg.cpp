@@ -4,7 +4,6 @@
 #include <qwhatsthis.h>
 #include <qcombobox.h>
 
-#include <kglobal.h>
 #include <klocale.h>
 #include <kbuttonbox.h>
 #include <klineedit.h>
