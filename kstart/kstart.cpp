@@ -110,7 +110,7 @@ void KStart::windowAdded(WId w){
         if( !XGetClassHint( qt_xdisplay(), w, &hint ))
             return;
         QCString cls = windowclass.contains( ' ' )
-            ? QCString( hint.res_name ) + ' ' + hint.res_class : hint.res_class;
+            ? QCString( hint.res_name ) + ' ' + hint.res_class : QCString( hint.res_class );
         cls = cls.lower();
         XFree( hint.res_name );
 	XFree( hint.res_class );
