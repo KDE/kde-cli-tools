@@ -345,6 +345,7 @@ bool FileTypesView::sync()
 
 void FileTypesView::load()
 {
+    readFileTypes();
 }
 
 void FileTypesView::save()
