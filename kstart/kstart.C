@@ -59,7 +59,9 @@ KStart::KStart(const char* command_arg,
 }
 
 void KStart::windowAdded(WId w){
-    NETWinInfo info( qt_xdisplay(), w, qt_xrootwin(), 0 );
+    NETWinInfo info( qt_xdisplay(), w, qt_xrootwin(), NET::WMDesktop |
+                     NET::WMState |
+                     NET::WMName  );
     if (window) {
 	QString title = QString::fromUtf8(info.visibleName());
 	QRegExp r = window;
@@ -75,7 +77,7 @@ void KStart::windowAdded(WId w){
     }
 }
 
-void KStart::applyStyle(Window w, NETWinInfo & info) {
+void KStart::applyStyle(WId w, NETWinInfo & info) {
     /*
     if (window)
 	KWM::prepareForSwallowing(w);

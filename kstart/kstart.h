@@ -32,7 +32,7 @@ public slots:
 
 private:
 
-  void applyStyle(Window, NETWinInfo &);
+  void applyStyle(WId, NETWinInfo &);
 
   KWinModule* kwinmodule;
   QString command;
