@@ -1,7 +1,7 @@
 AM_CPPFLAGS = -DQT_NO_CAST_ASCII 
 
 INCLUDES = $(all_includes)
-LDFLAGS = $(all_libraries) $(KDE_RPATH)
+AM_LDFLAGS = $(all_libraries) $(KDE_RPATH)
 LDADD   =       $(LIB_KDECORE)
 
 bin_PROGRAMS	= kreadconfig
