@@ -115,7 +115,7 @@ FileTypeDetails::FileTypeDetails( QWidget * parent, const char * name )
   bgLay->addSpacing(10);
   // The order of those three items is very important. If you change it, fix typeslistitem.cpp !
   bgLay->addWidget( new QRadioButton( i18n("Show file in embedded viewer"), m_autoEmbed ) );
-  bgLay->addWidget( new QRadioButton( i18n("Show file in seperate viewer"), m_autoEmbed ) );
+  bgLay->addWidget( new QRadioButton( i18n("Show file in separate viewer"), m_autoEmbed ) );
   bgLay->addWidget( new QRadioButton( i18n("Use group settings"), m_autoEmbed ) );
   connect(m_autoEmbed, SIGNAL( clicked( int ) ), SLOT( slotAutoEmbedClicked( int ) ));
 
