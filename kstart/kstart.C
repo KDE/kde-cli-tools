@@ -6,19 +6,22 @@
  * Port to NETWM by David Faure <faure@kde.org>
  */
 
-#include <kstart.moc>
+#include "kstart.moc"
 #include "version.h"
 
 #include <fcntl.h>
-#include <kprocess.h>
+#include <stdlib.h>
+
 #include <qregexp.h>
+
+#include <kdebug.h>
+#include <kprocess.h>
 #include <klocale.h>
 #include <kwin.h>
 #include <kwinmodule.h>
 #include <kapp.h>
 #include <kaboutdata.h>
 #include <kcmdlineargs.h>
-#include <stdlib.h>
 
 void execute(const char* cmd){
   KShellProcess proc;
@@ -85,7 +88,7 @@ void KStart::applyStyle(WId w, NETWinInfo & info) {
     if (desktop > 0) {
 	if ((int)info.desktop() != desktop)
         {
-            debug("moving window to desktop %d",desktop);
+            kdDebug() << "moving window to desktop " << desktop << endl;
 	    info.setDesktop(desktop);
         }
     }
