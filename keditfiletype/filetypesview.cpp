@@ -28,7 +28,7 @@
 FileTypesView::FileTypesView(QWidget *p, const char *name)
   : KCModule(p, name)
 {
-  setButtons(Default|Cancel|Apply|Ok);
+  setButtons(Cancel|Apply|Ok);
   QHBoxLayout *topLayout = new QHBoxLayout(this, KDialog::marginHint(),
                                            KDialog::spacingHint());
 
@@ -43,12 +43,12 @@ FileTypesView::FileTypesView(QWidget *p, const char *name)
   connect(typesLV, SIGNAL(selectionChanged(QListViewItem *)),
           this, SLOT(updateDisplay(QListViewItem *)));
 
-  QPushButton *addTypeB = new QPushButton(i18n("Add..."), this);
+  QPushButton *addTypeB = new QPushButton(i18n("&Add..."), this);
   connect(addTypeB, SIGNAL(clicked()),
           this, SLOT(addType()));
   leftLayout->addWidget(addTypeB, 1, 0);
 
-  QPushButton *removeTypeB = new QPushButton(i18n("Remove"), this);
+  QPushButton *removeTypeB = new QPushButton(i18n("&Remove"), this);
   connect(removeTypeB, SIGNAL(clicked()),
           this, SLOT(removeType()));
   leftLayout->addWidget(removeTypeB, 1, 1);
