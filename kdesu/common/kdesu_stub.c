@@ -297,6 +297,10 @@ int main(int argc, char **argv)
     if (strcmp(params[P_SYCOCA].value, "no") && system("kded --check"))
 	printf("kdesu_stub: unable to create sycoca\n");
 
+    /* Start kdeinit + klauncher */
+    if (system("kdeinit --no-dcop"))
+	printf("kdesu_stub: unable to start kdeinit or already started\n");
+
     /* Execute the command */
 
     pid = fork();
