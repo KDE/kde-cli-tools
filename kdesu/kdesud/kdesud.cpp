@@ -97,11 +97,14 @@ void kdesud_cleanup()
 
 // Borrowed from kdebase/kaudio/kaudioserver.cpp
 
+extern "C" int xio_errhandler(Display *);
+
 int xio_errhandler(Display *)
 {
     kdError(1205) << "Fatal IO error, exiting...\n";
     kdesud_cleanup();
     exit(1);
+    return 1;  //silence compilers
 }
 
 int initXconnection()
@@ -121,6 +124,11 @@ int initXconnection()
 	kdWarning(1205) << "Might not terminate at end of session.\n";
 	return -1;
     }
+}
+
+extern "C" {
+  void signal_exit(int);
+  void sigchld_handler(int);
 }
 
 void signal_exit(int sig)
