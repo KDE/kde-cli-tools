@@ -62,6 +62,7 @@ static KCmdLineOptions options[] = {
     { "p <prio>", I18N_NOOP("Set priority value: 0 <= prio <= 100, 0 is lowest."), "50" },
     { "r", I18N_NOOP("Use realtime scheduling."), 0 },
     { "nonewdcop", I18N_NOOP("Let command use existing dcopserver."), 0 },
+    { "i <icon name>", I18N_NOOP("Specify icon to use in the password dialog."), 0},
     KCmdLineLastOption
 };
 
@@ -143,6 +144,10 @@ static int startApp()
         kdError(1206) << "Could not stop daemon\n";
         exit(1);
     }
+
+    QString icon;
+    if ( args->isSet("i"))
+	icon = args->getOption("i");	
 
     // Get target uid
     QCString user = args->getOption("u");
@@ -337,7 +342,7 @@ static int startApp()
         KStartupInfoData data;
         data.setSilent( KStartupInfoData::Yes );
         KStartupInfo::sendChange( id, data );
-        KDEsuDialog dlg(user, auth_user, keep && !terminal);
+        KDEsuDialog dlg(user, auth_user, keep && !terminal, icon);
         dlg.addLine(i18n("Command:"), command);
         if ((priority != 50) || (scheduler != SuProcess::SchedNormal))
         {

@@ -12,8 +12,8 @@
 #include "sudlg.h"
 
 
-KDEsuDialog::KDEsuDialog(QCString user, QCString auth_user, bool enableKeep)
-    : KPasswordDialog(Password, enableKeep, User1)
+KDEsuDialog::KDEsuDialog(QCString user, QCString auth_user, bool enableKeep, const QString& icon)
+    : KPasswordDialog(Password, enableKeep, User1, 0, 0, icon)
 {
     m_User = auth_user;
     setCaption(i18n("Run as %1").arg(user));

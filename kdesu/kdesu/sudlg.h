@@ -15,7 +15,7 @@ class KDEsuDialog
     Q_OBJECT
 
 public:
-    KDEsuDialog(QCString user, QCString auth_user, bool enableKeep);
+    KDEsuDialog(QCString user, QCString auth_user, bool enableKeep, const QString& icon );
     ~KDEsuDialog();
 
     enum ResultCodes { AsUser = 10 };
