@@ -19,22 +19,21 @@
 #include "kserviceselectdlg.h"
 #include "kserviceselectdlg.moc"
 #include "kservicelistwidget.h"
+
+#include <klocale.h>
+
 #include <qvbox.h>
-#include <qlayout.h>
+#include <qlabel.h>
 
 KServiceSelectDlg::KServiceSelectDlg( const QString& /*serviceType*/, const QString& /*value*/, QWidget *parent )
     : KDialogBase( parent, "serviceSelectDlg", true,
-                   /* TODO caption */ QString::null, Ok|Cancel, Ok )
+                   i18n( "Add Service" ), Ok|Cancel, Ok )
 {
-    QVBox *topcontents = new QVBox ( this );
-    topcontents->setSpacing(KDialog::spacingHint());
-    QWidget *contents = new QWidget(topcontents);
-    QHBoxLayout * lay = new QHBoxLayout(contents);
-    lay->setSpacing(KDialog::spacingHint());
+    QVBox *vbox = new QVBox ( this );
 
-    lay->addStretch(1);
-
-    m_listbox=new KListBox( topcontents );
+    vbox->setSpacing( KDialog::spacingHint() );
+    new QLabel( i18n( "Select service:" ), vbox );
+    m_listbox=new KListBox( vbox );
 
     // Can't make a KTrader query since we don't have a servicetype to give,
     // we want all services that are not applications.......
@@ -52,7 +51,7 @@ KServiceSelectDlg::KServiceSelectDlg( const QString& /*serviceType*/, const QStr
     m_listbox->setMinimumHeight(350);
     m_listbox->setMinimumWidth(300);
     connect(m_listbox,SIGNAL(doubleClicked ( QListBoxItem * )),SLOT(slotOk()));
-    setMainWidget(topcontents);
+    setMainWidget(vbox);
 }
 
 KServiceSelectDlg::~KServiceSelectDlg()

@@ -205,7 +205,7 @@ void KServiceListWidget::addService()
   {
       KOpenWithDlg dlg(m_item->name(), QString::null, 0L);
       dlg.setSaveNewApplications(true);
-      if (dlg.exec() == false)
+      if (dlg.exec() != QDialog::Accepted)
           return;
 
       service = dlg.service();
@@ -217,7 +217,7 @@ void KServiceListWidget::addService()
   else
   {
       KServiceSelectDlg dlg(m_item->name(), QString::null, 0L);
-      if (dlg.exec() == false)
+      if (dlg.exec() != QDialog::Accepted)
           return;
        service = dlg.service();
        Q_ASSERT(service);
