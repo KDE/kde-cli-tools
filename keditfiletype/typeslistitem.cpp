@@ -90,7 +90,7 @@ void TypesListItem::sync()
   config.writeEntry("Type", "MimeType");
   config.writeEntry("MimeType", name());
   config.writeEntry("Icon", m_icon);
-  config.writeEntry("Patterns", m_patterns);
+  config.writeEntry("Patterns", m_patterns, ';');
   config.writeEntry("Comment", m_comment);
 
   KSimpleConfig profile("profilerc");
