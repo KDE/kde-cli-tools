@@ -244,6 +244,21 @@ int main(int argc, char *argv[])
     QCString options;
     env << ( "KDE_STARTUP_ENV=" + kapp->startupId());
     
+    if (pw->pw_uid)
+    {
+       // Only propagate KDEHOME for non-root users,
+       // root uses KDEROOTHOME
+       
+       // Translate the KDEHOME of this user to the new user.
+       QString kdeHome = KGlobal::dirs()->relativeLocation("home", KGlobal::dirs()->localkdedir());
+       if (kdeHome[0] != '/')
+          kdeHome.prepend("~/"); 
+       else
+          kdeHome=QString::null; // Use default
+
+       env << ("KDEHOME="+ QFile::encodeName(kdeHome));
+    }
+    
     if (!new_dcop)
     {
         QCString ksycoca = "KDESYCOCA="+QFile::encodeName(locateLocal("tmp", "ksycoca"));
