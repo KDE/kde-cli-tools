@@ -1,3 +1,21 @@
+/* This file is part of the KDE project
+   Copyright (C) 2003 Waldo Bastian <bastian@kde.org>
+   Copyright (C) 2003 David Faure <faure@kde.org>
+
+   This program is free software; you can redistribute it and/or
+   modify it under the terms of the GNU General Public
+   License version 2 as published by the Free Software Foundation.
+
+   This program is distributed in the hope that it will be useful,
+   but WITHOUT ANY WARRANTY; without even the implied warranty of
+   MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the GNU
+    General Public License for more details.
+
+   You should have received a copy of the GNU General Public License
+   along with this program; see the file COPYING.  If not, write to
+   the Free Software Foundation, Inc., 59 Temple Place - Suite 330,
+   Boston, MA 02111-1307, USA.
+*/
 
 #include <kdebug.h>
 #include <kiconloader.h>
@@ -378,13 +396,10 @@ KMimeType::Ptr TypesListItem::findImplicitAssociation(const QString &desktop)
     QStringList mimeTypeList = s_changedServices->contains( s->desktopEntryPath())
        ? (*s_changedServices)[ s->desktopEntryPath() ] : s->serviceTypes();
 
-    if (mimeTypeList.contains(name()))
-       return 0;
-       
     for(QStringList::ConstIterator it = mimeTypeList.begin();
        it != mimeTypeList.end(); ++it)
     {
-       if (m_mimetype->is(*it))
+       if ((m_mimetype->name() != *it) && m_mimetype->is(*it))
        {
           return KMimeType::mimeType(*it);
        }

@@ -1,7 +1,30 @@
+/* This file is part of the KDE project
+   Copyright (C) 2003 Waldo Bastian <bastian@kde.org>
+   Copyright (C) 2003 David Faure <faure@kde.org>
+   Copyright (C) 2002 Daniel Molkentin <molkentin@kde.org>
+
+   This program is free software; you can redistribute it and/or
+   modify it under the terms of the GNU General Public
+   License version 2 as published by the Free Software Foundation.
+
+   This program is distributed in the hope that it will be useful,
+   but WITHOUT ANY WARRANTY; without even the implied warranty of
+   MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the GNU
+    General Public License for more details.
+
+   You should have received a copy of the GNU General Public License
+   along with this program; see the file COPYING.  If not, write to
+   the Free Software Foundation, Inc., 59 Temple Place - Suite 330,
+   Boston, MA 02111-1307, USA.
+*/
+
+#include <unistd.h>
+
 #include <qpushbutton.h>
 #include <qlayout.h>
 #include <qwhatsthis.h>
 
+#include <kapplication.h>
 #include <kdebug.h>
 #include <klocale.h>
 #include <kmessagebox.h>
@@ -25,6 +48,17 @@ KServiceListItem::KServiceListItem( const QString &_desktopPath, int kind )
         setText( pService->name() );
     else
         setText( i18n( "%1 (%2)" ).arg( pService->name() ).arg( pService->desktopEntryName() ) );
+
+    bool isApplication = pService->type() == "Application";
+    if (!isApplication)
+      localPath = locateLocal("services", _desktopPath);
+    else
+      localPath = pService->locateLocal();
+}
+
+bool KServiceListItem::isImmutable()
+{
+    return !checkAccess(localPath, W_OK);
 }
 
 KServiceListWidget::KServiceListWidget(int kind, QWidget *parent, const char *name)
@@ -330,7 +364,11 @@ void KServiceListWidget::removeService()
     // Check if service is associated with this mimetype or with one of its parents
     KServiceListItem *serviceItem = static_cast<KServiceListItem *>(servicesLB->item(selected));
     KMimeType::Ptr mimetype = m_item->findImplicitAssociation(serviceItem->desktopPath);
-    if (mimetype)
+    if (serviceItem->isImmutable())
+    {
+       KMessageBox::sorry(this, i18n("You are not authorized to remove this service."));
+    }
+    else if (mimetype)
     {
        KMessageBox::sorry(this, "<qt>"+msg1.arg(serviceItem->text())+"<p>"+
                                 msg2.arg(mimetype->name()).arg(mimetype->comment()).
