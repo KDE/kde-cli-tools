@@ -222,8 +222,8 @@ static KCmdLineOptions options[] =
   { "alldesktops", I18N_NOOP("Make the window appear on all desktops"), 0 },
   { "iconify", I18N_NOOP("Iconify the window"), 0 },
   { "maximize", I18N_NOOP("Maximize the window"), 0 },
-  { "maximize-vertical", I18N_NOOP("Maximize the window vertically"), 0 },
-  { "maximize-horizontal", I18N_NOOP("Maximize the window horizontally"), 0 },
+  { "maximize-vertically", I18N_NOOP("Maximize the window vertically"), 0 },
+  { "maximize-horizontally", I18N_NOOP("Maximize the window horizontally"), 0 },
   { "fullscreen", I18N_NOOP("Show window fullscreen. Implies type Override."), 0 },
   { "type <type>", I18N_NOOP("The window type: Normal, Desktop, Dock, Tool, \nMenu, Dialog, TopMenu or Override"), 0 },
   { "activate", I18N_NOOP("Jump to the window even if it is started on a \n"
@@ -331,11 +331,11 @@ int main( int argc, char *argv[] )
       state |= NET::Max;
       mask |= NET::Max;
   }
-  if ( args->isSet("maximize-vertical") ) {
+  if ( args->isSet("maximize-vertically") ) {
       state |= NET::MaxVert;
       mask |= NET::MaxVert;
   }
-  if ( args->isSet("maximize-horizontal") ) {
+  if ( args->isSet("maximize-horizontally") ) {
       state |= NET::MaxHoriz;
       mask |= NET::MaxHoriz;
   }
