@@ -255,7 +255,6 @@ void TypesListItem::sync()
   saveServices( profile, m_embedServices, "KParts/ReadOnlyPart" );
 
   // Handle removed services
-  // Note: we currently do that for applications only. Embedding services can't be removed.
 
   KServiceTypeProfile::OfferList offerList =
     KServiceTypeProfile::offers(m_mimetype->name(), "Application");
