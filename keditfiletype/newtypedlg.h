@@ -3,9 +3,10 @@
 
 #include <qstring.h>
 #include <qstringlist.h>
-#include <qcombobox.h>
 #include <kdialog.h>
-#include <klineedit.h>
+
+class KLineEdit;
+class QComboBox;
 
 /**
  * A dialog for creating a new file type, with
@@ -17,8 +18,8 @@ class NewTypeDialog : public KDialog
 public:
   NewTypeDialog(QStringList groups, QWidget *parent = 0, 
 		const char *name = 0);
-  QString group() const { return groupCombo->currentText(); }
-  QString text() const { return typeEd->text(); }
+  QString group() const;
+  QString text() const;
 private:
   KLineEdit *typeEd;
   QComboBox *groupCombo;

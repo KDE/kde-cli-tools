@@ -2,10 +2,13 @@
 #include <qlayout.h>
 #include <qlabel.h>
 #include <qwhatsthis.h>
+#include <qcombobox.h>
 
 #include <kglobal.h>
 #include <klocale.h>
 #include <kbuttonbox.h>
+#include <klineedit.h>
+
 
 #include "newtypedlg.h"
 
@@ -53,4 +56,15 @@ NewTypeDialog::NewTypeDialog(QStringList groups,
 
   // Set a minimum size so that caption is not half-hidden
   setMinimumSize( 300, 50 );
+}
+
+QString NewTypeDialog::group() const 
+{ 
+  return groupCombo->currentText(); 
+}
+
+
+QString NewTypeDialog::text() const 
+{ 
+  return typeEd->text(); 
 }

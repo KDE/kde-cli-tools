@@ -4,6 +4,7 @@
 #include <qwhatsthis.h>
 #include <qpushbutton.h>
 #include <qlayout.h>
+#include <qlineedit.h>
 
 #include <dcopclient.h>
 #include <kapp.h>
