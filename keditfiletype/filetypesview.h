@@ -34,6 +34,7 @@ protected slots:
   void addType();
   void removeType();
   void updateDisplay(QListViewItem *);
+  void slotDoubleClicked(QListViewItem *);
   void slotFilter(const QString &patternFilter);
   void setDirty(bool state);
 

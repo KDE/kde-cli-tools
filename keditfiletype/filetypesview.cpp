@@ -55,6 +55,8 @@ FileTypesView::FileTypesView(QWidget *p, const char *name)
   leftLayout->addMultiCellWidget(typesLV, 2, 2, 0, 1);
   connect(typesLV, SIGNAL(selectionChanged(QListViewItem *)),
           this, SLOT(updateDisplay(QListViewItem *)));
+  connect(typesLV, SIGNAL(doubleClicked(QListViewItem *)),
+          this, SLOT(slotDoubleClicked(QListViewItem *)));
 
   QWhatsThis::add( typesLV, i18n("Here you can see a hierarchical list of"
     " the file types which are known on your system. Click on the '+' sign"
@@ -238,6 +240,10 @@ void FileTypesView::removeType()
   setDirty(true);
 }
 
+void FileTypesView::slotDoubleClicked(QListViewItem *item)
+{
+  item->setOpen( !item->isOpen() );
+}
 
 void FileTypesView::updateDisplay(QListViewItem *item)
 {
