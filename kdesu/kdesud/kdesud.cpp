@@ -161,16 +161,18 @@ void sigchld_handler(int)
 int create_socket()
 {
     int sockfd;
-    char *display;
     ksize_t addrlen;
     struct stat s;
 
-    display = getenv("DISPLAY");
-    if (!display) 
+    QCString display(getenv("DISPLAY"));
+    if (display.isEmpty())
     {
 	kdWarning(1205) << "$DISPLAY is not set\n";
 	return -1;
     }
+
+    // strip the screen number from the display
+    display.replace(QRegExp("\\.[0-9]+$"), "");
 
     sock = QFile::encodeName(locateLocal("socket", QString("kdesud_%1").arg(display)));
     int stat_err=lstat(sock, &s);
