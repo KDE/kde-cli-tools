@@ -114,10 +114,15 @@ FileTypeDetails::FileTypeDetails( QWidget * parent, const char * name )
                                        KDialog::spacingHint());
   bgLay->addSpacing(10);
   // The order of those three items is very important. If you change it, fix typeslistitem.cpp !
-  bgLay->addWidget( new QRadioButton( i18n("Yes"), autoEmbed ) );
-  bgLay->addWidget( new QRadioButton( i18n("No"), autoEmbed ) );
+  bgLay->addWidget( new QRadioButton( i18n("Show file in embedded viewer"), autoEmbed ) );
+  bgLay->addWidget( new QRadioButton( i18n("Show file in seperate viewer"), autoEmbed ) );
   bgLay->addWidget( new QRadioButton( i18n("Use group settings"), autoEmbed ) );
   connect(autoEmbed, SIGNAL( clicked( int ) ), SLOT( slotAutoEmbedClicked( int ) ));
+
+  QWhatsThis::add( autoEmbed, i18n("Here you can configure what the Konqueror file manager"
+    " will do when you click on a file of this type. Konqueror can display the file in"
+    " an embedded viwer or start up a separate application. If set to 'Use group settings',"
+    " Konqueror will behave according to the general settings in the 'File Manager' control module.") );
 
   secondLayout->addSpacing(10);
 
