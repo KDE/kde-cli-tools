@@ -4,7 +4,7 @@
  *
  * This file is part of the KDE project, module kdesu.
  * Copyright (C) 1999,2000 Geert Jansen <g.t.jansen@stud.tue.nl>
- * 
+ *
  * secure.cpp: Peer credentials for a UNIX socket.
  */
 
@@ -28,14 +28,14 @@
  * Under Linux, Socket_security is supported.
  */
 
-#if defined(SO_PEERCRED) 
+#if defined(SO_PEERCRED)
 
 SocketSecurity::SocketSecurity(int sockfd)
 {
     ksize_t len = sizeof(struct ucred);
     if (getsockopt(sockfd, SOL_SOCKET, SO_PEERCRED, &cred, &len) < 0) {
-	kDebugPError("getsockopt(SO_PEERCRED)");
-	return; 
+	kdError() << "getsockopt(SO_PEERCRED) " << perror << endl;
+	return;
     }
 
     ok = true;
@@ -58,4 +58,4 @@ SocketSecurity::SocketSecurity(int sockfd)
     ok = true;
 }
 
-#endif 
+#endif
