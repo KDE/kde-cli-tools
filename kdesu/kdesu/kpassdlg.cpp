@@ -277,12 +277,12 @@ void KPasswordDlg::slotCheckPass()
     proc.setUser(mUser.latin1());
     ret = proc.checkPass(edit->getPass());
     if (ret < 0) {
-	QMessageBox::warning(this, kapp->getCaption(), 
-	    i18n("Incorrect password!"), i18n("OK"));
-	edit->erase();
-	edit->setFocus();
+        QMessageBox::warning(this, kapp->caption(), 
+                             i18n("Incorrect password!"), i18n("OK"));
+        edit->erase();
+        edit->setFocus();
     } else
-	accept();
+        accept();
 }
 
 void KPasswordDlg::slotHelp()
