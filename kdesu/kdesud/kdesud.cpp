@@ -172,7 +172,7 @@ int create_socket()
     struct linger lin;
     lin.l_onoff = lin.l_linger = 0;
     if (setsockopt(sockfd, SOL_SOCKET, SO_LINGER, 
-		   static_cast<char*>(&lin), 
+		   static_cast<char*>((char *)&lin), 
 		   sizeof(linger)) < 0) {
 	xerror("setsockopt(SO_LINGER): %s");
 	return -1;
@@ -180,14 +180,14 @@ int create_socket()
 
     int opt = 1;
     if (setsockopt(sockfd, SOL_SOCKET, SO_REUSEADDR, 
-		   static_cast<char*>(&opt), 
+		   static_cast<char*>((char *)&opt), 
 		   sizeof(opt)) < 0) {
 	xerror ("setsockopt(SO_REUSEADDR): %s");
 	return -1;
     }
     opt = 1;
     if (setsockopt(sockfd, SOL_SOCKET, SO_KEEPALIVE, 
-		   static_cast<char*>(&opt),
+		   static_cast<char*>((char *)&opt),
 		   sizeof(opt)) < 0) {
 	xerror("setsockopt(SO_KEEPALIVE): %s");
 	return -1;
