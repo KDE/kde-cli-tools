@@ -63,6 +63,7 @@ static KCmdLineOptions options[] = {
     { "r", I18N_NOOP("Use realtime scheduling."), 0 },
     { "nonewdcop", I18N_NOOP("Let command use existing dcopserver."), 0 },
     { "i <icon name>", I18N_NOOP("Specify icon to use in the password dialog."), 0},
+    { "d", I18N_NOOP("Do not show the command to be run in the dialog."), 0},
     KCmdLineLastOption
 };
 
@@ -148,6 +149,10 @@ static int startApp()
     QString icon;
     if ( args->isSet("i"))
 	icon = args->getOption("i");	
+
+    bool prompt = true;
+    if ( args->isSet("d"))
+	prompt = false;
 
     // Get target uid
     QCString user = args->getOption("u");
@@ -343,14 +348,16 @@ static int startApp()
         data.setSilent( KStartupInfoData::Yes );
         KStartupInfo::sendChange( id, data );
         KDEsuDialog dlg(user, auth_user, keep && !terminal, icon);
-        dlg.addLine(i18n("Command:"), command);
+	if (prompt)
+	    dlg.addLine(i18n("Command:"), command);
         if ((priority != 50) || (scheduler != SuProcess::SchedNormal))
         {
             QString prio;
             if (scheduler == SuProcess::SchedRealtime)
                 prio += i18n("realtime: ");
             prio += QString("%1/100").arg(priority);
-            dlg.addLine(i18n("Priority:"), prio);
+	    if (prompt)
+		dlg.addLine(i18n("Priority:"), prio);
         }
         int ret = dlg.exec();
         if (ret == KDEsuDialog::Rejected)
