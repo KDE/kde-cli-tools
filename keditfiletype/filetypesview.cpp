@@ -165,6 +165,8 @@ void FileTypesView::readFileTypes()
 	TypesListItem *item = new TypesListItem(groupItem, (*it2));
 	m_itemList.append( item );
     }
+    updateDisplay(0L);
+
 }
 
 void FileTypesView::slotFilter(const QString & patternFilter)
