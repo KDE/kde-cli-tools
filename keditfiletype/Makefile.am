@@ -26,5 +26,4 @@ keditfiletype_LDFLAGS = $(KDE_RPATH) $(all_libraries)
 messages:
 	$(XGETTEXT) *.cpp -o $(podir)/filetypes.pot
 
-kcmfiletypes_data_DATA = filetypes.desktop
-kcmfiletypes_datadir = $(kde_appsdir)/Settings/Components
+xdg_apps_DATA = filetypes.desktop
