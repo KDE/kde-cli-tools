@@ -222,7 +222,7 @@ void FileTypesView::addType()
     if ( !group )
     {
        //group = new TypesListItem(
-       //TODO !
+       //TODO ! (The combo in NewTypeDialog must be made editable again when that happens)
        Q_ASSERT(group);
     }
 

@@ -27,7 +27,8 @@ NewTypeDialog::NewTypeDialog(QStringList groups,
   grid->addWidget(l, 0, 0);
 
   groupCombo = new QComboBox(this);
-  groupCombo->setEditable( true );
+  //groupCombo->setEditable( true ); M.O.: Currently, the code in filetypesview isn't capable of handling
+  //new top level types; so better not let them be added than crash.
   groupCombo->insertStringList(groups);
   grid->addWidget(groupCombo, 0, 1);
 
