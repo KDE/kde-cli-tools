@@ -39,11 +39,13 @@
 
 #define ERR strerror(errno)
 
+QCString command;
 const char *Version = "1.0";
 
 static KCmdLineOptions options[] = {
     { "+command", I18N_NOOP("Specifies the command to run."), 0 },
     { "f <file>", I18N_NOOP("Run command under target uid if <file> is not writeable."), "" },
+    { "c <command>", I18N_NOOP("Specifies the command to run."), "" },
     { "u <user>", I18N_NOOP("Specifies the target uid"), "root" },
     { "n", I18N_NOOP("Do not keep password."), 0 },
     { "s", I18N_NOOP("Stop the daemon (forgets all passwords)."), 0 },
@@ -71,8 +73,10 @@ int main(int argc, char *argv[])
 
     KApplication *app = new KApplication;
 
+
     // Check command
-    if (args->count() == 0)
+    // CJM - probably a hack here - but need to check for a "c" for backwords compat.
+    if ((args->count() == 0)&(!args->isSet("c")))
 	KCmdLineArgs::usage(i18n("No command specified!"));
 
     // Stop daemon and exit?
@@ -92,6 +96,7 @@ int main(int argc, char *argv[])
 	kdError(1206) << "Could not stop daemon\n";
 	exit(1);
     }
+
 
     // Get target uid
     QCString user = args->getOption("u");
@@ -147,12 +152,26 @@ int main(int argc, char *argv[])
     }
 
     // Get command
-    QCString command = args->arg(0);
-    for (int i=1; i<args->count(); i++) 
+    if (args->isSet("c")) 
+    {
+    command = args->getOption("c");
+    for (int i=0; i<args->count(); i++)
     {
 	command += " ";
 	command += args->arg(i);
     }
+    }
+    else {
+    command = args->arg(0); 
+    for (int i=1; i<args->count(); i++) 
+    {
+	command += " ";
+	command += args->arg(i);
+    }}
+
+//  CJM - Test lines remove when working
+//    kdWarning(1206) << args->count();
+//    kdWarning(1206) << command;
 
     // Don't change uid if we're don't need to.
     if (!change_uid)
