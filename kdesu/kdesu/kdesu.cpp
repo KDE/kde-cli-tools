@@ -69,6 +69,12 @@ int main(int argc, char *argv[])
     KCmdLineArgs::addCmdLineOptions(options);
     KCmdLineArgs *args = KCmdLineArgs::parsedArgs();
 
+    KApplication *app = new KApplication;
+
+    // Check command
+    if (args->count() == 0)
+	KCmdLineArgs::usage(i18n("No command specified!"));
+
     // Stop daemon and exit?
     if (args->isSet("s")) 
     {
@@ -141,8 +147,6 @@ int main(int argc, char *argv[])
     }
 
     // Get command
-    if (args->count() == 0)
-	KCmdLineArgs::usage(i18n("No command specified!"));
     QCString command = args->arg(0);
     for (int i=1; i<args->count(); i++) 
     {
@@ -192,9 +196,6 @@ int main(int argc, char *argv[])
 	kdError(1206) << "rlimit(): " << ERR << "\n";
 	exit(1);
     }
-
-    // From  here, we need the GUI: create a KApplication
-    KApplication *app = new KApplication;
 
     // Read configuration
     KConfig *config = KGlobal::config();
