@@ -35,7 +35,7 @@ KServiceListWidget::KServiceListWidget(int kind, QWidget *parent, const char *na
     m_kind( kind ), m_item( 0L )
 {
   QWidget * gb = this;
-  QGridLayout * grid = new QGridLayout(gb, 6, 2, KDialog::marginHint(),
+  QGridLayout * grid = new QGridLayout(gb, 7, 2, KDialog::marginHint(),
                                        KDialog::spacingHint());
   grid->addRowSpacing(0, fontMetrics().lineSpacing());
   grid->setRowStretch(1, 1);
@@ -43,10 +43,11 @@ KServiceListWidget::KServiceListWidget(int kind, QWidget *parent, const char *na
   grid->setRowStretch(3, 1);
   grid->setRowStretch(4, 1);
   grid->setRowStretch(5, 1);
+  grid->setRowStretch(6, 1);
 
   servicesLB = new QListBox(gb);
   connect(servicesLB, SIGNAL(highlighted(int)), SLOT(enableMoveButtons(int)));
-  grid->addMultiCellWidget(servicesLB, 1, 5, 0, 0);
+  grid->addMultiCellWidget(servicesLB, 1, 6, 0, 0);
 
   QString wtstr =
     (kind == SERVICELIST_APPLICATIONS ?
@@ -97,10 +98,19 @@ KServiceListWidget::KServiceListWidget(int kind, QWidget *parent, const char *na
 
   QWhatsThis::add( servNewButton, i18n( "Add a new application for this file type." ) );
 
+
+  servEditButton = new QPushButton(i18n("Edit..."), gb);
+  servEditButton->setEnabled(false);
+  connect(servEditButton, SIGNAL(clicked()), SLOT(editService()));
+  grid->addWidget(servEditButton, 4, 1);
+
+  QWhatsThis::add( servEditButton, i18n( "Edit command line of the selected application." ) );
+
+
   servRemoveButton = new QPushButton(i18n("Remove"), gb);
   servRemoveButton->setEnabled(false);
   connect(servRemoveButton, SIGNAL(clicked()), SLOT(removeService()));
-  grid->addWidget(servRemoveButton, 4, 1);
+  grid->addWidget(servRemoveButton, 5, 1);
 
   QWhatsThis::add( servRemoveButton, i18n( "Remove the selected application from the list." ) );
 }
@@ -113,8 +123,12 @@ void KServiceListWidget::setTypeItem( TypesListItem * item )
   // will need a selection
   servUpButton->setEnabled(false);
   servDownButton->setEnabled(false);
+
   if ( servRemoveButton )
     servRemoveButton->setEnabled(false);
+  if ( servEditButton )
+    servEditButton->setEnabled(false);
+
   servicesLB->clear();
   servicesLB->setEnabled(false);
 
@@ -231,6 +245,61 @@ void KServiceListWidget::addService()
   emit changed(true);
 }
 
+void KServiceListWidget::editService()
+{
+  if (!m_item)
+      return;
+
+  int selected = servicesLB->currentItem();
+  if ( selected >= 0 ) {
+
+    KService::Ptr service = 0L;
+    
+    // Only edit applications, not services as
+    // they don't have any parameters
+    if ( m_kind == SERVICELIST_APPLICATIONS )
+    {
+        // Just like popping up an add dialog except that we
+        // pass the current command line as a default
+        QListBoxItem *selItem = servicesLB->item(selected);
+
+        KService::Ptr pService = KService::serviceByDesktopPath(
+            ((KServiceListItem*)selItem)->desktopPath );
+
+        KOpenWithDlg dlg(m_item->name(), pService->exec(), 0L);
+        if (dlg.exec() == false)
+            return;
+
+        service = dlg.service();
+
+        Q_ASSERT(service);
+        if (!service)
+            return; // Don't crash if KOpenWith wasn't able to create service.
+
+      // Remove the old one...
+      servicesLB->removeItem( selected );
+
+      // ...check that it's not a duplicate entry...
+      bool addIt = true;
+      for (unsigned int index = 0; index < servicesLB->count(); index++)
+      if (servicesLB->text(index) == service->name()) {
+        addIt = false;
+        break;
+      }
+
+      // ...and add it in the same place as the old one:
+      if ( addIt ) {
+        QString desktopPath = service->desktopEntryPath();
+        servicesLB->insertItem( new KServiceListItem(desktopPath), selected );
+      }
+
+      updatePreferredServices();
+
+      emit changed(true);
+    }
+  }
+}
+
 void KServiceListWidget::removeService()
 {
   int selected = servicesLB->currentItem();
@@ -245,6 +314,8 @@ void KServiceListWidget::removeService()
   if ( servRemoveButton && servicesLB->currentItem() == -1 )
     servRemoveButton->setEnabled(false);
 
+  if ( servEditButton && servicesLB->currentItem() == -1 )
+    servEditButton->setEnabled(false);
 }
 
 void KServiceListWidget::updatePreferredServices()
@@ -289,6 +360,9 @@ void KServiceListWidget::enableMoveButtons(int index)
 
   if ( servRemoveButton )
     servRemoveButton->setEnabled(true);
+  
+  if ( servEditButton )
+    servEditButton->setEnabled(true);
 }
 
 #include "kservicelistwidget.moc"

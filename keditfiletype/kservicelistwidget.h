@@ -8,7 +8,7 @@ class QListBox;
 class QPushButton;
 
 /**
- * This widget holds a list of services, with 4 buttons to manage it.
+ * This widget holds a list of services, with 5 buttons to manage it.
  * It's a separate class so that it can be used by both tabs of the
  * module, once for applications and once for services.
  * The "kind" is determined by the argument given to the constructor.
@@ -29,6 +29,7 @@ protected slots:
   void promoteService();
   void demoteService();
   void addService();
+  void editService();
   void removeService();
   void enableMoveButtons(int index);
 
@@ -39,7 +40,7 @@ private:
   int m_kind;
   QListBox *servicesLB;
   QPushButton *servUpButton, *servDownButton;
-  QPushButton *servNewButton, *servRemoveButton;
+  QPushButton *servNewButton, *servEditButton, *servRemoveButton;
   TypesListItem *m_item;
 };
 
