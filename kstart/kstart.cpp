@@ -29,9 +29,10 @@
 #include <netwm.h>
 
 pid_t execute(const QString & cmd){
-  KShellProcess proc;
+  KProcess proc;
+  proc.setUseShell(true);
   proc << cmd;
-  if( proc.start(KShellProcess::DontCare))
+  if(proc.start(KProcess::DontCare))
       return proc.pid();
   return -1;
 }
