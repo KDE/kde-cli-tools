@@ -297,17 +297,18 @@ void TypesListItem::sync()
           }
           else
           {
-            QString path = KDesktopFile::locateLocal(pService->desktopEntryPath());
+            QString path = pService->locateLocal();
             KConfig orig(pService->desktopEntryPath(), true, false, "apps");
             desktop = orig.copyTo(path);
           }
 
           serviceTypeList.remove(name());
           desktop->setDesktopGroup();
-          desktop->writeEntry("MimeType", serviceTypeList, ';');
+          desktop->writeEntry("ServiceTypes", serviceTypeList, ';');
+          desktop->writeEntry("MimeType", "");
 
-        // if two or more types have been modified, and they use the same service,
-        // accumulate the changes
+          // if two or more types have been modified, and they use the same service,
+          // accumulate the changes
           (*s_changedServices)[ pService->desktopEntryPath() ] = serviceTypeList;
 
           desktop->sync();
@@ -326,7 +327,10 @@ void TypesListItem::sync()
 
           profile.setGroup( name() + " - " + QString::number(groupCount) );
 
-          profile.writeEntry("Application", pService->desktopEntryPath());
+          if (pService->menuId().isEmpty())
+            profile.writeEntry("Application", pService->desktopEntryPath());
+          else
+            profile.writeEntry("Application", pService->menuId());
           profile.writeEntry("ServiceType", name());
           profile.writeEntry("AllowAsDefault", true);
           profile.writeEntry("Preference", 0);
@@ -353,32 +357,45 @@ void TypesListItem::saveServices( KConfig & profile, QStringList services, const
 
     profile.writeEntry("ServiceType", name());
     profile.writeEntry("GenericServiceType", genericServiceType);
-    profile.writeEntry("Application", pService->desktopEntryPath());
+    if (pService->menuId().isEmpty())
+      profile.writeEntry("Application", pService->desktopEntryPath());
+    else
+      profile.writeEntry("Application", pService->menuId());
     profile.writeEntry("AllowAsDefault", true);
     profile.writeEntry("Preference", i);
 
-    KConfig *desktop;
-    if ( pService->type() == QString("Service") )
-    {
-        desktop = new KConfig(pService->desktopEntryPath(), false, false, "services");
-    }
-    else
-    {
-        QString path = KDesktopFile::locateLocal(pService->desktopEntryPath());
-        KConfig orig(pService->desktopEntryPath(), true, false, "apps");
-        desktop = orig.copyTo(path);
-    }
     // merge new mimetype
-    QStringList serviceTypeList = pService->serviceTypes();
+    if( s_changedServices == NULL )
+       deleter.setObject( s_changedServices, new QMap< QString, QStringList > );
+    QStringList serviceTypeList = s_changedServices->contains( pService->desktopEntryPath())
+       ? (*s_changedServices)[ pService->desktopEntryPath() ] : pService->serviceTypes();
 
     if (!serviceTypeList.contains(name()))
+    {
       serviceTypeList.append(name());
 
-    desktop->setDesktopGroup();
-    desktop->writeEntry("MimeType", serviceTypeList, ';');
-    desktop->writeEntry("ServiceTypes", "");
-    desktop->sync();
-    delete desktop;
+      KConfig *desktop;
+      if ( pService->type() == QString("Service") )
+      {
+        desktop = new KConfig(pService->desktopEntryPath(), false, false, "services");
+      }
+      else
+      {
+        QString path = pService->locateLocal();
+        KConfig orig(pService->desktopEntryPath(), true, false, "apps");
+        desktop = orig.copyTo(path);
+      }
+
+      desktop->setDesktopGroup();
+      desktop->writeEntry("ServiceTypes", serviceTypeList, ';');
+      desktop->writeEntry("MimeType", "");
+      desktop->sync();
+      delete desktop;
+
+      // if two or more types have been modified, and they use the same service,
+      // accumulate the changes
+      (*s_changedServices)[ pService->desktopEntryPath() ] = serviceTypeList;
+    }
   }
 }
 
