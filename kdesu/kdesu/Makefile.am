@@ -1,5 +1,7 @@
 ## Makefile.am for kdesu by Geert Jansen
 
+AM_CPPFLAGS = -DQT_NO_ASCII_CAST
+
 INCLUDES= $(all_includes)
 
 ## kdesu

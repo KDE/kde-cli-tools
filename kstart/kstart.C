@@ -23,7 +23,7 @@
 #include <kaboutdata.h>
 #include <kcmdlineargs.h>
 
-void execute(const char* cmd){
+void execute(const QString & cmd){
   KShellProcess proc;
   proc << cmd;
   proc.start(KShellProcess::DontCare);
@@ -65,7 +65,7 @@ void KStart::windowAdded(WId w){
     NETWinInfo info( qt_xdisplay(), w, qt_xrootwin(), NET::WMDesktop |
                      NET::WMState |
                      NET::WMName  );
-    if (window) {
+    if (!window.isNull()) {
 	QString title = QString::fromUtf8(info.visibleName());
 	QRegExp r = window;
 	if (r.match(title) != -1){
@@ -108,7 +108,7 @@ void KStart::applyStyle(WId w, NETWinInfo & info) {
     */
 
     XSync(qt_xdisplay(), False);
-    if (window) {
+    if (!window.isNull()) {
 	XMapWindow(qt_xdisplay(), w);
 	XSync(qt_xdisplay(), False);
     }
