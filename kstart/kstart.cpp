@@ -185,7 +185,7 @@ static KCmdLineOptions options[] =
   { "ontop", I18N_NOOP("Make the window always stay on top of any other window"), 0 },
   { "skiptaskbar", I18N_NOOP("The window does not get an entry in the taskbar"), 0 },
   { "skippager", I18N_NOOP("The window does not get an entry on the pager"), 0 },
-  { "tosystray", I18N_NOOP("The window is sent to the system tray in kicker."), 0 },
+  { "tosystray", I18N_NOOP("The window is sent to the system tray in Kicker."), 0 },
   { 0, 0, 0}
 };
 
