@@ -227,16 +227,6 @@ int main(int argc, char *argv[])
     if (!change_uid)
 	return system(command);
 
-    if (just_started && have_daemon) 
-    {
-	client.connect();
-	if (client.ping() == -1) 
-	{
-	    kdWarning(1206) << "Could not connect to daemon.\n";
-	    have_daemon = false;
-	}
-    }
-
     // Run command
 
     if (k && have_daemon) 
