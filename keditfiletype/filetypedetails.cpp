@@ -30,7 +30,7 @@ FileTypeDetails::FileTypeDetails( QWidget * parent, const char * name )
   iconButton->setIconType(KIcon::Desktop, KIcon::MimeType);
   connect(iconButton, SIGNAL(iconChanged(QString)), SLOT(updateIcon(QString)));
 
-  iconButton->setFixedSize(50, 50);
+  iconButton->setFixedSize(70, 70);
   hBox->addWidget(iconButton);
 
   QWhatsThis::add( iconButton, i18n("This button displays the icon associated"
