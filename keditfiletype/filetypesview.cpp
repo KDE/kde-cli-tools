@@ -110,7 +110,6 @@ FileTypesView::FileTypesView(QWidget *p, const char *name)
 
   m_widgetStack->raiseWidget( m_emptyWidget );
 
-  qApp->processEvents(); // let's show up
   QTimer::singleShot( 0, this, SLOT( init() ) ); // this takes some time
 }
 
@@ -126,14 +125,15 @@ void FileTypesView::setDirty(bool state)
 
 void FileTypesView::init()
 {
+  show();
   setEnabled( false );
-  setCursor( KCursor::waitCursor() );
 
+  setCursor( KCursor::waitCursor() );
   readFileTypes();
+  unsetCursor();
 
   setDirty(false);
   setEnabled( true );
-  unsetCursor();
 }
 
 // only call this method once on startup, then never again! Otherwise, newly
