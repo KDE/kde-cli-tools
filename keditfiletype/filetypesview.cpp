@@ -5,6 +5,7 @@
 #include <qpushbutton.h>
 #include <qlayout.h>
 #include <qlineedit.h>
+#include <qwidgetstack.h>
 
 #include <dcopclient.h>
 #include <kapp.h>
@@ -25,7 +26,7 @@ FileTypesView::FileTypesView(QWidget *p, const char *name)
   QString wtstr;
 
   QHBoxLayout *topLayout = new QHBoxLayout(this, KDialog::marginHint(),
-                       KDialog::spacingHint());
+                                KDialog::spacingHint());
 
   QGridLayout *leftLayout = new QGridLayout(4, 2);
   topLayout->addLayout(leftLayout, 0);
@@ -38,10 +39,10 @@ FileTypesView::FileTypesView(QWidget *p, const char *name)
   leftLayout->addMultiCellWidget(patternFilterLE, 1, 1, 0, 1);
 
   connect(patternFilterLE, SIGNAL(textChanged(const QString &)),
-      this, SLOT(slotFilter(const QString &)));
+          this, SLOT(slotFilter(const QString &)));
 
   wtstr = i18n("Enter a part of a filename pattern. Only file types with a "
-           "matching file pattern will appear in the list.");
+               "matching file pattern will appear in the list.");
 
   QWhatsThis::add( patternFilterLE, wtstr );
   QWhatsThis::add( patternFilterLBL, wtstr );
@@ -74,10 +75,17 @@ FileTypesView::FileTypesView(QWidget *p, const char *name)
 
   QWhatsThis::add( removeTypeB, i18n("Click here to remove the selected file type.") );
 
-  m_details = new FileTypeDetails( this );
+  // For the right panel, prepare a widget stack
+  m_widgetStack = new QWidgetStack( this );
+  m_details = new FileTypeDetails( m_widgetStack );
   connect( m_details, SIGNAL( changed(bool) ),
            this, SLOT( setDirty(bool) ) );
-  topLayout->addWidget( m_details, 100 );
+  m_widgetStack->addWidget( m_details, 1 /*id*/ );
+
+  m_emptyWidget = new QWidget( m_widgetStack );
+  m_widgetStack->addWidget( m_emptyWidget, 2 /*id*/ ); // show that one on startup
+
+  topLayout->addWidget( m_widgetStack, 100 );
 
   init();
 
@@ -116,38 +124,38 @@ void FileTypesView::readFileTypes(const QString &patternFilter)
     KMimeType::List mimetypes = KMimeType::allMimeTypes();
     QValueListIterator<KMimeType::Ptr> it2(mimetypes.begin());
     for (; it2 != mimetypes.end(); ++it2) {
-    bool add = true;
+        bool add = true;
 
-    if ( !patternFilter.isEmpty() ) {
-        QStringList matches = (*it2)->patterns().grep( patternFilter,
-                               false );
-        add = !matches.isEmpty();
-    }
-
-    if ( add ) {
-        QString mimetype = (*it2)->name();
-        int index = mimetype.find("/");
-        QString maj = mimetype.left(index);
-        QString min = mimetype.right(mimetype.length() - index+1);
-
-        QListViewItemIterator it(typesLV);
-        for (; it.current(); ++it) {
-        TypesListItem *current = (TypesListItem *) it.current();
-        if (current->majorType() == maj) {
-            new TypesListItem(current, (*it2));
-            break;
+        if ( !patternFilter.isEmpty() ) {
+            QStringList matches = (*it2)->patterns().grep( patternFilter,
+                                                           false );
+            add = !matches.isEmpty();
         }
-        }
-        if (!it.current()) {
-        // insert at top level.
-        TypesListItem *i = new TypesListItem(typesLV, (*it2));
 
-        if ( !patternFilter.isEmpty() )
-            i->setOpen(true);
+        if ( add ) {
+            QString mimetype = (*it2)->name();
+            int index = mimetype.find("/");
+            QString maj = mimetype.left(index);
+            QString min = mimetype.right(mimetype.length() - index+1);
 
-        new TypesListItem(i, (*it2));
+            QListViewItemIterator it(typesLV);
+            for (; it.current(); ++it) {
+                TypesListItem *current = (TypesListItem *) it.current();
+                if (current->majorType() == maj) {
+                    new TypesListItem(current, (*it2));
+                    break;
+                }
+            }
+            if (!it.current()) {
+                // insert at top level.
+                TypesListItem *i = new TypesListItem(typesLV, (*it2));
+
+                if ( !patternFilter.isEmpty() )
+                    i->setOpen(true);
+
+                new TypesListItem(i, (*it2));
+            }
         }
-    }
     }
 }
 
@@ -219,25 +227,31 @@ void FileTypesView::removeType()
 
 void FileTypesView::updateDisplay(QListViewItem *item)
 {
-  bool wasDirty = m_dirty;
+    if (!item)
+    {
+        m_widgetStack->raiseWidget( m_emptyWidget );
+        return;
+    }
 
-  if (!item)
-    return;
+    TypesListItem *tlitem = (TypesListItem *) item;
+    if (tlitem->isMeta()) // is a group
+    {
+        // Remove details - this is even more needed when we just
+        // removed a mimetype (and the group gets activated)
+        // TODO create group config
+        m_widgetStack->raiseWidget( m_emptyWidget );
+        return;
+    }
 
-  TypesListItem *tlitem = (TypesListItem *) item;
-  if (tlitem->isMeta()) // is a group
-  {
-    // Remove details - this is even more needed when we just
-    // removed a mimetype (and the group gets activated)
-    m_details->setTypeItem( 0L );
-    return;
-  }
+    bool wasDirty = m_dirty;
 
-  m_details->setTypeItem( tlitem );
+    m_widgetStack->raiseWidget( m_details );
 
-  // Updating the display indirectly called change(true)
-  if ( !wasDirty )
-    setDirty(false);
+    m_details->setTypeItem( tlitem );
+
+    // Updating the display indirectly called change(true)
+    if ( !wasDirty )
+        setDirty(false);
 }
 
 bool FileTypesView::sync()

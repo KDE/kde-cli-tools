@@ -10,6 +10,7 @@ class KIconButton;
 class QLineEdit;
 class QComboBox;
 class FileTypeDetails;
+class QWidgetStack;
 
 class FileTypesView : public KCModule
 {
@@ -40,7 +41,9 @@ protected:
 private:
   QListView *typesLV;
 
+  QWidgetStack * m_widgetStack;
   FileTypeDetails * m_details;
+  QWidget * m_emptyWidget;
 
   QLineEdit *patternFilterLE;
   QStringList removedList;
