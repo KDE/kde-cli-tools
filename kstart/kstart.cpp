@@ -194,8 +194,8 @@ static KCmdLineOptions options[] =
   // "!" means: all options after command are treated as arguments to the command
   { "window <regexp>", I18N_NOOP("A regular expression matching the window title.\n"
                   "If you do not specify one, then the very first\n"
-                  "window to appear will be taken.\n"
-                  "Omitting this option is NOT RECOMMENDED!"), 0 },
+                  "window to appear will be taken;\n"
+                  "omitting this option is NOT recommended."), 0 },
   { "desktop <number>", I18N_NOOP("Desktop where to make the window appear. "), 0 },
   { "currentdesktop", I18N_NOOP("Make the window appear on the desktop that was active\nwhen starting the application. "), 0 },
   { "alldesktops", I18N_NOOP("Make the window appear on all desktops"), 0 },
