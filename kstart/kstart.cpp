@@ -58,7 +58,7 @@ KStart::KStart()
     :QObject()
 {
     NETRootInfo i( qt_xdisplay(), NET::Supported );
-    bool useRule = i.isSupported( NET::WM2KDETemporaryRules );
+    bool useRule = !toSysTray && i.isSupported( NET::WM2KDETemporaryRules );
 
     if( useRule )
         sendRule();
