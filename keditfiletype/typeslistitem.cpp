@@ -22,6 +22,7 @@ TypesListItem::TypesListItem(TypesListItem *parent, KMimeType::Ptr mimetype, boo
 {
   init(mimetype);
   setText(0, minorType());
+  setPixmap(0, mimetype->pixmap(KIcon::Small));
 }
 
 TypesListItem::TypesListItem(QListView *parent, KMimeType::Ptr mimetype)
@@ -29,6 +30,7 @@ TypesListItem::TypesListItem(QListView *parent, KMimeType::Ptr mimetype)
 {
   init(mimetype);
   setText(0, majorType());
+  setPixmap(0, mimetype->pixmap(KIcon::Small));
 }
 
 TypesListItem::~TypesListItem()
