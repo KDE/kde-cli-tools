@@ -91,15 +91,11 @@ int SuProcess::exec(char *password, bool check_only)
 	    for (int i=0; i<len; i++)
 		password[i] = 'x';
 	}
-	if (!check_only) {
-	    if (ConverseStub(master, mCommand.c_str()) < 0) {
-		error("Converstation with kdesu_stub failed");
-		return -1;
-	    }
-	    if (mTerminal)
-		CopyOutput(master);	
-	} else
-	    CopyOutput(master);	
+	if (!check_only && (ConverseStub(master, mCommand.c_str()) < 0)) {
+	    error("Converstation with kdesu_stub failed");
+	    return -1;
+	}
+	CopyOutput(master, check_only||mTerminal);
 
 	int ret;
 	waitpid(pid, &ret, 0);
@@ -144,7 +140,7 @@ int SuProcess::exec(char *password, bool check_only)
 /**
  * Copy output to stdout until end of file or error.
  */
-int SuProcess::CopyOutput(int fd)
+int SuProcess::CopyOutput(int fd, bool echo)
 {
     char buf[256];
     int nbytes;
@@ -156,7 +152,8 @@ int SuProcess::CopyOutput(int fd)
 	}
 	if (nbytes == 0)
 	    break;
-	fwrite(buf, sizeof(char), nbytes, stdout);
+	if (echo)
+	    fwrite(buf, sizeof(char), nbytes, stdout);
     }
     return 0;
 }

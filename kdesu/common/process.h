@@ -66,7 +66,7 @@ private:
     int WaitSlave(const char *ttyname);
     int ConverseSU(int fd, const char *password, const char *tty);
     int ConverseStub(int fd, const char *command);
-    int CopyOutput(int fd);
+    int CopyOutput(int fd, bool echo);
 
     string mCommand;
     string mUser;
