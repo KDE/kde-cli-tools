@@ -25,7 +25,9 @@
 #include <kdebug.h>
 #include <kcmdlineargs.h>
 #include <ksycoca.h>
+#if defined Q_WS_X11
 #include <X11/Xutil.h>
+#endif
 
 FileTypeDialog::FileTypeDialog( KMimeType::Ptr mime )
   : KDialogBase( 0L, 0, false, QString::null, /* Help | */ Cancel | Apply | Ok,
@@ -112,12 +114,14 @@ int main(int argc, char ** argv)
     kdFatal() << "Mimetype " << args->arg(0) << " not found" << endl;
 
   FileTypeDialog dlg( mime );
+#if defined Q_WS_X11
   if( args->isSet( "parent" )) {
     bool ok;
     long id = args->getOption("parent").toLong(&ok);
     if (ok)
       XSetTransientForHint( qt_xdisplay(), dlg.winId(), id );
   }
+#endif
   args->clear();
   dlg.setCaption( i18n("Edit File Type %1").arg(mime->name()) );
   app.setMainWidget( &dlg );
