@@ -209,8 +209,10 @@ int ConnectionHandler::doCommand(QCString buf)
 	respond(Res_OK);
 	break;
 
-    case Lexer::Tok_exec:  // "EXEC command:string user:string\n"
+    case Lexer::Tok_exec:  // "EXEC command:string user:string [options:string (env:string)*]\n"
     {
+        QCString options;
+        QCStringList env;
 	tok = l->lex();
 	if (tok != Lexer::Tok_str)
 	    goto parse_error;
@@ -219,8 +221,21 @@ int ConnectionHandler::doCommand(QCString buf)
 	if (tok != Lexer::Tok_str)
 	    goto parse_error;
 	user = l->lval();
-	if (l->lex() != '\n')
-	    goto parse_error;
+	tok = l->lex();
+	if (tok != '\n')
+	{
+	    if (tok != Lexer::Tok_str)
+		goto parse_error;
+	    options = l->lval();
+            tok = l->lex();
+	    while (tok != '\n')
+            {
+               if (tok != Lexer::Tok_str)
+	           goto parse_error;
+	       env.append(l->lval());
+               tok = l->lex();
+            }
+	}
 
 	QCString auth_user;
 	if ((m_Scheduler != SuProcess::SchedNormal) || (m_Priority > 50))
@@ -265,8 +280,11 @@ int ConnectionHandler::doCommand(QCString buf)
 	    SuProcess proc;
 	    proc.setCommand(command);
 	    proc.setUser(user);
+	    if (options.contains('x'))
+	       proc.setXOnly(true);
 	    proc.setPriority(m_Priority);
 	    proc.setScheduler(m_Scheduler);
+	    proc.setEnvironment(env);
 	    ret = proc.exec(pass.data());
 	} else
 	{

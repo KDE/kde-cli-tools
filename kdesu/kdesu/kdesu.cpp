@@ -21,6 +21,10 @@
 #include <qstring.h>
 #include <qfileinfo.h>
 #include <qglobal.h>
+#include <qfile.h>
+#include <qdir.h>
+
+#include <dcopclient.h>
 
 #include <kdebug.h>
 #include <kglobal.h>
@@ -53,9 +57,24 @@ static KCmdLineOptions options[] = {
     { "t", I18N_NOOP("Enable terminal output (no password keeping)."), 0 },
     { "p <prio>", I18N_NOOP("Set priority value: 0 <= prio <= 100, 0 is lowest."), "50" },
     { "r", I18N_NOOP("Use realtime scheduling."), 0 },
+    { "nonewdcop", I18N_NOOP("Let command use existing dcopserver."), 0 },
     { 0, 0, 0 }
 };
 
+
+QCString dcopNetworkId()
+{
+    QCString result;
+    result.resize(1025);
+    QFile file(DCOPClient::dcopServerFile());
+    if (!file.open(IO_ReadOnly))
+        return "";
+    int i = file.readLine(result.data(), 1024);
+    if (i <= 0)
+        return "";
+    result.data()[i-1] = '\0'; // strip newline
+    return result;
+}
 
 int main(int argc, char *argv[])
 {
@@ -71,6 +90,7 @@ int main(int argc, char *argv[])
     KCmdLineArgs::init(argc, argv, &aboutData);
     KCmdLineArgs::addCmdLineOptions(options);
     KCmdLineArgs *args = KCmdLineArgs::parsedArgs();
+    KApplication::disableAutoDcopRegistration();
 
     KApplication *app = new KApplication;
 
@@ -197,11 +217,25 @@ int main(int argc, char *argv[])
     // Try to exec the command with kdesud.
     bool keep = !args->isSet("n") && have_daemon;
     bool terminal = args->isSet("t");
+    bool new_dcop = args->isSet("newdcop");
+
+    QCStringList env;
+    QCString options;
+    if (!new_dcop)
+    {
+        QCString iceauth = "ICEAUTHORITY="+QFile::encodeName(QDir::homeDirPath())+"/.ICEauthority";
+        QCString dcop = "DCOPSERVER="+dcopNetworkId();	    
+        QCString ksycoca = "KDESYCOCA="+QFile::encodeName(locateLocal("tmp", "ksycoca"));
+        env << iceauth << dcop << ksycoca;
+        
+        options += "x"; // X-only
+    }
+
     if (keep && !terminal && !just_started) 
     {
 	client.setPriority(priority);
 	client.setScheduler(scheduler);
-	if (client.exec(command, user) != -1)
+	if (client.exec(command, user, options, env) != -1)
 	    return 0;
     }
 
@@ -267,19 +301,23 @@ int main(int argc, char *argv[])
 	return system(command);
 
     // Run command
-
     if (keep && have_daemon) 
     {
 	client.setPass(password, timeout);
 	client.setPriority(priority);
 	client.setScheduler(scheduler);
-	return client.exec(command, user);
+	return client.exec(command, user, options, env);
     } else 
     {
 	SuProcess proc;
 	proc.setTerminal(terminal);
 	proc.setErase(true);
 	proc.setUser(user);
+	if (!new_dcop)
+	{
+	    proc.setXOnly(true);
+	    proc.setEnvironment(env);
+	}
 	proc.setPriority(priority);
 	proc.setScheduler(scheduler);
 	proc.setCommand(command);
