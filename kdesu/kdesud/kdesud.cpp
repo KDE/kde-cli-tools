@@ -58,7 +58,7 @@
 #include <sys/select.h>		// Needed on some systems.
 #endif
 
-#include <qvector.h>
+#include <qptrvector.h>
 #include <qfile.h>
 #include <qregexp.h>
 
@@ -302,7 +302,7 @@ int main(int argc, char *argv[])
     maxfd = QMAX(maxfd, x11Fd);
 
     repo = new Repository;
-    QVector<ConnectionHandler> handler;
+    QPtrVector<ConnectionHandler> handler;
     handler.setAutoDelete(true);
 
     // Signal handlers 
