@@ -1,7 +1,7 @@
 #ifndef _FILETYPESVIEW_H
 #define _FILETYPESVIEW_H
 
-#include <qlist.h>
+#include <qptrlist.h>
 #include <qmap.h>
 
 #include <kcmodule.h>
