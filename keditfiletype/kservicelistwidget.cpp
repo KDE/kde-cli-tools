@@ -309,6 +309,21 @@ void KServiceListWidget::editService()
 
 void KServiceListWidget::removeService()
 {
+  // TODO check if service is associated with this mimetype or with one
+  // of its parents
+  // Here are some strings already so that we don't have to break translations
+  // later on.
+  QString msg1 = i18n("The service <b>%1</b> can not be removed.");
+  QString msg2 = i18n("The service is listed here because it has been associated "
+                     "with the <b>%1</b> (%2) file type and files of type "
+                     "<b>%3</b> (%4) are per definition also of type "
+                     "<b>%5</b>.");
+  QString msg3 = i18n("Either select the <b>%1</b> file type to remove the "
+                      "service from there or move the service down "
+                      "to deprecate it.");
+  QString msg4 = i18n("Do you want to remove the service from the <b>%1</b> "
+                      "file type or from the <b>%2</b> file type?");
+
   int selected = servicesLB->currentItem();
 
   if ( selected >= 0 ) {
