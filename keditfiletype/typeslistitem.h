@@ -34,7 +34,7 @@ public:
   void setComment(QString c) { m_comment = c; }
   bool isMeta() const { return metaType; }
   QString icon() const { return m_icon; }
-  void setIcon(QString i) { m_icon = i; }
+  void setIcon(const QString& i); 
   QStringList patterns() const { return m_patterns; }
   void setPatterns(const QStringList &p) { m_patterns = p; }
   QStringList appServices() const { return m_appServices; }

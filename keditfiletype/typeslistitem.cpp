@@ -2,6 +2,7 @@
 #include <qtooltip.h>
 
 #include <kdebug.h>
+#include <kiconloader.h>
 #include <kservice.h>
 #include <kuserprofile.h>
 #include <kglobal.h>
@@ -333,3 +334,8 @@ void TypesListItem::saveServices( KSimpleConfig & profile, QStringList services,
   }
 }
 
+void TypesListItem::setIcon( const QString& icon )
+{
+  m_icon = icon;
+  setPixmap( 0, SmallIcon( icon ) );
+}
