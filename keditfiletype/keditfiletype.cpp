@@ -76,7 +76,7 @@ void FileTypeDialog::clientChanged(bool state)
 static KCmdLineOptions options[] =
 {
   { "+mimetype",   I18N_NOOP("File type to edit (e.g. text/html)"), 0 },
-  { 0, 0, 0}
+  KCmdLineLastOption
 };
 
 int main(int argc, char ** argv)

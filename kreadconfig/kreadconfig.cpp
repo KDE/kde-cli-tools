@@ -39,7 +39,7 @@ static KCmdLineOptions options[] =
         { "key <key>", I18N_NOOP("Key to look for"), 0 },
         { "default <default>", I18N_NOOP("Default value"), 0 },
 	{ "type <type>", I18N_NOOP("Type of variable"), 0 },
-	{ 0, 0, 0 }
+        KCmdLineLastOption
 };
 int main(int argc, char **argv)
 {
@@ -66,7 +66,7 @@ int main(int argc, char **argv)
 	   konfig = KGlobal::config();
 	else
 	   konfig = new KConfig(file, true, false);
-	   
+
 	konfig->setGroup(group);
 	if(type=="bool") {
 		dflt=dflt.lower();
