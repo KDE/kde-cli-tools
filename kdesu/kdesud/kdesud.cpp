@@ -241,6 +241,7 @@ int main(int argc, char *argv[])
     aboutData.addAuthor("Geert Jansen", I18N_NOOP("Author"),
 	    "jansen@kde.org", "http://www.stack.nl/~geertj/");
     KCmdLineArgs::init(argc, argv, &aboutData);
+    KApplication app(false, false);
 
     // Set core dump size to 0
     struct rlimit rlim;
