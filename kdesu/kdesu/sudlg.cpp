@@ -22,11 +22,11 @@ KDEsuDialog::KDEsuDialog(QCString user, QCString auth_user, bool enableKeep)
 
     QString prompt;
     if (m_User == "root")
-	prompt = i18n("The action you requested needs root priviliges. "
+	prompt = i18n("The action you requested needs root privileges. "
 		"Please enter root's password below or click "
-		"Ignore to continue with your current priviliges.");
+		"Ignore to continue with your current privileges.");
     else
-	prompt = i18n("The action you requested needs additional priviliges. "
+	prompt = i18n("The action you requested needs additional privileges. "
 		"Please enter the password for \"%1\" below or click "
 		"Ignore to continue with your current privileges.").arg(m_User);
     setPrompt(prompt);
