@@ -97,9 +97,10 @@ void KStart::sendRule() {
     KXMessages msg;
     QCString message;
     if( windowtitle )
-        message += "title=" + windowtitle + "\ntitleregexp=true\n";
+        message += "title=" + windowtitle + "\ntitlematch=3\n"; // 3 = regexp match
     if( windowclass )
-        message += "wmclass=" + windowclass + "\nwmclasscomplete="
+        message += "wmclass=" + windowclass + "\nwmclassmatch=1\n" // 1 = exact match
+            + "wmclasscomplete="
             // if windowclass contains a space (i.e. 2 words, use whole WM_CLASS)
             + ( windowclass.contains( ' ' ) ? "true" : "false" ) + "\n";
     if( windowtitle || windowclass ) {
@@ -157,8 +158,8 @@ void KStart::windowAdded(WId w){
 
     if ( windowtitle ) {
 	QString title = info.name().lower();
-	QRegExp r( windowtitle );
-	if (r.match(windowtitle) == -1)
+	QRegExp r( windowtitle.lower());
+	if (r.match(title) == -1)
 	    return; // no match
     }
     if ( windowclass ) {
@@ -269,7 +270,8 @@ static KCmdLineOptions options[] =
   { "window <regexp>", I18N_NOOP("A regular expression matching the window title"), 0 },
   { "windowclass <class>", I18N_NOOP("A string matching the window class (WM_CLASS property)\n"
                   "The window class can be found out by running\n"
-                  "'xprop | grep WM_CLASS' and clicking on a window.\n"
+                  "'xprop | grep WM_CLASS' and clicking on a window\n"
+                  "(use either both parts separated by a space or only the right part).\n"
                   "NOTE: If you specify neither window title nor window class,\n"
                   "then the very first window to appear will be taken;\n"
                   "omitting both options is NOT recommended."), 0 },
@@ -334,8 +336,6 @@ int main( int argc, char *argv[] )
 
   windowtitle = args->getOption( "window" );
   windowclass = args->getOption( "windowclass" );
-  if( windowtitle )
-      windowtitle = windowtitle.lower();
   if( windowclass )
       windowclass = windowclass.lower();
   
