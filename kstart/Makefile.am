@@ -9,7 +9,7 @@ LDADD   =       $(LIB_KDECORE)
 #######	Files
 
 bin_PROGRAMS	= kstart
-kstart_SOURCES	= kstart.C
+kstart_SOURCES	= kstart.cpp
 METASOURCES =	kstart.moc 
 
 noinst_HEADERS = kstart.h version.h
