@@ -4,6 +4,7 @@
 #include <qptrlist.h>
 #include <qmap.h>
 
+#include <kconfig.h>
 #include <kcmodule.h>
 
 #include "typeslistitem.h"
@@ -44,6 +45,7 @@ protected slots:
   void setDirty(bool state);
 
   void slotDatabaseChanged();
+  void slotEmbedMajor(const QString &major, bool &embed);
 
 protected:
   void readFileTypes();
@@ -66,6 +68,7 @@ private:
 
   QValueList<TypesListItem *> m_itemsModified;
 
+  KSharedConfig::Ptr m_konqConfig;
 };
 
 #endif

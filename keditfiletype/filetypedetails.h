@@ -7,6 +7,7 @@ class KIconButton;
 class QLineEdit;
 class QListBox;
 class QButtonGroup;
+class QCheckBox;
 class QRadioButton;
 class QPushButton;
 class KServiceListWidget;
@@ -27,8 +28,10 @@ public:
 
 protected:
   void updateRemoveButton();
+  void updateAskSave();
 
 signals:
+  void embedMajor(const QString &major, bool &embed); // To adjust whether major type is being embedded
   void changed(bool);
 
 protected slots:
@@ -38,6 +41,7 @@ protected slots:
   void removeExtension();
   void enableExtButtons(int index);
   void slotAutoEmbedClicked(int button);
+  void slotAskSaveToggled(bool);
 
 private:
   TypesListItem * m_item;
@@ -52,8 +56,9 @@ private:
   // Second tab - Embedding
   QButtonGroup *m_autoEmbed;
   KServiceListWidget *embedServiceListWidget;
+  QRadioButton *m_rbOpenSeparate;
+  QCheckBox *m_chkAskSave;
   QRadioButton *m_rbGroupSettings;
-
 };
 
 #endif

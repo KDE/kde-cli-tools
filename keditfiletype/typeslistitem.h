@@ -72,6 +72,9 @@ public:
   void setAutoEmbed( int a ) { m_autoEmbed = a; }
   const KMimeType::Ptr& mimeType() const { return m_mimetype; }
 
+  void getAskSave(bool &);
+  void setAskSave(bool);
+
   // Whether the service s lists this mimetype explicitly
   KMimeType::Ptr findImplicitAssociation(const QString &desktop);
 
@@ -96,6 +99,7 @@ private:
   unsigned int metaType:1;
   unsigned int m_bNewItem:1;
   unsigned int m_bFullInit:1;
+  unsigned int m_askSave:2; // 0 yes, 1 no, 2 default
   QString m_major, m_minor, m_comment, m_icon;
   QStringList m_patterns;
   QStringList m_appServices;

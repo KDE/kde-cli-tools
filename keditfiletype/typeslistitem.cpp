@@ -17,6 +17,7 @@
    Boston, MA 02111-1307, USA.
 */
 
+#include <kconfig.h>
 #include <kdebug.h>
 #include <kiconloader.h>
 #include <kstandarddirs.h>
@@ -29,21 +30,21 @@ QMap< QString, QStringList >* TypesListItem::s_changedServices;
 static KStaticDeleter< QMap< QString, QStringList > > deleter;
 
 TypesListItem::TypesListItem(QListView *parent, const QString & major)
-  : QListViewItem(parent), metaType(true), m_bNewItem(false)
+  : QListViewItem(parent), metaType(true), m_bNewItem(false), m_askSave(2)
 {
   initMeta(major);
   setText(0, majorType());
 }
 
 TypesListItem::TypesListItem(TypesListItem *parent, KMimeType::Ptr mimetype, bool newItem)
-  : QListViewItem(parent), metaType(false), m_bNewItem(newItem)
+  : QListViewItem(parent), metaType(false), m_bNewItem(newItem), m_askSave(2)
 {
   init(mimetype);
   setText(0, minorType());
 }
 
 TypesListItem::TypesListItem(QListView *parent, KMimeType::Ptr mimetype)
-  : QListViewItem(parent), metaType(false), m_bNewItem(false)
+  : QListViewItem(parent), metaType(false), m_bNewItem(false), m_askSave(2)
 {
   init(mimetype);
   setText(0, majorType());
@@ -58,10 +59,10 @@ void TypesListItem::initMeta( const QString & major )
   m_bFullInit = true;
   m_mimetype = 0L;
   m_major = major;
-  KConfig config("konquerorrc", true);
-  config.setGroup("EmbedSettings");
+  KSharedConfig::Ptr config = KSharedConfig::openConfig("konquerorrc", false, false);
+  config->setGroup("EmbedSettings");
   bool defaultValue = defaultEmbeddingSetting( major );
-  m_autoEmbed = config.readBoolEntry( QString::fromLatin1("embed-")+m_major, defaultValue ) ? 0 : 1;
+  m_autoEmbed = config->readBoolEntry( QString::fromLatin1("embed-")+m_major, defaultValue ) ? 0 : 1;
 }
 
 bool TypesListItem::defaultEmbeddingSetting( const QString& major )
@@ -205,13 +206,16 @@ bool TypesListItem::isDirty() const
   }
   else
   {
-    KConfig config("konquerorrc", true);
-    config.setGroup("EmbedSettings");
+    KSharedConfig::Ptr config = KSharedConfig::openConfig("konquerorrc", false, false);
+    config->setGroup("EmbedSettings");
     bool defaultValue = defaultEmbeddingSetting(m_major);
-    unsigned int oldAutoEmbed = config.readBoolEntry( QString::fromLatin1("embed-")+m_major, defaultValue ) ? 0 : 1;
+    unsigned int oldAutoEmbed = config->readBoolEntry( QString::fromLatin1("embed-")+m_major, defaultValue ) ? 0 : 1;
     if ( m_autoEmbed != oldAutoEmbed )
       return true;
   }
+  
+  if (m_askSave != 2)
+    return true;
 
   // nothing seems to have changed, it's not dirty.
   return false;
@@ -222,10 +226,28 @@ void TypesListItem::sync()
   Q_ASSERT(m_bFullInit);
   if ( isMeta() )
   {
-    KConfig config("konquerorrc");
-    config.setGroup("EmbedSettings");
-    config.writeEntry( QString::fromLatin1("embed-")+m_major, m_autoEmbed == 0 );
+    KSharedConfig::Ptr config = KSharedConfig::openConfig("konquerorrc", false, false);
+    config->setGroup("EmbedSettings");
+    config->writeEntry( QString::fromLatin1("embed-")+m_major, m_autoEmbed == 0 );
     return;
+  }
+
+  if (m_askSave != 2)
+  {
+    KSharedConfig::Ptr config = KSharedConfig::openConfig("konquerorrc", false, false);
+    config->setGroup("Notification Messages");
+    if (m_askSave == 0)
+    {
+       // Ask
+       config->deleteEntry("askSave"+name());
+       config->deleteEntry("askEmbedOrSave"+name());
+    }
+    else
+    {
+       // Do not ask, open
+       config->writeEntry("askSave"+name(), "no" );
+       config->writeEntry("askEmbedOrSave"+name(), "no" );
+    }
   }
 
   if (isMimeTypeDirty())
@@ -507,4 +529,20 @@ void TypesListItem::reset()
 {
     if( s_changedServices )
         s_changedServices->clear();
+}
+
+void TypesListItem::getAskSave(bool &_askSave)
+{
+    if (m_askSave == 0)
+       _askSave = true;
+    if (m_askSave == 1)
+       _askSave = false;
+}
+
+void TypesListItem::setAskSave(bool _askSave)
+{
+   if (_askSave)
+      m_askSave = 0;
+   else
+      m_askSave = 1;
 }

@@ -1,8 +1,11 @@
-#include <qvbuttongroup.h>
-#include <qradiobutton.h>
+#include <qcheckbox.h>
 #include <qlayout.h>
+#include <qradiobutton.h>
+#include <qvbuttongroup.h>
 #include <qwhatsthis.h>
 
+#include <kapplication.h>
+#include <kconfig.h>
 #include <kdebug.h>
 #include <kicondialog.h>
 #include <klineedit.h>
@@ -105,6 +108,9 @@ FileTypeDetails::FileTypeDetails( QWidget * parent, const char * name )
   m_rbGroupSettings = new QRadioButton( i18n("Use settings for '%1' group"), m_autoEmbed );
   connect(m_autoEmbed, SIGNAL( clicked( int ) ), SLOT( slotAutoEmbedClicked( int ) ));
 
+  m_chkAskSave = new QCheckBox( i18n("Ask whether to save to disk instead"), m_autoEmbed);
+  connect(m_chkAskSave, SIGNAL( toggled(bool) ), SLOT( slotAskSaveToggled(bool) ));
+
   QWhatsThis::add( m_autoEmbed, i18n("Here you can configure what the Konqueror file manager"
     " will do when you click on a file of this type. Konqueror can display the file in"
     " an embedded viewer or start up a separate application. If set to 'Use settings for G group',"
@@ -181,9 +187,80 @@ void FileTypeDetails::removeExtension()
 
 void FileTypeDetails::slotAutoEmbedClicked( int button )
 {
+  if ( !m_item || (button > 2))
+    return;
+
+  m_item->setAutoEmbed( button );
+
+  updateAskSave();
+
+  emit changed(true);
+}
+
+void FileTypeDetails::updateAskSave()
+{
   if ( !m_item )
     return;
-  m_item->setAutoEmbed( button );
+        
+  int button = m_item->autoEmbed();  
+  if (button == 2)
+  {
+    bool embedParent = TypesListItem::defaultEmbeddingSetting(m_item->majorType());
+    emit embedMajor(m_item->majorType(), embedParent);
+    button = embedParent ? 0 : 1;
+  }
+
+  QString mimeType = m_item->name();
+
+  QString dontAskAgainName;
+
+  if (button == 0) // Embedded
+    dontAskAgainName = "askEmbedOrSave"+mimeType;
+  else
+    dontAskAgainName = "askSave"+mimeType;
+
+  KSharedConfig::Ptr config = KSharedConfig::openConfig("konquerorrc", false, false);
+  config->setGroup("Notification Messages");
+  bool ask = config->readEntry(dontAskAgainName).isEmpty();
+  m_item->getAskSave(ask);
+  
+  bool neverAsk = false;
+  
+  if (button == 0)
+  {
+    KMimeType::Ptr mime = KMimeType::mimeType( mimeType );
+    // Don't ask for:
+    // - html (even new tabs would ask, due to about:blank!)
+    // - dirs obviously (though not common over HTTP :),
+    // - images (reasoning: no need to save, most of the time, because fast to see)
+    // e.g. postscript is different, because takes longer to read, so
+    // it's more likely that the user might want to save it.
+    // - multipart/* ("server push", see kmultipart)
+    // - other strange 'internal' mimetypes like print/manager...
+    if ( mime->is( "text/html" ) ||
+         mime->is( "text/xml" ) ||
+         mime->is( "inode/directory" ) ||
+         mimeType.startsWith( "image" ) ||
+         mime->is( "multipart/x-mixed-replace" ) ||
+         mime->is( "multipart/replace" ) ||
+         mimeType.startsWith( "print" ) )
+    {
+        neverAsk = true;
+    }
+  }
+  
+  m_chkAskSave->blockSignals(true);
+  m_chkAskSave->setChecked(ask && !neverAsk);
+  m_chkAskSave->setEnabled(!neverAsk);
+  m_chkAskSave->blockSignals(false);
+}  
+
+void FileTypeDetails::slotAskSaveToggled(bool askSave)
+{
+  if (!m_item)
+    return;
+
+  m_item->setAskSave(askSave);
   emit changed(true);
 }
 
@@ -209,6 +286,8 @@ void FileTypeDetails::setTypeItem( TypesListItem * tlitem )
     extensionLB->insertStringList(tlitem->patterns());
   else
     extensionLB->clear();
+    
+  updateAskSave();
 }
 
 void FileTypeDetails::enableExtButtons(int /*index*/)

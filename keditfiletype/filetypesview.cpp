@@ -7,10 +7,12 @@
 #include <qwidgetstack.h>
 
 #include <dcopclient.h>
+
 #include <kapplication.h>
 #include <kcursor.h>
 #include <kdebug.h>
 #include <kdesktopfile.h>
+#include <kipc.h>
 #include <klineedit.h>
 #include <klistview.h>
 #include <klocale.h>
@@ -25,6 +27,7 @@
 FileTypesView::FileTypesView(QWidget *p, const char *name)
   : KCModule(p, name)
 {
+  m_konqConfig = KSharedConfig::openConfig("konquerorrc", false, false);
 
   KServiceTypeProfile::setConfigurationMode();
   setButtons(Help | Apply | Cancel | Ok);
@@ -92,6 +95,8 @@ FileTypesView::FileTypesView(QWidget *p, const char *name)
   m_details = new FileTypeDetails( m_widgetStack );
   connect( m_details, SIGNAL( changed(bool) ),
            this, SLOT( setDirty(bool) ) );
+  connect( m_details, SIGNAL( embedMajor(const QString &, bool &) ),
+           this, SLOT( slotEmbedMajor(const QString &, bool &)));
   m_widgetStack->addWidget( m_details, 1 /*id*/ );
 
   // File Group Details
@@ -167,6 +172,18 @@ void FileTypesView::readFileTypes()
     }
     updateDisplay(0L);
 
+}
+
+void FileTypesView::slotEmbedMajor(const QString &major, bool &embed)
+{
+    TypesListItem *groupItem;
+    QMapIterator<QString,TypesListItem*> mit = m_majorMap.find( major );
+    if ( mit == m_majorMap.end() )
+        return;
+        
+    groupItem = mit.data();
+    
+    embed = (groupItem->autoEmbed() == 0);
 }
 
 void FileTypesView::slotFilter(const QString & patternFilter)
@@ -356,6 +373,9 @@ bool FileTypesView::sync( QValueList<TypesListItem *>& itemsModified )
     }
     ++it2;
   }
+
+  m_konqConfig->sync();
+
   setDirty(false);
   return didIt;
 }
@@ -371,6 +391,7 @@ void FileTypesView::save()
   if (sync(m_itemsModified)) {
     // only rebuild if sync() was necessary
     KService::rebuildKSycoca(this);
+    KIPC::sendMessageAll(KIPC::SettingsChanged);
   }
 }
 
