@@ -14,6 +14,8 @@
 #include <kprocess.h>
 #include <qregexp.h>
 #include <klocale.h>
+#include <kwm.h>
+#include <kapp.h>
 
 void execute(const char* cmd){
   KShellProcess proc;
@@ -21,8 +23,7 @@ void execute(const char* cmd){
   proc.start(KShellProcess::DontCare);
 }
 
-KStart::KStart(KWMModuleApplication* kwmmapp_arg,
-	       const char* command_arg,
+KStart::KStart(const char* command_arg,
 	       const char* window_arg,
 	       int desktop_arg,
 	       bool activate_arg,
@@ -32,7 +33,7 @@ KStart::KStart(KWMModuleApplication* kwmmapp_arg,
 	       int decoration_arg
 	       )
   :QObject(){
-    kwmmapp = kwmmapp_arg;
+    kwinmodule = new KWinModule;
     command = command_arg;
     window = window_arg;
     desktop = desktop_arg;
@@ -44,13 +45,14 @@ KStart::KStart(KWMModuleApplication* kwmmapp_arg,
 
     // just connect to the initialized() signal, we want to be
     // informed if we recieved all existing windows
-    connect(kwmmapp, SIGNAL(initialized()), SLOT(initialized()));
-    kwmmapp->connectToKWM();
+    //connect(kwinmodule, SIGNAL(initialized()), SLOT(initialized()));
+    //kwinmodule->connectToKWM();
+    initialized();
 }
 
 void KStart::initialized(){
     // ok, we are initialized. Now connect to window add to get the NEW windows
-    connect(kwmmapp, SIGNAL(windowAdd(Window)), SLOT(windowAdd(Window)));
+    connect(kwinmodule, SIGNAL(windowAdd(WId)), SLOT(windowAdd(WId)));
     if (window) {
 	KWM::doNotManage(window);
 	XSync(qt_xdisplay(), False);
@@ -59,7 +61,7 @@ void KStart::initialized(){
     execute(command);
 }
 
-void KStart::windowAdd(Window w){
+void KStart::windowAdd(WId w){
     if (window) {
 	QString t = KWM::title(w);
 	QRegExp r = window;
@@ -80,7 +82,10 @@ void KStart::applyStyle(Window w) {
 	KWM::prepareForSwallowing(w);
     if (desktop >= 0) {
 	if (KWM::desktop(w) != desktop)
+        {
+            debug("moving window to desktop %d",desktop);
 	    KWM::moveToDesktop(w, desktop);
+        }
     }
     if (maximize) {
 	debug("do maximize");
@@ -181,12 +186,12 @@ int main( int argc, char *argv[] )
     if (!strcmp(argv[i],"-staysontop") ) staysOnTop = KWM::staysOnTop;
   }
 
-  KWMModuleApplication a (argc, argv, "kstart");
+  KApplication a (argc, argv, "kstart");
 
   fcntl(ConnectionNumber(qt_xdisplay()), F_SETFD, 1);
 
 
-  new KStart(&a, argv[1], window, desktop, activate, maximize, iconify, sticky, decoration | noFocus | staysOnTop);
+  new KStart(argv[1], window, desktop, activate, maximize, iconify, sticky, decoration | noFocus | staysOnTop);
 
 
   return a.exec();

@@ -18,7 +18,7 @@
 #include <qwidget.h>
 #include <qpopupmenu.h>
 #include <qstrlist.h>
-#include <kwmmapp.h>
+#include <kwinmodule.h>
 #include <qdialog.h>
 #include <qlabel.h>
 #include <qpushbutton.h>
@@ -28,8 +28,7 @@ class KStart: public QObject {
   Q_OBJECT
 
 public:
-  KStart(KWMModuleApplication* kwmmapp_arg,
-	 const char* command_arg,
+  KStart(const char* command_arg,
 	 const char* window_arg,
 	 int desktop_arg,
 	 bool activate_arg,
@@ -42,14 +41,14 @@ public:
 public slots:
 
   void initialized();
-  void windowAdd(Window);
+  void windowAdd(WId);
 
 private:
     
   void applyStyle(Window);
     
     
-  KWMModuleApplication* kwmmapp;
+  KWinModule* kwinmodule;
   QString command;
   QString window;
   int desktop;

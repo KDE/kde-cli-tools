@@ -5,6 +5,9 @@
  Developed and maintained by Matthias Ettrich (ettrich@kde.org)
 
 
+1999-11-20  David Faure  <faure@kde.org>
+
+     * ported to KWinModule
 
 In 0.9 patchlevel 1:
 
