@@ -47,10 +47,13 @@
 QCString command;
 const char *Version = "1.0";
 
+// NOTE: if you change the position of the -u switch, be sure to adjust it
+// at the beginning of main()
 static KCmdLineOptions options[] = {
     { "+command", I18N_NOOP("Specifies the command to run."), 0 },
     { "c <command>", I18N_NOOP("Specifies the command to run."), "" },
     { "f <file>", I18N_NOOP("Run command under target uid if <file> is not writeable."), "" },
+    // FIXME 3.1: add dot at eol for consistency
     { "u <user>", I18N_NOOP("Specifies the target uid"), "root" },
     { "n", I18N_NOOP("Do not keep password."), 0 },
     { "s", I18N_NOOP("Stop the daemon (forgets all passwords)."), 0 },
@@ -78,6 +81,14 @@ QCString dcopNetworkId()
 
 int main(int argc, char *argv[])
 {
+    // FIXME: this can be considered a poor man's solution, as it's not
+    // directly obvious to a gui user. :)
+    // anyway, i vote against removing it even when we have a proper gui
+    // implementation.  -- ossi
+    const char *duser = ::getenv("ADMIN_ACCOUNT");
+    if (duser && duser[0])
+        options[3].def = duser;
+
     KAboutData aboutData("kdesu", I18N_NOOP("KDE su"),
 	    Version, I18N_NOOP("Runs a program with elevated privileges."),
 	    KAboutData::License_Artistic, 
