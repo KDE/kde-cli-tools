@@ -32,9 +32,11 @@ FileTypesView::FileTypesView(QWidget *p, const char *name)
 {
   QString wtstr;
   setButtons(Cancel|Apply|Ok);
-  QHBoxLayout *topLayout = new QHBoxLayout(this, KDialog::marginHint(),
-                                           KDialog::spacingHint());
+  QVBoxLayout *wrapper = new QVBoxLayout(this, KDialog::marginHint(),
+					 KDialog::spacingHint());
+  QHBoxLayout *topLayout = new QHBoxLayout;
 
+  wrapper->addLayout(topLayout);
   QGridLayout *leftLayout = new QGridLayout(2, 2);
   topLayout->addLayout(leftLayout, 2);
 
@@ -169,7 +171,7 @@ FileTypesView::FileTypesView(QWidget *p, const char *name)
 
   QWhatsThis::add( servNewButton, i18n( "Add a new application for this file type." ) );
 
-  //rightLayout->addStretch(1);
+  wrapper->addStretch(1);
 
   init();
 }
