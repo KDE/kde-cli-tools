@@ -298,7 +298,7 @@ int main(int argc, char *argv[])
         KStartupInfoId id;
         id.initId( app->startupId());
 	KStartupInfoData data;
-	data.setSuspend( KStartupInfoData::Yes );
+	data.setSilent( KStartupInfoData::Yes );
 	KStartupInfo::sendChange( id, data );
 	KDEsuDialog dlg(user, auth_user, keep && !terminal);
 	dlg.addLine(i18n("Command:"), command);
@@ -320,7 +320,7 @@ int main(int argc, char *argv[])
 	    change_uid = false;
 	password = dlg.password();
 	keep = dlg.keep();
-	data.setSuspend( KStartupInfoData::No );
+	data.setSilent( KStartupInfoData::No );
 	KStartupInfo::sendChange( id, data );
     }
 
