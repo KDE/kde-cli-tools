@@ -31,7 +31,10 @@ void Repository::add(const QCString &key, Data_entry &data)
     if (repo.find(key) != repo.end())
 	remove(key);
 
-    data.timeout += time(0L);
+    if (data.timeout == 0)
+	data.timeout = (unsigned) -1;
+    else
+	data.timeout += time(0L);
     head_time = QMIN(head_time, data.timeout);
     repo[key] = data;
 }
@@ -71,7 +74,8 @@ int Repository::expire()
 
     unsigned t;
     head_time = (unsigned) -1;
-    for (repo_cit=repo.begin(); repo_cit!=repo.end(); repo_cit++) {
+    for (repo_cit=repo.begin(); repo_cit!=repo.end(); repo_cit++) 
+    {
 	t = repo_cit.data().timeout;
 	if (current >= t)
 	    keys.push(repo_cit.key());

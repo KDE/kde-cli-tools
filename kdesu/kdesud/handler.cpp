@@ -67,7 +67,8 @@ void ConnectionHandler::respond(int ok, QCString s)
 	assert(1);
     }
 
-    if (!s.isEmpty()) {
+    if (!s.isEmpty()) 
+    {
 	buf += ' ';
 	buf += s;
     }
@@ -76,26 +77,27 @@ void ConnectionHandler::respond(int ok, QCString s)
     send(m_Fd, buf.data(), buf.length(), 0);
 }
 
-QCString ConnectionHandler::makeKey(int namspace, QCString host, 
-	QCString user, QCString command)
+QCString ConnectionHandler::makeKey(int _namespace, QCString s1, 
+	QCString s2, QCString s3)
 {
     QCString res;
-    res.setNum(namspace);
+    res.setNum(_namespace);
     res += "*";
-    res += host + "*" + user + "*" + command;
+    res += s1 + "*" + s2 + "*" + s3;
     return res;
 }
 
-/**
+/*
  * Parse and do one command. On a parse error, return -1. This will 
  * close the socket in the main accept loop.
  */
 
 int ConnectionHandler::doCommand()
 {
-    if ((uid_t) peerUid() != getuid()) {
-	kDebugError("Peer uid not equal to me");
-	kDebugError("Peer: %d, Me: %d", peerUid(), (int) getuid());
+    if ((uid_t) peerUid() != getuid()) 
+    {
+	kdWarning(1205) << "Peer uid not equal to me\n";
+	kdWarning(1205) << "Peer: " << peerUid() << " Me: " << getuid() << "\n";
 	return -1;
     }
 
@@ -118,7 +120,8 @@ int ConnectionHandler::doCommand()
     Data_entry data;
     const Data_entry *pdata;
 
-    switch (tok) {
+    switch (tok) 
+    {
     case Lexer::Tok_pass: 
 	tok = l->lex();
 	if (tok != Lexer::Tok_str)
@@ -131,7 +134,7 @@ int ConnectionHandler::doCommand()
 	if (l->lex() != '\n')
 	    goto parse_error;
 	respond(Res_OK);
-	kDebugInfo("kdesud: Password set!");
+	kdDebug(1205) << "Password set!\n";
 	break;
 
     case Lexer::Tok_user:
@@ -142,7 +145,7 @@ int ConnectionHandler::doCommand()
 	if (l->lex() != '\n')
 	    goto parse_error;
 	respond(Res_OK);
-	kDebugInfo("kdesud: User set to %s", m_User.data());
+	kdDebug(1205) << "User set to " << m_User << "\n";
 	break;
 
     case Lexer::Tok_host:
@@ -153,7 +156,7 @@ int ConnectionHandler::doCommand()
 	if (l->lex() != '\n')
 	    goto parse_error;
 	respond(Res_OK);
-	kDebugInfo("kdesud: Host set to %s", m_Host.data());
+	kdDebug(1205) << "Host set to " << m_Host << "\n";
 	break;
 
     case Lexer::Tok_prio:
@@ -164,7 +167,7 @@ int ConnectionHandler::doCommand()
 	if (l->lex() != '\n')
 	    goto parse_error;
 	respond(Res_OK);
-	kDebugInfo("kdesud: priority set to %d", m_Priority);
+	kdDebug(1205) << "priority set to " << m_Priority << "\n";
 	break;
 
     case Lexer::Tok_sched:
@@ -175,7 +178,7 @@ int ConnectionHandler::doCommand()
 	if (l->lex() != '\n')
 	    goto parse_error;
 	respond(Res_OK);
-	kDebugInfo("kdesud: Scheduler set to %d", m_Scheduler);
+	kdDebug(1205) << "Scheduler set to " << m_Scheduler << "\n";
 	break;
 
     case Lexer::Tok_exec:
@@ -198,8 +201,10 @@ int ConnectionHandler::doCommand()
 
 	key = makeKey(0, m_Host, auth_user, command);
 	pdata = repo->find(key);
-	if (!pdata) {
-	    if (m_Pass.isNull()) {
+	if (!pdata) 
+	{
+	    if (m_Pass.isNull()) 
+	    {
 		respond(Res_NO);
 		break;
 	    }
@@ -211,13 +216,15 @@ int ConnectionHandler::doCommand()
 	    pass = pdata->value;
 
 	// Execute the command asynchronously
-	kDebugInfo("kdesud: Executing command: %s", command.data());
+	kdDebug(1205) << "Executing command: " << command << "\n";
 	pid_t pid = fork();
-	if (pid < 0) {
-	    kDebugPError("fork()");
+	if (pid < 0) 
+	{
+	    kdDebug(1205) << "fork(): " << strerror(errno) << "\n";
 	    respond(Res_NO);
 	    break;
-	} else if (pid > 0) {
+	} else if (pid > 0) 
+	{
 	    respond(Res_OK);
 	    break;
 	}
@@ -226,14 +233,16 @@ int ConnectionHandler::doCommand()
 	signal(SIGCHLD, SIG_DFL);
 
 	int ret;
-	if (m_Host.isEmpty()) {
+	if (m_Host.isEmpty()) 
+	{
 	    SuProcess proc;
 	    proc.setCommand(command);
 	    proc.setUser(m_User);
 	    proc.setPriority(m_Priority);
 	    proc.setScheduler(m_Scheduler);
 	    ret = proc.exec(pass.data());
-	} else {
+	} else 
+	{
 	    SshProcess proc;
 	    proc.setCommand(command);
 	    proc.setUser(m_User);
@@ -241,11 +250,11 @@ int ConnectionHandler::doCommand()
 	    ret = proc.exec(pass.data());
 	}
 
-	kDebugInfo("kdesud: Command completed");
+	kdDebug(1205) << "Command completed\n";
 	_exit(ret);
     }
 
-    case Lexer::Tok_del:
+    case Lexer::Tok_delCmd:
 	tok = l->lex();
 	if (tok != Lexer::Tok_str)
 	    goto parse_error;
@@ -257,29 +266,52 @@ int ConnectionHandler::doCommand()
 	    goto parse_error;
 	key = makeKey(0, m_Host, m_User, command);
 	pdata = repo->find(key);
-	if (!pdata) {
+	if (!pdata) 
+	{
 	    respond(Res_NO);
 	    break;
 	}
 	repo->remove(key);
 	respond(Res_OK);
-	kDebugInfo("kdesud: Deleted key: %s", (const char *) key);
+	kdDebug(1205) << "Deleted key: " << key << "\n";
+	break;
+
+    case Lexer::Tok_delVar:
+	tok = l->lex();
+	if (tok != Lexer::Tok_str)
+	    goto parse_error;
+	key = makeKey(1, l->lval());
+	tok = l->lex();
+	if (tok != '\n')
+	    goto parse_error;
+	pdata = repo->find(key);
+	if (pdata == 0L)
+	{
+	    respond(Res_NO);
+	    break;
+	}
+	repo->remove(key);
+	respond(Res_OK);
+	kdDebug(1205) << "Deleted key: " << key << "\n";
 	break;
 
     case Lexer::Tok_set:
 	tok = l->lex();
 	if (tok != Lexer::Tok_str)
 	    goto parse_error;
-	key = QCString("1*") + l->lval();
+	key = makeKey(1, l->lval());
 	tok = l->lex();
 	if (tok != Lexer::Tok_str)
 	    goto parse_error;
 	data.value = l->lval();
+	tok = l->lex();
+	if (tok != Lexer::Tok_num)
+	    goto parse_error;
+	data.timeout = l->lval().toInt();
 	if (l->lex() != '\n')
 	    goto parse_error;
-	data.timeout = 86400;
 	repo->add(key, data);
-	kDebugInfo("kdesud: stored key: %s", key.data());
+	kdDebug(1205) << "stored key: " << key << "\n";
 	respond(Res_OK);
 	break;
 
@@ -287,10 +319,10 @@ int ConnectionHandler::doCommand()
 	tok = l->lex();
 	if (tok != Lexer::Tok_str)
 	    goto parse_error;
-	key = QCString("1*") + l->lval();
+	key = makeKey(1, l->lval());
 	if (l->lex() != '\n')
 	    goto parse_error;
-	kDebugInfo("kdesud: request for key: %s", key.data());
+	kdDebug(1205) << "request for key: " << key << "\n";
 	pdata = repo->find(key);
 	if (pdata)
 	    respond(Res_OK, pdata->value);
@@ -303,7 +335,7 @@ int ConnectionHandler::doCommand()
 	if (tok != '\n')
 	    goto parse_error;
 	respond(Res_OK);
-	kDebugInfo("kdesud: PING");
+	kdDebug(1205) << "PING\n";
 	break;
 
     case Lexer::Tok_stop:
@@ -311,12 +343,12 @@ int ConnectionHandler::doCommand()
 	if (tok != '\n')
 	    goto parse_error;
 	respond(Res_OK);
-	kDebugInfo("kdesud: Stopping by command");
+	kdDebug(1205) << "Stopping by command\n";
 	kdesud_cleanup();
 	exit(0);
 
     default:
-	kDebugInfo("kdesud: Uknown command: %s", l->lval().data());
+	kdWarning(1205) << "Uknown command: " << l->lval() << "\n";
 	goto parse_error;
     }
 
@@ -324,13 +356,13 @@ int ConnectionHandler::doCommand()
     return 0;
 
 parse_error:
-    kDebugInfo("kdesud: Parse error");
+    kdWarning(1205) << "Parse error\n";
     delete l;
     return -1;
 }
 
 
-/**
+/*
  * Handle a connection: make sure we don't block
  */
 
@@ -338,34 +370,37 @@ int ConnectionHandler::handle()
 {
     int ret, nbytes;
 
-    /* Add max # bytes to connection buffer */
+    // Add max 100 bytes to connection buffer
 
     char tmpbuf[100];
     nbytes = recv(m_Fd, tmpbuf, 99, 0);
 
-    if (nbytes < 0) {
+    if (nbytes < 0) 
+    {
 	if (errno == EINTR)
 	    return 0;
 	// read error
 	return -1;
-    } else if (nbytes == 0) {
+    } else if (nbytes == 0) 
+    {
 	// eof
-	kDebugInfo("kdesud: eof on fd %d", m_Fd);
+	kdDebug(1205) << "eof on fd " << m_Fd << "\n";
 	return -1;
     }
     tmpbuf[nbytes] = '\000';
 
-    if (m_Buf.length()+nbytes > 500) {
-	kDebugWarning("kdesud: line too long");
+    if (m_Buf.length()+nbytes > 1024) {
+	kdWarning(1205) << "line too long";
 	return -1;
     }
 
     m_Buf.append(tmpbuf);
     memset(tmpbuf, 'x', nbytes);
     
-    /* Do we have a complete command yet? */
+    // Do we have a complete command yet?
 
-    while (m_Buf.find('\n') != -1) {
+    while (m_Buf.find('\n') != -1) 
+    {
 	ret = doCommand();
 	if (ret < 0)
 	    return ret;

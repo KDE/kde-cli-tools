@@ -45,8 +45,8 @@ int Lexer::lex()
     m_Output.fill('x');
     m_Output.resize(0);
 
-    while (1) {
-
+    while (1) 
+    {
 	// newline? 
 	if (c == '\n')
 	    return '\n';
@@ -59,7 +59,8 @@ int Lexer::lex()
 	    while (isspace(c = m_Input[in++]));
 
 	// number?
-	if (isdigit(c)) {
+	if (isdigit(c)) 
+	{
 	    m_Output += c;
 	    while (isdigit(c = m_Input[in++]))
 		m_Output += c;
@@ -68,7 +69,8 @@ int Lexer::lex()
 	}
 
 	// quoted string?
-	if (c == '"') {
+	if (c == '"') 
+	{
 	    c = m_Input[in++];
 	    while ((c != '"') && !iscntrl(c)) {
 		// handle escaped characters
@@ -84,20 +86,22 @@ int Lexer::lex()
 	}
 
 	// normal string
-	while (!isspace(c) && !iscntrl(c)) {
+	while (!isspace(c) && !iscntrl(c)) 
+	{
 	    m_Output += c;
 	    c = m_Input[in++];
 	}
 	in--;
 
 	// command? 
-	if (m_Output.length() <= 4) {
+	if (m_Output.length() <= 4) 
+	{
 	    if (m_Output == "EXEC")
 		return Tok_exec;
 	    if (m_Output == "PASS")
 		return Tok_pass;
 	    if (m_Output == "DEL")
-		return Tok_del;
+		return Tok_delCmd;
 	    if (m_Output == "PING")
 		return Tok_ping;
 	    if (m_Output == "STOP")
@@ -114,6 +118,8 @@ int Lexer::lex()
 		return Tok_sched;
 	    if (m_Output == "PRIO")
 		return Tok_prio;
+	    if (m_Output == "DELV")
+		return Tok_delVar;
 	}
 
 	return Tok_str;

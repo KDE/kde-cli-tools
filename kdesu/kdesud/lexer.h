@@ -33,9 +33,10 @@ public:
 
     enum Tokens { 
 	Tok_none, 
-	Tok_exec=256, Tok_pass, Tok_user, Tok_del, 
+	Tok_exec=256, Tok_pass, Tok_user, Tok_delCmd,
 	Tok_ping, Tok_str, Tok_num , Tok_stop,
-	Tok_set, Tok_get, Tok_host, Tok_prio, Tok_sched
+	Tok_set, Tok_get, Tok_delVar, Tok_host, 
+	Tok_prio, Tok_sched
     };
 
 private:

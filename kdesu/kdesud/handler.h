@@ -33,12 +33,11 @@ public:
     int handle();
 
 private:
+    enum Results { Res_OK, Res_NO };
+
     int doCommand();
     void respond(int ok, QCString s=0);
-    QCString makeKey(int namspace, QCString host, QCString user, 
-	    QCString command);
-
-    enum Results { Res_OK, Res_NO };
+    QCString makeKey(int namspace, QCString s1, QCString s1=0, QCString s3=0);
 
     int m_Fd, m_Timeout;
     int m_Priority, m_Scheduler;
