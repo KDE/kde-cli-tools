@@ -38,6 +38,7 @@ protected slots:
   virtual void slotApply();
   virtual void slotOk();
   void clientChanged(bool state);
+  void slotDatabaseChanged();
 
 protected:
   void save();

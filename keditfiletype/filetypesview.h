@@ -28,8 +28,6 @@ public:
   FileTypesView(QWidget *p = 0, const char *name = 0);
   ~FileTypesView();
 
-  bool sync();
-
   void load();
   void save();
   void defaults();
@@ -46,8 +44,11 @@ protected slots:
   void slotFilter(const QString &patternFilter);
   void setDirty(bool state);
 
+  void slotDatabaseChanged();
+
 protected:
-    void readFileTypes();
+  void readFileTypes();
+  bool sync( QValueList<TypesListItem *>& itemsModified );
 
 private:
   KListView *typesLV;
@@ -65,6 +66,9 @@ private:
   QPtrList<TypesListItem> m_itemList;
   QSplitter *m_splitter;
   QWidget *m_left;
+
+  QValueList<TypesListItem *> m_itemsModified;
+
 };
 
 #endif

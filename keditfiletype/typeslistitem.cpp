@@ -133,23 +133,23 @@ bool TypesListItem::isDirty() const
     if ((m_mimetype->name() != name()) &&
         (name() != "application/octet-stream"))
     {
-      kdDebug() << "Mimetype Name Dirty :" << m_mimetype->name() << " name()=" << name() << endl;
+      kdDebug() << "Mimetype Name Dirty: old=" << m_mimetype->name() << " name()=" << name() << endl;
       return true;
     }
     if (m_mimetype->comment(QString(), false) != m_comment)
     {
-      kdDebug() << "Mimetype Comment Dirty :" << m_mimetype->comment(QString(),false) << " m_comment=" << m_comment << endl;
+      kdDebug() << "Mimetype Comment Dirty: old=" << m_mimetype->comment(QString(),false) << " m_comment=" << m_comment << endl;
       return true;
     }
     if (m_mimetype->icon(QString(), false) != m_icon)
     {
-      kdDebug() << "Mimetype Icon Dirty :" << m_mimetype->icon(QString(),false) << " m_icon=" << m_icon << endl;
+      kdDebug() << "Mimetype Icon Dirty: old=" << m_mimetype->icon(QString(),false) << " m_icon=" << m_icon << endl;
       return true;
     }
 
     if (m_mimetype->patterns() != m_patterns)
     {
-      kdDebug() << "Mimetype Patterns Dirty :" << m_mimetype->patterns().join(";")
+      kdDebug() << "Mimetype Patterns Dirty: old=" << m_mimetype->patterns().join(";")
                 << " m_patterns=" << m_patterns.join(";") << endl;
       return true;
     }
@@ -164,13 +164,13 @@ bool TypesListItem::isDirty() const
 
     if (oldAppServices != m_appServices)
     {
-      kdDebug() << "App Services Dirty :" << oldAppServices.join(";")
+      kdDebug() << "App Services Dirty: old=" << oldAppServices.join(";")
                 << " m_appServices=" << m_appServices.join(";") << endl;
       return true;
     }
     if (oldEmbedServices != m_embedServices)
     {
-      kdDebug() << "Embed Services Dirty :" << oldEmbedServices.join(";")
+      kdDebug() << "Embed Services Dirty: old=" << oldEmbedServices.join(";")
                 << " m_embedServices=" << m_embedServices.join(";") << endl;
       return true;
     }
@@ -402,4 +402,10 @@ bool TypesListItem::isEssential() const
     if ( n == "application/x-desktop" )
         return true;
     return false;
+}
+
+void TypesListItem::refresh()
+{
+    kdDebug() << "TypesListItem refresh " << name() << endl;
+    m_mimetype = KMimeType::mimeType( name() );
 }

@@ -21,6 +21,7 @@
 #include "filetypedetails.h"
 #include "filegroupdetails.h"
 #include "filetypesview.h"
+#include <ksycoca.h>
 
 FileTypesView::FileTypesView(QWidget *p, const char *name)
   : KCModule(p, name)
@@ -111,6 +112,8 @@ FileTypesView::FileTypesView(QWidget *p, const char *name)
   m_widgetStack->raiseWidget( m_emptyWidget );
 
   QTimer::singleShot( 0, this, SLOT( init() ) ); // this takes some time
+
+  connect( KSycoca::self(), SIGNAL( databaseChanged() ), SLOT( slotDatabaseChanged() ) );
 }
 
 FileTypesView::~FileTypesView()
@@ -309,7 +312,7 @@ void FileTypesView::updateDisplay(QListViewItem *item)
     setDirty(false);
 }
 
-bool FileTypesView::sync()
+bool FileTypesView::sync( QValueList<TypesListItem *>& itemsModified )
 {
   bool didIt = false;
   // first, remove those items which we are asked to remove.
@@ -336,6 +339,7 @@ bool FileTypesView::sync()
     if (tli->isDirty()) {
       kdDebug() << "Entry " << tli->name() << " is dirty. Saving." << endl;
       tli->sync();
+      itemsModified.append( tli );
       didIt = true;
     }
   }
@@ -350,12 +354,34 @@ void FileTypesView::load()
 
 void FileTypesView::save()
 {
-  // only send dcop signal if sync() was necessary.
-  if (sync()) {
+  m_itemsModified.clear();
+  if (sync(m_itemsModified)) {
+    // only send dcop signal if sync() was necessary.
     DCOPClient *dcc = kapp->dcopClient();
     if ( !dcc->isAttached() )
 	dcc->attach();
     dcc->send("kded", "kbuildsycoca", "recreate()", QByteArray());
+    // send() returns immediately. This means we don't have to block the UI
+    // while kbuildsycoca runs, unlike KOpenWithDlg.
+    // We'll update the mimetype object when databaseChanged() is emitted.
+  }
+}
+
+void FileTypesView::slotDatabaseChanged()
+{
+  if ( KSycoca::self()->isChanged( "mime" ) )
+  {
+    // ksycoca has new KMimeTypes objects for us, make sure to update
+    // our 'copies' to be in sync with it. Not important for OK, but
+    // important for Apply (how to differenciate those 2?).
+    // See BR 35071.
+    QValueList<TypesListItem *>::Iterator it = m_itemsModified.begin();
+    for( ; it != m_itemsModified.end(); ++it ) {
+        QString name = (*it)->name();
+        if ( removedList.find( name ) == removedList.end() ) // if not deleted meanwhile
+            (*it)->refresh();
+    }
+    m_itemsModified.clear();
   }
 }
 

@@ -56,16 +56,17 @@ public:
   bool isDirty() const;
   void sync();
   void setup();
+  void refresh(); // update m_mimetype from ksycoca when Apply is pressed
 
   static bool defaultEmbeddingSetting(  const QString& major );
 
 private:
   void getServiceOffers( QStringList & appServices, QStringList & embedServices ) const;
   void saveServices( KConfig & profile, QStringList services, const QString & servicetype2 );
-  KMimeType::Ptr m_mimetype;
   void initMeta( const QString & major );
   void init(KMimeType::Ptr mimetype);
 
+  KMimeType::Ptr m_mimetype;
   unsigned int groupCount:16; // shared between saveServices and sync
   unsigned int m_autoEmbed:2; // 0 yes, 1 no, 2 use group setting
   unsigned int metaType:1;

@@ -24,6 +24,7 @@
 #include <kaboutdata.h>
 #include <kdebug.h>
 #include <kcmdlineargs.h>
+#include <ksycoca.h>
 
 FileTypeDialog::FileTypeDialog( KMimeType::Ptr mime )
   : KDialogBase( 0L, 0, true, QString::null, /* Help | */ Cancel | Apply | Ok,
@@ -40,6 +41,8 @@ FileTypeDialog::FileTypeDialog( KMimeType::Ptr mime )
   connect(m_details, SIGNAL(changed(bool)), this, SLOT(clientChanged(bool)));
   // TODO setHelp()
   enableButton(Apply, false);
+
+  connect( KSycoca::self(), SIGNAL( databaseChanged() ), SLOT( slotDatabaseChanged() ) );
 }
 
 void FileTypeDialog::save()
@@ -67,6 +70,14 @@ void FileTypeDialog::clientChanged(bool state)
   // enable/disable buttons
   enableButton(User1, state);
   enableButton(Apply, state);
+}
+
+void FileTypeDialog::slotDatabaseChanged()
+{
+  if ( KSycoca::self()->isChanged( "mime" ) )
+  {
+      m_item->refresh();
+  }
 }
 
 #include "keditfiletype.moc"
