@@ -40,7 +40,7 @@ FileTypesView::FileTypesView(QWidget *p, const char *name)
 
   l->addLayout( leftLayout );
 
-  QLabel *patternFilterLBL = new QLabel(i18n("F&ind filename pattern:"), this);
+  QLabel *patternFilterLBL = new QLabel(i18n("F&ind file name pattern:"), this);
   leftLayout->addMultiCellWidget(patternFilterLBL, 0, 0, 0, 2);
 
   patternFilterLE = new KLineEdit(this);
@@ -50,7 +50,7 @@ FileTypesView::FileTypesView(QWidget *p, const char *name)
   connect(patternFilterLE, SIGNAL(textChanged(const QString &)),
           this, SLOT(slotFilter(const QString &)));
 
-  wtstr = i18n("Enter a part of a filename pattern. Only file types with a "
+  wtstr = i18n("Enter a part of a file name pattern. Only file types with a "
                "matching file pattern will appear in the list.");
 
   QWhatsThis::add( patternFilterLE, wtstr );
@@ -425,7 +425,7 @@ QString FileTypesView::quickHelp() const
     " (MIME is an acronym which stands for \"Multipurpose Internet Mail"
     " Extensions\".)<p> A file association consists of the following:"
     " <ul><li>Rules for determining the MIME-type of a file, for example"
-    " the filename pattern *.kwd, which means 'all files with names that end"
+    " the file name pattern *.kwd, which means 'all files with names that end"
     " in .kwd', is associated with the MIME type \"x-kword\";</li>"
     " <li>A short description of the MIME-type, for example the description"
     " of the MIME type \"x-kword\" is simply 'KWord document';</li>"
@@ -436,7 +436,7 @@ QString FileTypesView::quickHelp() const
     " given MIME-type -- if more than one application can be used then the"
     " list is ordered by priority.</li></ul>"
     " You may be surprised to find that some MIME types have no associated"
-    " filename patterns; in these cases, Konqueror is able to determine the"
+    " file name patterns; in these cases, Konqueror is able to determine the"
     " MIME-type by directly examining the contents of the file.");
 }
 
