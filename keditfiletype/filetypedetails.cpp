@@ -37,9 +37,9 @@ ServiceListItem::ServiceListItem( QString &_desktopPath )
 {
     KService::Ptr pService = KService::serviceByDesktopPath( _desktopPath );
 
-	ASSERT(pService);
+    ASSERT(pService);
 
-	setText( pService->name() );
+    setText( pService->name() );
 }
 
 FileTypeDetails::FileTypeDetails( QWidget * parent, const char * name )
