@@ -1,1 +1,1 @@
-#define KSTART_VERSION "kstart version 0.9pl2"
+#define KSTART_VERSION "kstart version 1.9"

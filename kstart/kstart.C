@@ -1,11 +1,10 @@
 /*
  * kstart.C. Part of the KDE project.
  *
- * Copyright (C) 1997 Matthias Ettrich
+ * Copyright (C) 1997-2000 Matthias Ettrich <ettrich@kde.org>
  *
+ * Port to NETWM by David Faure <faure@kde.org>
  */
-
-#include <qdir.h>
 
 #include <kstart.moc>
 #include "version.h"
@@ -15,9 +14,11 @@
 #include <qregexp.h>
 #include <klocale.h>
 #include <kwin.h>
+#include <kwinmodule.h>
 #include <kapp.h>
 #include <kaboutdata.h>
 #include <kcmdlineargs.h>
+#include <stdlib.h>
 
 void execute(const char* cmd){
   KShellProcess proc;
@@ -32,7 +33,7 @@ KStart::KStart(const char* command_arg,
 	       bool maximize_arg,
 	       bool iconify_arg,
 	       bool sticky_arg,
-	       int decoration_arg
+	       bool staysontop_arg
 	       )
   :QObject(){
     kwinmodule = new KWinModule;
@@ -43,64 +44,63 @@ KStart::KStart(const char* command_arg,
     maximize = maximize_arg;
     iconify = iconify_arg;
     sticky = sticky_arg;
-    decoration = decoration_arg;
+    staysontop = staysontop_arg;
 
-    // just connect to the initialized() signal, we want to be
-    // informed if we recieved all existing windows
-    //connect(kwinmodule, SIGNAL(initialized()), SLOT(initialized()));
-    //kwinmodule->connectToKWM();
-    initialized();
-}
-
-void KStart::initialized(){
-    // ok, we are initialized. Now connect to window add to get the NEW windows
-    connect(kwinmodule, SIGNAL(windowAdd(WId)), SLOT(windowAdd(WId)));
+    // connect to window add to get the NEW windows
+    connect(kwinmodule, SIGNAL(windowAdded(WId)), SLOT(windowAdded(WId)));
+    /*
     if (window) {
 	KWM::doNotManage(window);
 	XSync(qt_xdisplay(), False);
     }
+    */
     //finally execute the comand
     execute(command);
 }
 
-void KStart::windowAdd(WId w){
+void KStart::windowAdded(WId w){
+    NETWinInfo info( qt_xdisplay(), w, qt_xrootwin(), 0 );
     if (window) {
-	QString t = KWM::title(w);
+	QString title = QString::fromUtf8(info.visibleName());
 	QRegExp r = window;
-	if (r.match(t) != -1){
-	    applyStyle( w );
+	if (r.match(title) != -1){
+	    applyStyle( w, info );
 	    ::exit(0);
 	}
     }
     else {
 	// not window specified, just take the first one
-	applyStyle( w );
+	applyStyle( w, info );
 	::exit(0);
     }
 }
 
-void KStart::applyStyle(Window w) {
+void KStart::applyStyle(Window w, NETWinInfo & info) {
+    /*
     if (window)
 	KWM::prepareForSwallowing(w);
+    */
     if (desktop > 0) {
-	if (KWM::desktop(w) != desktop)
+	if ((int)info.desktop() != desktop)
         {
             debug("moving window to desktop %d",desktop);
-	    KWM::moveToDesktop(w, desktop);
+	    info.setDesktop(desktop);
         }
     }
     if (maximize) {
-	debug("do maximize");
-	KWM::doMaximize(w, true);
+        info.setState( NET::Max, 0 /* mask ? */ );
     }
-    if (iconify)
-	KWM::setIconify(w, true);
-    if (sticky) {
-	KWM::setSticky(w, true);
-    }
+    //if (iconify)
+        //info.setMappingState( NET::Iconic ); ?
+    if (sticky)
+        info.setState( NET::Sticky, 0 /* mask ? */ );
+    if (staysontop)
+        info.setState( NET::StaysOnTop, 0 /* mask ? */ );
+    /*
     if (decoration != KWM::normalDecoration) {
-	KWM::setDecoration(w, decoration);
+	info.setDecoration(w, decoration);
     }
+    */
 
     XSync(qt_xdisplay(), False);
     if (window) {
@@ -108,7 +108,11 @@ void KStart::applyStyle(Window w) {
 	XSync(qt_xdisplay(), False);
     }
     if (activate)
-      KWM::activate(w);
+    {
+      NETRootInfo rinfo( qt_xdisplay(), NET::CurrentDesktop );
+      rinfo.setCurrentDesktop( desktop );
+    }
+
     XSync(qt_xdisplay(), False);
 }
 
@@ -123,11 +127,11 @@ static KCmdLineOptions options[] =
   { "sticky", I18N_NOOP("Make the window sticky (appears on all desktops)"), 0 },
   { "iconify", I18N_NOOP("Iconify the window"), 0 },
   { "maximize", I18N_NOOP("Maximize the window"), 0 },
-  { "decoration <d>", I18N_NOOP("Sets the decoration, 'tiny' or 'none', defaults to normal."), 0 },
+  //{ "decoration <d>", I18N_NOOP("Sets the decoration, 'tiny' or 'none', defaults to normal."), 0 },
   { "activate", I18N_NOOP("Jump to the window even if it is started on a \n"
                           "different virtual desktop"), 0 },
-  { "nofocus", I18N_NOOP("The window does not get the focus\n"
-                         "(and therefore has no entry in the taskbar)."), 0 },
+  /*{ "nofocus", I18N_NOOP("The window does not get the focus\n"
+                         "(and therefore has no entry in the taskbar)."), 0 },*/
   { "staysontop", I18N_NOOP("Make the window stay on top of any other window"), 0 },
   { 0, 0, 0}
 };
@@ -146,9 +150,9 @@ int main( int argc, char *argv[] )
   aboutData.addAuthor( "Matthias Ettrich", 0, "ettrich@kde.org" );
 
   KCmdLineArgs::init( argc, argv, &aboutData );
- 
+
   KCmdLineArgs::addCmdLineOptions( options ); // Add our own options.
- 
+
   KApplication app;
 
   KCmdLineArgs *args = KCmdLineArgs::parsedArgs();
@@ -159,22 +163,26 @@ int main( int argc, char *argv[] )
   // Perhaps we should use a konsole-like solution here (shell, list of args...)
   QCString command;
   for(int i=0; i < args->count(); i++)
-      command += QCString(args->arg(i)) + " "; 
+      command += QCString(args->arg(i)) + " ";
 
   int desktop = args->getOption( "desktop" ).toInt();
   QCString window = args->getOption( "window" );
+  /*
   QCString s = args->getOption( "decoration" );
   int decoration = KWM::normalDecoration;
   if (s == "tiny")
     decoration = KWM::tinyDecoration;
   if (s == "none")
     decoration = KWM::noDecoration;
+  */
+  /*
   int noFocus = 0;
   if ( !args->isSet( "focus" ) ) // opposite to nofocus
      noFocus = KWM::noFocus;
-  int staysOnTop = 0;
+  */
+  bool staysOnTop = false;
   if ( args->isSet( "staysontop" ) )
-     staysOnTop = KWM::staysOnTop;
+    staysOnTop = true;
   bool activate = args->isSet("activate");
   bool maximize = args->isSet("maximize");
   bool iconify = args->isSet("iconify");
@@ -184,7 +192,7 @@ int main( int argc, char *argv[] )
 
   args->clear();
 
-  new KStart(command, window, desktop, activate, maximize, iconify, sticky, decoration | noFocus | staysOnTop);
+  new KStart(command, window, desktop, activate, maximize, iconify, sticky, staysOnTop);
 
   return app.exec();
 }

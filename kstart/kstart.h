@@ -1,28 +1,16 @@
 /*
  * kstart.h Part of the KDE project.
  *
- * Copyright (C) 1997 Matthias Ettrich
+ * Copyright (C) 1997-2000 Matthias Ettrich <ettrich@kde.org>
+ *
+ * Port to NETWM by David Faure <faure@kde.org>
  *
  */
 
-#include <qapplication.h>
-#include <qcursor.h>
-#include <qlist.h>
-#include <qstring.h>
+#include <qobject.h>
+#include <netwm.h>
 
-#include <stdlib.h>
-#include <stdio.h>
-#include <sys/time.h>
-#include <X11/X.h>
-#include <X11/Xlib.h>
-#include <qwidget.h>
-#include <qpopupmenu.h>
-#include <qstrlist.h>
-#include <kwinmodule.h>
-#include <qdialog.h>
-#include <qlabel.h>
-#include <qpushbutton.h>
-
+class KWinModule;
 
 class KStart: public QObject {
   Q_OBJECT
@@ -35,19 +23,17 @@ public:
 	 bool maximize_arg,
 	 bool iconify_arg,
 	 bool sticky_arg,
-	 int decoration_arg);
+	 bool staysontop_arg);
   ~KStart(){};
 
 public slots:
 
-  void initialized();
-  void windowAdd(WId);
+  void windowAdded(WId);
 
 private:
-    
-  void applyStyle(Window);
-    
-    
+
+  void applyStyle(Window, NETWinInfo &);
+
   KWinModule* kwinmodule;
   QString command;
   QString window;
@@ -56,7 +42,7 @@ private:
   bool maximize;
   bool iconify;
   bool sticky;
-  int decoration;
+  bool staysontop;
 };
 
 
