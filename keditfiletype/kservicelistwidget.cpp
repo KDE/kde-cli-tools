@@ -10,6 +10,8 @@
 #include "kservicelistwidget.h"
 #include "kserviceselectdlg.h"
 #include "typeslistitem.h"
+#include <kpropertiesdialog.h>
+#include <kstandarddirs.h>
 
 class KServiceListItem : public QListBoxText
 {
@@ -254,7 +256,7 @@ void KServiceListWidget::editService()
   if ( selected >= 0 ) {
 
     KService::Ptr service = 0L;
-    
+
     // Only edit applications, not services as
     // they don't have any parameters
     if ( m_kind == SERVICELIST_APPLICATIONS )
@@ -266,6 +268,7 @@ void KServiceListWidget::editService()
         KService::Ptr pService = KService::serviceByDesktopPath(
             ((KServiceListItem*)selItem)->desktopPath );
 
+#if 0
         KOpenWithDlg dlg(m_item->name(), pService->exec(), 0L);
         if (dlg.exec() == false)
             return;
@@ -275,7 +278,18 @@ void KServiceListWidget::editService()
         Q_ASSERT(service);
         if (!service)
             return; // Don't crash if KOpenWith wasn't able to create service.
-
+#else
+        QString path = pService->desktopEntryPath();
+        // If the path to the desktop file is relative, try to get the full
+        // path from KStdDirs.
+        path = (path[0] == '/') ? path : locate("apps", path);
+        KURL serviceURL;
+        serviceURL.setPath( path );
+        KPropertiesDialog dlg( serviceURL, this, 0, true /*modal*/ );
+        if ( dlg.exec() != QDialog::Accepted )
+            return;
+        service = pService;
+#endif
       // Remove the old one...
       servicesLB->removeItem( selected );
 
@@ -360,7 +374,7 @@ void KServiceListWidget::enableMoveButtons(int index)
 
   if ( servRemoveButton )
     servRemoveButton->setEnabled(true);
-  
+
   if ( servEditButton )
     servEditButton->setEnabled(true);
 }
