@@ -61,7 +61,7 @@
 #include <qvector.h>
 #include <qfile.h>
 
-#include <kapp.h>
+#include <kinstance.h>
 #include <kdebug.h>
 #include <klocale.h>
 #include <kcmdlineargs.h>
@@ -260,7 +260,7 @@ int main(int argc, char *argv[])
     aboutData.addAuthor("Geert Jansen", I18N_NOOP("Author"),
 	    "jansen@kde.org", "http://www.stack.nl/~geertj/");
     KCmdLineArgs::init(argc, argv, &aboutData);
-    KApplication app(false, false);
+    KInstance instance(&aboutData);
 
     // Set core dump size to 0
     struct rlimit rlim;
