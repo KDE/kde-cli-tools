@@ -5,7 +5,7 @@ INCLUDES = $(all_includes)
 bin_PROGRAMS = kdesud
 kdesud_SOURCES = kdesud.cpp repo.cpp lexer.cpp handler.cpp secure.cpp 
 kdesud_LDFLAGS = $(all_libraries) $(KDE_RPATH)
-kdesud_LDADD = $(LIB_KDECORE) -lkdesu
+kdesud_LDADD = $(LIB_KDECORE) -lkdesu $(LIBSOCKET)
 noinst_HEADERS = repo.h handler.h lexer.h secure.h
 
 ## kdesud needs to be suid or sgid something
