@@ -4,6 +4,7 @@ Icon=filetypes
 Type=Application
 Exec=kcmshell filetypes
 DocPath=kcontrol/filetypes/index.html
+Categories=Qt;KDE;X-KDE-settings-components;
 
 X-KDE-ModuleType=Library
 X-KDE-Library=filetypes
