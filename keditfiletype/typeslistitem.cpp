@@ -283,24 +283,23 @@ void TypesListItem::sync()
         if ( serviceTypeList.contains( name() ) ) {
           // The mimetype is listed explicitly in the .desktop files, so
           // just remove it and we're done
-          QString serviceLoc;
-
+          KConfig *desktop;
           if ( !isApplication )
-            serviceLoc = locateLocal("services", pService->desktopEntryPath());
+          {
+            desktop = new KConfig(pService->desktopEntryPath(), false, false, "services");
+          }
           else
-            serviceLoc = locateLocal("apps", pService->desktopEntryPath());
-
-          KDesktopFile desktop(serviceLoc);
-
+          {
+            QString path = KDesktopFile::locateLocal(pService->desktopEntryPath());
+            KConfig orig(pService->desktopEntryPath(), true, false, "apps");
+            desktop = orig.copyTo(path);
+          }
+          
           serviceTypeList.remove(name());
-          desktop.writeEntry("MimeType", serviceTypeList, ';');
+          desktop->writeEntry("MimeType", serviceTypeList, ';');
 
-          desktop.writeEntry("Type", pService->type());
-          desktop.writeEntry("Icon", pService->icon());
-          desktop.writeEntry("Name", pService->name());
-          desktop.writeEntry("Comment", pService->comment());
-          desktop.writeEntry("Exec", pService->exec());
-
+          desktop->sync();
+          delete desktop;
         }
         else {
           // The mimetype is not listed explicitly so it can't
@@ -346,29 +345,27 @@ void TypesListItem::saveServices( KConfig & profile, QStringList services, const
     profile.writeEntry("AllowAsDefault", true);
     profile.writeEntry("Preference", i);
 
-    QString serviceLoc;
-
+    KConfig *desktop;
     if ( pService->type() == QString("Service") )
-      serviceLoc = locateLocal("services", pService->desktopEntryPath());
+    {
+        desktop = new KConfig(pService->desktopEntryPath(), false, false, "services");
+    }
     else
-      serviceLoc = locateLocal("apps", pService->desktopEntryPath());
-
-    KDesktopFile desktop( serviceLoc );
-
-    desktop.writeEntry("Type", pService->type());
-    desktop.writeEntry("Icon", pService->icon());
-    desktop.writeEntry("Name", pService->name());
-    desktop.writeEntry("Comment", pService->comment());
-    desktop.writeEntry("Exec", pService->exec());
-
+    {
+        QString path = KDesktopFile::locateLocal(pService->desktopEntryPath());
+        KConfig orig(pService->desktopEntryPath(), true, false, "apps");
+        desktop = orig.copyTo(path);
+    }
     // merge new mimetype
     QStringList serviceTypeList = pService->serviceTypes();
 
     if (!serviceTypeList.contains(name()))
       serviceTypeList.append(name());
 
-    desktop.writeEntry("MimeType", serviceTypeList, ';');
-    desktop.writeEntry("ServiceTypes", "");
+    desktop->writeEntry("MimeType", serviceTypeList, ';');
+    desktop->writeEntry("ServiceTypes", "");
+    desktop->sync();
+    delete desktop;
   }
 }
 
