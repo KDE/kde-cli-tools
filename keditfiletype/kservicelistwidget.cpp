@@ -85,7 +85,7 @@ KServiceListWidget::KServiceListWidget(int kind, QWidget *parent, const char *na
 
   QWhatsThis::add( servDownButton, kind == SERVICELIST_APPLICATIONS ?
                    i18n("Assigns a lower priority to the selected\n"
-                        "application, moving it down in the list.  Note:  This \n"
+                        "application, moving it down in the list. Note: This \n"
                         "only affects the selected application if the file type is\n"
                         "associated with more than one application."):
                    i18n("Assigns a lower priority to the selected\n"
