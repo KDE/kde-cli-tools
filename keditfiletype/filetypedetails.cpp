@@ -145,6 +145,11 @@ FileTypeDetails::FileTypeDetails( QWidget * parent, const char * name )
   addTab( secondWidget, i18n("&Embedding") );
 }
 
+void FileTypeDetails::updateRemoveButton()
+{
+    removeExtButton->setEnabled(extensionLB->count()>0);
+}
+
 void FileTypeDetails::updateIcon(QString icon)
 {
   if (!m_item)
@@ -177,7 +182,7 @@ void FileTypeDetails::addExtension()
       QStringList patt = m_item->patterns();
       patt += m.text();
       m_item->setPatterns(patt);
-
+      updateRemoveButton();
       emit changed(true);
     }
   }
@@ -193,7 +198,7 @@ void FileTypeDetails::removeExtension()
   patt.remove(extensionLB->text(extensionLB->currentItem()));
   m_item->setPatterns(patt);
   extensionLB->removeItem(extensionLB->currentItem());
-
+  updateRemoveButton();
   emit changed(true);
 }
 

@@ -25,6 +25,9 @@ public:
 
   void setTypeItem( TypesListItem * item );
 
+protected:
+  void updateRemoveButton();
+
 signals:
   void changed(bool);
 
