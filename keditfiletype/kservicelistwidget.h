@@ -26,11 +26,12 @@
 class TypesListItem;
 class QLineEdit;
 class QPushButton;
+class KService;
 
 class KServiceListItem : public QListBoxText
 {
 public:
-    KServiceListItem(  const QString &desktopPath, int kind );
+    KServiceListItem(  KService *pService, int kind );
     bool isImmutable();
     QString desktopPath;
     QString localPath;

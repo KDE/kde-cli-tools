@@ -390,6 +390,7 @@ static bool inheritsMimetype(KMimeType::Ptr m, const QStringList &mimeTypeList)
 KMimeType::Ptr TypesListItem::findImplicitAssociation(const QString &desktop)
 {
     KService::Ptr s = KService::serviceByDesktopPath(desktop);
+    if (!s) return 0; // Hey, where did that one go?
 
     if( s_changedServices == NULL )
        deleter.setObject( s_changedServices, new QMap< QString, QStringList > );
@@ -413,7 +414,7 @@ void TypesListItem::saveServices( KConfig & profile, QStringList services, const
   for (int i = services.count(); it != services.end(); ++it, i--) {
 
     KService::Ptr pService = KService::serviceByDesktopPath(*it);
-    Q_ASSERT(pService);
+    if (!pService) continue; // Where did that one go?
 
     // Find a group header. The headers are just dummy names as far as
     // KUserProfile is concerned, but using the mimetype makes it a

@@ -44,7 +44,7 @@ KServiceSelectDlg::KServiceSelectDlg( const QString& /*serviceType*/, const QStr
     for ( ; it != allServices.end() ; ++it )
       if ( (*it)->hasServiceType( "KParts/ReadOnlyPart" ) )
       {
-          m_listbox->insertItem( new KServiceListItem( (*it)->desktopEntryPath(), KServiceListWidget::SERVICELIST_SERVICES ) );
+          m_listbox->insertItem( new KServiceListItem( (*it), KServiceListWidget::SERVICELIST_SERVICES ) );
       }
 
     m_listbox->sort();

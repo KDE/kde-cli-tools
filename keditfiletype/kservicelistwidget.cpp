@@ -37,13 +37,9 @@
 #include <kpropertiesdialog.h>
 #include <kstandarddirs.h>
 
-KServiceListItem::KServiceListItem( const QString &_desktopPath, int kind )
-    : QListBoxText(), desktopPath(_desktopPath)
+KServiceListItem::KServiceListItem( KService *pService, int kind )
+    : QListBoxText(), desktopPath(pService->desktopEntryPath())
 {
-    KService::Ptr pService = KService::serviceByDesktopPath( _desktopPath );
-
-    Q_ASSERT(pService);
-
     if ( kind == KServiceListWidget::SERVICELIST_APPLICATIONS )
         setText( pService->name() );
     else
@@ -51,7 +47,7 @@ KServiceListItem::KServiceListItem( const QString &_desktopPath, int kind )
 
     bool isApplication = pService->type() == "Application";
     if (!isApplication)
-      localPath = locateLocal("services", _desktopPath);
+      localPath = locateLocal("services", desktopPath);
     else
       localPath = pService->locateLocal();
 }
@@ -177,7 +173,10 @@ void KServiceListWidget::setTypeItem( TypesListItem * item )
       for ( QStringList::Iterator it = services.begin();
             it != services.end(); it++ )
       {
-        servicesLB->insertItem( new KServiceListItem(*it, m_kind) );
+        KService::Ptr pService = KService::serviceByDesktopPath( *it );
+
+        if (pService)
+          servicesLB->insertItem( new KServiceListItem(pService, m_kind) );
       }
       servicesLB->setEnabled(true);
     }
@@ -274,9 +273,7 @@ void KServiceListWidget::addService()
           return;
   }
 
-  QString desktopPath = service->desktopEntryPath();
-
-  servicesLB->insertItem( new KServiceListItem(desktopPath, m_kind), 0 );
+  servicesLB->insertItem( new KServiceListItem(service, m_kind), 0 );
   servicesLB->setCurrentItem(0);
 
   updatePreferredServices();
@@ -303,6 +300,8 @@ void KServiceListWidget::editService()
 
       KService::Ptr pService = KService::serviceByDesktopPath(
           ((KServiceListItem*)selItem)->desktopPath );
+      if (!pService)
+        return;
 
       QString path = pService->desktopEntryPath();
 
@@ -314,7 +313,7 @@ void KServiceListWidget::editService()
       KFileItem item( serviceURL, "application/x-desktop", KFileItem::Unknown );
       KPropertiesDialog dlg( &item, this, 0, true /*modal*/, false /*no auto-show*/ );
       if ( dlg.exec() != QDialog::Accepted )
-           return;
+        return;
       service = pService;
 
       // Remove the old one...
@@ -331,8 +330,7 @@ void KServiceListWidget::editService()
 
       // ...and add it in the same place as the old one:
       if ( addIt ) {
-        QString desktopPath = service->desktopEntryPath();
-        servicesLB->insertItem( new KServiceListItem(desktopPath, m_kind), selected );
+        servicesLB->insertItem( new KServiceListItem(service, m_kind), selected );
       }
 
       updatePreferredServices();
