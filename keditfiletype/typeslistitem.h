@@ -18,6 +18,7 @@ public:
    */
   TypesListItem(TypesListItem *parent, KMimeType::Ptr mimetype, bool newItem=false);
   ~TypesListItem();
+
   QString name() const { return m_major + "/" + m_minor; }
   QString majorType() const { return m_major; }
   QString minorType() const { return m_minor; }
@@ -29,13 +30,18 @@ public:
   void setIcon(QString i) { m_icon = i; }
   QStringList patterns() const { return m_patterns; }
   void setPatterns(const QStringList &p) { m_patterns = p; }
-  QStringList defaultServices() const { return m_services; }
-  void setDefaultServices(const QStringList &dsl) { m_services = dsl; }
+  QStringList appServices() const { return m_appServices; }
+  void setAppServices(const QStringList &dsl) { m_appServices = dsl; }
+  QStringList embedServices() const { return m_embedServices; }
+  void setEmbedServices(const QStringList &dsl) { m_embedServices = dsl; }
+  int autoEmbed() const { return m_autoEmbed; }
+  void setAutoEmbed( int a ) { m_autoEmbed = a; }
+
   bool isDirty() const;
   void sync();
 
 private:
-  bool acceptService( const KServiceOffer & offer ) const;
+  void saveServices( KSimpleConfig & profile, QStringList services );
   KMimeType::Ptr m_mimetype;
   void init(KMimeType::Ptr mimetype);
 
@@ -43,7 +49,10 @@ private:
   bool m_bNewItem;
   QString m_major, m_minor, m_comment, m_icon;
   QStringList m_patterns;
-  QStringList m_services;
+  QStringList m_appServices;
+  QStringList m_embedServices;
+  int m_autoEmbed; // 0,1,2
+  int groupCount; // shared between saveServices and sync
 };
 
 #endif

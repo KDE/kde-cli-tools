@@ -1,5 +1,7 @@
 #include <qstringlist.h>
 #include <qpushbutton.h>
+#include <qbuttongroup.h>
+#include <qradiobutton.h>
 #include <qlayout.h>
 #include <qgroupbox.h>
 #include <qlistbox.h>
@@ -31,10 +33,12 @@ FileTypeDetails::FileTypeDetails( QWidget * parent, const char * name )
   QString wtstr;
   // First tab - General
   QWidget * firstWidget = new QWidget(this);
-  QVBoxLayout *firstLayout = new QVBoxLayout(firstWidget);
+  QVBoxLayout *firstLayout = new QVBoxLayout(firstWidget,KDialog::marginHint(),
+                                       KDialog::spacingHint());
 
-  QHBoxLayout *hBox = new QHBoxLayout();
-  firstLayout->addLayout(hBox, 2);
+  QHBoxLayout *hBox = new QHBoxLayout(0L, KDialog::marginHint(),
+                                       KDialog::spacingHint());
+  firstLayout->addLayout(hBox, 1);
 
   iconButton = new KIconButton(firstWidget);
   iconButton->setIconType(KIcon::Desktop, KIcon::MimeType);
@@ -56,7 +60,9 @@ FileTypeDetails::FileTypeDetails( QWidget * parent, const char * name )
   extensionLB = new QListBox(gb);
   connect(extensionLB, SIGNAL(highlighted(int)), SLOT(enableExtButtons(int)));
   grid->addMultiCellWidget(extensionLB, 1, 2, 0, 0);
+  grid->setRowStretch(0, 0);
   grid->setRowStretch(1, 1);
+  grid->setRowStretch(2, 0);
 
   QWhatsThis::add( extensionLB, i18n("This box contains a list of patterns that can be"
     " used to identify files of the selected type. For example, the pattern *.txt is"
@@ -95,20 +101,30 @@ FileTypeDetails::FileTypeDetails( QWidget * parent, const char * name )
 
   serviceListWidget = new KServiceListWidget( KServiceListWidget::SERVICELIST_APPLICATIONS, firstWidget );
   connect( serviceListWidget, SIGNAL(changed(bool)), this, SIGNAL(changed(bool)));
-  firstLayout->addWidget(serviceListWidget, 1);
+  firstLayout->addWidget(serviceListWidget, 5);
 
   // Second tab - Embedding
   QWidget * secondWidget = new QWidget(this);
-  QVBoxLayout *secondLayout = new QVBoxLayout(secondWidget);
+  QVBoxLayout *secondLayout = new QVBoxLayout(secondWidget, KDialog::marginHint(),
+                                       KDialog::spacingHint());
 
-  // TODO embed checkbox
+  autoEmbed = new QButtonGroup( i18n("Left click previews"), secondWidget );
+  secondLayout->addWidget( autoEmbed, 1 );
+  QVBoxLayout *bgLay = new QVBoxLayout(autoEmbed, KDialog::marginHint(),
+                                       KDialog::spacingHint());
+  bgLay->addSpacing(10);
+  // The order of those three items is very important. If you change it, fix typeslistitem.cpp !
+  bgLay->addWidget( new QRadioButton( i18n("Yes"), autoEmbed ) );
+  bgLay->addWidget( new QRadioButton( i18n("No"), autoEmbed ) );
+  bgLay->addWidget( new QRadioButton( i18n("Use group settings"), autoEmbed ) );
+  connect(autoEmbed, SIGNAL( clicked( int ) ), SLOT( slotAutoEmbedClicked( int ) ));
 
-  QWidget * dummyWidget = new QWidget( secondWidget );
-  secondLayout->addWidget( dummyWidget, 10 );
+  secondLayout->addSpacing(10);
 
   embedServiceListWidget = new KServiceListWidget( KServiceListWidget::SERVICELIST_SERVICES, secondWidget );
+  embedServiceListWidget->setMinimumHeight( serviceListWidget->sizeHint().height() );
   connect( embedServiceListWidget, SIGNAL(changed(bool)), this, SIGNAL(changed(bool)));
-  secondLayout->addWidget(embedServiceListWidget, 1);
+  secondLayout->addWidget(embedServiceListWidget, 3);
 
   addTab( firstWidget, i18n("&General") );
   addTab( secondWidget, i18n("&Embedding") );
@@ -166,6 +182,14 @@ void FileTypeDetails::removeExtension()
   emit changed(true);
 }
 
+void FileTypeDetails::slotAutoEmbedClicked( int button )
+{
+  if ( !m_item )
+    return;
+  m_item->setAutoEmbed( button );
+  emit changed(true);
+}
+
 void FileTypeDetails::setTypeItem( TypesListItem * tlitem )
 {
   m_item = tlitem;
@@ -179,6 +203,8 @@ void FileTypeDetails::setTypeItem( TypesListItem * tlitem )
   removeExtButton->setEnabled(false);
 
   serviceListWidget->setTypeItem( tlitem );
+  embedServiceListWidget->setTypeItem( tlitem );
+  autoEmbed->setButton( tlitem ? tlitem->autoEmbed() : -1 );
 
   if ( tlitem )
     extensionLB->insertStringList(tlitem->patterns());

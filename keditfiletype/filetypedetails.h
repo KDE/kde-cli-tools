@@ -7,6 +7,7 @@ class TypesListItem;
 class KIconButton;
 class QLineEdit;
 class QListBox;
+class QButtonGroup;
 class QPushButton;
 class KServiceListWidget;
 
@@ -33,6 +34,7 @@ protected slots:
   void addExtension();
   void removeExtension();
   void enableExtButtons(int index);
+  void slotAutoEmbedClicked(int button);
 
 private:
   TypesListItem * m_item;
@@ -45,6 +47,7 @@ private:
   KServiceListWidget *serviceListWidget;
 
   // Second tab - Embedding
+  QButtonGroup *autoEmbed;
   KServiceListWidget *embedServiceListWidget;
 
 };

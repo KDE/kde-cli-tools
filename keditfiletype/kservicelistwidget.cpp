@@ -39,17 +39,22 @@ KServiceListItem::KServiceListItem( QString &_desktopPath )
 
 KServiceListWidget::KServiceListWidget(int kind, QWidget *parent, const char *name)
   : QGroupBox( kind == SERVICELIST_APPLICATIONS ? i18n("Application Preference Order")
-               : i18n("Services Preference Order"), parent, name )
+               : i18n("Services Preference Order"), parent, name ),
+  m_kind( kind )
 {
   QWidget * gb = this;
-  QGridLayout * grid = new QGridLayout(gb, 5, 2, KDialog::marginHint(),
-                         KDialog::spacingHint());
+  QGridLayout * grid = new QGridLayout(gb, 6, 2, KDialog::marginHint(),
+                                       KDialog::spacingHint());
   grid->addRowSpacing(0, fontMetrics().lineSpacing());
-//  grid->setRowStretch(3, 1);
+  grid->setRowStretch(1, 1);
+  grid->setRowStretch(2, 1);
+  grid->setRowStretch(3, 1);
+  grid->setRowStretch(4, 1);
+  grid->setRowStretch(5, 1);
 
   servicesLB = new QListBox(gb);
   connect(servicesLB, SIGNAL(highlighted(int)), SLOT(enableMoveButtons(int)));
-  grid->addMultiCellWidget(servicesLB, 1, 4, 0, 0);
+  grid->addMultiCellWidget(servicesLB, 1, 5, 0, 0);
 
   QString wtstr =
     (kind == SERVICELIST_APPLICATIONS ?
@@ -130,7 +135,9 @@ void KServiceListWidget::setTypeItem( TypesListItem * item )
 
   if ( item )
   {
-    QStringList services = item->defaultServices();
+    QStringList services = ( m_kind == SERVICELIST_APPLICATIONS )
+      ? item->appServices()
+      : item->embedServices();
 
     if (services.count() == 0) {
       servicesLB->insertItem("None");
@@ -250,7 +257,10 @@ void KServiceListWidget::updatePreferredServices()
     KServiceListItem *sli = (KServiceListItem *) servicesLB->item(i);
     sl.append( sli->desktopPath );
   }
-  m_item->setDefaultServices(sl);
+  if ( m_kind == SERVICELIST_APPLICATIONS )
+    m_item->setAppServices(sl);
+  else
+    m_item->setEmbedServices(sl);
 }
 
 void KServiceListWidget::enableMoveButtons(int index)

@@ -36,6 +36,7 @@ protected:
   void updatePreferredServices();
 
 private:
+  int m_kind;
   QListBox *servicesLB;
   QPushButton *servUpButton, *servDownButton;
   QPushButton *servNewButton, *servRemoveButton;
