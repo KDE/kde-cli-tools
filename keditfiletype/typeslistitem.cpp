@@ -44,7 +44,8 @@ void TypesListItem::initMeta( const QString & major )
   m_major = major;
   KConfig config("konquerorrc", true);
   config.setGroup("EmbedSettings");
-  m_autoEmbed = config.readBoolEntry( QString::fromLatin1("embed-")+m_major, true ) ? 0 : 1;
+  bool defaultValue = (major!="application"); // embedding is true by default except for application/*
+  m_autoEmbed = config.readBoolEntry( QString::fromLatin1("embed-")+m_major, defaultValue ) ? 0 : 1;
 }
 
 void TypesListItem::init(KMimeType::Ptr mimetype)
@@ -148,7 +149,8 @@ bool TypesListItem::isDirty() const
 
     KConfig config("konquerorrc", true);
     config.setGroup("EmbedSettings");
-    int oldAutoEmbed = config.readBoolEntry( QString::fromLatin1("embed-")+m_major, true ) ? 0 : 1;
+    bool defaultValue = (m_major!="application"); // embedding is true by default except for application/*
+    int oldAutoEmbed = config.readBoolEntry( QString::fromLatin1("embed-")+m_major, defaultValue ) ? 0 : 1;
     if ( m_autoEmbed != oldAutoEmbed )
       return true;
   }

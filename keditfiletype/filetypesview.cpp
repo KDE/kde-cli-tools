@@ -24,6 +24,9 @@
 FileTypesView::FileTypesView(QWidget *p, const char *name)
   : KCModule(p, name)
 {
+
+  KServiceTypeProfile::setConfigurationMode();
+
   QString wtstr;
 
   QHBoxLayout *topLayout = new QHBoxLayout(this, KDialog::marginHint(),
@@ -159,7 +162,7 @@ void FileTypesView::readFileTypes()
 	}
 	else
 	    groupItem = mit.data();
-	
+
 	TypesListItem *item = new TypesListItem(groupItem, (*it2));
 	m_itemList.append( item );
     }
@@ -173,7 +176,7 @@ void FileTypesView::slotFilter(const QString & patternFilter)
     while ( (item = typesLV->firstChild()) ) {
 	while ( item->firstChild() )
 	    item->takeItem( item->firstChild() );
-	
+
 	typesLV->takeItem( item );
     }
 
@@ -182,7 +185,7 @@ void FileTypesView::slotFilter(const QString & patternFilter)
     while ( it.current() ) {
 	if ( patternFilter.isEmpty() ||
 	     !((*it)->patterns().grep( patternFilter, false )).isEmpty() ) {
-	
+
 	    TypesListItem *group = m_majorMap[ (*it)->majorType() ];
 	    // QListView makes sure we don't insert a group-item more than once
 	    typesLV->insertItem( group );
