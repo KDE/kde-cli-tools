@@ -285,7 +285,8 @@ void KServiceListWidget::editService()
         path = (path[0] == '/') ? path : locate("apps", path);
         KURL serviceURL;
         serviceURL.setPath( path );
-        KPropertiesDialog dlg( serviceURL, this, 0, true /*modal*/ );
+        KFileItem item( serviceURL, "application/x-desktop", KFileItem::Unknown );
+        KPropertiesDialog dlg( &item, this, 0, true /*modal*/, false /*no auto-show*/ );
         if ( dlg.exec() != QDialog::Accepted )
             return;
         service = pService;
