@@ -5,7 +5,8 @@
  * This file is part of the KDE project, module kdesu.
  * Copyright (C) 1999 Geert Jansen <g.t.jansen@stud.tue.nl>
  */
-
+#ifndef KDESU_PATHSEARCH_H
+#define KDESU_PATHSEARCH_H
 #include <string>
 #include <vector>
 
@@ -33,4 +34,5 @@ private:
     vector<string>::iterator it;
 };
 
+#endif
 

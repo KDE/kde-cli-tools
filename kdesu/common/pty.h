@@ -11,6 +11,8 @@
  * PTY compatibility routines. This class tries to emulate a UNIX98 PTY API
  * on various platforms.
  */
+#ifndef KDESU_PTY_H
+#define KDESU_PTY_H
 
 class PTY {
 
@@ -57,4 +59,4 @@ private:
     char ttyname[50];
 };
     
-    
+#endif    
