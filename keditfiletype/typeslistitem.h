@@ -4,11 +4,18 @@
 #include <qlistview.h>
 
 #include <kmimetype.h>
+#include <kuserprofile.h>
 
 class TypesListItem : public QListViewItem
 {
 public:
+  /**
+   * Create a filetype group
+   */
   TypesListItem(QListView *parent, KMimeType::Ptr mimetype);
+  /**
+   * Create a filetype item
+   */
   TypesListItem(TypesListItem *parent, KMimeType::Ptr mimetype);
   ~TypesListItem();
   QString name() const { return m_major + "/" + m_minor; }
@@ -28,6 +35,7 @@ public:
   void sync();
 
 private:
+  bool acceptService( const KServiceOffer & offer ) const;
   KMimeType::Ptr m_mimetype;
   void init(KMimeType::Ptr mimetype);
 

@@ -218,8 +218,11 @@ void FileTypeDetails::removeExtension()
 void FileTypeDetails::setTypeItem( TypesListItem * tlitem )
 {
   m_item = tlitem;
-  iconButton->setIcon(tlitem->icon());
-  description->setText(tlitem->comment());
+  if ( tlitem )
+    iconButton->setIcon(tlitem->icon());
+  else
+    iconButton->resetIcon();
+  description->setText(tlitem ? tlitem->comment() : QString::null);
   extensionLB->clear();
   addExtButton->setEnabled(true);
   removeExtButton->setEnabled(false);
@@ -228,22 +231,28 @@ void FileTypeDetails::setTypeItem( TypesListItem * tlitem )
   servUpButton->setEnabled(false);
   servDownButton->setEnabled(false);
   servRemoveButton->setEnabled(false);
-  extensionLB->insertStringList(tlitem->patterns());
+  if ( tlitem )
+    extensionLB->insertStringList(tlitem->patterns());
+  else
+    extensionLB->clear();
 
   servicesLB->clear();
+  servicesLB->setEnabled(false);
 
-  QStringList services = tlitem->defaultServices();
+  if ( tlitem )
+  {
+    QStringList services = tlitem->defaultServices();
 
-  if (services.count() == 0) {
-    servicesLB->insertItem("None");
-    servicesLB->setEnabled(false);
-  } else {
-    for ( QStringList::Iterator it = services.begin();
-          it != services.end(); it++ )
-    {
-      servicesLB->insertItem( new ServiceListItem(*it) );
+    if (services.count() == 0) {
+      servicesLB->insertItem("None");
+    } else {
+      for ( QStringList::Iterator it = services.begin();
+            it != services.end(); it++ )
+      {
+        servicesLB->insertItem( new ServiceListItem(*it) );
+      }
+      servicesLB->setEnabled(true);
     }
-    servicesLB->setEnabled(true);
   }
 }
 

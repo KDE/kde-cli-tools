@@ -170,8 +170,8 @@ void FileTypesView::addType()
       TypesListItem *current = (TypesListItem *) it.current();
       if (current->majorType() == m.group()) {
         TypesListItem *tli = new TypesListItem(current, mimetype);
-      if (!tli->parent()->isOpen())
-        tli->parent()->setOpen(true);
+        if (!tli->parent()->isOpen())
+          tli->parent()->setOpen(true);
         typesLV->setSelected(tli, true);
         break;
       }
@@ -219,8 +219,13 @@ void FileTypesView::updateDisplay(QListViewItem *item)
     return;
 
   TypesListItem *tlitem = (TypesListItem *) item;
-  if (tlitem->isMeta())
+  if (tlitem->isMeta()) // is a group
+  {
+    // Remove details - this is even more needed when we just
+    // removed a mimetype (and the group gets activated)
+    m_details->setTypeItem( 0L );
     return;
+  }
 
   m_details->setTypeItem( tlitem );
 
