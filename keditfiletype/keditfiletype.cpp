@@ -25,9 +25,10 @@
 #include <kdebug.h>
 #include <kcmdlineargs.h>
 #include <ksycoca.h>
+#include <X11/Xutil.h>
 
 FileTypeDialog::FileTypeDialog( KMimeType::Ptr mime )
-  : KDialogBase( 0L, 0, true, QString::null, /* Help | */ Cancel | Apply | Ok,
+  : KDialogBase( 0L, 0, false, QString::null, /* Help | */ Cancel | Apply | Ok,
                  Ok, false )
 {
   m_details = new FileTypeDetails( this );
@@ -83,6 +84,7 @@ void FileTypeDialog::slotDatabaseChanged()
 
 static KCmdLineOptions options[] =
 {
+  { "parent <winid>", I18N_NOOP("Makes the dialog transient for the window specified by winid"), 0 },
   { "+mimetype",   I18N_NOOP("File type to edit (e.g. text/html)"), 0 },
   KCmdLineLastOption
 };
@@ -109,12 +111,18 @@ int main(int argc, char ** argv)
   if (!mime)
     kdFatal() << "Mimetype " << args->arg(0) << " not found" << endl;
 
+  FileTypeDialog dlg( mime );
+  if( args->isSet( "parent" )) {
+    bool ok;
+    long id = args->getOption("parent").toLong(&ok);
+    if (ok)
+      XSetTransientForHint( qt_xdisplay(), dlg.winId(), id );
+  }
   args->clear();
-  FileTypeDialog * dlg = new FileTypeDialog( mime );
-  dlg->setCaption( i18n("Edit File Type %1").arg(mime->name()) );
-  dlg->exec();
-  delete dlg;
+  dlg.setCaption( i18n("Edit File Type %1").arg(mime->name()) );
+  app.setMainWidget( &dlg );
+  dlg.show(); // non-modal
 
-  return 0;
+  return app.exec();
 }
 
