@@ -171,18 +171,20 @@ FileTypesView::FileTypesView(QWidget *p, const char *name)
   connect(servUpButton, SIGNAL(clicked()), SLOT(promoteService()));
   grid->addWidget(servUpButton, 1, 1);
 
-  QWhatsThis::add( servUpButton, i18n("Assigns a higher priority to the selected"
-    " application, moving it up in the list. Note that this only affects the selected"
-    " file type if the same application is associated with other file types.") );
+  QWhatsThis::add( servUpButton, i18n("Assigns a higher priority to the selected\n"
+                              "application, moving it up in the list. Note:  This\n"
+                              "only affects the selected application if the file type is\n"
+			      "associated with more than one application."));   
 
   servDownButton = new QPushButton(i18n("Move &Down"), gb);
   servDownButton->setEnabled(false);
   connect(servDownButton, SIGNAL(clicked()), SLOT(demoteService()));
   grid->addWidget(servDownButton, 2, 1);
 
-  QWhatsThis::add( servDownButton, i18n("Assigns a lower priority to the selected"
-    " application, moving it down in the list. Note that this only affects the selected"
-    " file type if the same application is associated with other file types.") );
+  QWhatsThis::add( servDownButton, i18n("Assigns a lower priority to the selected\n"
+			  "application, moving it down on the list.  Note:  This \n"
+			  "only affects the selected application if the file type is\n"
+			  "associated with more than one application."));
 
   servNewButton = new QPushButton(i18n("Add..."), gb);
   servNewButton->setEnabled(false);
