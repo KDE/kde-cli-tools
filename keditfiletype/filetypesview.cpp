@@ -119,7 +119,7 @@ FileTypesView::~FileTypesView()
 
 void FileTypesView::setDirty(bool state)
 {
-  emit changed(state);
+  setChanged(state);
   m_dirty = state;
 }
 
