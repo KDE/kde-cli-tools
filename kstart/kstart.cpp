@@ -204,7 +204,10 @@ static KCmdLineOptions options[] =
   { "type <type>", I18N_NOOP("The window type: Normal, Desktop, Dock, Tool, \nMenu, Dialog, TopMenu or Override"), 0 },
   { "activate", I18N_NOOP("Jump to the window even if it is started on a \n"
                           "different virtual desktop"), 0 },
-  { "ontop", I18N_NOOP("Make the window always stay on top of any other window"), 0 },
+  { "ontop", 0, 0 },
+  { "keepabove", I18N_NOOP("Try to keep the window above other windows"), 0 },
+  { "onbottom", 0, 0 },
+  { "keepbelow", I18N_NOOP("Try to keep the window below other windows"), 0 },
   { "skiptaskbar", I18N_NOOP("The window does not get an entry in the taskbar"), 0 },
   { "skippager", I18N_NOOP("The window does not get an entry on the pager"), 0 },
   { "tosystray", I18N_NOOP("The window is sent to the system tray in Kicker."), 0 },
@@ -272,10 +275,14 @@ int main( int argc, char *argv[] )
 	  windowtype = NET::Normal;
   }
 
-  if ( args->isSet( "ontop" ) ) {
-      state |= NET::StaysOnTop;
-      mask |= NET::StaysOnTop;
+  if ( args->isSet( "keepabove" ) ) {
+      state |= NET::KeepAbove;
+      mask |= NET::KeepAbove;
+  } else if ( args->isSet( "keepbelow" ) ) {
+      state |= NET::KeepBelow;
+      mask |= NET::KeepBelow;
   }
+  
   if ( args->isSet( "skiptaskbar" ) ) {
       state |= NET::SkipTaskbar;
       mask |= NET::SkipTaskbar;
