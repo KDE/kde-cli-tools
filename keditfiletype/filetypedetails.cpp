@@ -38,7 +38,7 @@ FileTypeDetails::FileTypeDetails( QWidget * parent, const char * name )
   QWhatsThis::add( iconButton, i18n("This button displays the icon associated"
     " with the selected file type. Click on it to choose a different icon.") );
 
-  QGroupBox *gb = new QGroupBox(i18n("File Name Patterns"), firstWidget);
+  QGroupBox *gb = new QGroupBox(i18n("Filename Patterns"), firstWidget);
   hBox->addWidget(gb);
 
   QGridLayout *grid = new QGridLayout(gb, 3, 2, KDialog::marginHint(),
@@ -71,7 +71,7 @@ FileTypeDetails::FileTypeDetails( QWidget * parent, const char * name )
           this, SLOT(removeExtension()));
   grid->addWidget(removeExtButton, 2, 1);
 
-  QWhatsThis::add( removeExtButton, i18n("Remove the selected file name pattern.") );
+  QWhatsThis::add( removeExtButton, i18n("Remove the selected filename pattern.") );
 
   gb = new QGroupBox(i18n("Description"), firstWidget);
   firstLayout->addWidget(gb);
