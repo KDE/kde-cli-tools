@@ -104,6 +104,12 @@ int main(int argc, char *argv[])
     KApplication::disableAutoDcopRegistration();
 
     KApplication *app = new KApplication;
+    
+    {
+    KStartupInfoId id;
+    id.initId( app->startupId());
+    id.setupStartupEnv(); // make KDE_STARTUP_ENV env. var. available again
+    }
 
     // Stop daemon and exit?
     if (args->isSet("s"))
@@ -236,6 +242,8 @@ int main(int argc, char *argv[])
 
     QCStringList env;
     QCString options;
+    env << ( "KDE_STARTUP_ENV=" + kapp->startupId());
+    
     if (!new_dcop)
     {
         QCString ksycoca = "KDESYCOCA="+QFile::encodeName(locateLocal("tmp", "ksycoca"));
@@ -287,24 +295,33 @@ int main(int argc, char *argv[])
     QCString password;
     if (needpw)
     {
-	KDEsuDialog *dlg = new KDEsuDialog(user, auth_user, keep && !terminal);
-	dlg->addLine(i18n("Command:"), command);
+        KStartupInfoId id;
+        id.initId( app->startupId());
+	KStartupInfoData data;
+	data.setSuspend( KStartupInfoData::Yes );
+	KStartupInfo::sendChange( id, data );
+	KDEsuDialog dlg(user, auth_user, keep && !terminal);
+	dlg.addLine(i18n("Command:"), command);
 	if ((priority != 50) || (scheduler != SuProcess::SchedNormal))
 	{
 	    QString prio;
 	    if (scheduler == SuProcess::SchedRealtime)
 		prio += i18n("realtime: ");
 	    prio += QString("%1/100").arg(priority);
-	    dlg->addLine(i18n("Priority:"), prio);
+	    dlg.addLine(i18n("Priority:"), prio);
 	}
-	int ret = dlg->exec();
+	int ret = dlg.exec();
 	if (ret == KDEsuDialog::Rejected)
+	{
+	    KStartupInfo::sendFinish( id );
 	    exit(0);
+	}
 	if (ret == KDEsuDialog::AsUser)
 	    change_uid = false;
-	password = dlg->password();
-	keep = dlg->keep();
-	delete dlg;
+	password = dlg.password();
+	keep = dlg.keep();
+	data.setSuspend( KStartupInfoData::No );
+	KStartupInfo::sendChange( id, data );
     }
 
     // Some events may need to be handled (like a button animation)
@@ -330,8 +347,8 @@ int main(int argc, char *argv[])
 	{
 	    proc.setXOnly(true);
 	    proc.setDCOPForwarding(true);
-	    proc.setEnvironment(env);
 	}
+	proc.setEnvironment(env);
 	proc.setPriority(priority);
 	proc.setScheduler(scheduler);
 	proc.setCommand(command);
