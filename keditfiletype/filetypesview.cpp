@@ -411,31 +411,11 @@ void FileTypesView::addService()
 
   KService::Ptr service = dlg.service();
 
-  if (!service) {
-    // if no text either, just return
-    if (dlg.text().isEmpty())
-      return;
-
-    // no service was found, maybe they typed the name into the text field
-    KService::List slist = KService::allServices();
-    QValueListIterator<KService::Ptr> it(slist.begin());
-    for (; it != slist.end(); ++it)
-      if ((*it)->exec() == dlg.text())
-	service = *it;
-  }
-
-  QString serviceName;
-  if (service)
-    serviceName = service->name();
-  else if (dlg.text().contains('/'))
-    serviceName = dlg.text().right(dlg.text().length() - 
-				   dlg.text().findRev('/') + 1);
-  else
-    serviceName = dlg.text();
+  ASSERT(service);
 
   // check if it is a duplicate entry
   for (unsigned int index = 0; index < servicesLB->count(); index++)
-    if (servicesLB->text(index) == serviceName)
+    if (servicesLB->text(index) == service->name())
       return;
 
   // if None is the only item, then there currently is no default
@@ -443,46 +423,9 @@ void FileTypesView::addService()
       servicesLB->removeItem(0);
       servicesLB->setEnabled(true);
   }
-  servicesLB->insertItem(serviceName);
+  servicesLB->insertItem(service->name());
 
-  QString path;
-  if (service)
-    // we want to write to the users local .desktop file
-    path = locateLocal("apps", service->relativeFilePath());
-  else if (serviceName.contains(".kdesktop"))
-    path = locateLocal("apps", serviceName);
-  else
-    path = locateLocal("apps", serviceName + ".desktop");
-  
-  KDesktopFile desktop(path);
-  if (service) {
-    desktop.writeEntry("Type", service->type());
-    desktop.writeEntry("Icon", service->icon());
-    desktop.writeEntry("Name", serviceName);
-    desktop.writeEntry("Comment", service->comment());
-    desktop.writeEntry("Exec", service->exec());
-
-    // merge in the mimetypes from the global .desktop file
-    QStringList mime_list;
-    QString old_path( locate("apps", service->relativeFilePath()) );
-    if (!old_path.isNull())
-      {
-	KDesktopFile old_desktop(old_path, true);
-	mime_list = old_desktop.readListEntry("MimeType", ';');
-      }
-    if (!mime_list.contains(item->name()))
-      mime_list.append(item->name());
-    desktop.writeEntry("MimeType", mime_list, ';');
-
-  } else {
-    desktop.writeEntry("Type", "Application");
-    desktop.writeEntry("Name", serviceName);
-    desktop.writeEntry("Exec", dlg.text());
-    desktop.writeEntry("MimeType", item->name() +  ';');
-  }
-
-  // write it all out to the file
-  desktop.sync();
+  updatePreferredServices();
 }
 
 void FileTypesView::load()

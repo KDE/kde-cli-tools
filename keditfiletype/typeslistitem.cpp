@@ -100,5 +100,22 @@ void TypesListItem::sync()
     profile.writeEntry("ServiceType", name());
     profile.writeEntry("AllowAsDefault", true);
     profile.writeEntry("Preference", i);
-  }
+    
+    KService::Ptr pService = KService::service(*it);
+    ASSERT(pService);
+
+    QString serviceLoc = locateLocal("apps", pService->relativeFilePath());
+    KDesktopFile desktop(serviceLoc);
+    desktop.writeEntry("Type", pService->type());
+    desktop.writeEntry("Icon", pService->icon());
+    desktop.writeEntry("Name", *it);
+    desktop.writeEntry("Comment", pService->comment());
+    desktop.writeEntry("Exec", pService->exec());
+
+    // merge new mimetype
+    QStringList serviceList = pService->serviceTypes();
+    if (!serviceList.contains(name()))
+      serviceList.append(name());
+    desktop.writeEntry("MimeType", serviceList, ';');
+   }
 }
