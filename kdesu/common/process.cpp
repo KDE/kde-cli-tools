@@ -250,7 +250,6 @@ int SuProcess::ConverseStub(int fd, const char *command)
 	buf[nbytes-1] = '\000';
 	if (buf[nbytes-2] == '\r')
 	    buf[nbytes-2] = '\000';
-	qDebug("SuProcess::ConverseStub(): request for %s", buf);
 	
 	if (!strcmp(buf, "display")) {
 	    write(fd, c.display().latin1(), c.display().length());
@@ -323,7 +322,6 @@ int SuProcess::WaitSlave(const char *ttyname)
 	    select(fd, 0L, 0L, 0L, &tv);
 	    continue;
 	}
-	qDebug("SuProcess::WaitSlave(): echo mode off");
 	break;
     }
     close(fd);

@@ -4,7 +4,7 @@
  *
  * This file is part of the KDE project, module kdesu.
  * Copyright (C) 1998 Pietro Iglio <iglio@fub.it>
- * Copyright (C) 1999 Geert Jansen <g.t.jansen@stud.tue.nl>
+ * Copyright (C) 1999,2000 Geert Jansen <jansen@kde.org>
  */
 
 #include <config.h>
@@ -13,7 +13,6 @@
 #include <errno.h>
 #include <string.h>
 #include <pwd.h>
-#include <string.h>
 #include <stdlib.h>
 
 #include <sys/time.h>
@@ -23,12 +22,14 @@
 #include <qfileinfo.h>
 #include <qglobal.h>
 
+#include <kdebug.h>
 #include <kglobal.h>
 #include <kapp.h>
 #include <kstddirs.h>
 #include <kconfig.h>
 #include <klocale.h>
-#include <kstartparams.h>
+#include <kaboutdata.h>
+#include <kcmdlineargs.h>
 
 #include "kdesu.h"
 #include "kpassdlg.h"
@@ -36,185 +37,97 @@
 #include "client.h"
 
 
-// Globals
-int _show_dbg = 0;
-int _show_wrn = 1;
-const char *Version = VERSION;
-const char *TryHelp = "Try `kdesu -h' for more information.\n";
-const char *Email = "<g.t.jansen@stud.tue.nl>";
-const char *Usage = "Usage: kdesu [USER] [-ntqd] [-f FILE] -c COMMAND [ARG1 [ARG2 [...]]]\n"
-		    "       kdesu -v|-h|-s\n";
+const char *Version = "1.0";
 
-/*
- * Message handler
- */
-void msgHandler(QtMsgType type, const char *msg)
-{
-    switch (type) {
-    case QtDebugMsg:
-	if (_show_dbg)
-	    fprintf(stderr, "Debug: %s\n", msg);
-	break;
+static KCmdLineOptions options[] = {
+    { "+command", I18N_NOOP("Specifies the command to run."), 0},
+    { "f <file>", I18N_NOOP("Run command under target uid if <file> is not writeable."), "" },
+    { "u <user>", I18N_NOOP("Specifies the target uid"), "root" },
+    { "n", I18N_NOOP("Do not keep password."), 0 },
+    { "s", I18N_NOOP("Stop the daemon (forgets all passwords)."), 0 },
+    { "t", I18N_NOOP("Enable terminal output (no password keeping)."), 0 },
+    { 0, 0, 0 }
+};
 
-    case QtWarningMsg:
-	if (_show_wrn)
-	    fprintf(stderr, "Warning: %s\n", msg);
-	break;
-
-    case QtFatalMsg:
-	fprintf(stderr, "Fatal: %s\n", msg);
-	exit(1);
-    }
-}
-
-
-// Main program
 
 int main(int argc, char *argv[])
 {
-    qInstallMsgHandler(msgHandler);
+    KAboutData aboutData("kdesu", I18N_NOOP("KDE su"),
+	    Version, I18N_NOOP("Runs a program under a different uid."),
+	    KAboutData::Artistic, 
+	    "Copyright (c) 1998-2000 Geert Jansen, Pietro Iglio");
+    aboutData.addAuthor("Geert Jansen", I18N_NOOP("Maintainer"),
+	    "jansen@kde.org", "http://www.stack.nl/~geertj/");
+    aboutData.addAuthor("Pietro Iglio", I18N_NOOP("Original author"),
+	    "iglio@fub.it");
 
-    QString command, file;
-    bool keep = true;
-    bool terminal = false;
+    KCmdLineArgs::init(argc, argv, &aboutData);
+    KCmdLineArgs::addCmdLineOptions(options);
+    KCmdLineArgs *args = KCmdLineArgs::parsedArgs();
 
-    KStartParams parm(argc, argv);
-    QString s;
-
-    // Parse user name argument
-    uid_t uid; 
-    QString user;
-    int i=0;
-    s = parm.get(i++);
-    if (s.isEmpty()) {
-	printf(Usage);
-	printf(TryHelp);
+    // Stop daemon and exit?
+    if (args->isSet("s")) {
+	KDEsuClient client;
+	if (client.ping() == -1)
+	    kDebugFatal("Daemon not running -- nothing to stop");
+	if (client.stopServer() != -1) {
+	    printf("Daemon stopped\n");
+	    exit(0);
+	}
+	kDebugFatal("Could not stop daemon");
 	exit(1);
     }
-    if (s.at(0) != '-') {
-	struct passwd *pw = getpwnam(s.latin1());
-	if (pw == 0L)
-	    qFatal("User %s does not exist", s.latin1());
-	user = s;
-	uid = pw->pw_uid;
-	s = parm.get(i++);
-    } else {
-	user = "root";
-	uid = 0;
-    }
 
-    // Parse options
-    while (s != "-c") {
-	if (s.at(0) != '-') {
-	    printf(Usage); printf(TryHelp);
-	    exit(1);
-	}
-	bool next = false;
-	for (unsigned int j=1; j<s.length(); j++) {
-	    switch (s.at(j).latin1()) {
-	    case 'f':
-		file = parm.get(i++);
-		if (file.isEmpty()) {
-		    printf(Usage); printf(TryHelp);
-		    exit(1);
-		}
-		next = true;
-		break;
-	    case 't':
-		terminal = true;
-		break;
-	    case 'n':
-		keep = false;
-		break;
-	    case 'q':
-		_show_dbg = 0;
-		_show_wrn = 0;
-		break;
-	    case 'd':
-		_show_dbg++;
-		break;
-
-	    // Exiting comand from here
-	    case 'v':
-		printf("kdesu version %s\n", Version);
-		printf("\n");
-		printf("  Copyright (C) 1998 Pietro Iglio <iglio@fub.it>\n");
-		printf("  Copyright (C) 1999 Geert Jansen %s", Email);
-		printf("\n");
-		exit(0);
-	    case 'h':
-		printf(Usage);
-		printf("Runs a command as another user.\n");
-		printf("\n");
-		printf("Options:\n");
-		printf("  -c COMMAND    Run command COMMAND. The entire command\n");
-		printf("                line has to be passed as a single argument.\n");
-		printf("  -f FILE       Run command as root if file specified by FILE\n");
-		printf("                is not writeable under current uid.\n");
-		printf("  -n            Do not keep password\n");
-		printf("  -s            Stop the daemon (forgets all passwords)\n"); 
-		printf("  -t            Enable terminal output (no password keeping).\n");
-		printf("  -q            Be quiet (shows no warnings)\n");
-		printf("  -d            Show debug information\n");
-		printf("  -v            Show version information\n");
-		printf("\n");
-		printf("Please report bugs to %s\n", Email);
-		exit(0);
-	     case 's':
-		{
-		    KDEsuClient client;
-		    if (client.ping() == -1)
-			qFatal("Daemon not running -- nothing to stop");
-		    if (client.stopServer() != -1) {
-			printf("Daemon stopped\n");
-			return 0;
-		    }
-		    qFatal("Could not stop daemon");
-		}
-	    }
-	    if (next)
-		break;
-	}
-	s = parm.get(i++);
-	if (s.isEmpty()) {
-	    printf(Usage); printf(TryHelp);
-	    exit(1);
-	}
-    }
-
-    // Parse command
-    command = parm.get(i++);
-    if (command.isEmpty()) {
-	printf(Usage); printf(TryHelp);
+    // Get target uid
+    QCString user = args->getOption("u");
+    struct passwd *pw = getpwnam(user);
+    if (pw == 0L) {
+	kDebugFatal("User %s does not exist", (const char *) user);
 	exit(1);
     }
-    while (!(s = parm.get(i++)).isEmpty()) {
-	command += " ";
-	command += s;
-    }
-    
-    // Don't use su if we're don't need to.
+    uid_t uid = pw->pw_uid;
     bool change_uid = (getuid() != uid);
 
+    // Get command
+    if (args->count() == 0)
+	KCmdLineArgs::usage(i18n("No command specified!"));
+    QCString command = args->arg(0);
+    for (int i=1; i<args->count(); i++) {
+	command += " ";
+	command += args->arg(i);
+    }
+
     // If file is not writeable, change uid
-    if (change_uid && !file.isEmpty()) {
+    QString file = QFile::decodeName(args->getOption("f"));
+    if (!file.isEmpty()) {
 	if (file.at(0) != '/') {
 	    KStandardDirs dirs;
 	    dirs.addKDEDefaults();
 	    file = dirs.findResource("config", file);
+	    if (file.isEmpty()) {
+		kDebugFatal("Config file not found: %s", file.latin1());
+		exit(1);
+	    }
 	}
 	QFileInfo fi(file);
-	if (!fi.exists())
-	    qFatal("File does not exist: %s", file.latin1());
+	if (!fi.exists()) {
+	    kDebugFatal("File does not exist: %s", file.latin1());
+	    exit(1);
+	}
 	change_uid = !fi.isWritable();
     }
 
+    // Don't change uid if we're don't need to.
     if (!change_uid) {
 	UserProcess proc(command);
 	return proc.exec();
     }
 
     // Try to exec the command with kdesud.
+    bool keep = true;
+    if (args->isSet("n"))
+	keep = false;
+    bool terminal = args->isSet("t");
     if (keep && !terminal) {
 	KDEsuClient client;
 	if (client.ping() != -1) {
@@ -231,11 +144,13 @@ int main(int argc, char *argv[])
     // root's password in memory.
     struct rlimit rlim;
     rlim.rlim_cur = rlim.rlim_max = 0;
-    if (setrlimit(RLIMIT_CORE, &rlim))
-	qFatal("rlimit(): %s", strerror(errno));
+    if (setrlimit(RLIMIT_CORE, &rlim)) {
+	kDebugFatal("rlimit(): %s", strerror(errno));
+	exit(1);
+    }
 
     // From  here, we need the GUI: create a KApplication
-    KApplication *app = new KApplication(argc, argv, "kdesu");
+    KApplication *app = new KApplication;
 
     // Read configuration
     KConfig *config = KGlobal::config();
@@ -264,26 +179,26 @@ int main(int argc, char *argv[])
 		   "Please enter the password for \"%1\" below or click\n"
 		   "Ignore to continue with your current privileges.").arg(user);
 
-    KPasswordDlg *pwDlg = new KPasswordDlg(txt, command, user, 
+    KDEsuDialog *dlg = new KDEsuDialog(command, user, 
 	    ((keep&&!terminal) ? 1+keep_cfg : 0));
-    pwDlg->setEchoMode(echo_mode);
-    pwDlg->exec();
+    dlg->setEchoMode(echo_mode);
+    dlg->exec();
 
     char *pass = new char[KPasswordEdit::PassLen];
-    switch (pwDlg->result()) {
-    case KPasswordDlg::Accepted:
-	strcpy(pass, pwDlg->getPass());
+    switch (dlg->result()) {
+    case KDEsuDialog::Accepted:
+	strcpy(pass, dlg->getPass());
 	change_uid = true;
 	break;
-    case KPasswordDlg::Rejected:
+    case KDEsuDialog::Rejected:
 	return 0;
-    case KPasswordDlg::AsUser:
+    case KDEsuDialog::AsUser:
 	change_uid = false;
 	break;
     }
     
-    keep = pwDlg->keepPass();
-    delete pwDlg;
+    keep = dlg->keepPass();
+    delete dlg;
 
     // This destroys the Qt event loop and makes sure the dialog goes away.
     delete app;

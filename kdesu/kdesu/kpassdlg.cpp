@@ -4,26 +4,21 @@
  *
  * This file is part of the KDE project, module kdesu.
  * Copyright (C) 1998 Pietro Iglio <iglio@fub.it>
- * Copyright (C) 1999 Geert Jansen <g.t.jansen@stud.tue.nl>
+ * Copyright (C) 1999,2000 Geert Jansen <jansen@kde.org>
  * 
- * kpassdlg.cpp: A password input dialog for kdesu.
+ * kpassdlg.cpp: Password input dialog for kdesu.
  */
 
 #include <config.h>
 
-#include <string.h>
-
-#include <qdialog.h>
-#include <qpushbutton.h>
+#include <qwidget.h>
 #include <qlineedit.h>
 #include <qlabel.h>
 #include <qlayout.h>
 #include <qsize.h>
 #include <qevent.h>
 #include <qkeycode.h>
-#include <qmessagebox.h>
 #include <qcheckbox.h>
-#include <qdir.h>
 
 #ifdef HAVE_PATHS_H
 #include <paths.h>
@@ -33,6 +28,8 @@
 #include <kapp.h>
 #include <klocale.h>
 #include <kiconloader.h>
+#include <kmessagebox.h>
+#include <kaboutdialog.h>
 
 #include "kdesu.h"
 #include "kpassdlg.h"
@@ -40,123 +37,110 @@
 
 
 KPasswordEdit::KPasswordEdit(QWidget *parent, const char *name)
-    : QLineEdit(parent, name), mEcho(OneStar)
+    : QLineEdit(parent, name), m_EchoMode(OneStar)
 {
     // I Keep the password in a char * instead of a QString.
     // I don't know what's happening inside a QString and I
     // cannot let the password lie around. I want to be sure
     // that when I delete it, it is deleted wholly.
-    mPassword = new char[PassLen];
-    strcpy(mPassword, "");
+    m_Password = new char[PassLen];
+    m_Password[0] = '\000';
+    m_length = 0;
 }
 
 
 KPasswordEdit::~KPasswordEdit()
 {
-    for (unsigned i=0; i<strlen(mPassword); i++)
-	mPassword[i] = 'x';
-    delete[] mPassword;
+    for (int i=0; i<PassLen; i++)
+	m_Password[i] = '\000';
+    delete[] m_Password;
 }
 
 
 void KPasswordEdit::erase()
 {
-    for (unsigned i=0; i<strlen(mPassword); i++)
-	mPassword[i] = 'x';
-    strcpy(mPassword, "");
+    for (int i=0; i<PassLen; i++)
+	m_Password[i] = '\000';
     setText("");
 }
 
 
 void KPasswordEdit::keyPressEvent(QKeyEvent *e)
 {    
-    int len = strlen(mPassword);
-
     switch (e->key()) {
-    case Key_Backspace:
-	if (len) {
-	    mPassword[len-1] = '\000';
-	    showit();
-	}
-	break;
     case Key_Return:
-	e->ignore();
-	break;
     case Key_Escape:
 	e->ignore();
 	break;
+    case Key_Backspace:
+	if (m_length) {
+	    m_Password[--m_length] = '\000';
+	    showPass();
+	}
+	break;
     default:
-	if (len < PassLen) {
-	    mPassword[len] = (char) e->ascii();
-	    mPassword[len+1] = '\000';
-	    showit();
+	if (m_length < PassLen) {
+	    m_Password[m_length] = (char) e->ascii();
+	    m_Password[++m_length] = '\000';
+	    showPass();
 	}
 	break;
     }
 }
 
-void KPasswordEdit::showit()
+void KPasswordEdit::showPass()
 {    
-    int len = strlen(mPassword);
     QString tmp;
 
-    switch (mEcho) {
+    switch (m_EchoMode) {
     case OneStar:
-	tmp.fill('*', len);
+	tmp.fill('*', m_length);
 	setText(tmp);
 	break;
     case ThreeStars:
-	tmp.fill('*', len*3);
+	tmp.fill('*', m_length*3);
 	setText(tmp);
 	break;
-    case NoStars: default:
+    case NoStars: 
+    default:
 	break;
     }
 }
 
 
-KPasswordDlg::KPasswordDlg(const QString& help, const QString& command, 
-	const QString& user, int keep, const QString& file, 
-	const QString& topic, QWidget *parent, const char *name) :
-
-	QDialog(parent, name, true), mHelp(help), mCommand(command), 
-	mUser(user), mKeep(keep), mHelpfile(file), mHelptopic(topic)
+KDEsuDialog::KDEsuDialog(QString command, QString user, int keep)
+    : KDialogBase(0L, "KDE su Dialog", true, user, Ok|Cancel|User1,
+	    Ok, true, "&Ignore")
 {
-    QString caption = "KDE su: ";
-    caption += mUser;
-    setCaption(caption);
+    m_User = user;
+    m_Command = command;
+    m_Keep = keep;
 
-    if (mHelp.isNull())
-	mHelp = i18n("Please enter root password");
-		 
-    QVBoxLayout *topLayout = new QVBoxLayout(this, 10);
-    QGridLayout *grid = new QGridLayout(5, 3);
-    topLayout->addLayout(grid, 6);
+    QString help;
+    if (m_User == "root")
+	help = i18n("The action you requested needs root priviliges.\n"
+		"Please enter root's password below or click\n"
+		"Ignore to continue with your current priviliges.");
+    else
+	help = i18n("The action you requested needs additional priviliges.\n"
+		"Please enter the password for \"%1\" below or click\n"
+		"Ignore to continue with your current privileges.").arg(m_User);
 
-    grid->setColStretch(0, 0);
-    grid->setColStretch(1, 0);
-    grid->setColStretch(2, 12);
-
-    grid->setRowStretch(0, 12);
-    grid->setRowStretch(1, 0);
-    grid->addRowSpacing(1, 10);
-    grid->setRowStretch(2, 12);
-    grid->setRowStretch(3, 0);
-    grid->setRowStretch(4, 12);
-
+    QWidget *main = new QWidget(this);
+    setMainWidget(main);
+    QGridLayout *grid = new QGridLayout(main, 4, 3, 10, 10);
 
     // Pixmap + Informational text
-
     QLabel *lbl;
     QPixmap pix(BarIcon("kdesu-keys"));
     if (!pix.isNull()) {
-	lbl = new QLabel(this);
+	lbl = new QLabel(main);
 	lbl->setPixmap(pix);
 	lbl->setFixedSize(lbl->sizeHint());
 	grid->addWidget(lbl, 0, 0, AlignCenter);
     }
 
-    lbl = new QLabel(this);
+    lbl = new QLabel(main);
     lbl->setAlignment(AlignLeft);
     lbl->setText(help);
     QSize size = lbl->sizeHint();
@@ -165,143 +149,85 @@ KPasswordDlg::KPasswordDlg(const QString& help, const QString& command,
     grid->addWidget(lbl, 0, 2, AlignLeft|AlignVCenter);
 
     // Command label
+    lbl = new QLabel(main);
+    lbl->setText(i18n("Command:"));
+    lbl->setFixedSize(lbl->sizeHint());
+    grid->addWidget(lbl, 1, 0, AlignLeft);
 
-    if (!command.isNull()) {
-	lbl = new QLabel(this);
-	lbl->setText(i18n("Command:"));
-	lbl->setFixedSize(lbl->sizeHint());
-	grid->addWidget(lbl, 2, 0, AlignLeft);
-
-	lbl = new QLabel(this);
-	lbl->setText(command);
-	lbl->setFixedWidth(size.width());
-	lbl->setFixedHeight(lbl->sizeHint().height());
-	grid->addWidget(lbl, 2, 2, AlignLeft);
-    }
+    lbl = new QLabel(main);
+    lbl->setText(m_Command);
+    lbl->setFixedWidth(size.width());
+    lbl->setFixedHeight(lbl->sizeHint().height());
+    grid->addWidget(lbl, 1, 2, AlignLeft);
 	    
     // Password label + line editor
-
-    lbl = new QLabel(this);
+    lbl = new QLabel(main);
     lbl->setAlignment(AlignLeft|AlignVCenter);
-    lbl->setText(i18n("&Password:"));
+    lbl->setText(i18n("%1's\n&Password:").arg(m_User));
     lbl->setFixedSize(lbl->sizeHint());
-    lbl->setBuddy(this);
-    grid->addWidget(lbl, 4, 0, AlignLeft);
+    lbl->setBuddy(main);
+    grid->addWidget(lbl, 2, 0, AlignLeft);
     
     QHBoxLayout *h_lay = new QHBoxLayout();
-    grid->addLayout(h_lay, 4, 2);
-    edit = new KPasswordEdit(this);
-    size = edit->sizeHint();
-    edit->setFixedHeight(size.height());
-    edit->setMinimumWidth(size.width());
-
-    h_lay->addWidget(edit, 12);
+    grid->addLayout(h_lay, 2, 2);
+    m_pEdit = new KPasswordEdit(main);
+    size = m_pEdit->sizeHint();
+    m_pEdit->setFixedHeight(size.height());
+    m_pEdit->setMinimumWidth(size.width());
+    h_lay->addWidget(m_pEdit, 12);
     h_lay->addStretch(6);
 
     // Keep password checkbox
-
-    if (mKeep) {
-	QCheckBox *cb = new QCheckBox(i18n("&Keep Password"), this);
+    if (m_Keep) {
+	QCheckBox *cb = new QCheckBox(i18n("&Keep Password"), main);
 	size = cb->sizeHint();
 	cb->setFixedSize(size);
-	if (mKeep > 1) {
+	if (m_Keep > 1) {
 	    cb->setChecked(true);
-	    mKeep = 1;
+	    m_Keep = 1;
 	} else
-	    mKeep = 0;
+	    m_Keep = 0;
 	connect(cb, SIGNAL(toggled(bool)), SLOT(slotKeep(bool)));
-
-	topLayout->addWidget(cb, 0, AlignLeft|AlignVCenter);
+	grid->addMultiCellWidget(cb, 3, 3, 0, 2, AlignLeft|AlignVCenter);
     } 
 
-    // Buttons
-
-    h_lay = new QHBoxLayout(10);
-    topLayout->addSpacing(10);
-    topLayout->addStretch(12);
-    topLayout->addLayout(h_lay, 0);
-
-    // This string controls how wide the buttons are gonna be. 
-    // Translators can change this
-    QPushButton *but = new QPushButton(i18n("ABCDEF"), this);
-    size = but->sizeHint();
-    delete but;
-
-    if (!mHelpfile.isNull()) {
-	but = new QPushButton(i18n("&Help"), this);
-	but->setFixedSize(size);
-	connect(but, SIGNAL(clicked()), SLOT(slotHelp()));
-	h_lay->addWidget(but);
-    } 
-
-    but = new QPushButton(i18n("&Cancel"), this);
-    but->setFixedSize(size);
-    connect(but, SIGNAL(clicked()), SLOT(slotCancel()));
-    h_lay->addWidget(but);
-    h_lay->addStretch(12);
-    
-    but = new QPushButton(i18n("&OK"), this);
-    but->setFixedSize(size);
-    but->setDefault(true);
-    connect(but, SIGNAL(clicked()), SLOT(slotCheckPass()));
-    h_lay->addWidget(but);
-    
-    but = new QPushButton(i18n("&Ignore"), this);
-    but->setFixedSize(size);
-    connect(but, SIGNAL(clicked()), SLOT(slotAsUser()));
-    h_lay->addWidget(but);
-    
-    topLayout->activate();
-    resize(minimumSize());
-
-    edit->setFocus();
+    m_pEdit->setFocus();
 }
 
 
-KPasswordDlg::~KPasswordDlg()
+KDEsuDialog::~KDEsuDialog()
 {
 }
 
 
-// checkPass() checks if the password is valid. This is done by checking
-// the return value of "su -c /bin/true".
-
-void KPasswordDlg::slotCheckPass()
+void KDEsuDialog::slotOk()
 {
-    int ret;
-    QString s;
-
     SuProcess proc;
     proc.setTerminal(true);
-    proc.setUser(mUser.latin1());
-    ret = proc.checkPass(edit->getPass());
+    proc.setUser(m_User.latin1());
+    int ret = proc.checkPass(m_pEdit->getPass());
     if (ret < 0) {
-        QMessageBox::warning(this, kapp->caption(), 
-                             i18n("Incorrect password!"), i18n("OK"));
-        edit->erase();
-        edit->setFocus();
+        KMessageBox::sorry(this, i18n("Incorrect password! Please try again."));
+        m_pEdit->erase();
+        m_pEdit->setFocus();
     } else
         accept();
 }
 
-void KPasswordDlg::slotHelp()
-{
-    if (!kapp) 
-	return;
-    kapp->invokeHTMLHelp(mHelpfile, mHelptopic);
-}
 
-void KPasswordDlg::slotCancel()
+void KDEsuDialog::slotCancel()
 {
     reject();
 }
 
-void KPasswordDlg::slotAsUser()
+
+void KDEsuDialog::slotUser1()
 {
     done(AsUser);
 }
 
-void KPasswordDlg::slotKeep(bool keep)
+
+void KDEsuDialog::slotKeep(bool keep)
 {
-    mKeep = keep;
+    m_Keep = keep;
 }

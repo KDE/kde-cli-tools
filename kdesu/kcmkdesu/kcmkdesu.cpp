@@ -171,7 +171,6 @@ void KDEsuConfig::slotKeep(bool keep)
 
 int KDEsuConfig::buttons()
 {
-    qDebug("buttons called");
     return KCModule::Help | KCModule::Default | KCModule::Reset |
 	   KCModule::Cancel | KCModule::Ok;
 }

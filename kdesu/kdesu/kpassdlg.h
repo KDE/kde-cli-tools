@@ -2,28 +2,24 @@
  *
  * This file is part of the KDE project, module kdesu.
  * Copyright (C) 1998 Pietro Iglio <iglio@fub.it>
- * Copyright (C) 1999 Geert Jansen <g.t.jansen@stud.tue.nl>
+ * Copyright (C) 1999,2000 Geert Jansen <jansen@kde.org>
  */
 
 #ifndef __KPasswordDlg_h_included__
 #define __KPasswordDlg_h_included__
 
 #include <qstring.h>
-#include <qdialog.h>
-#include <qpushbutton.h>
-#include <qlayout.h>
 #include <qlineedit.h>
-#include <qlabel.h>
-#include <qsize.h>
 #include <qevent.h>
 
-#include <kiconloader.h>
+#include <kaboutdialog.h>
 
 /**
  * KPasswordEdit: A safe password input widget.
  */
 
-class KPasswordEdit: public QLineEdit
+class KPasswordEdit
+    : public QLineEdit
 {
     Q_OBJECT
 
@@ -31,87 +27,54 @@ public:
     KPasswordEdit(QWidget *parent=0, const char *name=0);
     ~KPasswordEdit();
 
-    char *getPass() { return mPassword; }
+    const char *getPass() { return m_Password; }
     void erase();
-    void setEchoMode(int echo) { mEcho = echo; }
+    void setEchoMode(int echomode) { m_EchoMode = echomode; }
+
     static const int PassLen = 100;
 
 protected:
     virtual void keyPressEvent(QKeyEvent *);
 
 private:
-    void showit();
+    void showPass();
 
-    char *mPassword;
-    int mEcho;
+    char *m_Password;
+    int m_EchoMode, m_length;
 };
 
 
 /**
- * KPasswordDlg: A dialog for the input of a password.
- *
- * This dialog uses it's own result codes, KPasswordDlg::ResultCode because
- * it can have more results than QDialog. The result are: Accepted, Rejected
- * (same as QDialog) and AsUser. The last result means the user pressed the 
- * "As User" button.
+ * KDEsuDialog: The main dialog for kdesu.
  */
 
-class KPasswordDlg: public QDialog
+class KDEsuDialog
+    : public KDialogBase
 {
     Q_OBJECT
 
 public: 
-    /**
-     * This contructs a password dialog with helptext. If no text is given,
-     * the helptext is set to: "Pleas enter root password".
-     *
-     * @parm help A descriptive text which is show to the user.
-     * @parm command The command you are going to execute. This is for
-     * feedback to the user only.
-     * @parm keep Pass true if password keeping is enabled. This enables a
-     * control in the widget to turn it off.
-     * @parm helpFile The html help file you want to make available to the
-     * user.
-     * @parm helpTopic The topic in the help file.
-     */
-    KPasswordDlg(const QString& help, const QString& command=0, 
-	    const QString& user="root", int keep=0, const QString& helpfile=0,
-	    const QString &helptopic=0, QWidget *parent=0, 
-	    const char *name=0);
+    KDEsuDialog(QString command, QString user, int keep);
+    ~KDEsuDialog();
 
-    /** This is the destructor.  */
-    ~KPasswordDlg();
+    void setEchoMode(int mode) { m_pEdit->setEchoMode(mode); }
 
-    /**
-     * Sets the echo mode. This can be one of: One_star, Three_star and
-     * No_echo.
-     */
-    void setEchoMode(int mode) { edit->setEchoMode(mode); }
+    const char *getPass() const { return m_pEdit->getPass(); }
+    bool keepPass() const { return m_Keep; }
 
-    /** Return the password */
-    char *getPass() const { return edit->getPass(); }
-
-    bool keepPass() const { return mKeep; }
-
-    /** This dailog's result codes. */
     enum ResultCodes { Rejected, Accepted, AsUser };
 
 protected slots:
-    void slotHelp();
-    void slotCheckPass();
+    void slotOk();
     void slotCancel();
-    void slotAsUser();
+    void slotUser1();
     void slotKeep(bool);
 
 private:
-    QString mHelp;
-    QString mCommand;
-    QString mUser;
-    int mKeep;
-    QString mHelpfile, mHelptopic;
-
-
-    KPasswordEdit *edit;
+    int m_Keep;
+    QString m_Command;
+    QString m_User;
+    KPasswordEdit *m_pEdit;
 };
 
 
