@@ -230,10 +230,9 @@ void TypesListItem::sync()
 
   if (isMimeTypeDirty())
   {
-    QString loc = m_mimetype->desktopEntryPath();
-    loc = locateLocal("mime", loc);
-
-    KSimpleConfig config( loc );
+    // We must use KConfig otherwise config.deleteEntry doesn't 
+    // properly cancel out settings already present in system files.
+    KConfig config( m_mimetype->desktopEntryPath(), false, false, "mime" );
     config.setDesktopGroup();
 
     config.writeEntry("Type", "MimeType");
