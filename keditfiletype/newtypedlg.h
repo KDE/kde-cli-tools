@@ -3,7 +3,7 @@
 
 #include <qstring.h>
 #include <qstringlist.h>
-#include <kdialog.h>
+#include <kdialogbase.h>
 
 class KLineEdit;
 class QComboBox;
@@ -13,7 +13,7 @@ class QComboBox;
  * a combobox for choosing the group and a line-edit
  * for entering the name of the file type
  */
-class NewTypeDialog : public KDialog
+class NewTypeDialog : public KDialogBase
 {
 public:
   NewTypeDialog(QStringList groups, QWidget *parent = 0, 
