@@ -58,7 +58,7 @@ int Repository::removeSpecialKey(const QCString &key)
     if ( !key.isEmpty() )
     {
         QValueStack<QCString> rm_keys;
-        for (RepoCIterator it=repo.begin(); it!=repo.end(); it++)
+        for (RepoCIterator it=repo.begin(); it!=repo.end(); ++it)
         {
             if (  key.find( it.data().group ) == 0 &&
                   it.key().find( key ) >= 0 )
@@ -82,7 +82,7 @@ int Repository::removeGroup(const QCString &group)
     if ( !group.isEmpty() )
     {
         QValueStack<QCString> rm_keys;
-        for (RepoCIterator it=repo.begin(); it!=repo.end(); it++)
+        for (RepoCIterator it=repo.begin(); it!=repo.end(); ++it)
         {
             if (it.data().group == group)
             {
@@ -104,7 +104,7 @@ int Repository::hasGroup(const QCString &group) const
     if ( !group.isEmpty() )
     {
         RepoCIterator it;
-        for (it=repo.begin(); it!=repo.end(); it++)
+        for (it=repo.begin(); it!=repo.end(); ++it)
         {
             if (it.data().group == group)
                 return 0;
@@ -122,7 +122,7 @@ QCString Repository::findKeys(const QCString &group, const char *sep ) const
         int pos;
         QCString key;
         RepoCIterator it;
-        for (it=repo.begin(); it!=repo.end(); it++)
+        for (it=repo.begin(); it!=repo.end(); ++it)
         {
             if (it.data().group == group)
             {
@@ -171,7 +171,7 @@ int Repository::expire()
     QValueStack<QCString> keys;
     head_time = (unsigned) -1;
     RepoIterator it;
-    for (it=repo.begin(); it!=repo.end(); it++)
+    for (it=repo.begin(); it!=repo.end(); ++it)
     {
 	t = it.data().timeout;
 	if (t <= current)
