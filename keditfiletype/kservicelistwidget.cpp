@@ -140,7 +140,7 @@ void KServiceListWidget::setTypeItem( TypesListItem * item )
       : item->embedServices();
 
     if (services.count() == 0) {
-      servicesLB->insertItem("None");
+      servicesLB->insertItem(i18n("None"));
     } else {
       for ( QStringList::Iterator it = services.begin();
             it != services.end(); it++ )
@@ -217,7 +217,7 @@ void KServiceListWidget::addService()
       return;
 
   // if None is the only item, then there currently is no default
-  if (servicesLB->text(0) == "None") {
+  if (servicesLB->text(0) == i18n("None")) {
       servicesLB->removeItem(0);
       servicesLB->setEnabled(true);
   }
