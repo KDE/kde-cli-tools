@@ -6,7 +6,7 @@
 #include <kdebug.h>
 #include <kicondialog.h>
 #include <klineedit.h>
-#include <klineeditdlg.h>
+#include <kinputdialog.h>
 #include <klocale.h>
 
 #include "kservicelistwidget.h"
@@ -151,17 +151,17 @@ void FileTypeDetails::addExtension()
 {
   if ( !m_item )
     return;
-  KLineEditDlg m(i18n("Extension:"), "*.", this);
-  m.setCaption( i18n("Add New Extension") );
-  if (m.exec()) {
-    if (!m.text().isEmpty()) {
-      extensionLB->insertItem(m.text());
-      QStringList patt = m_item->patterns();
-      patt += m.text();
-      m_item->setPatterns(patt);
-      updateRemoveButton();
-      emit changed(true);
-    }
+
+  bool ok;
+  QString ext = KInputDialog::getText( i18n( "Add New Extension" ),
+    i18n( "Extension:" ), "*.", &ok, this );
+  if (ok) {
+    extensionLB->insertItem(ext);
+    QStringList patt = m_item->patterns();
+    patt += ext;
+    m_item->setPatterns(patt);
+    updateRemoveButton();
+    emit changed(true);
   }
 }
 
