@@ -60,7 +60,7 @@ FileTypesView::FileTypesView(QWidget *p, const char *name)
   rightLayout->addLayout(hBox);
 
   iconButton = new KIconLoaderButton(this);
-  iconButton->setIconType("icon");
+  iconButton->setIconType("mimetypes");
   connect(iconButton, SIGNAL(iconChanged(const QString &)),
           SLOT(updateIcon(const QString &)));
 
