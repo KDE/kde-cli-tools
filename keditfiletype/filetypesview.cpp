@@ -389,7 +389,7 @@ QString FileTypesView::quickHelp() const
 
 extern "C"
 {
-  KCModule *create_filetypes(QWidget *parent, const char *name)
+  KCModule *create_filetypes(QWidget *parent, const char *)
   {
     return new FileTypesView(parent, "filetypes");
   }
