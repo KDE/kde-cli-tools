@@ -5,8 +5,6 @@ Exec=kcmshell Browsing/Files/filetypes
 
 X-KDE-ModuleType=Library
 X-KDE-Library=filetypes
-X-KDE-ControlModuleType=User
-X-KDE-HideFromPanel=true
 
 Name=File Associations
 Name[ca]=Associacions de fitxers
