@@ -3,7 +3,6 @@
 #include <qwhatsthis.h>
 #include <qpushbutton.h>
 #include <qlayout.h>
-#include <qlineedit.h>
 #include <qsplitter.h>
 #include <qtimer.h>
 #include <qwidgetstack.h>
@@ -13,6 +12,7 @@
 #include <kcursor.h>
 #include <kdebug.h>
 #include <kdesktopfile.h>
+#include <klineedit.h>
 #include <klistview.h>
 #include <klocale.h>
 #include <kstandarddirs.h>
@@ -41,7 +41,7 @@ FileTypesView::FileTypesView(QWidget *p, const char *name)
   QLabel *patternFilterLBL = new QLabel( i18n("F&ind filename pattern"), m_left );
   leftLayout->addMultiCellWidget(patternFilterLBL, 0, 0, 0, 2);
 
-  patternFilterLE = new QLineEdit(m_left);
+  patternFilterLE = new KLineEdit(m_left);
   patternFilterLBL->setBuddy( patternFilterLE );
   leftLayout->addMultiCellWidget(patternFilterLE, 1, 1, 0, 2);
 
