@@ -4,7 +4,7 @@ libkcm_filetypes_la_LIBADD	= $(LIB_KSYCOCA) $(LIB_KDEUI) $(LIB_KFILE)
 libkcm_filetypes_la_LDFLAGS = $(all_libraries) -module -avoid-version -no-undefined
 libkcm_filetypes_la_METASOURCES = AUTO
 
-lib_LTLIBRARIES = libkcm_filetypes.la
+kde_module_LTLIBRARIES = libkcm_filetypes.la
 
 libkcm_filetypes_la_SOURCES = \
 	filetypesview.cpp filetypedetails.cpp filegroupdetails.cpp \
