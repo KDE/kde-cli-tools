@@ -8,7 +8,6 @@
  */
 
 #include <qobject.h>
-#include <netwm.h>
 
 class KWinModule;
 
@@ -16,33 +15,16 @@ class KStart: public QObject {
   Q_OBJECT
 
 public:
-  KStart(const char* command_arg,
-	 const char* window_arg,
-	 int desktop_arg,
-	 bool activate_arg,
-	 bool maximize_arg,
-	 bool iconify_arg,
-	 bool sticky_arg,
-	 bool staysontop_arg);
+  KStart();
   ~KStart(){};
 
 public slots:
-
   void windowAdded(WId);
 
 private:
 
-  void applyStyle(WId, NETWinInfo &);
-
+  void applyStyle(WId );
   KWinModule* kwinmodule;
-  QString command;
-  QString window;
-  int desktop;
-  bool activate;
-  bool maximize;
-  bool iconify;
-  bool sticky;
-  bool staysontop;
 };
 
 
