@@ -224,17 +224,20 @@ void KServiceListWidget::addService()
            return;
   }
 
-  // check if it is a duplicate entry
-  for (unsigned int index = 0; index < servicesLB->count(); index++)
-    if (static_cast<KServiceListItem*>( servicesLB->item(index) )->desktopPath
-        == service->desktopEntryPath())
-      return;
-
   // if None is the only item, then there currently is no default
   if (servicesLB->text(0) == i18n("None")) {
       servicesLB->removeItem(0);
       servicesLB->setEnabled(true);
   }
+  else
+  {
+      // check if it is a duplicate entry
+      for (unsigned int index = 0; index < servicesLB->count(); index++)
+        if (static_cast<KServiceListItem*>( servicesLB->item(index) )->desktopPath
+            == service->desktopEntryPath())
+          return;
+  }
+
   QString desktopPath = service->desktopEntryPath();
 
   servicesLB->insertItem( new KServiceListItem(desktopPath, m_kind) );
