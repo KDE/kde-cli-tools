@@ -63,6 +63,8 @@ int main(int argc, char **argv)
 		// For symmetry with kreadconfig we accept a wider range of values as true than Qt
 		bool boolvalue=(value=="true" || value=="on" || value=="yes" || value=="1");
 		konfig->writeEntry( key, boolvalue );
+	} else if (type=="path") {
+		konfig->writePathEntry( key, QString::fromLocal8Bit( value ) );
 	} else {
 		konfig->writeEntry( key, QString::fromLocal8Bit( value ) );
 	}

@@ -83,11 +83,16 @@ int main(int argc, char **argv)
                 if ( configMustDeleted )
                     delete konfig;
 		return retValue;
-	} else if(type=="num") {
+	} else if((type=="num") || (type=="int")) {
             long retValue = konfig->readLongNumEntry(key, dflt.toLong());
             if ( configMustDeleted )
                 delete konfig;
             return retValue;
+	} else if (type=="path"){
+                fprintf(stdout, "%s\n", konfig->readPathEntry(key, dflt).local8Bit().data());
+                if ( configMustDeleted )
+                    delete konfig;
+		return 0;
 	} else {
             /* Assume it's a string... */
                 fprintf(stdout, "%s\n", konfig->readEntry(key, dflt).local8Bit().data());
