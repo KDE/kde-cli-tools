@@ -3,7 +3,7 @@
  * $Id$
  *
  * This file is part of the KDE project, module kdesu.
- * Copyright (C) 1999 Geert Jansen <g.t.jansen@stud.tue.nl>
+ * Copyright (C) 1999,2000 Geert Jansen <jansen@kde.org>
  * 
  * client.cpp: A client for kdesud.
  */
@@ -27,6 +27,7 @@
 #include <kstddirs.h>
 
 #include "client.h"
+#include "kdesu.h"
 
 #ifdef __GNUC__
 #define ID __PRETTY_FUNCTION__
@@ -71,10 +72,6 @@ int KDEsuClient::connect()
     struct sockaddr_un addr;
     addr.sun_family = AF_UNIX;
     strcpy(addr.sun_path, sock);
-
-#ifndef SUN_LEN // this is far from POSIX :(
-#define SUN_LEN(ptr) ((size_t)(((struct sockaddr_un *) +0)->sun_path))
-#endif
 
     if (::connect(sockfd, (struct sockaddr *) &addr, SUN_LEN(&addr)) < 0) {
 	kDebugWarning("%s: connect(): %m", ID);
@@ -144,6 +141,16 @@ int KDEsuClient::setPass(const char *pass, int timeout)
 }
 
 
+int KDEsuClient::exec(QCString key)
+{
+    QCString cmd;
+    cmd = "EXEC ";
+    cmd += escape(key);
+    cmd += "\n";
+    return command(cmd);
+}
+
+
 int KDEsuClient::setUser(QCString user)
 {
     QCString cmd = "USER ";
@@ -153,11 +160,10 @@ int KDEsuClient::setUser(QCString user)
 }
 
 
-int KDEsuClient::exec(QCString key)
+int KDEsuClient::setHost(QCString host)
 {
-    QCString cmd;
-    cmd = "EXEC ";
-    cmd += escape(key);
+    QCString cmd = "HOST ";
+    cmd += escape(host);
     cmd += "\n";
     return command(cmd);
 }

@@ -3,7 +3,7 @@
  * $Id$
  *
  * This file is part of the KDE project, module kdesu.
- * Copyright (C) 1999 Geert Jansen <g.t.jansen@stud.tue.nl>
+ * Copyright (C) 1999,2000 Geert Jansen <jansen@kde.org>
  * 
  * This file contains code from TEShell.C of the KDE konsole. 
  * Copyright (c) 1997,1998 by Lars Doelle <lars.doelle@on-line.de> 

@@ -3,36 +3,43 @@
  * $Id$
  *
  * This file is part of the KDE project, module kdesu.
- * Copyright (C) 1999,2000 Geert Jansen <g.t.jansen@stud.tue.nl>
+ * Copyright (C) 1999,2000 Geert Jansen <jansen@kde.org>
  * 
  */
 
 #ifndef __Process_h_Included__
 #define __Process_h_Included__
 
-
 #include <qcstring.h>
+#include <qstring.h>
 #include <qstringlist.h>
 
+#include "pty.h"
+#include "kcookie.h"
 
 /**
- * Execute a program as root, using su to gain privileges.
+ * PtyProcess: a base class for SuProcess and RshProcess, providing common
+ * functionality related to PTY's.
  */
 
-class SuProcess
+class PtyProcess
 {
 public:
-    /**
-     * Construct a RootProcess object.
-     * @param command The command to execute, including arguments, shell
-     * redirection, etc.
-     */
-    SuProcess(const char *command=0L);
+    PtyProcess();
+    virtual ~PtyProcess();
+
+    /** (re)initialise  the pty. */
+    int init();
 
     /**
      * Set the command
      */
-    void setCommand(const char *command) { m_Command = command; }
+    void setCommand(QCString command) { m_Command = command; }
+
+    /**
+     * Enable/disable build of syscoca for the target.
+     */
+    void setBuildSycoca(bool build) { m_bSycoca = build; }
 
     /**
      * Enable terminal output.
@@ -41,45 +48,47 @@ public:
     void setTerminal(bool terminal) { m_bTerminal = terminal; }
 
     /**
+     * Set to "x only" mode: DCOP is not forwarded and the sycoca is not
+     * built.
+     */
+    void setXOnly(bool xonly) { m_bXOnly = xonly; }
+
+    /**
      * If set to true, the password is overwritten as soon as it is used.
      */
     void setErase(bool erase) { m_bErase = erase; }
 
     /**
-     * Enable/disable build of syscoca for the target.
+     * Set exit string. If a line of program output matches this,
+     * waitForChild() will kill it.
      */
-    void setBuildSycoca(bool build) { m_bSycoca = build; }
+    void setExitString(QCString exit) { m_Exit = exit; }
 
-    /**
-     * Set the user to su to.
-     */
-    void setUser(const char *user) { m_User = user; }
+protected:
+    // These virtual functions can be overloaded when special behaviour is
+    // needed (i.e. SshProcess).
+    virtual QString display() { return m_pCookie->display(); }
+    virtual QString displayAuth() { return m_pCookie->displayAuth(); }
+    virtual QStringList dcopServer() { return m_pCookie->dcopServer(); }
+    virtual QStringList dcopAuth() { return m_pCookie->dcopAuth(); }
+    virtual QStringList iceAuth() { return m_pCookie->iceAuth(); }
 
-    /**
-     * Execute the command. This will wait for the command to finish. If
-     * this is not desired, put the '&' character after the command.
-     * @param password Root's password.
-     */
-    int exec(char *password, bool check_only=false);
+    bool m_bTerminal, m_bSycoca;
+    bool m_bErase, m_bXOnly;
+    int m_Pid, m_Fd;
+    QCString m_TTY, m_Command, m_Exit;
 
-    /**
-     * Check the password. This is dony by trying to executing "true".
-     */
-    int checkPass(const char *pass) { return exec((char *) pass, true); }
+    int SetupTTY(int fd);
+    int WaitSlave();
+    int ConverseStub(bool check_only);
+    int waitForChild(bool echo);
+    int disableLocalEcho();
 
 private:
-    int SetupTTY();
-    int disableLocalEcho();
-    int WaitSlave();
-    int ConverseSU(const char *password);
-    int ConverseStub();
-    int waitForChild(bool echo);
+    PTY *m_pPTY;
+    KCookie *m_pCookie;
     QCString commaSeparatedList(QStringList);
-
-    int m_Pid, m_Fd;
-    QCString m_TTY, m_Command, m_User;
-    bool m_bOk, m_bTerminal, m_bSycoca;
-    bool m_bWait, m_bErase;
 };
+
 
 #endif

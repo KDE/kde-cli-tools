@@ -3,7 +3,7 @@
  * $Id$
  *
  * This file is part of the KDE project, module kdesu.
- * Copyright (C) 1999 Geert Jansen <g.t.jansen@stud.tue.nl>
+ * Copyright (C) 1999,2000 Geert Jansen <jansen@kde.org>
  * 
  * kdesu_stub.c: KDE su executes this stub, which in turn executes the
  *	         wanted program. Before that, startup parameters are sent
@@ -14,6 +14,7 @@
  *
  *   Parameter       Description         Format (csl = comma separated list)
  *
+ * - kdesu_stub      Header              "ok" | "stop"
  * - display         X11 display         string
  * - display_auth    X11 authentication  "type cookie" pair
  * - dcopserver      KDE dcopserver      csl of netids
@@ -31,6 +32,7 @@
 #include <errno.h>
 #include <pwd.h>
 #include <termios.h>
+#include <signal.h>
 
 #include <sys/types.h>
 #include <sys/stat.h>
@@ -47,6 +49,7 @@ struct param_struct {
 };
 
 struct param_struct params[] = {
+    {"kdesu_stub", 0L},
     {"display", 0L},
     {"display_auth", 0L},
     {"dcopserver", 0L},
@@ -57,15 +60,16 @@ struct param_struct params[] = {
     {"build_sycoca", 0L},
 };
 
-#define P_DISPLAY 0
-#define P_DISPLAY_AUTH 1
-#define P_DCOPSERVER 2
-#define P_DCOP_AUTH 3
-#define P_ICE_AUTH 4
-#define P_COMMAND 5
-#define P_PATH 6
-#define P_SYCOCA 7
-#define P_LAST 8
+#define P_HEADER 0
+#define P_DISPLAY 1
+#define P_DISPLAY_AUTH 2
+#define P_DCOPSERVER 3
+#define P_DCOP_AUTH 4
+#define P_ICE_AUTH 5
+#define P_COMMAND 6
+#define P_PATH 7
+#define P_SYCOCA 8
+#define P_LAST 9
 
 
 /**
@@ -152,112 +156,108 @@ int main(int argc, char **argv)
     struct passwd *pw;
     struct termios tio;
 
-    /* --verify is to test the installation */
-
-    if ((argc == 2) && !strcmp(argv[1], "--verify"))
-	exit(0);
-
-    /* Set terminal mode: disable OPOST and ECHO. This makes the parsing 
-     * on the other end much easier. */
-
-    if (tcgetattr(0, &tio) < 0) {
-	printf("end\n"); printf("tcgetattr(): %s", strerror(errno));
-	exit(1);
-    }
-    tio.c_oflag &= ~OPOST;
-    tio.c_lflag &= ~ECHO;
-    if (tcsetattr(0, TCSANOW, &tio) < 0) {
-	printf("end\n"); printf("tcsetattr(): %s", strerror(errno));
-	exit(1);
-    }
-
     /* Get startup parameters. */
 
-    printf("kdesu_stub\n");
     for (i=0; i<P_LAST; i++) {
 	printf("%s\n", params[i].name);
+	fflush(stdout);
 	if (fgets(buf, 1024, stdin) == 0L) {
-	    printf("end\n"); perror("Fatal: fgets()");
+	    printf("end\n"); fflush(stdout);
+	    perror("kdesu_stub: fgets()");
 	    exit(1);
 	}
 	params[i].value = xstrdup(buf);
+	// Installation check?
+	if ((i == 0) && !strcmp(params[i].value, "stop")) {
+	    printf("end\n");
+	    exit(0);
+	}
     }
     printf("end\n");
+    fflush(stdout);
     
     xsetenv("PATH", params[P_PATH].value);
 
     /* Handle display */
 
-    xsetenv("DISPLAY", params[P_DISPLAY].value);
-    if (params[P_DISPLAY_AUTH].value[0]) {
-	fname = tmpnam(0L);
-	fout = fopen(fname, "w");
-	if (!fout) {
-	    perror("Fatal: fopen()");
-	    exit(1);
+    if (strcmp(params[P_DISPLAY].value, "no")) {
+	xsetenv("DISPLAY", params[P_DISPLAY].value);
+	if (params[P_DISPLAY_AUTH].value[0]) {
+	    fname = tmpnam(0L);
+	    fout = fopen(fname, "w");
+	    if (!fout) {
+		perror("kdesu_stub: fopen()");
+		exit(1);
+	    }
+	    fprintf(fout, "add %s %s\n", params[P_DISPLAY].value, 
+		    params[P_DISPLAY_AUTH].value);
+	    fclose(fout);
+	    tmpnam(xauthority);
+	    xsetenv("XAUTHORITY", xauthority);
+	    sprintf(command, "xauth source %s >/dev/null 2>&1", fname);
+	    if (system(command))
+		printf("kdesu_stub: failed to add X authentication");
+	    unlink(fname);
 	}
-	fprintf(fout, "add %s %s\n", params[P_DISPLAY].value, 
-		params[P_DISPLAY_AUTH].value);
-	fclose(fout);
-	tmpnam(xauthority);
-	xsetenv("XAUTHORITY", xauthority);
-	sprintf(command, "xauth source %s >/dev/null 2>&1", fname);
-	if (system(command))
-	    printf("Warning: failed to add X authentication");
-	unlink(fname);
     }
     
 
     /* Handle DCOP */
 
-    xsetenv("DCOPSERVER", params[P_DCOPSERVER].value);
-    host = xstrsep(params[P_DCOPSERVER].value);
-    auth = xstrsep(params[P_ICE_AUTH].value);
-    if (host[0]) {
-	fname = tmpnam(0L);
-	fout = fopen(fname, "w");
-	if (!fout) {
-	    perror("Fatal: fopen()");
-	    exit(1);
+    if (strcmp(params[P_DCOPSERVER].value, "no")) {
+	xsetenv("DCOPSERVER", params[P_DCOPSERVER].value);
+	host = xstrsep(params[P_DCOPSERVER].value);
+	auth = xstrsep(params[P_ICE_AUTH].value);
+	if (host[0]) {
+	    fname = tmpnam(0L);
+	    fout = fopen(fname, "w");
+	    if (!fout) {
+		perror("kdesu_stub: fopen()");
+		exit(1);
+	    }
+	    for (i=0; host[i]; i++)
+		fprintf(fout, "add ICE \"\" %s %s\n", host[i], auth[i]);
+	    auth = xstrsep(params[P_DCOP_AUTH].value);
+	    for (i=0; host[i]; i++)
+		fprintf(fout, "add DCOP \"\" %s %s\n", host[i], auth[i]);
+	    fclose(fout);
+	    tmpnam(iceauthority);
+	    xsetenv("ICEAUTHORITY", iceauthority);
+	    sprintf(command, "iceauth source %s >/dev/null 2>&1", fname);
+	    if (system(command))
+		printf("kdesu_stub: failed to add DCOP authentication\n");
+	    unlink(fname);
 	}
-	for (i=0; host[i]; i++)
-	    fprintf(fout, "add ICE \"\" %s %s\n", host[i], auth[i]);
-	auth = xstrsep(params[P_DCOP_AUTH].value);
-	for (i=0; host[i]; i++)
-	    fprintf(fout, "add DCOP \"\" %s %s\n", host[i], auth[i]);
-	fclose(fout);
-	tmpnam(iceauthority);
-	xsetenv("ICEAUTHORITY", iceauthority);
-	sprintf(command, "iceauth source %s >/dev/null 2>&1", fname);
-	if (system(command))
-	    printf("Warning: failed to add DCOP authentication\n");
-	unlink(fname);
     }
  
 
     /* Rebuild ksycoca */
 
-    sycoca = 0;
-    home = getenv("HOME");
-    if (!home) {
-	pw = getpwuid(getuid());
-	if (pw)
-	    home = pw->pw_dir;
+    if (strcmp(params[P_SYCOCA].value, "no")) {
+	sycoca = 0;
+	if (!strcmp(params[P_SYCOCA].value, "check")) {
+	    home = getenv("HOME");
+	    if (!home) {
+		pw = getpwuid(getuid());
+		if (pw)
+		    home = pw->pw_dir;
+	    }
+	    if (home) {
+		sprintf(buf, "%s/.kde/share/config/ksycoca", home);
+		if (!access(buf, R_OK))
+		    sycoca = 1;
+	    }
+	}
+	if (!sycoca && system("kbuildsycoca --nosignal"))
+	    printf("kdesu_stub: unable to create sycoca\n");
     }
-    if (home) {
-	sprintf(buf, "%s/.kde/share/config/ksycoca", home);
-	if (!access(buf, R_OK))
-	    sycoca = 1;
-    }
-    if (!sycoca || !strcmp(params[P_SYCOCA].value, "yes"))
-	if (system("kbuildsycoca --nosignal"))
-	    printf("Warning: unable to create sycoca\n");
+
 
     /* Execute the command */
 
     pid = fork();
     if (pid == -1) {
-	printf("Error: fork(): %s\n", strerror(errno));
+	perror("kdesu_stub: fork()");
 	exit(1);
     }
     if (pid) {
@@ -268,21 +268,22 @@ int main(int argc, char **argv)
 	    if (ret == -1) {
 		if (errno == EINTR)
 		    continue;
-		printf("Error: waitpid(): %s\n", strerror(errno));
+		perror("kdesu_stub: waitpid()");
 		break;
 	    }
 	    if (WIFEXITED(state))
 		xit = WEXITSTATUS(state);
 	}
 
+	// Kill all processes in current process group.
 	unlink(xauthority);
 	unlink(iceauthority);
-	exit(state);
+	exit(xit);
 
     } else {
 	// Child: exec command
 	execl("/bin/sh", "sh", "-c", params[P_COMMAND].value, 0L);
-	printf("Error: exec(): %s\n", strerror(errno));
+	perror("kdesu_stub: exec()");
 	_exit(1);
     }
 }

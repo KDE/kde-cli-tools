@@ -3,7 +3,7 @@
  * $Id$
  *
  * This file is part of the KDE project, module kdesu.
- * Copyright (C) 1999 Geert Jansen <g.t.jansen@stud.tue.nl>
+ * Copyright (C) 1999,2000 Geert Jansen <jansen@kde.org>
  * 
  * client.h: client to access kdesud.
  */
@@ -47,6 +47,11 @@ public:
      * Set the target user.
      */
     int setUser(QCString user);
+
+    /**
+     * Set the target host (optional).
+     */
+    int setHost(QCString host);
 
     /**
      * Remove a command and it's password from kdesud.

@@ -1,12 +1,9 @@
 /* vi: ts=8 sts=4 sw=4
  *
- * $Id: $
+ * $Id$
  *
  * This file is part of the KDE project, module kdesu
- * Copyright (C) 1999 Geert Jansen <g.t.jansen@stud.tue.nl>
- * 
- * You can Freely distribute this program under the GNU General Public
- * License. See the file "COPYING" for the exact licensing terms.
+ * Copyright (C) 1999,2000 Geert Jansen <jansen@kde.org>
  */
 
 #ifndef __KCookie_h_Included__
