@@ -9,6 +9,7 @@ class QListBox;
 class KIconButton;
 class QLineEdit;
 class QComboBox;
+class FileTypeDetails;
 
 class FileTypesView : public KCModule
 {
@@ -26,40 +27,24 @@ public:
   void defaults();
   QString quickHelp();
 
-
 protected slots:
   void addType();
-  void removeType(); 
-  void addExtension();
-  void removeExtension();
+  void removeType();
   void updateDisplay(QListViewItem *);
-  void updateIcon(QString icon);
-  void updateDescription(const QString &desc);
-  void promoteService();
-  void demoteService();
-  void enableMoveButtons(int index);
-  void enableExtButtons(int index);
-  void addService();
-  void removeService();
   void slotFilter(const QString &patternFilter);
+  void setDirty() { setDirty( true ); }
 
 protected:
-  void updatePreferredServices();
   void readFileTypes(const QString &patternFilter = QString::null);
 
 private:
   void setDirty(bool state);
 
   QListView *typesLV;
-  KIconButton *iconButton;
-  QListBox *extensionLB;
-  QLineEdit *description;
-  QListBox *servicesLB;
-  QPushButton *servUpButton, *servDownButton;
-  QPushButton *servNewButton, *servRemoveButton;
-  QPushButton *addExtButton, *removeExtButton;
-  QLineEdit *patternFilterLE;
 
+  FileTypeDetails * m_details;
+
+  QLineEdit *patternFilterLE;
   QStringList removedList;
   bool m_dirty;
 };

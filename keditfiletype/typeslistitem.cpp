@@ -1,6 +1,7 @@
 #include <qstring.h>
 #include <qtooltip.h>
 
+#include <kdebug.h>
 #include <kservice.h>
 #include <kuserprofile.h>
 #include <kglobal.h>
@@ -95,6 +96,7 @@ void TypesListItem::sync()
   config.writeEntry("Icon", m_icon);
   config.writeEntry("Patterns", m_patterns, ';');
   config.writeEntry("Comment", m_comment);
+  config.writeEntry("Hidden", false);
 
   KSimpleConfig profile("profilerc");
 

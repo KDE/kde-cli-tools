@@ -7,11 +7,11 @@ libkcm_filetypes_la_METASOURCES = AUTO
 lib_LTLIBRARIES = libkcm_filetypes.la
 
 libkcm_filetypes_la_SOURCES = \
-	filetypesview.cpp typeslistitem.cpp \
-	newtypedlg.cpp
+	filetypesview.cpp filetypedetails.cpp \
+	typeslistitem.cpp newtypedlg.cpp
 
-noinst_HEADERS = filetypesview.h typeslistitem.h \
-	newtypedlg.h
+noinst_HEADERS = filetypesview.h filetypedetails.h \
+	typeslistitem.h newtypedlg.h
 
 DISTCLEANFILES = $(libkcm_filetypes_la_METASOURCES)
 

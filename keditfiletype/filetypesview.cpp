@@ -1,51 +1,23 @@
-#include <qstringlist.h>
+
+#include <qlistview.h>
+#include <qlabel.h>
+#include <qwhatsthis.h>
 #include <qpushbutton.h>
 #include <qlayout.h>
-#include <qlistview.h>
-#include <qgroupbox.h>
-#include <qlistbox.h>
-#include <qwhatsthis.h>
-#include <qlabel.h>
 
 #include <dcopclient.h>
-#include <krun.h>
-#include <kbuttonbox.h>
-#include <kiconloader.h>
-#include <kicondialog.h>
-#include <kstddirs.h>
-#include <klocale.h>
-#include <kdialog.h>
-#include <kservice.h>
-#include <kservicetype.h>
-#include <kmimetype.h>
-#include <klineeditdlg.h>
-#include <kuserprofile.h>
-#include <kdesktopfile.h>
-#include <kopenwith.h>
+#include <kapp.h>
 #include <kdebug.h>
+#include <kdesktopfile.h>
+#include <klocale.h>
+#include <kstddirs.h>
 
 #include "typeslistitem.h"
 #include "newtypedlg.h"
 
+#include "filetypedetails.h"
 #include "filetypesview.h"
 
-class ServiceListItem : public QListBoxText
-{
-public:
-	ServiceListItem( QString &desktopPath );
-
-	QString desktopPath;
-};
-
-ServiceListItem::ServiceListItem( QString &_desktopPath )
-	: QListBoxText(), desktopPath(_desktopPath)
-{
-    KService::Ptr pService = KService::serviceByDesktopPath( _desktopPath );
-
-	ASSERT(pService);
-
-	setText( pService->name() );
-}
 
 FileTypesView::FileTypesView(QWidget *p, const char *name)
   : KCModule(p, name)
@@ -102,122 +74,10 @@ FileTypesView::FileTypesView(QWidget *p, const char *name)
 
   QWhatsThis::add( removeTypeB, i18n("Click here to remove the selected file type.") );
 
-  QVBoxLayout *rightLayout = new QVBoxLayout();
-  topLayout->addLayout(rightLayout, 3);
-
-  QHBoxLayout *hBox = new QHBoxLayout();
-  rightLayout->addLayout(hBox, 2);
-
-  iconButton = new KIconButton(this);
-  iconButton->setIconType(KIcon::Desktop, KIcon::MimeType);
-  connect(iconButton, SIGNAL(iconChanged(QString)), SLOT(updateIcon(QString)));
-
-  iconButton->setFixedSize(50, 50);
-  hBox->addWidget(iconButton);
-
-  QWhatsThis::add( iconButton, i18n("This button displays the icon associated"
-    " with the selected file type. Click on it to choose a different icon.") );
-
-  QGroupBox *gb = new QGroupBox(i18n("Filename Patterns"), this);
-  hBox->addWidget(gb);
-
-  QGridLayout *grid = new QGridLayout(gb, 3, 2, KDialog::marginHint(),
-                                      KDialog::spacingHint());
-  grid->addRowSpacing(0, fontMetrics().lineSpacing());
-
-  extensionLB = new QListBox(gb);
-  connect(extensionLB, SIGNAL(highlighted(int)), SLOT(enableExtButtons(int)));
-  grid->addMultiCellWidget(extensionLB, 1, 2, 0, 0);
-  grid->setRowStretch(1, 1);
-
-  QWhatsThis::add( extensionLB, i18n("This box contains a list of patterns that can be"
-    " used to identify files of the selected type. For example, the pattern *.txt is"
-    " associated with the file type 'text/plain'; all files ending in '.txt' are recognized"
-    " as plain text files.") );
-
-  addExtButton = new QPushButton(i18n("Add..."), gb);
-  addExtButton->setEnabled(false);
-  connect(addExtButton, SIGNAL(clicked()),
-          this, SLOT(addExtension()));
-  grid->addWidget(addExtButton, 1, 1);
-
-  QWhatsThis::add( addExtButton, i18n("Add a new pattern for the selected file type.") );
-
-  removeExtButton = new QPushButton(i18n("Remove"), gb);
-  removeExtButton->setEnabled(false);
-  connect(removeExtButton, SIGNAL(clicked()),
-          this, SLOT(removeExtension()));
-  grid->addWidget(removeExtButton, 2, 1);
-
-  QWhatsThis::add( removeExtButton, i18n("Remove the selected filename pattern.") );
-
-  gb = new QGroupBox(i18n("Description"), this);
-  rightLayout->addWidget(gb);
-
-  gb->setColumnLayout(1, Qt::Horizontal);
-  description = new KLineEdit(gb);
-  connect(description, SIGNAL(textChanged(const QString &)),
-          SLOT(updateDescription(const QString &)));
-
-  wtstr = i18n("You can enter a short description for files of the selected"
-    " file type (e.g. 'HTML Page'). This description will be used by applications"
-    " like Konqueror to display directory content.");
-  QWhatsThis::add( gb, wtstr );
-  QWhatsThis::add( description, wtstr );
-
-  gb = new QGroupBox(i18n("Application Preference Order"), this);
-  rightLayout->addWidget(gb, 1);
-
-  grid = new QGridLayout(gb, 5, 2, KDialog::marginHint(),
-                         KDialog::spacingHint());
-  grid->addRowSpacing(0, fontMetrics().lineSpacing());
-//  grid->setRowStretch(3, 1);
-
-  servicesLB = new QListBox(gb);
-  connect(servicesLB, SIGNAL(highlighted(int)), SLOT(enableMoveButtons(int)));
-  grid->addMultiCellWidget(servicesLB, 1, 4, 0, 0);
-
-  wtstr = i18n("This is a list of applications associated with files of the selected"
-    " file type. This list is shown in Konqueror's context menus when you select"
-    " \"Open with...\". If more than one application is associated with this file type,"
-    " then the list is ordered by priority with the uppermost item taking precedence"
-    " over the others.");
-  QWhatsThis::add( gb, wtstr );
-  QWhatsThis::add( servicesLB, wtstr );
-
-  servUpButton = new QPushButton(i18n("Move &Up"), gb);
-  servUpButton->setEnabled(false);
-  connect(servUpButton, SIGNAL(clicked()), SLOT(promoteService()));
-  grid->addWidget(servUpButton, 1, 1);
-
-  QWhatsThis::add( servUpButton, i18n("Assigns a higher priority to the selected\n"
-                              "application, moving it up in the list. Note:  This\n"
-                              "only affects the selected application if the file type is\n"
-			      "associated with more than one application."));
-
-  servDownButton = new QPushButton(i18n("Move &Down"), gb);
-  servDownButton->setEnabled(false);
-  connect(servDownButton, SIGNAL(clicked()), SLOT(demoteService()));
-  grid->addWidget(servDownButton, 2, 1);
-
-  QWhatsThis::add( servDownButton, i18n("Assigns a lower priority to the selected\n"
-			  "application, moving it down on the list.  Note:  This \n"
-			  "only affects the selected application if the file type is\n"
-			  "associated with more than one application."));
-
-  servNewButton = new QPushButton(i18n("Add..."), gb);
-  servNewButton->setEnabled(false);
-  connect(servNewButton, SIGNAL(clicked()), SLOT(addService()));
-  grid->addWidget(servNewButton, 3, 1);
-
-  QWhatsThis::add( servNewButton, i18n( "Add a new application for this file type." ) );
-
-  servRemoveButton = new QPushButton(i18n("Remove"), gb);
-  servRemoveButton->setEnabled(false);
-  connect(servRemoveButton, SIGNAL(clicked()), SLOT(removeService()));
-  grid->addWidget(servRemoveButton, 4, 1);
-
-  QWhatsThis::add( servRemoveButton, i18n( "Remove the selected application from the list." ) );
+  m_details = new FileTypeDetails( this );
+  connect( m_details, SIGNAL( dirty() ),
+           this, SLOT( setDirty() ) );
+  topLayout->addWidget( m_details, 3);
 
   init();
   setDirty(false);
@@ -229,8 +89,8 @@ FileTypesView::~FileTypesView()
 
 void FileTypesView::setDirty(bool state)
 {
-	emit changed(state);
-	m_dirty = state;
+  emit changed(state);
+  m_dirty = state;
 }
 
 void FileTypesView::init()
@@ -350,36 +210,6 @@ void FileTypesView::removeType()
   setDirty(true);
 }
 
-void FileTypesView::addExtension()
-{
-  //ExtensionDialog m(this);
-  KLineEditDlg m(i18n("Extension:"), QString::null, this);
-  m.setCaption( i18n("Add New Extension") );
-  if (m.exec()) {
-    if (!m.text().isEmpty()) {
-      extensionLB->insertItem(m.text());
-      TypesListItem *tli = (TypesListItem *) typesLV->selectedItem();
-      QStringList patt = tli->patterns();
-      patt += m.text();
-      tli->setPatterns(patt);
-
-      setDirty(true);
-    }
-  }
-}
-
-void FileTypesView::removeExtension()
-{
-  if (extensionLB->currentItem() == -1)
-    return;
-  TypesListItem *tli = (TypesListItem *) typesLV->selectedItem();
-  QStringList patt = tli->patterns();
-  patt.remove(extensionLB->text(extensionLB->currentItem()));
-  tli->setPatterns(patt);
-  extensionLB->removeItem(extensionLB->currentItem());
-
-  setDirty(true);
-}
 
 void FileTypesView::updateDisplay(QListViewItem *item)
 {
@@ -392,120 +222,11 @@ void FileTypesView::updateDisplay(QListViewItem *item)
   if (tlitem->isMeta())
     return;
 
-  iconButton->setIcon(tlitem->icon());
-  description->setText(tlitem->comment());
-  extensionLB->clear();
-  removeExtButton->setEnabled(false);
-  addExtButton->setEnabled(true);
-  servNewButton->setEnabled(true);
-  servRemoveButton->setEnabled(false);
-  extensionLB->insertStringList(tlitem->patterns());
-
-
-  servicesLB->clear();
-
-  QStringList services = tlitem->defaultServices();
-
-  if (services.count() == 0) {
-    servicesLB->insertItem("None");
-    servicesLB->setEnabled(false);
-    servUpButton->setEnabled(false);
-    servDownButton->setEnabled(false);
-  } else {
-    for ( QStringList::Iterator it = services.begin();
-          it != services.end(); it++ )
-    {
-      servicesLB->insertItem( new ServiceListItem(*it) );
-    }
-    servicesLB->setEnabled(true);
-  }
+  m_details->setTypeItem( tlitem );
 
   // Updating the display indirectly called change(true)
   if ( !wasDirty )
     setDirty(false);
-}
-
-void FileTypesView::updateIcon(QString icon)
-{
-  if (extensionLB->currentItem() == 0)
-    return;
-
-  TypesListItem *tli = (TypesListItem *) typesLV->currentItem();
-  tli->setIcon(icon);
-
-  setDirty(true);
-}
-
-void FileTypesView::updateDescription(const QString &desc)
-{
-  if (extensionLB->currentItem() == 0)
-    return;
-
-  TypesListItem *tli = (TypesListItem *) typesLV->currentItem();
-  tli->setComment(desc);
-
-  setDirty(true);
-}
-
-void FileTypesView::promoteService()
-{
-  if (!servicesLB->isEnabled()) {
-    kapp->beep();
-    return;
-  }
-
-  unsigned int selIndex = servicesLB->currentItem();
-  if (selIndex == 0) {
-    kapp->beep();
-    return;
-  }
-
-  QListBoxItem *selItem = servicesLB->item(selIndex);
-  servicesLB->takeItem(selItem);
-  servicesLB->insertItem(selItem, selIndex-1);
-  servicesLB->setCurrentItem(selIndex - 1);
-
-  updatePreferredServices();
-
-  setDirty(true);
-}
-
-void FileTypesView::demoteService()
-{
-  if (!servicesLB->isEnabled()) {
-    kapp->beep();
-    return;
-  }
-
-  unsigned int selIndex = servicesLB->currentItem();
-  if (selIndex == servicesLB->count() - 1) {
-    kapp->beep();
-    return;
-  }
-
-  QListBoxItem *selItem = servicesLB->item(selIndex);
-  servicesLB->takeItem(selItem);
-  servicesLB->insertItem(selItem, selIndex+1);
-  servicesLB->setCurrentItem(selIndex + 1);
-
-  updatePreferredServices();
-
-  setDirty(true);
-}
-
-void FileTypesView::updatePreferredServices()
-{
-  if (typesLV->currentItem() == 0)
-    return;
-  TypesListItem *tli = (TypesListItem *) typesLV->currentItem();
-  QStringList sl;
-  unsigned int count = servicesLB->count();
-
-  for (unsigned int i = 0; i < count; i++) {
-    ServiceListItem *sli = (ServiceListItem *) servicesLB->item(i);
-    sl.append( sli->desktopPath );
-  }
-  tli->setDefaultServices(sl);
 }
 
 bool FileTypesView::sync()
@@ -533,92 +254,13 @@ bool FileTypesView::sync()
   for (; it2.current(); ++it2) {
     TypesListItem *tli = (TypesListItem *) it2.current();
     if (tli->isDirty()) {
+      kdDebug() << "Entry " << tli->name() << " is dirty. Saving." << endl;
       tli->sync();
       didIt = true;
     }
   }
   setDirty(false);
   return didIt;
-}
-
-void FileTypesView::enableMoveButtons(int index)
-{
-  if (servicesLB->count() <= 1)
-  {
-    servUpButton->setEnabled(false);
-    servDownButton->setEnabled(false);
-  }
-  else if ((uint) index == (servicesLB->count() - 1))
-  {
-    servUpButton->setEnabled(true);
-    servDownButton->setEnabled(false);
-  }
-  else if (index == 0)
-  {
-    servUpButton->setEnabled(false);
-    servDownButton->setEnabled(true);
-  }
-  else
-  {
-    servUpButton->setEnabled(true);
-    servDownButton->setEnabled(true);
-  }
-
-  servRemoveButton->setEnabled(true);
-}
-
-void FileTypesView::enableExtButtons(int /*index*/)
-{
-  removeExtButton->setEnabled(true);
-}
-
-void FileTypesView::addService()
-{
-  TypesListItem *item = (TypesListItem *)typesLV->currentItem();
-  if (!item)
-      return;
-
-  KOpenWithDlg dlg(item->name(), QString::null, 0L);
-  if (dlg.exec() == false)
-    return;
-
-  KService::Ptr service = dlg.service();
-
-  ASSERT(service);
-
-  // check if it is a duplicate entry
-  for (unsigned int index = 0; index < servicesLB->count(); index++)
-    if (servicesLB->text(index) == service->name())
-      return;
-
-  // if None is the only item, then there currently is no default
-  if (servicesLB->text(0) == "None") {
-      servicesLB->removeItem(0);
-      servicesLB->setEnabled(true);
-  }
-  QString desktopPath = service->desktopEntryPath();
-
-  servicesLB->insertItem( new ServiceListItem(desktopPath) );
-
-  updatePreferredServices();
-
-  setDirty(true);
-}
-
-void FileTypesView::removeService()
-{
-	int selected = servicesLB->currentItem();
-
-	if ( selected >= 0 ) {
-		servicesLB->removeItem( selected );
-		updatePreferredServices();
-
-		setDirty(true);
-	}
-
-	if ( servicesLB->currentItem() == -1 )
-		servRemoveButton->setEnabled(false);
-
 }
 
 void FileTypesView::load()
