@@ -67,21 +67,32 @@ int main(int argc, char **argv)
 	KInstance inst(&aboutData);
 
 	KConfig *konfig;
+        bool configMustDeleted = false;
 	if (file.isEmpty())
 	   konfig = KGlobal::config();
 	else
+        {
 	   konfig = new KConfig(file, true, false);
-
+           configMustDeleted=true;
+        }
 	konfig->setGroup(group);
 	if(type=="bool") {
 		dflt=dflt.lower();
 		bool def=(dflt=="true" || dflt=="on" || dflt=="yes" || dflt=="1");
-		return !konfig->readBoolEntry(key, def);
+                bool retValue = !konfig->readBoolEntry(key, def);
+                if ( configMustDeleted )
+                    delete konfig;
+		return retValue;
 	} else if(type=="num") {
-		return konfig->readLongNumEntry(key, dflt.toLong());
+            long retValue = konfig->readLongNumEntry(key, dflt.toLong());
+            if ( configMustDeleted )
+                delete konfig;
+            return retValue;
 	} else {
-		/* Assume it's a string... */
+            /* Assume it's a string... */
                 fprintf(stdout, "%s\n", konfig->readEntry(key, dflt).local8Bit().data());
+                if ( configMustDeleted )
+                    delete konfig;
 		return 0;
 	}
 }
