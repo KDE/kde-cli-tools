@@ -208,7 +208,7 @@ int main( int argc, char *argv[] )
 	  windowtype = NET::Normal;
   }
   
-  if ( args->isSet( "staysontop" ) ) {
+  if ( args->isSet( "ontop" ) ) {
       state |= NET::StaysOnTop;
       mask |= NET::StaysOnTop;
   }
