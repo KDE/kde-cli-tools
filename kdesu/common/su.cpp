@@ -66,6 +66,9 @@ int SuProcess::checkInstall(const char *password)
 
 int SuProcess::exec(const char *password, int check)
 {
+    if (check)
+	setTerminal(true);
+
     QString stub = KStandardDirs::findExe("kdesu_stub");
     if (stub.isEmpty()) {
 	kDebugError("%s: kdesu_stub not found", ID);
@@ -93,7 +96,7 @@ int SuProcess::exec(const char *password, int check)
 	kDebugError("%s: Converstation with kdesu_stub failed", ID);
 	return -1;
     }
-    int ret = waitForChild(check);
+    int ret = waitForChild();
     return ret;
 }
 

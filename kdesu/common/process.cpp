@@ -59,6 +59,7 @@ PtyProcess::PtyProcess()
     m_bErase = false;
     m_bXOnly = false;
     m_pPTY = 0L;
+    m_pCookie = new KCookie();
 }
 
 
@@ -75,7 +76,6 @@ int PtyProcess::init()
 	return -1;
     }
     m_TTY = m_pPTY->ptsname();
-    m_pCookie = new KCookie();
     m_Inbuf.resize(0);
     return 0;
 }
@@ -84,6 +84,7 @@ int PtyProcess::init()
 PtyProcess::~PtyProcess()
 {
     delete m_pPTY;
+    delete m_pCookie;
 }
     
 
@@ -140,6 +141,14 @@ QCString PtyProcess::readLine()
     }
 
     return ret;
+}
+
+void PtyProcess::writeLine(QCString line, bool addnl)
+{
+    if (!line.isEmpty())
+	write(m_Fd, line, line.length());
+    if (addnl)
+	write(m_Fd, "\n", 1);
 }
 
 /*
@@ -298,41 +307,25 @@ int PtyProcess::ConverseStub(bool check_only)
 	if (line.isNull())
 	    return -1;
 	if (line == "kdesu_stub") {
-	    if (check_only)
-		write(m_Fd, "stop\n", 5);
-	    else
-		write(m_Fd, "ok\n", 3);
+	    if (check_only) writeLine("stop");
+	    else writeLine("ok");
 	} else if (line == "display") {
-	    write(m_Fd, display(), display().length());
-	    write(m_Fd, "\n", 1);
+	    writeLine(display());
 	} else if (line == "display_auth") {
-	    write(m_Fd, displayAuth(), displayAuth().length());
-	    write(m_Fd, "\n", 1);
+	    writeLine(displayAuth());
 	} else if (line == "dcopserver") {
-	    QCString str = commaSeparatedList(dcopServer());
-	    write(m_Fd, str, str.length());
-	    write(m_Fd, "\n", 1);
+	    writeLine(commaSeparatedList(dcopServer()));
 	} else if (line == "dcop_auth") {
-	    QCString str = commaSeparatedList(dcopAuth());
-	    write(m_Fd, str, str.length());
-	    write(m_Fd, "\n", 1);
+	    writeLine(commaSeparatedList(dcopAuth()));
 	} else if (line == "ice_auth") {
-	    QCString str = commaSeparatedList(iceAuth());
-	    write(m_Fd, str, str.length());
-	    write(m_Fd, "\n", 1);
+	    writeLine(commaSeparatedList(iceAuth()));
 	} else if (line == "command") {
-	    write(m_Fd, m_Command, m_Command.length());
-	    write(m_Fd, "\n", 1);
+	    writeLine(m_Command);
 	} else if (line == "path") {
-	    char *path = getenv("PATH");
-	    if (path)
-		write(m_Fd, path, strlen(path));
-	    write(m_Fd, "\n", 1);
+	    writeLine(getenv("PATH"));
 	} else if (line == "build_sycoca") {
-	    if (m_bXOnly)
-		write(m_Fd, "no\n", 3);
-	    else
-		write(m_Fd, "yes\n", 4);
+	    if (m_bXOnly) writeLine("no");
+	    else writeLine("yes");
 	} else if (line == "end") {
 	    return 0;
 	} else {
@@ -351,16 +344,14 @@ int PtyProcess::ConverseStub(bool check_only)
  * attached to the terminal.
  */
 
-int PtyProcess::waitForChild(bool echo)
+int PtyProcess::waitForChild()
 {
-    char buf[256];
-    int pos, ret, nbytes, state, retval = 1;
+    int ret, state, retval = 1;
     struct timeval tv;
 
     fd_set fds;
     FD_ZERO(&fds);
 
-    echo |= m_bTerminal;
     QCString inbuf, line;
     while (1) {
 	tv.tv_sec = 1; tv.tv_usec = 0;
@@ -374,21 +365,16 @@ int PtyProcess::waitForChild(bool echo)
 	    }
 	}
 
-	// Buffer data to complete lines.
-	if (ret > 0) {
-	    nbytes = read(m_Fd, buf, 255);
-	    if (nbytes > 0) {
-		buf[nbytes] = '\0';
-		inbuf += buf;
+	if (ret) {
+	    line = readLine();
+	    if (!line.isEmpty()) {
+		if (!m_Exit.isEmpty() && !strnicmp(line, m_Exit, m_Exit.length()))
+		    kill(m_Pid, SIGTERM);
+		if (m_bTerminal) {
+		    fputs(line, stdout);
+		    fputc('\n', stdout);
+		}
 	    }
-	}
-	while ((pos = inbuf.find('\n')) != -1) {
-	    line = inbuf.left(pos+1);
-	    inbuf.remove(0, pos+1);
-	    if (!m_Exit.isEmpty() && !strnicmp(line, m_Exit, m_Exit.length()))
-		kill(m_Pid, SIGTERM);
-	    if (echo)
-		fputs(line, stdout);
 	}
 
 	// Check if the process is still alive

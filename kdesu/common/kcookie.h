@@ -13,6 +13,8 @@
 #include <qvaluelist.h>
 
 typedef QValueList<QCString> QCStringList;
+
+
 /**
  * Utility class to access the authentication tokens needed to run a KDE
  * program (X11 and DCOP cookies).

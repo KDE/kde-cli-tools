@@ -71,6 +71,9 @@ int SshProcess::checkInstall(const char *password)
 
 int SshProcess::exec(const char *password, int check)
 {    
+    if (check)
+	setTerminal(true);
+
     QCStringList args;
     if (!m_bXOnly) {
 	// Install DCOP forward
@@ -104,10 +107,10 @@ int SshProcess::exec(const char *password, int check)
 	    kDebugError("%s: Converstation with kdesu_stub failed", ID);
 	    kill(m_Pid, SIGTERM);
 	}
-	ret = waitForChild(check);
+	ret = waitForChild();
     } else {
 	kill(m_Pid, SIGTERM);
-	waitForChild(check);
+	waitForChild();
     }
     return ret;
 }
@@ -126,6 +129,7 @@ QCString SshProcess::dcopForward()
     QCString result, host;
     QCStringList srv = PtyProcess::dcopServer();
     QCStringList::Iterator it;
+    kDebugInfo("%s: count: %d", ID, srv.count());
     for (m_dcopSrv=0,it=srv.begin(); it!=srv.end(); m_dcopSrv++, it++) {
 	i = (*it).find('/');
 	if (i == -1)

@@ -16,7 +16,8 @@
 
 /**
  * A client class to access kdesud, the KDE su daemon.
- * It can execute commands for you, and store variables.
+ * As a trusted third party, it can execute commands for you 
+ * and store variables.
  */
 
 class KDEsuClient {
