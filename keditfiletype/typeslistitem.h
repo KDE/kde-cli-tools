@@ -16,7 +16,7 @@ public:
   /**
    * Create a filetype item
    */
-  TypesListItem(TypesListItem *parent, KMimeType::Ptr mimetype);
+  TypesListItem(TypesListItem *parent, KMimeType::Ptr mimetype, bool newItem=false);
   ~TypesListItem();
   QString name() const { return m_major + "/" + m_minor; }
   QString majorType() const { return m_major; }
@@ -40,6 +40,7 @@ private:
   void init(KMimeType::Ptr mimetype);
 
   bool metaType;
+  bool m_bNewItem;
   QString m_major, m_minor, m_comment, m_icon;
   QStringList m_patterns;
   QStringList m_services;

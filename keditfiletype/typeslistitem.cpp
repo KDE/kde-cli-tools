@@ -11,14 +11,14 @@
 #include "typeslistitem.h"
 
 TypesListItem::TypesListItem(QListView *parent, KMimeType::Ptr mimetype)
-  : QListViewItem(parent), metaType(true)
+  : QListViewItem(parent), metaType(true), m_bNewItem(false)
 {
   init(mimetype);
   setText(0, majorType());
 }
 
-TypesListItem::TypesListItem(TypesListItem *parent, KMimeType::Ptr mimetype)
-  : QListViewItem(parent), metaType(false)
+TypesListItem::TypesListItem(TypesListItem *parent, KMimeType::Ptr mimetype, bool newItem)
+  : QListViewItem(parent), metaType(false), m_bNewItem(newItem)
 {
   init(mimetype);
   setText(0, minorType());
@@ -57,6 +57,12 @@ void TypesListItem::init(KMimeType::Ptr mimetype)
 
 bool TypesListItem::isDirty() const
 {
+  if ( m_bNewItem )
+  {
+    kdDebug() << "New item, need to save it" << endl;
+    return true;
+  }
+
   if ((m_mimetype->name() != name()) &&
       (name() != "application/octet-stream"))
   {
@@ -114,6 +120,8 @@ void TypesListItem::sync()
   config.writeEntry("Patterns", m_patterns, ';');
   config.writeEntry("Comment", m_comment);
   config.writeEntry("Hidden", false);
+
+  m_bNewItem = false;
 
   KSimpleConfig profile("profilerc");
 

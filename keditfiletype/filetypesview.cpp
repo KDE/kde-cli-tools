@@ -169,7 +169,7 @@ void FileTypesView::addType()
     for (; it.current(); ++it) {
       TypesListItem *current = (TypesListItem *) it.current();
       if (current->majorType() == m.group()) {
-        TypesListItem *tli = new TypesListItem(current, mimetype);
+        TypesListItem *tli = new TypesListItem(current, mimetype, true);
         if (!tli->parent()->isOpen())
           tli->parent()->setOpen(true);
         typesLV->setSelected(tli, true);
@@ -179,7 +179,7 @@ void FileTypesView::addType()
     if (!it.current()) {
       // insert at top level.
       TypesListItem *i = new TypesListItem(typesLV, mimetype);
-      TypesListItem *tli = new TypesListItem(i, mimetype);
+      TypesListItem *tli = new TypesListItem(i, mimetype, true);
       if (!tli->parent()->isOpen())
         tli->parent()->setOpen(true);
       typesLV->setSelected(tli, true);
