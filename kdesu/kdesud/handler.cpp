@@ -406,7 +406,7 @@ int ConnectionHandler::doCommand(QCString buf)
 	value = repo->findKeys(name);
 	if (!value.isEmpty())
     {
-        kdDebug(1205) << "Requested value: " << value << endl;
+        // kdDebug(1205) << "Requested value: " << value << endl;
 	    respond(Res_OK, value);
     }
 	else
