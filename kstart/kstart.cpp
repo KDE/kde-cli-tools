@@ -147,7 +147,8 @@ void KStart::applyStyle(WId w ) {
 	info.setWindowType( windowtype );
     }
 
-    info.setState( state, mask );
+    if ( state )
+	info.setState( state, mask );
 
     if ( toSysTray ) {
 	QApplication::beep();
