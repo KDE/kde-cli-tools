@@ -52,7 +52,7 @@ KServiceSelectDlg::KServiceSelectDlg( const QString& /*serviceType*/, const QStr
     m_listbox->insertStringList( strList );
     m_listbox->setMinimumHeight(350);
     m_listbox->setMinimumWidth(300);
-
+    connect(m_listbox,SIGNAL(doubleClicked ( QListBoxItem * )),SLOT(slotOk()));
     setMainWidget(topcontents);
     enableButtonSeparator(false);
 }
