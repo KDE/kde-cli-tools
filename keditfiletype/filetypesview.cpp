@@ -38,7 +38,7 @@ FileTypesView::FileTypesView(QWidget *p, const char *name)
   QGridLayout *leftLayout = new QGridLayout(m_left, 4, 3);
   leftLayout->setColStretch(1, 1);
 
-  QLabel *patternFilterLBL = new QLabel( i18n("F&ind filename pattern"), m_left );
+  QLabel *patternFilterLBL = new QLabel( i18n("F&ind filename pattern:"), m_left );
   leftLayout->addMultiCellWidget(patternFilterLBL, 0, 0, 0, 2);
 
   patternFilterLE = new KLineEdit(m_left);
