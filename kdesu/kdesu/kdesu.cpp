@@ -109,7 +109,7 @@ int main(int argc, char *argv[])
 	    exit(1);
 	}
 	bool next = false;
-	for (int j=1; j<s.length(); j++) {
+	for (unsigned int j=1; j<s.length(); j++) {
 	    switch (s.at(j).latin1()) {
 	    case 'f':
 		file = parm.get(i++);
