@@ -1,12 +1,12 @@
 INCLUDES= $(all_includes)
 
-libkcm_filetypes_la_LIBADD	= $(LIB_KSYCOCA) $(LIB_KDEUI) $(LIB_KFILE)
-libkcm_filetypes_la_LDFLAGS = $(all_libraries) -module -avoid-version -no-undefined
-libkcm_filetypes_la_METASOURCES = AUTO
+kcm_filetypes_la_LIBADD	= $(LIB_KSYCOCA) $(LIB_KDEUI) $(LIB_KFILE)
+kcm_filetypes_la_LDFLAGS = $(all_libraries) -module -avoid-version -no-undefined
+kcm_filetypes_la_METASOURCES = AUTO
 
-kde_module_LTLIBRARIES = libkcm_filetypes.la
+kde_module_LTLIBRARIES = kcm_filetypes.la
 
-libkcm_filetypes_la_SOURCES = \
+kcm_filetypes_la_SOURCES = \
 	filetypesview.cpp filetypedetails.cpp filegroupdetails.cpp \
 	kservicelistwidget.cpp typeslistitem.cpp newtypedlg.cpp \
 	kserviceselectdlg.cpp
@@ -18,10 +18,10 @@ noinst_HEADERS = filetypesview.h filetypedetails.h filegroupdetails.h \
 bin_PROGRAMS = keditfiletype
 
 keditfiletype_SOURCES = keditfiletype.cpp
-keditfiletype_LDADD = libkcm_filetypes.la
+keditfiletype_LDADD = kcm_filetypes.la
 keditfiletype_LDFLAGS = $(all_libraries) $(KDE_RPATH)
 
-DISTCLEANFILES = $(libkcm_filetypes_la_METASOURCES)
+DISTCLEANFILES = $(kcm_filetypes_la_METASOURCES)
 
 messages:
 	$(XGETTEXT) *.cpp -o $(podir)/filetypes.pot
