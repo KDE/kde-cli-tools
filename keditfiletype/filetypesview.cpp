@@ -130,11 +130,6 @@ void FileTypesView::init()
   setCursor( KCursor::waitCursor() );
 
   readFileTypes();
-  // Since we have filled in the list once and for all, set width correspondingly,
-  // to avoid horizontal scrollbars (DF).
-  typesLV->setMinimumWidth( typesLV->sizeHint().width()+30 );
-//  m_splitter->setResizeMode(m_left, QSplitter::KeepSize);
-//  m_splitter->setResizeMode(m_widgetStack, QSplitter::Stretch);
 
   setDirty(false);
   setEnabled( true );
