@@ -69,18 +69,15 @@ int SuProcess::exec(const char *password, int check)
     if (check)
 	setTerminal(true);
 
-    QString stub = KStandardDirs::findExe("kdesu_stub");
-    if (stub.isEmpty()) {
-	kDebugError("%s: kdesu_stub not found", ID);
-	_exit(1);
-    }
-
     QCStringList args;
-    args += m_User;
+    if ((m_Scheduler != SchedNormal) || (m_Priority > 50))
+	args += "root";
+    else
+	args += m_User;
     args += "-c";
-    args += QFile::encodeName(stub);
+    args += QCString(KDE_BINDIR) + "/kdesu_stub";
 
-    if (PtyProcess::exec(__PATH_SU, args) < 0)
+    if (StubProcess::exec(__PATH_SU, args) < 0)
 	return -1;
     
     if (ConverseSU(password) < 0) {
@@ -138,7 +135,7 @@ int SuProcess::ConverseSU(const char *password)
 QCStringList SuProcess::dcopServer()
 {
     if (!m_bXOnly) 
-	return PtyProcess::dcopServer();
+	return StubProcess::dcopServer();
 
     QCStringList lst;
     lst += "no";

@@ -17,14 +17,11 @@ class KDEsuDialog
     Q_OBJECT
 
 public:
-    KDEsuDialog(QCString user, QCString command, bool enableKeep);
+    KDEsuDialog(QCString user, QCString auth_user, bool enableKeep);
     ~KDEsuDialog();
 
     enum ResultCodes { AsUser = 10 };
     
-    static int getPassword(QCString &password, QCString user,
-	    QCString command, int *keep);
-
 protected:
     bool checkPassword(const char *password);
     void slotUser1();

@@ -37,8 +37,11 @@ extern Repository *repo;
 
 
 ConnectionHandler::ConnectionHandler(int fd)
-	: SocketSecurity(fd), m_Fd(fd)
+	: SocketSecurity(fd)
 {
+    m_Fd = fd;
+    m_Priority = 50;
+    m_Scheduler = SuProcess::SchedNormal;
 }
 
 ConnectionHandler::~ConnectionHandler()
@@ -89,8 +92,8 @@ QCString ConnectionHandler::makeKey(int namspace, QCString host,
 int ConnectionHandler::doCommand()
 {
     if ((uid_t) peerUid() != getuid()) {
-	qWarning("Peer uid not equal to me");
-	qWarning("Peer: %d, Me: %d", peerUid(), (int) getuid());
+	kDebugError("Peer uid not equal to me");
+	kDebugError("Peer: %d, Me: %d", peerUid(), (int) getuid());
 	return -1;
     }
 
@@ -126,7 +129,7 @@ int ConnectionHandler::doCommand()
 	if (l->lex() != '\n')
 	    goto parse_error;
 	respond(Res_OK);
-	kDebugInfo("Password set!");
+	kDebugInfo("kdesud: Password set!");
 	break;
 
     case Lexer::Tok_user:
@@ -137,7 +140,7 @@ int ConnectionHandler::doCommand()
 	if (l->lex() != '\n')
 	    goto parse_error;
 	respond(Res_OK);
-	kDebugInfo("User set to %s", m_User.data());
+	kDebugInfo("kdesud: User set to %s", m_User.data());
 	break;
 
     case Lexer::Tok_host:
@@ -148,7 +151,29 @@ int ConnectionHandler::doCommand()
 	if (l->lex() != '\n')
 	    goto parse_error;
 	respond(Res_OK);
-	kDebugInfo("Host set to %s", m_Host.data());
+	kDebugInfo("kdesud: Host set to %s", m_Host.data());
+	break;
+
+    case Lexer::Tok_prio:
+	tok = l->lex();
+	if (tok != Lexer::Tok_num)
+	    goto parse_error;
+	m_Priority = l->lval().toInt();
+	if (l->lex() != '\n')
+	    goto parse_error;
+	respond(Res_OK);
+	kDebugInfo("kdesud: priority set to %d", m_Priority);
+	break;
+
+    case Lexer::Tok_sched:
+	tok = l->lex();
+	if (tok != Lexer::Tok_num)
+	    goto parse_error;
+	m_Scheduler = l->lval().toInt();
+	if (l->lex() != '\n')
+	    goto parse_error;
+	respond(Res_OK);
+	kDebugInfo("kdesud: Scheduler set to %d", m_Scheduler);
 	break;
 
     case Lexer::Tok_exec:
@@ -163,7 +188,13 @@ int ConnectionHandler::doCommand()
 	if (m_User.isEmpty())
 	    goto parse_error;
 
-	key = makeKey(0, m_Host, m_User, command);
+	QCString auth_user;
+	if ((m_Scheduler != SuProcess::SchedNormal) || (m_Priority > 50))
+	    auth_user = "root";
+	else
+	    auth_user = m_User;
+
+	key = makeKey(0, m_Host, auth_user, command);
 	pdata = repo->find(key);
 	if (!pdata) {
 	    if (m_Pass.isNull()) {
@@ -178,10 +209,10 @@ int ConnectionHandler::doCommand()
 	    pass = pdata->value;
 
 	// Execute the command asynchronously
-	kDebugInfo("Executing command: %s", command.data());
+	kDebugInfo("kdesud: Executing command: %s", command.data());
 	pid_t pid = fork();
 	if (pid < 0) {
-	    qWarning("fork(): %s", strerror(errno));
+	    kDebugPError("fork()");
 	    respond(Res_NO);
 	    break;
 	} else if (pid > 0) {
@@ -197,6 +228,8 @@ int ConnectionHandler::doCommand()
 	    SuProcess proc;
 	    proc.setCommand(command);
 	    proc.setUser(m_User);
+	    proc.setPriority(m_Priority);
+	    proc.setScheduler(m_Scheduler);
 	    ret = proc.exec(pass.data());
 	} else {
 	    SshProcess proc;
@@ -206,7 +239,7 @@ int ConnectionHandler::doCommand()
 	    ret = proc.exec(pass.data());
 	}
 
-	kDebugInfo("Command completed");
+	kDebugInfo("kdesud: Command completed");
 	_exit(ret);
     }
 
@@ -228,7 +261,7 @@ int ConnectionHandler::doCommand()
 	}
 	repo->remove(key);
 	respond(Res_OK);
-	kDebugInfo("Deleted key: %s", (const char *) key);
+	kDebugInfo("kdesud: Deleted key: %s", (const char *) key);
 	break;
 
     case Lexer::Tok_set:
@@ -244,7 +277,7 @@ int ConnectionHandler::doCommand()
 	    goto parse_error;
 	data.timeout = 86400;
 	repo->add(key, data);
-	kDebugInfo("stored key: %s", key.data());
+	kDebugInfo("kdesud: stored key: %s", key.data());
 	respond(Res_OK);
 	break;
 
@@ -255,7 +288,7 @@ int ConnectionHandler::doCommand()
 	key = QCString("1*") + l->lval();
 	if (l->lex() != '\n')
 	    goto parse_error;
-	kDebugInfo("request for key: %s", key.data());
+	kDebugInfo("kdesud: request for key: %s", key.data());
 	pdata = repo->find(key);
 	if (pdata)
 	    respond(Res_OK, pdata->value);
@@ -268,7 +301,7 @@ int ConnectionHandler::doCommand()
 	if (tok != '\n')
 	    goto parse_error;
 	respond(Res_OK);
-	kDebugInfo("PING");
+	kDebugInfo("kdesud: PING");
 	break;
 
     case Lexer::Tok_stop:
@@ -276,11 +309,11 @@ int ConnectionHandler::doCommand()
 	if (tok != '\n')
 	    goto parse_error;
 	respond(Res_OK);
-	kDebugInfo("Stopping by command");
+	kDebugInfo("kdesud: Stopping by command");
 	exit(0);
 
     default:
-	kDebugInfo("Uknown command: %s", l->lval().data());
+	kDebugInfo("kdesud: Uknown command: %s", l->lval().data());
 	goto parse_error;
     }
 
@@ -288,7 +321,7 @@ int ConnectionHandler::doCommand()
     return 0;
 
 parse_error:
-    kDebugInfo("Parse error");
+    kDebugInfo("kdesud: Parse error");
     delete l;
     return -1;
 }
@@ -314,19 +347,18 @@ int ConnectionHandler::handle()
 	return -1;
     } else if (nbytes == 0) {
 	// eof
-	kDebugInfo("eof on fd %d", m_Fd);
+	kDebugInfo("kdesud: eof on fd %d", m_Fd);
 	return -1;
     }
     tmpbuf[nbytes] = '\000';
 
     if (m_Buf.length()+nbytes > 500) {
-	qWarning("line too long");
+	kDebugWarning("kdesud: line too long");
 	return -1;
     }
 
-    m_Buf += tmpbuf;
+    m_Buf.append(tmpbuf);
     memset(tmpbuf, 'x', nbytes);
-
     
     /* Do we have a complete command yet? */
 

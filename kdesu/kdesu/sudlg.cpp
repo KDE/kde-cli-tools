@@ -14,11 +14,11 @@
 #include "sudlg.h"
 
 
-KDEsuDialog::KDEsuDialog(QCString user, QCString command, bool enableKeep)
-    : KPasswordDialog(Password, "", command, enableKeep, User1)
+KDEsuDialog::KDEsuDialog(QCString user, QCString auth_user, bool enableKeep)
+    : KPasswordDialog(Password, "", enableKeep, User1)
 {
-    m_User = user;
-    setCaption(i18n("Run as %1").arg(m_User));
+    m_User = auth_user;
+    setCaption(i18n("Run as %1").arg(user));
 
     QString prompt;
     if (m_User == "root")
@@ -54,23 +54,5 @@ void KDEsuDialog::slotUser1()
 {
     done(AsUser);
 } 
-
-
-//static
-int KDEsuDialog::getPassword(QCString &password, QCString user, 
-	QCString command, int *keep)
-{
-    bool enableKeep = keep && *keep;
-    KDEsuDialog *dlg = new KDEsuDialog(user, command, enableKeep);
-    int ret = dlg->exec();
-    if (ret == Accepted) {
-	password = dlg->password();
-	if (enableKeep)
-	    *keep = dlg->keep();
-    }
-    delete dlg;
-    return ret;
-}
-
 
 #include "sudlg.moc"

@@ -57,9 +57,7 @@ PtyProcess::PtyProcess()
 {
     m_bTerminal = false;
     m_bErase = false;
-    m_bXOnly = false;
     m_pPTY = 0L;
-    m_pCookie = new KCookie();
 }
 
 
@@ -84,7 +82,6 @@ int PtyProcess::init()
 PtyProcess::~PtyProcess()
 {
     delete m_pPTY;
-    delete m_pCookie;
 }
     
 
@@ -132,12 +129,7 @@ QCString PtyProcess::readLine(bool block)
 	if (nbytes == -1) {
 	    if (errno == EINTR)
 		continue;
-	    else if (errno == EAGAIN) 
-		break;
-	    else {
-		kDebugPError("%s: read()", ID);
-		break;
-	    }
+	    else break;
 	}
 	if (nbytes == 0)
 	    break;	// eof
@@ -291,67 +283,6 @@ int PtyProcess::enableLocalEcho(bool enable)
 }
 
 
-QCString PtyProcess::commaSeparatedList(QCStringList lst)
-{
-    if (lst.count() == 0)
-	return QCString("");
-
-    QCStringList::Iterator it = lst.begin();
-    QCString str = *it;
-    for (it++; it!=lst.end(); it++) {
-	str += ',';
-	str += *it;
-    }
-    return str;
-}
-    
-/*
- * Conversation with kdesu_stub. This is how we pass the authentication
- * tokens (X11 and DCOP), the X11 display, the DCOP server and the command
- * to the target process. kdesu_stub is already running with target 
- * priviliges.
- */
-
-int PtyProcess::ConverseStub(bool check_only)
-{
-    // This makes parsing a lot easier.
-    enableLocalEcho(false);
-
-    QCString line;
-    while (1) {
-	line = readLine();
-	if (line.isNull())
-	    return -1;
-	if (line == "kdesu_stub") {
-	    if (check_only) writeLine("stop");
-	    else writeLine("ok");
-	} else if (line == "display") {
-	    writeLine(display());
-	} else if (line == "display_auth") {
-	    writeLine(displayAuth());
-	} else if (line == "dcopserver") {
-	    writeLine(commaSeparatedList(dcopServer()));
-	} else if (line == "dcop_auth") {
-	    writeLine(commaSeparatedList(dcopAuth()));
-	} else if (line == "ice_auth") {
-	    writeLine(commaSeparatedList(iceAuth()));
-	} else if (line == "command") {
-	    writeLine(m_Command);
-	} else if (line == "path") {
-	    writeLine(getenv("PATH"));
-	} else if (line == "build_sycoca") {
-	    if (m_bXOnly) writeLine("no");
-	    else writeLine("yes");
-	} else if (line == "end") {
-	    return 0;
-	} else {
-	    kDebugWarning("%s: Unknown request: -->%s<--", ID, line.data());
-	    return -1;
-	}
-    }
-    return 0;
-}
-
 /*
  * Copy output to stdout until the child process exists, or a line of output
  * matches `m_Exit'.
@@ -368,7 +299,6 @@ int PtyProcess::waitForChild()
     fd_set fds;
     FD_ZERO(&fds);
 
-    QCString inbuf, line;
     while (1) {
 	tv.tv_sec = 1; tv.tv_usec = 0;
 	FD_SET(m_Fd, &fds);
@@ -382,7 +312,7 @@ int PtyProcess::waitForChild()
 	}
 
 	if (ret) {
-	    line = readLine(false);
+	    QCString line = readLine(false);
 	    while (!line.isNull()) {
 		if (!m_Exit.isEmpty() && !strnicmp(line, m_Exit, m_Exit.length()))
 		    kill(m_Pid, SIGTERM);
@@ -411,10 +341,10 @@ int PtyProcess::waitForChild()
 }
    
 /*
- * SetupTTY: Creates a new session. The filedescriptor "fd" is closed only 
- * after the slave pty is opened. This fd is actually also connected to it,
- * and it makes sure the peer doesn't get EIO when reading before we opened
- * it.
+ * SetupTTY: Creates a new session. The filedescriptor "fd" should be
+ * connected to the tty. It is closed after the tty is reopened to make it
+ * our controlling terminal. This way the tty is always opened at least once
+ * so we'll never get EIO when reading from it.
  */
 
 int PtyProcess::SetupTTY(int fd)

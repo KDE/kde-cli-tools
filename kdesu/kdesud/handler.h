@@ -9,9 +9,9 @@
 #ifndef __Handler_h_included__
 #define __Handler_h_included__
 
+#include <qcstring.h>
 #include "secure.h"
 
-class QCString;
 
 /**
  * A ConnectionHandler handles a client. It is called from the main program
@@ -41,6 +41,7 @@ private:
     enum Results { Res_OK, Res_NO };
 
     int m_Fd, m_Timeout;
+    int m_Priority, m_Scheduler;
     QCString m_Buf, m_Pass;
     QCString m_User, m_Host;
 };

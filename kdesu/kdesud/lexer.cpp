@@ -110,6 +110,10 @@ int Lexer::lex()
 		return Tok_get;
 	    if (m_Output == "HOST")
 		return Tok_host;
+	    if (m_Output == "SCHD")
+		return Tok_sched;
+	    if (m_Output == "PRIO")
+		return Tok_prio;
 	}
 
 	return Tok_str;

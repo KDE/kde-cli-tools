@@ -3,7 +3,7 @@
  * $Id$
  *
  * This file is part of the KDE project, module kdesu.
- * Copyright (C) 1999 Geert Jansen <g.t.jansen@stud.tue.nl>
+ * Copyright (C) 1999,2000 Geert Jansen <jansen@kde.org>
  * 
  *
  * kdesud.cpp: KDE su daemon. Offers "keep password" functionality to kde su.
@@ -101,7 +101,7 @@ void sigchld_handler(int)
 	pid = waitpid((pid_t) -1, &status, WNOHANG);
 	if (pid <= 0)
 	    break;
-	kDebugInfo("PID %d exited", (int) pid);
+	kDebugInfo("kdesud: PID %d exited", (int) pid);
     }
 }
 
@@ -144,7 +144,6 @@ int create_socket()
 	kDebugWarning("socket(): %s", strerror(errno));
 	return -1;
     }
-    kDebugInfo("Created socket: %s", (const char *) sock);
 
     struct sockaddr_un addr;
     addr.sun_family = AF_UNIX;
@@ -179,8 +178,6 @@ int create_socket()
     }
 
     chmod(sock, 0600);
-    kDebugInfo("Chmod to 0600");
-
     return sockfd;
 }
 
@@ -283,7 +280,7 @@ int main(int argc, char *argv[])
 		}
 		handler[fd] = new ConnectionHandler(fd);
 		FD_SET(fd, &active_fds);
-		kDebugInfo("Accepted new connection on fd %d", fd);
+		kDebugInfo("kdesud: Accepted new connection on fd %d", fd);
 		continue;
 	    }
 

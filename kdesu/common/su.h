@@ -10,23 +10,18 @@
 #define __SU_h_Included__
 
 #include <qcstring.h>
-#include "process.h"
 
-class QStringList;
+#include "stub.h"
 
 /**
- * Execute under a different uid, using su to gain privileges.
+ * Execute a command under elevated privileges, using su.
  */
 
-class SuProcess
-    : public PtyProcess
+class SuProcess: public StubProcess
 {
 public:
     SuProcess(QCString user=0, QCString command=0);
     ~SuProcess();
-
-    /** Set the target user. */
-    void setUser(QCString user) { m_User = user; }
 
     /** Execute the command. This will wait for the command to finish. */
     int exec(const char *password, int check=0);
@@ -42,8 +37,6 @@ protected:
 
 private:
     int ConverseSU(const char *password);
-
-    QCString m_User;
 };
 
 #endif

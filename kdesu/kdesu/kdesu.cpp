@@ -40,12 +40,14 @@
 const char *Version = "1.0";
 
 static KCmdLineOptions options[] = {
-    { "+command", I18N_NOOP("Specifies the command to run."), 0},
+    { "+command", I18N_NOOP("Specifies the command to run."), 0 },
     { "f <file>", I18N_NOOP("Run command under target uid if <file> is not writeable."), "" },
     { "u <user>", I18N_NOOP("Specifies the target uid"), "root" },
     { "n", I18N_NOOP("Do not keep password."), 0 },
     { "s", I18N_NOOP("Stop the daemon (forgets all passwords)."), 0 },
     { "t", I18N_NOOP("Enable terminal output (no password keeping)."), 0 },
+    { "p <prio>", I18N_NOOP("Set priority value: 0 <= prio <= 100, 0 is lowest."), "50" },
+    { "r", I18N_NOOP("Use realtime scheduling."), 0 },
     { 0, 0, 0 }
 };
 
@@ -53,7 +55,7 @@ static KCmdLineOptions options[] = {
 int main(int argc, char *argv[])
 {
     KAboutData aboutData("kdesu", I18N_NOOP("KDE su"),
-	    Version, I18N_NOOP("Runs a program under a different uid."),
+	    Version, I18N_NOOP("Runs a program with elevated privileges."),
 	    KAboutData::License_Artistic, 
 	    "Copyright (c) 1998-2000 Geert Jansen, Pietro Iglio");
     aboutData.addAuthor("Geert Jansen", I18N_NOOP("Maintainer"),
@@ -86,26 +88,17 @@ int main(int argc, char *argv[])
 
     // Get target uid
     QCString user = args->getOption("u");
+    QCString auth_user = user;
     struct passwd *pw = getpwnam(user);
     if (pw == 0L) {
 	kDebugFatal("User %s does not exist", (const char *) user);
 	exit(1);
     }
-    uid_t uid = pw->pw_uid;
-    bool change_uid = (getuid() != uid);
+    bool change_uid = (getuid() != pw->pw_uid);
 
-    // Get command
-    if (args->count() == 0)
-	KCmdLineArgs::usage(i18n("No command specified!"));
-    QCString command = args->arg(0);
-    for (int i=1; i<args->count(); i++) {
-	command += " ";
-	command += args->arg(i);
-    }
-
-    // If file is not writeable, change uid
+    // If file is writeable, do not change uid
     QString file = QFile::decodeName(args->getOption("f"));
-    if (!file.isEmpty()) {
+    if (change_uid && !file.isEmpty()) {
 	if (file.at(0) != '/') {
 	    KStandardDirs dirs;
 	    dirs.addKDEDefaults();
@@ -123,6 +116,31 @@ int main(int argc, char *argv[])
 	change_uid = !fi.isWritable();
     }
 
+    // Get priority/scheduler
+    QCString tmp = args->getOption("p");
+    bool ok;
+    int priority = tmp.toInt(&ok);
+    if (!ok || (priority < 0) || (priority > 100)) {
+	KCmdLineArgs::usage(i18n("Illegal priority: %1").arg(tmp));
+	exit(1);
+    }
+    int scheduler = SuProcess::SchedNormal;
+    if (args->isSet("r"))
+	scheduler = SuProcess::SchedRealtime;
+    if ((priority > 50) || (scheduler != SuProcess::SchedNormal)) {
+	change_uid = true;
+	auth_user = "root";
+    }
+
+    // Get command
+    if (args->count() == 0)
+	KCmdLineArgs::usage(i18n("No command specified!"));
+    QCString command = args->arg(0);
+    for (int i=1; i<args->count(); i++) {
+	command += " ";
+	command += args->arg(i);
+    }
+
     // Don't change uid if we're don't need to.
     if (!change_uid)
 	return system(command);
@@ -132,11 +150,11 @@ int main(int argc, char *argv[])
     bool have_daemon = true;
     KDEsuClient client;
     if (client.ping() == -1) {
-	just_started = true;
 	if (client.startServer() == -1) {
 	    kDebugWarning("Could not start daemon, reduced functionality.");
 	    have_daemon = false;
 	}
+	just_started = true;
     }
 
     // Try to exec the command with kdesud.
@@ -144,6 +162,8 @@ int main(int argc, char *argv[])
     bool terminal = args->isSet("t");
     if (keep && !terminal && !just_started) {
 	client.setUser(user);
+	client.setPriority(priority);
+	client.setScheduler(scheduler);
 	if (client.exec(command) != -1)
 	    return 0;
     }
@@ -166,13 +186,23 @@ int main(int argc, char *argv[])
     int timeout = config->readNumEntry("Timeout", defTimeout);
 
      // Start the dialog
-    QCString password;
-    int k = keep  && !terminal;
-    int ret = KDEsuDialog::getPassword(password, user, command, &k);
+    KDEsuDialog *dlg = new KDEsuDialog(user, auth_user, keep && !terminal);
+    dlg->addLine(i18n("Command:"), command);
+    if ((priority != 50) || (scheduler != SuProcess::SchedNormal)) {
+	QString prio;
+	if (scheduler == SuProcess::SchedRealtime)
+	    prio += i18n("realtime: ");
+	prio += QString("%1/100").arg(priority);
+	dlg->addLine(i18n("Priority:"), prio);
+    }
+    int ret = dlg->exec();
     if (ret == KDEsuDialog::Rejected)
 	exit(0);
     if (ret == KDEsuDialog::AsUser)
 	change_uid = false;
+    QCString password = dlg->password();
+    int k = dlg->keep();
+    delete dlg;
 
     // This destroys the Qt event loop and makes sure the dialog goes away.
     delete app;
@@ -193,12 +223,16 @@ int main(int argc, char *argv[])
     if (k && have_daemon) {
 	client.setUser(user);
 	client.setPass(password, timeout);
+	client.setPriority(priority);
+	client.setScheduler(scheduler);
 	return client.exec(command);
     } else {
 	SuProcess proc;
 	proc.setTerminal(terminal);
 	proc.setErase(true);
 	proc.setUser(user);
+	proc.setPriority(priority);
+	proc.setScheduler(scheduler);
 	proc.setCommand(command);
 	return proc.exec(password);
     }

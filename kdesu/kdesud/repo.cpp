@@ -3,7 +3,7 @@
  * $Id$
  *
  * This file is part of the KDE project, module kdesu.
- * Copyright (C) 1999 Geert Jansen <g.t.jansen@stud.tue.nl>
+ * Copyright (C) 1999,2000 Geert Jansen <g.t.jansen@stud.tue.nl>
  */
 
 #include <time.h>
@@ -34,8 +34,6 @@ void Repository::add(const QCString &key, Data_entry &data)
     data.timeout += time(0L);
     head_time = QMIN(head_time, data.timeout);
     repo[key] = data;
-
-    qDebug("Added key: %s", (const char *) key);
 }
 
 
@@ -48,7 +46,6 @@ int Repository::remove(const QCString &key)
     repo_it.data().value.fill('x');
     repo.remove(key);
 
-    qDebug("Deleted key: %s", (const char *) key);
     return 0;
 }
 
@@ -59,7 +56,6 @@ const Data_entry *Repository::find(const QCString &key) const
     if (repo_cit == repo.end())
 	return 0L;
 
-    qDebug("Found key: %s", (const char *) key);
     return &repo_cit.data();
 }
 
@@ -88,7 +84,6 @@ int Repository::expire()
     while (!keys.isEmpty())
 	remove(keys.pop());
     
-    qDebug("Expired %d entries", n);
     return n;
 }
 

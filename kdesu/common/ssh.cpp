@@ -55,11 +55,11 @@ SshProcess::~SshProcess()
 }
 
 
-QString SshProcess::checkNeedPassword()
+QCString SshProcess::checkNeedPassword()
 {
     if (exec(0L, 2) == 1)
 	return m_Prompt;
-    return QString::null;
+    return 0;
 }
 
 
@@ -88,7 +88,7 @@ int SshProcess::exec(const char *password, int check)
     args += "-o"; args += "StrictHostKeyChecking no";
     args += m_Host; args += "kdesu_stub";
 
-    if (PtyProcess::exec("ssh", args) < 0)
+    if (StubProcess::exec("ssh", args) < 0)
 	return -1;
 
     int ret = ConverseSsh(password, check);
@@ -127,7 +127,7 @@ QCString SshProcess::dcopForward()
     bool ok;
     int i, j, port=0;
     QCString result, host;
-    QCStringList srv = PtyProcess::dcopServer();
+    QCStringList srv = StubProcess::dcopServer();
     QCStringList::Iterator it;
     kDebugInfo("%s: count: %d", ID, srv.count());
     for (m_dcopSrv=0,it=srv.begin(); it!=srv.end(); m_dcopSrv++, it++) {
@@ -257,7 +257,7 @@ QCStringList SshProcess::dcopServer()
 QCStringList SshProcess::dcopAuth()
 {
     QCStringList lst;
-    lst += PtyProcess::dcopAuth()[m_dcopSrv];
+    lst += StubProcess::dcopAuth()[m_dcopSrv];
     return lst;
 }
 
@@ -265,7 +265,7 @@ QCStringList SshProcess::dcopAuth()
 QCStringList SshProcess::iceAuth()
 {
     QCStringList lst;
-    lst += PtyProcess::iceAuth()[m_dcopSrv];
+    lst += StubProcess::iceAuth()[m_dcopSrv];
     return lst;
 }
 

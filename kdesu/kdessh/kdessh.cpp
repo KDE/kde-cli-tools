@@ -138,17 +138,19 @@ int main(int argc, char *argv[])
     int timeout = config->readNumEntry("Timeout", defTimeout);
 
     SshProcess proc(host, user);
-    QString prompt = proc.checkNeedPassword();
+    QCString prompt = proc.checkNeedPassword();
     QCString password;
 
     if (!prompt.isEmpty()) {
-	int k = keep && !terminal;
-	int res = KDEsshDialog::getPassword(password, host, user, 
-		command, prompt, &k);
+	KDEsshDialog *dlg = new KDEsshDialog(host, user, prompt,
+		keep && !terminal);
+	dlg->addLine(i18n("Command"), command);
+	int res = dlg->exec();
 	if (res == KDEsshDialog::Rejected)
 	    exit(0);
-	if (keep)
-	    keep = k;
+	keep = dlg->keep();
+	password = dlg->password();
+	delete dlg;
     } else 
 	keep = 0; 
 

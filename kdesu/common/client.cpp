@@ -169,6 +169,22 @@ int KDEsuClient::setHost(QCString host)
 }
 
 
+int KDEsuClient::setPriority(int prio)
+{
+    QCString cmd;
+    cmd.sprintf("PRIO %d\n", prio);
+    return command(cmd);
+}
+
+
+int KDEsuClient::setScheduler(int sched)
+{
+    QCString cmd;
+    cmd.sprintf("SCHD %d\n", sched);
+    return command(cmd);
+}
+
+
 int KDEsuClient::delCommand(QCString key)
 {
     QCString cmd = "DEL ";

@@ -14,9 +14,9 @@
 #include "sshdlg.h"
 
 
-KDEsshDialog::KDEsshDialog(QCString host, QCString user, QCString command, 
-	QString prompt, bool enableKeep)
-    : KPasswordDialog(Password, "", command, enableKeep)
+KDEsshDialog::KDEsshDialog(QCString host, QCString user, QCString prompt, 
+	bool enableKeep)
+    : KPasswordDialog(Password, "", enableKeep)
 {
     m_Host = host;
     m_User = user;
@@ -50,24 +50,6 @@ bool KDEsshDialog::checkPassword(const char *password)
 	return false;
     }
     return true;
-}
-
-
-// static
-int KDEsshDialog::getPassword(QCString &password, QCString host, 
-	QCString user, QCString command, QString prompt, int *keep)
-{
-    bool enableKeep = keep && *keep;
-    KDEsshDialog *dlg = new KDEsshDialog(host, user, command, prompt,
-	    enableKeep);
-    int res = dlg->exec();
-    if (res == Accepted) {
-	password = dlg->password();
-	if (enableKeep)
-	    *keep = dlg->keep();
-    }
-    delete dlg;
-    return res;
 }
 
 

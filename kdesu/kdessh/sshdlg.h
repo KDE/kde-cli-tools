@@ -1,6 +1,6 @@
 /* vi: ts=8 sts=4 sw=4
  *
- * $Id: $
+ * $Id$
  *
  * This file is part of the KDE project, module kdesu.
  * Copyright (C) 2000 Geert Jansen <jansen@kde.org>
@@ -17,12 +17,9 @@ class KDEsshDialog
     Q_OBJECT
 
 public:
-    KDEsshDialog(QCString host, QCString user, QCString command, 
-	    QString prompt, bool enableKeep);
+    KDEsshDialog(QCString host, QCString user, QCString prompt, 
+	    bool enableKeep);
     ~KDEsshDialog();
-
-    static int getPassword(QCString &password, QCString host, QCString user,
-	    QCString command, QString prompt, int *keep);
 
 protected:
     bool checkPassword(const char *password);

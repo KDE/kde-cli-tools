@@ -55,6 +55,16 @@ public:
     int setHost(QCString host);
 
     /**
+     * Set the desired priority, see @ref #StubProcess.
+     */
+    int setPriority(int priority);
+
+    /**
+     * Set the desired scheduler, see @ref #StubProcess.
+     */
+    int setScheduler(int scheduler);
+
+    /**
      * Remove a command and it's password from kdesud.
      * @param command The command to remove.
      * @return zero on success, -1 on an error

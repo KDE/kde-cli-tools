@@ -6,8 +6,8 @@
  * Copyright (C) 1999,2000 Geert Jansen <jansen@kde.org>
  * 
  * kdesu_stub.c: KDE su executes this stub, which in turn executes the
- *	         wanted program. Before that, startup parameters are sent
- *	         through the pty/tty channel.
+ *	         target program. Before that, startup parameters are sent
+ *	         through stdin.
  * 
  *
  * Available parameters:   
@@ -23,7 +23,12 @@
  * - command         Command to run      string
  * - path            PATH env. var       string
  * - build_sycoca    Rebuild sycoca?     "yes" | "no"
+ * - user            Target user         string
+ * - priority        Process priority    0 <= int <= 100
+ * - scheduler       Process scheduler   "fifo" | "normal"
  */
+
+#include <config.h>
 
 #include <stdio.h>
 #include <stdlib.h>
@@ -37,7 +42,12 @@
 #include <sys/types.h>
 #include <sys/stat.h>
 #include <sys/wait.h>
+#include <sys/time.h>
+#include <sys/resource.h>
 
+#ifdef POSIX1B_SCHEDULING
+#include <sched.h>
+#endif
 
 /**
  * Params sent by the peer.
@@ -58,6 +68,9 @@ struct param_struct params[] = {
     {"command", 0L},
     {"path", 0L},
     {"build_sycoca", 0L},
+    {"user", 0L},
+    {"priority", 0L},
+    {"scheduler", 0L},
 };
 
 #define P_HEADER 0
@@ -69,7 +82,10 @@ struct param_struct params[] = {
 #define P_COMMAND 6
 #define P_PATH 7
 #define P_SYCOCA 8
-#define P_LAST 9
+#define P_USER 9
+#define P_PRIORITY 10
+#define P_SCHEDULER 11
+#define P_LAST 12
 
 
 /**
@@ -150,7 +166,7 @@ int main(int argc, char **argv)
     char buf[1024];
     char command[200], xauthority[200], iceauthority[200];
     char **host, **auth, *fname, *home;
-    int i, res, sycoca;
+    int i, res, sycoca, prio;
     pid_t pid;
     FILE *fout;
     struct passwd *pw;
@@ -177,6 +193,52 @@ int main(int argc, char **argv)
     fflush(stdout);
     
     xsetenv("PATH", params[P_PATH].value);
+
+    /* Do we need to change uid? */
+
+    pw = getpwnam(params[P_USER].value);
+    if (pw == 0L) {
+	printf("kdesu_stub: user %s does not exist!\n", params[P_USER].value);
+	exit(1);
+    }
+
+    /* Set scheduling/priority */
+
+    prio = atoi(params[P_PRIORITY].value);
+    if (!strcmp(params[P_SCHEDULER].value, "realtime")) {
+#ifdef POSIX1B_SCHEDULING
+	struct sched_param sched;
+	int min = sched_get_priority_min(SCHED_FIFO);
+	int max = sched_get_priority_max(SCHED_FIFO);
+	sched.sched_priority = min + (int) (((double) prio) * (max - min) / 100 + 0.5);
+	sched_setscheduler(0, SCHED_FIFO, &sched);
+#else
+	printf("kdesu_stub: realtime scheduling not supported\n");
+#endif
+    } else {
+	int val = 20 - (int) (((double) prio) * 40 / 100 + 0.5);
+	setpriority(PRIO_PROCESS, getpid(), val);
+    }
+
+    /* Drop privileges (this is permanent) */
+
+    if (getuid() != pw->pw_uid) {
+	if (setgid(pw->pw_gid) == -1) {
+	    perror("kdesu_stub: setgid()");
+	    exit(1);
+	}
+#ifdef HAVE_INITGROUPS
+	if (initgroups(pw->pw_name, pw->pw_gid) == -1) {
+	    perror("kdesu_stub: initgroups()");
+	    exit(1);
+	}
+#endif
+	if (setuid(pw->pw_uid) == -1) {
+	    perror("kdesu_stub: setuid()");
+	    exit(1);
+	}
+	xsetenv("HOME", pw->pw_dir);
+    }
 
     /* Handle display */
 
@@ -230,12 +292,10 @@ int main(int argc, char **argv)
 	}
     }
  
-
     /* Rebuild ksycoca */
 
     if (strcmp(params[P_SYCOCA].value, "no") && system("kded --check"))
 	printf("kdesu_stub: unable to create sycoca\n");
-
 
     /* Execute the command */
 
@@ -245,7 +305,7 @@ int main(int argc, char **argv)
 	exit(1);
     }
     if (pid) {
-	// Parent: wait for child, delete tempfiles and return.
+	/* Parent: wait for child, delete tempfiles and return. */
 	int ret, state, xit = 1;
 	while (1) {
 	    ret = waitpid(pid, &state, 0);
@@ -259,13 +319,12 @@ int main(int argc, char **argv)
 		xit = WEXITSTATUS(state);
 	}
 
-	// Kill all processes in current process group.
 	unlink(xauthority);
 	unlink(iceauthority);
 	exit(xit);
 
     } else {
-	// Child: exec command
+	/* Child: exec command. */
 	execl("/bin/sh", "sh", "-c", params[P_COMMAND].value, 0L);
 	perror("kdesu_stub: exec()");
 	_exit(1);

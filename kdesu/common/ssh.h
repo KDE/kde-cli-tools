@@ -11,14 +11,14 @@
 #define __SSH_h_Included__
 
 #include <qcstring.h>
-#include "process.h"
+
+#include "stub.h"
 
 /**
  * Execute a remote command, using ssh.
  */
 
-class SshProcess
-    : public PtyProcess
+class SshProcess: public StubProcess
 {
 public:
     SshProcess(QCString host=0, QCString user=0, QCString command=0);
@@ -27,15 +27,12 @@ public:
     /** Set the target host. */
     void setHost(QCString host) { m_Host = host; }
 
-    /** Set the target user. */
-    void setUser(QCString user) { m_User = user; }
-
     /** 
      * Check if the current user@host needs a password. 
      * @return The prompt for the password if a password is required. A null
      * string otherwise.
      */
-    QString checkNeedPassword();
+    QCString checkNeedPassword();
 
     /**
      * Check if the stub is installed and if the password is correct.
@@ -58,8 +55,7 @@ private:
     int ConverseSsh(const char *password, int check);
 
     int m_dcopPort, m_dcopSrv;
-    QString m_Prompt;
-    QCString m_Host, m_User;
+    QCString m_Prompt, m_Host;
 };
 
 #endif

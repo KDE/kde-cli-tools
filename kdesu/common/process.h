@@ -15,16 +15,12 @@
 #include <qstringlist.h>
 #include <qvaluelist.h>
 
-#include "pty.h"
-#include "kcookie.h"
-
+class PTY;
 typedef QValueList<QCString> QCStringList;
 
 /**
- * PtyProcess: Provides functionality for creating a GUI front end to
- * password requiring terminal programs (i.e. su, passwd, ...).
- *
- * It can be used "an sich", but you probably want to derive from it.
+ * PtyProcess provides for communications with tty based programs
+ * that require a terminal.
  */
 
 class PtyProcess
@@ -84,49 +80,17 @@ public:
     /** Enables/disables the ECHO flag.  */
     int enableLocalEcho(bool enable=true);
 
-    /**
-     * Have a conversation with kdesu_stub. If you execute a different 
-     * program, this method is not applicable.
-     */
-    int ConverseStub(bool check_only);
-
-    /**
-     * Set the command. Relevant only when executing kdesu_stub.
-     */
-    void setCommand(QCString command) { m_Command = command; }
-
-    /**
-     * Set to "X only mode": DCOP is not forwarded and the sycoca is not
-     * built. Relevant only when executing kdesu_stub.
-     */
-    void setXOnly(bool xonly) { m_bXOnly = xonly; }
-
-
 protected:
-    /** 
-     * These virtual functions can be overloaded when special behaviour is
-     * desired.
-     */
-    virtual QCString display() { return m_pCookie->display(); }
-    virtual QCString displayAuth() { return m_pCookie->displayAuth(); }
-    virtual QCStringList dcopServer() { return m_pCookie->dcopServer(); }
-    virtual QCStringList dcopAuth() { return m_pCookie->dcopAuth(); }
-    virtual QCStringList iceAuth() { return m_pCookie->iceAuth(); }
-
-    bool m_bTerminal;
-    bool m_bErase, m_bXOnly;
+    bool m_bErase, m_bTerminal;
     int m_Pid, m_Fd;
     QCString m_Command, m_Exit;
 
 private:
     int init();
     int SetupTTY(int fd);
-    QCString commaSeparatedList(QCStringList);
 
     PTY *m_pPTY;
-    KCookie *m_pCookie;
     QCString m_Inbuf, m_TTY;
 };
-
 
 #endif
