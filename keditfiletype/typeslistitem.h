@@ -12,11 +12,18 @@ public:
   /**
    * Create a filetype group
    */
-  TypesListItem(QListView *parent, KMimeType::Ptr mimetype);
+  TypesListItem(QListView *parent, const QString & major );
+
   /**
-   * Create a filetype item
+   * Create a filetype item inside a group
    */
   TypesListItem(TypesListItem *parent, KMimeType::Ptr mimetype, bool newItem=false);
+
+  /**
+   * Create a filetype item not inside a group (used by keditfiletype)
+   */
+  TypesListItem(QListView *parent, KMimeType::Ptr mimetype);
+
   ~TypesListItem();
 
   QString name() const { return m_major + "/" + m_minor; }
@@ -43,6 +50,7 @@ public:
 private:
   void saveServices( KSimpleConfig & profile, QStringList services );
   KMimeType::Ptr m_mimetype;
+  void initMeta( const QString & major );
   void init(KMimeType::Ptr mimetype);
 
   bool metaType;
@@ -51,7 +59,7 @@ private:
   QStringList m_patterns;
   QStringList m_appServices;
   QStringList m_embedServices;
-  int m_autoEmbed; // 0,1,2
+  int m_autoEmbed; // 0 yes, 1 no, 2 use group setting
   int groupCount; // shared between saveServices and sync
 };
 

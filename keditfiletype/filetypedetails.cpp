@@ -108,21 +108,22 @@ FileTypeDetails::FileTypeDetails( QWidget * parent, const char * name )
   QVBoxLayout *secondLayout = new QVBoxLayout(secondWidget, KDialog::marginHint(),
                                        KDialog::spacingHint());
 
-  autoEmbed = new QButtonGroup( i18n("Left click previews"), secondWidget );
-  secondLayout->addWidget( autoEmbed, 1 );
-  QVBoxLayout *bgLay = new QVBoxLayout(autoEmbed, KDialog::marginHint(),
+  m_autoEmbed = new QButtonGroup( i18n("Left click action"), secondWidget );
+  secondLayout->addWidget( m_autoEmbed, 1 );
+  QVBoxLayout *bgLay = new QVBoxLayout(m_autoEmbed, KDialog::marginHint(),
                                        KDialog::spacingHint());
   bgLay->addSpacing(10);
   // The order of those three items is very important. If you change it, fix typeslistitem.cpp !
-  bgLay->addWidget( new QRadioButton( i18n("Show file in embedded viewer"), autoEmbed ) );
-  bgLay->addWidget( new QRadioButton( i18n("Show file in seperate viewer"), autoEmbed ) );
-  bgLay->addWidget( new QRadioButton( i18n("Use group settings"), autoEmbed ) );
-  connect(autoEmbed, SIGNAL( clicked( int ) ), SLOT( slotAutoEmbedClicked( int ) ));
+  bgLay->addWidget( new QRadioButton( i18n("Show file in embedded viewer"), m_autoEmbed ) );
+  bgLay->addWidget( new QRadioButton( i18n("Show file in seperate viewer"), m_autoEmbed ) );
+  bgLay->addWidget( new QRadioButton( i18n("Use group settings"), m_autoEmbed ) );
+  connect(m_autoEmbed, SIGNAL( clicked( int ) ), SLOT( slotAutoEmbedClicked( int ) ));
 
-  QWhatsThis::add( autoEmbed, i18n("Here you can configure what the Konqueror file manager"
+  QWhatsThis::add( m_autoEmbed, i18n("Here you can configure what the Konqueror file manager"
     " will do when you click on a file of this type. Konqueror can display the file in"
-    " an embedded viwer or start up a separate application. If set to 'Use group settings',"
-    " Konqueror will behave according to the general settings in the 'File Manager' control module.") );
+    " an embedded viewer or start up a separate application. If set to 'Use group settings',"
+    " Konqueror will behave according to the settings of the group this type belongs to,"
+    " for instance 'image' if the current file type is image/png.") );
 
   secondLayout->addSpacing(10);
 
@@ -209,7 +210,7 @@ void FileTypeDetails::setTypeItem( TypesListItem * tlitem )
 
   serviceListWidget->setTypeItem( tlitem );
   embedServiceListWidget->setTypeItem( tlitem );
-  autoEmbed->setButton( tlitem ? tlitem->autoEmbed() : -1 );
+  m_autoEmbed->setButton( tlitem ? tlitem->autoEmbed() : -1 );
 
   if ( tlitem )
     extensionLB->insertStringList(tlitem->patterns());

@@ -3,6 +3,7 @@
 
 #include <kcmodule.h>
 
+class QLabel;
 class QListView;
 class QListViewItem;
 class QListBox;
@@ -10,6 +11,7 @@ class KIconButton;
 class QLineEdit;
 class QComboBox;
 class FileTypeDetails;
+class FileGroupDetails;
 class QWidgetStack;
 
 class FileTypesView : public KCModule
@@ -43,7 +45,8 @@ private:
 
   QWidgetStack * m_widgetStack;
   FileTypeDetails * m_details;
-  QWidget * m_emptyWidget;
+  FileGroupDetails * m_groupDetails;
+  QLabel * m_emptyWidget;
 
   QLineEdit *patternFilterLE;
   QStringList removedList;

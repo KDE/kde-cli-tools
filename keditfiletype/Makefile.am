@@ -7,10 +7,10 @@ libkcm_filetypes_la_METASOURCES = AUTO
 lib_LTLIBRARIES = libkcm_filetypes.la
 
 libkcm_filetypes_la_SOURCES = \
-	filetypesview.cpp filetypedetails.cpp \
+	filetypesview.cpp filetypedetails.cpp filegroupdetails.cpp \
 	kservicelistwidget.cpp typeslistitem.cpp newtypedlg.cpp
 
-noinst_HEADERS = filetypesview.h filetypedetails.h \
+noinst_HEADERS = filetypesview.h filetypedetails.h filegroupdetails.h \
 	kservicelistwidget.h typeslistitem.h newtypedlg.h
 
 bin_PROGRAMS = keditfiletype

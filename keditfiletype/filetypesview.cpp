@@ -18,6 +18,7 @@
 #include "newtypedlg.h"
 
 #include "filetypedetails.h"
+#include "filegroupdetails.h"
 #include "filetypesview.h"
 
 FileTypesView::FileTypesView(QWidget *p, const char *name)
@@ -77,13 +78,26 @@ FileTypesView::FileTypesView(QWidget *p, const char *name)
 
   // For the right panel, prepare a widget stack
   m_widgetStack = new QWidgetStack( this );
+
+  // File Type Details
   m_details = new FileTypeDetails( m_widgetStack );
   connect( m_details, SIGNAL( changed(bool) ),
            this, SLOT( setDirty(bool) ) );
   m_widgetStack->addWidget( m_details, 1 /*id*/ );
 
-  m_emptyWidget = new QWidget( m_widgetStack );
-  m_widgetStack->addWidget( m_emptyWidget, 2 /*id*/ ); // show that one on startup
+  // File Group Details
+  m_groupDetails = new FileGroupDetails( m_widgetStack );
+  connect( m_groupDetails, SIGNAL( changed(bool) ),
+           this, SLOT( setDirty(bool) ) );
+  m_widgetStack->addWidget( m_groupDetails, 2 /*id*/ );
+
+  // Widget shown on startup
+  m_emptyWidget = new QLabel( i18n("Select a file type by name or by extension"), m_widgetStack);
+  m_emptyWidget->setAlignment(AlignCenter);
+
+  m_widgetStack->addWidget( m_emptyWidget, 3 /*id*/ );
+
+  m_widgetStack->raiseWidget( m_emptyWidget );
 
   topLayout->addWidget( m_widgetStack, 100 );
 
@@ -148,7 +162,7 @@ void FileTypesView::readFileTypes(const QString &patternFilter)
             }
             if (!it.current()) {
                 // insert at top level.
-                TypesListItem *i = new TypesListItem(typesLV, (*it2));
+                TypesListItem *i = new TypesListItem(typesLV, maj);
 
                 if ( !patternFilter.isEmpty() )
                     i->setOpen(true);
@@ -227,31 +241,29 @@ void FileTypesView::removeType()
 
 void FileTypesView::updateDisplay(QListViewItem *item)
 {
-    if (!item)
-    {
-        m_widgetStack->raiseWidget( m_emptyWidget );
-        return;
-    }
+  if (!item)
+  {
+    m_widgetStack->raiseWidget( m_emptyWidget );
+    return;
+  }
 
-    TypesListItem *tlitem = (TypesListItem *) item;
-    if (tlitem->isMeta()) // is a group
-    {
-        // Remove details - this is even more needed when we just
-        // removed a mimetype (and the group gets activated)
-        // TODO create group config
-        m_widgetStack->raiseWidget( m_emptyWidget );
-        return;
-    }
+  bool wasDirty = m_dirty;
 
-    bool wasDirty = m_dirty;
-
+  TypesListItem *tlitem = (TypesListItem *) item;
+  if (tlitem->isMeta()) // is a group
+  {
+    m_widgetStack->raiseWidget( m_groupDetails );
+    m_groupDetails->setTypeItem( tlitem );
+  }
+  else
+  {
     m_widgetStack->raiseWidget( m_details );
-
     m_details->setTypeItem( tlitem );
+  }
 
-    // Updating the display indirectly called change(true)
-    if ( !wasDirty )
-        setDirty(false);
+  // Updating the display indirectly called change(true)
+  if ( !wasDirty )
+    setDirty(false);
 }
 
 bool FileTypesView::sync()

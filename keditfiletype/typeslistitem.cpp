@@ -10,10 +10,10 @@
 
 #include "typeslistitem.h"
 
-TypesListItem::TypesListItem(QListView *parent, KMimeType::Ptr mimetype)
+TypesListItem::TypesListItem(QListView *parent, const QString & major)
   : QListViewItem(parent), metaType(true), m_bNewItem(false)
 {
-  init(mimetype);
+  initMeta(major);
   setText(0, majorType());
 }
 
@@ -24,8 +24,24 @@ TypesListItem::TypesListItem(TypesListItem *parent, KMimeType::Ptr mimetype, boo
   setText(0, minorType());
 }
 
+TypesListItem::TypesListItem(QListView *parent, KMimeType::Ptr mimetype)
+  : QListViewItem(parent), metaType(false), m_bNewItem(false)
+{
+  init(mimetype);
+  setText(0, majorType());
+}
+
 TypesListItem::~TypesListItem()
 {
+}
+
+void TypesListItem::initMeta( const QString & major )
+{
+  m_mimetype = 0L;
+  m_major = major;
+  KConfig config("konquerorrc", true);
+  config.setGroup("FMSettings");
+  m_autoEmbed = config.readBoolEntry( QString::fromLatin1("embed-")+m_major, true ) ? 0 : 1;
 }
 
 void TypesListItem::init(KMimeType::Ptr mimetype)
@@ -72,63 +88,75 @@ bool TypesListItem::isDirty() const
     return true;
   }
 
-  if ((m_mimetype->name() != name()) &&
-      (name() != "application/octet-stream"))
+  if ( !isMeta() )
   {
-    kdDebug() << "Mimetype Name Dirty :" << m_mimetype->name() << " name()=" << name() << endl;
-    return true;
-  }
-  if (m_mimetype->comment(QString(), false) != m_comment)
-  {
-    kdDebug() << "Mimetype Comment Dirty :" << m_mimetype->comment(QString(),false) << " m_comment=" << m_comment << endl;
-    return true;
-  }
-  if (m_mimetype->icon(QString(), false) != m_icon)
-  {
-    kdDebug() << "Mimetype Icon Dirty :" << m_mimetype->icon(QString(),false) << " m_icon=" << m_icon << endl;
-    return true;
-  }
 
-  if (m_mimetype->patterns() != m_patterns)
-  {
-    kdDebug() << "Mimetype Patterns Dirty :" << m_mimetype->patterns().join(";")
-              << " m_patterns=" << m_patterns.join(";") << endl;
-    return true;
-  }
-
-  KServiceTypeProfile::OfferList offerList =
-    KServiceTypeProfile::offers(m_mimetype->name());
-
-  QStringList oldAppServices;
-  QStringList oldEmbedServices;
-  QValueListIterator<KServiceOffer> it(offerList.begin());
-  for (; it != offerList.end(); ++it) {
-    if ((*it).service()->type() == "Application") {
-      if ((*it).allowAsDefault())
-        oldAppServices.append((*it).service()->desktopEntryPath());
+    if ((m_mimetype->name() != name()) &&
+        (name() != "application/octet-stream"))
+    {
+      kdDebug() << "Mimetype Name Dirty :" << m_mimetype->name() << " name()=" << name() << endl;
+      return true;
     }
-    else {
-      oldEmbedServices.append((*it).service()->desktopEntryPath());
+    if (m_mimetype->comment(QString(), false) != m_comment)
+    {
+      kdDebug() << "Mimetype Comment Dirty :" << m_mimetype->comment(QString(),false) << " m_comment=" << m_comment << endl;
+      return true;
     }
-  }
+    if (m_mimetype->icon(QString(), false) != m_icon)
+    {
+      kdDebug() << "Mimetype Icon Dirty :" << m_mimetype->icon(QString(),false) << " m_icon=" << m_icon << endl;
+      return true;
+    }
 
-  if (oldAppServices != m_appServices)
-  {
-    kdDebug() << "App Services Dirty :" << oldAppServices.join(";")
-              << " m_appServices=" << m_appServices.join(";") << endl;
-    return true;
-  }
-  if (oldEmbedServices != m_embedServices)
-  {
-    kdDebug() << "Embed Services Dirty :" << oldEmbedServices.join(";")
-              << " m_embedServices=" << m_embedServices.join(";") << endl;
-    return true;
-  }
+    if (m_mimetype->patterns() != m_patterns)
+    {
+      kdDebug() << "Mimetype Patterns Dirty :" << m_mimetype->patterns().join(";")
+                << " m_patterns=" << m_patterns.join(";") << endl;
+      return true;
+    }
 
-  QVariant v = m_mimetype->property( "X-KDE-AutoEmbed" );
-  int oldAutoEmbed = v.isValid() ? (v.toBool() ? 0 : 1) : 2;
-  if ( oldAutoEmbed != m_autoEmbed )
-    return true;
+    KServiceTypeProfile::OfferList offerList =
+      KServiceTypeProfile::offers(m_mimetype->name());
+
+    QStringList oldAppServices;
+    QStringList oldEmbedServices;
+    QValueListIterator<KServiceOffer> it(offerList.begin());
+    for (; it != offerList.end(); ++it) {
+      if ((*it).service()->type() == "Application") {
+        if ((*it).allowAsDefault())
+          oldAppServices.append((*it).service()->desktopEntryPath());
+      }
+      else {
+        oldEmbedServices.append((*it).service()->desktopEntryPath());
+      }
+    }
+
+    if (oldAppServices != m_appServices)
+    {
+      kdDebug() << "App Services Dirty :" << oldAppServices.join(";")
+                << " m_appServices=" << m_appServices.join(";") << endl;
+      return true;
+    }
+    if (oldEmbedServices != m_embedServices)
+    {
+      kdDebug() << "Embed Services Dirty :" << oldEmbedServices.join(";")
+                << " m_embedServices=" << m_embedServices.join(";") << endl;
+      return true;
+    }
+
+    QVariant v = m_mimetype->property( "X-KDE-AutoEmbed" );
+    int oldAutoEmbed = v.isValid() ? (v.toBool() ? 0 : 1) : 2;
+    if ( oldAutoEmbed != m_autoEmbed )
+      return true;
+
+  } else {
+
+    KConfig config("konquerorrc", true);
+    config.setGroup("FMSettings");
+    int oldAutoEmbed = config.readBoolEntry( QString::fromLatin1("embed-")+m_major, true ) ? 0 : 1;
+    if ( m_autoEmbed != oldAutoEmbed )
+      return true;
+  }
 
   // nothing seems to have changed, it's not dirty.
   return false;
@@ -136,6 +164,13 @@ bool TypesListItem::isDirty() const
 
 void TypesListItem::sync()
 {
+  if ( isMeta() )
+  {
+    KConfig config("konquerorrc");
+    config.setGroup("FMSettings");
+    config.writeEntry( QString::fromLatin1("embed-")+m_major, m_autoEmbed == 0 );
+    return;
+  }
   QString loc = name() + ".desktop";
   loc = locateLocal("mime", loc);
 
