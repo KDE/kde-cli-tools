@@ -27,7 +27,7 @@ FileTypesView::FileTypesView(QWidget *p, const char *name)
 {
 
   KServiceTypeProfile::setConfigurationMode();
-
+  setButtons(Help | Apply | Cancel | Ok);
   QString wtstr;
 
   QHBoxLayout *l = new QHBoxLayout(this, 0, KDialog::marginHint());
