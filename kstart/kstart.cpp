@@ -116,7 +116,7 @@ void KStart::sendRule() {
     if (activate)
         message += "fsplevel=0\nfsplevelrule=1\n";
     if (iconify)
-        message += "minimized=true\nminimizedrule=2\n";
+        message += "minimize=true\nminimizerule=2\n";
     if ( windowtype != NET::Unknown ) {
         message += "type=" + QCString().setNum( windowtype ) + "\ntyperule=1";
     }
