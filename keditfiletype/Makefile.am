@@ -17,7 +17,7 @@ bin_PROGRAMS = keditfiletype
 
 keditfiletype_SOURCES = keditfiletype.cpp
 keditfiletype_LDADD = libkcm_filetypes.la
-keditfiletype_LDFLAGS = $(all_libraries)
+keditfiletype_LDFLAGS = $(all_libraries) $(KDE_RPATH)
 
 DISTCLEANFILES = $(libkcm_filetypes_la_METASOURCES)
 

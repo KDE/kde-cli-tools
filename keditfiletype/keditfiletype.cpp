@@ -93,6 +93,8 @@ int main(int argc, char ** argv)
   KCmdLineArgs *args = KCmdLineArgs::parsedArgs();
   KGlobal::locale()->insertCatalogue("filetypes");
 
+  if (args->count() == 0)
+    KCmdLineArgs::usage();
   KMimeType::Ptr mime = KMimeType::mimeType( args->arg(0) );
   if (!mime)
     kdFatal() << "Mimetype " << args->arg(0) << " not found" << endl;
