@@ -74,7 +74,6 @@ int ConnectionHandler::handle()
     } else if (nbytes == 0)
     {
 	// eof
-	kdDebug(1205) << "eof on fd " << m_Fd << endl;
 	return -1;
     }
     tmpbuf[nbytes] = '\000';
@@ -155,7 +154,6 @@ int ConnectionHandler::doCommand(QCString buf)
     QCString key, command, pass, name, user, value, env_check;
     Data_entry data;
 
-    // kdDebug(1205) << "Received command: " << buf << endl;
     Lexer *l = new Lexer(buf);
     int tok = l->lex();
     switch (tok)
@@ -437,10 +435,7 @@ int ConnectionHandler::doCommand(QCString buf)
 	kdDebug(1205) << "Request for group key: " << name << endl;
 	value = repo->findKeys(name);
 	if (!value.isEmpty())
-    {
-        // kdDebug(1205) << "Requested value: " << value << endl;
 	    respond(Res_OK, value);
-    }
 	else
 	    respond(Res_NO);
 	break;
@@ -454,22 +449,15 @@ int ConnectionHandler::doCommand(QCString buf)
 	    goto parse_error;
 	kdDebug(1205) << "Checking for group key: " << name << endl;
 	if ( repo->hasGroup( name ) < 0 )
-    {
-        kdDebug(1205) << "Group key NOT found!" << endl;
 	    respond(Res_NO);
-    }
 	else
-    {
-        kdDebug(1205) << "Group key found!" << endl;
 	    respond(Res_OK);
-    }
 	break;
 
     case Lexer::Tok_ping:  // "PING\n"
 	tok = l->lex();
 	if (tok != '\n')
 	    goto parse_error;
-	kdDebug(1205) << "PING" << endl;
 	respond(Res_OK);
 	break;
 
