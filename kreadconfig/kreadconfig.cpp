@@ -56,7 +56,7 @@ int main(int argc, char **argv)
 	QCString dflt=args->getOption("default");
 	QCString type=args->getOption("type").lower();
 	
-	KApplication app;
+	KApplication app( false, false ); // no styles, no gui
 
 	KConfig *konfig=KGlobal::config();
 	konfig->setGroup(group);
