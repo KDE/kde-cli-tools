@@ -2,11 +2,13 @@
 #define _FILETYPEDETAILS_H
 
 #include <qwidget.h>
+#include <qgroupbox.h>
 class TypesListItem;
 class KIconButton;
 class QLineEdit;
 class QListBox;
 class QPushButton;
+class KServiceListWidget;
 
 /**
  * This widget contains all the right part of the main kcmfiletypes
@@ -30,26 +32,16 @@ protected slots:
   void updateDescription(const QString &desc);
   void addExtension();
   void removeExtension();
-  void promoteService();
-  void demoteService();
-  void addService();
-  void removeService();
-  void enableMoveButtons(int index);
   void enableExtButtons(int index);
 
-protected:
-  void updatePreferredServices();
 private:
-
   TypesListItem * m_item;
 
   KIconButton *iconButton;
   QListBox *extensionLB;
-  QLineEdit *description;
-  QListBox *servicesLB;
-  QPushButton *servUpButton, *servDownButton;
-  QPushButton *servNewButton, *servRemoveButton;
   QPushButton *addExtButton, *removeExtButton;
+  QLineEdit *description;
+  KServiceListWidget *serviceListWidget;
 };
 
 #endif

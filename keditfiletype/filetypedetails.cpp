@@ -21,26 +21,9 @@
 #include <kservicetype.h>
 #include <kuserprofile.h>
 
+#include "kservicelistwidget.h"
 #include "filetypedetails.h"
 #include "typeslistitem.h"
-
-class ServiceListItem : public QListBoxText
-{
-public:
-	ServiceListItem( QString &desktopPath );
-
-	QString desktopPath;
-};
-
-ServiceListItem::ServiceListItem( QString &_desktopPath )
-	: QListBoxText(), desktopPath(_desktopPath)
-{
-    KService::Ptr pService = KService::serviceByDesktopPath( _desktopPath );
-
-    ASSERT(pService);
-
-    setText( pService->name() );
-}
 
 FileTypeDetails::FileTypeDetails( QWidget * parent, const char * name )
   : QWidget( parent, name ), m_item( 0L )
@@ -108,59 +91,9 @@ FileTypeDetails::FileTypeDetails( QWidget * parent, const char * name )
   QWhatsThis::add( gb, wtstr );
   QWhatsThis::add( description, wtstr );
 
-  gb = new QGroupBox(i18n("Application Preference Order"), this);
-  rightLayout->addWidget(gb, 1);
-
-  grid = new QGridLayout(gb, 5, 2, KDialog::marginHint(),
-                         KDialog::spacingHint());
-  grid->addRowSpacing(0, fontMetrics().lineSpacing());
-//  grid->setRowStretch(3, 1);
-
-  servicesLB = new QListBox(gb);
-  connect(servicesLB, SIGNAL(highlighted(int)), SLOT(enableMoveButtons(int)));
-  grid->addMultiCellWidget(servicesLB, 1, 4, 0, 0);
-
-  wtstr = i18n("This is a list of applications associated with files of the selected"
-    " file type. This list is shown in Konqueror's context menus when you select"
-    " \"Open with...\". If more than one application is associated with this file type,"
-    " then the list is ordered by priority with the uppermost item taking precedence"
-    " over the others.");
-  QWhatsThis::add( gb, wtstr );
-  QWhatsThis::add( servicesLB, wtstr );
-
-  servUpButton = new QPushButton(i18n("Move &Up"), gb);
-  servUpButton->setEnabled(false);
-  connect(servUpButton, SIGNAL(clicked()), SLOT(promoteService()));
-  grid->addWidget(servUpButton, 1, 1);
-
-  QWhatsThis::add( servUpButton, i18n("Assigns a higher priority to the selected\n"
-                              "application, moving it up in the list. Note:  This\n"
-                              "only affects the selected application if the file type is\n"
-			      "associated with more than one application."));
-
-  servDownButton = new QPushButton(i18n("Move &Down"), gb);
-  servDownButton->setEnabled(false);
-  connect(servDownButton, SIGNAL(clicked()), SLOT(demoteService()));
-  grid->addWidget(servDownButton, 2, 1);
-
-  QWhatsThis::add( servDownButton, i18n("Assigns a lower priority to the selected\n"
-			  "application, moving it down on the list.  Note:  This \n"
-			  "only affects the selected application if the file type is\n"
-			  "associated with more than one application."));
-
-  servNewButton = new QPushButton(i18n("Add..."), gb);
-  servNewButton->setEnabled(false);
-  connect(servNewButton, SIGNAL(clicked()), SLOT(addService()));
-  grid->addWidget(servNewButton, 3, 1);
-
-  QWhatsThis::add( servNewButton, i18n( "Add a new application for this file type." ) );
-
-  servRemoveButton = new QPushButton(i18n("Remove"), gb);
-  servRemoveButton->setEnabled(false);
-  connect(servRemoveButton, SIGNAL(clicked()), SLOT(removeService()));
-  grid->addWidget(servRemoveButton, 4, 1);
-
-  QWhatsThis::add( servRemoveButton, i18n( "Remove the selected application from the list." ) );
+  serviceListWidget = new KServiceListWidget( KServiceListWidget::SERVICELIST_APPLICATIONS, this );
+  connect( serviceListWidget, SIGNAL(changed(bool)), this, SIGNAL(changed(bool)));
+  rightLayout->addWidget(serviceListWidget, 1);
 }
 
 void FileTypeDetails::updateIcon(QString icon)
@@ -226,168 +159,13 @@ void FileTypeDetails::setTypeItem( TypesListItem * tlitem )
   extensionLB->clear();
   addExtButton->setEnabled(true);
   removeExtButton->setEnabled(false);
-  servNewButton->setEnabled(true);
-  // will need a selection
-  servUpButton->setEnabled(false);
-  servDownButton->setEnabled(false);
-  servRemoveButton->setEnabled(false);
+
+  serviceListWidget->setTypeItem( tlitem );
+
   if ( tlitem )
     extensionLB->insertStringList(tlitem->patterns());
   else
     extensionLB->clear();
-
-  servicesLB->clear();
-  servicesLB->setEnabled(false);
-
-  if ( tlitem )
-  {
-    QStringList services = tlitem->defaultServices();
-
-    if (services.count() == 0) {
-      servicesLB->insertItem("None");
-    } else {
-      for ( QStringList::Iterator it = services.begin();
-            it != services.end(); it++ )
-      {
-        servicesLB->insertItem( new ServiceListItem(*it) );
-      }
-      servicesLB->setEnabled(true);
-    }
-  }
-}
-
-void FileTypeDetails::promoteService()
-{
-  if (!servicesLB->isEnabled()) {
-    kapp->beep();
-    return;
-  }
-
-  unsigned int selIndex = servicesLB->currentItem();
-  if (selIndex == 0) {
-    kapp->beep();
-    return;
-  }
-
-  QListBoxItem *selItem = servicesLB->item(selIndex);
-  servicesLB->takeItem(selItem);
-  servicesLB->insertItem(selItem, selIndex-1);
-  servicesLB->setCurrentItem(selIndex - 1);
-
-  updatePreferredServices();
-
-  emit changed(true);
-}
-
-void FileTypeDetails::demoteService()
-{
-  if (!servicesLB->isEnabled()) {
-    kapp->beep();
-    return;
-  }
-
-  unsigned int selIndex = servicesLB->currentItem();
-  if (selIndex == servicesLB->count() - 1) {
-    kapp->beep();
-    return;
-  }
-
-  QListBoxItem *selItem = servicesLB->item(selIndex);
-  servicesLB->takeItem(selItem);
-  servicesLB->insertItem(selItem, selIndex+1);
-  servicesLB->setCurrentItem(selIndex + 1);
-
-  updatePreferredServices();
-
-  emit changed(true);
-}
-
-void FileTypeDetails::addService()
-{
-  if (!m_item)
-      return;
-
-  KOpenWithDlg dlg(m_item->name(), QString::null, 0L);
-  if (dlg.exec() == false)
-    return;
-
-  KService::Ptr service = dlg.service();
-
-  ASSERT(service);
-
-  // check if it is a duplicate entry
-  for (unsigned int index = 0; index < servicesLB->count(); index++)
-    if (servicesLB->text(index) == service->name())
-      return;
-
-  // if None is the only item, then there currently is no default
-  if (servicesLB->text(0) == "None") {
-      servicesLB->removeItem(0);
-      servicesLB->setEnabled(true);
-  }
-  QString desktopPath = service->desktopEntryPath();
-
-  servicesLB->insertItem( new ServiceListItem(desktopPath) );
-
-  updatePreferredServices();
-
-  emit changed(true);
-}
-
-void FileTypeDetails::removeService()
-{
-  int selected = servicesLB->currentItem();
-
-  if ( selected >= 0 ) {
-    servicesLB->removeItem( selected );
-    updatePreferredServices();
-
-    emit changed(true);
-  }
-
-  if ( servicesLB->currentItem() == -1 )
-    servRemoveButton->setEnabled(false);
-
-}
-
-void FileTypeDetails::updatePreferredServices()
-{
-  if (!m_item)
-    return;
-  QStringList sl;
-  unsigned int count = servicesLB->count();
-
-  for (unsigned int i = 0; i < count; i++) {
-    ServiceListItem *sli = (ServiceListItem *) servicesLB->item(i);
-    sl.append( sli->desktopPath );
-  }
-  m_item->setDefaultServices(sl);
-}
-
-void FileTypeDetails::enableMoveButtons(int index)
-{
-  if (servicesLB->count() <= 1)
-  {
-    servUpButton->setEnabled(false);
-    servDownButton->setEnabled(false);
-  }
-  else if ((uint) index == (servicesLB->count() - 1))
-  {
-    servUpButton->setEnabled(true);
-    servDownButton->setEnabled(false);
-  }
-  else if (index == 0)
-  {
-    servUpButton->setEnabled(false);
-    servDownButton->setEnabled(true);
-  }
-  else
-  {
-    servUpButton->setEnabled(true);
-    servDownButton->setEnabled(true);
-  }
-
-  servRemoveButton->setEnabled(true);
 }
 
 void FileTypeDetails::enableExtButtons(int /*index*/)

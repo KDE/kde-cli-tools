@@ -15,37 +15,39 @@
    the Free Software Foundation, Inc., 59 Temple Place - Suite 330,
    Boston, MA 02111-1307, USA.
 */
-#ifndef __keditfiletype_h
-#define __keditfiletype_h
+#ifndef _FILETYPEEMBEDCFG_H
+#define _FILETYPEEMBEDCFG_H
 
-#include <kdialogbase.h>
-#include <kmimetype.h>
-
+#include <qwidget.h>
 class TypesListItem;
-class FileTypeDetails;
+class KIconButton;
+class QLineEdit;
+class QListBox;
 
-// A dialog for ONE file type to be edited.
-class FileTypeDialog : public KDialogBase
+/**
+ * This widget contains the second page of the file configuration
+ * dialog. It is implemented as a separate class so that it can be
+ * used by the keditfiletype program to show the details of a single
+ * mimetype.
+ */
+class FileTypeEmbedCfg : public QWidget
 {
   Q_OBJECT
 public:
-  FileTypeDialog( KMimeType::Ptr mime );
+  FileTypeEmbedCfg(QWidget *parent = 0, const char *name = 0);
+
+  void setTypeItem( TypesListItem * item );
+
+signals:
+  void changed(bool);
 
 protected slots:
 
-  //virtual void slotDefault();
-  //virtual void slotUser1(); // Reset
-  virtual void slotApply();
-  virtual void slotOk();
-  void clientChanged(bool state);
-
 protected:
-  void save();
 
 private:
-  FileTypeDetails * m_details;
+  KServiceListWidget *serviceListWidget;
   TypesListItem * m_item;
 };
 
 #endif
-
