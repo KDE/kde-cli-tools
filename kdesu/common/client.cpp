@@ -73,7 +73,7 @@ int KDEsuClient::connect()
     strcpy(addr.sun_path, sock);
 
 #ifndef SUN_LEN // this is far from POSIX :(
-#define SUN_LEN(ptr) ((size_t) (((struct sockaddr_un *) +0)->sun_path)
+#define SUN_LEN(ptr) ((size_t)(((struct sockaddr_un *) +0)->sun_path))
 #endif
 
     if (::connect(sockfd, (struct sockaddr *) &addr, SUN_LEN(&addr)) < 0) {
