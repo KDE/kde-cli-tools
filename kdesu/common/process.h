@@ -12,6 +12,7 @@
 
 
 #include <qcstring.h>
+#include <qstringlist.h>
 
 
 /**
@@ -67,6 +68,7 @@ private:
     int ConverseSU(int fd, const char *password, const char *tty);
     int ConverseStub(int fd, const char *command);
     int CopyOutput(int fd, bool echo);
+    QCString commaSeparatedList(QStringList);
 
     QCString m_Command, m_User;
     bool m_bOk, m_bTerminal;

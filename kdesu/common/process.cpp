@@ -46,7 +46,7 @@
 
 #include "process.h"
 #include "pty.h"
-#include "xcookie.h"
+#include "kcookie.h"
 #include "pathsearch.h"
 
 
@@ -130,7 +130,7 @@ int SuProcess::exec(char *password, bool check_only)
 	// only if the user uses the '-t' switch.
 
 	execl(_PATH_SU, "su", (const char *) m_User, "-c", 
-		(const char *) path, NULL);
+		(const char *) path, 0L);
 
 	// Exec failed..
 	qWarning("SuProcess::exec(): execl(\"%s\"): %s", _PATH_SU, 
@@ -206,18 +206,32 @@ int SuProcess::ConverseSU(int fd, const char *password,
 }
 
 
-/**
- * Conversation with kdesu_stub. This is how we pass the cookie, DISPLAY,
- * and command to the target process. kdesu_stub is already running with
- * target priviliges.
+QCString SuProcess::commaSeparatedList(QStringList lst)
+{
+    if (lst.count() == 0)
+	return QCString("");
+
+    QStringList::Iterator it = lst.begin();
+    QCString str = (*it).latin1();
+    for (it++; it!=lst.end(); it++) {
+	str += ',';
+	str += (*it).latin1();
+    }
+    return str;
+}
+    
+/*
+ * Conversation with kdesu_stub. This is how we pass the authentication
+ * tokens (X11 and DCOP), the X11 display, the DCOP server and the command
+ * to the target process. kdesu_stub is already running with target 
+ * priviliges.
  */
 
 int SuProcess::ConverseStub(int fd, const char *command)
 {
     char buf[256];
     int nbytes;
-
-    Cookie C;
+    KCookie c;
 
     while (1) {
 	nbytes = read(fd, buf, 255);
@@ -230,47 +244,41 @@ int SuProcess::ConverseStub(int fd, const char *command)
 	buf[nbytes] = '\000';
 
 	if (buf[nbytes-1] != '\n') {
-	    qWarning("SuProcess:ConverseStub(): request from kdesu_stub too long");
+	    qWarning("SuProcess::ConverseStub(): request from kdesu_stub too long");
 	    return -1;
 	}
 	buf[nbytes-1] = '\000';
 	if (buf[nbytes-2] == '\r')
 	    buf[nbytes-2] = '\000';
+	qDebug("SuProcess::ConverseStub(): request for %s", buf);
 	
-	if (!strcmp(buf, "cookie")) {
-	    // X cookie
-	    qDebug("SuProcess::ConverseStub(): request for cookie");
-	    if (C.cookie())
-		write(fd, C.cookie(), strlen(C.cookie()));
+	if (!strcmp(buf, "display")) {
+	    write(fd, c.display().latin1(), c.display().length());
 	    write(fd, "\n", 1);
-	} else if (!strcmp(buf, "display")) {
-	    // X Display
-	    qDebug("SuProcess::ConverseStub(): request for display");
-	    char *ptr = getenv("DISPLAY");
-	    if (ptr)
-		write(fd, ptr, strlen(ptr));
+	} else if (!strcmp(buf, "display_auth")) {
+	    write(fd, c.displayAuth().latin1(), c.displayAuth().length());
 	    write(fd, "\n", 1);
-	} else if (!strcmp(buf, "proto")) {
-	    // X cookie protocol
-	    qDebug("SuProcess::ConverseStub(): request for proto");
-	    if (C.proto())
-		write(fd, C.proto(), strlen(C.proto()));
+	} else if (!strcmp(buf, "dcopserver")) {
+	    QCString str = commaSeparatedList(c.dcopServer());
+	    write(fd, str, str.length());
 	    write(fd, "\n", 1);
-	} else if (!strcmp(buf, "path")) {
-	    // X Display
-	    qDebug("SuProcess::ConverseStub(): request for PATH");
-	    char *ptr = getenv("PATH");
-	    if (ptr)
-		write(fd, ptr, strlen(ptr));
+	} else if (!strcmp(buf, "dcop_auth")) {
+	    QCString str = commaSeparatedList(c.dcopAuth());
+	    write(fd, str, str.length());
+	    write(fd, "\n", 1);
+	} else if (!strcmp(buf, "ice_auth")) {
+	    QCString str = commaSeparatedList(c.iceAuth());
+	    write(fd, str, str.length());
 	    write(fd, "\n", 1);
 	} else if (!strcmp(buf, "command")) {
-	    // Target command
-	    qDebug("SuProcess::ConverseStub(): request for command");
 	    write(fd, command, strlen(command));
 	    write(fd, "\n", 1);
+	} else if (!strcmp(buf, "path")) {
+	    char *path = getenv("PATH");
+	    if (path)
+		write(fd, path, strlen(path));
+	    write(fd, "\n", 1);
 	} else if (!strcmp(buf, "end")) {
-	    // end the conversation
-	    qDebug("SuProcess::ConverseStub(): Ending stub conversation");
 	    break;
 	} else {
 	    qWarning("SuProcess::ConverseStub(): unknown request: %s", buf);
@@ -283,7 +291,7 @@ int SuProcess::ConverseStub(int fd, const char *command)
 
     
     
-/**
+/*
  * WaitSlave: Wait until the terminal is set into no echo mode.
  *	      At least one su (RH6 w/ Linux-PAM patches) sets noecho mode 
  *	      AFTER writing the "Password: " prompt, using TCSAFLUSH. This 
@@ -322,7 +330,7 @@ int SuProcess::WaitSlave(const char *ttyname)
     return 0;
 }
 	    
-/**
+/*
  * SetupTTY: Creates a new session.
  */
 
@@ -389,7 +397,7 @@ int UserProcess::exec()
 	    return 0;
 	return -1;
     } else {
-	execl("/bin/sh", "sh", "-c", (const char *) m_Command, NULL);
+	execl("/bin/sh", "sh", "-c", (const char *) m_Command, 0L);
 	qWarning("UserProcess::exec(): exec(\"/bin/sh\"): %s",
 		strerror(errno));
 	_exit(1);

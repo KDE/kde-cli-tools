@@ -6,15 +6,21 @@
  * Copyright (C) 1999 Geert Jansen <g.t.jansen@stud.tue.nl>
  * 
  * kdesu_stub.c: KDE su executes this stub, which in turn executes the
- *	         desired program.
+ *	         wanted program. Before that, startup parameters are sent
+ *	         through the pty/tty channel.
  * 
- * We use a stub program because: In general, we need X authentication.
- * The X cookie is confidential and cannot be passed as a command line
- * argument. Because we want to be able to su to other users than root, 
- * we cannot use a private file. The solution used here is to use the 
- * pty/tty channel created by "class RootProcess" to pass the cookie. 
- * Now that we use this channel, we might as well pass all needed information
- * (nonconfidential -- like DISPLAY and PATH) through it.
+ *
+ * Available parameters:   
+ *
+ *   Parameter       Description         Format (csl = comma separated list)
+ *
+ * - display         X11 display         string
+ * - display_auth    X11 authentication  "type cookie" pair
+ * - dcopserver      KDE dcopserver      csl of netids
+ * - dcop_auth       DCOP authentication csl of "type cookie" pairs for DCOP
+ * - ice_auth        ICE authentication  csl of "type cookie" pairs for ICE
+ * - command         Command to run      string
+ * - path            PATH env. var       string
  */
 
 #include <stdio.h>
@@ -28,37 +34,102 @@
 #include <sys/stat.h>
 #include <sys/wait.h>
 
+
+/**
+ * Params sent by the peer.
+ */
+
+struct param_struct {
+    char *name;
+    char *value;
+};
+
+struct param_struct params[] = {
+    {"display", 0L},
+    {"display_auth", 0L},
+    {"dcopserver", 0L},
+    {"dcop_auth", 0L},
+    {"ice_auth", 0L},
+    {"command", 0L},
+    {"path", 0L},
+};
+
+#define P_DISPLAY 0
+#define P_DISPLAY_AUTH 1
+#define P_DCOPSERVER 2
+#define P_DCOP_AUTH 3
+#define P_ICE_AUTH 4
+#define P_COMMAND 5
+#define P_PATH 6
+#define P_LAST 7
+
+
+/**
+ * Safe malloc functions.
+ */
+char *xmalloc(int size)
+{
+    char *ptr = malloc(size);
+    if (ptr) return ptr;
+    perror("malloc()");
+    exit(1);
+}
+
+
+char *xrealloc(char *ptr, int size)
+{
+    ptr = realloc(ptr, size);
+    if (ptr) return ptr;
+    perror("realloc()");
+    exit(1);
+}
+
+
 /**
  * Solaris does not have a setenv()...
  */
 int xsetenv(char *name, char *value)
 {
-    char *s;
-
-    s = malloc(strlen(name)+strlen(value)+2);
-    if (!s)
-	return -1;
+    char *s = malloc(strlen(name)+strlen(value)+2);
+    if (!s) return -1;
     strcpy(s, name);
     strcat(s, "=");
     strcat(s, value);
-    return putenv(s); // yes: no free(s)
+    return putenv(s); // yes: no free()!
 }
 
 /**
  * Safe strdup and strip newline
  */
-
 char *xstrdup(char *src)
 {
-    char *dst = strdup(src);
-    int i = strlen(src)-1;
-    if (dst == 0L) {
-	perror("malloc()");
-	exit(1);
-    }
-    if (dst[i] == '\n')
-	dst[i] = '\000';
+    int len = strlen(src);
+    char *dst = xmalloc(len+1);
+    strcpy(dst, src);
+    if (dst[len-1] == '\n')
+	dst[len-1] = '\000';
     return dst;
+}
+
+/**
+ * Split comma separated list.
+ */
+char **xstrsep(char *str)
+{
+    int i = 0, size = 10;
+    char **list = (char **) xmalloc(size * sizeof(char *));
+    char *ptr = str, *nptr;
+    while ((nptr = strchr(ptr, ',')) != 0L) {
+	if (i > size-2)
+	    list = realloc(list, (size *= 2) * sizeof(char *));
+	*nptr = '\000';
+	list[i++] = ptr;
+	ptr = nptr+1;
+    }
+    if (*ptr != '\000')
+	list[i++] = ptr;
+    list[i] = 0L;
+    return list;
 }
 
 
@@ -69,137 +140,92 @@ char *xstrdup(char *src)
 int main()
 {
     char buf[1024];
-    int res, fd;
-    pid_t pid;
-    char *display, *cookie, *proto, *path, *command;
-    char *fname=0L;
+    char command[200], xauthority[200], iceauthority[200];
+    char **host, **auth, *fname;
+    int i, res;
     struct termios tio, tip;
+    FILE *fout;
 
-    /* Disable local echo: this makes the parsing in process.cpp easier */
+    /* Get startup parameters. Disable local echo: this this makes 
+     * the parsing in process.cpp easier */
 
     if (tcgetattr(0, &tio) < 0) {
-	printf("end\n"); perror("tcgetattr()");
+	printf("end\n"); perror("Fatal: tcgetattr()");
 	exit(1);
     }
     tip = tio;
     tio.c_lflag &= ~ECHO;
     if (tcsetattr(0, TCSANOW, &tio) < 0) {
-	printf("end\n"); perror("tcsetattr()");
+	printf("end\n"); perror("Fatal: tcsetattr()");
 	exit(1);
     }
-	
-    /* Get values */
-
-    printf("display\n");
-    if (fgets(buf, 1024, stdin) == 0L) {
-	printf("end\n"); perror("fgets()");
-	exit(1);
+    for (i=0; i<P_LAST; i++) {
+	printf("%s\n", params[i].name);
+	if (fgets(buf, 1024, stdin) == 0L) {
+	    printf("end\n"); perror("Fatal: fgets()");
+	    exit(1);
+	}
+	params[i].value = xstrdup(buf);
     }
-    display = xstrdup(buf);
-
-    printf("proto\n");
-    if (fgets(buf, 1024, stdin) == 0L) {
-	printf("end\n"); perror("fgets()");
-	exit(1);
-    }
-    proto = xstrdup(buf);
-
-    printf("cookie\n");
-    if (fgets(buf, 1024, stdin) == 0L) {
-	printf("end\n"); perror("fgets()");
-	exit(1);
-    }
-    cookie = xstrdup(buf);
-
-    printf("path\n");
-    if (fgets(buf, 1024, stdin) == 0L) {
-	printf("end\n"); perror("fgets()");
-	exit(1);
-    }
-    path = xstrdup(buf);
-
-    printf("command\n");
-    if (fgets(buf, 1024, stdin) == 0L) {
-	printf("end\n"); perror("fgets()");
-	exit(1);
-    }
-    command = xstrdup(buf); 
-
-    /* End conversation */
-
     printf("end\n");
-
-    /* Restore echo mode */
-
     if (tcsetattr(0, TCSANOW, &tip) < 0)
-	printf("warning: cannot restore terminal mode");
+	printf("Warning: cannot restore terminal mode");
     
-    /* Set environment */
 
-    if (strlen(path))
-	xsetenv("PATH", path);
-    if (strlen(display))
-	xsetenv("DISPLAY", display);
-    
-    /* If available, add an authentication cookie. */
+    /* Handle display */
 
-    if (strlen(cookie)) {
-
-	fname = tmpnam(NULL);
-	fd = open(fname, O_CREAT|O_EXCL);
-	if (fd < 0) {
-	    perror("open()");
+    xsetenv("DISPLAY", params[P_DISPLAY].value);
+    if (params[P_DISPLAY_AUTH].value[0]) {
+	fname = tmpnam(0L);
+	fout = fopen(fname, "w");
+	if (!fout) {
+	    perror("Fatal: fopen()");
 	    exit(1);
 	}
-	if (chmod(fname, 0600) < 0) {
-	    perror("chmod()");
-	    exit(1);
-	}
-	xsetenv("XAUTHORITY", fname);
-
-	pid = fork();
-	if (pid == -1) {
-	    perror("fork()");
-	    exit(1);
-	}
-	if (pid) {
-	    pid = waitpid(pid, &res, 0);
-	    if (pid < 0) {
-		perror("waitpid()");
-		exit(1);
-	    }
-	    if (!WIFEXITED(res) || WEXITSTATUS(res)) {
-		printf("xauth retured error code %d\n", WEXITSTATUS(res));
-		exit(1);
-	    }
-	} else {
-	    execlp("xauth", "xauth", "add", display, proto, cookie, NULL);
-	    perror("execlp()");
-	    _exit(1);
-	}
+	fprintf(fout, "add %s %s\n", params[P_DISPLAY].value, 
+		params[P_DISPLAY_AUTH].value);
+	fclose(fout);
+	tmpnam(xauthority);
+	xsetenv("XAUTHORITY", xauthority);
+	sprintf(command, "xauth source %s >/dev/null 2>&1", fname);
+	if (system(command))
+	    printf("Warning: failed to add X authentication");
+	unlink(fname);
     }
+    
+
+    /* Handle DCOP */
+
+    xsetenv("DCOPSERVER", params[P_DCOPSERVER].value);
+    host = xstrsep(params[P_DCOPSERVER].value);
+    auth = xstrsep(params[P_ICE_AUTH].value);
+    if (host[0]) {
+	fname = tmpnam(0L);
+	fout = fopen(fname, "w");
+	if (!fout) {
+	    perror("Fatal: fopen()");
+	    exit(1);
+	}
+	for (i=0; host[i]; i++)
+	    fprintf(fout, "add ICE \"\" %s %s\n", host[i], auth[i]);
+	auth = xstrsep(params[P_DCOP_AUTH].value);
+	for (i=0; host[i]; i++)
+	    fprintf(fout, "add DCOP \"\" %s %s\n", host[i], auth[i]);
+	fclose(fout);
+	tmpnam(iceauthority);
+	xsetenv("ICEAUTHORITY", iceauthority);
+	sprintf(command, "iceauth source %s >/dev/null 2>&1", fname);
+	if (system(command))
+	    printf("Warning: failed to add DCOP authentication");
+	unlink(fname);
+    }
+ 
 
     /* Execute the command */
 
-    pid = fork();
-    if (pid == -1) {
-	perror("fork()");
-	exit(1);
-    }
-    if (pid) {
-	pid = waitpid(pid, &res, 0);
-	if (pid < 0)
-	    perror("waitpid()");
-	if (fname)
-	    unlink(fname);
-    } else {
-	execl("/bin/sh", "sh", "-c", command, NULL);
-	perror("execl()");
-	exit(1);
-    }
-
-    if (WIFEXITED(res))
-	return WEXITSTATUS(res);
-    return 1;
+    xsetenv("PATH", params[P_PATH].value);
+    i = system(params[P_COMMAND].value);
+    unlink(xauthority);
+    unlink(iceauthority);
+    return i;
 }
-
