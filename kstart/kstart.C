@@ -139,7 +139,8 @@ void KStart::applyStyle(WId w ) {
 // David, 05/03/2000
 static KCmdLineOptions options[] =
 {
-  { "+command", I18N_NOOP("Command to execute."), 0 },
+  { "!+command", I18N_NOOP("Command to execute."), 0 },
+  // "!" means: all options after command are treated as arguments to the command
   { "window <regexp>", I18N_NOOP("A regular expression matching the window title.\n"
                   "If you do not specify one, then the very first window\n"
                   "to appear will be taken. Not recommended!"), 0 },
