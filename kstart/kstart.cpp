@@ -29,19 +29,10 @@
 
 #include <netwm.h>
 
-pid_t execute(const QCString & cmd){
-  KProcess proc;
-  proc.setUseShell(true);
-  proc << cmd;
-  if(proc.start(KProcess::DontCare))
-      return proc.pid();
-  return -1;
-}
-
 
 // some globals
 
-static QCString command = 0;
+static KProcess proc;
 static QCString windowtitle = 0;
 static QCString windowclass = 0;
 static int desktop = 0;
@@ -74,16 +65,11 @@ KStart::KStart()
     id.setupStartupEnv();
 
     //finally execute the comand
-    pid_t pid = execute(command);
-
-    if( pid >= 0 ) {
+    if( proc.start(KProcess::DontCare) ) {
         KStartupInfoData data;
-        data.addPid( pid );
-        data.setName( command );
-        QCString bin = command;
-        int space = bin.find( ' ' ); // try to get the name of the binary
-        if( space != -1 )
-            bin = bin.left( space );
+        data.addPid( proc.pid() );
+        QCString bin = proc.args().first();
+        data.setName( bin );
         data.setBin( bin.mid( bin.findRev( '/' ) + 1 ));
         KStartupInfo::sendChange( id, data );
     }
@@ -323,9 +309,8 @@ int main( int argc, char *argv[] )
   if ( args->count() == 0 )
       KCmdLineArgs::usage(i18n("No command specified"));
 
-  // Perhaps we should use a konsole-like solution here (shell, list of args...)
   for(int i=0; i < args->count(); i++)
-      command += QCString(args->arg(i)) + " ";
+    proc << args->arg(i);
 
   kwinmodule = new KWinModule;
 
