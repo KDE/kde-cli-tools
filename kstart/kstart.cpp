@@ -112,30 +112,30 @@ void KStart::sendRule() {
     }
     if ( ( desktop > 0 && desktop <= kwinmodule->numberOfDesktops() )
          || desktop == NETWinInfo::OnAllDesktops ) {
-	message += "desktop=" + QCString().setNum( desktop ) + "\ndesktoprule=2\n";
+	message += "desktop=" + QCString().setNum( desktop ) + "\ndesktoprule=3\n";
     }
     if (activate)
         message += "fsplevel=0\nfsplevelrule=1\n";
     if (iconify)
-        message += "minimize=true\nminimizerule=2\n";
+        message += "minimize=true\nminimizerule=3\n";
     if ( windowtype != NET::Unknown ) {
         message += "type=" + QCString().setNum( windowtype ) + "\ntyperule=1";
     }
     if ( state ) {
         if( state & NET::KeepAbove )
-            message += "above=true\naboverule=2\n";
+            message += "above=true\naboverule=3\n";
         if( state & NET::KeepBelow )
-            message += "below=true\nbelowrule=2\n";
+            message += "below=true\nbelowrule=3\n";
         if( state & NET::SkipTaskbar )
-            message += "skiptaskbar=true\nskiptaskbarrule=2\n";
+            message += "skiptaskbar=true\nskiptaskbarrule=3\n";
         if( state & NET::SkipPager )
-            message += "skippager=true\nskippagerrule=2\n";
+            message += "skippager=true\nskippagerrule=3\n";
         if( state & NET::MaxVert )
-            message += "maximizevert=true\nmaximizevertrule=2\n";
+            message += "maximizevert=true\nmaximizevertrule=3\n";
         if( state & NET::MaxHoriz )
-            message += "maximizehoriz=true\nmaximizehorizrule=2\n";
+            message += "maximizehoriz=true\nmaximizehorizrule=3\n";
         if( state & NET::FullScreen )
-            message += "fullscreen=true\nfullscreenrule=2\n";
+            message += "fullscreen=true\nfullscreenrule=3\n";
     }
 
     msg.broadcastMessage( "_KDE_NET_WM_TEMPORARY_RULES", message, -1, false );
