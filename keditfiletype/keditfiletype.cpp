@@ -94,7 +94,6 @@ int main(int argc, char ** argv)
   KCmdLineArgs::addCmdLineOptions( options ); // Add our own options.
   KApplication app;
   KCmdLineArgs *args = KCmdLineArgs::parsedArgs();
-  KGlobal::locale()->insertCatalogue("filetypes");
 
   if (args->count() == 0)
     KCmdLineArgs::usage();

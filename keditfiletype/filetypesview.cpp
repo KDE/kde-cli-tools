@@ -391,8 +391,7 @@ extern "C"
 {
   KCModule *create_filetypes(QWidget *parent, const char *name)
   {
-    KGlobal::locale()->insertCatalogue("filetypes");
-    return new FileTypesView(parent, name);
+    return new FileTypesView(parent, "filetypes");
   }
 
   void init_filetypes()
