@@ -144,7 +144,8 @@ void KStart::applyStyle(WId w ) {
 
     NETWinInfo info( qt_xdisplay(), w, qt_xrootwin(), NET::WMState );
 
-    if (desktop != 0 && desktop <= kwinmodule->numberOfDesktops() )
+    if ( ( desktop > 0 && desktop <= kwinmodule->numberOfDesktops() )
+         || desktop == NETWinInfo::OnAllDesktops )
 	info.setDesktop( desktop );
 
     if (iconify) {
