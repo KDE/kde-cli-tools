@@ -1,4 +1,4 @@
-#include <qbuttongroup.h>
+#include <qvbuttongroup.h>
 #include <qradiobutton.h>
 #include <qlayout.h>
 #include <qwhatsthis.h>
@@ -94,24 +94,16 @@ FileTypeDetails::FileTypeDetails( QWidget * parent, const char * name )
   QVBoxLayout *secondLayout = new QVBoxLayout(secondWidget, KDialog::marginHint(),
                                        KDialog::spacingHint());
 
-  m_autoEmbed = new QButtonGroup( i18n("Left click action"), secondWidget );
+  m_autoEmbed = new QVButtonGroup( i18n("Left click action"), secondWidget );
+  m_autoEmbed->layout()->setSpacing( KDialog::spacingHint() );
   secondLayout->addWidget( m_autoEmbed, 1 );
 
   m_autoEmbed->setSizePolicy( QSizePolicy( (QSizePolicy::SizeType)3, (QSizePolicy::SizeType)0, m_autoEmbed->sizePolicy().hasHeightForWidth() ) );
-  m_autoEmbed->setColumnLayout(0, Qt::Vertical );
-  m_autoEmbed->layout()->setSpacing( 0 );
-  m_autoEmbed->layout()->setMargin( 0 );
-  QVBoxLayout *bgLay = new QVBoxLayout( m_autoEmbed->layout() );
-  bgLay->setAlignment( Qt::AlignTop );
-  bgLay->setSpacing(KDialog::marginHint() );
-  bgLay->setMargin(  KDialog::spacingHint() );
 
-//  bgLay->addSpacing(10);
   // The order of those three items is very important. If you change it, fix typeslistitem.cpp !
-  bgLay->addWidget( new QRadioButton( i18n("Show file in embedded viewer"), m_autoEmbed ) );
-  bgLay->addWidget( new QRadioButton( i18n("Show file in separate viewer"), m_autoEmbed ) );
+  new QRadioButton( i18n("Show file in embedded viewer"), m_autoEmbed );
+  new QRadioButton( i18n("Show file in separate viewer"), m_autoEmbed );
   m_rbGroupSettings = new QRadioButton( i18n("Use settings for '%1' group"), m_autoEmbed );
-  bgLay->addWidget( m_rbGroupSettings );
   connect(m_autoEmbed, SIGNAL( clicked( int ) ), SLOT( slotAutoEmbedClicked( int ) ));
 
   QWhatsThis::add( m_autoEmbed, i18n("Here you can configure what the Konqueror file manager"
