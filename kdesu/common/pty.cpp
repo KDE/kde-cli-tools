@@ -78,8 +78,8 @@ int PTY::getpt()
 
     // Try /dev/pty[p-e][0-f] (Linux w/o UNIX98 PTY's)
 
-    for (const char *c1 = "pqrstuvwxyzabcde"; *c1 != 0L; c1++) {
-	for (const char *c2 = "pqrstuvwxyzabcde"; *c2 != 0L; c2++) {
+    for (const char *c1 = "pqrstuvwxyzabcde"; *c1 != '\0'; c1++) {
+	for (const char *c2 = "0123456789abcdef"; *c2 != '\0'; c2++) {
 	    ptyname.sprintf("/dev/pty%c%c", *c1, *c2);
 	    ttyname.sprintf("/dev/tty%c%c", *c1, *c2);
 	    if (access(ptyname, F_OK) < 0)
