@@ -46,9 +46,8 @@ KServiceSelectDlg::KServiceSelectDlg( const QString& /*serviceType*/, const QStr
     KService::List allServices = KService::allServices();
     QValueListIterator<KService::Ptr> it(allServices.begin());
     for ( ; it != allServices.end() ; ++it )
-        if ( (*it)->type() == "Service" &&
-             (*it)->hasServiceType( "KParts/ReadOnlyPart" ) )
-            strList += (*it)->name();
+      if ( (*it)->hasServiceType( "KParts/ReadOnlyPart" ) )
+        strList += (*it)->name();
 
     strList.sort();
     m_listbox->insertStringList( strList );
