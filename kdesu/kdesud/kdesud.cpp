@@ -40,12 +40,12 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include <unistd.h>
-#include <errno.h>
 #include <ctype.h>
 #include <string.h>
 #include <stdarg.h>
 #include <signal.h>
 #include <pwd.h>
+#include <errno.h>
 
 #include <sys/time.h>
 #include <sys/stat.h>
@@ -68,25 +68,47 @@
 #include "client.h"
 #include "kdesu.h"
 
+#include <X11/X.h>
+#include <X11/Xlib.h>
+
 // Globals
 
 Repository *repo;
 const char *Version = "1.01";
 QCString sock;
+Display *x11Display;
 
 
-// Unlink the socket atexit()
+// Borrowed from kdebase/kaudio/kaudioserver.cpp
 
-void cleanup(void)
+int xio_errhandler(Display *)
 {
-    unlink(sock);
+    kDebugError("kdesud: Fatal IO error, exiting...");
+    exit(1);
+}
+
+int initXconnection()
+{
+    x11Display = XOpenDisplay(NULL);
+    if (x11Display != 0L) {
+	XSetIOErrorHandler(xio_errhandler);
+	XCreateSimpleWindow(x11Display, DefaultRootWindow(x11Display), 
+		0, 0, 1, 1, 0,
+		BlackPixelOfScreen(DefaultScreenOfDisplay(x11Display)),
+		BlackPixelOfScreen(DefaultScreenOfDisplay(x11Display)));
+	return XConnectionNumber(x11Display);
+    } else {
+	kDebugWarning("kdesud: Can't connect to the X Server.");
+	kDebugWarning("kdesud: Might not terminate at end of session.");
+	return -1;
+    }
 }
 
 // Global signal handler
 
 void signal_exit(int sig)
 {
-    fprintf(stderr, "Exiting on signal %d\n", sig); 
+    kDebugError("Exiting on signal %d", sig); 
     exit(1);
 }
 
@@ -105,6 +127,12 @@ void sigchld_handler(int)
     }
 }
 
+// Cleanup atexit()
+
+void cleanup(void)
+{
+    unlink(sock);
+}
 
 /**
  * Creates an AF_UNIX socket in /tmp, mode 0600.
@@ -141,7 +169,7 @@ int create_socket()
 
     sockfd = socket(PF_UNIX, SOCK_STREAM, 0);
     if (sockfd < 0) {
-	kDebugWarning("socket(): %s", strerror(errno));
+	kDebugPError("socket()");
 	return -1;
     }
 
@@ -150,33 +178,31 @@ int create_socket()
     strcpy(addr.sun_path, sock);
     addrlen = SUN_LEN(&addr);
     if (bind(sockfd, (struct sockaddr *)&addr, addrlen) < 0) {
-	kDebugWarning("bind(): %s", strerror(errno));
+	kDebugPError("bind()");
 	return -1;
     }
-
     atexit(cleanup);
 
     struct linger lin;
     lin.l_onoff = lin.l_linger = 0;
     if (setsockopt(sockfd, SOL_SOCKET, SO_LINGER, (char *) &lin,
 		   sizeof(linger)) < 0) {
-	kDebugWarning("setsockopt(SO_LINGER): %s", strerror(errno));
+	kDebugPError("setsockopt(SO_LINGER)");
 	return -1;
     }
 
     int opt = 1;
     if (setsockopt(sockfd, SOL_SOCKET, SO_REUSEADDR, (char *) &opt,
 		   sizeof(opt)) < 0) {
-	kDebugWarning("setsockopt(SO_REUSEADDR): %s", strerror(errno));
+	kDebugPError("setsockopt(SO_REUSEADDR)");
 	return -1;
     }
     opt = 1;
     if (setsockopt(sockfd, SOL_SOCKET, SO_KEEPALIVE, (char *) &opt,
 		   sizeof(opt)) < 0) {
-	kDebugWarning("setsockopt(SO_KEEPALIVE): %s", strerror(errno));
+	kDebugPError("setsockopt(SO_KEEPALIVE)");
 	return -1;
     }
-
     chmod(sock, 0600);
     return sockfd;
 }
@@ -200,7 +226,7 @@ int main(int argc, char *argv[])
     struct rlimit rlim;
     rlim.rlim_cur = rlim.rlim_max = 0;
     if (setrlimit(RLIMIT_CORE, &rlim) < 0) {
-	kDebugWarning("setrlimit(): %s", strerror(errno));
+	kDebugPError("setrlimit()");
 	exit(1);
     }
 
@@ -209,19 +235,22 @@ int main(int argc, char *argv[])
     if (sockfd < 0)
 	exit(1);
     if (listen(sockfd, 1) < 0) {
-	kDebugWarning("listen(): %s", strerror(errno));
+	kDebugPError("listen()");
 	exit(1);
     }
 
     // Ok, we're accepting connections. Fork to the background.
     pid_t pid = fork();
     if (pid == -1) {
-	kDebugFatal("fork(): %m");
+	kDebugPError("fork()");
 	exit(1);
     }
     if (pid)
-	_exit(0);
-	
+	exit(0);
+
+    // Make sure we exit when the display gets closed.
+    int x11Fd = initXconnection();
+
     // Allocate the repository 
     repo = new Repository;
 
@@ -243,6 +272,9 @@ int main(int argc, char *argv[])
     sa.sa_flags = SA_NOCLDSTOP;
     sigaction(SIGCHLD, &sa, 0L);
 
+    sa.sa_handler = SIG_IGN;
+    sigaction(SIGPIPE, &sa, 0L);
+
     // Main execution loop 
 
     ksize_t addrlen;
@@ -252,6 +284,8 @@ int main(int argc, char *argv[])
     fd_set tmp_fds, active_fds;
     FD_ZERO(&active_fds);
     FD_SET(sockfd, &active_fds);
+    if (x11Fd != -1)
+	FD_SET(x11Fd, &active_fds);
     while (1) {
 
 	tmp_fds = active_fds;
@@ -259,7 +293,7 @@ int main(int argc, char *argv[])
 	if (select(FD_SETSIZE, &tmp_fds, 0L, 0L, &tv) < 0) {
 	    if (errno == EINTR)
 		continue;
-	    kDebugFatal("select(): %s", strerror(errno));
+	    kDebugPError("select()");
 	    exit(1);
 	}
 	
@@ -269,13 +303,20 @@ int main(int argc, char *argv[])
 	    if (!FD_ISSET(i, &tmp_fds)) 
 		continue;
 
+	    if (i == x11Fd) {
+		// Discard X events
+		XEvent event_return;
+		if (x11Display)
+		    XNextEvent(x11Display, &event_return);
+	    }
+
 	    if (i == sockfd) {
 		// new connection
 		int fd;
 		addrlen = 64;
 		fd = accept(sockfd, (struct sockaddr *) &clientname, &addrlen);
 		if (fd < 0) {
-		    kDebugWarning("accept(): %s", strerror(errno));
+		    kDebugPError("accept()");
 		    continue;
 		}
 		handler[fd] = new ConnectionHandler(fd);
