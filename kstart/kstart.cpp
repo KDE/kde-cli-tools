@@ -105,7 +105,8 @@ void KStart::sendRule() {
             + ( windowclass.contains( ' ' ) ? "true" : "false" ) + "\n";
     if( windowtitle || windowclass ) {
         // always ignore these window types
-        message += "types=" + QCString().setNum( -1U & ~( NET::TopMenuMask | NET::ToolbarMask | NET::DesktopMask )) + "\n";
+        message += "types=" + QCString().setNum( -1U &
+            ~( NET::TopMenuMask | NET::ToolbarMask | NET::DesktopMask | NET::SplashMask | NET::MenuMask )) + "\n";
     } else {
         // accept only "normal" windows
         message += "types=" + QCString().setNum( NET::NormalMask | NET::DialogMask ) + "\n";
