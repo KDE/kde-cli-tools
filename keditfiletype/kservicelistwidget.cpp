@@ -210,6 +210,8 @@ void KServiceListWidget::addService()
   KService::Ptr service = dlg.service();
 
   ASSERT(service);
+  if (!service) 
+     return; // Don't crash if KOpenWith wasn't able to create service.
 
   // check if it is a duplicate entry
   for (unsigned int index = 0; index < servicesLB->count(); index++)
