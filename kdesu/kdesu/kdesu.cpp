@@ -30,6 +30,7 @@
 #include <klocale.h>
 #include <kaboutdata.h>
 #include <kcmdlineargs.h>
+#include <kmessagebox.h>
 
 #include <kdesu/defaults.h>
 #include <kdesu/su.h>
@@ -219,25 +220,45 @@ int main(int argc, char *argv[])
     config->setGroup("Passwords");
     int timeout = config->readNumEntry("Timeout", defTimeout);
 
-     // Start the dialog
-    KDEsuDialog *dlg = new KDEsuDialog(user, auth_user, keep && !terminal);
-    dlg->addLine(i18n("Command:"), command);
-    if ((priority != 50) || (scheduler != SuProcess::SchedNormal)) 
+    // Check if we need a password
+    SuProcess proc;
+    proc.setUser(auth_user);
+    int needpw = proc.checkNeedPassword();
+    if (needpw < 0)
     {
-	QString prio;
-	if (scheduler == SuProcess::SchedRealtime)
-	    prio += i18n("realtime: ");
-	prio += QString("%1/100").arg(priority);
-	dlg->addLine(i18n("Priority:"), prio);
+	QString err = i18n("Su returned with an error!\n");
+	KMessageBox::error(0L, err);
+	exit(1);
     }
-    int ret = dlg->exec();
-    if (ret == KDEsuDialog::Rejected)
-	exit(0);
-    if (ret == KDEsuDialog::AsUser)
-	change_uid = false;
-    QCString password = dlg->password();
-    int k = dlg->keep();
-    delete dlg;
+    if (needpw == 0)
+    {
+	keep = 0;
+	kdDebug() << "Don't need password!!\n";
+    }
+
+    // Start the dialog
+    QCString password;
+    if (needpw)
+    {
+	KDEsuDialog *dlg = new KDEsuDialog(user, auth_user, keep && !terminal);
+	dlg->addLine(i18n("Command:"), command);
+	if ((priority != 50) || (scheduler != SuProcess::SchedNormal)) 
+	{
+	    QString prio;
+	    if (scheduler == SuProcess::SchedRealtime)
+		prio += i18n("realtime: ");
+	    prio += QString("%1/100").arg(priority);
+	    dlg->addLine(i18n("Priority:"), prio);
+	}
+	int ret = dlg->exec();
+	if (ret == KDEsuDialog::Rejected)
+	    exit(0);
+	if (ret == KDEsuDialog::AsUser)
+	    change_uid = false;
+	password = dlg->password();
+	keep = dlg->keep();
+	delete dlg;
+    }
 
     // Some events may need to be handled (like a button animation)
     app->processEvents();
@@ -247,7 +268,7 @@ int main(int argc, char *argv[])
 
     // Run command
 
-    if (k && have_daemon) 
+    if (keep && have_daemon) 
     {
 	client.setPass(password, timeout);
 	client.setPriority(priority);

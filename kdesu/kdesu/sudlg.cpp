@@ -46,14 +46,21 @@ bool KDEsuDialog::checkPassword(const char *password)
     int status = proc.checkInstall(password);
     switch (status)
     {
+    case -1:
+	KMessageBox::sorry(this, i18n("Conversation with su failed."));
+	done(Rejected);
+	return false;
+
     case 0:
 	return true;
+
     case SuProcess::SuNotFound:
         KMessageBox::sorry(this, 
 		i18n("The program `su' is not found!\n\n"
 		     "Make sure your PATH is set correctly."));
 	done(Rejected);
 	return false;
+
     case SuProcess::SuNotAllowed:
         KMessageBox::sorry(this, 
 		i18n("You are not allowed to use `su'!\n\n"
@@ -61,9 +68,11 @@ bool KDEsuDialog::checkPassword(const char *password)
 		     "group (often: wheel) to use this program."));
 	done(Rejected);
 	return false;
+
     case SuProcess::SuIncorrectPassword:
         KMessageBox::sorry(this, i18n("Incorrect password! Please try again."));
 	return false;
+
     default:
         KMessageBox::error(this, i18n("Internal error: Illegal return from "
 		"SuProcess::checkInstall()"));
