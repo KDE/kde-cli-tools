@@ -119,7 +119,7 @@ static bool wstate_withdrawn( WId winid )
 
 void KStart::applyStyle(WId w ) {
 
-    if ( toSysTray || iconify || windowtype != NET::Unknown || desktop >= 1 ) {
+    if ( toSysTray || state || iconify || windowtype != NET::Unknown || desktop >= 1 ) {
 	
 	XWithdrawWindow(qt_xdisplay(), w, qt_xscreen());
 	QApplication::flushX();
