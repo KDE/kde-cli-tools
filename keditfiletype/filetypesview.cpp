@@ -25,22 +25,23 @@ FileTypesView::FileTypesView(QWidget *p, const char *name)
   QString wtstr;
 
   QHBoxLayout *topLayout = new QHBoxLayout(this, KDialog::marginHint(),
-					   KDialog::spacingHint());
+                       KDialog::spacingHint());
 
   QGridLayout *leftLayout = new QGridLayout(4, 2);
   topLayout->addLayout(leftLayout, 0);
 
-  QLabel *patternFilterLBL = new QLabel( i18n("Find filename pattern"), this );
+  QLabel *patternFilterLBL = new QLabel( i18n("F&ind filename pattern"), this );
   leftLayout->addMultiCellWidget(patternFilterLBL, 0, 0, 0, 1);
 
   patternFilterLE = new QLineEdit(this);
+  patternFilterLBL->setBuddy( patternFilterLE );
   leftLayout->addMultiCellWidget(patternFilterLE, 1, 1, 0, 1);
 
   connect(patternFilterLE, SIGNAL(textChanged(const QString &)),
-	  this, SLOT(slotFilter(const QString &)));
+      this, SLOT(slotFilter(const QString &)));
 
   wtstr = i18n("Enter a part of a filename pattern. Only file types with a "
-	       "matching file pattern will appear in the list.");
+           "matching file pattern will appear in the list.");
 
   QWhatsThis::add( patternFilterLE, wtstr );
   QWhatsThis::add( patternFilterLBL, wtstr );
@@ -115,38 +116,38 @@ void FileTypesView::readFileTypes(const QString &patternFilter)
     KMimeType::List mimetypes = KMimeType::allMimeTypes();
     QValueListIterator<KMimeType::Ptr> it2(mimetypes.begin());
     for (; it2 != mimetypes.end(); ++it2) {
-	bool add = true;
-	
-	if ( !patternFilter.isEmpty() ) {
-	    QStringList matches = (*it2)->patterns().grep( patternFilter,
-							   false );
-	    add = !matches.isEmpty();
-	}
-	
-	if ( add ) {
-	    QString mimetype = (*it2)->name();
-	    int index = mimetype.find("/");
-	    QString maj = mimetype.left(index);
-	    QString min = mimetype.right(mimetype.length() - index+1);
-	
-	    QListViewItemIterator it(typesLV);
-	    for (; it.current(); ++it) {
-		TypesListItem *current = (TypesListItem *) it.current();
-		if (current->majorType() == maj) {
-		    new TypesListItem(current, (*it2));
-		    break;
-		}
-	    }
-	    if (!it.current()) {
-		// insert at top level.
-		TypesListItem *i = new TypesListItem(typesLV, (*it2));
-		
-		if ( !patternFilter.isEmpty() )
-		    i->setOpen(true);
-		
-		new TypesListItem(i, (*it2));
-	    }
-	}
+    bool add = true;
+
+    if ( !patternFilter.isEmpty() ) {
+        QStringList matches = (*it2)->patterns().grep( patternFilter,
+                               false );
+        add = !matches.isEmpty();
+    }
+
+    if ( add ) {
+        QString mimetype = (*it2)->name();
+        int index = mimetype.find("/");
+        QString maj = mimetype.left(index);
+        QString min = mimetype.right(mimetype.length() - index+1);
+
+        QListViewItemIterator it(typesLV);
+        for (; it.current(); ++it) {
+        TypesListItem *current = (TypesListItem *) it.current();
+        if (current->majorType() == maj) {
+            new TypesListItem(current, (*it2));
+            break;
+        }
+        }
+        if (!it.current()) {
+        // insert at top level.
+        TypesListItem *i = new TypesListItem(typesLV, (*it2));
+
+        if ( !patternFilter.isEmpty() )
+            i->setOpen(true);
+
+        new TypesListItem(i, (*it2));
+        }
+    }
     }
 }
 
