@@ -32,13 +32,12 @@ protected slots:
   void removeType();
   void updateDisplay(QListViewItem *);
   void slotFilter(const QString &patternFilter);
+  void setDirty(bool state);
 
 protected:
   void readFileTypes(const QString &patternFilter = QString::null);
 
 private:
-  void setDirty(bool state);
-
   QListView *typesLV;
 
   FileTypeDetails * m_details;
