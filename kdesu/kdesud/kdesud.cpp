@@ -356,7 +356,7 @@ int main(int argc, char *argv[])
 	    }
 
 	    // handle alreay established connection
-	    if (handler[i]->handle() < 0) 
+	    if (handler[i] && handler[i]->handle() < 0) 
 	    {
 		handler.remove(i);
 		FD_CLR(i, &active_fds);
