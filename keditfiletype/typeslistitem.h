@@ -61,7 +61,7 @@ public:
 
 private:
   void getServiceOffers( QStringList & appServices, QStringList & embedServices ) const;
-  void saveServices( KSimpleConfig & profile, QStringList services, const QString & servicetype2 );
+  void saveServices( KConfig & profile, QStringList services, const QString & servicetype2 );
   KMimeType::Ptr m_mimetype;
   void initMeta( const QString & major );
   void init(KMimeType::Ptr mimetype);

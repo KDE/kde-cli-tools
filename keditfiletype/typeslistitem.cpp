@@ -224,7 +224,7 @@ void TypesListItem::sync()
 
   m_bNewItem = false;
 
-  KSimpleConfig profile("profilerc");
+  KConfig profile("profilerc", false, false);
 
   // Deleting current contents in profilerc relating to
   // this service type
@@ -324,7 +324,7 @@ void TypesListItem::sync()
   }
 }
 
-void TypesListItem::saveServices( KSimpleConfig & profile, QStringList services, const QString & genericServiceType )
+void TypesListItem::saveServices( KConfig & profile, QStringList services, const QString & genericServiceType )
 {
   QStringList::Iterator it(services.begin());
   for (int i = services.count(); it != services.end(); ++it, i--) {
