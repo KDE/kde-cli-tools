@@ -177,7 +177,7 @@ int create_socket()
 
     sock = QFile::encodeName(locateLocal("socket", QString("kdesud_%1").arg(display)));
     int stat_err=lstat(sock, &s);
-    if(!stat_err && S_ISLNK(s.st_ino)) {
+    if(!stat_err && S_ISLNK(s.st_mode)) {
 	kdWarning(1205) << "Someone is running a symlink attack on you\n";
 	if(unlink(sock)) {
 	    kdWarning(1205) << "Could not delete symlink\n";
