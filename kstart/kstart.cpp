@@ -46,6 +46,7 @@ static int desktop = 0;
 static bool activate = false;
 static bool iconify = false;
 static bool toSysTray = false;
+static bool fullscreen = false;
 static unsigned long state = 0;
 static unsigned long mask = 0;
 static NET::WindowType windowtype = NET::Unknown;
@@ -64,15 +65,15 @@ KStart::KStart()
     KStartupInfoId id;
     id.initId( kapp->startupId());
     id.setupStartupEnv();
-    
+
     //finally execute the comand
     pid_t pid = execute(command);
-    
+
     if( pid >= 0 ) {
         KStartupInfoData data;
         data.addPid( pid );
         data.setName( command );
-        QCString bin = command; 
+        QCString bin = command;
         int space = bin.find( ' ' ); // try to get the name of the binary
         if( space != -1 )
             bin = bin.left( space );
@@ -92,7 +93,7 @@ void KStart::windowAdded(WId w){
         || info.windowType == NET::Toolbar
         || info.windowType == NET::Desktop )
         return;
-        
+
     if ( window) {
 	QString title = info.name;
 	QRegExp r( window );
@@ -133,7 +134,7 @@ static bool wstate_withdrawn( WId winid )
 void KStart::applyStyle(WId w ) {
 
     if ( toSysTray || state || iconify || windowtype != NET::Unknown || desktop >= 1 ) {
-	
+
 	XWithdrawWindow(qt_xdisplay(), w, qt_xscreen());
 	QApplication::flushX();
 
@@ -168,6 +169,11 @@ void KStart::applyStyle(WId w ) {
 	KWin::setSystemTrayWindowFor( w,  qt_xrootwin() );
     }
 
+    if ( fullscreen ) {
+	QRect r = QApplication::desktop()->geometry();
+	XMoveResizeWindow( qt_xdisplay(), w, r.x(), r.y(), r.width(), r.height() );
+    }
+
 
     XSync(qt_xdisplay(), False);
 
@@ -193,6 +199,7 @@ static KCmdLineOptions options[] =
   { "alldesktops", I18N_NOOP("Make the window appear on all desktops"), 0 },
   { "iconify", I18N_NOOP("Iconify the window"), 0 },
   { "maximize", I18N_NOOP("Maximize the window"), 0 },
+  { "fullscreen", I18N_NOOP("Show window fullscreen. Implies type Override."), 0 },
   { "type <type>", I18N_NOOP("The window type: Normal, Desktop, Dock, Tool, \nMenu, Dialog, TopMenu or Override"), 0 },
   { "activate", I18N_NOOP("Jump to the window even if it is started on a \n"
                           "different virtual desktop"), 0 },
@@ -287,12 +294,14 @@ int main( int argc, char *argv[] )
 
   iconify = args->isSet("iconify");
   toSysTray = args->isSet("tosystray");
+  if ( fullscreen = args->isSet("fullscreen") )
+      windowtype = NET::Override;
 
   fcntl(ConnectionNumber(qt_xdisplay()), F_SETFD, 1);
   args->clear();
 
   KStart start;
-  
+
   QTimer::singleShot( 120 * 1000, &app, SLOT( quit())); // quit if nothing happens in 2 minutes
   return app.exec();
 }
