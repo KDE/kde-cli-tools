@@ -69,7 +69,7 @@ int main(int argc, char **argv)
 		return konfig->readLongNumEntry(key, dflt.toLong());
 	} else {
 		/* Assume it's a string... */
-                fprintf(stdout, "%s\n", konfig->readEntry(key, dflt).latin1());
+                fprintf(stdout, "%s\n", konfig->readEntry(key, dflt).local8Bit().data());
 		return 0;
 	}
 }
