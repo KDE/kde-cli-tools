@@ -71,7 +71,7 @@ FileTypesView::FileTypesView(QWidget *p, const char *name)
     " (e.g. text/html for HTML files) to view/edit the information for that"
     " file type using the controls on the right.") );
 
-  QPushButton *addTypeB = new QPushButton(i18n("&Add..."), m_left);
+  QPushButton *addTypeB = new QPushButton(i18n("Add..."), m_left);
   connect(addTypeB, SIGNAL(clicked()),
           this, SLOT(addType()));
   leftLayout->addWidget(addTypeB, 3, 0);
