@@ -16,6 +16,8 @@
 #include <klocale.h>
 #include <kwm.h>
 #include <kapp.h>
+#include <kaboutdata.h>
+#include <kcmdlineargs.h>
 
 void execute(const char* cmd){
   KShellProcess proc;
@@ -80,7 +82,7 @@ void KStart::windowAdd(WId w){
 void KStart::applyStyle(Window w) {
     if (window)
 	KWM::prepareForSwallowing(w);
-    if (desktop >= 0) {
+    if (desktop > 0) {
 	if (KWM::desktop(w) != desktop)
         {
             debug("moving window to desktop %d",desktop);
@@ -110,89 +112,79 @@ void KStart::applyStyle(Window w) {
     XSync(qt_xdisplay(), False);
 }
 
-
-
+// David, 05/03/2000
+static KCmdLineOptions options[] =
+{
+  { "+command", I18N_NOOP("Command to execute."), 0 },
+  { "window <regexp>", I18N_NOOP("A regular expression matching the window title.\n"
+                  "If you do not specify one, then the very first window\n"
+                  "to appear will be taken. Not recommended!"), 0 },
+  { "desktop <number>", I18N_NOOP("Desktop where to make the window appear"), 0 },
+  { "sticky", I18N_NOOP("Make the window sticky (appears on all desktops)"), 0 },
+  { "iconify", I18N_NOOP("Iconify the window"), 0 },
+  { "maximize", I18N_NOOP("Maximize the window"), 0 },
+  { "decoration <d>", I18N_NOOP("Sets the decoration, 'tiny' or 'none', defaults to normal."), 0 },
+  { "activate", I18N_NOOP("Jump to the window even if it is started on a \n"
+                          "different virtual desktop"), 0 },
+  { "nofocus", I18N_NOOP("The window does not get the focus\n"
+                         "(and therefore has no entry in the taskbar)."), 0 },
+  { "staysontop", I18N_NOOP("Make the window stay on top of any other window"), 0 },
+  { 0, 0, 0}
+};
 
 int main( int argc, char *argv[] )
 {
-  if (argc <= 2) {
-      KApplication dummyForI18n(argc,argv, "kstart");
-      printf(KSTART_VERSION);
-      printf(i18n(
-       "\n Copyright (C) 1997, 1998 Matthias Ettrich (ettrich@kde.org)\n"
-       "\n Utility to launch legay applications with special KDE window properties"
-       "\n such as iconified, maximized, a certain virtual desktop, a special decoration"
-       "\n or sticky. Furthermore you can exclude the window from getting the focus or"
-       "\n force the window manager to keep the window always on top."
-       "\n "
-       "\n In addition, the -activate switch will jump to the window even if it is"
-       "\n started on a different virtual desktop"
-       "\n "
-       "\n Usage:"
-       "\n %1 <command> [-window <regular expression>] [-desktop <number>]"
-       "\n              [-sticky] [-iconify] [-maximize] "
-       "\n              [-decoration tiny|none] [-activate] [-nofocus] [-staysontop]"
-       "\n "
-       "\n If you do not specify a regular expression for the windows title,"
-       "\n then the very first window to appear will be taken. Not recommended!"
-       "\n "
-       "\n Example usage:"
-       "\n %2 \"xclock -geometry 80x80-0+0\" -window xclock \\"
-       "\n        -decoration tiny -sticky -nofocus -staysontop"
-       "\n puts a tiny decorated, sticky xclock on the top right corner of the screen,"
-       "\n that does not even get focus (and therefore has no entry in the taskbar)."
-       "\n Note that you can still close it with the right mouse button."
-       "\n "
-       "\n ").arg(argv[0]).arg(argv[0]));
+  // David, 05/03/2000
+  KAboutData aboutData( "kstart", I18N_NOOP("KStart"), KSTART_VERSION,
+      I18N_NOOP(""
+       "Utility to launch applications with special KDE window properties \n"
+       "such as iconified, maximized, a certain virtual desktop, a special decoration\n"
+       "or sticky. Furthermore you can exclude the window from getting the focus or\n"
+       "force the window manager to keep the window always on top."),
+      KAboutData::License_GPL,
+       "(C) 1997-2000 Matthias Ettrich (ettrich@kde.org)" );
+  aboutData.addAuthor( "Matthias Ettrich", 0, "ettrich@kde.org" );
 
-      ::exit(0);
-  }
-  int desktop = 0;
-  char* window = 0;
-  bool activate = FALSE;
-  bool maximize = FALSE;
-  bool iconify = FALSE;
-  bool sticky = FALSE;
-  int noFocus = 0;
-  int staysOnTop = 0;
+  KCmdLineArgs::init( argc, argv, &aboutData );
+ 
+  KCmdLineArgs::addCmdLineOptions( options ); // Add our own options.
+ 
+  KApplication app;
+
+  KCmdLineArgs *args = KCmdLineArgs::parsedArgs();
+
+  if ( args->count() == 0 )
+      KCmdLineArgs::usage(i18n("No command specified"));
+
+  // Perhaps we should use a konsole-like solution here (shell, list of args...)
+  QCString command;
+  for(int i=0; i < args->count(); i++)
+      command += QCString(args->arg(i)) + " "; 
+
+  int desktop = args->getOption( "desktop" ).toInt();
+  QCString window = args->getOption( "window" );
+  QCString s = args->getOption( "decoration" );
   int decoration = KWM::normalDecoration;
-
-  for (int i = 2; i < argc; i++)
-  {
-      if (!strcmp(argv[i],"-version")) {
-	  printf(KSTART_VERSION);
-	  printf(i18n("\n Copyright (C) 1997, 1998 Matthias Ettrich (ettrich@kde.org)\n"));
-	  ::exit(0);
-      }
-    if (!strcmp(argv[i],"-window") && i+1 < argc) {
-	window =  argv[++i];
-    }
-    if (!strcmp(argv[i],"-desktop") && i+1 < argc) {
-	QString s =  argv[++i];
-	desktop = s.toInt();
-    }
-    if (!strcmp(argv[i],"-decoration") && i+1 < argc) {
-	QString s =  argv[++i];
-	if (s == "tiny")
-	    decoration = KWM::tinyDecoration;
-	if (s == "none")
-	    decoration = KWM::noDecoration;
-    }
-    if (!strcmp(argv[i],"-activate") ) activate = true;
-    if (!strcmp(argv[i],"-maximize") ) maximize = true;
-    if (!strcmp(argv[i],"-iconify") ) iconify = true;
-    if (!strcmp(argv[i],"-sticky") ) sticky = true;
-    if (!strcmp(argv[i],"-nofocus") ) noFocus = KWM::noFocus;
-    if (!strcmp(argv[i],"-staysontop") ) staysOnTop = KWM::staysOnTop;
-  }
-
-  KApplication a (argc, argv, "kstart");
+  if (s == "tiny")
+    decoration = KWM::tinyDecoration;
+  if (s == "none")
+    decoration = KWM::noDecoration;
+  int noFocus = 0;
+  if ( !args->isSet( "focus" ) ) // opposite to nofocus
+     noFocus = KWM::noFocus;
+  int staysOnTop = 0;
+  if ( args->isSet( "staysontop" ) )
+     staysOnTop = KWM::staysOnTop;
+  bool activate = args->isSet("activate");
+  bool maximize = args->isSet("maximize");
+  bool iconify = args->isSet("iconify");
+  bool sticky = args->isSet("sticky");
 
   fcntl(ConnectionNumber(qt_xdisplay()), F_SETFD, 1);
 
+  args->clear();
 
-  new KStart(argv[1], window, desktop, activate, maximize, iconify, sticky, decoration | noFocus | staysOnTop);
+  new KStart(command, window, desktop, activate, maximize, iconify, sticky, decoration | noFocus | staysOnTop);
 
-
-  return a.exec();
+  return app.exec();
 }
