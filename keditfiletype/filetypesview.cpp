@@ -216,6 +216,12 @@ void FileTypesView::addType()
                                             QStringList());
 
     TypesListItem *group = m_majorMap[ m.group() ];
+    if ( !group )
+    {
+       //group = new TypesListItem(
+       //TODO !
+       Q_ASSERT(group);
+    }
 
     // find out if our group has been filtered out -> insert if necessary
     QListViewItem *item = typesLV->firstChild();

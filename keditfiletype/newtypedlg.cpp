@@ -11,6 +11,7 @@
 
 
 #include "newtypedlg.h"
+#include <qpushbutton.h>
 
 NewTypeDialog::NewTypeDialog(QStringList groups,
 			     QWidget *parent, const char *name)
@@ -27,6 +28,7 @@ NewTypeDialog::NewTypeDialog(QStringList groups,
   grid->addWidget(l, 0, 0);
 
   groupCombo = new QComboBox(this);
+  groupCombo->setEditable( true );
   groupCombo->insertStringList(groups);
   grid->addWidget(groupCombo, 0, 1);
 
