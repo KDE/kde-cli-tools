@@ -4,6 +4,7 @@
 #include <qlistview.h>
 #include <qgroupbox.h>
 #include <qlistbox.h>
+#include <qwhatsthis.h>
 
 #include <dcopclient.h>
 #include <kbuttonbox.h>
@@ -28,6 +29,7 @@
 FileTypesView::FileTypesView(QWidget *p, const char *name)
   : KCModule(p, name)
 {
+  QString wtstr;
   setButtons(Cancel|Apply|Ok);
   QHBoxLayout *topLayout = new QHBoxLayout(this, KDialog::marginHint(),
                                            KDialog::spacingHint());
@@ -43,15 +45,23 @@ FileTypesView::FileTypesView(QWidget *p, const char *name)
   connect(typesLV, SIGNAL(selectionChanged(QListViewItem *)),
           this, SLOT(updateDisplay(QListViewItem *)));
 
+  QWhatsThis::add( typesLV, i18n("Here you can see a hierarchical list of the file types"
+    " installed on your system. Select a file type (e.g. text/html for HTML files) to edit it"
+    " using the controls on the right.") );
+
   QPushButton *addTypeB = new QPushButton(i18n("&Add..."), this);
   connect(addTypeB, SIGNAL(clicked()),
           this, SLOT(addType()));
   leftLayout->addWidget(addTypeB, 1, 0);
 
+  QWhatsThis::add( addTypeB, i18n("Click here to add a new file type.") );
+
   QPushButton *removeTypeB = new QPushButton(i18n("&Remove"), this);
   connect(removeTypeB, SIGNAL(clicked()),
           this, SLOT(removeType()));
   leftLayout->addWidget(removeTypeB, 1, 1);
+
+  QWhatsThis::add( removeTypeB, i18n("Removes the selected file type.") );
 
   QVBoxLayout *rightLayout = new QVBoxLayout();
   topLayout->addLayout(rightLayout, 3);
@@ -67,6 +77,9 @@ FileTypesView::FileTypesView(QWidget *p, const char *name)
   iconButton->setFixedSize(50, 50);
   hBox->addWidget(iconButton);
 
+  QWhatsThis::add( iconButton, i18n("This button displays the icon associated"
+    " with the selected file type. Click on it to chose a new icon.") );
+
   QGroupBox *gb = new QGroupBox(i18n("File Patterns"), this);
   hBox->addWidget(gb);
 
@@ -78,17 +91,26 @@ FileTypesView::FileTypesView(QWidget *p, const char *name)
   connect(extensionLB, SIGNAL(highlighted(int)), SLOT(enableExtButtons(int)));
   grid->addMultiCellWidget(extensionLB, 1, 2, 0, 0);
 
+  QWhatsThis::add( extensionLB, i18n("This box contains a list of patterns that can be"
+    " used to identify files of the selected type. E.g. you'd use the pattern *.txt for the file"
+    " type 'text/plain', so all files ending in '.txt' will be recognized as plain text files."
+    " Think of the leading asterisk (*) as: \"All files ending in the following characters\".") );
+
   addExtButton = new QPushButton(i18n("Add..."), gb);
   addExtButton->setEnabled(false);
   connect(addExtButton, SIGNAL(clicked()),
           this, SLOT(addExtension()));
   grid->addWidget(addExtButton, 1, 1);
 
+  QWhatsThis::add( addExtButton, i18n("Add a new pattern for the selected file type.") );
+
   removeExtButton = new QPushButton(i18n("Remove"), gb);
   removeExtButton->setEnabled(false);
   connect(removeExtButton, SIGNAL(clicked()),
           this, SLOT(removeExtension()));
   grid->addWidget(removeExtButton, 2, 1);
+
+  QWhatsThis::add( removeExtButton, i18n("Remove the selected file pattern.") );
 
   gb = new QGroupBox(i18n("Description"), this);
   rightLayout->addWidget(gb);
@@ -97,6 +119,12 @@ FileTypesView::FileTypesView(QWidget *p, const char *name)
   description = new KLineEdit(gb);
   connect(description, SIGNAL(textChanged(const QString &)),
           SLOT(updateDescription(const QString &)));
+
+  wtstr = i18n("Here you can enter a short description for files of the selected"
+    " file type (e.g. 'HTML Page'). This description will be used by applications like Konqueror to"
+    " display directory content.");
+  QWhatsThis::add( gb, wtstr );
+  QWhatsThis::add( description, wtstr );
 
   gb = new QGroupBox(i18n("Application Preference Order"), this);
   rightLayout->addWidget(gb);
@@ -110,20 +138,35 @@ FileTypesView::FileTypesView(QWidget *p, const char *name)
   connect(servicesLB, SIGNAL(highlighted(int)), SLOT(enableMoveButtons(int)));
   grid->addMultiCellWidget(servicesLB, 1, 3, 0, 0);
 
+  wtstr = i18n("This box contains a list of applications registered for the selected"
+    " file type. These applications will be shown e.g. in context menus in Konqueror and"
+    " will be used to open a file on mouse click. If this contains more than one application"
+    " the upmost application has highest priority.");
+  QWhatsThis::add( gb, wtstr );
+  QWhatsThis::add( servicesLB, wtstr );
+
   servUpButton = new QPushButton(i18n("Move &Up"), gb);
   servUpButton->setEnabled(false);
   connect(servUpButton, SIGNAL(clicked()), SLOT(promoteService()));
   grid->addWidget(servUpButton, 1, 1);
+
+  QWhatsThis::add( servUpButton, i18n("Assigns a higher priority to the selected"
+    " application, moving it up in the list (only affects the selected file type).") );
 
   servDownButton = new QPushButton(i18n("Move &Down"), gb);
   servDownButton->setEnabled(false);
   connect(servDownButton, SIGNAL(clicked()), SLOT(demoteService()));
   grid->addWidget(servDownButton, 2, 1);
 
+  QWhatsThis::add( servDownButton, i18n("Assigns a lower priority to the selected"
+    " application, moving it down in the list (only affects the selected file type).") );
+
   servNewButton = new QPushButton(i18n("Add..."), gb);
   servNewButton->setEnabled(false);
   connect(servNewButton, SIGNAL(clicked()), SLOT(addService()));
   grid->addWidget(servNewButton, 3, 1);
+
+  QWhatsThis::add( servNewButton, i18n( "Add a new application for this file type." ) );
 
   //rightLayout->addStretch(1);
 
@@ -456,6 +499,18 @@ void FileTypesView::save()
 void FileTypesView::defaults()
 {
 }
+
+QString FileTypesView::quickHelp()
+{
+  return i18n("<h1>File Associations</h1> File associations contain information about"
+    " different types of files (also called \"mime types\"). They contain: <ul><li>rules how to tell the"
+    " mime type of a file (e.g. for the KWord mime type *.kwd, which means: 'all files ending in .kwd').</li>"
+    " <li>a short description for files of a certain mime type (e.g. 'KWord document')</li>"
+    " <li>the name of the icon that should be used for files of a certain mime type</li>"
+    " <li>a list of programs that can be used to open these files (listed by priority)</li></ul>"
+    " Programs like Konqueror or the Desktop use this information to display directories etc.");
+}
+
 #include "filetypesview.moc"
 
 extern "C"
@@ -470,3 +525,4 @@ extern "C"
   {
   }
 }
+
