@@ -116,11 +116,11 @@ void KStart::sendRule() {
 	message += "desktop=" + QCString().setNum( desktop ) + "\ndesktoprule=3\n";
     }
     if (activate)
-        message += "fsplevel=0\nfsplevelrule=1\n";
+        message += "fsplevel=0\nfsplevelrule=2\n";
     if (iconify)
         message += "minimize=true\nminimizerule=3\n";
     if ( windowtype != NET::Unknown ) {
-        message += "type=" + QCString().setNum( windowtype ) + "\ntyperule=1";
+        message += "type=" + QCString().setNum( windowtype ) + "\ntyperule=2";
     }
     if ( state ) {
         if( state & NET::KeepAbove )
