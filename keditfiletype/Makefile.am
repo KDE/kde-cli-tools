@@ -1,6 +1,6 @@
 INCLUDES= $(all_includes)
 
-kcm_filetypes_la_LIBADD	= libfiletypes.la $(LIB_KFILE)
+kcm_filetypes_la_LIBADD	= libfiletypes.la $(LIB_KIO)
 kcm_filetypes_la_LDFLAGS = -module -avoid-version -no-undefined $(all_libraries)
 kcm_filetypes_la_METASOURCES = AUTO
 
@@ -20,7 +20,7 @@ libfiletypes_la_SOURCES = filetypesview.cpp filetypedetails.cpp filegroupdetails
 		 kserviceselectdlg.cpp
 
 keditfiletype_SOURCES = keditfiletype.cpp
-keditfiletype_LDADD = libfiletypes.la $(LIB_KFILE)
+keditfiletype_LDADD = libfiletypes.la $(LIB_KIO)
 keditfiletype_LDFLAGS = $(KDE_RPATH) $(all_libraries)
 
 messages:
