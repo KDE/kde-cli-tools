@@ -55,7 +55,7 @@ void TypesListItem::setup()
 {
   if (m_mimetype)
   {
-     setPixmap(0, m_mimetype->pixmap(KIcon::Small));
+     setPixmap(0, m_mimetype->pixmap(KIcon::Small, IconSize(KIcon::Small)));
   }
   QListViewItem::setup();
 }
