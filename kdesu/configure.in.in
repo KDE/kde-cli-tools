@@ -14,7 +14,7 @@ else
     if test "$path_su" = "no"; then
 	AC_MSG_ERROR(su was not found!)
     else
-	AC_DEFINE_UNQUOTED(_PATH_SU, "$path_su")
+	AC_DEFINE_UNQUOTED(_PATH_SU, "$path_su", [path to su])
     fi
 fi
 
@@ -22,7 +22,7 @@ dnl Check for "struct ucred"
 AC_MSG_CHECKING("struct ucred")
 AC_EGREP_HEADER([struct ucred], [sys/socket.h], have_ucred=yes)
 if test "$have_ucred" = "yes"; then
-    AC_DEFINE(HAVE_STRUCT_UCRED)
+    AC_DEFINE(HAVE_STRUCT_UCRED, 1, [Define if you have the struct ucred])
     AC_MSG_RESULT(yes)
 else
     AC_MSG_RESULT(no)
