@@ -15,6 +15,7 @@
 
 #include <kapp.h>
 #include <kconfig.h>
+#include <kglobal.h>
 #include <klocale.h>
 #include <kcmodule.h>
 
@@ -28,6 +29,7 @@
  */
 extern "C" {
     KCModule *create_kdesu(QWidget *parent, const char *name) {
+	KGlobal::locale()->insertCatalogue("kcmkdesu");
 	return new KDEsuConfig(parent, name);
     }
 }
