@@ -50,7 +50,8 @@ void TypesListItem::init(KMimeType::Ptr mimetype)
   QValueListIterator<KServiceOffer> it(offerList.begin());
 
   for (; it != offerList.end(); ++it) {
-    if ((*it).allowAsDefault())
+    if ((*it).allowAsDefault()
+        && (*it).service()->type() == QString::fromLatin1("Application"))
       m_services.append((*it).service()->desktopEntryPath());
   }
 }
