@@ -90,8 +90,8 @@ void KStart::applyStyle(Window w, NETWinInfo & info) {
     if (maximize) {
         info.setState( NET::Max, 0 /* mask ? */ );
     }
-    //if (iconify)
-        //info.setMappingState( NET::Iconic ); ?
+    if (iconify)
+        XIconifyWindow( qt_xdisplay(), w, qt_xscreen() );
     if (sticky)
         info.setState( NET::Sticky, 0 /* mask ? */ );
     if (staysontop)
