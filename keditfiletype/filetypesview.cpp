@@ -21,6 +21,7 @@
 #include <kuserprofile.h>
 #include <kdesktopfile.h>
 #include <kopenwith.h>
+#include <kdebug.h>
 
 #include "typeslistitem.h"
 #include "newtypedlg.h"
@@ -40,7 +41,7 @@ FileTypesView::FileTypesView(QWidget *p, const char *name)
   QGridLayout *leftLayout = new QGridLayout(3, 2);
   topLayout->addLayout(leftLayout, 2);
 
-  QLabel *patternFilterLBL = new QLabel( i18n("Find file pattern"), this );
+  QLabel *patternFilterLBL = new QLabel( i18n("Find filename pattern"), this );
   leftLayout->addWidget(patternFilterLBL, 0, 0);
   
   patternFilterLE = new QLineEdit(this);
@@ -49,7 +50,7 @@ FileTypesView::FileTypesView(QWidget *p, const char *name)
   connect(patternFilterLE, SIGNAL(textChanged(const QString &)),
 	  this, SLOT(slotFilter(const QString &)));
   
-  wtstr = i18n("Enter a part of a file pattern. Only file types with a "
+  wtstr = i18n("Enter a part of a filename pattern. Only file types with a "
 	       "matching file pattern will appear in the list.");
   
   QWhatsThis::add( patternFilterLE, wtstr );
@@ -99,7 +100,7 @@ FileTypesView::FileTypesView(QWidget *p, const char *name)
   QWhatsThis::add( iconButton, i18n("This button displays the icon associated"
     " with the selected file type. Click on it to choose a different icon.") );
 
-  QGroupBox *gb = new QGroupBox(i18n("File Patterns"), this);
+  QGroupBox *gb = new QGroupBox(i18n("Filename Patterns"), this);
   hBox->addWidget(gb);
 
   QGridLayout *grid = new QGridLayout(gb, 3, 2, KDialog::marginHint(),
@@ -130,7 +131,7 @@ FileTypesView::FileTypesView(QWidget *p, const char *name)
           this, SLOT(removeExtension()));
   grid->addWidget(removeExtButton, 2, 1);
 
-  QWhatsThis::add( removeExtButton, i18n("Remove the selected file pattern.") );
+  QWhatsThis::add( removeExtButton, i18n("Remove the selected filename pattern.") );
 
   gb = new QGroupBox(i18n("Description"), this);
   rightLayout->addWidget(gb);
@@ -212,43 +213,44 @@ void FileTypesView::slotFilter(const QString &patternFilter)
 
 void FileTypesView::readFileTypes(const QString &patternFilter)
 {
-  typesLV->clear();
-
-  KMimeType::List mimetypes = KMimeType::allMimeTypes();
-  QValueListIterator<KMimeType::Ptr> it2(mimetypes.begin());
-  for (; it2 != mimetypes.end(); ++it2) {
-    bool add = true;
-
-    if ( !patternFilter.isEmpty() ) {
-      QStringList matches = (*it2)->patterns().grep( patternFilter, false );
-      add = !matches.isEmpty();
+    typesLV->clear();
+    
+    KMimeType::List mimetypes = KMimeType::allMimeTypes();
+    QValueListIterator<KMimeType::Ptr> it2(mimetypes.begin());
+    for (; it2 != mimetypes.end(); ++it2) {
+	bool add = true;
+	
+	if ( !patternFilter.isEmpty() ) {
+	    QStringList matches = (*it2)->patterns().grep( patternFilter, 
+							   false );
+	    add = !matches.isEmpty();
+	}
+	
+	if ( add ) {
+	    QString mimetype = (*it2)->name();
+	    int index = mimetype.find("/");
+	    QString maj = mimetype.left(index);
+	    QString min = mimetype.right(mimetype.length() - index+1);
+	    
+	    QListViewItemIterator it(typesLV);
+	    for (; it.current(); ++it) {
+		TypesListItem *current = (TypesListItem *) it.current();
+		if (current->majorType() == maj) {
+		    new TypesListItem(current, (*it2));
+		    break;
+		}
+	    }
+	    if (!it.current()) {
+		// insert at top level.
+		TypesListItem *i = new TypesListItem(typesLV, (*it2));
+		
+		if ( !patternFilter.isEmpty() )
+		    i->setOpen(true);
+		
+		new TypesListItem(i, (*it2));
+	    }
+	}
     }
-
-    if ( add ) {
-    QString mimetype = (*it2)->name();
-    int index = mimetype.find("/");
-    QString maj = mimetype.left(index);
-    QString min = mimetype.right(mimetype.length() - index+1);
-
-    QListViewItemIterator it(typesLV);
-    for (; it.current(); ++it) {
-      TypesListItem *current = (TypesListItem *) it.current();
-      if (current->majorType() == maj) {
-        new TypesListItem(current, (*it2));
-        break;
-      }
-    }
-    if (!it.current()) {
-      // insert at top level.
-      TypesListItem *i = new TypesListItem(typesLV, (*it2));
-
-        if ( !patternFilter.isEmpty() )
-          i->setOpen(true);
-
-      new TypesListItem(i, (*it2));
-      }
-    }
-  }
 }
 
 void FileTypesView::addType()
@@ -556,7 +558,7 @@ QString FileTypesView::quickHelp()
     " (MIME is an acronym which stands for \"Multipurpose Internet Mail"
     " Extensions\".)<p> A file association consists of the following:"
     " <ul><li>Rules for determining the MIME-type of a file. For example,"
-    " the file pattern *.kwd, which means 'all files with names that end"
+    " the filename pattern *.kwd, which means 'all files with names that end"
     " in .kwd', is associated with the MIME type \"x-kword\".</li>"
     " <li>A short description of the MIME-type. For example, the description"
     " of the MIME type \"x-kword\" is simply 'KWord document'.)</li>"
@@ -567,7 +569,7 @@ QString FileTypesView::quickHelp()
     " given MIME-type. If more than one application can be used, then the"
     " list is ordered by priority.</li></ul>"
     " You may be surprised to find that some MIME types have no associated"
-    " file patterns! In these cases, Konqueror is able to determine the"
+    " filename patterns! In these cases, Konqueror is able to determine the"
     " MIME-type by directly examining the contents of the file.");
 }
 
