@@ -5,7 +5,7 @@
  *
  */
 
-#include <qapp.h>
+#include <qapplication.h>
 #include <qcursor.h>
 #include <qlist.h>
 #include <qstring.h>
@@ -16,12 +16,12 @@
 #include <X11/X.h>
 #include <X11/Xlib.h>
 #include <qwidget.h>
-#include <qpopmenu.h>
+#include <qpopupmenu.h>
 #include <qstrlist.h>
 #include <kwmmapp.h>
 #include <qdialog.h>
 #include <qlabel.h>
-#include <qpushbt.h>
+#include <qpushbutton.h>
 
 
 class KStart: public QObject {
@@ -50,8 +50,8 @@ private:
     
     
   KWMModuleApplication* kwmmapp;
-  const char* command;
-  const char* window;
+  QString command;
+  QString window;
   int desktop;
   bool activate;
   bool maximize;
