@@ -38,8 +38,13 @@ void TypesListItem::initMeta( const QString & major )
   m_major = major;
   KConfig config("konquerorrc", true);
   config.setGroup("EmbedSettings");
-  bool defaultValue = (major!="application"); // embedding is true by default except for application/*
+  bool defaultValue = defaultEmbeddingSetting( major );
   m_autoEmbed = config.readBoolEntry( QString::fromLatin1("embed-")+m_major, defaultValue ) ? 0 : 1;
+}
+
+bool TypesListItem::defaultEmbeddingSetting( const QString& major )
+{
+  return (major=="image"); // embedding is false by default except for image/*
 }
 
 void TypesListItem::setup()
@@ -178,7 +183,7 @@ bool TypesListItem::isDirty() const
 
     KConfig config("konquerorrc", true);
     config.setGroup("EmbedSettings");
-    bool defaultValue = (m_major!="application"); // embedding is true by default except for application/*
+    bool defaultValue = defaultEmbeddingSetting(m_major);
     unsigned int oldAutoEmbed = config.readBoolEntry( QString::fromLatin1("embed-")+m_major, defaultValue ) ? 0 : 1;
     if ( m_autoEmbed != oldAutoEmbed )
       return true;

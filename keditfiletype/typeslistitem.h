@@ -49,6 +49,8 @@ public:
   void sync();
   void setup();
 
+  static bool defaultEmbeddingSetting(  const QString& major );
+
 private:
   void getServiceOffers( QStringList & appServices, QStringList & embedServices ) const;
   void saveServices( KSimpleConfig & profile, QStringList services, const QString & servicetype2 );
