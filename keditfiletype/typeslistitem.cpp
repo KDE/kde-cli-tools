@@ -357,6 +357,18 @@ void TypesListItem::sync()
   }
 }
 
+static bool inheritsMimetype(KMimeType::Ptr m, const QStringList &mimeTypeList)
+{
+  for(QStringList::ConstIterator it = mimeTypeList.begin();
+      it != mimeTypeList.end(); ++it)
+  {
+    if (m->is(*it))
+       return true;  
+  }
+
+  return false;
+}
+
 void TypesListItem::saveServices( KConfig & profile, QStringList services, const QString & genericServiceType )
 {
   QStringList::Iterator it(services.begin());
@@ -385,9 +397,8 @@ void TypesListItem::saveServices( KConfig & profile, QStringList services, const
     QStringList mimeTypeList = s_changedServices->contains( pService->desktopEntryPath())
        ? (*s_changedServices)[ pService->desktopEntryPath() ] : pService->serviceTypes();
 
-    if (!mimeTypeList.contains(name()))
+    if (!mimeTypeList.contains(name()) && !inheritsMimetype(m_mimetype, mimeTypeList))
     {
-
       KConfig *desktop;
       if ( pService->type() == QString("Service") )
       {
