@@ -15,7 +15,7 @@
 
 
 KDEsuDialog::KDEsuDialog(QCString user, QCString auth_user, bool enableKeep)
-    : KPasswordDialog(Password, "", enableKeep, User1)
+    : KPasswordDialog(Password, enableKeep, User1)
 {
     m_User = auth_user;
     setCaption(i18n("Run as %1").arg(user));
@@ -55,14 +55,14 @@ bool KDEsuDialog::checkPassword(const char *password)
 	return true;
 
     case SuProcess::SuNotFound:
-        KMessageBox::sorry(this, 
+        KMessageBox::sorry(this,
 		i18n("The program 'su' is not found!\n"
 		     "Make sure your PATH is set correctly."));
 	done(Rejected);
 	return false;
 
     case SuProcess::SuNotAllowed:
-        KMessageBox::sorry(this, 
+        KMessageBox::sorry(this,
 		i18n("You are not allowed to use 'su'!\n"
 		     "On some systems, you need to be in a special "
 		     "group (often: wheel) to use this program."));
@@ -84,6 +84,6 @@ bool KDEsuDialog::checkPassword(const char *password)
 void KDEsuDialog::slotUser1()
 {
     done(AsUser);
-} 
+}
 
 #include "sudlg.moc"
