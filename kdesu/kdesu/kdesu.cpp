@@ -221,8 +221,8 @@ int main(int argc, char *argv[])
     int k = dlg->keep();
     delete dlg;
 
-    // This destroys the Qt event loop and makes sure the dialog goes away.
-    delete app;
+    // Some events may need to be handled (like a button animation)
+    app->processEvents();
 
     if (!change_uid)
 	return system(command);
