@@ -50,6 +50,7 @@ KServiceListWidget::KServiceListWidget(int kind, QWidget *parent, const char *na
   servicesLB = new QListBox(gb);
   connect(servicesLB, SIGNAL(highlighted(int)), SLOT(enableMoveButtons(int)));
   grid->addMultiCellWidget(servicesLB, 1, 6, 0, 0);
+  connect( servicesLB, SIGNAL( doubleClicked ( QListBoxItem * )), this, SLOT( editService()));
 
   QString wtstr =
     (kind == SERVICELIST_APPLICATIONS ?
@@ -251,7 +252,6 @@ void KServiceListWidget::editService()
 {
   if (!m_item)
       return;
-
   int selected = servicesLB->currentItem();
   if ( selected >= 0 ) {
 
@@ -377,7 +377,7 @@ void KServiceListWidget::enableMoveButtons(int index)
     servRemoveButton->setEnabled(true);
 
   if ( servEditButton )
-    servEditButton->setEnabled(true);
+    servEditButton->setEnabled(true && ( m_kind == SERVICELIST_APPLICATIONS ) );
 }
 
 #include "kservicelistwidget.moc"
