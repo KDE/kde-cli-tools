@@ -147,9 +147,8 @@ KPasswordDlg::KPasswordDlg(const QString& help, const QString& command,
 
     // Pixmap + Informational text
 
-    QLabel *lbl; QPixmap pix;
-    KIconLoader *loader = KGlobal::iconLoader();
-    pix = loader->loadIcon("kdesu-keys.xpm");
+    QLabel *lbl;
+    QPixmap pix(BarIcon("kdesu-keys"));
     if (!pix.isNull()) {
 	lbl = new QLabel(this);
 	lbl->setPixmap(pix);
