@@ -31,7 +31,7 @@
 #include <kaboutdata.h>
 #include <kcmdlineargs.h>
 
-#include "kdesu.h"
+#include "defaults.h"
 #include "su.h"
 #include "sudlg.h"
 #include "client.h"

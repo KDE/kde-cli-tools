@@ -27,10 +27,10 @@
 #include <kaboutdata.h>
 #include <kcmdlineargs.h>
 
-#include "kdesu.h"
 #include "ssh.h"
 #include "sshdlg.h"
 #include "client.h"
+#include "defaults.h"
 
 
 const char *Version = "1.0";

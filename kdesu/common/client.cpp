@@ -8,6 +8,7 @@
  * client.cpp: A client for kdesud.
  */
 
+#include <config.h>
 #include <stdio.h>
 #include <unistd.h>
 #include <stdlib.h>
@@ -27,12 +28,16 @@
 #include <kstddirs.h>
 
 #include "client.h"
-#include "kdesu.h"
 
 #ifdef __GNUC__
 #define ID __PRETTY_FUNCTION__
 #else
 #define ID "KDEsuClient"
+#endif
+
+#ifndef SUN_LEN
+#define SUN_LEN(ptr) ((ksize_t) (((struct sockaddr_un *) 0)->sun_path) \
+	             + strlen ((ptr)->sun_path))   
 #endif
 
 KDEsuClient::KDEsuClient()

@@ -20,8 +20,8 @@
 #include <kcmodule.h>
 #include <kpassdlg.h>
 
+#include "defaults.h"
 #include "kcmkdesu.h"
-#include "kdesu.h"
 #include "client.h"
 
 
