@@ -24,7 +24,6 @@ public slots:
 private:
 
   void applyStyle(WId );
-  KWinModule* kwinmodule;
 };
 
 

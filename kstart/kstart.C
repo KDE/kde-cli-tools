@@ -42,12 +42,11 @@ static bool iconify = 0;
 static unsigned long state = 0;
 static unsigned long mask = 0;
 static NET::WindowType windowtype = NET::Unknown;
+static KWinModule* kwinmodule;
 
 KStart::KStart()
     :QObject()
 {
-    kwinmodule = new KWinModule;
-
     // connect to window add to get the NEW windows
     connect(kwinmodule, SIGNAL(windowAdded(WId)), SLOT(windowAdded(WId)));
 
@@ -145,6 +144,7 @@ static KCmdLineOptions options[] =
                   "If you do not specify one, then the very first window\n"
                   "to appear will be taken. Not recommended!"), 0 },
   { "desktop <number>", I18N_NOOP("Desktop where to make the window appear. "), 0 },
+  { "currentdesktop", I18N_NOOP("Make the window appear on the desktop that was active\nwhen starting the application. "), 0 },
   { "alldesktops", I18N_NOOP("Make the window appear on all desktops"), 0 },
   { "iconify", I18N_NOOP("Iconify the window"), 0 },
   { "maximize", I18N_NOOP("Maximize the window"), 0 },
@@ -183,9 +183,13 @@ int main( int argc, char *argv[] )
   for(int i=0; i < args->count(); i++)
       command += QCString(args->arg(i)) + " ";
 
+  kwinmodule = new KWinModule;
+
   desktop = args->getOption( "desktop" ).toInt();
   if ( args->isSet ( "alldesktops")  )
       desktop = NETWinInfo::OnAllDesktops;
+  if ( args->isSet ( "currentdesktop")  )
+      desktop = kwinmodule->currentDesktop();
 
   window = args->getOption( "window" );
 
