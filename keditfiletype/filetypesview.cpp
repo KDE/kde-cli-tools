@@ -384,7 +384,7 @@ void FileTypesView::slotDatabaseChanged()
   {
     // ksycoca has new KMimeTypes objects for us, make sure to update
     // our 'copies' to be in sync with it. Not important for OK, but
-    // important for Apply (how to differenciate those 2?).
+    // important for Apply (how to differentiate those 2?).
     // See BR 35071.
     QValueList<TypesListItem *>::Iterator it = m_itemsModified.begin();
     for( ; it != m_itemsModified.end(); ++it ) {
