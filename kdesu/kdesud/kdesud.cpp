@@ -140,7 +140,7 @@ void sigchld_handler(int)
 	pid = waitpid((pid_t) -1, &status, WNOHANG);
 	if (pid <= 0)
 	    break;
-	kdDebug(1205) << "PID " << (int) pid << "exited\n";
+	kdDebug(1205) << "PID " << (int) pid << " exited\n";
     }
 }
 
