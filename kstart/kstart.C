@@ -50,7 +50,7 @@ KStart::KStart()
 
     // connect to window add to get the NEW windows
     connect(kwinmodule, SIGNAL(windowAdded(WId)), SLOT(windowAdded(WId)));
-    
+
     if (window)
 	kwinmodule->doNotManage( window );
 
@@ -59,15 +59,15 @@ KStart::KStart()
 }
 
 void KStart::windowAdded(WId w){
-    
+
     KWin::Info info = KWin::info( w );
-    
+
     if ( window) {
 	QString title = info.name;
 	QRegExp r( window );
 	if (r.match(title) == -1)
 	    return; // no match
-    } 
+    }
     applyStyle( w );
     QApplication::exit();
 }
@@ -94,22 +94,22 @@ static bool wstate_withdrawn( WId winid )
 
 
 void KStart::applyStyle(WId w ) {
-    
-    
+
+
     if ( iconify || windowtype != NET::Unknown || desktop >= 1 ) {
-	 
+	
 	XWithdrawWindow(qt_xdisplay(), w, qt_xscreen());
 	QApplication::flushX();
 
 	while ( !wstate_withdrawn(w) )
 	    ;
     }
-   
+
     NETWinInfo info( qt_xdisplay(), w, qt_xrootwin(), NET::WMState );
 
-    if (desktop != 0) 
+    if (desktop != 0)
 	info.setDesktop( desktop );
-    
+
     if (iconify) {
 	XWMHints * hints = XGetWMHints(qt_xdisplay(), w );
 	if (hints ) {
@@ -119,16 +119,15 @@ void KStart::applyStyle(WId w ) {
 	    XFree(hints);
 	}
     }
-    
+
     if ( windowtype != NET::Unknown ) {
-	qDebug("setwindowtype to %d", windowtype );
 	info.setWindowType( windowtype );
     }
-    
+
     info.setState( state, mask );
 
     XSync(qt_xdisplay(), False);
-    
+
     XMapWindow(qt_xdisplay(), w);
     XSync(qt_xdisplay(), False);
     if (activate)
@@ -186,7 +185,7 @@ int main( int argc, char *argv[] )
   desktop = args->getOption( "desktop" ).toInt();
   if ( args->isSet ( "alldesktops")  )
       desktop = NETWinInfo::OnAllDesktops;
-  
+
   window = args->getOption( "window" );
 
   QCString s = args->getOption( "type" );
@@ -204,10 +203,10 @@ int main( int argc, char *argv[] )
 	  windowtype = NET::Dialog;
       else if ( s == "override" )
 	  windowtype = NET::Override;
-      else 
+      else
 	  windowtype = NET::Normal;
   }
-  
+
   if ( args->isSet( "ontop" ) ) {
       state |= NET::StaysOnTop;
       mask |= NET::StaysOnTop;
@@ -216,16 +215,16 @@ int main( int argc, char *argv[] )
       state |= NET::SkipTaskbar;
       mask |= NET::SkipTaskbar;
   }
-  
+
   activate = args->isSet("activate");
-  
+
   if ( args->isSet("maximize") ) {
       state |= NET::Max;
       mask |= NET::Max;
   }
-  
+
   iconify = args->isSet("iconify");
-  
+
   fcntl(ConnectionNumber(qt_xdisplay()), F_SETFD, 1);
   args->clear();
 
