@@ -18,7 +18,6 @@ TypesListItem::TypesListItem(TypesListItem *parent, KMimeType::Ptr mimetype, boo
 {
   init(mimetype);
   setText(0, minorType());
-  setPixmap(0, mimetype->pixmap(KIcon::Small));
 }
 
 TypesListItem::TypesListItem(QListView *parent, KMimeType::Ptr mimetype)
@@ -26,7 +25,6 @@ TypesListItem::TypesListItem(QListView *parent, KMimeType::Ptr mimetype)
 {
   init(mimetype);
   setText(0, majorType());
-  setPixmap(0, mimetype->pixmap(KIcon::Small));
 }
 
 TypesListItem::~TypesListItem()
@@ -35,6 +33,7 @@ TypesListItem::~TypesListItem()
 
 void TypesListItem::initMeta( const QString & major )
 {
+  m_bFullInit = true;
   m_mimetype = 0L;
   m_major = major;
   KConfig config("konquerorrc", true);
@@ -43,8 +42,18 @@ void TypesListItem::initMeta( const QString & major )
   m_autoEmbed = config.readBoolEntry( QString::fromLatin1("embed-")+m_major, defaultValue ) ? 0 : 1;
 }
 
+void TypesListItem::setup()
+{
+  if (m_mimetype)
+  {
+     setPixmap(0, m_mimetype->pixmap(KIcon::Small));
+  }
+  QListViewItem::setup();
+}
+
 void TypesListItem::init(KMimeType::Ptr mimetype)
 {
+  m_bFullInit = false;
   m_mimetype = mimetype;
 
   int index = mimetype->name().find("/");
@@ -60,10 +69,30 @@ void TypesListItem::init(KMimeType::Ptr mimetype)
   m_icon = mimetype->icon(QString(), false);
   m_patterns = mimetype->patterns();
 
-  getServiceOffers( m_appServices, m_embedServices );
-
   QVariant v = mimetype->property( "X-KDE-AutoEmbed" );
   m_autoEmbed = v.isValid() ? (v.toBool() ? 0 : 1) : 2;
+}
+
+QStringList TypesListItem::appServices() const 
+{ 
+  if (!m_bFullInit)
+  {
+     TypesListItem *that = const_cast<TypesListItem *>(this);
+     that->getServiceOffers(that->m_appServices, that->m_embedServices);
+     that->m_bFullInit = true;
+  }
+  return m_appServices; 
+}
+
+QStringList TypesListItem::embedServices() const
+{
+  if (!m_bFullInit)
+  {
+     TypesListItem *that = const_cast<TypesListItem *>(this);
+     that->getServiceOffers(that->m_appServices, that->m_embedServices);
+     that->m_bFullInit = true;
+  }
+  return m_embedServices;
 }
 
 void TypesListItem::getServiceOffers( QStringList & appServices, QStringList & embedServices ) const
@@ -82,6 +111,11 @@ void TypesListItem::getServiceOffers( QStringList & appServices, QStringList & e
 
 bool TypesListItem::isDirty() const
 {
+  if ( !m_bFullInit) 
+  {
+    return false;
+  }
+
   if ( m_bNewItem )
   {
     kdDebug() << "New item, need to save it" << endl;
@@ -136,7 +170,7 @@ bool TypesListItem::isDirty() const
     }
 
     QVariant v = m_mimetype->property( "X-KDE-AutoEmbed" );
-    int oldAutoEmbed = v.isValid() ? (v.toBool() ? 0 : 1) : 2;
+    unsigned int oldAutoEmbed = v.isValid() ? (v.toBool() ? 0 : 1) : 2;
     if ( oldAutoEmbed != m_autoEmbed )
       return true;
 
@@ -145,7 +179,7 @@ bool TypesListItem::isDirty() const
     KConfig config("konquerorrc", true);
     config.setGroup("EmbedSettings");
     bool defaultValue = (m_major!="application"); // embedding is true by default except for application/*
-    int oldAutoEmbed = config.readBoolEntry( QString::fromLatin1("embed-")+m_major, defaultValue ) ? 0 : 1;
+    unsigned int oldAutoEmbed = config.readBoolEntry( QString::fromLatin1("embed-")+m_major, defaultValue ) ? 0 : 1;
     if ( m_autoEmbed != oldAutoEmbed )
       return true;
   }
@@ -156,6 +190,7 @@ bool TypesListItem::isDirty() const
 
 void TypesListItem::sync()
 {
+  assert(m_bFullInit);
   if ( isMeta() )
   {
     KConfig config("konquerorrc");

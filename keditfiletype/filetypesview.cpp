@@ -4,6 +4,7 @@
 #include <qpushbutton.h>
 #include <qlayout.h>
 #include <qlineedit.h>
+#include <qsplitter.h>
 #include <qtimer.h>
 #include <qwidgetstack.h>
 
@@ -29,18 +30,20 @@ FileTypesView::FileTypesView(QWidget *p, const char *name)
 
   QString wtstr;
 
-  QHBoxLayout *topLayout = new QHBoxLayout(this, KDialog::marginHint(),
-                                KDialog::spacingHint());
+  QHBoxLayout *l = new QHBoxLayout( this);
+  m_splitter = new QSplitter(Horizontal, this);
+  l->addWidget(m_splitter);
+  m_left = new QWidget(m_splitter);
+  m_splitter->setResizeMode(m_left, QSplitter::FollowSizeHint);
+  QGridLayout *leftLayout = new QGridLayout(m_left, 4, 3);
+  leftLayout->setColStretch(1, 1);
 
-  QGridLayout *leftLayout = new QGridLayout(4, 2);
-  topLayout->addLayout(leftLayout, 0);
+  QLabel *patternFilterLBL = new QLabel( i18n("F&ind filename pattern"), m_left );
+  leftLayout->addMultiCellWidget(patternFilterLBL, 0, 0, 0, 2);
 
-  QLabel *patternFilterLBL = new QLabel( i18n("F&ind filename pattern"), this );
-  leftLayout->addMultiCellWidget(patternFilterLBL, 0, 0, 0, 1);
-
-  patternFilterLE = new QLineEdit(this);
+  patternFilterLE = new QLineEdit(m_left);
   patternFilterLBL->setBuddy( patternFilterLE );
-  leftLayout->addMultiCellWidget(patternFilterLE, 1, 1, 0, 1);
+  leftLayout->addMultiCellWidget(patternFilterLE, 1, 1, 0, 2);
 
   connect(patternFilterLE, SIGNAL(textChanged(const QString &)),
           this, SLOT(slotFilter(const QString &)));
@@ -51,11 +54,12 @@ FileTypesView::FileTypesView(QWidget *p, const char *name)
   QWhatsThis::add( patternFilterLE, wtstr );
   QWhatsThis::add( patternFilterLBL, wtstr );
 
-  typesLV = new KListView(this);
+  typesLV = new KListView(m_left);
   typesLV->setRootIsDecorated(true);
+  typesLV->setFullWidth(true);
 
   typesLV->addColumn(i18n("Known Types"));
-  leftLayout->addMultiCellWidget(typesLV, 2, 2, 0, 1);
+  leftLayout->addMultiCellWidget(typesLV, 2, 2, 0, 2);
   connect(typesLV, SIGNAL(selectionChanged(QListViewItem *)),
           this, SLOT(updateDisplay(QListViewItem *)));
   connect(typesLV, SIGNAL(doubleClicked(QListViewItem *)),
@@ -67,23 +71,24 @@ FileTypesView::FileTypesView(QWidget *p, const char *name)
     " (e.g. text/html for HTML files) to view/edit the information for that"
     " file type using the controls on the right.") );
 
-  QPushButton *addTypeB = new QPushButton(i18n("&Add..."), this);
+  QPushButton *addTypeB = new QPushButton(i18n("&Add..."), m_left);
   connect(addTypeB, SIGNAL(clicked()),
           this, SLOT(addType()));
   leftLayout->addWidget(addTypeB, 3, 0);
 
   QWhatsThis::add( addTypeB, i18n("Click here to add a new file type.") );
 
-  m_removeTypeB = new QPushButton(i18n("&Remove"), this);
+  m_removeTypeB = new QPushButton(i18n("&Remove"), m_left);
   connect(m_removeTypeB, SIGNAL(clicked()),
           this, SLOT(removeType()));
-  leftLayout->addWidget(m_removeTypeB, 3, 1);
+  leftLayout->addWidget(m_removeTypeB, 3, 2);
   m_removeTypeB->setEnabled(false);
 
   QWhatsThis::add( m_removeTypeB, i18n("Click here to remove the selected file type.") );
 
   // For the right panel, prepare a widget stack
-  m_widgetStack = new QWidgetStack( this );
+  m_widgetStack = new QWidgetStack( m_splitter );
+  m_splitter->setResizeMode(m_left, QSplitter::Stretch);
 
   // File Type Details
   m_details = new FileTypeDetails( m_widgetStack );
@@ -104,8 +109,6 @@ FileTypesView::FileTypesView(QWidget *p, const char *name)
   m_widgetStack->addWidget( m_emptyWidget, 3 /*id*/ );
 
   m_widgetStack->raiseWidget( m_emptyWidget );
-
-  topLayout->addWidget( m_widgetStack, 100 );
 
   qApp->processEvents(); // let's show up
   QTimer::singleShot( 0, this, SLOT( init() ) ); // this takes some time
@@ -129,13 +132,13 @@ void FileTypesView::init()
   readFileTypes();
   // Since we have filled in the list once and for all, set width correspondingly,
   // to avoid horizontal scrollbars (DF).
-  typesLV->setColumnWidth(0, typesLV->sizeHint().width() );
-  typesLV->setMinimumWidth( typesLV->sizeHint().width() );
+  typesLV->setMinimumWidth( typesLV->sizeHint().width()+30 );
+//  m_splitter->setResizeMode(m_left, QSplitter::KeepSize);
+//  m_splitter->setResizeMode(m_widgetStack, QSplitter::Stretch);
 
   setDirty(false);
   setEnabled( true );
   unsetCursor();
-
 }
 
 // only call this method once on startup, then never again! Otherwise, newly

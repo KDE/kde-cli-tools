@@ -37,9 +37,9 @@ public:
   void setIcon(const QString& i); 
   QStringList patterns() const { return m_patterns; }
   void setPatterns(const QStringList &p) { m_patterns = p; }
-  QStringList appServices() const { return m_appServices; }
+  QStringList appServices() const;
   void setAppServices(const QStringList &dsl) { m_appServices = dsl; }
-  QStringList embedServices() const { return m_embedServices; }
+  QStringList embedServices() const;
   void setEmbedServices(const QStringList &dsl) { m_embedServices = dsl; }
   int autoEmbed() const { return m_autoEmbed; }
   void setAutoEmbed( int a ) { m_autoEmbed = a; }
@@ -47,6 +47,7 @@ public:
 
   bool isDirty() const;
   void sync();
+  void setup();
 
 private:
   void getServiceOffers( QStringList & appServices, QStringList & embedServices ) const;
@@ -55,14 +56,15 @@ private:
   void initMeta( const QString & major );
   void init(KMimeType::Ptr mimetype);
 
-  bool metaType;
-  bool m_bNewItem;
+  unsigned int groupCount:16; // shared between saveServices and sync
+  unsigned int m_autoEmbed:2; // 0 yes, 1 no, 2 use group setting
+  unsigned int metaType:1;
+  unsigned int m_bNewItem:1;
+  unsigned int m_bFullInit:1;
   QString m_major, m_minor, m_comment, m_icon;
   QStringList m_patterns;
   QStringList m_appServices;
   QStringList m_embedServices;
-  int m_autoEmbed; // 0 yes, 1 no, 2 use group setting
-  int groupCount; // shared between saveServices and sync
 };
 
 #endif

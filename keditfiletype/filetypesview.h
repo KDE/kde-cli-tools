@@ -9,7 +9,7 @@
 #include "typeslistitem.h"
 
 class QLabel;
-class QListView;
+class KListView;
 class QListViewItem;
 class QListBox;
 class QPushButton;
@@ -19,6 +19,7 @@ class QComboBox;
 class FileTypeDetails;
 class FileGroupDetails;
 class QWidgetStack;
+class QSplitter;
 
 class FileTypesView : public KCModule
 {
@@ -49,7 +50,7 @@ protected:
     void readFileTypes();
 
 private:
-  QListView *typesLV;
+  KListView *typesLV;
   QPushButton *m_removeTypeB;
 
   QWidgetStack * m_widgetStack;
@@ -62,6 +63,8 @@ private:
   bool m_dirty;
   QMap<QString,TypesListItem*> m_majorMap;
   QPtrList<TypesListItem> m_itemList;
+  QSplitter *m_splitter;
+  QWidget *m_left;
 };
 
 #endif
