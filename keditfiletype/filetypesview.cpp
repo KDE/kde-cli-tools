@@ -276,6 +276,7 @@ void FileTypesView::removeType()
 
 void FileTypesView::slotDoubleClicked(QListViewItem *item)
 {
+  if ( !item ) return;
   item->setOpen( !item->isOpen() );
 }
 
