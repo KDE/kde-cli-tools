@@ -17,6 +17,9 @@
 
 #include <sys/time.h>
 #include <sys/resource.h>
+#if defined(HAVE_SYS_WAIT_H)
+#include <sys/wait.h>
+#endif
 
 #include <qstring.h>
 #include <qfileinfo.h>
