@@ -76,7 +76,7 @@
 #include <X11/Xlib.h>
 
 #ifndef SUN_LEN
-#define SUN_LEN(ptr) ((ksize_t) (((struct sockaddr_un *) 0)->sun_path) \
+#define SUN_LEN(ptr) ((kde_socklen_t) (((struct sockaddr_un *) 0)->sun_path) \
                      + strlen ((ptr)->sun_path))   
 #endif
 
@@ -153,7 +153,7 @@ void sigchld_handler(int)
 int create_socket()
 {
     int sockfd;
-    ksize_t addrlen;
+    kde_socklen_t addrlen;
     struct stat s;
 
     QCString display(getenv("DISPLAY"));
@@ -317,7 +317,7 @@ int main(int argc, char *argv[])
 
     // Main execution loop 
 
-    ksize_t addrlen;
+    kde_socklen_t addrlen;
     struct sockaddr_un clientname;
 
     fd_set tmp_fds, active_fds;
