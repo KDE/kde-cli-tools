@@ -37,6 +37,7 @@ FileTypesView::FileTypesView(QWidget *p, const char *name)
   m_left = new QWidget(m_splitter);
   m_splitter->setResizeMode(m_left, QSplitter::FollowSizeHint);
   QGridLayout *leftLayout = new QGridLayout(m_left, 4, 3);
+  leftLayout->setSpacing( KDialog::spacingHint() );
   leftLayout->setColStretch(1, 1);
 
   QLabel *patternFilterLBL = new QLabel( i18n("F&ind filename pattern:"), m_left );
