@@ -236,13 +236,17 @@ void TypesListItem::sync()
 
   for (; it_srv != offerList.end(); ++it_srv) {
 
-    // Only those were added in init()
-    if ((*it_srv).service()->type() == "Application" &&
-        (*it_srv).allowAsDefault() ) {
 
       KService::Ptr pService = (*it_srv).service();
 
-      if ( ! m_appServices.contains( pService->desktopEntryPath() ) ) {
+      bool isApplication = pService->type() == "Application";
+      if (isApplication && !pService->allowAsDefault())
+          continue; // Only those which were added in init()
+
+      // Look in the correct list...
+      if ( (isApplication && ! m_appServices.contains( pService->desktopEntryPath() ))
+           || (!isApplication && !m_embedServices.contains( pService->desktopEntryPath() ))
+          ) {
         // The service was in m_appServices but has been removed
         // create a new .desktop file without this mimetype
 
@@ -253,7 +257,7 @@ void TypesListItem::sync()
           // just remove it and we're done
           QString serviceLoc;
 
-          if ( pService->type() == QString("Service") )
+          if ( !isApplication )
             serviceLoc = locateLocal("services", pService->desktopEntryPath());
           else
             serviceLoc = locateLocal("apps", pService->desktopEntryPath());
@@ -289,7 +293,6 @@ void TypesListItem::sync()
           profile.writeEntry("Preference", 0);
         }
       }
-    }
   }
 }
 

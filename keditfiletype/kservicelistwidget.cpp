@@ -17,6 +17,7 @@
 #include <kuserprofile.h>
 
 #include "kservicelistwidget.h"
+#include "kserviceselectdlg.h"
 #include "typeslistitem.h"
 
 class KServiceListItem : public QListBoxText
@@ -98,26 +99,19 @@ KServiceListWidget::KServiceListWidget(int kind, QWidget *parent, const char *na
                    i18n("Assigns a lower priority to the selected\n"
                         "service, moving it down in the list."));
 
-  if ( kind == SERVICELIST_APPLICATIONS )
-  {
-    servNewButton = new QPushButton(i18n("Add..."), gb);
-    servNewButton->setEnabled(false);
-    connect(servNewButton, SIGNAL(clicked()), SLOT(addService()));
-    grid->addWidget(servNewButton, 3, 1);
+  servNewButton = new QPushButton(i18n("Add..."), gb);
+  servNewButton->setEnabled(false);
+  connect(servNewButton, SIGNAL(clicked()), SLOT(addService()));
+  grid->addWidget(servNewButton, 3, 1);
 
-    QWhatsThis::add( servNewButton, i18n( "Add a new application for this file type." ) );
+  QWhatsThis::add( servNewButton, i18n( "Add a new application for this file type." ) );
 
-    servRemoveButton = new QPushButton(i18n("Remove"), gb);
-    servRemoveButton->setEnabled(false);
-    connect(servRemoveButton, SIGNAL(clicked()), SLOT(removeService()));
-    grid->addWidget(servRemoveButton, 4, 1);
+  servRemoveButton = new QPushButton(i18n("Remove"), gb);
+  servRemoveButton->setEnabled(false);
+  connect(servRemoveButton, SIGNAL(clicked()), SLOT(removeService()));
+  grid->addWidget(servRemoveButton, 4, 1);
 
-    QWhatsThis::add( servRemoveButton, i18n( "Remove the selected application from the list." ) );
-  } else
-  {
-    servNewButton = 0L;
-    servRemoveButton = 0L;
-  }
+  QWhatsThis::add( servRemoveButton, i18n( "Remove the selected application from the list." ) );
 }
 
 void KServiceListWidget::setTypeItem( TypesListItem * item )
@@ -203,15 +197,29 @@ void KServiceListWidget::addService()
   if (!m_item)
       return;
 
-  KOpenWithDlg dlg(m_item->name(), QString::null, 0L);
-  if (dlg.exec() == false)
-    return;
+  KService::Ptr service = 0L;
+  if ( m_kind == SERVICELIST_APPLICATIONS )
+  {
+      KOpenWithDlg dlg(m_item->name(), QString::null, 0L);
+      if (dlg.exec() == false)
+          return;
 
-  KService::Ptr service = dlg.service();
+      service = dlg.service();
 
-  ASSERT(service);
-  if (!service) 
-     return; // Don't crash if KOpenWith wasn't able to create service.
+      ASSERT(service);
+      if (!service)
+          return; // Don't crash if KOpenWith wasn't able to create service.
+  }
+  else
+  {
+      KServiceSelectDlg dlg(m_item->name(), QString::null, 0L);
+      if (dlg.exec() == false)
+          return;
+       service = dlg.service();
+       ASSERT(service);
+       if (!service)
+           return;
+  }
 
   // check if it is a duplicate entry
   for (unsigned int index = 0; index < servicesLB->count(); index++)

@@ -8,10 +8,12 @@ lib_LTLIBRARIES = libkcm_filetypes.la
 
 libkcm_filetypes_la_SOURCES = \
 	filetypesview.cpp filetypedetails.cpp filegroupdetails.cpp \
-	kservicelistwidget.cpp typeslistitem.cpp newtypedlg.cpp
+	kservicelistwidget.cpp typeslistitem.cpp newtypedlg.cpp \
+	kserviceselectdlg.cpp
 
 noinst_HEADERS = filetypesview.h filetypedetails.h filegroupdetails.h \
-	kservicelistwidget.h typeslistitem.h newtypedlg.h
+	kservicelistwidget.h typeslistitem.h newtypedlg.h \
+	kserviceselectdlg.h
 
 bin_PROGRAMS = keditfiletype
 
