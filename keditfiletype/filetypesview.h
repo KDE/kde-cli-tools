@@ -31,7 +31,6 @@ public:
   void load();
   void save();
   void defaults();
-  QString quickHelp() const;
 
 protected slots:
   /** fill in the various graphical elements, set up other stuff. */

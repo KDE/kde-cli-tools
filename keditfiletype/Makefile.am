@@ -1,8 +1,8 @@
-INCLUDES= $(all_includes)
+AM_CPPFLAGS = $(all_includes)
 
 kcm_filetypes_la_LIBADD	= libfiletypes.la $(LIB_KIO)
 kcm_filetypes_la_LDFLAGS = -module -avoid-version -no-undefined $(all_libraries)
-kcm_filetypes_la_METASOURCES = AUTO
+METASOURCES = AUTO
 
 kde_module_LTLIBRARIES = kcm_filetypes.la
 

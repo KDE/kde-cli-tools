@@ -7,8 +7,5 @@ extern "C"
         return new FileTypesView(parent, "filetypes");
 	  }
 
-	    void init_filetypes()
-		      {
-			        }
 }
 

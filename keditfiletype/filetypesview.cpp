@@ -1,9 +1,9 @@
 
 #include <qlabel.h>
-#include <qwhatsthis.h>
-#include <qpushbutton.h>
 #include <qlayout.h>
+#include <qpushbutton.h>
 #include <qtimer.h>
+#include <qwhatsthis.h>
 #include <qwidgetstack.h>
 
 #include <dcopclient.h>
@@ -28,6 +28,26 @@ FileTypesView::FileTypesView(QWidget *p, const char *name)
   : KCModule(p, name)
 {
   m_konqConfig = KSharedConfig::openConfig("konquerorrc", false, false);
+
+  setQuickHelp( i18n("<h1>File Associations</h1>"
+    " This module allows you to choose which applications are associated"
+    " with a given type of file. File types are also referred to MIME types"
+    " (MIME is an acronym which stands for \"Multipurpose Internet Mail"
+    " Extensions\".)<p> A file association consists of the following:"
+    " <ul><li>Rules for determining the MIME-type of a file, for example"
+    " the filename pattern *.kwd, which means 'all files with names that end"
+    " in .kwd', is associated with the MIME type \"x-kword\";</li>"
+    " <li>A short description of the MIME-type, for example the description"
+    " of the MIME type \"x-kword\" is simply 'KWord document';</li>"
+    " <li>An icon to be used for displaying files of the given MIME-type,"
+    " so that you can easily identify the type of file in, say, a Konqueror"
+    " view (at least for the types you use often);</li>"
+    " <li>A list of the applications which can be used to open files of the"
+    " given MIME-type -- if more than one application can be used then the"
+    " list is ordered by priority.</li></ul>"
+    " You may be surprised to find that some MIME types have no associated"
+    " filename patterns; in these cases, Konqueror is able to determine the"
+    " MIME-type by directly examining the contents of the file."));
 
   KServiceTypeProfile::setConfigurationMode();
   setButtons(Help | Apply | Cancel | Ok);
@@ -415,29 +435,6 @@ void FileTypesView::slotDatabaseChanged()
 
 void FileTypesView::defaults()
 {
-}
-
-QString FileTypesView::quickHelp() const
-{
-  return i18n("<h1>File Associations</h1>"
-    " This module allows you to choose which applications are associated"
-    " with a given type of file. File types are also referred to MIME types"
-    " (MIME is an acronym which stands for \"Multipurpose Internet Mail"
-    " Extensions\".)<p> A file association consists of the following:"
-    " <ul><li>Rules for determining the MIME-type of a file, for example"
-    " the filename pattern *.kwd, which means 'all files with names that end"
-    " in .kwd', is associated with the MIME type \"x-kword\";</li>"
-    " <li>A short description of the MIME-type, for example the description"
-    " of the MIME type \"x-kword\" is simply 'KWord document';</li>"
-    " <li>An icon to be used for displaying files of the given MIME-type,"
-    " so that you can easily identify the type of file in, say, a Konqueror"
-    " view (at least for the types you use often);</li>"
-    " <li>A list of the applications which can be used to open files of the"
-    " given MIME-type -- if more than one application can be used then the"
-    " list is ordered by priority.</li></ul>"
-    " You may be surprised to find that some MIME types have no associated"
-    " filename patterns; in these cases, Konqueror is able to determine the"
-    " MIME-type by directly examining the contents of the file.");
 }
 
 #include "filetypesview.moc"
