@@ -4,6 +4,10 @@
 
  Developed and maintained by Matthias Ettrich (ettrich@kde.org)
 
+2001-12-22  Richard Moore <rich@kde.org>
+
+     * Added a 'send to system tray' option. This differs from ksystraycmd
+     as it simply causes a window to be swallowed into the tray.
 
 2000-06-09  David Faure  <faure@kde.org>
 

@@ -4,6 +4,7 @@
  * Copyright (C) 1997-2000 Matthias Ettrich <ettrich@kde.org>
  *
  * First port to NETWM by David Faure <faure@kde.org>
+ * Send to system tray by Richard Moore <rich@kde.org>
  */
 
 #include "kstart.moc"
@@ -41,8 +42,9 @@ pid_t execute(const QString & cmd){
 static QCString command = 0;
 static QCString window = 0;
 static int desktop = 0;
-static bool activate = 0;
-static bool iconify = 0;
+static bool activate = false;
+static bool iconify = false;
+static bool toSysTray = false;
 static unsigned long state = 0;
 static unsigned long mask = 0;
 static NET::WindowType windowtype = NET::Unknown;
@@ -117,8 +119,7 @@ static bool wstate_withdrawn( WId winid )
 
 void KStart::applyStyle(WId w ) {
 
-
-    if ( iconify || windowtype != NET::Unknown || desktop >= 1 ) {
+    if ( toSysTray || iconify || windowtype != NET::Unknown || desktop >= 1 ) {
 	
 	XWithdrawWindow(qt_xdisplay(), w, qt_xscreen());
 	QApplication::flushX();
@@ -148,10 +149,17 @@ void KStart::applyStyle(WId w ) {
 
     info.setState( state, mask );
 
+    if ( toSysTray ) {
+	QApplication::beep();
+	KWin::setSystemTrayWindowFor( w,  qt_xrootwin() );
+    }
+
+
     XSync(qt_xdisplay(), False);
 
-    XMapWindow(qt_xdisplay(), w);
+    XMapWindow(qt_xdisplay(), w );
     XSync(qt_xdisplay(), False);
+
     if (activate)
       KWin::setActiveWindow( w );
 
@@ -177,6 +185,7 @@ static KCmdLineOptions options[] =
   { "ontop", I18N_NOOP("Make the window always stay on top of any other window"), 0 },
   { "skiptaskbar", I18N_NOOP("The window does not get an entry in the taskbar"), 0 },
   { "skippager", I18N_NOOP("The window does not get an entry on the pager"), 0 },
+  { "tosystray", I18N_NOOP("The window is sent to the system tray in kicker."), 0 },
   { 0, 0, 0}
 };
 
@@ -190,7 +199,10 @@ int main( int argc, char *argv[] )
        "and so on." ),
       KAboutData::License_GPL,
        "(C) 1997-2000 Matthias Ettrich (ettrich@kde.org)" );
+
   aboutData.addAuthor( "Matthias Ettrich", 0, "ettrich@kde.org" );
+  aboutData.addAuthor( "David Faure", 0, "faure@kde.org" );
+  aboutData.addAuthor( "Richard J. Moore", 0, "rich@kde.org" );
 
   KCmdLineArgs::init( argc, argv, &aboutData );
 
@@ -258,6 +270,7 @@ int main( int argc, char *argv[] )
   }
 
   iconify = args->isSet("iconify");
+  toSysTray = args->isSet("tosystray");
 
   fcntl(ConnectionNumber(qt_xdisplay()), F_SETFD, 1);
   args->clear();
