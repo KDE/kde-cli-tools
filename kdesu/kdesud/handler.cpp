@@ -3,7 +3,7 @@
  * $Id$
  *
  * This file is part of the KDE project, module kdesu.
- * Copyright (C) 1999 Geert Jansen <g.t.jansen@stud.tue.nl>
+ * Copyright (C) 1999,2000 Geert Jansen <jansen@kde.org>
  *
  * handler.cpp: A connection handler for kdesud.
  */
@@ -28,7 +28,8 @@
 #include "repo.h"
 #include "lexer.h"
 #include "secure.h"
-#include "process.h"
+#include "su.h"
+#include "ssh.cpp"
 
 
 // Global repository
@@ -36,17 +37,14 @@ extern Repository *repo;
 
 
 ConnectionHandler::ConnectionHandler(int fd)
-	: SocketSecurity(fd), mFd(fd)
+	: SocketSecurity(fd), m_Fd(fd)
 {
-    mbPass = false;
-    mbUser = false;
 }
 
 ConnectionHandler::~ConnectionHandler()
 {
-    mBuf.fill('x');
-    if (mbPass)
-	mPass.fill('x');
+    m_Buf.fill('x');
+    m_Pass.fill('x');
 }
 
 void ConnectionHandler::respond(int ok, QCString s)
@@ -70,9 +68,18 @@ void ConnectionHandler::respond(int ok, QCString s)
     }
     buf += '\n';
 
-    send(mFd, buf.data(), buf.length(), 0);
+    send(m_Fd, buf.data(), buf.length(), 0);
 }
 
+QCString ConnectionHandler::makeKey(int namspace, QCString host, 
+	QCString user, QCString command)
+{
+    QCString res;
+    res.setNum(namspace);
+    res += "*";
+    res += host + "*" + user + "*" + command;
+    return res;
+}
 
 /**
  * Parse and do one command. On a parse error, return -1. This will 
@@ -87,13 +94,13 @@ int ConnectionHandler::doCommand()
 	return -1;
     }
 
-    int n = mBuf.find('\n');
+    int n = m_Buf.find('\n');
     assert(n != -1);
 
-    QCString newbuf = mBuf.mid(0, n+1);
+    QCString newbuf = m_Buf.mid(0, n+1);
     for (int i=0; i<=n; i++)
-	mBuf[n] = 'x';
-    mBuf.remove(0, n+1);
+	m_Buf[n] = 'x';
+    m_Buf.remove(0, n+1);
 
     /* I'd like to use auto_ptr here, but egcs 1.1.2 has it
      * commented out.. */
@@ -111,12 +118,11 @@ int ConnectionHandler::doCommand()
 	tok = l->lex();
 	if (tok != Lexer::Tok_str)
 	    goto parse_error;
-	mPass = l->lval();
-	mbPass = true;
+	m_Pass = l->lval();
 	tok = l->lex();
 	if (tok != Lexer::Tok_num)
 	    goto parse_error;
-	mTimeout = l->lval().toInt();
+	m_Timeout = l->lval().toInt();
 	if (l->lex() != '\n')
 	    goto parse_error;
 	respond(Res_OK);
@@ -127,12 +133,22 @@ int ConnectionHandler::doCommand()
 	tok = l->lex();
 	if (tok != Lexer::Tok_str)
 	    goto parse_error;
-	mUser = l->lval();
-	mbUser = true;
+	m_User = l->lval();
 	if (l->lex() != '\n')
 	    goto parse_error;
 	respond(Res_OK);
-	kDebugInfo("User set to %s", (const char *) mUser);
+	kDebugInfo("User set to %s", m_User.data());
+	break;
+
+    case Lexer::Tok_host:
+	tok = l->lex();
+	if (tok != Lexer::Tok_str)
+	    goto parse_error;
+	m_Host = l->lval();
+	if (l->lex() != '\n')
+	    goto parse_error;
+	respond(Res_OK);
+	kDebugInfo("Host set to %s", m_Host.data());
 	break;
 
     case Lexer::Tok_exec:
@@ -144,28 +160,26 @@ int ConnectionHandler::doCommand()
 	if (l->lex() != '\n')
 	    goto parse_error;
 
-	if (!mbUser)
+	if (m_User.isEmpty())
 	    goto parse_error;
-	key = mUser;
-	key += "*";
-	key += command;
-	
+
+	key = makeKey(0, m_Host, m_User, command);
 	pdata = repo->find(key);
 	if (!pdata) {
-	    if (!mbPass) {
+	    if (m_Pass.isNull()) {
 		respond(Res_NO);
 		break;
 	    }
-	    data.value = mPass;
-	    data.timeout = mTimeout;
+	    data.value = m_Pass;
+	    data.timeout = m_Timeout;
 	    repo->add(key, data);
-	    pass = mPass;
+	    pass = m_Pass;
 	} else
 	    pass = pdata->value;
 
 	// Check if we need to rebuild the sycoca.
 	bool build_sycoca = true;
-	key = QCString("ksycoca_") + mUser;
+	key = makeKey(1, m_Host, m_User, "ksycoca");
 	pdata = repo->find(key);
 	if (pdata && (pdata->value == "yes")) {
 	    kDebugInfo("kdesud: NOT building sycoca");
@@ -178,7 +192,7 @@ int ConnectionHandler::doCommand()
 	}
 
 	// Execute the command asynchronously
-	kDebugInfo("Executing command: %s", (const char *) command);
+	kDebugInfo("Executing command: %s", command.data());
 	pid_t pid = fork();
 	if (pid < 0) {
 	    qWarning("fork(): %s", strerror(errno));
@@ -192,11 +206,22 @@ int ConnectionHandler::doCommand()
 	// Ignore SIGCHLD because "class SuProcess" needs waitpid()
 	signal(SIGCHLD, SIG_DFL);
 
-	SuProcess proc;
-	proc.setBuildSycoca(build_sycoca);
-	proc.setCommand(command);
-	proc.setUser(mUser);
-	int ret = proc.exec(pass.data());
+	int ret;
+	if (m_Host.isEmpty()) {
+	    SuProcess proc;
+	    proc.setBuildSycoca(build_sycoca);
+	    proc.setCommand(command);
+	    proc.setUser(m_User);
+	    ret = proc.exec(pass.data());
+	} else {
+	    SshProcess proc;
+	    proc.setBuildSycoca(build_sycoca);
+	    proc.setCommand(command);
+	    proc.setUser(m_User);
+	    proc.setHost(m_Host);
+	    ret = proc.exec(pass.data());
+	}
+
 	kDebugInfo("Command completed");
 	_exit(ret);
     }
@@ -209,12 +234,9 @@ int ConnectionHandler::doCommand()
 	if (l->lex() != '\n')
 	    goto parse_error;
 	
-	if (!mbUser)
+	if (m_User.isEmpty())
 	    goto parse_error;
-	key = mUser;
-	key += "*";
-	key += command;
-
+	key = makeKey(0, m_Host, m_User, command);
 	pdata = repo->find(key);
 	if (!pdata) {
 	    respond(Res_NO);
@@ -229,7 +251,7 @@ int ConnectionHandler::doCommand()
 	tok = l->lex();
 	if (tok != Lexer::Tok_str)
 	    goto parse_error;
-	key = l->lval();
+	key = QCString("1*") + l->lval();
 	tok = l->lex();
 	if (tok != Lexer::Tok_str)
 	    goto parse_error;
@@ -246,7 +268,7 @@ int ConnectionHandler::doCommand()
 	tok = l->lex();
 	if (tok != Lexer::Tok_str)
 	    goto parse_error;
-	key = l->lval();
+	key = QCString("1*") + l->lval();
 	if (l->lex() != '\n')
 	    goto parse_error;
 	kDebugInfo("request for key: %s", key.data());
@@ -274,7 +296,7 @@ int ConnectionHandler::doCommand()
 	exit(0);
 
     default:
-	kDebugInfo("Uknown command: %s", (const char *) l->lval());
+	kDebugInfo("Uknown command: %s", l->lval().data());
 	goto parse_error;
     }
 
@@ -299,7 +321,7 @@ int ConnectionHandler::handle()
     /* Add max # bytes to connection buffer */
 
     char tmpbuf[100];
-    nbytes = recv(mFd, tmpbuf, 99, 0);
+    nbytes = recv(m_Fd, tmpbuf, 99, 0);
 
     if (nbytes < 0) {
 	if (errno == EINTR)
@@ -308,23 +330,23 @@ int ConnectionHandler::handle()
 	return -1;
     } else if (nbytes == 0) {
 	// eof
-	kDebugInfo("eof on fd %d", mFd);
+	kDebugInfo("eof on fd %d", m_Fd);
 	return -1;
     }
     tmpbuf[nbytes] = '\000';
 
-    if (mBuf.length()+nbytes > 500) {
+    if (m_Buf.length()+nbytes > 500) {
 	qWarning("line too long");
 	return -1;
     }
 
-    mBuf += tmpbuf;
+    m_Buf += tmpbuf;
     memset(tmpbuf, 'x', nbytes);
 
     
     /* Do we have a complete command yet? */
 
-    while (mBuf.find('\n') != -1) {
+    while (m_Buf.find('\n') != -1) {
 	ret = doCommand();
 	if (ret < 0)
 	    return ret;

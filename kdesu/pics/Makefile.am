@@ -2,4 +2,3 @@
 
 xpmdir = $(kde_datadir)/kdesu/pics
 xpm_DATA = kdesu-keys.xpm
-

@@ -1,21 +1,16 @@
-dnl Check for su
-AC_MSG_CHECKING(for _PATH_SU)
-AC_EGREP_CPP(su_is_there,
-[#include <paths.h>
- #ifdef _PATH_SU
- su_is_there
- #endif
-], path_su=yes, path_su=no)
-if test "$path_su" = "yes"; then
-    AC_MSG_RESULT(paths.h)
+dnl Check for su, ssh
+AC_PATH_PROG(path_su, "su", "no")
+if test "$path_su" = "no"; then
+    AC_MSG_ERROR(su was not found!)
 else
-    AC_MSG_RESULT(no)
-    AC_PATH_PROG(path_su, "su", "no")
-    if test "$path_su" = "no"; then
-	AC_MSG_ERROR(su was not found!)
-    else
-	AC_DEFINE_UNQUOTED(_PATH_SU, "$path_su", [path to su])
-    fi
+    AC_DEFINE_UNQUOTED(__PATH_SU, "$path_su", [path to su])
+fi
+
+AC_PATH_PROG(path_ssh, "ssh", "no")
+if test "$path_ssh" = "no"; then
+    AC_MSG_ERROR(ssh was not found!)
+else
+    AC_DEFINE_UNQUOTED(__PATH_SSH, "$path_ssh", [path to ssh])
 fi
 
 dnl Check for "struct ucred"

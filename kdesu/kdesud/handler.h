@@ -3,7 +3,7 @@
  * $Id$
  *
  * This file is part of the KDE project, module kdesu.
- * Copyright (C) 1999 Geert Jansen <g.t.jansen@stud.tue.nl>
+ * Copyright (C) 1999,2000 Geert Jansen <jansen@kde.org>
  */
 
 #ifndef __Handler_h_included__
@@ -19,6 +19,7 @@ class QCString;
  * It keeps reading data until a newline is read. Then, a command is parsed
  * and executed.
  */
+
 class ConnectionHandler: public SocketSecurity 
 {
 
@@ -34,16 +35,14 @@ public:
 private:
     int doCommand();
     void respond(int ok, QCString s=0);
+    QCString makeKey(int namspace, QCString host, QCString user, 
+	    QCString command);
 
     enum Results { Res_OK, Res_NO };
 
-    bool mbPass;
-    bool mbUser;
-    int mFd;
-    int mTimeout;
-    QCString mBuf;
-    QCString mPass;
-    QCString mUser;
+    int m_Fd, m_Timeout;
+    QCString m_Buf, m_Pass;
+    QCString m_User, m_Host;
 };
 
 #endif

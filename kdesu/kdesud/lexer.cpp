@@ -3,7 +3,7 @@
  * $Id$
  *
  * This file is part of the KDE project, module kdesu.
- * Copyright (C) 1999 Geert Jansen <g.t.jansen@stud.tue.nl>
+ * Copyright (C) 1999,2000 Geert Jansen <jansen@kde.org>
  * 
  * lexer.cpp: A lexer for the kdesud protocol. See kdesud.cpp for a
  *            description of the protocol.
@@ -108,6 +108,8 @@ int Lexer::lex()
 		return Tok_set;
 	    if (m_Output == "GET")
 		return Tok_get;
+	    if (m_Output == "HOST")
+		return Tok_host;
 	}
 
 	return Tok_str;

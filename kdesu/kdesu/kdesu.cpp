@@ -32,8 +32,8 @@
 #include <kcmdlineargs.h>
 
 #include "kdesu.h"
-#include "kpassdlg.h"
-#include "process.h"
+#include "su.h"
+#include "sudlg.h"
 #include "client.h"
 
 
@@ -76,18 +76,6 @@ int main(int argc, char *argv[])
 	}
 	kDebugFatal("Could not stop daemon");
 	exit(1);
-    }
-
-    // Check for daemon and start if necessary
-    bool just_started = false;
-    bool have_daemon = true;
-    KDEsuClient client;
-    if (client.ping() == -1) {
-	just_started = true;
-	if (client.startServer() == -1) {
-	    kDebugWarning("Could not start daemon, reduced functionality.");
-	    have_daemon = false;
-	}
     }
 
     // Get target uid
@@ -133,6 +121,18 @@ int main(int argc, char *argv[])
     if (!change_uid)
 	return system(command);
 
+    // Check for daemon and start if necessary
+    bool just_started = false;
+    bool have_daemon = true;
+    KDEsuClient client;
+    if (client.ping() == -1) {
+	just_started = true;
+	if (client.startServer() == -1) {
+	    kDebugWarning("Could not start daemon, reduced functionality.");
+	    have_daemon = false;
+	}
+    }
+
     // Try to exec the command with kdesud.
     bool keep = !args->isSet("n");
     bool terminal = args->isSet("t");
@@ -171,7 +171,7 @@ int main(int argc, char *argv[])
     int pw_timeout = config->readNumEntry("KeepPasswordTimeout", defTimeout);
 
      // Start the dialog
-    KDEsuDialog *dlg = new KDEsuDialog(command, user, 
+    KDEsuDialog *dlg = new KDEsuDialog(user, command, 
 	    ((keep&&!terminal) ? 1+keep_cfg : 0));
     dlg->setEchoMode(echoMode);
     dlg->exec();
@@ -214,8 +214,7 @@ int main(int argc, char *argv[])
 	return client.exec(command);
     } else {
 	SuProcess proc;
-	QCString key = "ksycoca_";
-	key += user;
+	QCString key = QCString("*") + user + "*ksycoca";
 	if (client.getVar(key) == "yes")
 	    proc.setBuildSycoca(false);
 	else

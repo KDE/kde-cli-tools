@@ -3,12 +3,16 @@
 INCLUDES= -I$(top_srcdir)/kdesu/common $(all_includes)
 
 ## kdesu
-bin_PROGRAMS = 	kdesu
-kdesu_SOURCES = kdesu.cpp kpassdlg.cpp
+bin_PROGRAMS = 	kdesu kdessh
+kdesu_SOURCES = kdesu.cpp sudlg.cpp
 kdesu_LDFLAGS = $(all_libraries) $(KDE_RPATH)
 kdesu_LDADD   = $(LIB_KDECORE) $(LIB_KDEUI) $(top_builddir)/kdesu/common/libkdesu.la
 kdesu_METASOURCES =  AUTO
-noinst_HEADERS = kpassdlg.h
+noinst_HEADERS = sudlg.h
+
+kdessh_SOURCES = kdessh.cpp
+kdessh_LDFLAGS = $(all_libraries) $(KDE_RPATH)
+kdessh_LDADD   = $(LIB_KDECORE) $(top_builddir)/kdesu/common/libkdesu.la
 
 ## Messages
 messages:

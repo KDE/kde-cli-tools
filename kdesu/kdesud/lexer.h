@@ -3,7 +3,7 @@
  * $Id$
  *
  * This file is part of the KDE project, module kdesu.
- * Copyright (C) 1999 Geert Jansen <g.t.jansen@stud.tue.nl>
+ * Copyright (C) 1999,2000 Geert Jansen <jansen@kde.org>
  */
 
 #ifndef __Lexer_h_included__
@@ -37,7 +37,8 @@ public:
 	Tok_user, Tok_del, 
 	Tok_ping, Tok_str, 
 	Tok_num , Tok_stop,
-	Tok_set, Tok_get
+	Tok_set, Tok_get,
+	Tok_host
     };
 
 private:
