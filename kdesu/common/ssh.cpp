@@ -41,6 +41,12 @@
 #endif
 
 
+// Don't break compilation in case ssh was not found.
+
+#ifndef __PATH_SSH
+#define __PATH_SSH "[ssh was not found by configure]"
+#endif
+
 SshProcess::SshProcess(QCString host, QCString user, QCString command)
 {
     m_Host = host;

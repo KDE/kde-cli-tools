@@ -35,6 +35,9 @@
 #define ID __FILE__
 #endif
 
+#ifndef __PATH_SU
+#define __PATH_SU "[su was not found by configure]"
+#endif
 
 SuProcess::SuProcess(QCString user, QCString command)
 {
