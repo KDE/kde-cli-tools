@@ -21,7 +21,7 @@ install-data-local:
 	@echo "********************************************************"
 
 install-exec-hook: 
-	@(chown root.@nogroup@ $(DESTDIR)$(bindir)/kdesud && chmod 2755  $(DESTDIR)$(bindir)/kdesud) \
+	@(chown root:@nogroup@ $(DESTDIR)$(bindir)/kdesud && chmod 2755  $(DESTDIR)$(bindir)/kdesud) \
 	|| echo "Error: Could not install kdesud as setgid nogroup!!\n" \
 	"The password caching feature is disabled."
 
