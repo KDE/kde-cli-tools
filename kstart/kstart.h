@@ -17,13 +17,15 @@ class KStart: public QObject {
 public:
   KStart();
   ~KStart(){};
-
+  
 public slots:
   void windowAdded(WId);
 
 private:
 
   void applyStyle(WId );
+  void sendRule();
+
 };
 
 

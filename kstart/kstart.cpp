@@ -25,6 +25,7 @@
 #include <kaboutdata.h>
 #include <kcmdlineargs.h>
 #include <kstartupinfo.h>
+#include <kxmessages.h>
 
 #include <netwm.h>
 
@@ -56,12 +57,17 @@ static KWinModule* kwinmodule;
 KStart::KStart()
     :QObject()
 {
-    // connect to window add to get the NEW windows
-    connect(kwinmodule, SIGNAL(windowAdded(WId)), SLOT(windowAdded(WId)));
+    NETRootInfo i( qt_xdisplay(), NET::Supported );
+    bool useRule = i.isSupported( NET::WM2KDETemporaryRules );
 
-    if (windowtitle)
-	kwinmodule->doNotManage( windowtitle );
-
+    if( useRule )
+        sendRule();
+    else {
+        // connect to window add to get the NEW windows
+        connect(kwinmodule, SIGNAL(windowAdded(WId)), SLOT(windowAdded(WId)));
+        if (windowtitle)
+    	    kwinmodule->doNotManage( windowtitle );
+    }
     // propagate the app startup notification info to the started app
     KStartupInfoId id;
     id.initId( kapp->startupId());
@@ -83,6 +89,55 @@ KStart::KStart()
     }
     else
         KStartupInfo::sendFinish( id ); // failed to start
+
+  QTimer::singleShot( useRule ? 0 : 120 * 1000, kapp, SLOT( quit()));
+}
+
+void KStart::sendRule() {
+    KXMessages msg;
+    QCString message;
+    if( windowtitle )
+        message += "title=" + windowtitle + "\ntitleregexp=true\n";
+    if( windowclass )
+        message += "wmclass=" + windowclass + "\nwmclasscomplete="
+            // if windowclass contains a space (i.e. 2 words, use whole WM_CLASS)
+            + ( windowclass.contains( ' ' ) ? "true" : "false" ) + "\n";
+    if( windowtitle || windowclass ) {
+        // always ignore these window types
+        message += "types=" + QCString().setNum( -1U & ~( NET::TopMenuMask | NET::ToolbarMask | NET::DesktopMask )) + "\n";
+    } else {
+        // accept only "normal" windows
+        message += "types=" + QCString().setNum( NET::NormalMask | NET::DialogMask ) + "\n";
+    }
+    if ( ( desktop > 0 && desktop <= kwinmodule->numberOfDesktops() )
+         || desktop == NETWinInfo::OnAllDesktops )
+	message += "desktop=" + QCString().setNum( desktop ) + "\ndesktoprule=2\n";
+    if (iconify)
+        message += "minimized=true\nminimizedrule=2\n";
+    if ( windowtype != NET::Unknown ) {
+        message += "type=" + QCString().setNum( windowtype ) + "\ntyperule=1";
+    }
+    if ( state ) {
+        if( state & NET::KeepAbove )
+            message += "above=true\naboverule=2\n";
+        if( state & NET::KeepBelow )
+            message += "below=true\nbelowrule=2\n";
+        if( state & NET::SkipTaskbar )
+            message += "skiptaskbar=true\nskiptaskbarrule=2\n";
+        if( state & NET::SkipPager )
+            message += "skippager=true\nskippagerrule=2\n";
+        if( state & NET::MaxVert )
+            message += "maximizevert=true\nmaximizevertrule=2\n";
+        if( state & NET::MaxHoriz )
+            message += "maximizehoriz=true\nmaximizehorizrule=2\n";
+        if( state & NET::FullScreen )
+            message += "fullscreen=true\nfullscreenrule=2\n";
+    }
+    if (activate)
+        message += "fspleveladjust=-1000\nfspleveladjustrule=1\n";
+
+    msg.broadcastMessage( "_KDE_NET_WM_TEMPORARY_RULES", message, -1, false );
+    kapp->flushX();
 }
 
 const int SUPPORTED_WINDOW_TYPES_MASK = NET::NormalMask | NET::DesktopMask | NET::DockMask
@@ -358,6 +413,5 @@ int main( int argc, char *argv[] )
 
   KStart start;
 
-  QTimer::singleShot( 120 * 1000, &app, SLOT( quit())); // quit if nothing happens in 2 minutes
   return app.exec();
 }
