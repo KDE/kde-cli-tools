@@ -7,6 +7,7 @@
 #include <qwhatsthis.h>
 
 #include <dcopclient.h>
+#include <krun.h>
 #include <kbuttonbox.h>
 #include <kiconloader.h>
 #include <kiconloaderdialog.h>
@@ -378,7 +379,7 @@ void FileTypesView::demoteService()
 }
 
 void FileTypesView::updatePreferredServices()
-{ 
+{
   if (typesLV->currentItem() == 0)
     return;
   TypesListItem *tli = (TypesListItem *) typesLV->currentItem();
