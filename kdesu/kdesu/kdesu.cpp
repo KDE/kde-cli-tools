@@ -37,6 +37,7 @@
 #include <kcmdlineargs.h>
 #include <kmessagebox.h>
 #include <krun.h>
+#include <kuser.h>
 
 #include <kdesu/defaults.h>
 #include <kdesu/su.h>
@@ -290,6 +291,9 @@ static int startApp()
 
        env << ("KDEHOME="+ QFile::encodeName(kdeHome));
     }
+
+    KUser u;
+    env << (QCString) ("KDESU_USER=" + u.loginName().local8Bit());
     
     if (!new_dcop)
     {
