@@ -44,12 +44,12 @@ NewTypeDialog::NewTypeDialog(QStringList groups,
   topl->addWidget(bbox);
 
   bbox->addStretch(1);
-  QPushButton *okButton = bbox->addButton(i18n("OK"));
+  QPushButton *okButton = bbox->addButton(i18n("&OK"));
   okButton->setDefault(true);
   connect(okButton, SIGNAL(clicked()),
 	  this, SLOT(accept()));
 
-  QPushButton *cancelButton = bbox->addButton(i18n("Cancel"));
+  QPushButton *cancelButton = bbox->addButton(i18n("&Cancel"));
   connect(cancelButton, SIGNAL(clicked()),
 	  this, SLOT(reject()));
 
