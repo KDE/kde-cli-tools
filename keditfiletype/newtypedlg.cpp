@@ -16,7 +16,7 @@ NewTypeDialog::NewTypeDialog(QStringList groups,
 			     QWidget *parent, const char *name)
   : KDialog(parent, name, true)
 {
-  setCaption(i18n("Create new file type"));
+  setCaption(i18n("Create New File Type"));
   QVBoxLayout *topl = new QVBoxLayout(this, marginHint(), spacingHint());
 
   QGridLayout *grid = new QGridLayout(2, 2);
