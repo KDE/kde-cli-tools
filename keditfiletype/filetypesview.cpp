@@ -404,7 +404,7 @@ void FileTypesView::addService()
 {
   TypesListItem *item = (TypesListItem *)typesLV->currentItem();
   QStringList list;
-  list.append(QString("Mimetype: %1").arg(item->name()));
+  list.append(i18n("File Association: %1").arg(item->name()));
   KOpenWithDlg dlg(list, i18n("Add Application"), QString::null, (QWidget*)0);
   if (dlg.exec() == false)
     return;
