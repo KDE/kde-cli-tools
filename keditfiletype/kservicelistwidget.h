@@ -2,10 +2,17 @@
 #define _KSERVICELISTWIDGET_H
 
 #include <qgroupbox.h>
+#include <qlistbox.h>
 class TypesListItem;
 class QLineEdit;
-class QListBox;
 class QPushButton;
+
+class KServiceListItem : public QListBoxText
+{
+public:
+    KServiceListItem(  const QString &desktopPath, int kind );
+    QString desktopPath;
+};
 
 /**
  * This widget holds a list of services, with 5 buttons to manage it.

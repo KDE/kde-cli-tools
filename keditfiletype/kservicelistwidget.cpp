@@ -13,22 +13,17 @@
 #include <kpropertiesdialog.h>
 #include <kstandarddirs.h>
 
-class KServiceListItem : public QListBoxText
-{
-public:
-	KServiceListItem( QString &desktopPath );
-
-	QString desktopPath;
-};
-
-KServiceListItem::KServiceListItem( QString &_desktopPath )
+KServiceListItem::KServiceListItem( const QString &_desktopPath, int kind )
     : QListBoxText(), desktopPath(_desktopPath)
 {
     KService::Ptr pService = KService::serviceByDesktopPath( _desktopPath );
 
     Q_ASSERT(pService);
 
-    setText( pService->name() );
+    if ( kind == KServiceListWidget::SERVICELIST_APPLICATIONS )
+        setText( pService->name() );
+    else
+        setText( i18n( "%1 (%2)" ).arg( pService->name() ).arg( pService->desktopEntryName() ) );
 }
 
 KServiceListWidget::KServiceListWidget(int kind, QWidget *parent, const char *name)
@@ -147,7 +142,7 @@ void KServiceListWidget::setTypeItem( TypesListItem * item )
       for ( QStringList::Iterator it = services.begin();
             it != services.end(); it++ )
       {
-        servicesLB->insertItem( new KServiceListItem(*it) );
+        servicesLB->insertItem( new KServiceListItem(*it, m_kind) );
       }
       servicesLB->setEnabled(true);
     }
@@ -231,7 +226,8 @@ void KServiceListWidget::addService()
 
   // check if it is a duplicate entry
   for (unsigned int index = 0; index < servicesLB->count(); index++)
-    if (servicesLB->text(index) == service->name())
+    if (static_cast<KServiceListItem*>( servicesLB->item(index) )->desktopPath
+        == service->desktopEntryPath())
       return;
 
   // if None is the only item, then there currently is no default
@@ -241,7 +237,7 @@ void KServiceListWidget::addService()
   }
   QString desktopPath = service->desktopEntryPath();
 
-  servicesLB->insertItem( new KServiceListItem(desktopPath) );
+  servicesLB->insertItem( new KServiceListItem(desktopPath, m_kind) );
 
   updatePreferredServices();
 
@@ -297,15 +293,16 @@ void KServiceListWidget::editService()
       // ...check that it's not a duplicate entry...
       bool addIt = true;
       for (unsigned int index = 0; index < servicesLB->count(); index++)
-      if (servicesLB->text(index) == service->name()) {
-        addIt = false;
-        break;
-      }
+        if (static_cast<KServiceListItem*>( servicesLB->item(index) )->desktopPath
+                == service->desktopEntryPath()) {
+          addIt = false;
+          break;
+        }
 
       // ...and add it in the same place as the old one:
       if ( addIt ) {
         QString desktopPath = service->desktopEntryPath();
-        servicesLB->insertItem( new KServiceListItem(desktopPath), selected );
+        servicesLB->insertItem( new KServiceListItem(desktopPath, m_kind), selected );
       }
 
       updatePreferredServices();
