@@ -19,11 +19,13 @@
 #include <sys/types.h>
 #include <sys/socket.h>
 #include <sys/un.h>
+#include <sys/stat.h>
 
 #include "kdesu.h"
 #include "process.h"
 #include "client.h"
 #include "debug.h"
+#include "pathsearch.h"
 
 
 KDEsuClient::KDEsuClient()
@@ -172,9 +174,25 @@ int KDEsuClient::stopServer()
     return command(Cmd_stop);
 }
 
-
 int KDEsuClient::startServer()
 {
+    PathSearch PS;
+
+    const char *daemon = PS.locate("kdesud");
+    if (daemon == 0L) {
+	error("kdesud not found -- password keeping disabled");
+	return -1;
+    }
+    struct stat sbuf;
+    if (stat(daemon, &sbuf) < 0) {
+	xerror("stat(%s): %s", daemon);
+	return -1;
+    }
+    if (!(sbuf.st_mode & S_ISGID)) {
+	error("kdesud not setgid -- password keeping disabled");
+	return -1;
+    }
+
     UserProcess proc("kdesud &");
     return proc.exec();
 }

@@ -207,7 +207,7 @@ int main(int argc, char *argv[])
 	} else
 	    // The user has to enter a password and this very probably 
 	    // gives enough time to start up the daemon.
-	    client.startServer();
+	    keep = (client.startServer() != -1);
     }
 
     // Set core dump size to 0 because we will have 
