@@ -43,6 +43,7 @@ public:
   void setEmbedServices(const QStringList &dsl) { m_embedServices = dsl; }
   int autoEmbed() const { return m_autoEmbed; }
   void setAutoEmbed( int a ) { m_autoEmbed = a; }
+  const KMimeType::Ptr& mimeType() const { return m_mimetype; }
 
   bool isDirty() const;
   void sync();

@@ -1,5 +1,4 @@
 
-#include <klistview.h>
 #include <qlabel.h>
 #include <qwhatsthis.h>
 #include <qpushbutton.h>
@@ -13,12 +12,11 @@
 #include <kcursor.h>
 #include <kdebug.h>
 #include <kdesktopfile.h>
+#include <klistview.h>
 #include <klocale.h>
 #include <kstddirs.h>
 
-#include "typeslistitem.h"
 #include "newtypedlg.h"
-
 #include "filetypedetails.h"
 #include "filegroupdetails.h"
 #include "filetypesview.h"
@@ -124,7 +122,7 @@ void FileTypesView::init()
 {
   setEnabled( false );
   setCursor( KCursor::waitCursor() );
-  
+
   readFileTypes();
   // Since we have filled in the list once and for all, set width correspondingly,
   // to avoid horizontal scrollbars (DF).
@@ -137,64 +135,73 @@ void FileTypesView::init()
 
 }
 
-void FileTypesView::slotFilter(const QString &patternFilter)
-{
-  readFileTypes(patternFilter);
-}
-
-void FileTypesView::readFileTypes(const QString &patternFilter)
+// only call this method once on startup, then never again! Otherwise, newly
+// added Filetypes will be lost.
+void FileTypesView::readFileTypes()
 {
     typesLV->clear();
+    m_majorMap.clear();
+    m_itemList.clear();
 
+    TypesListItem *groupItem;
     KMimeType::List mimetypes = KMimeType::allMimeTypes();
     QValueListIterator<KMimeType::Ptr> it2(mimetypes.begin());
     for (; it2 != mimetypes.end(); ++it2) {
-        bool add = true;
+	QString mimetype = (*it2)->name();
+	int index = mimetype.find("/");
+	QString maj = mimetype.left(index);
+	QString min = mimetype.right(mimetype.length() - index+1);
 
-        if ( !patternFilter.isEmpty() ) {
-            QStringList matches = (*it2)->patterns().grep( patternFilter,
-                                                           false );
-            add = !matches.isEmpty();
-        }
+	QMapIterator<QString,TypesListItem*> mit = m_majorMap.find( maj );
+	if ( mit == m_majorMap.end() ) {
+	    groupItem = new TypesListItem( typesLV, maj );
+	    m_majorMap.insert( maj, groupItem );
+	}
+	else
+	    groupItem = mit.data();
+	
+	TypesListItem *item = new TypesListItem(groupItem, (*it2));
+	m_itemList.append( item );
+    }
+}
 
-        if ( add ) {
-            QString mimetype = (*it2)->name();
-            int index = mimetype.find("/");
-            QString maj = mimetype.left(index);
-            QString min = mimetype.right(mimetype.length() - index+1);
+void FileTypesView::slotFilter(const QString & patternFilter)
+{
+    // one of the few ways to clear a listview without destroying the
+    // listviewitems and without making QListView crash.
+    QListViewItem *item;
+    while ( (item = typesLV->firstChild()) ) {
+	while ( item->firstChild() )
+	    item->takeItem( item->firstChild() );
+	
+	typesLV->takeItem( item );
+    }
 
-            QListViewItemIterator it(typesLV);
-            for (; it.current(); ++it) {
-                TypesListItem *current = (TypesListItem *) it.current();
-                if (current->majorType() == maj) {
-                    new TypesListItem(current, (*it2));
-                    break;
-                }
-            }
-            if (!it.current()) {
-                // insert at top level.
-                TypesListItem *i = new TypesListItem(typesLV, maj);
-
-                if ( !patternFilter.isEmpty() )
-                    i->setOpen(true);
-
-                new TypesListItem(i, (*it2));
-            }
-        }
+    // insert all items and their group that match the filter
+    QListIterator<TypesListItem> it( m_itemList );
+    while ( it.current() ) {
+	if ( patternFilter.isEmpty() ||
+	     !((*it)->patterns().grep( patternFilter, false )).isEmpty() ) {
+	
+	    TypesListItem *group = m_majorMap[ (*it)->majorType() ];
+	    // QListView makes sure we don't insert a group-item more than once
+	    typesLV->insertItem( group );
+	    group->insertItem( *it );
+	}
+	++it;
     }
 }
 
 void FileTypesView::addType()
 {
-  QStringList groups;
-  QListViewItemIterator it(typesLV);
-  for (; it.current(); ++it) {
-    TypesListItem *current = (TypesListItem *) it.current();
-    if (!groups.contains(current->majorType()))
-      groups.append(current->majorType());
+  QStringList allGroups;
+  QMapIterator<QString,TypesListItem*> it = m_majorMap.begin();
+  while ( it != m_majorMap.end() ) {
+      allGroups.append( it.key() );
+      ++it;
   }
 
-  NewTypeDialog m(groups, this);
+  NewTypeDialog m(allGroups, this);
 
   if (m.exec()) {
     QListViewItemIterator it(typesLV);
@@ -205,24 +212,26 @@ void FileTypesView::addType()
                                             QString(), QString(),
                                             QStringList());
 
-    for (; it.current(); ++it) {
-      TypesListItem *current = (TypesListItem *) it.current();
-      if (current->majorType() == m.group()) {
-        TypesListItem *tli = new TypesListItem(current, mimetype, true);
-        if (!tli->parent()->isOpen())
-          tli->parent()->setOpen(true);
-        typesLV->setSelected(tli, true);
-        break;
-      }
+    TypesListItem *group = m_majorMap[ m.group() ];
+
+    // find out if our group has been filtered out -> insert if necessary
+    QListViewItem *item = typesLV->firstChild();
+    bool insert = true;
+    while ( item ) {
+	if ( item == group ) {
+	    insert = false;
+	    break;
+	}
+	item = item->nextSibling();
     }
-    if (!it.current()) {
-      // insert at top level.
-      TypesListItem *i = new TypesListItem(typesLV, mimetype);
-      TypesListItem *tli = new TypesListItem(i, mimetype, true);
-      if (!tli->parent()->isOpen())
-        tli->parent()->setOpen(true);
-      typesLV->setSelected(tli, true);
-    }
+    if ( insert )
+	typesLV->insertItem( group );
+
+    TypesListItem *tli = new TypesListItem(group, mimetype, true);
+    m_itemList.append( tli );
+
+    group->setOpen(true);
+    typesLV->setSelected(tli, true);
 
     setDirty(true);
   }
@@ -233,7 +242,10 @@ void FileTypesView::removeType()
   TypesListItem *current = (TypesListItem *) typesLV->currentItem();
   QListViewItem *li = 0L;
 
-  if (current && !current->isMeta())
+  if ( !current )
+      return;
+
+  if ( !current->isMeta() )
   {
     li = current->itemAbove();
     if (!li)
@@ -242,9 +254,12 @@ void FileTypesView::removeType()
       li = current->parent();
     removedList.append(current->name());
     current->parent()->takeItem(current);
+    m_itemList.removeRef( current );
     setDirty(true);
   }
-  typesLV->setSelected(li, true);
+
+  if ( li )
+      typesLV->setSelected(li, true);
 }
 
 void FileTypesView::slotDoubleClicked(QListViewItem *item)
@@ -325,6 +340,8 @@ void FileTypesView::save()
   // only send dcop signal if sync() was necessary.
   if (sync()) {
     DCOPClient *dcc = kapp->dcopClient();
+    if ( !dcc->isAttached() )
+	dcc->attach();
     dcc->send("kded", "kbuildsycoca", "recreate()", QByteArray());
   }
 }

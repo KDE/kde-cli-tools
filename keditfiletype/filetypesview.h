@@ -1,7 +1,12 @@
 #ifndef _FILETYPESVIEW_H
 #define _FILETYPESVIEW_H
 
+#include <qlist.h>
+#include <qmap.h>
+
 #include <kcmodule.h>
+
+#include "typeslistitem.h"
 
 class QLabel;
 class QListView;
@@ -41,7 +46,7 @@ protected slots:
   void setDirty(bool state);
 
 protected:
-  void readFileTypes(const QString &patternFilter = QString::null);
+    void readFileTypes();
 
 private:
   QListView *typesLV;
@@ -55,6 +60,8 @@ private:
   QLineEdit *patternFilterLE;
   QStringList removedList;
   bool m_dirty;
+  QMap<QString,TypesListItem*> m_majorMap;
+  QList<TypesListItem> m_itemList;
 };
 
 #endif
