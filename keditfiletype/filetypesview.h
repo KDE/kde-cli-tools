@@ -7,6 +7,7 @@ class QLabel;
 class QListView;
 class QListViewItem;
 class QListBox;
+class QPushButton;
 class KIconButton;
 class QLineEdit;
 class QComboBox;
@@ -43,6 +44,7 @@ protected:
 
 private:
   QListView *typesLV;
+  QPushButton *m_removeTypeB;
 
   QWidgetStack * m_widgetStack;
   FileTypeDetails * m_details;

@@ -71,12 +71,13 @@ FileTypesView::FileTypesView(QWidget *p, const char *name)
 
   QWhatsThis::add( addTypeB, i18n("Click here to add a new file type.") );
 
-  QPushButton *removeTypeB = new QPushButton(i18n("&Remove"), this);
-  connect(removeTypeB, SIGNAL(clicked()),
+  m_removeTypeB = new QPushButton(i18n("&Remove"), this);
+  connect(m_removeTypeB, SIGNAL(clicked()),
           this, SLOT(removeType()));
-  leftLayout->addWidget(removeTypeB, 3, 1);
+  leftLayout->addWidget(m_removeTypeB, 3, 1);
+  m_removeTypeB->setEnabled(false);
 
-  QWhatsThis::add( removeTypeB, i18n("Click here to remove the selected file type.") );
+  QWhatsThis::add( m_removeTypeB, i18n("Click here to remove the selected file type.") );
 
   // For the right panel, prepare a widget stack
   m_widgetStack = new QWidgetStack( this );
@@ -224,9 +225,8 @@ void FileTypesView::removeType()
   TypesListItem *current = (TypesListItem *) typesLV->currentItem();
   QListViewItem *li = 0L;
 
-  if (current->isMeta())
-    kapp->beep();
-  else {
+  if (current && !current->isMeta())
+  {
     li = current->itemAbove();
     if (!li)
       li = current->itemBelow();
@@ -234,10 +234,9 @@ void FileTypesView::removeType()
       li = current->parent();
     removedList.append(current->name());
     current->parent()->takeItem(current);
+    setDirty(true);
   }
   typesLV->setSelected(li, true);
-
-  setDirty(true);
 }
 
 void FileTypesView::slotDoubleClicked(QListViewItem *item)
@@ -250,6 +249,7 @@ void FileTypesView::updateDisplay(QListViewItem *item)
   if (!item)
   {
     m_widgetStack->raiseWidget( m_emptyWidget );
+    m_removeTypeB->setEnabled(false);
     return;
   }
 
@@ -260,11 +260,13 @@ void FileTypesView::updateDisplay(QListViewItem *item)
   {
     m_widgetStack->raiseWidget( m_groupDetails );
     m_groupDetails->setTypeItem( tlitem );
+    m_removeTypeB->setEnabled(false);
   }
   else
   {
     m_widgetStack->raiseWidget( m_details );
     m_details->setTypeItem( tlitem );
+    m_removeTypeB->setEnabled(true);
   }
 
   // Updating the display indirectly called change(true)
