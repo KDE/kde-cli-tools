@@ -56,43 +56,49 @@ int Repository::remove(const QCString &key)
 
 int Repository::removeSpecialKey(const QCString &key)
 {
-    bool found = false;
+    int found = -1;
     if ( !key.isEmpty() )
     {
-        RepoIterator it;
-        QCString var, group;
-        for (it=repo.begin(); it!=repo.end(); it++)
+        QValueStack<QCString> rm_keys;
+        for (RepoCIterator it=repo.begin(); it!=repo.end(); it++)
         {
-            group = it.data().group;
-            if (  key.find( group ) == 0 &&
+            if (  key.find( it.data().group ) == 0 &&
                   it.key().find( key ) >= 0 )
             {
-	        kdDebug(1205) << "Removed key: " << it.key() << endl;
-                repo.remove( it );
-                if(!found) found = true;
+                rm_keys.push(it.key());
+                found = 0;
             }
         }
+        while (!rm_keys.isEmpty())
+        {
+            kdDebug(1205) << "Removed key: " << rm_keys.top() << endl;
+            remove(rm_keys.pop());
+        }
     }
-    return (found ? 0:-1);
+    return found;
 }
 
 int Repository::removeGroup(const QCString &group)
 {
-    bool found = false;
+    int found = -1;
     if ( !group.isEmpty() )
     {
-        RepoIterator it;
-        for (it=repo.begin(); it!=repo.end(); it++)
+        QValueStack<QCString> rm_keys;
+        for (RepoCIterator it=repo.begin(); it!=repo.end(); it++)
         {
             if (it.data().group == group)
             {
-                kdDebug(1205) << "Removed key: " << it.key() << endl;
-                repo.remove(it);
-                if(!found) found = true;
+                rm_keys.push(it.key());
+                found = 0;
             }
         }
+        while (!rm_keys.isEmpty())
+        {
+            kdDebug(1205) << "Removed key: " << rm_keys.top() << endl;
+            remove(rm_keys.pop());
+        }
     }
-    return (found ? 0:-1);
+    return found;
 }
 
 int Repository::hasGroup(const QCString &group) const
