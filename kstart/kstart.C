@@ -181,7 +181,7 @@ int main( int argc, char *argv[] )
     if (!strcmp(argv[i],"-staysontop") ) staysOnTop = KWM::staysOnTop;
   }
 
-  KWMModuleApplication a (argc, argv);
+  KWMModuleApplication a (argc, argv, "kstart");
 
   fcntl(ConnectionNumber(qt_xdisplay()), F_SETFD, 1);
 
