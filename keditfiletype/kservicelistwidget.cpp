@@ -204,6 +204,7 @@ void KServiceListWidget::addService()
   if ( m_kind == SERVICELIST_APPLICATIONS )
   {
       KOpenWithDlg dlg(m_item->name(), QString::null, 0L);
+      dlg.setSaveNewApplications(true);
       if (dlg.exec() == false)
           return;
 
@@ -240,7 +241,8 @@ void KServiceListWidget::addService()
 
   QString desktopPath = service->desktopEntryPath();
 
-  servicesLB->insertItem( new KServiceListItem(desktopPath, m_kind) );
+  servicesLB->insertItem( new KServiceListItem(desktopPath, m_kind), 0 );
+  servicesLB->setCurrentItem(0);
 
   updatePreferredServices();
 
@@ -260,36 +262,26 @@ void KServiceListWidget::editService()
     // they don't have any parameters
     if ( m_kind == SERVICELIST_APPLICATIONS )
     {
-        // Just like popping up an add dialog except that we
-        // pass the current command line as a default
-        QListBoxItem *selItem = servicesLB->item(selected);
+      // Just like popping up an add dialog except that we
+      // pass the current command line as a default
+      QListBoxItem *selItem = servicesLB->item(selected);
 
-        KService::Ptr pService = KService::serviceByDesktopPath(
-            ((KServiceListItem*)selItem)->desktopPath );
+      KService::Ptr pService = KService::serviceByDesktopPath(
+          ((KServiceListItem*)selItem)->desktopPath );
 
-#if 0
-        KOpenWithDlg dlg(m_item->name(), pService->exec(), 0L);
-        if (dlg.exec() == false)
-            return;
+      QString path = pService->desktopEntryPath();
 
-        service = dlg.service();
+      // If the path to the desktop file is relative, try to get the full
+      // path from KStdDirs.
+      path = locate("apps", path);
+      KURL serviceURL;
+      serviceURL.setPath( path );
+      KFileItem item( serviceURL, "application/x-desktop", KFileItem::Unknown );
+      KPropertiesDialog dlg( &item, this, 0, true /*modal*/, false /*no auto-show*/ );
+      if ( dlg.exec() != QDialog::Accepted )
+           return;
+      service = pService;
 
-        Q_ASSERT(service);
-        if (!service)
-            return; // Don't crash if KOpenWith wasn't able to create service.
-#else
-        QString path = pService->desktopEntryPath();
-        // If the path to the desktop file is relative, try to get the full
-        // path from KStdDirs.
-        path = (path[0] == '/') ? path : locate("apps", path);
-        KURL serviceURL;
-        serviceURL.setPath( path );
-        KFileItem item( serviceURL, "application/x-desktop", KFileItem::Unknown );
-        KPropertiesDialog dlg( &item, this, 0, true /*modal*/, false /*no auto-show*/ );
-        if ( dlg.exec() != QDialog::Accepted )
-            return;
-        service = pService;
-#endif
       // Remove the old one...
       servicesLB->removeItem( selected );
 

@@ -369,14 +369,8 @@ void FileTypesView::save()
 {
   m_itemsModified.clear();
   if (sync(m_itemsModified)) {
-    // only send dcop signal if sync() was necessary.
-    DCOPClient *dcc = kapp->dcopClient();
-    if ( !dcc->isAttached() )
-	dcc->attach();
-    dcc->send("kded", "kbuildsycoca", "recreate()", QByteArray());
-    // send() returns immediately. This means we don't have to block the UI
-    // while kbuildsycoca runs, unlike KOpenWithDlg.
-    // We'll update the mimetype object when databaseChanged() is emitted.
+    // only rebuild if sync() was necessary
+    KService::rebuildKSycoca(this);
   }
 }
 

@@ -49,8 +49,7 @@ void FileTypeDialog::save()
 {
   if (m_item->isDirty()) {
     m_item->sync();
-    DCOPClient *dcc = kapp->dcopClient();
-    dcc->send("kded", "kbuildsycoca", "recreate()", QByteArray());
+    KService::rebuildKSycoca(this);
   }
 }
 
