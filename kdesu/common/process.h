@@ -77,12 +77,14 @@ protected:
     int WaitSlave();
     int ConverseStub(bool check_only);
     int waitForChild(bool echo);
-    int disableLocalEcho();
+    int enableLocalEcho(bool enable=true);
+    QCString readLine();
 
 private:
     PTY *m_pPTY;
     KCookie *m_pCookie;
     QCString commaSeparatedList(QStringList);
+    QCString m_Inbuf;
 };
 
 

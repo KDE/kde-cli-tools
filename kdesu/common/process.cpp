@@ -74,6 +74,7 @@ int PtyProcess::init()
     }
     m_TTY = m_pPTY->ptsname();
     m_pCookie = new KCookie();
+    m_Inbuf.resize(0);
     return 0;
 }
 
@@ -83,6 +84,63 @@ PtyProcess::~PtyProcess()
     delete m_pPTY;
 }
     
+
+/*
+ * Read one line of input. The terminal is in canonical mode, so you always
+ * read a line at at time, but it's possible to receive multiple lines in
+ * one time.
+ */
+
+QCString PtyProcess::readLine()
+{
+    int pos;
+    QCString ret;
+
+    if (!m_Inbuf.isEmpty()) {
+	pos = m_Inbuf.find('\n');
+	if (pos == -1) {
+	    ret = m_Inbuf;
+	    m_Inbuf.resize(0);
+	} else {
+	    ret = m_Inbuf.left(pos);
+	    m_Inbuf = m_Inbuf.mid(pos+1);
+	}
+	return ret;
+    }
+
+    int nbytes;
+    char buf[256];
+    while (1) {
+	nbytes = read(m_Fd, buf, 255);
+	if (nbytes == -1) {
+	    if (errno == EINTR)
+		continue;
+	    else {
+		kDebugPError("%s: read()", ID);
+		break;
+	    }
+	}
+	if (nbytes == 0)
+	    break;	// eof
+
+	buf[nbytes] = '\000';
+	m_Inbuf += buf;
+
+	pos = m_Inbuf.find('\n');
+	if (pos == -1) {
+	    ret = m_Inbuf;
+	    m_Inbuf.resize(0);
+	} else {
+	    ret = m_Inbuf.left(pos);
+	    m_Inbuf = m_Inbuf.mid(pos+1);
+	}
+	break;
+    }
+
+    return ret;
+}
+
+	
 /*
  * Wait until the terminal is set into no echo mode. At least one su 
  * (RH6 w/ Linux-PAM patches) sets noecho mode AFTER writing the Password: 
@@ -123,7 +181,7 @@ int PtyProcess::WaitSlave()
 }
 
 
-int PtyProcess::disableLocalEcho()
+int PtyProcess::enableLocalEcho(bool enable)
 {
     int slave = open(m_TTY, O_RDWR);
     if (slave < 0) {
@@ -135,7 +193,10 @@ int PtyProcess::disableLocalEcho()
 	kDebugPError("%s: tcgetattr()", ID);
 	close(slave); return -1;
     }
-    tio.c_lflag &= ~ECHO;
+    if (enable)
+	tio.c_lflag |= ECHO;
+    else
+	tio.c_lflag &= ~ECHO;
     if (tcsetattr(slave, TCSANOW, &tio) < 0) {
 	kDebugPError("%s: tcsetattr()", ID);
 	close(slave); return -1;
@@ -168,71 +229,57 @@ QCString PtyProcess::commaSeparatedList(QStringList lst)
 
 int PtyProcess::ConverseStub(bool check_only)
 {
-    char buf[256];
-    int nbytes, pos;
-
     // This makes parsing a lot easier.
-    disableLocalEcho();
+    enableLocalEcho(false);
 
-    QCString inbuf, line;
+    QCString line;
     while (1) {
-	nbytes = read(m_Fd, buf, 255);
-	if (nbytes == -1) {
-	    if (errno == EINTR) continue;
-	    else return -1;
-	}
-	if (nbytes == 0)
+	line = readLine();
+	if (line.isNull())
 	    return -1;
-	buf[nbytes] = '\000';
-
-	inbuf += buf;
-	while ((pos = inbuf.find('\n')) != -1) {
-	    line = inbuf.left(pos);
-	    inbuf.remove(0, pos+1);
-	    if (!strcmp(line, "kdesu_stub")) {
-		if (check_only)
-		    write(m_Fd, "stop\n", 5);
-		else
-		    write(m_Fd, "ok\n", 3);
-	    } else if (!strcmp(line, "display")) {
-		QCString str = display().latin1();
-		write(m_Fd, str, str.length());
-		write(m_Fd, "\n", 1);
-	    } else if (!strcmp(line, "display_auth")) {
-		QCString str = displayAuth().latin1();
-		write(m_Fd, str, str.length());
-		write(m_Fd, "\n", 1);
-	    } else if (!strcmp(line, "dcopserver")) {
-		QCString str = commaSeparatedList(dcopServer());
-		write(m_Fd, str, str.length());
-		write(m_Fd, "\n", 1);
-	    } else if (!strcmp(line, "dcop_auth")) {
-		QCString str = commaSeparatedList(dcopAuth());
-		write(m_Fd, str, str.length());
-		write(m_Fd, "\n", 1);
-	    } else if (!strcmp(line, "ice_auth")) {
-		QCString str = commaSeparatedList(iceAuth());
-		write(m_Fd, str, str.length());
-		write(m_Fd, "\n", 1);
-	    } else if (!strcmp(line, "command")) {
-		write(m_Fd, m_Command, m_Command.length());
-		write(m_Fd, "\n", 1);
-	    } else if (!strcmp(line, "path")) {
-		char *path = getenv("PATH");
-		if (path)
-		    write(m_Fd, path, strlen(path));
-		write(m_Fd, "\n", 1);
-	    } else if (!strcmp(line, "build_sycoca")) {
-		if (m_bXOnly)
-		    write(m_Fd, "no\n", 3);
-		else
-		    write(m_Fd, "yes\n", 4);
-	    } else if (!strcmp(line, "end")) {
-		return 0;
-	    } else {
-		kDebugWarning("%s: Unknown request: -->%s<--", ID, buf);
-		return -1;
-	    }
+	if (line == "kdesu_stub") {
+	    if (check_only)
+		write(m_Fd, "stop\n", 5);
+	    else
+		write(m_Fd, "ok\n", 3);
+	} else if (line == "display") {
+	    QCString str = display().latin1();
+	    write(m_Fd, str, str.length());
+	    write(m_Fd, "\n", 1);
+	} else if (line == "display_auth") {
+	    QCString str = displayAuth().latin1();
+	    write(m_Fd, str, str.length());
+	    write(m_Fd, "\n", 1);
+	} else if (line == "dcopserver") {
+	    QCString str = commaSeparatedList(dcopServer());
+	    write(m_Fd, str, str.length());
+	    write(m_Fd, "\n", 1);
+	} else if (line == "dcop_auth") {
+	    QCString str = commaSeparatedList(dcopAuth());
+	    write(m_Fd, str, str.length());
+	    write(m_Fd, "\n", 1);
+	} else if (line == "ice_auth") {
+	    QCString str = commaSeparatedList(iceAuth());
+	    write(m_Fd, str, str.length());
+	    write(m_Fd, "\n", 1);
+	} else if (line == "command") {
+	    write(m_Fd, m_Command, m_Command.length());
+	    write(m_Fd, "\n", 1);
+	} else if (line == "path") {
+	    char *path = getenv("PATH");
+	    if (path)
+		write(m_Fd, path, strlen(path));
+	    write(m_Fd, "\n", 1);
+	} else if (line == "build_sycoca") {
+	    if (m_bXOnly)
+		write(m_Fd, "no\n", 3);
+	    else
+		write(m_Fd, "yes\n", 4);
+	} else if (line == "end") {
+	    return 0;
+	} else {
+	    kDebugWarning("%s: Unknown request: -->%s<--", ID, line.data());
+	    return -1;
 	}
     }
     return 0;

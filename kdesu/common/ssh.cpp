@@ -190,30 +190,21 @@ QString SshProcess::dcopForward()
 
 int SshProcess::ConverseSsh(const char *password, int check)
 {
-    char buf[256]; 
-    int nbytes;
-    int i, j, colon, state;
+    unsigned i, j, colon;
 
-    state = 0;
+    QCString line;
+    int state = 0;
+
     while (state < 2) {
-	nbytes = read(m_Fd, buf, 255);
-	if (nbytes == -1) {
-	    if (errno == EINTR) continue;
-	    else {
-		kDebugPError("%s: read()", ID);
-		return -1;
-	    }
-	}
-	if (nbytes == 0)
+	line = readLine();
+	if (line.isNull())
 	    return -1;
-	buf[nbytes] = '\000';
-
 	switch (state) {
 	case 0:
 	    // Check for "kdesu_stub" header.
-	    if (!strcmp(buf, "kdesu_stub\n")) {
+	    if (line == "kdesu_stub") {
 		// We don't want this echoed back.
-		disableLocalEcho();
+		enableLocalEcho(false);
 		if (check > 0)
 		    write(m_Fd, "stop\n", 5);
 		else
@@ -223,17 +214,17 @@ int SshProcess::ConverseSsh(const char *password, int check)
 	    }
 
 	    // Match "Password: " with the regex ^[^:]+:[\w]*$.
-	    for (i=0,j=0,colon=0; i<nbytes; i++) {
-		if (buf[i] == ':') {
+	    for (i=0,j=0,colon=0; i<line.length(); i++) {
+		if (line[i] == ':') {
 		    j = i; colon++;
 		    continue;
 		}
-		if (!isspace(buf[i]))
+		if (!isspace(line[i]))
 		    j++;
 	    }
-	    if ((colon == 1) && (buf[j] == ':')) {
+	    if ((colon == 1) && (line[j] == ':')) {
 		if ((check > 1) || (password == 0L)) {
-		    m_Prompt = buf;
+		    m_Prompt = line;
 		    return 1;
 		}
 		WaitSlave();
@@ -243,13 +234,15 @@ int SshProcess::ConverseSsh(const char *password, int check)
 		break;
 	    }
 	    if (m_bTerminal)
-		fwrite(buf, sizeof(char), nbytes, stdout);
+		fputs(line, stdout);
 	    break;
 
 	case 1:
-	    if (strchr(buf, '\n'))
+	    if (line.isEmpty()) {
 		state++;
-	    break;
+		break;
+	    }
+	    return -1;
 	}
     }
 

@@ -3,7 +3,7 @@
  * $Id$
  *
  * This file is part of the KDE project, module kdesu.
- * Copyright (C) 1999,2000 Geert Jansen <g.t.jansen@stud.tue.nl>
+ * Copyright (C) 1999,2000 Geert Jansen <jansen@kde.org>
  */
 
 #ifndef __SU_h_Included__

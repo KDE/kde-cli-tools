@@ -124,26 +124,17 @@ int SuProcess::exec(const char *password, int check)
 
 int SuProcess::ConverseSU(const char *password)
 {	
-    char buf[256]; 
-    int nbytes, i;
     int state = 0;
 
+    QCString line;
     while (state < 2) {
-	nbytes = read(m_Fd, buf, 255);
-	if (nbytes == -1) {
-	    if (errno == EINTR) continue;
-	    else {
-		kDebugError("%s: read(): %m", ID);
-		return -1;
-	    }
-	}
-	if (nbytes == 0)
+	line = readLine(); 
+	if (line.isNull())
 	    return -1;
-	buf[nbytes] = '\000';
 	switch (state) {
 	case 0:
 	    // Write password
-	    if (strchr(buf, ':')) {
+	    if (line.contains(':')) {
 		WaitSlave();
 		write(m_Fd, password, strlen(password));
 		write(m_Fd, "\n", 1);
@@ -151,11 +142,11 @@ int SuProcess::ConverseSU(const char *password)
 	    } 
 	    break;
 	case 1:
-	    // Wait for newline
-	    for (i=0; (i<nbytes) && (buf[i] != '\n'); i++);
-	    if (i < nbytes)
+	    if (line.isEmpty()) {
 		state++;
-	    break;
+		break;
+	    }
+	    return -1;
 	}
     }
     return 0;
