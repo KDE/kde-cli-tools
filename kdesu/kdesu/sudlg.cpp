@@ -54,21 +54,21 @@ bool KDEsuDialog::checkPassword(const char *password)
 
     case SuProcess::SuNotFound:
         KMessageBox::sorry(this,
-		i18n("The program 'su' is not found!\n"
-		     "Make sure your PATH is set correctly."));
+		i18n("The program 'su' is not found;\n"
+		     "make sure your PATH is set correctly."));
 	done(Rejected);
 	return false;
 
     case SuProcess::SuNotAllowed:
         KMessageBox::sorry(this,
-		i18n("You are not allowed to use 'su'!\n"
-		     "On some systems, you need to be in a special "
+		i18n("You are not allowed to use 'su';\n"
+		     "on some systems, you need to be in a special "
 		     "group (often: wheel) to use this program."));
 	done(Rejected);
 	return false;
 
     case SuProcess::SuIncorrectPassword:
-        KMessageBox::sorry(this, i18n("Incorrect password! Please try again."));
+        KMessageBox::sorry(this, i18n("Incorrect password; please try again."));
 	return false;
 
     default:

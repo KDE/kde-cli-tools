@@ -223,7 +223,7 @@ static int startApp()
     {
         if( args->count() == 0 )
         {
-            KCmdLineArgs::usage(i18n("No command specified!"));
+            KCmdLineArgs::usage(i18n("No command specified."));
             exit(1);
         }
         command = args->arg(0);
@@ -328,7 +328,7 @@ static int startApp()
     int needpw = proc.checkNeedPassword();
     if (needpw < 0)
     {
-        QString err = i18n("Su returned with an error!\n");
+        QString err = i18n("Su returned with an error.\n");
         KMessageBox::error(0L, err);
         exit(1);
     }
