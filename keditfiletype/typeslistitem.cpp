@@ -118,6 +118,39 @@ void TypesListItem::getServiceOffers( QStringList & appServices, QStringList & e
     embedServices.append((*it).service()->desktopEntryPath());
 }
 
+bool TypesListItem::isMimeTypeDirty() const
+{
+  if ((m_mimetype->name() != name()) &&
+      (name() != "application/octet-stream"))
+  {
+    kdDebug() << "Mimetype Name Dirty: old=" << m_mimetype->name() << " name()=" << name() << endl;
+    return true;
+  }
+  if (m_mimetype->comment(QString(), false) != m_comment)
+  {
+    kdDebug() << "Mimetype Comment Dirty: old=" << m_mimetype->comment(QString(),false) << " m_comment=" << m_comment << endl;
+    return true;
+  }
+  if (m_mimetype->icon(QString(), false) != m_icon)
+  {
+    kdDebug() << "Mimetype Icon Dirty: old=" << m_mimetype->icon(QString(),false) << " m_icon=" << m_icon << endl;
+    return true;
+  }
+
+  if (m_mimetype->patterns() != m_patterns)
+  {
+    kdDebug() << "Mimetype Patterns Dirty: old=" << m_mimetype->patterns().join(";")
+              << " m_patterns=" << m_patterns.join(";") << endl;
+    return true;
+  }
+
+  QVariant v = m_mimetype->property( "X-KDE-AutoEmbed" );
+  unsigned int oldAutoEmbed = v.isValid() ? (v.toBool() ? 0 : 1) : 2;
+  if ( oldAutoEmbed != m_autoEmbed )
+    return true;
+  return false;
+}
+
 bool TypesListItem::isDirty() const
 {
   if ( !m_bFullInit)
@@ -133,35 +166,6 @@ bool TypesListItem::isDirty() const
 
   if ( !isMeta() )
   {
-
-    if ((m_mimetype->name() != name()) &&
-        (name() != "application/octet-stream"))
-    {
-      kdDebug() << "Mimetype Name Dirty: old=" << m_mimetype->name() << " name()=" << name() << endl;
-      return true;
-    }
-    if (m_mimetype->comment(QString(), false) != m_comment)
-    {
-      kdDebug() << "Mimetype Comment Dirty: old=" << m_mimetype->comment(QString(),false) << " m_comment=" << m_comment << endl;
-      return true;
-    }
-    if (m_mimetype->icon(QString(), false) != m_icon)
-    {
-      kdDebug() << "Mimetype Icon Dirty: old=" << m_mimetype->icon(QString(),false) << " m_icon=" << m_icon << endl;
-      return true;
-    }
-
-    if (m_mimetype->patterns() != m_patterns)
-    {
-      kdDebug() << "Mimetype Patterns Dirty: old=" << m_mimetype->patterns().join(";")
-                << " m_patterns=" << m_patterns.join(";") << endl;
-      return true;
-    }
-
-    // not used anywhere?
-//     KServiceTypeProfile::OfferList offerList =
-//       KServiceTypeProfile::offers(m_mimetype->name());
-
     QStringList oldAppServices;
     QStringList oldEmbedServices;
     getServiceOffers( oldAppServices, oldEmbedServices );
@@ -178,14 +182,11 @@ bool TypesListItem::isDirty() const
                 << " m_embedServices=" << m_embedServices.join(";") << endl;
       return true;
     }
-
-    QVariant v = m_mimetype->property( "X-KDE-AutoEmbed" );
-    unsigned int oldAutoEmbed = v.isValid() ? (v.toBool() ? 0 : 1) : 2;
-    if ( oldAutoEmbed != m_autoEmbed )
+    if (isMimeTypeDirty())
       return true;
-
-  } else {
-
+  }
+  else
+  {
     KConfig config("konquerorrc", true);
     config.setGroup("EmbedSettings");
     bool defaultValue = defaultEmbeddingSetting(m_major);
@@ -208,25 +209,29 @@ void TypesListItem::sync()
     config.writeEntry( QString::fromLatin1("embed-")+m_major, m_autoEmbed == 0 );
     return;
   }
-  QString loc = m_mimetype->desktopEntryPath();
-  loc = locateLocal("mime", loc);
 
-  KSimpleConfig config( loc );
-  config.setDesktopGroup();
+  if (isMimeTypeDirty())
+  {
+    QString loc = m_mimetype->desktopEntryPath();
+    loc = locateLocal("mime", loc);
 
-  config.writeEntry("Type", "MimeType");
-  config.writeEntry("MimeType", name());
-  config.writeEntry("Icon", m_icon);
-  config.writeEntry("Patterns", m_patterns, ';');
-  config.writeEntry("Comment", m_comment);
-  config.writeEntry("Hidden", false);
+    KSimpleConfig config( loc );
+    config.setDesktopGroup();
 
-  if ( m_autoEmbed == 2 )
-    config.deleteEntry( QString::fromLatin1("X-KDE-AutoEmbed"), false );
-  else
-    config.writeEntry( QString::fromLatin1("X-KDE-AutoEmbed"), m_autoEmbed == 0 );
+    config.writeEntry("Type", "MimeType");
+    config.writeEntry("MimeType", name());
+    config.writeEntry("Icon", m_icon);
+    config.writeEntry("Patterns", m_patterns, ';');
+    config.writeEntry("Comment", m_comment);
+    config.writeEntry("Hidden", false);
 
-  m_bNewItem = false;
+    if ( m_autoEmbed == 2 )
+      config.deleteEntry( QString::fromLatin1("X-KDE-AutoEmbed"), false );
+    else
+      config.writeEntry( QString::fromLatin1("X-KDE-AutoEmbed"), m_autoEmbed == 0 );
+
+    m_bNewItem = false;
+  }
 
   KConfig profile("profilerc", false, false);
 

@@ -53,6 +53,7 @@ public:
   void setAutoEmbed( int a ) { m_autoEmbed = a; }
   const KMimeType::Ptr& mimeType() const { return m_mimetype; }
 
+  bool isMimeTypeDirty() const; // whether the mimetype .desktop file needs saving
   bool isDirty() const;
   void sync();
   void setup();
