@@ -152,7 +152,7 @@ int ConnectionHandler::doCommand(QCString buf)
 	return -1;
     }
 
-    QCString key, command, pass, name, user, value;
+    QCString key, command, pass, name, user, value, env_check;
     Data_entry data;
 
     // kdDebug(1205) << "Received command: " << buf << endl;
@@ -232,7 +232,9 @@ int ConnectionHandler::doCommand(QCString buf)
             {
                if (tok != Lexer::Tok_str)
 	           goto parse_error;
-	       env.append(l->lval());
+	       QCString env_str = l->lval();
+	       env.append(env_str);
+	       env_check += "*"+env_str;
                tok = l->lex();
             }
 	}
@@ -242,8 +244,13 @@ int ConnectionHandler::doCommand(QCString buf)
 	    auth_user = "root";
 	else
 	    auth_user = user;
-	key = makeKey(0, m_Host, auth_user, command);
-	pass = repo->find(key);
+	key = makeKey(2, m_Host, auth_user, command);
+	// We only use the command if the environment is the same.
+	if (repo->find(key) == env_check)
+	{
+           key = makeKey(0, m_Host, auth_user, command);
+           pass = repo->find(key);
+        }
 	if (pass.isNull())
 	{
 	    if (m_Pass.isNull())
@@ -251,8 +258,13 @@ int ConnectionHandler::doCommand(QCString buf)
 		respond(Res_NO);
 		break;
 	    }
+	    data.value = env_check;
+	    data.timeout = m_Timeout;
+            key = makeKey(2, m_Host, auth_user, command);
+	    repo->add(key, data);
 	    data.value = m_Pass;
 	    data.timeout = m_Timeout;
+            key = makeKey(0, m_Host, auth_user, command);
 	    repo->add(key, data);
 	    pass = m_Pass;
 	}
