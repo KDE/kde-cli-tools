@@ -13,6 +13,12 @@ libkcm_filetypes_la_SOURCES = \
 noinst_HEADERS = filetypesview.h filetypedetails.h \
 	typeslistitem.h newtypedlg.h
 
+bin_PROGRAMS = keditfiletype
+
+keditfiletype_SOURCES = keditfiletype.cpp
+keditfiletype_LDADD = libkcm_filetypes.la
+keditfiletype_LDFLAGS = $(all_libraries)
+
 DISTCLEANFILES = $(libkcm_filetypes_la_METASOURCES)
 
 messages:

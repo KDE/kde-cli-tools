@@ -1,0 +1,84 @@
+// Copyright David Faure (todo insert GPL)
+#include "filetypedetails.h"
+#include "typeslistitem.h"
+#include "keditfiletype.h"
+
+#include <kapp.h>
+#include <kaboutdata.h>
+#include <kdebug.h>
+#include <kcmdlineargs.h>
+#include <klocale.h>
+
+FileTypeDialog::FileTypeDialog( KMimeType::Ptr mime )
+  : KDialogBase( 0L, 0, true, QString::null, /* Help | */ Cancel | Apply | Ok,
+                 Ok, false )
+{
+  m_details = new FileTypeDetails( this );
+  QListView * dummyListView = new QListView( m_details );
+  dummyListView->hide();
+  m_item = new TypesListItem( dummyListView, mime );
+  m_details->setTypeItem( m_item );
+
+  // This code is very similar to kcdialog.cpp
+  setMainWidget( m_details );
+  connect(m_details, SIGNAL(changed(bool)), this, SLOT(clientChanged(bool)));
+  // TODO setHelp()
+  enableButton(Apply, false);
+}
+
+// Why doesn't kcmshell filetypes have Reset ? Weird.
+
+void FileTypeDialog::slotApply()
+{
+  // save();
+}
+
+void FileTypeDialog::slotOk()
+{
+  // save();
+  accept();
+}
+
+void FileTypeDialog::clientChanged(bool state)
+{
+  // enable/disable buttons
+  enableButton(User1, state);
+  enableButton(Apply, state);
+}
+
+#include "keditfiletype.moc"
+
+static KCmdLineOptions options[] =
+{
+  { "+mimetype",   I18N_NOOP("File type to edit (e.g. text/html)"), 0 },
+  { 0, 0, 0}
+};
+
+int main(int argc, char ** argv)
+{
+  KAboutData aboutData( "keditfiletype", I18N_NOOP("KEditFileType"), "1.0",
+                        I18N_NOOP("KDE file type editor - simplified version for editing a single file type"),
+                        KAboutData::License_GPL,
+                        I18N_NOOP("(c) 2000, KDE developers") );
+  aboutData.addAuthor("Preston Brown",0, "pbrown@kde.org");
+  aboutData.addAuthor("David Faure",0, "faure@kde.org");
+
+  KCmdLineArgs::init( argc, argv, &aboutData );
+  KCmdLineArgs::addCmdLineOptions( options ); // Add our own options.
+  KApplication app;
+  KCmdLineArgs *args = KCmdLineArgs::parsedArgs();
+  KGlobal::locale()->insertCatalogue("filetypes");
+  
+  KMimeType::Ptr mime = KMimeType::mimeType( args->arg(0) );
+  if (!mime)
+    kdFatal() << "Mimetype " << args->arg(0) << " not found" << endl;
+
+  args->clear();
+  FileTypeDialog * dlg = new FileTypeDialog( mime );
+  dlg->setCaption( i18n("Edit File Type %1").arg(mime->name()) );
+  dlg->exec();
+  delete dlg;
+
+  return 0;
+}
+
