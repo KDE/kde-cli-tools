@@ -1,0 +1,46 @@
+dnl Check for su
+AC_MSG_CHECKING(for _PATH_SU)
+AC_EGREP_CPP(su_is_there,
+[#include <paths.h>
+ #ifdef _PATH_SU
+ su_is_there
+ #endif
+], path_su=yes, path_su=no)
+if test "$path_su" = "yes"; then
+    AC_MSG_RESULT(paths.h)
+else
+    AC_MSG_RESULT(no)
+    AC_PATH_PROG(path_su, "su", "no")
+    if test "$path_su" = "no"; then
+	AC_MSG_ERROR(su was not found!)
+    else
+	AC_DEFINE_UNQUOTED(_PATH_SU, "$path_su")
+    fi
+fi
+
+dnl Check for "struct ucred"
+AC_MSG_CHECKING("struct ucred")
+AC_EGREP_HEADER([struct ucred], [sys/socket.h], have_ucred=yes)
+if test "$have_ucred" = "yes"; then
+    AC_DEFINE(HAVE_STRUCT_UCRED)
+    AC_MSG_RESULT(yes)
+else
+    AC_MSG_RESULT(no)
+fi
+
+dnl Check for the group "nogroup". Use -2 otherwise.
+AC_MSG_CHECKING(nogroup)
+AC_TRY_RUN([
+    #include <grp.h>
+    #include <sys/types.h>
+
+    int main() 
+    {
+	struct group *grp = getgrnam("nogroup");
+	if (grp) return 0;
+	return 1;
+    }
+], nogroup=nogroup, nogroup=65534, nogroup=65534)
+AC_MSG_RESULT($nogroup)
+AC_SUBST(nogroup)
+
