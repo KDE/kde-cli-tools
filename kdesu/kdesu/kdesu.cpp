@@ -35,6 +35,7 @@
 #include <kaboutdata.h>
 #include <kcmdlineargs.h>
 #include <kmessagebox.h>
+#include <krun.h>
 
 #include <kdesu/defaults.h>
 #include <kdesu/su.h>
@@ -182,8 +183,10 @@ int main(int argc, char *argv[])
     command = args->getOption("c");
     for (int i=0; i<args->count(); i++)
     {
+        QString arg = QFile::decodeName(args->arg(i));
+        KRun::shellQuote(arg);
 	command += " ";
-	command += args->arg(i);
+	command += QFile::encodeName(arg);
     }
     }
     else {
@@ -195,8 +198,10 @@ int main(int argc, char *argv[])
     command = args->arg(0); 
     for (int i=1; i<args->count(); i++) 
     {
+        QString arg = QFile::decodeName(args->arg(i));
+        KRun::shellQuote(arg);
 	command += " ";
-	command += args->arg(i);
+	command += QFile::encodeName(arg);
     }}
 
 //  CJM - Test lines remove when working

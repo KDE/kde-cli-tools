@@ -6,7 +6,7 @@ INCLUDES= $(all_includes)
 bin_PROGRAMS = 	kdesu
 kdesu_SOURCES = kdesu.cpp sudlg.cpp
 kdesu_LDFLAGS = $(all_libraries) $(KDE_RPATH)
-kdesu_LDADD   = $(LIB_KDEUI) -lkdesu
+kdesu_LDADD   = $(LIB_KIO) -lkdesu
 kdesu_METASOURCES =  AUTO
 noinst_HEADERS = sudlg.h
 
