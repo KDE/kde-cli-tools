@@ -1,22 +1,22 @@
 /* Read KGlobal::config() entries - for use in shell scripts.
  * (c) 2001 Red Hat, Inc.
  * Programmed by Bernhard Rosenkraenzer <bero@redhat.com>
- * 
+ *
  * If --type is specified as bool, the return value is 0 if the value
  * is set, 1 if it isn't set. There is no output.
- * 
+ *
  * If --type is specified as num, the return value matches the value
  * of the key. There is no output.
- * 
+ *
  * If --type is not set, the value of the key is simply printed to stdout.
- * 
+ *
  * Usage examples:
  *	if kreadconfig --group KDE --key macStyle --type bool; then
  *		echo "We're using Mac-Style menus."
  *	else
  *		echo "We're using normal menus."
  *	fi
- *	
+ *
  *	TRASH=`kreadconfig --group Paths --key Trash`
  *	if test -n "$TRASH"; then
  *		mv someFile "$TRASH"
@@ -30,7 +30,8 @@
 #include <kcmdlineargs.h>
 #include <klocale.h>
 #include <kaboutdata.h>
-#include <iostream>
+#include <stdio.h>
+
 static KCmdLineOptions options[] =
 {
 	{ "group <group>", I18N_NOOP("Group to look in"), "KDE" },
@@ -55,7 +56,7 @@ int main(int argc, char **argv)
 	QString key=QString::fromLatin1(args->getOption("key"));
 	QCString dflt=args->getOption("default");
 	QCString type=args->getOption("type").lower();
-	
+
 	KApplication app( false, false ); // no styles, no gui
 
 	KConfig *konfig=KGlobal::config();
@@ -68,7 +69,7 @@ int main(int argc, char **argv)
 		return konfig->readLongNumEntry(key, dflt.toLong());
 	} else {
 		/* Assume it's a string... */
-		cout << konfig->readEntry(key, dflt).latin1() << endl;
+                fprintf(stdout, "%s\n", konfig->readEntry(key, dflt).latin1());
 		return 0;
 	}
 }
