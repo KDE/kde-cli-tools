@@ -111,7 +111,7 @@ void KStart::applyStyle(Window w) {
 int main( int argc, char *argv[] )
 {
   if (argc <= 2) {
-      KApplication dummyForI18n(argc,argv);
+      KApplication dummyForI18n(argc,argv, "kstart");
       printf(KSTART_VERSION);
       printf(i18n(
        "\n Copyright (C) 1997, 1998 Matthias Ettrich (ettrich@kde.org)\n"
