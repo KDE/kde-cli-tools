@@ -1,5 +1,5 @@
 
-#include <qlistview.h>
+#include <klistview.h>
 #include <qlabel.h>
 #include <qwhatsthis.h>
 #include <qpushbutton.h>
@@ -18,7 +18,6 @@
 #include "filetypedetails.h"
 #include "filetypesview.h"
 
-
 FileTypesView::FileTypesView(QWidget *p, const char *name)
   : KCModule(p, name)
 {
@@ -28,14 +27,14 @@ FileTypesView::FileTypesView(QWidget *p, const char *name)
   QHBoxLayout *topLayout = new QHBoxLayout(this, KDialog::marginHint(),
 					   KDialog::spacingHint());
 
-  QGridLayout *leftLayout = new QGridLayout(3, 2);
-  topLayout->addLayout(leftLayout, 2);
+  QGridLayout *leftLayout = new QGridLayout(4, 2);
+  topLayout->addLayout(leftLayout, 0);
 
   QLabel *patternFilterLBL = new QLabel( i18n("Find filename pattern"), this );
-  leftLayout->addWidget(patternFilterLBL, 0, 0);
+  leftLayout->addMultiCellWidget(patternFilterLBL, 0, 0, 0, 1);
 
   patternFilterLE = new QLineEdit(this);
-  leftLayout->addWidget(patternFilterLE, 0, 1);
+  leftLayout->addMultiCellWidget(patternFilterLE, 1, 1, 0, 1);
 
   connect(patternFilterLE, SIGNAL(textChanged(const QString &)),
 	  this, SLOT(slotFilter(const QString &)));
@@ -46,11 +45,11 @@ FileTypesView::FileTypesView(QWidget *p, const char *name)
   QWhatsThis::add( patternFilterLE, wtstr );
   QWhatsThis::add( patternFilterLBL, wtstr );
 
-  typesLV = new QListView(this);
+  typesLV = new KListView(this);
   typesLV->setRootIsDecorated(true);
 
   typesLV->addColumn(i18n("Known Types"));
-  leftLayout->addMultiCellWidget(typesLV, 1, 1, 0, 1);
+  leftLayout->addMultiCellWidget(typesLV, 2, 2, 0, 1);
   connect(typesLV, SIGNAL(selectionChanged(QListViewItem *)),
           this, SLOT(updateDisplay(QListViewItem *)));
 
@@ -63,23 +62,29 @@ FileTypesView::FileTypesView(QWidget *p, const char *name)
   QPushButton *addTypeB = new QPushButton(i18n("&Add..."), this);
   connect(addTypeB, SIGNAL(clicked()),
           this, SLOT(addType()));
-  leftLayout->addWidget(addTypeB, 2, 0);
+  leftLayout->addWidget(addTypeB, 3, 0);
 
   QWhatsThis::add( addTypeB, i18n("Click here to add a new file type.") );
 
   QPushButton *removeTypeB = new QPushButton(i18n("&Remove"), this);
   connect(removeTypeB, SIGNAL(clicked()),
           this, SLOT(removeType()));
-  leftLayout->addWidget(removeTypeB, 2, 1);
+  leftLayout->addWidget(removeTypeB, 3, 1);
 
   QWhatsThis::add( removeTypeB, i18n("Click here to remove the selected file type.") );
 
   m_details = new FileTypeDetails( this );
   connect( m_details, SIGNAL( dirty() ),
            this, SLOT( setDirty() ) );
-  topLayout->addWidget( m_details, 3);
+  topLayout->addWidget( m_details, 100 );
 
   init();
+
+  // Since we have filled in the list once and for all, set width correspondingly,
+  // to avoid horizontal scrollbars (DF).
+  typesLV->setColumnWidth(0, typesLV->sizeHint().width() );
+  typesLV->setMinimumWidth( typesLV->sizeHint().width() );
+
   setDirty(false);
 }
 
