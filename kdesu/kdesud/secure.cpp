@@ -50,8 +50,13 @@ SocketSecurity::SocketSecurity(int sockfd)
 
 SocketSecurity::SocketSecurity(int sockfd)
 {
-    kdWarning() << "Using void socket security. Please add support for your" << endl;
-    kdWarning() << "platform to kdesu/kdesud/secure.cpp" << endl;
+    static bool warned_him = FALSE;
+
+    if (!warned_him) {
+        kdWarning() << "Using void socket security. Please add support for your" << endl;
+        kdWarning() << "platform to kdesu/kdesud/secure.cpp" << endl;
+        warned_him = TRUE;
+    }
 
     // This passes the test made in handler.cpp
     cred.uid = getuid();
