@@ -22,3 +22,5 @@ install-exec-local:
 	@(chown root.@nogroup@ $(bindir)/kdesud && chmod 2755  $(bindir)/kdesud) \
 	|| echo "Error: Could not install kdesud as setgid nogroup!!\n" \
 	"The password caching feature is disabled."
+
+messages:

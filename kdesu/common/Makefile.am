@@ -7,3 +7,5 @@ libkdesu_a_SOURCES = pty.cpp client.cpp process.cpp pathsearch.cpp xcookie.cpp
 
 bin_PROGRAMS = kdesu_stub
 kdesu_stub_SOURCES = kdesu_stub.c
+
+messages:
