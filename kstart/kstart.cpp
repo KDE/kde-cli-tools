@@ -87,11 +87,23 @@ void KStart::windowAdded(WId w){
 
     KWin::Info info = KWin::info( w );
 
+    // always ignore these window types
+    if( info.windowType == NET::TopMenu
+        || info.windowType == NET::Toolbar
+        || info.windowType == NET::Desktop )
+        return;
+        
     if ( window) {
 	QString title = info.name;
 	QRegExp r( window );
 	if (r.match(title) == -1)
 	    return; // no match
+    } else {
+        // accept only "normal" windows
+        if( info.windowType != NET::Unknown
+            && info.windowType != NET::Normal
+            && info.windowType != NET::Dialog )
+            return;
     }
     applyStyle( w );
     QApplication::exit();
