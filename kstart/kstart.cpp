@@ -84,26 +84,30 @@ KStart::KStart()
         KStartupInfo::sendFinish( id ); // failed to start
 }
 
+const int SUPPORTED_WINDOW_TYPES_MASK = NET::NormalMask | NET::DesktopMask | NET::DockMask
+    | NET::ToolbarMask | NET::MenuMask | NET::DialogMask | NET::OverrideMask | NET::TopMenuMask
+    | NET::UtilityMask | NET::SplashMask;
+
 void KStart::windowAdded(WId w){
 
-    KWin::Info info = KWin::info( w );
+    KWin::WindowInfo info = KWin::windowInfo( w );
 
     // always ignore these window types
-    if( info.windowType == NET::TopMenu
-        || info.windowType == NET::Toolbar
-        || info.windowType == NET::Desktop )
+    if( info.windowType( SUPPORTED_WINDOW_TYPES_MASK ) == NET::TopMenu
+        || info.windowType( SUPPORTED_WINDOW_TYPES_MASK ) == NET::Toolbar
+        || info.windowType( SUPPORTED_WINDOW_TYPES_MASK ) == NET::Desktop )
         return;
 
     if ( window) {
-	QString title = info.name;
+	QString title = info.name();
 	QRegExp r( window );
 	if (r.match(title) == -1)
 	    return; // no match
     } else {
         // accept only "normal" windows
-        if( info.windowType != NET::Unknown
-            && info.windowType != NET::Normal
-            && info.windowType != NET::Dialog )
+        if( info.windowType( SUPPORTED_WINDOW_TYPES_MASK ) != NET::Unknown
+            && info.windowType( SUPPORTED_WINDOW_TYPES_MASK ) != NET::Normal
+            && info.windowType( SUPPORTED_WINDOW_TYPES_MASK ) != NET::Dialog )
             return;
     }
     applyStyle( w );
@@ -182,7 +186,7 @@ void KStart::applyStyle(WId w ) {
     XSync(qt_xdisplay(), False);
 
     if (activate)
-      KWin::setActiveWindow( w );
+      KWin::forceActiveWindow( w );
 
     QApplication::flushX();
 }
@@ -306,8 +310,16 @@ int main( int argc, char *argv[] )
 
   iconify = args->isSet("iconify");
   toSysTray = args->isSet("tosystray");
-  if ( fullscreen = args->isSet("fullscreen") )
-      windowtype = NET::Override;
+  if ( args->isSet("fullscreen") ) {
+      NETRootInfo i( qt_xdisplay(), NET::Supported );
+      if( i.isSupported( NET::FullScreen )) {
+          state |= NET::FullScreen;
+          mask |= NET::FullScreen;
+      } else {
+          windowtype = NET::Override;
+          fullscreen = true;
+      }
+  }
 
   fcntl(ConnectionNumber(qt_xdisplay()), F_SETFD, 1);
   args->clear();
