@@ -348,15 +348,15 @@ int ConnectionHandler::doCommand(QCString buf)
     if (tok != Lexer::Tok_str)
         goto parse_error;
     name = l->lval();
-    kdDebug(1205) << "Special Key to be used for deletion: " << name << endl;
+    // kdDebug(1205) << "Special Key to be used for deletion: " << name << endl;
     if (repo->removeSpecialKey(name) < 0)
     {
-        kdDebug(1205) << "Unable to remove cached keys for: " << name << endl;
+        // kdDebug(1205) << "Unable to remove cached keys for: " << name << endl;
         respond(Res_NO);
     }
     else
     {
-        kdDebug(1205) << "Removed all cached keys for: " << name << endl;
+        // kdDebug(1205) << "Removed all cached keys for: " << name << endl;
         respond(Res_OK);
     }
     break;
