@@ -264,23 +264,23 @@ void KStart::applyStyle(WId w ) {
 // David, 05/03/2000
 static KCmdLineOptions options[] =
 {
-  { "!+command", I18N_NOOP("Command to execute."), 0 },
+  { "!+command", I18N_NOOP("Command to execute"), 0 },
   // "!" means: all options after command are treated as arguments to the command
-  { "window <regexp>", I18N_NOOP("A regular expression matching the window title."), 0 },
-  { "windowclass <class>", I18N_NOOP("A string matching the window class (WM_CLASS property).\n"
+  { "window <regexp>", I18N_NOOP("A regular expression matching the window title"), 0 },
+  { "windowclass <class>", I18N_NOOP("A string matching the window class (WM_CLASS property)\n"
                   "The window class can be found out by running\n"
                   "'xprop | grep WM_CLASS' and clicking on a window.\n"
                   "NOTE: If you specify neither window title nor window class,\n"
                   "then the very first window to appear will be taken;\n"
                   "omitting both options is NOT recommended."), 0 },
-  { "desktop <number>", I18N_NOOP("Desktop where to make the window appear. "), 0 },
-  { "currentdesktop", I18N_NOOP("Make the window appear on the desktop that was active\nwhen starting the application. "), 0 },
+  { "desktop <number>", I18N_NOOP("Desktop where to make the window appear"), 0 },
+  { "currentdesktop", I18N_NOOP("Make the window appear on the desktop that was active\nwhen starting the application"), 0 },
   { "alldesktops", I18N_NOOP("Make the window appear on all desktops"), 0 },
   { "iconify", I18N_NOOP("Iconify the window"), 0 },
   { "maximize", I18N_NOOP("Maximize the window"), 0 },
   { "maximize-vertically", I18N_NOOP("Maximize the window vertically"), 0 },
   { "maximize-horizontally", I18N_NOOP("Maximize the window horizontally"), 0 },
-  { "fullscreen", I18N_NOOP("Show window fullscreen. Implies type Override."), 0 },
+  { "fullscreen", I18N_NOOP("Show window fullscreen. Implies type Override"), 0 },
   { "type <type>", I18N_NOOP("The window type: Normal, Desktop, Dock, Tool, \nMenu, Dialog, TopMenu or Override"), 0 },
   { "activate", I18N_NOOP("Jump to the window even if it is started on a \n"
                           "different virtual desktop"), 0 },
@@ -290,7 +290,7 @@ static KCmdLineOptions options[] =
   { "keepbelow", I18N_NOOP("Try to keep the window below other windows"), 0 },
   { "skiptaskbar", I18N_NOOP("The window does not get an entry in the taskbar"), 0 },
   { "skippager", I18N_NOOP("The window does not get an entry on the pager"), 0 },
-  { "tosystray", I18N_NOOP("The window is sent to the system tray in Kicker."), 0 },
+  { "tosystray", I18N_NOOP("The window is sent to the system tray in Kicker"), 0 },
   KCmdLineLastOption
 };
 

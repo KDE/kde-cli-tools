@@ -52,18 +52,18 @@ const char *Version = "1.0";
 // NOTE: if you change the position of the -u switch, be sure to adjust it
 // at the beginning of main()
 static KCmdLineOptions options[] = {
-    { "+command", I18N_NOOP("Specifies the command to run."), 0 },
-    { "c <command>", I18N_NOOP("Specifies the command to run."), "" },
-    { "f <file>", I18N_NOOP("Run command under target uid if <file> is not writable."), "" },
-    { "u <user>", I18N_NOOP("Specifies the target uid."), "root" },
-    { "n", I18N_NOOP("Do not keep password."), 0 },
-    { "s", I18N_NOOP("Stop the daemon (forgets all passwords)."), 0 },
-    { "t", I18N_NOOP("Enable terminal output (no password keeping)."), 0 },
-    { "p <prio>", I18N_NOOP("Set priority value: 0 <= prio <= 100, 0 is lowest."), "50" },
-    { "r", I18N_NOOP("Use realtime scheduling."), 0 },
-    { "nonewdcop", I18N_NOOP("Let command use existing dcopserver."), 0 },
-    { "i <icon name>", I18N_NOOP("Specify icon to use in the password dialog."), 0},
-    { "d", I18N_NOOP("Do not show the command to be run in the dialog."), 0},
+    { "+command", I18N_NOOP("Specifies the command to run"), 0 },
+    { "c <command>", I18N_NOOP("Specifies the command to run"), "" },
+    { "f <file>", I18N_NOOP("Run command under target uid if <file> is not writable"), "" },
+    { "u <user>", I18N_NOOP("Specifies the target uid"), "root" },
+    { "n", I18N_NOOP("Do not keep password"), 0 },
+    { "s", I18N_NOOP("Stop the daemon (forgets all passwords)"), 0 },
+    { "t", I18N_NOOP("Enable terminal output (no password keeping)"), 0 },
+    { "p <prio>", I18N_NOOP("Set priority value: 0 <= prio <= 100, 0 is lowest"), "50" },
+    { "r", I18N_NOOP("Use realtime scheduling"), 0 },
+    { "nonewdcop", I18N_NOOP("Let command use existing dcopserver"), 0 },
+    { "i <icon name>", I18N_NOOP("Specify icon to use in the password dialog"), 0},
+    { "d", I18N_NOOP("Do not show the command to be run in the dialog"), 0},
     KCmdLineLastOption
 };
 
