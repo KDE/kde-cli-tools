@@ -23,16 +23,13 @@
 
 KServiceSelectDlg::KServiceSelectDlg( const QString& /*serviceType*/, const QString& /*value*/, QWidget *parent )
     : KDialogBase( parent, "serviceSelectDlg", true,
-                   /* TODO caption */ QString::null,
-                   KDialogBase::Ok | KDialogBase::Cancel,
-                   KDialogBase::Ok, true )
+                   /* TODO caption */ QString::null, Ok|Cancel, Ok )
 {
     QVBox *topcontents = new QVBox ( this );
-    topcontents->setSpacing(KDialog::spacingHint()*2);
-    topcontents->setMargin(KDialog::marginHint()*2);
+    topcontents->setSpacing(KDialog::spacingHint());
     QWidget *contents = new QWidget(topcontents);
     QHBoxLayout * lay = new QHBoxLayout(contents);
-    lay->setSpacing(KDialog::spacingHint()*2);
+    lay->setSpacing(KDialog::spacingHint());
 
     lay->addStretch(1);
 
@@ -54,7 +51,6 @@ KServiceSelectDlg::KServiceSelectDlg( const QString& /*serviceType*/, const QStr
     m_listbox->setMinimumWidth(300);
     connect(m_listbox,SIGNAL(doubleClicked ( QListBoxItem * )),SLOT(slotOk()));
     setMainWidget(topcontents);
-    enableButtonSeparator(false);
 }
 
 KServiceSelectDlg::~KServiceSelectDlg()
