@@ -48,7 +48,8 @@ public:
   void sync();
 
 private:
-  void saveServices( KSimpleConfig & profile, QStringList services );
+  void getServiceOffers( QStringList & appServices, QStringList & embedServices ) const;
+  void saveServices( KSimpleConfig & profile, QStringList services, const QString & servicetype2 );
   KMimeType::Ptr m_mimetype;
   void initMeta( const QString & major );
   void init(KMimeType::Ptr mimetype);

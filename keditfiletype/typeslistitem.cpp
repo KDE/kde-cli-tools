@@ -63,25 +63,24 @@ void TypesListItem::init(KMimeType::Ptr mimetype)
   m_icon = mimetype->icon(QString(), false);
   m_patterns = mimetype->patterns();
 
-  KServiceTypeProfile::OfferList offerList =
-    KServiceTypeProfile::offers(mimetype->name());
-
-  QValueListIterator<KServiceOffer> it(offerList.begin());
-
-  // warning: code duplicated in isDirty
-  for (; it != offerList.end(); ++it) {
-    if ((*it).service()->type() == "Application") {
-      if ((*it).allowAsDefault())
-        m_appServices.append((*it).service()->desktopEntryPath());
-    }
-    else /////// This else shouldn't exist, but at the moment we can't handle
-              // one service being present in both lists (we would save the
-              // preference twice !)
-      m_embedServices.append((*it).service()->desktopEntryPath());
-  }
+  getServiceOffers( m_appServices, m_embedServices );
 
   QVariant v = mimetype->property( "X-KDE-AutoEmbed" );
   m_autoEmbed = v.isValid() ? (v.toBool() ? 0 : 1) : 2;
+}
+
+void TypesListItem::getServiceOffers( QStringList & appServices, QStringList & embedServices ) const
+{
+  KServiceTypeProfile::OfferList offerList =
+    KServiceTypeProfile::offers(m_mimetype->name(), "Application");
+  QValueListIterator<KServiceOffer> it(offerList.begin());
+  for (; it != offerList.end(); ++it)
+    if ((*it).allowAsDefault())
+      appServices.append((*it).service()->desktopEntryPath());
+
+  offerList = KServiceTypeProfile::offers(m_mimetype->name(), "KParts/ReadOnlyPart");
+  for ( it = offerList.begin(); it != offerList.end(); ++it)
+    embedServices.append((*it).service()->desktopEntryPath());
 }
 
 bool TypesListItem::isDirty() const
@@ -124,17 +123,7 @@ bool TypesListItem::isDirty() const
 
     QStringList oldAppServices;
     QStringList oldEmbedServices;
-    QValueListIterator<KServiceOffer> it(offerList.begin());
-    for (; it != offerList.end(); ++it) {
-      if ((*it).service()->type() == "Application") {
-        if ((*it).allowAsDefault())
-          oldAppServices.append((*it).service()->desktopEntryPath());
-      }
-     else /////// This else shouldn't exist, but at the moment we can't handle
-               // one service being present in both lists (we would save the
-               // preference twice !)
-        oldEmbedServices.append((*it).service()->desktopEntryPath());
-    }
+    getServiceOffers( oldAppServices, oldEmbedServices );
 
     if (oldAppServices != m_appServices)
     {
@@ -223,8 +212,8 @@ void TypesListItem::sync()
 
   groupCount = 1;
 
-  saveServices( profile, m_appServices );
-  saveServices( profile, m_embedServices );
+  saveServices( profile, m_appServices, "Application" );
+  saveServices( profile, m_embedServices, "KParts/ReadOnlyPart" );
 
   // Handle removed services
   // Note: we currently do that for applications only. Embedding services can't be removed.
@@ -296,7 +285,7 @@ void TypesListItem::sync()
   }
 }
 
-void TypesListItem::saveServices( KSimpleConfig & profile, QStringList services )
+void TypesListItem::saveServices( KSimpleConfig & profile, QStringList services, const QString & genericServiceType )
 {
   QStringList::Iterator it(services.begin());
   for (int i = services.count(); it != services.end(); ++it, i--) {
@@ -313,6 +302,7 @@ void TypesListItem::saveServices( KSimpleConfig & profile, QStringList services 
     profile.setGroup( name() + " - " + QString::number(groupCount) );
 
     profile.writeEntry("ServiceType", name());
+    profile.writeEntry("GenericServiceType", genericServiceType);
     profile.writeEntry("Application", pService->desktopEntryPath());
     profile.writeEntry("AllowAsDefault", true);
     profile.writeEntry("Preference", i);
