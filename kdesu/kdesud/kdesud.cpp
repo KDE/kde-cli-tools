@@ -8,7 +8,7 @@
  *
  * kdesud.cpp: KDE su daemon. Offers "keep password" functionality to kde su.
  *
- * The socket /tmp/kdesud_$(uid)_$(display) is used for communication with
+ * The socket $KDEHOME/socket-$(HOSTNAME)/kdesud_$(display) is used for communication with
  * client programs.
  *
  * The protocol: Client initiates the connection. All commands and responses
@@ -59,11 +59,13 @@
 #endif
 
 #include <qvector.h>
+#include <qfile.h>
 
 #include <kapp.h>
 #include <kdebug.h>
 #include <klocale.h>
 #include <kcmdlineargs.h>
+#include <kstddirs.h>
 #include <kaboutdata.h>
 #include <kdesu/client.h>
 #include <kdesu/defaults.h>
@@ -153,7 +155,7 @@ void sigchld_handler(int)
 }
 
 /**
- * Creates an AF_UNIX socket in /tmp, mode 0600.
+ * Creates an AF_UNIX socket in socket resource, mode 0600.
  */
 
 int create_socket()
@@ -170,7 +172,7 @@ int create_socket()
 	return -1;
     }
 
-    sock.sprintf("/tmp/kdesud_%d_%s", (int) getuid(), display);
+    sock = QFile::encodeName(locateLocal("socket", QString("kdesud_%1").arg(display)));
     int stat_err=lstat(sock, &s);
     if(!stat_err && S_ISLNK(s.st_ino)) {
 	kdWarning(1205) << "Someone is running a symlink attack on you\n";
