@@ -3,7 +3,7 @@
  *
  * Copyright (C) 1997-2000 Matthias Ettrich <ettrich@kde.org>
  *
- * Port to NETWM by David Faure <faure@kde.org>
+ * First port to NETWM by David Faure <faure@kde.org>
  */
 
 #include "kstart.moc"
@@ -93,14 +93,14 @@ void KStart::applyStyle(WId w, NETWinInfo & info) {
         }
     }
     if (maximize) {
-        info.setState( NET::Max, 0 /* mask ? */ );
+        info.setState( NET::Max,  NET::Max );
     }
     if (iconify)
         XIconifyWindow( qt_xdisplay(), w, qt_xscreen() );
     if (sticky)
-        info.setState( NET::Sticky, 0 /* mask ? */ );
+        info.setDesktop( NETWinInfo::OnAllDesktops );
     if (staysontop)
-        info.setState( NET::StaysOnTop, 0 /* mask ? */ );
+        info.setState( NET::StaysOnTop, NET::StaysOnTop );
     /*
     if (decoration != KWM::normalDecoration) {
 	info.setDecoration(w, decoration);
@@ -143,10 +143,9 @@ int main( int argc, char *argv[] )
   // David, 05/03/2000
   KAboutData aboutData( "kstart", I18N_NOOP("KStart"), KSTART_VERSION,
       I18N_NOOP(""
-       "Utility to launch applications with special KDE window properties \n"
+       "Utility to launch applications with special window properties \n"
        "such as iconified, maximized, a certain virtual desktop, a special decoration\n"
-       "or sticky. Furthermore you can exclude the window from getting the focus or\n"
-       "force the window manager to keep the window always on top."),
+       "and so on." ),
       KAboutData::License_GPL,
        "(C) 1997-2000 Matthias Ettrich (ettrich@kde.org)" );
   aboutData.addAuthor( "Matthias Ettrich", 0, "ettrich@kde.org" );
