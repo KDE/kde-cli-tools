@@ -5,6 +5,7 @@
 #include <qgroupbox.h>
 #include <qlistbox.h>
 
+#include <dcopclient.h>
 #include <kbuttonbox.h>
 #include <kiconloaderdialog.h>
 #include <kstddirs.h>
@@ -394,7 +395,7 @@ void FileTypesView::enableMoveButtons(int index)
   }
 }
 
-void FileTypesView::enableExtButtons(int index)
+void FileTypesView::enableExtButtons(int /*index*/)
 {
   removeExtButton->setEnabled(true);
 }
@@ -448,6 +449,11 @@ void FileTypesView::load()
 
 void FileTypesView::save()
 {
+  // only send dcop signal if sync() was necessary.
+  if (sync()) {
+    DCOPClient *dcc = kapp->dcopClient();
+    dcc->send("kded", "kbuildsycoca", "recreate()", QByteArray());
+  }
 }
 
 void FileTypesView::defaults()
