@@ -21,7 +21,7 @@
 #include <qsize.h>
 #include <qevent.h>
 #include <qkeycode.h>
-#include <qmsgbox.h>
+#include <qmessagebox.h>
 #include <qcheckbox.h>
 #include <qdir.h>
 
