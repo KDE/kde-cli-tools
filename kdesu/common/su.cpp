@@ -50,14 +50,14 @@ SuProcess::~SuProcess()
 
 int SuProcess::checkInstall(const char *password)
 {
-    return exec((char *)password, true);
+    return exec(password, true);
 }
 
 /*
  * Execute a command with su(1).
  */
 
-int SuProcess::exec(char *password, int check)
+int SuProcess::exec(const char *password, int check)
 {
     if (PtyProcess::init() < 0)
 	return -1;
@@ -79,9 +79,9 @@ int SuProcess::exec(char *password, int check)
 	    return -1;
 	} 
 	if (m_bErase) {
-	    int len = strlen(password);
-	    for (int i=0; i<len; i++)
-		password[i] = '\000';
+	    char *ptr = const_cast<char *>(password);
+	    for (unsigned i=0; i<strlen(password); i++)
+		ptr[i] = '\000';
 	}
 	if (ConverseStub(check) < 0) {
 	    kDebugError("%s: Converstation with kdesu_stub failed", ID);

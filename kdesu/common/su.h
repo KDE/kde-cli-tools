@@ -29,7 +29,7 @@ public:
     void setUser(QCString user) { m_User = user; }
 
     /** Execute the command. This will wait for the command to finish. */
-    int exec(char *password, int check=0);
+    int exec(const char *password, int check=0);
 
     /** 
      * Check if the stub is installed and the password is correct.

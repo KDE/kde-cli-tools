@@ -2,11 +2,8 @@
 
 INCLUDES = $(all_includes)
 noinst_LTLIBRARIES = libkdesu.la
-noinst_HEADERS = kdesu.h client.h process.h pty.h kcookie.h su.h ssh.h \
-	kpassdlg.h
-libkdesu_la_SOURCES = pty.cpp client.cpp process.cpp kcookie.cpp su.cpp \
-	ssh.cpp kpassdlg.cpp
-libkdesu_la_METASOURCES = AUTO
+noinst_HEADERS = kdesu.h client.h process.h pty.h kcookie.h su.h ssh.h 
+libkdesu_la_SOURCES = pty.cpp client.cpp process.cpp kcookie.cpp su.cpp ssh.cpp
 
 bin_PROGRAMS = kdesu_stub
 kdesu_stub_SOURCES = kdesu_stub.c

@@ -41,10 +41,10 @@ public:
      * Check if the stub is installed and if the password is correct.
      * @return Zero if everything is correct, nonzero otherwise.
      */
-    int checkInstall(const char *password=0L);
+    int checkInstall(const char *password);
 
     /** Execute the command. */
-    int exec(char *password, int check=0);
+    int exec(const char *password, int check=0);
 
 protected:
     QString display();

@@ -65,11 +65,11 @@ QString SshProcess::checkNeedPassword()
 
 int SshProcess::checkInstall(const char *password)
 {
-    return exec((char *)password, 1);
+    return exec(password, 1);
 }
 
 
-int SshProcess::exec(char *password, int check)
+int SshProcess::exec(const char *password, int check)
 {    
     if (PtyProcess::init() < 0)
 	return -1;
@@ -100,9 +100,9 @@ int SshProcess::exec(char *password, int check)
 	    return -1;
 	} 
 	if (m_bErase) {
-	    int len = strlen(password);
-	    for (int i=0; i<len; i++)
-		password[i] = '\000';
+	    char *ptr = const_cast<char *>(password);
+	    for (unsigned i=0; i<strlen(password); i++)
+		ptr[i] = '\000';
 	}
 	setExitString("Waiting for forwarded connections to terminate");
 	if (ret == 0) {

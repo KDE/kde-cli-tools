@@ -1,6 +1,6 @@
 /* vi: ts=8 sts=4 sw=4
  *
- * $Id: $
+ * $Id$
  *
  * This file is part of the KDE project, module kdesu.
  * Copyright (C) 2000 Geert Jansen <jansen@kde.org>
@@ -9,21 +9,24 @@
 #ifndef __SuDlg_h_Included__
 #define __SuDlg_h_Included__
 
-#include "kpassdlg.h"
+#include <kpassdlg.h>
 
 class KDEsuDialog
-    : public KPassDialog
+    : public KPasswordDialog
 {
     Q_OBJECT
 
 public:
-    KDEsuDialog(QCString user, QCString command, int keep);
+    KDEsuDialog(QCString user, QCString command, bool enableKeep);
     ~KDEsuDialog();
 
     enum ResultCodes { AsUser = 10 };
     
+    static int getPassword(QCString &password, QCString user,
+	    QCString command, int *keep);
+
 protected:
-    bool checkPass(const char *password);
+    bool checkPassword(const char *password);
     void slotUser1();
     
 private:

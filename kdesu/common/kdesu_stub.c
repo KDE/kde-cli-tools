@@ -248,7 +248,7 @@ int main(int argc, char **argv)
 		    sycoca = 1;
 	    }
 	}
-	if (!sycoca && system("kbuildsycoca --nosignal"))
+	if (!sycoca && system("kded --check"))
 	    printf("kdesu_stub: unable to create sycoca\n");
     }
 
