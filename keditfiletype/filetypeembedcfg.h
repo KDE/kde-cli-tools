@@ -42,9 +42,9 @@ public:
 signals:
   void changed(bool);
 
-protected slots:
+//protected slots:
 
-protected:
+//protected:
 
 private:
   KServiceListWidget *serviceListWidget;
