@@ -153,6 +153,7 @@ static KCmdLineOptions options[] =
                           "different virtual desktop"), 0 },
   { "ontop", I18N_NOOP("Make the window always stay on top of any other window"), 0 },
   { "skiptaskbar", I18N_NOOP("The window does not get an entry in the taskbar"), 0 },
+  { "skippager", I18N_NOOP("The window does not get an entry on the pager"), 0 },
   { 0, 0, 0}
 };
 
@@ -219,6 +220,11 @@ int main( int argc, char *argv[] )
   if ( args->isSet( "skiptaskbar" ) ) {
       state |= NET::SkipTaskbar;
       mask |= NET::SkipTaskbar;
+  }
+
+  if ( args->isSet( "skippager" ) ) {
+      state |= NET::SkipPager;
+      mask |= NET::SkipPager;
   }
 
   activate = args->isSet("activate");
