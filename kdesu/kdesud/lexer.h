@@ -20,23 +20,17 @@ public:
     Lexer(const QCString &input);
     ~Lexer();
 
-    /**
-     * Read next token.
-     */
+    /** Read next token. */
     int lex();
 
-    /**
-     * Return the token's semantic value. A reference is returned because it
-     * might contains sensitive information, that I don't want to copy.
-     */
+    /** Return the token's value. */
     QCString &lval();
 
     enum Tokens { 
-	Tok_none, 
-	Tok_exec=256, Tok_pass, Tok_user, Tok_delCmd,
+	Tok_none, Tok_exec=256, Tok_pass, Tok_delCmd,
 	Tok_ping, Tok_str, Tok_num , Tok_stop,
-	Tok_set, Tok_get, Tok_delVar, Tok_host, 
-	Tok_prio, Tok_sched
+	Tok_set, Tok_get, Tok_delVar, Tok_delGroup,
+	Tok_host, Tok_prio, Tok_sched
     };
 
 private:

@@ -17,8 +17,10 @@
 /**
  * Used internally.
  */
-struct Data_entry {
+struct Data_entry 
+{
     QCString value;
+    QCString group;
     unsigned int timeout;
 };
 
@@ -33,33 +35,26 @@ public:
     Repository();
     ~Repository();
 
-    /**
-     * Expire data elements which are too old.
-     */
+    /** Remove data elements which are expired. */
     int expire();
 
-    /**
-     * Add a data element 
-     */
+    /** Add a data element */
     void add(const QCString &key, Data_entry &data);
 
-    /**
-     * Delete a data element. The value field is overwritten before it is
-     * deleted because it could contain sensitive information.
-     */
+    /** Delete a data element. */
     int remove(const QCString& key);
 
-    /**
-     * Return a data entry.
-     */
-    const Data_entry *find(const QCString &key) const;
+    /** Delete all data entries having a given group.  */
+    int removeGroup(const QCString& group);
+
+    /** Return a data value.  */
+    QCString find(const QCString &key) const;
 
 private:
 
     QMap<QCString,Data_entry> repo;
-    QMap<QCString,Data_entry>::Iterator repo_it;
-    mutable QMap<QCString,Data_entry>::ConstIterator repo_cit;
-
+    typedef QMap<QCString,Data_entry>::Iterator RepoIterator;
+    typedef QMap<QCString,Data_entry>::ConstIterator RepoCIterator;
     unsigned head_time;
 };
 

@@ -12,6 +12,7 @@
 #include <qcstring.h>
 #include <qmap.h>
 #include <qvaluestack.h>
+#include <kdebug.h>
 
 #include "repo.h"
 
@@ -28,66 +29,76 @@ Repository::~Repository()
 
 void Repository::add(const QCString &key, Data_entry &data)
 {
-    if (repo.find(key) != repo.end())
+    RepoIterator it = repo.find(key);
+    if (it != repo.end())
 	remove(key);
-
     if (data.timeout == 0)
 	data.timeout = (unsigned) -1;
     else
 	data.timeout += time(0L);
     head_time = QMIN(head_time, data.timeout);
-    repo[key] = data;
+    repo.insert(key, data);
 }
 
 
 int Repository::remove(const QCString &key)
 {
-    repo_it = repo.find(key);
-    if (repo_it == repo.end()) 
+    RepoIterator it = repo.find(key);
+    if (it == repo.end()) 
 	return -1;
-    
-    repo_it.data().value.fill('x');
+    it.data().value.fill('x');
+    it.data().group.fill('x');
     repo.remove(key);
-
     return 0;
 }
 
 
-const Data_entry *Repository::find(const QCString &key) const
+int Repository::removeGroup(const QCString &group)
 {
-    repo_cit = repo.find(key);
-    if (repo_cit == repo.end())
-	return 0L;
+    RepoIterator it;
+    for (it=repo.begin(); it!=repo.end(); it++)
+    {
+	if (it.data().group == group)
+	{
+	    repo.remove(it.key());
+	    return 0;
+	}
+    }
+    return -1;
+}
 
-    return &repo_cit.data();
+    
+QCString Repository::find(const QCString &key) const
+{
+    RepoCIterator it = repo.find(key);
+    if (it == repo.end())
+	return 0;
+    return it.data().value;
 }
 
 
 int Repository::expire()
 {
     unsigned current = time(0L);
-
     if (current < head_time)
 	return 0;
     
-    QValueStack<QCString> keys;
-
     unsigned t;
+    QValueStack<QCString> keys;
     head_time = (unsigned) -1;
-    for (repo_cit=repo.begin(); repo_cit!=repo.end(); repo_cit++) 
+    RepoIterator it;
+    for (it=repo.begin(); it!=repo.end(); it++) 
     {
-	t = repo_cit.data().timeout;
-	if (current >= t)
-	    keys.push(repo_cit.key());
+	t = it.data().timeout;
+	if (t <= current)
+	    keys.push(it.key());
 	else 
 	    head_time = QMIN(head_time, t);
     }
 
-    
     int n = keys.count();
     while (!keys.isEmpty())
 	remove(keys.pop());
-    
     return n;
 }
 

@@ -27,22 +27,19 @@ public:
     ConnectionHandler(int fd);
     ~ConnectionHandler();
 
-    /**
-     * Call this when there is data to read from the socket.
-     */
+    /** Handle incoming data. */
     int handle();
 
 private:
     enum Results { Res_OK, Res_NO };
 
-    int doCommand();
+    int doCommand(QCString buf);
     void respond(int ok, QCString s=0);
     QCString makeKey(int namspace, QCString s1, QCString s1=0, QCString s3=0);
 
     int m_Fd, m_Timeout;
     int m_Priority, m_Scheduler;
-    QCString m_Buf, m_Pass;
-    QCString m_User, m_Host;
+    QCString m_Buf, m_Pass, m_Host;
 };
 
 #endif

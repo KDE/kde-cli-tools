@@ -106,8 +106,6 @@ int Lexer::lex()
 		return Tok_ping;
 	    if (m_Output == "STOP")
 		return Tok_stop;
-	    if (m_Output == "USER")
-		return Tok_user;
 	    if (m_Output == "SET")
 		return Tok_set;
 	    if (m_Output == "GET")
@@ -120,6 +118,8 @@ int Lexer::lex()
 		return Tok_prio;
 	    if (m_Output == "DELV")
 		return Tok_delVar;
+	    if (m_Output == "DELG")
+		return Tok_delGroup;
 	}
 
 	return Tok_str;
