@@ -197,7 +197,8 @@ void TypesListItem::sync()
   for (; it_srv != offerList.end(); ++it_srv) {
 
     // Only those were added in init()
-    if ( (*it_srv).allowAsDefault() ) {
+    if ((*it_srv).service()->type() == "Application" &&
+        (*it_srv).allowAsDefault() ) {
 
       KService::Ptr pService = (*it_srv).service();
 
@@ -295,6 +296,7 @@ void TypesListItem::saveServices( KSimpleConfig & profile, QStringList services 
       serviceTypeList.append(name());
 
     desktop.writeEntry("MimeType", serviceTypeList, ';');
+    desktop.writeEntry("ServiceTypes", "");
   }
 }
 
