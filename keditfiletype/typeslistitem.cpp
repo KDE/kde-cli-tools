@@ -301,10 +301,11 @@ void TypesListItem::sync()
             KConfig orig(pService->desktopEntryPath(), true, false, "apps");
             desktop = orig.copyTo(path);
           }
-          
+
           serviceTypeList.remove(name());
+          desktop->setDesktopGroup();
           desktop->writeEntry("MimeType", serviceTypeList, ';');
-          
+
         // if two or more types have been modified, and they use the same service,
         // accumulate the changes
           (*s_changedServices)[ pService->desktopEntryPath() ] = serviceTypeList;
@@ -373,6 +374,7 @@ void TypesListItem::saveServices( KConfig & profile, QStringList services, const
     if (!serviceTypeList.contains(name()))
       serviceTypeList.append(name());
 
+    desktop->setDesktopGroup();
     desktop->writeEntry("MimeType", serviceTypeList, ';');
     desktop->writeEntry("ServiceTypes", "");
     desktop->sync();
