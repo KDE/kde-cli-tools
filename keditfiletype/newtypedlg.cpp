@@ -1,6 +1,7 @@
 
 #include <qlayout.h>
 #include <qlabel.h>
+#include <qwhatsthis.h>
 
 #include <kglobal.h>
 #include <klocale.h>
@@ -24,6 +25,9 @@ NewTypeDialog::NewTypeDialog(QStringList groups,
   groupCombo = new QComboBox(this);
   groupCombo->insertStringList(groups);
   grid->addWidget(groupCombo, 0, 1);
+
+  QWhatsThis::add( groupCombo, i18n("Select the category under which"
+    " the new file type should be added.") );
 
   l = new QLabel(i18n("Type name:"), this);
   grid->addWidget(l, 1, 0);

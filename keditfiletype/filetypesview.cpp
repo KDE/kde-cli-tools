@@ -48,9 +48,11 @@ FileTypesView::FileTypesView(QWidget *p, const char *name)
   connect(typesLV, SIGNAL(selectionChanged(QListViewItem *)),
           this, SLOT(updateDisplay(QListViewItem *)));
 
-  QWhatsThis::add( typesLV, i18n("Here you can see a hierarchical list of the file types"
-    " installed on your system. Select a file type (e.g. text/html for HTML files) to edit it"
-    " using the controls on the right.") );
+  QWhatsThis::add( typesLV, i18n("Here you can see a hierarchical list of"
+    " the file types which are known on your system. Click on the '+' sign"
+    " to expand a category, or the '-' sign to collapse it. Select a file type"
+    " (e.g. text/html for HTML files) to view/edit the information for that"
+    " file type using the controls on the right.") );
 
   QPushButton *addTypeB = new QPushButton(i18n("&Add..."), this);
   connect(addTypeB, SIGNAL(clicked()),
@@ -64,7 +66,7 @@ FileTypesView::FileTypesView(QWidget *p, const char *name)
           this, SLOT(removeType()));
   leftLayout->addWidget(removeTypeB, 1, 1);
 
-  QWhatsThis::add( removeTypeB, i18n("Removes the selected file type.") );
+  QWhatsThis::add( removeTypeB, i18n("Click here to remove the selected file type.") );
 
   QVBoxLayout *rightLayout = new QVBoxLayout();
   topLayout->addLayout(rightLayout, 3);
@@ -80,7 +82,7 @@ FileTypesView::FileTypesView(QWidget *p, const char *name)
   hBox->addWidget(iconButton);
 
   QWhatsThis::add( iconButton, i18n("This button displays the icon associated"
-    " with the selected file type. Click on it to chose a new icon.") );
+    " with the selected file type. Click on it to choose a different icon.") );
 
   QGroupBox *gb = new QGroupBox(i18n("File Patterns"), this);
   hBox->addWidget(gb);
@@ -94,9 +96,9 @@ FileTypesView::FileTypesView(QWidget *p, const char *name)
   grid->addMultiCellWidget(extensionLB, 1, 2, 0, 0);
 
   QWhatsThis::add( extensionLB, i18n("This box contains a list of patterns that can be"
-    " used to identify files of the selected type. E.g. you'd use the pattern *.txt for the file"
-    " type 'text/plain', so all files ending in '.txt' will be recognized as plain text files."
-    " Think of the leading asterisk (*) as: \"All files ending in the following characters\".") );
+    " used to identify files of the selected type. For example, the pattern *.txt is"
+    " associated with the file type 'text/plain'; all files ending in '.txt' are recognized"
+    " as plain text files.") );
 
   addExtButton = new QPushButton(i18n("Add..."), gb);
   addExtButton->setEnabled(false);
@@ -122,9 +124,9 @@ FileTypesView::FileTypesView(QWidget *p, const char *name)
   connect(description, SIGNAL(textChanged(const QString &)),
           SLOT(updateDescription(const QString &)));
 
-  wtstr = i18n("Here you can enter a short description for files of the selected"
-    " file type (e.g. 'HTML Page'). This description will be used by applications like Konqueror to"
-    " display directory content.");
+  wtstr = i18n("You can enter a short description for files of the selected"
+    " file type (e.g. 'HTML Page'). This description will be used by applications"
+    " like Konqueror to display directory content.");
   QWhatsThis::add( gb, wtstr );
   QWhatsThis::add( description, wtstr );
 
@@ -140,10 +142,11 @@ FileTypesView::FileTypesView(QWidget *p, const char *name)
   connect(servicesLB, SIGNAL(highlighted(int)), SLOT(enableMoveButtons(int)));
   grid->addMultiCellWidget(servicesLB, 1, 3, 0, 0);
 
-  wtstr = i18n("This box contains a list of applications registered for the selected"
-    " file type. These applications will be shown e.g. in context menus in Konqueror and"
-    " will be used to open a file on mouse click. If this contains more than one application"
-    " the upmost application has highest priority.");
+  wtstr = i18n("This is a list of applications associated with files of the selected"
+    " file type. This list is shown in Konqueror's context menus when you select"
+    " \"Open with...\". If more than one application is associated with this file type,"
+    " then the list is ordered by priority with the uppermost item taking precedence"
+    " over the others.");
   QWhatsThis::add( gb, wtstr );
   QWhatsThis::add( servicesLB, wtstr );
 
@@ -153,7 +156,8 @@ FileTypesView::FileTypesView(QWidget *p, const char *name)
   grid->addWidget(servUpButton, 1, 1);
 
   QWhatsThis::add( servUpButton, i18n("Assigns a higher priority to the selected"
-    " application, moving it up in the list (only affects the selected file type).") );
+    " application, moving it up in the list. Note that this only affects the selected"
+    " file type if the same application is associated with other file types.") );
 
   servDownButton = new QPushButton(i18n("Move &Down"), gb);
   servDownButton->setEnabled(false);
@@ -161,7 +165,8 @@ FileTypesView::FileTypesView(QWidget *p, const char *name)
   grid->addWidget(servDownButton, 2, 1);
 
   QWhatsThis::add( servDownButton, i18n("Assigns a lower priority to the selected"
-    " application, moving it down in the list (only affects the selected file type).") );
+    " application, moving it down in the list. Note that this only affects the selected"
+    " file type if the same application is associated with other file types.") );
 
   servNewButton = new QPushButton(i18n("Add..."), gb);
   servNewButton->setEnabled(false);
@@ -504,13 +509,25 @@ void FileTypesView::defaults()
 
 QString FileTypesView::quickHelp()
 {
-  return i18n("<h1>File Associations</h1> File associations contain information about"
-    " different types of files (also called \"mime types\"). They contain: <ul><li>rules how to tell the"
-    " mime type of a file (e.g. for the KWord mime type *.kwd, which means: 'all files ending in .kwd').</li>"
-    " <li>a short description for files of a certain mime type (e.g. 'KWord document')</li>"
-    " <li>the name of the icon that should be used for files of a certain mime type</li>"
-    " <li>a list of programs that can be used to open these files (listed by priority)</li></ul>"
-    " Programs like Konqueror or the Desktop use this information to display directories etc.");
+  return i18n("<h1>File Associations</h1>"
+    " This module allows you to choose which applications are associated"
+    " with a given type of file. File types are also referred to MIME types"
+    " (MIME is an acronym which stands for \"Multipurpose Internet Mail"
+    " Extensions\".)<p> A file association consists of the following:"
+    " <ul><li>Rules for determining the MIME-type of a file. For example,"
+    " the file pattern *.kwd, which means 'all files with names that end"
+    " in .kwd', is associated with the MIME type \"x-kword\".</li>"
+    " <li>A short description of the MIME-type. For example, the description"
+    " of the MIME type \"x-kword\" is simply 'KWord document'.)</li>"
+    " <li>An icon to be used for displaying files of the given MIME-type,"
+    " so that you can easily identify the type of file, say in a Konqueror"
+    " view (at least for the types you use often!)</li>"
+    " <li>A list of the applications which can be used to open files of the"
+    " given MIME-type. If more than one application can be used, then the"
+    " list is ordered by priority.</li></ul>"
+    " You may be surprised to find that some MIME types have no associated"
+    " file patterns! In these cases, Konqueror is able to determine the"
+    " MIME-type by directly examining the contents of the file.");
 }
 
 #include "filetypesview.moc"
