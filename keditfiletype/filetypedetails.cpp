@@ -160,7 +160,7 @@ void FileTypeDetails::addExtension()
 {
   if ( !m_item )
     return;
-  KLineEditDlg m(i18n("Extension:"), QString::null, this);
+  KLineEditDlg m(i18n("Extension:"), "*.", this);
   m.setCaption( i18n("Add New Extension") );
   if (m.exec()) {
     if (!m.text().isEmpty()) {
