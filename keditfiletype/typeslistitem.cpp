@@ -190,7 +190,7 @@ bool TypesListItem::isDirty() const
 
 void TypesListItem::sync()
 {
-  assert(m_bFullInit);
+  Q_ASSERT(m_bFullInit);
   if ( isMeta() )
   {
     KConfig config("konquerorrc");
