@@ -28,7 +28,7 @@
 
 #include <netwm.h>
 
-pid_t execute(const QString & cmd){
+pid_t execute(const QCString & cmd){
   KProcess proc;
   proc.setUseShell(true);
   proc << cmd;
