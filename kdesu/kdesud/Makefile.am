@@ -4,7 +4,7 @@ INCLUDES = -I$(top_srcdir)/kdesu/common
 
 bin_PROGRAMS = kdesud
 kdesud_SOURCES = kdesud.cpp repo.cpp lexer.cpp handler.cpp secure.cpp 
-kdesud_LDADD = $(top_srcdir)/kdesu/common/libkdesu.a
+kdesud_LDADD = $(top_builddir)/kdesu/common/libkdesu.a
 noinst_HEADERS = repo.h kdesud.h handler.h lexer.h secure.h
 
 ## kdesud needs to be suid or sgid something

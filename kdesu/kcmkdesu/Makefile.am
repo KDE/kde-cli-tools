@@ -5,7 +5,7 @@ INCLUDES= $(all_includes) -I$(top_srcdir)/kdesu/common
 bin_PROGRAMS = kcmkdesu
 kcmkdesu_SOURCES = kcmkdesu.cpp 
 kcmkdesu_LDFLAGS = $(all_libraries) $(KDE_RPATH)
-kcmkdesu_LDADD   = $(LIB_KDEUI) $(top_srcdir)/kdesu/common/libkdesu.a
+kcmkdesu_LDADD   = $(LIB_KDEUI) $(top_builddir)/kdesu/common/libkdesu.a
 kcmkdesu_METASOURCES = AUTO
 
 noinst_HEADERS = kcmkdesu.h
