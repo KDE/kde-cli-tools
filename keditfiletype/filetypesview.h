@@ -19,7 +19,6 @@ class QComboBox;
 class FileTypeDetails;
 class FileGroupDetails;
 class QWidgetStack;
-class QSplitter;
 
 class FileTypesView : public KCModule
 {
@@ -64,8 +63,6 @@ private:
   bool m_dirty;
   QMap<QString,TypesListItem*> m_majorMap;
   QPtrList<TypesListItem> m_itemList;
-  QSplitter *m_splitter;
-  QWidget *m_left;
 
   QValueList<TypesListItem *> m_itemsModified;
 

@@ -28,14 +28,13 @@ FileGroupDetails::FileGroupDetails(QWidget *parent, const char *name )
     : QWidget( parent, name )
 {
   QWidget * parentWidget = this;
-  QVBoxLayout *secondLayout = new QVBoxLayout(parentWidget, KDialog::marginHint(),
-                                              KDialog::spacingHint());
+  QVBoxLayout *secondLayout = new QVBoxLayout(parentWidget,
+      0, KDialog::spacingHint());
 
   m_autoEmbed = new QVButtonGroup( i18n("Left Click Action"), parentWidget );
   m_autoEmbed->layout()->setSpacing( KDialog::spacingHint() );
-  secondLayout->addWidget( m_autoEmbed, 1 );
-  secondLayout->addWidget( new QWidget( parentWidget ), 100 );
-  // The order of those three items is very important. If you change it, fix typeslistitem.cpp !
+  secondLayout->addWidget( m_autoEmbed );
+  // The order of those two items is very important. If you change it, fix typeslistitem.cpp !
   new QRadioButton( i18n("Show file in embedded viewer"), m_autoEmbed );
   new QRadioButton( i18n("Show file in separate viewer"), m_autoEmbed );
   connect(m_autoEmbed, SIGNAL( clicked( int ) ), SLOT( slotAutoEmbedClicked( int ) ));
@@ -45,7 +44,7 @@ FileGroupDetails::FileGroupDetails(QWidget *parent, const char *name )
     " an embedded viewer or start up a separate application. You can change this setting for a"
     " specific file type in the 'Embedding' tab of the file type configuration.") );
 
-  secondLayout->addSpacing(10);
+  secondLayout->addStretch();
 }
 
 void FileGroupDetails::setTypeItem( TypesListItem * item )
