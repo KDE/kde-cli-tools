@@ -5,6 +5,7 @@
 #include <qgroupbox.h>
 #include <qlistbox.h>
 #include <qwhatsthis.h>
+#include <qlabel.h>
 
 #include <dcopclient.h>
 #include <krun.h>
@@ -36,14 +37,29 @@ FileTypesView::FileTypesView(QWidget *p, const char *name)
   QHBoxLayout *topLayout = new QHBoxLayout(this, KDialog::marginHint(),
 					   KDialog::spacingHint());
 
-  QGridLayout *leftLayout = new QGridLayout(2, 2);
+  QGridLayout *leftLayout = new QGridLayout(3, 2);
   topLayout->addLayout(leftLayout, 2);
+
+  QLabel *patternFilterLBL = new QLabel( i18n("Find file pattern"), this );
+  leftLayout->addWidget(patternFilterLBL, 0, 0);
+  
+  patternFilterLE = new QLineEdit(this);
+  leftLayout->addWidget(patternFilterLE, 0, 1);
+  
+  connect(patternFilterLE, SIGNAL(textChanged(const QString &)),
+	  this, SLOT(slotFilter(const QString &)));
+  
+  wtstr = i18n("Enter a part of a file pattern. Only file types with a "
+	       "matching file pattern will appear in the list.");
+  
+  QWhatsThis::add( patternFilterLE, wtstr );
+  QWhatsThis::add( patternFilterLBL, wtstr );
 
   typesLV = new QListView(this);
   typesLV->setRootIsDecorated(true);
 
   typesLV->addColumn(i18n("Known Types"));
-  leftLayout->addMultiCellWidget(typesLV, 0, 0, 0, 1);
+  leftLayout->addMultiCellWidget(typesLV, 1, 1, 0, 1);
   connect(typesLV, SIGNAL(selectionChanged(QListViewItem *)),
           this, SLOT(updateDisplay(QListViewItem *)));
 
@@ -56,14 +72,14 @@ FileTypesView::FileTypesView(QWidget *p, const char *name)
   QPushButton *addTypeB = new QPushButton(i18n("&Add..."), this);
   connect(addTypeB, SIGNAL(clicked()),
           this, SLOT(addType()));
-  leftLayout->addWidget(addTypeB, 1, 0);
+  leftLayout->addWidget(addTypeB, 2, 0);
 
   QWhatsThis::add( addTypeB, i18n("Click here to add a new file type.") );
 
   QPushButton *removeTypeB = new QPushButton(i18n("&Remove"), this);
   connect(removeTypeB, SIGNAL(clicked()),
           this, SLOT(removeType()));
-  leftLayout->addWidget(removeTypeB, 1, 1);
+  leftLayout->addWidget(removeTypeB, 2, 1);
 
   QWhatsThis::add( removeTypeB, i18n("Click here to remove the selected file type.") );
 
@@ -184,9 +200,29 @@ FileTypesView::~FileTypesView()
 
 void FileTypesView::init()
 {
+  readFileTypes();
+}
+
+void FileTypesView::slotFilter(const QString &patternFilter)
+{
+  readFileTypes(patternFilter);
+}
+
+void FileTypesView::readFileTypes(const QString &patternFilter)
+{
+  typesLV->clear();
+
   KMimeType::List mimetypes = KMimeType::allMimeTypes();
   QValueListIterator<KMimeType::Ptr> it2(mimetypes.begin());
   for (; it2 != mimetypes.end(); ++it2) {
+    bool add = true;
+
+    if ( !patternFilter.isEmpty() ) {
+      QStringList matches = (*it2)->patterns().grep( patternFilter, false );
+      add = !matches.isEmpty();
+    }
+
+    if ( add ) {
     QString mimetype = (*it2)->name();
     int index = mimetype.find("/");
     QString maj = mimetype.left(index);
@@ -203,7 +239,12 @@ void FileTypesView::init()
     if (!it.current()) {
       // insert at top level.
       TypesListItem *i = new TypesListItem(typesLV, (*it2));
+
+        if ( !patternFilter.isEmpty() )
+          i->setOpen(true);
+
       new TypesListItem(i, (*it2));
+      }
     }
   }
 }
