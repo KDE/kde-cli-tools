@@ -1,3 +1,8 @@
+Dat, 23 Oct 99    Geert Jansen <g.t.jansen@stud.tue.nl>
+
+    * STL -> QTL
+    * Use Qt's standard debug facilities.
+
 Tue, 28 Sep 99    Geert Jansen <g.t.jansen@stud.tue.nl>
 
     * Integrating kdesu into kdebase

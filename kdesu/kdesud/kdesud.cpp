@@ -38,6 +38,7 @@
 #include <config.h>
 
 #include <stdio.h>
+#include <stdlib.h>
 #include <unistd.h>
 #include <errno.h>
 #include <ctype.h>
@@ -45,10 +46,6 @@
 #include <stdarg.h>
 #include <signal.h>
 #include <pwd.h>
-
-#include <queue>
-#include <map>
-#include <fstream>
 
 #include <sys/time.h>
 #include <sys/stat.h>
@@ -58,10 +55,10 @@
 #include <sys/resource.h>
 #include <sys/wait.h>
 
-#include "kdesud.h"
+#include <qglobal.h>
+
 #include "repo.h"
 #include "handler.h"
-#include "debug.h"
 #include "client.h"
 #include "kdesu.h"
 
@@ -73,21 +70,21 @@ int _show_wrn = 1;
 const char *Version = VERSION;
 const char *Help = "Try `kdesud -h' for more information.";
 const char *Email = "<g.t.jansen@stud.tue.nl";
-string sock;
+QCString sock;
 
 
 // Unlink the socket atexit()
 
 void cleanup(void)
 {
-    unlink(sock.c_str());
+    unlink(sock);
 }
 
 // Global signal handler
 
 void signal_exit(int sig)
 {
-    error("Exiting on signal %d", sig);
+    fprintf(stderr, "Exiting on signal %d\n", sig); 
     exit(1);
 }
 
@@ -102,18 +99,10 @@ void sigchld_handler(int)
 	pid = waitpid((pid_t) -1, &status, WNOHANG);
 	if (pid <= 0)
 	    break;
-	debug("PID %d exited", (int) pid);
+	qDebug("PID %d exited", (int) pid);
     }
 }
 
-// Erase a <string>
-
-void clear(string &s, string::size_type npos)
-{
-    if (npos == 0)
-	npos = s.size();
-    s.replace(0, npos, npos, 'x');
-}
 
 /**
  * Creates an AF_UNIX socket in /tmp, mode 0600.
@@ -127,25 +116,22 @@ int create_socket()
 
     display = getenv("DISPLAY");
     if (!display) {
-	error("DISPLAY is not set");
+	qWarning("DISPLAY is not set");
 	return -1;
     }
 
-    sock = "/tmp/kdesud_";
-    char buf[20];
-    sprintf(buf, "%d_", (int) getuid());
-    sock += buf; sock += display;
+    sock.sprintf("/tmp/kdesud_%d_%s", (int) getuid(), display);
 
-    if (!access(sock.c_str(), R_OK|W_OK)) {
+    if (!access(sock, R_OK|W_OK)) {
 	KDEsuClient client;
 	if (client.ping() == -1) {
-	    warning("stale socket exists");
-	    if (unlink(sock.c_str())) {
-		error("Could not delete stale socket");
+	    qWarning("stale socket exists");
+	    if (unlink(sock)) {
+		qWarning("Could not delete stale socket");
 		return -1;
 	    }
 	} else {
-	    error("kdesud is already running");
+	    qWarning("kdesud is already running");
 	    return -1;
 	}
 
@@ -153,17 +139,17 @@ int create_socket()
 
     sockfd = socket(PF_UNIX, SOCK_STREAM, 0);
     if (sockfd < 0) {
-	xerror("socket(): %s");
+	qWarning("socket(): %s", strerror(errno));
 	return -1;
     }
-    debug("Created socket: %s", sock.c_str());
+    qDebug("Created socket: %s", (const char *) sock);
 
     struct sockaddr_un addr;
     addr.sun_family = AF_UNIX;
-    strcpy(addr.sun_path, sock.c_str());
+    strcpy(addr.sun_path, sock);
     addrlen = SUN_LEN(&addr);
     if (bind(sockfd, (struct sockaddr *)&addr, addrlen) < 0) {
-	xerror("bind(): %s");
+	qWarning("bind(): %s", strerror(errno));
 	return -1;
     }
 
@@ -171,32 +157,52 @@ int create_socket()
 
     struct linger lin;
     lin.l_onoff = lin.l_linger = 0;
-    if (setsockopt(sockfd, SOL_SOCKET, SO_LINGER, 
-		   static_cast<char*>((char *)&lin), 
+    if (setsockopt(sockfd, SOL_SOCKET, SO_LINGER, (char *) &lin,
 		   sizeof(linger)) < 0) {
-	xerror("setsockopt(SO_LINGER): %s");
+	qWarning("setsockopt(SO_LINGER): %s", strerror(errno));
 	return -1;
     }
 
     int opt = 1;
-    if (setsockopt(sockfd, SOL_SOCKET, SO_REUSEADDR, 
-		   static_cast<char*>((char *)&opt), 
+    if (setsockopt(sockfd, SOL_SOCKET, SO_REUSEADDR, (char *) &opt,
 		   sizeof(opt)) < 0) {
-	xerror ("setsockopt(SO_REUSEADDR): %s");
+	qWarning("setsockopt(SO_REUSEADDR): %s", strerror(errno));
 	return -1;
     }
     opt = 1;
-    if (setsockopt(sockfd, SOL_SOCKET, SO_KEEPALIVE, 
-		   static_cast<char*>((char *)&opt),
+    if (setsockopt(sockfd, SOL_SOCKET, SO_KEEPALIVE, (char *) &opt,
 		   sizeof(opt)) < 0) {
-	xerror("setsockopt(SO_KEEPALIVE): %s");
+	qWarning("setsockopt(SO_KEEPALIVE): %s", strerror(errno));
 	return -1;
     }
 
-    chmod(sock.c_str(), 0600);
-    debug("Chmod to 0600");
+    chmod(sock, 0600);
+    qDebug("Chmod to 0600");
 
     return sockfd;
+}
+
+
+/*
+ * Message handler
+ */
+void msgHandler(QtMsgType type, const char *msg)
+{
+    switch (type) {
+    case QtDebugMsg:
+	if (_show_dbg)
+	    fprintf(stderr, "Debug: %s\n", msg);
+	break;
+
+    case QtWarningMsg:
+	if (_show_wrn)
+	    fprintf(stderr, "Warning: %s\n", msg);
+	break;
+
+    case QtFatalMsg:
+	fprintf(stderr, "Fatal: %s\n", msg);
+	exit(1);
+    }
 }
 
 
@@ -206,30 +212,27 @@ int create_socket()
 
 int main(int argc, char *argv[])
 {
-    int sockfd, i;
-    struct timeval tv;
-    struct sigaction sa;
+    qInstallMsgHandler(msgHandler);
 
     int c;
-
     while ((c = getopt(argc, argv, "hvdq")) != -1) {
 	switch (c) {
 	case 'h':
-	    cerr << "kdesud [OPTIONS]...\n";
-	    cerr << "KDE su daemon (password keeper for KDE su).\n";
-	    cerr << endl;
-	    cerr << "Options:\n";
-	    cerr << "  -d      Give debug information\n";
-	    cerr << "  -q      Be quiet (no warnings)\n";
-	    cerr << "  -v      Show verion information\n";
-	    cerr << endl;
-	    cerr << "Please report bugs to " << Email << endl;
+	    printf("kdesud [OPTIONS]...\n");
+	    printf("KDE su daemon (password keeper for KDE su).\n");
+	    printf("\n");
+	    printf("Options:\n");
+	    printf("  -d      Give debug information\n");
+	    printf("  -q      Be quiet (no warnings)\n");
+	    printf("  -v      Show verion information\n");
+	    printf("\n");
+	    printf("Please report bugs to %s\n", Email);
 	    exit(0);
 	case 'v':
-	    cerr << "kdesud version " << Version << endl;
-	    cerr << endl;
-	    cerr << "  Copyright (c) 1999 Geert Jansen " << Email << endl;
-	    cerr << endl;
+	    printf("kdesud version %s\n", Version);
+	    printf("\n");
+	    printf("  Copyright (c) 1999 Geert Jansen %s\n", Email);
+	    printf("\n");
 	    exit(0);
 	case 'd':
 	    _show_dbg++;
@@ -238,8 +241,8 @@ int main(int argc, char *argv[])
 	    _show_wrn = 0;
 	    break;
 	case '?': default:
-	    cerr << "kdesud: invalid option" << endl;
-	    cerr << Help << endl;
+	    printf("kdesud: invalid option\n");
+	    printf("%s\n", Help);
 	    exit(1);
 	}
     }
@@ -248,16 +251,16 @@ int main(int argc, char *argv[])
     struct rlimit rlim;
     rlim.rlim_cur = rlim.rlim_max = 0;
     if (setrlimit(RLIMIT_CORE, &rlim) < 0) {
-	xerror("setrlimit(): %s");
+	qWarning("setrlimit(): %s", strerror(errno));
 	exit(1);
     }
 
     // Create the Unix socket.
-    sockfd = create_socket();
+    int sockfd = create_socket();
     if (sockfd < 0)
 	exit(1);
     if (listen(sockfd, 1) < 0) {
-	xerror("listen(): %s");
+	qWarning("listen(): %s", strerror(errno));
 	exit(1);
     }
 
@@ -265,9 +268,10 @@ int main(int argc, char *argv[])
     repo = new Repository;
 
     // connection handlers
-    vector<ConnectionHandler *> handler(FD_SETSIZE);
+    ConnectionHandler *handler[FD_SETSIZE];
 
     // Signal handlers 
+    struct sigaction sa;
     sa.sa_handler = signal_exit;
     sigemptyset(&sa.sa_mask);
     sa.sa_flags = 0;
@@ -281,13 +285,11 @@ int main(int argc, char *argv[])
     sa.sa_flags = SA_NOCLDSTOP;
     sigaction(SIGCHLD, &sa, 0L);
 
-    // Expire at least every 5 seconds 
-    tv.tv_sec = 5; tv.tv_usec = 0;
-
     // Main execution loop 
 
     ksize_t addrlen;
     struct sockaddr_un clientname;
+    struct timeval tv;
 
     fd_set tmp_fds, active_fds;
     FD_ZERO(&active_fds);
@@ -295,18 +297,16 @@ int main(int argc, char *argv[])
     while (1) {
 
 	tmp_fds = active_fds;
+	tv.tv_sec = 5; tv.tv_usec = 0;
 	if (select(FD_SETSIZE, &tmp_fds, 0L, 0L, &tv) < 0) {
 	    if (errno == EINTR)
 		continue;
-	    xerror("select(): %s");
-	    exit(1);
+	    qFatal("select(): %s", strerror(errno));
 	}
 	
-	tv.tv_sec = 5; tv.tv_usec = 0;
-
 	repo->expire();
 
-	for (i=0; i<FD_SETSIZE; i++) {
+	for (int i=0; i<FD_SETSIZE; i++) {
 	    if (!FD_ISSET(i, &tmp_fds)) 
 		continue;
 
@@ -316,12 +316,12 @@ int main(int argc, char *argv[])
 		addrlen = 64;
 		fd = accept(sockfd, (struct sockaddr *) &clientname, &addrlen);
 		if (fd < 0) {
-		    xerror("accept(): %s");
-		    exit(1);
+		    qWarning("accept(): %s", strerror(errno));
+		    continue;
 		}
 		handler[fd] = new ConnectionHandler(fd);
 		FD_SET(fd, &active_fds);
-		debug("Accepted new connection on fd %d", fd);
+		qDebug("Accepted new connection on fd %d", fd);
 		continue;
 	    }
 
@@ -333,6 +333,6 @@ int main(int argc, char *argv[])
 	    }
 	}
     }
-    warning("???");
+    qWarning("???");
 }
 

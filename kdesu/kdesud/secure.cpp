@@ -14,13 +14,15 @@
 #include <unistd.h>
 #include <fcntl.h>
 #include <string.h>
+#include <errno.h>
 
 #include <sys/types.h>
 #include <sys/stat.h>
 #include <sys/socket.h>
 
+#include <qglobal.h>
+
 #include "secure.h"
-#include "debug.h"
 
 
 /**
@@ -33,7 +35,7 @@ SocketSecurity::SocketSecurity(int sockfd)
 {
     ksize_t len = sizeof(struct ucred);
     if (getsockopt(sockfd, SOL_SOCKET, SO_PEERCRED, &cred, &len) < 0) {
-	xerror("getsockopt(SO_PEERCRED): %s");
+	qWarning("getsockopt(SO_PEERCRED): %s", strerror(errno));
 	return; 
     }
 
@@ -49,7 +51,8 @@ SocketSecurity::SocketSecurity(int sockfd)
 
 SocketSecurity::SocketSecurity(int sockfd)
 {
-    warning("Using void socket security");
+    qWarning("Using void socket security. Please add support for your");
+    qWarning("platform to kdesu/kdesud/secure.cpp");
 
     // This passes the test made in handler.cpp
     cred.uid = getuid();

@@ -14,21 +14,24 @@
 #include <assert.h>
 #include <unistd.h>
 #include <signal.h>
+#include <errno.h>
+#include <string.h>
 
 #include <sys/types.h>
 #include <sys/socket.h>
 #include <sys/types.h>
 
-#include <string>
-#include <memory>
+#include <qcstring.h>
 
-#include "kdesud.h"
 #include "handler.h"
 #include "repo.h"
 #include "lexer.h"
 #include "secure.h"
 #include "process.h"
-#include "debug.h"
+
+
+// Global repository
+extern Repository *repo;
 
 
 ConnectionHandler::ConnectionHandler(int fd)
@@ -40,12 +43,14 @@ ConnectionHandler::ConnectionHandler(int fd)
 
 ConnectionHandler::~ConnectionHandler()
 {
-    clear(mBuf);
+    mBuf.fill('x');
+    if (mbPass)
+	mPass.fill('x');
 }
 
-void ConnectionHandler::respond(int ok, string s)
+void ConnectionHandler::respond(int ok, QCString s)
 {
-    string buf;
+    QCString buf;
 
     switch (ok) {
     case Res_OK:
@@ -58,13 +63,13 @@ void ConnectionHandler::respond(int ok, string s)
 	assert(1);
     }
 
-    if (s.size()) {
+    if (!s.isEmpty()) {
 	buf += ' ';
 	buf += s;
     }
     buf += '\n';
 
-    send(mFd, buf.data(), buf.size(), 0);
+    send(mFd, buf.data(), buf.length(), 0);
 }
 
 
@@ -76,19 +81,18 @@ void ConnectionHandler::respond(int ok, string s)
 int ConnectionHandler::doCommand()
 {
     if ((uid_t) peerUid() != getuid()) {
-	error("Peer uid not equal to me");
-	error("Peer: %d, Me: %d", peerUid(), (int) getuid());
+	qWarning("Peer uid not equal to me");
+	qWarning("Peer: %d, Me: %d", peerUid(), (int) getuid());
 	return -1;
     }
 
-    string::size_type n;
+    int n = mBuf.find('\n');
+    assert(n != -1);
 
-    n = mBuf.find('\n');
-    assert(n != string::npos);
-
-    string newbuf(mBuf, 0, n+1);
-    clear(mBuf, n+1);
-    mBuf.erase(0, n+1);
+    QCString newbuf = mBuf.mid(0, n+1);
+    for (int i=0; i<=n; i++)
+	mBuf[n] = 'x';
+    mBuf.remove(0, n+1);
 
     /* I'd like to use auto_ptr here, but egcs 1.1.2 has it
      * commented out.. */
@@ -97,10 +101,9 @@ int ConnectionHandler::doCommand()
 
     int tok = l->lex();
 
-    string key, command;
+    QCString key, command;
     Data_entry data;
     const Data_entry *pdata;
-    int ret;
 
     switch (tok) {
     case Lexer::Tok_pass: 
@@ -112,12 +115,12 @@ int ConnectionHandler::doCommand()
 	tok = l->lex();
 	if (tok != Lexer::Tok_num)
 	    goto parse_error;
-	mTimeout = atoi(l->lval().c_str());
+	mTimeout = l->lval().toInt();
 	tok = l->lex();
 	if (tok != '\n')
 	    goto parse_error;
 	respond(Res_OK);
-	debug("Password set!");
+	qDebug("Password set!");
 	break;
 
     case Lexer::Tok_user:
@@ -130,7 +133,7 @@ int ConnectionHandler::doCommand()
 	if (tok != '\n')
 	    goto parse_error;
 	respond(Res_OK);
-	debug("User set to %s", mUser.c_str());
+	qDebug("User set to %s", (const char *) mUser);
 	break;
 
     case Lexer::Tok_exec:
@@ -157,15 +160,15 @@ int ConnectionHandler::doCommand()
 	    }
 	    data.value = mPass;
 	    data.timeout = mTimeout;
-	    repo->add(key, &data);
+	    repo->add(key, data);
 	    pdata = &data;
 	}
 
 	// Execute the command asynchronously
-	debug("Executing command: %s", command.c_str());
+	qDebug("Executing command: %s", (const char *) command);
 	pid_t pid = fork();
 	if (pid < 0) {
-	    xerror("fork(): %s");
+	    qWarning("fork(): %s", strerror(errno));
 	    respond(Res_NO);
 	    break;
 	} else if (pid > 0) {
@@ -177,10 +180,10 @@ int ConnectionHandler::doCommand()
 	signal(SIGCHLD, SIG_DFL);
 
 	SuProcess proc;
-	proc.setCommand(command.c_str());
-	proc.setUser(mUser.c_str());
-	ret = proc.exec((char *)pdata->value.c_str());
-	debug("Command completed");
+	proc.setCommand(command);
+	proc.setUser(mUser);
+	int ret = proc.exec((char *) pdata->value.data());
+	qDebug("Command completed");
 	_exit(ret);
     }
 
@@ -204,9 +207,9 @@ int ConnectionHandler::doCommand()
 	    respond(Res_NO);
 	    break;
 	}
-	repo->erase(key);
+	repo->remove(key);
 	respond(Res_OK);
-	debug("Deleted key: %s", key.c_str());
+	qDebug("Deleted key: %s", (const char *) key);
 	break;
 
     case Lexer::Tok_ping:
@@ -214,7 +217,7 @@ int ConnectionHandler::doCommand()
 	if (tok != '\n')
 	    goto parse_error;
 	respond(Res_OK);
-	debug("PING");
+	qDebug("PING");
 	break;
 
     case Lexer::Tok_stop:
@@ -222,11 +225,11 @@ int ConnectionHandler::doCommand()
 	if (tok != '\n')
 	    goto parse_error;
 	respond(Res_OK);
-	debug("Stopping by command");
+	qDebug("Stopping by command");
 	exit(0);
 
     default:
-	debug("Uknown command");
+	qDebug("Uknown command: %s", (const char *) l->lval());
 	goto parse_error;
     }
 
@@ -234,7 +237,7 @@ int ConnectionHandler::doCommand()
     return 0;
 
 parse_error:
-    debug("Parse error");
+    qDebug("Parse error");
     delete l;
     return -1;
 }
@@ -260,13 +263,13 @@ int ConnectionHandler::handle()
 	return -1;
     } else if (nbytes == 0) {
 	// eof
-	debug("eof on fd %d", mFd);
+	qDebug("eof on fd %d", mFd);
 	return -1;
     }
     tmpbuf[nbytes] = '\000';
 
-    if (mBuf.size()+nbytes > 500) {
-	warning("line too long");
+    if (mBuf.length()+nbytes > 500) {
+	qWarning("line too long");
 	return -1;
     }
 
@@ -276,7 +279,7 @@ int ConnectionHandler::handle()
     
     /* Do we have a complete command yet? */
 
-    while (mBuf.find('\n') != string::npos) {
+    while (mBuf.find('\n') != -1) {
 	ret = doCommand();
 	if (ret < 0)
 	    return ret;

@@ -1,11 +1,12 @@
 ## Makefile.am for kdesud
 
-INCLUDES = -I$(top_srcdir)/kdesu/common
+INCLUDES = -I$(top_srcdir)/kdesu/common -I$(qt_includes)
 
 bin_PROGRAMS = kdesud
 kdesud_SOURCES = kdesud.cpp repo.cpp lexer.cpp handler.cpp secure.cpp 
-kdesud_LDADD = $(top_builddir)/kdesu/common/libkdesu.a
-noinst_HEADERS = repo.h kdesud.h handler.h lexer.h secure.h
+kdesud_LDFLAGS = $(all_libraries) $(KDE_RPATH)
+kdesud_LDADD = $(LIB_QT) $(top_builddir)/kdesu/common/libkdesu.a
+noinst_HEADERS = repo.h handler.h lexer.h secure.h
 
 ## kdesud needs to be suid or sgid something
 install-data-local:

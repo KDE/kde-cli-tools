@@ -9,6 +9,8 @@
 #ifndef __XCookie_h_included__
 #define __XCookie_h_included__
 
+#include <qcstring.h>
+
 /**
  * Extract cookies from the user's .Xauthority file.
  */
@@ -24,17 +26,16 @@ public:
     /**
      * Returns the cookie.
      */
-    const char *cookie() { return mOk ? mCookie : 0L; }
+    QCString cookie() { return m_bOk ? m_Cookie : QCString(); }
 
     /**
      * Returns the cookie protocol.
      */
-    const char *proto() { return mOk ? mProto : 0L; }
+    QCString proto() { return m_bOk ? m_Proto : QCString(); }
 
 private:
-    char *mProto;
-    char *mCookie;
-    bool mOk;
+    bool m_bOk;
+    QCString m_Proto, m_Cookie;
 };
 
 #endif

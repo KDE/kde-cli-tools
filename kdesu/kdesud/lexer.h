@@ -9,13 +9,15 @@
 #ifndef __Lexer_h_included__
 #define __Lexer_h_included__
 
+class QCString;
+
 /**
  * This is a lexer for the kdesud protocol.
  */
 
 class Lexer {
 public:
-    Lexer(string &input);
+    Lexer(const QCString &input);
     ~Lexer();
 
     /**
@@ -24,9 +26,10 @@ public:
     int lex();
 
     /**
-     * Return the token's semantic value.
+     * Return the token's semantic value. A reference is returned because it
+     * might contains sensitive information, that I don't want to copy.
      */
-    string &lval();
+    QCString &lval();
 
     enum Tokens { 
 	Tok_none, 
@@ -37,10 +40,10 @@ public:
     };
 
 private:
-    string mInput;
-    string mOutput;
+    QCString m_Input;
+    QCString m_Output;
 
-    string::iterator in;
+    int in;
 };
 
 #endif

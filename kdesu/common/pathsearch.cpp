@@ -11,37 +11,38 @@
 #include <stdlib.h>
 #include <unistd.h>
 
-#include <vector>
-#include <string>
+#include <qvaluelist.h>
+#include <qcstring.h>
 
 #include "pathsearch.h"
 
 
 PathSearch::PathSearch()
 {
-    char *p = getenv("PATH");
-    if ((p == 0L) || (*p == 0))
+    QCString path = getenv("PATH");
+    if (path.isEmpty())
 	return;
 
-    string pathstr = p;
-    string::size_type n=0, m=0;
-    while ((m = pathstr.find(':', n)) != string::npos) {
-	path.push_back(pathstr.substr(n, (m-n)));
+    int n=0, m=0;
+    while ((m = path.find(':', n)) != -1) {
+	m_Path.append(path.mid(n, m - n));
 	n = m+1;
     }
-    if (n < pathstr.size())
-	path.push_back(pathstr.substr(n, m));
+
+    if (n < (int) path.length())
+	m_Path.append(path.mid(n));
 }
 
-const char *PathSearch::locate(const char *prog, int mode)
+QCString PathSearch::locate(const char *prog, int mode)
 {
-    string file;
-    for (it = path.begin(); it != path.end(); it++) {
+    QCString file;
+    QValueList<QCString>::ConstIterator it;
+    for (it = m_Path.begin(); it != m_Path.end(); it++) {
 	file = *it + "/" + prog;
-	if (access(file.c_str(), mode) == 0)
-	    return file.c_str();
+	if (access(file, mode) == 0)
+	    return file;
     }
 
-    return 0L;
+    return QCString();
 }
 

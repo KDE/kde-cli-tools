@@ -11,8 +11,8 @@
  * PTY compatibility routines. This class tries to emulate a UNIX98 PTY API
  * on various platforms.
  */
-#ifndef KDESU_PTY_H
-#define KDESU_PTY_H
+#ifndef __PTY_h_Included__
+#define __PTY_h_Included__
 
 class PTY {
 
@@ -47,16 +47,15 @@ public:
 
     /**
      * Get the slave name.
-     * @return A pointer to the slave's name in the filesystem.
+     * @return The slave name.
      */
-    const char *ptsname();
+    QCString ptsname();
     
 private:
 
     int ptyfd;
 
-    char ptyname[50];
-    char ttyname[50];
+    QCString ptyname, ttyname;
 };
     
-#endif    
+#endif  // __PTY_h_Included__

@@ -11,7 +11,7 @@
 #define __Process_h_included__
 
 
-#include <string>
+#include <qcstring.h>
 
 
 /**
@@ -26,28 +26,28 @@ public:
      * @param command The command to execute, including arguments, shell
      * redirection, etc.
      */
-    SuProcess(const char *command="");
+    SuProcess(const char *command=0L);
 
     /**
      * Set the command
      */
-    void setCommand(const char *command) { mCommand = command; }
+    void setCommand(const char *command) { m_Command = command; }
 
     /**
      * Enable terminal output.
      * @param bool True if terminal output is wanted, false otherwise.
      */
-    void setTerminal(bool terminal) { mTerminal = terminal; }
+    void setTerminal(bool terminal) { m_bTerminal = terminal; }
 
     /**
      * If set to true, the password is overwritten as soon as it is used.
      */
-    void setErase(bool erase) { mErase = erase; }
+    void setErase(bool erase) { m_bErase = erase; }
 
     /**
      * Set the user to su to.
      */
-    void setUser(const char *user) { mUser = user; }
+    void setUser(const char *user) { m_User = user; }
 
     /**
      * Execute the command. This will wait for the command to finish. If
@@ -68,12 +68,9 @@ private:
     int ConverseStub(int fd, const char *command);
     int CopyOutput(int fd, bool echo);
 
-    string mCommand;
-    string mUser;
-    bool mOk;
-    bool mTerminal;
-    bool mWait;
-    bool mErase;
+    QCString m_Command, m_User;
+    bool m_bOk, m_bTerminal;
+    bool m_bWait, m_bErase;
 };
 
 
@@ -87,12 +84,12 @@ public:
      * Constructs a User_process object.
      * @param command The command to execute.
      */
-    UserProcess(const char *command="");
+    UserProcess(const char *command=0L);
 
     /**
      * Set the command to execute.
      */
-    void setCommand(const char *command) { mCommand = command; }
+    void setCommand(const char *command) { m_Command = command; }
 
     /**
      * Execute and wait for the command.
@@ -100,7 +97,7 @@ public:
     int exec();
 
 private:
-    string mCommand;
+    QCString m_Command;
 };
 
 #endif

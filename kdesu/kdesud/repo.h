@@ -10,13 +10,15 @@
 #define __Repo_h_included__
 
 
-#include <map>
-#include <queue>
-#include <string>
+#include <qmap.h>
+#include <qcstring.h>
 
 
+/**
+ * Used internally.
+ */
 struct Data_entry {
-    string value;
+    QCString value;
     unsigned int timeout;
 };
 
@@ -24,9 +26,7 @@ struct Data_entry {
 /**
  * String repository.
  *
- * This class implements a string repository with expriation. The
- * strings are indexed by a key which is also a string.
- * Internally, the key/value data is stored in a STL map.
+ * This class implements a string repository with expiration.
  */
 class Repository {
 public:
@@ -41,24 +41,24 @@ public:
     /**
      * Add a data element 
      */
-    void add(const string &key, Data_entry *data);
+    void add(const QCString &key, Data_entry &data);
 
     /**
      * Delete a data element. The value field is overwritten before it is
      * deleted because it could contain sensitive information.
      */
-    int erase(const string& key);
+    int remove(const QCString& key);
 
     /**
      * Return a data entry.
      */
-    const Data_entry *find(const string &key) const;
+    const Data_entry *find(const QCString &key) const;
 
 private:
 
-    map<string,Data_entry> repo;
-    map<string,Data_entry>::iterator repo_it;
-    mutable map<string,Data_entry>::const_iterator repo_cit;
+    QMap<QCString,Data_entry> repo;
+    QMap<QCString,Data_entry>::Iterator repo_it;
+    mutable QMap<QCString,Data_entry>::ConstIterator repo_cit;
 
     unsigned head_time;
 };

@@ -21,22 +21,22 @@
 #include <fcntl.h>
 #include <unistd.h>
 #include <string.h>
+#include <errno.h>
 
 #include <sys/types.h>
 #include <sys/stat.h>
 #include <sys/wait.h>
 #include <sys/ioctl.h>
 
+#include <qglobal.h>
+#include <qcstring.h>
+
 #include "pty.h"
 #include "pathsearch.h"
-#include "debug.h"
-
 
 PTY::PTY()
 {
     ptyfd = -1;
-    strcpy(ptyname, "");
-    strcpy(ttyname, "");
 }
 
 PTY::~PTY()
@@ -53,7 +53,7 @@ int PTY::getpt()
 #if defined(HAVE_GETPT) && defined(HAVE_PTSNAME)
 
     ptyfd = ::getpt();
-    strcpy(ttyname, ::ptsname(ptyfd));
+    ttyname = ::ptsname(ptyfd);
     return ptyfd;
 
 #else
@@ -62,14 +62,14 @@ int PTY::getpt()
 
     ptyfd = open("/dev/ptmx", O_RDWR);
     if (ptyfd >= 0) {
-	strcpy(ptyname, "/dev/ptmx");
+	ptyname = "/dev/ptmx";
 #ifdef HAVE_PTSNAME
-	strcpy(ttyname, ::ptsname(ptyfd));
+	ttyname = ::ptsname(ptyfd);
 	return ptyfd;
 #elif defined (TIOCGPTN)
 	int ptyno;
 	if (ioctl(ptyfd, TIOCGPTN, &ptyno) == 0) {
-	    sprintf(ttyname, "/dev/pts/%d", ptyno);
+	    ttyname.sprintf("/dev/pts/%d", ptyno);
 	    return ptyfd;
 	}
 #endif
@@ -78,10 +78,10 @@ int PTY::getpt()
 
     // Try /dev/pty[p-e][0-f] (Linux w/o UNIX98 PTY's)
 
-    for (char *c1 = "pqrstuvwxyzabcde"; *c1 != 0L; c1++) {
-	for (char *c2 = "pqrstuvwxyzabcde"; *c2 != 0L; c2++) {
-	    sprintf(ptyname, "/dev/pty%c%c", *c1, *c2);
-	    sprintf(ttyname, "/dev/tty%c%c", *c1, *c2);
+    for (const char *c1 = "pqrstuvwxyzabcde"; *c1 != 0L; c1++) {
+	for (const char *c2 = "pqrstuvwxyzabcde"; *c2 != 0L; c2++) {
+	    ptyname.sprintf("/dev/pty%c%c", *c1, *c2);
+	    ttyname.sprintf("/dev/tty%c%c", *c1, *c2);
 	    if (access(ptyname, F_OK) < 0)
 		goto linux_out;
 	    ptyfd = open(ptyname, O_RDWR);
@@ -94,8 +94,8 @@ linux_out:
     // Try /dev/pty%d (SCO, Unixware)
 
     for (int i=0; i<256; i++) {
-	sprintf(ptyname, "/dev/ptyp%d", i);
-	sprintf(ttyname, "/dev/ttyp%d", i);
+	ptyname.sprintf("/dev/ptyp%d", i);
+	ttyname.sprintf("/dev/ttyp%d", i);
 	if (access(ptyname, F_OK) < 0)
 	    break;
 	ptyfd = open(ptyname, O_RDWR);
@@ -107,7 +107,7 @@ linux_out:
     // Other systems ??
 
     ptyfd = -1;
-    error("Unknown system or all methods failed");
+    qWarning("PTY::getpt(): Unknown system or all methods failed");
     return -1;
 
 #endif // HAVE_GETPT
@@ -127,13 +127,13 @@ int PTY::grantpt()
 #else
 
     // konsole_grantpty doesn't do this
-    if (!strcmp(ptyname, "/dev/ptmx"))
+    if (ptyname == "/dev/ptmx")
 	return 0;
 
     // Use konsole_grantpty:
     PathSearch PS;
-    if (!PS.locate("konsole_grantpty")) {
-	error("konsole_grantpty not found");
+    if (PS.locate("konsole_grantpty").isEmpty()) {
+	qWarning("PTY::grantpt(): konsole_grantpty not found");
 	return -1;
     }
 
@@ -142,7 +142,7 @@ int PTY::grantpt()
 
     pid_t pid;
     if ((pid = fork()) == -1) {
-	xerror("fork(): %s");
+	qWarning("PTY::grantpt(): fork(): %s", strerror(errno));
 	return -1;
     }
 
@@ -152,19 +152,23 @@ int PTY::grantpt()
 	waitpid (pid, &ret, 0);
     	if (WIFEXITED(ret) && !WEXITSTATUS(ret))
 	    return 0;
-	error("konsole_grantpty returned with error: %d", WEXITSTATUS(ret));
+	qWarning("PTY::grantpt(): konsole_grantpty returned with error: %d", 
+		WEXITSTATUS(ret));
 	return -1;
     } else {
 	// Child: exec konsole_grantpty
 	if (ptyfd != pty_fileno && dup2(ptyfd, pty_fileno) < 0) 
 	    _exit(1);
 	execlp("konsole_grantpty", "konsole_grantpty", "--grant", NULL);
-	xerror("exec(\"konsole_grantpty\"): %s");
+	qWarning("PTY::grantpt(): exec(\"konsole_grantpty\"): %s",
+		strerror(errno));
 	_exit(1);
     }
 
-#endif // HAVE_GRANTPT
+    // shut up, gcc
+    return 0;
 
+#endif // HAVE_GRANTPT
 }
 
 
@@ -203,10 +207,10 @@ int PTY::unlockpt()
  * Return the slave side name.
  */
 
-const char *PTY::ptsname()
+QCString PTY::ptsname()
 {
     if (ptyfd < 0)
-	return 0L;
+	return QCString();
 
     return ttyname;
 }

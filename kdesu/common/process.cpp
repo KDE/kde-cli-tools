@@ -41,19 +41,21 @@
 #include <sys/stream.h>
 #endif
 
+#include <qglobal.h>
+#include <qcstring.h>
+
 #include "process.h"
 #include "pty.h"
-#include "debug.h"
 #include "xcookie.h"
 #include "pathsearch.h"
 
 
 SuProcess::SuProcess(const char *command)
 {
-    mCommand = command;
-    mTerminal = false;
-    mErase = false;
-    mUser = "root";
+    m_Command = command;
+    m_User = "root";
+    m_bTerminal = false;
+    m_bErase = false;
 }
 
 
@@ -69,13 +71,13 @@ int SuProcess::exec(char *password, bool check_only)
     if (master < 0)
 	return -1;
     if ((pty->grantpt() < 0) || (pty->unlockpt() < 0)) {
-	error("master setup failed");
+	qWarning("SuProcess::exec(): master setup failed");
 	return -1;
     }
 
     pid_t pid;
     if ((pid = fork()) == -1) {
-	xerror("fork(): %s");
+	qWarning("SuProcess::exec(): fork(): %s", strerror(errno));
 	return -1;
     }
 
@@ -83,19 +85,19 @@ int SuProcess::exec(char *password, bool check_only)
 	// Parent: Have the necessary conversations.
 
 	if (ConverseSU(master, password, pty->ptsname()) < 0) {
-	    error("Conversation with su failed");
+	    qWarning("SuProcess::exec(): Conversation with su failed");
 	    return -1;
 	} 
-	if (mErase) {
+	if (m_bErase) {
 	    int len = strlen(password);
 	    for (int i=0; i<len; i++)
 		password[i] = 'x';
 	}
-	if (!check_only && (ConverseStub(master, mCommand.c_str()) < 0)) {
-	    error("Converstation with kdesu_stub failed");
+	if (!check_only && (ConverseStub(master, m_Command) < 0)) {
+	    qWarning("SuProcess::exec(): Converstation with kdesu_stub failed");
 	    return -1;
 	}
-	CopyOutput(master, check_only||mTerminal);
+	CopyOutput(master, check_only || m_bTerminal);
 
 	int ret;
 	waitpid(pid, &ret, 0);
@@ -108,29 +110,31 @@ int SuProcess::exec(char *password, bool check_only)
 
     } else {
 
-	char *prog;
+	const char *prog;
 	if (check_only) 
 	    prog = "true";
 	else
 	    prog = "kdesu_stub";
 
 	PathSearch PS;
-	const char *path = PS.locate(prog);
-	if (path == 0L) {
-	    error("%s not found", prog);
+	QCString path = PS.locate(prog);
+	if (path.isEmpty()) {
+	    qWarning("SuProcess::exec(): %s not found", prog);
 	    _exit(1);
 	}
 
 	if (SetupTTY(pty->ptsname()) < 0)
 	    _exit(1);
 
-	// Debug output will go through the tty from now on. It is visible
+	// Terminal output will go through the tty from now on. It is visible
 	// only if the user uses the '-t' switch.
 
-	execl(_PATH_SU, "su", mUser.c_str(), "-c", path, NULL);
+	execl(_PATH_SU, "su", (const char *) m_User, "-c", 
+		(const char *) path, NULL);
 
 	// Exec failed..
-	xerror("execl(\"%s\"): %s", _PATH_SU);
+	qWarning("SuProcess::exec(): execl(\"%s\"): %s", _PATH_SU, 
+		strerror(errno));
 	_exit(1);
     }
 
@@ -226,7 +230,7 @@ int SuProcess::ConverseStub(int fd, const char *command)
 	buf[nbytes] = '\000';
 
 	if (buf[nbytes-1] != '\n') {
-	    error("reqeust from kdesu_stub too long");
+	    qWarning("SuProcess:ConverseStub(): request from kdesu_stub too long");
 	    return -1;
 	}
 	buf[nbytes-1] = '\000';
@@ -235,41 +239,41 @@ int SuProcess::ConverseStub(int fd, const char *command)
 	
 	if (!strcmp(buf, "cookie")) {
 	    // X cookie
-	    debug("request for cookie");
+	    qDebug("SuProcess::ConverseStub(): request for cookie");
 	    if (C.cookie())
 		write(fd, C.cookie(), strlen(C.cookie()));
 	    write(fd, "\n", 1);
 	} else if (!strcmp(buf, "display")) {
 	    // X Display
-	    debug("request for display");
+	    qDebug("SuProcess::ConverseStub(): request for display");
 	    char *ptr = getenv("DISPLAY");
 	    if (ptr)
 		write(fd, ptr, strlen(ptr));
 	    write(fd, "\n", 1);
 	} else if (!strcmp(buf, "proto")) {
 	    // X cookie protocol
-	    debug("request for proto");
+	    qDebug("SuProcess::ConverseStub(): request for proto");
 	    if (C.proto())
 		write(fd, C.proto(), strlen(C.proto()));
 	    write(fd, "\n", 1);
 	} else if (!strcmp(buf, "path")) {
 	    // X Display
-	    debug("request for PATH");
+	    qDebug("SuProcess::ConverseStub(): request for PATH");
 	    char *ptr = getenv("PATH");
 	    if (ptr)
 		write(fd, ptr, strlen(ptr));
 	    write(fd, "\n", 1);
 	} else if (!strcmp(buf, "command")) {
 	    // Target command
-	    debug("request for command");
+	    qDebug("SuProcess::ConverseStub(): request for command");
 	    write(fd, command, strlen(command));
 	    write(fd, "\n", 1);
 	} else if (!strcmp(buf, "end")) {
 	    // end the conversation
-	    debug("Ending stub conversation");
+	    qDebug("SuProcess::ConverseStub(): Ending stub conversation");
 	    break;
 	} else {
-	    error("unknown request: %s", buf);
+	    qWarning("SuProcess::ConverseStub(): unknown request: %s", buf);
 	    return -1;
 	}
     }
@@ -299,18 +303,19 @@ int SuProcess::WaitSlave(const char *ttyname)
 
     while (1) {
 	if (tcgetattr(fd, &tio) < 0) {
-	    xerror("tcgetattr(): %s");
+	    qWarning("SuProcess::WaitSlave(): tcgetattr(): %s",
+		    strerror(errno));
 	    close(fd);
 	    return -1;
 	}
 	if (tio.c_lflag & ECHO) {
-	    debug("echo mode still on");
+	    qDebug("SuProcess::WaitSlave(): echo mode still on");
 	    // sleep 1/10 sec
 	    tv.tv_sec = 0; tv.tv_usec = 100000;
 	    select(fd, 0L, 0L, 0L, &tv);
 	    continue;
 	}
-	debug("echo mode off");
+	qDebug("SuProcess::WaitSlave(): echo mode off");
 	break;
     }
     close(fd);
@@ -361,15 +366,18 @@ int SuProcess::SetupTTY(const char *ttyname)
 
 
 UserProcess::UserProcess(const char *command)
-	: mCommand(command)
+	: m_Command(command)
 {
 }
 
 int UserProcess::exec()
 {
+    if (m_Command.isEmpty())
+	return -1;
+
     pid_t pid;
     if ((pid = fork()) == -1) {
-	xerror("fork(): %s");
+	qWarning("UserProcess::exec(): fork(): %s", strerror(errno));
 	return -1;
     }
 
@@ -381,8 +389,9 @@ int UserProcess::exec()
 	    return 0;
 	return -1;
     } else {
-	execl("/bin/sh", "sh", "-c", mCommand.c_str(), NULL);
-	xerror("exec(\"/bin/sh\"): %s");
+	execl("/bin/sh", "sh", "-c", (const char *) m_Command, NULL);
+	qWarning("UserProcess::exec(): exec(\"/bin/sh\"): %s",
+		strerror(errno));
 	_exit(1);
     }
 }

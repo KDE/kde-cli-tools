@@ -12,7 +12,7 @@
 #include <sys/socket.h>
 #include <sys/un.h>
 
-#include <string>
+#include <qcstring.h>
 
 /**
  * A client class to access kdesud, the KDE su daemon.
@@ -84,9 +84,9 @@ private:
     };
 
     int sockfd;
-    string sock;
+    QCString sock;
 
     int command(int code, const char *arg1=0, int arg2=0);
-    string escape(const char *str);
+    QCString escape(const char *str);
 };
 

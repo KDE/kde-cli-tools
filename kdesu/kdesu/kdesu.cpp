@@ -9,19 +9,18 @@
 
 #include <config.h>
 
-#include <iostream>
-#include <string>
-
 #include <unistd.h>
 #include <errno.h>
 #include <string.h>
 #include <pwd.h>
+#include <string.h>
 
 #include <sys/time.h>
 #include <sys/resource.h>
 
 #include <qstring.h>
 #include <qfileinfo.h>
+#include <qglobal.h>
 
 #include <kglobal.h>
 #include <kapp.h>
@@ -34,7 +33,6 @@
 #include "kpassdlg.h"
 #include "process.h"
 #include "client.h"
-#include "debug.h"
 
 
 // Globals
@@ -46,11 +44,35 @@ const char *Email = "<g.t.jansen@stud.tue.nl>";
 const char *Usage = "Usage: kdesu [USER] [-ntqd] [-f FILE] -c COMMAND [ARG1 [ARG2 [...]]]\n"
 		    "       kdesu -v|-h|-s\n";
 
+/*
+ * Message handler
+ */
+void msgHandler(QtMsgType type, const char *msg)
+{
+    switch (type) {
+    case QtDebugMsg:
+	if (_show_dbg)
+	    fprintf(stderr, "Debug: %s\n", msg);
+	break;
+
+    case QtWarningMsg:
+	if (_show_wrn)
+	    fprintf(stderr, "Warning: %s\n", msg);
+	break;
+
+    case QtFatalMsg:
+	fprintf(stderr, "Fatal: %s\n", msg);
+	exit(1);
+    }
+}
+
+
 // Main program
 
 int main(int argc, char *argv[])
 {
-    int c;
+    qInstallMsgHandler(msgHandler);
+
     QString command, file;
     bool keep = true;
     bool terminal = false;
@@ -64,15 +86,14 @@ int main(int argc, char *argv[])
     int i=0;
     s = parm.get(i++);
     if (s.isEmpty()) {
-	cout << Usage << TryHelp << endl;
+	printf(Usage);
+	printf(TryHelp);
 	exit(1);
     }
     if (s.at(0) != '-') {
 	struct passwd *pw = getpwnam(s.latin1());
-	if (pw == 0L) {
-	    error("User %s does not exist", s.latin1());
-	    exit(1);
-	}
+	if (pw == 0L)
+	    qFatal("User %s does not exist", s.latin1());
 	user = s;
 	uid = pw->pw_uid;
 	s = parm.get(i++);
@@ -84,7 +105,7 @@ int main(int argc, char *argv[])
     // Parse options
     while (s != "-c") {
 	if (s.at(0) != '-') {
-	    cout << Usage << TryHelp << endl;
+	    printf(Usage); printf(TryHelp);
 	    exit(1);
 	}
 	bool next = false;
@@ -93,7 +114,7 @@ int main(int argc, char *argv[])
 	    case 'f':
 		file = parm.get(i++);
 		if (file.isEmpty()) {
-		    cout << Usage << TryHelp << endl;
+		    printf(Usage); printf(TryHelp);
 		    exit(1);
 		}
 		next = true;
@@ -114,43 +135,40 @@ int main(int argc, char *argv[])
 
 	    // Exiting comand from here
 	    case 'v':
-		cerr << "kdesu version " << Version << endl;
-		cerr << endl;
-		cerr << "  Copyright (C) 1998 Pietro Iglio <iglio@fub.it>\n";
-		cerr << "  Copyright (C) 1999 Geert Jansen " << Email << endl;
-		cerr << endl;
+		printf("kdesu version %s\n", Version);
+		printf("\n");
+		printf("  Copyright (C) 1998 Pietro Iglio <iglio@fub.it>\n");
+		printf("  Copyright (C) 1999 Geert Jansen %s", Email);
+		printf("\n");
 		exit(0);
 	    case 'h':
-		cerr << Usage;
-		cerr << "Runs a command as another user.\n";
-		cerr << endl;
-		cerr << "Options:\n";
-		cerr << "  -c COMMAND    Run command COMMAND. The entire command\n";
-		cerr << "                line has to be passed as a single argument.\n";
-		cerr << "  -f FILE       Run command as root if file specified by FILE\n";
-		cerr << "                is not writeable under current uid.\n";
-		cerr << "  -n            Do not keep password\n";
-		cerr << "  -s            Stop the daemon (forgets all passwords)\n"; 
-		cerr << "  -t            Enable terminal output (no password keeping).\n";
-		cerr << "  -q            Be quiet (shows no warnings)\n";
-		cerr << "  -d            Show debug information\n";
-		cerr << "  -v            Show version information\n";
-		cerr << endl;
-		cerr << "Please report bugs to " << Email << endl;
+		printf(Usage);
+		printf("Runs a command as another user.\n");
+		printf("\n");
+		printf("Options:\n");
+		printf("  -c COMMAND    Run command COMMAND. The entire command\n");
+		printf("                line has to be passed as a single argument.\n");
+		printf("  -f FILE       Run command as root if file specified by FILE\n");
+		printf("                is not writeable under current uid.\n");
+		printf("  -n            Do not keep password\n");
+		printf("  -s            Stop the daemon (forgets all passwords)\n"); 
+		printf("  -t            Enable terminal output (no password keeping).\n");
+		printf("  -q            Be quiet (shows no warnings)\n");
+		printf("  -d            Show debug information\n");
+		printf("  -v            Show version information\n");
+		printf("\n");
+		printf("Please report bugs to %s\n", Email);
 		exit(0);
 	     case 's':
 		{
 		    KDEsuClient client;
-		    if (client.ping() == -1) {
-			error("Daemon not running -- nothing to stop");
-			exit(1);
-		    }
+		    if (client.ping() == -1)
+			qFatal("Daemon not running -- nothing to stop");
 		    if (client.stopServer() != -1) {
-			cout << "Daemon stopped\n";
+			printf("Daemon stopped\n");
 			return 0;
 		    }
-		    error("Could not stop daemon");
-		    exit(1);
+		    qFatal("Could not stop daemon");
 		}
 	    }
 	    if (next)
@@ -158,7 +176,7 @@ int main(int argc, char *argv[])
 	}
 	s = parm.get(i++);
 	if (s.isEmpty()) {
-	    cout << Usage << TryHelp << endl;
+	    printf(Usage); printf(TryHelp);
 	    exit(1);
 	}
     }
@@ -166,7 +184,7 @@ int main(int argc, char *argv[])
     // Parse command
     command = parm.get(i++);
     if (command.isEmpty()) {
-	cout << Usage << TryHelp << endl;
+	printf(Usage); printf(TryHelp);
 	exit(1);
     }
     while (!(s = parm.get(i++)).isEmpty()) {
@@ -185,10 +203,8 @@ int main(int argc, char *argv[])
 	    file = dirs.findResource("config", file);
 	}
 	QFileInfo fi(file);
-	if (!fi.exists()) {
-	    error("File does not exist: %s", file.latin1());
-	    exit(1);
-	}
+	if (!fi.exists())
+	    qFatal("File does not exist: %s", file.latin1());
 	change_uid = !fi.isWritable();
     }
 
@@ -214,10 +230,8 @@ int main(int argc, char *argv[])
     // root's password in memory.
     struct rlimit rlim;
     rlim.rlim_cur = rlim.rlim_max = 0;
-    if (setrlimit(RLIMIT_CORE, &rlim)) {
-	xerror("rlimit(): %s");
-	exit(1);
-    }
+    if (setrlimit(RLIMIT_CORE, &rlim))
+	qFatal("rlimit(): %s", strerror(errno));
 
     // From  here, we need the GUI: create a KApplication
     KApplication *app = new KApplication(argc, argv, "kdesu");
@@ -249,7 +263,8 @@ int main(int argc, char *argv[])
 		   "Please enter the password for \"%1\" below or click\n"
 		   "Ignore to continue with your current privileges.").arg(user);
 
-    KPasswordDlg *pwDlg = new KPasswordDlg(txt, command, user, ((keep&&!terminal) ? 1+keep_cfg : 0));
+    KPasswordDlg *pwDlg = new KPasswordDlg(txt, command, user, 
+	    ((keep&&!terminal) ? 1+keep_cfg : 0));
     pwDlg->setEchoMode(echo_mode);
     pwDlg->exec();
 
@@ -285,7 +300,7 @@ int main(int argc, char *argv[])
 	    client.setPass(pass, pw_timeout);
 	    return client.exec(command);
 	} else
-	    error("Cannot connect to daemon -- not keeping password");
+	    qWarning("Cannot connect to daemon -- not keeping password");
     } 
 
     SuProcess proc;

@@ -8,23 +8,24 @@
  * client.cpp: A client for kdesud.
  */
 
-#include <iostream>
-#include <string>
-
-#include <stdio.h> // sprintf
+#include <stdio.h>
 #include <unistd.h>
 #include <stdlib.h>
 #include <pwd.h>
+#include <errno.h>
+#include <string.h>
 
 #include <sys/types.h>
 #include <sys/socket.h>
 #include <sys/un.h>
 #include <sys/stat.h>
 
+#include <qglobal.h>
+#include <qcstring.h>
+
 #include "kdesu.h"
 #include "process.h"
 #include "client.h"
-#include "debug.h"
 #include "pathsearch.h"
 
 
@@ -33,12 +34,10 @@ KDEsuClient::KDEsuClient()
     sockfd = -1;
     char *dpy = getenv("DISPLAY");
     if (dpy == 0L) {
-	error("DISPLAY is not set");
+	qWarning("DISPLAY is not set");
 	return;
     }
-    char uid[20];
-    sprintf(uid, "%d_", (int) getuid());
-    sock = string("/tmp/kdesud_") + uid + dpy;
+    sock.sprintf("/tmp/kdesud_%d_%s", (int) getuid(), dpy);
     connect();
 }
 
@@ -54,21 +53,21 @@ int KDEsuClient::connect()
 {
     if (sockfd >= 0)
 	close(sockfd);
-    if (access(sock.c_str(), R_OK|W_OK)) {
+    if (access(sock, R_OK|W_OK)) {
 	sockfd = -1;
 	return -1;
     }
 
     sockfd = socket(PF_UNIX, SOCK_STREAM, 0);
     if (sockfd < 0) {
-	xerror("socket(): %s");
+	qWarning("KDEsuClient::connect(): socket(): %s", strerror(errno));
 	return -1;
     }
     struct sockaddr_un addr;
     addr.sun_family = AF_UNIX;
-    strcpy(addr.sun_path, sock.c_str());
+    strcpy(addr.sun_path, sock);
     if (::connect(sockfd, (struct sockaddr *) &addr, SUN_LEN(&addr)) < 0) {
-	xerror("connect(): %s");
+	qWarning("KDEsuClient::connect(): connect(): %s", strerror(errno));
 	close(sockfd); sockfd = -1;
 	return -1;
     }
@@ -76,17 +75,23 @@ int KDEsuClient::connect()
 }
 
 
-string KDEsuClient::escape(const char *str)
+QCString KDEsuClient::escape(const char *str)
 {
-    string copy = str;
+    QCString copy(str);
 
-    string::size_type n = 0;
-    while ((n = copy.find_first_of("\"\\", n)) != string::npos) {
-	copy.insert(n, 1, '\\');
+    int n = 0;
+    while ((n = copy.find("\\", n)) != -1) {
+	copy.insert(n, '\\');
 	n += 2;
     }
-    copy.insert(0, "\"");
-    copy += '\"';
+    n = 0;
+    while ((n = copy.find("\"", n)) != -1) {
+	copy.insert(n, '\\');
+	n += 2;
+    }
+
+    copy.prepend("\"");
+    copy.append("\"");
 
     return copy;
 }
@@ -97,22 +102,20 @@ int KDEsuClient::command(int code, const char *arg1, int arg2)
     if (sockfd < 0)
 	return -1;
 
-    string cmd;
-    char buf[100];
+    QCString cmd;
 
     switch (code) {
     case Cmd_pass:
-	sprintf(buf, "%d", arg2);
-	cmd = string("PASS ") + escape(arg1) + ' ' + buf + '\n';
+	cmd.sprintf("PASS %s %d\n", (const char *) escape(arg1), arg2);
 	break;
     case Cmd_user:
-	cmd = string("USER ") + escape(arg1) + '\n';
+	cmd.sprintf("USER %s\n", (const char *) escape(arg1));
 	break;
     case Cmd_exec:
-	cmd = string("EXEC ") + escape(arg1) + '\n';
+	cmd.sprintf("EXEC %s\n", (const char *) escape(arg1));
 	break;
     case Cmd_del:
-	cmd = string("DEL ") + escape(arg1) + '\n';
+	cmd.sprintf("DEL %s\n", (const char *) escape(arg1));
 	break;
     case Cmd_ping:
 	cmd = "PING\n";
@@ -122,18 +125,18 @@ int KDEsuClient::command(int code, const char *arg1, int arg2)
 	break;
     }
 
-    if (send(sockfd, cmd.c_str(), cmd.size(), 0) != (int) cmd.size())
+    if (send(sockfd, cmd, cmd.length(), 0) != (int) cmd.length())
 	return -1;
     
-    string reply;
-    int nbytes;
-    while ((nbytes = recv(sockfd, buf, 99, 0)) > 0) {
-	buf[nbytes] = '\000';
-	reply += buf;
-	if (reply.find('\n') != string::npos)
-	    break;
+    char buf[100];
+    int nbytes = recv(sockfd, buf, 99, 0);
+    if (nbytes <= 0) {
+	qWarning("KDEsuClient::command(): no reply");
+	return -1;
     }
+    buf[nbytes] = '\000';
 
+    QString reply = buf;
     if (reply != "OK\n")
 	return -1;
 
@@ -178,18 +181,19 @@ int KDEsuClient::startServer()
 {
     PathSearch PS;
 
-    const char *daemon = PS.locate("kdesud");
-    if (daemon == 0L) {
-	error("kdesud not found -- password keeping disabled");
+    QCString daemon = PS.locate("kdesud");
+    if (daemon.isEmpty()) {
+	qWarning("KDEsuClient::startServer(): kdesud not found -- no password keeping");
 	return -1;
     }
     struct stat sbuf;
     if (stat(daemon, &sbuf) < 0) {
-	xerror("stat(%s): %s", daemon);
+	qWarning("KDEsuClient::startServer(): stat(\"%s\"): %s", 
+		(const char *) daemon, strerror(errno));
 	return -1;
     }
     if (!(sbuf.st_mode & S_ISGID)) {
-	error("kdesud not setgid -- password keeping disabled");
+	qWarning("KDEsuClient::startServer(): kdesud not setgid -- no password keeping");
 	return -1;
     }
 

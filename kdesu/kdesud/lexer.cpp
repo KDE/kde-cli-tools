@@ -10,30 +10,26 @@
  */
 
 #include <ctype.h>
-
-#include <string>
-
+#include <qcstring.h>
 #include "lexer.h"
-#include "kdesud.h"
-#include "debug.h"
 
 
-Lexer::Lexer(string &input)
+Lexer::Lexer(const QCString &input)
 {
-    mInput = input; // copy
-    in = mInput.begin();
+    m_Input = input;
+    in = 0;
 }
 
 Lexer::~Lexer()
 {
-    // Clear out buffers
-    clear(mInput);
-    clear(mOutput);
+    // Erase buffers
+    m_Input.fill('x');
+    m_Output.fill('x');
 }
 
-string &Lexer::lval()
+QCString &Lexer::lval()
 {
-    return mOutput;
+    return m_Output;
 }
 
 /*
@@ -45,9 +41,9 @@ int Lexer::lex()
 {
     char c;
 
-    c = *in++;
-    clear(mOutput);
-    mOutput.erase();
+    c = m_Input[in++];
+    m_Output.fill('x');
+    m_Output.resize(0);
 
     while (1) {
 
@@ -60,27 +56,27 @@ int Lexer::lex()
 	    return Tok_none;
 
 	if (isspace(c))
-	    while (isspace(c = *in++));
+	    while (isspace(c = m_Input[in++]));
 
 	// number?
 	if (isdigit(c)) {
-	    mOutput += c;
-	    while (isdigit(c = *in++))
-		mOutput += c;
+	    m_Output += c;
+	    while (isdigit(c = m_Input[in++]))
+		m_Output += c;
 	    in--;
 	    return Tok_num;
 	}
 
 	// quoted string?
 	if (c == '"') {
-	    c = *in++;
+	    c = m_Input[in++];
 	    while ((c != '"') && !iscntrl(c)) {
 		// handle escaped characters
 		if (c == '\\')
-		    mOutput += *in++;
+		    m_Output += m_Input[in++];
 		else
-		    mOutput += c;
-		c = *in++;
+		    m_Output += c;
+		c = m_Input[in++];
 	    }
 	    if (c == '"')
 		return Tok_str;
@@ -89,24 +85,24 @@ int Lexer::lex()
 
 	// normal string
 	while (!isspace(c) && !iscntrl(c)) {
-	    mOutput += c;
-	    c = *in++;
+	    m_Output += c;
+	    c = m_Input[in++];
 	}
 	in--;
 
 	// command? 
-	if (mOutput.size() <= 4) {
-	    if (mOutput == "EXEC")
+	if (m_Output.length() <= 4) {
+	    if (m_Output == "EXEC")
 		return Tok_exec;
-	    if (mOutput == "PASS")
+	    if (m_Output == "PASS")
 		return Tok_pass;
-	    if (mOutput == "DEL")
+	    if (m_Output == "DEL")
 		return Tok_del;
-	    if (mOutput == "PING")
+	    if (m_Output == "PING")
 		return Tok_ping;
-	    if (mOutput == "STOP")
+	    if (m_Output == "STOP")
 		return Tok_stop;
-	    if (mOutput == "USER")
+	    if (m_Output == "USER")
 		return Tok_user;
 	}
 

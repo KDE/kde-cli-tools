@@ -27,11 +27,6 @@
 #include "client.h"
 
 
-// Globals
-
-int _show_dbg = 0;
-int _show_wrn = 1;
-
 KDEsuConfig::KDEsuConfig(QWidget *parent, const char *name)
     : KConfigWidget(parent, name)
 {

@@ -9,14 +9,11 @@
 #include <time.h>
 #include <assert.h>
 
-#include <queue>
-#include <map>
-#include <stack>
-#include <string>
+#include <qcstring.h>
+#include <qmap.h>
+#include <qvaluestack.h>
 
 #include "repo.h"
-#include "kdesud.h"
-#include "debug.h"
 
 
 Repository::Repository()
@@ -29,41 +26,41 @@ Repository::~Repository()
 {}
 
 
-void Repository::add(const string &key, Data_entry *data)
+void Repository::add(const QCString &key, Data_entry &data)
 {
     if (repo.find(key) != repo.end())
-	erase(key);
+	remove(key);
 
-    data->timeout += time(0L);
-    head_time = min(head_time, data->timeout);
-    repo[key] = *data;
+    data.timeout += time(0L);
+    head_time = QMIN(head_time, data.timeout);
+    repo[key] = data;
 
-    debug("Added key: %s", key.c_str());
+    qDebug("Added key: %s", (const char *) key);
 }
 
 
-int Repository::erase(const string &key)
+int Repository::remove(const QCString &key)
 {
     repo_it = repo.find(key);
     if (repo_it == repo.end()) 
 	return -1;
     
-    clear(repo_it->second.value);
-    repo.erase(key);
+    repo_it.data().value.fill('x');
+    repo.remove(key);
 
-    debug("Deleted key: %s", key.c_str());
+    qDebug("Deleted key: %s", (const char *) key);
     return 0;
 }
 
 
-const Data_entry *Repository::find(const string &key) const
+const Data_entry *Repository::find(const QCString &key) const
 {
     repo_cit = repo.find(key);
     if (repo_cit == repo.end())
 	return 0L;
 
-    debug("Found key: %s", key.c_str());
-    return &(repo_cit->second);
+    qDebug("Found key: %s", (const char *) key);
+    return &repo_cit.data();
 }
 
 
@@ -74,27 +71,24 @@ int Repository::expire()
     if (current < head_time)
 	return 0;
     
-    stack<string> keys;
+    QValueStack<QCString> keys;
 
     unsigned t;
     head_time = (unsigned) -1;
     for (repo_cit=repo.begin(); repo_cit!=repo.end(); repo_cit++) {
-	t = repo_cit->second.timeout;
+	t = repo_cit.data().timeout;
 	if (current >= t)
-	    keys.push(repo_cit->first);
+	    keys.push(repo_cit.key());
 	else 
-	    head_time = min(head_time, t);
+	    head_time = QMIN(head_time, t);
     }
 
-    string s;
-    int n = keys.size();
-    while (keys.size()) {
-	s = keys.top();
-	erase(s);
-	keys.pop();
-    }
     
-    debug("Expired %d entries", n);
+    int n = keys.count();
+    while (!keys.isEmpty())
+	remove(keys.pop());
+    
+    qDebug("Expired %d entries", n);
     return n;
 }
 
