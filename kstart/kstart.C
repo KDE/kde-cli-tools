@@ -14,7 +14,7 @@
 #include <kprocess.h>
 #include <qregexp.h>
 #include <klocale.h>
-#include <kwm.h>
+#include <kwin.h>
 #include <kapp.h>
 #include <kaboutdata.h>
 #include <kcmdlineargs.h>
