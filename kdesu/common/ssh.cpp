@@ -71,18 +71,6 @@ int SshProcess::checkInstall(const char *password)
 
 int SshProcess::exec(const char *password, int check)
 {    
-    if (PtyProcess::init() < 0)
-	return -1;
-
-    // Open the pty slave before forking. See PtyProcess::SetupTTY
-    int slave = open(m_TTY, O_RDWR);
-    if (slave < 0) {
-	kDebugError("%s: Could not open slave pty", ID);
-	return -1;
-    }
-
-    // Get DCOP port forward.
-
     QCStringList args;
     if (!m_bXOnly) {
 	// Install DCOP forward

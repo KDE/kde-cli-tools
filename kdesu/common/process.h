@@ -56,20 +56,12 @@ public:
      */
     void setErase(bool erase) { m_bErase = erase; }
 
+protected:
     /**
      * Set exit string. If a line of program output matches this,
      * waitForChild() will kill it.
      */
     void setExitString(QCString exit) { m_Exit = exit; }
-
-protected:
-    // These virtual functions can be overloaded when special behaviour is
-    // needed (i.e. SshProcess).
-    virtual QCString display() { return m_pCookie->display(); }
-    virtual QCString displayAuth() { return m_pCookie->displayAuth(); }
-    virtual QCStringList dcopServer() { return m_pCookie->dcopServer(); }
-    virtual QCStringList dcopAuth() { return m_pCookie->dcopAuth(); }
-    virtual QCStringList iceAuth() { return m_pCookie->iceAuth(); }
 
     int exec(QCString command, QCStringList args);
     QCString readLine();
@@ -79,10 +71,18 @@ protected:
     int waitForChild(bool echo);
     int enableLocalEcho(bool enable=true);
 
+    // These virtual functions can be overloaded when special behaviour is
+    // needed (i.e. SshProcess).
+    virtual QCString display() { return m_pCookie->display(); }
+    virtual QCString displayAuth() { return m_pCookie->displayAuth(); }
+    virtual QCStringList dcopServer() { return m_pCookie->dcopServer(); }
+    virtual QCStringList dcopAuth() { return m_pCookie->dcopAuth(); }
+    virtual QCStringList iceAuth() { return m_pCookie->iceAuth(); }
+
     bool m_bTerminal;
     bool m_bErase, m_bXOnly;
     int m_Pid, m_Fd;
-    QCString m_TTY, m_Command, m_Exit;
+    QCString m_Command, m_Exit;
 
 private:
     QCString commaSeparatedList(QCStringList);
@@ -90,7 +90,7 @@ private:
 
     PTY *m_pPTY;
     KCookie *m_pCookie;
-    QCString m_Inbuf;
+    QCString m_Inbuf, m_TTY;
 };
 
 
