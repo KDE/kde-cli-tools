@@ -273,7 +273,7 @@ static KCmdLineOptions options[] =
                   "NOTE: If you specify neither window title nor window class,\n"
                   "then the very first window to appear will be taken;\n"
                   "omitting both options is NOT recommended."), 0 },
-  { "desktop <number>", I18N_NOOP("Desktop where to make the window appear"), 0 },
+  { "desktop <number>", I18N_NOOP("Desktop on which to make the window appear"), 0 },
   { "currentdesktop", I18N_NOOP("Make the window appear on the desktop that was active\nwhen starting the application"), 0 },
   { "alldesktops", I18N_NOOP("Make the window appear on all desktops"), 0 },
   { "iconify", I18N_NOOP("Iconify the window"), 0 },
