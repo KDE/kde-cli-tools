@@ -32,11 +32,10 @@ FileTypesView::FileTypesView(QWidget *p, const char *name)
 {
   QString wtstr;
   setButtons(Cancel|Apply|Ok);
-  QVBoxLayout *wrapper = new QVBoxLayout(this, KDialog::marginHint(),
-					 KDialog::spacingHint());
-  QHBoxLayout *topLayout = new QHBoxLayout;
 
-  wrapper->addLayout(topLayout);
+  QHBoxLayout *topLayout = new QHBoxLayout(this, KDialog::marginHint(),
+					   KDialog::spacingHint());
+
   QGridLayout *leftLayout = new QGridLayout(2, 2);
   topLayout->addLayout(leftLayout, 2);
 
@@ -72,7 +71,7 @@ FileTypesView::FileTypesView(QWidget *p, const char *name)
   topLayout->addLayout(rightLayout, 3);
 
   QHBoxLayout *hBox = new QHBoxLayout();
-  rightLayout->addLayout(hBox);
+  rightLayout->addLayout(hBox, 2);
 
   iconButton = new KIconButton(this);
   iconButton->setIconType(KIcon::Desktop, KIcon::MimeType);
@@ -89,11 +88,12 @@ FileTypesView::FileTypesView(QWidget *p, const char *name)
 
   QGridLayout *grid = new QGridLayout(gb, 3, 2, KDialog::marginHint(),
                                       KDialog::spacingHint());
-  grid->addRowSpacing(0, gb->fontMetrics().height());
+  grid->addRowSpacing(0, fontMetrics().lineSpacing());
 
   extensionLB = new QListBox(gb);
   connect(extensionLB, SIGNAL(highlighted(int)), SLOT(enableExtButtons(int)));
   grid->addMultiCellWidget(extensionLB, 1, 2, 0, 0);
+  grid->setRowStretch(1, 1);
 
   QWhatsThis::add( extensionLB, i18n("This box contains a list of patterns that can be"
     " used to identify files of the selected type. For example, the pattern *.txt is"
@@ -131,12 +131,12 @@ FileTypesView::FileTypesView(QWidget *p, const char *name)
   QWhatsThis::add( description, wtstr );
 
   gb = new QGroupBox(i18n("Application Preference Order"), this);
-  rightLayout->addWidget(gb);
+  rightLayout->addWidget(gb, 1);
 
   grid = new QGridLayout(gb, 5, 2, KDialog::marginHint(),
                          KDialog::spacingHint());
-  grid->addRowSpacing(0, gb->fontMetrics().height());
-  grid->setRowStretch(3, 1);
+  grid->addRowSpacing(0, fontMetrics().lineSpacing());
+//  grid->setRowStretch(3, 1);
 
   servicesLB = new QListBox(gb);
   connect(servicesLB, SIGNAL(highlighted(int)), SLOT(enableMoveButtons(int)));
@@ -174,8 +174,6 @@ FileTypesView::FileTypesView(QWidget *p, const char *name)
   grid->addWidget(servNewButton, 3, 1);
 
   QWhatsThis::add( servNewButton, i18n( "Add a new application for this file type." ) );
-
-  wrapper->addStretch(1);
 
   init();
 }

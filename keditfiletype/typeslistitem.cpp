@@ -1,4 +1,6 @@
 #include <qstring.h>
+#include <qtooltip.h>
+
 #include <kservice.h>
 #include <kuserprofile.h>
 #include <kglobal.h>
