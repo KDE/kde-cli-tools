@@ -8,7 +8,7 @@ else
     AC_MSG_RESULT(no)
 fi
 
-dnl Check for the group "nogroup". Use -2 otherwise.
+dnl Check for the group "nogroup" or "nobody" Use -2 otherwise.
 AC_MSG_CHECKING(nogroup)
 AC_TRY_RUN([
     #include <grp.h>
@@ -20,6 +20,18 @@ AC_TRY_RUN([
 	if (grp) return 0;
 	return 1;
     }
-], nogroup=nogroup, nogroup=65534, nogroup=65534)
+], nogroup=nogroup, 
+AC_TRY_RUN([
+    #include <grp.h>
+    #include <sys/types.h>
+
+    int main() 
+    {
+	struct group *grp = getgrnam("nobody");
+	if (grp) return 0;
+	return 1;
+    }
+], nogroup=nobody, 
+nogroup=65534, nogroup=65534), nogroup=65534)
 AC_MSG_RESULT($nogroup)
 AC_SUBST(nogroup)
