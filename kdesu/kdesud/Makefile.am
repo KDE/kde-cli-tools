@@ -25,3 +25,5 @@ install-exec-local: install-binPROGRAMS
 	|| echo "Error: Could not install kdesud as setgid nogroup!!\n" \
 	"The password caching feature is disabled."
 
+messages:
+	$(XGETTEXT) $(kdesud_SOURCES) -o $(podir)/kdesud.pot
