@@ -6,7 +6,7 @@ INCLUDES= -I$(top_srcdir)/kdesu/common $(all_includes)
 bin_PROGRAMS = 	kdesu
 kdesu_SOURCES = kdesu.cpp kpassdlg.cpp
 kdesu_LDFLAGS = $(all_libraries) $(KDE_RPATH)
-kdesu_LDADD   = $(LIB_KDECORE) $(LIB_KDEUI) $(top_builddir)/kdesu/common/libkdesu.a
+kdesu_LDADD   = $(LIB_KDECORE) $(LIB_KDEUI) $(top_builddir)/kdesu/common/libkdesu.la
 kdesu_METASOURCES =  AUTO
 noinst_HEADERS = kpassdlg.h
 
