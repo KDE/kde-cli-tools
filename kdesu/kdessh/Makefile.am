@@ -12,5 +12,5 @@ noinst_HEADERS = sshdlg.h
 
 ## Messages
 messages:
-	$(XGETTEXT) -C -ki18n -kI18N_NOOP -x $(includedir)/kde.pot $(kdessh_SOURCES) -o $(podir)/kdessh.pot
+	$(XGETTEXT) $(kdessh_SOURCES) -o $(podir)/kdessh.pot
 

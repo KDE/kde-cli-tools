@@ -12,4 +12,4 @@ noinst_HEADERS = sudlg.h
 
 ## Messages
 messages:
-	$(XGETTEXT) -C -ki18n -x $(includedir)/kde.pot $(kdesu_SOURCES) && mv messages.po $(podir)/kdesu.pot
+	$(XGETTEXT) $(kdesu_SOURCES) -o $(podir)/kdesu.pot
