@@ -104,7 +104,7 @@ void TypesListItem::sync()
     KService::Ptr pService = KService::service(*it);
     ASSERT(pService);
 
-    QString serviceLoc = locateLocal("apps", pService->relativeFilePath());
+    QString serviceLoc = locateLocal("apps", pService->desktopEntryPath());
     KDesktopFile desktop(serviceLoc);
     desktop.writeEntry("Type", pService->type());
     desktop.writeEntry("Icon", pService->icon());
