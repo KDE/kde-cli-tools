@@ -1,0 +1,57 @@
+[Desktop Entry]
+Icon=filetypes
+Type=Application
+Exec=kcmshell Browsing/Files/filetypes
+
+X-KDE-ModuleType=Library
+X-KDE-LibraryName=filetypes
+X-KDE-ControlModuleType=User
+X-KDE-HideFromPanel=true
+
+Name=File Associations
+Name[ca]=Associacions de fitxers
+Name[cs]=Asociace souborů
+Name[de]=Datei-Zuordnungen
+Name[eo]=Dosierasocioj
+Name[fi]=Tiedostosidokset
+Name[fr]=Associations de fichiers
+Name[he]=םיצבק יכויש
+Name[hu]=Fájl társítások
+Name[it]=Associazioni file
+Name[ja]=ファイルの関連付け
+Name[no]=Filtilknytninger
+Name[no_NY]=Filtilknytingar
+Name[pt]=Associação de Ficheiros
+Name[ro]=Asociere fişiere
+Name[sl]=Datote�ne asociacije
+Name[sv]=Filbindningar
+Name[ta]=§¸¡ôÒ ¦¾¡¼÷Ò¸û
+
+Comment=File Association Configuration
+Comment[ca]=Configuració de les associacions de fitxers
+Comment[cs]=Nastavení asociací souborů s aplikacemi
+Comment[de]=Zuordnung von Dateitypen vornehmen
+Comment[eo]=Argordaĵo pri asocioj inter dosierotipoj kaj aplikaĵoj
+Comment[fi]=Muokkaa tietostosidoksia
+Comment[fr]=Configuration des associations de fichiers
+Comment[he]=םיצבק יכויש תורדגה
+Comment[hu]=Fájl társítások beállítása
+Comment[it]=Configurazione associazioni file
+Comment[ja]=Talk daemon の設定
+Comment[no]=Konfigurasjon av filtilknytninger
+Comment[no_NY]=Oppsett av filtilknytingar
+Comment[pt]=Configuração das Associações de Ficheiros
+Comment[ro]=Configurează asocierea fişierelor cu aplicaţii
+Comment[sl]=Nastavitev datote�nih asociacij
+Comment[sv]=Anpassning av filbindningar
+Comment[ta]=§¸¡ôÒ ¦¾¡¼÷Ò ÅÊÅ¨ÁôÒ
+
+Keywords=Filetypes,File Assosciations,Mime Types,File Patterns,Files
+Keywords[ca]=Tipus de fitxer,Associacions de fitxers,Tipus Mime,Patrons de fitxer,Fitxers
+Keywords[de]=dateitypen,dateizuordnungen,mime -typen,dateimuster,datei-filter,dateien
+Keywords[hu]=fájltípusok,fájl hozzárendelések, mime típusok,fájlok,file
+Keywords[no]=Filtyper,Filassosiasjoner,Mime-typer,Filmønster,filer
+Keywords[no_NY]=filtypar,filtilknytingar,mime-typar,filmønster,filer
+Keywords[pt]=tipos de ficheiros,associações,tipos mime,padrões de ficheiros,ficheiros
+Keywords[ro]=tipuri de fişiere,asocieri fişiere,tipuri MIME,modele fişiere,fişiere
+Keywords[sl]=vrste datotek,povezave datotek,vrste MIME,vzorci datotek,datoteke

@@ -17,3 +17,6 @@ DISTCLEANFILES = $(libkcm_filetypes_la_METASOURCES)
 
 messages:
 	$(XGETTEXT) *.cpp -o $(podir)/filetypes.pot
+
+data_DATA = filetypes.desktop
+datadir = $(kde_appsdir)/Settings/Browsing/Files
