@@ -1,4 +1,9 @@
-Dat, 23 Oct 99    Geert Jansen <g.t.jansen@stud.tue.nl>
+Sat, 18 Dec 99    Geert Jansen <g.t.jansen@stud.tue.nl>
+
+    * Add DCOP authentication cookies.
+    * Fixed SMP install of kdesud.
+
+Sat, 23 Oct 99    Geert Jansen <g.t.jansen@stud.tue.nl>
 
     * STL -> QTL
     * Use Qt's standard debug facilities.
