@@ -16,4 +16,4 @@ noinst_HEADERS = filetypesview.h typeslistitem.h \
 DISTCLEANFILES = $(libkcm_filetypes_la_METASOURCES)
 
 messages:
-	$(XGETTEXT) -C -ktranslate -ki18n -x $(includedir)/kde.pot *.cpp && mv messages.po ../po/filetypes.pot
+	$(XGETTEXT) -C -ktranslate -ki18n -x $(includedir)/kde.pot *.cpp && mv messages.po ../../po/filetypes.pot
