@@ -5,7 +5,7 @@
 #include <qstringlist.h>
 #include <qcombobox.h>
 #include <kdialog.h>
-#include <klined.h>
+#include <klineedit.h>
 
 class NewTypeDialog : public KDialog
 {
@@ -15,7 +15,7 @@ public:
   QString group() const { return groupCombo->currentText(); }
   QString text() const { return typeEd->text(); }
 private:
-  QLineEdit *typeEd;
+  KLineEdit *typeEd;
   QComboBox *groupCombo;
 };
 

@@ -2,7 +2,7 @@
 #include <qlabel.h>
 #include <kglobal.h>
 #include <klocale.h>
-#include <klined.h>
+#include <klineedit.h>
 #include <kbuttonbox.h>
 
 #include "extensiondlg.h"

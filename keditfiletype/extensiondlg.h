@@ -5,7 +5,7 @@
 
 #include <kdialog.h>
 
-class QLineEdit;
+class KLineEdit;
 
 class ExtensionDialog : public KDialog
 {
@@ -14,7 +14,7 @@ public:
   QString text() const { return extEd->text(); }
 
 private:
-  QLineEdit *extEd;
+  KLineEdit *extEd;
 };
 
 #endif

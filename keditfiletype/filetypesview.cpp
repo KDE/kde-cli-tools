@@ -11,7 +11,6 @@
 #include <kstddirs.h>
 #include <klocale.h>
 #include <kdialog.h>
-#include <klined.h>
 #include <kservice.h>
 #include <kservicetype.h>
 #include <kmimetype.h>
