@@ -10,7 +10,7 @@
 #include <krun.h>
 #include <kbuttonbox.h>
 #include <kiconloader.h>
-#include <kiconloaderdialog.h>
+#include <kicondialog.h>
 #include <kstddirs.h>
 #include <klocale.h>
 #include <kdialog.h>
@@ -72,7 +72,7 @@ FileTypesView::FileTypesView(QWidget *p, const char *name)
   QHBoxLayout *hBox = new QHBoxLayout();
   rightLayout->addLayout(hBox);
 
-  iconButton = new KIconLoaderButton(this);
+  iconButton = new KIconButton(this);
   iconButton->setIconType(KIcon::Desktop, KIcon::MimeType);
   connect(iconButton, SIGNAL(iconChanged(QString)), SLOT(updateIcon(QString)));
 

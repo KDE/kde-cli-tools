@@ -6,7 +6,7 @@
 class QListView;
 class QListViewItem;
 class QListBox;
-class KIconLoaderButton;
+class KIconButton;
 class QLineEdit;
 class QComboBox;
 
@@ -46,7 +46,7 @@ protected:
 
 private:
   QListView *typesLV;
-  KIconLoaderButton *iconButton;
+  KIconButton *iconButton;
   QListBox *extensionLB;
   QLineEdit *description;
   QListBox *servicesLB;
