@@ -40,7 +40,7 @@ void TypesListItem::initMeta( const QString & major )
   m_mimetype = 0L;
   m_major = major;
   KConfig config("konquerorrc", true);
-  config.setGroup("FMSettings");
+  config.setGroup("EmbedSettings");
   m_autoEmbed = config.readBoolEntry( QString::fromLatin1("embed-")+m_major, true ) ? 0 : 1;
 }
 
@@ -152,7 +152,7 @@ bool TypesListItem::isDirty() const
   } else {
 
     KConfig config("konquerorrc", true);
-    config.setGroup("FMSettings");
+    config.setGroup("EmbedSettings");
     int oldAutoEmbed = config.readBoolEntry( QString::fromLatin1("embed-")+m_major, true ) ? 0 : 1;
     if ( m_autoEmbed != oldAutoEmbed )
       return true;
@@ -167,7 +167,7 @@ void TypesListItem::sync()
   if ( isMeta() )
   {
     KConfig config("konquerorrc");
-    config.setGroup("FMSettings");
+    config.setGroup("EmbedSettings");
     config.writeEntry( QString::fromLatin1("embed-")+m_major, m_autoEmbed == 0 );
     return;
   }
