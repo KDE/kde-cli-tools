@@ -7,6 +7,7 @@
 
 #include <dcopclient.h>
 #include <kbuttonbox.h>
+#include <kiconloader.h>
 #include <kiconloaderdialog.h>
 #include <kstddirs.h>
 #include <klocale.h>
@@ -59,7 +60,7 @@ FileTypesView::FileTypesView(QWidget *p, const char *name)
   rightLayout->addLayout(hBox);
 
   iconButton = new KIconLoaderButton(this);
-  iconButton->setIconType("mimetypes");
+  iconButton->setIconType(KIcon::Desktop, KIcon::MimeType);
   connect(iconButton, SIGNAL(iconChanged(const QString &)),
           SLOT(updateIcon(const QString &)));
 
