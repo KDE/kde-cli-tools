@@ -1,6 +1,6 @@
 /* vi: ts=8 sts=4 sw=4
  *
- * $Id: $
+ * $Id$
  *
  * This file is part of the KDE project, module kdesu.
  * Copyright (C) 2000 Geert Jansen <jansen@kde.org>
@@ -21,7 +21,7 @@ KDEsshDialog::KDEsshDialog(QCString host, QCString user, QCString command,
     m_Host = host;
     m_User = user;
 
-    setCaption(i18n("%1@%2").arg(m_User).arg(m_Host));
+    setCaption(QString::fromLatin1("%1@%2").arg(m_User).arg(m_Host));
 
     // Make the prompt a little more polite :-)
     if (!strnicmp(prompt, "Enter ", 6))
