@@ -41,7 +41,8 @@ pid_t execute(const QCString & cmd){
 // some globals
 
 static QCString command = 0;
-static QCString window = 0;
+static QCString windowtitle = 0;
+static QCString windowclass = 0;
 static int desktop = 0;
 static bool activate = false;
 static bool iconify = false;
@@ -58,8 +59,8 @@ KStart::KStart()
     // connect to window add to get the NEW windows
     connect(kwinmodule, SIGNAL(windowAdded(WId)), SLOT(windowAdded(WId)));
 
-    if (window)
-	kwinmodule->doNotManage( window );
+    if (windowtitle)
+	kwinmodule->doNotManage( windowtitle );
 
     // propagate the app startup notification info to the started app
     KStartupInfoId id;
@@ -98,12 +99,25 @@ void KStart::windowAdded(WId w){
         || info.windowType( SUPPORTED_WINDOW_TYPES_MASK ) == NET::Desktop )
         return;
 
-    if ( window) {
-	QString title = info.name();
-	QRegExp r( window );
-	if (r.match(title) == -1)
+    if ( windowtitle ) {
+	QString title = info.name().lower();
+	QRegExp r( windowtitle );
+	if (r.match(windowtitle) == -1)
 	    return; // no match
-    } else {
+    }
+    if ( windowclass ) {
+        XClassHint hint;
+        if( !XGetClassHint( qt_xdisplay(), w, &hint ))
+            return;
+        QCString cls = windowclass.contains( ' ' )
+            ? QCString( hint.res_name ) + ' ' + hint.res_class : hint.res_class;
+        cls = cls.lower();
+        XFree( hint.res_name );
+	XFree( hint.res_class );
+        if( cls != windowclass )
+            return;
+    }
+    if( !windowtitle && !windowclass ) {
         // accept only "normal" windows
         if( info.windowType( SUPPORTED_WINDOW_TYPES_MASK ) != NET::Unknown
             && info.windowType( SUPPORTED_WINDOW_TYPES_MASK ) != NET::Normal
@@ -196,10 +210,13 @@ static KCmdLineOptions options[] =
 {
   { "!+command", I18N_NOOP("Command to execute."), 0 },
   // "!" means: all options after command are treated as arguments to the command
-  { "window <regexp>", I18N_NOOP("A regular expression matching the window title.\n"
-                  "If you do not specify one, then the very first\n"
-                  "window to appear will be taken;\n"
-                  "omitting this option is NOT recommended."), 0 },
+  { "window <regexp>", I18N_NOOP("A regular expression matching the window title."), 0 },
+  { "windowclass <class>", I18N_NOOP("A string matching the window class (WM_CLASS property).\n"
+                  "The window class can be found out by running\n"
+                  "'xprop | grep WM_CLASS' and clicking on a window.\n"
+                  "NOTE: If you specify neither window title nor window class,\n"
+                  "then the very first window to appear will be taken;\n"
+                  "omitting both options is NOT recommended."), 0 },
   { "desktop <number>", I18N_NOOP("Desktop where to make the window appear. "), 0 },
   { "currentdesktop", I18N_NOOP("Make the window appear on the desktop that was active\nwhen starting the application. "), 0 },
   { "alldesktops", I18N_NOOP("Make the window appear on all desktops"), 0 },
@@ -259,10 +276,15 @@ int main( int argc, char *argv[] )
   if ( args->isSet ( "currentdesktop")  )
       desktop = kwinmodule->currentDesktop();
 
-  window = args->getOption( "window" );
+  windowtitle = args->getOption( "window" );
+  windowclass = args->getOption( "windowclass" );
+  if( windowtitle )
+      windowtitle = windowtitle.lower();
+  if( windowclass )
+      windowclass = windowclass.lower();
   
-  if( window.isEmpty())
-      kdWarning() << "Omitting --window argument is not recommended" << endl;
+  if( windowtitle.isEmpty() && windowclass.isEmpty())
+      kdWarning() << "Omitting both --window and --windowclass arguments is not recommended" << endl;
 
   QCString s = args->getOption( "type" );
   if ( !s.isEmpty() ) {
