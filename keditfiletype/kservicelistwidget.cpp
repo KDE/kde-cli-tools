@@ -28,7 +28,7 @@ public:
 };
 
 KServiceListItem::KServiceListItem( QString &_desktopPath )
-	: QListBoxText(), desktopPath(_desktopPath)
+    : QListBoxText(), desktopPath(_desktopPath)
 {
     KService::Ptr pService = KService::serviceByDesktopPath( _desktopPath );
 
@@ -40,7 +40,7 @@ KServiceListItem::KServiceListItem( QString &_desktopPath )
 KServiceListWidget::KServiceListWidget(int kind, QWidget *parent, const char *name)
   : QGroupBox( kind == SERVICELIST_APPLICATIONS ? i18n("Application Preference Order")
                : i18n("Services Preference Order"), parent, name ),
-  m_kind( kind )
+    m_kind( kind ), m_item( 0L )
 {
   QWidget * gb = this;
   QGridLayout * grid = new QGridLayout(gb, 6, 2, KDialog::marginHint(),
