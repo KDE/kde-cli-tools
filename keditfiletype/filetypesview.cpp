@@ -278,13 +278,19 @@ void FileTypesView::updateDisplay(QListViewItem *item)
 
 void FileTypesView::updateIcon(const QString &icon)
 {
-  TypesListItem *tli = (TypesListItem *) typesLV->selectedItem();
+  if (extensionLB->currentItem() == 0)
+    return;
+
+  TypesListItem *tli = (TypesListItem *) typesLV->currentItem();
   tli->setIcon(icon);
 }
 
 void FileTypesView::updateDescription(const QString &desc)
 {
-  TypesListItem *tli = (TypesListItem *) typesLV->selectedItem();
+  if (extensionLB->currentItem() == 0)
+    return;
+
+  TypesListItem *tli = (TypesListItem *) typesLV->currentItem();
   tli->setComment(desc);
 }
 
@@ -329,8 +335,10 @@ void FileTypesView::demoteService()
 }
 
 void FileTypesView::updatePreferredServices()
-{
-  TypesListItem *tli = (TypesListItem *) typesLV->selectedItem();
+{ 
+  if (typesLV->currentItem() == 0)
+    return;
+  TypesListItem *tli = (TypesListItem *) typesLV->currentItem();
   QStringList sl;
   unsigned int count = servicesLB->count();
 
@@ -404,6 +412,9 @@ void FileTypesView::enableExtButtons(int /*index*/)
 void FileTypesView::addService()
 {
   TypesListItem *item = (TypesListItem *)typesLV->currentItem();
+  if (!item)
+      return;
+
   QStringList list;
   list.append(i18n("File Type: %1").arg(item->name()));
   KOpenWithDlg dlg(list, i18n("Add Application"), QString::null, (QWidget*)0);
