@@ -37,6 +37,7 @@
 
 #include "sudlg.h"
 
+#define ERR strerror(errno)
 
 const char *Version = "1.0";
 
@@ -69,15 +70,20 @@ int main(int argc, char *argv[])
     KCmdLineArgs *args = KCmdLineArgs::parsedArgs();
 
     // Stop daemon and exit?
-    if (args->isSet("s")) {
+    if (args->isSet("s")) 
+    {
 	KDEsuClient client;
 	if (client.ping() == -1)
-	    kDebugFatal("Daemon not running -- nothing to stop");
-	if (client.stopServer() != -1) {
-	    printf("Daemon stopped\n");
+	{
+	    kdError(1206) << "Daemon not running -- nothing to stop\n";
+	    exit(1);
+	}
+	if (client.stopServer() != -1) 
+	{
+	    kdDebug(1206) << "Daemon stopped\n";
 	    exit(0);
 	}
-	kDebugFatal("Could not stop daemon");
+	kdError(1206) << "Could not stop daemon\n";
 	exit(1);
     }
 
@@ -85,27 +91,32 @@ int main(int argc, char *argv[])
     QCString user = args->getOption("u");
     QCString auth_user = user;
     struct passwd *pw = getpwnam(user);
-    if (pw == 0L) {
-	kDebugFatal("User %s does not exist", (const char *) user);
+    if (pw == 0L) 
+    {
+	kdError(1206) << "User " << user << " does not exist\n";
 	exit(1);
     }
     bool change_uid = (getuid() != pw->pw_uid);
 
     // If file is writeable, do not change uid
     QString file = QFile::decodeName(args->getOption("f"));
-    if (change_uid && !file.isEmpty()) {
-	if (file.at(0) != '/') {
+    if (change_uid && !file.isEmpty()) 
+    {
+	if (file.at(0) != '/') 
+	{
 	    KStandardDirs dirs;
 	    dirs.addKDEDefaults();
 	    file = dirs.findResource("config", file);
-	    if (file.isEmpty()) {
-		kDebugFatal("Config file not found: %s", file.latin1());
+	    if (file.isEmpty()) 
+	    {
+		kdError(1206) << "Config file not found: " << file << "\n";
 		exit(1);
 	    }
 	}
 	QFileInfo fi(file);
-	if (!fi.exists()) {
-	    kDebugFatal("File does not exist: %s", file.latin1());
+	if (!fi.exists()) 
+	{
+	    kdError(1206) << "File does not exist: " << file << "\n";
 	    exit(1);
 	}
 	change_uid = !fi.isWritable();
@@ -115,14 +126,16 @@ int main(int argc, char *argv[])
     QCString tmp = args->getOption("p");
     bool ok;
     int priority = tmp.toInt(&ok);
-    if (!ok || (priority < 0) || (priority > 100)) {
+    if (!ok || (priority < 0) || (priority > 100)) 
+    {
 	KCmdLineArgs::usage(i18n("Illegal priority: %1").arg(tmp));
 	exit(1);
     }
     int scheduler = SuProcess::SchedNormal;
     if (args->isSet("r"))
 	scheduler = SuProcess::SchedRealtime;
-    if ((priority > 50) || (scheduler != SuProcess::SchedNormal)) {
+    if ((priority > 50) || (scheduler != SuProcess::SchedNormal)) 
+    {
 	change_uid = true;
 	auth_user = "root";
     }
@@ -131,7 +144,8 @@ int main(int argc, char *argv[])
     if (args->count() == 0)
 	KCmdLineArgs::usage(i18n("No command specified!"));
     QCString command = args->arg(0);
-    for (int i=1; i<args->count(); i++) {
+    for (int i=1; i<args->count(); i++) 
+    {
 	command += " ";
 	command += args->arg(i);
     }
@@ -144,22 +158,28 @@ int main(int argc, char *argv[])
     bool just_started = false;
     bool have_daemon = true;
     KDEsuClient client;
-    if (client.ping() == -1) {
-	if (client.startServer() == -1) {
-	    kDebugWarning("Could not start daemon, reduced functionality.");
+    if (!client.isServerSGID())
+    {
+	kdWarning(1206) << "Daemon not safe (not sgid), not using it.\n";
+	have_daemon = false;
+    } else if (client.ping() == -1) 
+    {
+	if (client.startServer() == -1)
+	{
+	    kdWarning(1206) << "Could not start daemon, reduced functionality.\n";
 	    have_daemon = false;
 	}
 	just_started = true;
     }
 
     // Try to exec the command with kdesud.
-    bool keep = !args->isSet("n");
+    bool keep = !args->isSet("n") && have_daemon;
     bool terminal = args->isSet("t");
-    if (keep && !terminal && !just_started) {
-	client.setUser(user);
+    if (keep && !terminal && !just_started) 
+    {
 	client.setPriority(priority);
 	client.setScheduler(scheduler);
-	if (client.exec(command) != -1)
+	if (client.exec(command, user) != -1)
 	    return 0;
     }
 
@@ -167,8 +187,9 @@ int main(int argc, char *argv[])
     // root's password in memory.
     struct rlimit rlim;
     rlim.rlim_cur = rlim.rlim_max = 0;
-    if (setrlimit(RLIMIT_CORE, &rlim)) {
-	kDebugFatal("rlimit(): %m");
+    if (setrlimit(RLIMIT_CORE, &rlim)) 
+    {
+	kdError(1206) << "rlimit(): " << ERR << "\n";
 	exit(1);
     }
 
@@ -183,7 +204,8 @@ int main(int argc, char *argv[])
      // Start the dialog
     KDEsuDialog *dlg = new KDEsuDialog(user, auth_user, keep && !terminal);
     dlg->addLine(i18n("Command:"), command);
-    if ((priority != 50) || (scheduler != SuProcess::SchedNormal)) {
+    if ((priority != 50) || (scheduler != SuProcess::SchedNormal)) 
+    {
 	QString prio;
 	if (scheduler == SuProcess::SchedRealtime)
 	    prio += i18n("realtime: ");
@@ -205,23 +227,26 @@ int main(int argc, char *argv[])
     if (!change_uid)
 	return system(command);
 
-    if (just_started && have_daemon) {
+    if (just_started && have_daemon) 
+    {
 	client.connect();
-	if (client.ping() == -1) {
-	    kDebugWarning("Could not connect to daemon.");
+	if (client.ping() == -1) 
+	{
+	    kdWarning(1206) << "Could not connect to daemon.\n";
 	    have_daemon = false;
 	}
     }
 
     // Run command
 
-    if (k && have_daemon) {
-	client.setUser(user);
+    if (k && have_daemon) 
+    {
 	client.setPass(password, timeout);
 	client.setPriority(priority);
 	client.setScheduler(scheduler);
-	return client.exec(command);
-    } else {
+	return client.exec(command, user);
+    } else 
+    {
 	SuProcess proc;
 	proc.setTerminal(terminal);
 	proc.setErase(true);
