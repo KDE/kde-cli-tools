@@ -22,7 +22,7 @@ FileTypeDetails::FileTypeDetails( QWidget * parent, const char * name )
   QVBoxLayout *firstLayout = new QVBoxLayout(firstWidget,KDialog::marginHint(),
                                        KDialog::spacingHint());
 
-  QHBoxLayout *hBox = new QHBoxLayout(0L, 0, KDialog::spacingHint());
+  QHBoxLayout *hBox = new QHBoxLayout(firstWidget, 0, KDialog::spacingHint());
   firstLayout->addLayout(hBox, 1);
 
   iconButton = new KIconButton(firstWidget);
