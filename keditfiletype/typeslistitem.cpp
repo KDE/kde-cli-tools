@@ -154,8 +154,9 @@ bool TypesListItem::isDirty() const
       return true;
     }
 
-    KServiceTypeProfile::OfferList offerList =
-      KServiceTypeProfile::offers(m_mimetype->name());
+    // not used anywhere?
+//     KServiceTypeProfile::OfferList offerList =
+//       KServiceTypeProfile::offers(m_mimetype->name());
 
     QStringList oldAppServices;
     QStringList oldEmbedServices;
@@ -257,7 +258,8 @@ void TypesListItem::sync()
   // Note: we currently do that for applications only. Embedding services can't be removed.
 
   KServiceTypeProfile::OfferList offerList =
-    KServiceTypeProfile::offers(m_mimetype->name());
+    KServiceTypeProfile::offers(m_mimetype->name(), "Application");
+  offerList += KServiceTypeProfile::offers(m_mimetype->name(), "KParts/ReadOnlyPart");
 
   QValueListIterator<KServiceOffer> it_srv(offerList.begin());
 
