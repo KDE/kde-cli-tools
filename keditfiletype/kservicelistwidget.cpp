@@ -12,6 +12,7 @@
 #include <klocale.h>
 #include <kopenwith.h>
 #include <kmimetype.h>
+#include <knotifyclient.h>
 #include <kservice.h>
 #include <kservicetype.h>
 #include <kuserprofile.h>
@@ -149,13 +150,13 @@ void KServiceListWidget::setTypeItem( TypesListItem * item )
 void KServiceListWidget::promoteService()
 {
   if (!servicesLB->isEnabled()) {
-    kapp->beep();
+    KNotifyClient::beep();
     return;
   }
 
   unsigned int selIndex = servicesLB->currentItem();
   if (selIndex == 0) {
-    kapp->beep();
+    KNotifyClient::beep();
     return;
   }
 
@@ -172,13 +173,13 @@ void KServiceListWidget::promoteService()
 void KServiceListWidget::demoteService()
 {
   if (!servicesLB->isEnabled()) {
-    kapp->beep();
+    KNotifyClient::beep();
     return;
   }
 
   unsigned int selIndex = servicesLB->currentItem();
   if (selIndex == servicesLB->count() - 1) {
-    kapp->beep();
+    KNotifyClient::beep();
     return;
   }
 
