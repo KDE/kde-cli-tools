@@ -31,6 +31,21 @@ KCookie::KCookie()
 }
 
 
+QCStringList KCookie::split(QCString line, char ch)
+{
+    QCStringList result;
+
+    int i=0, pos;
+    while ((pos = line.find(ch, i)) != -1) {
+	result += line.mid(i, pos-i);
+	i = pos+1;
+    }
+    if (i < (int) line.length())
+	result += line.mid(i);
+    return result;
+}
+    
+
 void KCookie::getXCookie()
 {    
     char buf[1024];
@@ -41,17 +56,19 @@ void KCookie::getXCookie()
 	kDebugError("%s: $DISPLAY is not set", ID);
 	return;
     }
-    QString cmd = QString("xauth list %1").arg(m_Display);
-    if (!(f = popen(cmd.latin1(), "r"))) {
+    QCString cmd;
+    cmd.sprintf("xauth list %s", m_Display.data());
+    if (!(f = popen(cmd, "r"))) {
 	kDebugError("%s: popen(): %m", ID);
 	return;
     }
-    QString output = QString(fgets(buf, 1024, f)).simplifyWhiteSpace();
+    QCString output = fgets(buf, 1024, f);
     if (pclose(f) < 0) {
 	kDebugError("%s: Could not run xauth", ID);
 	return;
     }
-    QStringList lst = QStringList::split(' ', output);
+    output = output.simplifyWhiteSpace();
+    QCStringList lst = split(output, ' ');
     if (lst.count() != 3) {
 	kDebugError("%s: parse error", ID);
 	return;
@@ -65,42 +82,45 @@ void KCookie::getICECookie()
     FILE *f;
     char buf[1024];
 
-    QString dcopsrv(getenv("DCOPSERVER"));
+    QCString dcopsrv = getenv("DCOPSERVER");
     if (dcopsrv.isEmpty()) {
-	QString home(getenv("HOME"));
+	QCString home = getenv("HOME");
 	if (home.isEmpty()) {
-	    kDebugError("%s: Cannot find DCOP server.", ID);
+	    kDebugWarning("%s: Cannot find DCOP server.", ID);
 	    return;
 	}
 	if (!(f = fopen(home + "/.DCOPserver", "r"))) {
-	    kDebugError("%s: Cannot open ~/.DCOPserver.", ID);
+	    kDebugWarning("%s: Cannot open ~/.DCOPserver.", ID);
 	    return;
 	}
-	dcopsrv = QString(fgets(buf, 1024, f)).stripWhiteSpace();
+	dcopsrv = fgets(buf, 1024, f);
+	dcopsrv = dcopsrv.stripWhiteSpace();
 	fclose(f);
     }
-    m_DCOPSrv = QStringList::split(',', dcopsrv);
-    if (m_DCOPSrv.count() == 0)
+    m_DCOPSrv = split(dcopsrv, ',');
+    if (m_DCOPSrv.count() == 0) {
+	kDebugWarning("No DCOP servers found");
 	return;
+    }
 
-    QStringList::Iterator it;
+    QCStringList::Iterator it;
     for (it=m_DCOPSrv.begin(); it != m_DCOPSrv.end(); it++) {
-	QString cmd = QString("iceauth list netid=%1").arg(*it);
-	if (!(f = popen(cmd.latin1(), "r"))) {
+	QCString cmd;
+	cmd.sprintf("iceauth list netid=%s", (*it).data());
+	if (!(f = popen(cmd, "r"))) {
 	    kDebugError("%s: popen(): %m", ID);
 	    break;
 	}
-	QStringList output;
+	QCStringList output;
 	while (fgets(buf, 1024, f) > 0)
-	    output += QString(buf);
+	    output += buf;
 	if (pclose(f) < 0) {
 	    kDebugError("%s: Could not run iceauth.", ID);
 	    break;
 	}
-	QStringList::Iterator it;
-	for (it=output.begin(); it!=output.end(); it++) {
-	    QStringList lst = QStringList::split(' ',
-		    (*it).simplifyWhiteSpace());
+	QCStringList::Iterator it2;
+	for (it2=output.begin(); it2!=output.end(); it2++) {
+	    QCStringList lst = split((*it2).simplifyWhiteSpace(), ' ');
 	    if (lst.count() != 5) {
 		kDebugError("%s: parse error", ID);
 		break;
@@ -110,7 +130,7 @@ void KCookie::getICECookie()
 	    else if (lst[0] == "ICE")
 		m_ICEAuth += (lst[3] + ' ' + lst[4]);
 	    else 
-		kDebugError("%s: unknown protocol: %s", ID, lst[0].latin1());
+		kDebugError("%s: unknown protocol: %s", ID, lst[0].data());
 	}
     }
 }

@@ -8,7 +8,8 @@
  * This file contains code from TEShell.C of the KDE konsole. 
  * Copyright (c) 1997,1998 by Lars Doelle <lars.doelle@on-line.de> 
  *
- * process.cpp: Execute a program as another user with "class SuProcess".
+ * process.cpp: Functionality to build a front end to password asking
+ *  terminal programs.
  */
 
 #include <config.h>
@@ -36,6 +37,7 @@
 
 #include <qglobal.h>
 #include <qcstring.h>
+#include <qfile.h>
 
 #include <kdebug.h>
 #include <kstddirs.h>
@@ -140,7 +142,65 @@ QCString PtyProcess::readLine()
     return ret;
 }
 
+/*
+ * Fork and execute the command. This returns in the parent.
+ */
+
+int PtyProcess::exec(QCString command, QCStringList args)
+{
+    if (init() < 0)
+	return -1;
+
+    // Open the pty slave before forking. See SetupTTY()
+    int slave = open(m_TTY, O_RDWR);
+    if (slave < 0) {
+        kDebugError("%s: Could not open slave pty", ID);
+        return -1;
+    } 
+
+    if ((m_Pid = fork()) == -1) {
+        kDebugPError("%s: fork()", ID);
+        return -1;
+    } 
+
+    // Parent
+    if (m_Pid) {
+	close(slave);
+	return 0;
+    }
+
+    // Child
+    if (SetupTTY(slave) < 0)
+	_exit(1);
+
+    // From now on, terminal output goes through the tty.
+
+    QCString path;
+    if (command.contains('/'))
+	path = command;
+    else {
+	QString file = KStandardDirs::findExe(command);
+	if (file.isEmpty()) {
+	    kDebugError("%s: %s not found!", ID, command.data());
+	    _exit(1);
+	} 
+	path = QFile::encodeName(file);
+    }
+
+    int i;
+    const char *argp[32];
+    argp[0] = path;
+    QCStringList::Iterator it;
+    for (i=1, it=args.begin(); it!=args.end() && i<31; it++)
+	argp[i++] = *it;
+    argp[i] = 0L;
 	
+    execv(path, argp);
+    kDebugPError("%s: execv(\"%s\")", ID, path.data());
+    _exit(1);
+}
+
+
 /*
  * Wait until the terminal is set into no echo mode. At least one su 
  * (RH6 w/ Linux-PAM patches) sets noecho mode AFTER writing the Password: 
@@ -206,16 +266,16 @@ int PtyProcess::enableLocalEcho(bool enable)
 }
 
 
-QCString PtyProcess::commaSeparatedList(QStringList lst)
+QCString PtyProcess::commaSeparatedList(QCStringList lst)
 {
     if (lst.count() == 0)
 	return QCString("");
 
-    QStringList::Iterator it = lst.begin();
-    QCString str = (*it).latin1();
+    QCStringList::Iterator it = lst.begin();
+    QCString str = *it;
     for (it++; it!=lst.end(); it++) {
 	str += ',';
-	str += (*it).latin1();
+	str += *it;
     }
     return str;
 }
@@ -243,12 +303,10 @@ int PtyProcess::ConverseStub(bool check_only)
 	    else
 		write(m_Fd, "ok\n", 3);
 	} else if (line == "display") {
-	    QCString str = display().latin1();
-	    write(m_Fd, str, str.length());
+	    write(m_Fd, display(), display().length());
 	    write(m_Fd, "\n", 1);
 	} else if (line == "display_auth") {
-	    QCString str = displayAuth().latin1();
-	    write(m_Fd, str, str.length());
+	    write(m_Fd, displayAuth(), displayAuth().length());
 	    write(m_Fd, "\n", 1);
 	} else if (line == "dcopserver") {
 	    QCString str = commaSeparatedList(dcopServer());
@@ -350,8 +408,8 @@ int PtyProcess::waitForChild(bool echo)
 }
    
 /*
- * SetupTTY: Creates a new session. The filedescriptor "fd" cannot be closed
- * until the slave pty is opened. This fd is actually also connected to it,
+ * SetupTTY: Creates a new session. The filedescriptor "fd" is closed only 
+ * after the slave pty is opened. This fd is actually also connected to it,
  * and it makes sure the peer doesn't get EIO when reading before we opened
  * it.
  */

@@ -38,7 +38,7 @@ public:
     int checkInstall(const char *password);
 
 protected:
-    QStringList dcopServer();
+    QCStringList dcopServer();
 
 private:
     int ConverseSU(const char *password);

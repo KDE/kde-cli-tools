@@ -22,6 +22,7 @@
 
 #include <qglobal.h>
 #include <qcstring.h>
+#include <qfile.h>
 
 #include <kdebug.h>
 #include <kstddirs.h>
@@ -65,57 +66,35 @@ int SuProcess::checkInstall(const char *password)
 
 int SuProcess::exec(const char *password, int check)
 {
-    if (PtyProcess::init() < 0)
-	return -1;
-
-    // Open slave before forking: see PtyProcess::SetupTTY.
-    int slave = open(m_TTY, O_RDWR);
-    if (slave < 0) {
-	kDebugError("%s: Could not open slave pty", ID);
-	return -1;
-    }
-    if ((m_Pid = fork()) == -1) {
-	kDebugWarning("%s: fork(): %m", ID);
-	return -1;
-    }
-    if (m_Pid) {
-	close(slave);
-	if (ConverseSU(password) < 0) {
-	    kDebugError("%s: Conversation with su failed", ID);
-	    return -1;
-	} 
-	if (m_bErase) {
-	    char *ptr = const_cast<char *>(password);
-	    for (unsigned i=0; i<strlen(password); i++)
-		ptr[i] = '\000';
-	}
-	if (ConverseStub(check) < 0) {
-	    kDebugError("%s: Converstation with kdesu_stub failed", ID);
-	    return -1;
-	}
-	int ret = waitForChild(check);
-	return ret;
-
-    } else {
-
-	QString stub = KStandardDirs::findExe("kdesu_stub");
-	if (stub.isEmpty()) {
-	    kDebugError("%s: kdesu_stub not found", ID);
-	    _exit(1);
-	}
-
-	if (SetupTTY(slave) < 0)
-	    _exit(1);
-
-	// Terminal output will go through the tty from now on. It is visible
-	// only if the user uses the '-t' switch.
-
-	execl(__PATH_SU, "su", m_User.data(), "-c", stub.latin1(), 0L);
-	kDebugWarning("%s: execl(\"%s\"): %m", ID, __PATH_SU);
+    QString stub = KStandardDirs::findExe("kdesu_stub");
+    if (stub.isEmpty()) {
+	kDebugError("%s: kdesu_stub not found", ID);
 	_exit(1);
     }
 
-    return 0;
+    QCStringList args;
+    args += m_User;
+    args += "-c";
+    args += QFile::encodeName(stub);
+
+    if (PtyProcess::exec(__PATH_SU, args) < 0)
+	return -1;
+    
+    if (ConverseSU(password) < 0) {
+	kDebugError("%s: Conversation with su failed", ID);
+	return -1;
+    } 
+    if (m_bErase) {
+	char *ptr = const_cast<char *>(password);
+	for (unsigned i=0; i<strlen(password); i++)
+	    ptr[i] = '\000';
+    }
+    if (ConverseStub(check) < 0) {
+	kDebugError("%s: Converstation with kdesu_stub failed", ID);
+	return -1;
+    }
+    int ret = waitForChild(check);
+    return ret;
 }
 
 /*
@@ -153,13 +132,13 @@ int SuProcess::ConverseSU(const char *password)
 }
 
 
-QStringList SuProcess::dcopServer()
+QCStringList SuProcess::dcopServer()
 {
     if (!m_bXOnly) 
 	return PtyProcess::dcopServer();
 
-    QStringList lst;
-    lst += QString("no");
+    QCStringList lst;
+    lst += "no";
     return lst;
 }
 

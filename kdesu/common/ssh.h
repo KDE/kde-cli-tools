@@ -47,14 +47,14 @@ public:
     int exec(const char *password, int check=0);
 
 protected:
-    QString display();
-    QString displayAuth();
-    QStringList dcopServer();
-    QStringList dcopAuth();
-    QStringList iceAuth();
+    QCString display();
+    QCString displayAuth();
+    QCStringList dcopServer();
+    QCStringList dcopAuth();
+    QCStringList iceAuth();
 
 private:
-    QString dcopForward();
+    QCString dcopForward();
     int ConverseSsh(const char *password, int check);
 
     int m_dcopPort, m_dcopSrv;

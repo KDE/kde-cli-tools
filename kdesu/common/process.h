@@ -13,9 +13,12 @@
 #include <qcstring.h>
 #include <qstring.h>
 #include <qstringlist.h>
+#include <qvaluelist.h>
 
 #include "pty.h"
 #include "kcookie.h"
+
+typedef QValueList<QCString> QCStringList;
 
 /**
  * PtyProcess: a base class for SuProcess and RshProcess, providing common
@@ -62,28 +65,31 @@ public:
 protected:
     // These virtual functions can be overloaded when special behaviour is
     // needed (i.e. SshProcess).
-    virtual QString display() { return m_pCookie->display(); }
-    virtual QString displayAuth() { return m_pCookie->displayAuth(); }
-    virtual QStringList dcopServer() { return m_pCookie->dcopServer(); }
-    virtual QStringList dcopAuth() { return m_pCookie->dcopAuth(); }
-    virtual QStringList iceAuth() { return m_pCookie->iceAuth(); }
+    virtual QCString display() { return m_pCookie->display(); }
+    virtual QCString displayAuth() { return m_pCookie->displayAuth(); }
+    virtual QCStringList dcopServer() { return m_pCookie->dcopServer(); }
+    virtual QCStringList dcopAuth() { return m_pCookie->dcopAuth(); }
+    virtual QCStringList iceAuth() { return m_pCookie->iceAuth(); }
+
+    int exec(QCString command, QCStringList args);
+    QCString readLine();
+
+    int WaitSlave();
+    int ConverseStub(bool check_only);
+    int waitForChild(bool echo);
+    int enableLocalEcho(bool enable=true);
 
     bool m_bTerminal;
     bool m_bErase, m_bXOnly;
     int m_Pid, m_Fd;
     QCString m_TTY, m_Command, m_Exit;
 
-    int SetupTTY(int fd);
-    int WaitSlave();
-    int ConverseStub(bool check_only);
-    int waitForChild(bool echo);
-    int enableLocalEcho(bool enable=true);
-    QCString readLine();
-
 private:
+    QCString commaSeparatedList(QCStringList);
+    int SetupTTY(int fd);
+
     PTY *m_pPTY;
     KCookie *m_pCookie;
-    QCString commaSeparatedList(QStringList);
     QCString m_Inbuf;
 };
 

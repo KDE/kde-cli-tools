@@ -82,61 +82,46 @@ int SshProcess::exec(const char *password, int check)
     }
 
     // Get DCOP port forward.
-    QString fwd = dcopForward();
-    if (fwd.isEmpty()) {
-	kDebugError("%s: Could not get DCOP forward", ID);
-	return -1;
-    }
 
-    if ((m_Pid = fork()) == -1) {
-	kDebugPError("%s: fork()", ID);
-	return -1;
-    }
-    if (m_Pid) {
-	close(slave); // See PtyProcess::SetupTTY
-	int ret = ConverseSsh(password, check);
-	if (ret < 0) {
-	    kDebugError("%s: Conversation with ssh failed", ID);
+    QCStringList args;
+    if (!m_bXOnly) {
+	// Install DCOP forward
+	QCString fwd = dcopForward();
+	if (fwd.isEmpty()) {
+	    kDebugError("%s: Could not get DCOP forward", ID);
 	    return -1;
-	} 
-	if (m_bErase) {
-	    char *ptr = const_cast<char *>(password);
-	    for (unsigned i=0; i<strlen(password); i++)
-		ptr[i] = '\000';
 	}
-	setExitString("Waiting for forwarded connections to terminate");
-	if (ret == 0) {
-	    if (ConverseStub(check) < 0) {
-		kDebugError("%s: Converstation with kdesu_stub failed", ID);
-		kill(m_Pid, SIGTERM);
-	    }
-	    ret = waitForChild(check);
-	} else {
-	    kill(m_Pid, SIGTERM);
-	    waitForChild(check);
-	}
-	return ret;
-    } else {
-	if (SetupTTY(slave) < 0)
-	    _exit(1);
-	QString path = KStandardDirs::findExe("ssh");
-	if (path.isEmpty()) {
-	    kDebugError("ssh not found!");
-	    _exit(1);
-	}
-	if (m_bXOnly)
-	    execl(path.latin1(), "ssh", "-l", m_User.data(), 
-		"-o", "StrictHostKeyChecking no", m_Host.data(), 
-		"kdesu_stub", 0L);
-	else
-	    execl(path.latin1(), "ssh", "-R", fwd.latin1(), "-l", m_User.data(), 
-		"-o", "StrictHostKeyChecking no", m_Host.data(), 
-		"kdesu_stub", 0L);
-	kDebugPError("%s: execl(\"%s\")", ID, path.latin1());
-	_exit(1);
+	args += "-R"; args += fwd;
     }
+    args += "-l"; args += m_User;
+    args += "-o"; args += "StrictHostKeyChecking no";
+    args += m_Host; args += "kdesu_stub";
 
-    return 0;
+    if (PtyProcess::exec("ssh", args) < 0)
+	return -1;
+
+    int ret = ConverseSsh(password, check);
+    if (ret < 0) {
+	kDebugError("%s: Conversation with ssh failed", ID);
+	return -1;
+    } 
+    if (m_bErase) {
+	char *ptr = const_cast<char *>(password);
+	for (unsigned i=0; i<strlen(password); i++)
+	    ptr[i] = '\000';
+    }
+    setExitString("Waiting for forwarded connections to terminate");
+    if (ret == 0) {
+	if (ConverseStub(check) < 0) {
+	    kDebugError("%s: Converstation with kdesu_stub failed", ID);
+	    kill(m_Pid, SIGTERM);
+	}
+	ret = waitForChild(check);
+    } else {
+	kill(m_Pid, SIGTERM);
+	waitForChild(check);
+    }
+    return ret;
 }
 
 /*
@@ -146,13 +131,13 @@ int SshProcess::exec(const char *password, int check)
  * concern because ssh will not start.
  */
 
-QString SshProcess::dcopForward()
+QCString SshProcess::dcopForward()
 {
     bool ok;
     int i, j, port=0;
-    QString host;
-    QStringList srv = PtyProcess::dcopServer();
-    QStringList::Iterator it;
+    QCString result, host;
+    QCStringList srv = PtyProcess::dcopServer();
+    QCStringList::Iterator it;
     for (m_dcopSrv=0,it=srv.begin(); it!=srv.end(); m_dcopSrv++, it++) {
 	i = (*it).find('/');
 	if (i == -1)
@@ -168,10 +153,11 @@ QString SshProcess::dcopForward()
 	    break;
     }
     if (it == srv.end())
-	return QString::null;
+	return result;
 
     m_dcopPort = 10000 + (int) ((40000.0 * rand()) / (1.0 + RAND_MAX));
-    return QString("%1:%2:%3").arg(m_dcopPort).arg(host).arg(port);
+    result.sprintf("%d:%s:%d", m_dcopPort, host.data(), port);
+    return result;
 }
 
 	
@@ -251,42 +237,42 @@ int SshProcess::ConverseSsh(const char *password, int check)
 
 
 // Display redirection is handled by ssh natively.
-QString SshProcess::display()
+QCString SshProcess::display()
 {
-    return QString("no");
+    return "no";
 }
 
 
-QString SshProcess::displayAuth()
+QCString SshProcess::displayAuth()
 {
-    return QString("no");
+    return "no";
 }
 
 
 // Return the remote end of the forwarded connection.
-QStringList SshProcess::dcopServer()
+QCStringList SshProcess::dcopServer()
 {
-    QStringList lst;
+    QCStringList lst;
     if (m_bXOnly)
-	lst += QString("no");
+	lst += "no";
     else
-	lst += QString("tcp/localhost:%1").arg(m_dcopPort);
+	lst += QCString().sprintf("tcp/localhost:%d", m_dcopPort);
     return lst;
 }
 
 
 // Return the right cookie.
-QStringList SshProcess::dcopAuth()
+QCStringList SshProcess::dcopAuth()
 {
-    QStringList lst;
+    QCStringList lst;
     lst += PtyProcess::dcopAuth()[m_dcopSrv];
     return lst;
 }
 
 
-QStringList SshProcess::iceAuth()
+QCStringList SshProcess::iceAuth()
 {
-    QStringList lst;
+    QCStringList lst;
     lst += PtyProcess::iceAuth()[m_dcopSrv];
     return lst;
 }
