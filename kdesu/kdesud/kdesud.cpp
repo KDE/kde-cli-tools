@@ -191,7 +191,8 @@ int create_socket()
 
     struct sockaddr_un addr;
     addr.sun_family = AF_UNIX;
-    strcpy(addr.sun_path, sock);
+    strncpy(addr.sun_path, sock, sizeof(addr.sun_path)-1);
+    addr.sun_path[sizeof(addr.sun_path)-1] = '\000';
     addrlen = SUN_LEN(&addr);
     if (bind(sockfd, (struct sockaddr *)&addr, addrlen) < 0) 
     {
