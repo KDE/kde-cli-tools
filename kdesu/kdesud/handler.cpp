@@ -170,6 +170,8 @@ int ConnectionHandler::doCommand(QCString buf)
 	m_Timeout = l->lval().toInt();
 	if (l->lex() != '\n')
 	    goto parse_error;
+	if (m_Pass.isNull())
+	   m_Pass = "";
 	kdDebug(1205) << "Password set!\n";
 	respond(Res_OK);
 	break;
@@ -249,7 +251,7 @@ int ConnectionHandler::doCommand(QCString buf)
            key = makeKey(0, m_Host, auth_user, command);
            pass = repo->find(key);
         }
-	if (pass.isNull())
+	if (pass.isNull()) // isNull() means no password, isEmpty() can mean empty password
 	{
 	    if (m_Pass.isNull())
 	    {
