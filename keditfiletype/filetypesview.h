@@ -40,6 +40,7 @@ protected slots:
   void enableMoveButtons(int index);
   void enableExtButtons(int index);
   void addService();
+  void removeService();
   void slotFilter(const QString &patternFilter);
 
 protected:
@@ -47,17 +48,20 @@ protected:
   void readFileTypes(const QString &patternFilter = QString::null);
 
 private:
+  void setDirty(bool state);
+
   QListView *typesLV;
   KIconButton *iconButton;
   QListBox *extensionLB;
   QLineEdit *description;
   QListBox *servicesLB;
   QPushButton *servUpButton, *servDownButton;
-  QPushButton *servNewButton;
+  QPushButton *servNewButton, *servRemoveButton;
   QPushButton *addExtButton, *removeExtButton;
   QLineEdit *patternFilterLE;
 
   QStringList removedList;
+  bool m_dirty;
 };
 
 #endif

@@ -50,7 +50,7 @@ void TypesListItem::init(KMimeType::Ptr mimetype)
 
   for (; it != offerList.end(); ++it) {
     if ((*it).allowAsDefault())
-      m_services.append((*it).service()->name());
+      m_services.append((*it).service()->desktopEntryPath());
   }
 }
 
@@ -73,7 +73,7 @@ bool TypesListItem::isDirty() const
   QStringList oldservices;
   for (; it != offerList.end(); ++it) {
     if ((*it).allowAsDefault())
-      oldservices.append((*it).service()->name());
+      oldservices.append((*it).service()->desktopEntryPath());
   }
 
   if (oldservices != m_services)
@@ -88,7 +88,8 @@ void TypesListItem::sync()
   QString loc = name() + ".desktop";
   loc = locateLocal("mime", loc);
 
-  KDesktopFile config(loc, false, "mime");
+  KDesktopFile config( loc );
+  
   config.writeEntry("Type", "MimeType");
   config.writeEntry("MimeType", name());
   config.writeEntry("Icon", m_icon);
@@ -96,28 +97,136 @@ void TypesListItem::sync()
   config.writeEntry("Comment", m_comment);
 
   KSimpleConfig profile("profilerc");
+
+  // Deleting current contents in profilerc relating to 
+  // this service type
+  //
+  QStringList groups = profile.groupList();
+  
+  for (QStringList::Iterator it = groups.begin();
+       it != groups.end(); it++ )
+  {
+    profile.setGroup(*it);
+
+    // Entries with Preference <= 0 or AllowAsDefault == false
+    // are not in m_services
+    if ( profile.readEntry( "ServiceType" ) == name() 
+         && profile.readNumEntry( "Preference" ) > 0 
+         && profile.readBoolEntry( "AllowAsDefault" ) )
+    {
+      profile.deleteGroup( *it );
+    }
+  }
+  
+  // Save preferred services
+  //
+  int groupCount = 1;
+  
   QStringList::Iterator it(m_services.begin());
   for (int i = m_services.count(); it != m_services.end(); ++it, i--) {
-    profile.setGroup(*it);
+  
+    KService::Ptr pService = KService::serviceByDesktopPath(*it);
+    ASSERT(pService);
+
+	// Find a group header. The headers are just dummy names as far as
+	// KUserProfile is concerned, but using the mimetype makes it a
+	// bit more structured for "manual" reading
+    while ( profile.hasGroup( name() + " - " + QString::number(groupCount) ) )
+        groupCount++;
+    
+    profile.setGroup( name() + " - " + QString::number(groupCount) );
+
     profile.writeEntry("ServiceType", name());
+    profile.writeEntry("Application", pService->desktopEntryPath());
     profile.writeEntry("AllowAsDefault", true);
     profile.writeEntry("Preference", i);
     
-    KService::Ptr pService = KService::serviceByName(*it);
-    ASSERT(pService);
+	QString serviceLoc;
 
-    QString serviceLoc = locateLocal("apps", pService->desktopEntryPath());
-    KDesktopFile desktop(serviceLoc);
+	if ( pService->type() == QString("Service") )
+      serviceLoc = locateLocal("services", pService->desktopEntryPath());
+	else
+      serviceLoc = locateLocal("apps", pService->desktopEntryPath());
+	  
+    KDesktopFile desktop( serviceLoc );
+
     desktop.writeEntry("Type", pService->type());
     desktop.writeEntry("Icon", pService->icon());
-    desktop.writeEntry("Name", *it);
+    desktop.writeEntry("Name", pService->name());
     desktop.writeEntry("Comment", pService->comment());
     desktop.writeEntry("Exec", pService->exec());
 
     // merge new mimetype
     QStringList serviceList = pService->serviceTypes();
+  
     if (!serviceList.contains(name()))
       serviceList.append(name());
+
     desktop.writeEntry("MimeType", serviceList, ';');
-   }
+  }
+
+  // Handle removed services
+  //
+  KServiceTypeProfile::OfferList offerList = 
+    KServiceTypeProfile::offers(m_mimetype->name());
+  
+  QValueListIterator<KServiceOffer> it_srv(offerList.begin());
+  
+  for (; it_srv != offerList.end(); ++it_srv) {
+  
+    // Only those with allowAsDefault() were added in init() 
+    if ( (*it_srv).allowAsDefault() ) {
+    
+      KService::Ptr pService = (*it_srv).service();
+
+      if ( ! m_services.contains( pService->desktopEntryPath() ) ) {
+        // The service was in m_services but has been removed
+        // create a new .desktop file without this mimetype 
+        
+        QStringList serviceTypeList = pService->serviceTypes();
+
+        if ( serviceTypeList.contains( name() ) ) {
+          // The mimetype is listed explicitly in the .desktop files, so 
+          // just remove it and we're done
+          QString serviceLoc;
+		  
+          if ( pService->type() == QString("Service") )
+            serviceLoc = locateLocal("services", pService->desktopEntryPath());
+          else
+		    serviceLoc = locateLocal("apps", pService->desktopEntryPath());
+			
+          KDesktopFile desktop(serviceLoc);
+          
+          serviceTypeList.remove(name());
+          desktop.writeEntry("MimeType", serviceTypeList, ';');
+          
+          desktop.writeEntry("Type", pService->type());
+          desktop.writeEntry("Icon", pService->icon());
+          desktop.writeEntry("Name", pService->name());
+          desktop.writeEntry("Comment", pService->comment());
+          desktop.writeEntry("Exec", pService->exec());
+
+        }
+        else {
+          // The mimetype is not listed explicitly so it can't 
+          // be removed. Preference = 0 handles this.
+
+          // Find a group header. The headers are just dummy names as far as
+          // KUserProfile is concerned, but using the mimetype makes it a
+          // bit more structured for "manual" reading
+          while ( profile.hasGroup( 
+                  name() + " - " + QString::number(groupCount) ) )
+              groupCount++;
+            
+          profile.setGroup( name() + " - " + QString::number(groupCount) );
+
+          profile.writeEntry("Application", pService->desktopEntryPath());
+          profile.writeEntry("ServiceType", name());
+          profile.writeEntry("AllowAsDefault", true);
+          profile.writeEntry("Preference", 0);
+        }
+      }
+    }
+  }
+  
 }
