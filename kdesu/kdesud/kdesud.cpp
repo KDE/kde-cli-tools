@@ -161,6 +161,7 @@ int create_socket()
     int sockfd;
     char *display;
     ksize_t addrlen;
+    struct stat s;
 
     display = getenv("DISPLAY");
     if (!display) 
@@ -170,6 +171,14 @@ int create_socket()
     }
 
     sock.sprintf("/tmp/kdesud_%d_%s", (int) getuid(), display);
+    int stat_err=lstat(sock, &s);
+    if(!stat_err && S_ISLNK(s.st_ino)) {
+	kdWarning(1205) << "Someone is running a symlink attack on you\n";
+	if(unlink(sock)) {
+	    kdWarning(1205) << "Could not delete symlink\n";
+	    return -1;
+	}
+    }
 
     if (!access(sock, R_OK|W_OK)) 
     {
