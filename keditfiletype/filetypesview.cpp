@@ -23,7 +23,6 @@ FileTypesView::FileTypesView(QWidget *p, const char *name)
   : KCModule(p, name)
 {
   QString wtstr;
-  setButtons(Cancel|Apply|Ok);
 
   QHBoxLayout *topLayout = new QHBoxLayout(this, KDialog::marginHint(),
 					   KDialog::spacingHint());
