@@ -17,7 +17,7 @@
 #include <kmimetype.h>
 #include <kuserprofile.h>
 #include <kdesktopfile.h>
-#include <kio_openwith.h>
+#include <kopenwith.h>
 
 #include "typeslistitem.h"
 #include "newtypedlg.h"
@@ -31,7 +31,7 @@ FileTypesView::FileTypesView(QWidget *p, const char *name)
   setButtons(Default|Cancel|Apply|Ok);
   QHBoxLayout *topLayout = new QHBoxLayout(this, KDialog::marginHint(),
                                            KDialog::spacingHint());
-  
+
   QGridLayout *leftLayout = new QGridLayout(2, 2);
   topLayout->addLayout(leftLayout, 2);
 
@@ -55,7 +55,7 @@ FileTypesView::FileTypesView(QWidget *p, const char *name)
 
   QVBoxLayout *rightLayout = new QVBoxLayout();
   topLayout->addLayout(rightLayout, 3);
-  
+
   QHBoxLayout *hBox = new QHBoxLayout();
   rightLayout->addLayout(hBox);
 
@@ -92,7 +92,7 @@ FileTypesView::FileTypesView(QWidget *p, const char *name)
 
   gb = new QGroupBox(i18n("Description"), this);
   rightLayout->addWidget(gb);
-  
+
   gb->setColumnLayout(1, Qt::Horizontal);
   description = new KLineEdit(gb);
   connect(description, SIGNAL(textChanged(const QString &)),
@@ -263,7 +263,7 @@ void FileTypesView::updateDisplay(QListViewItem *item)
   servNewButton->setEnabled(true);
   extensionLB->insertStringList(tlitem->patterns());
 
-  
+
   servicesLB->clear();
   if (tlitem->defaultServices().count() == 0) {
     servicesLB->insertItem("None");
@@ -333,7 +333,7 @@ void FileTypesView::updatePreferredServices()
   TypesListItem *tli = (TypesListItem *) typesLV->selectedItem();
   QStringList sl;
   unsigned int count = servicesLB->count();
-  
+
   for (unsigned int i = 0; i < count; i++)
     sl.append(servicesLB->text(i));
 
@@ -350,7 +350,7 @@ bool FileTypesView::sync()
   for (; it != removedList.end(); ++it) {
     didIt = true;
     KMimeType::Ptr m_ptr = KMimeType::mimeType(*it);
-    
+
     loc = *it + ".desktop";
     loc = locateLocal("mime", loc);
 
@@ -376,23 +376,23 @@ void FileTypesView::enableMoveButtons(int index)
 {
   if (servicesLB->count() == 1)
   {
-    servUpButton->setEnabled(false);  
-    servDownButton->setEnabled(false);  
+    servUpButton->setEnabled(false);
+    servDownButton->setEnabled(false);
   }
   else if ((uint) index == (servicesLB->count() - 1))
   {
-    servUpButton->setEnabled(true);  
-    servDownButton->setEnabled(false);  
+    servUpButton->setEnabled(true);
+    servDownButton->setEnabled(false);
   }
   else if (index == 0)
   {
-    servUpButton->setEnabled(false);  
-    servDownButton->setEnabled(true);  
+    servUpButton->setEnabled(false);
+    servDownButton->setEnabled(true);
   }
   else
   {
-    servUpButton->setEnabled(true);  
-    servDownButton->setEnabled(true);  
+    servUpButton->setEnabled(true);
+    servDownButton->setEnabled(true);
   }
 }
 
@@ -449,8 +449,8 @@ void FileTypesView::defaults()
 
 extern "C"
 {
-  KCModule *create_filetypes(QWidget *parent, const char *name) 
-  { 
+  KCModule *create_filetypes(QWidget *parent, const char *name)
+  {
     KGlobal::locale()->insertCatalogue("filetypes");
     return new FileTypesView(parent, name);
   }
