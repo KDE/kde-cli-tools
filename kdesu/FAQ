@@ -32,11 +32,15 @@ A: KDE su needs to setup a pty/tty pair for communicating with `su'. This is
    that is not a tty.  Setting up a pty/tty pair is not completely portable.
 
 Q: A good debug tip?
-A: If kdesu doesn't fire up your application, use the '-dt' switches.
-   This way, you'll get terminal output (-t) and debug messages (-d). Maybe 
-   there is something wrong with the program you're trying to run.
+A: If kdesu doesn't fire up your application, use the '-t' switch.
+   This way, you'll get terminal output. Maybe there is something wrong with 
+   the program you're trying to run.
 
 Q: I always get the warning: "Terminal output not available on non-terminal".
 A: Maybe you're not logged on from a terminal but probably you're using
    UNIX98 pty's without glibc 2.1 (Linux). The glibc 2.0 ttyname() function 
    incorrectly reports that UNIX98 slave pty's are no tty's.
+
+Q: Why not use DCOP for the communications with the daemon?
+A: KDE su needs one instance of the daemon per host, instead of per desktop
+   session.
