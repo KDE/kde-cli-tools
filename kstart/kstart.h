@@ -7,6 +7,10 @@
  *
  */
 
+#ifndef KSTART_H
+#define KSTART_H
+
+
 #include <qobject.h>
 
 class KWinModule;
@@ -28,5 +32,5 @@ private:
 
 };
 
-
+#endif
 
