@@ -25,4 +25,4 @@ messages:
 	$(XGETTEXT) *.cpp -o $(podir)/filetypes.pot
 
 data_DATA = filetypes.desktop
-datadir = $(kde_appsdir)/Settings/Browsing/Files
+datadir = $(kde_appsdir)/Settings/FileBrowsing
