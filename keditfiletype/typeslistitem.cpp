@@ -369,6 +369,29 @@ static bool inheritsMimetype(KMimeType::Ptr m, const QStringList &mimeTypeList)
   return false;
 }
 
+KMimeType::Ptr TypesListItem::findImplicitAssociation(const QString &desktop)
+{
+    KService::Ptr s = KService::serviceByDesktopPath(desktop);
+
+    if( s_changedServices == NULL )
+       deleter.setObject( s_changedServices, new QMap< QString, QStringList > );
+    QStringList mimeTypeList = s_changedServices->contains( s->desktopEntryPath())
+       ? (*s_changedServices)[ s->desktopEntryPath() ] : s->serviceTypes();
+
+    if (mimeTypeList.contains(name()))
+       return 0;
+       
+    for(QStringList::ConstIterator it = mimeTypeList.begin();
+       it != mimeTypeList.end(); ++it)
+    {
+       if (m_mimetype->is(*it))
+       {
+          return KMimeType::mimeType(*it);
+       }
+    }
+    return 0;
+}
+
 void TypesListItem::saveServices( KConfig & profile, QStringList services, const QString & genericServiceType )
 {
   QStringList::Iterator it(services.begin());

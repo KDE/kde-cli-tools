@@ -4,8 +4,9 @@
 
 #include <kdebug.h>
 #include <klocale.h>
-#include <kopenwith.h>
+#include <kmessagebox.h>
 #include <knotifyclient.h>
+#include <kopenwith.h>
 
 #include "kservicelistwidget.h"
 #include "kserviceselectdlg.h"
@@ -309,8 +310,7 @@ void KServiceListWidget::editService()
 
 void KServiceListWidget::removeService()
 {
-  // TODO check if service is associated with this mimetype or with one
-  // of its parents
+  if (!m_item) return;
   // Here are some strings already so that we don't have to break translations
   // later on.
   QString msg1 = i18n("The service <b>%1</b> can not be removed.");
@@ -327,10 +327,24 @@ void KServiceListWidget::removeService()
   int selected = servicesLB->currentItem();
 
   if ( selected >= 0 ) {
-    servicesLB->removeItem( selected );
-    updatePreferredServices();
+    // Check if service is associated with this mimetype or with one of its parents
+    KServiceListItem *serviceItem = static_cast<KServiceListItem *>(servicesLB->item(selected));
+    KMimeType::Ptr mimetype = m_item->findImplicitAssociation(serviceItem->desktopPath);
+    if (mimetype)
+    {
+       KMessageBox::sorry(this, "<qt>"+msg1.arg(serviceItem->text())+"<p>"+
+                                msg2.arg(mimetype->name()).arg(mimetype->comment()).
+                                arg(m_item->name()).arg(m_item->comment()).
+                                arg(mimetype->name())+"<p>"+
+                                msg3.arg(mimetype->name()));
+    }
+    else
+    {
+       servicesLB->removeItem( selected );
+       updatePreferredServices();
 
-    emit changed(true);
+       emit changed(true);
+    }
   }
 
   if ( servRemoveButton && servicesLB->currentItem() == -1 )
