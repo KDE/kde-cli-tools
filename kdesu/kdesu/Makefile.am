@@ -12,4 +12,4 @@ noinst_HEADERS = kpassdlg.h
 
 ## Messages
 messages:
-	$(XGETTEXT) -C -ki18n -x $(includedir)/kde.pot $(kdesu_SOURCES) && mv messages.po ../../po/kdesu.pot
+	$(XGETTEXT) -C -ki18n -x $(includedir)/kde.pot $(kdesu_SOURCES) && mv messages.po $(podir)/kdesu.pot

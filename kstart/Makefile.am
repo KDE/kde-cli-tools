@@ -13,7 +13,7 @@ METASOURCES =	kstart.moc
 noinst_HEADERS = kstart.h version.h
 
 messages:
-	$(XGETTEXT) -C -ktranslate -ki18n -x $(includedir)/kde.pot $(kstart_SOURCES) && mv messages.po ../po/kstart.pot
+	$(XGETTEXT) -C -ktranslate -ki18n -x $(includedir)/kde.pot $(kstart_SOURCES) && mv messages.po $(podir)/kstart.pot
 
 EXTRA_DIST = CHANGES LICENSE.readme
 
