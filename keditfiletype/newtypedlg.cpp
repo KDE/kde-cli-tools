@@ -9,10 +9,11 @@
 
 #include "newtypedlg.h"
 
-NewTypeDialog::NewTypeDialog(QStringList groups, 
+NewTypeDialog::NewTypeDialog(QStringList groups,
 			     QWidget *parent, const char *name)
   : KDialog(parent, name, true)
 {
+  setCaption(i18n("Create new file type"));
   QVBoxLayout *topl = new QVBoxLayout(this, marginHint(), spacingHint());
 
   QGridLayout *grid = new QGridLayout(2, 2);
@@ -37,7 +38,7 @@ NewTypeDialog::NewTypeDialog(QStringList groups,
 
   KButtonBox *bbox = new KButtonBox(this);
   topl->addWidget(bbox);
-  
+
   bbox->addStretch(1);
   QPushButton *okButton = bbox->addButton(i18n("OK"));
   okButton->setDefault(true);
@@ -49,4 +50,7 @@ NewTypeDialog::NewTypeDialog(QStringList groups,
 	  this, SLOT(reject()));
 
   typeEd->setFocus();
+
+  // Set a minimum size so that caption is not half-hidden
+  setMinimumSize( 300, 50 );
 }

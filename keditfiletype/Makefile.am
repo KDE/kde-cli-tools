@@ -8,10 +8,10 @@ lib_LTLIBRARIES = libkcm_filetypes.la
 
 libkcm_filetypes_la_SOURCES = \
 	filetypesview.cpp typeslistitem.cpp \
-	extensiondlg.cpp newtypedlg.cpp
+	newtypedlg.cpp
 
 noinst_HEADERS = filetypesview.h typeslistitem.h \
-	extensiondlg.h newtypedlg.h
+	newtypedlg.h
 
 DISTCLEANFILES = $(libkcm_filetypes_la_METASOURCES)
 

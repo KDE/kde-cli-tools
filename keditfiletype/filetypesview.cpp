@@ -18,6 +18,7 @@
 #include <kservice.h>
 #include <kservicetype.h>
 #include <kmimetype.h>
+#include <klineeditdlg.h>
 #include <kuserprofile.h>
 #include <kdesktopfile.h>
 #include <kopenwith.h>
@@ -25,7 +26,6 @@
 
 #include "typeslistitem.h"
 #include "newtypedlg.h"
-#include "extensiondlg.h"
 
 #include "filetypesview.h"
 
@@ -352,7 +352,9 @@ void FileTypesView::removeType()
 
 void FileTypesView::addExtension()
 {
-  ExtensionDialog m(this);
+  //ExtensionDialog m(this);
+  KLineEditDlg m(i18n("Extension:"), QString::null, this);
+  m.setCaption( i18n("Add New Extension") );
   if (m.exec()) {
     if (!m.text().isEmpty()) {
       extensionLB->insertItem(m.text());
