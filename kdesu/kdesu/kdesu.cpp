@@ -31,10 +31,11 @@
 #include <kaboutdata.h>
 #include <kcmdlineargs.h>
 
-#include "defaults.h"
-#include "su.h"
+#include <kdesu/defaults.h>
+#include <kdesu/su.h>
+#include <kdesu/client.h>
+
 #include "sudlg.h"
-#include "client.h"
 
 
 const char *Version = "1.0";
@@ -77,12 +78,6 @@ int main(int argc, char *argv[])
 	    exit(0);
 	}
 	kDebugFatal("Could not stop daemon");
-	exit(1);
-    }
-
-    // Configure found su?
-    if (!strcmp(__PATH_SU, "false")) {
-	kDebugFatal("su was not found by configure");
 	exit(1);
     }
 

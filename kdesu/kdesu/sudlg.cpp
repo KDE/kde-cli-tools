@@ -10,7 +10,7 @@
 #include <klocale.h>
 #include <kmessagebox.h>
 
-#include "su.h"
+#include <kdesu/su.h>
 #include "sudlg.h"
 
 

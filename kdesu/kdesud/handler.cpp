@@ -24,12 +24,13 @@
 #include <qcstring.h>
 
 #include <kdebug.h>
+#include <kdesu/su.h>
+#include <kdesu/ssh.h>
+
 #include "handler.h"
 #include "repo.h"
 #include "lexer.h"
 #include "secure.h"
-#include "su.h"
-#include "ssh.cpp"
 
 
 // Global repository

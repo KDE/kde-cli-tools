@@ -62,11 +62,11 @@
 #include <klocale.h>
 #include <kcmdlineargs.h>
 #include <kaboutdata.h>
+#include <kdesu/client.h>
+#include <kdesu/defaults.h>
 
 #include "repo.h"
 #include "handler.h"
-#include "client.h"
-#include "defaults.h"
 
 #include <X11/X.h>
 #include <X11/Xlib.h>
