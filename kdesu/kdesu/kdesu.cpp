@@ -28,8 +28,8 @@
 
 #include <kdebug.h>
 #include <kglobal.h>
-#include <kapp.h>
-#include <kstddirs.h>
+#include <kapplication.h>
+#include <kstandarddirs.h>
 #include <kconfig.h>
 #include <klocale.h>
 #include <kaboutdata.h>

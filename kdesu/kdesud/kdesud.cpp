@@ -66,7 +66,7 @@
 #include <kdebug.h>
 #include <klocale.h>
 #include <kcmdlineargs.h>
-#include <kstddirs.h>
+#include <kstandarddirs.h>
 #include <kaboutdata.h>
 #include <kdesu/client.h>
 #include <kdesu/defaults.h>

@@ -21,7 +21,7 @@
 #include <klocale.h>
 #include <kwin.h>
 #include <kwinmodule.h>
-#include <kapp.h>
+#include <kapplication.h>
 #include <kaboutdata.h>
 #include <kcmdlineargs.h>
 #include <kstartupinfo.h>
