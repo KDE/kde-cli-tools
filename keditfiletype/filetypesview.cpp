@@ -5,10 +5,12 @@
 #include <qpushbutton.h>
 #include <qlayout.h>
 #include <qlineedit.h>
+#include <qtimer.h>
 #include <qwidgetstack.h>
 
 #include <dcopclient.h>
 #include <kapp.h>
+#include <kcursor.h>
 #include <kdebug.h>
 #include <kdesktopfile.h>
 #include <klocale.h>
@@ -104,14 +106,8 @@ FileTypesView::FileTypesView(QWidget *p, const char *name)
 
   topLayout->addWidget( m_widgetStack, 100 );
 
-  init();
-
-  // Since we have filled in the list once and for all, set width correspondingly,
-  // to avoid horizontal scrollbars (DF).
-  typesLV->setColumnWidth(0, typesLV->sizeHint().width() );
-  typesLV->setMinimumWidth( typesLV->sizeHint().width() );
-
-  setDirty(false);
+  qApp->processEvents(); // let's show up
+  QTimer::singleShot( 0, this, SLOT( init() ) ); // this takes some time
 }
 
 FileTypesView::~FileTypesView()
@@ -126,7 +122,19 @@ void FileTypesView::setDirty(bool state)
 
 void FileTypesView::init()
 {
+  setEnabled( false );
+  setCursor( KCursor::waitCursor() );
+  
   readFileTypes();
+  // Since we have filled in the list once and for all, set width correspondingly,
+  // to avoid horizontal scrollbars (DF).
+  typesLV->setColumnWidth(0, typesLV->sizeHint().width() );
+  typesLV->setMinimumWidth( typesLV->sizeHint().width() );
+
+  setDirty(false);
+  setEnabled( true );
+  unsetCursor();
+
 }
 
 void FileTypesView::slotFilter(const QString &patternFilter)

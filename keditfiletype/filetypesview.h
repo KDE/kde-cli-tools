@@ -22,8 +22,6 @@ public:
   FileTypesView(QWidget *p = 0, const char *name = 0);
   ~FileTypesView();
 
-  /** fill in the various graphical elements, set up other stuff. */
-  void init();
   bool sync();
 
   void load();
@@ -32,6 +30,9 @@ public:
   QString quickHelp() const;
 
 protected slots:
+  /** fill in the various graphical elements, set up other stuff. */
+  void init();
+
   void addType();
   void removeType();
   void updateDisplay(QListViewItem *);
