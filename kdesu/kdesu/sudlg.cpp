@@ -72,7 +72,7 @@ bool KDEsuDialog::checkPassword(const char *password)
 	return false;
 
     default:
-        KMessageBox::error(this, i18n("Internal error: Illegal return from "
+        KMessageBox::error(this, i18n("Internal error: illegal return from "
 		"SuProcess::checkInstall()"));
 	done(Rejected);
 	return false;
