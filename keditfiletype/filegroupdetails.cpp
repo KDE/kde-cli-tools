@@ -31,7 +31,7 @@ FileGroupDetails::FileGroupDetails(QWidget *parent, const char *name )
   QVBoxLayout *secondLayout = new QVBoxLayout(parentWidget, KDialog::marginHint(),
                                               KDialog::spacingHint());
 
-  m_autoEmbed = new QVButtonGroup( i18n("Left click action"), parentWidget );
+  m_autoEmbed = new QVButtonGroup( i18n("Left Click Action"), parentWidget );
   m_autoEmbed->layout()->setSpacing( KDialog::spacingHint() );
   secondLayout->addWidget( m_autoEmbed, 1 );
   secondLayout->addWidget( new QWidget( parentWidget ), 100 );

@@ -94,7 +94,7 @@ FileTypeDetails::FileTypeDetails( QWidget * parent, const char * name )
   QVBoxLayout *secondLayout = new QVBoxLayout(secondWidget, KDialog::marginHint(),
                                        KDialog::spacingHint());
 
-  m_autoEmbed = new QVButtonGroup( i18n("Left click action"), secondWidget );
+  m_autoEmbed = new QVButtonGroup( i18n("Left Click Action"), secondWidget );
   m_autoEmbed->layout()->setSpacing( KDialog::spacingHint() );
   secondLayout->addWidget( m_autoEmbed, 1 );
 
