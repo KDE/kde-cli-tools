@@ -1,1 +1,1 @@
-SUBDIRS = kdesu kdesud pics 
+SUBDIRS = kdesu kdesud
