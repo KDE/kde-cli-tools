@@ -288,8 +288,6 @@ void KServiceListWidget::editService()
   int selected = servicesLB->currentItem();
   if ( selected >= 0 ) {
 
-    KService::Ptr service = 0L;
-
     // Only edit applications, not services as
     // they don't have any parameters
     if ( m_kind == SERVICELIST_APPLICATIONS )
@@ -298,12 +296,12 @@ void KServiceListWidget::editService()
       // pass the current command line as a default
       QListBoxItem *selItem = servicesLB->item(selected);
 
-      KService::Ptr pService = KService::serviceByDesktopPath(
+      KService::Ptr service = KService::serviceByDesktopPath(
           ((KServiceListItem*)selItem)->desktopPath );
-      if (!pService)
+      if (!service)
         return;
 
-      QString path = pService->desktopEntryPath();
+      QString path = service->desktopEntryPath();
 
       // If the path to the desktop file is relative, try to get the full
       // path from KStdDirs.
@@ -314,7 +312,12 @@ void KServiceListWidget::editService()
       KPropertiesDialog dlg( &item, this, 0, true /*modal*/, false /*no auto-show*/ );
       if ( dlg.exec() != QDialog::Accepted )
         return;
-      service = pService;
+
+      // Reload service
+      service = KService::serviceByDesktopPath(
+          ((KServiceListItem*)selItem)->desktopPath );
+      if (!service)
+        return;
 
       // Remove the old one...
       servicesLB->removeItem( selected );
@@ -331,6 +334,7 @@ void KServiceListWidget::editService()
       // ...and add it in the same place as the old one:
       if ( addIt ) {
         servicesLB->insertItem( new KServiceListItem(service, m_kind), selected );
+        servicesLB->setCurrentItem(selected);
       }
 
       updatePreferredServices();
