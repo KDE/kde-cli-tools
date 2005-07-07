@@ -12,7 +12,7 @@ noinst_HEADERS = repo.h handler.h lexer.h secure.h
 install-data-local:
 	@echo "********************************************************"
 	@echo ""
-	@echo "For security reasons, kdesud is intalled setgid nogroup."
+	@echo "For security reasons, kdesud is installed setgid nogroup."
 	@echo "Kdesud is the daemon that implements the password caching."
 	@echo ""
 	@echo "You should NOT use the password caching feature if kdesud is"
