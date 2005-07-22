@@ -30,7 +30,7 @@
 
 SocketSecurity::SocketSecurity(int sockfd)
 {
-    ksize_t len = sizeof(struct ucred);
+    size_t len = sizeof(struct ucred);
     if (getsockopt(sockfd, SOL_SOCKET, SO_PEERCRED, &cred, &len) < 0) {
 	kdError() << "getsockopt(SO_PEERCRED) " << perror << endl;
 	return;

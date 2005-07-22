@@ -68,6 +68,7 @@
 #include <kaboutdata.h>
 #include <kdesu/client.h>
 #include <kdesu/defaults.h>
+#include <ksockaddr.h>
 
 #include "repo.h"
 #include "handler.h"
@@ -153,7 +154,7 @@ void sigchld_handler(int)
 int create_socket()
 {
     int sockfd;
-    kde_socklen_t addrlen;
+    ksocklen_t addrlen;
     struct stat s;
 
     QCString display(getenv("DISPLAY"));
@@ -317,7 +318,7 @@ int main(int argc, char *argv[])
 
     // Main execution loop 
 
-    kde_socklen_t addrlen;
+    ksocklen_t addrlen;
     struct sockaddr_un clientname;
 
     fd_set tmp_fds, active_fds;
