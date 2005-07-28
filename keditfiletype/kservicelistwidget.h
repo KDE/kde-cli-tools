@@ -21,14 +21,14 @@
 #ifndef _KSERVICELISTWIDGET_H
 #define _KSERVICELISTWIDGET_H
 
-#include <qgroupbox.h>
-#include <qlistbox.h>
+#include <q3groupbox.h>
+#include <q3listbox.h>
 class TypesListItem;
 class QLineEdit;
 class QPushButton;
 class KService;
 
-class KServiceListItem : public QListBoxText
+class KServiceListItem : public Q3ListBoxText
 {
 public:
     KServiceListItem(  KService *pService, int kind );
@@ -43,7 +43,7 @@ public:
  * module, once for applications and once for services.
  * The "kind" is determined by the argument given to the constructor.
  */
-class KServiceListWidget : public QGroupBox
+class KServiceListWidget : public Q3GroupBox
 {
   Q_OBJECT
 public:
@@ -68,7 +68,7 @@ protected:
 
 private:
   int m_kind;
-  QListBox *servicesLB;
+  Q3ListBox *servicesLB;
   QPushButton *servUpButton, *servDownButton;
   QPushButton *servNewButton, *servEditButton, *servRemoveButton;
   TypesListItem *m_item;

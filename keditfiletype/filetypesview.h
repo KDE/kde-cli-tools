@@ -1,8 +1,11 @@
 #ifndef _FILETYPESVIEW_H
 #define _FILETYPESVIEW_H
 
-#include <qptrlist.h>
+#include <q3ptrlist.h>
 #include <qmap.h>
+//Added by qt3to4:
+#include <QLabel>
+#include <Q3ValueList>
 
 #include <kconfig.h>
 #include <kcmodule.h>
@@ -11,15 +14,15 @@
 
 class QLabel;
 class KListView;
-class QListViewItem;
-class QListBox;
+class Q3ListViewItem;
+class Q3ListBox;
 class QPushButton;
 class KIconButton;
 class QLineEdit;
 class QComboBox;
 class FileTypeDetails;
 class FileGroupDetails;
-class QWidgetStack;
+class Q3WidgetStack;
 
 class FileTypesView : public KCModule
 {
@@ -38,8 +41,8 @@ protected slots:
 
   void addType();
   void removeType();
-  void updateDisplay(QListViewItem *);
-  void slotDoubleClicked(QListViewItem *);
+  void updateDisplay(Q3ListViewItem *);
+  void slotDoubleClicked(Q3ListViewItem *);
   void slotFilter(const QString &patternFilter);
   void setDirty(bool state);
 
@@ -48,13 +51,13 @@ protected slots:
 
 protected:
   void readFileTypes();
-  bool sync( QValueList<TypesListItem *>& itemsModified );
+  bool sync( Q3ValueList<TypesListItem *>& itemsModified );
 
 private:
   KListView *typesLV;
   QPushButton *m_removeTypeB;
 
-  QWidgetStack * m_widgetStack;
+  Q3WidgetStack * m_widgetStack;
   FileTypeDetails * m_details;
   FileGroupDetails * m_groupDetails;
   QLabel * m_emptyWidget;
@@ -63,9 +66,9 @@ private:
   QStringList removedList;
   bool m_dirty;
   QMap<QString,TypesListItem*> m_majorMap;
-  QPtrList<TypesListItem> m_itemList;
+  Q3PtrList<TypesListItem> m_itemList;
 
-  QValueList<TypesListItem *> m_itemsModified;
+  Q3ValueList<TypesListItem *> m_itemsModified;
 
   KSharedConfig::Ptr m_konqConfig;
 };

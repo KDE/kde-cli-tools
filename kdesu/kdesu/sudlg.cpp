@@ -5,6 +5,8 @@
  */
 
 #include <qstring.h>
+//Added by qt3to4:
+#include <Q3CString>
 #include <klocale.h>
 #include <kmessagebox.h>
 
@@ -12,11 +14,11 @@
 #include "sudlg.h"
 
 
-KDEsuDialog::KDEsuDialog(QCString user, QCString auth_user, bool enableKeep, const QString& icon)
+KDEsuDialog::KDEsuDialog(Q3CString user, Q3CString auth_user, bool enableKeep, const QString& icon)
     : KPasswordDialog(Password, enableKeep, User1, icon)
 {
     m_User = auth_user;
-    setCaption(i18n("Run as %1").arg(user));
+    setCaption(i18n("Run as %1").arg(QString::fromLatin1(user)));
 
     QString prompt;
     if (m_User == "root")
@@ -26,7 +28,7 @@ KDEsuDialog::KDEsuDialog(QCString user, QCString auth_user, bool enableKeep, con
     else
 	prompt = i18n("The action you requested needs additional privileges. "
 		"Please enter the password for \"%1\" below or click "
-		"Ignore to continue with your current privileges.").arg(m_User);
+		"Ignore to continue with your current privileges.").arg(QString::fromLatin1(m_User));
     setPrompt(prompt);
 
     setButtonText(User1, i18n("&Ignore"));

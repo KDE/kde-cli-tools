@@ -9,7 +9,7 @@
 
 #include <sys/types.h>
 
-#include <qcstring.h>
+#include <QByteArray>
 #include "secure.h"
 
 /**
@@ -35,13 +35,13 @@ public:
 private:
     enum Results { Res_OK, Res_NO };
 
-    int doCommand(QCString buf);
-    void respond(int ok, QCString s=0);
-    QCString makeKey(int namspace, QCString s1, QCString s2=0, QCString s3=0);
+    int doCommand(QByteArray buf);
+    void respond(int ok, QByteArray s=0);
+    QByteArray makeKey(int namspace, QByteArray s1, QByteArray s2=0, QByteArray s3=0);
 
     int m_Fd, m_Timeout;
     int m_Priority, m_Scheduler;
-    QCString m_Buf, m_Pass, m_Host;
+    QByteArray m_Buf, m_Pass, m_Host;
 public:
     int m_exitCode;
     bool m_hasExitCode;

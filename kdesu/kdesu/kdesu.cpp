@@ -24,6 +24,8 @@
 #include <qglobal.h>
 #include <qfile.h>
 #include <qdir.h>
+//Added by qt3to4:
+#include <Q3CString>
 
 #include <dcopclient.h>
 
@@ -47,7 +49,7 @@
 
 #define ERR strerror(errno)
 
-QCString command;
+QByteArray command;
 const char *Version = "1.0";
 
 // NOTE: if you change the position of the -u switch, be sure to adjust it
@@ -69,12 +71,12 @@ static KCmdLineOptions options[] = {
 };
 
 
-QCString dcopNetworkId()
+Q3CString dcopNetworkId()
 {
-    QCString result;
+    Q3CString result;
     result.resize(1025);
     QFile file(DCOPClient::dcopServerFile());
-    if (!file.open(IO_ReadOnly))
+    if (!file.open(QIODevice::ReadOnly))
         return "";
     int i = file.readLine(result.data(), 1024);
     if (i <= 0)
@@ -108,7 +110,7 @@ int main(int argc, char *argv[])
     KCmdLineArgs::addCmdLineOptions(options);
     KApplication::disableAutoDcopRegistration();
     // kdesu doesn't process SM events, so don't even connect to ksmserver
-    QCString session_manager = getenv( "SESSION_MANAGER" );
+    QByteArray session_manager = getenv( "SESSION_MANAGER" );
     unsetenv( "SESSION_MANAGER" );
     KApplication app;
     // but propagate it to the started app
@@ -124,7 +126,7 @@ int main(int argc, char *argv[])
 
     if (result == 127)
     {
-        KMessageBox::sorry(0, i18n("Command '%1' not found.").arg(command));
+        KMessageBox::sorry(0, i18n("Command '%1' not found.").arg(QString::fromLocal8Bit(command)));
     }
 
     return result;
@@ -160,8 +162,8 @@ static int startApp()
 	prompt = false;
 
     // Get target uid
-    QCString user = args->getOption("u");
-    QCString auth_user = user;
+    Q3CString user = args->getOption("u");
+    Q3CString auth_user = user;
     struct passwd *pw = getpwnam(user);
     if (pw == 0L)
     {
@@ -195,12 +197,12 @@ static int startApp()
     }
 
     // Get priority/scheduler
-    QCString tmp = args->getOption("p");
+    QByteArray tmp = args->getOption("p");
     bool ok;
     int priority = tmp.toInt(&ok);
     if (!ok || (priority < 0) || (priority > 100))
     {
-        KCmdLineArgs::usage(i18n("Illegal priority: %1").arg(tmp));
+        KCmdLineArgs::usage(i18n("Illegal priority: %1").arg(QString::fromLatin1(tmp)));
         exit(1);
     }
     int scheduler = SuProcess::SchedNormal;
@@ -273,8 +275,8 @@ static int startApp()
     bool terminal = args->isSet("t");
     bool new_dcop = args->isSet("newdcop");
 
-    QCStringList env;
-    QCString options;
+    QList<QByteArray> env;
+    Q3CString options;
     env << ( "KDE_STARTUP_ENV=" + kapp->startupId());
     
     if (pw->pw_uid)
@@ -293,11 +295,11 @@ static int startApp()
     }
 
     KUser u;
-    env << (QCString) ("KDESU_USER=" + u.loginName().local8Bit());
+    env << (Q3CString) ("KDESU_USER=" + u.loginName().local8Bit());
     
     if (!new_dcop)
     {
-        QCString ksycoca = "KDESYCOCA="+QFile::encodeName(locateLocal("tmp", "ksycoca"));
+        Q3CString ksycoca = "KDESYCOCA="+QFile::encodeName(locateLocal("tmp", "ksycoca"));
         env << ksycoca;
 
         options += "xf"; // X-only, dcop forwarding enabled.
@@ -347,7 +349,7 @@ static int startApp()
     }
 
     // Start the dialog
-    QCString password;
+    Q3CString password;
     if (needpw)
     {
         KStartupInfoId id;

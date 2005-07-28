@@ -8,6 +8,8 @@
 #define __SuDlg_h_Included__
 
 #include <kpassdlg.h>
+//Added by qt3to4:
+#include <Q3CString>
 
 class KDEsuDialog
     : public KPasswordDialog
@@ -15,7 +17,7 @@ class KDEsuDialog
     Q_OBJECT
 
 public:
-    KDEsuDialog(QCString user, QCString auth_user, bool enableKeep, const QString& icon );
+    KDEsuDialog(Q3CString user, Q3CString auth_user, bool enableKeep, const QString& icon );
     ~KDEsuDialog();
 
     enum ResultCodes { AsUser = 10 };
@@ -25,7 +27,7 @@ protected:
     void slotUser1();
     
 private:
-    QCString m_User;
+    Q3CString m_User;
 };
     
 

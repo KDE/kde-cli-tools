@@ -13,6 +13,8 @@
 #include <klocale.h>
 #include <kaboutdata.h>
 #include <stdio.h>
+//Added by qt3to4:
+#include <Q3CString>
 
 static KCmdLineOptions options[] =
 {
@@ -39,14 +41,14 @@ int main(int argc, char **argv)
 	QString group=QString::fromLocal8Bit(args->getOption("group"));
 	QString key=QString::fromLocal8Bit(args->getOption("key"));
 	QString file=QString::fromLocal8Bit(args->getOption("file"));
-	QCString type=args->getOption("type").lower();
+	Q3CString type=args->getOption("type").lower();
 
 
 	if (key.isNull() || !args->count()) {
 		KCmdLineArgs::usage();
 		return 1;
 	}
-	QCString value = args->arg( 0 );
+	Q3CString value = args->arg( 0 );
 
 	KInstance inst(&aboutData);
 

@@ -25,6 +25,7 @@
 #include <kdebug.h>
 #include <kcmdlineargs.h>
 #include <ksycoca.h>
+#include <QX11Info>
 
 #ifdef Q_WS_X11
 #include <X11/Xlib.h>
@@ -36,7 +37,7 @@ FileTypeDialog::FileTypeDialog( KMimeType::Ptr mime )
                  Ok, false )
 {
   m_details = new FileTypeDetails( this );
-  QListView * dummyListView = new QListView( m_details );
+  Q3ListView * dummyListView = new Q3ListView( m_details );
   dummyListView->hide();
   m_item = new TypesListItem( dummyListView, mime );
   m_details->setTypeItem( m_item );
@@ -119,9 +120,9 @@ int main(int argc, char ** argv)
 #if defined Q_WS_X11
   if( args->isSet( "parent" )) {
     bool ok;
-    long id = args->getOption("parent").toLong(&ok);
+    long id = Q3CString(args->getOption("parent")).toLong(&ok);
     if (ok)
-      XSetTransientForHint( qt_xdisplay(), dlg.winId(), id );
+      XSetTransientForHint( QX11Info::display(), dlg.winId(), id );
   }
 #endif
   args->clear();

@@ -29,22 +29,22 @@
 QMap< QString, QStringList >* TypesListItem::s_changedServices;
 static KStaticDeleter< QMap< QString, QStringList > > deleter;
 
-TypesListItem::TypesListItem(QListView *parent, const QString & major)
-  : QListViewItem(parent), metaType(true), m_bNewItem(false), m_askSave(2)
+TypesListItem::TypesListItem(Q3ListView *parent, const QString & major)
+  : Q3ListViewItem(parent), metaType(true), m_bNewItem(false), m_askSave(2)
 {
   initMeta(major);
   setText(0, majorType());
 }
 
 TypesListItem::TypesListItem(TypesListItem *parent, KMimeType::Ptr mimetype, bool newItem)
-  : QListViewItem(parent), metaType(false), m_bNewItem(newItem), m_askSave(2)
+  : Q3ListViewItem(parent), metaType(false), m_bNewItem(newItem), m_askSave(2)
 {
   init(mimetype);
   setText(0, minorType());
 }
 
-TypesListItem::TypesListItem(QListView *parent, KMimeType::Ptr mimetype)
-  : QListViewItem(parent), metaType(false), m_bNewItem(false), m_askSave(2)
+TypesListItem::TypesListItem(Q3ListView *parent, KMimeType::Ptr mimetype)
+  : Q3ListViewItem(parent), metaType(false), m_bNewItem(false), m_askSave(2)
 {
   init(mimetype);
   setText(0, majorType());
@@ -76,7 +76,7 @@ void TypesListItem::setup()
   {
      setPixmap(0, m_mimetype->pixmap(KIcon::Small, IconSize(KIcon::Small)));
   }
-  QListViewItem::setup();
+  Q3ListViewItem::setup();
 }
 
 void TypesListItem::init(KMimeType::Ptr mimetype)
@@ -127,7 +127,7 @@ void TypesListItem::getServiceOffers( QStringList & appServices, QStringList & e
 {
   KServiceTypeProfile::OfferList offerList =
     KServiceTypeProfile::offers(m_mimetype->name(), "Application");
-  QValueListIterator<KServiceOffer> it(offerList.begin());
+  Q3ValueListIterator<KServiceOffer> it(offerList.begin());
   for (; it != offerList.end(); ++it)
     if ((*it).allowAsDefault())
       appServices.append((*it).service()->desktopEntryPath());
@@ -308,7 +308,7 @@ void TypesListItem::sync()
     KServiceTypeProfile::offers(m_mimetype->name(), "Application");
   offerList += KServiceTypeProfile::offers(m_mimetype->name(), "KParts/ReadOnlyPart");
 
-  QValueListIterator<KServiceOffer> it_srv(offerList.begin());
+  Q3ValueListIterator<KServiceOffer> it_srv(offerList.begin());
 
   for (; it_srv != offerList.end(); ++it_srv) {
 

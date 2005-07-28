@@ -1,8 +1,12 @@
 
 #include <qlayout.h>
 #include <qlabel.h>
-#include <qwhatsthis.h>
+
 #include <qcombobox.h>
+//Added by qt3to4:
+#include <QVBoxLayout>
+#include <QFrame>
+#include <QGridLayout>
 
 #include <klocale.h>
 #include <klineedit.h>
@@ -30,7 +34,7 @@ NewTypeDialog::NewTypeDialog(QStringList groups,
   groupCombo->insertStringList(groups);
   grid->addWidget(groupCombo, 0, 1);
 
-  QWhatsThis::add( groupCombo, i18n("Select the category under which"
+  groupCombo->setWhatsThis( i18n("Select the category under which"
     " the new file type should be added.") );
 
   l = new QLabel(i18n("Type name:"), main);

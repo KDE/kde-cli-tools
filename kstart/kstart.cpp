@@ -15,6 +15,9 @@
 
 #include <qregexp.h>
 #include <qtimer.h>
+//Added by qt3to4:
+#include <Q3CString>
+#include <QDesktopWidget>
 
 #include <kdebug.h>
 #include <kprocess.h>
@@ -28,13 +31,14 @@
 #include <kxmessages.h>
 
 #include <netwm.h>
+#include <QX11Info>
 
 
 // some globals
 
 static KProcess proc;
-static QCString windowtitle = 0;
-static QCString windowclass = 0;
+static Q3CString windowtitle = 0;
+static Q3CString windowclass = 0;
 static int desktop = 0;
 static bool activate = false;
 static bool iconify = false;
@@ -48,7 +52,7 @@ static KWinModule* kwinmodule;
 KStart::KStart()
     :QObject()
 {
-    NETRootInfo i( qt_xdisplay(), NET::Supported );
+    NETRootInfo i( QX11Info::display(), NET::Supported );
     bool useRule = !toSysTray && i.isSupported( NET::WM2KDETemporaryRules );
 
     if( useRule )
@@ -56,7 +60,7 @@ KStart::KStart()
     else {
         // connect to window add to get the NEW windows
         connect(kwinmodule, SIGNAL(windowAdded(WId)), SLOT(windowAdded(WId)));
-        if (windowtitle)
+        if (!windowtitle.isEmpty())
     	    kwinmodule->doNotManage( windowtitle );
     }
     // propagate the app startup notification info to the started app
@@ -68,7 +72,7 @@ KStart::KStart()
     if( proc.start(KProcess::DontCare) ) {
         KStartupInfoData data;
         data.addPid( proc.pid() );
-        QCString bin = proc.args().first();
+        Q3CString bin = proc.args().first();
         data.setName( bin );
         data.setBin( bin.mid( bin.findRev( '/' ) + 1 ));
         KStartupInfo::sendChange( id, data );
@@ -81,32 +85,32 @@ KStart::KStart()
 
 void KStart::sendRule() {
     KXMessages msg;
-    QCString message;
-    if( windowtitle )
+    Q3CString message;
+    if( !windowtitle.isEmpty() )
         message += "title=" + windowtitle + "\ntitlematch=3\n"; // 3 = regexp match
-    if( windowclass )
+    if( !windowclass.isEmpty() )
         message += "wmclass=" + windowclass + "\nwmclassmatch=1\n" // 1 = exact match
             + "wmclasscomplete="
             // if windowclass contains a space (i.e. 2 words, use whole WM_CLASS)
             + ( windowclass.contains( ' ' ) ? "true" : "false" ) + "\n";
-    if( windowtitle || windowclass ) {
+    if( (!windowtitle.isEmpty()) || (!windowclass.isEmpty()) ) {
         // always ignore these window types
-        message += "types=" + QCString().setNum( -1U &
+        message += "types=" + Q3CString().setNum( -1U &
             ~( NET::TopMenuMask | NET::ToolbarMask | NET::DesktopMask | NET::SplashMask | NET::MenuMask )) + "\n";
     } else {
         // accept only "normal" windows
-        message += "types=" + QCString().setNum( NET::NormalMask | NET::DialogMask ) + "\n";
+        message += "types=" + Q3CString().setNum( NET::NormalMask | NET::DialogMask ) + "\n";
     }
     if ( ( desktop > 0 && desktop <= kwinmodule->numberOfDesktops() )
          || desktop == NETWinInfo::OnAllDesktops ) {
-	message += "desktop=" + QCString().setNum( desktop ) + "\ndesktoprule=3\n";
+	message += "desktop=" + Q3CString().setNum( desktop ) + "\ndesktoprule=3\n";
     }
     if (activate)
         message += "fsplevel=0\nfsplevelrule=2\n";
     if (iconify)
         message += "minimize=true\nminimizerule=3\n";
     if ( windowtype != NET::Unknown ) {
-        message += "type=" + QCString().setNum( windowtype ) + "\ntyperule=2";
+        message += "type=" + Q3CString().setNum( windowtype ) + "\ntyperule=2";
     }
     if ( state ) {
         if( state & NET::KeepAbove )
@@ -143,25 +147,28 @@ void KStart::windowAdded(WId w){
         || info.windowType( SUPPORTED_WINDOW_TYPES_MASK ) == NET::Desktop )
         return;
 
-    if ( windowtitle ) {
+    if ( !windowtitle.isEmpty() ) {
 	QString title = info.name().lower();
 	QRegExp r( windowtitle.lower());
-	if (r.match(title) == -1)
+	if ( !r.exactMatch(title) )
 	    return; // no match
     }
-    if ( windowclass ) {
+    if ( !windowclass.isEmpty() ) {
+#warning "Porting required"
+#if 0
         XClassHint hint;
-        if( !XGetClassHint( qt_xdisplay(), w, &hint ))
+        if( !XGetClassHint( QX11Info::display(), w, &hint ))
             return;
-        QCString cls = windowclass.contains( ' ' )
-            ? QCString( hint.res_name ) + ' ' + hint.res_class : QCString( hint.res_class );
+        Q3CString cls = windowclass.contains( ' ' )
+            ? Q3CString( hint.res_name ) + ' ' + hint.res_class : Q3CString( hint.res_class );
         cls = cls.lower();
         XFree( hint.res_name );
 	XFree( hint.res_class );
         if( cls != windowclass )
             return;
+#endif
     }
-    if( !windowtitle && !windowclass ) {
+    if( windowtitle.isEmpty() && windowclass.isEmpty() ) {
         // accept only "normal" windows
         if( info.windowType( SUPPORTED_WINDOW_TYPES_MASK ) != NET::Unknown
             && info.windowType( SUPPORTED_WINDOW_TYPES_MASK ) != NET::Normal
@@ -180,7 +187,7 @@ static bool wstate_withdrawn( WId winid )
     int format;
     unsigned long length, after;
     unsigned char *data;
-    int r = XGetWindowProperty( qt_xdisplay(), winid, qt_wm_state, 0, 2,
+    int r = XGetWindowProperty( QX11Info::display(), winid, qt_wm_state, 0, 2,
 				FALSE, AnyPropertyType, &type, &format,
 				&length, &after, &data );
     bool withdrawn = TRUE;
@@ -197,25 +204,26 @@ void KStart::applyStyle(WId w ) {
 
     if ( toSysTray || state || iconify || windowtype != NET::Unknown || desktop >= 1 ) {
 
-	XWithdrawWindow(qt_xdisplay(), w, qt_xscreen());
+	QX11Info info;
+	XWithdrawWindow(QX11Info::display(), w, info.screen());
 	QApplication::flushX();
 
 	while ( !wstate_withdrawn(w) )
 	    ;
     }
 
-    NETWinInfo info( qt_xdisplay(), w, qt_xrootwin(), NET::WMState );
+    NETWinInfo info( QX11Info::display(), w, QX11Info::appRootWindow(), NET::WMState );
 
     if ( ( desktop > 0 && desktop <= kwinmodule->numberOfDesktops() )
          || desktop == NETWinInfo::OnAllDesktops )
 	info.setDesktop( desktop );
 
     if (iconify) {
-	XWMHints * hints = XGetWMHints(qt_xdisplay(), w );
+	XWMHints * hints = XGetWMHints(QX11Info::display(), w );
 	if (hints ) {
 	    hints->flags |= StateHint;
 	    hints->initial_state = IconicState;
-	    XSetWMHints( qt_xdisplay(), w, hints );
+	    XSetWMHints( QX11Info::display(), w, hints );
 	    XFree(hints);
 	}
     }
@@ -229,19 +237,19 @@ void KStart::applyStyle(WId w ) {
 
     if ( toSysTray ) {
 	QApplication::beep();
-	KWin::setSystemTrayWindowFor( w,  qt_xrootwin() );
+	KWin::setSystemTrayWindowFor( w,  QX11Info::appRootWindow() );
     }
 
     if ( fullscreen ) {
-	QRect r = QApplication::desktop()->geometry();
-	XMoveResizeWindow( qt_xdisplay(), w, r.x(), r.y(), r.width(), r.height() );
+	QRect r = QApplication::desktop()->screenGeometry();
+	XMoveResizeWindow( QX11Info::display(), w, r.x(), r.y(), r.width(), r.height() );
     }
 
 
-    XSync(qt_xdisplay(), False);
+    XSync(QX11Info::display(), False);
 
-    XMapWindow(qt_xdisplay(), w );
-    XSync(qt_xdisplay(), False);
+    XMapWindow(QX11Info::display(), w );
+    XSync(QX11Info::display(), False);
 
     if (activate)
       KWin::forceActiveWindow( w );
@@ -322,13 +330,13 @@ int main( int argc, char *argv[] )
 
   windowtitle = args->getOption( "window" );
   windowclass = args->getOption( "windowclass" );
-  if( windowclass )
+  if( !windowclass.isEmpty() )
       windowclass = windowclass.lower();
   
   if( windowtitle.isEmpty() && windowclass.isEmpty())
       kdWarning() << "Omitting both --window and --windowclass arguments is not recommended" << endl;
 
-  QCString s = args->getOption( "type" );
+  Q3CString s = args->getOption( "type" );
   if ( !s.isEmpty() ) {
       s = s.lower();
       if ( s == "desktop" )
@@ -385,7 +393,7 @@ int main( int argc, char *argv[] )
   iconify = args->isSet("iconify");
   toSysTray = args->isSet("tosystray");
   if ( args->isSet("fullscreen") ) {
-      NETRootInfo i( qt_xdisplay(), NET::Supported );
+      NETRootInfo i( QX11Info::display(), NET::Supported );
       if( i.isSupported( NET::FullScreen )) {
           state |= NET::FullScreen;
           mask |= NET::FullScreen;
@@ -395,7 +403,7 @@ int main( int argc, char *argv[] )
       }
   }
 
-  fcntl(ConnectionNumber(qt_xdisplay()), F_SETFD, 1);
+  fcntl(ConnectionNumber(QX11Info::display()), F_SETFD, 1);
   args->clear();
 
   KStart start;

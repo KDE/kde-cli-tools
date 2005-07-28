@@ -1,8 +1,12 @@
 #include <qcheckbox.h>
 #include <qlayout.h>
 #include <qradiobutton.h>
-#include <qvbuttongroup.h>
-#include <qwhatsthis.h>
+
+//Added by qt3to4:
+#include <QVBoxLayout>
+#include <QHBoxLayout>
+#include <QGridLayout>
+#include <Q3ButtonGroup>
 
 #include <kapplication.h>
 #include <kconfig.h>
@@ -35,24 +39,24 @@ FileTypeDetails::FileTypeDetails( QWidget * parent, const char * name )
   iconButton->setFixedSize(70, 70);
   hBox->addWidget(iconButton);
 
-  QWhatsThis::add( iconButton, i18n("This button displays the icon associated"
+  iconButton->setWhatsThis( i18n("This button displays the icon associated"
     " with the selected file type. Click on it to choose a different icon.") );
 
-  QGroupBox *gb = new QGroupBox(i18n("Filename Patterns"), firstWidget);
+  Q3GroupBox *gb = new Q3GroupBox(i18n("Filename Patterns"), firstWidget);
   hBox->addWidget(gb);
 
   QGridLayout *grid = new QGridLayout(gb, 3, 2, KDialog::marginHint(),
                                       KDialog::spacingHint());
   grid->addRowSpacing(0, fontMetrics().lineSpacing());
 
-  extensionLB = new QListBox(gb);
+  extensionLB = new Q3ListBox(gb);
   connect(extensionLB, SIGNAL(highlighted(int)), SLOT(enableExtButtons(int)));
   grid->addMultiCellWidget(extensionLB, 1, 2, 0, 0);
   grid->setRowStretch(0, 0);
   grid->setRowStretch(1, 1);
   grid->setRowStretch(2, 0);
 
-  QWhatsThis::add( extensionLB, i18n("This box contains a list of patterns that can be"
+  extensionLB->setWhatsThis( i18n("This box contains a list of patterns that can be"
     " used to identify files of the selected type. For example, the pattern *.txt is"
     " associated with the file type 'text/plain'; all files ending in '.txt' are recognized"
     " as plain text files.") );
@@ -63,7 +67,7 @@ FileTypeDetails::FileTypeDetails( QWidget * parent, const char * name )
           this, SLOT(addExtension()));
   grid->addWidget(addExtButton, 1, 1);
 
-  QWhatsThis::add( addExtButton, i18n("Add a new pattern for the selected file type.") );
+  addExtButton->setWhatsThis( i18n("Add a new pattern for the selected file type.") );
 
   removeExtButton = new QPushButton(i18n("Remove"), gb);
   removeExtButton->setEnabled(false);
@@ -71,9 +75,9 @@ FileTypeDetails::FileTypeDetails( QWidget * parent, const char * name )
           this, SLOT(removeExtension()));
   grid->addWidget(removeExtButton, 2, 1);
 
-  QWhatsThis::add( removeExtButton, i18n("Remove the selected filename pattern.") );
+  removeExtButton->setWhatsThis( i18n("Remove the selected filename pattern.") );
 
-  gb = new QGroupBox(i18n("Description"), firstWidget);
+  gb = new Q3GroupBox(i18n("Description"), firstWidget);
   firstLayout->addWidget(gb);
 
   gb->setColumnLayout(1, Qt::Horizontal);
@@ -84,8 +88,8 @@ FileTypeDetails::FileTypeDetails( QWidget * parent, const char * name )
   wtstr = i18n("You can enter a short description for files of the selected"
     " file type (e.g. 'HTML Page'). This description will be used by applications"
     " like Konqueror to display directory content.");
-  QWhatsThis::add( gb, wtstr );
-  QWhatsThis::add( description, wtstr );
+  gb->setWhatsThis( wtstr );
+  description->setWhatsThis( wtstr );
 
   serviceListWidget = new KServiceListWidget( KServiceListWidget::SERVICELIST_APPLICATIONS, firstWidget );
   connect( serviceListWidget, SIGNAL(changed(bool)), this, SIGNAL(changed(bool)));
@@ -96,8 +100,8 @@ FileTypeDetails::FileTypeDetails( QWidget * parent, const char * name )
   QVBoxLayout *secondLayout = new QVBoxLayout(secondWidget, KDialog::marginHint(),
                                        KDialog::spacingHint());
 
-  m_autoEmbed = new QVButtonGroup( i18n("Left Click Action"), secondWidget );
-  m_autoEmbed->layout()->setSpacing( KDialog::spacingHint() );
+  m_autoEmbed = new Q3ButtonGroup( i18n("Left Click Action"), secondWidget );
+  secondLayout->setSpacing( KDialog::spacingHint() );
   secondLayout->addWidget( m_autoEmbed, 1 );
 
   m_autoEmbed->setSizePolicy( QSizePolicy( (QSizePolicy::SizeType)3, (QSizePolicy::SizeType)0, m_autoEmbed->sizePolicy().hasHeightForWidth() ) );
@@ -111,7 +115,7 @@ FileTypeDetails::FileTypeDetails( QWidget * parent, const char * name )
   m_chkAskSave = new QCheckBox( i18n("Ask whether to save to disk instead"), m_autoEmbed);
   connect(m_chkAskSave, SIGNAL( toggled(bool) ), SLOT( slotAskSaveToggled(bool) ));
 
-  QWhatsThis::add( m_autoEmbed, i18n("Here you can configure what the Konqueror file manager"
+  m_autoEmbed->setWhatsThis( i18n("Here you can configure what the Konqueror file manager"
     " will do when you click on a file of this type. Konqueror can display the file in"
     " an embedded viewer or start up a separate application. If set to 'Use settings for G group',"
     " Konqueror will behave according to the settings of the group G this type belongs to,"

@@ -20,7 +20,7 @@
 
 #include <qwidget.h>
 class TypesListItem;
-class QButtonGroup;
+class Q3ButtonGroup;
 
 /**
  * This widget contains the details for a filetype group.
@@ -44,7 +44,7 @@ private:
   TypesListItem * m_item;
 
   // Embedding config
-  QButtonGroup *m_autoEmbed;
+  Q3ButtonGroup *m_autoEmbed;
 };
 
 #endif

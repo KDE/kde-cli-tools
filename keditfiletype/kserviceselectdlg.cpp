@@ -22,14 +22,14 @@
 
 #include <klocale.h>
 
-#include <qvbox.h>
+#include <q3vbox.h>
 #include <qlabel.h>
 
 KServiceSelectDlg::KServiceSelectDlg( const QString& /*serviceType*/, const QString& /*value*/, QWidget *parent )
     : KDialogBase( parent, "serviceSelectDlg", true,
                    i18n( "Add Service" ), Ok|Cancel, Ok )
 {
-    QVBox *vbox = new QVBox ( this );
+    Q3VBox *vbox = new Q3VBox ( this );
 
     vbox->setSpacing( KDialog::spacingHint() );
     new QLabel( i18n( "Select service:" ), vbox );
@@ -40,7 +40,7 @@ KServiceSelectDlg::KServiceSelectDlg( const QString& /*serviceType*/, const QStr
     // So we have to do it the slow way
     // ### Why can't we query for KParts/ReadOnlyPart as the servicetype? Should work fine!
     KService::List allServices = KService::allServices();
-    QValueListIterator<KService::Ptr> it(allServices.begin());
+    Q3ValueListIterator<KService::Ptr> it(allServices.begin());
     for ( ; it != allServices.end() ; ++it )
       if ( (*it)->hasServiceType( "KParts/ReadOnlyPart" ) )
       {
@@ -50,7 +50,7 @@ KServiceSelectDlg::KServiceSelectDlg( const QString& /*serviceType*/, const QStr
     m_listbox->sort();
     m_listbox->setMinimumHeight(350);
     m_listbox->setMinimumWidth(300);
-    connect(m_listbox,SIGNAL(doubleClicked ( QListBoxItem * )),SLOT(slotOk()));
+    connect(m_listbox,SIGNAL(doubleClicked ( Q3ListBoxItem * )),SLOT(slotOk()));
     setMainWidget(vbox);
 }
 

@@ -3,8 +3,12 @@
 #include <qlayout.h>
 #include <qpushbutton.h>
 #include <qtimer.h>
-#include <qwhatsthis.h>
-#include <qwidgetstack.h>
+
+#include <q3widgetstack.h>
+//Added by qt3to4:
+#include <QGridLayout>
+#include <QHBoxLayout>
+#include <Q3ValueList>
 
 #include <dcopclient.h>
 
@@ -73,8 +77,8 @@ FileTypesView::FileTypesView(QWidget *p, const char *name)
   wtstr = i18n("Enter a part of a filename pattern. Only file types with a "
                "matching file pattern will appear in the list.");
 
-  QWhatsThis::add( patternFilterLE, wtstr );
-  QWhatsThis::add( patternFilterLBL, wtstr );
+  patternFilterLE->setWhatsThis( wtstr );
+  patternFilterLBL->setWhatsThis( wtstr );
 
   typesLV = new KListView(this);
   typesLV->setRootIsDecorated(true);
@@ -82,12 +86,12 @@ FileTypesView::FileTypesView(QWidget *p, const char *name)
 
   typesLV->addColumn(i18n("Known Types"));
   leftLayout->addMultiCellWidget(typesLV, 2, 2, 0, 2);
-  connect(typesLV, SIGNAL(selectionChanged(QListViewItem *)),
-          this, SLOT(updateDisplay(QListViewItem *)));
-  connect(typesLV, SIGNAL(doubleClicked(QListViewItem *)),
-          this, SLOT(slotDoubleClicked(QListViewItem *)));
+  connect(typesLV, SIGNAL(selectionChanged(Q3ListViewItem *)),
+          this, SLOT(updateDisplay(Q3ListViewItem *)));
+  connect(typesLV, SIGNAL(doubleClicked(Q3ListViewItem *)),
+          this, SLOT(slotDoubleClicked(Q3ListViewItem *)));
 
-  QWhatsThis::add( typesLV, i18n("Here you can see a hierarchical list of"
+  typesLV->setWhatsThis( i18n("Here you can see a hierarchical list of"
     " the file types which are known on your system. Click on the '+' sign"
     " to expand a category, or the '-' sign to collapse it. Select a file type"
     " (e.g. text/html for HTML files) to view/edit the information for that"
@@ -97,17 +101,17 @@ FileTypesView::FileTypesView(QWidget *p, const char *name)
   connect(addTypeB, SIGNAL(clicked()), SLOT(addType()));
   leftLayout->addWidget(addTypeB, 3, 0);
 
-  QWhatsThis::add( addTypeB, i18n("Click here to add a new file type.") );
+  addTypeB->setWhatsThis( i18n("Click here to add a new file type.") );
 
   m_removeTypeB = new QPushButton(i18n("&Remove"), this);
   connect(m_removeTypeB, SIGNAL(clicked()), SLOT(removeType()));
   leftLayout->addWidget(m_removeTypeB, 3, 2);
   m_removeTypeB->setEnabled(false);
 
-  QWhatsThis::add( m_removeTypeB, i18n("Click here to remove the selected file type.") );
+  m_removeTypeB->setWhatsThis( i18n("Click here to remove the selected file type.") );
 
   // For the right panel, prepare a widget stack
-  m_widgetStack = new QWidgetStack(this);
+  m_widgetStack = new Q3WidgetStack(this);
 
   l->addWidget( m_widgetStack );
 
@@ -127,7 +131,7 @@ FileTypesView::FileTypesView(QWidget *p, const char *name)
 
   // Widget shown on startup
   m_emptyWidget = new QLabel( i18n("Select a file type by name or by extension"), m_widgetStack);
-  m_emptyWidget->setAlignment(AlignCenter);
+  m_emptyWidget->setAlignment( Qt::AlignCenter );
 
   m_widgetStack->addWidget( m_emptyWidget, 3 /*id*/ );
 
@@ -172,14 +176,14 @@ void FileTypesView::readFileTypes()
 
     TypesListItem *groupItem;
     KMimeType::List mimetypes = KMimeType::allMimeTypes();
-    QValueListIterator<KMimeType::Ptr> it2(mimetypes.begin());
+    Q3ValueListIterator<KMimeType::Ptr> it2(mimetypes.begin());
     for (; it2 != mimetypes.end(); ++it2) {
 	QString mimetype = (*it2)->name();
 	int index = mimetype.find("/");
 	QString maj = mimetype.left(index);
 	QString min = mimetype.right(mimetype.length() - index+1);
 
-	QMapIterator<QString,TypesListItem*> mit = m_majorMap.find( maj );
+	QMap<QString,TypesListItem*>::const_iterator mit = m_majorMap.find( maj );
 	if ( mit == m_majorMap.end() ) {
 	    groupItem = new TypesListItem( typesLV, maj );
 	    m_majorMap.insert( maj, groupItem );
@@ -197,7 +201,7 @@ void FileTypesView::readFileTypes()
 void FileTypesView::slotEmbedMajor(const QString &major, bool &embed)
 {
     TypesListItem *groupItem;
-    QMapIterator<QString,TypesListItem*> mit = m_majorMap.find( major );
+    QMap<QString,TypesListItem*>::const_iterator mit = m_majorMap.find( major );
     if ( mit == m_majorMap.end() )
         return;
         
@@ -210,7 +214,7 @@ void FileTypesView::slotFilter(const QString & patternFilter)
 {
     // one of the few ways to clear a listview without destroying the
     // listviewitems and without making QListView crash.
-    QListViewItem *item;
+    Q3ListViewItem *item;
     while ( (item = typesLV->firstChild()) ) {
 	while ( item->firstChild() )
 	    item->takeItem( item->firstChild() );
@@ -219,7 +223,7 @@ void FileTypesView::slotFilter(const QString & patternFilter)
     }
 
     // insert all items and their group that match the filter
-    QPtrListIterator<TypesListItem> it( m_itemList );
+    Q3PtrListIterator<TypesListItem> it( m_itemList );
     while ( it.current() ) {
 	if ( patternFilter.isEmpty() ||
 	     !((*it)->patterns().grep( patternFilter, false )).isEmpty() ) {
@@ -236,7 +240,7 @@ void FileTypesView::slotFilter(const QString & patternFilter)
 void FileTypesView::addType()
 {
   QStringList allGroups;
-  QMapIterator<QString,TypesListItem*> it = m_majorMap.begin();
+  QMap<QString,TypesListItem*>::iterator it = m_majorMap.begin();
   while ( it != m_majorMap.end() ) {
       allGroups.append( it.key() );
       ++it;
@@ -245,7 +249,7 @@ void FileTypesView::addType()
   NewTypeDialog m(allGroups, this);
 
   if (m.exec()) {
-    QListViewItemIterator it(typesLV);
+    Q3ListViewItemIterator it(typesLV);
     QString loc = m.group() + "/" + m.text() + ".desktop";
     loc = locateLocal("mime", loc);
     KMimeType::Ptr mimetype = new KMimeType(loc,
@@ -262,7 +266,7 @@ void FileTypesView::addType()
     }
 
     // find out if our group has been filtered out -> insert if necessary
-    QListViewItem *item = typesLV->firstChild();
+    Q3ListViewItem *item = typesLV->firstChild();
     bool insert = true;
     while ( item ) {
 	if ( item == group ) {
@@ -298,7 +302,7 @@ void FileTypesView::removeType()
   if ( current->isEssential() )
       return;
 
-  QListViewItem *li = current->itemAbove();
+  Q3ListViewItem *li = current->itemAbove();
   if (!li)
       li = current->itemBelow();
   if (!li)
@@ -313,13 +317,13 @@ void FileTypesView::removeType()
       typesLV->setSelected(li, true);
 }
 
-void FileTypesView::slotDoubleClicked(QListViewItem *item)
+void FileTypesView::slotDoubleClicked(Q3ListViewItem *item)
 {
   if ( !item ) return;
   item->setOpen( !item->isOpen() );
 }
 
-void FileTypesView::updateDisplay(QListViewItem *item)
+void FileTypesView::updateDisplay(Q3ListViewItem *item)
 {
   if (!item)
   {
@@ -349,7 +353,7 @@ void FileTypesView::updateDisplay(QListViewItem *item)
     setDirty(false);
 }
 
-bool FileTypesView::sync( QValueList<TypesListItem *>& itemsModified )
+bool FileTypesView::sync( Q3ValueList<TypesListItem *>& itemsModified )
 {
   bool didIt = false;
   // first, remove those items which we are asked to remove.
@@ -371,7 +375,7 @@ bool FileTypesView::sync( QValueList<TypesListItem *>& itemsModified )
 
   // now go through all entries and sync those which are dirty.
   // don't use typesLV, it may be filtered
-  QMapIterator<QString,TypesListItem*> it1 = m_majorMap.begin();
+  QMap<QString,TypesListItem*>::iterator it1 = m_majorMap.begin();
   while ( it1 != m_majorMap.end() ) {
     TypesListItem *tli = *it1;
     if (tli->isDirty()) {
@@ -382,7 +386,7 @@ bool FileTypesView::sync( QValueList<TypesListItem *>& itemsModified )
     }
     ++it1;
   }
-  QPtrListIterator<TypesListItem> it2( m_itemList );
+  Q3PtrListIterator<TypesListItem> it2( m_itemList );
   while ( it2.current() ) {
     TypesListItem *tli = *it2;
     if (tli->isDirty()) {
@@ -423,7 +427,7 @@ void FileTypesView::slotDatabaseChanged()
     // our 'copies' to be in sync with it. Not important for OK, but
     // important for Apply (how to differentiate those 2?).
     // See BR 35071.
-    QValueList<TypesListItem *>::Iterator it = m_itemsModified.begin();
+    Q3ValueList<TypesListItem *>::Iterator it = m_itemsModified.begin();
     for( ; it != m_itemsModified.end(); ++it ) {
         QString name = (*it)->name();
         if ( removedList.find( name ) == removedList.end() ) // if not deleted meanwhile

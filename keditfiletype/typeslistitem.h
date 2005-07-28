@@ -20,18 +20,18 @@
 #ifndef _TYPESLISTITEM_H
 #define _TYPESLISTITEM_H
 
-#include <qlistview.h>
+#include <q3listview.h>
 
 #include <kmimetype.h>
 #include <kuserprofile.h>
 
-class TypesListItem : public QListViewItem
+class TypesListItem : public Q3ListViewItem
 {
 public:
   /**
    * Create a filetype group
    */
-  TypesListItem(QListView *parent, const QString & major );
+  TypesListItem(Q3ListView *parent, const QString & major );
 
   /**
    * Create a filetype item inside a group
@@ -41,7 +41,7 @@ public:
   /**
    * Create a filetype item not inside a group (used by keditfiletype)
    */
-  TypesListItem(QListView *parent, KMimeType::Ptr mimetype);
+  TypesListItem(Q3ListView *parent, KMimeType::Ptr mimetype);
 
   ~TypesListItem();
 

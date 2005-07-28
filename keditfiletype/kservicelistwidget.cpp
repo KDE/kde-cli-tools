@@ -22,7 +22,9 @@
 
 #include <qpushbutton.h>
 #include <qlayout.h>
-#include <qwhatsthis.h>
+
+//Added by qt3to4:
+#include <QGridLayout>
 
 #include <kapplication.h>
 #include <kdebug.h>
@@ -38,7 +40,7 @@
 #include <kstandarddirs.h>
 
 KServiceListItem::KServiceListItem( KService *pService, int kind )
-    : QListBoxText(), desktopPath(pService->desktopEntryPath())
+    : Q3ListBoxText(), desktopPath(pService->desktopEntryPath())
 {
     if ( kind == KServiceListWidget::SERVICELIST_APPLICATIONS )
         setText( pService->name() );
@@ -58,7 +60,7 @@ bool KServiceListItem::isImmutable()
 }
 
 KServiceListWidget::KServiceListWidget(int kind, QWidget *parent, const char *name)
-  : QGroupBox( kind == SERVICELIST_APPLICATIONS ? i18n("Application Preference Order")
+  : Q3GroupBox( kind == SERVICELIST_APPLICATIONS ? i18n("Application Preference Order")
                : i18n("Services Preference Order"), parent, name ),
     m_kind( kind ), m_item( 0L )
 {
@@ -73,10 +75,10 @@ KServiceListWidget::KServiceListWidget(int kind, QWidget *parent, const char *na
   grid->setRowStretch(5, 1);
   grid->setRowStretch(6, 1);
 
-  servicesLB = new QListBox(gb);
+  servicesLB = new Q3ListBox(gb);
   connect(servicesLB, SIGNAL(highlighted(int)), SLOT(enableMoveButtons(int)));
   grid->addMultiCellWidget(servicesLB, 1, 6, 0, 0);
-  connect( servicesLB, SIGNAL( doubleClicked ( QListBoxItem * )), this, SLOT( editService()));
+  connect( servicesLB, SIGNAL( doubleClicked ( Q3ListBoxItem * )), this, SLOT( editService()));
 
   QString wtstr =
     (kind == SERVICELIST_APPLICATIONS ?
@@ -91,15 +93,15 @@ KServiceListWidget::KServiceListWidget(int kind, QWidget *parent, const char *na
           " then the list is ordered by priority with the uppermost item taking precedence"
           " over the others."));
 
-  QWhatsThis::add( gb, wtstr );
-  QWhatsThis::add( servicesLB, wtstr );
+  gb->setWhatsThis( wtstr );
+  servicesLB->setWhatsThis( wtstr );
 
   servUpButton = new QPushButton(i18n("Move &Up"), gb);
   servUpButton->setEnabled(false);
   connect(servUpButton, SIGNAL(clicked()), SLOT(promoteService()));
   grid->addWidget(servUpButton, 2, 1);
 
-  QWhatsThis::add( servUpButton, kind == SERVICELIST_APPLICATIONS ?
+  servUpButton->setWhatsThis( kind == SERVICELIST_APPLICATIONS ?
                    i18n("Assigns a higher priority to the selected\n"
                         "application, moving it up in the list. Note:  This\n"
                         "only affects the selected application if the file type is\n"
@@ -112,7 +114,7 @@ KServiceListWidget::KServiceListWidget(int kind, QWidget *parent, const char *na
   connect(servDownButton, SIGNAL(clicked()), SLOT(demoteService()));
   grid->addWidget(servDownButton, 3, 1);
 
-  QWhatsThis::add( servDownButton, kind == SERVICELIST_APPLICATIONS ?
+  servDownButton->setWhatsThis( kind == SERVICELIST_APPLICATIONS ?
                    i18n("Assigns a lower priority to the selected\n"
                         "application, moving it down in the list. Note: This \n"
                         "only affects the selected application if the file type is\n"
@@ -125,7 +127,7 @@ KServiceListWidget::KServiceListWidget(int kind, QWidget *parent, const char *na
   connect(servNewButton, SIGNAL(clicked()), SLOT(addService()));
   grid->addWidget(servNewButton, 1, 1);
 
-  QWhatsThis::add( servNewButton, i18n( "Add a new application for this file type." ) );
+  servNewButton->setWhatsThis( i18n( "Add a new application for this file type." ) );
 
 
   servEditButton = new QPushButton(i18n("Edit..."), gb);
@@ -133,7 +135,7 @@ KServiceListWidget::KServiceListWidget(int kind, QWidget *parent, const char *na
   connect(servEditButton, SIGNAL(clicked()), SLOT(editService()));
   grid->addWidget(servEditButton, 4, 1);
 
-  QWhatsThis::add( servEditButton, i18n( "Edit command line of the selected application." ) );
+  servEditButton->setWhatsThis( i18n( "Edit command line of the selected application." ) );
 
 
   servRemoveButton = new QPushButton(i18n("Remove"), gb);
@@ -141,7 +143,7 @@ KServiceListWidget::KServiceListWidget(int kind, QWidget *parent, const char *na
   connect(servRemoveButton, SIGNAL(clicked()), SLOT(removeService()));
   grid->addWidget(servRemoveButton, 5, 1);
 
-  QWhatsThis::add( servRemoveButton, i18n( "Remove the selected application from the list." ) );
+  servRemoveButton->setWhatsThis( i18n( "Remove the selected application from the list." ) );
 }
 
 void KServiceListWidget::setTypeItem( TypesListItem * item )
@@ -196,7 +198,7 @@ void KServiceListWidget::promoteService()
     return;
   }
 
-  QListBoxItem *selItem = servicesLB->item(selIndex);
+  Q3ListBoxItem *selItem = servicesLB->item(selIndex);
   servicesLB->takeItem(selItem);
   servicesLB->insertItem(selItem, selIndex-1);
   servicesLB->setCurrentItem(selIndex - 1);
@@ -219,7 +221,7 @@ void KServiceListWidget::demoteService()
     return;
   }
 
-  QListBoxItem *selItem = servicesLB->item(selIndex);
+  Q3ListBoxItem *selItem = servicesLB->item(selIndex);
   servicesLB->takeItem(selItem);
   servicesLB->insertItem(selItem, selIndex+1);
   servicesLB->setCurrentItem(selIndex + 1);
@@ -294,7 +296,7 @@ void KServiceListWidget::editService()
     {
       // Just like popping up an add dialog except that we
       // pass the current command line as a default
-      QListBoxItem *selItem = servicesLB->item(selected);
+      Q3ListBoxItem *selItem = servicesLB->item(selected);
 
       KService::Ptr service = KService::serviceByDesktopPath(
           ((KServiceListItem*)selItem)->desktopPath );

@@ -8,11 +8,10 @@
  */
 
 #include <ctype.h>
-#include <qcstring.h>
 #include "lexer.h"
 
 
-Lexer::Lexer(const QCString &input)
+Lexer::Lexer(const QByteArray &input)
 {
     m_Input = input;
     in = 0;
@@ -25,7 +24,7 @@ Lexer::~Lexer()
     m_Output.fill('x');
 }
 
-QCString &Lexer::lval()
+QByteArray &Lexer::lval()
 {
     return m_Output;
 }

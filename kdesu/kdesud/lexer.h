@@ -7,7 +7,7 @@
 #ifndef __Lexer_h_included__
 #define __Lexer_h_included__
 
-class QCString;
+#include <QByteArray>
 
 /**
  * This is a lexer for the kdesud protocol.
@@ -15,14 +15,14 @@ class QCString;
 
 class Lexer {
 public:
-    Lexer(const QCString &input);
+    Lexer(const QByteArray &input);
     ~Lexer();
 
     /** Read next token. */
     int lex();
 
     /** Return the token's value. */
-    QCString &lval();
+    QByteArray &lval();
 
     enum Tokens { 
     Tok_none, Tok_exec=256, Tok_pass, Tok_delCmd,
@@ -33,8 +33,8 @@ public:
     };
 
 private:
-    QCString m_Input;
-    QCString m_Output;
+    QByteArray m_Input;
+    QByteArray m_Output;
 
     int in;
 };

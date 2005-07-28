@@ -18,8 +18,8 @@
 #include "filegroupdetails.h"
 #include "typeslistitem.h"
 #include <qlayout.h>
-#include <qvbuttongroup.h>
 #include <qradiobutton.h>
+#include <q3buttongroup.h>
 #include <qwhatsthis.h>
 #include <kdialog.h>
 #include <klocale.h>
@@ -31,7 +31,8 @@ FileGroupDetails::FileGroupDetails(QWidget *parent, const char *name )
   QVBoxLayout *secondLayout = new QVBoxLayout(parentWidget,
       0, KDialog::spacingHint());
 
-  m_autoEmbed = new QVButtonGroup( i18n("Left Click Action"), parentWidget );
+  m_autoEmbed = new Q3ButtonGroup( i18n("Left Click Action"), parentWidget );
+  m_autoEmbed->setOrientation( Qt::Vertical );
   m_autoEmbed->layout()->setSpacing( KDialog::spacingHint() );
   secondLayout->addWidget( m_autoEmbed );
   // The order of those two items is very important. If you change it, fix typeslistitem.cpp !

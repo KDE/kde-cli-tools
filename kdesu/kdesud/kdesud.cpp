@@ -56,9 +56,11 @@
 #include <sys/select.h>                // Needed on some systems.
 #endif
 
-#include <qptrvector.h>
+#include <q3ptrvector.h>
 #include <qfile.h>
 #include <qregexp.h>
+//Added by qt3to4:
+#include <Q3CString>
 
 #include <kinstance.h>
 #include <kdebug.h>
@@ -87,7 +89,7 @@
 
 Repository *repo;
 const char *Version = "1.01";
-QCString sock;
+Q3CString sock;
 Display *x11Display;
 int pipeOfDeath[2];
 
@@ -157,7 +159,7 @@ int create_socket()
     ksocklen_t addrlen;
     struct stat s;
 
-    QCString display(getenv("DISPLAY"));
+    QString display = QString::fromAscii(getenv("DISPLAY"));
     if (display.isEmpty())
     {
         kdWarning(1205) << "$DISPLAY is not set\n";
@@ -294,7 +296,7 @@ int main(int argc, char *argv[])
     maxfd = QMAX(maxfd, x11Fd);
 
     repo = new Repository;
-    QPtrVector<ConnectionHandler> handler;
+    Q3PtrVector<ConnectionHandler> handler;
     handler.setAutoDelete(true);
 
     pipe(pipeOfDeath);
