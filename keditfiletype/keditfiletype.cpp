@@ -19,12 +19,15 @@
 #include "typeslistitem.h"
 #include "keditfiletype.h"
 
+#include <qfile.h>
+
 #include <dcopclient.h>
 #include <kapplication.h>
 #include <kaboutdata.h>
 #include <kdebug.h>
 #include <kcmdlineargs.h>
 #include <ksycoca.h>
+#include <kstandarddirs.h>
 #include <QX11Info>
 
 #ifdef Q_WS_X11
@@ -36,10 +39,22 @@ FileTypeDialog::FileTypeDialog( KMimeType::Ptr mime )
   : KDialogBase( 0L, 0, false, QString::null, /* Help | */ Cancel | Apply | Ok,
                  Ok, false )
 {
+  init( mime, false );
+}
+
+FileTypeDialog::FileTypeDialog( KMimeType::Ptr mime, bool newItem )
+  : KDialogBase( 0L, 0, false, QString::null, /* Help | */ Cancel | Apply | Ok,
+                 Ok, false )
+{
+  init( mime, newItem );
+}
+
+void FileTypeDialog::init( KMimeType::Ptr mime, bool newItem )
+{
   m_details = new FileTypeDetails( this );
   Q3ListView * dummyListView = new Q3ListView( m_details );
   dummyListView->hide();
-  m_item = new TypesListItem( dummyListView, mime );
+  m_item = new TypesListItem( dummyListView, mime, newItem );
   m_details->setTypeItem( m_item );
 
   // This code is very similar to kcdialog.cpp
@@ -112,11 +127,40 @@ int main(int argc, char ** argv)
 
   if (args->count() == 0)
     KCmdLineArgs::usage();
-  KMimeType::Ptr mime = KMimeType::mimeType( args->arg(0) );
-  if (!mime)
-    kdFatal() << "Mimetype " << args->arg(0) << " not found" << endl;
 
-  FileTypeDialog dlg( mime );
+  QString arg = args->arg(0);
+
+  bool createType = arg.startsWith( "*" );
+
+  KMimeType::Ptr mime;
+  
+  if ( createType ) {
+    QString mimeString = "application/x-kdeuser%1";
+    QString loc;
+    int inc = 0;
+    do {
+      ++inc;
+      loc = locateLocal( "mime", mimeString.arg( inc ) + ".desktop" );
+    }
+    while ( QFile::exists( loc ) );
+
+    QStringList patterns;
+    if ( arg.length() > 2 )
+	patterns << arg.lower() << arg.upper();
+    QString comment;
+    if ( arg.startsWith( "*." ) && arg.length() >= 3 ) {
+	QString type = arg.mid( 3 ).prepend( arg[2].upper() );
+        comment = i18n( "%1 File" ).arg( type );
+    }
+    mime = new KMimeType( loc, mimeString.arg( inc ), QString::null, comment, patterns );
+  }
+  else { 
+    mime = KMimeType::mimeType( arg );
+    if (!mime)
+      kdFatal() << "Mimetype " << arg << " not found" << endl;
+  }
+
+  FileTypeDialog dlg( mime, createType );
 #if defined Q_WS_X11
   if( args->isSet( "parent" )) {
     bool ok;
@@ -126,7 +170,12 @@ int main(int argc, char ** argv)
   }
 #endif
   args->clear();
-  dlg.setCaption( i18n("Edit File Type %1").arg(mime->name()) );
+  if ( !createType )
+    dlg.setCaption( i18n("Edit File Type %1").arg(mime->name()) );
+  else {
+    dlg.setCaption( i18n("Create New File Type %1").arg(mime->name()) );
+    dlg.enableButton( KDialogBase::Apply, true );
+  }
   app.setMainWidget( &dlg );
   dlg.show(); // non-modal
 

@@ -43,6 +43,12 @@ public:
    */
   TypesListItem(Q3ListView *parent, KMimeType::Ptr mimetype);
 
+  /**
+   * Create a filetype item not inside a group (used by keditfiletype)
+   * KDE4: merge with previous
+   */
+  TypesListItem(Q3ListView *parent, KMimeType::Ptr mimetype, bool newItem);
+
   ~TypesListItem();
 
   QString name() const { return m_major + "/" + m_minor; }

@@ -30,6 +30,7 @@ class FileTypeDialog : public KDialogBase
   Q_OBJECT
 public:
   FileTypeDialog( KMimeType::Ptr mime );
+  FileTypeDialog( KMimeType::Ptr mime, bool newItem );
 
 protected slots:
 
@@ -44,6 +45,7 @@ protected:
   void save();
 
 private:
+  void init( KMimeType::Ptr mime, bool newItem );
   FileTypeDetails * m_details;
   TypesListItem * m_item;
 };

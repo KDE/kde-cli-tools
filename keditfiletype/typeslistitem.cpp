@@ -50,6 +50,13 @@ TypesListItem::TypesListItem(Q3ListView *parent, KMimeType::Ptr mimetype)
   setText(0, majorType());
 }
 
+TypesListItem::TypesListItem(Q3ListView *parent, KMimeType::Ptr mimetype, bool newItem)
+  : Q3ListViewItem(parent), metaType(false), m_bNewItem(newItem), m_askSave(2)
+{
+  init(mimetype);
+  setText(0, majorType());
+}
+
 TypesListItem::~TypesListItem()
 {
 }
@@ -139,6 +146,8 @@ void TypesListItem::getServiceOffers( QStringList & appServices, QStringList & e
 
 bool TypesListItem::isMimeTypeDirty() const
 {
+  if ( m_bNewItem )
+    return true;
   if ((m_mimetype->name() != name()) &&
       (name() != "application/octet-stream"))
   {
