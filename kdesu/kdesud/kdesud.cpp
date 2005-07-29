@@ -70,7 +70,6 @@
 #include <kaboutdata.h>
 #include <kdesu/client.h>
 #include <kdesu/defaults.h>
-#include <ksockaddr.h>
 
 #include "repo.h"
 #include "handler.h"
@@ -93,6 +92,7 @@ Q3CString sock;
 Display *x11Display;
 int pipeOfDeath[2];
 
+typedef unsigned ksocklen_t;
 
 void kdesud_cleanup()
 {

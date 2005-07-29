@@ -19,9 +19,9 @@
 #include <sys/socket.h>
 
 #include <kdebug.h>
-#include <ksockaddr.h>
 #include "secure.h"
 
+typedef unsigned ksocklen_t;
 
 /**
  * Under Linux, Socket_security is supported.
