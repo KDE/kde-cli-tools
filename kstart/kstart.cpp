@@ -180,9 +180,14 @@ void KStart::windowAdded(WId w){
 }
 
 
-extern Atom qt_wm_state; // defined in qapplication_x11.cpp
+//extern Atom qt_wm_state; // defined in qapplication_x11.cpp
 static bool wstate_withdrawn( WId winid )
 {
+#warning "Porting required."
+//Porting info: The Qt4 equivalent for qt_wm_state is qt_x11Data->atoms[QX11Data::WM_STATE]
+//which can be accessed via the macro ATOM(WM_STATE). Unfortunately, neither of these seem
+//to be exported out of the Qt environment. This value may have to be aquired from somewhere else.
+/*
     Atom type;
     int format;
     unsigned long length, after;
@@ -197,6 +202,8 @@ static bool wstate_withdrawn( WId winid )
 	XFree( (char *)data );
     }
     return withdrawn;
+*/
+	return TRUE;
 }
 
 
