@@ -92,6 +92,8 @@ Q3CString sock;
 Display *x11Display;
 int pipeOfDeath[2];
 
+// FIXME: This is just here to make it compile
+// It would be better to fix it more globally (Caleb Tennis)
 typedef unsigned ksocklen_t;
 
 void kdesud_cleanup()
