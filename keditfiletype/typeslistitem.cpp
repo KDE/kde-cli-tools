@@ -43,12 +43,6 @@ TypesListItem::TypesListItem(TypesListItem *parent, KMimeType::Ptr mimetype, boo
   setText(0, minorType());
 }
 
-TypesListItem::TypesListItem(Q3ListView *parent, KMimeType::Ptr mimetype)
-  : Q3ListViewItem(parent), metaType(false), m_bNewItem(false), m_askSave(2)
-{
-  init(mimetype);
-  setText(0, majorType());
-}
 
 TypesListItem::TypesListItem(Q3ListView *parent, KMimeType::Ptr mimetype, bool newItem)
   : Q3ListViewItem(parent), metaType(false), m_bNewItem(newItem), m_askSave(2)
