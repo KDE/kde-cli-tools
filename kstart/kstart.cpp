@@ -148,8 +148,8 @@ void KStart::windowAdded(WId w){
         return;
 
     if ( !windowtitle.isEmpty() ) {
-	QString title = info.name().lower();
-	QRegExp r( windowtitle.lower());
+	QString title = info.name().toLower();
+	QRegExp r( windowtitle.toLower());
 	if ( !r.exactMatch(title) )
 	    return; // no match
     }
@@ -161,7 +161,7 @@ void KStart::windowAdded(WId w){
             return;
         Q3CString cls = windowclass.contains( ' ' )
             ? Q3CString( hint.res_name ) + ' ' + hint.res_class : Q3CString( hint.res_class );
-        cls = cls.lower();
+        cls = cls.toLower();
         XFree( hint.res_name );
 	XFree( hint.res_class );
         if( cls != windowclass )
@@ -197,7 +197,7 @@ static bool wstate_withdrawn( WId winid )
 				&length, &after, &data );
     bool withdrawn = TRUE;
     if ( r == Success && data && format == 32 ) {
-	Q_UINT32 *wstate = (Q_UINT32*)data;
+	quint32 *wstate = (quint32*)data;
 	withdrawn  = (*wstate == WithdrawnState );
 	XFree( (char *)data );
     }
@@ -338,14 +338,14 @@ int main( int argc, char *argv[] )
   windowtitle = args->getOption( "window" );
   windowclass = args->getOption( "windowclass" );
   if( !windowclass.isEmpty() )
-      windowclass = windowclass.lower();
+      windowclass = windowclass.toLower();
   
   if( windowtitle.isEmpty() && windowclass.isEmpty())
       kdWarning() << "Omitting both --window and --windowclass arguments is not recommended" << endl;
 
   Q3CString s = args->getOption( "type" );
   if ( !s.isEmpty() ) {
-      s = s.lower();
+      s = s.toLower();
       if ( s == "desktop" )
 	  windowtype = NET::Desktop;
       else if ( s == "dock" )
