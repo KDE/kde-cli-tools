@@ -57,7 +57,7 @@ int main(int argc, char **argv)
 	QString key=QString::fromLocal8Bit(args->getOption("key"));
 	QString file=QString::fromLocal8Bit(args->getOption("file"));
 	QString dflt=args->getOption("default");
-	QString type=args->getOption("type").lower();
+	QString type=args->getOption("type").toLower();
 
 	if (key.isNull()) {
 		KCmdLineArgs::usage();
@@ -78,7 +78,7 @@ int main(int argc, char **argv)
         }
 	konfig->setGroup(group);
 	if(type=="bool") {
-		dflt=dflt.lower();
+		dflt=dflt.toLower();
 		bool def=(dflt=="true" || dflt=="on" || dflt=="yes" || dflt=="1");
                 bool retValue = !konfig->readBoolEntry(key, def);
                 if ( configMustDeleted )
@@ -90,13 +90,13 @@ int main(int argc, char **argv)
                 delete konfig;
             return retValue;
 	} else if (type=="path"){
-                fprintf(stdout, "%s\n", konfig->readPathEntry(key, dflt).local8Bit().data());
+                fprintf(stdout, "%s\n", konfig->readPathEntry(key, dflt).toLocal8Bit().data());
                 if ( configMustDeleted )
                     delete konfig;
 		return 0;
 	} else {
             /* Assume it's a string... */
-                fprintf(stdout, "%s\n", konfig->readEntry(key, dflt).local8Bit().data());
+                fprintf(stdout, "%s\n", konfig->readEntry(key, dflt).toLocal8Bit().data());
                 if ( configMustDeleted )
                     delete konfig;
 		return 0;

@@ -41,7 +41,7 @@ int main(int argc, char **argv)
 	QString group=QString::fromLocal8Bit(args->getOption("group"));
 	QString key=QString::fromLocal8Bit(args->getOption("key"));
 	QString file=QString::fromLocal8Bit(args->getOption("file"));
-	QByteArray type=args->getOption("type").lower();
+	QByteArray type=args->getOption("type").toLower();
 
 
 	if (key.isNull() || !args->count()) {
