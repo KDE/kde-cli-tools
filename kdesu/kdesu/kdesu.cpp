@@ -119,7 +119,7 @@ int main(int argc, char *argv[])
     {
         KStartupInfoId id;
         id.initId( kapp->startupId());
-        id.setupStartupEnv(); // make KDE_STARTUP_ENV env. var. available again
+        id.setupStartupEnv(); // make DESKTOP_STARTUP_ID env. var. available again
     }
 
     int result = startApp();
@@ -277,7 +277,7 @@ static int startApp()
 
     QList<QByteArray> env;
     Q3CString options;
-    env << ( "KDE_STARTUP_ENV=" + kapp->startupId());
+    env << ( "DESKTOP_STARTUP_ID=" + kapp->startupId());
     
     if (pw->pw_uid)
     {

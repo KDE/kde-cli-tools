@@ -244,7 +244,7 @@ int ConnectionHandler::doCommand(QByteArray buf)
                    goto parse_error;
                QByteArray env_str = l->lval();
                env.append(env_str);
-               if (strncmp(env_str, "KDE_STARTUP_ENV=", strlen("KDE_STARTUP_ENV=")) != 0)
+               if (strncmp(env_str, "DESKTOP_STARTUP_ID=", strlen("DESKTOP_STARTUP_ID=")) != 0)
                    env_check += "*"+env_str;
                tok = l->lex();
             }
