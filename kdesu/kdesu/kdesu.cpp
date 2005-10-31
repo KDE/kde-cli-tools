@@ -299,7 +299,7 @@ static int startApp()
     
     if (!new_dcop)
     {
-        Q3CString ksycoca = "KDESYCOCA="+QFile::encodeName(locateLocal("tmp", "ksycoca"));
+        Q3CString ksycoca = "KDESYCOCA="+QFile::encodeName(locateLocal("cache", "ksycoca"));
         env << ksycoca;
 
         options += "xf"; // X-only, dcop forwarding enabled.
