@@ -7,7 +7,6 @@
 #include <time.h>
 #include <assert.h>
 
-#include <q3cstring.h>
 #include <qmap.h>
 #include <q3valuestack.h>
 #include <kdebug.h>
