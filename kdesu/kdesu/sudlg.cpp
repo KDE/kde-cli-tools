@@ -5,16 +5,15 @@
  */
 
 #include <qstring.h>
-//Added by qt3to4:
-#include <Q3CString>
 #include <klocale.h>
 #include <kmessagebox.h>
+#include <QByteArray>
 
 #include <kdesu/su.h>
 #include "sudlg.h"
 
 
-KDEsuDialog::KDEsuDialog(Q3CString user, Q3CString auth_user, bool enableKeep, const QString& icon)
+KDEsuDialog::KDEsuDialog(QByteArray user, QByteArray auth_user, bool enableKeep, const QString& icon)
     : KPasswordDialog(Password, enableKeep, User1, icon)
 {
     m_User = auth_user;

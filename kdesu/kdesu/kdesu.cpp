@@ -24,8 +24,6 @@
 #include <qglobal.h>
 #include <qfile.h>
 #include <qdir.h>
-//Added by qt3to4:
-#include <Q3CString>
 
 #include <dcopclient.h>
 
@@ -71,9 +69,9 @@ static KCmdLineOptions options[] = {
 };
 
 
-Q3CString dcopNetworkId()
+QByteArray dcopNetworkId()
 {
-    Q3CString result;
+    QByteArray result;
     result.resize(1025);
     QFile file(DCOPClient::dcopServerFile());
     if (!file.open(QIODevice::ReadOnly))
@@ -162,8 +160,8 @@ static int startApp()
 	prompt = false;
 
     // Get target uid
-    Q3CString user = args->getOption("u");
-    Q3CString auth_user = user;
+    QByteArray user = args->getOption("u");
+    QByteArray auth_user = user;
     struct passwd *pw = getpwnam(user);
     if (pw == 0L)
     {
@@ -276,7 +274,7 @@ static int startApp()
     bool new_dcop = args->isSet("newdcop");
 
     QList<QByteArray> env;
-    Q3CString options;
+    QByteArray options;
     env << ( "DESKTOP_STARTUP_ID=" + kapp->startupId());
     
     if (pw->pw_uid)
@@ -295,11 +293,11 @@ static int startApp()
     }
 
     KUser u;
-    env << (Q3CString) ("KDESU_USER=" + u.loginName().local8Bit());
+    env << (QByteArray) ("KDESU_USER=" + u.loginName().local8Bit());
     
     if (!new_dcop)
     {
-        Q3CString ksycoca = "KDESYCOCA="+QFile::encodeName(locateLocal("cache", "ksycoca"));
+        QByteArray ksycoca = "KDESYCOCA="+QFile::encodeName(locateLocal("cache", "ksycoca"));
         env << ksycoca;
 
         options += "xf"; // X-only, dcop forwarding enabled.
@@ -349,7 +347,7 @@ static int startApp()
     }
 
     // Start the dialog
-    Q3CString password;
+    QByteArray password;
     if (needpw)
     {
         KStartupInfoId id;
