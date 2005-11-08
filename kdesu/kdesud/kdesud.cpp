@@ -59,8 +59,7 @@
 #include <q3ptrvector.h>
 #include <qfile.h>
 #include <qregexp.h>
-//Added by qt3to4:
-#include <Q3CString>
+#include <QByteArray>
 
 #include <kinstance.h>
 #include <kdebug.h>
@@ -88,7 +87,7 @@
 
 Repository *repo;
 const char *Version = "1.01";
-Q3CString sock;
+QByteArray sock;
 Display *x11Display;
 int pipeOfDeath[2];
 
