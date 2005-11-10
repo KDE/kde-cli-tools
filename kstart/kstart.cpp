@@ -16,7 +16,6 @@
 #include <qregexp.h>
 #include <qtimer.h>
 //Added by qt3to4:
-#include <Q3CString>
 #include <QDesktopWidget>
 
 #include <kdebug.h>
@@ -37,8 +36,8 @@
 // some globals
 
 static KProcess proc;
-static Q3CString windowtitle = 0;
-static Q3CString windowclass = 0;
+static QString windowtitle = 0;
+static QString windowclass = 0;
 static int desktop = 0;
 static bool activate = false;
 static bool iconify = false;
@@ -72,7 +71,7 @@ KStart::KStart()
     if( proc.start(KProcess::DontCare) ) {
         KStartupInfoData data;
         data.addPid( proc.pid() );
-        Q3CString bin = proc.args().first();
+        QString bin = proc.args().first();
         data.setName( bin );
         data.setBin( bin.mid( bin.findRev( '/' ) + 1 ));
         KStartupInfo::sendChange( id, data );
@@ -85,7 +84,7 @@ KStart::KStart()
 
 void KStart::sendRule() {
     KXMessages msg;
-    Q3CString message;
+    QString message;
     if( !windowtitle.isEmpty() )
         message += "title=" + windowtitle + "\ntitlematch=3\n"; // 3 = regexp match
     if( !windowclass.isEmpty() )
@@ -95,22 +94,22 @@ void KStart::sendRule() {
             + ( windowclass.contains( ' ' ) ? "true" : "false" ) + "\n";
     if( (!windowtitle.isEmpty()) || (!windowclass.isEmpty()) ) {
         // always ignore these window types
-        message += "types=" + Q3CString().setNum( -1U &
+        message += "types=" + QString().setNum( -1U &
             ~( NET::TopMenuMask | NET::ToolbarMask | NET::DesktopMask | NET::SplashMask | NET::MenuMask )) + "\n";
     } else {
         // accept only "normal" windows
-        message += "types=" + Q3CString().setNum( NET::NormalMask | NET::DialogMask ) + "\n";
+        message += "types=" + QString().setNum( NET::NormalMask | NET::DialogMask ) + "\n";
     }
     if ( ( desktop > 0 && desktop <= kwinmodule->numberOfDesktops() )
          || desktop == NETWinInfo::OnAllDesktops ) {
-	message += "desktop=" + Q3CString().setNum( desktop ) + "\ndesktoprule=3\n";
+	message += "desktop=" + QString().setNum( desktop ) + "\ndesktoprule=3\n";
     }
     if (activate)
         message += "fsplevel=0\nfsplevelrule=2\n";
     if (iconify)
         message += "minimize=true\nminimizerule=3\n";
     if ( windowtype != NET::Unknown ) {
-        message += "type=" + Q3CString().setNum( windowtype ) + "\ntyperule=2";
+        message += "type=" + QString().setNum( windowtype ) + "\ntyperule=2";
     }
     if ( state ) {
         if( state & NET::KeepAbove )
@@ -343,7 +342,7 @@ int main( int argc, char *argv[] )
   if( windowtitle.isEmpty() && windowclass.isEmpty())
       kdWarning() << "Omitting both --window and --windowclass arguments is not recommended" << endl;
 
-  Q3CString s = args->getOption( "type" );
+  QString s = args->getOption( "type" );
   if ( !s.isEmpty() ) {
       s = s.toLower();
       if ( s == "desktop" )
