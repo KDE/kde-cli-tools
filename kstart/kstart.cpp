@@ -73,7 +73,7 @@ KStart::KStart()
         data.addPid( proc.pid() );
         QString bin = proc.args().first();
         data.setName( bin );
-        data.setBin( bin.mid( bin.findRev( '/' ) + 1 ));
+        data.setBin( bin.mid( bin.lastIndexOf( '/' ) + 1 ));
         KStartupInfo::sendChange( id, data );
     }
     else
@@ -129,7 +129,7 @@ void KStart::sendRule() {
     }
 
     msg.broadcastMessage( "_KDE_NET_WM_TEMPORARY_RULES", message, -1, false );
-    kapp->flushX();
+    kapp->flush();
 }
 
 const int SUPPORTED_WINDOW_TYPES_MASK = NET::NormalMask | NET::DesktopMask | NET::DockMask
@@ -212,7 +212,7 @@ void KStart::applyStyle(WId w ) {
 
 	QX11Info info;
 	XWithdrawWindow(QX11Info::display(), w, info.screen());
-	QApplication::flushX();
+	QApplication::flush();
 
 	while ( !wstate_withdrawn(w) )
 	    ;
@@ -260,7 +260,7 @@ void KStart::applyStyle(WId w ) {
     if (activate)
       KWin::forceActiveWindow( w );
 
-    QApplication::flushX();
+    QApplication::flush();
 }
 
 // David, 05/03/2000
