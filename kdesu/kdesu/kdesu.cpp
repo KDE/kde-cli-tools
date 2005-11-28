@@ -91,6 +91,7 @@ int main(int argc, char *argv[])
     // directly obvious to a gui user. :)
     // anyway, i vote against removing it even when we have a proper gui
     // implementation.  -- ossi
+
     const char *duser = ::getenv("ADMIN_ACCOUNT");
     if (duser && duser[0])
         options[3].def = duser;
@@ -113,7 +114,7 @@ int main(int argc, char *argv[])
     KApplication app;
     // but propagate it to the started app
     setenv( "SESSION_MANAGER", session_manager.data(), 1 );
-    
+
     {
         KStartupInfoId id;
         id.initId( kapp->startupId());
