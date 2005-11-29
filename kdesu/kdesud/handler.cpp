@@ -18,8 +18,6 @@
 #include <sys/socket.h>
 #include <sys/types.h>
 
-#include <q3cstring.h>
-
 #include <kdebug.h>
 #include <kdesu/su.h>
 #include <kdesu/ssh.h>
