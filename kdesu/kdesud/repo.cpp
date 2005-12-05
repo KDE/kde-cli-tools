@@ -7,8 +7,8 @@
 #include <time.h>
 #include <assert.h>
 
+#include <QStack>
 #include <qmap.h>
-#include <q3valuestack.h>
 #include <kdebug.h>
 
 #include "repo.h"
@@ -56,7 +56,7 @@ int Repository::removeSpecialKey(const QByteArray &key)
     int found = -1;
     if ( !key.isEmpty() )
     {
-        Q3ValueStack<QByteArray> rm_keys;
+        QStack<QByteArray> rm_keys;
         for (RepoCIterator it=repo.begin(); it!=repo.end(); ++it)
         {
             if (  key.find( it.data().group ) == 0 &&
@@ -80,7 +80,7 @@ int Repository::removeGroup(const QByteArray &group)
     int found = -1;
     if ( !group.isEmpty() )
     {
-        Q3ValueStack<QByteArray> rm_keys;
+        QStack<QByteArray> rm_keys;
         for (RepoCIterator it=repo.begin(); it!=repo.end(); ++it)
         {
             if (it.data().group == group)
@@ -167,7 +167,7 @@ int Repository::expire()
 	return 0;
 
     unsigned t;
-    Q3ValueStack<QByteArray> keys;
+    QStack<QByteArray> keys;
     head_time = (unsigned) -1;
     RepoIterator it;
     for (it=repo.begin(); it!=repo.end(); ++it)
