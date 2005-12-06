@@ -1,6 +1,6 @@
 /* Write KConfig() entries - for use in shell scripts.
- * (c) 2001 Red Hat, Inc. & Luís Pedro Coelho
- * Programmed by Luís Pedro Coelho <luis_pedro@netcabo.pt>
+ * (c) 2001 Red Hat, Inc. & LuÃ­s Pedro Coelho
+ * Programmed by LuÃ­s Pedro Coelho <luis_pedro@netcabo.pt>
  *  based on kreadconfig by Bernhard Rosenkraenzer <bero@redhat.com>
  *
  * License: GPL
@@ -31,8 +31,8 @@ int main(int argc, char **argv)
 		"1.0.0",
 		I18N_NOOP("Write KConfig entries - for use in shell scripts"),
 		KAboutData::License_GPL,
-		"(c) 2001 Red Hat, Inc. & Luís Pedro Coelho");
-	aboutData.addAuthor("Luís Pedro Coelho", 0, "luis_pedro@netcabo.pt");
+		"(c) 2001 Red Hat, Inc. & LuÃ­s Pedro Coelho");
+	aboutData.addAuthor("LuÃ­s Pedro Coelho", 0, "luis_pedro@netcabo.pt");
 	aboutData.addAuthor("Bernhard Rosenkraenzer", "Wrote kreadconfig on which this is based", "bero@redhat.com");
 	KCmdLineArgs::init(argc, argv, &aboutData);
 	KCmdLineArgs::addCmdLineOptions(options);
