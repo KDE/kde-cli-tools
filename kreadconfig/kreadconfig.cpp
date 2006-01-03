@@ -80,7 +80,7 @@ int main(int argc, char **argv)
 	if(type=="bool") {
 		dflt=dflt.toLower();
 		bool def=(dflt=="true" || dflt=="on" || dflt=="yes" || dflt=="1");
-                bool retValue = !konfig->readBoolEntry(key, def);
+                bool retValue = !konfig->readEntry(key, QVariant(def)).toBool();
                 if ( configMustDeleted )
                     delete konfig;
 		return retValue;
