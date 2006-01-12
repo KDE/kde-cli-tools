@@ -329,7 +329,7 @@ static int startApp()
     // Read configuration
     KConfig *config = KGlobal::config();
     config->setGroup("Passwords");
-    int timeout = config->readNumEntry("Timeout", defTimeout);
+    int timeout = config->readEntry("Timeout", defTimeout);
 
     // Check if we need a password
     SuProcess proc;
