@@ -22,7 +22,7 @@ public:
   KStart();
   ~KStart(){};
   
-public slots:
+public Q_SLOTS:
   void windowAdded(WId);
 
 private:
