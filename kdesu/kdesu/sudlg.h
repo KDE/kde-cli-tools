@@ -7,7 +7,7 @@
 #ifndef __SuDlg_h_Included__
 #define __SuDlg_h_Included__
 
-#include <kpassdlg.h>
+#include <kpassworddialog.h>
 #include <QByteArray>
 
 class KDEsuDialog
