@@ -107,7 +107,7 @@ extern "C" int xio_errhandler(Display *);
 
 int xio_errhandler(Display *)
 {
-    kdError(1205) << "Fatal IO error, exiting...\n";
+    kError(1205) << "Fatal IO error, exiting...\n";
     kdesud_cleanup();
     exit(1);
     return 1;  //silence compilers
@@ -126,8 +126,8 @@ int initXconnection()
         return XConnectionNumber(x11Display);
     } else 
     {
-        kdWarning(1205) << "Can't connect to the X Server.\n";
-        kdWarning(1205) << "Might not terminate at end of session.\n";
+        kWarning(1205) << "Can't connect to the X Server.\n";
+        kWarning(1205) << "Might not terminate at end of session.\n";
         return -1;
     }
 }
@@ -139,7 +139,7 @@ extern "C" {
 
 void signal_exit(int sig)
 {
-    kdDebug(1205) << "Exiting on signal " << sig << "\n";
+    kDebug(1205) << "Exiting on signal " << sig << "\n";
     kdesud_cleanup();
     exit(1);
 }
@@ -163,7 +163,7 @@ int create_socket()
     QString display = QString::fromAscii(getenv("DISPLAY"));
     if (display.isEmpty())
     {
-        kdWarning(1205) << "$DISPLAY is not set\n";
+        kWarning(1205) << "$DISPLAY is not set\n";
         return -1;
     }
 
@@ -173,9 +173,9 @@ int create_socket()
     sock = QFile::encodeName(locateLocal("socket", QString("kdesud_%1").arg(display)));
     int stat_err=lstat(sock, &s);
     if(!stat_err && S_ISLNK(s.st_mode)) {
-        kdWarning(1205) << "Someone is running a symlink attack on you\n";
+        kWarning(1205) << "Someone is running a symlink attack on you\n";
         if(unlink(sock)) {
-            kdWarning(1205) << "Could not delete symlink\n";
+            kWarning(1205) << "Could not delete symlink\n";
             return -1;
         }
     }
@@ -185,15 +185,15 @@ int create_socket()
         KDEsuClient client;
         if (client.ping() == -1) 
         {
-            kdWarning(1205) << "stale socket exists\n";
+            kWarning(1205) << "stale socket exists\n";
             if (unlink(sock)) 
             {
-                kdWarning(1205) << "Could not delete stale socket\n";
+                kWarning(1205) << "Could not delete stale socket\n";
                 return -1;
             }
         } else 
         {
-            kdWarning(1205) << "kdesud is already running\n";
+            kWarning(1205) << "kdesud is already running\n";
             return -1;
         }
 
@@ -202,7 +202,7 @@ int create_socket()
     sockfd = socket(PF_UNIX, SOCK_STREAM, 0);
     if (sockfd < 0) 
     {
-        kdError(1205) << "socket(): " << ERR << "\n";
+        kError(1205) << "socket(): " << ERR << "\n";
         return -1;
     }
 
@@ -213,7 +213,7 @@ int create_socket()
     addrlen = SUN_LEN(&addr);
     if (bind(sockfd, (struct sockaddr *)&addr, addrlen) < 0) 
     {
-        kdError(1205) << "bind(): " << ERR << "\n";
+        kError(1205) << "bind(): " << ERR << "\n";
         return -1;
     }
 
@@ -222,7 +222,7 @@ int create_socket()
     if (setsockopt(sockfd, SOL_SOCKET, SO_LINGER, (char *) &lin,
                    sizeof(linger)) < 0) 
     {
-        kdError(1205) << "setsockopt(SO_LINGER): " << ERR << "\n";
+        kError(1205) << "setsockopt(SO_LINGER): " << ERR << "\n";
         return -1;
     }
 
@@ -230,14 +230,14 @@ int create_socket()
     if (setsockopt(sockfd, SOL_SOCKET, SO_REUSEADDR, (char *) &opt,
                    sizeof(opt)) < 0) 
     {
-        kdError(1205) << "setsockopt(SO_REUSEADDR): " << ERR << "\n";
+        kError(1205) << "setsockopt(SO_REUSEADDR): " << ERR << "\n";
         return -1;
     }
     opt = 1;
     if (setsockopt(sockfd, SOL_SOCKET, SO_KEEPALIVE, (char *) &opt,
                    sizeof(opt)) < 0) 
     {
-        kdError(1205) << "setsockopt(SO_KEEPALIVE): " << ERR << "\n";
+        kError(1205) << "setsockopt(SO_KEEPALIVE): " << ERR << "\n";
         return -1;
     }
     chmod(sock, 0600);
@@ -265,7 +265,7 @@ int main(int argc, char *argv[])
     rlim.rlim_cur = rlim.rlim_max = 0;
     if (setrlimit(RLIMIT_CORE, &rlim) < 0) 
     {
-        kdError(1205) << "setrlimit(): " << ERR << "\n";
+        kError(1205) << "setrlimit(): " << ERR << "\n";
         exit(1);
     }
 
@@ -275,7 +275,7 @@ int main(int argc, char *argv[])
         exit(1);
     if (listen(sockfd, 1) < 0) 
     {
-        kdError(1205) << "listen(): " << ERR << "\n";
+        kError(1205) << "listen(): " << ERR << "\n";
         kdesud_cleanup();
         exit(1);
     }
@@ -285,7 +285,7 @@ int main(int argc, char *argv[])
     pid_t pid = fork();
     if (pid == -1) 
     {
-        kdError(1205) << "fork():" << ERR << "\n";
+        kError(1205) << "fork():" << ERR << "\n";
         kdesud_cleanup();
         exit(1);
     }
@@ -338,7 +338,7 @@ int main(int argc, char *argv[])
         {
             if (errno == EINTR) continue;
             
-            kdError(1205) << "select(): " << ERR << "\n";
+            kError(1205) << "select(): " << ERR << "\n";
             exit(1);
         }
         repo->expire();
@@ -390,7 +390,7 @@ int main(int argc, char *argv[])
                 fd = accept(sockfd, (struct sockaddr *) &clientname, &addrlen);
                 if (fd < 0) 
                 {
-                    kdError(1205) << "accept():" << ERR << "\n";
+                    kError(1205) << "accept():" << ERR << "\n";
                     continue;
                 }
                 if (fd+1 > (int) handler.size())
@@ -409,6 +409,6 @@ int main(int argc, char *argv[])
             }
         }
     }
-    kdWarning(1205) << "???\n";
+    kWarning(1205) << "???\n";
 }
 

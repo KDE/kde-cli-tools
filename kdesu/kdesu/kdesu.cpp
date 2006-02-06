@@ -140,15 +140,15 @@ static int startApp()
         KDEsuClient client;
         if (client.ping() == -1)
         {
-            kdError(1206) << "Daemon not running -- nothing to stop\n";
+            kError(1206) << "Daemon not running -- nothing to stop\n";
             exit(1);
         }
         if (client.stopServer() != -1)
         {
-            kdDebug(1206) << "Daemon stopped\n";
+            kDebug(1206) << "Daemon stopped\n";
             exit(0);
         }
-        kdError(1206) << "Could not stop daemon\n";
+        kError(1206) << "Could not stop daemon\n";
         exit(1);
     }
 
@@ -166,7 +166,7 @@ static int startApp()
     struct passwd *pw = getpwnam(user);
     if (pw == 0L)
     {
-        kdError(1206) << "User " << user << " does not exist\n";
+        kError(1206) << "User " << user << " does not exist\n";
         exit(1);
     }
     bool change_uid = (getuid() != pw->pw_uid);
@@ -182,14 +182,14 @@ static int startApp()
             file = dirs.findResource("config", file);
             if (file.isEmpty())
             {
-                kdError(1206) << "Config file not found: " << file << "\n";
+                kError(1206) << "Config file not found: " << file << "\n";
                 exit(1);
             }
         }
         QFileInfo fi(file);
         if (!fi.exists())
         {
-            kdError(1206) << "File does not exist: " << file << "\n";
+            kError(1206) << "File does not exist: " << file << "\n";
             exit(1);
         }
         change_uid = !fi.isWritable();
@@ -256,14 +256,14 @@ static int startApp()
     KDEsuClient client;
     if (!client.isServerSGID())
     {
-        kdWarning(1206) << "Daemon not safe (not sgid), not using it.\n";
+        kWarning(1206) << "Daemon not safe (not sgid), not using it.\n";
         have_daemon = false;
     }
     else if (client.ping() == -1)
     {
         if (client.startServer() == -1)
         {
-            kdWarning(1206) << "Could not start daemon, reduced functionality.\n";
+            kWarning(1206) << "Could not start daemon, reduced functionality.\n";
             have_daemon = false;
         }
         just_started = true;
@@ -322,7 +322,7 @@ static int startApp()
     rlim.rlim_cur = rlim.rlim_max = 0;
     if (setrlimit(RLIMIT_CORE, &rlim))
     {
-        kdError(1206) << "rlimit(): " << ERR << "\n";
+        kError(1206) << "rlimit(): " << ERR << "\n";
         exit(1);
     }
 
@@ -344,7 +344,7 @@ static int startApp()
     if (needpw == 0)
     {
         keep = 0;
-        kdDebug() << "Don't need password!!\n";
+        kDebug() << "Don't need password!!\n";
     }
 
     // Start the dialog

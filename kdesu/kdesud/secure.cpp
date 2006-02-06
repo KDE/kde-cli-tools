@@ -35,7 +35,7 @@ SocketSecurity::SocketSecurity(int sockfd)
 {
     ksocklen_t len = sizeof(struct ucred);
     if (getsockopt(sockfd, SOL_SOCKET, SO_PEERCRED, &cred, &len) < 0) {
-	kdError() << "getsockopt(SO_PEERCRED) " << perror << endl;
+	kError() << "getsockopt(SO_PEERCRED) " << perror << endl;
 	return;
     }
 
@@ -68,8 +68,8 @@ SocketSecurity::SocketSecurity(int sockfd)
     static bool warned_him = FALSE;
 
     if (!warned_him) {
-        kdWarning() << "Using void socket security. Please add support for your" << endl;
-        kdWarning() << "platform to kdesu/kdesud/secure.cpp" << endl;
+        kWarning() << "Using void socket security. Please add support for your" << endl;
+        kWarning() << "platform to kdesu/kdesud/secure.cpp" << endl;
         warned_him = TRUE;
     }
 

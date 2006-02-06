@@ -75,7 +75,7 @@ int ConnectionHandler::handle()
 
     if (m_Buf.length()+nbytes > 1024)
     {
-        kdWarning(1205) << "line too long";
+        kWarning(1205) << "line too long";
         return -1;
     }
 
@@ -154,8 +154,8 @@ int ConnectionHandler::doCommand(QByteArray buf)
 {
     if ((uid_t) peerUid() != getuid())
     {
-        kdWarning(1205) << "Peer uid not equal to me\n";
-        kdWarning(1205) << "Peer: " << peerUid() << " Me: " << getuid() << endl;
+        kWarning(1205) << "Peer uid not equal to me\n";
+        kWarning(1205) << "Peer: " << peerUid() << " Me: " << getuid() << endl;
         return -1;
     }
 
@@ -180,7 +180,7 @@ int ConnectionHandler::doCommand(QByteArray buf)
             goto parse_error;
         if (m_Pass.isNull())
            m_Pass = "";
-        kdDebug(1205) << "Password set!\n";
+        kDebug(1205) << "Password set!\n";
         respond(Res_OK);
         break;
 
@@ -191,7 +191,7 @@ int ConnectionHandler::doCommand(QByteArray buf)
         m_Host = l->lval();
         if (l->lex() != '\n')
             goto parse_error;
-        kdDebug(1205) << "Host set to " << m_Host << endl;
+        kDebug(1205) << "Host set to " << m_Host << endl;
         respond(Res_OK);
         break;
 
@@ -202,7 +202,7 @@ int ConnectionHandler::doCommand(QByteArray buf)
         m_Priority = l->lval().toInt();
         if (l->lex() != '\n')
             goto parse_error;
-        kdDebug(1205) << "priority set to " << m_Priority << endl;
+        kDebug(1205) << "priority set to " << m_Priority << endl;
         respond(Res_OK);
         break;
 
@@ -213,7 +213,7 @@ int ConnectionHandler::doCommand(QByteArray buf)
         m_Scheduler = l->lval().toInt();
         if (l->lex() != '\n')
             goto parse_error;
-        kdDebug(1205) << "Scheduler set to " << m_Scheduler << endl;
+        kDebug(1205) << "Scheduler set to " << m_Scheduler << endl;
         respond(Res_OK);
         break;
 
@@ -279,11 +279,11 @@ int ConnectionHandler::doCommand(QByteArray buf)
         }
 
         // Execute the command asynchronously
-        kdDebug(1205) << "Executing command: " << command << endl;
+        kDebug(1205) << "Executing command: " << command << endl;
         pid_t pid = fork();
         if (pid < 0)
         {
-            kdDebug(1205) << "fork(): " << strerror(errno) << endl;
+            kDebug(1205) << "fork(): " << strerror(errno) << endl;
             respond(Res_NO);
             break;
         } else if (pid > 0)
@@ -319,7 +319,7 @@ int ConnectionHandler::doCommand(QByteArray buf)
             ret = proc.exec(pass.data());
         }
 
-        kdDebug(1205) << "Command completed: " << command << endl;
+        kDebug(1205) << "Command completed: " << command << endl;
         _exit(ret);
     }
 
@@ -336,11 +336,11 @@ int ConnectionHandler::doCommand(QByteArray buf)
         goto parse_error;
     key = makeKey(0, m_Host, user, command);
     if (repo->remove(key) < 0) {
-        kdDebug(1205) << "Unknown command: " << command << endl;
+        kDebug(1205) << "Unknown command: " << command << endl;
         respond(Res_NO);
     }
     else {
-        kdDebug(1205) << "Deleted command: " << command << ", user = "
+        kDebug(1205) << "Deleted command: " << command << ", user = "
                       << user << endl;
         respond(Res_OK);
     }
@@ -358,11 +358,11 @@ int ConnectionHandler::doCommand(QByteArray buf)
     key = makeKey(1, name);
     if (repo->remove(key) < 0)
     {
-        kdDebug(1205) << "Unknown name: " << name << endl;
+        kDebug(1205) << "Unknown name: " << name << endl;
         respond(Res_NO);
     }
     else {
-        kdDebug(1205) << "Deleted name: " << name << endl;
+        kDebug(1205) << "Deleted name: " << name << endl;
         respond(Res_OK);
     }
     break;
@@ -375,12 +375,12 @@ int ConnectionHandler::doCommand(QByteArray buf)
     name = l->lval();
     if (repo->removeGroup(name) < 0)
     {
-        kdDebug(1205) << "No keys found under group: " << name << endl;
+        kDebug(1205) << "No keys found under group: " << name << endl;
         respond(Res_NO);
     }
     else
     {
-        kdDebug(1205) << "Removed all keys under group: " << name << endl;
+        kDebug(1205) << "Removed all keys under group: " << name << endl;
         respond(Res_OK);
     }
     break;
@@ -417,7 +417,7 @@ int ConnectionHandler::doCommand(QByteArray buf)
         goto parse_error;
     key = makeKey(1, name);
     repo->add(key, data);
-    kdDebug(1205) << "Stored key: " << key << endl;
+    kDebug(1205) << "Stored key: " << key << endl;
     respond(Res_OK);
     break;
 
@@ -429,7 +429,7 @@ int ConnectionHandler::doCommand(QByteArray buf)
     if (l->lex() != '\n')
         goto parse_error;
     key = makeKey(1, name);
-    kdDebug(1205) << "Request for key: " << key << endl;
+    kDebug(1205) << "Request for key: " << key << endl;
     value = repo->find(key);
     if (!value.isEmpty())
         respond(Res_OK, value);
@@ -444,7 +444,7 @@ int ConnectionHandler::doCommand(QByteArray buf)
         name = l->lval();
         if (l->lex() != '\n')
             goto parse_error;
-        kdDebug(1205) << "Request for group key: " << name << endl;
+        kDebug(1205) << "Request for group key: " << name << endl;
         value = repo->findKeys(name);
         if (!value.isEmpty())
             respond(Res_OK, value);
@@ -459,7 +459,7 @@ int ConnectionHandler::doCommand(QByteArray buf)
         name = l->lval();
         if (l->lex() != '\n')
             goto parse_error;
-        kdDebug(1205) << "Checking for group key: " << name << endl;
+        kDebug(1205) << "Checking for group key: " << name << endl;
         if ( repo->hasGroup( name ) < 0 )
             respond(Res_NO);
         else
@@ -486,13 +486,13 @@ int ConnectionHandler::doCommand(QByteArray buf)
         tok = l->lex();
         if (tok != '\n')
             goto parse_error;
-        kdDebug(1205) << "Stopping by command" << endl;
+        kDebug(1205) << "Stopping by command" << endl;
         respond(Res_OK);
         kdesud_cleanup();
         exit(0);
 
     default:
-        kdWarning(1205) << "Unknown command: " << l->lval() << endl;
+        kWarning(1205) << "Unknown command: " << l->lval() << endl;
         respond(Res_NO);
         goto parse_error;
     }
@@ -501,7 +501,7 @@ int ConnectionHandler::doCommand(QByteArray buf)
     return 0;
 
 parse_error:
-    kdWarning(1205) << "Parse error" << endl;
+    kWarning(1205) << "Parse error" << endl;
     delete l;
     return -1;
 }
