@@ -294,14 +294,14 @@ int main(int argc, char *argv[])
 
     // Make sure we exit when the display gets closed.
     int x11Fd = initXconnection();
-    maxfd = QMAX(maxfd, x11Fd);
+    maxfd = qMax(maxfd, x11Fd);
 
     repo = new Repository;
     Q3PtrVector<ConnectionHandler> handler;
     handler.setAutoDelete(true);
 
     pipe(pipeOfDeath);
-    maxfd = QMAX(maxfd, pipeOfDeath[0]);
+    maxfd = qMax(maxfd, pipeOfDeath[0]);
 
     // Signal handlers 
     struct sigaction sa;
@@ -396,7 +396,7 @@ int main(int argc, char *argv[])
                 if (fd+1 > (int) handler.size())
                     handler.resize(fd+1);
                 handler.insert(fd, new ConnectionHandler(fd));
-                maxfd = QMAX(maxfd, fd);
+                maxfd = qMax(maxfd, fd);
                 FD_SET(fd, &active_fds);
                 continue;
             }
