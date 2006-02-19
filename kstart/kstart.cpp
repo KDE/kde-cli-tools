@@ -192,9 +192,9 @@ static bool wstate_withdrawn( WId winid )
     unsigned long length, after;
     unsigned char *data;
     int r = XGetWindowProperty( QX11Info::display(), winid, qt_wm_state, 0, 2,
-				FALSE, AnyPropertyType, &type, &format,
+				false, AnyPropertyType, &type, &format,
 				&length, &after, &data );
-    bool withdrawn = TRUE;
+    bool withdrawn = true;
     if ( r == Success && data && format == 32 ) {
 	quint32 *wstate = (quint32*)data;
 	withdrawn  = (*wstate == WithdrawnState );
@@ -202,7 +202,7 @@ static bool wstate_withdrawn( WId winid )
     }
     return withdrawn;
 */
-	return TRUE;
+	return true;
 }
 
 
