@@ -28,4 +28,4 @@ install-exec-hook:
 	"The password caching feature is disabled."
 
 messages:
-	$(XGETTEXT) $(kdesud_SOURCES) -o $(podir)/kdesud.pot
+	$(XGETTEXT) *.cpp -o $(podir)/kdesud.pot

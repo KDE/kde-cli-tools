@@ -10,6 +10,5 @@ kdesu_LDADD   = $(LIB_KIO) -lkdesu
 kdesu_METASOURCES =  AUTO
 noinst_HEADERS = sudlg.h
 
-## Messages
 messages:
-	$(XGETTEXT) $(kdesu_SOURCES) -o $(podir)/kdesu.pot
+	$(XGETTEXT) *.cpp -o $(podir)/kdesu.pot
