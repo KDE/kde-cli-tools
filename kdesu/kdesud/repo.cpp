@@ -59,7 +59,7 @@ int Repository::removeSpecialKey(const QByteArray &key)
         QStack<QByteArray> rm_keys;
         for (RepoCIterator it=repo.begin(); it!=repo.end(); ++it)
         {
-            if (  key.find( it.data().group ) == 0 &&
+            if (  key.find( it.value().group ) == 0 &&
                   it.key().find( key ) >= 0 )
             {
                 rm_keys.push(it.key());
@@ -83,7 +83,7 @@ int Repository::removeGroup(const QByteArray &group)
         QStack<QByteArray> rm_keys;
         for (RepoCIterator it=repo.begin(); it!=repo.end(); ++it)
         {
-            if (it.data().group == group)
+            if (it.value().group == group)
             {
                 rm_keys.push(it.key());
                 found = 0;
@@ -105,7 +105,7 @@ int Repository::hasGroup(const QByteArray &group) const
         RepoCIterator it;
         for (it=repo.begin(); it!=repo.end(); ++it)
         {
-            if (it.data().group == group)
+            if (it.value().group == group)
                 return 0;
         }
     }
@@ -123,7 +123,7 @@ QByteArray Repository::findKeys(const QByteArray &group, const char *sep ) const
         RepoCIterator it;
         for (it=repo.begin(); it!=repo.end(); ++it)
         {
-            if (it.data().group == group)
+            if (it.value().group == group)
             {
                 key = it.key();
                 kDebug(1205) << "Matching key found: " << key << endl;
@@ -156,7 +156,7 @@ QByteArray Repository::find(const QByteArray &key) const
     RepoCIterator it = repo.find(key);
     if (it == repo.end())
         return 0;
-    return it.data().value;
+    return it.value().value;
 }
 
 
