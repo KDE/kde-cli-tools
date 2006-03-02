@@ -11,7 +11,7 @@ kde4_automoc(${kreadconfig_SRCS})
 
 kde4_add_executable(kreadconfig ${kreadconfig_SRCS})
 
-target_link_libraries(kreadconfig  ${QT_AND_KDECORE_LIBS} kdeui )
+target_link_libraries(kreadconfig  ${LIB_KDEUI} )
 
 install_targets(/bin kreadconfig )
 
