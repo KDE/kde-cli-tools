@@ -4,7 +4,7 @@ include_directories( ${KDE4_INCLUDE_DIR} ${QT_INCLUDES} ${CMAKE_CURRENT_SOURCE_D
 
 
 ########### install files ###############
-
+install_files(/bin FILES kdeeject)
 
 kde4_footer()
 
