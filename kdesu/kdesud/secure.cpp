@@ -65,12 +65,12 @@ SocketSecurity::SocketSecurity(int sockfd)
 
 SocketSecurity::SocketSecurity(int sockfd)
 {
-    static bool warned_him = FALSE;
+    static bool warned_him = false;
 
     if (!warned_him) {
         kWarning() << "Using void socket security. Please add support for your" << endl;
         kWarning() << "platform to kdesu/kdesud/secure.cpp" << endl;
-        warned_him = TRUE;
+        warned_him = true;
     }
 
     // This passes the test made in handler.cpp
