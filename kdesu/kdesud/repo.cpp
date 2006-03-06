@@ -45,8 +45,8 @@ int Repository::remove(const QByteArray &key)
      RepoIterator it = repo.find(key);
      if (it == repo.end())
         return -1;
-     it.data().value.fill('x');
-     it.data().group.fill('x');
+     it.value().value.fill('x');
+     it.value().group.fill('x');
      repo.remove(it);
      return 0;
 }
@@ -172,7 +172,7 @@ int Repository::expire()
     RepoIterator it;
     for (it=repo.begin(); it!=repo.end(); ++it)
     {
-	t = it.data().timeout;
+	t = it.value().timeout;
 	if (t <= current)
 	    keys.push(it.key());
 	else
