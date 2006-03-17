@@ -294,7 +294,7 @@ static int startApp()
     }
 
     KUser u;
-    env << (QByteArray) ("KDESU_USER=" + u.loginName().local8Bit());
+    env << (QByteArray) ("KDESU_USER=" + u.loginName().toLocal8Bit());
     
     if (!new_dcop)
     {
