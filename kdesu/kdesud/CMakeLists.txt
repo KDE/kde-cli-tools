@@ -16,7 +16,7 @@ kde4_automoc(${kdesud_SRCS})
 
 kde4_add_executable(kdesud ${kdesud_SRCS})
 
-target_link_libraries(kdesud  ${QT_AND_KDECORE_LIBS} kdesu )
+target_link_libraries(kdesud  ${KDE4_KDECORE_LIBS} kdesu )
 
 install_targets(/bin kdesud )
 

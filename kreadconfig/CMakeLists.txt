@@ -26,7 +26,7 @@ kde4_automoc(${kwriteconfig_SRCS})
 
 kde4_add_executable(kwriteconfig ${kwriteconfig_SRCS})
 
-target_link_libraries(kwriteconfig  ${QT_AND_KDECORE_LIBS} )
+target_link_libraries(kwriteconfig  ${KDE4_KDECORE_LIBS} )
 
 install_targets(/bin kwriteconfig )
 
