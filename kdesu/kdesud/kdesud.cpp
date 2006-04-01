@@ -103,6 +103,7 @@ void kdesud_cleanup()
 
 // Borrowed from kdebase/kaudio/kaudioserver.cpp
 
+#ifdef Q_WS_X11
 extern "C" int xio_errhandler(Display *);
 
 int xio_errhandler(Display *)
@@ -131,6 +132,7 @@ int initXconnection()
         return -1;
     }
 }
+#endif
 
 extern "C" {
   void signal_exit(int);
@@ -292,9 +294,11 @@ int main(int argc, char *argv[])
     if (pid)
         exit(0);
 
+#ifdef Q_WS_X11
     // Make sure we exit when the display gets closed.
     int x11Fd = initXconnection();
     maxfd = qMax(maxfd, x11Fd);
+#endif
 
     repo = new Repository;
     Q3PtrVector<ConnectionHandler> handler;
@@ -328,8 +332,10 @@ int main(int argc, char *argv[])
     FD_ZERO(&active_fds);
     FD_SET(sockfd, &active_fds);
     FD_SET(pipeOfDeath[0], &active_fds);
+#ifdef Q_WS_X11
     if (x11Fd != -1)
         FD_SET(x11Fd, &active_fds);
+#endif
 
     while (1) 
     {
@@ -374,6 +380,7 @@ int main(int argc, char *argv[])
                 while(result > 0);
             }
 
+#ifdef Q_WS_X11
             if (i == x11Fd) 
             {
                 // Discard X events
@@ -381,6 +388,7 @@ int main(int argc, char *argv[])
                 if (x11Display)
                     XNextEvent(x11Display, &event_return);
             }
+#endif
 
             if (i == sockfd) 
             {

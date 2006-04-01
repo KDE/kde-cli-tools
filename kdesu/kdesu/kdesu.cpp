@@ -116,9 +116,11 @@ int main(int argc, char *argv[])
     setenv( "SESSION_MANAGER", session_manager.data(), 1 );
 
     {
+#ifdef Q_WS_X11
         KStartupInfoId id;
         id.initId( kapp->startupId());
         id.setupStartupEnv(); // make DESKTOP_STARTUP_ID env. var. available again
+#endif
     }
 
     int result = startApp();
@@ -351,11 +353,13 @@ static int startApp()
     QByteArray password;
     if (needpw)
     {
+#ifdef Q_WS_X11
         KStartupInfoId id;
         id.initId( kapp->startupId());
         KStartupInfoData data;
         data.setSilent( KStartupInfoData::Yes );
         KStartupInfo::sendChange( id, data );
+#endif
         KDEsuDialog dlg(user, auth_user, keep && !terminal, icon);
 	if (prompt)
 	    dlg.addLine(i18n("Command:"), command);
@@ -371,15 +375,19 @@ static int startApp()
         int ret = dlg.exec();
         if (ret == KDEsuDialog::Rejected)
         {
+#ifdef Q_WS_X11
             KStartupInfo::sendFinish( id );
+#endif
             exit(0);
         }
         if (ret == KDEsuDialog::AsUser)
             change_uid = false;
         password = dlg.password();
         keep = dlg.keep();
+#ifdef Q_WS_X11
         data.setSilent( KStartupInfoData::No );
         KStartupInfo::sendChange( id, data );
+#endif
     }
 
     // Some events may need to be handled (like a button animation)
