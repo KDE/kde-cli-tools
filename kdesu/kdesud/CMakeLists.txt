@@ -4,18 +4,18 @@ include_directories(  ${CMAKE_CURRENT_SOURCE_DIR} ${CMAKE_CURRENT_BINARY_DIR} ${
 
 ########### next target ###############
 
-set(kdesud_SRCS 
-   kdesud.cpp 
-   repo.cpp 
-   lexer.cpp 
-   handler.cpp 
+set(kdesud_SRCS
+   kdesud.cpp
+   repo.cpp
+   lexer.cpp
+   handler.cpp
    secure.cpp )
 
 kde4_automoc(${kdesud_SRCS})
 
 kde4_add_executable(kdesud ${kdesud_SRCS})
 
-target_link_libraries(kdesud  ${KDE4_KDECORE_LIBS} kdesu )
+target_link_libraries(kdesud  ${KDE4_KDECORE_LIBS}  ${KDE4_KDESU_LIBS} )
 
 install_targets(/bin kdesud )
 
@@ -36,7 +36,7 @@ kde4_footer()
 #KDE_CXXFLAGS = $(KDE_USE_FPIE)
 #
 #bin_PROGRAMS = kdesud
-#kdesud_SOURCES = kdesud.cpp repo.cpp lexer.cpp handler.cpp secure.cpp 
+#kdesud_SOURCES = kdesud.cpp repo.cpp lexer.cpp handler.cpp secure.cpp
 #kdesud_LDFLAGS = $(KDE_USE_PIE) $(all_libraries) $(KDE_RPATH)
 #kdesud_LDADD = $(LIB_KDECORE) -lkdesu $(LIBSOCKET)
 #noinst_HEADERS = repo.h handler.h lexer.h secure.h
@@ -53,7 +53,7 @@ kde4_footer()
 #	@echo ""
 #	@echo "********************************************************"
 #
-#install-exec-hook: 
+#install-exec-hook:
 #	@(chown root:@nogroup@ $(DESTDIR)$(bindir)/kdesud && chmod 2755  $(DESTDIR)$(bindir)/kdesud) \
 #	|| echo "Error: Could not install kdesud as setgid nogroup!!\n" \
 #	"The password caching feature is disabled."
