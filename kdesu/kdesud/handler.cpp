@@ -85,7 +85,7 @@ int ConnectionHandler::handle()
     // Do we have a complete command yet?
     int n;
     QByteArray newbuf;
-    while ((n = m_Buf.find('\n')) != -1)
+    while ((n = m_Buf.indexOf('\n')) != -1)
     {
         newbuf = m_Buf.left(n+1);
         m_Buf.fill('x', n+1);

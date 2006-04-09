@@ -59,8 +59,8 @@ int Repository::removeSpecialKey(const QByteArray &key)
         QStack<QByteArray> rm_keys;
         for (RepoCIterator it=repo.begin(); it!=repo.end(); ++it)
         {
-            if (  key.find( it.value().group ) == 0 &&
-                  it.key().find( key ) >= 0 )
+            if (  key.indexOf( it.value().group ) == 0 &&
+                  it.key().indexOf( key ) >= 0 )
             {
                 rm_keys.push(it.key());
                 found = 0;
@@ -127,7 +127,7 @@ QByteArray Repository::findKeys(const QByteArray &group, const char *sep ) const
             {
                 key = it.key();
                 kDebug(1205) << "Matching key found: " << key << endl;
-                pos = key.findRev(sep);
+                pos = key.lastIndexOf(sep);
                 key.truncate( pos );
                 key.remove(0, 2);
                 if (!list.isEmpty())
