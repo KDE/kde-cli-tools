@@ -243,7 +243,7 @@ void KStart::applyStyle(WId w ) {
 
     if ( toSysTray ) {
 	QApplication::beep();
-	KWin::setSystemTrayWindowFor( w,  QX11Info::appRootWindow() );
+	KWin::setSystemTrayWindowFor( w, QX11Info::appRootWindow() );
     }
 
     if ( fullscreen ) {

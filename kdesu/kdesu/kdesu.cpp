@@ -127,7 +127,7 @@ int main(int argc, char *argv[])
 
     if (result == 127)
     {
-        KMessageBox::sorry(0, i18n("Command '%1' not found.").arg(QString::fromLocal8Bit(command)));
+        KMessageBox::sorry(0, i18n("Command '%1' not found.", QString::fromLocal8Bit(command)));
     }
 
     return result;
@@ -203,7 +203,7 @@ static int startApp()
     int priority = tmp.toInt(&ok);
     if (!ok || (priority < 0) || (priority > 100))
     {
-        KCmdLineArgs::usage(i18n("Illegal priority: %1").arg(QString::fromLatin1(tmp)));
+        KCmdLineArgs::usage(i18n("Illegal priority: %1", QString::fromLatin1(tmp)));
         exit(1);
     }
     int scheduler = SuProcess::SchedNormal;

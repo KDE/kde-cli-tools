@@ -17,7 +17,7 @@ KDEsuDialog::KDEsuDialog(QByteArray user, QByteArray auth_user, bool enableKeep,
     : KPasswordDialog(Password, enableKeep, User1, icon)
 {
     m_User = auth_user;
-    setCaption(i18n("Run as %1").arg(QString::fromLatin1(user)));
+    setCaption(i18n("Run as %1", QString::fromLatin1(user)));
 
     QString prompt;
     if (m_User == "root")
@@ -27,7 +27,7 @@ KDEsuDialog::KDEsuDialog(QByteArray user, QByteArray auth_user, bool enableKeep,
     else
 	prompt = i18n("The action you requested needs additional privileges. "
 		"Please enter the password for \"%1\" below or click "
-		"Ignore to continue with your current privileges.").arg(QString::fromLatin1(m_User));
+		"Ignore to continue with your current privileges.", QString::fromLatin1(m_User));
     setPrompt(prompt);
 
     setButtonText(User1, i18n("&Ignore"));
