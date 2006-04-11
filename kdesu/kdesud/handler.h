@@ -36,8 +36,9 @@ private:
     enum Results { Res_OK, Res_NO };
 
     int doCommand(QByteArray buf);
-    void respond(int ok, QByteArray s=0);
-    QByteArray makeKey(int namspace, QByteArray s1, QByteArray s2=0, QByteArray s3=0);
+    void respond(int ok, const QByteArray &s = QByteArray());
+    QByteArray makeKey(int namspace, const QByteArray &s1,
+                       const QByteArray &s2 = QByteArray(), const QByteArray &s3 = QByteArray()) const;
 
     int m_Fd, m_Timeout;
     int m_Priority, m_Scheduler;

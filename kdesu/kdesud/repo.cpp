@@ -47,7 +47,7 @@ int Repository::remove(const QByteArray &key)
         return -1;
      it.value().value.fill('x');
      it.value().group.fill('x');
-     repo.remove(it);
+     repo.erase(it);
      return 0;
 }
 

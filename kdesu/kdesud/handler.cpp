@@ -98,8 +98,8 @@ int ConnectionHandler::handle()
     return 0;
 }
 
-QByteArray ConnectionHandler::makeKey(int _namespace, QByteArray s1,
-        QByteArray s2, QByteArray s3)
+QByteArray ConnectionHandler::makeKey(int _namespace, const QByteArray &s1,
+                                      const QByteArray &s2, const QByteArray &s3) const
 {
     QByteArray res;
     res.setNum(_namespace);
@@ -120,7 +120,7 @@ void ConnectionHandler::sendExitCode()
     send(m_Fd, buf.data(), buf.length(), 0);
 }
 
-void ConnectionHandler::respond(int ok, QByteArray s)
+void ConnectionHandler::respond(int ok, const QByteArray &s)
 {
     QByteArray buf;
 
