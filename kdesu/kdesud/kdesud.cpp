@@ -73,8 +73,10 @@
 #include "repo.h"
 #include "handler.h"
 
+#ifdef Q_WS_X11
 #include <X11/X.h>
 #include <X11/Xlib.h>
+#endif
 
 #ifndef SUN_LEN
 #define SUN_LEN(ptr) ((kde_socklen_t) (((struct sockaddr_un *) 0)->sun_path) \
@@ -88,7 +90,9 @@
 Repository *repo;
 const char *Version = "1.01";
 QByteArray sock;
+#ifdef Q_WS_X11
 Display *x11Display;
+#endif
 int pipeOfDeath[2];
 
 // FIXME: This is just here to make it compile

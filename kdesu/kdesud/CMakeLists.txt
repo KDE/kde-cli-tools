@@ -1,5 +1,5 @@
 kde4_header()
-include_directories(  ${CMAKE_CURRENT_SOURCE_DIR} ${CMAKE_CURRENT_BINARY_DIR} ${KDE4_INCLUDES} )
+include_directories( ${KDE4_INCLUDES} )
 
 
 ########### next target ###############
@@ -13,9 +13,9 @@ set(kdesud_SRCS
 
 kde4_automoc(${kdesud_SRCS})
 
-kde4_add_executable(kdesud ${kdesud_SRCS})
+kde4_add_executable(kdesud NOGUI ${kdesud_SRCS})
 
-target_link_libraries(kdesud  ${KDE4_KDECORE_LIBS}  ${KDE4_KDESU_LIBS} )
+target_link_libraries(kdesud ${KDE4_KDECORE_LIBS}  ${KDE4_KDESU_LIBS} )
 
 install_targets(/bin kdesud )
 
