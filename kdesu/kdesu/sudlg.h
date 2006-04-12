@@ -16,18 +16,18 @@ class KDEsuDialog
     Q_OBJECT
 
 public:
-    KDEsuDialog(QByteArray user, QByteArray auth_user, bool enableKeep, const QString& icon );
+    KDEsuDialog(QByteArray user, QByteArray auth_user, bool enableKeep, const QString& icon , bool withIgnoreButton);
     ~KDEsuDialog();
 
     enum ResultCodes { AsUser = 10 };
-    
+
 protected:
     bool checkPassword(const char *password);
     void slotUser1();
-    
+
 private:
     QByteArray m_User;
 };
-    
+
 
 #endif // __SuDlg_h_Included__

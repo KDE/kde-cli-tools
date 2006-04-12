@@ -63,6 +63,7 @@ static KCmdLineOptions options[] = {
     { "p <prio>", I18N_NOOP("Set priority value: 0 <= prio <= 100, 0 is lowest"), "50" },
     { "r", I18N_NOOP("Use realtime scheduling"), 0 },
     { "nonewdcop", I18N_NOOP("Let command use existing dcopserver"), 0 },
+    { "noignorebutton", I18N_NOOP("Do not display ignore button"), 0 },
     { "i <icon name>", I18N_NOOP("Specify icon to use in the password dialog"), 0},
     { "d", I18N_NOOP("Do not show the command to be run in the dialog"), 0},
     KCmdLineLastOption
@@ -156,7 +157,7 @@ static int startApp()
 
     QString icon;
     if ( args->isSet("i"))
-	icon = args->getOption("i");	
+	icon = args->getOption("i");
 
     bool prompt = true;
     if ( args->isSet("d"))
@@ -227,7 +228,7 @@ static int startApp()
             command += QFile::encodeName(arg);
         }
     }
-    else 
+    else
     {
         if( args->count() == 0 )
         {
@@ -275,20 +276,21 @@ static int startApp()
     bool keep = !args->isSet("n") && have_daemon;
     bool terminal = args->isSet("t");
     bool new_dcop = args->isSet("newdcop");
+    bool withIgnoreButton = args->isSet("ignorebutton");
 
     QList<QByteArray> env;
     QByteArray options;
     env << ( "DESKTOP_STARTUP_ID=" + kapp->startupId());
-    
+
     if (pw->pw_uid)
     {
        // Only propagate KDEHOME for non-root users,
        // root uses KDEROOTHOME
-       
+
        // Translate the KDEHOME of this user to the new user.
        QString kdeHome = KGlobal::dirs()->relativeLocation("home", KGlobal::dirs()->localkdedir());
        if (kdeHome[0] != '/')
-          kdeHome.prepend("~/"); 
+          kdeHome.prepend("~/");
        else
           kdeHome=QString(); // Use default
 
@@ -297,7 +299,7 @@ static int startApp()
 
     KUser u;
     env << (QByteArray) ("KDESU_USER=" + u.loginName().toLocal8Bit());
-    
+
     if (!new_dcop)
     {
         QByteArray ksycoca = "KDESYCOCA="+QFile::encodeName(locateLocal("cache", "ksycoca"));
@@ -360,7 +362,7 @@ static int startApp()
         data.setSilent( KStartupInfoData::Yes );
         KStartupInfo::sendChange( id, data );
 #endif
-        KDEsuDialog dlg(user, auth_user, keep && !terminal, icon);
+        KDEsuDialog dlg(user, auth_user, keep && !terminal, icon, withIgnoreButton);
 	if (prompt)
 	    dlg.addLine(i18n("Command:"), command);
         if ((priority != 50) || (scheduler != SuProcess::SchedNormal))

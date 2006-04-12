@@ -13,24 +13,31 @@
 #include "sudlg.h"
 
 
-KDEsuDialog::KDEsuDialog(QByteArray user, QByteArray auth_user, bool enableKeep, const QString& icon)
-    : KPasswordDialog(Password, enableKeep, User1, icon)
+KDEsuDialog::KDEsuDialog(QByteArray user, QByteArray auth_user, bool enableKeep, const QString& icon, bool withIgnoreButton)
+    : KPasswordDialog(Password, enableKeep, withIgnoreButton?User1:NoDefault, icon)
 {
     m_User = auth_user;
     setCaption(i18n("Run as %1", QString::fromLatin1(user)));
 
     QString prompt;
     if (m_User == "root")
-	prompt = i18n("The action you requested needs root privileges. "
-		"Please enter root's password below or click "
-		"Ignore to continue with your current privileges.");
+    {
+        if ( withIgnoreButton )
+            prompt = i18n("The action you requested needs root privileges. "
+                          "Please enter root's password below or click "
+                          "Ignore to continue with your current privileges.");
+        else
+            prompt = i18n("The action you requested needs root privileges. "
+                          "Please enter root's password below ");
+    }
     else
 	prompt = i18n("The action you requested needs additional privileges. "
 		"Please enter the password for \"%1\" below or click "
 		"Ignore to continue with your current privileges.", QString::fromLatin1(m_User));
     setPrompt(prompt);
 
-    setButtonText(User1, i18n("&Ignore"));
+    if( withIgnoreButton )
+        setButtonText(User1, i18n("&Ignore"));
 }
 
 
