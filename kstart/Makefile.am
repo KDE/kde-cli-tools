@@ -15,8 +15,6 @@ METASOURCES =	kstart.moc
 
 noinst_HEADERS = kstart.h version.h
 
-messages:
-	$(XGETTEXT) *.cpp -o $(podir)/kstart.pot
 
 EXTRA_DIST = CHANGES LICENSE.readme
 
