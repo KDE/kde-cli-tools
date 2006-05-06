@@ -3,7 +3,7 @@ include_directories(  ${CMAKE_CURRENT_SOURCE_DIR} ${CMAKE_CURRENT_BINARY_DIR} ${
 
 
 ########### install files ###############
-install_files(/bin FILES kdeeject)
+install(PROGRAMS kdeeject DESTINATION bin)
 
 kde4_footer()
 

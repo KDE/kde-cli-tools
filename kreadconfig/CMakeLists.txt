@@ -14,7 +14,7 @@ kde4_add_executable(kreadconfig ${kreadconfig_SRCS})
 
 target_link_libraries(kreadconfig  ${KDE4_KDEUI_LIBS} )
 
-install_targets(/bin kreadconfig )
+install(TARGETS kreadconfig DESTINATION bin)
 
 
 ########### next target ###############
@@ -27,7 +27,7 @@ kde4_add_executable(kwriteconfig ${kwriteconfig_SRCS})
 
 target_link_libraries(kwriteconfig  ${KDE4_KDECORE_LIBS} )
 
-install_targets(/bin kwriteconfig )
+install(TARGETS kwriteconfig DESTINATION bin)
 
 
 ########### install files ###############
