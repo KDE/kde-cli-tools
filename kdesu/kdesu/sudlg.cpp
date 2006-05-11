@@ -4,7 +4,7 @@
  * Copyright (C) 2000 Geert Jansen <jansen@kde.org>
  */
 
-#include <qstring.h>
+#include <QString>
 #include <klocale.h>
 #include <kmessagebox.h>
 #include <QByteArray>

@@ -19,11 +19,11 @@
 #include <sys/wait.h>
 #endif
 
-#include <qstring.h>
+#include <QString>
 #include <qfileinfo.h>
 #include <qglobal.h>
-#include <qfile.h>
-#include <qdir.h>
+#include <QFile>
+#include <QDir>
 
 #include <dcopclient.h>
 

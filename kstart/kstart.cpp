@@ -13,8 +13,8 @@
 #include <fcntl.h>
 #include <stdlib.h>
 
-#include <qregexp.h>
-#include <qtimer.h>
+#include <QRegExp>
+#include <QTimer>
 //Added by qt3to4:
 #include <QDesktopWidget>
 

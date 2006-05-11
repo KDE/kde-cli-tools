@@ -8,7 +8,7 @@
 #define __Repo_h_included__
 
 
-#include <qmap.h>
+#include <QMap>
 #include <QByteArray>
 
 

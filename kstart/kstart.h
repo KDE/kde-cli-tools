@@ -11,7 +11,7 @@
 #define KSTART_H
 
 #include <qwindowdefs.h>
-#include <qobject.h>
+#include <QObject>
 
 class KWinModule;
 

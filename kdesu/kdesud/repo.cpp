@@ -8,7 +8,7 @@
 #include <assert.h>
 
 #include <QStack>
-#include <qmap.h>
+#include <QMap>
 #include <kdebug.h>
 
 #include "repo.h"

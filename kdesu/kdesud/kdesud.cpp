@@ -57,8 +57,8 @@
 #endif
 
 #include <q3ptrvector.h>
-#include <qfile.h>
-#include <qregexp.h>
+#include <QFile>
+#include <QRegExp>
 #include <QByteArray>
 
 #include <kinstance.h>
