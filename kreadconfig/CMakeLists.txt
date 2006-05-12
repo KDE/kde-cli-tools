@@ -1,4 +1,3 @@
-kde4_header()
 
 project(kreadconfig)
 
@@ -33,7 +32,6 @@ install(TARGETS kwriteconfig DESTINATION bin)
 ########### install files ###############
 
 
-kde4_footer()
 
 
 

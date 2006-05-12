@@ -1,4 +1,3 @@
-kde4_header()
 
 
 
@@ -23,7 +22,6 @@ install(TARGETS kdesud DESTINATION bin)
 ########### install files ###############
 
 
-kde4_footer()
 
 
 

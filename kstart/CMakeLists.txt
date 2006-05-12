@@ -1,4 +1,3 @@
-kde4_header()
 
 project(kstart)
 
@@ -20,7 +19,6 @@ install(TARGETS kstart DESTINATION bin)
 ########### install files ###############
 
 
-kde4_footer()
 
 
 

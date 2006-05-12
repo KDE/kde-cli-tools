@@ -1,4 +1,3 @@
-kde4_header()
 
 
 
@@ -21,7 +20,6 @@ target_link_libraries(kdesu_executable  ${KDE4_KIO_LIBS} ${KDE4_KDESU_LIBS} )
 install(TARGETS kdesu_executable DESTINATION bin)
 
 
-kde4_footer()
 
 
 
