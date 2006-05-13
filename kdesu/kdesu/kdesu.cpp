@@ -20,7 +20,7 @@
 #endif
 
 #include <QString>
-#include <qfileinfo.h>
+#include <QFileInfo>
 #include <qglobal.h>
 #include <QFile>
 #include <QDir>
