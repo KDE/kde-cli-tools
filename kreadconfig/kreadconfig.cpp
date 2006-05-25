@@ -85,7 +85,7 @@ int main(int argc, char **argv)
                     delete konfig;
 		return retValue;
 	} else if((type=="num") || (type=="int")) {
-            long retValue = konfig->readLongNumEntry(key, dflt.toLong());
+            long retValue = konfig->readEntry<qulonglong>(key, dflt.toLong());
             if ( configMustDeleted )
                 delete konfig;
             return retValue;
