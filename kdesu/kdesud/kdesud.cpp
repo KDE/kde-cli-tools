@@ -413,7 +413,7 @@ int main(int argc, char *argv[])
                 continue;
             }
 
-            // handle alreay established connection
+            // handle already established connection
             if (handler[i] && handler[i]->handle() < 0) 
             {
                 handler.remove(i);

@@ -103,8 +103,8 @@ QByteArray ConnectionHandler::makeKey(int _namespace, const QByteArray &s1,
 {
     QByteArray res;
     res.setNum(_namespace);
-    res += "*";
-    res += s1 + "*" + s2 + "*" + s3;
+    res += '*';
+    res += s1 + '*' + s2 + '*' + s3;
     return res;
 }
 
@@ -243,7 +243,7 @@ int ConnectionHandler::doCommand(QByteArray buf)
                QByteArray env_str = l->lval();
                env.append(env_str);
                if (strncmp(env_str, "DESKTOP_STARTUP_ID=", strlen("DESKTOP_STARTUP_ID=")) != 0)
-                   env_check += "*"+env_str;
+                   env_check += '*'+env_str;
                tok = l->lex();
             }
         }

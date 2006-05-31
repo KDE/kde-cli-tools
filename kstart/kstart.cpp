@@ -91,14 +91,14 @@ void KStart::sendRule() {
         message += "wmclass=" + windowclass + "\nwmclassmatch=1\n" // 1 = exact match
             + "wmclasscomplete="
             // if windowclass contains a space (i.e. 2 words, use whole WM_CLASS)
-            + ( windowclass.contains( ' ' ) ? "true" : "false" ) + "\n";
+            + ( windowclass.contains( ' ' ) ? "true" : "false" ) + '\n';
     if( (!windowtitle.isEmpty()) || (!windowclass.isEmpty()) ) {
         // always ignore these window types
         message += "types=" + QString().setNum( -1U &
-            ~( NET::TopMenuMask | NET::ToolbarMask | NET::DesktopMask | NET::SplashMask | NET::MenuMask )) + "\n";
+            ~( NET::TopMenuMask | NET::ToolbarMask | NET::DesktopMask | NET::SplashMask | NET::MenuMask )) + '\n';
     } else {
         // accept only "normal" windows
-        message += "types=" + QString().setNum( NET::NormalMask | NET::DialogMask ) + "\n";
+        message += "types=" + QString().setNum( NET::NormalMask | NET::DialogMask ) + '\n';
     }
     if ( ( desktop > 0 && desktop <= kwinmodule->numberOfDesktops() )
          || desktop == NETWinInfo::OnAllDesktops ) {
@@ -185,7 +185,7 @@ static bool wstate_withdrawn( WId winid )
 #warning "Porting required."
 //Porting info: The Qt4 equivalent for qt_wm_state is qt_x11Data->atoms[QX11Data::WM_STATE]
 //which can be accessed via the macro ATOM(WM_STATE). Unfortunately, neither of these seem
-//to be exported out of the Qt environment. This value may have to be aquired from somewhere else.
+//to be exported out of the Qt environment. This value may have to be acquired from somewhere else.
 /*
     Atom type;
     int format;

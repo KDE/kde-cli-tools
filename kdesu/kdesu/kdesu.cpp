@@ -224,7 +224,7 @@ static int startApp()
         {
             QString arg = QFile::decodeName(args->arg(i));
             KRun::shellQuote(arg);
-            command += " ";
+            command += ' ';
             command += QFile::encodeName(arg);
         }
     }
@@ -240,7 +240,7 @@ static int startApp()
         {
             QString arg = QFile::decodeName(args->arg(i));
             KRun::shellQuote(arg);
-            command += " ";
+            command += ' ';
             command += QFile::encodeName(arg);
         }
     }
