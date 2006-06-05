@@ -25,7 +25,7 @@
 #include <QFile>
 #include <QDir>
 
-#include <dcopclient.h>
+#include <dbus/qdbus.h>
 
 #include <kdebug.h>
 #include <kglobal.h>
@@ -62,14 +62,15 @@ static KCmdLineOptions options[] = {
     { "t", I18N_NOOP("Enable terminal output (no password keeping)"), 0 },
     { "p <prio>", I18N_NOOP("Set priority value: 0 <= prio <= 100, 0 is lowest"), "50" },
     { "r", I18N_NOOP("Use realtime scheduling"), 0 },
-    { "nonewdcop", I18N_NOOP("Let command use existing dcopserver"), 0 },
+//  { "nonewdcop", I18N_NOOP("Let command use existing dcopserver"), 0 },
     { "noignorebutton", I18N_NOOP("Do not display ignore button"), 0 },
     { "i <icon name>", I18N_NOOP("Specify icon to use in the password dialog"), 0},
     { "d", I18N_NOOP("Do not show the command to be run in the dialog"), 0},
     KCmdLineLastOption
 };
 
-
+#if 0
+// D-BUS has no equivalent
 QByteArray dcopNetworkId()
 {
     QByteArray result;
@@ -83,6 +84,7 @@ QByteArray dcopNetworkId()
     result.data()[i-1] = '\0'; // strip newline
     return result;
 }
+#endif
 
 static int startApp();
 
@@ -108,7 +110,7 @@ int main(int argc, char *argv[])
 
     KCmdLineArgs::init(argc, argv, &aboutData);
     KCmdLineArgs::addCmdLineOptions(options);
-    KApplication::disableAutoDcopRegistration();
+    //KApplication::disableAutoDcopRegistration();
     // kdesu doesn't process SM events, so don't even connect to ksmserver
     QByteArray session_manager = getenv( "SESSION_MANAGER" );
     unsetenv( "SESSION_MANAGER" );
@@ -275,7 +277,6 @@ static int startApp()
     // Try to exec the command with kdesud.
     bool keep = !args->isSet("n") && have_daemon;
     bool terminal = args->isSet("t");
-    bool new_dcop = args->isSet("newdcop");
     bool withIgnoreButton = args->isSet("ignorebutton");
 
     QList<QByteArray> env;
@@ -299,14 +300,6 @@ static int startApp()
 
     KUser u;
     env << (QByteArray) ("KDESU_USER=" + u.loginName().toLocal8Bit());
-
-    if (!new_dcop)
-    {
-        QByteArray ksycoca = "KDESYCOCA="+QFile::encodeName(locateLocal("cache", "ksycoca"));
-        env << ksycoca;
-
-        options += "xf"; // X-only, dcop forwarding enabled.
-    }
 
     if (keep && !terminal && !just_started)
     {
@@ -419,11 +412,6 @@ static int startApp()
         proc.setTerminal(terminal);
         proc.setErase(true);
         proc.setUser(user);
-        if (!new_dcop)
-        {
-            proc.setXOnly(true);
-            proc.setDCOPForwarding(true);
-        }
         proc.setEnvironment(env);
         proc.setPriority(priority);
         proc.setScheduler(scheduler);
