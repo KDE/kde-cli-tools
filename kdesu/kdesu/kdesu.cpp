@@ -25,7 +25,7 @@
 #include <QFile>
 #include <QDir>
 
-#include <dbus/qdbus.h>
+#include <QtDBus/QtDBus>
 
 #include <kdebug.h>
 #include <kglobal.h>
