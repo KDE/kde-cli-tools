@@ -2,7 +2,7 @@
  *
  * This file is part of the KDE project, module kdesu.
  * Copyright (C) 1999,2000 Geert Jansen <jansen@kde.org>
- * 
+ *
  *
  * kdesud.cpp: KDE su daemon. Offers "keep password" functionality to kde su.
  *
@@ -25,7 +25,7 @@
  *                              NO         <command> has been executed
  *                                         before (< timeout) no PASS
  *                                         command is needed.
- *                                              
+ *
  *   DEL <command>              OK         Delete password for command
  *                              NO         <command>.
  *
@@ -80,7 +80,7 @@
 
 #ifndef SUN_LEN
 #define SUN_LEN(ptr) ((kde_socklen_t) (((struct sockaddr_un *) 0)->sun_path) \
-                     + strlen ((ptr)->sun_path))   
+                     + strlen ((ptr)->sun_path))
 #endif
 
 #define ERR strerror(errno)
@@ -121,15 +121,15 @@ int xio_errhandler(Display *)
 int initXconnection()
 {
     x11Display = XOpenDisplay(NULL);
-    if (x11Display != 0L) 
+    if (x11Display != 0L)
     {
         XSetIOErrorHandler(xio_errhandler);
-        XCreateSimpleWindow(x11Display, DefaultRootWindow(x11Display), 
+        XCreateSimpleWindow(x11Display, DefaultRootWindow(x11Display),
                 0, 0, 1, 1, 0,
                 BlackPixelOfScreen(DefaultScreenOfDisplay(x11Display)),
                 BlackPixelOfScreen(DefaultScreenOfDisplay(x11Display)));
         return XConnectionNumber(x11Display);
-    } else 
+    } else
     {
         kWarning(1205) << "Can't connect to the X Server.\n";
         kWarning(1205) << "Might not terminate at end of session.\n";
@@ -176,7 +176,7 @@ int create_socket()
     // strip the screen number from the display
     display.replace(QRegExp("\\.[0-9]+$"), "");
 
-    sock = QFile::encodeName(locateLocal("socket", QString("kdesud_%1").arg(display)));
+    sock = QFile::encodeName(KStandardDirs::locateLocal("socket", QString("kdesud_%1").arg(display)));
     int stat_err=lstat(sock, &s);
     if(!stat_err && S_ISLNK(s.st_mode)) {
         kWarning(1205) << "Someone is running a symlink attack on you\n";
@@ -186,18 +186,18 @@ int create_socket()
         }
     }
 
-    if (!access(sock, R_OK|W_OK)) 
+    if (!access(sock, R_OK|W_OK))
     {
         KDEsuClient client;
-        if (client.ping() == -1) 
+        if (client.ping() == -1)
         {
             kWarning(1205) << "stale socket exists\n";
-            if (unlink(sock)) 
+            if (unlink(sock))
             {
                 kWarning(1205) << "Could not delete stale socket\n";
                 return -1;
             }
-        } else 
+        } else
         {
             kWarning(1205) << "kdesud is already running\n";
             return -1;
@@ -206,7 +206,7 @@ int create_socket()
     }
 
     sockfd = socket(PF_UNIX, SOCK_STREAM, 0);
-    if (sockfd < 0) 
+    if (sockfd < 0)
     {
         kError(1205) << "socket(): " << ERR << "\n";
         return -1;
@@ -217,7 +217,7 @@ int create_socket()
     strncpy(addr.sun_path, sock, sizeof(addr.sun_path)-1);
     addr.sun_path[sizeof(addr.sun_path)-1] = '\000';
     addrlen = SUN_LEN(&addr);
-    if (bind(sockfd, (struct sockaddr *)&addr, addrlen) < 0) 
+    if (bind(sockfd, (struct sockaddr *)&addr, addrlen) < 0)
     {
         kError(1205) << "bind(): " << ERR << "\n";
         return -1;
@@ -226,7 +226,7 @@ int create_socket()
     struct linger lin;
     lin.l_onoff = lin.l_linger = 0;
     if (setsockopt(sockfd, SOL_SOCKET, SO_LINGER, (char *) &lin,
-                   sizeof(linger)) < 0) 
+                   sizeof(linger)) < 0)
     {
         kError(1205) << "setsockopt(SO_LINGER): " << ERR << "\n";
         return -1;
@@ -234,14 +234,14 @@ int create_socket()
 
     int opt = 1;
     if (setsockopt(sockfd, SOL_SOCKET, SO_REUSEADDR, (char *) &opt,
-                   sizeof(opt)) < 0) 
+                   sizeof(opt)) < 0)
     {
         kError(1205) << "setsockopt(SO_REUSEADDR): " << ERR << "\n";
         return -1;
     }
     opt = 1;
     if (setsockopt(sockfd, SOL_SOCKET, SO_KEEPALIVE, (char *) &opt,
-                   sizeof(opt)) < 0) 
+                   sizeof(opt)) < 0)
     {
         kError(1205) << "setsockopt(SO_KEEPALIVE): " << ERR << "\n";
         return -1;
@@ -269,7 +269,7 @@ int main(int argc, char *argv[])
     // Set core dump size to 0
     struct rlimit rlim;
     rlim.rlim_cur = rlim.rlim_max = 0;
-    if (setrlimit(RLIMIT_CORE, &rlim) < 0) 
+    if (setrlimit(RLIMIT_CORE, &rlim) < 0)
     {
         kError(1205) << "setrlimit(): " << ERR << "\n";
         exit(1);
@@ -279,7 +279,7 @@ int main(int argc, char *argv[])
     int sockfd = create_socket();
     if (sockfd < 0)
         exit(1);
-    if (listen(sockfd, 1) < 0) 
+    if (listen(sockfd, 1) < 0)
     {
         kError(1205) << "listen(): " << ERR << "\n";
         kdesud_cleanup();
@@ -289,7 +289,7 @@ int main(int argc, char *argv[])
 
     // Ok, we're accepting connections. Fork to the background.
     pid_t pid = fork();
-    if (pid == -1) 
+    if (pid == -1)
     {
         kError(1205) << "fork():" << ERR << "\n";
         kdesud_cleanup();
@@ -311,7 +311,7 @@ int main(int argc, char *argv[])
     pipe(pipeOfDeath);
     maxfd = qMax(maxfd, pipeOfDeath[0]);
 
-    // Signal handlers 
+    // Signal handlers
     struct sigaction sa;
     sa.sa_handler = signal_exit;
     sigemptyset(&sa.sa_mask);
@@ -327,7 +327,7 @@ int main(int argc, char *argv[])
     sa.sa_handler = SIG_IGN;
     sigaction(SIGPIPE, &sa, 0L);
 
-    // Main execution loop 
+    // Main execution loop
 
     ksocklen_t addrlen;
     struct sockaddr_un clientname;
@@ -341,20 +341,20 @@ int main(int argc, char *argv[])
         FD_SET(x11Fd, &active_fds);
 #endif
 
-    while (1) 
+    while (1)
     {
         tmp_fds = active_fds;
-        if (select(maxfd+1, &tmp_fds, 0L, 0L, 0L) < 0) 
+        if (select(maxfd+1, &tmp_fds, 0L, 0L, 0L) < 0)
         {
             if (errno == EINTR) continue;
-            
+
             kError(1205) << "select(): " << ERR << "\n";
             exit(1);
         }
         repo->expire();
-        for (int i=0; i<=maxfd; i++) 
+        for (int i=0; i<=maxfd; i++)
         {
-            if (!FD_ISSET(i, &tmp_fds)) 
+            if (!FD_ISSET(i, &tmp_fds))
                 continue;
 
             if (i == pipeOfDeath[0])
@@ -385,7 +385,7 @@ int main(int argc, char *argv[])
             }
 
 #ifdef Q_WS_X11
-            if (i == x11Fd) 
+            if (i == x11Fd)
             {
                 // Discard X events
                 XEvent event_return;
@@ -394,13 +394,13 @@ int main(int argc, char *argv[])
             }
 #endif
 
-            if (i == sockfd) 
+            if (i == sockfd)
             {
                 // Accept new connection
                 int fd;
                 addrlen = 64;
                 fd = accept(sockfd, (struct sockaddr *) &clientname, &addrlen);
-                if (fd < 0) 
+                if (fd < 0)
                 {
                     kError(1205) << "accept():" << ERR << "\n";
                     continue;
@@ -414,7 +414,7 @@ int main(int argc, char *argv[])
             }
 
             // handle already established connection
-            if (handler[i] && handler[i]->handle() < 0) 
+            if (handler[i] && handler[i]->handle() < 0)
             {
                 handler.remove(i);
                 FD_CLR(i, &active_fds);
