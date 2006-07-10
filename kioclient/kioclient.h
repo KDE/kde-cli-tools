@@ -20,6 +20,7 @@
 #define __kioclient_h
 
 #include <QApplication>
+class KUrl;
 class KJob;
 
 class ClientApp : public QApplication
@@ -35,8 +36,11 @@ protected Q_SLOTS:
   void slotResult( KJob * );
   void delayedQuit();
   void slotDialogCanceled();
+  void deref();
 
 private:
+  bool kde_open( const KUrl& url, const QString& mimeType );
+
   static bool m_ok;
 
 };
