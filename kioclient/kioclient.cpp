@@ -150,6 +150,7 @@ bool ClientApp::doIt()
   ClientApp app( fake_argc, fake_argv );
   KInstance instance( "kioclient" ); // needed by KIO's internal use of KConfig
   app.setApplicationName(instance.instanceName());
+  app.setQuitOnLastWindowClosed( false );
 
   // KIO needs dbus (for uiserver communication)
   extern void qDBusBindToApplication();
