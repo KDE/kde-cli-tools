@@ -13,7 +13,7 @@ kde4_add_executable(kstart ${kstart_SRCS})
 
 target_link_libraries(kstart  ${KDE4_KDECORE_LIBS} )
 
-install(TARGETS kstart DESTINATION bin)
+install(TARGETS kstart DESTINATION ${BIN_INSTALL_DIR})
 
 
 ########### install files ###############

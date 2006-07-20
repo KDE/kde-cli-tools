@@ -16,7 +16,7 @@ kde4_add_executable(kdesud NOGUI ${kdesud_SRCS})
 
 target_link_libraries(kdesud ${KDE4_KDECORE_LIBS}  ${KDE4_KDESU_LIBS} )
 
-install(TARGETS kdesud DESTINATION bin)
+install(TARGETS kdesud DESTINATION ${BIN_INSTALL_DIR})
 
 
 ########### install files ###############
