@@ -2,11 +2,6 @@
 
 
 ########### install files ###############
-install(PROGRAMS kdeeject DESTINATION bin)
+install(PROGRAMS kdeeject DESTINATION ${BIN_INSTALL_DIR})
 
 
-
-
-#original Makefile.am contents follow:
-
-#bin_SCRIPTS = kdeeject
