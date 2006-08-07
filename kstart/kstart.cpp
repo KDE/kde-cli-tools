@@ -284,7 +284,7 @@ static KCmdLineOptions options[] =
   { "maximize-vertically", I18N_NOOP("Maximize the window vertically"), 0 },
   { "maximize-horizontally", I18N_NOOP("Maximize the window horizontally"), 0 },
   { "fullscreen", I18N_NOOP("Show window fullscreen"), 0 },
-  { "type <type>", I18N_NOOP("The window type: Normal, Desktop, Dock, Tool, \nMenu, Dialog, TopMenu or Override"), 0 },
+  { "type <type>", I18N_NOOP("The window type: Normal, Desktop, Dock, Toolbar, \nMenu, Dialog, TopMenu or Override"), 0 },
   { "activate", I18N_NOOP("Jump to the window even if it is started on a \n"
                           "different virtual desktop"), 0 },
   { "ontop", 0, 0 },
@@ -349,8 +349,8 @@ int main( int argc, char *argv[] )
 	  windowtype = NET::Desktop;
       else if ( s == "dock" )
 	  windowtype = NET::Dock;
-      else if ( s == "tool" )
-	  windowtype = NET::Tool;
+      else if ( s == "toolbar" )
+	  windowtype = NET::Toolbar;
       else if ( s == "menu" )
 	  windowtype = NET::Menu;
       else if ( s == "dialog" )
