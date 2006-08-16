@@ -3,6 +3,11 @@
 
 ########### next target ###############
 
+if(KDE4_ENABLE_FPIE)
+    set ( CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} ${KDE4_CXX_FPIE_FLAGS}")
+endif(KDE4_ENABLE_FPIE)
+
+
 set(kdesud_SRCS
    kdesud.cpp
    repo.cpp
@@ -10,11 +15,17 @@ set(kdesud_SRCS
    handler.cpp
    secure.cpp )
 
+
+
 kde4_automoc(${kdesud_SRCS})
 
 kde4_add_executable(kdesud NOGUI ${kdesud_SRCS})
 
-target_link_libraries(kdesud ${KDE4_KDECORE_LIBS}  ${KDE4_KDESU_LIBS} )
+if(KDE4_ENABLE_FPIE)
+    target_link_libraries(kdesud ${KDE4_KDECORE_LIBS}  ${KDE4_KDESU_LIBS} ${KDE4_PIE_LDFLAGS})
+else(KDE4_ENABLE_FPIE)
+    target_link_libraries(kdesud ${KDE4_KDECORE_LIBS}  ${KDE4_KDESU_LIBS} )
+endif(KDE4_ENABLE_FPIE)
 
 MESSAGE(STATUS "Create macro to display info at the end of install")
 install(TARGETS kdesud PERMISSIONS SETGID OWNER_EXECUTE OWNER_WRITE OWNER_READ GROUP_EXECUTE GROUP_READ WORLD_EXECUTE WORLD_READ DESTINATION ${BIN_INSTALL_DIR})
