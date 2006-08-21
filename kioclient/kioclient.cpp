@@ -194,7 +194,7 @@ bool ClientApp::doIt()
   // KIO needs dbus (for uiserver communication)
   extern void qDBusBindToApplication();
   qDBusBindToApplication();
-  if (!QDBus::sessionBus().isConnected())
+  if (!QDBusConnection::sessionBus().isConnected())
       kFatal(101) << "Session bus not found" << endl;
 
 
