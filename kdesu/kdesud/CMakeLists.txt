@@ -1,13 +1,4 @@
 
-
-
-########### next target ###############
-
-if(KDE4_ENABLE_FPIE)
-    set ( CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} ${KDE4_CXX_FPIE_FLAGS}")
-endif(KDE4_ENABLE_FPIE)
-
-
 set(kdesud_SRCS
    kdesud.cpp
    repo.cpp
@@ -19,12 +10,13 @@ set(kdesud_SRCS
 
 kde4_automoc(${kdesud_SRCS})
 
+target_link_libraries(kdesud ${KDE4_KDECORE_LIBS}  ${KDE4_KDESU_LIBS} )
+
 kde4_add_executable(kdesud NOGUI ${kdesud_SRCS})
 
 if(KDE4_ENABLE_FPIE)
-    target_link_libraries(kdesud ${KDE4_KDECORE_LIBS}  ${KDE4_KDESU_LIBS} ${KDE4_PIE_LDFLAGS})
-else(KDE4_ENABLE_FPIE)
-    target_link_libraries(kdesud ${KDE4_KDECORE_LIBS}  ${KDE4_KDESU_LIBS} )
+    macro_add_compile_flags(kdesud ${KDE4_CXX_FPIE_FLAGS})
+    macro_add_link_flags(kdesud ${KDE4_PIE_LDFLAGS})
 endif(KDE4_ENABLE_FPIE)
 
 MESSAGE(STATUS "Create macro to display info at the end of install")
