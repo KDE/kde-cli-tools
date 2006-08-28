@@ -10,9 +10,9 @@ set(kdesud_SRCS
 
 kde4_automoc(${kdesud_SRCS})
 
-target_link_libraries(kdesud ${KDE4_KDECORE_LIBS}  ${KDE4_KDESU_LIBS} )
-
 kde4_add_executable(kdesud NOGUI ${kdesud_SRCS})
+
+target_link_libraries(kdesud ${KDE4_KDECORE_LIBS}  ${KDE4_KDESU_LIBS} )
 
 if(KDE4_ENABLE_FPIE)
     macro_add_compile_flags(kdesud ${KDE4_CXX_FPIE_FLAGS})
