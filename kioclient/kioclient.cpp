@@ -237,7 +237,7 @@ bool ClientApp::doIt()
     KUrl::List srcLst;
     if (argc == 1) {
        while(true) {
-          KUrl src = KUrlRequesterDlg::getURL();
+          KUrl src = KUrlRequesterDlg::getUrl();
           if (!src.isEmpty()) {
              if (!src.isValid()) {
                 KMessageBox::error(0, i18n("Unable to download from an invalid URL."));
