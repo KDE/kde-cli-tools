@@ -25,24 +25,25 @@ class KJob;
 
 class ClientApp : public QApplication
 {
-  Q_OBJECT
+    Q_OBJECT
 public:
-  ClientApp(int &argc, char **argv ) : QApplication( argc, argv ) {}
+    ClientApp(int &argc, char **argv ) : QApplication( argc, argv ) {}
 
-  /** Parse command-line arguments and "do it" */
-  static bool doIt();
+    /** Parse command-line arguments and "do it" */
+    static bool doIt();
 
 protected Q_SLOTS:
-  void slotResult( KJob * );
-  void delayedQuit();
-  void slotDialogCanceled();
-  void deref();
+    void slotResult( KJob * );
+    void delayedQuit();
+    void slotDialogCanceled();
+    void deref();
 
 private:
-  bool kde_open( const KUrl& url, const QString& mimeType );
+    bool kde_open( const KUrl& url, const QString& mimeType );
+    bool doCopy( int firstArg );
+    bool doMove( int firstArg );
 
-  static bool m_ok;
-
+    static bool m_ok;
 };
 
 #endif

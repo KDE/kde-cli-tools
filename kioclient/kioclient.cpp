@@ -42,6 +42,30 @@ static const char programName[] = I18N_NOOP("KIO Client");
 static const char description[] = I18N_NOOP("Command-line tool for network-transparent operations");
 static const char version[] = "2.0";
 
+#if defined(KIOCLIENT_AS_KDEOPEN)
+static const KCmdLineOptions options[] =
+{
+    { "noninteractive", I18N_NOOP("Non interactive use: no message boxes"), 0},
+    { "+urls", I18N_NOOP("url or urls"), 0 },
+    KCmdLineLastOption
+};
+#elif defined(KIOCLIENT_AS_KDECP)
+static const KCmdLineOptions options[] =
+{
+    { "noninteractive", I18N_NOOP("Non interactive use: no message boxes"), 0},
+    { "+src", I18N_NOOP("Source url or urls"), 0 },
+    { "+dest", I18N_NOOP("Destination url"), 0 },
+    KCmdLineLastOption
+};
+#elif defined(KIOCLIENT_AS_KDEMV)
+static const KCmdLineOptions options[] =
+{
+    { "noninteractive", I18N_NOOP("Non interactive use: no message boxes"), 0},
+    { "+src", I18N_NOOP("Source url or urls"), 0 },
+    { "+dest", I18N_NOOP("Destination url"), 0 },
+    KCmdLineLastOption
+};
+#elif defined(KIOCLIENT_AS_KIOCLIENT)
 static const KCmdLineOptions options[] =
 {
     { "noninteractive", I18N_NOOP("Non interactive use: no message boxes"), 0},
@@ -50,61 +74,54 @@ static const KCmdLineOptions options[] =
     { "+[URL(s)]", I18N_NOOP("Arguments for command"), 0},
     KCmdLineLastOption
 };
+#endif
 
 bool ClientApp::m_ok = true;
 static bool s_interactive = true;
-static bool s_isKdeOpen = false;
 
+#ifdef KIOCLIENT_AS_KIOCLIENT
 static void usage()
 {
     KCmdLineArgs::enable_i18n();
     puts(i18n("\nSyntax:\n").toLocal8Bit());
-    if ( s_isKdeOpen ) {
-        puts(i18n("  kde-open 'url' ['mimetype']\n"
-                  "            # Tries to open the document pointed to by 'url', in the application\n"
-                  "            #   associated with it in KDE. You may omit 'mimetype'.\n"
-                  "            #   In this case the mimetype is determined\n"
-                  "            #   automatically. Of course URL may be the URL of a\n"
-                  "            #   document, or it may be a *.desktop file.\n").toLocal8Bit());
-    } else {
-        puts(i18n("  kioclient openProperties 'url'\n"
-                  "            # Opens a properties menu\n\n").toLocal8Bit());
-        puts(i18n("  kioclient exec 'url' ['mimetype']\n"
-                  "            # Tries to open the document pointed to by 'url', in the application\n"
-                  "            #   associated with it in KDE. You may omit 'mimetype'.\n"
-                  "            #   In this case the mimetype is determined\n"
-                  "            #   automatically. Of course URL may be the URL of a\n"
-                  "            #   document, or it may be a *.desktop file.\n").toLocal8Bit());
-        puts(i18n("  kioclient move 'src' 'dest'\n"
-                  "            # Moves the URL 'src' to 'dest'.\n"
-                  "            #   'src' may be a list of URLs.\n").toLocal8Bit());
-        //puts(i18n("            #   'dest' may be \"trash:/\" to move the files\n"
-        //            "            #   in the trash bin.\n\n").toLocal8Bit());
-        puts(i18n("  kioclient download ['src']\n"
-                  "            # Copies the URL 'src' to a user specified location'.\n"
-                  "            #   'src' may be a list of URLs, if not present then\n"
-                  "            #   a URL will be requested.\n\n").toLocal8Bit());
-        puts(i18n("  kioclient copy 'src' 'dest'\n"
-                  "            # Copies the URL 'src' to 'dest'.\n"
-                  "            #   'src' may be a list of URLs.\n\n").toLocal8Bit());
+    puts(i18n("  kioclient openProperties 'url'\n"
+              "            # Opens a properties menu\n\n").toLocal8Bit());
+    puts(i18n("  kioclient exec 'url' ['mimetype']\n"
+              "            # Tries to open the document pointed to by 'url', in the application\n"
+              "            #   associated with it in KDE. You may omit 'mimetype'.\n"
+              "            #   In this case the mimetype is determined\n"
+              "            #   automatically. Of course URL may be the URL of a\n"
+              "            #   document, or it may be a *.desktop file.\n").toLocal8Bit());
+    puts(i18n("  kioclient move 'src' 'dest'\n"
+              "            # Moves the URL 'src' to 'dest'.\n"
+              "            #   'src' may be a list of URLs.\n").toLocal8Bit());
+    //puts(i18n("            #   'dest' may be \"trash:/\" to move the files\n"
+    //            "            #   in the trash bin.\n\n").toLocal8Bit());
+    puts(i18n("  kioclient download ['src']\n"
+              "            # Copies the URL 'src' to a user specified location'.\n"
+              "            #   'src' may be a list of URLs, if not present then\n"
+              "            #   a URL will be requested.\n\n").toLocal8Bit());
+    puts(i18n("  kioclient copy 'src' 'dest'\n"
+              "            # Copies the URL 'src' to 'dest'.\n"
+              "            #   'src' may be a list of URLs.\n\n").toLocal8Bit());
 
-        puts(i18n("*** Examples:\n"
-                  "  kioclient exec file:/root/Desktop/cdrom.desktop \"Mount default\"\n"
-                  "             // Mounts the CD-ROM\n\n").toLocal8Bit());
-        puts(i18n("  kioclient exec file:/home/weis/data/test.html\n"
-                  "             // Opens the file with default binding\n\n").toLocal8Bit());
-        puts(i18n("  kioclient exec file:/home/weis/data/test.html Netscape\n"
-                  "             // Opens the file with netscape\n\n").toLocal8Bit());
-        puts(i18n("  kioclient exec ftp://localhost/\n"
-                  "             // Opens new window with URL\n\n").toLocal8Bit());
-        puts(i18n("  kioclient exec file:/root/Desktop/emacs.desktop\n"
-                  "             // Starts emacs\n\n").toLocal8Bit());
-        puts(i18n("  kioclient exec file:/root/Desktop/cdrom.desktop\n"
-                  "             // Opens the CD-ROM's mount directory\n\n").toLocal8Bit());
-        puts(i18n("  kioclient exec .\n"
-                  "             // Opens the current directory. Very convenient.\n\n").toLocal8Bit());
-    }
+    puts(i18n("*** Examples:\n"
+              "  kioclient exec file:/root/Desktop/cdrom.desktop \"Mount default\"\n"
+              "             // Mounts the CD-ROM\n\n").toLocal8Bit());
+    puts(i18n("  kioclient exec file:/home/weis/data/test.html\n"
+              "             // Opens the file with default binding\n\n").toLocal8Bit());
+    puts(i18n("  kioclient exec file:/home/weis/data/test.html Netscape\n"
+              "             // Opens the file with netscape\n\n").toLocal8Bit());
+    puts(i18n("  kioclient exec ftp://localhost/\n"
+              "             // Opens new window with URL\n\n").toLocal8Bit());
+    puts(i18n("  kioclient exec file:/root/Desktop/emacs.desktop\n"
+              "             // Starts emacs\n\n").toLocal8Bit());
+    puts(i18n("  kioclient exec file:/root/Desktop/cdrom.desktop\n"
+              "             // Opens the CD-ROM's mount directory\n\n").toLocal8Bit());
+    puts(i18n("  kioclient exec .\n"
+              "             // Opens the current directory. Very convenient.\n\n").toLocal8Bit());
 }
+#endif
 
 int main( int argc, char **argv )
 {
@@ -113,8 +130,7 @@ int main( int argc, char **argv )
   KCmdLineArgs::addCmdLineOptions( options );
   KCmdLineArgs::addTempFileOption();
 
-  s_isKdeOpen = QByteArray( argv[0] ).endsWith( "kde-open" );
-
+#ifdef KIOCLIENT_AS_KIOCLIENT
   KCmdLineArgs *args = KCmdLineArgs::parsedArgs();
 
   if ( argc == 1 || args->isSet("commands") )
@@ -122,6 +138,7 @@ int main( int argc, char **argv )
     usage();
     return 0;
   }
+#endif
 
   return ClientApp::doIt() ? 0 /*no error*/ : 1 /*error*/;
 }
@@ -172,120 +189,141 @@ bool ClientApp::kde_open( const KUrl& url, const QString& mimeType )
     }
 }
 
-bool ClientApp::doIt()
+bool ClientApp::doCopy( int firstArg )
 {
-  KCmdLineArgs *args = KCmdLineArgs::parsedArgs();
-  int argc = args->count();
-  checkArgumentCount(argc, 1, 0);
-
-  if ( !args->isSet( "ninteractive" ) ) {
-      s_interactive = false;
-  }
-  QByteArray command = args->arg(0);
-
-  kDebug() << "Creating ClientApp" << endl;
-  int fake_argc = 0;
-  char** fake_argv = 0;
-  ClientApp app( fake_argc, fake_argv );
-  KInstance instance( "kioclient" ); // needed by KIO's internal use of KConfig
-  app.setApplicationName(instance.instanceName());
-  app.setQuitOnLastWindowClosed( false );
-
-  // KIO needs dbus (for uiserver communication)
-  extern void qDBusBindToApplication();
-  qDBusBindToApplication();
-  if (!QDBusConnection::sessionBus().isConnected())
-      kFatal(101) << "Session bus not found" << endl;
-
-
-  if ( s_isKdeOpen )
-  {
-      app.kde_open( KUrl( command ), QByteArray() );
-  }
-  else if ( command == "openProperties" )
-  {
-    checkArgumentCount(argc, 2, 2);
-    KPropertiesDialog * p = new KPropertiesDialog( args->url(1) );
-    QObject::connect( p, SIGNAL( destroyed() ), &app, SLOT( quit() ));
-    QObject::connect( p, SIGNAL( canceled() ), &app, SLOT( slotDialogCanceled() ));
-    app.exec();
-    return m_ok;
-  }
-  else if ( command == "exec" )
-  {
-    checkArgumentCount(argc, 2, 3);
-    app.kde_open( args->url( 1 ),
-                  argc == 3 ? QString::fromLocal8Bit( args->arg( 2 ) ) : QString() );
-  }
-  else if ( command == "move" )
-  {
-    checkArgumentCount(argc, 2, 0);
+    KCmdLineArgs *args = KCmdLineArgs::parsedArgs();
+    int argc = args->count();
     KUrl::List srcLst;
-    for ( int i = 1; i <= argc - 2; i++ )
+    for ( int i = firstArg; i <= argc - 2; i++ )
+      srcLst.append( args->url(i) );
+    KIO::Job * job = KIO::copy( srcLst, args->url(argc - 1) );
+    if ( !s_interactive )
+        job->setUiDelegate( 0 );
+    connect( job, SIGNAL( result( KJob * ) ), this, SLOT( slotResult( KJob * ) ) );
+    this->exec();
+    return m_ok;
+}
+
+bool ClientApp::doMove( int firstArg )
+{
+    KCmdLineArgs *args = KCmdLineArgs::parsedArgs();
+    int argc = args->count();
+    KUrl::List srcLst;
+    for ( int i = firstArg; i <= argc - 2; i++ )
       srcLst.append( args->url(i) );
 
     KIO::Job * job = KIO::move( srcLst, args->url(argc - 1) );
     if ( !s_interactive )
         job->setUiDelegate( 0 );
-    connect( job, SIGNAL( result( KJob * ) ), &app, SLOT( slotResult( KJob * ) ) );
-    app.exec();
+    connect( job, SIGNAL( result( KJob * ) ), this, SLOT( slotResult( KJob * ) ) );
+    this->exec();
     return m_ok;
-  }
-  else if ( command == "download" )
-  {
-    checkArgumentCount(argc, 0, 0);
-    KUrl::List srcLst;
-    if (argc == 1) {
-       while(true) {
-          KUrl src = KUrlRequesterDlg::getUrl();
-          if (!src.isEmpty()) {
-             if (!src.isValid()) {
-                KMessageBox::error(0, i18n("Unable to download from an invalid URL."));
-                continue;
-             }
-             srcLst.append(src);
-          }
-          break;
-       }
-    } else {
-       for ( int i = 1; i <= argc - 1; i++ )
-          srcLst.append( args->url(i) );
-    }
-    if (srcLst.count() == 0)
-       return m_ok;
-    QString dst =
-       KFileDialog::getSaveFileName( (argc<2) ? (QString::null) : (args->url(1).fileName()) );
-    if (dst.isEmpty()) // canceled
-       return m_ok; // AK - really okay?
-    KUrl dsturl;
-    dsturl.setPath( dst );
-    KIO::Job * job = KIO::copy( srcLst, dsturl );
-    if ( !s_interactive )
-        job->setUiDelegate( 0 );
-    connect( job, SIGNAL( result( KJob * ) ), &app, SLOT( slotResult( KJob * ) ) );
-    app.exec();
-    return m_ok;
-  }
-  else if ( command == "copy" )
-  {
-    checkArgumentCount(argc, 2, 0);
-    KUrl::List srcLst;
-    for ( int i = 1; i <= argc - 2; i++ )
-      srcLst.append( args->url(i) );
+}
 
-    KIO::Job * job = KIO::copy( srcLst, args->url(argc - 1) );
-    if ( !s_interactive )
-        job->setUiDelegate( 0 );
-    connect( job, SIGNAL( result( KJob * ) ), &app, SLOT( slotResult( KJob * ) ) );
-    app.exec();
-    return m_ok;
-  }
-  else
-  {
-    fprintf( stderr, "%s", i18n("Syntax Error: Unknown command '%1'\n", QString::fromLocal8Bit(command)).toLocal8Bit().data() );
-    return false;
-  }
-  return true;
+bool ClientApp::doIt()
+{
+    KCmdLineArgs *args = KCmdLineArgs::parsedArgs();
+    int argc = args->count();
+    checkArgumentCount(argc, 1, 0);
+
+    if ( !args->isSet( "ninteractive" ) ) {
+        s_interactive = false;
+    }
+    QByteArray command = args->arg(0);
+
+    kDebug() << "Creating ClientApp" << endl;
+    int fake_argc = 0;
+    char** fake_argv = 0;
+    ClientApp app( fake_argc, fake_argv );
+    KInstance instance( "kioclient" ); // needed by KIO's internal use of KConfig
+    app.setApplicationName(instance.instanceName());
+    app.setQuitOnLastWindowClosed( false );
+
+    // KIO needs dbus (for uiserver communication)
+    extern void qDBusBindToApplication();
+    qDBusBindToApplication();
+    if (!QDBusConnection::sessionBus().isConnected())
+        kFatal(101) << "Session bus not found" << endl;
+
+
+#ifdef KIOCLIENT_AS_KDEOPEN
+    app.kde_open( KUrl( command ), QByteArray() );
+    return true;
+#elif defined(KIOCLIENT_AS_KDECP)
+    checkArgumentCount(argc, 2, 0);
+    return app.doCopy(0);
+#elif defined(KIOCLIENT_AS_KDEMV)
+    checkArgumentCount(argc, 2, 0);
+    return app.doMove(0);
+#else
+    // Normal kioclient mode
+    if ( command == "openProperties" )
+    {
+        checkArgumentCount(argc, 2, 2);
+        KPropertiesDialog * p = new KPropertiesDialog( args->url(1) );
+        QObject::connect( p, SIGNAL( destroyed() ), &app, SLOT( quit() ));
+        QObject::connect( p, SIGNAL( canceled() ), &app, SLOT( slotDialogCanceled() ));
+        app.exec();
+        return m_ok;
+    }
+    else if ( command == "exec" )
+    {
+        checkArgumentCount(argc, 2, 3);
+        app.kde_open( args->url( 1 ),
+                      argc == 3 ? QString::fromLocal8Bit( args->arg( 2 ) ) : QString() );
+    }
+    else if ( command == "download" )
+    {
+        checkArgumentCount(argc, 0, 0);
+        KUrl::List srcLst;
+        if (argc == 1) {
+            while(true) {
+                KUrl src = KUrlRequesterDlg::getUrl();
+                if (!src.isEmpty()) {
+                    if (!src.isValid()) {
+                        KMessageBox::error(0, i18n("Unable to download from an invalid URL."));
+                        continue;
+                    }
+                    srcLst.append(src);
+                }
+                break;
+            }
+        } else {
+            for ( int i = 1; i <= argc - 1; i++ )
+                srcLst.append( args->url(i) );
+        }
+        if (srcLst.count() == 0)
+            return m_ok;
+        QString dst =
+            KFileDialog::getSaveFileName( (argc<2) ? (QString::null) : (args->url(1).fileName()) );
+        if (dst.isEmpty()) // canceled
+            return m_ok; // AK - really okay?
+        KUrl dsturl;
+        dsturl.setPath( dst );
+        KIO::Job * job = KIO::copy( srcLst, dsturl );
+        if ( !s_interactive )
+            job->setUiDelegate( 0 );
+        connect( job, SIGNAL( result( KJob * ) ), &app, SLOT( slotResult( KJob * ) ) );
+        app.exec();
+        return m_ok;
+    }
+    else if ( command == "copy" )
+    {
+        checkArgumentCount(argc, 2, 0);
+        return app.doCopy( 1 );
+    }
+    else if ( command == "move" )
+    {
+        checkArgumentCount(argc, 2, 0);
+        return app.doMove( 1 );
+    }
+    else
+    {
+        fprintf( stderr, "%s", i18n("Syntax Error: Unknown command '%1'\n", QString::fromLocal8Bit(command)).toLocal8Bit().data() );
+        return false;
+    }
+    return true;
+#endif
 }
 
 void ClientApp::slotResult( KJob * job )
