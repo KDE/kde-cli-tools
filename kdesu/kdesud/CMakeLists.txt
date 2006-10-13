@@ -8,7 +8,7 @@ set(kdesud_SRCS
 
 
 
-kde4_automoc(${kdesud_SRCS})
+kde4_automoc(kdesud ${kdesud_SRCS})
 
 kde4_add_executable(kdesud NOGUI ${kdesud_SRCS})
 

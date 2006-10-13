@@ -1,5 +1,5 @@
 set(kioclient_SRCS kioclient.cpp )
-kde4_automoc(${kioclient_SRCS})
+kde4_automoc(kioclient ${kioclient_SRCS})
 kde4_add_executable(kioclient NOGUI ${kioclient_SRCS})
 macro_add_compile_flags(kioclient -DKIOCLIENT_AS_KIOCLIENT)
 target_link_libraries(kioclient ${KDE4_KIO_LIBS})
