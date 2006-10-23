@@ -7,7 +7,7 @@ project(kreadconfig)
 
 set(kreadconfig_SRCS kreadconfig.cpp )
 
-kde4_automoc(kreadconfig ${kreadconfig_SRCS})
+kde4_automoc(${kreadconfig_SRCS})
 
 kde4_add_executable(kreadconfig ${kreadconfig_SRCS})
 
@@ -20,7 +20,7 @@ install(TARGETS kreadconfig DESTINATION ${BIN_INSTALL_DIR})
 
 set(kwriteconfig_SRCS kwriteconfig.cpp )
 
-kde4_automoc(kwriteconfig ${kwriteconfig_SRCS})
+kde4_automoc(${kwriteconfig_SRCS})
 
 kde4_add_executable(kwriteconfig ${kwriteconfig_SRCS})
 

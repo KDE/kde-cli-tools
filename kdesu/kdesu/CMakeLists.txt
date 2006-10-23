@@ -6,7 +6,7 @@
 
 set(kdesu_SRCS kdesu.cpp sudlg.cpp )
 
-kde4_automoc(kdesu ${kdesu_SRCS})
+kde4_automoc(${kdesu_SRCS})
 
 kde4_add_executable(kdesu_executable ${kdesu_SRCS})
 # in KDELibsDependencies.cmake installed by kdelibs there is a dependency to "kdesu"
