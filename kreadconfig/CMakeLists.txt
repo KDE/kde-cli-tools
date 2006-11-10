@@ -22,8 +22,8 @@ set(kwriteconfig_SRCS kwriteconfig.cpp )
 
 kde4_automoc(${kwriteconfig_SRCS})
 
-kde4_add_executable(kwriteconfig ${kwriteconfig_SRCS})
+kde4_add_executable(kwriteconfig NOGUI ${kwriteconfig_SRCS})
 
-target_link_libraries(kwriteconfig NOGUI ${KDE4_KDECORE_LIBS} )
+target_link_libraries(kwriteconfig ${KDE4_KDECORE_LIBS} )
 
 install(TARGETS kwriteconfig DESTINATION ${BIN_INSTALL_DIR})
