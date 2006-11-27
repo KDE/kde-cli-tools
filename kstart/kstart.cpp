@@ -15,15 +15,15 @@
 
 #include <QRegExp>
 #include <QTimer>
-//Added by qt3to4:
 #include <QDesktopWidget>
+#include <qapplication.h>
 
 #include <kdebug.h>
 #include <kprocess.h>
 #include <klocale.h>
+#include <kinstance.h>
 #include <kwin.h>
 #include <kwinmodule.h>
-#include <kapplication.h>
 #include <kaboutdata.h>
 #include <kcmdlineargs.h>
 #include <kstartupinfo.h>
@@ -35,7 +35,7 @@
 
 // some globals
 
-static KProcess proc;
+static KProcess* proc = 0;
 static QString windowtitle = 0;
 static QString windowclass = 0;
 static int desktop = 0;
@@ -63,15 +63,14 @@ KStart::KStart()
     	    kwinmodule->doNotManage( windowtitle );
     }
     // propagate the app startup notification info to the started app
-    KStartupInfoId id;
-    id.initId( kapp->startupId());
-    id.setupStartupEnv();
+    // We are not using KApplication, so the env remained set
+    KStartupInfoId id = KStartupInfo::currentStartupIdEnv();
 
     //finally execute the comand
-    if( proc.start(KProcess::DontCare) ) {
+    if( proc->start(KProcess::DontCare) ) {
         KStartupInfoData data;
-        data.addPid( proc.pid() );
-        QString bin = proc.args().first();
+        data.addPid( proc->pid() );
+        QString bin = proc->args().first();
         data.setName( bin );
         data.setBin( bin.mid( bin.lastIndexOf( '/' ) + 1 ));
         KStartupInfo::sendChange( id, data );
@@ -79,7 +78,7 @@ KStart::KStart()
     else
         KStartupInfo::sendFinish( id ); // failed to start
 
-  QTimer::singleShot( useRule ? 0 : 120 * 1000, kapp, SLOT( quit()));
+  QTimer::singleShot( useRule ? 0 : 120 * 1000, qApp, SLOT( quit()));
 }
 
 void KStart::sendRule() {
@@ -129,7 +128,7 @@ void KStart::sendRule() {
     }
 
     msg.broadcastMessage( "_KDE_NET_WM_TEMPORARY_RULES", message, -1, false );
-    kapp->flush();
+    qApp->flush();
 }
 
 const int SUPPORTED_WINDOW_TYPES_MASK = NET::NormalMask | NET::DesktopMask | NET::DockMask
@@ -155,7 +154,7 @@ void KStart::windowAdded(WId w){
     if ( !windowclass.isEmpty() ) {
 #ifdef __GNUC__
 #warning "Porting required"
-#endif	    
+#endif
 #if 0
         XClassHint hint;
         if( !XGetClassHint( QX11Info::display(), w, &hint ))
@@ -186,7 +185,7 @@ static bool wstate_withdrawn( WId winid )
 {
 #ifdef __GNUC__
 #warning "Porting required."
-#endif	
+#endif
 //Porting info: The Qt4 equivalent for qt_wm_state is qt_x11Data->atoms[QX11Data::WM_STATE]
 //which can be accessed via the macro ATOM(WM_STATE). Unfortunately, neither of these seem
 //to be exported out of the Qt environment. This value may have to be acquired from somewhere else.
@@ -267,7 +266,6 @@ void KStart::applyStyle(WId w ) {
     QApplication::flush();
 }
 
-// David, 05/03/2000
 static KCmdLineOptions options[] =
 {
   { "!+command", I18N_NOOP("Command to execute"), 0 },
@@ -303,7 +301,6 @@ static KCmdLineOptions options[] =
 
 int main( int argc, char *argv[] )
 {
-  // David, 05/03/2000
   KAboutData aboutData( "kstart", I18N_NOOP("KStart"), KSTART_VERSION,
       I18N_NOOP(""
        "Utility to launch applications with special window properties \n"
@@ -320,15 +317,17 @@ int main( int argc, char *argv[] )
 
   KCmdLineArgs::addCmdLineOptions( options ); // Add our own options.
 
-  KApplication app;
+  KInstance instance( &aboutData );
+  QApplication app( *KCmdLineArgs::qt_argc(), *KCmdLineArgs::qt_argv() );
 
   KCmdLineArgs *args = KCmdLineArgs::parsedArgs();
 
   if ( args->count() == 0 )
       KCmdLineArgs::usage(i18n("No command specified"));
 
+  proc = new KProcess;
   for(int i=0; i < args->count(); i++)
-    proc << args->arg(i);
+    (*proc) << args->arg(i);
 
   kwinmodule = new KWinModule;
 
@@ -342,7 +341,7 @@ int main( int argc, char *argv[] )
   windowclass = args->getOption( "windowclass" );
   if( !windowclass.isEmpty() )
       windowclass = windowclass.toLower();
-  
+
   if( windowtitle.isEmpty() && windowclass.isEmpty())
       kWarning() << "Omitting both --window and --windowclass arguments is not recommended" << endl;
 
@@ -374,7 +373,7 @@ int main( int argc, char *argv[] )
       state |= NET::KeepBelow;
       mask |= NET::KeepBelow;
   }
-  
+
   if ( args->isSet( "skiptaskbar" ) ) {
       state |= NET::SkipTaskbar;
       mask |= NET::SkipTaskbar;
