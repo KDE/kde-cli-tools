@@ -49,6 +49,7 @@ KDEsuDialog::KDEsuDialog(QByteArray user, QByteArray auth_user, bool enableKeep,
 
     if( withIgnoreButton )
         setButtonText(User1, i18n("&Ignore"));
+    connect(this,SIGNAL(user1Clicked()),this,SLOT(slotUser1()));
 }
 
 

@@ -21,9 +21,10 @@ public:
 
     enum ResultCodes { AsUser = 10 };
 
+private slots:
+    void slotUser1();
 protected:
     bool checkPassword(const char *password);
-    void slotUser1();
 
 private:
     QByteArray m_User;
