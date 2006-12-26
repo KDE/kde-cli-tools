@@ -263,6 +263,7 @@ bool ClientApp::doIt()
         KPropertiesDialog * p = new KPropertiesDialog( args->url(1) );
         QObject::connect( p, SIGNAL( destroyed() ), &app, SLOT( quit() ));
         QObject::connect( p, SIGNAL( canceled() ), &app, SLOT( slotDialogCanceled() ));
+        p->show();
         app.exec();
         return m_ok;
     }
