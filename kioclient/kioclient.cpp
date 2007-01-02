@@ -25,7 +25,7 @@
 #include <kpropertiesdialog.h>
 #include <klocale.h>
 #include <kstandarddirs.h>
-#include <kurlrequesterdlg.h>
+#include <kurlrequesterdialog.h>
 #include <kmessagebox.h>
 #include <kmimetypetrader.h>
 #include <kfiledialog.h>
@@ -279,7 +279,7 @@ bool ClientApp::doIt()
         KUrl::List srcLst;
         if (argc == 1) {
             while(true) {
-                KUrl src = KUrlRequesterDlg::getUrl();
+                KUrl src = KUrlRequesterDialog::getUrl();
                 if (!src.isEmpty()) {
                     if (!src.isValid()) {
                         KMessageBox::error(0, i18n("Unable to download from an invalid URL."));
