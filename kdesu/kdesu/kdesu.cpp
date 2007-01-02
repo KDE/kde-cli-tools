@@ -377,7 +377,7 @@ static int startApp()
         }
         if (ret == KDEsuDialog::AsUser)
             change_uid = false;
-        password = dlg.password();
+        password = dlg.password().local8Bit();
         keep = dlg.keep();
 #ifdef Q_WS_X11
         data.setSilent( KStartupInfoData::No );
