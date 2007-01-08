@@ -7,11 +7,11 @@
 #ifndef __SuDlg_h_Included__
 #define __SuDlg_h_Included__
 
-#include <kpassworddialog.h>
+#include <k3passworddialog.h>
 #include <QByteArray>
 
 class KDEsuDialog
-    : public KPasswordDialog
+    : public K3PasswordDialog
 {
     Q_OBJECT
 

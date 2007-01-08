@@ -15,7 +15,7 @@ kde4_add_executable(kdesu_executable ${kdesu_SRCS})
 # give it the name kdesu
 set_target_properties(kdesu_executable PROPERTIES OUTPUT_NAME kdesu)
 
-target_link_libraries(kdesu_executable  ${KDE4_KIO_LIBS} ${KDE4_KDESU_LIBS} )
+target_link_libraries(kdesu_executable  ${KDE4_KIO_LIBS} ${KDE4_KDESU_LIBS} ${KDE4_KDE3SUPPORT_LIBS} )
 
 install(TARGETS kdesu_executable DESTINATION ${BIN_INSTALL_DIR})
 

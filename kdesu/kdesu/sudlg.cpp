@@ -19,7 +19,7 @@
 #define DEFAULT_SUPER_USER_COMMAND "su"
 
 KDEsuDialog::KDEsuDialog(QByteArray user, QByteArray auth_user, bool enableKeep, const QString& icon, bool withIgnoreButton)
-    : KPasswordDialog(Password, enableKeep, withIgnoreButton?User1:NoDefault, icon)
+    : K3PasswordDialog(Password, enableKeep, withIgnoreButton?User1:NoDefault, icon)
 {
     KConfig* config = KGlobal::config();
     config->setGroup("super-user-command");
