@@ -391,6 +391,7 @@ int main(int argc, char *argv[])
                 XEvent event_return;
                 if (x11Display)
                     XNextEvent(x11Display, &event_return);
+                continue;
             }
 #endif
 
