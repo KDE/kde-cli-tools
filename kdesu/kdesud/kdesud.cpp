@@ -344,6 +344,8 @@ int main(int argc, char *argv[])
     while (1)
     {
         tmp_fds = active_fds;
+        if(x11Display)
+            XFlush(x11Display);
         if (select(maxfd+1, &tmp_fds, 0L, 0L, 0L) < 0)
         {
             if (errno == EINTR) continue;
@@ -390,7 +392,8 @@ int main(int argc, char *argv[])
                 // Discard X events
                 XEvent event_return;
                 if (x11Display)
-                    XNextEvent(x11Display, &event_return);
+                    while(XPending(x11Display))
+                        XNextEvent(x11Display, &event_return);
                 continue;
             }
 #endif
