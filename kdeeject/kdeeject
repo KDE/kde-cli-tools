@@ -26,7 +26,7 @@ if test $# -ge 1 -a "$1" != "--help"; then
       ;;
   esac
   if test $? -eq 0; then
-    dcop kdesktop default refreshIcons
+    qdbus org.kde.kdesktop /Desktop refreshIcons
     exit 0
   elif test $quiet -eq 0; then
     kdialog --title "KDE Eject" --error "Eject $1 failed!"
