@@ -344,8 +344,10 @@ int main(int argc, char *argv[])
     while (1)
     {
         tmp_fds = active_fds;
+#ifdef Q_WS_X11
         if(x11Display)
             XFlush(x11Display);
+#endif
         if (select(maxfd+1, &tmp_fds, 0L, 0L, 0L) < 0)
         {
             if (errno == EINTR) continue;
