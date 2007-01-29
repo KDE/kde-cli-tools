@@ -21,7 +21,7 @@
 KDEsuDialog::KDEsuDialog(QByteArray user, QByteArray auth_user, bool enableKeep, const QString& icon, bool withIgnoreButton)
     : K3PasswordDialog(Password, enableKeep, withIgnoreButton?User1:NoDefault, icon)
 {
-    KConfig* config = KGlobal::config();
+    KSharedConfig::Ptr config = KGlobal::config();
     config->setGroup("super-user-command");
     QString superUserCommand = config->readEntry("super-user-command", DEFAULT_SUPER_USER_COMMAND);
     if ( superUserCommand != "sudo" && superUserCommand != "su" ) {

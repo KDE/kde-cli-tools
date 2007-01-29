@@ -50,7 +50,7 @@ int main(int argc, char **argv)
 	}
 	QByteArray value = args->arg( 0 );
 
-	KInstance inst(&aboutData);
+	KComponentData inst(&aboutData);
 
 	KConfig *konfig;
 	if (file.isEmpty())

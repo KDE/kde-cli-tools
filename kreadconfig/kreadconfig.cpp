@@ -64,13 +64,13 @@ int main(int argc, char **argv)
 		return 1;
 	}
 
-	KInstance inst(&aboutData);
+	KComponentData inst(&aboutData);
 	KGlobal::config();
 
 	KConfig *konfig;
         bool configMustDeleted = false;
 	if (file.isEmpty())
-	   konfig = KGlobal::config();
+	   konfig = KGlobal::config().data();
 	else
         {
 	   konfig = new KConfig(file, true, false);

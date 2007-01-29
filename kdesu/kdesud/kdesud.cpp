@@ -61,7 +61,7 @@
 #include <QRegExp>
 #include <QByteArray>
 
-#include <kinstance.h>
+#include <kcomponentdata.h>
 #include <kdebug.h>
 #include <klocale.h>
 #include <kcmdlineargs.h>
@@ -264,7 +264,7 @@ int main(int argc, char *argv[])
     aboutData.addAuthor("Geert Jansen", I18N_NOOP("Author"),
             "jansen@kde.org", "http://www.stack.nl/~geertj/");
     KCmdLineArgs::init(argc, argv, &aboutData);
-    KInstance instance(&aboutData);
+    KComponentData componentData(&aboutData);
 
     // Set core dump size to 0
     struct rlimit rlim;

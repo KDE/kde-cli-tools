@@ -35,7 +35,7 @@
 #include <QTimer>
 #include <krun.h>
 #include <QtDBus/QtDBus>
-#include <kinstance.h>
+#include <kcomponentdata.h>
 
 static const char appName[] = "kioclient";
 static const char programName[] = I18N_NOOP("KIO Client");
@@ -235,8 +235,8 @@ bool ClientApp::doIt()
     int fake_argc = 0;
     char** fake_argv = 0;
     ClientApp app( fake_argc, fake_argv );
-    KInstance instance( "kioclient" ); // needed by KIO's internal use of KConfig
-    app.setApplicationName(instance.instanceName());
+    KComponentData componentData("kioclient"); // needed by KIO's internal use of KConfig
+    app.setApplicationName(componentData.componentName());
     app.setQuitOnLastWindowClosed( false );
 
     // KIO needs dbus (for uiserver communication)

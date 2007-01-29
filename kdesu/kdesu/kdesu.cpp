@@ -324,7 +324,7 @@ static int startApp()
     }
 
     // Read configuration
-    KConfig *config = KGlobal::config();
+    KSharedConfig::Ptr config = KGlobal::config();
     config->setGroup("Passwords");
     int timeout = config->readEntry("Timeout", defTimeout);
 
