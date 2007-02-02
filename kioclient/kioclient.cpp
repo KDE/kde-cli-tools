@@ -229,7 +229,6 @@ bool ClientApp::doIt()
     if ( !args->isSet( "ninteractive" ) ) {
         s_interactive = false;
     }
-    QByteArray command = args->arg(0);
 
     kDebug() << "Creating ClientApp" << endl;
     int fake_argc = 0;
@@ -247,7 +246,7 @@ bool ClientApp::doIt()
 
 
 #ifdef KIOCLIENT_AS_KDEOPEN
-    app.kde_open( KUrl( command ), QByteArray() );
+    app.kde_open( args->url(0), QByteArray() );
     return true;
 #elif defined(KIOCLIENT_AS_KDECP)
     checkArgumentCount(argc, 2, 0);
@@ -257,6 +256,7 @@ bool ClientApp::doIt()
     return app.doMove(0);
 #else
     // Normal kioclient mode
+    const QByteArray command = args->arg(0);
     if ( command == "openProperties" )
     {
         checkArgumentCount(argc, 2, 2);
