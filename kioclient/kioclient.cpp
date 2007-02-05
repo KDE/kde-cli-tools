@@ -20,6 +20,7 @@
 
 #include <ktoolinvocation.h>
 #include <kio/job.h>
+#include <kio/copyjob.h>
 #include <kio/jobuidelegate.h>
 #include <kcmdlineargs.h>
 #include <kpropertiesdialog.h>
