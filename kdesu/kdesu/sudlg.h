@@ -7,16 +7,18 @@
 #ifndef __SuDlg_h_Included__
 #define __SuDlg_h_Included__
 
-#include <k3passworddialog.h>
 #include <QByteArray>
 
+#include <KPasswordDialog>
+#include <kdesu/su.h>
+
 class KDEsuDialog
-    : public K3PasswordDialog
+    : public KPasswordDialog
 {
     Q_OBJECT
 
 public:
-    KDEsuDialog(QByteArray user, QByteArray auth_user, bool enableKeep, const QString& icon , bool withIgnoreButton);
+    KDEsuDialog(QByteArray user, QByteArray authUser, bool enableKeep, const QString& icon , bool withIgnoreButton);
     ~KDEsuDialog();
 
     enum ResultCodes { AsUser = 10 };
@@ -24,10 +26,10 @@ public:
 private slots:
     void slotUser1();
 protected:
-    bool checkPassword(const char *password);
+    bool checkPassword();
 
 private:
-    QByteArray m_User;
+    SuProcess proc;
 };
 
 

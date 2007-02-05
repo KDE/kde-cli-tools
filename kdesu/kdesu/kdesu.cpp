@@ -345,7 +345,7 @@ static int startApp()
     }
 
     // Start the dialog
-    QByteArray password;
+    QString password;
     if (needpw)
     {
 #ifdef Q_WS_X11
@@ -356,16 +356,17 @@ static int startApp()
         KStartupInfo::sendChange( id, data );
 #endif
         KDEsuDialog dlg(user, auth_user, keep && !terminal, icon, withIgnoreButton);
-	if (prompt)
-	    dlg.addLine(i18n("Command:"), command);
+        if (prompt)
+            dlg.addCommentLine(i18n("Command:"), command);
+
         if ((priority != 50) || (scheduler != SuProcess::SchedNormal))
         {
             QString prio;
             if (scheduler == SuProcess::SchedRealtime)
                 prio += i18n("realtime: ");
             prio += QString("%1/100").arg(priority);
-	    if (prompt)
-		dlg.addLine(i18n("Priority:"), prio);
+            if (prompt)
+                dlg.addCommentLine(i18n("Priority:"), prio);
         }
         int ret = dlg.exec();
         if (ret == KDEsuDialog::Rejected)
@@ -378,7 +379,7 @@ static int startApp()
         if (ret == KDEsuDialog::AsUser)
             change_uid = false;
         password = dlg.password();
-        keep = dlg.keep();
+        keep = dlg.keepPassword();
 #ifdef Q_WS_X11
         data.setSilent( KStartupInfoData::No );
         KStartupInfo::sendChange( id, data );
@@ -397,7 +398,7 @@ static int startApp()
     }
     else if (keep && have_daemon)
     {
-        client.setPass(password, timeout);
+        client.setPass(password.toLocal8Bit(), timeout);
         client.setPriority(priority);
         client.setScheduler(scheduler);
         int result = client.exec(command, user, options, env);
@@ -416,7 +417,7 @@ static int startApp()
         proc.setPriority(priority);
         proc.setScheduler(scheduler);
         proc.setCommand(command);
-        int result = proc.exec(password);
+        int result = proc.exec(password.toLocal8Bit());
         return result;
     }
     return -1;
