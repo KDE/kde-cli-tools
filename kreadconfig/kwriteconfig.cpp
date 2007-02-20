@@ -54,9 +54,9 @@ int main(int argc, char **argv)
 
 	KConfig *konfig;
 	if (file.isEmpty())
-	   konfig = new KConfig(QString::fromLatin1("kdeglobals"), false, false);
+	   konfig = new KConfig(QString::fromLatin1( "kdeglobals"), KConfig::NoGlobals );
 	else
-	   konfig = new KConfig(file, false, false);
+	   konfig = new KConfig( file, KConfig::NoGlobals );
 
 	konfig->setGroup(group);
 	if ( konfig->getConfigState() != KConfig::ReadWrite || konfig->entryIsImmutable( key ) ) return 2;
