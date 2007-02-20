@@ -76,27 +76,27 @@ int main(int argc, char **argv)
 	   konfig = new KConfig( file, KConfig::NoGlobals );
            configMustDeleted=true;
         }
-	konfig->setGroup(group);
+        KConfigGroup cfgGroup = konfig->group(group);
 	if(type=="bool") {
 		dflt=dflt.toLower();
 		bool def=(dflt=="true" || dflt=="on" || dflt=="yes" || dflt=="1");
-                bool retValue = !konfig->readEntry(key, QVariant(def)).toBool();
+                bool retValue = !cfgGroup.readEntry(key, QVariant(def)).toBool();
                 if ( configMustDeleted )
                     delete konfig;
 		return retValue;
 	} else if((type=="num") || (type=="int")) {
-            long retValue = konfig->readEntry<qulonglong>(key, dflt.toLong());
+            long retValue = cfgGroup.readEntry<qulonglong>(key, dflt.toLong());
             if ( configMustDeleted )
                 delete konfig;
             return retValue;
 	} else if (type=="path"){
-                fprintf(stdout, "%s\n", konfig->readPathEntry(key, dflt).toLocal8Bit().data());
+                fprintf(stdout, "%s\n", cfgGroup.readPathEntry(key, dflt).toLocal8Bit().data());
                 if ( configMustDeleted )
                     delete konfig;
 		return 0;
 	} else {
             /* Assume it's a string... */
-                fprintf(stdout, "%s\n", konfig->readEntry(key, dflt).toLocal8Bit().data());
+                fprintf(stdout, "%s\n", cfgGroup.readEntry(key, dflt).toLocal8Bit().data());
                 if ( configMustDeleted )
                     delete konfig;
 		return 0;

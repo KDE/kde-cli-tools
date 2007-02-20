@@ -58,17 +58,17 @@ int main(int argc, char **argv)
 	else
 	   konfig = new KConfig( file, KConfig::NoGlobals );
 
-	konfig->setGroup(group);
-	if ( konfig->getConfigState() != KConfig::ReadWrite || konfig->entryIsImmutable( key ) ) return 2;
+        KConfigGroup cfgGroup = konfig->group(group);
+	if ( konfig->getConfigState() != KConfig::ReadWrite || cfgGroup.entryIsImmutable( key ) ) return 2;
 
 	if(type=="bool") {
 		// For symmetry with kreadconfig we accept a wider range of values as true than Qt
 		bool boolvalue=(value=="true" || value=="on" || value=="yes" || value=="1");
-		konfig->writeEntry( key, boolvalue );
+		cfgGroup.writeEntry( key, boolvalue );
 	} else if (type=="path") {
-		konfig->writePathEntry( key, QString::fromLocal8Bit( value ) );
+		cfgGroup.writePathEntry( key, QString::fromLocal8Bit( value ) );
 	} else {
-		konfig->writeEntry( key, QString::fromLocal8Bit( value ) );
+		cfgGroup.writeEntry( key, QString::fromLocal8Bit( value ) );
 	}
 	konfig->sync();
         delete konfig;
