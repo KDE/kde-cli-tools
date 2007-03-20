@@ -20,7 +20,7 @@ class KStart: public QObject {
 
 public:
   KStart();
-  ~KStart(){};
+  ~KStart(){}
   
 public Q_SLOTS:
   void windowAdded(WId);
