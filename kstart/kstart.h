@@ -13,8 +13,6 @@
 #include <qwindowdefs.h>
 #include <QObject>
 
-class KWinModule;
-
 class KStart: public QObject {
   Q_OBJECT
 

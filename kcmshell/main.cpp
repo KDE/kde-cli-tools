@@ -49,7 +49,6 @@
 #include <klocale.h>
 #include <kservicetypetrader.h>
 #include <kstartupinfo.h>
-#include <kwin.h>
 #include <kglobal.h>
 
 #include "main.h"
