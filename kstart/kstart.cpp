@@ -135,7 +135,7 @@ const int SUPPORTED_WINDOW_TYPES_MASK = NET::NormalMask | NET::DesktopMask | NET
 
 void KStart::windowAdded(WId w){
 
-    KWM::WindowInfo info = KWM::windowInfo( w, NET::WMWindowType | NET::WMName );
+    KWindowInfo info = KWM::windowInfo( w, NET::WMWindowType | NET::WMName );
 
     // always ignore these window types
     if( info.windowType( SUPPORTED_WINDOW_TYPES_MASK ) == NET::TopMenu
