@@ -16,7 +16,7 @@
 #include <QRegExp>
 #include <QTimer>
 #include <QDesktopWidget>
-#include <qapplication.h>
+#include <QtGui/QApplication>
 
 #include <kdebug.h>
 #include <k3process.h>

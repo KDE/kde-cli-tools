@@ -21,7 +21,7 @@
 
 #include <QString>
 #include <QFileInfo>
-#include <qglobal.h>
+#include <QtCore/QBool>
 #include <QFile>
 #include <QDir>
 

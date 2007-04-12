@@ -21,8 +21,8 @@
 
 #include <iostream>
 
-#include <qfile.h>
-#include <qicon.h>
+#include <QtCore/QFile>
+#include <QtGui/QIcon>
 
 #ifdef Q_WS_X11
 /*

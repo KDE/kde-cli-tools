@@ -10,7 +10,7 @@
 #ifndef KSTART_H
 #define KSTART_H
 
-#include <qwindowdefs.h>
+#include <QtGui/QWidgetList>
 #include <QObject>
 
 class KStart: public QObject {
