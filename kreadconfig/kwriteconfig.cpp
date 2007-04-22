@@ -14,7 +14,7 @@
 #include <kaboutdata.h>
 #include <stdio.h>
 //Added by qt3to4:
-#include <QString>
+
 
 static KCmdLineOptions options[] =
 {

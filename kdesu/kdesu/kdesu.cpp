@@ -19,7 +19,7 @@
 #include <sys/wait.h>
 #endif
 
-#include <QString>
+
 #include <QFileInfo>
 #include <QtCore/QBool>
 #include <QFile>

@@ -5,7 +5,7 @@
  */
 
 #include <QByteArray>
-#include <QString>
+
 
 #include <KConfig>
 #include <KDebug>
