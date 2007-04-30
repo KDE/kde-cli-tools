@@ -56,7 +56,7 @@
 #include <sys/select.h>                // Needed on some systems.
 #endif
 
-#include <Qt3Support/Q3PtrVector>
+#include <QVector>
 #include <QFile>
 #include <QRegExp>
 #include <QByteArray>
@@ -305,8 +305,7 @@ int main(int argc, char *argv[])
 #endif
 
     repo = new Repository;
-    Q3PtrVector<ConnectionHandler> handler;
-    handler.setAutoDelete(true);
+    QVector<ConnectionHandler *> handler;
 
     pipe(pipeOfDeath);
     maxfd = qMax(maxfd, pipeOfDeath[0]);
@@ -411,9 +410,10 @@ int main(int argc, char *argv[])
                     kError(1205) << "accept():" << ERR << "\n";
                     continue;
                 }
-                if (fd+1 > (int) handler.size())
-                    handler.resize(fd+1);
-                handler.insert(fd, new ConnectionHandler(fd));
+		while (fd+1 > (int) handler.size())
+		    handler.append(0);
+		delete handler[fd];
+		handler[fd] = new ConnectionHandler(fd);
                 maxfd = qMax(maxfd, fd);
                 FD_SET(fd, &active_fds);
                 continue;
@@ -422,7 +422,8 @@ int main(int argc, char *argv[])
             // handle already established connection
             if (handler[i] && handler[i]->handle() < 0)
             {
-                handler.remove(i);
+		delete handler[i];
+		handler[i] = 0;
                 FD_CLR(i, &active_fds);
             }
         }
