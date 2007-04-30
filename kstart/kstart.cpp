@@ -22,7 +22,7 @@
 #include <k3process.h>
 #include <klocale.h>
 #include <kcomponentdata.h>
-#include <kwm.h>
+#include <kwindowsystem.h>
 #include <kaboutdata.h>
 #include <kcmdlineargs.h>
 #include <kstartupinfo.h>
@@ -56,9 +56,9 @@ KStart::KStart()
         sendRule();
     else {
         // connect to window add to get the NEW windows
-        connect(KWM::self(), SIGNAL(windowAdded(WId)), SLOT(windowAdded(WId)));
+        connect(KWindowSystem::self(), SIGNAL(windowAdded(WId)), SLOT(windowAdded(WId)));
         if (!windowtitle.isEmpty())
-    	    KWM::doNotManage( windowtitle );
+    	    KWindowSystem::doNotManage( windowtitle );
     }
     // propagate the app startup notification info to the started app
     // We are not using KApplication, so the env remained set
@@ -97,7 +97,7 @@ void KStart::sendRule() {
         // accept only "normal" windows
         message += "types=" + QString().setNum( NET::NormalMask | NET::DialogMask ) + '\n';
     }
-    if ( ( desktop > 0 && desktop <= KWM::numberOfDesktops() )
+    if ( ( desktop > 0 && desktop <= KWindowSystem::numberOfDesktops() )
          || desktop == NETWinInfo::OnAllDesktops ) {
 	message += "desktop=" + QString().setNum( desktop ) + "\ndesktoprule=3\n";
     }
@@ -135,7 +135,7 @@ const int SUPPORTED_WINDOW_TYPES_MASK = NET::NormalMask | NET::DesktopMask | NET
 
 void KStart::windowAdded(WId w){
 
-    KWindowInfo info = KWM::windowInfo( w, NET::WMWindowType | NET::WMName );
+    KWindowInfo info = KWindowSystem::windowInfo( w, NET::WMWindowType | NET::WMName );
 
     // always ignore these window types
     if( info.windowType( SUPPORTED_WINDOW_TYPES_MASK ) == NET::TopMenu
@@ -221,7 +221,7 @@ void KStart::applyStyle(WId w ) {
 
     NETWinInfo info( QX11Info::display(), w, QX11Info::appRootWindow(), NET::WMState );
 
-    if ( ( desktop > 0 && desktop <= KWM::numberOfDesktops() )
+    if ( ( desktop > 0 && desktop <= KWindowSystem::numberOfDesktops() )
          || desktop == NETWinInfo::OnAllDesktops )
 	info.setDesktop( desktop );
 
@@ -244,7 +244,7 @@ void KStart::applyStyle(WId w ) {
 
     if ( toSysTray ) {
 	QApplication::beep();
-//	KWM::setSystemTrayWindowFor( w, QX11Info::appRootWindow() );
+//	KWindowSystem::setSystemTrayWindowFor( w, QX11Info::appRootWindow() );
     }
 
     if ( fullscreen ) {
@@ -259,7 +259,7 @@ void KStart::applyStyle(WId w ) {
     XSync(QX11Info::display(), False);
 
     if (activate)
-      KWM::forceActiveWindow( w );
+      KWindowSystem::forceActiveWindow( w );
 
     QApplication::flush();
 }
@@ -331,7 +331,7 @@ int main( int argc, char *argv[] )
   if ( args->isSet ( "alldesktops")  )
       desktop = NETWinInfo::OnAllDesktops;
   if ( args->isSet ( "currentdesktop")  )
-      desktop = KWM::currentDesktop();
+      desktop = KWindowSystem::currentDesktop();
 
   windowtitle = args->getOption( "window" );
   windowclass = args->getOption( "windowclass" );
