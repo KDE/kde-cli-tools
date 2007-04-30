@@ -36,8 +36,8 @@
 #include <kaboutdata.h>
 #include <kcmdlineargs.h>
 #include <kmessagebox.h>
-#include <krun.h>
 #include <kuser.h>
+#include <kstartupinfo.h>
 
 #include <kdesu/defaults.h>
 #include <kdesu/su.h>
@@ -225,7 +225,10 @@ static int startApp()
         for (int i=0; i<args->count(); i++)
         {
             QString arg = QFile::decodeName(args->arg(i));
-            KRun::shellQuote(arg);
+	    if(!arg.isEmpty()) {
+		QChar q('\'');
+		arg.replace(q, "'\\''").prepend(q).append(q);
+	    }
             command += ' ';
             command += QFile::encodeName(arg);
         }
@@ -241,7 +244,10 @@ static int startApp()
         for (int i=1; i<args->count(); i++)
         {
             QString arg = QFile::decodeName(args->arg(i));
-            KRun::shellQuote(arg);
+	    if(!arg.isEmpty()) {
+		QChar q('\'');
+		arg.replace(q, "'\\''").prepend(q).append(q);
+	    }
             command += ' ';
             command += QFile::encodeName(arg);
         }
