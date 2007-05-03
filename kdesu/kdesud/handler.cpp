@@ -5,6 +5,7 @@
  * handler.cpp: A connection handler for kdesud.
  */
 
+#include "handler.h"
 
 #include <stdlib.h>
 #include <string.h>
@@ -12,17 +13,14 @@
 #include <unistd.h>
 #include <signal.h>
 #include <errno.h>
-#include <string.h>
 
 #include <sys/types.h>
 #include <sys/socket.h>
-#include <sys/types.h>
 
 #include <kdebug.h>
 #include <kdesu/su.h>
 #include <kdesu/ssh.h>
 
-#include "handler.h"
 #include "repo.h"
 #include "lexer.h"
 #include "secure.h"

@@ -7,7 +7,7 @@
 #ifndef __Secure_h_included__
 #define __Secure_h_included__
 
-#include "config.h"
+#include <config.h>
 
 #include <sys/types.h>
 #include <sys/socket.h>

@@ -6,6 +6,8 @@
  * secure.cpp: Peer credentials for a UNIX socket.
  */
 
+#include "secure.h"
+
 #include <config.h>
 
 #include <stdio.h>
@@ -19,7 +21,6 @@
 #include <sys/socket.h>
 
 #include <kdebug.h>
-#include "secure.h"
 
 // FIXME: This is just here to make it compile (since ksock* was removed from kdelibs).
 // It would be better to fix it more globally. (Caleb Tennis)

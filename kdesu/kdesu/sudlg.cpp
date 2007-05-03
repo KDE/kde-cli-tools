@@ -4,16 +4,15 @@
  * Copyright (C) 2000 Geert Jansen <jansen@kde.org>
  */
 
-#include <QByteArray>
+#include "sudlg.h"
 
+#include <QByteArray>
 
 #include <KConfig>
 #include <KDebug>
 #include <KGlobal>
 #include <KIconLoader>
 #include <KLocale>
-
-#include "sudlg.h"
 
 KDEsuDialog::KDEsuDialog(QByteArray user, QByteArray authUser, bool enableKeep, const QString& icon, bool withIgnoreButton)
     : KPasswordDialog(0, enableKeep ? ShowKeepPassword : NoFlags,

@@ -2,13 +2,14 @@
  *
  * This file is part of the KDE project, module kdesu.
  * Copyright (C) 1999,2000 Geert Jansen <jansen@kde.org>
- * 
+ *
  * lexer.cpp: A lexer for the kdesud protocol. See kdesud.cpp for a
  *            description of the protocol.
  */
 
-#include <ctype.h>
 #include "lexer.h"
+
+#include <ctype.h>
 
 
 Lexer::Lexer(const QByteArray &input)

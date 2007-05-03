@@ -4,14 +4,14 @@
  * Copyright (C) 1999,2000 Geert Jansen <g.t.jansen@stud.tue.nl>
  */
 
+#include "repo.h"
+
 #include <time.h>
 #include <assert.h>
 
 #include <QStack>
 #include <QMap>
-#include <kdebug.h>
-
-#include "repo.h"
+#include <KDebug>
 
 
 Repository::Repository()
