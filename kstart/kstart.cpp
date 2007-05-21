@@ -316,7 +316,7 @@ int main( int argc, char *argv[] )
   KCmdLineArgs::addCmdLineOptions( options ); // Add our own options.
 
   KComponentData componentData( &aboutData );
-  QApplication app( *KCmdLineArgs::qt_argc(), *KCmdLineArgs::qt_argv() );
+  QApplication app( KCmdLineArgs::qtArgc(), KCmdLineArgs::qtArgv() );
 
   KCmdLineArgs *args = KCmdLineArgs::parsedArgs();
 
