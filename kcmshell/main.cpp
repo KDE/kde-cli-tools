@@ -265,6 +265,7 @@ extern "C" KDE_EXPORT int kdemain(int _argc, char *_argv[])
     KCmdLineArgs *kdeargs = KCmdLineArgs::parsedArgs("kde");
     if (kdeargs && kdeargs->isSet("caption")) {
         dlg->setCaption(QString());
+        kdeargs->clear();
     } else if (modules.count() == 1) {
         dlg->setCaption(modules.first()->name());
     }
@@ -277,7 +278,6 @@ extern "C" KDE_EXPORT int kdemain(int _argc, char *_argv[])
         QString iconName = KCModuleInfo(modules.first()).icon();
         dlg->setWindowIcon( KIcon(iconName) );
     }
-
     dlg->exec();
     delete dlg;
 
