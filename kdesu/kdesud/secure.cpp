@@ -8,7 +8,7 @@
 
 #include "secure.h"
 
-#include <config.h>
+#include <config-runtime.h>
 
 #include <stdio.h>
 #include <unistd.h>

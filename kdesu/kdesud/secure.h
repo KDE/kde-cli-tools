@@ -7,23 +7,8 @@
 #ifndef __Secure_h_included__
 #define __Secure_h_included__
 
-#include <config.h>
-
 #include <sys/types.h>
 #include <sys/socket.h>
-
-#ifndef HAVE_STRUCT_UCRED
-
-// `struct ucred' is not defined in glibc 2.0.
-
-struct ucred {
-    pid_t     pid;
-    uid_t     uid;
-    gid_t     gid;
-};
-
-#endif // HAVE_STRUCT_UCRED
-
 
 /**
  * The Socket_security class autheticates the peer for you. It provides
