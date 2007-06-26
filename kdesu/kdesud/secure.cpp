@@ -40,9 +40,9 @@ SocketSecurity::SocketSecurity(int sockfd) : pid(-1), gid(-1), uid(-1)
 	kError() << "getsockopt(SO_PEERCRED) " << perror << endl;
 	return;
     }
-    pid = ucred.pid;
-    gid = ucred.gid;
-    uid = ucred.uid;
+    pid = cred.pid;
+    gid = cred.gid;
+    uid = cred.uid;
 }
 
 #else
