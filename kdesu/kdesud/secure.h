@@ -21,13 +21,13 @@ public:
     explicit SocketSecurity(int fd);
 
     /** Returns the peer's process-id. */
-    int peerPid() { return pid; }
+    int peerPid() const { return pid; }
 
     /** Returns the peer's user-id */
-    int peerUid() { return uid; }
+    int peerUid() const { return uid; }
 
     /** Returns the peer's group-id */
-    int peerGid() { return gid; }
+    int peerGid() const { return gid; }
 
 private:
     int pid;
