@@ -18,20 +18,21 @@
 
 class SocketSecurity {
 public:
-    SocketSecurity(int fd);
+    explicit SocketSecurity(int fd);
 
     /** Returns the peer's process-id. */
-    int peerPid() { if (!ok) return -1; return cred.pid; }
+    int peerPid() { return pid; }
 
     /** Returns the peer's user-id */
-    int peerUid() { if (!ok) return -1; return cred.uid; }
+    int peerUid() { return uid; }
 
     /** Returns the peer's group-id */
-    int peerGid() { if (!ok) return -1; return cred.gid; }
+    int peerGid() { return gid; }
 
 private:
-    bool ok;
-    struct ucred cred;
+    int pid;
+    int gid;
+    int uid;
 };
 
 #endif

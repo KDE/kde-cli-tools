@@ -32,39 +32,39 @@ typedef unsigned ksocklen_t;
 
 #if defined(SO_PEERCRED)
 
-SocketSecurity::SocketSecurity(int sockfd)
+SocketSecurity::SocketSecurity(int sockfd) : pid(-1), gid(-1), uid(-1)
 {
+    ucred cred;
     ksocklen_t len = sizeof(struct ucred);
     if (getsockopt(sockfd, SOL_SOCKET, SO_PEERCRED, &cred, &len) < 0) {
 	kError() << "getsockopt(SO_PEERCRED) " << perror << endl;
 	return;
     }
-
-    ok = true;
+    pid = ucred.pid;
+    gid = ucred.gid;
+    uid = ucred.uid;
 }
 
 #else
 # if defined(HAVE_GETPEEREID)
-SocketSecurity::SocketSecurity(int sockfd)
+SocketSecurity::SocketSecurity(int sockfd) : pid(-1), gid(-1), uid(-1)
 {
     uid_t euid;
     gid_t egid;
     if (getpeereid(sockfd, &euid, &egid) == 0) {
-	cred.uid = euid;
-	cred.gid = egid;
-	cred.pid = -1;
-	ok = true;
+	uid = euid;
+	gid = egid;
+	pid = -1;
     }
 }
 
 # else
-
-
+#warning SocketSecurity support for your platform not implemented/available!
 /**
  * The default version does nothing.
  */
 
-SocketSecurity::SocketSecurity(int sockfd)
+SocketSecurity::SocketSecurity(int sockfd) : pid(-1), gid(-1), uid(-1)
 {
     static bool warned_him = false;
 
