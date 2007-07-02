@@ -59,15 +59,6 @@ using namespace std;
 
 KService::List m_modules;
 
-static KCmdLineOptions options[] =
-{
-    { "list", I18N_NOOP("List all possible modules"), 0},
-    { "+module", I18N_NOOP("Configuration module to open"), 0 },
-    { "lang <language>", I18N_NOOP("Specify a particular language"), 0 },
-    { "silent", I18N_NOOP("Do not display main window"), 0 },
-    KCmdLineLastOption
-};
-
 
 static void listModules()
 {
@@ -172,28 +163,34 @@ void KCMShell::appExit(const QString &appId, const QString &oldName, const QStri
 
 extern "C" KDE_EXPORT int kdemain(int _argc, char *_argv[])
 {
-    KAboutData aboutData( "kcmshell", I18N_NOOP("KDE Control Module"),
+    KAboutData aboutData( "kcmshell", 0, ki18n("KDE Control Module"),
                           0,
-                          I18N_NOOP("A tool to start single KDE control modules"),
+                          ki18n("A tool to start single KDE control modules"),
                           KAboutData::License_GPL,
-                          I18N_NOOP("(c) 1999-2004, The KDE Developers") );
+                          ki18n("(c) 1999-2004, The KDE Developers") );
 
-    aboutData.addAuthor("Frans Englich", I18N_NOOP("Maintainer"), "frans.englich@kde.org");
-    aboutData.addAuthor("Daniel Molkentin", 0, "molkentin@kde.org");
-    aboutData.addAuthor("Matthias Hoelzer-Kluepfel",0, "hoelzer@kde.org");
-    aboutData.addAuthor("Matthias Elter",0, "elter@kde.org");
-    aboutData.addAuthor("Matthias Ettrich",0, "ettrich@kde.org");
-    aboutData.addAuthor("Waldo Bastian",0, "bastian@kde.org");
+    aboutData.addAuthor(ki18n("Frans Englich"), ki18n("Maintainer"), "frans.englich@kde.org");
+    aboutData.addAuthor(ki18n("Daniel Molkentin"), KLocalizedString(), "molkentin@kde.org");
+    aboutData.addAuthor(ki18n("Matthias Hoelzer-Kluepfel"),KLocalizedString(), "hoelzer@kde.org");
+    aboutData.addAuthor(ki18n("Matthias Elter"),KLocalizedString(), "elter@kde.org");
+    aboutData.addAuthor(ki18n("Matthias Ettrich"),KLocalizedString(), "ettrich@kde.org");
+    aboutData.addAuthor(ki18n("Waldo Bastian"),KLocalizedString(), "bastian@kde.org");
 
     KGlobal::locale()->setMainCatalog("kcmshell");
 
     KCmdLineArgs::init(_argc, _argv, &aboutData);
+
+    KCmdLineOptions options;
+    options.add("list", ki18n("List all possible modules"));
+    options.add("+module", ki18n("Configuration module to open"));
+    options.add("lang <language>", ki18n("Specify a particular language"));
+    options.add("silent", ki18n("Do not display main window"));
     KCmdLineArgs::addCmdLineOptions( options ); // Add our own options.
     KCMShell app;
 
     const KCmdLineArgs *args = KCmdLineArgs::parsedArgs();
 
-    const QByteArray lang = args->getOption("lang");
+    const QString lang = args->getOption("lang");
     if( !lang.isNull() )
         KGlobal::locale()->setLanguage(lang);
 
@@ -235,7 +232,7 @@ extern "C" KDE_EXPORT int kdemain(int _argc, char *_argv[])
     KService::List modules;
     for (int i = 0; i < args->count(); i++)
     {
-        KService::Ptr service = locateModule(args->arg(i));
+        KService::Ptr service = locateModule(args->arg(i).toLocal8Bit());
         if( service )
         {
             modules.append(service);

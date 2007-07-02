@@ -257,11 +257,11 @@ int create_socket()
 
 int main(int argc, char *argv[])
 {
-    KAboutData aboutData("kdesud", I18N_NOOP("KDE su daemon"),
-            Version, I18N_NOOP("Daemon used by kdesu"),
+    KAboutData aboutData("kdesud", 0, ki18n("KDE su daemon"),
+            Version, ki18n("Daemon used by kdesu"),
             KAboutData::License_Artistic,
-            "Copyright (c) 1999,2000 Geert Jansen");
-    aboutData.addAuthor("Geert Jansen", I18N_NOOP("Author"),
+            ki18n("Copyright (c) 1999,2000 Geert Jansen"));
+    aboutData.addAuthor(ki18n("Geert Jansen"), ki18n("Author"),
             "jansen@kde.org", "http://www.stack.nl/~geertj/");
     KCmdLineArgs::init(argc, argv, &aboutData);
     KComponentData componentData(&aboutData);

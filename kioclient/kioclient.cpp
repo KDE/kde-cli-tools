@@ -43,40 +43,6 @@ static const char programName[] = I18N_NOOP("KIO Client");
 static const char description[] = I18N_NOOP("Command-line tool for network-transparent operations");
 static const char version[] = "2.0";
 
-#if defined(KIOCLIENT_AS_KDEOPEN)
-static const KCmdLineOptions options[] =
-{
-    { "noninteractive", I18N_NOOP("Non interactive use: no message boxes"), 0},
-    { "+urls", I18N_NOOP("url or urls"), 0 },
-    KCmdLineLastOption
-};
-#elif defined(KIOCLIENT_AS_KDECP)
-static const KCmdLineOptions options[] =
-{
-    { "noninteractive", I18N_NOOP("Non interactive use: no message boxes"), 0},
-    { "+src", I18N_NOOP("Source url or urls"), 0 },
-    { "+dest", I18N_NOOP("Destination url"), 0 },
-    KCmdLineLastOption
-};
-#elif defined(KIOCLIENT_AS_KDEMV)
-static const KCmdLineOptions options[] =
-{
-    { "noninteractive", I18N_NOOP("Non interactive use: no message boxes"), 0},
-    { "+src", I18N_NOOP("Source url or urls"), 0 },
-    { "+dest", I18N_NOOP("Destination url"), 0 },
-    KCmdLineLastOption
-};
-#elif defined(KIOCLIENT_AS_KIOCLIENT)
-static const KCmdLineOptions options[] =
-{
-    { "noninteractive", I18N_NOOP("Non interactive use: no message boxes"), 0},
-    { "commands", I18N_NOOP("Show available commands"), 0},
-    { "+command", I18N_NOOP("Command (see --commands)"), 0},
-    { "+[URL(s)]", I18N_NOOP("Arguments for command"), 0},
-    KCmdLineLastOption
-};
-#endif
-
 bool ClientApp::m_ok = true;
 static bool s_interactive = true;
 
@@ -126,7 +92,24 @@ static void usage()
 
 int main( int argc, char **argv )
 {
-  KCmdLineArgs::init(argc, argv, appName, programName, description, version, false);
+  KCmdLineArgs::init(argc, argv, appName, 0, ki18n(programName), version, ki18n(description), false);
+
+
+  KCmdLineOptions options;
+  options.add("noninteractive", ki18n("Non interactive use: no message boxes"));
+  #if defined(KIOCLIENT_AS_KDEOPEN)
+  options.add("+urls", ki18n("url or urls"));
+  #elif defined(KIOCLIENT_AS_KDECP)
+  options.add("+src", ki18n("Source url or urls"));
+  options.add("+dest", ki18n("Destination url"));
+  #elif defined(KIOCLIENT_AS_KDEMV)
+  options.add("+src", ki18n("Source url or urls"));
+  options.add("+dest", ki18n("Destination url"));
+  #elif defined(KIOCLIENT_AS_KIOCLIENT)
+  options.add("commands", ki18n("Show available commands"));
+  options.add("+command", ki18n("Command (see --commands)"));
+  options.add("+[URL(s)]", ki18n("Arguments for command"));
+  #endif
 
   KCmdLineArgs::addCmdLineOptions( options );
   KCmdLineArgs::addTempFileOption();
@@ -257,7 +240,7 @@ bool ClientApp::doIt()
     return app.doMove(0);
 #else
     // Normal kioclient mode
-    const QByteArray command = args->arg(0);
+    const QByteArray command = args->arg(0).toLocal8Bit();
     if ( command == "openProperties" )
     {
         checkArgumentCount(argc, 2, 2);
@@ -272,7 +255,7 @@ bool ClientApp::doIt()
     {
         checkArgumentCount(argc, 2, 3);
         app.kde_open( args->url( 1 ),
-                      argc == 3 ? QString::fromLocal8Bit( args->arg( 2 ) ) : QString() );
+                      argc == 3 ? args->arg( 2 ) : QString() );
     }
     else if ( command == "download" )
     {

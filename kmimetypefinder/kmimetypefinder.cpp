@@ -24,15 +24,14 @@
 
 #include <stdio.h>
 
-static KCmdLineOptions options[] =
-{
-  { "+filename", "the filename to test", 0 },
-  KCmdLineLastOption
-};
-
 int main(int argc, char *argv[])
 {
-    KCmdLineArgs::init( argc, argv, "kmimetypefinder", "MimeType Finder", "Gives the mimetype for a given file", KDE_VERSION_STRING );
+    KCmdLineArgs::init( argc, argv, "kmimetypefinder", 0, ki18n("MimeType Finder"), KDE_VERSION_STRING , ki18n("Gives the mimetype for a given file"));
+
+
+    KCmdLineOptions options;
+
+    options.add("+filename", ki18n("the filename to test"));
 
     KCmdLineArgs::addCmdLineOptions( options );
 

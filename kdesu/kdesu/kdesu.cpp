@@ -52,23 +52,6 @@ const char *Version = "1.0";
 
 // NOTE: if you change the position of the -u switch, be sure to adjust it
 // at the beginning of main()
-static KCmdLineOptions options[] = {
-    { "+command", I18N_NOOP("Specifies the command to run"), 0 },
-    { "c <command>", I18N_NOOP("Specifies the command to run"), "" },
-    { "f <file>", I18N_NOOP("Run command under target uid if <file> is not writable"), "" },
-    { "u <user>", I18N_NOOP("Specifies the target uid"), "root" },
-    { "n", I18N_NOOP("Do not keep password"), 0 },
-    { "s", I18N_NOOP("Stop the daemon (forgets all passwords)"), 0 },
-    { "t", I18N_NOOP("Enable terminal output (no password keeping)"), 0 },
-    { "p <prio>", I18N_NOOP("Set priority value: 0 <= prio <= 100, 0 is lowest"), "50" },
-    { "r", I18N_NOOP("Use realtime scheduling"), 0 },
-//  { "nonewdcop", I18N_NOOP("Let command use existing dcopserver"), 0 },
-    { "noignorebutton", I18N_NOOP("Do not display ignore button"), 0 },
-    { "i <icon name>", I18N_NOOP("Specify icon to use in the password dialog"), 0},
-    { "d", I18N_NOOP("Do not show the command to be run in the dialog"), 0},
-    KCmdLineLastOption
-};
-
 #if 0
 // D-BUS has no equivalent
 QByteArray dcopNetworkId()
@@ -95,21 +78,40 @@ int main(int argc, char *argv[])
     // anyway, i vote against removing it even when we have a proper gui
     // implementation.  -- ossi
 
-    const char *duser = ::getenv("ADMIN_ACCOUNT");
-    if (duser && duser[0])
-        options[3].def = duser;
+    QByteArray duser = ::getenv("ADMIN_ACCOUNT");
+    if (duser.isEmpty())
+        duser = "root";
 
-    KAboutData aboutData("kdesu", I18N_NOOP("KDE su"),
-            Version, I18N_NOOP("Runs a program with elevated privileges."),
+    KAboutData aboutData("kdesu", 0, ki18n("KDE su"),
+            Version, ki18n("Runs a program with elevated privileges."),
             KAboutData::License_Artistic,
-            "Copyright (c) 1998-2000 Geert Jansen, Pietro Iglio");
-    aboutData.addAuthor("Geert Jansen", I18N_NOOP("Maintainer"),
+            ki18n("Copyright (c) 1998-2000 Geert Jansen, Pietro Iglio"));
+    aboutData.addAuthor(ki18n("Geert Jansen"), ki18n("Maintainer"),
             "jansen@kde.org", "http://www.stack.nl/~geertj/");
-    aboutData.addAuthor("Pietro Iglio", I18N_NOOP("Original author"),
+    aboutData.addAuthor(ki18n("Pietro Iglio"), ki18n("Original author"),
             "iglio@fub.it");
 
     KCmdLineArgs::init(argc, argv, &aboutData);
+
+    // NOTE: if you change the position of the -u switch, be sure to adjust it
+    // at the beginning of main()
+    KCmdLineOptions options;
+    options.add("+command", ki18n("Specifies the command to run"));
+    options.add("c <command>", ki18n("Specifies the command to run"));
+    options.add("f <file>", ki18n("Run command under target uid if <file> is not writable"));
+    options.add("u <user>", ki18n("Specifies the target uid"), duser);
+    options.add("n", ki18n("Do not keep password"));
+    options.add("s", ki18n("Stop the daemon (forgets all passwords)"));
+    options.add("t", ki18n("Enable terminal output (no password keeping)"));
+    options.add("p <prio>", ki18n("Set priority value: 0 <= prio <= 100, 0 is lowest"), "50");
+    options.add("r", ki18n("Use realtime scheduling"));
+    options.add("nonewdcop", ki18n("Let command use existing dcopserver"));
+//  options.add("nonewdcop", ki18n("Let command use existing dcopserver"));
+    options.add("noignorebutton", ki18n("Do not display ignore button"));
+    options.add("i <icon name>", ki18n("Specify icon to use in the password dialog"));
+    options.add("d", ki18n("Do not show the command to be run in the dialog"));
     KCmdLineArgs::addCmdLineOptions(options);
+
     //KApplication::disableAutoDcopRegistration();
     // kdesu doesn't process SM events, so don't even connect to ksmserver
     QByteArray session_manager = getenv( "SESSION_MANAGER" );
@@ -166,7 +168,7 @@ static int startApp()
 	prompt = false;
 
     // Get target uid
-    QByteArray user = args->getOption("u");
+    QByteArray user = args->getOption("u").toLocal8Bit();
     QByteArray auth_user = user;
     struct passwd *pw = getpwnam(user);
     if (pw == 0L)
@@ -177,7 +179,7 @@ static int startApp()
     bool change_uid = (getuid() != pw->pw_uid);
 
     // If file is writeable, do not change uid
-    QString file = QFile::decodeName(args->getOption("f"));
+    QString file = args->getOption("f");
     if (change_uid && !file.isEmpty())
     {
         if (file.at(0) != '/')
@@ -201,12 +203,12 @@ static int startApp()
     }
 
     // Get priority/scheduler
-    QByteArray tmp = args->getOption("p");
+    QString tmp = args->getOption("p");
     bool ok;
     int priority = tmp.toInt(&ok);
     if (!ok || (priority < 0) || (priority > 100))
     {
-        KCmdLineArgs::usage(i18n("Illegal priority: %1", QString::fromLatin1(tmp)));
+        KCmdLineArgs::usageError(i18n("Illegal priority: %1", tmp));
         exit(1);
     }
     int scheduler = SuProcess::SchedNormal;
@@ -221,10 +223,10 @@ static int startApp()
     // Get command
     if (args->isSet("c"))
     {
-        command = args->getOption("c");
+        command = args->getOption("c").toLocal8Bit();
         for (int i=0; i<args->count(); i++)
         {
-            QString arg = QFile::decodeName(args->arg(i));
+            QString arg = args->arg(i);
 	    if(!arg.isEmpty()) {
 		QChar q('\'');
 		arg.replace(q, "'\\''").prepend(q).append(q);
@@ -237,13 +239,13 @@ static int startApp()
     {
         if( args->count() == 0 )
         {
-            KCmdLineArgs::usage(i18n("No command specified."));
+            KCmdLineArgs::usageError(i18n("No command specified."));
             exit(1);
         }
-        command = args->arg(0);
+        command = args->arg(0).toLocal8Bit();
         for (int i=1; i<args->count(); i++)
         {
-            QString arg = QFile::decodeName(args->arg(i));
+            QString arg = args->arg(i);
 	    if(!arg.isEmpty()) {
 		QChar q('\'');
 		arg.replace(q, "'\\''").prepend(q).append(q);

@@ -31,31 +31,28 @@
 #include <klocale.h>
 #include <kaboutdata.h>
 #include <stdio.h>
-
-static KCmdLineOptions options[] =
-{
-	{ "file <file>", I18N_NOOP("Use <file> instead of global config"), 0 },
-	{ "group <group>", I18N_NOOP("Group to look in"), "KDE" },
-        { "key <key>", I18N_NOOP("Key to look for"), 0 },
-        { "default <default>", I18N_NOOP("Default value"), 0 },
-	{ "type <type>", I18N_NOOP("Type of variable"), 0 },
-        KCmdLineLastOption
-};
 int main(int argc, char **argv)
 {
-	KAboutData aboutData("kreadconfig", I18N_NOOP("KReadConfig"),
+	KAboutData aboutData("kreadconfig", 0, ki18n("KReadConfig"),
 		"1.0.1",
-		I18N_NOOP("Read KConfig entries - for use in shell scripts"),
+		ki18n("Read KConfig entries - for use in shell scripts"),
 		KAboutData::License_GPL,
-		"(c) 2001 Red Hat, Inc.");
-	aboutData.addAuthor("Bernhard Rosenkraenzer", 0, "bero@redhat.com");
+		ki18n("(c) 2001 Red Hat, Inc."));
+	aboutData.addAuthor(ki18n("Bernhard Rosenkraenzer"), KLocalizedString(), "bero@redhat.com");
 	KCmdLineArgs::init(argc, argv, &aboutData);
+
+	KCmdLineOptions options;
+	options.add("file <file>", ki18n("Use <file> instead of global config"));
+	options.add("group <group>", ki18n("Group to look in"), "KDE");
+	options.add("key <key>", ki18n("Key to look for"));
+	options.add("default <default>", ki18n("Default value"));
+	options.add("type <type>", ki18n("Type of variable"));
 	KCmdLineArgs::addCmdLineOptions(options);
 	KCmdLineArgs *args=KCmdLineArgs::parsedArgs();
 
-	QString group=QString::fromLocal8Bit(args->getOption("group"));
-	QString key=QString::fromLocal8Bit(args->getOption("key"));
-	QString file=QString::fromLocal8Bit(args->getOption("file"));
+	QString group=args->getOption("group");
+	QString key=args->getOption("key");
+	QString file=args->getOption("file");
 	QString dflt=args->getOption("default");
 	QString type=args->getOption("type").toLower();
 

@@ -25,17 +25,18 @@
 
 #include <stdio.h>
 
-static KCmdLineOptions options[] =
-{
-  { "mimetype <mimetype>", "a mimetype", 0 },
-  { "servicetype <servicetype>", "a servicetype, like KParts/ReadOnlyPart or KMyApp/Plugin", 0 },
-  { "constraint <constraint>", "a constraint expressed in the trader query language", 0 },
-  KCmdLineLastOption
-};
-
 int main( int argc, char **argv )
 {
-  KCmdLineArgs::init( argc, argv, "ktraderclient", I18N_NOOP("KTraderClient"), I18N_NOOP("A command-line tool for querying the KDE trader system"), "0.0" );
+  KCmdLineArgs::init( argc, argv, "ktraderclient", 0, ki18n("KTraderClient"), "0.0" , ki18n("A command-line tool for querying the KDE trader system"));
+
+
+  KCmdLineOptions options;
+
+  options.add("mimetype <mimetype>", ki18n("a mimetype"));
+
+  options.add("servicetype <servicetype>", ki18n("a servicetype, like KParts/ReadOnlyPart or KMyApp/Plugin"));
+
+  options.add("constraint <constraint>", ki18n("a constraint expressed in the trader query language"));
 
   KCmdLineArgs::addCmdLineOptions( options );
 
@@ -43,9 +44,9 @@ int main( int argc, char **argv )
 
   KCmdLineArgs *args = KCmdLineArgs::parsedArgs();
 
-  const QString mimetype = QString::fromLocal8Bit( args->getOption( "mimetype" ) );
-  QString servicetype = QString::fromLocal8Bit( args->getOption( "servicetype" ) );
-  const QString constraint = QString::fromLocal8Bit( args->getOption( "constraint" ) );
+  const QString mimetype = args->getOption( "mimetype" );
+  QString servicetype = args->getOption( "servicetype" );
+  const QString constraint = args->getOption( "constraint" );
 
   if ( mimetype.isEmpty() && servicetype.isEmpty() )
       KCmdLineArgs::usage();
