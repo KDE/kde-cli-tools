@@ -19,7 +19,7 @@
 #include <QtGui/QApplication>
 
 #include <kdebug.h>
-#include <k3process.h>
+#include <kprocess.h>
 #include <klocale.h>
 #include <kcomponentdata.h>
 #include <kwindowsystem.h>
@@ -34,7 +34,8 @@
 
 // some globals
 
-static K3Process* proc = 0;
+static KProcess* proc = 0;
+static QString exe = 0;
 static QString windowtitle = 0;
 static QString windowclass = 0;
 static int desktop = 0;
@@ -65,12 +66,11 @@ KStart::KStart()
     KStartupInfoId id = KStartupInfo::currentStartupIdEnv();
 
     //finally execute the comand
-    if( proc->start(K3Process::DontCare) ) {
+    if( int pid = proc->startDetached() ) {
         KStartupInfoData data;
-        data.addPid( proc->pid() );
-        QString bin = proc->args().first();
-        data.setName( bin );
-        data.setBin( bin.mid( bin.lastIndexOf( '/' ) + 1 ));
+        data.addPid( pid );
+        data.setName( exe );
+        data.setBin( exe.mid( exe.lastIndexOf( '/' ) + 1 ));
         KStartupInfo::sendChange( id, data );
     }
     else
@@ -321,7 +321,8 @@ int main( int argc, char *argv[] )
   if ( args->count() == 0 )
       KCmdLineArgs::usageError(i18n("No command specified"));
 
-  proc = new K3Process;
+  exe = args->arg(0);
+  proc = new KProcess;
   for(int i=0; i < args->count(); i++)
     (*proc) << args->arg(i);
 
