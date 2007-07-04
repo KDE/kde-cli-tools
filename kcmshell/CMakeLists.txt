@@ -1,4 +1,3 @@
-project(kcmshell)
 
 include_directories( ${KDE4_KPARTS_INCLUDES} )
 

@@ -1,4 +1,3 @@
-project(kstart)
 
 set(kstart_SRCS kstart.cpp )
 
