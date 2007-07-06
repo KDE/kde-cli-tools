@@ -64,7 +64,7 @@ static void listModules()
 {
   const KService::List services = KServiceTypeTrader::self()->query( "KCModule", "[X-KDE-ParentApp] == 'kcontrol' or [X-KDE-ParentApp] == 'kinfocenter'" );
   for( KService::List::const_iterator it = services.begin();
-       it != services.end(); it++)
+       it != services.end(); ++it)
   {
       const KService::Ptr s = (*it);
       if (!KAuthorized::authorizeControlModule(s->menuId()))
