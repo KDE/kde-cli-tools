@@ -6,7 +6,6 @@
 
 set(kreadconfig_SRCS kreadconfig.cpp )
 
-kde4_automoc(${kreadconfig_SRCS})
 
 kde4_add_executable(kreadconfig NOGUI ${kreadconfig_SRCS})
 
@@ -19,7 +18,6 @@ install(TARGETS kreadconfig DESTINATION ${BIN_INSTALL_DIR})
 
 set(kwriteconfig_SRCS kwriteconfig.cpp )
 
-kde4_automoc(${kwriteconfig_SRCS})
 
 kde4_add_executable(kwriteconfig NOGUI ${kwriteconfig_SRCS})
 

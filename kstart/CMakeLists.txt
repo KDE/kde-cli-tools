@@ -1,7 +1,6 @@
 
 set(kstart_SRCS kstart.cpp )
 
-kde4_automoc(${kstart_SRCS})
 
 kde4_add_executable(kstart ${kstart_SRCS})
 
