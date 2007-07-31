@@ -38,6 +38,7 @@
 #include <kmessagebox.h>
 #include <kuser.h>
 #include <kstartupinfo.h>
+#include <kdefakes.h>
 
 #include <kdesu/defaults.h>
 #include <kdesu/su.h>
