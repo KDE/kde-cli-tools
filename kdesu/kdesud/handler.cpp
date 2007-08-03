@@ -153,7 +153,7 @@ int ConnectionHandler::doCommand(QByteArray buf)
     if ((uid_t) peerUid() != getuid())
     {
         kWarning(1205) << "Peer uid not equal to me\n";
-        kWarning(1205) << "Peer: " << peerUid() << " Me: " << getuid() << endl;
+        kWarning(1205) << "Peer: " << peerUid() << " Me: " << getuid() ;
         return -1;
     }
 
@@ -189,7 +189,7 @@ int ConnectionHandler::doCommand(QByteArray buf)
         m_Host = l->lval();
         if (l->lex() != '\n')
             goto parse_error;
-        kDebug(1205) << "Host set to " << m_Host << endl;
+        kDebug(1205) << "Host set to " << m_Host;
         respond(Res_OK);
         break;
 
@@ -200,7 +200,7 @@ int ConnectionHandler::doCommand(QByteArray buf)
         m_Priority = l->lval().toInt();
         if (l->lex() != '\n')
             goto parse_error;
-        kDebug(1205) << "priority set to " << m_Priority << endl;
+        kDebug(1205) << "priority set to " << m_Priority;
         respond(Res_OK);
         break;
 
@@ -211,7 +211,7 @@ int ConnectionHandler::doCommand(QByteArray buf)
         m_Scheduler = l->lval().toInt();
         if (l->lex() != '\n')
             goto parse_error;
-        kDebug(1205) << "Scheduler set to " << m_Scheduler << endl;
+        kDebug(1205) << "Scheduler set to " << m_Scheduler;
         respond(Res_OK);
         break;
 
@@ -277,11 +277,11 @@ int ConnectionHandler::doCommand(QByteArray buf)
         }
 
         // Execute the command asynchronously
-        kDebug(1205) << "Executing command: " << command << endl;
+        kDebug(1205) << "Executing command: " << command;
         pid_t pid = fork();
         if (pid < 0)
         {
-            kDebug(1205) << "fork(): " << strerror(errno) << endl;
+            kDebug(1205) << "fork(): " << strerror(errno);
             respond(Res_NO);
             break;
         } else if (pid > 0)
@@ -315,7 +315,7 @@ int ConnectionHandler::doCommand(QByteArray buf)
             ret = proc.exec(pass.data());
         }
 
-        kDebug(1205) << "Command completed: " << command << endl;
+        kDebug(1205) << "Command completed: " << command;
         _exit(ret);
     }
 
@@ -332,7 +332,7 @@ int ConnectionHandler::doCommand(QByteArray buf)
         goto parse_error;
     key = makeKey(0, m_Host, user, command);
     if (repo->remove(key) < 0) {
-        kDebug(1205) << "Unknown command: " << command << endl;
+        kDebug(1205) << "Unknown command: " << command;
         respond(Res_NO);
     }
     else {
@@ -354,11 +354,11 @@ int ConnectionHandler::doCommand(QByteArray buf)
     key = makeKey(1, name);
     if (repo->remove(key) < 0)
     {
-        kDebug(1205) << "Unknown name: " << name << endl;
+        kDebug(1205) << "Unknown name: " << name;
         respond(Res_NO);
     }
     else {
-        kDebug(1205) << "Deleted name: " << name << endl;
+        kDebug(1205) << "Deleted name: " << name;
         respond(Res_OK);
     }
     break;
@@ -371,12 +371,12 @@ int ConnectionHandler::doCommand(QByteArray buf)
     name = l->lval();
     if (repo->removeGroup(name) < 0)
     {
-        kDebug(1205) << "No keys found under group: " << name << endl;
+        kDebug(1205) << "No keys found under group: " << name;
         respond(Res_NO);
     }
     else
     {
-        kDebug(1205) << "Removed all keys under group: " << name << endl;
+        kDebug(1205) << "Removed all keys under group: " << name;
         respond(Res_OK);
     }
     break;
@@ -413,7 +413,7 @@ int ConnectionHandler::doCommand(QByteArray buf)
         goto parse_error;
     key = makeKey(1, name);
     repo->add(key, data);
-    kDebug(1205) << "Stored key: " << key << endl;
+    kDebug(1205) << "Stored key: " << key;
     respond(Res_OK);
     break;
 
@@ -425,7 +425,7 @@ int ConnectionHandler::doCommand(QByteArray buf)
     if (l->lex() != '\n')
         goto parse_error;
     key = makeKey(1, name);
-    kDebug(1205) << "Request for key: " << key << endl;
+    kDebug(1205) << "Request for key: " << key;
     value = repo->find(key);
     if (!value.isEmpty())
         respond(Res_OK, value);
@@ -440,7 +440,7 @@ int ConnectionHandler::doCommand(QByteArray buf)
         name = l->lval();
         if (l->lex() != '\n')
             goto parse_error;
-        kDebug(1205) << "Request for group key: " << name << endl;
+        kDebug(1205) << "Request for group key: " << name;
         value = repo->findKeys(name);
         if (!value.isEmpty())
             respond(Res_OK, value);
@@ -455,7 +455,7 @@ int ConnectionHandler::doCommand(QByteArray buf)
         name = l->lval();
         if (l->lex() != '\n')
             goto parse_error;
-        kDebug(1205) << "Checking for group key: " << name << endl;
+        kDebug(1205) << "Checking for group key: " << name;
         if ( repo->hasGroup( name ) < 0 )
             respond(Res_NO);
         else
@@ -482,13 +482,13 @@ int ConnectionHandler::doCommand(QByteArray buf)
         tok = l->lex();
         if (tok != '\n')
             goto parse_error;
-        kDebug(1205) << "Stopping by command" << endl;
+        kDebug(1205) << "Stopping by command";
         respond(Res_OK);
         kdesud_cleanup();
         exit(0);
 
     default:
-        kWarning(1205) << "Unknown command: " << l->lval() << endl;
+        kWarning(1205) << "Unknown command: " << l->lval() ;
         respond(Res_NO);
         goto parse_error;
     }
@@ -497,7 +497,7 @@ int ConnectionHandler::doCommand(QByteArray buf)
     return 0;
 
 parse_error:
-    kWarning(1205) << "Parse error" << endl;
+    kWarning(1205) << "Parse error" ;
     delete l;
     return -1;
 }

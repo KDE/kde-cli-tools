@@ -156,7 +156,7 @@ static void checkArgumentCount(int count, int min, int max)
 bool ClientApp::kde_open( const KUrl& url, const QString& mimeType )
 {
     if ( mimeType.isEmpty() ) {
-        kDebug() << k_funcinfo << url << endl;
+        kDebug() << k_funcinfo << url;
         KRun * run = new KRun( url, 0 );
         QObject::connect( run, SIGNAL( finished() ), this, SLOT( delayedQuit() ));
         QObject::connect( run, SIGNAL( error() ), this, SLOT( delayedQuit() ));
@@ -214,7 +214,7 @@ bool ClientApp::doIt()
         s_interactive = false;
     }
 
-    kDebug() << "Creating ClientApp" << endl;
+    kDebug() << "Creating ClientApp";
     int fake_argc = 0;
     char** fake_argv = 0;
     ClientApp app( fake_argc, fake_argv );
@@ -226,7 +226,7 @@ bool ClientApp::doIt()
     extern void qDBusBindToApplication();
     qDBusBindToApplication();
     if (!QDBusConnection::sessionBus().isConnected())
-        kFatal(101) << "Session bus not found" << endl;
+        kFatal(101) << "Session bus not found" ;
 
 
 #ifdef KIOCLIENT_AS_KDEOPEN

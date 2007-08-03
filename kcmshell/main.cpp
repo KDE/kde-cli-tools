@@ -83,13 +83,13 @@ static KService::Ptr locateModule(const QByteArray& module)
     KService::Ptr service = KService::serviceByStorageId( path );
     if (!service)
     {
-        kWarning(780) << "Could not find module '" << module << "'." << endl;
+        kWarning(780) << "Could not find module '" << module << "'." ;
         return KService::Ptr();
     }
 
     if ( service->noDisplay() )
     {
-        kDebug(780) << module << " should not be loaded." << endl;
+        kDebug(780) << module << " should not be loaded.";
         return KService::Ptr();
     }
 
@@ -109,7 +109,7 @@ bool KCMShell::isRunning()
     QDBusReply<void> reply = iface.call("activate", kapp->startupId());
     if (!reply.isValid())
     {
-        kDebug(780) << "Calling D-Bus function dialog::activate() failed." << endl;
+        kDebug(780) << "Calling D-Bus function dialog::activate() failed.";
         return false; // Error, we have to do it ourselves.
     }
 
@@ -127,7 +127,7 @@ KCMShellMultiDialog::KCMShellMultiDialog(KPageDialog::FaceType dialogFace, QWidg
 
 void KCMShellMultiDialog::activate( const QByteArray& asn_id )
 {
-    kDebug(780) << k_funcinfo << endl;
+    kDebug(780) << k_funcinfo;
 
 #ifdef Q_WS_X11
     KStartupInfo::setNewStartupId( this, asn_id );
@@ -142,7 +142,7 @@ void KCMShell::setServiceName(const QString &dbusName )
 
 void KCMShell::waitForExit()
 {
-    kDebug(780) << k_funcinfo << endl;
+    kDebug(780) << k_funcinfo;
 
     connect(QDBusConnection::sessionBus().interface(), SIGNAL(serviceOwnerChanged(QString,QString,QString)),
             SLOT(appExit(QString,QString,QString)));
@@ -152,11 +152,11 @@ void KCMShell::waitForExit()
 void KCMShell::appExit(const QString &appId, const QString &oldName, const QString &newName)
 {
     Q_UNUSED(newName);
-    kDebug(780) << k_funcinfo << endl;
+    kDebug(780) << k_funcinfo;
 
     if( appId == m_serviceName && !oldName.isEmpty() )
     {
-        kDebug(780) << "'" << appId << "' closed, dereferencing." << endl;
+        kDebug(780) << "'" << appId << "' closed, dereferencing.";
         KGlobal::deref();
     }
 }

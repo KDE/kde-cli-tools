@@ -338,7 +338,7 @@ int main( int argc, char *argv[] )
       windowclass = windowclass.toLower();
 
   if( windowtitle.isEmpty() && windowclass.isEmpty())
-      kWarning() << "Omitting both --window and --windowclass arguments is not recommended" << endl;
+      kWarning() << "Omitting both --window and --windowclass arguments is not recommended" ;
 
   QString s = args->getOption( "type" );
   if ( !s.isEmpty() ) {
