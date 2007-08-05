@@ -75,8 +75,7 @@ SocketSecurity::SocketSecurity(int sockfd) : pid(-1), gid(-1), uid(-1)
     }
 
     // This passes the test made in handler.cpp
-    cred.uid = getuid();
-    ok = true;
+    uid = getuid();
 }
 
 # endif
