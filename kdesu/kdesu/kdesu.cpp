@@ -186,7 +186,6 @@ static int startApp()
         if (file.at(0) != '/')
         {
             KStandardDirs dirs;
-            dirs.addKDEDefaults();
             file = dirs.findResource("config", file);
             if (file.isEmpty())
             {
