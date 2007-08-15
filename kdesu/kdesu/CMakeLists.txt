@@ -22,19 +22,3 @@ install(TARGETS kdesu_executable DESTINATION ${BIN_INSTALL_DIR})
 
 
 
-#original Makefile.am contents follow:
-
-### Makefile.am for kdesu by Geert Jansen
-#
-#INCLUDES= $(all_includes)
-#
-### kdesu
-#bin_PROGRAMS = 	kdesu
-#kdesu_SOURCES = kdesu.cpp sudlg.cpp
-#kdesu_LDFLAGS = $(all_libraries) $(KDE_RPATH)
-#kdesu_LDADD   = $(LIB_KIO) -lkdesu
-#kdesu_METASOURCES =  AUTO
-#noinst_HEADERS = sudlg.h
-#
-#messages:
-#	$(XGETTEXT) *.cpp -o $(podir)/kdesu.pot
