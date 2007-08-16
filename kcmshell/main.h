@@ -89,7 +89,7 @@ public:
      * Constructor. Parameter @p dialogFace is passed to KCMultiDialog
      * unchanged.
      */
-    KCMShellMultiDialog(KPageDialog::FaceType dialogFace, QWidget *parent = 0);
+    explicit KCMShellMultiDialog(KPageDialog::FaceType dialogFace, QWidget *parent = 0);
 
 public Q_SLOTS:
 
@@ -103,4 +103,3 @@ public Q_SLOTS:
 
 // vim: sw=4 et sts=4
 #endif //kcmshell_h
-
