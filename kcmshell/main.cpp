@@ -127,7 +127,7 @@ KCMShellMultiDialog::KCMShellMultiDialog(KPageDialog::FaceType dialogFace, QWidg
 
 void KCMShellMultiDialog::activate( const QByteArray& asn_id )
 {
-    kDebug(780) << k_funcinfo;
+    kDebug(780) ;
 
 #ifdef Q_WS_X11
     KStartupInfo::setNewStartupId( this, asn_id );
@@ -142,7 +142,7 @@ void KCMShell::setServiceName(const QString &dbusName )
 
 void KCMShell::waitForExit()
 {
-    kDebug(780) << k_funcinfo;
+    kDebug(780) ;
 
     connect(QDBusConnection::sessionBus().interface(), SIGNAL(serviceOwnerChanged(QString,QString,QString)),
             SLOT(appExit(QString,QString,QString)));
@@ -152,7 +152,7 @@ void KCMShell::waitForExit()
 void KCMShell::appExit(const QString &appId, const QString &oldName, const QString &newName)
 {
     Q_UNUSED(newName);
-    kDebug(780) << k_funcinfo;
+    kDebug(780) ;
 
     if( appId == m_serviceName && !oldName.isEmpty() )
     {

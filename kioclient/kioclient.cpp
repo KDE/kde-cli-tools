@@ -156,7 +156,7 @@ static void checkArgumentCount(int count, int min, int max)
 bool ClientApp::kde_open( const KUrl& url, const QString& mimeType )
 {
     if ( mimeType.isEmpty() ) {
-        kDebug() << k_funcinfo << url;
+        kDebug() << url;
         KRun * run = new KRun( url, 0 );
         QObject::connect( run, SIGNAL( finished() ), this, SLOT( delayedQuit() ));
         QObject::connect( run, SIGNAL( error() ), this, SLOT( delayedQuit() ));
