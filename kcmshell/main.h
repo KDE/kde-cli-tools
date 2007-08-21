@@ -19,9 +19,8 @@
 
 */
 
-#ifndef kcmshell_h
-#define kcmshell_h
-
+#ifndef MAIN_H
+#define MAIN_H
 
 #include <kapplication.h>
 #include <kcmultidialog.h>
@@ -102,4 +101,4 @@ public Q_SLOTS:
 };
 
 // vim: sw=4 et sts=4
-#endif //kcmshell_h
+#endif // MAIN_H

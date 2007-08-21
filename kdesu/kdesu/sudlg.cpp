@@ -38,7 +38,7 @@ KDEsuDialog::KDEsuDialog(QByteArray user, QByteArray authUser, bool enableKeep, 
     } else {
         if (authUser == "root") {
             prompt = "<qt>" + i18n("The action you requested needs <b>root privileges</b>. "
-            "Please enter <b>root's<b> password below or click "
+            "Please enter <b>root's</b> password below or click "
             "Ignore to continue with your current privileges.") + "</qt>";
         } else {
             prompt = "<qt>" + i18n("The action you requested needs additional privileges. "
@@ -72,12 +72,12 @@ bool KDEsuDialog::checkPassword()
         return true;
 
     case SuProcess::SuNotFound:
-        showErrorMessage(i18n("The program 'su' is not found.<br>"
+        showErrorMessage(i18n("The program 'su' is not found.<br />"
                              "Make sure your PATH is set correctly."), FatalError);
         return false;
 
     case SuProcess::SuNotAllowed:
-        showErrorMessage(("You are not allowed to use 'su'.<p>"
+        showErrorMessage(("You are not allowed to use 'su'.<br /><br />"
                          "On some systems, you need to be in a special "
                          "group (often: wheel) to use this program."), FatalError);
         return false;
