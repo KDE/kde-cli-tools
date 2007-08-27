@@ -32,7 +32,6 @@
 #include <kfiledialog.h>
 #include <kdebug.h>
 #include <kservice.h>
-#include <kstaticdeleter.h>
 #include <QTimer>
 #include <krun.h>
 #include <QtDBus/QtDBus>
