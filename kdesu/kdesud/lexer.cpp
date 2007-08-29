@@ -54,7 +54,8 @@ int Lexer::lex()
 	    return Tok_none;
 
 	if (isspace(c))
-	    while (isspace(c = m_Input[in++]));
+	    while (isspace(c = m_Input[in++]))
+                ;
 
 	// number?
 	if (isdigit(c)) 
