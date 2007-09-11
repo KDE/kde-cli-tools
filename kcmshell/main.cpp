@@ -191,8 +191,11 @@ extern "C" KDE_EXPORT int kdemain(int _argc, char *_argv[])
     const KCmdLineArgs *args = KCmdLineArgs::parsedArgs();
 
     const QString lang = args->getOption("lang");
-    if( !lang.isEmpty() )
-        KGlobal::locale()->setLanguage(lang);
+    if( !lang.isEmpty() ) {
+        KLocale *locale = new KLocale(aboutData.catalogName(), lang);
+        delete KGlobal::locale();
+        KGlobal::setLocale(locale);
+    }
 
     if (args->isSet("list"))
     {
