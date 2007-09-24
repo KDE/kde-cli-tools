@@ -176,8 +176,6 @@ extern "C" KDE_EXPORT int kdemain(int _argc, char *_argv[])
     aboutData.addAuthor(ki18n("Matthias Ettrich"),KLocalizedString(), "ettrich@kde.org");
     aboutData.addAuthor(ki18n("Waldo Bastian"),KLocalizedString(), "bastian@kde.org");
 
-    KGlobal::locale()->setMainCatalog("kcmshell");
-
     KCmdLineArgs::init(_argc, _argv, &aboutData);
 
     KCmdLineOptions options;
@@ -192,9 +190,7 @@ extern "C" KDE_EXPORT int kdemain(int _argc, char *_argv[])
 
     const QString lang = args->getOption("lang");
     if( !lang.isEmpty() ) {
-        KLocale *locale = new KLocale(aboutData.catalogName(), lang);
-        delete KGlobal::locale();
-        KGlobal::setLocale(locale);
+        KGlobal::setLocale(new KLocale(aboutData.catalogName(), lang));
     }
 
     if (args->isSet("list"))
