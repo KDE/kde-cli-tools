@@ -12,6 +12,8 @@
 #include <KPasswordDialog>
 #include <kdesu/su.h>
 
+using namespace KDESu;
+
 class KDEsuDialog
     : public KPasswordDialog
 {

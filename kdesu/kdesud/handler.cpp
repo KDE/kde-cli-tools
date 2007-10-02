@@ -25,6 +25,8 @@
 #include "lexer.h"
 #include "secure.h"
 
+using namespace KDESu;
+
 
 // Global repository
 extern Repository *repo;

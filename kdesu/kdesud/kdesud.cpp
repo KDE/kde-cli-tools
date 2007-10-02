@@ -85,6 +85,9 @@
 
 #define ERR strerror(errno)
 
+
+using namespace KDESu;
+
 // Globals
 
 Repository *repo;
