@@ -7,6 +7,7 @@
  *
  */
 #include <kconfig.h>
+#include <kconfiggroup.h>
 #include <kglobal.h>
 #include <kapplication.h>
 #include <kcmdlineargs.h>
@@ -51,9 +52,9 @@ int main(int argc, char **argv)
 
 	KConfig *konfig;
 	if (file.isEmpty())
-	   konfig = new KConfig(QString::fromLatin1( "kdeglobals"), KConfig::NoGlobals );
+	   konfig = new KConfig(QString::fromLatin1( "kdeglobals"), KConfig::CascadeConfig );
 	else
-	   konfig = new KConfig( file, KConfig::NoGlobals );
+	   konfig = new KConfig( file, KConfig::CascadeConfig );
 
         KConfigGroup cfgGroup = konfig->group(group);
 	if ( konfig->getConfigState() != KConfig::ReadWrite || cfgGroup.entryIsImmutable( key ) ) return 2;

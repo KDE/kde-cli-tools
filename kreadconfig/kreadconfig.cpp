@@ -25,6 +25,7 @@
  *	fi
  */
 #include <kconfig.h>
+#include <kconfiggroup.h>
 #include <kglobal.h>
 #include <kapplication.h>
 #include <kcmdlineargs.h>
@@ -70,19 +71,19 @@ int main(int argc, char **argv)
 	   konfig = KGlobal::config().data();
 	else
         {
-	   konfig = new KConfig( file, KConfig::NoGlobals );
+	   konfig = new KConfig( file, KConfig::CascadeConfig );
            configMustDeleted=true;
         }
         KConfigGroup cfgGroup = konfig->group(group);
 	if(type=="bool") {
 		dflt=dflt.toLower();
 		bool def=(dflt=="true" || dflt=="on" || dflt=="yes" || dflt=="1");
-                bool retValue = !cfgGroup.readEntry(key, QVariant(def)).toBool();
+                bool retValue = !cfgGroup.readEntry(key, def);
                 if ( configMustDeleted )
                     delete konfig;
 		return retValue;
 	} else if((type=="num") || (type=="int")) {
-            long retValue = cfgGroup.readEntry<qulonglong>(key, dflt.toLong());
+            int retValue = cfgGroup.readEntry(key, dflt.toInt());
             if ( configMustDeleted )
                 delete konfig;
             return retValue;
