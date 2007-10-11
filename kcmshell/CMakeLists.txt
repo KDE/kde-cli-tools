@@ -1,8 +1,4 @@
 
-include_directories( ${KDE4_KPARTS_INCLUDES} )
-
-########### next target ###############
-
 set(kcmshell_KDEINIT_SRCS main.cpp )
 
 
