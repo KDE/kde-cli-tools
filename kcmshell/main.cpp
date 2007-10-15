@@ -102,7 +102,7 @@ bool KCMShell::isRunning()
     if( owner == QDBusConnection::sessionBus().baseService() )
         return false; // We are the one and only.
 
-    kDebug(780) << "kcmshell with modules '" <<
+    kDebug(780) << "kcmshell4 with modules '" <<
         m_serviceName << "' is already running." << endl;
 
     QDBusInterface iface(m_serviceName, "/KCModule/dialog", "org.kde.KCMShellMultiDialog");
