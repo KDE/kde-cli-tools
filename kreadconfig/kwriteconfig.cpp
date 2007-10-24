@@ -52,12 +52,12 @@ int main(int argc, char **argv)
 
 	KConfig *konfig;
 	if (file.isEmpty())
-	   konfig = new KConfig(QString::fromLatin1( "kdeglobals"), KConfig::CascadeConfig );
+	   konfig = new KConfig(QString::fromLatin1( "kdeglobals"), KConfig::NoGlobals );
 	else
-	   konfig = new KConfig( file, KConfig::CascadeConfig );
+	   konfig = new KConfig( file, KConfig::NoGlobals );
 
         KConfigGroup cfgGroup = konfig->group(group);
-	if ( konfig->getConfigState() != KConfig::ReadWrite || cfgGroup.entryIsImmutable( key ) ) return 2;
+	if ( konfig->accessMode() != KConfig::ReadWrite || cfgGroup.isEntryImmutable( key ) ) return 2;
 
 	if(type=="bool") {
 		// For symmetry with kreadconfig we accept a wider range of values as true than Qt

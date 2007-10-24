@@ -71,7 +71,7 @@ int main(int argc, char **argv)
 	   konfig = KGlobal::config().data();
 	else
         {
-	   konfig = new KConfig( file, KConfig::CascadeConfig );
+	   konfig = new KConfig( file, KConfig::NoGlobals );
            configMustDeleted=true;
         }
         KConfigGroup cfgGroup = konfig->group(group);
