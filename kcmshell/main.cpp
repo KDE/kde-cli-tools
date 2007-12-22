@@ -29,10 +29,8 @@
     FIXME: how are we supposed to handle stuff like this that is so
     integrated with QX11Embed on alternate platforms?
 */
-#include <QX11EmbedWidget>
 #endif
 
-#include <QVBoxLayout>
 
 #include <QtDBus/QtDBus>
 

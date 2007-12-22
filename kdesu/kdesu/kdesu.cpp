@@ -23,7 +23,6 @@
 #include <QFileInfo>
 #include <QtCore/QBool>
 #include <QFile>
-#include <QDir>
 
 #include <QtDBus/QtDBus>
 

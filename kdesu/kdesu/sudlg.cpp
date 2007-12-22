@@ -8,10 +8,7 @@
 
 #include <QByteArray>
 
-#include <KConfig>
 #include <KDebug>
-#include <KGlobal>
-#include <KIconLoader>
 #include <KLocale>
 
 KDEsuDialog::KDEsuDialog(QByteArray user, QByteArray authUser, bool enableKeep, const QString& icon, bool withIgnoreButton)

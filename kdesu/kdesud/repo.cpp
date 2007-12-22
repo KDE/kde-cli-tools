@@ -10,7 +10,6 @@
 #include <assert.h>
 
 #include <QStack>
-#include <QMap>
 #include <KDebug>
 
 
