@@ -5,10 +5,25 @@
  *
  * First port to NETWM by David Faure <faure@kde.org>
  * Send to system tray by Richard Moore <rich@kde.org>
+
+ * This program is free software; you can redistribute it and/or
+ * modify it under the terms of the GNU General Public License as
+ * published by the Free Software Foundation; either version 2 of
+ * the License or (at your option) version 3 or any later version
+ * accepted by the membership of KDE e.V. (or its successor approved
+ * by the membership of KDE e.V.), which shall act as a proxy 
+ * defined in Section 14 of version 3 of the license.
+
+ * This program is distributed in the hope that it will be useful,
+ * but WITHOUT ANY WARRANTY; without even the implied warranty of
+ * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+ * GNU General Public License for more details.
+
+ * You should have received a copy of the GNU General Public License
+ * along with this program.  If not, see <http://www.gnu.org/licenses/>.
  */
 
 #include "kstart.moc"
-#include "version.h"
 
 #include <fcntl.h>
 #include <stdlib.h>
@@ -27,6 +42,7 @@
 #include <kcmdlineargs.h>
 #include <kstartupinfo.h>
 #include <kxmessages.h>
+#include <kdeversion.h>
 
 #include <netwm.h>
 #include <QX11Info>
@@ -266,7 +282,7 @@ void KStart::applyStyle(WId w ) {
 
 int main( int argc, char *argv[] )
 {
-  KAboutData aboutData( "kstart", 0, ki18n("KStart"), KSTART_VERSION,
+  KAboutData aboutData( "kstart", 0, ki18n("KStart"), KDE_VERSION_STRING,
       ki18n(""
        "Utility to launch applications with special window properties \n"
        "such as iconified, maximized, a certain virtual desktop, a special decoration\n"
