@@ -36,6 +36,7 @@
 #include <krun.h>
 #include <QtDBus/QtDBus>
 #include <kcomponentdata.h>
+#include <iostream>
 
 static const char appName[] = "kioclient";
 static const char programName[] = I18N_NOOP("KIO Client");
@@ -70,6 +71,8 @@ static void usage()
     puts(i18n("  kioclient copy 'src' 'dest'\n"
               "            # Copies the URL 'src' to 'dest'.\n"
               "            #   'src' may be a list of URLs.\n\n").toLocal8Bit());
+    puts(i18n("  kioclient cat 'url'\n"
+              "            # Writes out the contents of 'url' to stdout\n\n").toLocal8Bit());
 
     puts(i18n("*** Examples:\n"
               "  kioclient exec file:/root/Desktop/cdrom.desktop \"Mount default\"\n"
@@ -243,10 +246,19 @@ bool ClientApp::doIt()
     if ( command == "openProperties" )
     {
         checkArgumentCount(argc, 2, 2);
-        KPropertiesDialog * p = new KPropertiesDialog( args->url(1) );
+        KPropertiesDialog * p = new KPropertiesDialog( args->url(1), 0 /*no parent*/ );
         QObject::connect( p, SIGNAL( destroyed() ), &app, SLOT( quit() ));
         QObject::connect( p, SIGNAL( canceled() ), &app, SLOT( slotDialogCanceled() ));
         p->show();
+        app.exec();
+        return m_ok;
+    }
+    else if ( command == "cat" )
+    {
+        checkArgumentCount(argc, 2, 2);
+        KIO::TransferJob* job = KIO::get(args->url(1));
+        connect(job, SIGNAL(data(KIO::Job*,QByteArray) ), &app, SLOT(slotPrintData(KIO::Job*,QByteArray)));
+        connect( job, SIGNAL( result( KJob * ) ), &app, SLOT( slotResult( KJob * ) ) );
         app.exec();
         return m_ok;
     }
@@ -327,6 +339,12 @@ void ClientApp::slotDialogCanceled()
 void ClientApp::deref()
 {
     KGlobal::deref();
+}
+
+void ClientApp::slotPrintData(KIO::Job*, const QByteArray &data)
+{
+    if (!data.isEmpty())
+        std::cout << data.constData();
 }
 
 #include "kioclient.moc"

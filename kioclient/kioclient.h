@@ -22,6 +22,7 @@
 #include <QApplication>
 class KUrl;
 class KJob;
+namespace KIO { class Job; }
 
 class ClientApp : public QApplication
 {
@@ -32,7 +33,8 @@ public:
     /** Parse command-line arguments and "do it" */
     static bool doIt();
 
-protected Q_SLOTS:
+private Q_SLOTS:
+    void slotPrintData(KIO::Job *job, const QByteArray &data);
     void slotResult( KJob * );
     void delayedQuit();
     void slotDialogCanceled();
