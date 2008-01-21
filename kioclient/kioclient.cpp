@@ -45,6 +45,7 @@ static const char version[] = "2.0";
 
 bool ClientApp::m_ok = true;
 static bool s_interactive = true;
+static KIO::JobFlags s_jobFlags = KIO::DefaultFlags;
 
 #ifdef KIOCLIENT_AS_KIOCLIENT
 static void usage()
@@ -182,7 +183,7 @@ bool ClientApp::doCopy( int firstArg )
     KUrl::List srcLst;
     for ( int i = firstArg; i <= argc - 2; i++ )
       srcLst.append( args->url(i) );
-    KIO::Job * job = KIO::copy( srcLst, args->url(argc - 1) );
+    KIO::Job * job = KIO::copy( srcLst, args->url(argc - 1), s_jobFlags );
     if ( !s_interactive )
         job->setUiDelegate( 0 );
     connect( job, SIGNAL( result( KJob * ) ), this, SLOT( slotResult( KJob * ) ) );
@@ -198,7 +199,7 @@ bool ClientApp::doMove( int firstArg )
     for ( int i = firstArg; i <= argc - 2; i++ )
       srcLst.append( args->url(i) );
 
-    KIO::Job * job = KIO::move( srcLst, args->url(argc - 1) );
+    KIO::Job * job = KIO::move( srcLst, args->url(argc - 1), s_jobFlags );
     if ( !s_interactive )
         job->setUiDelegate( 0 );
     connect( job, SIGNAL( result( KJob * ) ), this, SLOT( slotResult( KJob * ) ) );
@@ -214,6 +215,7 @@ bool ClientApp::doIt()
 
     if ( !args->isSet( "ninteractive" ) ) {
         s_interactive = false;
+        s_jobFlags = KIO::HideProgressInfo;
     }
 
     kDebug() << "Creating ClientApp";
@@ -256,7 +258,9 @@ bool ClientApp::doIt()
     else if ( command == "cat" )
     {
         checkArgumentCount(argc, 2, 2);
-        KIO::TransferJob* job = KIO::get(args->url(1));
+        KIO::TransferJob* job = KIO::get(args->url(1), KIO::NoReload, s_jobFlags);
+        if ( !s_interactive )
+            job->setUiDelegate( 0 );
         connect(job, SIGNAL(data(KIO::Job*,QByteArray) ), &app, SLOT(slotPrintData(KIO::Job*,QByteArray)));
         connect( job, SIGNAL( result( KJob * ) ), &app, SLOT( slotResult( KJob * ) ) );
         app.exec();
@@ -296,7 +300,7 @@ bool ClientApp::doIt()
             return m_ok; // AK - really okay?
         KUrl dsturl;
         dsturl.setPath( dst );
-        KIO::Job * job = KIO::copy( srcLst, dsturl );
+        KIO::Job * job = KIO::copy( srcLst, dsturl, s_jobFlags );
         if ( !s_interactive )
             job->setUiDelegate( 0 );
         connect( job, SIGNAL( result( KJob * ) ), &app, SLOT( slotResult( KJob * ) ) );
