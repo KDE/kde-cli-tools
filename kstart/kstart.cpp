@@ -197,6 +197,8 @@ void KStart::windowAdded(WId w){
 //extern Atom qt_wm_state; // defined in qapplication_x11.cpp
 static bool wstate_withdrawn( WId winid )
 {
+    Q_UNUSED(winid);
+
 #ifdef __GNUC__
 #warning "Porting required."
 #endif
