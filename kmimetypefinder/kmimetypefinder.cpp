@@ -31,7 +31,7 @@ int main(int argc, char *argv[])
 
     KCmdLineOptions options;
 
-    options.add("+filename", ki18n("the filename to test"));
+    options.add("+filename", ki18n("The filename to test"));
 
     KCmdLineArgs::addCmdLineOptions( options );
 
