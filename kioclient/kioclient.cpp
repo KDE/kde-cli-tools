@@ -66,7 +66,7 @@ static void usage()
     //puts(i18n("            #   'dest' may be \"trash:/\" to move the files\n"
     //            "            #   in the trash bin.\n\n").toLocal8Bit());
     puts(i18n("  kioclient download ['src']\n"
-              "            # Copies the URL 'src' to a user specified location'.\n"
+              "            # Copies the URL 'src' to a user-specified location'.\n"
               "            #   'src' may be a list of URLs, if not present then\n"
               "            #   a URL will be requested.\n\n").toLocal8Bit());
     puts(i18n("  kioclient copy 'src' 'dest'\n"
@@ -77,7 +77,7 @@ static void usage()
 
     puts(i18n("*** Examples:\n"
               "  kioclient exec file:/root/Desktop/cdrom.desktop \"Mount default\"\n"
-              "             // Mounts the CD-ROM\n\n").toLocal8Bit());
+              "             // Mounts the CDROM\n\n").toLocal8Bit());
     puts(i18n("  kioclient exec file:/home/weis/data/test.html\n"
               "             // Opens the file with default binding\n\n").toLocal8Bit());
     puts(i18n("  kioclient exec file:/home/weis/data/test.html Netscape\n"
@@ -87,7 +87,7 @@ static void usage()
     puts(i18n("  kioclient exec file:/root/Desktop/emacs.desktop\n"
               "             // Starts emacs\n\n").toLocal8Bit());
     puts(i18n("  kioclient exec file:/root/Desktop/cdrom.desktop\n"
-              "             // Opens the CD-ROM's mount directory\n\n").toLocal8Bit());
+              "             // Opens the CDROM's mount directory\n\n").toLocal8Bit());
     puts(i18n("  kioclient exec .\n"
               "             // Opens the current directory. Very convenient.\n\n").toLocal8Bit());
 }
@@ -99,15 +99,15 @@ int main( int argc, char **argv )
 
 
   KCmdLineOptions options;
-  options.add("noninteractive", ki18n("Non interactive use: no message boxes"));
+  options.add("noninteractive", ki18n("Non-interactive use: no message boxes"));
   #if defined(KIOCLIENT_AS_KDEOPEN)
-  options.add("+urls", ki18n("url or urls"));
+  options.add("+urls", ki18n("URL or URLs"));
   #elif defined(KIOCLIENT_AS_KDECP)
-  options.add("+src", ki18n("Source url or urls"));
-  options.add("+dest", ki18n("Destination url"));
+  options.add("+src", ki18n("Source URL or URLs"));
+  options.add("+dest", ki18n("Destination URL"));
   #elif defined(KIOCLIENT_AS_KDEMV)
-  options.add("+src", ki18n("Source url or urls"));
-  options.add("+dest", ki18n("Destination url"));
+  options.add("+src", ki18n("Source URL or URLs"));
+  options.add("+dest", ki18n("Destination URL"));
   #elif defined(KIOCLIENT_AS_KIOCLIENT)
   options.add("commands", ki18n("Show available commands"));
   options.add("+command", ki18n("Command (see --commands)"));
