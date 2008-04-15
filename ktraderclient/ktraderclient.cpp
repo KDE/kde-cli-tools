@@ -32,11 +32,11 @@ int main( int argc, char **argv )
 
   KCmdLineOptions options;
 
-  options.add("mimetype <mimetype>", ki18n("a mimetype"));
+  options.add("mimetype <mimetype>", ki18n("A mimetype"));
 
-  options.add("servicetype <servicetype>", ki18n("a servicetype, like KParts/ReadOnlyPart or KMyApp/Plugin"));
+  options.add("servicetype <servicetype>", ki18n("A servicetype, like KParts/ReadOnlyPart or KMyApp/Plugin"));
 
-  options.add("constraint <constraint>", ki18n("a constraint expressed in the trader query language"));
+  options.add("constraint <constraint>", ki18n("A constraint expressed in the trader query language"));
 
   KCmdLineArgs::addCmdLineOptions( options );
 
