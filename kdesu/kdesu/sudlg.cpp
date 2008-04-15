@@ -71,8 +71,8 @@ bool KDEsuDialog::checkPassword()
         return true;
 
     case SuProcess::SuNotFound:
-        showErrorMessage(i18n("The program 'su' is not found.<br />"
-                             "Make sure your PATH is set correctly."), FatalError);
+        showErrorMessage(i18n("The program 'su' could not be found.<br />"
+                             "Ensure your PATH is set correctly."), FatalError);
         return false;
 
     case SuProcess::SuNotAllowed:
