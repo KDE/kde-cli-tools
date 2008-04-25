@@ -364,6 +364,8 @@ static int startApp()
         KDEsuDialog dlg(user, auth_user, keep && !terminal, icon, withIgnoreButton);
         if (prompt)
             dlg.addCommentLine(i18n("Command:"), command);
+        if (defKeep)
+            dlg.setKeepPassword(true);
 
         if ((priority != 50) || (scheduler != SuProcess::SchedNormal))
         {
