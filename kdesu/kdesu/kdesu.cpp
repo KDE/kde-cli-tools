@@ -78,7 +78,7 @@ int main(int argc, char *argv[])
     // anyway, i vote against removing it even when we have a proper gui
     // implementation.  -- ossi
 
-    QByteArray duser = ::getenv("ADMIN_ACCOUNT");
+    QByteArray duser = qgetenv("ADMIN_ACCOUNT");
     if (duser.isEmpty())
         duser = "root";
 
@@ -90,6 +90,7 @@ int main(int argc, char *argv[])
             "jansen@kde.org", "http://www.stack.nl/~geertj/");
     aboutData.addAuthor(ki18n("Pietro Iglio"), ki18n("Original author"),
             "iglio@fub.it");
+    aboutData.setProgramIconName("dialog-password");
 
     KCmdLineArgs::init(argc, argv, &aboutData);
 
@@ -114,7 +115,7 @@ int main(int argc, char *argv[])
 
     //KApplication::disableAutoDcopRegistration();
     // kdesu doesn't process SM events, so don't even connect to ksmserver
-    QByteArray session_manager = getenv( "SESSION_MANAGER" );
+    QByteArray session_manager = qgetenv( "SESSION_MANAGER" );
     unsetenv( "SESSION_MANAGER" );
     KApplication app;
     // but propagate it to the started app
