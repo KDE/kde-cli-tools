@@ -91,7 +91,7 @@ user</replaceable></group>
 <cmdsynopsis>
 <command>kdesu</command>
 <arg choice="opt">&kde; Generic Options</arg>
-<arg choice="opt">Qt Generic Options</arg>
+<arg choice="opt">&Qt; Generic Options</arg>
 </cmdsynopsis>
 
 <para>The command line options are explained below.</para>
@@ -120,7 +120,7 @@ current user. If it is not writable, the command is executed as user
 <parameter>FILE</parameter> starts with a <literal>/</literal>, it is
 taken as an absolute filename. Otherwise, it is taken as the name of a
 global &kde; configuration file. For example: to configure the K display
-manager, <application>kdm</application>, you could issue
+manager, &kdm;, you could issue
 <command>kdesu <option>-c kdmconfig -f
 kdmrc</option></command></para></listitem>
 </varlistentry>
@@ -137,7 +137,7 @@ just the name, without any extension.</para>
 <varlistentry>
 <term><option>-n</option></term>
 <listitem><para>Do not keep the password. This disables the <guilabel>keep
-password</guilabel> checkbox in the password dialog.</para></listitem>
+password</guilabel> check box in the password dialog.</para></listitem>
 </varlistentry>
 <varlistentry>
 <term><option>-p</option> <replaceable>priority</replaceable></term>
@@ -149,7 +149,7 @@ password</guilabel> checkbox in the password dialog.</para></listitem>
 </varlistentry>
 <varlistentry>
 <term><option>-r</option></term>
-<listitem><para>Use realtime scheduling.</para>
+<listitem><para>Use real-time scheduling.</para>
 </listitem>
 </varlistentry>
 
@@ -303,6 +303,8 @@ maintain this program in the future.</para>
 <para>The author can be reached through email at &Geert.Jansen.mail;.
 Please report any bugs you find to me so that I can fix them. If you
 have a suggestion, feel free to contact me.</para>
+
+<!-- TRANS:CREDIT_FOR_TRANSLATORS -->
 
 &underFDL;
 &underArtisticLicense;
