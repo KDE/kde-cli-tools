@@ -11,7 +11,7 @@ kde4_add_executable(kreadconfig NOGUI ${kreadconfig_SRCS})
 
 target_link_libraries(kreadconfig  ${KDE4_KDECORE_LIBS} )
 
-install(TARGETS kreadconfig DESTINATION ${BIN_INSTALL_DIR})
+install(TARGETS kreadconfig ${INSTALL_TARGETS_DEFAULT_ARGS})
 
 
 ########### next target ###############
@@ -23,4 +23,4 @@ kde4_add_executable(kwriteconfig NOGUI ${kwriteconfig_SRCS})
 
 target_link_libraries(kwriteconfig ${KDE4_KDECORE_LIBS} )
 
-install(TARGETS kwriteconfig DESTINATION ${BIN_INSTALL_DIR})
+install(TARGETS kwriteconfig ${INSTALL_TARGETS_DEFAULT_ARGS})
