@@ -29,14 +29,14 @@ int main(int argc, char **argv)
 
 	KCmdLineOptions options;
 	options.add("file <file>", ki18n("Use <file> instead of global config"));
-	options.add("group <group>", ki18n("Group to look in"), "KDE");
+	options.add("group <group>", ki18n("Group to look in. Use repeatedly for nested groups."), "KDE");
 	options.add("key <key>", ki18n("Key to look for"));
 	options.add("type <type>", ki18n("Type of variable. Use \"bool\" for a boolean, otherwise it is treated as a string"));
 	options.add("+value", ki18n( "The value to write. Mandatory, on a shell use '' for empty" ));
 	KCmdLineArgs::addCmdLineOptions(options);
 	KCmdLineArgs *args=KCmdLineArgs::parsedArgs();
 
-	QString group=args->getOption("group");
+	QStringList groups=args->getOptionList("group");
 	QString key=args->getOption("key");
 	QString file=args->getOption("file");
 	QString type=args->getOption("type").toLower();
@@ -56,7 +56,9 @@ int main(int argc, char **argv)
 	else
 	   konfig = new KConfig( file, KConfig::NoGlobals );
 
-        KConfigGroup cfgGroup = konfig->group(group);
+        KConfigGroup cfgGroup = konfig->group("");
+        foreach (const QString &grp, groups)
+            cfgGroup = cfgGroup.group(grp);
 	if ( konfig->accessMode() != KConfig::ReadWrite || cfgGroup.isEntryImmutable( key ) ) return 2;
 
 	if(type=="bool") {

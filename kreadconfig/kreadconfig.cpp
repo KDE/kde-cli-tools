@@ -44,14 +44,14 @@ int main(int argc, char **argv)
 
 	KCmdLineOptions options;
 	options.add("file <file>", ki18n("Use <file> instead of global config"));
-	options.add("group <group>", ki18n("Group to look in"), "KDE");
+	options.add("group <group>", ki18n("Group to look in. Use repeatedly for nested groups."), "KDE");
 	options.add("key <key>", ki18n("Key to look for"));
 	options.add("default <default>", ki18n("Default value"));
 	options.add("type <type>", ki18n("Type of variable"));
 	KCmdLineArgs::addCmdLineOptions(options);
 	KCmdLineArgs *args=KCmdLineArgs::parsedArgs();
 
-	QString group=args->getOption("group");
+	QStringList groups=args->getOptionList("group");
 	QString key=args->getOption("key");
 	QString file=args->getOption("file");
 	QString dflt=args->getOption("default");
@@ -74,7 +74,9 @@ int main(int argc, char **argv)
 	   konfig = new KConfig( file, KConfig::NoGlobals );
            configMustDeleted=true;
         }
-        KConfigGroup cfgGroup = konfig->group(group);
+        KConfigGroup cfgGroup = konfig->group("");
+        foreach (const QString &grp, groups)
+            cfgGroup = cfgGroup.group(grp);
 	if(type=="bool") {
 		dflt=dflt.toLower();
 		bool def=(dflt=="true" || dflt=="on" || dflt=="yes" || dflt=="1");
