@@ -59,7 +59,9 @@ SocketSecurity::SocketSecurity(int sockfd) : pid(-1), gid(-1), uid(-1)
 }
 
 # else
+#ifdef __GNUC__
 #warning SocketSecurity support for your platform not implemented/available!
+#endif
 /**
  * The default version does nothing.
  */
