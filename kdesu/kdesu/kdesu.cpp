@@ -19,7 +19,6 @@
 #include <sys/wait.h>
 #endif
 
-
 #include <QFileInfo>
 #include <QtCore/QBool>
 #include <QFile>
@@ -38,6 +37,7 @@
 #include <kuser.h>
 #include <kstartupinfo.h>
 #include <kdefakes.h>
+#include <kwindowsystem.h>
 
 #include <kdesu/defaults.h>
 #include <kdesu/su.h>
@@ -111,6 +111,9 @@ int main(int argc, char *argv[])
     options.add("noignorebutton", ki18n("Do not display ignore button"));
     options.add("i <icon name>", ki18n("Specify icon to use in the password dialog"));
     options.add("d", ki18n("Do not show the command to be run in the dialog"));
+#ifdef Q_WS_X11
+    options.add("embed <winid>", ki18n("Makes the dialog transient for an X app specified by winid"));
+#endif
     KCmdLineArgs::addCmdLineOptions(options);
 
     //KApplication::disableAutoDcopRegistration();
@@ -286,6 +289,14 @@ static int startApp()
     bool keep = !args->isSet("n") && have_daemon;
     bool terminal = args->isSet("t");
     bool withIgnoreButton = args->isSet("ignorebutton");
+    bool embed = args->isSet("embed");
+    int winid = -1;
+    if(embed) {
+        winid = args->getOption("embed").toInt(&embed, 0);  //C style parsing.  If the string begins with "0x", base 16 is used; if the string begins with "0", base 8 is used; otherwise, base 10 is used.
+        if(!embed)
+            kWarning(1206) << "Embed winid is not a valid number";
+    }
+
 
     QList<QByteArray> env;
     QByteArray options;
@@ -377,6 +388,12 @@ static int startApp()
             if (prompt)
                 dlg.addCommentLine(i18n("Priority:"), prio);
         }
+
+	//Attach dialog
+#ifdef Q_WS_X11
+	if(embed)
+            KWindowSystem::setMainWindow(&dlg, (WId)winid);
+#endif
         int ret = dlg.exec();
         if (ret == KDEsuDialog::Rejected)
         {
