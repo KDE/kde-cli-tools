@@ -224,6 +224,7 @@ bool ClientApp::doIt()
     ClientApp app( fake_argc, fake_argv );
     KComponentData componentData("kioclient"); // needed by KIO's internal use of KConfig
     app.setApplicationName(componentData.componentName());
+    KGlobal::ref();
     KGlobal::setAllowQuit(true);
 
     // KIO needs dbus (for uiserver communication)
