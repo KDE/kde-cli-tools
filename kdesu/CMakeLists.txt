@@ -1,4 +1,6 @@
 
 
 add_subdirectory( kdesu ) 
-add_subdirectory( kdesud ) 
+if (UNIX AND NOT APPLE)
+add_subdirectory( kdesud )
+endif(UNIX AND NOT APPLE)
