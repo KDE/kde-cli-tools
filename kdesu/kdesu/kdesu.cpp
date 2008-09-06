@@ -112,7 +112,7 @@ int main(int argc, char *argv[])
 #ifdef Q_WS_X11
     /* KDialog originally used --embed for attaching the dialog box.  However this is misleading and so we changed to --attach.
      * For consistancy, we silently map --embed to --attach */
-    options.add("attach <winid>", ki18n("Makes the dialog transient for an X app specified by winid"));
+    options.add("attach <winid>", ki18nc("Transient means that the kdesu app will be attached to the app specified by the winid so that its like a dialog box rather than some seperate program", "Makes the dialog transient for an X app specified by winid"));
     options.add("embed <winid>");
 #endif
     KCmdLineArgs::addCmdLineOptions(options);
