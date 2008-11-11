@@ -199,14 +199,14 @@ extern "C" KDE_EXPORT int kdemain(int _argc, char *_argv[])
 
         int maxLen=0;
 
-        for( KService::List::ConstIterator it = m_modules.begin(); it != m_modules.end(); ++it)
+        for( KService::List::ConstIterator it = m_modules.constBegin(); it != m_modules.constEnd(); ++it)
         {
             int len = (*it)->desktopEntryName().length();
             if (len > maxLen)
                 maxLen = len;
         }
 
-        for( KService::List::ConstIterator it = m_modules.begin(); it != m_modules.end(); ++it)
+        for( KService::List::ConstIterator it = m_modules.constBegin(); it != m_modules.constEnd(); ++it)
         {
             QString entry("%1 - %2");
 
@@ -264,7 +264,7 @@ extern "C" KDE_EXPORT int kdemain(int _argc, char *_argv[])
         dlg->setCaption(modules.first()->name());
     }
 
-    for (KService::List::ConstIterator it = modules.begin(); it != modules.end(); ++it)
+    for (KService::List::ConstIterator it = modules.constBegin(); it != modules.constEnd(); ++it)
         dlg->addModule(*it);
 
     if ( !args->isSet( "icon" ) && modules.count() == 1)
