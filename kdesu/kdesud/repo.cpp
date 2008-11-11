@@ -56,7 +56,7 @@ int Repository::removeSpecialKey(const QByteArray &key)
     if ( !key.isEmpty() )
     {
         QStack<QByteArray> rm_keys;
-        for (RepoCIterator it=repo.begin(); it!=repo.end(); ++it)
+        for (RepoCIterator it=repo.constBegin(); it!=repo.constEnd(); ++it)
         {
             if (  key.indexOf( it.value().group ) == 0 &&
                   it.key().indexOf( key ) >= 0 )
@@ -80,7 +80,7 @@ int Repository::removeGroup(const QByteArray &group)
     if ( !group.isEmpty() )
     {
         QStack<QByteArray> rm_keys;
-        for (RepoCIterator it=repo.begin(); it!=repo.end(); ++it)
+        for (RepoCIterator it=repo.constBegin(); it!=repo.constEnd(); ++it)
         {
             if (it.value().group == group)
             {

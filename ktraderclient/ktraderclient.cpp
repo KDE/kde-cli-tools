@@ -70,14 +70,14 @@ int main( int argc, char **argv )
   printf("got %d offers.\n", offers.count());
 
   int i = 0;
-  KService::List::ConstIterator it = offers.begin();
-  const KService::List::ConstIterator end = offers.end();
+  KService::List::ConstIterator it = offers.constBegin();
+  const KService::List::ConstIterator end = offers.constEnd();
   for (; it != end; ++it, ++i )
   {
     printf("---- Offer %d ----\n", i);
     QStringList props = (*it)->propertyNames();
-    QStringList::ConstIterator propIt = props.begin();
-    QStringList::ConstIterator propEnd = props.end();
+    QStringList::ConstIterator propIt = props.constBegin();
+    QStringList::ConstIterator propEnd = props.constEnd();
     for (; propIt != propEnd; ++propIt )
     {
       QVariant prop = (*it)->property( *propIt );
