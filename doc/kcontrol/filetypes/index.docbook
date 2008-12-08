@@ -175,7 +175,7 @@ determines which applications will be associated with the specified
 <varlistentry>
 <term><guilabel>Embedding Tab</guilabel></term>
 <listitem>
-<para>The Embedding tab allows you to determine if an file will be
+<para>The Embedding tab allows you to determine if a file will be
 viewed within a &konqueror; window, or by starting the
 application.</para>
 </listitem>
