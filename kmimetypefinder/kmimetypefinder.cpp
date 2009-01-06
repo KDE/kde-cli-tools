@@ -1,5 +1,6 @@
 /*
  *  Copyright (C) 2002 David Faure   <faure@kde.org>
+ *  Copyright (C) 2008 Pino Toscano  <pino@kde.org>
  *
  *  This library is free software; you can redistribute it and/or
  *  modify it under the terms of the GNU Library General Public
@@ -16,6 +17,8 @@
  *  Boston, MA 02110-1301, USA.
  */
 
+#include <QFile>
+
 #include <kmimetype.h>
 #include <kcmdlineargs.h>
 //#include <kapplication.h>
@@ -31,7 +34,9 @@ int main(int argc, char *argv[])
 
     KCmdLineOptions options;
 
-    options.add("+filename", ki18n("The filename to test"));
+    options.add("c").add("content", ki18n("Use only the file content for determining the mimetype."));
+    options.add("f").add("filename-only", ki18n("Whether use the file name only for determining the mimetype. Not used if -c is specified."));
+    options.add("+filename", ki18n("The filename to test. '-' to read from stdin."));
 
     KCmdLineArgs::addCmdLineOptions( options );
 
@@ -45,7 +50,17 @@ int main(int argc, char *argv[])
     }
     const QString fileName = args->arg( 0 );
     int accuracy;
-    KMimeType::Ptr mime = KMimeType::findByPath( fileName, 0, false, &accuracy );
+    KMimeType::Ptr mime;
+    if (fileName == QLatin1String("-")) {
+        QFile qstdin;
+        qstdin.open(stdin, QIODevice::ReadOnly);
+        const QByteArray data = qstdin.readAll();
+        mime = KMimeType::findByContent(data, &accuracy);
+    } else if (args->isSet("c")) {
+        mime = KMimeType::findByFileContent(fileName, &accuracy);
+    } else {
+        mime = KMimeType::findByPath(fileName, 0, args->isSet("f"), &accuracy);
+    }
     if ( mime && mime->name() != KMimeType::defaultMimeType() ) {
         printf("%s\n", mime->name().toLatin1().constData());
         printf("(accuracy %d)\n", accuracy);
