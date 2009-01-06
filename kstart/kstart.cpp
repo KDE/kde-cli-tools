@@ -11,7 +11,7 @@
  * published by the Free Software Foundation; either version 2 of
  * the License or (at your option) version 3 or any later version
  * accepted by the membership of KDE e.V. (or its successor approved
- * by the membership of KDE e.V.), which shall act as a proxy 
+ * by the membership of KDE e.V.), which shall act as a proxy
  * defined in Section 14 of version 3 of the license.
 
  * This program is distributed in the hope that it will be useful,
@@ -23,6 +23,7 @@
  * along with this program.  If not, see <http://www.gnu.org/licenses/>.
  */
 
+#include <ktoolinvocation.h>
 #include "kstart.moc"
 
 #include <fcntl.h>
@@ -51,9 +52,10 @@
 // some globals
 
 static KProcess* proc = 0;
-static QString exe = 0;
-static QString windowtitle = 0;
-static QString windowclass = 0;
+static QString exe;
+static QString url;
+static QString windowtitle;
+static QString windowclass;
 static int desktop = 0;
 static bool activate = false;
 static bool iconify = false;
@@ -82,15 +84,26 @@ KStart::KStart()
     KStartupInfoId id = KStartupInfo::currentStartupIdEnv();
 
     //finally execute the comand
-    if( int pid = proc->startDetached() ) {
-        KStartupInfoData data;
-        data.addPid( pid );
-        data.setName( exe );
-        data.setBin( exe.mid( exe.lastIndexOf( '/' ) + 1 ));
-        KStartupInfo::sendChange( id, data );
+    if (proc) {
+        if( int pid = proc->startDetached() ) {
+            KStartupInfoData data;
+            data.addPid( pid );
+            data.setName( exe );
+            data.setBin( exe.mid( exe.lastIndexOf( '/' ) + 1 ));
+            KStartupInfo::sendChange( id, data );
+        }
+        else
+            KStartupInfo::sendFinish( id ); // failed to start
+    } else {
+        QString error;
+        QString dbusService;
+        int pid;
+        if (KToolInvocation::startServiceByDesktopPath(exe, url, &error, &dbusService, &pid) == 0) {
+            printf("%s\n", qPrintable(dbusService));
+        } else {
+            kError() << error;
+        }
     }
-    else
-        KStartupInfo::sendFinish( id ); // failed to start
 
   QTimer::singleShot( useRule ? 0 : 120 * 1000, qApp, SLOT( quit()));
 }
@@ -302,6 +315,8 @@ int main( int argc, char *argv[] )
   KCmdLineOptions options;
 
   options.add("!+command", ki18n("Command to execute"));
+  options.add("service <desktopfile>", ki18n("Alternative to <command>: desktop file to start. DBUS service will be printed to stdout"));
+  options.add("url <url>", ki18n("Optional URL to pass <desktopfile>, when using --service"));
   // "!" means: all options after command are treated as arguments to the command
   options.add("window <regexp>", ki18n("A regular expression matching the window title"));
   options.add("windowclass <class>", ki18n("A string matching the window class (WM_CLASS property)\n"
@@ -336,13 +351,18 @@ int main( int argc, char *argv[] )
 
   KCmdLineArgs *args = KCmdLineArgs::parsedArgs();
 
-  if ( args->count() == 0 )
-      KCmdLineArgs::usageError(i18n("No command specified"));
+  if (args->isSet("service")) {
+      exe = args->getOption("service");
+      url = args->getOption("url");
+  } else {
+      if ( args->count() == 0 )
+          KCmdLineArgs::usageError(i18n("No command specified"));
 
-  exe = args->arg(0);
-  proc = new KProcess;
-  for(int i=0; i < args->count(); i++)
-    (*proc) << args->arg(i);
+      exe = args->arg(0);
+      proc = new KProcess;
+      for(int i=0; i < args->count(); i++)
+          (*proc) << args->arg(i);
+  }
 
   desktop = args->getOption( "desktop" ).toInt();
   if ( args->isSet ( "alldesktops")  )
