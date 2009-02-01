@@ -315,7 +315,7 @@ int main( int argc, char *argv[] )
   KCmdLineOptions options;
 
   options.add("!+command", ki18n("Command to execute"));
-  options.add("service <desktopfile>", ki18n("Alternative to <command>: desktop file to start. DBUS service will be printed to stdout"));
+  options.add("service <desktopfile>", ki18n("Alternative to <command>: desktop file to start. D-Bus service will be printed to stdout"));
   options.add("url <url>", ki18n("Optional URL to pass <desktopfile>, when using --service"));
   // "!" means: all options after command are treated as arguments to the command
   options.add("window <regexp>", ki18n("A regular expression matching the window title"));
