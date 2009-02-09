@@ -59,12 +59,13 @@ static void usage()
               "            #   associated with it in KDE. You may omit 'mimetype'.\n"
               "            #   In this case the mimetype is determined\n"
               "            #   automatically. Of course URL may be the URL of a\n"
-              "            #   document, or it may be a *.desktop file.\n").toLocal8Bit());
+              "            #   document, or it may be a *.desktop file.\n"
+              "            #   'url' can be an executable, too.\n").toLocal8Bit());
     puts(i18n("  kioclient move 'src' 'dest'\n"
               "            # Moves the URL 'src' to 'dest'.\n"
               "            #   'src' may be a list of URLs.\n").toLocal8Bit());
-    //puts(i18n("            #   'dest' may be \"trash:/\" to move the files\n"
-    //            "            #   in the trash bin.\n\n").toLocal8Bit());
+    puts(i18n("            #   'dest' may be \"trash:/\" to move the files\n"
+              "            #   in the trash bin.\n\n").toLocal8Bit());
     puts(i18n("  kioclient download ['src']\n"
               "            # Copies the URL 'src' to a user-specified location'.\n"
               "            #   'src' may be a list of URLs, if not present then\n"
@@ -156,11 +157,12 @@ static void checkArgumentCount(int count, int min, int max)
     }
 }
 
-bool ClientApp::kde_open( const KUrl& url, const QString& mimeType )
+bool ClientApp::kde_open(const KUrl& url, const QString& mimeType, bool allowExec)
 {
     if ( mimeType.isEmpty() ) {
         kDebug() << url;
         KRun * run = new KRun( url, 0 );
+        run->setRunExecutables(allowExec);
         QObject::connect( run, SIGNAL( finished() ), this, SLOT( delayedQuit() ));
         QObject::connect( run, SIGNAL( error() ), this, SLOT( delayedQuit() ));
         this->exec();
@@ -233,9 +235,8 @@ bool ClientApp::doIt()
     if (!QDBusConnection::sessionBus().isConnected())
         kFatal(101) << "Session bus not found" ;
 
-
 #ifdef KIOCLIENT_AS_KDEOPEN
-    app.kde_open( args->url(0), QByteArray() );
+    app.kde_open(args->url(0), QByteArray(), false);
     return true;
 #elif defined(KIOCLIENT_AS_KDECP)
     checkArgumentCount(argc, 2, 0);
@@ -271,7 +272,8 @@ bool ClientApp::doIt()
     {
         checkArgumentCount(argc, 2, 3);
         app.kde_open( args->url( 1 ),
-                      argc == 3 ? args->arg( 2 ) : QString() );
+                      argc == 3 ? args->arg( 2 ) : QString(),
+                      true );
     }
     else if ( command == "download" )
     {

@@ -41,7 +41,7 @@ private Q_SLOTS:
     void deref();
 
 private:
-    bool kde_open( const KUrl& url, const QString& mimeType );
+    bool kde_open( const KUrl& url, const QString& mimeType, bool allowExec );
     bool doCopy( int firstArg );
     bool doMove( int firstArg );
 
