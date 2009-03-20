@@ -19,14 +19,22 @@
 */
 
 #include "mimetypewriter.h"
-#include "sharedmimeinfoversion.h"
+#include <kmimetype.h>
 
 #include <kdebug.h>
+#include <kdeversion.h>
 #include <kprocess.h>
 #include <kstandarddirs.h>
 
 #include <QXmlStreamWriter>
 #include <QFile>
+
+/// WARNING: this code is duplicated between apps/nsplugins and runtime/filetypes
+
+static bool sharedMimeInfoSupportsIcon()
+{
+    return KMimeType::sharedMimeInfoVersion() >= KDE_MAKE_VERSION(0, 40, 0);
+}
 
 class MimeTypeWriterPrivate
 {
@@ -101,7 +109,7 @@ bool MimeTypeWriter::write()
 
     if (!d->m_iconName.isEmpty()) {
         // User-specified icon name
-        if (SharedMimeInfoVersion::supportsIcon()) {
+        if (sharedMimeInfoSupportsIcon()) {
             writer.writeStartElement(nsUri, "icon");
             writer.writeAttribute("name", d->m_iconName);
             writer.writeEndElement(); // icon
@@ -165,6 +173,7 @@ void MimeTypeWriter::removeOwnMimeType(const QString& mimeType)
     QFile::remove(file);
     // We must also remove the generated XML file, update-mime-database doesn't do that, for unknown media types
     QString xmlFile = KGlobal::dirs()->findResource( "xdgdata-mime", mimeType + ".xml" );
-    qDebug() << xmlFile;
     QFile::remove(xmlFile);
 }
+
+/// WARNING: this code is duplicated between apps/nsplugins and runtime/filetypes

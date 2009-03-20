@@ -25,6 +25,8 @@ class QStringList;
 class QString;
 class MimeTypeWriterPrivate;
 
+/// WARNING: this code is duplicated between apps/nsplugins and runtime/filetypes
+
 /**
  * MimeTypeWriter writes out the definition of a mimetype
  * in a XDG shared-mime-info compliant way.
@@ -95,5 +97,6 @@ private:
     MimeTypeWriterPrivate* const d;
 };
 
-#endif /* MIMETYPEWRITER_H */
+/// WARNING: this code is duplicated between apps/nsplugins and runtime/filetypes
 
+#endif /* MIMETYPEWRITER_H */
