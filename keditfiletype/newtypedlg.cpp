@@ -51,6 +51,7 @@ NewTypeDialog::NewTypeDialog(const QStringList &groups, QWidget *parent)
   m_groupCombo = new QComboBox(main);
   m_groupCombo->setEditable(true);
   m_groupCombo->addItems(groups);
+  m_groupCombo->setCurrentIndex(m_groupCombo->findText("application")); // certainly a better default than "all"
   formLayout->addRow(l, m_groupCombo);
 
   m_groupCombo->setWhatsThis( i18n("Select the category under which"

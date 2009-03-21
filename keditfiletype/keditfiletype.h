@@ -38,7 +38,7 @@ protected Q_SLOTS:
   virtual void slotOk();
   virtual void slotApply();
   void clientChanged(bool state);
-  void slotDatabaseChanged();
+  void slotDatabaseChanged(const QStringList& changedResources);
 
 protected:
   void save();

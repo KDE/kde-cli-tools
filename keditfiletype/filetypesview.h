@@ -61,11 +61,12 @@ protected Q_SLOTS:
   void slotFilter(const QString &patternFilter);
   void setDirty(bool state);
 
-  void slotDatabaseChanged();
+  void slotDatabaseChanged(const QStringList& changedResources);
   void slotEmbedMajor(const QString &major, bool &embed);
 
 private:
   void readFileTypes();
+    void updateRemoveButton(TypesListItem* item);
 
 private:
   QTreeWidget *typesLV;
@@ -79,6 +80,7 @@ private:
   KLineEdit *patternFilterLE;
   QStringList removedList;
   bool m_dirty;
+    bool m_removeButtonSaysRevert;
   QMap<QString,TypesListItem*> m_majorMap;
   QList<TypesListItem *> m_itemList;
 

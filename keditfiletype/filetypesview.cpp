@@ -33,17 +33,14 @@
 #include <qdbusmessage.h>
 
 // KDE
-#include <kapplication.h>
 #include <kbuildsycocaprogressdialog.h>
-#include <kcursor.h>
 #include <kdebug.h>
 #include <klineedit.h>
 #include <klocale.h>
 #include <kpushbutton.h>
 #include <kservicetypeprofile.h>
+#include <kstandarddirs.h>
 #include <ksycoca.h>
-#include <kpluginfactory.h>
-#include <kpluginloader.h>
 
 // Local
 #include "newtypedlg.h"
@@ -91,7 +88,7 @@ FileTypesView::FileTypesView(QWidget *parent, const QVariantList &)
 
   patternFilterLE = new KLineEdit(this);
   patternFilterLE->setClearButtonShown(true);
-  patternFilterLE->setClickMessage( i18n("F&ind file type or filename pattern:").remove(':').remove('&')/*TODO remove colon*/ );
+  patternFilterLE->setClickMessage(i18n("Find file type or filename pattern"));
   leftLayout->addWidget(patternFilterLE);
 
   connect(patternFilterLE, SIGNAL(textChanged(const QString &)),
@@ -133,8 +130,7 @@ FileTypesView::FileTypesView(QWidget *parent, const QVariantList &)
   connect(m_removeTypeB, SIGNAL(clicked()), SLOT(removeType()));
   btnsLay->addWidget(m_removeTypeB);
   m_removeTypeB->setEnabled(false);
-
-  m_removeTypeB->setWhatsThis( i18n("Click here to remove the selected file type.") );
+  m_removeButtonSaysRevert = false;
 
   // For the right panel, prepare a widget stack
   m_widgetStack = new QStackedWidget(this);
@@ -162,7 +158,7 @@ FileTypesView::FileTypesView(QWidget *parent, const QVariantList &)
 
   m_widgetStack->setCurrentWidget( m_emptyWidget );
 
-  connect( KSycoca::self(), SIGNAL( databaseChanged() ), SLOT( slotDatabaseChanged() ) );
+  connect(KSycoca::self(), SIGNAL(databaseChanged(QStringList)), SLOT(slotDatabaseChanged(QStringList)));
 }
 
 FileTypesView::~FileTypesView()
@@ -248,7 +244,7 @@ void FileTypesView::addType()
     NewTypeDialog dialog(allGroups, this);
 
     if (dialog.exec()) {
-        QString newMimeType = dialog.group() + '/' + dialog.text();
+        const QString newMimeType = dialog.group() + '/' + dialog.text();
 
         QTreeWidgetItemIterator it(typesLV);
 
@@ -283,34 +279,40 @@ void FileTypesView::addType()
 
 void FileTypesView::removeType()
 {
-  TypesListItem *current = (TypesListItem *) typesLV->currentItem();
+    TypesListItem *current = static_cast<TypesListItem *>(typesLV->currentItem());
 
-  if ( !current )
-      return;
+    if (!current) {
+        return;
+    }
 
-  const MimeTypeData& mimeTypeData = current->mimeTypeData();
+    const MimeTypeData& mimeTypeData = current->mimeTypeData();
 
-  // Can't delete groups
-  if ( mimeTypeData.isMeta() )
-      return;
-  // nor essential mimetypes
-  if ( mimeTypeData.isEssential() )
-      return;
+    // Can't delete groups nor essential mimetypes (but the button should be
+    // disabled already in these cases, so this is just extra safety).
+    if (mimeTypeData.isMeta() || mimeTypeData.isEssential()) {
+        return;
+    }
 
-  QTreeWidgetItem *li = typesLV->itemAbove(current);
-  if (!li)
-      li = typesLV->itemBelow(current);
-  if (!li)
-      li = current->parent();
+    if (!mimeTypeData.isNew()) {
+        removedList.append(mimeTypeData.name());
+    }
+    if (m_removeButtonSaysRevert) {
+        // Nothing else to do for now, until saving
+        updateDisplay(current);
+    } else {
+        QTreeWidgetItem *li = typesLV->itemAbove(current);
+        if (!li)
+            li = typesLV->itemBelow(current);
+        if (!li)
+            li = current->parent();
 
-  if (!mimeTypeData.isNew())
-      removedList.append(mimeTypeData.name());
-  current->parent()->takeChild(current->parent()->indexOfChild(current));
-  m_itemList.removeAll(current);
-  setDirty(true);
-
-  if ( li )
-      li->setSelected(true);
+        current->parent()->takeChild(current->parent()->indexOfChild(current));
+        m_itemList.removeAll(current);
+        if (li) {
+            li->setSelected(true);
+        }
+    }
+    setDirty(true);
 }
 
 void FileTypesView::slotDoubleClicked(QTreeWidgetItem *item)
@@ -321,40 +323,77 @@ void FileTypesView::slotDoubleClicked(QTreeWidgetItem *item)
 
 void FileTypesView::updateDisplay(QTreeWidgetItem *item)
 {
-  if (!item)
-  {
-    m_widgetStack->setCurrentWidget( m_emptyWidget );
-    m_removeTypeB->setEnabled(false);
-    return;
-  }
+    TypesListItem *tlitem = static_cast<TypesListItem *>(item);
+    updateRemoveButton(tlitem);
 
-  bool wasDirty = m_dirty;
-
-  TypesListItem *tlitem = (TypesListItem *) item;
-  MimeTypeData& mimeTypeData = tlitem->mimeTypeData();
-
-  if (mimeTypeData.isMeta()) // is a group
-  {
-    m_widgetStack->setCurrentWidget( m_groupDetails );
-    m_groupDetails->setMimeTypeData( &mimeTypeData );
-    m_removeTypeB->setEnabled(false);
-  }
-  else
-  {
-    m_widgetStack->setCurrentWidget( m_details );
-    m_details->setMimeTypeData( &mimeTypeData );
-    bool canRemove = !mimeTypeData.isEssential();
-    if (canRemove && !mimeTypeData.isNew()) {
-        // We can only remove mimetypes that we defined ourselves, not those from freedesktop.org
-        canRemove = MimeTypeWriter::hasDefinitionFile(mimeTypeData.name());
+    if (!item) {
+        m_widgetStack->setCurrentWidget(m_emptyWidget);
+        return;
     }
-    m_removeTypeB->setEnabled(canRemove);
-  }
 
-  // Updating the display indirectly called change(true)
-  if ( !wasDirty )
-    setDirty(false);
+    const bool wasDirty = m_dirty;
+
+    MimeTypeData& mimeTypeData = tlitem->mimeTypeData();
+
+    if (mimeTypeData.isMeta()) { // is a group
+        m_widgetStack->setCurrentWidget(m_groupDetails);
+        m_groupDetails->setMimeTypeData(&mimeTypeData);
+    } else {
+        m_widgetStack->setCurrentWidget(m_details);
+        m_details->setMimeTypeData(&mimeTypeData);
+    }
+
+    // Updating the display indirectly called change(true)
+    if (!wasDirty) {
+        setDirty(false);
+    }
 }
+
+void FileTypesView::updateRemoveButton(TypesListItem* tlitem)
+{
+    bool canRemove = false;
+    m_removeButtonSaysRevert = false;
+
+    if (tlitem) {
+        const MimeTypeData& mimeTypeData = tlitem->mimeTypeData();
+        if (!mimeTypeData.isMeta() && !mimeTypeData.isEssential()) {
+            if (mimeTypeData.isNew()) {
+                canRemove = true;
+            } else {
+                // We can only remove mimetypes that we defined ourselves, not those from freedesktop.org
+                const QString mimeType = mimeTypeData.name();
+                kDebug() << mimeType << "hasDefinitionFile:" << MimeTypeWriter::hasDefinitionFile(mimeType);
+                if (MimeTypeWriter::hasDefinitionFile(mimeType)) {
+                    canRemove = true;
+
+                    // Is there a global definition for it?
+                    const QStringList mimeFiles = KGlobal::dirs()->findAllResources( "xdgdata-mime", mimeType + ".xml" );
+                    kDebug() << mimeFiles;
+                    if (mimeFiles.count() >= 2 /*a local and a global*/) {
+                        m_removeButtonSaysRevert = true;
+                        kDebug() << removedList;
+                        if (removedList.contains(mimeType)) {
+                            canRemove = false; // already on the "to be reverted" list, user needs to save now
+                        }
+                    }
+                }
+            }
+        }
+    }
+
+    if (m_removeButtonSaysRevert) {
+        m_removeTypeB->setText(i18n("&Revert"));
+        m_removeTypeB->setToolTip(i18n("Revert this file type to its initial system-wide definition"));
+        m_removeTypeB->setWhatsThis(i18n("Click here to revert this file type to its initial system-wide definition, which undoes any changes made to the file type. Note that system-wide file types cannot be deleted. You can however empty their pattern list, to minimize the chances of them being used (but the file type determination from file contents can still end up using them)."));
+    } else {
+        m_removeTypeB->setText(i18n("&Remove"));
+        m_removeTypeB->setToolTip(i18n("Delete this file type definition completely"));
+        m_removeTypeB->setWhatsThis(i18n("Click here to delete this file type definition completely. This is only possible for user-defined file types. System-wide file types cannot be deleted. You can however empty their pattern list, to minimize the chances of them being used (but the file type determination from file contents can still end up using them)."));
+    }
+
+    m_removeTypeB->setEnabled(canRemove);
+}
+
 
 void FileTypesView::save()
 {
@@ -366,6 +405,7 @@ void FileTypesView::save()
         didIt = true;
         needUpdateMimeDb = true;
     }
+    removedList.clear();
 
   // now go through all entries and sync those which are dirty.
   // don't use typesLV, it may be filtered
@@ -400,10 +440,14 @@ void FileTypesView::save()
       KBuildSycocaProgressDialog::rebuildKSycoca(this);
 
       // Trigger reparseConfiguration of filetypesrc in konqueror
+      // TODO: the same for dolphin. Or we should probably define a global signal for this.
+      // Or a KGlobalSettings thing.
       QDBusMessage message =
           QDBusMessage::createSignal("/KonqMain", "org.kde.Konqueror.Main", "reparseConfiguration");
       QDBusConnection::sessionBus().send(message);
   }
+
+  updateDisplay(typesLV->currentItem());
 }
 
 void FileTypesView::load()
@@ -418,10 +462,11 @@ void FileTypesView::load()
     setEnabled(true);
 }
 
-void FileTypesView::slotDatabaseChanged()
+void FileTypesView::slotDatabaseChanged(const QStringList& changedResources)
 {
-    if ( KSycoca::self()->isChanged("xdgdata-mime") // changes in mimetype definitions
-         || KSycoca::self()->isChanged("services") ) { // changes in .desktop files
+    kDebug() << changedResources;
+    if ( changedResources.contains("xdgdata-mime") // changes in mimetype definitions
+         || changedResources.contains("services") ) { // changes in .desktop files
 
         m_details->refresh();
 

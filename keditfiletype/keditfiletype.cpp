@@ -69,8 +69,7 @@ void FileTypeDialog::init()
     // TODO setHelp()
     enableButton(Apply, false);
 
-    connect( KSycoca::self(), SIGNAL( databaseChanged() ), SLOT( slotDatabaseChanged() ) );
-
+    connect(KSycoca::self(), SIGNAL(databaseChanged(QStringList)), SLOT(slotDatabaseChanged(QStringList)));
     connect( this, SIGNAL( okClicked() ), SLOT( slotOk() ) );
     connect( this, SIGNAL( applyClicked() ), SLOT( slotApply() ) );
 }
@@ -106,10 +105,11 @@ void FileTypeDialog::clientChanged(bool state)
   enableButton(Apply, state);
 }
 
-void FileTypeDialog::slotDatabaseChanged()
+void FileTypeDialog::slotDatabaseChanged(const QStringList& changedResources)
 {
-    if ( KSycoca::self()->isChanged("xdgdata-mime") // changes in mimetype definitions
-         || KSycoca::self()->isChanged("services") ) { // changes in .desktop files
+    kDebug() << changedResources;
+    if ( changedResources.contains("xdgdata-mime") // changes in mimetype definitions
+         || changedResources.contains("services") ) { // changes in .desktop files
         m_details->refresh();
     }
 }

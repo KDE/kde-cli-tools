@@ -206,6 +206,11 @@ bool MimeTypeData::isMimeTypeDirty() const
     if (m_bNewItem)
         return true;
 
+    if (!m_mimetype) {
+        kWarning() << "MimeTypeData for" << name() << "says 'not new' but is without a mimetype? Should not happen.";
+        return true;
+    }
+
     if (m_mimetype->comment() != m_comment) {
         kDebug() << "Mimetype Comment Dirty: old=" << m_mimetype->comment() << "m_comment=" << m_comment;
         return true;
@@ -384,7 +389,6 @@ void MimeTypeData::refresh()
     if (m_isGroup)
         return;
 
-    //kDebug() << "MimeTypeData refresh" << name();
     m_mimetype = KMimeType::mimeType( name() );
     if (m_mimetype) {
         if (m_bNewItem) {
