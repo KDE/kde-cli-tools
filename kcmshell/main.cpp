@@ -24,14 +24,6 @@
 #include <QtCore/QFile>
 #include <QtGui/QIcon>
 
-#ifdef Q_WS_X11
-/*
-    FIXME: how are we supposed to handle stuff like this that is so
-    integrated with QX11Embed on alternate platforms?
-*/
-#endif
-
-
 #include <QtDBus/QtDBus>
 
 #include <kaboutdata.h>
