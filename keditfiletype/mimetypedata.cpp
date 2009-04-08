@@ -94,8 +94,8 @@ MimeTypeData::AutoEmbed MimeTypeData::readAutoEmbed() const
     const QString key = QString("embed-") + name();
     const KConfigGroup group(config, "EmbedSettings");
     if (m_isGroup) {
-        // embedding is false by default except for image/* and inode/* (hardcoded in konq)
-        const bool defaultValue = ( m_major == "image" || m_major == "inode" );
+        // embedding is false by default except for image/*, multipart/* and inode/* (hardcoded in konq)
+        const bool defaultValue = (m_major == "image" || m_major == "multipart" || m_major == "inode");
         return group.readEntry(key, defaultValue) ? Yes : No;
     } else {
         if (group.hasKey(key))
