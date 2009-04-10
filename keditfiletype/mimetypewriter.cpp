@@ -116,6 +116,10 @@ bool MimeTypeWriter::write()
         }
     }
 
+    // Allow this local definition to override the global definition
+    writer.writeStartElement(nsUri, "glob-deleteall");
+    writer.writeEndElement(); // glob-deleteall
+
     foreach(const QString& pattern, d->m_patterns) {
         writer.writeStartElement(nsUri, "glob");
         writer.writeAttribute("pattern", pattern);

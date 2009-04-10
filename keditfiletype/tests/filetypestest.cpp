@@ -137,6 +137,7 @@ private Q_SLOTS:
         QVERIFY(patterns.contains("*.txt"));
         QVERIFY(!patterns.contains("*.toto"));
         const QStringList origPatterns = patterns;
+        patterns.removeAll("*.txt");
         patterns.append("*.toto"); // yes, a french guy wrote this, as you can see
         patterns.sort(); // for future comparisons
         QVERIFY(!data.isDirty());
@@ -149,11 +150,11 @@ private Q_SLOTS:
         QCOMPARE(data.patterns(), patterns);
         data.refresh(); // reload from ksycoca
         QCOMPARE(data.patterns(), patterns);
-        QVERIFY(!data.isDirty());
         // Check what's in ksycoca
         QStringList newPatterns = KMimeType::mimeType("text/plain")->patterns();
         newPatterns.sort();
         QCOMPARE(newPatterns, patterns);
+        QVERIFY(!data.isDirty());
 
         // Remove custom file
         const QString packageFileName = KStandardDirs::locateLocal( "xdgdata-mime", "packages/text-plain.xml" );
@@ -326,7 +327,7 @@ private: // helper methods
         // Wait for notifyDatabaseChanged DBus signal
         // (The real KCM code simply does the refresh in a slot, asynchronously)
         QEventLoop loop;
-        QObject::connect(KSycoca::self(), SIGNAL(databaseChanged()), &loop, SLOT(quit()));
+        QObject::connect(KSycoca::self(), SIGNAL(databaseChanged(QStringList)), &loop, SLOT(quit()));
         KProcess proc;
         proc << KStandardDirs::findExe(KBUILDSYCOCA_EXENAME);
         proc.setOutputChannelMode(KProcess::MergedChannels); // silence kbuildsycoca output
