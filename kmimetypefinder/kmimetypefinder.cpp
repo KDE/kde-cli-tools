@@ -21,7 +21,7 @@
 
 #include <kmimetype.h>
 #include <kcmdlineargs.h>
-//#include <kapplication.h>
+#include <QCoreApplication>
 #include <kdeversion.h>
 #include <kcomponentdata.h>
 
@@ -40,7 +40,7 @@ int main(int argc, char *argv[])
 
     KCmdLineArgs::addCmdLineOptions( options );
 
-    // KApplication app;
+    QCoreApplication app(argc, argv); // in case KSycoca needs a QEventLoop
     KComponentData instance("kmimetypefinder");
 
     KCmdLineArgs *args = KCmdLineArgs::parsedArgs();
