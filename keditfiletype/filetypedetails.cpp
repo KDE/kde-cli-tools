@@ -133,7 +133,7 @@ FileTypeDetails::FileTypeDetails( QWidget * parent )
           SLOT(updateDescription(const QString &)));
 
   QHBoxLayout *descriptionBox = new QHBoxLayout;
-  descriptionBox->addWidget(new QLabel(i18n("Description"),firstWidget));
+  descriptionBox->addWidget(new QLabel(i18n("Description:"),firstWidget));
   descriptionBox->addWidget(description);
   firstLayout->addLayout(descriptionBox);
 
