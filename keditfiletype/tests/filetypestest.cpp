@@ -137,7 +137,10 @@ private Q_SLOTS:
         QVERIFY(patterns.contains("*.txt"));
         QVERIFY(!patterns.contains("*.toto"));
         const QStringList origPatterns = patterns;
-        patterns.removeAll("*.txt");
+        if (KMimeType::sharedMimeInfoVersion() >= KDE_MAKE_VERSION(0, 60, 0)) {
+            // <glob-deleteall> is only supported by shared-mime-info >= 0.60
+            patterns.removeAll("*.txt");
+        }
         patterns.append("*.toto"); // yes, a french guy wrote this, as you can see
         patterns.sort(); // for future comparisons
         QVERIFY(!data.isDirty());
