@@ -19,8 +19,11 @@ if(KDE4_ENABLE_FPIE)
 endif(KDE4_ENABLE_FPIE)
 
 MESSAGE(STATUS "Create macro to display info at the end of install")
-install(TARGETS kdesud PERMISSIONS SETGID OWNER_EXECUTE OWNER_WRITE OWNER_READ GROUP_EXECUTE GROUP_READ WORLD_EXECUTE WORLD_READ DESTINATION ${LIBEXEC_INSTALL_DIR})
-
+install(TARGETS kdesud DESTINATION ${LIBEXEC_INSTALL_DIR})
+install(CODE "
+    set(KDESUD_PATH \"\$ENV{DESTDIR}${LIBEXEC_INSTALL_DIR}/kdesud\")
+    EXECUTE_PROCESS(COMMAND sh -c \"chgrp nogroup '\${KDESUD_PATH}' && chmod g+s '\${KDESUD_PATH}'\")
+")
 
 ########### install files ###############
 
