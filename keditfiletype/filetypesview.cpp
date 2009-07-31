@@ -83,7 +83,6 @@ FileTypesView::FileTypesView(QWidget *parent, const QVariantList &)
 
   QHBoxLayout* l = new QHBoxLayout(this);
   QVBoxLayout* leftLayout = new QVBoxLayout();
-  leftLayout->setSpacing(KDialog::spacingHint());
   l->addLayout( leftLayout );
 
   patternFilterLE = new KLineEdit(this);

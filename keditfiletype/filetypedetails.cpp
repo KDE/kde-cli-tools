@@ -59,11 +59,8 @@ FileTypeDetails::FileTypeDetails( QWidget * parent )
   // First tab - General
   QWidget * firstWidget = new QWidget(m_tabWidget);
   QVBoxLayout *firstLayout = new QVBoxLayout(firstWidget);
-  firstLayout->setMargin(KDialog::marginHint());
-  firstLayout->setSpacing(KDialog::spacingHint());
 
   QHBoxLayout *hBox = new QHBoxLayout();
-  hBox->setSpacing(KDialog::spacingHint());
   firstLayout->addLayout(hBox);
 
     if (SharedMimeInfoVersion::supportsIcon()) {
@@ -88,7 +85,6 @@ FileTypeDetails::FileTypeDetails( QWidget * parent )
   hBox->addWidget(gb);
 
   hBox = new QHBoxLayout(gb);
-  hBox->setSpacing(KDialog::spacingHint());
 
   extensionLB = new QListWidget(gb);
   connect(extensionLB, SIGNAL(itemSelectionChanged()), SLOT(enableExtButtons()));
@@ -104,8 +100,6 @@ FileTypeDetails::FileTypeDetails( QWidget * parent )
 
   QVBoxLayout *vbox = new QVBoxLayout();
   hBox->addLayout(vbox);
-  vbox->setSpacing(KDialog::spacingHint());
-//   vbox->setMargins(KDialog::spacingHint());
 
   addExtButton = new KPushButton(i18n("Add..."), gb);
   addExtButton->setIcon(KIcon("list-add"));
@@ -149,11 +143,8 @@ FileTypeDetails::FileTypeDetails( QWidget * parent )
   // Second tab - Embedding
   QWidget * secondWidget = new QWidget(m_tabWidget);
   QVBoxLayout *secondLayout = new QVBoxLayout(secondWidget);
-  secondLayout->setMargin(KDialog::marginHint());
-  secondLayout->setSpacing(KDialog::spacingHint());
 
   m_autoEmbedBox = new QGroupBox( i18n("Left Click Action"), secondWidget );
-  secondLayout->setSpacing( KDialog::spacingHint() );
   secondLayout->addWidget( m_autoEmbedBox );
 
   m_autoEmbedBox->setSizePolicy( QSizePolicy::Preferred, QSizePolicy::Fixed );
@@ -184,7 +175,7 @@ FileTypeDetails::FileTypeDetails( QWidget * parent )
     " for instance 'image' if the current file type is image/png.") );
 
   embedServiceListWidget = new KServiceListWidget( KServiceListWidget::SERVICELIST_SERVICES, secondWidget );
-  embedServiceListWidget->setMinimumHeight( serviceListWidget->sizeHint().height() );
+//  embedServiceListWidget->setMinimumHeight( serviceListWidget->sizeHint().height() );
   connect( embedServiceListWidget, SIGNAL(changed(bool)), this, SIGNAL(changed(bool)));
   secondLayout->addWidget(embedServiceListWidget);
 

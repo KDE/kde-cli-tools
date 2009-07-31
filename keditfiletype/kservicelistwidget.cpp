@@ -72,8 +72,6 @@ KServiceListWidget::KServiceListWidget(int kind, QWidget *parent)
     m_kind( kind ), m_mimeTypeData( 0L )
 {
   QHBoxLayout *lay= new QHBoxLayout(this);
-  lay->setMargin(KDialog::marginHint());
-  lay->setSpacing(KDialog::spacingHint());
 
   servicesLB = new QListWidget(this);
   connect(servicesLB, SIGNAL(itemSelectionChanged()), SLOT(enableMoveButtons()));

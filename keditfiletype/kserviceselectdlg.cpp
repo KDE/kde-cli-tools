@@ -20,7 +20,7 @@
 #include "kservicelistwidget.h"
 
 #include <klocale.h>
-#include <kvbox.h>
+#include <QtGui/QVBoxLayout>
 #include <QtGui/QLabel>
 
 KServiceSelectDlg::KServiceSelectDlg( const QString& /*serviceType*/, const QString& /*value*/, QWidget *parent )
@@ -31,10 +31,10 @@ KServiceSelectDlg::KServiceSelectDlg( const QString& /*serviceType*/, const QStr
     setCaption( i18n( "Add Service" ) );
     setButtons( Ok | Cancel );
 
-    KVBox *vbox = new KVBox ( this );
+    QWidget *vbox = new QWidget( this );
+    QVBoxLayout *layout = new QVBoxLayout( vbox );
 
-    vbox->setSpacing( KDialog::spacingHint() );
-    new QLabel( i18n( "Select service:" ), vbox );
+    layout->addWidget( new QLabel( i18n( "Select service:" ), vbox ) );
     m_listbox=new KListWidget( vbox );
 
     // Can't make a KTrader query since we don't have a servicetype to give,
@@ -51,7 +51,8 @@ KServiceSelectDlg::KServiceSelectDlg( const QString& /*serviceType*/, const QStr
 
     m_listbox->model()->sort(0);
     m_listbox->setMinimumHeight(350);
-    m_listbox->setMinimumWidth(300);
+    m_listbox->setMinimumWidth(400);
+    layout->addWidget( m_listbox );
     connect(m_listbox,SIGNAL(itemDoubleClicked(QListWidgetItem*)),SLOT(slotOk()));
     connect( this, SIGNAL(okClicked()), this, SLOT(slotOk()) );
     setMainWidget(vbox);
