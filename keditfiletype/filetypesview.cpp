@@ -28,7 +28,6 @@
 #include <QtGui/QLayout>
 #include <QtCore/QTimer>
 #include <QtGui/QBoxLayout>
-#include <QFile>
 #include <qdbusconnection.h>
 #include <qdbusmessage.h>
 

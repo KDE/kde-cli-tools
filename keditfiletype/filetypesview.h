@@ -27,7 +27,6 @@
 #include <QtGui/QLabel>
 #include <QtGui/QStackedWidget>
 
-#include <KConfig>
 #include <KSharedConfig>
 #include <KCModule>
 
