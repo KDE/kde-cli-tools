@@ -14,8 +14,8 @@
 <!-- TRANS:ROLES_OF_TRANSLATORS -->
 </authorgroup>
 
-<date>2003-10-13</date>
-<releaseinfo>3.2</releaseinfo>
+<date>2009-08-06</date>
+<releaseinfo>4.3</releaseinfo>
 
 <keywordset>
 <keyword>KDE</keyword>
@@ -31,8 +31,8 @@
 <title>Introduction</title>
 
 <para>One of the most convenient aspects of &kde;, is its ability to
-automatically match a data file, with its application.  As an example,
-when you click on your favorite &kword; document in &konqueror;, &kde;
+automatically match a data file with its application.  As an example,
+when you click on your favorite &kword; document in the filemanager, &kde;
 automatically starts &kword;, and automatically loads that file into
 &kword; so you can begin working on it.</para>
 
@@ -66,6 +66,11 @@ without opening and analyzing the format of each and every file.</para>
 <sect2 id="file-assoc-use">
 <title>How to use this module</title>
 
+<para>You can start this module  
+by opening &systemsettings; and selecting <guilabel>File Associations</guilabel> on the 
+<guilabel>Advanced</guilabel> tab. Alternatively, you can start it by
+typing <command>kcmshell4 filetypes</command> from the terminal or &krunner;.</para>
+
 <para>The file associations are organized into several categories, and
 at a minimum you will have:</para>
 
@@ -84,10 +89,6 @@ at a minimum you will have:</para>
 <para>All of the file associations are sorted into one of these
 categories.</para>
 
-<para>There is also an overview category <quote>All</quote>, which
-displays all the file types in one list, without categorizing
-them.</para>
-
 <note><para>There is no functional difference between any of the
 categories.  These categories are designed to help organize your file
 associations, but they do not alter the associations in any way.
@@ -102,7 +103,7 @@ category name.  You will be presented with a list of the associated
 mime-types under that category.</para>
 
 <tip><para>You can also search for a particular &MIME; type by using the
-search box. The search box is labeled <guilabel>Find filename
+search box. The search box is labeled <guilabel>Find file type or filename
 pattern</guilabel> and is located above the category list.</para>
 
 <para>Simply type the first letter of the &MIME; type you are interested
@@ -119,7 +120,7 @@ characters.</para></tip>
 <para>If you want to add a new &MIME; type to your file associations,
 you can click on the <guibutton>Add...</guibutton> button.  A small
 dialog box will appear.  You select the category from the drop down
-box, and type the &MIME; name in the blank labeled <guilabel>Type
+box labeled <guilabel>Group</guilabel>, and type the &MIME; name in the blank labeled <guilabel>Type
 name</guilabel>.  Click <guibutton>OK</guibutton> to add the new mime
 type, or click <guibutton>Cancel</guibutton> to not add any new
 mime-types.</para>
@@ -159,7 +160,7 @@ the &MIME; type will appear in the module window.</para>
 
 <orderedlist>
 <listitem><para><guilabel>Mime Type Icon</guilabel> is the icon that
-will be visible when using &konqueror; as a file
+will be visible when using &dolphin; or &konqueror; as a file
 manager.</para></listitem>
 <listitem><para><guilabel>Filename Patterns</guilabel> is a search
 pattern which &kde; will use to determine the &MIME; type.</para></listitem>
@@ -176,7 +177,7 @@ determines which applications will be associated with the specified
 <term><guilabel>Embedding Tab</guilabel></term>
 <listitem>
 <para>The Embedding tab allows you to determine if a file will be
-viewed within a &konqueror; window, or by starting the
+viewed within a filemanager window, or by starting the
 application.</para>
 </listitem>
 </varlistentry>
@@ -236,15 +237,15 @@ you, it does not affect the function of the &MIME; type.</para>
 <sect3 id="file-assoc-use-app">
 <title>Editing the application associations</title>
 
-<para>There are four buttons (<guibutton>Move Up</guibutton>,
-<guibutton>Move Down</guibutton>, <guibutton>Add</guibutton> and
+<para>There are five buttons (<guibutton>Move Up</guibutton>,
+<guibutton>Move Down</guibutton>, <guibutton>Add</guibutton>, <guibutton>Edit</guibutton> and
 <guibutton>Remove</guibutton>) and a combo box (which lists the
 applications) which are used to configure the applications.</para>
 
 <para>The combo box lists all of the applications associated with a
 specific &MIME; type.  The list is in a specific order.  The top
 application is the first application tried.  The next application down
-the list is the second, etc.</para>
+the list is the second, &etc;.</para>
 
 <note><para>What do you mean there is more than one application per
 &MIME; type?  Why is this necessary?</para>
@@ -259,10 +260,10 @@ system.</para>
 <para>As an example:</para>
 <para>For the &MIME; type <literal>pdf</literal>, there are two
 applications associated with this file type.  The first program is
-called <application>PS Viewer</application>.  If your system does not
-have <application>PS Viewer</application> installed, then &kde;
-automatically starts the second application <application>Adobe Acrobat
-Reader</application>.  As you can see, this will help keep &kde; running
+called &okular;.  If your system does not
+have &okular; installed, then &kde;
+automatically starts the second application &krita;.  
+As you can see, this will help keep &kde; running
 strong  as you add and subtract applications.</para></note>
 
 <para>We have established that the order is important.  You can change
@@ -296,25 +297,27 @@ there will not be an application to view the data document.</para></tip>
 <title>Embedding</title>
 <para>By clicking on the <guilabel>Embedding</guilabel> tab, you are
 presented with three radio buttons in the <guilabel>Left click
-action</guilabel> group.  These determine how &konqueror; views the selected
+action</guilabel> group.  These determine how the filemanager views the selected
 &MIME; type:</para>
 
 <variablelist>
 <varlistentry><term>Show file in embedded viewer</term>
-<listitem><para>If this is selected, the file will be shown <emphasis>within</emphasis> the &konqueror; window.</para></listitem></varlistentry>
+<listitem><para>If this is selected, the file will be shown <emphasis>within</emphasis> the filemanager window.</para></listitem></varlistentry>
 <varlistentry><term>Show file in separate viewer</term>
 <listitem><para>This will cause a separate window to be created when showing this mime-type.</para></listitem></varlistentry>
-<varlistentry><term>Use group settings.</term>
+<varlistentry><term>Use settings for 'application' group</term>
 <listitem><para>This will cause the mime-type to use the settings for the mime-type group.
 (if you are editing an audio mime type, then the settings for the audio group are used).</para></listitem></varlistentry>
+<!--<varlistentry><term>Ask wether to save to disk instead</term>
+<listitem><para>????????</para></listitem></varlistentry>-->
 </variablelist>
 
 <para>Below this is a listbox labeled <guilabel>Services Preference
 Order</guilabel>.</para>
 
-<para>When you are in &konqueror;, you can
+<para>When you use a filemanager like &dolphin; or &konqueror;, you can
 <mousebutton>right</mousebutton> mouse click, and a menu will with an
-entry labeled <guimenu>Preview with...</guimenu> will appear.  This box
+entry labeled <guimenu>Open with...</guimenu> will appear.  This box
 lists the applications that will appear, in the order they will
 appear, under this menu.</para>
 
