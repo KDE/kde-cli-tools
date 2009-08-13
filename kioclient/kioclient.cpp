@@ -354,4 +354,9 @@ void ClientApp::slotPrintData(KIO::Job*, const QByteArray &data)
         std::cout << data.constData();
 }
 
+ClientApp::ClientApp(int &argc, char **argv )
+    : QApplication( argc, argv, s_interactive /*-> bool GUIenabled*/ )
+{
+}
+
 #include "kioclient.moc"

@@ -28,7 +28,7 @@ class ClientApp : public QApplication
 {
     Q_OBJECT
 public:
-    ClientApp(int &argc, char **argv ) : QApplication( argc, argv ) {}
+    ClientApp(int &argc, char **argv );
 
     /** Parse command-line arguments and "do it" */
     static bool doIt();
