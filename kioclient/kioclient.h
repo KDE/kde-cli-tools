@@ -44,6 +44,7 @@ private:
     bool kde_open( const KUrl& url, const QString& mimeType, bool allowExec );
     bool doCopy( int firstArg );
     bool doMove( int firstArg );
+    bool doRemove( int firstArg );
 
     static bool m_ok;
 };

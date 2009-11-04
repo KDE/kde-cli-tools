@@ -21,6 +21,7 @@
 #include <ktoolinvocation.h>
 #include <kio/job.h>
 #include <kio/copyjob.h>
+#include <kio/deletejob.h>
 #include <kio/jobuidelegate.h>
 #include <kcmdlineargs.h>
 #include <kpropertiesdialog.h>
@@ -65,16 +66,25 @@ static void usage()
               "            # Moves the URL 'src' to 'dest'.\n"
               "            #   'src' may be a list of URLs.\n").toLocal8Bit());
     puts(i18n("            #   'dest' may be \"trash:/\" to move the files\n"
-              "            #   in the trash bin.\n\n").toLocal8Bit());
+              "            #   in the trash bin.\n").toLocal8Bit());
+    puts(i18n("            #   the short version kioclient mv\n"
+              "            #   is also available.\n\n").toLocal8Bit());
     puts(i18n("  kioclient download ['src']\n"
               "            # Copies the URL 'src' to a user-specified location'.\n"
               "            #   'src' may be a list of URLs, if not present then\n"
               "            #   a URL will be requested.\n\n").toLocal8Bit());
     puts(i18n("  kioclient copy 'src' 'dest'\n"
               "            # Copies the URL 'src' to 'dest'.\n"
-              "            #   'src' may be a list of URLs.\n\n").toLocal8Bit());
+              "            #   'src' may be a list of URLs.\n").toLocal8Bit());
+    puts(i18n("            #   the short version kioclient mv\n"
+              "            #   is also available.\n\n").toLocal8Bit());
     puts(i18n("  kioclient cat 'url'\n"
               "            # Writes out the contents of 'url' to stdout\n\n").toLocal8Bit());
+    puts(i18n("  kioclient remove 'url'\n"
+              "            # Removes the URL\n"
+              "            #   'url' may be a list of URLs.\n").toLocal8Bit());
+    puts(i18n("            #   the short version kioclient rm\n"
+              "            #   is also available.\n\n").toLocal8Bit());
 
     puts(i18n("*** Examples:\n"
               "  kioclient exec file:/root/Desktop/cdrom.desktop \"Mount default\"\n"
@@ -209,6 +219,21 @@ bool ClientApp::doMove( int firstArg )
     return m_ok;
 }
 
+bool ClientApp::doRemove( int firstArg )
+{
+    KCmdLineArgs *args = KCmdLineArgs::parsedArgs();
+    int argc = args->count();
+    KUrl::List srcLst;
+    for ( int i = firstArg; i < argc; i++ )
+      srcLst.append( args->url(i) );
+    KIO::Job * job = KIO::del( srcLst, s_jobFlags );
+    if ( !s_interactive )
+        job->setUiDelegate( 0 );
+    connect( job, SIGNAL( result( KJob * ) ), this, SLOT( slotResult( KJob * ) ) );
+    this->exec();
+    return m_ok;
+}
+
 bool ClientApp::doIt()
 {
     KCmdLineArgs *args = KCmdLineArgs::parsedArgs();
@@ -310,15 +335,20 @@ bool ClientApp::doIt()
         app.exec();
         return m_ok;
     }
-    else if ( command == "copy" )
+    else if ( command == "copy" || command == "cp" )
     {
         checkArgumentCount(argc, 2, 0);
         return app.doCopy( 1 );
     }
-    else if ( command == "move" )
+    else if ( command == "move" || command == "mv" )
     {
         checkArgumentCount(argc, 2, 0);
         return app.doMove( 1 );
+    }
+    else if ( command == "remove" || command == "rm" )
+    {
+        checkArgumentCount(argc, 2, 0);
+        return app.doRemove( 1 );
     }
     else
     {
