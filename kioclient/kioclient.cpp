@@ -66,7 +66,7 @@ static void usage()
               "            # Moves the URL 'src' to 'dest'.\n"
               "            #   'src' may be a list of URLs.\n").toLocal8Bit());
     puts(i18n("            #   'dest' may be \"trash:/\" to move the files\n"
-              "            #   in the trash bin.\n").toLocal8Bit());
+              "            #   to the trash.\n").toLocal8Bit());
     puts(i18n("            #   the short version kioclient mv\n"
               "            #   is also available.\n\n").toLocal8Bit());
     puts(i18n("  kioclient download ['src']\n"
