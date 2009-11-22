@@ -144,7 +144,7 @@ FileTypeDetails::FileTypeDetails( QWidget * parent )
   QWidget * secondWidget = new QWidget(m_tabWidget);
   QVBoxLayout *secondLayout = new QVBoxLayout(secondWidget);
 
-  m_autoEmbedBox = new QGroupBox( i18n("Left Click Action"), secondWidget );
+  m_autoEmbedBox = new QGroupBox( i18n("Left Click Action (only for Konqueror file manager)"), secondWidget );
   secondLayout->addWidget( m_autoEmbedBox );
 
   m_autoEmbedBox->setSizePolicy( QSizePolicy::Preferred, QSizePolicy::Fixed );
@@ -153,7 +153,7 @@ FileTypeDetails::FileTypeDetails( QWidget * parent )
   QRadioButton *sepViewerRadio = new QRadioButton( i18n("Show file in separate viewer") );
   m_rbGroupSettings = new QRadioButton( QString("Use settings for '%1' group") );
 
-  m_chkAskSave = new QCheckBox( i18n("Ask whether to save to disk instead") );
+  m_chkAskSave = new QCheckBox( i18n("Ask whether to save to disk instead (only for Konqueror browser)") );
   connect(m_chkAskSave, SIGNAL( toggled(bool) ), SLOT( slotAskSaveToggled(bool) ));
 
   m_autoEmbedGroup = new QButtonGroup(m_autoEmbedBox);
@@ -169,10 +169,11 @@ FileTypeDetails::FileTypeDetails( QWidget * parent )
   vbox->addWidget(m_chkAskSave);
 
   m_autoEmbedBox->setWhatsThis( i18n("Here you can configure what the Konqueror file manager"
-    " will do when you click on a file of this type. Konqueror can display the file in"
+    " will do when you click on a file of this type. The Konqueror file manager can display the file in"
     " an embedded viewer or start up a separate application. If set to 'Use settings for G group',"
-    " Konqueror will behave according to the settings of the group G this type belongs to,"
-    " for instance 'image' if the current file type is image/png.") );
+    " the file manager will behave according to the settings of the group G this type belongs to,"
+    " for instance 'image' if the current file type is image/png. Dolphin "
+    " shows files always in a separate viewer") );
 
   embedServiceListWidget = new KServiceListWidget( KServiceListWidget::SERVICELIST_SERVICES, secondWidget );
 //  embedServiceListWidget->setMinimumHeight( serviceListWidget->sizeHint().height() );

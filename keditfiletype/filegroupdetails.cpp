@@ -32,7 +32,7 @@ FileGroupDetails::FileGroupDetails(QWidget *parent)
 {
   QVBoxLayout *secondLayout = new QVBoxLayout(this);
 
-  QGroupBox *autoEmbedBox = new QGroupBox( i18n("Left Click Action") );
+  QGroupBox *autoEmbedBox = new QGroupBox( i18n("Left Click Action (only for Konqueror file manager)") );
   m_autoEmbed = new QButtonGroup( autoEmbedBox );
   secondLayout->addWidget( autoEmbedBox );
   // The order of those two items is very important. If you change it, fix typeslistitem.cpp !
@@ -48,7 +48,8 @@ FileGroupDetails::FileGroupDetails(QWidget *parent)
   autoEmbedBox->setWhatsThis( i18n("Here you can configure what the Konqueror file manager"
     " will do when you click on a file belonging to this group. Konqueror can display the file in"
     " an embedded viewer or start up a separate application. You can change this setting for a"
-    " specific file type in the 'Embedding' tab of the file type configuration.") );
+    " specific file type in the 'Embedding' tab of the file type configuration. Dolphin "
+    " shows files always in a separate viewer") );
 
   secondLayout->addStretch();
 }
