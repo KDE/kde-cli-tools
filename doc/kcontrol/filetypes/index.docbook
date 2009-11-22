@@ -14,8 +14,8 @@
 <!-- TRANS:ROLES_OF_TRANSLATORS -->
 </authorgroup>
 
-<date>2009-08-06</date>
-<releaseinfo>4.3</releaseinfo>
+<date>2009-11-22</date>
+<releaseinfo>4.4</releaseinfo>
 
 <keywordset>
 <keyword>KDE</keyword>
@@ -239,10 +239,10 @@ you, it does not affect the function of the &MIME; type.</para>
 
 <para>There are five buttons (<guibutton>Move Up</guibutton>,
 <guibutton>Move Down</guibutton>, <guibutton>Add</guibutton>, <guibutton>Edit</guibutton> and
-<guibutton>Remove</guibutton>) and a combo box (which lists the
+<guibutton>Remove</guibutton>) and a list box (which lists the
 applications) which are used to configure the applications.</para>
 
-<para>The combo box lists all of the applications associated with a
+<para>The list box lists all of the applications associated with a
 specific &MIME; type.  The list is in a specific order.  The top
 application is the first application tried.  The next application down
 the list is the second, &etc;.</para>
@@ -295,8 +295,10 @@ there will not be an application to view the data document.</para></tip>
 
 <sect3 id="file-assoc-embedding">
 <title>Embedding</title>
+<para>These settings are valid only for &konqueror; used as file manager, &dolphin;
+is not able to use embedded views and opens a file always in the associated application.</para>
 <para>By clicking on the <guilabel>Embedding</guilabel> tab, you are
-presented with three radio buttons in the <guilabel>Left click
+presented with four radio buttons in the <guilabel>Left click
 action</guilabel> group.  These determine how the filemanager views the selected
 &MIME; type:</para>
 
@@ -308,8 +310,9 @@ action</guilabel> group.  These determine how the filemanager views the selected
 <varlistentry><term>Use settings for 'application' group</term>
 <listitem><para>This will cause the mime-type to use the settings for the mime-type group.
 (if you are editing an audio mime type, then the settings for the audio group are used).</para></listitem></varlistentry>
-<!--<varlistentry><term>Ask wether to save to disk instead</term>
-<listitem><para>????????</para></listitem></varlistentry>-->
+<varlistentry><term>Ask whether to save to disk instead</term>
+<listitem><para>This settings applies only to &konqueror; in browser mode and determines
+if the file is shown in an embedded viewer or if you are asked to save the file to disl instead.</para></listitem></varlistentry>
 </variablelist>
 
 <para>Below this is a listbox labeled <guilabel>Services Preference
