@@ -169,11 +169,11 @@ FileTypeDetails::FileTypeDetails( QWidget * parent )
   vbox->addWidget(m_chkAskSave);
 
   m_autoEmbedBox->setWhatsThis( i18n("Here you can configure what the Konqueror file manager"
-    " will do when you click on a file of this type. The Konqueror file manager can display the file in"
-    " an embedded viewer or start up a separate application. If set to 'Use settings for G group',"
-    " the file manager will behave according to the settings of the group G this type belongs to,"
-    " for instance 'image' if the current file type is image/png. Dolphin "
-    " shows files always in a separate viewer") );
+    " will do when you click on a file of this type. Konqueror can either display the file in"
+    " an embedded viewer, or start up a separate application. If set to 'Use settings for G group',"
+    " the file manager will behave according to the settings of the group G to which this type belongs;"
+    " for instance, 'image' if the current file type is image/png. Dolphin"
+    " always shows files in a separate viewer.") );
 
   embedServiceListWidget = new KServiceListWidget( KServiceListWidget::SERVICELIST_SERVICES, secondWidget );
 //  embedServiceListWidget->setMinimumHeight( serviceListWidget->sizeHint().height() );
