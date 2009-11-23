@@ -311,8 +311,8 @@ action</guilabel> group.  These determine how the filemanager views the selected
 <listitem><para>This will cause the mime-type to use the settings for the mime-type group.
 (if you are editing an audio mime type, then the settings for the audio group are used).</para></listitem></varlistentry>
 <varlistentry><term>Ask whether to save to disk instead</term>
-<listitem><para>This settings applies only to &konqueror; in browser mode and determines
-if the file is shown in an embedded viewer or if you are asked to save the file to disl instead.</para></listitem></varlistentry>
+<listitem><para>This setting applies only to &konqueror; in browser mode and determines
+if the file is shown in an embedded viewer or if you are asked to save the file to disk instead.</para></listitem></varlistentry>
 </variablelist>
 
 <para>Below this is a listbox labeled <guilabel>Services Preference
