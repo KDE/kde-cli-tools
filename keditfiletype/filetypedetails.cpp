@@ -288,7 +288,7 @@ void FileTypeDetails::updateAskSave()
         if (mime) {
             // SYNC SYNC SYNC SYNC SYNC SYNC SYNC SYNC SYNC SYNC SYNC SYNC SYNC SYNC
             // NOTE: Keep this function in sync with
-            // kdelibs/kparts/browserrun.cpp BrowserRun::askEmbedOrSave()
+            // kdelibs/kparts/browseropenorsavequestion.cpp BrowserOpenOrSaveQuestionPrivate::autoEmbedMimeType
 
             // Don't ask for:
             // - html (even new tabs would ask, due to about:blank!)
@@ -297,14 +297,12 @@ void FileTypeDetails::updateAskSave()
             // e.g. postscript is different, because takes longer to read, so
             // it's more likely that the user might want to save it.
             // - multipart/* ("server push", see kmultipart)
-            // - other strange 'internal' mimetypes like print/manager...
             if ( mime->is( "text/html" ) ||
                  mime->is( "application/xml" ) ||
                  mime->is( "inode/directory" ) ||
                  mimeType.startsWith( "image" ) ||
                  mime->is( "multipart/x-mixed-replace" ) ||
-                 mime->is( "multipart/replace" ) ||
-                 mimeType.startsWith( "print" ) )
+                 mime->is( "multipart/replace" ) )
             {
                 neverAsk = true;
             }
