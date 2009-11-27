@@ -49,6 +49,10 @@ using namespace std;
 
 KService::List m_modules;
 
+static int debugArea() {
+    static int s_area = KDebug::registerArea("kcmshell");
+    return s_area;
+}
 
 static void listModules()
 {
@@ -73,13 +77,13 @@ static KService::Ptr locateModule(const QByteArray& module)
     KService::Ptr service = KService::serviceByStorageId( path );
     if (!service)
     {
-        kWarning(780) << "Could not find module '" << module << "'." ;
+        kWarning(debugArea()) << "Could not find module '" << module << "'." ;
         return KService::Ptr();
     }
 
     if ( service->noDisplay() )
     {
-        kDebug(780) << module << " should not be loaded.";
+        kDebug(debugArea()) << module << " should not be loaded.";
         return KService::Ptr();
     }
 
@@ -92,14 +96,14 @@ bool KCMShell::isRunning()
     if( owner == QDBusConnection::sessionBus().baseService() )
         return false; // We are the one and only.
 
-    kDebug(780) << "kcmshell4 with modules '" <<
+    kDebug(debugArea()) << "kcmshell4 with modules '" <<
         m_serviceName << "' is already running." << endl;
 
     QDBusInterface iface(m_serviceName, "/KCModule/dialog", "org.kde.KCMShellMultiDialog");
     QDBusReply<void> reply = iface.call("activate", kapp->startupId());
     if (!reply.isValid())
     {
-        kDebug(780) << "Calling D-Bus function dialog::activate() failed.";
+        kDebug(debugArea()) << "Calling D-Bus function dialog::activate() failed.";
         return false; // Error, we have to do it ourselves.
     }
 
@@ -117,7 +121,7 @@ KCMShellMultiDialog::KCMShellMultiDialog(KPageDialog::FaceType dialogFace, QWidg
 
 void KCMShellMultiDialog::activate( const QByteArray& asn_id )
 {
-    kDebug(780) ;
+    kDebug(debugArea()) ;
 
 #ifdef Q_WS_X11
     KStartupInfo::setNewStartupId( this, asn_id );
@@ -132,7 +136,7 @@ void KCMShell::setServiceName(const QString &dbusName )
 
 void KCMShell::waitForExit()
 {
-    kDebug(780) ;
+    kDebug(debugArea()) ;
 
     connect(QDBusConnection::sessionBus().interface(), SIGNAL(serviceOwnerChanged(QString,QString,QString)),
             SLOT(appExit(QString,QString,QString)));
@@ -142,11 +146,11 @@ void KCMShell::waitForExit()
 void KCMShell::appExit(const QString &appId, const QString &oldName, const QString &newName)
 {
     Q_UNUSED(newName);
-    kDebug(780) ;
+    kDebug(debugArea()) ;
 
     if( appId == m_serviceName && !oldName.isEmpty() )
     {
-        kDebug(780) << "'" << appId << "' closed, dereferencing.";
+        kDebug(debugArea()) << "'" << appId << "' closed, dereferencing.";
         KGlobal::deref();
     }
 }
