@@ -300,7 +300,7 @@ void FileTypeDetails::updateAskSave()
             if ( mime->is( "text/html" ) ||
                  mime->is( "application/xml" ) ||
                  mime->is( "inode/directory" ) ||
-                 mimeType.startsWith( "image" ) ||
+                 mimeType.startsWith( QLatin1String("image") ) ||
                  mime->is( "multipart/x-mixed-replace" ) ||
                  mime->is( "multipart/replace" ) )
             {

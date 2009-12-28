@@ -157,7 +157,7 @@ int main(int argc, char ** argv)
       if ( arg.length() > 2 )
           patterns << arg.toLower() << arg.toUpper();
       QString comment;
-      if ( arg.startsWith( "*." ) && arg.length() >= 3 ) {
+      if ( arg.startsWith( QLatin1String("*.") ) && arg.length() >= 3 ) {
           const QString type = arg.mid( 3 ).prepend( arg[2].toUpper() );
           comment = i18n( "%1 File", type );
       }
