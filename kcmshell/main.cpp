@@ -19,6 +19,8 @@
 
 */
 
+#include "main.h"
+
 #include <iostream>
 
 #include <QtCore/QFile>
@@ -40,9 +42,8 @@
 #include <kservicetypetrader.h>
 #include <kstartupinfo.h>
 #include <kglobal.h>
-
-#include "main.h"
 #include <kicon.h>
+
 #include "main.moc"
 
 using namespace std;
@@ -71,7 +72,7 @@ static KService::Ptr locateModule(const QByteArray& module)
 {
     QString path = QFile::decodeName(module);
 
-    if (!path.endsWith(".desktop"))
+    if (!path.endsWith(QLatin1String(".desktop")))
         path += ".desktop";
 
     KService::Ptr service = KService::serviceByStorageId( path );
