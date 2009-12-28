@@ -320,7 +320,7 @@ static int startApp()
        if (kdeHome[0] != '/')
           kdeHome.prepend("~/");
        else
-          kdeHome=QString(); // Use default
+          kdeHome.clear(); // Use default
 
        env << ("KDEHOME="+ QFile::encodeName(kdeHome));
     }
