@@ -279,6 +279,29 @@ dialog box, you can select the application you want to use for this mime
 type.  Click <guibutton>OK</guibutton> when you are done, and the
 application will be added to the current list.</para>
 
+<para>To change the options of an application for a particular &MIME; type 
+select it in the list and then press the <guibutton>Edit..</guibutton> button. 
+This opens a new dialog with <guilabel>General</guilabel>, 
+<guilabel>Permissions</guilabel>, <guilabel>Applications</guilabel> and
+<guilabel>Preview</guilabel> tabs.
+On the <guilabel>Applications</guilabel> tab you can edit <guilabel>Name</guilabel>,
+<guilabel>Description</guilabel> and <guilabel>Comment</guilabel>.
+In the <guilabel>Command</guilabel> field you can have several place holders 
+following the command, which will be replaced with the actual values 
+when the actual program is run:</para>
+<itemizedlist>
+<listitem><para>%f - a single file name</para></listitem>
+<listitem><para>%F - a list of files; use for applications that can open several local files 
+at once</para></listitem>
+<listitem><para>%u - a single URL</para></listitem>
+<listitem><para>%U - a list of URLs</para></listitem>
+<listitem><para>%d - the folder of the file to open</para></listitem>
+<listitem><para>%D - a list of folders</para></listitem>
+<listitem><para>%i - the icon</para></listitem>
+<listitem><para>%m - the mini-icon</para></listitem>
+<listitem><para>%c - the caption</para></listitem>
+</itemizedlist>
+
 <para>You can remove an application (thereby ensuring that the
 application will never run with this &MIME; type by clicking once on the
 name of the application, and clicking the <guibutton>Remove</guibutton>
