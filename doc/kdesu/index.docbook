@@ -43,6 +43,11 @@
 <chapter id="introduction">
 <title>Introduction</title>
 
+<!-- from kdebase/runtime/kdesu/FAQ since rev 855297
+kdesu is a libexec program, so does not normally reside in your PATH.
+Use something like:
+<command>$(kde4-config - -path libexec)kdesu - - program_to_run-->
+
 <para>Welcome to &kdesu;! &kdesu; is a graphical front end for the
 &UNIX; <command>su</command> command for the K Desktop Environment.
 It allows you to run a program as different user by supplying the
