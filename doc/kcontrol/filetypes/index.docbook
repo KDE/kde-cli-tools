@@ -280,7 +280,7 @@ type.  Click <guibutton>OK</guibutton> when you are done, and the
 application will be added to the current list.</para>
 
 <para>To change the options of an application for a particular &MIME; type 
-select it in the list and then press the <guibutton>Edit..</guibutton> button. 
+select it in the list and then press the <guibutton>Edit...</guibutton> button. 
 This opens a new dialog with <guilabel>General</guilabel>, 
 <guilabel>Permissions</guilabel>, <guilabel>Applications</guilabel> and
 <guilabel>Preview</guilabel> tabs.
