@@ -18,7 +18,6 @@
 
 #include "kioclient.h"
 
-#include <ktoolinvocation.h>
 #include <kio/job.h>
 #include <kio/copyjob.h>
 #include <kio/deletejob.h>
