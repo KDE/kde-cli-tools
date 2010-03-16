@@ -408,7 +408,7 @@ static int startApp()
 #ifdef Q_WS_X11
             KStartupInfo::sendFinish( id );
 #endif
-            exit(0);
+            exit(1);
         }
         if (ret == KDEsuDialog::AsUser)
             change_uid = false;
