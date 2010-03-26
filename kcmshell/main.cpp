@@ -137,19 +137,24 @@ void KCMShell::setServiceName(const QString &dbusName )
 
 void KCMShell::waitForExit()
 {
-    kDebug(debugArea()) ;
+    kDebug(debugArea());
 
-    connect(QDBusConnection::sessionBus().interface(), SIGNAL(serviceOwnerChanged(QString,QString,QString)),
+    QDBusServiceWatcher *watcher = new QDBusServiceWatcher(this);
+    watcher->setConnection(QDBusConnection::sessionBus());
+    watcher->setWatchMode(QDBusServiceWatcher::WatchForOwnerChange);
+    watcher->addWatchedService(m_serviceName);
+    connect(watcher, SIGNAL(serviceOwnerChanged(QString,QString,QString)),
             SLOT(appExit(QString,QString,QString)));
     exec();
 }
 
 void KCMShell::appExit(const QString &appId, const QString &oldName, const QString &newName)
 {
+    Q_UNUSED(appId);
     Q_UNUSED(newName);
-    kDebug(debugArea()) ;
+    kDebug(debugArea());
 
-    if( appId == m_serviceName && !oldName.isEmpty() )
+    if (!oldName.isEmpty())
     {
         kDebug(debugArea()) << "'" << appId << "' closed, dereferencing.";
         KGlobal::deref();
