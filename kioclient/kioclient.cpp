@@ -110,6 +110,9 @@ int main( int argc, char **argv )
 
   KCmdLineOptions options;
   options.add("noninteractive", ki18n("Non-interactive use: no message boxes"));
+  #if !defined(KIOCLIENT_AS_KDEOPEN)
+  options.add("overwrite", ki18n("Overwrite destination if it exists (for copy and move)"));
+  #endif
   #if defined(KIOCLIENT_AS_KDEOPEN)
   options.add("+urls", ki18n("URL or URLs"));
   #elif defined(KIOCLIENT_AS_KDECP)
@@ -242,6 +245,9 @@ bool ClientApp::doIt()
     if ( !args->isSet( "ninteractive" ) ) {
         s_interactive = false;
         s_jobFlags = KIO::HideProgressInfo;
+    }
+    if (args->isSet("overwrite")) {
+        s_jobFlags |= KIO::Overwrite;
     }
 
     kDebug() << "Creating ClientApp";
