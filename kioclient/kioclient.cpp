@@ -105,7 +105,7 @@ static void usage()
 
 int main( int argc, char **argv )
 {
-  KCmdLineArgs::init(argc, argv, appName, 0, ki18n(programName), version, ki18n(description), false);
+  KCmdLineArgs::init(argc, argv, appName, 0, ki18n(programName), version, ki18n(description), KCmdLineArgs::CmdLineArgNone);
 
 
   KCmdLineOptions options;
@@ -246,9 +246,11 @@ bool ClientApp::doIt()
         s_interactive = false;
         s_jobFlags = KIO::HideProgressInfo;
     }
+#if !defined(KIOCLIENT_AS_KDEOPEN)
     if (args->isSet("overwrite")) {
         s_jobFlags |= KIO::Overwrite;
     }
+#endif
 
     kDebug() << "Creating ClientApp";
     int fake_argc = 0;
