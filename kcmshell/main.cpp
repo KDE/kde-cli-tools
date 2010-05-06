@@ -231,7 +231,15 @@ extern "C" KDE_EXPORT int kdemain(int _argc, char *_argv[])
     KService::List modules;
     for (int i = 0; i < args->count(); i++)
     {
-        KService::Ptr service = locateModule(args->arg(i).toLocal8Bit());
+        const QByteArray arg = args->arg(i).toLocal8Bit();
+        KService::Ptr service = locateModule(arg);
+        if (!service) {
+            service = locateModule("kcm_" + arg);
+        }
+        if (!service) {
+            service = locateModule("kcm" + arg);
+        }
+
         if( service )
         {
             modules.append(service);
