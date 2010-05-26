@@ -48,7 +48,6 @@ FileTypeDialog::FileTypeDialog( MimeTypeData* mime )
     m_mimeTypeData(mime)
 {
   setButtons( Cancel | Apply | Ok );
-  showButtonSeparator( false );
 
   init();
 }
