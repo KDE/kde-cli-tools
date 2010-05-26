@@ -40,7 +40,6 @@ NewTypeDialog::NewTypeDialog(const QStringList &groups, QWidget *parent)
   setModal( true );
   setCaption( i18n( "Create New File Type" ) );
   setButtons( Ok | Cancel );
-  showButtonSeparator( true );
 
   QWidget* main = mainWidget();
 
