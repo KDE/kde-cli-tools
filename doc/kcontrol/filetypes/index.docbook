@@ -67,8 +67,8 @@ without opening and analyzing the format of each and every file.</para>
 <title>How to use this module</title>
 
 <para>You can start this module  
-by opening &systemsettings; and selecting <guilabel>File Associations</guilabel> on the 
-<guilabel>Advanced</guilabel> tab. Alternatively, you can start it by
+by opening &systemsettings; and selecting <guilabel>File Associations</guilabel> in the 
+<guilabel>Application Appearance and Behavior</guilabel> category. Alternatively, you can start it by
 typing <command>kcmshell4 filetypes</command> from the terminal or &krunner;.</para>
 
 <para>The file associations are organized into several categories, and
