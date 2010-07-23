@@ -397,12 +397,14 @@ void FileTypesView::updateRemoveButton(TypesListItem* tlitem)
 void FileTypesView::save()
 {
     bool needUpdateMimeDb = false;
+    bool needUpdateSycoca = false;
     bool didIt = false;
     // first, remove those items which we are asked to remove.
     Q_FOREACH(const QString& mime, removedList) {
         MimeTypeWriter::removeOwnMimeType(mime);
         didIt = true;
         needUpdateMimeDb = true;
+        needUpdateSycoca = true; // remove offers for this mimetype
     }
     removedList.clear();
 
@@ -421,6 +423,8 @@ void FileTypesView::save()
   }
     Q_FOREACH(TypesListItem* tli, m_itemList) {
         if (tli->mimeTypeData().isDirty()) {
+            if (tli->mimeTypeData().isServiceListDirty())
+                needUpdateSycoca = true;
             kDebug() << "Entry " << tli->name() << " is dirty. Saving.";
             if (tli->mimeTypeData().sync())
                 needUpdateMimeDb = true;
@@ -435,9 +439,11 @@ void FileTypesView::save()
   if (needUpdateMimeDb) {
       MimeTypeWriter::runUpdateMimeDatabase();
   }
-  if (didIt) {
+  if (needUpdateSycoca) {
       KBuildSycocaProgressDialog::rebuildKSycoca(this);
+  }
 
+  if (didIt) { // TODO make more specific: only if autoEmbed changed? Well, maybe this is useful for icon and glob changes too...
       // Trigger reparseConfiguration of filetypesrc in konqueror
       // TODO: the same for dolphin. Or we should probably define a global signal for this.
       // Or a KGlobalSettings thing.

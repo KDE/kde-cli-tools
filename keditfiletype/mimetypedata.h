@@ -77,6 +77,12 @@ public:
      * Returns true if the mimetype data has any unsaved changes.
      */
     bool isDirty() const;
+
+    /**
+     * Returns true if the mimetype data has any unsaved changes in the service list.
+     */
+    bool isServiceListDirty() const;
+
     /**
      * Save changes to disk.
      * Does not check isDirty(), so the common idiom is if (data.isDirty()) { needUpdate = data.sync(); }
@@ -84,12 +90,12 @@ public:
      */
     bool sync();
     /**
-     * Update m_mimetype from ksycoca when Apply is pressed
+     * Update m_mimetype from the xml when Apply is pressed
      */
     void refresh();
 
     /**
-     * Return true if this is a new mimetype, i.e. one that is not yet in ksycoca
+     * Return true if this is a new mimetype, i.e. one that is not yet on disk
      */
     bool isNew() const { return m_bNewItem; }
 

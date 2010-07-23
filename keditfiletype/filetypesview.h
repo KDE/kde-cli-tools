@@ -80,7 +80,7 @@ private:
   QStringList removedList;
   bool m_dirty;
     bool m_removeButtonSaysRevert;
-  QMap<QString,TypesListItem*> m_majorMap;
+    QMap<QString,TypesListItem*> m_majorMap; // groups
   QList<TypesListItem *> m_itemList;
 
   KSharedConfig::Ptr m_fileTypesConfig;

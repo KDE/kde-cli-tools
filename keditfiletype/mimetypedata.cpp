@@ -233,6 +233,11 @@ bool MimeTypeData::isMimeTypeDirty() const
     return false;
 }
 
+bool MimeTypeData::isServiceListDirty() const
+{
+    return !m_isGroup && (m_appServicesModified || m_embedServicesModified);
+}
+
 bool MimeTypeData::isDirty() const
 {
     if ( m_bNewItem ) {
@@ -241,7 +246,7 @@ bool MimeTypeData::isDirty() const
     }
 
     if ( !m_isGroup ) {
-        if (m_appServicesModified || m_embedServicesModified)
+        if (isServiceListDirty())
             return true;
         if (isMimeTypeDirty())
             return true;
@@ -396,7 +401,7 @@ void MimeTypeData::refresh()
             m_bNewItem = false; // if this was a new mimetype, we just created it
         }
         if (!isMimeTypeDirty()) {
-            // Update from ksycoca, in case something was changed from out of this kcm
+            // Update from the xml, in case something was changed from out of this kcm
             // (e.g. using KOpenWithDialog, or keditfiletype + kcmshell filetypes)
             initFromKMimeType();
         }

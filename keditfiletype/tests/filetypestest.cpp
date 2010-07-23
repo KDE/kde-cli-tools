@@ -40,8 +40,6 @@ private Q_SLOTS:
     {
         m_mimeTypeCreatedSuccessfully = false;
         const QString kdehome = QDir::home().canonicalPath() + "/.kde-unit-test";
-        // We need a place where we can hack a mimeapps.list without harm, so not ~/.local
-        ::setenv("XDG_DATA_HOME", QFile::encodeName(kdehome) + "/xdg/local", 1);
         QStringList appsDirs = KGlobal::dirs()->resourceDirs("xdgdata-apps");
         //kDebug() << appsDirs;
         m_localApps = kdehome + "/xdg/local/applications/";
@@ -149,9 +147,9 @@ private Q_SLOTS:
         bool needUpdateMimeDb = data.sync();
         QVERIFY(needUpdateMimeDb);
         MimeTypeWriter::runUpdateMimeDatabase();
-        runKBuildSycoca();
+        //runKBuildSycoca();
         QCOMPARE(data.patterns(), patterns);
-        data.refresh(); // reload from ksycoca
+        data.refresh(); // reload from the xml
         QCOMPARE(data.patterns(), patterns);
         // Check what's in ksycoca
         QStringList newPatterns = KMimeType::mimeType("text/plain")->patterns();
@@ -164,7 +162,7 @@ private Q_SLOTS:
         QVERIFY(!packageFileName.isEmpty());
         QFile::remove(packageFileName);
         MimeTypeWriter::runUpdateMimeDatabase();
-        runKBuildSycoca();
+        //runKBuildSycoca();
         // Check what's in ksycoca
         newPatterns = KMimeType::mimeType("text/plain")->patterns();
         newPatterns.sort();
@@ -259,7 +257,7 @@ private Q_SLOTS:
         QVERIFY(data.isDirty());
         QVERIFY(data.sync());
         MimeTypeWriter::runUpdateMimeDatabase();
-        runKBuildSycoca();
+        //runKBuildSycoca();
         KMimeType::Ptr mime = KMimeType::mimeType(mimeTypeName);
         QVERIFY(mime);
         QCOMPARE(mime->comment(), QString("Fake MimeType"));
@@ -279,7 +277,7 @@ private Q_SLOTS:
         QVERIFY(MimeTypeWriter::hasDefinitionFile(mimeTypeName));
         MimeTypeWriter::removeOwnMimeType(mimeTypeName);
         MimeTypeWriter::runUpdateMimeDatabase();
-        runKBuildSycoca();
+        //runKBuildSycoca();
         KMimeType::Ptr mime = KMimeType::mimeType(mimeTypeName);
         QVERIFY(!mime);
     }
@@ -369,5 +367,3 @@ private: // helper methods
 QTEST_KDEMAIN( FileTypesTest, NoGUI )
 
 #include "filetypestest.moc"
-
-

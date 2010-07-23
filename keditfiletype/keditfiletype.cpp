@@ -76,9 +76,11 @@ void FileTypeDialog::init()
 void FileTypeDialog::save()
 {
     if (m_mimeTypeData->isDirty()) {
+        const bool servicesDirty = m_mimeTypeData->isServiceListDirty();
         if (m_mimeTypeData->sync())
             MimeTypeWriter::runUpdateMimeDatabase();
-        KBuildSycocaProgressDialog::rebuildKSycoca(this);
+        if (servicesDirty)
+            KBuildSycocaProgressDialog::rebuildKSycoca(this);
         // Trigger reparseConfiguration of filetypesrc in konqueror
         QDBusMessage message =
             QDBusMessage::createSignal("/KonqMain", "org.kde.Konqueror.Main", "reparseConfiguration");
