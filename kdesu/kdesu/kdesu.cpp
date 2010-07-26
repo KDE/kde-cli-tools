@@ -85,7 +85,7 @@ int main(int argc, char *argv[])
     KAboutData aboutData("kdesu", 0, ki18n("KDE su"),
             Version, ki18n("Runs a program with elevated privileges."),
             KAboutData::License_Artistic,
-            ki18n("Copyright © 1998-2000 Geert Jansen, Pietro Iglio"));
+            ki18n("Copyright (c) 1998-2000 Geert Jansen, Pietro Iglio"));
     aboutData.addAuthor(ki18n("Geert Jansen"), ki18n("Maintainer"),
             "jansen@kde.org", "http://www.stack.nl/~geertj/");
     aboutData.addAuthor(ki18n("Pietro Iglio"), ki18n("Original author"),

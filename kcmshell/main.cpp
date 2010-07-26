@@ -167,7 +167,7 @@ extern "C" KDE_EXPORT int kdemain(int _argc, char *_argv[])
                           0,
                           ki18n("A tool to start single KDE control modules"),
                           KAboutData::License_GPL,
-                          ki18n("Copyright © 1999–2004, KCMShell authors") );
+                          ki18n("(c) 1999-2004, The KDE Developers") );
 
     aboutData.addAuthor(ki18n("Frans Englich"), ki18n("Maintainer"), "frans.englich@kde.org");
     aboutData.addAuthor(ki18n("Daniel Molkentin"), KLocalizedString(), "molkentin@kde.org");
