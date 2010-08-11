@@ -108,4 +108,6 @@ int main( int argc, char **argv )
         printf("%s'\n", outp.toLocal8Bit().data());
     }
   }
+  return 0;
 }
+
