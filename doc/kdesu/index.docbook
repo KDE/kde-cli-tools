@@ -24,8 +24,8 @@
 
 <legalnotice>&FDLNotice;</legalnotice>
 
-<date>2005-06-07</date>
-<releaseinfo>1.00.00</releaseinfo>
+<date>2010-09-21</date>
+<releaseinfo>&kde; 4.5</releaseinfo>
 
 
 <abstract><para>&kdesu; is a graphical front end for the &UNIX;
@@ -46,7 +46,16 @@
 <!-- from kdebase/runtime/kdesu/FAQ since rev 855297
 kdesu is a libexec program, so does not normally reside in your PATH.
 Use something like:
-<command>$(kde4-config - -path libexec)kdesu - - program_to_run-->
+<command>$(kde4-config - -path libexec)kdesu - - program_to_run
+  
+https://bugs.kde.org/show_bug.cgi?id=194267
+"one needs to create a
+~/.kde/share/config/kdesurc file to tell KDE to use sudo instead of su."
+~/.kde/share/config/kdesurc
+[super-user-command]
+super-user-command=sudo
+does this really work?
+-->
 
 <para>Welcome to &kdesu;! &kdesu; is a graphical front end for the
 &UNIX; <command>su</command> command for the K Desktop Environment.
@@ -66,6 +75,10 @@ from <filename>.desktop</filename> files. Although it asks for the
 dialog, I consider it to be more of a command line &lt;-&gt; &GUI;
 glue instead of a pure &GUI; program.</para>
 
+<para>Since <command>kdesu</command> is no longer installed in <userinput>
+$(kde4-config --prefix)</userinput>/bin but in <userinput>kde4-config --path libexec</userinput> 
+and therefore not in your <envar>Path</envar>, you have to use <userinput>$(kde4-config 
+--path libexec)<command>kdesu</command></userinput> to launch <command>kdesu</command>.</para>
 </chapter>
 
 <chapter id="using-kdesu">
@@ -76,7 +89,7 @@ glue instead of a pure &GUI; program.</para>
 <cmdsynopsis>
 <command>kdesu</command>
 
-<group choice="opt"><option>-c</option></group>
+<group choice="opt"><option>-c</option> <replaceable> command</replaceable></group>
 <group choice="opt"><option>-d</option></group>
 <group choice="opt"><option>-f</option> <replaceable> file</replaceable></group>
 <group choice="opt"><option>-i</option> <replaceable> icon name</replaceable></group>
@@ -85,13 +98,14 @@ glue instead of a pure &GUI; program.</para>
 <group choice="opt"><option>-r</option></group>
 <group choice="opt"><option>-s</option></group>
 <group choice="opt"><option>-t</option></group>
-<group choice="opt"><option>-u</option> <replaceable>
-user</replaceable></group>
-<group choice="opt"><option>--nonewdcop</option></group>
+<group choice="opt"><option>-u</option> <replaceable> user</replaceable></group>
+<group choice="opt"><option>--noignorebutton</option></group>
+<group choice="opt"><option>--attach</option> <replaceable> winid</replaceable></group>
+<!--group choice="opt"><option>- -nonewdcop</option></group>
 
 <group><arg choice="req"><replaceable>command</replaceable> <arg><replaceable>arg1</replaceable></arg>
 	  <arg><replaceable>arg2</replaceable></arg>
-          <arg rep="repeat"><replaceable></replaceable></arg></arg></group>
+          <arg rep="repeat"><replaceable></replaceable></arg></arg></group-->
 </cmdsynopsis>
 <cmdsynopsis>
 <command>kdesu</command>
@@ -103,15 +117,15 @@ user</replaceable></group>
 
 <variablelist>
 <varlistentry>
-<term><option>-c <replaceable>program</replaceable></option></term>
-<listitem><para>This specifies the program to run as root. It has to be passed
+<term><option>-c <replaceable>command</replaceable></option></term>
+<listitem><para>This specifies the command to run as root. It has to be passed
 in one argument. So if, for example, you want to start a new file manager, you
-would enter at the prompt: <userinput><command>kdesu <option>-c <replaceable>kfm
--sw</replaceable></option></command></userinput></para></listitem>
+would enter at the prompt: <userinput>$(kde4-config --path libexec)<command>kdesu <option>-c <replaceable>
+&dolphin;</replaceable></option></command></userinput></para></listitem>
 </varlistentry>
 <varlistentry>
 <term><option>-d</option></term>
-<listitem><para>Do not show the command to be run in the dialog.</para></listitem>
+<listitem><para>Show debug information.</para></listitem>
 </varlistentry>
 <varlistentry>
 <term><option>-f <replaceable>file</replaceable></option></term>
@@ -122,27 +136,25 @@ writable by the current user, &kdesu; will execute the command as the
 current user. If it is not writable, the command is executed as user
 <parameter>user</parameter> (defaults to root).</para>
 <para><parameter>file</parameter> is evaluated like this: if
-<parameter>FILE</parameter> starts with a <literal>/</literal>, it is
+<parameter>file</parameter> starts with a <literal>/</literal>, it is
 taken as an absolute filename. Otherwise, it is taken as the name of a
-global &kde; configuration file. For example: to configure the K display
-manager, &kdm;, you could issue
-<command>kdesu <option>-c kdmconfig -f
-kdmrc</option></command></para></listitem>
+global &kde; configuration file.</para></listitem>
 </varlistentry>
 <varlistentry>
 <term><option>-i</option> <replaceable>icon name</replaceable></term>
 <listitem><para>Specify icon to use in the password dialog.  You may specify
 just the name, without any extension.</para>
-<para>For instance to run <command>kfmclient</command> and show the
+<para>For instance to run &konqueror; in filemanager mode and show the
 &konqueror; icon in the password dialog:</para>
-<screen><userinput><command>kdesu</command>  <option>-i konqueror</option> <command>kfmclient</command></userinput></screen>
+<screen><userinput>$(kde4-config --path libexec)<command>kdesu</command>  <option>-i konqueror</option> 
+<option>-c "konqueror --profile filemanagement"</option></userinput></screen>
 </listitem>
 </varlistentry>
 
 <varlistentry>
 <term><option>-n</option></term>
 <listitem><para>Do not keep the password. This disables the <guilabel>keep
-password</guilabel> check box in the password dialog.</para></listitem>
+password</guilabel> checkbox in the password dialog.</para></listitem>
 </varlistentry>
 <varlistentry>
 <term><option>-p</option> <replaceable>priority</replaceable></term>
@@ -154,7 +166,7 @@ password</guilabel> check box in the password dialog.</para></listitem>
 </varlistentry>
 <varlistentry>
 <term><option>-r</option></term>
-<listitem><para>Use real-time scheduling.</para>
+<listitem><para>Use realtime scheduling.</para>
 </listitem>
 </varlistentry>
 
