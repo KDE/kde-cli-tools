@@ -393,6 +393,7 @@ void KServiceListWidget::updatePreferredServices()
     KServiceListItem *sli = (KServiceListItem *) servicesLB->item(i);
     sl.append( sli->storageId );
   }
+  sl.removeDuplicates();
   if ( m_kind == SERVICELIST_APPLICATIONS )
     m_mimeTypeData->setAppServices(sl);
   else
