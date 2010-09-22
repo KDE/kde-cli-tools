@@ -26,7 +26,7 @@
 KServiceSelectDlg::KServiceSelectDlg( const QString& /*serviceType*/, const QString& /*value*/, QWidget *parent )
     : KDialog( parent )
 {
-    setObjectName( "serviceSelectDlg" );
+    setObjectName( QLatin1String( "serviceSelectDlg" ) );
     setModal( true );
     setCaption( i18n( "Add Service" ) );
     setButtons( Ok | Cancel );
