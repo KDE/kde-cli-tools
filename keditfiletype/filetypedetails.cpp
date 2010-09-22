@@ -144,7 +144,7 @@ FileTypeDetails::FileTypeDetails( QWidget * parent )
   QWidget * secondWidget = new QWidget(m_tabWidget);
   QVBoxLayout *secondLayout = new QVBoxLayout(secondWidget);
 
-  m_autoEmbedBox = new QGroupBox( i18n("Left Click Action (only for Konqueror file manager)"), secondWidget );
+  m_autoEmbedBox = new QGroupBox( i18n("Left Click Action in Konqueror"), secondWidget );
   secondLayout->addWidget( m_autoEmbedBox );
 
   m_autoEmbedBox->setSizePolicy( QSizePolicy::Preferred, QSizePolicy::Fixed );
