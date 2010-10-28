@@ -68,22 +68,24 @@ static void listModules()
   }
 }
 
-static KService::Ptr locateModule(const QByteArray& module)
+static KService::Ptr locateModule(const QString& module)
 {
-    QString path = QFile::decodeName(module);
+    QString path = module;
 
     if (!path.endsWith(QLatin1String(".desktop")))
         path += ".desktop";
 
     KService::Ptr service = KService::serviceByStorageId( path );
-    if (!service)
-    {
-        kWarning(debugArea()) << "Could not find module '" << module << "'." ;
+    if (!service) {
         return KService::Ptr();
     }
 
-    if ( service->noDisplay() )
-    {
+    if (!service->hasServiceType("KCModule")) {
+        // Not a KCModule. E.g. "kcmshell4 akonadi" finds services/kresources/kabc/akonadi.desktop, unrelated.
+        return KService::Ptr();
+    }
+
+    if ( service->noDisplay() ) {
         kDebug(debugArea()) << module << " should not be loaded.";
         return KService::Ptr();
     }
@@ -231,7 +233,7 @@ extern "C" KDE_EXPORT int kdemain(int _argc, char *_argv[])
     KService::List modules;
     for (int i = 0; i < args->count(); i++)
     {
-        const QByteArray arg = args->arg(i).toLocal8Bit();
+        const QString arg = args->arg(i);
         KService::Ptr service = locateModule(arg);
         if (!service) {
             service = locateModule("kcm_" + arg);
@@ -240,13 +242,13 @@ extern "C" KDE_EXPORT int kdemain(int _argc, char *_argv[])
             service = locateModule("kcm" + arg);
         }
 
-        if( service )
-        {
+        if (service) {
             modules.append(service);
             if( !serviceName.isEmpty() )
                 serviceName += '_';
-
             serviceName += args->arg(i);
+        } else {
+            fprintf(stderr, "%s\n", i18n("Could not find module '%1'. See kcmshell --list for the full list of modules.", arg).toLocal8Bit().constData());
         }
     }
 
