@@ -86,13 +86,15 @@ bool KDEsuDialog::checkPassword()
         return false;
 
     case SuProcess::SuNotAllowed:
-        showErrorMessage(("You are not allowed to use 'su'.<br /><br />"
-                         "On some systems, you need to be in a special "
-                         "group (often: wheel) to use this program."), FatalError);
+        // This is actually never returned, as kdesu cannot tell the difference.
+        showErrorMessage(QLatin1String("The impossible happened."), FatalError);
         return false;
 
     case SuProcess::SuIncorrectPassword:
-        showErrorMessage(i18n("Incorrect password, please try again."), PasswordError);
+        showErrorMessage(i18n("Permission denied.<br />"
+                              "Possibly incorrect password, please try again.<br />"
+                              "On some systems, you need to be in a special "
+                              "group (often: wheel) to use this program."), PasswordError);
         return false;
 
     default:
