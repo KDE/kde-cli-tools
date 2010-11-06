@@ -181,11 +181,18 @@ static int startApp()
         kError(1206) << "User " << user << " does not exist\n";
         exit(1);
     }
-    bool change_uid = (getuid() != pw->pw_uid);
+    bool other_uid = (getuid() != pw->pw_uid);
+    bool change_uid = other_uid;
+    if (!change_uid) {
+        char *cur_user = getenv("USER");
+        if (!cur_user)
+            cur_user = getenv("LOGNAME");
+        change_uid = (!cur_user || user != cur_user);
+    }
 
     // If file is writeable, do not change uid
     QString file = args->getOption("f");
-    if (change_uid && !file.isEmpty())
+    if (other_uid && !file.isEmpty())
     {
         if (file.at(0) != '/')
         {
