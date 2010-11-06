@@ -137,7 +137,7 @@ int main(int argc, char *argv[])
 
     if (result == 127)
     {
-        KMessageBox::sorry(0, i18n("Command '%1' not found.", QString::fromLocal8Bit(command)));
+        KMessageBox::sorry(0, i18n("Cannot execute command '%1'.", QString::fromLocal8Bit(command)));
     }
 
     return result;
