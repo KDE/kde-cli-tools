@@ -120,10 +120,12 @@ int main(int argc, char *argv[])
     //KApplication::disableAutoDcopRegistration();
     // kdesu doesn't process SM events, so don't even connect to ksmserver
     QByteArray session_manager = qgetenv( "SESSION_MANAGER" );
-    unsetenv( "SESSION_MANAGER" );
+    if (!session_manager.isEmpty())
+        unsetenv( "SESSION_MANAGER" );
     KApplication app;
     // but propagate it to the started app
-    setenv( "SESSION_MANAGER", session_manager.data(), 1 );
+    if (!session_manager.isEmpty())
+        setenv( "SESSION_MANAGER", session_manager.data(), 1 );
 
     {
 #ifdef Q_WS_X11
