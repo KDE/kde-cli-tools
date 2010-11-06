@@ -79,8 +79,8 @@
 #endif
 
 #ifndef SUN_LEN
-#define SUN_LEN(ptr) ((kde_socklen_t) (((struct sockaddr_un *) 0)->sun_path) \
-                     + strlen ((ptr)->sun_path))
+#define SUN_LEN(ptr) ((kde_socklen_t) \
+    (offsetof(struct sockaddr_un, sun_path) + strlen ((ptr)->sun_path)))
 #endif
 
 #define ERR strerror(errno)
