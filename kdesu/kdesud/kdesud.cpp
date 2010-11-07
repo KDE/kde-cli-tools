@@ -79,7 +79,7 @@
 #endif
 
 #ifndef SUN_LEN
-#define SUN_LEN(ptr) ((kde_socklen_t) \
+#define SUN_LEN(ptr) ((socklen_t) \
     (offsetof(struct sockaddr_un, sun_path) + strlen ((ptr)->sun_path)))
 #endif
 
@@ -100,7 +100,7 @@ int pipeOfDeath[2];
 
 // FIXME: This is just here to make it compile
 // It would be better to fix it more globally (Caleb Tennis)
-typedef unsigned ksocklen_t;
+typedef unsigned socklen_t;
 
 void kdesud_cleanup()
 {
@@ -166,7 +166,7 @@ void sigchld_handler(int)
 int create_socket()
 {
     int sockfd;
-    ksocklen_t addrlen;
+    socklen_t addrlen;
     struct stat s;
 
     QString display = QString::fromAscii(getenv("DISPLAY"));
@@ -331,7 +331,7 @@ int main(int argc, char *argv[])
 
     // Main execution loop
 
-    ksocklen_t addrlen;
+    socklen_t addrlen;
     struct sockaddr_un clientname;
 
     fd_set tmp_fds, active_fds;
