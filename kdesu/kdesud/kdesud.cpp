@@ -98,10 +98,6 @@ Display *x11Display;
 #endif
 int pipeOfDeath[2];
 
-// FIXME: This is just here to make it compile
-// It would be better to fix it more globally (Caleb Tennis)
-typedef unsigned socklen_t;
-
 void kdesud_cleanup()
 {
     unlink(sock);
