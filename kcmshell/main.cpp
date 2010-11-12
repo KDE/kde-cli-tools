@@ -248,7 +248,7 @@ extern "C" KDE_EXPORT int kdemain(int _argc, char *_argv[])
                 serviceName += '_';
             serviceName += args->arg(i);
         } else {
-            fprintf(stderr, "%s\n", i18n("Could not find module '%1'. See kcmshell --list for the full list of modules.", arg).toLocal8Bit().constData());
+            fprintf(stderr, "%s\n", i18n("Could not find module '%1'. See kcmshell4 --list for the full list of modules.", arg).toLocal8Bit().constData());
         }
     }
 
