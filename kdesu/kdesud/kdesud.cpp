@@ -296,7 +296,7 @@ int main(int argc, char *argv[])
         exit(1);
     }
     if (pid)
-        exit(0);
+        _exit(0);
 
 #ifdef Q_WS_X11
     // Make sure we exit when the display gets closed.
