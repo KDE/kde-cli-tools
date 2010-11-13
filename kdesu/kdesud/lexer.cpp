@@ -73,10 +73,21 @@ int Lexer::lex()
 	    c = m_Input[in++];
 	    while ((c != '"') && !iscntrl(c)) {
 		// handle escaped characters
-		if (c == '\\')
-		    m_Output += m_Input[in++];
-		else
+		if (c == '\\') {
+		    c = m_Input[in++];
+		    if ((c == '"') || iscntrl(c))
+		        return Tok_none;
+		    if (c == '^') {
+		        c = m_Input[in++];
+		        if ((c == '"') || iscntrl(c))
+		             return Tok_none;
+		        m_Output += c - '@';
+		    } else {
+		        m_Output += c;
+		    }
+		} else {
 		    m_Output += c;
+		}
 		c = m_Input[in++];
 	    }
 	    if (c == '"')
