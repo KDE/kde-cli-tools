@@ -27,6 +27,7 @@
 
 using namespace KDESu;
 
+#define BUF_SIZE 1024
 
 // Global repository
 extern Repository *repo;
@@ -55,10 +56,8 @@ int ConnectionHandler::handle()
 {
     int ret, nbytes;
 
-    // Add max 100 bytes to connection buffer
-
-    char tmpbuf[100];
-    nbytes = recv(m_Fd, tmpbuf, 99, 0);
+    m_Buf.reserve(BUF_SIZE);
+    nbytes = recv(m_Fd, m_Buf.data() + m_Buf.size(), BUF_SIZE - 1 - m_Buf.size(), 0);
 
     if (nbytes < 0)
     {
@@ -71,26 +70,27 @@ int ConnectionHandler::handle()
         // eof
         return -1;
     }
-    tmpbuf[nbytes] = '\000';
 
-    if (m_Buf.length()+nbytes > 1024)
+    m_Buf.resize(m_Buf.size()+nbytes);
+    if (m_Buf.size() == BUF_SIZE - 1)
     {
         kWarning(1205) << "line too long";
         return -1;
     }
 
-    m_Buf.append(tmpbuf);
-    memset(tmpbuf, 'x', nbytes);
-
     // Do we have a complete command yet?
     int n;
-    QByteArray newbuf;
     while ((n = m_Buf.indexOf('\n')) != -1)
     {
-        newbuf = m_Buf.left(n+1);
-        m_Buf.fill('x', n+1);
-        m_Buf.remove(0, n+1);
+        n++;
+        QByteArray newbuf = QByteArray(m_Buf.data(), n); // ensure new detached buffer for simplicity
+        int nsize = m_Buf.size() - n;
+        ::memmove(m_Buf.data(), m_Buf.data() + n, nsize);
+        ::memset(m_Buf.data() + nsize, 'x', n);
+        m_Buf.resize(nsize);
         ret = doCommand(newbuf);
+        if (newbuf.isDetached()) // otherwise somebody else will clear it
+            newbuf.fill('x');
         if (ret < 0)
             return ret;
     }
