@@ -37,6 +37,7 @@
 
 #include <stdio.h>
 #include <stdlib.h>
+#include <fcntl.h>
 #include <unistd.h>
 #include <ctype.h>
 #include <string.h>
@@ -278,7 +279,7 @@ int main(int argc, char *argv[])
     int sockfd = create_socket();
     if (sockfd < 0)
         exit(1);
-    if (listen(sockfd, 1) < 0)
+    if (listen(sockfd, 10) < 0)
     {
         kError(1205) << "listen(): " << ERR << "\n";
         kdesud_cleanup();
@@ -415,6 +416,7 @@ int main(int argc, char *argv[])
 		handler[fd] = new ConnectionHandler(fd);
                 maxfd = qMax(maxfd, fd);
                 FD_SET(fd, &active_fds);
+                fcntl(fd, F_SETFL, fcntl(fd, F_GETFL) | O_NONBLOCK);
                 continue;
             }
 
