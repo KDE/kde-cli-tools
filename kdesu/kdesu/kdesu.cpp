@@ -35,6 +35,7 @@
 #include <kcmdlineargs.h>
 #include <kmessagebox.h>
 #include <kuser.h>
+#include <kshell.h>
 #include <kstartupinfo.h>
 #include <kdefakes.h>
 #include <kwindowsystem.h>
@@ -97,8 +98,8 @@ int main(int argc, char *argv[])
     // NOTE: if you change the position of the -u switch, be sure to adjust it
     // at the beginning of main()
     KCmdLineOptions options;
-    options.add("+command", ki18n("Specifies the command to run"));
-    options.add("c <command>", ki18n("Specifies the command to run"));
+    options.add("+command", ki18n("Specifies the command to run as separate arguments"));
+    options.add("c <command>", ki18n("Specifies the command to run as one string"));
     options.add("f <file>", ki18n("Run command under target uid if <file> is not writable"));
     options.add("u <user>", ki18n("Specifies the target uid"), duser);
     options.add("n", ki18n("Do not keep password"));
@@ -237,16 +238,10 @@ static int startApp()
     if (args->isSet("c"))
     {
         command = args->getOption("c").toLocal8Bit();
-        for (int i=0; i<args->count(); i++)
-        {
-            QString arg = args->arg(i);
-	    if(!arg.isEmpty()) {
-		QChar q('\'');
-		arg.replace(q, "'\\''").prepend(q).append(q);
-	    }
-            command += ' ';
-            command += QFile::encodeName(arg);
-        }
+        // Accepting additional arguments here is somewhat weird,
+        // but one can conceive use cases: have a complex command with
+        // redirections and additional file names which need to be quoted
+        // safely.
     }
     else
     {
@@ -255,17 +250,11 @@ static int startApp()
             KCmdLineArgs::usageError(i18n("No command specified."));
             exit(1);
         }
-        command = args->arg(0).toLocal8Bit();
-        for (int i=1; i<args->count(); i++)
-        {
-            QString arg = args->arg(i);
-	    if(!arg.isEmpty()) {
-		QChar q('\'');
-		arg.replace(q, "'\\''").prepend(q).append(q);
-	    }
-            command += ' ';
-            command += QFile::encodeName(arg);
-        }
+    }
+    for (int i = 0; i < args->count(); i++)
+    {
+        command += ' ';
+        command += QFile::encodeName(KShell::quoteArg(args->arg(i)));
     }
 
     // Don't change uid if we're don't need to.
