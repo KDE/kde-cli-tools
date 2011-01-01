@@ -185,6 +185,7 @@ extern "C" KDE_EXPORT int kdemain(int _argc, char *_argv[])
     options.add("+module", ki18n("Configuration module to open"));
     options.add("lang <language>", ki18n("Specify a particular language"));
     options.add("silent", ki18n("Do not display main window"));
+    options.add("args <arguments>", ki18n("Arguments for the module"));
     KCmdLineArgs::addCmdLineOptions( options ); // Add our own options.
     KCMShell app;
 
@@ -267,6 +268,10 @@ extern "C" KDE_EXPORT int kdemain(int _argc, char *_argv[])
         ftype = KPageDialog::List;
     }
 
+    QStringList moduleArgs;
+    QString x = args->getOption("args");
+    moduleArgs << x.split(QRegExp(" +"));
+
     KCMShellMultiDialog *dlg = new KCMShellMultiDialog(ftype);
     KCmdLineArgs *kdeargs = KCmdLineArgs::parsedArgs("kde");
     if (kdeargs && kdeargs->isSet("caption")) {
@@ -277,7 +282,7 @@ extern "C" KDE_EXPORT int kdemain(int _argc, char *_argv[])
     }
 
     for (KService::List::ConstIterator it = modules.constBegin(); it != modules.constEnd(); ++it)
-        dlg->addModule(*it);
+        dlg->addModule(*it, 0, moduleArgs);
 
     if ( !args->isSet( "icon" ) && modules.count() == 1)
     {
