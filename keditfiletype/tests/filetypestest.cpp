@@ -282,6 +282,26 @@ private Q_SLOTS:
         QVERIFY(!mime);
     }
 
+    void testModifyMimeTypeComment() // of a system mimetype. And check that it's re-read correctly.
+    {
+        const char* mimeTypeName = "image/png";
+        MimeTypeData data(KMimeType::mimeType(mimeTypeName));
+        QCOMPARE(data.comment(), QString::fromLatin1("PNG image"));
+        const char* fakeComment = "PNG image [testing]";
+        data.setComment(fakeComment);
+        QVERIFY(data.isDirty());
+        QVERIFY(data.sync());
+        MimeTypeWriter::runUpdateMimeDatabase();
+        //runKBuildSycoca();
+        KMimeType::Ptr mime = KMimeType::mimeType(mimeTypeName);
+        QVERIFY(mime);
+        QCOMPARE(mime->comment(), QString::fromLatin1(fakeComment));
+
+        // Cleanup
+        QVERIFY(MimeTypeWriter::hasDefinitionFile(mimeTypeName));
+        MimeTypeWriter::removeOwnMimeType(mimeTypeName);
+    }
+
     void cleanupTestCase()
     {
         // If we remove it, then every run of the unit test has to run kbuildsycoca... slow.
