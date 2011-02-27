@@ -9,6 +9,7 @@
 #include "secure.h"
 
 #include <config-runtime.h>
+#include <config-kdesud.h>
 
 #include <stdio.h>
 #include <unistd.h>
@@ -30,7 +31,20 @@ typedef unsigned ksocklen_t;
  * Under Linux, Socket_security is supported.
  */
 
-#if defined(SO_PEERCRED)
+#if defined(HAVE_GETPEEREID)
+
+SocketSecurity::SocketSecurity(int sockfd) : pid(-1), gid(-1), uid(-1)
+{
+    uid_t euid;
+    gid_t egid;
+    if (getpeereid(sockfd, &euid, &egid) == 0) {
+	uid = euid;
+	gid = egid;
+	pid = -1;
+    }
+}
+
+#elif defined(SO_PEERCRED)
 
 SocketSecurity::SocketSecurity(int sockfd) : pid(-1), gid(-1), uid(-1)
 {
@@ -43,19 +57,6 @@ SocketSecurity::SocketSecurity(int sockfd) : pid(-1), gid(-1), uid(-1)
     pid = cred.pid;
     gid = cred.gid;
     uid = cred.uid;
-}
-
-#else
-# if defined(HAVE_GETPEEREID)
-SocketSecurity::SocketSecurity(int sockfd) : pid(-1), gid(-1), uid(-1)
-{
-    uid_t euid;
-    gid_t egid;
-    if (getpeereid(sockfd, &euid, &egid) == 0) {
-	uid = euid;
-	gid = egid;
-	pid = -1;
-    }
 }
 
 # else
@@ -80,5 +81,4 @@ SocketSecurity::SocketSecurity(int sockfd) : pid(-1), gid(-1), uid(-1)
     uid = getuid();
 }
 
-# endif
 #endif
