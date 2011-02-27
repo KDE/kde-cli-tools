@@ -2,3 +2,6 @@
 
 /* Define to 1 if you have the `getpeereid' function. */
 #cmakedefine HAVE_GETPEEREID 1
+
+/* Define to 1 if you have the `getpeerucred' function. */
+#cmakedefine HAVE_GETPEERUCRED 1

@@ -1,4 +1,5 @@
 check_function_exists(getpeereid HAVE_GETPEEREID) # openbsd style
+check_function_exists(getpeereucred HAVE_GETPEERUCRED) # solaris style
 
 configure_file (config-kdesud.h.cmake ${CMAKE_CURRENT_BINARY_DIR}/config-kdesud.h )
 

@@ -44,6 +44,22 @@ SocketSecurity::SocketSecurity(int sockfd) : pid(-1), gid(-1), uid(-1)
     }
 }
 
+# elif defined(HAVE_GETPEERUCRED)
+
+#include <ucred.h>
+
+SocketSecurity::SocketSecurity(int sockfd) : pid(-1), gid(-1), uid(-1)
+{
+    ucred_t *ucred = 0;
+
+    if (getpeerucred(sockfd, &ucred) == 0) {
+        uid = ucred_geteuid(ucred);
+        gid = ucred_getrgid(ucred);
+        pid = -1;
+        ucred_free(ucred);
+    }
+}
+
 #elif defined(SO_PEERCRED)
 
 SocketSecurity::SocketSecurity(int sockfd) : pid(-1), gid(-1), uid(-1)
