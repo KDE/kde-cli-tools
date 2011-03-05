@@ -98,7 +98,7 @@ int main(int argc, char *argv[])
     // NOTE: if you change the position of the -u switch, be sure to adjust it
     // at the beginning of main()
     KCmdLineOptions options;
-    options.add("+command", ki18n("Specifies the command to run as separate arguments"));
+    options.add("!+command", ki18n("Specifies the command to run as separate arguments"));
     options.add("c <command>", ki18n("Specifies the command to run as one string"));
     options.add("f <file>", ki18n("Run command under target uid if <file> is not writable"));
     options.add("u <user>", ki18n("Specifies the target uid"), duser);
