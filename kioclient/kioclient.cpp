@@ -75,7 +75,7 @@ static void usage()
     puts(i18n("  kioclient copy 'src' 'dest'\n"
               "            # Copies the URL 'src' to 'dest'.\n"
               "            #   'src' may be a list of URLs.\n").toLocal8Bit());
-    puts(i18n("            #   the short version kioclient mv\n"
+    puts(i18n("            #   the short version kioclient cp\n"
               "            #   is also available.\n\n").toLocal8Bit());
     puts(i18n("  kioclient cat 'url'\n"
               "            # Writes out the contents of 'url' to stdout\n\n").toLocal8Bit());
