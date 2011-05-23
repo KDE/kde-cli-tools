@@ -44,7 +44,7 @@ private Q_SLOTS:
         //kDebug() << appsDirs;
         m_localApps = kdehome + "/xdg/local/applications/";
         QCOMPARE(appsDirs.first(), m_localApps);
-        QCOMPARE(KGlobal::dirs()->resourceDirs("xdgdata-mime").first(), kdehome + "/xdg/local/mime/");
+        QCOMPARE(KGlobal::dirs()->resourceDirs("xdgdata-mime").first(), QString(kdehome + "/xdg/local/mime/"));
 
         QFile::remove(m_localApps + "mimeapps.list");
 
