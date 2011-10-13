@@ -44,7 +44,7 @@ private Q_SLOTS:
         //kDebug() << appsDirs;
         m_localApps = kdehome + "/xdg/local/applications/";
         QCOMPARE(appsDirs.first(), m_localApps);
-        QCOMPARE(KGlobal::dirs()->resourceDirs("xdgdata-mime").first(), kdehome + "/xdg/local/mime/");
+        QCOMPARE(KGlobal::dirs()->resourceDirs("xdgdata-mime").first(), QString(kdehome + "/xdg/local/mime/"));
 
         QFile::remove(m_localApps + "mimeapps.list");
 
@@ -280,6 +280,26 @@ private Q_SLOTS:
         //runKBuildSycoca();
         KMimeType::Ptr mime = KMimeType::mimeType(mimeTypeName);
         QVERIFY(!mime);
+    }
+
+    void testModifyMimeTypeComment() // of a system mimetype. And check that it's re-read correctly.
+    {
+        const char* mimeTypeName = "image/png";
+        MimeTypeData data(KMimeType::mimeType(mimeTypeName));
+        QCOMPARE(data.comment(), QString::fromLatin1("PNG image"));
+        const char* fakeComment = "PNG image [testing]";
+        data.setComment(fakeComment);
+        QVERIFY(data.isDirty());
+        QVERIFY(data.sync());
+        MimeTypeWriter::runUpdateMimeDatabase();
+        //runKBuildSycoca();
+        KMimeType::Ptr mime = KMimeType::mimeType(mimeTypeName);
+        QVERIFY(mime);
+        QCOMPARE(mime->comment(), QString::fromLatin1(fakeComment));
+
+        // Cleanup
+        QVERIFY(MimeTypeWriter::hasDefinitionFile(mimeTypeName));
+        MimeTypeWriter::removeOwnMimeType(mimeTypeName);
     }
 
     void cleanupTestCase()
