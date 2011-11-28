@@ -14,8 +14,8 @@
 <!-- TRANS:ROLES_OF_TRANSLATORS -->
 </authorgroup>
 
-<date>2010-06-23</date>
-<releaseinfo>&kde; 4.5</releaseinfo>
+<date>2011-11-28</date>
+<releaseinfo>&kde; 4.8</releaseinfo>
 
 <keywordset>
 <keyword>KDE</keyword>
@@ -81,7 +81,6 @@ at a minimum you will have:</para>
 <listitem><para>Inode</para></listitem>
 <listitem><para>Message</para></listitem>
 <listitem><para>Multipart</para></listitem>
-<listitem><para>Print</para></listitem>
 <listitem><para>Text</para></listitem>
 <listitem><para>Video</para></listitem>
 </orderedlist>
