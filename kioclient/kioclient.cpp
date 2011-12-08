@@ -268,8 +268,7 @@ bool ClientApp::doIt()
         kFatal(101) << "Session bus not found" ;
 
 #ifdef KIOCLIENT_AS_KDEOPEN
-    app.kde_open(args->url(0), QByteArray(), false);
-    return true;
+    return app.kde_open(args->url(0), QByteArray(), false);
 #elif defined(KIOCLIENT_AS_KDECP)
     checkArgumentCount(argc, 2, 0);
     return app.doCopy(0);
@@ -303,9 +302,9 @@ bool ClientApp::doIt()
     else if ( command == "exec" )
     {
         checkArgumentCount(argc, 2, 3);
-        app.kde_open( args->url( 1 ),
-                      argc == 3 ? args->arg( 2 ) : QString(),
-                      true );
+        return app.kde_open( args->url( 1 ),
+                             argc == 3 ? args->arg( 2 ) : QString(),
+                             true );
     }
     else if ( command == "download" )
     {
