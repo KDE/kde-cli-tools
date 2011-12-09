@@ -195,6 +195,7 @@ Comment[zh_CN]=配置文件关联
 Comment[zh_TW]=設定檔案關聯
 
 X-KDE-Keywords=Filetypes,File Associations,Mime Types,File Patterns,Files,Pattern
+X-KDE-Keywords[ca]=Tipus de fitxers,Associacions de fitxer,tipus MIME,patrons de fitxers,patró
 X-KDE-Keywords[kk]=Filetypes,File Associations,Mime Types,File Patterns,Files,Pattern
 X-KDE-Keywords[nl]=Bestandstypen,bestandsassociaties,Mime-typen,bestandspatronen,bestanden,patroon
 X-KDE-Keywords[pt]=Tipos de ficheiros,Associações de ficheiros,Tipos MIME,Padrões de ficheiros,Ficheiros,Padrão
