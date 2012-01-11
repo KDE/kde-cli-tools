@@ -387,7 +387,7 @@ void ClientApp::deref()
 void ClientApp::slotPrintData(KIO::Job*, const QByteArray &data)
 {
     if (!data.isEmpty())
-        std::cout << data.constData();
+        std::cout.write(data.constData(), data.size());
 }
 
 ClientApp::ClientApp(int &argc, char **argv )
