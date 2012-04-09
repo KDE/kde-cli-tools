@@ -25,8 +25,8 @@
 #include <unistd.h>
 
 // Qt
-#include <QtGui/QLayout>
-#include <QtGui/QHBoxLayout>
+#include <QLayout>
+#include <QHBoxLayout>
 
 // KDE
 #include <kapplication.h>

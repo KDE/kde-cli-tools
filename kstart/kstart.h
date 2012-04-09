@@ -25,7 +25,7 @@
 #ifndef KSTART_H
 #define KSTART_H
 
-#include <QtGui/QWidgetList>
+#include <QWidgetList>
 #include <QObject>
 
 class KStart: public QObject {

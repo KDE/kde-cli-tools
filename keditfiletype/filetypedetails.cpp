@@ -22,12 +22,12 @@
 #include "sharedmimeinfoversion.h"
 
 // Qt
-#include <QtGui/QBoxLayout>
-#include <QtGui/QButtonGroup>
-#include <QtGui/QCheckBox>
-#include <QtGui/QLayout>
-#include <QtGui/QListWidget>
-#include <QtGui/QRadioButton>
+#include <QBoxLayout>
+#include <QButtonGroup>
+#include <QCheckBox>
+#include <QLayout>
+#include <QListWidget>
+#include <QRadioButton>
 #include <QLabel>
 
 // KDE

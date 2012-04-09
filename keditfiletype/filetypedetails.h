@@ -20,7 +20,7 @@
 #ifndef FILETYPEDETAILS_H
 #define FILETYPEDETAILS_H
 
-#include <QtGui/QTabWidget>
+#include <QTabWidget>
 
 class KIconButton;
 class MimeTypeData;

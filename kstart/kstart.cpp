@@ -32,7 +32,7 @@
 #include <QRegExp>
 #include <QTimer>
 #include <QDesktopWidget>
-#include <QtGui/QApplication>
+#include <QApplication>
 
 #include <kdebug.h>
 #include <kprocess.h>

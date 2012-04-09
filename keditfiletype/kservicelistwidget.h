@@ -23,7 +23,7 @@
 #define _KSERVICELISTWIDGET_H
 
 #include <QGroupBox>
-#include <QtGui/QListWidget>
+#include <QListWidget>
 #include <kservice.h>
 class MimeTypeData;
 class KPushButton;

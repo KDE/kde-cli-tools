@@ -24,10 +24,10 @@
 #include "mimetypewriter.h"
 
 // Qt
-#include <QtGui/QLabel>
-#include <QtGui/QLayout>
+#include <QLabel>
+#include <QLayout>
 #include <QtCore/QTimer>
-#include <QtGui/QBoxLayout>
+#include <QBoxLayout>
 #include <qdbusconnection.h>
 #include <qdbusmessage.h>
 

@@ -20,7 +20,7 @@
 #ifndef FILEGROUPDETAILS_H
 #define FILEGROUPDETAILS_H
 
-#include <QtGui/QWidget>
+#include <QWidget>
 class MimeTypeData;
 class QButtonGroup;
 

@@ -22,7 +22,7 @@
 #define TYPESLISTITEM_H
 
 #include "mimetypedata.h"
-#include <QtGui/QTreeWidgetItem>
+#include <QTreeWidgetItem>
 
 #include <kmimetype.h>
 

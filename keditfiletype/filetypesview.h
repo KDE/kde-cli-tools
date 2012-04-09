@@ -24,8 +24,8 @@
 
 #include <QtCore/QList>
 #include <QtCore/QMap>
-#include <QtGui/QLabel>
-#include <QtGui/QStackedWidget>
+#include <QLabel>
+#include <QStackedWidget>
 
 #include <KSharedConfig>
 #include <KCModule>

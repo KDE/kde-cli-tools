@@ -22,12 +22,12 @@
 #include "newtypedlg.h"
 
 // Qt
-#include <QtGui/QBoxLayout>
-#include <QtGui/QComboBox>
-#include <QtGui/QFrame>
-#include <QtGui/QFormLayout>
-#include <QtGui/QLabel>
-#include <QtGui/QLayout>
+#include <QBoxLayout>
+#include <QComboBox>
+#include <QFrame>
+#include <QFormLayout>
+#include <QLabel>
+#include <QLayout>
 
 // KDE
 #include <klineedit.h>

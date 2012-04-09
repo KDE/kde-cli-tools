@@ -20,10 +20,10 @@
 #include "filegroupdetails.h"
 #include "mimetypedata.h"
 
-#include <QtGui/QLayout>
-#include <QtGui/QRadioButton>
-#include <QtGui/QButtonGroup>
-#include <QtGui/QGroupBox>
+#include <QLayout>
+#include <QRadioButton>
+#include <QButtonGroup>
+#include <QGroupBox>
 
 #include <klocale.h>
 

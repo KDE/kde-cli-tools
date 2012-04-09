@@ -24,7 +24,7 @@
 #include <iostream>
 
 #include <QtCore/QFile>
-#include <QtGui/QIcon>
+#include <QIcon>
 
 #include <QtDBus/QtDBus>
 

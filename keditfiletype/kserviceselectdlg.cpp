@@ -20,8 +20,8 @@
 #include "kservicelistwidget.h"
 
 #include <klocale.h>
-#include <QtGui/QVBoxLayout>
-#include <QtGui/QLabel>
+#include <QVBoxLayout>
+#include <QLabel>
 
 KServiceSelectDlg::KServiceSelectDlg( const QString& /*serviceType*/, const QString& /*value*/, QWidget *parent )
     : KDialog( parent )
