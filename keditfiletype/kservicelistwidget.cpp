@@ -37,6 +37,7 @@
 #include <kopenwithdialog.h>
 #include <kpropertiesdialog.h>
 #include <kpushbutton.h>
+#include <kicon.h>
 #include <kstandarddirs.h>
 
 // Local

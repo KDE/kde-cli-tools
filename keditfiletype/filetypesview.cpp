@@ -39,6 +39,7 @@
 #include <kpushbutton.h>
 #include <kservicetypeprofile.h>
 #include <kstandarddirs.h>
+#include <kicon.h>
 #include <ksycoca.h>
 
 // Local

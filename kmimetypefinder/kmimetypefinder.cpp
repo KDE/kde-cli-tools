@@ -23,6 +23,7 @@
 #include <kcmdlineargs.h>
 #include <QCoreApplication>
 #include <kdeversion.h>
+#include <klocale.h>
 #include <kcomponentdata.h>
 
 #include <stdio.h>

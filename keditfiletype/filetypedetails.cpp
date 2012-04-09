@@ -37,6 +37,8 @@
 #include <kinputdialog.h>
 #include <klineedit.h>
 #include <klocale.h>
+#include <kicon.h>
+#include <kiconbutton.h>
 #include <kpushbutton.h>
 
 // Local
