@@ -20,7 +20,6 @@
 #endif
 
 #include <QFileInfo>
-#include <QtCore/QBool>
 #include <QFile>
 
 #include <QtDBus/QtDBus>
