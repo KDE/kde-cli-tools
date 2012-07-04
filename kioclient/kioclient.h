@@ -20,6 +20,7 @@
 #define __kioclient_h
 
 #include <QApplication>
+#include <kio/udsentry.h>
 class KUrl;
 class KJob;
 namespace KIO { class Job; }
@@ -35,6 +36,7 @@ public:
 
 private Q_SLOTS:
     void slotPrintData(KIO::Job *job, const QByteArray &data);
+    void slotEntries(KIO::Job* job, const KIO::UDSEntryList& );
     void slotResult( KJob * );
     void delayedQuit();
     void slotDialogCanceled();
@@ -44,6 +46,7 @@ private:
     bool kde_open( const KUrl& url, const QString& mimeType, bool allowExec );
     bool doCopy( int firstArg );
     bool doMove( int firstArg );
+    bool doList( int firstArg );
     bool doRemove( int firstArg );
 
     static bool m_ok;

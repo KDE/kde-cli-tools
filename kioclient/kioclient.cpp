@@ -79,6 +79,8 @@ static void usage()
               "            #   is also available.\n\n").toLocal8Bit());
     puts(i18n("  kioclient cat 'url'\n"
               "            # Writes out the contents of 'url' to stdout\n\n").toLocal8Bit());
+    puts(i18n("  kioclient ls 'url'\n"
+              "            # Lists the contents of the directory 'url' to stdout\n\n").toLocal8Bit());
     puts(i18n("  kioclient remove 'url'\n"
               "            # Removes the URL\n"
               "            #   'url' may be a list of URLs.\n").toLocal8Bit());
@@ -205,6 +207,30 @@ bool ClientApp::doCopy( int firstArg )
     return m_ok;
 }
 
+void ClientApp::slotEntries(KIO::Job* job, const KIO::UDSEntryList& list)
+{
+    KUrl url = static_cast<KIO::ListJob*>( job )->url();
+    KIO::UDSEntryList::ConstIterator it=list.begin();
+    for (; it != list.end(); ++it) {
+        // For each file...
+        QString name = (*it).stringValue( KIO::UDSEntry::UDS_NAME );
+        std::cout << qPrintable(name) << std::endl;
+    }
+}
+
+bool ClientApp::doList( int firstArg )
+{
+    KCmdLineArgs *args = KCmdLineArgs::parsedArgs();
+    KUrl dir = args->url(firstArg);
+    KIO::Job * job = KIO::listDir(dir, KIO::HideProgressInfo);
+    job->setUiDelegate(0);
+    connect(job, SIGNAL(entries(KIO::Job*,KIO::UDSEntryList)),
+            SLOT(slotEntries(KIO::Job*,KIO::UDSEntryList)));
+    connect(job, SIGNAL(result(KJob *)), this, SLOT(slotResult(KJob *)));
+    this->exec();
+    return m_ok;
+}
+
 bool ClientApp::doMove( int firstArg )
 {
     KCmdLineArgs *args = KCmdLineArgs::parsedArgs();
@@ -239,7 +265,7 @@ bool ClientApp::doRemove( int firstArg )
 bool ClientApp::doIt()
 {
     KCmdLineArgs *args = KCmdLineArgs::parsedArgs();
-    int argc = args->count();
+    const int argc = args->count();
     checkArgumentCount(argc, 1, 0);
 
     if ( !args->isSet( "ninteractive" ) ) {
@@ -280,7 +306,7 @@ bool ClientApp::doIt()
     const QByteArray command = args->arg(0).toLocal8Bit();
     if ( command == "openProperties" )
     {
-        checkArgumentCount(argc, 2, 2);
+        checkArgumentCount(argc, 2, 2); // openProperties <url>
         KPropertiesDialog * p = new KPropertiesDialog( args->url(1), 0 /*no parent*/ );
         QObject::connect( p, SIGNAL( destroyed() ), &app, SLOT( quit() ));
         QObject::connect( p, SIGNAL( canceled() ), &app, SLOT( slotDialogCanceled() ));
@@ -290,7 +316,7 @@ bool ClientApp::doIt()
     }
     else if ( command == "cat" )
     {
-        checkArgumentCount(argc, 2, 2);
+        checkArgumentCount(argc, 2, 2); // cat <url>
         KIO::TransferJob* job = KIO::get(args->url(1), KIO::NoReload, s_jobFlags);
         if ( !s_interactive )
             job->setUiDelegate( 0 );
@@ -343,17 +369,22 @@ bool ClientApp::doIt()
     }
     else if ( command == "copy" || command == "cp" )
     {
-        checkArgumentCount(argc, 2, 0);
+        checkArgumentCount(argc, 3, 0); // cp <src> <dest>
         return app.doCopy( 1 );
     }
     else if ( command == "move" || command == "mv" )
     {
-        checkArgumentCount(argc, 2, 0);
+        checkArgumentCount(argc, 3, 0); // mv <src> <dest>
         return app.doMove( 1 );
+    }
+    else if ( command == "list" || command == "ls" )
+    {
+        checkArgumentCount(argc, 2, 2); // ls <url>
+        return app.doList( 1 );
     }
     else if ( command == "remove" || command == "rm" )
     {
-        checkArgumentCount(argc, 2, 0);
+        checkArgumentCount(argc, 2, 0); // rm <url>
         return app.doRemove( 1 );
     }
     else
