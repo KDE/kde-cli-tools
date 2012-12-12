@@ -55,6 +55,14 @@ static int debugArea() {
     return s_area;
 }
 
+static bool caseInsensitiveLessThan(const KService::Ptr s1, const KService::Ptr s2)
+{
+    const int compare = QString::compare(s1->desktopEntryName(),
+                                         s2->desktopEntryName(),
+                                         Qt::CaseInsensitive);
+    return (compare < 0);
+}
+
 static void listModules()
 {
   const KService::List services = KServiceTypeTrader::self()->query( "KCModule", "[X-KDE-ParentApp] == 'kcontrol' or [X-KDE-ParentApp] == 'kinfocenter'" );
@@ -66,6 +74,8 @@ static void listModules()
           continue;
       m_modules.append(s);
   }
+
+  qStableSort(m_modules.begin(), m_modules.end(), caseInsensitiveLessThan);
 }
 
 static KService::Ptr locateModule(const QString& module)
