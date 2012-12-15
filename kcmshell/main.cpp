@@ -23,26 +23,20 @@
 
 #include <iostream>
 
-#include <QtCore/QFile>
-#include <QIcon>
-
 #include <QtDBus/QtDBus>
 
-#include <kaboutdata.h>
-#include <kapplication.h>
-#include <kauthorized.h>
-#include <kcmdlineargs.h>
-#include <kcmoduleinfo.h>
-#include <kcmoduleloader.h>
-#include <kcmoduleproxy.h>
-#include <kcmultidialog.h>
-#include <kdebug.h>
-#include <kiconloader.h>
-#include <klocale.h>
-#include <kservicetypetrader.h>
-#include <kstartupinfo.h>
-#include <kglobal.h>
-#include <kicon.h>
+#include <KAboutData>
+#include <KApplication>
+#include <KAuthorized>
+#include <KCmdLineArgs>
+#include <KCModuleInfo>
+#include <KCMultiDialog>
+#include <KDebug>
+#include <KLocale>
+#include <KServiceTypeTrader>
+#include <KStartupInfo>
+#include <KGlobal>
+#include <KIcon>
 
 #include "main.moc"
 

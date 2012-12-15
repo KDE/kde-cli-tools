@@ -22,9 +22,9 @@
 #ifndef MAIN_H
 #define MAIN_H
 
-#include <kapplication.h>
-#include <kcmultidialog.h>
-#include <kpagedialog.h>
+#include <KApplication>
+#include <KCMultiDialog>
+#include <KPageDialog>
 
 /**
  * The KApplication instance for kcmshell.
