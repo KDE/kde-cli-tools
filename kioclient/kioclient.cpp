@@ -223,7 +223,8 @@ bool ClientApp::doList( int firstArg )
     KCmdLineArgs *args = KCmdLineArgs::parsedArgs();
     KUrl dir = args->url(firstArg);
     KIO::Job * job = KIO::listDir(dir, KIO::HideProgressInfo);
-    job->setUiDelegate(0);
+    if ( !s_interactive )
+        job->setUiDelegate(0);
     connect(job, SIGNAL(entries(KIO::Job*,KIO::UDSEntryList)),
             SLOT(slotEntries(KIO::Job*,KIO::UDSEntryList)));
     connect(job, SIGNAL(result(KJob *)), this, SLOT(slotResult(KJob *)));
