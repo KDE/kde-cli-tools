@@ -37,6 +37,7 @@
 #include <KStartupInfo>
 #include <KGlobal>
 #include <KIcon>
+#include <kdeversion.h>
 
 #include "main.moc"
 
@@ -170,7 +171,7 @@ void KCMShell::appExit(const QString &appId, const QString &oldName, const QStri
 extern "C" KDE_EXPORT int kdemain(int _argc, char *_argv[])
 {
     KAboutData aboutData( "kcmshell", 0, ki18n("KDE Control Module"),
-                          0,
+                          KDE_VERSION_STRING,
                           ki18n("A tool to start single KDE control modules"),
                           KAboutData::License_GPL,
                           ki18n("(c) 1999-2004, The KDE Developers") );
