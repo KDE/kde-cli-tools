@@ -59,7 +59,6 @@ static QString windowclass;
 static int desktop = 0;
 static bool activate = false;
 static bool iconify = false;
-static bool toSysTray = false;
 static bool fullscreen = false;
 static unsigned long state = 0;
 static unsigned long mask = 0;
@@ -69,7 +68,7 @@ KStart::KStart()
     :QObject()
 {
     NETRootInfo i( QX11Info::display(), NET::Supported );
-    bool useRule = !toSysTray && i.isSupported( NET::WM2KDETemporaryRules );
+    bool useRule = i.isSupported( NET::WM2KDETemporaryRules );
 
     if( useRule )
         sendRule();
@@ -240,7 +239,7 @@ static bool wstate_withdrawn( WId winid )
 
 void KStart::applyStyle(WId w ) {
 
-    if ( toSysTray || state || iconify || windowtype != NET::Unknown || desktop >= 1 ) {
+    if ( state || iconify || windowtype != NET::Unknown || desktop >= 1 ) {
 
 	QX11Info info;
 	XWithdrawWindow(QX11Info::display(), w, info.screen());
@@ -272,11 +271,6 @@ void KStart::applyStyle(WId w ) {
 
     if ( state )
 	info.setState( state, mask );
-
-    if ( toSysTray ) {
-	QApplication::beep();
-//	KWindowSystem::setSystemTrayWindowFor( w, QX11Info::appRootWindow() );
-    }
 
     if ( fullscreen ) {
 	QRect r = QApplication::desktop()->screenGeometry();
@@ -343,7 +337,6 @@ int main( int argc, char *argv[] )
   options.add("keepbelow", ki18n("Try to keep the window below other windows"));
   options.add("skiptaskbar", ki18n("The window does not get an entry in the taskbar"));
   options.add("skippager", ki18n("The window does not get an entry on the pager"));
-  options.add("tosystray", ki18n("The window is sent to the system tray in Kicker"));
   KCmdLineArgs::addCmdLineOptions( options ); // Add our own options.
 
   KComponentData componentData( &aboutData );
@@ -433,7 +426,6 @@ int main( int argc, char *argv[] )
   }
 
   iconify = args->isSet("iconify");
-  toSysTray = args->isSet("tosystray");
   if ( args->isSet("fullscreen") ) {
       NETRootInfo i( QX11Info::display(), NET::Supported );
       if( i.isSupported( NET::FullScreen )) {
