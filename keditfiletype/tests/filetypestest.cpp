@@ -175,6 +175,7 @@ private Q_SLOTS:
         MimeTypeData data(KMimeType::mimeType(mimeTypeName));
         QStringList appServices = data.appServices();
         //kDebug() << appServices;
+        QVERIFY(!appServices.isEmpty());
         const QString oldPreferredApp = appServices.first();
         QVERIFY(!appServices.contains(fakeApplication)); // already there? hmm can't really test then
         QVERIFY(!data.isDirty());
