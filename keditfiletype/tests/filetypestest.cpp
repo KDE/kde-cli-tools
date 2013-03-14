@@ -171,7 +171,7 @@ private Q_SLOTS:
 
     void testAddService()
     {
-        const char* mimeTypeName = "application/vnd.oasis.opendocument.text";
+        const char* mimeTypeName = "text/plain";
         MimeTypeData data(KMimeType::mimeType(mimeTypeName));
         QStringList appServices = data.appServices();
         //kDebug() << appServices;
