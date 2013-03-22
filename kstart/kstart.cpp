@@ -75,8 +75,6 @@ KStart::KStart()
     else {
         // connect to window add to get the NEW windows
         connect(KWindowSystem::self(), SIGNAL(windowAdded(WId)), SLOT(windowAdded(WId)));
-        if (!windowtitle.isEmpty())
-    	    KWindowSystem::doNotManage( windowtitle );
     }
     // propagate the app startup notification info to the started app
     // We are not using KApplication, so the env remained set
