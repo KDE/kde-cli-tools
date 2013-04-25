@@ -244,7 +244,7 @@ applications) which are used to configure the applications.</para>
 <para>The list box lists all of the applications associated with a
 specific &MIME; type.  The list is in a specific order.  The top
 application is the first application tried.  The next application down
-the list is the second, &etc;.</para>
+the list is the second, &etc;</para>
 
 <note><para>What do you mean there is more than one application per
 &MIME; type?  Why is this necessary?</para>
