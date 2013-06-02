@@ -116,7 +116,7 @@ int main( int argc, char **argv )
   options.add("overwrite", ki18n("Overwrite destination if it exists (for copy and move)"));
   #endif
   #if defined(KIOCLIENT_AS_KDEOPEN)
-  options.add("+urls", ki18n("URL or URLs"));
+  options.add("+url", ki18n("file or URL"));
   #elif defined(KIOCLIENT_AS_KDECP)
   options.add("+src", ki18n("Source URL or URLs"));
   options.add("+dest", ki18n("Destination URL"));
