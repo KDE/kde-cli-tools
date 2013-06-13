@@ -161,12 +161,12 @@ static void checkArgumentCount(int count, int min, int max)
 {
     if (count < min)
     {
-        fputs( i18n("Syntax Error: Not enough arguments\n").toLocal8Bit(), stderr );
+        fputs( i18nc("@info:shell", "%1: Syntax error, not enough arguments\n", appName).toLocal8Bit(), stderr );
         ::exit(1);
     }
     if (max && (count > max))
     {
-        fputs( i18n("Syntax Error: Too many arguments\n").toLocal8Bit(), stderr );
+        fputs( i18nc("@info:shell", "%1: Syntax error, too many arguments\n", appName).toLocal8Bit(), stderr );
         ::exit(1);
     }
 }
@@ -390,7 +390,7 @@ bool ClientApp::doIt()
     }
     else
     {
-        fprintf( stderr, "%s", i18n("Syntax Error: Unknown command '%1'\n", QString::fromLocal8Bit(command)).toLocal8Bit().data() );
+        fputs( i18nc("@info:shell", "%1: Syntax error, unknown command '%2'\n", appName, QString::fromLocal8Bit(command)).toLocal8Bit().data(), stderr );
         return false;
     }
     return true;
