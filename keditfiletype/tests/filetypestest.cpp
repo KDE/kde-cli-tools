@@ -171,7 +171,7 @@ private Q_SLOTS:
 
     void testAddService()
     {
-        const char* mimeTypeName = "text/plain";
+        const char* mimeTypeName = "application/rtf"; // use inherited mimetype to test #321706
         MimeTypeData data(KMimeType::mimeType(mimeTypeName));
         QStringList appServices = data.appServices();
         //kDebug() << appServices;
@@ -182,6 +182,18 @@ private Q_SLOTS:
         appServices.prepend(fakeApplication);
         data.setAppServices(appServices);
         QVERIFY(data.isDirty());
+        QVERIFY(!data.sync()); // success, but no need to run update-mime-database
+        runKBuildSycoca();
+        QVERIFY(!data.isDirty());
+        // Check what's in ksycoca
+        checkMimeTypeServices(mimeTypeName, appServices);
+        // Check what's in mimeapps.list
+        checkAddedAssociationsContains(mimeTypeName, fakeApplication);
+
+        // Test reordering apps, i.e. move fakeApplication under oldPreferredApp
+        appServices.removeFirst();
+        appServices.insert(1, fakeApplication);
+        data.setAppServices(appServices);
         QVERIFY(!data.sync()); // success, but no need to run update-mime-database
         runKBuildSycoca();
         QVERIFY(!data.isDirty());
