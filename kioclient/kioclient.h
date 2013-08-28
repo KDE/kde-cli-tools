@@ -21,7 +21,7 @@
 
 #include <QApplication>
 #include <kio/udsentry.h>
-class KUrl;
+class QUrl;
 class KJob;
 namespace KIO { class Job; }
 
@@ -43,7 +43,7 @@ private Q_SLOTS:
     void deref();
 
 private:
-    bool kde_open( const KUrl& url, const QString& mimeType, bool allowExec );
+    bool kde_open( const QUrl& url, const QString& mimeType, bool allowExec );
     bool doCopy( int firstArg );
     bool doMove( int firstArg );
     bool doList( int firstArg );

@@ -25,12 +25,13 @@
 #include <kcmdlineargs.h>
 #include <kpropertiesdialog.h>
 #include <klocale.h>
+#include <kglobal.h>
 #include <kstandarddirs.h>
 #include <kurlrequesterdialog.h>
 #include <kmessagebox.h>
 #include <kmimetypetrader.h>
 #include <kfiledialog.h>
-#include <kdebug.h>
+//#include <qdebug>
 #include <kservice.h>
 #include <QTimer>
 #include <krun.h>
@@ -171,10 +172,10 @@ static void checkArgumentCount(int count, int min, int max)
     }
 }
 
-bool ClientApp::kde_open(const KUrl& url, const QString& mimeType, bool allowExec)
+bool ClientApp::kde_open(const QUrl& url, const QString& mimeType, bool allowExec)
 {
     if ( mimeType.isEmpty() ) {
-        kDebug() << url;
+      //  qDebug() << url;
         KRun * run = new KRun( url, 0 );
         run->setRunExecutables(allowExec);
         QObject::connect( run, SIGNAL( finished() ), this, SLOT( delayedQuit() ));
@@ -182,7 +183,7 @@ bool ClientApp::kde_open(const KUrl& url, const QString& mimeType, bool allowExe
         this->exec();
         return !krun_has_error;
     } else {
-        KUrl::List urls;
+        QList<QUrl> urls;
         urls.append( url );
         const KService::List offers = KMimeTypeTrader::self()->query(
             mimeType, QLatin1String( "Application" ) );
@@ -196,7 +197,7 @@ bool ClientApp::doCopy( int firstArg )
 {
     KCmdLineArgs *args = KCmdLineArgs::parsedArgs();
     int argc = args->count();
-    KUrl::List srcLst;
+    QList<QUrl> srcLst;
     for ( int i = firstArg; i <= argc - 2; i++ )
       srcLst.append( args->url(i) );
     KIO::Job * job = KIO::copy( srcLst, args->url(argc - 1), s_jobFlags );
@@ -209,7 +210,7 @@ bool ClientApp::doCopy( int firstArg )
 
 void ClientApp::slotEntries(KIO::Job* job, const KIO::UDSEntryList& list)
 {
-    KUrl url = static_cast<KIO::ListJob*>( job )->url();
+    QUrl url = static_cast<KIO::ListJob*>( job )->url();
     KIO::UDSEntryList::ConstIterator it=list.begin();
     for (; it != list.end(); ++it) {
         // For each file...
@@ -221,7 +222,7 @@ void ClientApp::slotEntries(KIO::Job* job, const KIO::UDSEntryList& list)
 bool ClientApp::doList( int firstArg )
 {
     KCmdLineArgs *args = KCmdLineArgs::parsedArgs();
-    KUrl dir = args->url(firstArg);
+    QUrl dir = args->url(firstArg);
     KIO::Job * job = KIO::listDir(dir, KIO::HideProgressInfo);
     if ( !s_interactive )
         job->setUiDelegate(0);
@@ -236,7 +237,7 @@ bool ClientApp::doMove( int firstArg )
 {
     KCmdLineArgs *args = KCmdLineArgs::parsedArgs();
     int argc = args->count();
-    KUrl::List srcLst;
+    QList<QUrl> srcLst;
     for ( int i = firstArg; i <= argc - 2; i++ )
       srcLst.append( args->url(i) );
 
@@ -252,7 +253,7 @@ bool ClientApp::doRemove( int firstArg )
 {
     KCmdLineArgs *args = KCmdLineArgs::parsedArgs();
     int argc = args->count();
-    KUrl::List srcLst;
+    QList<QUrl> srcLst;
     for ( int i = firstArg; i < argc; i++ )
       srcLst.append( args->url(i) );
     KIO::Job * job = KIO::del( srcLst, s_jobFlags );
@@ -279,7 +280,7 @@ bool ClientApp::doIt()
     }
 #endif
 
-    kDebug() << "Creating ClientApp";
+    //qDebug() << "Creating ClientApp";
     int fake_argc = 0;
     char** fake_argv = 0;
     ClientApp app( fake_argc, fake_argv );
@@ -292,7 +293,7 @@ bool ClientApp::doIt()
     extern void qDBusBindToApplication();
     qDBusBindToApplication();
     if (!QDBusConnection::sessionBus().isConnected())
-        kFatal(101) << "Session bus not found" ;
+        qDebug() << "Session bus not found" ;
 
 #ifdef KIOCLIENT_AS_KDEOPEN
     return app.kde_open(args->url(0), QByteArray(), false);
@@ -336,10 +337,10 @@ bool ClientApp::doIt()
     else if ( command == "download" )
     {
         checkArgumentCount(argc, 0, 0);
-        KUrl::List srcLst;
+        QList<QUrl> srcLst;
         if (argc == 1) {
             while(true) {
-                KUrl src = KUrlRequesterDialog::getUrl();
+                QUrl src = KUrlRequesterDialog::getUrl();
                 if (!src.isEmpty()) {
                     if (!src.isValid()) {
                         KMessageBox::error(0, i18n("Unable to download from an invalid URL."));
@@ -356,10 +357,10 @@ bool ClientApp::doIt()
         if (srcLst.count() == 0)
             return m_ok;
         QString dst =
-            KFileDialog::getSaveFileName( (argc<2) ? QString() : (args->url(1).fileName()) );
+            KFileDialog::getSaveFileName( (argc<2) ? QString() : (args->url(1)) );
         if (dst.isEmpty()) // canceled
             return m_ok; // AK - really okay?
-        KUrl dsturl;
+        QUrl dsturl;
         dsturl.setPath( dst );
         KIO::Job * job = KIO::copy( srcLst, dsturl, s_jobFlags );
         if ( !s_interactive )
