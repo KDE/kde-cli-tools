@@ -357,7 +357,8 @@ bool ClientApp::doIt()
         if (srcLst.count() == 0)
             return m_ok;
         QString dst =
-            KFileDialog::getSaveFileName( (argc<2) ? QString() : (args->url(1)) );
+ 
+            KFileDialog::getSaveFileName( (argc<2) ? QUrl() : args->url(1) );
         if (dst.isEmpty()) // canceled
             return m_ok; // AK - really okay?
         QUrl dsturl;
