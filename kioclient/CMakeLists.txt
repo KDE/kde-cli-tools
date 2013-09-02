@@ -7,8 +7,7 @@ target_link_libraries(kioclient
         ${KDE4_SOLID_LIBS}   
         ${KDE4Support_LIBRARIES}
         ${KDECLARATIVE_LIBRARIES} 
-        KF5::KI18n KF5::KConfigCore KF5::KConfigGui
-        ${KDE4_KDEUI_LIBS} 
+        KF5::KI18n KF5::KConfigCore KF5::KConfigGui Qt5::DBus
         ${KDE4_SOLID_LIBS}
         ${KCore_LIBRARIES}
         kdeqt5staging
@@ -26,8 +25,7 @@ target_link_libraries(kdeopen ${KDE4_KIO_LIBS}
         ${KDE4_SOLID_LIBS}   
         ${KDE4Support_LIBRARIES}
         ${KDECLARATIVE_LIBRARIES} 
-        KF5::KI18n KF5::KConfigCore KF5::KConfigGui
-        ${KDE4_KDEUI_LIBS} 
+        KF5::KI18n KF5::KConfigCore KF5::KConfigGui Qt5::DBus
         ${KDE4_SOLID_LIBS}
         ${KCore_LIBRARIES}
         kdeqt5staging
@@ -43,8 +41,7 @@ target_link_libraries(kdecp ${KDE4_KIO_LIBS}
         ${KDE4_SOLID_LIBS}   
         ${KDE4Support_LIBRARIES}
         ${KDECLARATIVE_LIBRARIES} 
-        KF5::KI18n KF5::KConfigCore KF5::KConfigGui
-        ${KDE4_KDEUI_LIBS} 
+        KF5::KI18n KF5::KConfigCore KF5::KConfigGui Qt5::DBus
         ${KDE4_SOLID_LIBS}
         ${KCore_LIBRARIES}
         kdeqt5staging
@@ -61,8 +58,7 @@ target_link_libraries(kdemv ${KDE4_KIO_LIBS}
         ${KDE4_SOLID_LIBS}   
         ${KDE4Support_LIBRARIES}
         ${KDECLARATIVE_LIBRARIES} 
-        KF5::KI18n KF5::KConfigCore KF5::KConfigGui
-        ${KDE4_KDEUI_LIBS} 
+        KF5::KI18n KF5::KConfigCore KF5::KConfigGui Qt5::DBus
         ${KDE4_SOLID_LIBS}
         ${KCore_LIBRARIES}
         kdeqt5staging
