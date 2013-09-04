@@ -293,7 +293,7 @@ bool ClientApp::doIt()
     extern void qDBusBindToApplication();
     qDBusBindToApplication();
     if (!QDBusConnection::sessionBus().isConnected())
-        qDebug() << "Session bus not found" ;
+        qFatal("Session bus not found");
 
 #ifdef KIOCLIENT_AS_KDEOPEN
     return app.kde_open(args->url(0), QByteArray(), false);
