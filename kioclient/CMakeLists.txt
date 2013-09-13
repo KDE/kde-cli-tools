@@ -10,7 +10,6 @@ target_link_libraries(kioclient
         KF5::KI18n KF5::KConfigCore KF5::KConfigGui Qt5::DBus
         ${KDE4_SOLID_LIBS}
         ${KCore_LIBRARIES}
-        kdeqt5staging
         ${Qt5Script_LIBRARIES}
         )
 install(TARGETS kioclient ${INSTALL_TARGETS_DEFAULT_ARGS})
@@ -28,7 +27,6 @@ target_link_libraries(kdeopen ${KDE4_KIO_LIBS}
         KF5::KI18n KF5::KConfigCore KF5::KConfigGui Qt5::DBus
         ${KDE4_SOLID_LIBS}
         ${KCore_LIBRARIES}
-        kdeqt5staging
         ${Qt5Script_LIBRARIES})
 install(TARGETS kdeopen ${INSTALL_TARGETS_DEFAULT_ARGS})
 
@@ -44,7 +42,6 @@ target_link_libraries(kdecp ${KDE4_KIO_LIBS}
         KF5::KI18n KF5::KConfigCore KF5::KConfigGui Qt5::DBus
         ${KDE4_SOLID_LIBS}
         ${KCore_LIBRARIES}
-        kdeqt5staging
         ${Qt5Script_LIBRARIES})
 install(TARGETS kdecp ${INSTALL_TARGETS_DEFAULT_ARGS})
 
@@ -61,7 +58,6 @@ target_link_libraries(kdemv ${KDE4_KIO_LIBS}
         KF5::KI18n KF5::KConfigCore KF5::KConfigGui Qt5::DBus
         ${KDE4_SOLID_LIBS}
         ${KCore_LIBRARIES}
-        kdeqt5staging
         ${Qt5Script_LIBRARIES})
 install(TARGETS kdemv ${INSTALL_TARGETS_DEFAULT_ARGS})
 #set(kdemv_SRCS kioclient.cpp )
