@@ -1,9 +1,9 @@
 
 set(kcmshell_KDEINIT_SRCS main.cpp )
 
-kde4_add_kdeinit_executable( kcmshell4 ${kcmshell_KDEINIT_SRCS})
+kde4_add_kdeinit_executable( kcmshell5 ${kcmshell_KDEINIT_SRCS})
 
-target_link_libraries(kdeinit_kcmshell4 ${KDE4_KCMUTILS_LIBS} ${KDE4_KDEUI_LIBS} )
+target_link_libraries(kdeinit_kcmshell5 Qt5::DBus ${KDE4_KCMUTILS_LIBS} KF5::KI18n ${KDE4Support_LIBRARIES} )
 
-install(TARGETS kdeinit_kcmshell4  ${INSTALL_TARGETS_DEFAULT_ARGS})
-install(TARGETS kcmshell4          ${INSTALL_TARGETS_DEFAULT_ARGS})
+install(TARGETS kdeinit_kcmshell5  ${INSTALL_TARGETS_DEFAULT_ARGS})
+install(TARGETS kcmshell5          ${INSTALL_TARGETS_DEFAULT_ARGS})

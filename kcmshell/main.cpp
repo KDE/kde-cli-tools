@@ -39,6 +39,8 @@
 #include <KIcon>
 #include <kdeversion.h>
 
+#include <k4aboutdata.h>
+
 #include "main.moc"
 
 using namespace std;
@@ -168,12 +170,12 @@ void KCMShell::appExit(const QString &appId, const QString &oldName, const QStri
     }
 }
 
-extern "C" KDE_EXPORT int kdemain(int _argc, char *_argv[])
+extern "C" Q_DECL_EXPORT int kdemain(int _argc, char *_argv[])
 {
-    KAboutData aboutData( "kcmshell", 0, ki18n("KDE Control Module"),
+    K4AboutData aboutData( "kcmshell", 0, ki18n("KDE Control Module"),
                           KDE_VERSION_STRING,
                           ki18n("A tool to start single KDE control modules"),
-                          KAboutData::License_GPL,
+                          K4AboutData::License_GPL,
                           ki18n("(c) 1999-2004, The KDE Developers") );
 
     aboutData.addAuthor(ki18n("Frans Englich"), ki18n("Maintainer"), "frans.englich@kde.org");
@@ -198,7 +200,7 @@ extern "C" KDE_EXPORT int kdemain(int _argc, char *_argv[])
 
     const QString lang = args->getOption("lang");
     if( !lang.isEmpty() ) {
-        KGlobal::setLocale(new KLocale(aboutData.catalogName(), lang));
+      //  KGlobal::setLocale(new KLocale(aboutData.catalogName(), lang));
     }
 
     if (args->isSet("list"))
@@ -280,10 +282,10 @@ extern "C" KDE_EXPORT int kdemain(int _argc, char *_argv[])
     KCMShellMultiDialog *dlg = new KCMShellMultiDialog(ftype);
     KCmdLineArgs *kdeargs = KCmdLineArgs::parsedArgs("kde");
     if (kdeargs && kdeargs->isSet("caption")) {
-        dlg->setCaption(QString());
+        dlg->setWindowTitle(QString());
         kdeargs->clear();
     } else if (modules.count() == 1) {
-        dlg->setCaption(modules.first()->name());
+        dlg->setWindowTitle(modules.first()->name());
     }
 
     for (KService::List::ConstIterator it = modules.constBegin(); it != modules.constEnd(); ++it)
