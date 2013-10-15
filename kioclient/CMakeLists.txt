@@ -1,16 +1,22 @@
 include_directories(${KDE4_INCLUDE_DIR}/kio ${KDE4_INCLUDE_DIR}/KDE) 
 set(kioclient_SRCS kioclient.cpp )
-kde4_add_executable(kioclient NOGUI ${kioclient_SRCS})
+kde4_add_executable(kioclient ${kioclient_SRCS})
 set_property(TARGET kioclient APPEND_STRING PROPERTY COMPILE_FLAGS "-DKIOCLIENT_AS_KIOCLIENT")
 target_link_libraries(kioclient 
-        KF5::KIOCore KF5::KIOWidgets 
-        KF5::Solid  kio 
-        ${KDE4Support_LIBRARIES}
-        ${KDECLARATIVE_LIBRARIES} 
-        KF5::KI18n KF5::KConfigCore KF5::KConfigGui Qt5::DBus
+	Qt5::Core
+	Qt5::Script
+	Qt5::DBus
+	KF5::KCoreAddons
+	KF5::KIOCore KF5::KIOWidgets 
+        KF5::Solid  
+	kio
+        KF5::KIOFileWidgets	
+	KF5::KDeclarative
+        KF5::KI18n 
+	KF5::KConfigCore
+	KF5::KConfigGui
         KF5::Solid
-        ${KCore_LIBRARIES}
-        ${Qt5Script_LIBRARIES}
+        ${KDE4Support_LIBRARIES}
         )
 install(TARGETS kioclient ${INSTALL_TARGETS_DEFAULT_ARGS})
 
