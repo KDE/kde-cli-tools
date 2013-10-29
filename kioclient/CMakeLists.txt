@@ -16,7 +16,7 @@ target_link_libraries(kioclient
 	KF5::KConfigCore
 	KF5::KConfigGui
         KF5::Solid
-        ${KDE4Support_LIBRARIES}
+        KF5::KDE4Support
         )
 install(TARGETS kioclient ${INSTALL_TARGETS_DEFAULT_ARGS})
 
@@ -28,7 +28,7 @@ set_property(TARGET kdeopen APPEND_STRING PROPERTY COMPILE_FLAGS "-DKIOCLIENT_AS
 #macro_add_compile_flags(kde-open -DKIOCLIENT_AS_KDEOPEN)
 target_link_libraries(kdeopen KF5::KIOCore KF5::KIOWidgets
         KF5::Solid   
-        ${KDE4Support_LIBRARIES}
+        KF5::KDE4Support
         ${KDECLARATIVE_LIBRARIES} 
         KF5::KI18n KF5::KConfigCore KF5::KConfigGui Qt5::DBus
         KF5::Solid
@@ -43,7 +43,7 @@ set_property(TARGET kdecp APPEND_STRING PROPERTY COMPILE_FLAGS "-DKIOCLIENT_AS_K
 #macro_add_compile_flags(kde-open -DKIOCLIENT_AS_KDEOPEN)
 target_link_libraries(kdecp KF5::KIOCore KF5::KIOWidgets
         KF5::Solid   
-        ${KDE4Support_LIBRARIES}
+        KF5::KDE4Support
         ${KDECLARATIVE_LIBRARIES} 
         KF5::KI18n KF5::KConfigCore KF5::KConfigGui Qt5::DBus
         KF5::Solid
@@ -59,7 +59,7 @@ set_property(TARGET kdemv APPEND_STRING PROPERTY COMPILE_FLAGS "-DKIOCLIENT_AS_K
 #macro_add_compile_flags(kde-open -DKIOCLIENT_AS_KDEOPEN)
 target_link_libraries(kdemv KF5::KIOCore KF5::KIOWidgets
         KF5::Solid   
-        ${KDE4Support_LIBRARIES}
+        KF5::KDE4Support
         ${KDECLARATIVE_LIBRARIES} 
         KF5::KI18n KF5::KConfigCore KF5::KConfigGui Qt5::DBus
         KF5::Solid
