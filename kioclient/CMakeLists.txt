@@ -9,7 +9,6 @@ target_link_libraries(kioclient
 	KF5::KCoreAddons
 	KF5::KIOCore KF5::KIOWidgets 
         KF5::Solid  
-	kio
         KF5::KIOFileWidgets	
 	KF5::KDeclarative
         KF5::KI18n 
