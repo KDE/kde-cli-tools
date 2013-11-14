@@ -88,7 +88,7 @@ static KService::Ptr locateModule(const QString& module)
     }
 
     if (!service->hasServiceType("KCModule")) {
-        // Not a KCModule. E.g. "kcmshell4 akonadi" finds services/kresources/kabc/akonadi.desktop, unrelated.
+        // Not a KCModule. E.g. "kcmshell5 akonadi" finds services/kresources/kabc/akonadi.desktop, unrelated.
         return KService::Ptr();
     }
 
@@ -106,7 +106,7 @@ bool KCMShell::isRunning()
     if( owner == QDBusConnection::sessionBus().baseService() )
         return false; // We are the one and only.
 
-    kDebug(debugArea()) << "kcmshell4 with modules '" <<
+    kDebug(debugArea()) << "kcmshell5 with modules '" <<
         m_serviceName << "' is already running." << endl;
 
     QDBusInterface iface(m_serviceName, "/KCModule/dialog", "org.kde.KCMShellMultiDialog");
@@ -172,7 +172,7 @@ void KCMShell::appExit(const QString &appId, const QString &oldName, const QStri
 
 extern "C" Q_DECL_EXPORT int kdemain(int _argc, char *_argv[])
 {
-    K4AboutData aboutData( "kcmshell", 0, ki18n("KDE Control Module"),
+    K4AboutData aboutData( "kcmshell5", 0, ki18n("KDE Control Module"),
                           KDE_VERSION_STRING,
                           ki18n("A tool to start single KDE control modules"),
                           K4AboutData::License_GPL,
@@ -256,7 +256,7 @@ extern "C" Q_DECL_EXPORT int kdemain(int _argc, char *_argv[])
                 serviceName += '_';
             serviceName += args->arg(i);
         } else {
-            fprintf(stderr, "%s\n", i18n("Could not find module '%1'. See kcmshell4 --list for the full list of modules.", arg).toLocal8Bit().constData());
+            fprintf(stderr, "%s\n", i18n("Could not find module '%1'. See kcmshell5 --list for the full list of modules.", arg).toLocal8Bit().constData());
         }
     }
 
