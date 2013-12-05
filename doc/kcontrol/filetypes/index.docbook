@@ -1,6 +1,7 @@
 <?xml version="1.0" ?>
 <!DOCTYPE article PUBLIC "-//KDE//DTD DocBook XML V4.2-Based Variant V1.1//EN"
 "dtd/kdex.dtd" [
+<!ENTITY calligrawords "<application>Calligra Words</application>">
 <!ENTITY % addindex "IGNORE">
 <!ENTITY % English "INCLUDE" > <!-- change language only here -->
 ]>
@@ -14,8 +15,8 @@
 <!-- TRANS:ROLES_OF_TRANSLATORS -->
 </authorgroup>
 
-<date>2011-11-28</date>
-<releaseinfo>&kde; 4.8</releaseinfo>
+<date>2013-12-05</date>
+<releaseinfo>&kde; 4.12</releaseinfo>
 
 <keywordset>
 <keyword>KDE</keyword>
@@ -32,12 +33,12 @@
 
 <para>One of the most convenient aspects of &kde;, is its ability to
 automatically match a data file with its application.  As an example,
-when you click on your favorite &kword; document in the filemanager, &kde;
-automatically starts &kword;, and automatically loads that file into
-&kword; so you can begin working on it.</para>
+when you click on your favorite &calligrawords; document in the filemanager, &kde;
+automatically starts &calligrawords;, and automatically loads that file into
+&calligrawords; so you can begin working on it.</para>
 
-<para>In the example above, the &kword; Data file is
-<emphasis>associated</emphasis> with &kword; (the application).  These
+<para>In the example above, the &calligrawords; Data file is
+<emphasis>associated</emphasis> with &calligrawords; (the application).  These
 file associations are crucial to the functioning of &kde;.</para>
 
 <para>When &kde; is installed, it automatically creates hundreds of file
