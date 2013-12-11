@@ -6,14 +6,14 @@ target_link_libraries(kioclient
 	Qt5::Core
 	Qt5::Script
 	Qt5::DBus
-	KF5::KCoreAddons
+	KF5::CoreAddons
 	KF5::KIOCore KF5::KIOWidgets 
         KF5::Solid  
         KF5::KIOFileWidgets	
-	KF5::KDeclarative
-        KF5::KI18n 
-	KF5::KConfigCore
-	KF5::KConfigGui
+	KF5::Declarative
+        KF5::I18n 
+	KF5::ConfigCore
+	KF5::ConfigGui
         KF5::Solid
         KF5::KDE4Support
         )
@@ -29,7 +29,7 @@ target_link_libraries(kdeopen KF5::KIOCore KF5::KIOWidgets
         KF5::Solid   
         KF5::KDE4Support
         ${KDECLARATIVE_LIBRARIES} 
-        KF5::KI18n KF5::KConfigCore KF5::KConfigGui Qt5::DBus
+        KF5::I18n KF5::ConfigCore KF5::ConfigGui Qt5::DBus
         KF5::Solid
         ${KCore_LIBRARIES}
         ${Qt5Script_LIBRARIES})
@@ -44,7 +44,7 @@ target_link_libraries(kdecp KF5::KIOCore KF5::KIOWidgets
         KF5::Solid   
         KF5::KDE4Support
         ${KDECLARATIVE_LIBRARIES} 
-        KF5::KI18n KF5::KConfigCore KF5::KConfigGui Qt5::DBus
+        KF5::I18n KF5::ConfigCore KF5::ConfigGui Qt5::DBus
         KF5::Solid
         ${KCore_LIBRARIES}
         ${Qt5Script_LIBRARIES})
@@ -60,7 +60,7 @@ target_link_libraries(kdemv KF5::KIOCore KF5::KIOWidgets
         KF5::Solid   
         KF5::KDE4Support
         ${KDECLARATIVE_LIBRARIES} 
-        KF5::KI18n KF5::KConfigCore KF5::KConfigGui Qt5::DBus
+        KF5::I18n KF5::ConfigCore KF5::ConfigGui Qt5::DBus
         KF5::Solid
         ${KCore_LIBRARIES}
         ${Qt5Script_LIBRARIES})
