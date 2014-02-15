@@ -32,10 +32,12 @@
 
 // KDE
 #include <kconfig.h>
+#include <kconfiggroup.h>
 #include <kdebug.h>
 #include <kicondialog.h>
 #include <kinputdialog.h>
 #include <klineedit.h>
+#include <kiconbutton.h>
 #include <klocale.h>
 #include <kicon.h>
 #include <kpushbutton.h>

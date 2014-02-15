@@ -39,6 +39,7 @@
 #include <kpushbutton.h>
 #include <kicon.h>
 #include <kstandarddirs.h>
+#include <qstandardpaths.h>
 
 // Local
 #include "kserviceselectdlg.h"
@@ -53,7 +54,7 @@ KServiceListItem::KServiceListItem( const KService::Ptr& pService, int kind )
         setText( i18n( "%1 (%2)", pService->name(), pService->desktopEntryName() ) );
 
     if (!pService->isApplication())
-      localPath = KStandardDirs::locateLocal("services", desktopPath);
+      localPath = QStandardPaths::writableLocation(QStandardPaths::GenericDataLocation) + QLatin1String("/kde5/services/") + desktopPath;
     else
       localPath = pService->locateLocal();
 }
@@ -318,9 +319,9 @@ void KServiceListWidget::editService()
 
     // If the path to the desktop file is relative, try to get the full
     // path from KStandardDirs.
-    path = KStandardDirs::locate("apps", path); // TODO use xdgdata-apps instead?
+    path = QStandardPaths::locate(QStandardPaths::ApplicationsLocation, path);
 
-    KFileItem item(KUrl(path), "application/x-desktop", KFileItem::Unknown);
+    KFileItem item(QUrl::fromLocalFile(path), "application/x-desktop", KFileItem::Unknown);
     KPropertiesDialog dlg(item, this);
     if (dlg.exec() != QDialog::Accepted)
         return;

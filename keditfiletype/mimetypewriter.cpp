@@ -24,10 +24,11 @@
 #include <kdebug.h>
 #include <kdeversion.h>
 #include <kprocess.h>
-#include <kstandarddirs.h>
+
 
 #include <QXmlStreamWriter>
 #include <QFile>
+#include <qstandardpaths.h>
 
 /// WARNING: this code is duplicated between apps/nsplugins and runtime/filetypes
 
@@ -134,7 +135,7 @@ bool MimeTypeWriter::write()
 
 void MimeTypeWriter::runUpdateMimeDatabase()
 {
-    const QString localPackageDir = KStandardDirs::locateLocal("xdgdata-mime", QString());
+    const QString localPackageDir = QStandardPaths::writableLocation(QStandardPaths::GenericDataLocation) + QLatin1String("/mime/");
     Q_ASSERT(!localPackageDir.isEmpty());
     KProcess proc;
     proc << "update-mime-database";
@@ -155,14 +156,14 @@ QString MimeTypeWriterPrivate::localFilePath() const
     // and in ~/.local we don't really expect other packages to be installed anyway...
     QString baseName = m_mimeType;
     baseName.replace('/', '-');
-    return KStandardDirs::locateLocal( "xdgdata-mime", "packages/" + baseName + ".xml" );
+    return QStandardPaths::writableLocation(QStandardPaths::GenericDataLocation) + QLatin1String("/mime/") + "packages/" + baseName + ".xml" ;
 }
 
 static QString existingDefinitionFile(const QString& mimeType)
 {
     QString baseName = mimeType;
     baseName.replace('/', '-');
-    return KGlobal::dirs()->findResource( "xdgdata-mime", "packages/" + baseName + ".xml" );
+    return QStandardPaths::locate(QStandardPaths::GenericDataLocation, QLatin1String("mime/") + "packages/" + baseName + ".xml" );
 }
 
 bool MimeTypeWriter::hasDefinitionFile(const QString& mimeType)
@@ -176,7 +177,7 @@ void MimeTypeWriter::removeOwnMimeType(const QString& mimeType)
     Q_ASSERT(!file.isEmpty());
     QFile::remove(file);
     // We must also remove the generated XML file, update-mime-database doesn't do that, for unknown media types
-    QString xmlFile = KGlobal::dirs()->findResource( "xdgdata-mime", mimeType + ".xml" );
+    QString xmlFile = QStandardPaths::locate(QStandardPaths::GenericDataLocation, QLatin1String("mime/") + mimeType + ".xml" );
     QFile::remove(xmlFile);
 }
 

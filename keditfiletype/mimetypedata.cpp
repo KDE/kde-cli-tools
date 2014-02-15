@@ -27,6 +27,7 @@
 #include <ksharedconfig.h>
 #include <kconfiggroup.h>
 #include <kmimetypetrader.h>
+#include <qstandardpaths.h>
 
 MimeTypeData::MimeTypeData(const QString& major)
     : m_askSave(AskSaveDefault),
@@ -317,7 +318,7 @@ void MimeTypeData::syncServices()
     if (!m_bFullInit)
         return;
 
-    KSharedConfig::Ptr profile = KSharedConfig::openConfig("mimeapps.list", KConfig::NoGlobals, "xdgdata-apps");
+    KSharedConfig::Ptr profile = KSharedConfig::openConfig("mimeapps.list", KConfig::NoGlobals, QStandardPaths::ApplicationsLocation);
 
     if (!profile->isConfigWritable(true)) // warn user if mimeapps.list is root-owned (#155126/#94504)
         return;

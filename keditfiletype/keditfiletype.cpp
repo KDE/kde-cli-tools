@@ -28,13 +28,13 @@
 
 // KDE
 #include <kapplication.h>
-#include <kaboutdata.h>
+#include <k4aboutdata.h>
 #include <kbuildsycocaprogressdialog.h>
 #include <kdebug.h>
 #include <kcmdlineargs.h>
 #include <ksycoca.h>
 #include <kservicetypeprofile.h>
-#include <kstandarddirs.h>
+
 #include <klocale.h>
 #include <kwindowsystem.h>
 
@@ -120,9 +120,9 @@ void FileTypeDialog::slotDatabaseChanged(const QStringList& changedResources)
 int main(int argc, char ** argv)
 {
   KServiceTypeProfile::setConfigurationMode();
-  KAboutData aboutData( "keditfiletype", "filetypes", ki18n("KEditFileType"), "1.0",
+  K4AboutData aboutData( "keditfiletype", "filetypes", ki18n("KEditFileType"), "1.0",
                         ki18n("KDE file type editor - simplified version for editing a single file type"),
-                        KAboutData::License_GPL,
+                        K4AboutData::License_GPL,
                         ki18n("(c) 2000, KDE developers") );
   aboutData.addAuthor(ki18n("Preston Brown"),KLocalizedString(), "pbrown@kde.org");
   aboutData.addAuthor(ki18n("David Faure"),KLocalizedString(), "faure@kde.org");

@@ -38,9 +38,10 @@
 #include <klocale.h>
 #include <kpushbutton.h>
 #include <kservicetypeprofile.h>
-#include <kstandarddirs.h>
+
 #include <kicon.h>
 #include <ksycoca.h>
+#include <qstandardpaths.h>
 
 // Local
 #include "newtypedlg.h"
@@ -53,7 +54,7 @@ K_EXPORT_PLUGIN(FileTypesViewFactory("filetypes"))
 
 
 FileTypesView::FileTypesView(QWidget *parent, const QVariantList &)
-  : KCModule(FileTypesViewFactory::componentData(), parent)
+  : KCModule(/*FileTypesViewFactory::aboutData(),*/ parent)
 {
   m_fileTypesConfig = KSharedConfig::openConfig("filetypesrc", KConfig::NoGlobals);
 
@@ -367,7 +368,7 @@ void FileTypesView::updateRemoveButton(TypesListItem* tlitem)
                     canRemove = true;
 
                     // Is there a global definition for it?
-                    const QStringList mimeFiles = KGlobal::dirs()->findAllResources( "xdgdata-mime", mimeType + ".xml" );
+                    const QStringList mimeFiles = QStandardPaths::locateAll(QStandardPaths::GenericDataLocation, QLatin1String("mime/") + mimeType + ".xml" );
                     kDebug() << mimeFiles;
                     if (mimeFiles.count() >= 2 /*a local and a global*/) {
                         m_removeButtonSaysRevert = true;
