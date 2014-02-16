@@ -28,6 +28,7 @@
 #include <QLayout>
 #include <QtCore/QTimer>
 #include <QBoxLayout>
+#include <QStandardPaths>
 #include <qdbusconnection.h>
 #include <qdbusmessage.h>
 
@@ -41,7 +42,6 @@
 
 #include <kicon.h>
 #include <ksycoca.h>
-#include <qstandardpaths.h>
 
 // Local
 #include "newtypedlg.h"

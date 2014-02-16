@@ -66,7 +66,7 @@
 #include <kdebug.h>
 #include <klocale.h>
 #include <kcmdlineargs.h>
-#include <kstandarddirs.h>
+
 #include <kaboutdata.h>
 #include <kdesu/client.h>
 #include <kdesu/defaults.h>
@@ -77,6 +77,7 @@
 #ifdef Q_WS_X11
 #include <X11/X.h>
 #include <X11/Xlib.h>
+#include <QStandardPaths>
 #endif
 
 #ifndef SUN_LEN
@@ -176,7 +177,7 @@ int create_socket()
     // strip the screen number from the display
     display.replace(QRegExp("\\.[0-9]+$"), "");
 
-    sock = QFile::encodeName(KStandardDirs::locateLocal("socket", QString("kdesud_%1").arg(display)));
+    sock = QFile::encodeName(QStandardPaths::writableLocation(QStandardPaths::RuntimeLocation) + QLatin1Char('/') + QString("kdesud_%1").arg(display));
     int stat_err=lstat(sock, &s);
     if(!stat_err && S_ISLNK(s.st_mode)) {
         kWarning(1205) << "Someone is running a symlink attack on you\n";

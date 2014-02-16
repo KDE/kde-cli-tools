@@ -28,7 +28,7 @@
 
 #include <QXmlStreamWriter>
 #include <QFile>
-#include <qstandardpaths.h>
+#include <QStandardPaths>
 
 /// WARNING: this code is duplicated between apps/nsplugins and runtime/filetypes
 

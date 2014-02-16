@@ -82,12 +82,12 @@ int main(int argc, char **argv)
 	}
 
 	KComponentData inst(&aboutData);
-	KGlobal::config();
+	KSharedConfig::openConfig();
 
 	KConfig *konfig;
         bool configMustDeleted = false;
 	if (file.isEmpty())
-	   konfig = KGlobal::config().data();
+	   konfig = KSharedConfig::openConfig().data();
 	else
         {
 	   konfig = new KConfig( file, KConfig::NoGlobals );

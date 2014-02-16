@@ -348,7 +348,7 @@ static int startApp()
     }
 
     // Read configuration
-    KConfigGroup config(KGlobal::config(), "Passwords");
+    KConfigGroup config(KSharedConfig::openConfig(), "Passwords");
     int timeout = config.readEntry("Timeout", defTimeout);
 
     // Check if we need a password

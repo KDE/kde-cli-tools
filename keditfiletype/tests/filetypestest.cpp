@@ -29,6 +29,7 @@
 
 #include <mimetypedata.h>
 #include <mimetypewriter.h>
+#include <QStandardPaths>
 
 
 class FileTypesTest : public QObject
@@ -40,11 +41,11 @@ private Q_SLOTS:
     {
         m_mimeTypeCreatedSuccessfully = false;
         const QString kdehome = QDir::home().canonicalPath() + "/.kde-unit-test";
-        QStringList appsDirs = KGlobal::dirs()->resourceDirs("xdgdata-apps");
+        QStringList appsDirs = QStandardPaths::standardLocations(QStandardPaths::ApplicationsLocation) /* WARNING: no more trailing slashes */;
         //kDebug() << appsDirs;
         m_localApps = kdehome + "/xdg/local/applications/";
         QCOMPARE(appsDirs.first(), m_localApps);
-        QCOMPARE(KGlobal::dirs()->resourceDirs("xdgdata-mime").first(), QString(kdehome + "/xdg/local/mime/"));
+        QCOMPARE(QStandardPaths::locateAll(QStandardPaths::GenericDataLocation, QLatin1String("mime/") + , QStandardPaths::LocateDirectory);
 
         QFile::remove(m_localApps + "mimeapps.list");
 
@@ -58,14 +59,14 @@ private Q_SLOTS:
             mustUpdateKSycoca = true;
 
         // Cleanup after testMimeTypePatterns if it failed mid-way
-        const QString packageFileName = KStandardDirs::locateLocal( "xdgdata-mime", "packages/text-plain.xml" );
+        const QString packageFileName = QStandardPaths::writableLocation(QStandardPaths::GenericDataLocation) + QLatin1String("/mime/") + "packages/text-plain.xml" ;
         if (!packageFileName.isEmpty()) {
             QFile::remove(packageFileName);
             MimeTypeWriter::runUpdateMimeDatabase();
             mustUpdateKSycoca = true;
         }
 
-        QFile::remove(KStandardDirs::locateLocal("config", "filetypesrc"));
+        QFile::remove(QStandardPaths::writableLocation(QStandardPaths::ConfigLocation) + QLatin1Char('/') + "filetypesrc");
 
         if ( mustUpdateKSycoca ) {
             // Update ksycoca in ~/.kde-unit-test after creating the above
@@ -158,7 +159,7 @@ private Q_SLOTS:
         QVERIFY(!data.isDirty());
 
         // Remove custom file
-        const QString packageFileName = KStandardDirs::locateLocal( "xdgdata-mime", "packages/text-plain.xml" );
+        const QString packageFileName = QStandardPaths::writableLocation(QStandardPaths::GenericDataLocation) + QLatin1String("/mime/") + "packages/text-plain.xml" ;
         QVERIFY(!packageFileName.isEmpty());
         QFile::remove(packageFileName);
         MimeTypeWriter::runUpdateMimeDatabase();
@@ -318,7 +319,7 @@ private Q_SLOTS:
     void cleanupTestCase()
     {
         // If we remove it, then every run of the unit test has to run kbuildsycoca... slow.
-        //QFile::remove(KStandardDirs::locateLocal("xdgdata-apps", "fakeapplication.desktop"));
+        //QFile::remove(QStandardPaths::writableLocation(QStandardPaths::ApplicationsLocation) + QLatin1Char('/') + "fakeapplication.desktop");
     }
 
 private: // helper methods

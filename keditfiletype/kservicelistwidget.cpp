@@ -27,6 +27,7 @@
 // Qt
 #include <QLayout>
 #include <QHBoxLayout>
+#include <QStandardPaths>
 
 // KDE
 #include <kapplication.h>
@@ -39,7 +40,6 @@
 #include <kpushbutton.h>
 #include <kicon.h>
 #include <kstandarddirs.h>
-#include <qstandardpaths.h>
 
 // Local
 #include "kserviceselectdlg.h"

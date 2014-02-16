@@ -26,7 +26,7 @@
 #include <kpropertiesdialog.h>
 #include <klocale.h>
 #include <kglobal.h>
-#include <kstandarddirs.h>
+
 #include <kurlrequesterdialog.h>
 #include <kmessagebox.h>
 #include <kmimetypetrader.h>
