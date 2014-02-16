@@ -31,6 +31,8 @@
 #include <mimetypewriter.h>
 #include <QStandardPaths>
 
+#define KDE_MAKE_VERSION( a,b,c ) (((a) << 16) | ((b) << 8) | (c))
+
 
 class FileTypesTest : public QObject
 {
@@ -39,13 +41,16 @@ class FileTypesTest : public QObject
 private Q_SLOTS:
     void initTestCase()
     {
+        extern KSERVICE_EXPORT bool kservice_require_kded;
+        kservice_require_kded = false;
+
+        QStandardPaths::setTestModeEnabled(true);
+
         m_mimeTypeCreatedSuccessfully = false;
-        const QString kdehome = QDir::home().canonicalPath() + "/.kde-unit-test";
-        QStringList appsDirs = QStandardPaths::standardLocations(QStandardPaths::ApplicationsLocation) /* WARNING: no more trailing slashes */;
+        QStringList appsDirs = QStandardPaths::standardLocations(QStandardPaths::ApplicationsLocation);
         //kDebug() << appsDirs;
-        m_localApps = kdehome + "/xdg/local/applications/";
-        QCOMPARE(appsDirs.first(), m_localApps);
-        QCOMPARE(QStandardPaths::locateAll(QStandardPaths::GenericDataLocation, QLatin1String("mime/") + , QStandardPaths::LocateDirectory);
+        m_localApps = appsDirs.first();
+        QVERIFY(QDir().mkpath(QStandardPaths::writableLocation(QStandardPaths::GenericDataLocation) + QStringLiteral("/mime/packages")));
 
         QFile::remove(m_localApps + "mimeapps.list");
 
@@ -286,7 +291,7 @@ private Q_SLOTS:
     void testDeleteMimeType()
     {
         if (!m_mimeTypeCreatedSuccessfully)
-            QSKIP("This test relies on testCreateMimeType", SkipAll);
+            QSKIP("This test relies on testCreateMimeType");
         const QString mimeTypeName = "fake/unit-test-fake-mimetype";
         QVERIFY(MimeTypeWriter::hasDefinitionFile(mimeTypeName));
         MimeTypeWriter::removeOwnMimeType(mimeTypeName);
