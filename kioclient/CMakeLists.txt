@@ -1,4 +1,3 @@
-include_directories(${KDE4_INCLUDE_DIR}/kio ${KDE4_INCLUDE_DIR}/KDE) 
 set(kioclient_SRCS kioclient.cpp )
 kde4_add_executable(kioclient ${kioclient_SRCS})
 set_property(TARGET kioclient APPEND_STRING PROPERTY COMPILE_FLAGS "-DKIOCLIENT_AS_KIOCLIENT")
