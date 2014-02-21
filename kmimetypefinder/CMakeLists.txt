@@ -1,4 +1,5 @@
-kde4_add_executable(kmimetypefinder NOGUI kmimetypefinder.cpp)
+add_executable(kmimetypefinder kmimetypefinder.cpp)
+ecm_mark_nongui_executable(kmimetypefinder)
 
 target_link_libraries(kmimetypefinder ${KDE4_KDECORE_LIBS})
 
