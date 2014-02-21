@@ -89,35 +89,35 @@ int main(int argc, char **argv)
 	if (file.isEmpty())
 	   konfig = KSharedConfig::openConfig().data();
 	else
-        {
-	   konfig = new KConfig( file, KConfig::NoGlobals );
-           configMustDeleted=true;
-        }
-        KConfigGroup cfgGroup = konfig->group("");
-        foreach (const QString &grp, groups)
-            cfgGroup = cfgGroup.group(grp);
+	{
+		konfig = new KConfig( file, KConfig::NoGlobals );
+		configMustDeleted=true;
+	}
+	KConfigGroup cfgGroup = konfig->group("");
+	foreach (const QString &grp, groups)
+		cfgGroup = cfgGroup.group(grp);
 	if(type=="bool") {
 		dflt=dflt.toLower();
 		bool def=(dflt=="true" || dflt=="on" || dflt=="yes" || dflt=="1");
-                bool retValue = !cfgGroup.readEntry(key, def);
-                if ( configMustDeleted )
-                    delete konfig;
+		bool retValue = !cfgGroup.readEntry(key, def);
+		if ( configMustDeleted )
+			delete konfig;
 		return retValue;
 	} else if((type=="num") || (type=="int")) {
-            int retValue = cfgGroup.readEntry(key, dflt.toInt());
-            if ( configMustDeleted )
-                delete konfig;
-            return retValue;
+		int retValue = cfgGroup.readEntry(key, dflt.toInt());
+		if ( configMustDeleted )
+			delete konfig;
+		return retValue;
 	} else if (type=="path"){
-                fprintf(stdout, "%s\n", cfgGroup.readPathEntry(key, dflt).toLocal8Bit().data());
-                if ( configMustDeleted )
-                    delete konfig;
+		fprintf(stdout, "%s\n", cfgGroup.readPathEntry(key, dflt).toLocal8Bit().data());
+		if ( configMustDeleted )
+			delete konfig;
 		return 0;
 	} else {
-            /* Assume it's a string... */
-                fprintf(stdout, "%s\n", cfgGroup.readEntry(key, dflt).toLocal8Bit().data());
-                if ( configMustDeleted )
-                    delete konfig;
+		/* Assume it's a string... */
+		fprintf(stdout, "%s\n", cfgGroup.readEntry(key, dflt).toLocal8Bit().data());
+		if ( configMustDeleted )
+			delete konfig;
 		return 0;
 	}
 }
