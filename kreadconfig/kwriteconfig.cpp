@@ -30,6 +30,7 @@
 
 int main(int argc, char **argv)
 {
+	QCoreApplication app(argc, argv);
 	KAboutData aboutData("kwriteconfig", 0, i18n("KWriteConfig"),
 		"1.0.0",
 		i18n("Write KConfig entries - for use in shell scripts"),
@@ -38,7 +39,6 @@ int main(int argc, char **argv)
 	aboutData.addAuthor("Luís Pedro Coelho", QString(), "luis_pedro@netcabo.pt");
 	aboutData.addAuthor("Bernhard Rosenkraenzer", i18n("Wrote kreadconfig on which this is based"), "bero@redhat.com");
 
-	QCoreApplication app(argc, argv);
 	KAboutData::setApplicationData(aboutData);
 
 	QCommandLineParser parser;

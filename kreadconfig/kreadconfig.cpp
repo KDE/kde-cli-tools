@@ -41,51 +41,51 @@
  *		rm someFile
  *	fi
  */
-#include <kconfig.h>
-#include <kconfiggroup.h>
-#include <kglobal.h>
-#include <kapplication.h>
-#include <kcmdlineargs.h>
-#include <klocale.h>
-#include <kaboutdata.h>
+
+#include <KConfig>
+#include <KConfigGroup>
+#include <KAboutData>
+#include <KLocalizedString>
+#include <QCommandLineParser>
 #include <stdio.h>
+
 int main(int argc, char **argv)
 {
-	KAboutData aboutData("kreadconfig", 0, ki18n("KReadConfig"),
-		"1.0.1",
-		ki18n("Read KConfig entries - for use in shell scripts"),
-		KAboutData::License_GPL,
-		ki18n("(c) 2001 Red Hat, Inc."));
-	aboutData.addAuthor(ki18n("Bernhard Rosenkraenzer"), KLocalizedString(), "bero@redhat.com");
-	KCmdLineArgs::init(argc, argv, &aboutData);
-
 	QCoreApplication app(argc, argv);
+	KAboutData aboutData("kreadconfig", 0, i18n("KReadConfig"),
+		"1.0.1",
+		i18n("Read KConfig entries - for use in shell scripts"),
+		KAboutData::License_GPL,
+		i18n("(c) 2001 Red Hat, Inc."));
+	aboutData.addAuthor(i18n("Bernhard Rosenkraenzer"), QString(), "bero@redhat.com");
 
-	KCmdLineOptions options;
-	options.add("file <file>", ki18n("Use <file> instead of global config"));
-	options.add("group <group>", ki18n("Group to look in. Use repeatedly for nested groups."), "KDE");
-	options.add("key <key>", ki18n("Key to look for"));
-	options.add("default <default>", ki18n("Default value"));
-	options.add("type <type>", ki18n("Type of variable"));
-	KCmdLineArgs::addCmdLineOptions(options);
-	KCmdLineArgs *args=KCmdLineArgs::parsedArgs();
+	KAboutData::setApplicationData(aboutData);
 
-	QStringList groups=args->getOptionList("group");
-	QString key=args->getOption("key");
-	QString file=args->getOption("file");
-	QString dflt=args->getOption("default");
-	QString type=args->getOption("type").toLower();
+	QCommandLineParser parser;
+	parser.addOption(QCommandLineOption("file", i18n("Use <file> instead of global config"), "file"));
+	parser.addOption(QCommandLineOption("group", i18n("Group to look in. Use repeatedly for nested groups."), "group", "KDE"));
+	parser.addOption(QCommandLineOption("key", i18n("Key to look for"), "key"));
+	parser.addOption(QCommandLineOption("default", i18n("Default value"), "value"));
+	parser.addOption(QCommandLineOption("type", i18n("Type of variable"), "type"));
 
-	if (key.isNull()) {
-		KCmdLineArgs::usage();
-		return 1;
+	aboutData.setupCommandLine(&parser);
+	parser.process(app);
+	aboutData.processCommandLine(&parser);
+
+	QStringList groups=parser.values("group");
+	QString key=parser.value("key");
+	QString file=parser.value("file");
+	QString dflt=parser.value("default");
+	QString type=parser.value("type").toLower();
+
+	if (parser.positionalArguments().isEmpty()) {
+		parser.showHelp(1);
 	}
 
-	KComponentData inst(&aboutData);
 	KSharedConfig::openConfig();
 
 	KConfig *konfig;
-        bool configMustDeleted = false;
+	bool configMustDeleted = false;
 	if (file.isEmpty())
 	   konfig = KSharedConfig::openConfig().data();
 	else
