@@ -20,61 +20,59 @@
     along with this program.  If not, see <http://www.gnu.org/licenses/>.
 */
 
-#include <kconfig.h>
-#include <kconfiggroup.h>
-#include <kglobal.h>
-#include <kapplication.h>
-#include <kcmdlineargs.h>
-#include <klocale.h>
-#include <kaboutdata.h>
+#include <KConfig>
+#include <KConfigGroup>
 #include <stdio.h>
-//Added by qt3to4:
+#include <KAboutData>
+#include <KLocalizedString>
+#include <QCoreApplication>
+#include <QCommandLineParser>
 
 int main(int argc, char **argv)
 {
-	KAboutData aboutData("kwriteconfig", 0, ki18n("KWriteConfig"),
+	KAboutData aboutData("kwriteconfig", 0, i18n("KWriteConfig"),
 		"1.0.0",
-		ki18n("Write KConfig entries - for use in shell scripts"),
+		i18n("Write KConfig entries - for use in shell scripts"),
 		KAboutData::License_GPL,
-		ki18n("(c) 2001 Red Hat, Inc. & Luís Pedro Coelho"));
-	aboutData.addAuthor(ki18n("Luís Pedro Coelho"), KLocalizedString(), "luis_pedro@netcabo.pt");
-	aboutData.addAuthor(ki18n("Bernhard Rosenkraenzer"), ki18n("Wrote kreadconfig on which this is based"), "bero@redhat.com");
-	KCmdLineArgs::init(argc, argv, &aboutData);
+		i18n("(c) 2001 Red Hat, Inc. & Luís Pedro Coelho"));
+	aboutData.addAuthor("Luís Pedro Coelho", QString(), "luis_pedro@netcabo.pt");
+	aboutData.addAuthor("Bernhard Rosenkraenzer", i18n("Wrote kreadconfig on which this is based"), "bero@redhat.com");
 
 	QCoreApplication app(argc, argv);
+	KAboutData::setApplicationData(aboutData);
 
-	KCmdLineOptions options;
-	options.add("file <file>", ki18n("Use <file> instead of global config"));
-	options.add("group <group>", ki18n("Group to look in. Use repeatedly for nested groups."), "KDE");
-	options.add("key <key>", ki18n("Key to look for"));
-	options.add("type <type>", ki18n("Type of variable. Use \"bool\" for a boolean, otherwise it is treated as a string"));
-	options.add("+value", ki18n( "The value to write. Mandatory, on a shell use '' for empty" ));
-	KCmdLineArgs::addCmdLineOptions(options);
-	KCmdLineArgs *args=KCmdLineArgs::parsedArgs();
+	QCommandLineParser parser;
+	parser.addHelpOption();
+	parser.addOption(QCommandLineOption("file", i18n("Use <file> instead of global config"), "file"));
+	parser.addOption(QCommandLineOption("group", i18n("Group to look in. Use repeatedly for nested groups."), "group", "KDE"));
+	parser.addOption(QCommandLineOption("key <key>", i18n("Key to look for")));
+	parser.addOption(QCommandLineOption("type <type>", i18n("Type of variable. Use \"bool\" for a boolean, otherwise it is treated as a string")));
+	parser.addPositionalArgument("value", i18n( "The value to write. Mandatory, on a shell use '' for empty" ));
 
-	QStringList groups=args->getOptionList("group");
-	QString key=args->getOption("key");
-	QString file=args->getOption("file");
-	QString type=args->getOption("type").toLower();
+	aboutData.setupCommandLine(&parser);
+	parser.process(app);
+	aboutData.processCommandLine(&parser);
+
+	QStringList groups=parser.values("group");
+	QString key=parser.value("key");
+	QString file=parser.value("file");
+	QString type=parser.value("type").toLower();
 
 
-	if (key.isNull() || !args->count()) {
-		KCmdLineArgs::usage();
-		return 1;
+	if (parser.positionalArguments().isEmpty()) {
+		parser.showHelp(1);
 	}
-	QByteArray value = args->arg( 0 ).toLocal8Bit();
-
-	KComponentData inst(&aboutData);
+	QByteArray value = parser.positionalArguments().first().toLocal8Bit();
 
 	KConfig *konfig;
 	if (file.isEmpty())
-	   konfig = new KConfig(QString::fromLatin1( "kdeglobals"), KConfig::NoGlobals );
+	konfig = new KConfig(QString::fromLatin1( "kdeglobals"), KConfig::NoGlobals );
 	else
-	   konfig = new KConfig( file, KConfig::NoGlobals );
+	konfig = new KConfig( file, KConfig::NoGlobals );
 
-        KConfigGroup cfgGroup = konfig->group("");
-        foreach (const QString &grp, groups)
-            cfgGroup = cfgGroup.group(grp);
+		KConfigGroup cfgGroup = konfig->group("");
+		foreach (const QString &grp, groups)
+			cfgGroup = cfgGroup.group(grp);
 	if ( konfig->accessMode() != KConfig::ReadWrite || cfgGroup.isEntryImmutable( key ) ) return 2;
 
 	if(type=="bool") {
@@ -87,7 +85,7 @@ int main(int argc, char **argv)
 		cfgGroup.writeEntry( key, QString::fromLocal8Bit( value ) );
 	}
 	konfig->sync();
-        delete konfig;
+		delete konfig;
 	return 0;
 }
 
