@@ -44,6 +44,7 @@
 
 #include <KConfig>
 #include <KConfigGroup>
+#include <KSharedConfig>
 #include <KAboutData>
 #include <KLocalizedString>
 #include <QCommandLineParser>
