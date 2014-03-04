@@ -25,12 +25,13 @@
 #include <QtDBus/QtDBus>
 
 #include <kdebug.h>
+#include <kconfiggroup.h>
 #include <kglobal.h>
 #include <kapplication.h>
 #include <kstandarddirs.h>
 #include <kconfig.h>
 #include <klocale.h>
-#include <kaboutdata.h>
+#include <k4aboutdata.h>
 #include <kcmdlineargs.h>
 #include <kmessagebox.h>
 #include <kuser.h>
@@ -82,9 +83,9 @@ int main(int argc, char *argv[])
     if (duser.isEmpty())
         duser = "root";
 
-    KAboutData aboutData("kdesu", 0, ki18n("KDE su"),
+    K4AboutData aboutData("kdesu", 0, ki18n("KDE su"),
             Version, ki18n("Runs a program with elevated privileges."),
-            KAboutData::License_Artistic,
+            K4AboutData::License_Artistic,
             ki18n("Copyright (c) 1998-2000 Geert Jansen, Pietro Iglio"));
     aboutData.addAuthor(ki18n("Geert Jansen"), ki18n("Maintainer"),
             "jansen@kde.org", "http://www.stack.nl/~geertj/");

@@ -67,7 +67,7 @@
 #include <klocale.h>
 #include <kcmdlineargs.h>
 
-#include <kaboutdata.h>
+#include <k4aboutdata.h>
 #include <kdesu/client.h>
 #include <kdesu/defaults.h>
 
@@ -258,9 +258,9 @@ int create_socket()
 
 int main(int argc, char *argv[])
 {
-    KAboutData aboutData("kdesud", 0, ki18n("KDE su daemon"),
+    K4AboutData aboutData("kdesud", 0, ki18n("KDE su daemon"),
             Version, ki18n("Daemon used by kdesu"),
-            KAboutData::License_Artistic,
+            K4AboutData::License_Artistic,
             ki18n("Copyright (c) 1999,2000 Geert Jansen"));
     aboutData.addAuthor(ki18n("Geert Jansen"), ki18n("Author"),
             "jansen@kde.org", "http://www.stack.nl/~geertj/");

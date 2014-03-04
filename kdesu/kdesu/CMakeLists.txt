@@ -6,7 +6,7 @@ add_executable(kdesu_executable kdesu.cpp sudlg.cpp)
 # give it the name kdesu
 set_target_properties(kdesu_executable PROPERTIES OUTPUT_NAME kdesu)
 
-target_link_libraries(kdesu_executable  ${KDE4_KDEUI_LIBS} ${KDE4_KDESU_LIBS} )
+target_link_libraries(kdesu_executable KF5::Su KF5::KDE4Support)
 
 install(TARGETS kdesu_executable DESTINATION ${LIBEXEC_INSTALL_DIR})
 

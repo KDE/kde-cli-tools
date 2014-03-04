@@ -14,7 +14,7 @@ set(kdesud_SRCS
 add_executable(kdesud ${kdesud_SRCS})
 ecm_mark_nongui_executable(kdesud)
 
-target_link_libraries(kdesud ${KDE4_KDESU_LIBS} ${KDE4_KDECORE_LIBS} ${X11_LIBRARIES})
+target_link_libraries(kdesud KF5::Su KF5::KDE4Support ${X11_LIBRARIES})
 
 if(KDE4_ENABLE_FPIE)
     macro_add_compile_flags(kdesud ${KDE4_CXX_FPIE_FLAGS})

@@ -10,24 +10,25 @@
 
 #include <KDebug>
 #include <KLocale>
+#include <KIconThemes/KIconLoader>
+#include <QPushButton>
 
 KDEsuDialog::KDEsuDialog(QByteArray user, QByteArray authUser, bool enableKeep, const QString& icon, bool withIgnoreButton)
-    : KPasswordDialog(0, enableKeep ? ShowKeepPassword : NoFlags,
-                      withIgnoreButton ? User1 : NoDefault)
+    : KPasswordDialog(0, enableKeep ? ShowKeepPassword : NoFlags)
 {
     if ( !icon.isEmpty() ) {
         setPixmap(DesktopIcon(icon));
     }
 
     if ( withIgnoreButton ) {
-        setButtonText( User1, i18n("Ignore") );
+        buttonBox()->addButton(QDialogButtonBox::Ignore);
     }
 
     QString superUserCommand = proc.superUserCommand();
 
     proc.setUser(authUser);
 
-    setCaption(i18n("Run as %1", QString::fromLatin1(user)));
+    setWindowTitle(i18n("Run as %1", QString::fromLatin1(user)));
 
     QString prompt;
     if (proc.useUsersOwnPassword()) {
@@ -56,9 +57,9 @@ KDEsuDialog::KDEsuDialog(QByteArray user, QByteArray authUser, bool enableKeep, 
     }
     setPrompt(prompt);
 
-    if( withIgnoreButton )
-        setButtonText(User1, i18n("&Ignore"));
-    connect(this,SIGNAL(user1Clicked()),this,SLOT(slotUser1()));
+    if( withIgnoreButton ) {
+        connect(buttonBox()->button(QDialogButtonBox::Ignore), SIGNAL(clicked()), SLOT(slotUser1()));
+    }
 
     setMinimumSize(minimumSizeHint());
 }
