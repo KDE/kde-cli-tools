@@ -21,18 +21,20 @@
 
 #include <QApplication>
 #include <kio/udsentry.h>
+
+class QCommandLineParser;
 class QUrl;
 class KJob;
 namespace KIO { class Job; }
 
-class ClientApp : public QApplication
+class ClientApp : public QObject
 {
     Q_OBJECT
 public:
-    ClientApp(int &argc, char **argv );
+    ClientApp();
 
     /** Parse command-line arguments and "do it" */
-    static bool doIt();
+    bool doIt(const QCommandLineParser& parser);
 
 private Q_SLOTS:
     void slotPrintData(KIO::Job *job, const QByteArray &data);
@@ -40,14 +42,13 @@ private Q_SLOTS:
     void slotResult( KJob * );
     void delayedQuit();
     void slotDialogCanceled();
-    void deref();
 
 private:
     bool kde_open( const QUrl& url, const QString& mimeType, bool allowExec );
-    bool doCopy( int firstArg );
-    bool doMove( int firstArg );
-    bool doList( int firstArg );
-    bool doRemove( int firstArg );
+    bool doCopy( const QStringList& urls );
+    bool doMove( const QStringList& urls );
+    bool doList( const QStringList& urls );
+    bool doRemove( const QStringList& urls );
 
     static bool m_ok;
 };

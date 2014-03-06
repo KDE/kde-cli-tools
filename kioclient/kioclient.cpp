@@ -18,40 +18,59 @@
 
 #include "kioclient.h"
 
-#include <kio/job.h>
-#include <kio/copyjob.h>
-#include <kio/deletejob.h>
-#include <kio/jobuidelegate.h>
-#include <kcmdlineargs.h>
-#include <kpropertiesdialog.h>
-#include <klocale.h>
-#include <kglobal.h>
+#include <KIO/CopyJob>
+#include <KIO/DeleteJob>
+#include <kio/listjob.h>
+#include <kio/transferjob.h>
+#include <KIO/JobUiDelegate>
+#include <KPropertiesDialog>
+#include <KService>
+#include <KRun>
+#include <KAboutData>
+#include <KLocalizedString>
+#include <KMimeTypeTrader>
 
-#include <kurlrequesterdialog.h>
-#include <kmessagebox.h>
-#include <kmimetypetrader.h>
-#include <kfiledialog.h>
-//#include <qdebug>
-#include <kservice.h>
-#include <QTimer>
-#include <krun.h>
-#include <QtDBus/QtDBus>
-#include <kcomponentdata.h>
+#include <QDBusConnection>
+#include <QCommandLineParser>
+#include <QFileDialog>
 #include <iostream>
-
-static const char appName[] = "kioclient";
-static const char programName[] = I18N_NOOP("KIO Client");
-static const char description[] = I18N_NOOP("Command-line tool for network-transparent operations");
-static const char version[] = "2.0";
 
 bool ClientApp::m_ok = true;
 static bool s_interactive = true;
 static KIO::JobFlags s_jobFlags = KIO::DefaultFlags;
 
+QUrl /*KCmdLineArgs::*/makeURL(const QString &urlArg)
+{
+    QFileInfo fileInfo(urlArg);
+    if (!fileInfo.isRelative()) { // i.e. starts with '/', on unix
+        QUrl result = QUrl::fromLocalFile(QDir::fromNativeSeparators(urlArg));
+        return result; // Absolute path.
+    }
+
+    QUrl qurl(urlArg);
+    if (qurl.isRelative() || fileInfo.exists()) {
+        QUrl result = QUrl::fromLocalFile(QDir::currentPath() + QLatin1Char('/') + urlArg);
+#if 0 //Qt5 TODO: QUrlInfo::cleanPath
+        result.cleanPath(); //This did use KUrl::cleanPath()
+#endif
+        return result;  // Relative path
+    }
+
+    return QUrl(urlArg); // Argument is a URL
+}
+
+QList<QUrl> makeUrls(const QStringList& urlArgs)
+{
+    QList<QUrl> ret;
+    foreach(const QString& url, urlArgs) {
+        ret += makeURL(url);
+    }
+    return ret;
+}
+
 #ifdef KIOCLIENT_AS_KIOCLIENT
 static void usage()
 {
-    KCmdLineArgs::enable_i18n();
     puts(i18n("\nSyntax:\n").toLocal8Bit());
     puts(i18n("  kioclient openProperties 'url'\n"
               "            # Opens a properties menu\n\n").toLocal8Bit());
@@ -108,51 +127,60 @@ static void usage()
 
 int main( int argc, char **argv )
 {
-  KCmdLineArgs::init(argc, argv, appName, 0, ki18n(programName), version, ki18n(description), KCmdLineArgs::CmdLineArgNone);
+  QApplication app(argc, argv);
 
+  QString appName = "kioclient";
+  QString programName = i18n("KIO Client");
+  QString description = i18n("Command-line tool for network-transparent operations");
+  QString version = "2.0";
+  KAboutData data(appName, appName, programName, version, description, KAboutData::License_LGPL_V2);
 
-  KCmdLineOptions options;
-  options.add("noninteractive", ki18n("Non-interactive use: no message boxes"));
+  QCommandLineParser parser;
+  parser.addOption(QCommandLineOption("noninteractive", i18n("Non-interactive use: no message boxes. If you don't want a"
+                                                             "graphical connection, use --platform offscreen")));
+
   #if !defined(KIOCLIENT_AS_KDEOPEN)
-  options.add("overwrite", ki18n("Overwrite destination if it exists (for copy and move)"));
-  #endif
-  #if defined(KIOCLIENT_AS_KDEOPEN)
-  options.add("+url", ki18n("file or URL"));
-  #elif defined(KIOCLIENT_AS_KDECP)
-  options.add("+src", ki18n("Source URL or URLs"));
-  options.add("+dest", ki18n("Destination URL"));
-  #elif defined(KIOCLIENT_AS_KDEMV)
-  options.add("+src", ki18n("Source URL or URLs"));
-  options.add("+dest", ki18n("Destination URL"));
-  #elif defined(KIOCLIENT_AS_KIOCLIENT)
-  options.add("commands", ki18n("Show available commands"));
-  options.add("+command", ki18n("Command (see --commands)"));
-  options.add("+[URL(s)]", ki18n("Arguments for command"));
+  parser.addOption(QCommandLineOption("overwrite", i18n("Overwrite destination if it exists (for copy and move)")));
   #endif
 
-  KCmdLineArgs::addCmdLineOptions( options );
-  KCmdLineArgs::addTempFileOption();
+  #if defined(KIOCLIENT_AS_KDEOPEN)
+  parser.addPositionalArgument("url", i18n("file or URL"), i18n("urls..."));
+  #elif defined(KIOCLIENT_AS_KDECP)
+  parser.addPositionalArgument("src", i18n("Source URL or URLs"), i18n("urls..."));
+  parser.addPositionalArgument("dest", i18n("Destination URL"), i18n("url"));
+  #elif defined(KIOCLIENT_AS_KDEMV)
+  parser.addPositionalArgument("src", i18n("Source URL or URLs"), i18n("urls..."));
+  parser.addPositionalArgument("dest", i18n("Destination URL"), i18n("url"));
+  #elif defined(KIOCLIENT_AS_KIOCLIENT)
+  parser.addOption(QCommandLineOption("commands", i18n("Show available commands")));
+  parser.addPositionalArgument("command", i18n("Command (see --commands)"), i18n("command"));
+  parser.addPositionalArgument("URLs", i18n("Arguments for command"), i18n("urls..."));
+  #endif
+
+//   KCmdLineArgs::addTempFileOption();
+
+  data.setupCommandLine(&parser);
+  parser.process(app);
+  data.processCommandLine(&parser);
 
 #ifdef KIOCLIENT_AS_KIOCLIENT
-  KCmdLineArgs *args = KCmdLineArgs::parsedArgs();
-
-  if ( argc == 1 || args->isSet("commands") )
+  if ( argc == 1 || parser.isSet("commands") )
   {
+    puts(parser.helpText().toLocal8Bit());
+    puts("\n\n");
     usage();
     return 0;
   }
 #endif
 
-  return ClientApp::doIt() ? 0 /*no error*/ : 1 /*error*/;
+  ClientApp client;
+  return client.doIt(parser) ? 0 /*no error*/ : 1 /*error*/;
 }
 
 bool krun_has_error = false;
 
 void ClientApp::delayedQuit()
 {
-    // Quit in 2 seconds. This leaves time for KRun to pop up
-    // "app not found" in KProcessRunner, if that was the case.
-    QTimer::singleShot( 2000, this, SLOT(deref()) );
     // don't access the KRun instance later, it will be deleted after calling slots
     if( static_cast< const KRun* >( sender())->hasError())
         krun_has_error = true;
@@ -162,12 +190,12 @@ static void checkArgumentCount(int count, int min, int max)
 {
     if (count < min)
     {
-        fputs( i18nc("@info:shell", "%1: Syntax error, not enough arguments\n", appName).toLocal8Bit(), stderr );
+        fputs( i18nc("@info:shell", "%1: Syntax error, not enough arguments\n", qAppName()).toLocal8Bit(), stderr );
         ::exit(1);
     }
     if (max && (count > max))
     {
-        fputs( i18nc("@info:shell", "%1: Syntax error, too many arguments\n", appName).toLocal8Bit(), stderr );
+        fputs( i18nc("@info:shell", "%1: Syntax error, too many arguments\n", qAppName()).toLocal8Bit(), stderr );
         ::exit(1);
     }
 }
@@ -180,7 +208,7 @@ bool ClientApp::kde_open(const QUrl& url, const QString& mimeType, bool allowExe
         run->setRunExecutables(allowExec);
         QObject::connect( run, SIGNAL( finished() ), this, SLOT( delayedQuit() ));
         QObject::connect( run, SIGNAL( error() ), this, SLOT( delayedQuit() ));
-        this->exec();
+        qApp->exec();
         return !krun_has_error;
     } else {
         QList<QUrl> urls;
@@ -193,18 +221,15 @@ bool ClientApp::kde_open(const QUrl& url, const QString& mimeType, bool allowExe
     }
 }
 
-bool ClientApp::doCopy( int firstArg )
+bool ClientApp::doCopy( const QStringList& urls )
 {
-    KCmdLineArgs *args = KCmdLineArgs::parsedArgs();
-    int argc = args->count();
-    QList<QUrl> srcLst;
-    for ( int i = firstArg; i <= argc - 2; i++ )
-      srcLst.append( args->url(i) );
-    KIO::Job * job = KIO::copy( srcLst, args->url(argc - 1), s_jobFlags );
+    QList<QUrl> srcLst(makeUrls(urls));
+    QUrl dest = srcLst.takeLast();
+    KIO::Job * job = KIO::copy( srcLst, dest, s_jobFlags );
     if ( !s_interactive )
         job->setUiDelegate( 0 );
     connect( job, SIGNAL( result( KJob * ) ), this, SLOT( slotResult( KJob * ) ) );
-    this->exec();
+    qApp->exec();
     return m_ok;
 }
 
@@ -219,180 +244,150 @@ void ClientApp::slotEntries(KIO::Job* job, const KIO::UDSEntryList& list)
     }
 }
 
-bool ClientApp::doList( int firstArg )
+bool ClientApp::doList( const QStringList& urls )
 {
-    KCmdLineArgs *args = KCmdLineArgs::parsedArgs();
-    QUrl dir = args->url(firstArg);
+    QUrl dir = urls.first();
     KIO::Job * job = KIO::listDir(dir, KIO::HideProgressInfo);
     if ( !s_interactive )
         job->setUiDelegate(0);
     connect(job, SIGNAL(entries(KIO::Job*,KIO::UDSEntryList)),
             SLOT(slotEntries(KIO::Job*,KIO::UDSEntryList)));
     connect(job, SIGNAL(result(KJob *)), this, SLOT(slotResult(KJob *)));
-    this->exec();
+    qApp->exec();
     return m_ok;
 }
 
-bool ClientApp::doMove( int firstArg )
+bool ClientApp::doMove( const QStringList& urls )
 {
-    KCmdLineArgs *args = KCmdLineArgs::parsedArgs();
-    int argc = args->count();
-    QList<QUrl> srcLst;
-    for ( int i = firstArg; i <= argc - 2; i++ )
-      srcLst.append( args->url(i) );
-
-    KIO::Job * job = KIO::move( srcLst, args->url(argc - 1), s_jobFlags );
+    QList<QUrl> srcLst(makeUrls(urls));
+    QUrl dest = srcLst.takeLast();
+    KIO::Job * job = KIO::move( srcLst, dest, s_jobFlags );
     if ( !s_interactive )
         job->setUiDelegate( 0 );
     connect( job, SIGNAL( result( KJob * ) ), this, SLOT( slotResult( KJob * ) ) );
-    this->exec();
+    qApp->exec();
     return m_ok;
 }
 
-bool ClientApp::doRemove( int firstArg )
+bool ClientApp::doRemove( const QStringList& urls )
 {
-    KCmdLineArgs *args = KCmdLineArgs::parsedArgs();
-    int argc = args->count();
-    QList<QUrl> srcLst;
-    for ( int i = firstArg; i < argc; i++ )
-      srcLst.append( args->url(i) );
-    KIO::Job * job = KIO::del( srcLst, s_jobFlags );
+    KIO::Job * job = KIO::del( makeUrls(urls), s_jobFlags );
     if ( !s_interactive )
         job->setUiDelegate( 0 );
     connect( job, SIGNAL( result( KJob * ) ), this, SLOT( slotResult( KJob * ) ) );
-    this->exec();
+    qApp->exec();
     return m_ok;
 }
 
-bool ClientApp::doIt()
+bool ClientApp::doIt(const QCommandLineParser& parser)
 {
-    KCmdLineArgs *args = KCmdLineArgs::parsedArgs();
-    const int argc = args->count();
+    const int argc = parser.positionalArguments().count();
     checkArgumentCount(argc, 1, 0);
 
-    if ( !args->isSet( "ninteractive" ) ) {
+    if ( !parser.isSet( "noninteractive" ) ) {
         s_interactive = false;
         s_jobFlags = KIO::HideProgressInfo;
     }
 #if !defined(KIOCLIENT_AS_KDEOPEN)
-    if (args->isSet("overwrite")) {
+    if (parser.isSet("overwrite")) {
         s_jobFlags |= KIO::Overwrite;
     }
 #endif
 
-    //qDebug() << "Creating ClientApp";
-    int fake_argc = 0;
-    char** fake_argv = 0;
-    ClientApp app( fake_argc, fake_argv );
-    KComponentData componentData("kioclient"); // needed by KIO's internal use of KConfig
-    app.setApplicationName(componentData.componentName());
-    KGlobal::ref();
-    KGlobal::setAllowQuit(true);
-
     // KIO needs dbus (for uiserver communication)
-    extern void qDBusBindToApplication();
-    qDBusBindToApplication();
     if (!QDBusConnection::sessionBus().isConnected())
         qFatal("Session bus not found");
 
 #ifdef KIOCLIENT_AS_KDEOPEN
-    return app.kde_open(args->url(0), QByteArray(), false);
+    return kde_open(makeURL(parser.positionalArguments().at(0)), QByteArray(), false);
 #elif defined(KIOCLIENT_AS_KDECP)
     checkArgumentCount(argc, 2, 0);
-    return app.doCopy(0);
+    return doCopy(parser.positionalArguments());
 #elif defined(KIOCLIENT_AS_KDEMV)
     checkArgumentCount(argc, 2, 0);
-    return app.doMove(0);
+    return doMove(parser.positionalArguments());
 #else
     // Normal kioclient mode
-    const QByteArray command = args->arg(0).toLocal8Bit();
+    QString command = parser.positionalArguments().first();
     if ( command == "openProperties" )
     {
         checkArgumentCount(argc, 2, 2); // openProperties <url>
-        KPropertiesDialog * p = new KPropertiesDialog( args->url(1), 0 /*no parent*/ );
-        QObject::connect( p, SIGNAL( destroyed() ), &app, SLOT( quit() ));
-        QObject::connect( p, SIGNAL( canceled() ), &app, SLOT( slotDialogCanceled() ));
+        KPropertiesDialog * p = new KPropertiesDialog(parser.positionalArguments().last(), 0 /*no parent*/ );
+        QObject::connect( p, SIGNAL( destroyed() ), qApp, SLOT( quit() ));
+        QObject::connect( p, SIGNAL( canceled() ), this, SLOT( slotDialogCanceled() ));
         p->show();
-        app.exec();
+        qApp->exec();
         return m_ok;
     }
     else if ( command == "cat" )
     {
         checkArgumentCount(argc, 2, 2); // cat <url>
-        KIO::TransferJob* job = KIO::get(args->url(1), KIO::NoReload, s_jobFlags);
+        KIO::TransferJob* job = KIO::get(parser.positionalArguments().last(), KIO::NoReload, s_jobFlags);
         if ( !s_interactive )
             job->setUiDelegate( 0 );
-        connect(job, SIGNAL(data(KIO::Job*,QByteArray) ), &app, SLOT(slotPrintData(KIO::Job*,QByteArray)));
-        connect( job, SIGNAL( result( KJob * ) ), &app, SLOT( slotResult( KJob * ) ) );
-        app.exec();
+        connect(job, SIGNAL(data(KIO::Job*,QByteArray) ), this, SLOT(slotPrintData(KIO::Job*,QByteArray)));
+        connect(job, SIGNAL( result( KJob * ) ), this, SLOT( slotResult( KJob * ) ) );
+        qApp->exec();
         return m_ok;
     }
     else if ( command == "exec" )
     {
         checkArgumentCount(argc, 2, 3);
-        return app.kde_open( args->url( 1 ),
-                             argc == 3 ? args->arg( 2 ) : QString(),
+        return kde_open( parser.positionalArguments()[1],
+                             argc == 3 ? parser.positionalArguments().last() : QString(),
                              true );
     }
     else if ( command == "download" )
     {
         checkArgumentCount(argc, 0, 0);
-        QList<QUrl> srcLst;
-        if (argc == 1) {
-            while(true) {
-                QUrl src = KUrlRequesterDialog::getUrl();
-                if (!src.isEmpty()) {
-                    if (!src.isValid()) {
-                        KMessageBox::error(0, i18n("Unable to download from an invalid URL."));
-                        continue;
-                    }
-                    srcLst.append(src);
-                }
-                break;
-            }
-        } else {
-            for ( int i = 1; i <= argc - 1; i++ )
-                srcLst.append( args->url(i) );
-        }
-        if (srcLst.count() == 0)
+        QStringList args = parser.positionalArguments();
+        args.removeFirst();
+        QList<QUrl> srcLst = makeUrls(args);
+
+        if (srcLst.isEmpty())
             return m_ok;
-        QString dst =
- 
-            KFileDialog::getSaveFileName( (argc<2) ? QUrl() : args->url(1) );
-        if (dst.isEmpty()) // canceled
+        QUrl dsturl = QFileDialog::getSaveFileUrl(0, i18n("Destination where to download the files"), (!srcLst.isEmpty()) ? QUrl() : srcLst.first() );
+
+        if (dsturl.isEmpty()) // canceled
             return m_ok; // AK - really okay?
-        QUrl dsturl;
-        dsturl.setPath( dst );
         KIO::Job * job = KIO::copy( srcLst, dsturl, s_jobFlags );
         if ( !s_interactive )
             job->setUiDelegate( 0 );
-        connect( job, SIGNAL( result( KJob * ) ), &app, SLOT( slotResult( KJob * ) ) );
-        app.exec();
+        connect( job, SIGNAL( result( KJob * ) ), qApp, SLOT( slotResult( KJob * ) ) );
+        qApp->exec();
         return m_ok;
     }
     else if ( command == "copy" || command == "cp" )
     {
         checkArgumentCount(argc, 3, 0); // cp <src> <dest>
-        return app.doCopy( 1 );
+        QStringList args = parser.positionalArguments();
+        args.removeFirst();
+        return doCopy(args);
     }
     else if ( command == "move" || command == "mv" )
     {
         checkArgumentCount(argc, 3, 0); // mv <src> <dest>
-        return app.doMove( 1 );
+        QStringList args = parser.positionalArguments();
+        args.removeFirst();
+        return doMove(args);
     }
     else if ( command == "list" || command == "ls" )
     {
         checkArgumentCount(argc, 2, 2); // ls <url>
-        return app.doList( 1 );
+        QStringList args = parser.positionalArguments();
+        args.removeFirst();
+        return doList(args);
     }
     else if ( command == "remove" || command == "rm" )
     {
         checkArgumentCount(argc, 2, 0); // rm <url>
-        return app.doRemove( 1 );
+        QStringList args = parser.positionalArguments();
+        args.removeFirst();
+        return doRemove(args);
     }
     else
     {
-        fputs( i18nc("@info:shell", "%1: Syntax error, unknown command '%2'\n", appName, QString::fromLocal8Bit(command)).toLocal8Bit().data(), stderr );
+        fputs( i18nc("@info:shell", "%1: Syntax error, unknown command '%2'\n", qAppName(), command).toLocal8Bit().data(), stderr );
         return false;
     }
     return true;
@@ -404,18 +399,13 @@ void ClientApp::slotResult( KJob * job )
     if (job->error() && s_interactive)
         static_cast<KIO::Job*>(job)->ui()->showErrorMessage();
     m_ok = !job->error();
-    quit();
+    qApp->quit();
 }
 
 void ClientApp::slotDialogCanceled()
 {
     m_ok = false;
-    quit();
-}
-
-void ClientApp::deref()
-{
-    KGlobal::deref();
+    qApp->quit();
 }
 
 void ClientApp::slotPrintData(KIO::Job*, const QByteArray &data)
@@ -424,8 +414,8 @@ void ClientApp::slotPrintData(KIO::Job*, const QByteArray &data)
         std::cout.write(data.constData(), data.size());
 }
 
-ClientApp::ClientApp(int &argc, char **argv )
-    : QApplication( argc, argv, s_interactive /*-> bool GUIenabled*/ )
+ClientApp::ClientApp()
+    : QObject()
 {
 }
 

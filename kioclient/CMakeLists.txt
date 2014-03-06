@@ -1,75 +1,18 @@
-set(kioclient_SRCS kioclient.cpp )
-add_executable(kioclient ${kioclient_SRCS})
-set_property(TARGET kioclient APPEND_STRING PROPERTY COMPILE_FLAGS "-DKIOCLIENT_AS_KIOCLIENT")
-target_link_libraries(kioclient 
-	Qt5::Core
-	Qt5::Script
-	Qt5::DBus
-	KF5::CoreAddons
-	KF5::KIOCore KF5::KIOWidgets 
-        KF5::Solid  
-        KF5::KIOFileWidgets	
-	KF5::Declarative
-        KF5::I18n 
-	KF5::ConfigCore
-	KF5::ConfigGui
-        KF5::Solid
-        KF5::KDE4Support
-        )
-install(TARGETS kioclient ${INSTALL_TARGETS_DEFAULT_ARGS})
+function(add_kioclient_interface TARGET_NAME)
+    add_executable(${TARGET_NAME} kioclient.cpp)
+    string(TOUPPER "${TARGET_NAME}" UPPER_TARGET_NAME)
+    target_compile_definitions(${TARGET_NAME} PRIVATE "-DKIOCLIENT_AS_${UPPER_TARGET_NAME}")
+    target_link_libraries(${TARGET_NAME} Qt5::DBus KF5::CoreAddons KF5::KIOWidgets KF5::I18n)
+    install(TARGETS ${TARGET_NAME} ${INSTALL_TARGETS_DEFAULT_ARGS})
+endfunction()
 
-################
+#we compile every file with different definitions, so it will behave slightly different
+add_kioclient_interface(kioclient)
+add_kioclient_interface(kdeopen)
+add_kioclient_interface(kdecp)
+add_kioclient_interface(kdemv)
 
-add_executable(kdeopen kioclient.cpp)
-ecm_mark_nongui_executable(kdeopen)
-set_property(TARGET kdeopen APPEND_STRING PROPERTY COMPILE_FLAGS "-DKIOCLIENT_AS_KDEOPEN")
-#macro_add_compile_flags(kde-open -DKIOCLIENT_AS_KDEOPEN)
-target_link_libraries(kdeopen KF5::KIOCore KF5::KIOWidgets
-        KF5::Solid   
-        KF5::KDE4Support
-        ${KDECLARATIVE_LIBRARIES} 
-        KF5::I18n KF5::ConfigCore KF5::ConfigGui Qt5::DBus
-        KF5::Solid
-        ${KCore_LIBRARIES}
-        ${Qt5Script_LIBRARIES})
-install(TARGETS kdeopen ${INSTALL_TARGETS_DEFAULT_ARGS})
-
-################
-add_executable(kdecp kioclient.cpp)
-ecm_mark_nongui_executable(kdecp)
-set_property(TARGET kdecp APPEND_STRING PROPERTY COMPILE_FLAGS "-DKIOCLIENT_AS_KDECP")
-#macro_add_compile_flags(kde-open -DKIOCLIENT_AS_KDEOPEN)
-target_link_libraries(kdecp KF5::KIOCore KF5::KIOWidgets
-        KF5::Solid   
-        KF5::KDE4Support
-        ${KDECLARATIVE_LIBRARIES} 
-        KF5::I18n KF5::ConfigCore KF5::ConfigGui Qt5::DBus
-        KF5::Solid
-        ${KCore_LIBRARIES}
-        ${Qt5Script_LIBRARIES})
-install(TARGETS kdecp ${INSTALL_TARGETS_DEFAULT_ARGS})
-
-
-################
-set(kdemv_SRCS kioclient.cpp )
-add_executable(kdemv ${kdemv_SRCS})
+#kioclient is not marked as nongui since download and openProperties do graphical things
 ecm_mark_nongui_executable(kdemv)
-set_property(TARGET kdemv APPEND_STRING PROPERTY COMPILE_FLAGS "-DKIOCLIENT_AS_KDEMV")
-#macro_add_compile_flags(kde-open -DKIOCLIENT_AS_KDEOPEN)
-target_link_libraries(kdemv KF5::KIOCore KF5::KIOWidgets
-        KF5::Solid   
-        KF5::KDE4Support
-        ${KDECLARATIVE_LIBRARIES} 
-        KF5::I18n KF5::ConfigCore KF5::ConfigGui Qt5::DBus
-        KF5::Solid
-        ${KCore_LIBRARIES}
-        ${Qt5Script_LIBRARIES})
-install(TARGETS kdemv ${INSTALL_TARGETS_DEFAULT_ARGS})
-#set(kdemv_SRCS kioclient.cpp )
-#add_executable(kde-mv ${kdemv_SRCS})
-#ecm_mark_nongui_executable(kde-mv)
-#set_property(TARGET kio-mv APPEND_STRING PROPERTY COMPILE_FLAGS "-DKIOCLIENT_AS_KDEMV")
-#macro_add_compile_flags(kde-mv -DKIOCLIENT_AS_KDEMV)
-#target_link_libraries(kde-mv KF5::KIOCore KF5::KIOWidgets)
-#install(TARGETS kde-mv ${INSTALL_TARGETS_DEFAULT_ARGS})
-
+ecm_mark_nongui_executable(kdecp)
+ecm_mark_nongui_executable(kdeopen)
