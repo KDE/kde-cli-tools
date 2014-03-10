@@ -203,7 +203,6 @@ static void checkArgumentCount(int count, int min, int max)
 bool ClientApp::kde_open(const QUrl& url, const QString& mimeType, bool allowExec)
 {
     if ( mimeType.isEmpty() ) {
-      //  qDebug() << url;
         KRun * run = new KRun( url, 0 );
         run->setRunExecutables(allowExec);
         QObject::connect( run, SIGNAL( finished() ), this, SLOT( delayedQuit() ));
@@ -333,7 +332,7 @@ bool ClientApp::doIt(const QCommandLineParser& parser)
     else if ( command == "exec" )
     {
         checkArgumentCount(argc, 2, 3);
-        return kde_open( parser.positionalArguments()[1],
+        return kde_open( makeURL(parser.positionalArguments()[1]),
                              argc == 3 ? parser.positionalArguments().last() : QString(),
                              true );
     }
