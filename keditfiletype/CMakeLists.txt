@@ -17,9 +17,9 @@ set(libfiletypes_SRCS
 
 set(kcm_filetypes_SRCS filetypesview.cpp ${libfiletypes_SRCS})
 
-kde4_add_plugin(kcm_filetypes ${kcm_filetypes_SRCS})
+add_library(kcm_filetypes MODULE ${kcm_filetypes_SRCS})
 
-target_link_libraries(kcm_filetypes ${KDE4_KDEUI_LIBS} ${KDE4_KIO_LIBS})
+target_link_libraries(kcm_filetypes KF5::KDE4Support KF5::KIOWidgets)
 
 install(TARGETS kcm_filetypes  DESTINATION ${PLUGIN_INSTALL_DIR} )
 
@@ -29,7 +29,7 @@ set(keditfiletype_SRCS keditfiletype.cpp ${libfiletypes_SRCS})
 
 add_executable(keditfiletype ${keditfiletype_SRCS})
 
-target_link_libraries(keditfiletype ${KDE4_KIO_LIBS})
+target_link_libraries(keditfiletype KF5::KDE4Support KF5::KIOWidgets)
 if (Q_WS_X11)
   target_link_libraries(keditfiletype ${X11_X11_LIB})
 endif (Q_WS_X11)

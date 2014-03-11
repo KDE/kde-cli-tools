@@ -1,5 +1,4 @@
-set( EXECUTABLE_OUTPUT_PATH ${CMAKE_CURRENT_BINARY_DIR} )
-include_directories( ${CMAKE_CURRENT_SOURCE_DIR}/.. ${KDE4_INCLUDES} )
+include_directories( ${CMAKE_CURRENT_SOURCE_DIR}/.. )
 
 ########### filetypestest ###############
 
@@ -11,5 +10,5 @@ add_executable(filetypestest
 )
 ecm_mark_as_test(filetypestest)
 add_test(filetypestest filetypestest)
-target_link_libraries(filetypestest ${KDE4_KDECORE_LIBS} ${KDE4_KIO_LIBRARY} ${KDE4_KDEUI_LIBRARIES}
-                      ${QT_QTCORE_LIBRARY} ${QT_QTGUI_LIBRARY} ${QT_QTTEST_LIBRARY})
+target_link_libraries(filetypestest KF5::KDE4Support KF5::KIOCore
+                      Qt5::Core Qt5::Gui Qt5::Test)
