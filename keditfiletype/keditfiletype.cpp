@@ -119,7 +119,6 @@ void FileTypeDialog::slotDatabaseChanged(const QStringList& changedResources)
 
 int main(int argc, char ** argv)
 {
-  KServiceTypeProfile::setConfigurationMode();
   K4AboutData aboutData( "keditfiletype", "filetypes", ki18n("KEditFileType"), "1.0",
                         ki18n("KDE file type editor - simplified version for editing a single file type"),
                         K4AboutData::License_GPL,

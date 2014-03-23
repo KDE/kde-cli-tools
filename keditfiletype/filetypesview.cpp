@@ -78,7 +78,6 @@ FileTypesView::FileTypesView(QWidget *parent, const QVariantList &)
     " filename patterns; in these cases, KDE is able to determine the"
     " MIME-type by directly examining the contents of the file.</p>"));
 
-  KServiceTypeProfile::setConfigurationMode();
   setButtons(Help | Apply);
   QString wtstr;
 
