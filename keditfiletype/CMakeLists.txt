@@ -32,7 +32,7 @@ add_executable(keditfiletype ${keditfiletype_SRCS})
 target_link_libraries(keditfiletype KF5::KDE4Support KF5::KIOWidgets)
 if (Q_WS_X11)
   target_link_libraries(keditfiletype ${X11_X11_LIB})
-endif (Q_WS_X11)
+endif ()
 
 install(TARGETS keditfiletype ${INSTALL_TARGETS_DEFAULT_ARGS})
 
