@@ -1,4 +1,4 @@
-add_executable(kstart kstart)
+add_executable(kstart kstart.cpp)
 
 target_link_libraries(kstart KF5::KDE4Support ${X11_X11_LIB})
 
