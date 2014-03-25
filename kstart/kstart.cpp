@@ -24,7 +24,7 @@
  */
 
 #include <ktoolinvocation.h>
-#include "kstart.moc"
+#include "kstart.h"
 
 #include <fcntl.h>
 #include <stdlib.h>
@@ -39,7 +39,7 @@
 #include <klocale.h>
 #include <kcomponentdata.h>
 #include <kwindowsystem.h>
-#include <kaboutdata.h>
+#include <k4aboutdata.h>
 #include <kcmdlineargs.h>
 #include <kstartupinfo.h>
 #include <kxmessages.h>
@@ -47,7 +47,8 @@
 
 #include <netwm.h>
 #include <QX11Info>
-
+#include <X11/Xlib.h>
+#include <X11/Xutil.h>
 
 // some globals
 
@@ -60,14 +61,14 @@ static int desktop = 0;
 static bool activate = false;
 static bool iconify = false;
 static bool fullscreen = false;
-static unsigned long state = 0;
-static unsigned long mask = 0;
+static NET::States state = 0;
+static NET::States mask = 0;
 static NET::WindowType windowtype = NET::Unknown;
 
 KStart::KStart()
     :QObject()
 {
-    NETRootInfo i( QX11Info::display(), NET::Supported );
+    NETRootInfo i( QX11Info::connection(), NET::Supported );
     bool useRule = i.isSupported( NET::WM2KDETemporaryRules );
 
     if( useRule )
@@ -151,11 +152,11 @@ void KStart::sendRule() {
             message += "fullscreen=true\nfullscreenrule=3\n";
     }
 
-    msg.broadcastMessage( "_KDE_NET_WM_TEMPORARY_RULES", message, -1, false );
+    msg.broadcastMessage( "_KDE_NET_WM_TEMPORARY_RULES", message, -1 );
     qApp->flush();
 }
 
-const int SUPPORTED_WINDOW_TYPES_MASK = NET::NormalMask | NET::DesktopMask | NET::DockMask
+const NET::WindowTypes SUPPORTED_WINDOW_TYPES_MASK = NET::NormalMask | NET::DesktopMask | NET::DockMask
     | NET::ToolbarMask | NET::MenuMask | NET::DialogMask | NET::OverrideMask | NET::TopMenuMask
     | NET::UtilityMask | NET::SplashMask;
 
@@ -239,15 +240,14 @@ void KStart::applyStyle(WId w ) {
 
     if ( state || iconify || windowtype != NET::Unknown || desktop >= 1 ) {
 
-	QX11Info info;
-	XWithdrawWindow(QX11Info::display(), w, info.screen());
+	XWithdrawWindow(QX11Info::display(), w, QX11Info::appScreen());
 	QApplication::flush();
 
 	while ( !wstate_withdrawn(w) )
 	    ;
     }
 
-    NETWinInfo info( QX11Info::display(), w, QX11Info::appRootWindow(), NET::WMState );
+    NETWinInfo info( QX11Info::connection(), w, QX11Info::appRootWindow(), NET::WMState );
 
     if ( ( desktop > 0 && desktop <= KWindowSystem::numberOfDesktops() )
          || desktop == NETWinInfo::OnAllDesktops )
@@ -289,12 +289,12 @@ void KStart::applyStyle(WId w ) {
 
 int main( int argc, char *argv[] )
 {
-  KAboutData aboutData( "kstart", 0, ki18n("KStart"), KDE_VERSION_STRING,
+  K4AboutData aboutData( "kstart", 0, ki18n("KStart"), KDE_VERSION_STRING,
       ki18n(""
        "Utility to launch applications with special window properties \n"
        "such as iconified, maximized, a certain virtual desktop, a special decoration\n"
        "and so on." ),
-      KAboutData::License_GPL,
+      K4AboutData::License_GPL,
        ki18n("(C) 1997-2000 Matthias Ettrich (ettrich@kde.org)") );
 
   aboutData.addAuthor( ki18n("Matthias Ettrich"), KLocalizedString(), "ettrich@kde.org" );
@@ -425,7 +425,7 @@ int main( int argc, char *argv[] )
 
   iconify = args->isSet("iconify");
   if ( args->isSet("fullscreen") ) {
-      NETRootInfo i( QX11Info::display(), NET::Supported );
+      NETRootInfo i( QX11Info::connection(), NET::Supported );
       if( i.isSupported( NET::FullScreen )) {
           state |= NET::FullScreen;
           mask |= NET::FullScreen;
@@ -435,7 +435,7 @@ int main( int argc, char *argv[] )
       }
   }
 
-  fcntl(ConnectionNumber(QX11Info::display()), F_SETFD, 1);
+  fcntl(XConnectionNumber(QX11Info::display()), F_SETFD, 1);
   args->clear();
 
   KStart start;
