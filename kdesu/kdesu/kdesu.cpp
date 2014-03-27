@@ -21,24 +21,19 @@
 
 #include <QFileInfo>
 #include <QFile>
+#include <QLoggingCategory>
+#include <QCommandLineParser>
+#include <QApplication>
 
-#include <QtDBus/QtDBus>
-
-#include <kdebug.h>
 #include <kconfiggroup.h>
-#include <kglobal.h>
-#include <kapplication.h>
-#include <kstandarddirs.h>
-#include <kconfig.h>
-#include <klocale.h>
-#include <k4aboutdata.h>
-#include <kcmdlineargs.h>
+#include <KSharedConfig>
 #include <kmessagebox.h>
 #include <kuser.h>
 #include <kshell.h>
 #include <kstartupinfo.h>
-#include <kdefakes.h>
 #include <kwindowsystem.h>
+#include <klocalizedstring.h>
+#include <kaboutdata.h>
 
 #include <kdesu/defaults.h>
 #include <kdesu/su.h>
@@ -47,6 +42,8 @@
 #include "sudlg.h"
 
 #define ERR strerror(errno)
+
+static QLoggingCategory category("org.kde.kdesu");
 
 QByteArray command;
 const char *Version = "1.0";
@@ -70,60 +67,60 @@ QByteArray dcopNetworkId()
 }
 #endif
 
-static int startApp();
+static int startApp(QCommandLineParser& p);
 
 int main(int argc, char *argv[])
 {
+    QApplication app(argc, argv);
+
     // FIXME: this can be considered a poor man's solution, as it's not
     // directly obvious to a gui user. :)
     // anyway, i vote against removing it even when we have a proper gui
     // implementation.  -- ossi
-
     QByteArray duser = qgetenv("ADMIN_ACCOUNT");
     if (duser.isEmpty())
         duser = "root";
 
-    K4AboutData aboutData("kdesu", 0, ki18n("KDE su"),
-            Version, ki18n("Runs a program with elevated privileges."),
-            K4AboutData::License_Artistic,
-            ki18n("Copyright (c) 1998-2000 Geert Jansen, Pietro Iglio"));
-    aboutData.addAuthor(ki18n("Geert Jansen"), ki18n("Maintainer"),
+    KAboutData aboutData("kdesu", 0, i18n("KDE su"),
+            Version, i18n("Runs a program with elevated privileges."),
+            KAboutData::License_Artistic,
+            i18n("Copyright (c) 1998-2000 Geert Jansen, Pietro Iglio"));
+    aboutData.addAuthor(i18n("Geert Jansen"), i18n("Maintainer"),
             "jansen@kde.org", "http://www.stack.nl/~geertj/");
-    aboutData.addAuthor(ki18n("Pietro Iglio"), ki18n("Original author"),
+    aboutData.addAuthor(i18n("Pietro Iglio"), i18n("Original author"),
             "iglio@fub.it");
     aboutData.setProgramIconName("dialog-password");
 
-    KCmdLineArgs::init(argc, argv, &aboutData);
+    KAboutData::setApplicationData(aboutData);
 
     // NOTE: if you change the position of the -u switch, be sure to adjust it
     // at the beginning of main()
-    KCmdLineOptions options;
-    options.add("!+command", ki18n("Specifies the command to run as separate arguments"));
-    options.add("c <command>", ki18n("Specifies the command to run as one string"));
-    options.add("f <file>", ki18n("Run command under target uid if <file> is not writable"));
-    options.add("u <user>", ki18n("Specifies the target uid"), duser);
-    options.add("n", ki18n("Do not keep password"));
-    options.add("s", ki18n("Stop the daemon (forgets all passwords)"));
-    options.add("t", ki18n("Enable terminal output (no password keeping)"));
-    options.add("p <prio>", ki18n("Set priority value: 0 <= prio <= 100, 0 is lowest"), "50");
-    options.add("r", ki18n("Use realtime scheduling"));
-    options.add("noignorebutton", ki18n("Do not display ignore button"));
-    options.add("i <icon name>", ki18n("Specify icon to use in the password dialog"));
-    options.add("d", ki18n("Do not show the command to be run in the dialog"));
+    QCommandLineParser parser;
+    parser.addPositionalArgument("command", i18n("Specifies the command to run as separate arguments"));
+    parser.addOption(QCommandLineOption("c", i18n("Specifies the command to run as one string"), "command"));
+    parser.addOption(QCommandLineOption("f", i18n("Run command under target uid if <file> is not writable"), "file"));
+    parser.addOption(QCommandLineOption("u", i18n("Specifies the target uid"), "user", duser));
+    parser.addOption(QCommandLineOption("n", i18n("Do not keep password")));
+    parser.addOption(QCommandLineOption("s", i18n("Stop the daemon (forgets all passwords)")));
+    parser.addOption(QCommandLineOption("t", i18n("Enable terminal output (no password keeping)")));
+    parser.addOption(QCommandLineOption("p", i18n("Set priority value: 0 <= prio <= 100, 0 is lowest"), "prio", "50"));
+    parser.addOption(QCommandLineOption("r", i18n("Use realtime scheduling")));
+    parser.addOption(QCommandLineOption("noignorebutton", i18n("Do not display ignore button")));
+    parser.addOption(QCommandLineOption("i", i18n("Specify icon to use in the password dialog"), "icon name"));
+    parser.addOption(QCommandLineOption("d", i18n("Do not show the command to be run in the dialog")));
 #ifdef Q_WS_X11
     /* KDialog originally used --embed for attaching the dialog box.  However this is misleading and so we changed to --attach.
      * For consistancy, we silently map --embed to --attach */
-    options.add("attach <winid>", ki18nc("Transient means that the kdesu app will be attached to the app specified by the winid so that it is like a dialog box rather than some separate program", "Makes the dialog transient for an X app specified by winid"));
-    options.add("embed <winid>");
+    parser.addOption(QCommandLineOption("attach", i18nc("Transient means that the kdesu app will be attached to the app specified by the winid so that it is like a dialog box rather than some separate program", "Makes the dialog transient for an X app specified by winid"), "winid"));
+    parser.addOption(QCommandLineOption("embed", i18n("Embed into a window", "winid"));
 #endif
-    KCmdLineArgs::addCmdLineOptions(options);
+
 
     //KApplication::disableAutoDcopRegistration();
     // kdesu doesn't process SM events, so don't even connect to ksmserver
     QByteArray session_manager = qgetenv( "SESSION_MANAGER" );
     if (!session_manager.isEmpty())
         unsetenv( "SESSION_MANAGER" );
-    KApplication app;
     // but propagate it to the started app
     if (!session_manager.isEmpty())
         setenv( "SESSION_MANAGER", session_manager.data(), 1 );
@@ -136,7 +133,10 @@ int main(int argc, char *argv[])
 #endif
     }
 
-    int result = startApp();
+    aboutData.setupCommandLine(&parser);
+    parser.process(app);
+    aboutData.processCommandLine(&parser);
+    int result = startApp(parser);
 
     if (result == 127)
     {
@@ -146,43 +146,42 @@ int main(int argc, char *argv[])
     return result;
 }
 
-static int startApp()
+static int startApp(QCommandLineParser& p)
 {
-    KCmdLineArgs *args = KCmdLineArgs::parsedArgs();
     // Stop daemon and exit?
-    if (args->isSet("s"))
+    if (p.isSet("s"))
     {
         KDEsuClient client;
         if (client.ping() == -1)
         {
-            kError(1206) << "Daemon not running -- nothing to stop\n";
-            exit(1);
+            qCCritical(category) << "Daemon not running -- nothing to stop\n";
+            p.showHelp(1);
         }
         if (client.stopServer() != -1)
         {
-            kDebug(1206) << "Daemon stopped\n";
+            qCDebug(category) << "Daemon stopped\n";
             exit(0);
         }
-        kError(1206) << "Could not stop daemon\n";
-        exit(1);
+        qCCritical(category) << "Could not stop daemon\n";
+        p.showHelp(1);
     }
 
     QString icon;
-    if ( args->isSet("i"))
-	icon = args->getOption("i");
+    if ( p.isSet("i"))
+        icon = p.value("i");
 
     bool prompt = true;
-    if ( args->isSet("d"))
-	prompt = false;
+    if ( p.isSet("d"))
+        prompt = false;
 
     // Get target uid
-    QByteArray user = args->getOption("u").toLocal8Bit();
+    QByteArray user = p.value("u").toLocal8Bit();
     QByteArray auth_user = user;
     struct passwd *pw = getpwnam(user);
     if (pw == 0L)
     {
-        kError(1206) << "User " << user << " does not exist\n";
-        exit(1);
+        qCCritical(category) << "User " << user << " does not exist\n";
+        p.showHelp(1);
     }
     bool other_uid = (getuid() != pw->pw_uid);
     bool change_uid = other_uid;
@@ -194,39 +193,38 @@ static int startApp()
     }
 
     // If file is writeable, do not change uid
-    QString file = args->getOption("f");
+    QString file = p.value("f");
     if (other_uid && !file.isEmpty())
     {
-        if (file.at(0) != '/')
+        if (file.startsWith('/'))
         {
-            KStandardDirs dirs;
-            file = dirs.findResource("config", file);
+            file = QStandardPaths::locate(QStandardPaths::GenericConfigLocation, file);
             if (file.isEmpty())
             {
-                kError(1206) << "Config file not found: " << file << "\n";
-                exit(1);
+                qCCritical(category) << "Config file not found: " << file;
+                p.showHelp(1);
             }
         }
         QFileInfo fi(file);
         if (!fi.exists())
         {
-            kError(1206) << "File does not exist: " << file << "\n";
-            exit(1);
+            qCCritical(category) << "File does not exist: " << file;
+            p.showHelp(1);
         }
         change_uid = !fi.isWritable();
     }
 
     // Get priority/scheduler
-    QString tmp = args->getOption("p");
+    QString tmp = p.value("p");
     bool ok;
     int priority = tmp.toInt(&ok);
     if (!ok || (priority < 0) || (priority > 100))
     {
-        KCmdLineArgs::usageError(i18n("Illegal priority: %1", tmp));
-        exit(1);
+        qCCritical(category) << i18n("Illegal priority: %1", tmp);
+        p.showHelp(1);
     }
     int scheduler = SuProcess::SchedNormal;
-    if (args->isSet("r"))
+    if (p.isSet("r"))
         scheduler = SuProcess::SchedRealtime;
     if ((priority > 50) || (scheduler != SuProcess::SchedNormal))
     {
@@ -235,9 +233,9 @@ static int startApp()
     }
 
     // Get command
-    if (args->isSet("c"))
+    if (p.isSet("c"))
     {
-        command = args->getOption("c").toLocal8Bit();
+        command = p.value("c").toLocal8Bit();
         // Accepting additional arguments here is somewhat weird,
         // but one can conceive use cases: have a complex command with
         // redirections and additional file names which need to be quoted
@@ -245,16 +243,16 @@ static int startApp()
     }
     else
     {
-        if( args->count() == 0 )
+        if( p.positionalArguments().count() == 0 )
         {
-            KCmdLineArgs::usageError(i18n("No command specified."));
-            exit(1);
+            qCCritical(category) << i18n("No command specified.");
+            p.showHelp(1);
         }
     }
-    for (int i = 0; i < args->count(); i++)
+    foreach(const QString& arg, p.positionalArguments())
     {
         command += ' ';
-        command += QFile::encodeName(KShell::quoteArg(args->arg(i)));
+        command += QFile::encodeName(KShell::quoteArg(arg));
     }
 
     // Don't change uid if we're don't need to.
@@ -271,57 +269,58 @@ static int startApp()
     KDEsuClient client;
     if (!client.isServerSGID())
     {
-        kWarning(1206) << "Daemon not safe (not sgid), not using it.\n";
+        qCWarning(category) << "Daemon not safe (not sgid), not using it.\n";
         have_daemon = false;
     }
     else if (client.ping() == -1)
     {
         if (client.startServer() == -1)
         {
-            kWarning(1206) << "Could not start daemon, reduced functionality.\n";
+            qCWarning(category) << "Could not start daemon, reduced functionality.\n";
             have_daemon = false;
         }
         just_started = true;
     }
 
     // Try to exec the command with kdesud.
-    bool keep = !args->isSet("n") && have_daemon;
-    bool terminal = args->isSet("t");
-    bool withIgnoreButton = args->isSet("ignorebutton");
+    bool keep = !p.isSet("n") && have_daemon;
+    bool terminal = p.isSet("t");
+    bool withIgnoreButton = p.isSet("ignorebutton");
     int winid = -1;
-    bool attach = args->isSet("attach");
+    bool attach = p.isSet("attach");
     if(attach) {
-        winid = args->getOption("attach").toInt(&attach, 0);  //C style parsing.  If the string begins with "0x", base 16 is used; if the string begins with "0", base 8 is used; otherwise, base 10 is used.
+        winid = p.value("attach").toInt(&attach, 0);  //C style parsing.  If the string begins with "0x", base 16 is used; if the string begins with "0", base 8 is used; otherwise, base 10 is used.
         if(!attach)
-            kWarning(1206) << "Specified winid to attach to is not a valid number";
-    } else if(args->isSet("embed")) {
+            qCWarning(category) << "Specified winid to attach to is not a valid number";
+    } else if(p.isSet("embed")) {
         /* KDialog originally used --embed for attaching the dialog box.  However this is misleading and so we changed to --attach.
          * For consistancy, we silently map --embed to --attach */
         attach = true;
-        winid = args->getOption("embed").toInt(&attach, 0);  //C style parsing.  If the string begins with "0x", base 16 is used; if the string begins with "0", base 8 is used; otherwise, base 10 is used.
+        winid = p.value("embed").toInt(&attach, 0);  //C style parsing.  If the string begins with "0x", base 16 is used; if the string begins with "0", base 8 is used; otherwise, base 10 is used.
         if(!attach)
-            kWarning(1206) << "Specified winid to attach to is not a valid number";
+            qCWarning(category) << "Specified winid to attach to is not a valid number";
     }
 
 
     QList<QByteArray> env;
     QByteArray options;
-    env << ( "DESKTOP_STARTUP_ID=" + kapp->startupId());
+    env << ( "DESKTOP_STARTUP_ID=" + KStartupInfo::startupId());
 
-    if (pw->pw_uid)
-    {
-       // Only propagate KDEHOME for non-root users,
-       // root uses KDEROOTHOME
-
-       // Translate the KDEHOME of this user to the new user.
-       QString kdeHome = KGlobal::dirs()->relativeLocation("home", KGlobal::dirs()->localkdedir());
-       if (kdeHome[0] != '/')
-          kdeHome.prepend("~/");
-       else
-          kdeHome.clear(); // Use default
-
-       env << ("KDEHOME="+ QFile::encodeName(kdeHome));
-    }
+//     TODO: Maybe should port this to XDG_*, somehow?
+//     if (pw->pw_uid)
+//     {
+//        // Only propagate KDEHOME for non-root users,
+//        // root uses KDEROOTHOME
+//
+//        // Translate the KDEHOME of this user to the new user.
+//        QString kdeHome = KGlobal::dirs()->relativeLocation("home", KGlobal::dirs()->localkdedir());
+//        if (kdeHome[0] != '/')
+//           kdeHome.prepend("~/");
+//        else
+//           kdeHome.clear(); // Use default
+//
+//        env << ("KDEHOME="+ QFile::encodeName(kdeHome));
+//     }
 
     KUser u;
     env << (QByteArray) ("KDESU_USER=" + u.loginName().toLocal8Bit());
@@ -344,8 +343,8 @@ static int startApp()
     rlim.rlim_cur = rlim.rlim_max = 0;
     if (setrlimit(RLIMIT_CORE, &rlim))
     {
-        kError(1206) << "rlimit(): " << ERR << "\n";
-        exit(1);
+        qCCritical(category) << "rlimit(): " << ERR;
+        p.showHelp(1);
     }
 
     // Read configuration
@@ -360,12 +359,12 @@ static int startApp()
     {
         QString err = i18n("Su returned with an error.\n");
         KMessageBox::error(0L, err);
-        exit(1);
+        p.showHelp(1);
     }
     if (needpw == 0)
     {
         keep = 0;
-        kDebug() << "Don't need password!!\n";
+        qDebug() << "Don't need password!!\n";
     }
 
     // Start the dialog
@@ -406,7 +405,7 @@ static int startApp()
 #ifdef Q_WS_X11
             KStartupInfo::sendFinish( id );
 #endif
-            exit(1);
+            p.showHelp(1);
         }
         if (ret == KDEsuDialog::AsUser)
             change_uid = false;
@@ -419,7 +418,7 @@ static int startApp()
     }
 
     // Some events may need to be handled (like a button animation)
-    kapp->processEvents();
+    qApp->processEvents();
 
     // Run command
     if (!change_uid)

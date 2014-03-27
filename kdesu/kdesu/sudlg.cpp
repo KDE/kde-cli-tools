@@ -8,9 +8,8 @@
 
 #include <QByteArray>
 
-#include <KDebug>
-#include <KLocale>
-#include <KIconThemes/KIconLoader>
+#include <KIconLoader>
+#include <KLocalizedString>
 #include <QPushButton>
 
 KDEsuDialog::KDEsuDialog(QByteArray user, QByteArray authUser, bool enableKeep, const QString& icon, bool withIgnoreButton)
