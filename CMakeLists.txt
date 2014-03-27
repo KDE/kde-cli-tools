@@ -10,5 +10,6 @@ if(Qt5X11Extras_FOUND)
 endif()
 
 if(UNIX)
+    add_subdirectory(kdesu)
     add_subdirectory(kdeeject)
 endif()
