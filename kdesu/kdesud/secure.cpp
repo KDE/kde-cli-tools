@@ -21,7 +21,7 @@
 #include <sys/stat.h>
 #include <sys/socket.h>
 
-#include <kdebug.h>
+#include <qdebug.h>
 
 // FIXME: This is just here to make it compile (since ksock* was removed from kdelibs).
 // It would be better to fix it more globally. (Caleb Tennis)
@@ -67,7 +67,7 @@ SocketSecurity::SocketSecurity(int sockfd) : pid(-1), gid(-1), uid(-1)
     ucred cred;
     ksocklen_t len = sizeof(struct ucred);
     if (getsockopt(sockfd, SOL_SOCKET, SO_PEERCRED, &cred, &len) < 0) {
-	kError() << "getsockopt(SO_PEERCRED) " << perror << endl;
+	qCritical() << "getsockopt(SO_PEERCRED) " << perror << endl;
 	return;
     }
     pid = cred.pid;

@@ -10,8 +10,10 @@
 #include <assert.h>
 
 #include <QStack>
-#include <KDebug>
+#include <QDebug>
+#include <QLoggingCategory>
 
+static QLoggingCategory category("org.kde.kdesud");
 
 Repository::Repository()
 {
@@ -67,7 +69,7 @@ int Repository::removeSpecialKey(const QByteArray &key)
         }
         while (!rm_keys.isEmpty())
         {
-            kDebug(1205) << "Removed key: " << rm_keys.top();
+            qCDebug(category) << "Removed key: " << rm_keys.top();
             remove(rm_keys.pop());
         }
     }
@@ -90,7 +92,7 @@ int Repository::removeGroup(const QByteArray &group)
         }
         while (!rm_keys.isEmpty())
         {
-            kDebug(1205) << "Removed key: " << rm_keys.top();
+            qCDebug(category) << "Removed key: " << rm_keys.top();
             remove(rm_keys.pop());
         }
     }
@@ -116,7 +118,7 @@ QByteArray Repository::findKeys(const QByteArray &group, const char *sep ) const
     QByteArray list="";
     if( !group.isEmpty() )
     {
-        kDebug(1205) << "Looking for matching key with group key: " << group;
+        qCDebug(category) << "Looking for matching key with group key: " << group;
         int pos;
         QByteArray key;
         RepoCIterator it;
@@ -125,7 +127,7 @@ QByteArray Repository::findKeys(const QByteArray &group, const char *sep ) const
             if (it.value().group == group)
             {
                 key = it.key();
-                kDebug(1205) << "Matching key found: " << key;
+                qCDebug(category) << "Matching key found: " << key;
                 pos = key.lastIndexOf(sep);
                 key.truncate( pos );
                 key.remove(0, 2);
@@ -134,7 +136,7 @@ QByteArray Repository::findKeys(const QByteArray &group, const char *sep ) const
                     // Add the same keys only once please :)
                     if( !list.contains(key) )
                     {
-                        kDebug(1205) << "Key added to list: " << key;
+                        qCDebug(category) << "Key added to list: " << key;
                         list += '\007'; // I do not know
                         list.append(key);
                     }
