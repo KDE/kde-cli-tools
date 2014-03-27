@@ -8,15 +8,15 @@
 
 #include <QByteArray>
 
-#include <KIconLoader>
 #include <KLocalizedString>
 #include <QPushButton>
+#include <qstyle.h>
 
 KDEsuDialog::KDEsuDialog(QByteArray user, QByteArray authUser, bool enableKeep, const QString& icon, bool withIgnoreButton)
     : KPasswordDialog(0, enableKeep ? ShowKeepPassword : NoFlags)
 {
     if ( !icon.isEmpty() ) {
-        setPixmap(DesktopIcon(icon));
+        setPixmap(QIcon::fromTheme(icon).pixmap(style()->pixelMetric(QStyle::PM_LargeIconSize)));
     }
 
     if ( withIgnoreButton ) {
