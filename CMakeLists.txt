@@ -3,6 +3,7 @@ add_subdirectory(keditfiletype)
 add_subdirectory(kmimetypefinder)
 add_subdirectory(ktraderclient)
 add_subdirectory(kioclient)
+add_subdirectory(ksvgtopng)
 
 if(Qt5X11Extras_FOUND)
     add_subdirectory(kstart)
