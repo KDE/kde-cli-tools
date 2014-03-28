@@ -5,7 +5,7 @@
  * Copyright (C) 1999,2000 Geert Jansen <jansen@kde.org>
  */
 
-#include <config-runtime.h>
+#include <config-kde-cli-tools.h>
 
 #include <unistd.h>
 #include <errno.h>
