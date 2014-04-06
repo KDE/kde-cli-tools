@@ -21,6 +21,9 @@ find_package(Qt5 ${QT_MIN_VERSION} CONFIG REQUIRED COMPONENTS
     Test
 )
 
+find_package(Qt5X11Extras ${QT_MIN_VERSION} CONFIG)
+set_package_properties(Qt5X11Extras PROPERTIES PURPOSE "Required for KStart")
+
 find_package(KF5 CONFIG REQUIRED COMPONENTS
     Config
     KCMUtils
