@@ -23,7 +23,6 @@ find_package(Qt5 ${QT_MIN_VERSION} CONFIG REQUIRED COMPONENTS
 
 find_package(KF5 CONFIG REQUIRED COMPONENTS
     Config
-    Init
     KCMUtils
     Su
     KDE4Support
