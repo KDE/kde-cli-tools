@@ -33,6 +33,8 @@ find_package(KF5 CONFIG REQUIRED COMPONENTS
 
 include_directories(${CMAKE_CURRENT_BINARY_DIR})
 
+add_subdirectory(doc)
+
 add_subdirectory(kcmshell)
 add_subdirectory(keditfiletype)
 add_subdirectory(kmimetypefinder)
