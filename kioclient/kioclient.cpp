@@ -136,7 +136,7 @@ int main( int argc, char **argv )
   KAboutData data(appName, appName, programName, version, description, KAboutData::License_LGPL_V2);
 
   QCommandLineParser parser;
-  parser.addOption(QCommandLineOption("noninteractive", i18n("Non-interactive use: no message boxes. If you don't want a"
+  parser.addOption(QCommandLineOption("noninteractive", i18n("Non-interactive use: no message boxes. If you don't want a "
                                                              "graphical connection, use --platform offscreen")));
 
   #if !defined(KIOCLIENT_AS_KDEOPEN)
