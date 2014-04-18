@@ -6,9 +6,6 @@ set(QT_MIN_VERSION "5.2.0")
 find_package(ECM 0.0.11 REQUIRED NO_MODULE)
 set(CMAKE_MODULE_PATH ${ECM_MODULE_PATH} ${ECM_KDE_MODULE_DIR})
 
-include(KDEInstallDirs)
-include(KDECMakeSettings)
-include(KDECompilerSettings)
 include(ECMInstallIcons)
 include(ECMMarkAsTest)
 include(ECMMarkNonGuiExecutable)
@@ -18,11 +15,19 @@ include(CheckIncludeFiles)
 find_package(Qt5 ${QT_MIN_VERSION} CONFIG REQUIRED COMPONENTS
     Widgets
     Svg
-    Test
 )
 
 find_package(Qt5X11Extras ${QT_MIN_VERSION} CONFIG)
-set_package_properties(Qt5X11Extras PROPERTIES PURPOSE "Required for KStart")
+
+find_package(Qt5Test ${QT_MIN_VERSION} CONFIG QUIET)
+set_package_properties(Qt5Test PROPERTIES
+         PURPOSE "Required for tests"
+         TYPE OPTIONAL
+         )
+add_feature_info("Qt5Test" Qt5Test_FOUND "Required for building tests")
+if (NOT Qt5Test_FOUND)
+    set(BUILD_TESTING OFF CACHE BOOL "Build the testing tree.")
+endif()
 
 find_package(KF5 CONFIG REQUIRED COMPONENTS
     Config
@@ -30,6 +35,12 @@ find_package(KF5 CONFIG REQUIRED COMPONENTS
     Su
     KDE4Support
 )
+
+feature_summary(WHAT ALL INCLUDE_QUIET_PACKAGES FATAL_ON_MISSING_REQUIRED_PACKAGES)
+
+include(KDEInstallDirs)
+include(KDECMakeSettings)
+include(KDECompilerSettings)
 
 include_directories(${CMAKE_CURRENT_BINARY_DIR})
 
