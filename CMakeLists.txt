@@ -29,7 +29,7 @@ if (NOT Qt5Test_FOUND)
     set(BUILD_TESTING OFF CACHE BOOL "Build the testing tree.")
 endif()
 
-find_package(KF5 CONFIG REQUIRED COMPONENTS
+find_package(KF5 REQUIRED COMPONENTS
     Config
     KCMUtils
     Su
