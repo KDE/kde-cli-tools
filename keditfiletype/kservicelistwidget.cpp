@@ -54,7 +54,7 @@ KServiceListItem::KServiceListItem( const KService::Ptr& pService, int kind )
         setText( i18n( "%1 (%2)", pService->name(), pService->desktopEntryName() ) );
 
     if (!pService->isApplication())
-      localPath = QStandardPaths::writableLocation(QStandardPaths::GenericDataLocation) + QLatin1String("/kde5/services/") + desktopPath;
+      localPath = QStandardPaths::writableLocation(QStandardPaths::GenericDataLocation) + QStringLiteral("/kservices5/") + desktopPath;
     else
       localPath = pService->locateLocal();
 }
