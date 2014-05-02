@@ -28,6 +28,7 @@
 #include <kconfiggroup.h>
 #include <kmimetypetrader.h>
 #include <QStandardPaths>
+#include <QXmlStreamReader>
 
 MimeTypeData::MimeTypeData(const QString& major)
     : m_askSave(AskSaveDefault),
@@ -84,9 +85,48 @@ MimeTypeData::MimeTypeData(const QString& mimeName, bool)
 void MimeTypeData::initFromKMimeType()
 {
     m_comment = m_mimetype->comment();
-    m_userSpecifiedIcon = m_mimetype->userSpecifiedIconName();
     setPatterns(m_mimetype->patterns());
     m_autoEmbed = readAutoEmbed();
+
+    // Parse XML file to find out if the user specified a custom icon name
+    const QString file = name() + QLatin1String(".xml");
+    const QStringList mimeFiles = QStandardPaths::locateAll(QStandardPaths::GenericDataLocation, "mime/" + file);
+    qDebug() << mimeFiles;
+    if (mimeFiles.isEmpty()) {
+        qWarning() << "No file found for" << file << ", even though the file appeared in a directory listing.";
+        qWarning() << "Either it was just removed, or the directory doesn't have executable permission...";
+        qWarning() << QStandardPaths::locateAll(QStandardPaths::GenericDataLocation, "mime", QStandardPaths::LocateDirectory);
+    } else {
+        QListIterator<QString> mimeFilesIter(mimeFiles);
+        mimeFilesIter.toBack();
+        while (mimeFilesIter.hasPrevious()) { // global first, then local.
+            const QString fullPath = mimeFilesIter.previous();
+            QFile qfile(fullPath);
+            if (!qfile.open(QFile::ReadOnly))
+                continue;
+
+            QXmlStreamReader xml(&qfile);
+            if (xml.readNextStartElement()) {
+                if (xml.name() != "mime-type") {
+                    continue;
+                }
+                const QString mimeName = xml.attributes().value(QLatin1String("type")).toString();
+                if (mimeName.isEmpty())
+                    continue;
+                if (mimeName != name()) {
+                    qWarning() << "Got name" << mimeName << "in file" << file << "expected" << name();
+                }
+
+                while (xml.readNextStartElement()) {
+                    const QStringRef tag = xml.name();
+                    if (tag == "icon") {
+                        m_userSpecifiedIcon = xml.attributes().value(QLatin1String("name")).toString();
+                    }
+                    xml.skipCurrentElement();
+                }
+            }
+        }
+    }
 }
 
 MimeTypeData::AutoEmbed MimeTypeData::readAutoEmbed() const
