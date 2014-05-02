@@ -10,13 +10,16 @@ X-KDE-ParentApp=kcontrol
 X-KDE-System-Settings-Parent-Category=application-appearance-and-behavior
 
 Name=File Associations
+Name[nl]=Bestandsassociaties
 Name[uk]=Прив’язка файлів
 Name[x-test]=xxFile Associationsxx
 
 Comment=Configure file associations
+Comment[nl]=Hier kunt u de bestandsassociaties instellen
 Comment[uk]=Налаштування прив’язки файлів
 Comment[x-test]=xxConfigure file associationsxx
 
 X-KDE-Keywords=Filetypes,File Associations,Mime Types,File Patterns,Files,Pattern
+X-KDE-Keywords[nl]=Bestandstypen,bestandsassociaties,Mime-typen,bestandspatronen,bestanden,patroon
 X-KDE-Keywords[uk]=Filetypes,File Associations,Mime Types,File Patterns,Files,Pattern,файл,файли,типи файлів,тип,прив’язка,прив’язування,відповідність,взірці,шаблон,файли,взірець,файла
 X-KDE-Keywords[x-test]=xxFiletypes,File Associations,Mime Types,File Patterns,Files,Patternxx
