@@ -1,6 +1,6 @@
-add_executable(ktraderclient ktraderclient.cpp)
-ecm_mark_nongui_executable(ktraderclient)
+add_executable(ktraderclient5 ktraderclient.cpp)
+ecm_mark_nongui_executable(ktraderclient5)
 
-target_link_libraries(ktraderclient KF5::KIOWidgets KF5::KDE4Support)
+target_link_libraries(ktraderclient5 KF5::KIOWidgets KF5::KDE4Support)
 
-install(TARGETS ktraderclient ${INSTALL_TARGETS_DEFAULT_ARGS} )
+install(TARGETS ktraderclient5 ${INSTALL_TARGETS_DEFAULT_ARGS} )

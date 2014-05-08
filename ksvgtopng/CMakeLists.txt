@@ -1,4 +1,4 @@
-add_executable(ksvgtopng ksvgtopng.cpp)
-ecm_mark_nongui_executable(ksvgtopng)
-target_link_libraries(ksvgtopng Qt5::Svg)
-install(TARGETS ksvgtopng ${INSTALL_TARGETS_DEFAULT_ARGS})
+add_executable(ksvgtopng5 ksvgtopng.cpp)
+ecm_mark_nongui_executable(ksvgtopng5)
+target_link_libraries(ksvgtopng5 Qt5::Svg)
+install(TARGETS ksvgtopng5 ${INSTALL_TARGETS_DEFAULT_ARGS})

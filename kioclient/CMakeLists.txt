@@ -7,15 +7,15 @@ function(add_kioclient_interface TARGET_NAME)
 endfunction()
 
 #we compile every file with different definitions, so it will behave slightly different
-add_kioclient_interface(kioclient)
-add_kioclient_interface(kdecp)
-add_kioclient_interface(kdemv)
+add_kioclient_interface(kioclient5)
+add_kioclient_interface(kdecp5)
+add_kioclient_interface(kdemv5)
 
 #kioclient is not marked as nongui since download and openProperties do graphical things
-ecm_mark_nongui_executable(kdemv)
-ecm_mark_nongui_executable(kdecp)
+ecm_mark_nongui_executable(kdemv5)
+ecm_mark_nongui_executable(kdecp5)
 
-add_executable(kde-open kioclient.cpp)
-target_compile_definitions(kde-open PRIVATE "-DKIOCLIENT_AS_KDEOPEN")
-target_link_libraries(kde-open Qt5::DBus KF5::CoreAddons KF5::KIOWidgets KF5::I18n)
-install(TARGETS kde-open ${INSTALL_TARGETS_DEFAULT_ARGS})
+add_executable(kde-open5 kioclient.cpp)
+target_compile_definitions(kde-open5 PRIVATE "-DKIOCLIENT_AS_KDEOPEN")
+target_link_libraries(kde-open5 Qt5::DBus KF5::CoreAddons KF5::KIOWidgets KF5::I18n)
+install(TARGETS kde-open5 ${INSTALL_TARGETS_DEFAULT_ARGS})

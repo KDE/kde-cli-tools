@@ -27,14 +27,14 @@ install(TARGETS kcm_filetypes  DESTINATION ${PLUGIN_INSTALL_DIR} )
 
 set(keditfiletype_SRCS keditfiletype.cpp ${libfiletypes_SRCS})
 
-add_executable(keditfiletype ${keditfiletype_SRCS})
+add_executable(keditfiletype5 ${keditfiletype_SRCS})
 
-target_link_libraries(keditfiletype KF5::KDE4Support KF5::KIOWidgets)
+target_link_libraries(keditfiletype5 KF5::KDE4Support KF5::KIOWidgets)
 if (Q_WS_X11)
-  target_link_libraries(keditfiletype ${X11_X11_LIB})
+  target_link_libraries(keditfiletype5 ${X11_X11_LIB})
 endif ()
 
-install(TARGETS keditfiletype ${INSTALL_TARGETS_DEFAULT_ARGS})
+install(TARGETS keditfiletype5 ${INSTALL_TARGETS_DEFAULT_ARGS})
 
 ########### install files ###############
 
