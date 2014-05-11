@@ -39,6 +39,7 @@ bool ClientApp::m_ok = true;
 static bool s_interactive = true;
 static KIO::JobFlags s_jobFlags = KIO::DefaultFlags;
 
+// Qt5 TODO: use QUrl::fromUserInput(urlArgs, QDir::currentPath());
 QUrl /*KCmdLineArgs::*/makeURL(const QString &urlArg)
 {
     QFileInfo fileInfo(urlArg);
@@ -134,8 +135,11 @@ int main( int argc, char **argv )
   QString description = i18n("Command-line tool for network-transparent operations");
   QString version = "2.0";
   KAboutData data(appName, appName, programName, version, description, KAboutData::License_LGPL_V2);
+  KAboutData::setApplicationData(data);
 
   QCommandLineParser parser;
+  parser.addVersionOption();
+  parser.addHelpOption();
   parser.addOption(QCommandLineOption("noninteractive", i18n("Non-interactive use: no message boxes. If you don't want a "
                                                              "graphical connection, use --platform offscreen")));
 
