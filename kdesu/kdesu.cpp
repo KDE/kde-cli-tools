@@ -81,9 +81,9 @@ int main(int argc, char *argv[])
     if (duser.isEmpty())
         duser = "root";
 
-    KAboutData aboutData("kdesu", 0, i18n("KDE su"),
+    KAboutData aboutData("kdesu", i18n("KDE su"),
             Version, i18n("Runs a program with elevated privileges."),
-            KAboutData::License_Artistic,
+            KAboutLicense::Artistic,
             i18n("Copyright (c) 1998-2000 Geert Jansen, Pietro Iglio"));
     aboutData.addAuthor(i18n("Geert Jansen"), i18n("Maintainer"),
             "jansen@kde.org", "http://www.stack.nl/~geertj/");

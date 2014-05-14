@@ -134,7 +134,7 @@ int main( int argc, char **argv )
   QString programName = i18n("KIO Client");
   QString description = i18n("Command-line tool for network-transparent operations");
   QString version = "2.0";
-  KAboutData data(appName, appName, programName, version, description, KAboutData::License_LGPL_V2);
+  KAboutData data(appName, programName, version, description, KAboutLicense::LGPL_V2);
   KAboutData::setApplicationData(data);
 
   QCommandLineParser parser;
