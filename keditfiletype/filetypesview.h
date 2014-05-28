@@ -35,7 +35,7 @@
 class QLabel;
 class QTreeWidget;
 class QTreeWidgetItem;
-class KPushButton;
+class QPushButton;
 class KLineEdit;
 class FileTypeDetails;
 class FileGroupDetails;
@@ -69,7 +69,7 @@ private:
 
 private:
   QTreeWidget *typesLV;
-  KPushButton *m_removeTypeB;
+  QPushButton *m_removeTypeB;
 
   QStackedWidget * m_widgetStack;
   FileTypeDetails * m_details;

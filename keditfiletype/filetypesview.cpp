@@ -28,19 +28,18 @@
 #include <QLayout>
 #include <QtCore/QTimer>
 #include <QBoxLayout>
+#include <QPushButton>
 #include <QStandardPaths>
 #include <qdbusconnection.h>
 #include <qdbusmessage.h>
+#include <qdebug.h>
 
 // KDE
 #include <kbuildsycocaprogressdialog.h>
-#include <kdebug.h>
 #include <klineedit.h>
-#include <klocale.h>
-#include <kpushbutton.h>
+#include <klocalizedstring.h>
 #include <kservicetypeprofile.h>
 
-#include <kicon.h>
 #include <ksycoca.h>
 
 // Local
@@ -118,15 +117,15 @@ FileTypesView::FileTypesView(QWidget *parent, const QVariantList &)
   QHBoxLayout* btnsLay = new QHBoxLayout();
   leftLayout->addLayout(btnsLay);
   btnsLay->addStretch(1);
-  KPushButton *addTypeB = new KPushButton(i18n("Add..."), this);
-  addTypeB->setIcon(KIcon("list-add"));
+  QPushButton *addTypeB = new QPushButton(i18n("Add..."), this);
+  addTypeB->setIcon(QIcon::fromTheme("list-add"));
   connect(addTypeB, SIGNAL(clicked()), SLOT(addType()));
   btnsLay->addWidget(addTypeB);
 
   addTypeB->setWhatsThis( i18n("Click here to add a new file type.") );
 
-  m_removeTypeB = new KPushButton(i18n("&Remove"), this);
-  m_removeTypeB->setIcon(KIcon("list-remove"));
+  m_removeTypeB = new QPushButton(i18n("&Remove"), this);
+  m_removeTypeB->setIcon(QIcon::fromTheme("list-remove"));
   connect(m_removeTypeB, SIGNAL(clicked()), SLOT(removeType()));
   btnsLay->addWidget(m_removeTypeB);
   m_removeTypeB->setEnabled(false);
@@ -172,9 +171,9 @@ void FileTypesView::setDirty(bool state)
 }
 
 // To order the mimetype list
-static bool mimeTypeLessThan(const KMimeType::Ptr& m1, const KMimeType::Ptr& m2)
+static bool mimeTypeLessThan(const QMimeType& m1, const QMimeType& m2)
 {
-    return m1->name() < m2->name();
+    return m1.name() < m2.name();
 }
 
 // Note that this method loses any newly-added (and not saved yet) mimetypes.
@@ -185,11 +184,12 @@ void FileTypesView::readFileTypes()
     m_majorMap.clear();
     m_itemList.clear();
 
-    KMimeType::List mimetypes = KMimeType::allMimeTypes();
+    QMimeDatabase db;
+    QList<QMimeType> mimetypes = db.allMimeTypes();
     qSort(mimetypes.begin(), mimetypes.end(), mimeTypeLessThan);
-    KMimeType::List::const_iterator it2(mimetypes.constBegin());
+    auto it2(mimetypes.constBegin());
     for (; it2 != mimetypes.constEnd(); ++it2) {
-        const QString mimetype = (*it2)->name();
+        const QString mimetype = (*it2).name();
         const int index = mimetype.indexOf('/');
         const QString maj = mimetype.left(index);
         const QString min = mimetype.right(mimetype.length() - index+1);
@@ -362,16 +362,16 @@ void FileTypesView::updateRemoveButton(TypesListItem* tlitem)
             } else {
                 // We can only remove mimetypes that we defined ourselves, not those from freedesktop.org
                 const QString mimeType = mimeTypeData.name();
-                kDebug() << mimeType << "hasDefinitionFile:" << MimeTypeWriter::hasDefinitionFile(mimeType);
+                qDebug() << mimeType << "hasDefinitionFile:" << MimeTypeWriter::hasDefinitionFile(mimeType);
                 if (MimeTypeWriter::hasDefinitionFile(mimeType)) {
                     canRemove = true;
 
                     // Is there a global definition for it?
                     const QStringList mimeFiles = QStandardPaths::locateAll(QStandardPaths::GenericDataLocation, QLatin1String("mime/") + mimeType + ".xml" );
-                    kDebug() << mimeFiles;
+                    qDebug() << mimeFiles;
                     if (mimeFiles.count() >= 2 /*a local and a global*/) {
                         m_removeButtonSaysRevert = true;
-                        kDebug() << removedList;
+                        qDebug() << removedList;
                         if (removedList.contains(mimeType)) {
                             canRemove = false; // already on the "to be reverted" list, user needs to save now
                         }
@@ -415,7 +415,7 @@ void FileTypesView::save()
   while ( it1 != m_majorMap.end() ) {
     TypesListItem *tli = *it1;
     if (tli->mimeTypeData().isDirty()) {
-      kDebug() << "Entry " << tli->name() << " is dirty. Saving.";
+      qDebug() << "Entry " << tli->name() << " is dirty. Saving.";
       if (tli->mimeTypeData().sync())
           needUpdateMimeDb = true;
       didIt = true;
@@ -426,7 +426,7 @@ void FileTypesView::save()
         if (tli->mimeTypeData().isDirty()) {
             if (tli->mimeTypeData().isServiceListDirty())
                 needUpdateSycoca = true;
-            kDebug() << "Entry " << tli->name() << " is dirty. Saving.";
+            qDebug() << "Entry " << tli->name() << " is dirty. Saving.";
             if (tli->mimeTypeData().sync())
                 needUpdateMimeDb = true;
             didIt = true;
@@ -470,7 +470,7 @@ void FileTypesView::load()
 
 void FileTypesView::slotDatabaseChanged(const QStringList& changedResources)
 {
-    kDebug() << changedResources;
+    qDebug() << changedResources;
     if ( changedResources.contains("xdgdata-mime") // changes in mimetype definitions
          || changedResources.contains("services") ) { // changes in .desktop files
 

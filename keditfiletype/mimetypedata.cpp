@@ -19,10 +19,9 @@
 */
 
 #include "mimetypedata.h"
-#include "sharedmimeinfoversion.h"
 #include <kprotocolmanager.h>
 #include "mimetypewriter.h"
-#include <kdebug.h>
+#include <qdebug.h>
 #include <kservice.h>
 #include <ksharedconfig.h>
 #include <kconfiggroup.h>
@@ -37,21 +36,23 @@ MimeTypeData::MimeTypeData(const QString& major)
       m_isGroup(true),
       m_appServicesModified(false),
       m_embedServicesModified(false),
+      m_userSpecifiedIconModified(false),
       m_major(major)
 {
     m_autoEmbed = readAutoEmbed();
 }
 
-MimeTypeData::MimeTypeData(const KMimeType::Ptr mime)
+MimeTypeData::MimeTypeData(const QMimeType& mime)
     : m_mimetype(mime),
       m_askSave(AskSaveDefault), // TODO: the code for initializing this is missing. FileTypeDetails initializes the checkbox instead...
       m_bNewItem(false),
       m_bFullInit(false),
       m_isGroup(false),
       m_appServicesModified(false),
-      m_embedServicesModified(false)
+      m_embedServicesModified(false),
+      m_userSpecifiedIconModified(false)
 {
-    const QString mimeName = m_mimetype->name();
+    const QString mimeName = m_mimetype.name();
     const int index = mimeName.indexOf('/');
     if (index != -1) {
         m_major = mimeName.left(index);
@@ -59,17 +60,18 @@ MimeTypeData::MimeTypeData(const KMimeType::Ptr mime)
     } else {
         m_major = mimeName;
     }
-    initFromKMimeType();
+    initFromQMimeType();
 }
 
 MimeTypeData::MimeTypeData(const QString& mimeName, bool)
-    : m_mimetype(0),
-      m_askSave(AskSaveDefault),
+    : m_askSave(AskSaveDefault),
       m_bNewItem(true),
       m_bFullInit(false),
       m_isGroup(false),
       m_appServicesModified(false),
-      m_embedServicesModified(false)
+      m_embedServicesModified(false),
+      m_userSpecifiedIconModified(false)
+
 {
     const int index = mimeName.indexOf('/');
     if (index != -1) {
@@ -82,10 +84,10 @@ MimeTypeData::MimeTypeData(const QString& mimeName, bool)
     // all the rest is empty by default
 }
 
-void MimeTypeData::initFromKMimeType()
+void MimeTypeData::initFromQMimeType()
 {
-    m_comment = m_mimetype->comment();
-    setPatterns(m_mimetype->patterns());
+    m_comment = m_mimetype.comment();
+    setPatterns(m_mimetype.globPatterns());
     m_autoEmbed = readAutoEmbed();
 
     // Parse XML file to find out if the user specified a custom icon name
@@ -141,7 +143,7 @@ MimeTypeData::AutoEmbed MimeTypeData::readAutoEmbed() const
     } else {
         if (group.hasKey(key))
             return group.readEntry(key, false) ? Yes : No;
-        // TODO if ( !mimetype->property( "X-KDE-LocalProtocol" ).toString().isEmpty() )
+        // TODO if ( !mimetype.property( "X-KDE-LocalProtocol" ).toString().isEmpty() )
         // TODO    return MimeTypeData::Yes; // embed by default for zip, tar etc.
         return MimeTypeData::UseGroupSetting;
     }
@@ -192,7 +194,11 @@ bool MimeTypeData::isEssential() const
 
 void MimeTypeData::setUserSpecifiedIcon(const QString& icon)
 {
+    if (icon == m_userSpecifiedIcon) {
+        return;
+    }
     m_userSpecifiedIcon = icon;
+    m_userSpecifiedIconModified = true;
 }
 
 QStringList MimeTypeData::getAppOffers() const
@@ -247,24 +253,24 @@ bool MimeTypeData::isMimeTypeDirty() const
     if (m_bNewItem)
         return true;
 
-    if (!m_mimetype) {
-        kWarning() << "MimeTypeData for" << name() << "says 'not new' but is without a mimetype? Should not happen.";
+    if (!m_mimetype.isValid()) {
+        qWarning() << "MimeTypeData for" << name() << "says 'not new' but is without a mimetype? Should not happen.";
         return true;
     }
 
-    if (m_mimetype->comment() != m_comment) {
-        kDebug() << "Mimetype Comment Dirty: old=" << m_mimetype->comment() << "m_comment=" << m_comment;
+    if (m_mimetype.comment() != m_comment) {
+        qDebug() << "Mimetype Comment Dirty: old=" << m_mimetype.comment() << "m_comment=" << m_comment;
         return true;
     }
-    if (m_mimetype->userSpecifiedIconName() != m_userSpecifiedIcon) {
-        kDebug() << "Mimetype Icon Dirty: old=" << m_mimetype->iconName() << "m_userSpecifiedIcon=" << m_userSpecifiedIcon;
+    if (m_userSpecifiedIconModified) {
+        qDebug() << "m_userSpecifiedIcon has changed. Now set to" << m_userSpecifiedIcon;
         return true;
     }
 
-    QStringList storedPatterns = m_mimetype->patterns();
+    QStringList storedPatterns = m_mimetype.globPatterns();
     storedPatterns.sort(); // see ctor
     if ( storedPatterns != m_patterns) {
-        kDebug() << "Mimetype Patterns Dirty: old=" << storedPatterns
+        qDebug() << "Mimetype Patterns Dirty: old=" << storedPatterns
                  << "m_patterns=" << m_patterns;
         return true;
     }
@@ -282,7 +288,7 @@ bool MimeTypeData::isServiceListDirty() const
 bool MimeTypeData::isDirty() const
 {
     if ( m_bNewItem ) {
-        kDebug() << "New item, need to save it";
+        qDebug() << "New item, need to save it";
         return true;
     }
 
@@ -334,17 +340,13 @@ bool MimeTypeData::sync()
     if (isMimeTypeDirty()) {
         MimeTypeWriter mimeTypeWriter(name());
         mimeTypeWriter.setComment(m_comment);
-        if (SharedMimeInfoVersion::supportsIcon()) {
-            // Very important: don't write <icon> if shared-mime-info doesn't support it,
-            // it would abort on it!
-            if (!m_userSpecifiedIcon.isEmpty()) {
-                mimeTypeWriter.setIconName(m_userSpecifiedIcon);
-            }
+        if (!m_userSpecifiedIcon.isEmpty()) {
+            mimeTypeWriter.setIconName(m_userSpecifiedIcon);
         }
         mimeTypeWriter.setPatterns(m_patterns);
         if (!mimeTypeWriter.write())
             return false;
-
+        m_userSpecifiedIconModified = false;
         needUpdateMimeDb = true;
     }
 
@@ -393,7 +395,7 @@ static QStringList collectStorageIds(const QStringList& services)
 
         KService::Ptr pService = KService::serviceByStorageId(*it);
         if (!pService) {
-            kWarning() << "service with storage id" << *it << "not found";
+            qWarning() << "service with storage id" << *it << "not found";
             continue; // Where did that one go?
         }
 
@@ -434,17 +436,17 @@ void MimeTypeData::refresh()
 {
     if (m_isGroup)
         return;
-
-    m_mimetype = KMimeType::mimeType( name() );
-    if (m_mimetype) {
+    QMimeDatabase db;
+    m_mimetype = db.mimeTypeForName( name() );
+    if (m_mimetype.isValid()) {
         if (m_bNewItem) {
-            kDebug() << "OK, created" << name();
+            qDebug() << "OK, created" << name();
             m_bNewItem = false; // if this was a new mimetype, we just created it
         }
         if (!isMimeTypeDirty()) {
             // Update from the xml, in case something was changed from out of this kcm
             // (e.g. using KOpenWithDialog, or keditfiletype + kcmshell filetypes)
-            initFromKMimeType();
+            initFromQMimeType();
         }
         if (!m_appServicesModified && !m_embedServicesModified) {
             m_bFullInit = false; // refresh services too
@@ -468,7 +470,7 @@ void MimeTypeData::setAskSave(bool _askSave)
 bool MimeTypeData::canUseGroupSetting() const
 {
     // "Use group settings" isn't available for zip, tar etc.; those have a builtin default...
-    if (!m_mimetype) // e.g. new mimetype
+    if (!m_mimetype.isValid()) // e.g. new mimetype
         return true;
     const bool hasLocalProtocolRedirect = !KProtocolManager::protocolForArchiveMimetype(name()).isEmpty();
     return !hasLocalProtocolRedirect;
@@ -478,7 +480,7 @@ void MimeTypeData::setPatterns(const QStringList &p)
 {
     m_patterns = p;
     // Sort them, since update-mime-database doesn't respect order (order of globs file != order of xml),
-    // and this code says things like if (m_mimetype->patterns() == m_patterns).
+    // and this code says things like if (m_mimetype.patterns() == m_patterns).
     // We could also sort in KMimeType::setPatterns but this would just slow down the
     // normal use case (anything else than this KCM) for no good reason.
     m_patterns.sort();
@@ -514,7 +516,7 @@ QString MimeTypeData::icon() const
 {
     if (!m_userSpecifiedIcon.isEmpty())
         return m_userSpecifiedIcon;
-    if (m_mimetype)
-        return m_mimetype->iconName();
+    if (m_mimetype.isValid())
+        return m_mimetype.iconName();
     return QString();
 }

@@ -32,7 +32,7 @@ class QButtonGroup;
 class QCheckBox;
 class QRadioButton;
 class KLineEdit;
-class KPushButton;
+class QPushButton;
 class KServiceListWidget;
 
 /**
@@ -88,7 +88,7 @@ private:
     QLabel* iconLabel; // if icon cannot be changed
 
   QListWidget *extensionLB;
-  KPushButton *addExtButton, *removeExtButton;
+  QPushButton *addExtButton, *removeExtButton;
   KLineEdit *description;
   KServiceListWidget *serviceListWidget;
 

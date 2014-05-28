@@ -20,33 +20,40 @@
 #ifndef __keditfiletype_h
 #define __keditfiletype_h
 
-#include <kdialog.h>
-#include <kmimetype.h>
+#include <QDialog>
+#include <QMimeType>
+#include <QMimeDatabase>
+
+class QDialogButtonBox;
 
 class MimeTypeData;
 class FileTypeDetails;
 
 // A dialog for ONE file type to be edited.
-class FileTypeDialog : public KDialog
+class FileTypeDialog : public QDialog
 {
     Q_OBJECT
 public:
     FileTypeDialog(MimeTypeData* mime);
-    ~FileTypeDialog();
+    virtual ~FileTypeDialog();
+
+    void setApplyButtonEnabled(bool);
+
+public Q_SLOTS:
+    void accept() Q_DECL_OVERRIDE;
 
 protected Q_SLOTS:
-  virtual void slotOk();
-  virtual void slotApply();
-  void clientChanged(bool state);
-  void slotDatabaseChanged(const QStringList& changedResources);
+    void clientChanged(bool state);
+    void slotDatabaseChanged(const QStringList& changedResources);
 
-protected:
-  void save();
+private Q_SLOTS:
+    void save();
 
 private:
-  void init();
-  FileTypeDetails * m_details;
-  MimeTypeData* m_mimeTypeData;
+    void init();
+    FileTypeDetails * m_details;
+    MimeTypeData* m_mimeTypeData;
+    QDialogButtonBox* m_buttonBox;
 };
 
 #endif

@@ -19,28 +19,27 @@
 
 // Own
 #include "filetypedetails.h"
-#include "sharedmimeinfoversion.h"
 
 // Qt
 #include <QBoxLayout>
 #include <QButtonGroup>
 #include <QCheckBox>
+#include <QDebug>
+#include <QInputDialog>
+#include <QLabel>
 #include <QLayout>
 #include <QListWidget>
+#include <QPushButton>
 #include <QRadioButton>
-#include <QLabel>
 
 // KDE
 #include <kconfig.h>
 #include <kconfiggroup.h>
-#include <kdebug.h>
 #include <kicondialog.h>
-#include <kinputdialog.h>
 #include <klineedit.h>
+#include <klocalizedstring.h>
 #include <kiconbutton.h>
-#include <klocale.h>
-#include <kicon.h>
-#include <kpushbutton.h>
+#include <ksharedconfig.h>
 
 // Local
 #include "kservicelistwidget.h"
@@ -51,6 +50,7 @@ FileTypeDetails::FileTypeDetails( QWidget * parent )
 {
 
     QVBoxLayout* topLayout = new QVBoxLayout(this);
+    topLayout->setContentsMargins(0, 0, 0, 0);
 
     m_mimeTypeLabel = new QLabel(this);
     topLayout->addWidget(m_mimeTypeLabel, 0, Qt::AlignCenter);
@@ -66,23 +66,14 @@ FileTypeDetails::FileTypeDetails( QWidget * parent )
   QHBoxLayout *hBox = new QHBoxLayout();
   firstLayout->addLayout(hBox);
 
-    if (SharedMimeInfoVersion::supportsIcon()) {
-        iconButton = new KIconButton(firstWidget);
-        iconButton->setIconType(KIconLoader::Desktop, KIconLoader::MimeType);
-        connect(iconButton, SIGNAL(iconChanged(QString)), SLOT(updateIcon(QString)));
-        iconButton->setWhatsThis( i18n("This button displays the icon associated"
-                                       " with the selected file type. Click on it to choose a different icon.") );
-        iconButton->setFixedSize(70, 70);
-        iconLabel = 0;
-        hBox->addWidget(iconButton);
-    } else {
-        iconButton = 0;
-        iconLabel = new QLabel(firstWidget);
-        iconLabel->setWhatsThis( i18n("This is the icon associated with the selected file type. "
-                                      "Choosing a different icon requires shared-mime-info to be at least version 0.40.") );
-        iconLabel->setFixedSize(70, 70);
-        hBox->addWidget(iconLabel);
-    }
+  iconButton = new KIconButton(firstWidget);
+  iconButton->setIconType(KIconLoader::Desktop, KIconLoader::MimeType);
+  connect(iconButton, SIGNAL(iconChanged(QString)), SLOT(updateIcon(QString)));
+  iconButton->setWhatsThis( i18n("This button displays the icon associated"
+                                 " with the selected file type. Click on it to choose a different icon.") );
+  iconButton->setFixedSize(70, 70);
+  iconLabel = 0;
+  hBox->addWidget(iconButton);
 
   QGroupBox *gb = new QGroupBox(i18n("Filename Patterns"), firstWidget);
   hBox->addWidget(gb);
@@ -104,16 +95,16 @@ FileTypeDetails::FileTypeDetails( QWidget * parent )
   QVBoxLayout *vbox = new QVBoxLayout();
   hBox->addLayout(vbox);
 
-  addExtButton = new KPushButton(i18n("Add..."), gb);
-  addExtButton->setIcon(KIcon("list-add"));
+  addExtButton = new QPushButton(i18n("Add..."), gb);
+  addExtButton->setIcon(QIcon::fromTheme("list-add"));
   addExtButton->setEnabled(false);
   connect(addExtButton, SIGNAL(clicked()),
           this, SLOT(addExtension()));
   vbox->addWidget(addExtButton);
   addExtButton->setWhatsThis( i18n("Add a new pattern for the selected file type.") );
 
-  removeExtButton = new KPushButton(i18n("Remove"), gb);
-  removeExtButton->setIcon(KIcon("list-remove"));
+  removeExtButton = new QPushButton(i18n("Remove"), gb);
+  removeExtButton->setIcon(QIcon::fromTheme("list-remove"));
   removeExtButton->setEnabled(false);
   connect(removeExtButton, SIGNAL(clicked()),
           this, SLOT(removeExtension()));
@@ -221,8 +212,9 @@ void FileTypeDetails::addExtension()
     return;
 
   bool ok;
-  QString ext = KInputDialog::getText( i18n( "Add New Extension" ),
-    i18n( "Extension:" ), "*.", &ok, this );
+  QString ext = QInputDialog::getText(this,
+    i18n( "Add New Extension" ), i18n( "Extension:" ),
+    QLineEdit::Normal, "*.", &ok);
   if (ok) {
     extensionLB->addItem(ext);
     QStringList patt = m_mimeTypeData->patterns();
@@ -263,6 +255,7 @@ void FileTypeDetails::updateAskSave()
 {
     if ( !m_mimeTypeData )
         return;
+    QMimeDatabase db;
 
     MimeTypeData::AutoEmbed autoEmbed = m_mimeTypeData->autoEmbed();
     if (m_mimeTypeData->isMeta() && autoEmbed == MimeTypeData::UseGroupSetting) {
@@ -287,11 +280,11 @@ void FileTypeDetails::updateAskSave()
     bool neverAsk = false;
 
     if (autoEmbed == MimeTypeData::Yes) {
-        const KMimeType::Ptr mime = KMimeType::mimeType( mimeType );
-        if (mime) {
+        const QMimeType mime = db.mimeTypeForName( mimeType );
+        if (mime.isValid()) {
             // SYNC SYNC SYNC SYNC SYNC SYNC SYNC SYNC SYNC SYNC SYNC SYNC SYNC SYNC
             // NOTE: Keep this function in sync with
-            // kdelibs/kparts/browseropenorsavequestion.cpp BrowserOpenOrSaveQuestionPrivate::autoEmbedMimeType
+            // kparts/src/browseropenorsavequestion.cpp BrowserOpenOrSaveQuestionPrivate::autoEmbedMimeType
 
             // Don't ask for:
             // - html (even new tabs would ask, due to about:blank!)
@@ -300,12 +293,12 @@ void FileTypeDetails::updateAskSave()
             // e.g. postscript is different, because takes longer to read, so
             // it's more likely that the user might want to save it.
             // - multipart/* ("server push", see kmultipart)
-            if ( mime->is( "text/html" ) ||
-                 mime->is( "application/xml" ) ||
-                 mime->is( "inode/directory" ) ||
-                 mimeType.startsWith( QLatin1String("image") ) ||
-                 mime->is( "multipart/x-mixed-replace" ) ||
-                 mime->is( "multipart/replace" ) )
+            if (mime.inherits(QStringLiteral("text/html")) ||
+                mime.inherits(QStringLiteral("application/xml")) ||
+                mime.inherits(QStringLiteral("inode/directory")) ||
+                mimeType.startsWith(QLatin1String("image")) ||
+                mime.inherits(QStringLiteral("multipart/x-mixed-replace")) ||
+                mime.inherits(QStringLiteral("multipart/replace")))
             {
                 neverAsk = true;
             }

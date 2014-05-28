@@ -22,9 +22,8 @@
 // Own
 #include "typeslistitem.h"
 
-// KDE
-#include <kdebug.h>
-#include <kicon.h>
+// Qt
+#include <QDebug>
 
 
 TypesListItem::TypesListItem(QTreeWidget *parent, const QString & major)
@@ -34,7 +33,7 @@ TypesListItem::TypesListItem(QTreeWidget *parent, const QString & major)
     setText(0, major);
 }
 
-TypesListItem::TypesListItem(TypesListItem *parent, KMimeType::Ptr mimetype)
+TypesListItem::TypesListItem(TypesListItem *parent, QMimeType mimetype)
   : QTreeWidgetItem(parent),
     m_mimetypeData(mimetype)
 {
@@ -61,7 +60,7 @@ void TypesListItem::setIcon( const QString& icon )
 void TypesListItem::loadIcon(bool forceReload)
 {
     if ((!m_mimetypeData.icon().isEmpty() && icon(0).isNull()) || forceReload) {
-        QTreeWidgetItem::setIcon(0, KIcon(m_mimetypeData.icon()));
+        QTreeWidgetItem::setIcon(0, QIcon::fromTheme(m_mimetypeData.icon()));
     }
 }
 

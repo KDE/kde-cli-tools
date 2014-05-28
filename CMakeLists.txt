@@ -15,6 +15,7 @@ include(CheckIncludeFiles)
 find_package(Qt5 ${QT_MIN_VERSION} CONFIG REQUIRED COMPONENTS
     Widgets
     Svg
+    DBus
 )
 
 find_package(Qt5X11Extras ${QT_MIN_VERSION} CONFIG)
@@ -31,9 +32,12 @@ endif()
 
 find_package(KF5 REQUIRED COMPONENTS
     Config
+    IconThemes
+    I18n
     KCMUtils
     Su
     KDE4Support
+    WindowSystem
 )
 
 feature_summary(WHAT ALL INCLUDE_QUIET_PACKAGES FATAL_ON_MISSING_REQUIRED_PACKAGES)

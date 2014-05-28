@@ -6,7 +6,6 @@ add_executable(filetypestest
  filetypestest.cpp
  ../mimetypedata.cpp
  ../mimetypewriter.cpp
- ../sharedmimeinfoversion.cpp
 )
 ecm_mark_as_test(filetypestest)
 add_test(filetypestest filetypestest)

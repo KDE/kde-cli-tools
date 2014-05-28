@@ -19,7 +19,6 @@
 
 #include <kprocess.h>
 #include <kservice.h>
-#include <qtest_kde.h>
 
 #include <kconfiggroup.h>
 #include <kdebug.h>
@@ -27,9 +26,13 @@
 #include <kstandarddirs.h>
 #include <ksycoca.h>
 
+// Qt
+#include <QDir>
+#include <QStandardPaths>
+#include <QTest>
+
 #include <mimetypedata.h>
 #include <mimetypewriter.h>
-#include <QStandardPaths>
 
 #define KDE_MAKE_VERSION( a,b,c ) (((a) << 16) | ((b) << 8) | (c))
 
@@ -108,7 +111,8 @@ private Q_SLOTS:
 
     void testMimeTypeAutoEmbed()
     {
-        MimeTypeData data(KMimeType::mimeType("text/plain"));
+        QMimeDatabase db;
+        MimeTypeData data(db.mimeTypeForName("text/plain"));
         QCOMPARE(data.majorType(), QString("text"));
         QCOMPARE(data.minorType(), QString("plain"));
         QCOMPARE(data.name(), QString("text/plain"));
@@ -121,7 +125,7 @@ private Q_SLOTS:
         QVERIFY(!data.sync()); // save to disk. Should succeed, but return false (no need to run update-mime-database)
         QVERIFY(!data.isDirty());
         // Check what's on disk by creating another MimeTypeData instance
-        MimeTypeData data2(KMimeType::mimeType("text/plain"));
+        MimeTypeData data2(db.mimeTypeForName("text/plain"));
         QCOMPARE(data2.autoEmbed(), MimeTypeData::Yes);
         QVERIFY(!data2.isDirty());
         data2.setAutoEmbed(MimeTypeData::UseGroupSetting); // revert to default, for next time
@@ -132,7 +136,8 @@ private Q_SLOTS:
 
     void testMimeTypePatterns()
     {
-        MimeTypeData data(KMimeType::mimeType("text/plain"));
+        QMimeDatabase db;
+        MimeTypeData data(db.mimeTypeForName("text/plain"));
         QCOMPARE(data.name(), QString("text/plain"));
         QCOMPARE(data.majorType(), QString("text"));
         QCOMPARE(data.minorType(), QString("plain"));
@@ -141,10 +146,7 @@ private Q_SLOTS:
         QVERIFY(patterns.contains("*.txt"));
         QVERIFY(!patterns.contains("*.toto"));
         const QStringList origPatterns = patterns;
-        if (KMimeType::sharedMimeInfoVersion() >= KDE_MAKE_VERSION(0, 61, 0)) {
-            // <glob-deleteall> is only supported by shared-mime-info > 0.60
-            patterns.removeAll("*.txt");
-        }
+        patterns.removeAll("*.txt");
         patterns.append("*.toto"); // yes, a french guy wrote this, as you can see
         patterns.sort(); // for future comparisons
         QVERIFY(!data.isDirty());
@@ -158,7 +160,7 @@ private Q_SLOTS:
         data.refresh(); // reload from the xml
         QCOMPARE(data.patterns(), patterns);
         // Check what's in ksycoca
-        QStringList newPatterns = KMimeType::mimeType("text/plain")->patterns();
+        QStringList newPatterns = db.mimeTypeForName("text/plain").globPatterns();
         newPatterns.sort();
         QCOMPARE(newPatterns, patterns);
         QVERIFY(!data.isDirty());
@@ -170,15 +172,16 @@ private Q_SLOTS:
         MimeTypeWriter::runUpdateMimeDatabase();
         //runKBuildSycoca();
         // Check what's in ksycoca
-        newPatterns = KMimeType::mimeType("text/plain")->patterns();
+        newPatterns = db.mimeTypeForName("text/plain").globPatterns();
         newPatterns.sort();
         QCOMPARE(newPatterns, origPatterns);
     }
 
     void testAddService()
     {
+        QMimeDatabase db;
         const char* mimeTypeName = "application/rtf"; // use inherited mimetype to test #321706
-        MimeTypeData data(KMimeType::mimeType(mimeTypeName));
+        MimeTypeData data(db.mimeTypeForName(mimeTypeName));
         QStringList appServices = data.appServices();
         //kDebug() << appServices;
         QVERIFY(!appServices.isEmpty());
@@ -222,9 +225,10 @@ private Q_SLOTS:
 
     void testRemoveTwice()
     {
+        QMimeDatabase db;
         // Remove fakeApplication from image/png
         const char* mimeTypeName = "image/png";
-        MimeTypeData data(KMimeType::mimeType(mimeTypeName));
+        MimeTypeData data(db.mimeTypeForName(mimeTypeName));
         QStringList appServices = data.appServices();
         kDebug() << "initial list for" << mimeTypeName << appServices;
         QVERIFY(appServices.removeAll(fakeApplication) > 0);
@@ -264,6 +268,7 @@ private Q_SLOTS:
 
     void testCreateMimeType()
     {
+        QMimeDatabase db;
         const QString mimeTypeName = "fake/unit-test-fake-mimetype";
         // Clean up after previous runs if necessary
         if (MimeTypeWriter::hasDefinitionFile(mimeTypeName))
@@ -277,19 +282,20 @@ private Q_SLOTS:
         QVERIFY(data.sync());
         MimeTypeWriter::runUpdateMimeDatabase();
         //runKBuildSycoca();
-        KMimeType::Ptr mime = KMimeType::mimeType(mimeTypeName);
-        QVERIFY(mime);
-        QCOMPARE(mime->comment(), QString("Fake MimeType"));
-        QCOMPARE(mime->patterns(), patterns); // must sort them if more than one
+        QMimeType mime = db.mimeTypeForName(mimeTypeName);
+        QVERIFY(mime.isValid());
+        QCOMPARE(mime.comment(), QString("Fake MimeType"));
+        QCOMPARE(mime.globPatterns(), patterns); // must sort them if more than one
 
         // Testcase for the shaman.xml bug
-        QCOMPARE(KMimeType::findByPath("/whatever/foo.pkg.tar.gz")->name(), QString("fake/unit-test-fake-mimetype"));
+        QCOMPARE(db.mimeTypeForFile("/whatever/foo.pkg.tar.gz").name(), QString("fake/unit-test-fake-mimetype"));
 
         m_mimeTypeCreatedSuccessfully = true;
     }
 
     void testDeleteMimeType()
     {
+        QMimeDatabase db;
         if (!m_mimeTypeCreatedSuccessfully)
             QSKIP("This test relies on testCreateMimeType");
         const QString mimeTypeName = "fake/unit-test-fake-mimetype";
@@ -297,14 +303,15 @@ private Q_SLOTS:
         MimeTypeWriter::removeOwnMimeType(mimeTypeName);
         MimeTypeWriter::runUpdateMimeDatabase();
         //runKBuildSycoca();
-        KMimeType::Ptr mime = KMimeType::mimeType(mimeTypeName);
-        QVERIFY(!mime);
+        QMimeType mime = db.mimeTypeForName(mimeTypeName);
+        QVERIFY(mime.isValid());
     }
 
     void testModifyMimeTypeComment() // of a system mimetype. And check that it's re-read correctly.
     {
+        QMimeDatabase db;
         const char* mimeTypeName = "image/png";
-        MimeTypeData data(KMimeType::mimeType(mimeTypeName));
+        MimeTypeData data(db.mimeTypeForName(mimeTypeName));
         QCOMPARE(data.comment(), QString::fromLatin1("PNG image"));
         const char* fakeComment = "PNG image [testing]";
         data.setComment(fakeComment);
@@ -312,9 +319,9 @@ private Q_SLOTS:
         QVERIFY(data.sync());
         MimeTypeWriter::runUpdateMimeDatabase();
         //runKBuildSycoca();
-        KMimeType::Ptr mime = KMimeType::mimeType(mimeTypeName);
-        QVERIFY(mime);
-        QCOMPARE(mime->comment(), QString::fromLatin1(fakeComment));
+        QMimeType mime = db.mimeTypeForName(mimeTypeName);
+        QVERIFY(mime.isValid());
+        QCOMPARE(mime.comment(), QString::fromLatin1(fakeComment));
 
         // Cleanup
         QVERIFY(MimeTypeWriter::hasDefinitionFile(mimeTypeName));
@@ -391,7 +398,8 @@ private: // helper methods
 
     void checkMimeTypeServices(const QString& mimeTypeName, const QStringList& expectedServices)
     {
-        MimeTypeData data2(KMimeType::mimeType(mimeTypeName));
+        QMimeDatabase db;
+        MimeTypeData data2(db.mimeTypeForName(mimeTypeName));
         if (data2.appServices() != expectedServices)
             kDebug() << "got" << data2.appServices() << "expected" << expectedServices;
         QCOMPARE(data2.appServices(), expectedServices);
@@ -403,6 +411,6 @@ private: // helper methods
     bool m_mimeTypeCreatedSuccessfully;
 };
 
-QTEST_KDEMAIN( FileTypesTest, NoGUI )
+QTEST_MAIN(FileTypesTest)
 
 #include "filetypestest.moc"

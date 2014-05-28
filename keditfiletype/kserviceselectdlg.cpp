@@ -19,23 +19,25 @@
 #include "kserviceselectdlg.moc"
 #include "kservicelistwidget.h"
 
-#include <klocale.h>
-#include <QVBoxLayout>
+#include <QDialogButtonBox>
 #include <QLabel>
+#include <QVBoxLayout>
+
+#include <KLocalizedString>
 
 KServiceSelectDlg::KServiceSelectDlg( const QString& /*serviceType*/, const QString& /*value*/, QWidget *parent )
-    : KDialog( parent )
+    : QDialog( parent )
 {
     setObjectName( QLatin1String( "serviceSelectDlg" ) );
     setModal( true );
-    setCaption( i18n( "Add Service" ) );
-    setButtons( Ok | Cancel );
+    setWindowTitle( i18n( "Add Service" ) );
 
-    QWidget *vbox = new QWidget( this );
-    QVBoxLayout *layout = new QVBoxLayout( vbox );
+    QVBoxLayout *layout = new QVBoxLayout(this);
 
-    layout->addWidget( new QLabel( i18n( "Select service:" ), vbox ) );
-    m_listbox=new KListWidget( vbox );
+    layout->addWidget( new QLabel( i18n( "Select service:" ) ) );
+    m_listbox=new QListWidget();
+    m_buttonBox = new QDialogButtonBox;
+    m_buttonBox->setStandardButtons(QDialogButtonBox::Ok | QDialogButtonBox::Cancel);
 
     // Can't make a KTrader query since we don't have a servicetype to give,
     // we want all services that are not applications.......
@@ -53,18 +55,14 @@ KServiceSelectDlg::KServiceSelectDlg( const QString& /*serviceType*/, const QStr
     m_listbox->setMinimumHeight(350);
     m_listbox->setMinimumWidth(400);
     layout->addWidget( m_listbox );
-    connect(m_listbox,SIGNAL(itemDoubleClicked(QListWidgetItem*)),SLOT(slotOk()));
-    connect( this, SIGNAL(okClicked()), this, SLOT(slotOk()) );
-    setMainWidget(vbox);
+    layout->addWidget( m_buttonBox );
+    connect(m_listbox,SIGNAL(itemDoubleClicked(QListWidgetItem*)),SLOT(accept()));
+    connect(m_buttonBox, SIGNAL(accepted()), SLOT(accept()));
+    connect(m_buttonBox, SIGNAL(rejected()), SLOT(reject()));
 }
 
 KServiceSelectDlg::~KServiceSelectDlg()
 {
-}
-
-void KServiceSelectDlg::slotOk()
-{
-   accept();
 }
 
 KService::Ptr KServiceSelectDlg::service()

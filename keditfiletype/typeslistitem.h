@@ -24,7 +24,8 @@
 #include "mimetypedata.h"
 #include <QTreeWidgetItem>
 
-#include <kmimetype.h>
+#include <QMimeType>
+#include <QMimeDatabase>
 
 // TODO different subclasses for mimetypes and groups?
 class TypesListItem : public QTreeWidgetItem
@@ -38,7 +39,7 @@ public:
     /**
      * Create a filetype item inside a group, for an existing mimetype
      */
-    TypesListItem(TypesListItem *parent, KMimeType::Ptr mimetype);
+    TypesListItem(TypesListItem *parent, QMimeType mimetype);
 
     /**
      * Create a filetype item inside a group, for a new mimetype

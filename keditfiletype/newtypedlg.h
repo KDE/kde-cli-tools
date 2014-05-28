@@ -20,8 +20,9 @@
 #ifndef _NEWTYPEDLG_H
 #define _NEWTYPEDLG_H
 
-#include <kdialog.h>
+#include <QDialog>
 
+class QDialogButtonBox;
 class QStringList;
 class KLineEdit;
 class QComboBox;
@@ -32,7 +33,7 @@ class QComboBox;
  * - a line-edit for entering the name of the file type
  * The rest (description, patterns, icon, apps) can be set later in the filetypesview anyway.
  */
-class NewTypeDialog : public KDialog
+class NewTypeDialog : public QDialog
 {
 public:
     explicit NewTypeDialog(const QStringList &groups, QWidget *parent);
@@ -41,6 +42,7 @@ public:
 private:
     KLineEdit *m_typeEd;
     QComboBox *m_groupCombo;
+    QDialogButtonBox* m_buttonBox;
 };
 
 #endif

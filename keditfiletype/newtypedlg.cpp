@@ -24,6 +24,7 @@
 // Qt
 #include <QBoxLayout>
 #include <QComboBox>
+#include <QDialogButtonBox>
 #include <QFrame>
 #include <QFormLayout>
 #include <QLabel>
@@ -31,23 +32,21 @@
 
 // KDE
 #include <klineedit.h>
-#include <klocale.h>
+#include <klocalizedstring.h>
 
 
 NewTypeDialog::NewTypeDialog(const QStringList &groups, QWidget *parent)
-  : KDialog( parent )
+  : QDialog( parent )
 {
   setModal( true );
-  setCaption( i18n( "Create New File Type" ) );
-  setButtons( Ok | Cancel );
+  setWindowTitle( i18n( "Create New File Type" ) );
 
-  QWidget* main = mainWidget();
+  QVBoxLayout *mainLayout = new QVBoxLayout(this);
+  QFormLayout *formLayout = new QFormLayout;
 
-  QFormLayout *formLayout = new QFormLayout(main);
+  QLabel *l = new QLabel(i18n("Group:"));
 
-  QLabel *l = new QLabel(i18n("Group:"), main);
-
-  m_groupCombo = new QComboBox(main);
+  m_groupCombo = new QComboBox;
   m_groupCombo->setEditable(true);
   m_groupCombo->addItems(groups);
   m_groupCombo->setCurrentIndex(m_groupCombo->findText("application")); // certainly a better default than "all"
@@ -58,14 +57,23 @@ NewTypeDialog::NewTypeDialog(const QStringList &groups, QWidget *parent)
 
   // Line 1: mimetype name
 
-  l = new QLabel(i18n("Type name:"), main);
+  l = new QLabel(i18n("Type name:"));
 
-  m_typeEd = new KLineEdit(main);
+  m_typeEd = new KLineEdit;
   formLayout->addRow(l, m_typeEd);
 
   m_typeEd->setWhatsThis(i18n("Type the name of the file type. For instance, if you selected 'image' as category and you type 'custom' here, the file type 'image/custom' will be created."));
 
   m_typeEd->setFocus();
+
+  m_buttonBox = new QDialogButtonBox;
+  m_buttonBox->setStandardButtons(QDialogButtonBox::Ok | QDialogButtonBox::Cancel);
+
+  mainLayout->addLayout(formLayout);
+  mainLayout->addWidget(m_buttonBox);
+
+  connect(m_buttonBox, SIGNAL(accepted()), SLOT(accept()));
+  connect(m_buttonBox, SIGNAL(rejected()), SLOT(reject()));
 
   // Set a minimum width so that caption is not half-hidden
   setMinimumWidth(300);

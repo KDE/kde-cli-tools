@@ -19,23 +19,15 @@
 */
 
 #include "mimetypewriter.h"
-#include <kmimetype.h>
 
-#include <kdebug.h>
-#include <kdeversion.h>
-#include <kprocess.h>
-
-
-#include <QXmlStreamWriter>
+#include <QDebug>
 #include <QFile>
+#include <QMimeDatabase>
+#include <QMimeType>
 #include <QStandardPaths>
+#include <QXmlStreamWriter>
 
-/// WARNING: this code is duplicated between apps/nsplugins and runtime/filetypes
-
-static bool sharedMimeInfoSupportsIcon()
-{
-    return KMimeType::sharedMimeInfoVersion() >= KDE_MAKE_VERSION(0, 40, 0);
-}
+#include <kprocess.h>
 
 class MimeTypeWriterPrivate
 {
@@ -84,10 +76,10 @@ void MimeTypeWriter::setMarker(const QString& marker)
 bool MimeTypeWriter::write()
 {
     const QString packageFileName = d->localFilePath();
-    kDebug() << "writing" << packageFileName;
+    qDebug() << "writing" << packageFileName;
     QFile packageFile(packageFileName);
     if (!packageFile.open(QIODevice::WriteOnly)) {
-        kError() << "Couldn't open" << packageFileName << "for writing";
+        qCritical() << "Couldn't open" << packageFileName << "for writing";
         return false;
     }
     QXmlStreamWriter writer(&packageFile);
@@ -110,11 +102,9 @@ bool MimeTypeWriter::write()
 
     if (!d->m_iconName.isEmpty()) {
         // User-specified icon name
-        if (sharedMimeInfoSupportsIcon()) {
-            writer.writeStartElement(nsUri, "icon");
-            writer.writeAttribute("name", d->m_iconName);
-            writer.writeEndElement(); // icon
-        }
+        writer.writeStartElement(nsUri, "icon");
+        writer.writeAttribute("name", d->m_iconName);
+        writer.writeEndElement(); // icon
     }
 
     // Allow this local definition to override the global definition
@@ -142,7 +132,7 @@ void MimeTypeWriter::runUpdateMimeDatabase()
     proc << localPackageDir;
     const int exitCode = proc.execute();
     if (exitCode) {
-        kWarning() << proc.program() << "exited with error code" << exitCode;
+        qWarning() << proc.program() << "exited with error code" << exitCode;
     }
 }
 

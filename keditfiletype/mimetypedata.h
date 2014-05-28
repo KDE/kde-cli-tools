@@ -21,11 +21,14 @@
 #ifndef MIMETYPEDATA_H
 #define MIMETYPEDATA_H
 
-#include <kmimetype.h>
+#include <QMimeType>
+#include <QMimeDatabase>
+
+class KConfigGroup;
 
 /**
  * This is a non-gui (data) class, that represents a mimetype.
- * It is a KMimeType::Ptr plus the changes we made to it.
+ * It is a QMimeType plus the changes we made to it.
  */
 class MimeTypeData
 {
@@ -33,7 +36,7 @@ public:
     // Constructor used for groups
     MimeTypeData(const QString& major);
     // Real constructor, used for an existing mimetype.
-    MimeTypeData(const KMimeType::Ptr mime);
+    MimeTypeData(const QMimeType& mime);
     // Real constructor, used for a new mimetype.
     MimeTypeData(const QString& mimeName, bool /*unused, just to distinguish from the other QString ctor*/);
 
@@ -67,7 +70,7 @@ public:
     AutoEmbed autoEmbed() const { return m_autoEmbed; }
     void setAutoEmbed( AutoEmbed a ) { m_autoEmbed = a; }
 
-    const KMimeType::Ptr& mimeType() const { return m_mimetype; }
+    const QMimeType& mimeType() const { return m_mimetype; }
     bool canUseGroupSetting() const;
 
     void getAskSave(bool &);
@@ -105,7 +108,7 @@ public:
     bool matchesFilter(const QString& filter) const;
 
 private:
-    void initFromKMimeType();
+    void initFromQMimeType();
     AutoEmbed readAutoEmbed() const;
     void writeAutoEmbed();
     bool isMimeTypeDirty() const; // whether the mimetype definition file needs saving
@@ -116,7 +119,7 @@ private:
     void saveServices(KConfigGroup & config, const QStringList& services);
     void saveRemovedServices(KConfigGroup & config, const QStringList& services, const QStringList& oldServices);
 
-    KMimeType::Ptr m_mimetype; // 0 if this is data for a mimetype group (m_isGroup==true)
+    QMimeType m_mimetype;
     enum AskSave { AskSaveYes = 0, AskSaveNo = 1, AskSaveDefault = 2 };
     AskSave m_askSave:3;
     AutoEmbed m_autoEmbed:3;
@@ -125,6 +128,7 @@ private:
     bool m_isGroup:1;
     bool m_appServicesModified:1;
     bool m_embedServicesModified:1;
+    bool m_userSpecifiedIconModified:1;
     QString m_major, m_minor, m_comment, m_userSpecifiedIcon;
     QStringList m_patterns;
     mutable QStringList m_appServices;

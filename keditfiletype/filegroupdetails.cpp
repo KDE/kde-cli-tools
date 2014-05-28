@@ -25,7 +25,7 @@
 #include <QButtonGroup>
 #include <QGroupBox>
 
-#include <klocale.h>
+#include <klocalizedstring.h>
 
 FileGroupDetails::FileGroupDetails(QWidget *parent)
     : QWidget( parent )

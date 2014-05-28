@@ -25,21 +25,17 @@
 #include <unistd.h>
 
 // Qt
+#include <QBoxLayout>
+#include <QDebug>
 #include <QLayout>
-#include <QHBoxLayout>
+#include <QPushButton>
 #include <QStandardPaths>
 
 // KDE
-#include <kapplication.h>
-#include <kdebug.h>
-#include <klocale.h>
+#include <klocalizedstring.h>
 #include <kmessagebox.h>
-#include <knotification.h>
 #include <kopenwithdialog.h>
 #include <kpropertiesdialog.h>
-#include <kpushbutton.h>
-#include <kicon.h>
-#include <kstandarddirs.h>
 
 // Local
 #include "kserviceselectdlg.h"
@@ -59,10 +55,6 @@ KServiceListItem::KServiceListItem( const KService::Ptr& pService, int kind )
       localPath = pService->locateLocal();
 }
 
-bool KServiceListItem::isImmutable() const
-{
-    return !KStandardDirs::checkAccess(localPath, W_OK);
-}
 
 
 
@@ -99,8 +91,8 @@ KServiceListWidget::KServiceListWidget(int kind, QWidget *parent)
   QVBoxLayout *btnsLay= new QVBoxLayout();
   lay->addLayout(btnsLay);
 
-  servUpButton = new KPushButton(i18n("Move &Up"), this);
-  servUpButton->setIcon(KIcon("arrow-up"));
+  servUpButton = new QPushButton(i18n("Move &Up"), this);
+  servUpButton->setIcon(QIcon::fromTheme("arrow-up"));
   servUpButton->setEnabled(false);
   connect(servUpButton, SIGNAL(clicked()), SLOT(promoteService()));
   btnsLay->addWidget(servUpButton);
@@ -113,8 +105,8 @@ KServiceListWidget::KServiceListWidget(int kind, QWidget *parent)
                    i18n("Assigns a higher priority to the selected\n"
                         "service, moving it up in the list."));
 
-  servDownButton = new KPushButton(i18n("Move &Down"), this);
-  servDownButton->setIcon(KIcon("arrow-down"));
+  servDownButton = new QPushButton(i18n("Move &Down"), this);
+  servDownButton->setIcon(QIcon::fromTheme("arrow-down"));
   servDownButton->setEnabled(false);
   connect(servDownButton, SIGNAL(clicked()), SLOT(demoteService()));
   btnsLay->addWidget(servDownButton);
@@ -126,24 +118,24 @@ KServiceListWidget::KServiceListWidget(int kind, QWidget *parent)
                    i18n("Assigns a lower priority to the selected\n"
                         "service, moving it down in the list."));
 
-  servNewButton = new KPushButton(i18n("Add..."), this);
-  servNewButton->setIcon(KIcon("list-add"));
+  servNewButton = new QPushButton(i18n("Add..."), this);
+  servNewButton->setIcon(QIcon::fromTheme("list-add"));
   servNewButton->setEnabled(false);
   connect(servNewButton, SIGNAL(clicked()), SLOT(addService()));
   btnsLay->addWidget(servNewButton);
   servNewButton->setWhatsThis( i18n( "Add a new application for this file type." ) );
 
 
-  servEditButton = new KPushButton(i18n("Edit..."), this);
-  servEditButton->setIcon(KIcon("edit-rename"));
+  servEditButton = new QPushButton(i18n("Edit..."), this);
+  servEditButton->setIcon(QIcon::fromTheme("edit-rename"));
   servEditButton->setEnabled(false);
   connect(servEditButton, SIGNAL(clicked()), SLOT(editService()));
   btnsLay->addWidget(servEditButton);
   servEditButton->setWhatsThis( i18n( "Edit command line of the selected application." ) );
 
 
-  servRemoveButton = new KPushButton(i18n("Remove"), this);
-  servRemoveButton->setIcon(KIcon("list-remove"));
+  servRemoveButton = new QPushButton(i18n("Remove"), this);
+  servRemoveButton->setIcon(QIcon::fromTheme("list-remove"));
   servRemoveButton->setEnabled(false);
   connect(servRemoveButton, SIGNAL(clicked()), SLOT(removeService()));
   btnsLay->addWidget(servRemoveButton);
@@ -193,13 +185,11 @@ void KServiceListWidget::setMimeTypeData( MimeTypeData * mimeTypeData )
 void KServiceListWidget::promoteService()
 {
   if (!servicesLB->isEnabled()) {
-    KNotification::beep();
     return;
   }
 
   int selIndex = servicesLB->currentRow();
   if (selIndex == 0) {
-    KNotification::beep();
     return;
   }
 
@@ -216,13 +206,11 @@ void KServiceListWidget::promoteService()
 void KServiceListWidget::demoteService()
 {
   if (!servicesLB->isEnabled()) {
-    KNotification::beep();
     return;
   }
 
   int selIndex = servicesLB->currentRow();
   if (selIndex == servicesLB->count() - 1) {
-    KNotification::beep();
     return;
   }
 
@@ -365,19 +353,10 @@ void KServiceListWidget::removeService()
   int selected = servicesLB->currentRow();
 
   if ( selected >= 0 ) {
-    // Check if service is associated with this mimetype or with one of its parents
-    KServiceListItem *serviceItem = static_cast<KServiceListItem *>(servicesLB->item(selected));
-    if (serviceItem->isImmutable())
-    {
-       KMessageBox::sorry(this, i18n("You are not authorized to remove this service."));
-    }
-    else
-    {
-       delete servicesLB->takeItem( selected );
-       updatePreferredServices();
+    delete servicesLB->takeItem( selected );
+    updatePreferredServices();
 
-       emit changed(true);
-    }
+    emit changed(true);
   }
 
     // Update buttons and service list again (e.g. to re-add "None")

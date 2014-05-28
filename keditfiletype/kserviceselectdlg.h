@@ -17,10 +17,15 @@
 
 #ifndef __kserviceselectdlg_h
 #define __kserviceselectdlg_h
-#include <kdialog.h>
+
+#include <QDialog>
+#include <QListWidget>
+
 #include <kservice.h>
-#include <klistwidget.h>
-class KServiceSelectDlg : public KDialog
+
+class QDialogButtonBox;
+
+class KServiceSelectDlg : public QDialog
 {
     Q_OBJECT
 public:
@@ -41,10 +46,10 @@ public:
      * @return the chosen service
      */
     KService::Ptr service();
-protected slots:
-    void slotOk();
+
 private:
-    KListWidget * m_listbox;
+    QListWidget * m_listbox;
+    QDialogButtonBox* m_buttonBox;
 };
 
 #endif

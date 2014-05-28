@@ -10,7 +10,6 @@ set(libfiletypes_SRCS
  mimetypewriter.cpp
  newtypedlg.cpp
  kserviceselectdlg.cpp
- sharedmimeinfoversion.cpp
 )
 
 ########### next target ###############
@@ -19,7 +18,13 @@ set(kcm_filetypes_SRCS filetypesview.cpp ${libfiletypes_SRCS})
 
 add_library(kcm_filetypes MODULE ${kcm_filetypes_SRCS})
 
-target_link_libraries(kcm_filetypes KF5::KDE4Support KF5::KIOWidgets)
+target_link_libraries(kcm_filetypes
+    KF5::ConfigWidgets
+    KF5::IconThemes
+    KF5::I18n
+    KF5::KIOWidgets
+    Qt5::DBus
+)
 
 install(TARGETS kcm_filetypes  DESTINATION ${PLUGIN_INSTALL_DIR} )
 
@@ -29,7 +34,14 @@ set(keditfiletype_SRCS keditfiletype.cpp ${libfiletypes_SRCS})
 
 add_executable(keditfiletype5 ${keditfiletype_SRCS})
 
-target_link_libraries(keditfiletype5 KF5::KDE4Support KF5::KIOWidgets)
+target_link_libraries(keditfiletype5
+    KF5::ConfigCore
+    KF5::IconThemes
+    KF5::KIOWidgets
+    KF5::WindowSystem
+    KF5::I18n
+    Qt5::DBus
+)
 if (Q_WS_X11)
   target_link_libraries(keditfiletype5 ${X11_X11_LIB})
 endif ()

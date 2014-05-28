@@ -25,15 +25,16 @@
 #include <QGroupBox>
 #include <QListWidget>
 #include <kservice.h>
+
+class QPushButton;
+
 class MimeTypeData;
-class KPushButton;
 class KService;
 
 class KServiceListItem : public QListWidgetItem
 {
 public:
     KServiceListItem( const KService::Ptr& pService, int kind );
-    bool isImmutable() const;
     QString storageId;
     QString desktopPath;
     QString localPath;
@@ -71,8 +72,8 @@ protected:
 private:
   int m_kind;
   QListWidget *servicesLB;
-  KPushButton *servUpButton, *servDownButton;
-  KPushButton *servNewButton, *servEditButton, *servRemoveButton;
+  QPushButton *servUpButton, *servDownButton;
+  QPushButton *servNewButton, *servEditButton, *servRemoveButton;
   MimeTypeData *m_mimeTypeData;
 };
 
