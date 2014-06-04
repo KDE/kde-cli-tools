@@ -197,6 +197,11 @@ extern "C" Q_DECL_EXPORT int kdemain(int _argc, char *_argv[])
     KCmdLineArgs::addCmdLineOptions( options ); // Add our own options.
     KCMShell app;
 
+    QTranslator qtTranslator;
+    qtTranslator.load("qt_" + QLocale::system().name(),
+                      QLibraryInfo::location(QLibraryInfo::TranslationsPath));
+    app.installTranslator(&qtTranslator);
+
     const KCmdLineArgs *args = KCmdLineArgs::parsedArgs();
 
     const QString lang = args->getOption("lang");
