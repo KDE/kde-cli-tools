@@ -172,6 +172,7 @@ void KCMShell::appExit(const QString &appId, const QString &oldName, const QStri
 
 extern "C" Q_DECL_EXPORT int kdemain(int _argc, char *_argv[])
 {
+    KLocalizedString::setApplicationDomain("kcmshell");
     K4AboutData aboutData( "kcmshell5", 0, ki18n("KDE Control Module"),
                           KDE_VERSION_STRING,
                           ki18n("A tool to start single KDE control modules"),
