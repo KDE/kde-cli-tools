@@ -35,6 +35,7 @@ install(TARGETS kcm_filetypes  DESTINATION ${PLUGIN_INSTALL_DIR} )
 set(keditfiletype_SRCS keditfiletype.cpp ${libfiletypes_SRCS})
 
 add_executable(keditfiletype5 ${keditfiletype_SRCS})
+target_compile_definitions(keditfiletype5 PRIVATE -DPROJECT_VERSION="${PROJECT_VERSION}")
 
 target_link_libraries(keditfiletype5
     KF5::ConfigCore

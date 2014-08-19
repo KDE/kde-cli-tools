@@ -46,7 +46,7 @@
 static QLoggingCategory category("org.kde.kdesu");
 
 QByteArray command;
-const char *Version = "1.0";
+const char *Version = PROJECT_VERSION;
 
 // NOTE: if you change the position of the -u switch, be sure to adjust it
 // at the beginning of main()

@@ -289,7 +289,7 @@ void KStart::applyStyle(WId w ) {
 
 int main( int argc, char *argv[] )
 {
-  K4AboutData aboutData( "kstart", 0, ki18n("KStart"), KDE_VERSION_STRING,
+  K4AboutData aboutData( "kstart", 0, ki18n("KStart"), PROJECT_VERSION,
       ki18n(""
        "Utility to launch applications with special window properties \n"
        "such as iconified, maximized, a certain virtual desktop, a special decoration\n"

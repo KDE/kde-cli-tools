@@ -30,7 +30,7 @@
 
 int main(int argc, char *argv[])
 {
-    KCmdLineArgs::init( argc, argv, "kmimetypefinder", 0, ki18n("MimeType Finder"), KDE_VERSION_STRING , ki18n("Gives the mimetype for a given file"));
+    KCmdLineArgs::init( argc, argv, "kmimetypefinder", 0, ki18n("MimeType Finder"), PROJECT_VERSION , ki18n("Gives the mimetype for a given file"));
 
 
     KCmdLineOptions options;

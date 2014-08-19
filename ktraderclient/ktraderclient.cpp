@@ -27,7 +27,7 @@
 
 int main( int argc, char **argv )
 {
-  KCmdLineArgs::init( argc, argv, "ktraderclient", 0, ki18n("KTraderClient"), "0.0" , ki18n("A command-line tool for querying the KDE trader system"));
+  KCmdLineArgs::init( argc, argv, "ktraderclient", 0, ki18n("KTraderClient"), PROJECT_VERSION , ki18n("A command-line tool for querying the KDE trader system"));
 
 
   KCmdLineOptions options;

@@ -1,4 +1,5 @@
 add_executable(kdesu_executable kdesu.cpp sudlg.cpp)
+target_compile_definitions(kdesu_executable PRIVATE -DPROJECT_VERSION="${PROJECT_VERSION}")
 
 # in KDELibsDependencies.cmake installed by kdelibs there is a dependency to "kdesu"
 # which is then recognized here as the target name for this executable

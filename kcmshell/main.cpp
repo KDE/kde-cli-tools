@@ -174,7 +174,7 @@ extern "C" Q_DECL_EXPORT int kdemain(int _argc, char *_argv[])
 {
     KLocalizedString::setApplicationDomain("kcmshell");
     K4AboutData aboutData( "kcmshell5", 0, ki18n("KDE Control Module"),
-                          KDE_VERSION_STRING,
+                          PROJECT_VERSION,
                           ki18n("A tool to start single KDE control modules"),
                           K4AboutData::License_GPL,
                           ki18n("(c) 1999-2004, The KDE Developers") );

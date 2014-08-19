@@ -130,7 +130,7 @@ int main(int argc, char ** argv)
 {
     QApplication app(argc, argv);
 
-    KAboutData aboutData( "keditfiletype", i18n("KEditFileType"), "1.0",
+    KAboutData aboutData( "keditfiletype", i18n("KEditFileType"), PROJECT_VERSION,
        i18n("KDE file type editor - simplified version for editing a single file type"),
        KAboutLicense::GPL,
        i18n("(c) 2000, KDE developers") );
