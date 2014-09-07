@@ -23,13 +23,13 @@
 #include <kconfiggroup.h>
 #include <kdebug.h>
 #include <kdesktopfile.h>
-#include <kstandarddirs.h>
 #include <ksycoca.h>
 
 // Qt
 #include <QDir>
 #include <QStandardPaths>
 #include <QTest>
+#include <QSignalSpy>
 
 #include <mimetypedata.h>
 #include <mimetypewriter.h>
@@ -373,13 +373,18 @@ private: // helper methods
     {
         // Wait for notifyDatabaseChanged DBus signal
         // (The real KCM code simply does the refresh in a slot, asynchronously)
-        QEventLoop loop;
-        QObject::connect(KSycoca::self(), SIGNAL(databaseChanged(QStringList)), &loop, SLOT(quit()));
-        KProcess proc;
-        proc << KStandardDirs::findExe(KBUILDSYCOCA_EXENAME);
-        proc.setOutputChannelMode(KProcess::MergedChannels); // silence kbuildsycoca output
-        proc.execute();
-        loop.exec();
+
+        QProcess proc;
+        const QString kbuildsycoca = QStandardPaths::findExecutable(KBUILDSYCOCA_EXENAME);
+        QVERIFY(!kbuildsycoca.isEmpty());
+        QStringList args;
+        args << "--testmode";
+        proc.start(kbuildsycoca, args);
+        proc.waitForFinished();
+        qDebug() << "waiting for signal";
+        QSignalSpy spy(KSycoca::self(), SIGNAL(databaseChanged(QStringList)));
+        QVERIFY(spy.wait(10000));
+        qDebug() << "got signal";
     }
 
     bool createDesktopFile(const QString& path)
