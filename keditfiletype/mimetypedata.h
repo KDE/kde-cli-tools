@@ -117,6 +117,7 @@ private:
     void getMyServiceOffers() const;
     void syncServices();
     void saveServices(KConfigGroup & config, const QStringList& services);
+    void saveDefaultApplication(KConfigGroup & config, const QStringList& services);
     void saveRemovedServices(KConfigGroup & config, const QStringList& services, const QStringList& oldServices);
 
     QMimeType m_mimetype;

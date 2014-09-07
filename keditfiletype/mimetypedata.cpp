@@ -367,6 +367,9 @@ void MimeTypeData::syncServices()
 
     const QStringList oldAppServices = getAppOffers();
     if (oldAppServices != m_appServices) {
+        // Save the default application according to mime-apps-spec 1.0
+        KConfigGroup defaultApp(profile, "Default Applications");
+        saveDefaultApplication(defaultApp, m_appServices);
         // Save preferred services
         KConfigGroup addedApps(profile, "Added Associations");
         saveServices(addedApps, m_appServices);
@@ -430,6 +433,14 @@ void MimeTypeData::saveServices(KConfigGroup & config, const QStringList& servic
         config.deleteEntry(name());
     else
         config.writeXdgListEntry(name(), collectStorageIds(services));
+}
+
+void MimeTypeData::saveDefaultApplication(KConfigGroup & config, const QStringList& services)
+{
+    if (services.isEmpty())
+        config.deleteEntry(name());
+    else
+        config.writeXdgListEntry(name(), QStringList(collectStorageIds(services).first()));
 }
 
 void MimeTypeData::refresh()
