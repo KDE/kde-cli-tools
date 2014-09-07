@@ -137,6 +137,7 @@ private Q_SLOTS:
 
     void testMimeTypePatterns()
     {
+        // Given the text/plain mimetype
         QMimeDatabase db;
         MimeTypeData data(db.mimeTypeForName("text/plain"));
         QCOMPARE(data.name(), QString("text/plain"));
@@ -146,6 +147,8 @@ private Q_SLOTS:
         QStringList patterns = data.patterns();
         QVERIFY(patterns.contains("*.txt"));
         QVERIFY(!patterns.contains("*.toto"));
+
+        // When the user changes the patterns
         const QStringList origPatterns = patterns;
         patterns.removeAll("*.txt");
         patterns.append("*.toto"); // yes, a french guy wrote this, as you can see
@@ -156,23 +159,23 @@ private Q_SLOTS:
         bool needUpdateMimeDb = data.sync();
         QVERIFY(needUpdateMimeDb);
         MimeTypeWriter::runUpdateMimeDatabase();
-        //runKBuildSycoca();
+
+        // Then the GUI and the QMimeDatabase API should show the new patterns
         QCOMPARE(data.patterns(), patterns);
         data.refresh(); // reload from the xml
         QCOMPARE(data.patterns(), patterns);
-        // Check what's in ksycoca
+        // Check what's in QMimeDatabase
         QStringList newPatterns = db.mimeTypeForName("text/plain").globPatterns();
         newPatterns.sort();
         QCOMPARE(newPatterns, patterns);
         QVERIFY(!data.isDirty());
 
-        // Remove custom file
+        // And then removing the custom file by hand should revert to the initial state
         const QString packageFileName = QStandardPaths::writableLocation(QStandardPaths::GenericDataLocation) + QLatin1String("/mime/") + "packages/text-plain.xml" ;
         QVERIFY(!packageFileName.isEmpty());
         QFile::remove(packageFileName);
         MimeTypeWriter::runUpdateMimeDatabase();
-        //runKBuildSycoca();
-        // Check what's in ksycoca
+        // Check what's in QMimeDatabase
         newPatterns = db.mimeTypeForName("text/plain").globPatterns();
         newPatterns.sort();
         QCOMPARE(newPatterns, origPatterns);
