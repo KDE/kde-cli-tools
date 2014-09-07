@@ -24,7 +24,7 @@ target_link_libraries(kcm_filetypes
     KF5::ConfigWidgets
     KF5::IconThemes
     KF5::I18n
-    KF5::KIOWidgets
+    KF5::KIOWidgets # KOpenWithDialog, KBuildSycocaProgressDialog
     Qt5::DBus
 )
 
@@ -40,7 +40,7 @@ target_compile_definitions(keditfiletype5 PRIVATE -DPROJECT_VERSION="${PROJECT_V
 target_link_libraries(keditfiletype5
     KF5::ConfigCore
     KF5::IconThemes
-    KF5::KIOWidgets
+    KF5::KIOWidgets # KOpenWithDialog, KBuildSycocaProgressDialog
     KF5::WindowSystem
     KF5::I18n
     Qt5::DBus
