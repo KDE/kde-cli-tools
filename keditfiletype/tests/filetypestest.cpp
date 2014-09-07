@@ -53,9 +53,10 @@ private Q_SLOTS:
         QStringList appsDirs = QStandardPaths::standardLocations(QStandardPaths::ApplicationsLocation);
         //kDebug() << appsDirs;
         m_localApps = appsDirs.first() + '/';
+        m_localConfig = QStandardPaths::writableLocation(QStandardPaths::GenericConfigLocation);
         QVERIFY(QDir().mkpath(QStandardPaths::writableLocation(QStandardPaths::GenericDataLocation) + QStringLiteral("/mime/packages")));
 
-        QFile::remove(m_localApps + "mimeapps.list");
+        QFile::remove(m_localConfig + "mimeapps.list");
 
         // Create fake applications for some tests below.
         bool mustUpdateKSycoca = false;
@@ -74,7 +75,7 @@ private Q_SLOTS:
             mustUpdateKSycoca = true;
         }
 
-        QFile::remove(QStandardPaths::writableLocation(QStandardPaths::ConfigLocation) + QLatin1Char('/') + "filetypesrc");
+        QFile::remove(QStandardPaths::writableLocation(QStandardPaths::GenericConfigLocation) + QLatin1Char('/') + "filetypesrc");
 
         if ( mustUpdateKSycoca ) {
             // Update ksycoca in ~/.kde-unit-test after creating the above
@@ -338,7 +339,7 @@ private: // helper methods
 
     void checkAddedAssociationsContains(const QString& mimeTypeName, const QString& application)
     {
-        const KConfig config(m_localApps + "mimeapps.list", KConfig::NoGlobals);
+        const KConfig config(m_localConfig + "mimeapps.list", KConfig::NoGlobals);
         const KConfigGroup group(&config, "Added Associations");
         const QStringList addedEntries = group.readXdgListEntry(mimeTypeName);
         if (!addedEntries.contains(application)) {
@@ -349,7 +350,7 @@ private: // helper methods
 
     void checkRemovedAssociationsContains(const QString& mimeTypeName, const QString& application)
     {
-        const KConfig config(m_localApps + "mimeapps.list", KConfig::NoGlobals);
+        const KConfig config(m_localConfig + "mimeapps.list", KConfig::NoGlobals);
         const KConfigGroup group(&config, "Removed Associations");
         const QStringList removedEntries = group.readXdgListEntry(mimeTypeName);
         if (!removedEntries.contains(application)) {
@@ -360,7 +361,7 @@ private: // helper methods
 
     void checkRemovedAssociationsDoesNotContain(const QString& mimeTypeName, const QString& application)
     {
-        const KConfig config(m_localApps + "mimeapps.list", KConfig::NoGlobals);
+        const KConfig config(m_localConfig + "mimeapps.list", KConfig::NoGlobals);
         const KConfigGroup group(&config, "Removed Associations");
         const QStringList removedEntries = group.readXdgListEntry(mimeTypeName);
         if (removedEntries.contains(application)) {
@@ -375,6 +376,7 @@ private: // helper methods
         // (The real KCM code simply does the refresh in a slot, asynchronously)
 
         QProcess proc;
+        //proc.setProcessChannelMode(QProcess::ForwardedChannels);
         const QString kbuildsycoca = QStandardPaths::findExecutable(KBUILDSYCOCA_EXENAME);
         QVERIFY(!kbuildsycoca.isEmpty());
         QStringList args;
@@ -413,6 +415,7 @@ private: // helper methods
     QString fakeApplication; // storage id of the fake application
     QString fakeApplication2; // storage id of the fake application2
     QString m_localApps;
+    QString m_localConfig;
     bool m_mimeTypeCreatedSuccessfully;
 };
 
