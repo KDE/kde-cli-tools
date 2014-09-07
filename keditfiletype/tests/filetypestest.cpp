@@ -52,7 +52,7 @@ private Q_SLOTS:
         m_mimeTypeCreatedSuccessfully = false;
         QStringList appsDirs = QStandardPaths::standardLocations(QStandardPaths::ApplicationsLocation);
         //kDebug() << appsDirs;
-        m_localApps = appsDirs.first();
+        m_localApps = appsDirs.first() + '/';
         QVERIFY(QDir().mkpath(QStandardPaths::writableLocation(QStandardPaths::GenericDataLocation) + QStringLiteral("/mime/packages")));
 
         QFile::remove(m_localApps + "mimeapps.list");
