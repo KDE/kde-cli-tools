@@ -89,7 +89,7 @@ int main(int argc, char *argv[])
             "jansen@kde.org", "http://www.stack.nl/~geertj/");
     aboutData.addAuthor(i18n("Pietro Iglio"), i18n("Original author"),
             "iglio@fub.it");
-    aboutData.setProgramIconName("dialog-password");
+    app.setWindowIcon(QIcon::fromTheme("dialog-password"));
 
     KAboutData::setApplicationData(aboutData);
 

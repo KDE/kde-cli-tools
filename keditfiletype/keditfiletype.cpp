@@ -136,7 +136,7 @@ int main(int argc, char ** argv)
        i18n("(c) 2000, KDE developers") );
     aboutData.addAuthor(i18n("Preston Brown"), QString(), "pbrown@kde.org");
     aboutData.addAuthor(i18n("David Faure"), QString(), "faure@kde.org");
-    aboutData.setProgramIconName("preferences-desktop-filetype-association");
+    app.setWindowIcon(QIcon::fromTheme("preferences-desktop-filetype-association"));
     KAboutData::setApplicationData(aboutData);
 
     QCommandLineParser parser;
