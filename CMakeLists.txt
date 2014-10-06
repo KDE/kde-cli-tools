@@ -37,7 +37,7 @@ find_package(KF5 REQUIRED COMPONENTS
     I18n
     KCMUtils
     Su
-    KDE4Support
+    KDELibs4Support
     WindowSystem
 )
 

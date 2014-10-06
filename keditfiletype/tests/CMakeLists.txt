@@ -9,5 +9,5 @@ add_executable(filetypestest
 )
 ecm_mark_as_test(filetypestest)
 add_test(filetypestest filetypestest)
-target_link_libraries(filetypestest KF5::KDE4Support KF5::KIOCore
+target_link_libraries(filetypestest KF5::KDELibs4Support KF5::KIOCore
                       Qt5::Core Qt5::Gui Qt5::Test)
