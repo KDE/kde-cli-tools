@@ -129,14 +129,14 @@ void FileTypeDialog::slotDatabaseChanged(const QStringList& changedResources)
 int main(int argc, char ** argv)
 {
     QApplication app(argc, argv);
+    QApplication::setWindowIcon(QIcon::fromTheme("preferences-desktop-filetype-association"));
 
-    KAboutData aboutData( "keditfiletype", i18n("KEditFileType"), PROJECT_VERSION,
+    KAboutData aboutData( "keditfiletype", i18n("File Type Editor"), PROJECT_VERSION,
        i18n("KDE file type editor - simplified version for editing a single file type"),
        KAboutLicense::GPL,
        i18n("(c) 2000, KDE developers") );
     aboutData.addAuthor(i18n("Preston Brown"), QString(), "pbrown@kde.org");
     aboutData.addAuthor(i18n("David Faure"), QString(), "faure@kde.org");
-    app.setWindowIcon(QIcon::fromTheme("preferences-desktop-filetype-association"));
     KAboutData::setApplicationData(aboutData);
 
     QCommandLineParser parser;
