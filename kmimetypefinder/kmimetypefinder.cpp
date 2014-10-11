@@ -19,7 +19,7 @@
 
 #include <QFile>
 
-#include <kmimetype.h>
+#include <qmimetype.h>
 #include <kcmdlineargs.h>
 #include <QCoreApplication>
 #include <kdeversion.h>
@@ -27,6 +27,8 @@
 #include <kcomponentdata.h>
 
 #include <stdio.h>
+#include <QMimeDatabase>
+#include <QMimeType>
 
 int main(int argc, char *argv[])
 {
@@ -50,21 +52,22 @@ int main(int argc, char *argv[])
         return 1;
     }
     const QString fileName = args->arg( 0 );
-    int accuracy;
-    KMimeType::Ptr mime;
+    QMimeDatabase db;
+    QMimeType mime;
     if (fileName == QLatin1String("-")) {
         QFile qstdin;
         qstdin.open(stdin, QIODevice::ReadOnly);
         const QByteArray data = qstdin.readAll();
-        mime = KMimeType::findByContent(data, &accuracy);
+        mime = db.mimeTypeForData(data);
     } else if (args->isSet("c")) {
-        mime = KMimeType::findByFileContent(fileName, &accuracy);
+        mime = db.mimeTypeForFile(fileName, QMimeDatabase::MatchContent);
+    } else if (args->isSet("f")) {
+        mime = db.mimeTypeForFile(fileName, QMimeDatabase::MatchExtension);
     } else {
-        mime = KMimeType::findByPath(fileName, 0, args->isSet("f"), &accuracy);
+        mime = db.mimeTypeForFile(fileName);
     }
-    if ( mime && mime->name() != KMimeType::defaultMimeType() ) {
-        printf("%s\n", mime->name().toLatin1().constData());
-        printf("(accuracy %d)\n", accuracy);
+    if ( !mime.isDefault() ) {
+        printf("%s\n", mime.name().toLatin1().constData());
     } else {
         return 1; // error
     }
