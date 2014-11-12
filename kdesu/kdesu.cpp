@@ -108,12 +108,14 @@ int main(int argc, char *argv[])
     parser.addOption(QCommandLineOption("noignorebutton", i18n("Do not display ignore button")));
     parser.addOption(QCommandLineOption("i", i18n("Specify icon to use in the password dialog"), "icon name"));
     parser.addOption(QCommandLineOption("d", i18n("Do not show the command to be run in the dialog")));
-#ifdef Q_WS_X11
+#ifdef HAVE_X11
     /* KDialog originally used --embed for attaching the dialog box.  However this is misleading and so we changed to --attach.
      * For consistancy, we silently map --embed to --attach */
     parser.addOption(QCommandLineOption("attach", i18nc("Transient means that the kdesu app will be attached to the app specified by the winid so that it is like a dialog box rather than some separate program", "Makes the dialog transient for an X app specified by winid"), "winid"));
-    parser.addOption(QCommandLineOption("embed", i18n("Embed into a window", "winid"));
+    parser.addOption(QCommandLineOption("embed", i18n("Embed into a window"), "winid"));
 #endif
+    parser.addHelpOption();
+    parser.addVersionOption();
 
 
     //KApplication::disableAutoDcopRegistration();
@@ -126,9 +128,9 @@ int main(int argc, char *argv[])
         setenv( "SESSION_MANAGER", session_manager.data(), 1 );
 
     {
-#ifdef Q_WS_X11
+#ifdef HAVE_X11
         KStartupInfoId id;
-        id.initId( kapp->startupId());
+        id.initId();
         id.setupStartupEnv(); // make DESKTOP_STARTUP_ID env. var. available again
 #endif
     }
@@ -285,7 +287,7 @@ static int startApp(QCommandLineParser& p)
     // Try to exec the command with kdesud.
     bool keep = !p.isSet("n") && have_daemon;
     bool terminal = p.isSet("t");
-    bool withIgnoreButton = p.isSet("ignorebutton");
+    bool withIgnoreButton = !p.isSet("noignorebutton");
     int winid = -1;
     bool attach = p.isSet("attach");
     if(attach) {
@@ -371,9 +373,9 @@ static int startApp(QCommandLineParser& p)
     QString password;
     if (needpw)
     {
-#ifdef Q_WS_X11
+#ifdef HAVE_X11
         KStartupInfoId id;
-        id.initId( kapp->startupId());
+        id.initId();
         KStartupInfoData data;
         data.setSilent( KStartupInfoData::Yes );
         KStartupInfo::sendChange( id, data );
@@ -395,14 +397,14 @@ static int startApp(QCommandLineParser& p)
         }
 
 	//Attach dialog
-#ifdef Q_WS_X11
+#ifdef HAVE_X11
 	if(attach)
             KWindowSystem::setMainWindow(&dlg, (WId)winid);
 #endif
         int ret = dlg.exec();
         if (ret == KDEsuDialog::Rejected)
         {
-#ifdef Q_WS_X11
+#ifdef HAVE_X11
             KStartupInfo::sendFinish( id );
 #endif
             p.showHelp(1);
@@ -411,7 +413,7 @@ static int startApp(QCommandLineParser& p)
             change_uid = false;
         password = dlg.password();
         keep = dlg.keepPassword();
-#ifdef Q_WS_X11
+#ifdef HAVE_X11
         data.setSilent( KStartupInfoData::No );
         KStartupInfo::sendChange( id, data );
 #endif

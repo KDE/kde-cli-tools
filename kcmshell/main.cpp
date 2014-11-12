@@ -19,6 +19,8 @@
 
 */
 
+#include <config-kde-cli-tools.h>
+
 #include "main.h"
 
 #include <iostream>
@@ -133,7 +135,7 @@ void KCMShellMultiDialog::activate( const QByteArray& asn_id )
 {
     kDebug(debugArea()) ;
 
-#ifdef Q_WS_X11
+#ifdef HAVE_X11
     KStartupInfo::setNewStartupId( this, asn_id );
 #endif
 }
