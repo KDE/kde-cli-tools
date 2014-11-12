@@ -41,6 +41,11 @@ find_package(KF5 REQUIRED COMPONENTS
     WindowSystem
 )
 
+find_package(X11)
+if(X11_FOUND AND XCB_XCB_FOUND)
+  set(HAVE_X11 1)
+endif()
+
 feature_summary(WHAT ALL INCLUDE_QUIET_PACKAGES FATAL_ON_MISSING_REQUIRED_PACKAGES)
 
 include(KDEInstallDirs)
