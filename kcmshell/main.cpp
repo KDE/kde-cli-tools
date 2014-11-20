@@ -278,7 +278,7 @@ extern "C" Q_DECL_EXPORT int kdemain(int _argc, char *_argv[])
     KPageDialog::FaceType ftype = KPageDialog::Plain;
 
     if (modules.count() < 1) {
-        return 0;
+        return -1;
     } else if (modules.count() > 1) {
         ftype = KPageDialog::List;
     }
