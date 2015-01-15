@@ -42,7 +42,6 @@
 #include <QCommandLineParser>
 #include <QCommandLineOption>
 
-#include "main.moc"
 
 using namespace std;
 

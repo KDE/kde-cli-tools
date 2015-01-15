@@ -361,4 +361,3 @@ void FileTypeDetails::refresh()
     setMimeTypeData(m_mimeTypeData, m_item);
 }
 
-#include "filetypedetails.moc"

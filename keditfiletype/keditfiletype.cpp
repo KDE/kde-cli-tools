@@ -124,7 +124,6 @@ void FileTypeDialog::slotDatabaseChanged(const QStringList& changedResources)
     }
 }
 
-#include "keditfiletype.moc"
 
 int main(int argc, char ** argv)
 {

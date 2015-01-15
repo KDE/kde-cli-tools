@@ -16,7 +16,6 @@
 */
 
 #include "kserviceselectdlg.h"
-#include "kserviceselectdlg.moc"
 #include "kservicelistwidget.h"
 
 #include <QDialogButtonBox>
