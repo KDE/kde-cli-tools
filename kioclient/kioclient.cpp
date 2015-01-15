@@ -297,10 +297,6 @@ bool ClientApp::doIt(const QCommandLineParser& parser)
     }
 #endif
 
-    // KIO needs dbus (for uiserver communication)
-    if (!QDBusConnection::sessionBus().isConnected())
-        qFatal("Session bus not found");
-
 #ifdef KIOCLIENT_AS_KDEOPEN
     return kde_open(makeURL(parser.positionalArguments().at(0)), QByteArray(), false);
 #elif defined(KIOCLIENT_AS_KDECP)
