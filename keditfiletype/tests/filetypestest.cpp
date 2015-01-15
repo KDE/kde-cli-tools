@@ -21,7 +21,6 @@
 #include <kservice.h>
 
 #include <kconfiggroup.h>
-#include <kdebug.h>
 #include <kdesktopfile.h>
 #include <ksycoca.h>
 
@@ -51,7 +50,7 @@ private Q_SLOTS:
 
         m_mimeTypeCreatedSuccessfully = false;
         QStringList appsDirs = QStandardPaths::standardLocations(QStandardPaths::ApplicationsLocation);
-        //kDebug() << appsDirs;
+        //qDebug() << appsDirs;
         m_localApps = appsDirs.first() + '/';
         m_localConfig = QStandardPaths::writableLocation(QStandardPaths::GenericConfigLocation);
         QVERIFY(QDir().mkpath(QStandardPaths::writableLocation(QStandardPaths::GenericDataLocation) + QStringLiteral("/mime/packages")));
@@ -187,7 +186,7 @@ private Q_SLOTS:
         const char* mimeTypeName = "application/rtf"; // use inherited mimetype to test #321706
         MimeTypeData data(db.mimeTypeForName(mimeTypeName));
         QStringList appServices = data.appServices();
-        //kDebug() << appServices;
+        //qDebug() << appServices;
         QVERIFY(!appServices.isEmpty());
         const QString oldPreferredApp = appServices.first();
         QVERIFY(!appServices.contains(fakeApplication)); // already there? hmm can't really test then
@@ -234,7 +233,7 @@ private Q_SLOTS:
         const char* mimeTypeName = "image/png";
         MimeTypeData data(db.mimeTypeForName(mimeTypeName));
         QStringList appServices = data.appServices();
-        kDebug() << "initial list for" << mimeTypeName << appServices;
+        qDebug() << "initial list for" << mimeTypeName << appServices;
         QVERIFY(appServices.removeAll(fakeApplication) > 0);
         data.setAppServices(appServices);
         QVERIFY(!data.sync()); // success, but no need to run update-mime-database
@@ -245,7 +244,7 @@ private Q_SLOTS:
         checkRemovedAssociationsContains(mimeTypeName, fakeApplication);
 
         // Remove fakeApplication2 from image/png; must keep the previous entry in "Removed Associations"
-        kDebug() << "Removing fakeApplication2";
+        qDebug() << "Removing fakeApplication2";
         QVERIFY(appServices.removeAll(fakeApplication2) > 0);
         data.setAppServices(appServices);
         QVERIFY(!data.sync()); // success, but no need to run update-mime-database
@@ -258,7 +257,7 @@ private Q_SLOTS:
         checkRemovedAssociationsContains(mimeTypeName, fakeApplication2);
 
         // And now re-add fakeApplication2...
-        kDebug() << "Re-adding fakeApplication2";
+        qDebug() << "Re-adding fakeApplication2";
         appServices.prepend(fakeApplication2);
         data.setAppServices(appServices);
         QVERIFY(!data.sync()); // success, but no need to run update-mime-database
@@ -346,7 +345,7 @@ private: // helper methods
         const KConfigGroup group(&config, "Added Associations");
         const QStringList addedEntries = group.readXdgListEntry(mimeTypeName);
         if (!addedEntries.contains(application)) {
-            kWarning() << addedEntries << "does not contain" << application;
+            qWarning() << addedEntries << "does not contain" << application;
             QVERIFY(addedEntries.contains(application));
         }
     }
@@ -357,7 +356,7 @@ private: // helper methods
         const KConfigGroup group(&config, "Removed Associations");
         const QStringList removedEntries = group.readXdgListEntry(mimeTypeName);
         if (!removedEntries.contains(application)) {
-            kWarning() << removedEntries << "does not contain" << application;
+            qWarning() << removedEntries << "does not contain" << application;
             QVERIFY(removedEntries.contains(application));
         }
     }
@@ -368,7 +367,7 @@ private: // helper methods
         const KConfigGroup group(&config, "Removed Associations");
         const QStringList removedEntries = group.readXdgListEntry(mimeTypeName);
         if (removedEntries.contains(application)) {
-            kWarning() << removedEntries << "contains" << application;
+            qWarning() << removedEntries << "contains" << application;
             QVERIFY(!removedEntries.contains(application));
         }
     }
@@ -411,7 +410,7 @@ private: // helper methods
         QMimeDatabase db;
         MimeTypeData data2(db.mimeTypeForName(mimeTypeName));
         if (data2.appServices() != expectedServices)
-            kDebug() << "got" << data2.appServices() << "expected" << expectedServices;
+            qDebug() << "got" << data2.appServices() << "expected" << expectedServices;
         QCOMPARE(data2.appServices(), expectedServices);
     }
 
