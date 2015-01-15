@@ -16,40 +16,44 @@
  *  Boston, MA 02110-1301, USA.
  */
 
-#include <kcmdlineargs.h>
+
 #include <kmimetypetrader.h>
-#include <kmimetype.h>
-#include <kapplication.h>
-#include <klocale.h>
 #include <kservicetypetrader.h>
 
 #include <stdio.h>
+#include <QCoreApplication>
+#include <KAboutData>
+#include <KLocalizedString>
+#include <QCommandLineParser>
+#include <QCommandLineOption>
 
 int main( int argc, char **argv )
 {
-  KCmdLineArgs::init( argc, argv, "ktraderclient", 0, ki18n("KTraderClient"), PROJECT_VERSION , ki18n("A command-line tool for querying the KDE trader system"));
+    QCoreApplication app(argc, argv);
 
+    KAboutData aboutData(QLatin1String("ktraderclient"), i18n("KTraderClient"), QLatin1String(PROJECT_VERSION));
+    aboutData.addAuthor(i18n("David Faure"), QString(), "faure@kde.org");
 
-  KCmdLineOptions options;
+    aboutData.setShortDescription(i18n("A command-line tool for querying the KDE trader system"));
+    QCommandLineParser parser;
+    KAboutData::setApplicationData(aboutData);
+    parser.addVersionOption();
+    parser.addHelpOption();
+    aboutData.setupCommandLine(&parser);
 
-  options.add("mimetype <mimetype>", ki18n("A mimetype"));
+    parser.addOption(QCommandLineOption(QStringList() << QLatin1String("mimetype"), i18n("A mimetype"), QLatin1String("mimetype")));
+    parser.addOption(QCommandLineOption(QStringList() << QLatin1String("servicetype"), i18n("A servicetype, like KParts/ReadOnlyPart or KMyApp/Plugin"), QLatin1String("servicetype")));
+    parser.addOption(QCommandLineOption(QStringList() << QLatin1String("constraint"), i18n("A constraint expressed in the trader query language"), QLatin1String("constraint")));
 
-  options.add("servicetype <servicetype>", ki18n("A servicetype, like KParts/ReadOnlyPart or KMyApp/Plugin"));
+    parser.process(app);
+    aboutData.processCommandLine(&parser);
 
-  options.add("constraint <constraint>", ki18n("A constraint expressed in the trader query language"));
-
-  KCmdLineArgs::addCmdLineOptions( options );
-
-  KApplication app( false ); // no GUI
-
-  KCmdLineArgs *args = KCmdLineArgs::parsedArgs();
-
-  const QString mimetype = args->getOption( "mimetype" );
-  QString servicetype = args->getOption( "servicetype" );
-  const QString constraint = args->getOption( "constraint" );
+    const QString mimetype = parser.value("mimetype");
+    QString servicetype = parser.value("servicetype");
+    const QString constraint = parser.value("constraint");
 
   if ( mimetype.isEmpty() && servicetype.isEmpty() )
-      KCmdLineArgs::usage();
+      parser.showHelp();
 
   if ( !mimetype.isEmpty() )
       printf( "mimetype is : %s\n", qPrintable( mimetype ) );
@@ -85,7 +89,7 @@ int main( int argc, char **argv )
       if ( !prop.isValid() )
       {
         printf("Invalid property %s\n", (*propIt).toLocal8Bit().data());
-	continue;
+        continue;
       }
 
       QString outp = *propIt;
