@@ -69,7 +69,7 @@ QList<QUrl> makeUrls(const QStringList& urlArgs)
     return ret;
 }
 
-#ifdef KIOCLIENT_AS_KIOCLIENT
+#ifdef KIOCLIENT_AS_KIOCLIENT5
 static void usage()
 {
     puts(i18n("\nSyntax:\n").toLocal8Bit());
@@ -149,13 +149,13 @@ int main( int argc, char **argv )
 
   #if defined(KIOCLIENT_AS_KDEOPEN)
   parser.addPositionalArgument("url", i18n("file or URL"), i18n("urls..."));
-  #elif defined(KIOCLIENT_AS_KDECP)
+  #elif defined(KIOCLIENT_AS_KDECP5)
   parser.addPositionalArgument("src", i18n("Source URL or URLs"), i18n("urls..."));
   parser.addPositionalArgument("dest", i18n("Destination URL"), i18n("url"));
-  #elif defined(KIOCLIENT_AS_KDEMV)
+  #elif defined(KIOCLIENT_AS_KDEMV5)
   parser.addPositionalArgument("src", i18n("Source URL or URLs"), i18n("urls..."));
   parser.addPositionalArgument("dest", i18n("Destination URL"), i18n("url"));
-  #elif defined(KIOCLIENT_AS_KIOCLIENT)
+  #elif defined(KIOCLIENT_AS_KIOCLIENT5)
   parser.addOption(QCommandLineOption("commands", i18n("Show available commands")));
   parser.addPositionalArgument("command", i18n("Command (see --commands)"), i18n("command"));
   parser.addPositionalArgument("URLs", i18n("Arguments for command"), i18n("urls..."));
@@ -167,7 +167,7 @@ int main( int argc, char **argv )
   parser.process(app);
   data.processCommandLine(&parser);
 
-#ifdef KIOCLIENT_AS_KIOCLIENT
+#ifdef KIOCLIENT_AS_KIOCLIENT5
   if ( argc == 1 || parser.isSet("commands") )
   {
     puts(parser.helpText().toLocal8Bit());
@@ -303,10 +303,10 @@ bool ClientApp::doIt(const QCommandLineParser& parser)
 
 #ifdef KIOCLIENT_AS_KDEOPEN
     return kde_open(makeURL(parser.positionalArguments().at(0)), QByteArray(), false);
-#elif defined(KIOCLIENT_AS_KDECP)
+#elif defined(KIOCLIENT_AS_KDECP5)
     checkArgumentCount(argc, 2, 0);
     return doCopy(parser.positionalArguments());
-#elif defined(KIOCLIENT_AS_KDEMV)
+#elif defined(KIOCLIENT_AS_KDEMV5)
     checkArgumentCount(argc, 2, 0);
     return doMove(parser.positionalArguments());
 #else
