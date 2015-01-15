@@ -28,31 +28,25 @@
 #include <QtDBus/QtDBus>
 
 #include <KAboutData>
-#include <KApplication>
+#include <QApplication>
 #include <KAuthorized>
-#include <KCmdLineArgs>
+
 #include <KCModuleInfo>
 #include <KCMultiDialog>
-#include <KDebug>
-#include <KLocale>
+#include <QDebug>
+#include <KLocalizedString>
 #include <KServiceTypeTrader>
 #include <KStartupInfo>
-#include <KGlobal>
-#include <KIcon>
-#include <kdeversion.h>
+#include <QIcon>
 
-#include <k4aboutdata.h>
+#include <QCommandLineParser>
+#include <QCommandLineOption>
 
 #include "main.moc"
 
 using namespace std;
 
 KService::List m_modules;
-
-static int debugArea() {
-    static int s_area = KDebug::registerArea("kcmshell");
-    return s_area;
-}
 
 static bool caseInsensitiveLessThan(const KService::Ptr s1, const KService::Ptr s2)
 {
@@ -95,7 +89,7 @@ static KService::Ptr locateModule(const QString& module)
     }
 
     if ( service->noDisplay() ) {
-        kDebug(debugArea()) << module << " should not be loaded.";
+        qDebug() << module << "should not be loaded.";
         return KService::Ptr();
     }
 
@@ -108,14 +102,13 @@ bool KCMShell::isRunning()
     if( owner == QDBusConnection::sessionBus().baseService() )
         return false; // We are the one and only.
 
-    kDebug(debugArea()) << "kcmshell5 with modules '" <<
-        m_serviceName << "' is already running." << endl;
+    qDebug() << "kcmshell5 with modules '" << m_serviceName << "' is already running.";
 
     QDBusInterface iface(m_serviceName, "/KCModule/dialog", "org.kde.KCMShellMultiDialog");
-    QDBusReply<void> reply = iface.call("activate", kapp->startupId());
+    QDBusReply<void> reply = iface.call("activate", KStartupInfo::startupId());
     if (!reply.isValid())
     {
-        kDebug(debugArea()) << "Calling D-Bus function dialog::activate() failed.";
+        qDebug() << "Calling D-Bus function dialog::activate() failed.";
         return false; // Error, we have to do it ourselves.
     }
 
@@ -133,8 +126,6 @@ KCMShellMultiDialog::KCMShellMultiDialog(KPageDialog::FaceType dialogFace, QWidg
 
 void KCMShellMultiDialog::activate( const QByteArray& asn_id )
 {
-    kDebug(debugArea()) ;
-
 #ifdef HAVE_X11
     KStartupInfo::setNewStartupId( this, asn_id );
 #endif
@@ -148,8 +139,6 @@ void KCMShell::setServiceName(const QString &dbusName )
 
 void KCMShell::waitForExit()
 {
-    kDebug(debugArea());
-
     QDBusServiceWatcher *watcher = new QDBusServiceWatcher(this);
     watcher->setConnection(QDBusConnection::sessionBus());
     watcher->setWatchMode(QDBusServiceWatcher::WatchForOwnerChange);
@@ -163,55 +152,61 @@ void KCMShell::appExit(const QString &appId, const QString &oldName, const QStri
 {
     Q_UNUSED(appId);
     Q_UNUSED(newName);
-    kDebug(debugArea());
 
     if (!oldName.isEmpty())
     {
-        kDebug(debugArea()) << "'" << appId << "' closed, dereferencing.";
-        KGlobal::deref();
+        qDebug() << "'" << appId << "' closed, quitting.";
+        qApp->quit();
     }
 }
 
 extern "C" Q_DECL_EXPORT int kdemain(int _argc, char *_argv[])
 {
     KLocalizedString::setApplicationDomain("kcmshell");
-    K4AboutData aboutData( "kcmshell5", 0, ki18n("KDE Control Module"),
+
+    KCMShell app(_argc, _argv);
+
+    KAboutData aboutData( "kcmshell5", i18n("KDE Control Module"),
                           PROJECT_VERSION,
-                          ki18n("A tool to start single KDE control modules"),
-                          K4AboutData::License_GPL,
-                          ki18n("(c) 1999-2004, The KDE Developers") );
+                          i18n("A tool to start single KDE control modules"),
+                          KAboutLicense::GPL,
+                          i18n("(c) 1999-2015, The KDE Developers") );
 
-    aboutData.addAuthor(ki18n("Frans Englich"), ki18n("Maintainer"), "frans.englich@kde.org");
-    aboutData.addAuthor(ki18n("Daniel Molkentin"), KLocalizedString(), "molkentin@kde.org");
-    aboutData.addAuthor(ki18n("Matthias Hoelzer-Kluepfel"),KLocalizedString(), "hoelzer@kde.org");
-    aboutData.addAuthor(ki18n("Matthias Elter"),KLocalizedString(), "elter@kde.org");
-    aboutData.addAuthor(ki18n("Matthias Ettrich"),KLocalizedString(), "ettrich@kde.org");
-    aboutData.addAuthor(ki18n("Waldo Bastian"),KLocalizedString(), "bastian@kde.org");
+    aboutData.addAuthor(i18n("Frans Englich"), i18n("Maintainer"), "frans.englich@kde.org");
+    aboutData.addAuthor(i18n("Daniel Molkentin"), QString(), "molkentin@kde.org");
+    aboutData.addAuthor(i18n("Matthias Hoelzer-Kluepfel"),QString(), "hoelzer@kde.org");
+    aboutData.addAuthor(i18n("Matthias Elter"),QString(), "elter@kde.org");
+    aboutData.addAuthor(i18n("Matthias Ettrich"),QString(), "ettrich@kde.org");
+    aboutData.addAuthor(i18n("Waldo Bastian"),QString(), "bastian@kde.org");
 
-    KCmdLineArgs::init(_argc, _argv, &aboutData);
+    QCommandLineParser parser;
+    KAboutData::setApplicationData(aboutData);
+    parser.addVersionOption();
+    parser.addHelpOption();
+    aboutData.setupCommandLine(&parser);
 
-    KCmdLineOptions options;
-    options.add("list", ki18n("List all possible modules"));
-    options.add("+module", ki18n("Configuration module to open"));
-    options.add("lang <language>", ki18n("Specify a particular language"));
-    options.add("silent", ki18n("Do not display main window"));
-    options.add("args <arguments>", ki18n("Arguments for the module"));
-    KCmdLineArgs::addCmdLineOptions( options ); // Add our own options.
-    KCMShell app;
+    parser.addOption(QCommandLineOption(QStringList() << QLatin1String("list"), i18n("List all possible modules")));
+    parser.addPositionalArgument(QLatin1String("module"), i18n("Configuration module to open"));
+    parser.addOption(QCommandLineOption(QStringList() << QLatin1String("lang"), i18n("Specify a particular language"), QLatin1String("language")));
+    parser.addOption(QCommandLineOption(QStringList() << QLatin1String("silent"), i18n("Do not display main window")));
+    parser.addOption(QCommandLineOption(QStringList() << QLatin1String("args"), i18n("Arguments for the module"), QLatin1String("arguments")));
+
+    parser.process(app);
+    aboutData.processCommandLine(&parser);
 
     QTranslator qtTranslator;
     qtTranslator.load("qt_" + QLocale::system().name(),
                       QLibraryInfo::location(QLibraryInfo::TranslationsPath));
     app.installTranslator(&qtTranslator);
 
-    const KCmdLineArgs *args = KCmdLineArgs::parsedArgs();
 
-    const QString lang = args->getOption("lang");
+    const QString lang = parser.value("lang");
     if( !lang.isEmpty() ) {
-      //  KGlobal::setLocale(new KLocale(aboutData.catalogName(), lang));
+        QLocale locale(lang);
+        QLocale::setDefault(locale);
     }
 
-    if (args->isSet("list"))
+    if (parser.isSet("list"))
     {
         cout << i18n("The following modules are available:").toLocal8Bit().data() << endl;
 
@@ -239,17 +234,17 @@ extern "C" Q_DECL_EXPORT int kdemain(int _argc, char *_argv[])
         return 0;
     }
 
-    if (args->count() < 1)
+    if (parser.positionalArguments().count() < 1)
     {
-        args->usage();
+        parser.showHelp();
         return -1;
     }
 
     QString serviceName;
     KService::List modules;
-    for (int i = 0; i < args->count(); i++)
+    for (int i = 0; i < parser.positionalArguments().count(); i++)
     {
-        const QString arg = args->arg(i);
+        const QString arg = parser.positionalArguments().at(i);
         KService::Ptr service = locateModule(arg);
         if (!service) {
             service = locateModule("kcm_" + arg);
@@ -262,7 +257,7 @@ extern "C" Q_DECL_EXPORT int kdemain(int _argc, char *_argv[])
             modules.append(service);
             if( !serviceName.isEmpty() )
                 serviceName += '_';
-            serviceName += args->arg(i);
+            serviceName += arg;
         } else {
             fprintf(stderr, "%s\n", i18n("Could not find module '%1'. See kcmshell5 --list for the full list of modules.", arg).toLocal8Bit().constData());
         }
@@ -284,14 +279,12 @@ extern "C" Q_DECL_EXPORT int kdemain(int _argc, char *_argv[])
     }
 
     QStringList moduleArgs;
-    QString x = args->getOption("args");
+    QString x = parser.value("args");
     moduleArgs << x.split(QRegExp(" +"));
 
     KCMShellMultiDialog *dlg = new KCMShellMultiDialog(ftype);
-    KCmdLineArgs *kdeargs = KCmdLineArgs::parsedArgs("kde");
-    if (kdeargs && kdeargs->isSet("caption")) {
+    if (parser.isSet("caption")) {
         dlg->setWindowTitle(QString());
-        kdeargs->clear();
     } else if (modules.count() == 1) {
         dlg->setWindowTitle(modules.first()->name());
     }
@@ -299,10 +292,10 @@ extern "C" Q_DECL_EXPORT int kdemain(int _argc, char *_argv[])
     for (KService::List::ConstIterator it = modules.constBegin(); it != modules.constEnd(); ++it)
         dlg->addModule(*it, 0, moduleArgs);
 
-    if ( !args->isSet( "icon" ) && modules.count() == 1)
+    if (!parser.isSet("icon") && modules.count() == 1)
     {
         QString iconName = KCModuleInfo(modules.first()).icon();
-        dlg->setWindowIcon( KIcon(iconName) );
+        dlg->setWindowIcon( QIcon::fromTheme(iconName) );
     }
     dlg->exec();
     delete dlg;

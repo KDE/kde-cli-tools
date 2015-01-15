@@ -22,18 +22,19 @@
 #ifndef MAIN_H
 #define MAIN_H
 
-#include <KApplication>
+#include <QApplication>
 #include <KCMultiDialog>
 #include <KPageDialog>
 
 /**
- * The KApplication instance for kcmshell.
+ * The application instance for kcmshell.
  */
-class KCMShell : public KApplication
+class KCMShell : public QApplication
 {
     Q_OBJECT
 
 public:
+    KCMShell(int &argc, char** argv) : QApplication(argc, argv) {}
 
     /**
      * Sets m_serviceName basically to @p serviceName,
