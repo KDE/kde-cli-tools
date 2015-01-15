@@ -22,17 +22,20 @@
 #include <KIO/DeleteJob>
 #include <kio/listjob.h>
 #include <kio/transferjob.h>
+#ifndef KIOCORE_ONLY
 #include <KIO/JobUiDelegate>
 #include <KPropertiesDialog>
 #include <KService>
 #include <KRun>
+#include <KMimeTypeTrader>
+#endif
 #include <KAboutData>
 #include <KLocalizedString>
-#include <KMimeTypeTrader>
 
 #include <QDBusConnection>
 #include <QCommandLineParser>
 #include <QFileDialog>
+#include <QDebug>
 #include <iostream>
 
 bool ClientApp::m_ok = true;
@@ -128,7 +131,11 @@ static void usage()
 
 int main( int argc, char **argv )
 {
+#ifdef KIOCORE_ONLY
+  QCoreApplication app(argc, argv);
+#else
   QApplication app(argc, argv);
+#endif
 
   QString appName = "kioclient";
   QString programName = i18n("KIO Client");
@@ -185,9 +192,11 @@ bool krun_has_error = false;
 
 void ClientApp::delayedQuit()
 {
+#ifndef KIOCORE_ONLY
     // don't access the KRun instance later, it will be deleted after calling slots
     if( static_cast< const KRun* >( sender())->hasError())
         krun_has_error = true;
+#endif
 }
 
 static void checkArgumentCount(int count, int min, int max)
@@ -204,6 +213,7 @@ static void checkArgumentCount(int count, int min, int max)
     }
 }
 
+#ifndef KIOCORE_ONLY
 bool ClientApp::kde_open(const QUrl& url, const QString& mimeType, bool allowExec)
 {
     if ( mimeType.isEmpty() ) {
@@ -223,6 +233,7 @@ bool ClientApp::kde_open(const QUrl& url, const QString& mimeType, bool allowExe
         return KRun::run( *serv, urls, 0 );
     }
 }
+#endif
 
 bool ClientApp::doCopy( const QStringList& urls )
 {
@@ -308,6 +319,7 @@ bool ClientApp::doIt(const QCommandLineParser& parser)
 #else
     // Normal kioclient mode
     QString command = parser.positionalArguments().first();
+#ifndef KIOCORE_ONLY
     if ( command == "openProperties" )
     {
         checkArgumentCount(argc, 2, 2); // openProperties <url>
@@ -318,7 +330,9 @@ bool ClientApp::doIt(const QCommandLineParser& parser)
         qApp->exec();
         return m_ok;
     }
-    else if ( command == "cat" )
+    else
+#endif
+        if ( command == "cat" )
     {
         checkArgumentCount(argc, 2, 2); // cat <url>
         KIO::TransferJob* job = KIO::get(parser.positionalArguments().last(), KIO::NoReload, s_jobFlags);
@@ -329,6 +343,7 @@ bool ClientApp::doIt(const QCommandLineParser& parser)
         qApp->exec();
         return m_ok;
     }
+#ifndef KIOCORE_ONLY
     else if ( command == "exec" )
     {
         checkArgumentCount(argc, 2, 3);
@@ -336,6 +351,7 @@ bool ClientApp::doIt(const QCommandLineParser& parser)
                              argc == 3 ? parser.positionalArguments().last() : QString(),
                              true );
     }
+#endif
     else if ( command == "download" )
     {
         checkArgumentCount(argc, 0, 0);
@@ -395,8 +411,17 @@ bool ClientApp::doIt(const QCommandLineParser& parser)
 
 void ClientApp::slotResult( KJob * job )
 {
-    if (job->error() && s_interactive)
-        static_cast<KIO::Job*>(job)->ui()->showErrorMessage();
+    if (job->error()) {
+#ifndef KIOCORE_ONLY
+        if (s_interactive) {
+            static_cast<KIO::Job*>(job)->ui()->showErrorMessage();
+        } else
+#endif
+        {
+            qWarning() << job->errorString();
+
+        }
+    }
     m_ok = !job->error();
     qApp->quit();
 }
