@@ -443,4 +443,3 @@ ClientApp::ClientApp()
 {
 }
 
-#include "kioclient.moc"
