@@ -326,8 +326,10 @@ void FileTypeDetails::setMimeTypeData( MimeTypeData * mimeTypeData, TypesListIte
   m_item = item; // can be 0
   Q_ASSERT(mimeTypeData);
   m_mimeTypeLabel->setText(i18n("File type %1", mimeTypeData->name()));
-  if (iconButton)
+  if (iconButton) {
       iconButton->setIcon(mimeTypeData->icon());
+      iconButton->setToolTip(mimeTypeData->icon());
+  }
   else
       iconLabel->setPixmap(DesktopIcon(mimeTypeData->icon()));
   description->setText(mimeTypeData->comment());
