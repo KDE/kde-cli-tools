@@ -9,7 +9,7 @@ set_target_properties(kdesu_executable PROPERTIES OUTPUT_NAME kdesu)
 
 target_link_libraries(kdesu_executable KF5::WidgetsAddons KF5::I18n KF5::ConfigCore KF5::WindowSystem KF5::Su)
 
-install(TARGETS kdesu_executable DESTINATION ${LIBEXEC_INSTALL_DIR})
+install(TARGETS kdesu_executable DESTINATION ${KDE_INSTALL_LIBEXECDIR_KF5})
 
 
 
