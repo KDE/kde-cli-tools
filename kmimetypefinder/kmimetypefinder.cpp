@@ -20,7 +20,7 @@
 #include <QFile>
 
 #include <qmimetype.h>
-#include <kcmdlineargs.h>
+
 #include <QCoreApplication>
 #include <kdeversion.h>
 #include <klocale.h>
@@ -29,29 +29,35 @@
 #include <stdio.h>
 #include <QMimeDatabase>
 #include <QMimeType>
+#include <QCommandLineParser>
+#include <QCommandLineOption>
 
 int main(int argc, char *argv[])
 {
-    KCmdLineArgs::init( argc, argv, "kmimetypefinder", 0, ki18n("MimeType Finder"), PROJECT_VERSION , ki18n("Gives the mimetype for a given file"));
+    KAboutData aboutData( QLatin1String("kmimetypefinder"), i18n("MimeType Finder"), QLatin1String(PROJECT_VERSION ));
+    aboutData.setShortDescription(i18n("Gives the mimetype for a given file"));
+    QCoreApplication app(argc, argv);
+    QCommandLineParser parser;
+    KAboutData::setApplicationData(aboutData);
+    parser.addVersionOption();
+    parser.addHelpOption();
+    parser.addOption(QCommandLineOption(QStringList() << QLatin1String("c") << QLatin1String("content"), i18n("Use only the file content for determining the mimetype.")));
+    parser.addOption(QCommandLineOption(QStringList() << QLatin1String("f") << QLatin1String("filename-only"), i18n("Whether use the file name only for determining the mimetype. Not used if -c is specified.")));
+    parser.addPositionalArgument(QLatin1String("filename"), i18n("The filename to test. '-' to read from stdin."));
+
+    aboutData.setupCommandLine(&parser);
+    parser.process(app);
+    aboutData.processCommandLine(&parser);
 
 
-    KCmdLineOptions options;
 
-    options.add("c").add("content", ki18n("Use only the file content for determining the mimetype."));
-    options.add("f").add("filename-only", ki18n("Whether use the file name only for determining the mimetype. Not used if -c is specified."));
-    options.add("+filename", ki18n("The filename to test. '-' to read from stdin."));
-
-    KCmdLineArgs::addCmdLineOptions( options );
-
-    QCoreApplication app(argc, argv); // in case KSycoca needs a QEventLoop
     KComponentData instance("kmimetypefinder");
 
-    KCmdLineArgs *args = KCmdLineArgs::parsedArgs();
-    if( args->count() < 1 ) {
+    if( parser.positionalArguments().count() < 1 ) {
         printf( "No filename specified\n" );
         return 1;
     }
-    const QString fileName = args->arg( 0 );
+    const QString fileName = parser.positionalArguments().at( 0 );
     QMimeDatabase db;
     QMimeType mime;
     if (fileName == QLatin1String("-")) {
@@ -59,9 +65,9 @@ int main(int argc, char *argv[])
         qstdin.open(stdin, QIODevice::ReadOnly);
         const QByteArray data = qstdin.readAll();
         mime = db.mimeTypeForData(data);
-    } else if (args->isSet("c")) {
+    } else if (parser.isSet("c")) {
         mime = db.mimeTypeForFile(fileName, QMimeDatabase::MatchContent);
-    } else if (args->isSet("f")) {
+    } else if (parser.isSet("f")) {
         mime = db.mimeTypeForFile(fileName, QMimeDatabase::MatchExtension);
     } else {
         mime = db.mimeTypeForFile(fileName);
