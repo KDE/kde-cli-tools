@@ -1,3 +1,3 @@
 if(UNIX)
-    add_subdirectory(kdesu)
+    ecm_optional_add_subdirectory(kdesu)
 endif()
