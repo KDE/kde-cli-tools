@@ -12,6 +12,7 @@ include(ECMMarkAsTest)
 include(ECMMarkNonGuiExecutable)
 include(FeatureSummary)
 include(CheckIncludeFiles)
+include(ECMOptionalAddSubdirectory)
 
 find_package(Qt5 ${QT_MIN_VERSION} CONFIG REQUIRED COMPONENTS
     Widgets
