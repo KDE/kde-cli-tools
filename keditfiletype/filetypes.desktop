@@ -107,7 +107,7 @@ Comment=Configure file associations
 Comment[af]=Konfigureer lêer assosiasies
 Comment[ar]=اضبط ارتباطات الملفات
 Comment[as]=নথিপত্ৰৰ সম্বন্ধ বিন্যাস কৰক
-Comment[ast]=Configuración d'asociaciones de ficheros
+Comment[ast]=Configura les asociaciones de ficheros
 Comment[be]=Настаўленні асацыяцыяў файлаў
 Comment[be@latin]=Naładź poviazi dla fajłaŭ
 Comment[bg]=Настройване и асоцииране на файлови типове с програми
@@ -196,6 +196,7 @@ Comment[zh_CN]=配置文件关联
 Comment[zh_TW]=設定檔案關聯
 
 X-KDE-Keywords=Filetypes,File Associations,Mime Types,File Patterns,Files,Pattern
+X-KDE-Keywords[ast]=Tribes de ficheros, asociaciones de ficheros, tribes MIME,patrones de ficheru,ficheros,patrón
 X-KDE-Keywords[bg]=Filetypes,File Associations,Mime Types,File Patterns,Files,Pattern,Файлове,Видове,Асоциации,Шаблони
 X-KDE-Keywords[bn]=Filetypes,File Associations,Mime Types,File Patterns,Files,Pattern
 X-KDE-Keywords[bs]=Filetypes,File Associations,Mime Types,File Patterns,Files,Pattern,tipovi datoteka,pridruživanje datoteka,uzorci datoteka,uzorci
