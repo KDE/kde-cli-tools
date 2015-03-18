@@ -184,11 +184,13 @@ extern "C" Q_DECL_EXPORT int kdemain(int _argc, char *_argv[])
     parser.addHelpOption();
     aboutData.setupCommandLine(&parser);
 
-    parser.addOption(QCommandLineOption(QStringList() << QLatin1String("list"), i18n("List all possible modules")));
+    parser.addOption(QCommandLineOption(QLatin1String("list"), i18n("List all possible modules")));
     parser.addPositionalArgument(QLatin1String("module"), i18n("Configuration module to open"));
-    parser.addOption(QCommandLineOption(QStringList() << QLatin1String("lang"), i18n("Specify a particular language"), QLatin1String("language")));
-    parser.addOption(QCommandLineOption(QStringList() << QLatin1String("silent"), i18n("Do not display main window")));
-    parser.addOption(QCommandLineOption(QStringList() << QLatin1String("args"), i18n("Arguments for the module"), QLatin1String("arguments")));
+    parser.addOption(QCommandLineOption(QLatin1String("lang"), i18n("Specify a particular language"), QLatin1String("language")));
+    parser.addOption(QCommandLineOption(QLatin1String("silent"), i18n("Do not display main window")));
+    parser.addOption(QCommandLineOption(QLatin1String("args"), i18n("Arguments for the module"), QLatin1String("arguments")));
+    parser.addOption(QCommandLineOption(QLatin1String("icon"), i18n("Use a specific icon for the window"), QLatin1String("icon")));
+    parser.addOption(QCommandLineOption(QLatin1String("caption"), i18n("Use a specific caption for the window"), QLatin1String("caption")));
 
     parser.process(app);
     aboutData.processCommandLine(&parser);
@@ -283,7 +285,7 @@ extern "C" Q_DECL_EXPORT int kdemain(int _argc, char *_argv[])
 
     KCMShellMultiDialog *dlg = new KCMShellMultiDialog(ftype);
     if (parser.isSet("caption")) {
-        dlg->setWindowTitle(QString());
+        dlg->setWindowTitle(parser.value("caption"));
     } else if (modules.count() == 1) {
         dlg->setWindowTitle(modules.first()->name());
     }
@@ -291,8 +293,9 @@ extern "C" Q_DECL_EXPORT int kdemain(int _argc, char *_argv[])
     for (KService::List::ConstIterator it = modules.constBegin(); it != modules.constEnd(); ++it)
         dlg->addModule(*it, 0, moduleArgs);
 
-    if (!parser.isSet("icon") && modules.count() == 1)
-    {
+    if (parser.isSet("icon")) {
+        dlg->setWindowIcon(QIcon::fromTheme(parser.value("icon")));
+    } else if (!parser.isSet("icon") && !modules.isEmpty()) {
         QString iconName = KCModuleInfo(modules.first()).icon();
         dlg->setWindowIcon( QIcon::fromTheme(iconName) );
     }
