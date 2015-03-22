@@ -47,8 +47,6 @@ if(X11_FOUND AND XCB_XCB_FOUND)
   set(HAVE_X11 1)
 endif()
 
-feature_summary(WHAT ALL INCLUDE_QUIET_PACKAGES FATAL_ON_MISSING_REQUIRED_PACKAGES)
-
 include(KDEInstallDirs)
 include(KDECMakeSettings)
 include(KDECompilerSettings)
@@ -75,3 +73,5 @@ endif()
 
 check_include_files(sys/wait.h HAVE_SYS_WAIT_H)
 configure_file (config-kde-cli-tools.h.cmake ${CMAKE_CURRENT_BINARY_DIR}/config-kde-cli-tools.h )
+
+feature_summary(WHAT ALL INCLUDE_QUIET_PACKAGES FATAL_ON_MISSING_REQUIRED_PACKAGES)
