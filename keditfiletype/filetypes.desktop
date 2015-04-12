@@ -12,7 +12,7 @@ X-KDE-Weight=50
 
 Name=File Associations
 Name[af]=Lêer Assosiasies
-Name[ar]=ارتباطات الملفات
+Name[ar]=ارتباطات الملفّات
 Name[as]=নথিপত্ৰৰ সম্বন্ধ
 Name[be]=Асацыяцыі файлаў
 Name[be@latin]=Poviazi dla fajłaŭ
@@ -104,7 +104,7 @@ Name[zh_TW]=檔案關聯
 
 Comment=Configure file associations
 Comment[af]=Konfigureer lêer assosiasies
-Comment[ar]=اضبط ارتباطات الملفات
+Comment[ar]=اضبط ارتباطات الملفّات
 Comment[as]=নথিপত্ৰৰ সম্বন্ধ বিন্যাস কৰক
 Comment[be]=Настаўленні асацыяцыяў файлаў
 Comment[be@latin]=Naładź poviazi dla fajłaŭ
@@ -194,6 +194,7 @@ Comment[zh_CN]=配置文件关联
 Comment[zh_TW]=設定檔案關聯
 
 X-KDE-Keywords=Filetypes,File Associations,Mime Types,File Patterns,Files,Pattern
+X-KDE-Keywords[ar]=أنواع الملفّات,ارتباطات الملفّات,أنواع مايم,أنماط الملفّات,ملفّات,نمط
 X-KDE-Keywords[bg]=Filetypes,File Associations,Mime Types,File Patterns,Files,Pattern,Файлове,Видове,Асоциации,Шаблони
 X-KDE-Keywords[bn]=Filetypes,File Associations,Mime Types,File Patterns,Files,Pattern
 X-KDE-Keywords[bs]=Filetypes,File Associations,Mime Types,File Patterns,Files,Pattern,tipovi datoteka,pridruživanje datoteka,uzorci datoteka,uzorci
