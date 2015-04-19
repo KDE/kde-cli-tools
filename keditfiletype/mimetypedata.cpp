@@ -360,7 +360,7 @@ void MimeTypeData::syncServices()
     if (!m_bFullInit)
         return;
 
-    KSharedConfig::Ptr profile = KSharedConfig::openConfig("mimeapps.list", KConfig::NoGlobals, QStandardPaths::GenericConfigLocation);
+    KSharedConfig::Ptr profile = KSharedConfig::openConfig("mimeapps.list", KConfig::NoGlobals, QStandardPaths::ApplicationsLocation);
 
     if (!profile->isConfigWritable(true)) // warn user if mimeapps.list is root-owned (#155126/#94504)
         return;
