@@ -33,6 +33,8 @@ int main(int argc, char *argv[])
 {
     QCoreApplication app(argc, argv);
 
+    KLocalizedString::setApplicationDomain("kmimetypefinder");
+
     KAboutData aboutData( QLatin1String("kmimetypefinder"), i18n("MimeType Finder"), QLatin1String(PROJECT_VERSION ));
     aboutData.setShortDescription(i18n("Gives the mimetype for a given file"));
     QCommandLineParser parser;

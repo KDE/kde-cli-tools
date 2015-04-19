@@ -81,6 +81,8 @@ int main(int argc, char *argv[])
     if (duser.isEmpty())
         duser = "root";
 
+    KLocalizedString::setApplicationDomain("kdesu");
+
     KAboutData aboutData("kdesu", i18n("KDE su"),
             Version, i18n("Runs a program with elevated privileges."),
             KAboutLicense::Artistic,

@@ -31,6 +31,7 @@ int main( int argc, char **argv )
 {
     QCoreApplication app(argc, argv);
 
+    KLocalizedString::setApplicationDomain("ktraderclient");
     KAboutData aboutData(QLatin1String("ktraderclient"), i18n("KTraderClient"), QLatin1String(PROJECT_VERSION));
     aboutData.addAuthor(i18n("David Faure"), QString(), "faure@kde.org");
 
