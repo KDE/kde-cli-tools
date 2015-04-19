@@ -289,6 +289,8 @@ void KStart::applyStyle(WId w ) {
 
 int main( int argc, char *argv[] )
 {
+  KLocalizedString::setApplicationDomain( "kstart" );
+
   K4AboutData aboutData( "kstart", 0, ki18n("KStart"), PROJECT_VERSION,
       ki18n(""
        "Utility to launch applications with special window properties \n"
