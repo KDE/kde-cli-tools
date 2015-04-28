@@ -249,9 +249,8 @@ bool ClientApp::doCopy( const QStringList& urls )
     return m_ok;
 }
 
-void ClientApp::slotEntries(KIO::Job* job, const KIO::UDSEntryList& list)
+void ClientApp::slotEntries(KIO::Job*, const KIO::UDSEntryList& list)
 {
-    QUrl url = static_cast<KIO::ListJob*>( job )->url();
     KIO::UDSEntryList::ConstIterator it=list.begin();
     for (; it != list.end(); ++it) {
         // For each file...
