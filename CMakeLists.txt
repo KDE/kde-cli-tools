@@ -42,6 +42,9 @@ find_package(KF5 REQUIRED COMPONENTS
     WindowSystem
 )
 
+# Disables automatic conversions from QString (or char *) to QUrl.
+add_definitions(-DQT_NO_URL_CAST_FROM_STRING)
+
 find_package(X11)
 if(X11_FOUND AND XCB_XCB_FOUND)
   set(HAVE_X11 1)

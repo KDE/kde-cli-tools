@@ -262,7 +262,7 @@ void ClientApp::slotEntries(KIO::Job* job, const KIO::UDSEntryList& list)
 
 bool ClientApp::doList( const QStringList& urls )
 {
-    QUrl dir = urls.first();
+    QUrl dir = makeURL(urls.first());
     KIO::Job * job = KIO::listDir(dir, KIO::HideProgressInfo);
     if ( !s_interactive )
         job->setUiDelegate(0);
@@ -325,7 +325,8 @@ bool ClientApp::doIt(const QCommandLineParser& parser)
     if ( command == "openProperties" )
     {
         checkArgumentCount(argc, 2, 2); // openProperties <url>
-        KPropertiesDialog * p = new KPropertiesDialog(parser.positionalArguments().last(), 0 /*no parent*/ );
+        QUrl url = makeURL(parser.positionalArguments().last());
+        KPropertiesDialog * p = new KPropertiesDialog(url, 0 /*no parent*/ );
         QObject::connect( p, SIGNAL( destroyed() ), qApp, SLOT( quit() ));
         QObject::connect( p, SIGNAL( canceled() ), this, SLOT( slotDialogCanceled() ));
         p->show();
@@ -337,7 +338,8 @@ bool ClientApp::doIt(const QCommandLineParser& parser)
         if ( command == "cat" )
     {
         checkArgumentCount(argc, 2, 2); // cat <url>
-        KIO::TransferJob* job = KIO::get(parser.positionalArguments().last(), KIO::NoReload, s_jobFlags);
+        QUrl url = makeURL(parser.positionalArguments().last());
+        KIO::TransferJob* job = KIO::get(url, KIO::NoReload, s_jobFlags);
         if ( !s_interactive )
             job->setUiDelegate( 0 );
         connect(job, SIGNAL(data(KIO::Job*,QByteArray) ), this, SLOT(slotPrintData(KIO::Job*,QByteArray)));
