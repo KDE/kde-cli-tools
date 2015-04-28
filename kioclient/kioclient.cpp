@@ -232,7 +232,7 @@ bool ClientApp::kde_open(const QUrl& url, const QString& mimeType, bool allowExe
             mimeType, QLatin1String( "Application" ) );
         if (offers.isEmpty()) return 1;
         KService::Ptr serv = offers.first();
-        return KRun::run( *serv, urls, 0 );
+        return KRun::runService( *serv, urls, 0 );
     }
 }
 #endif
