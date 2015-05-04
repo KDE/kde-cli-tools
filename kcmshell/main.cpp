@@ -194,11 +194,6 @@ extern "C" Q_DECL_EXPORT int kdemain(int _argc, char *_argv[])
     parser.process(app);
     aboutData.processCommandLine(&parser);
 
-    QTranslator qtTranslator;
-    qtTranslator.load("qt_" + QLocale::system().name(),
-                      QLibraryInfo::location(QLibraryInfo::TranslationsPath));
-    app.installTranslator(&qtTranslator);
-
     const QString lang = parser.value("lang");
     if (!lang.isEmpty()) {
         QLocale locale(lang);
