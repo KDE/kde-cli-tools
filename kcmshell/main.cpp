@@ -57,17 +57,15 @@ static bool caseInsensitiveLessThan(const KService::Ptr s1, const KService::Ptr 
 
 static void listModules()
 {
-  const KService::List services = KServiceTypeTrader::self()->query( "KCModule", "[X-KDE-ParentApp] == 'kcontrol' or [X-KDE-ParentApp] == 'kinfocenter'" );
-  for( KService::List::const_iterator it = services.begin();
-       it != services.end(); ++it)
-  {
-      const KService::Ptr s = (*it);
-      if (!KAuthorized::authorizeControlModule(s->menuId()))
-          continue;
-      m_modules.append(s);
-  }
+    const KService::List services = KServiceTypeTrader::self()->query( "KCModule", "[X-KDE-ParentApp] == 'kcontrol' or [X-KDE-ParentApp] == 'kinfocenter'" );
+    for( KService::List::const_iterator it = services.constBegin(); it != services.constEnd(); ++it) {
+        const KService::Ptr s = (*it);
+        if (!KAuthorized::authorizeControlModule(s->menuId()))
+            continue;
+        m_modules.append(s);
+    }
 
-  qStableSort(m_modules.begin(), m_modules.end(), caseInsensitiveLessThan);
+    qStableSort(m_modules.begin(), m_modules.end(), caseInsensitiveLessThan);
 }
 
 static KService::Ptr locateModule(const QString& module)
@@ -87,7 +85,7 @@ static KService::Ptr locateModule(const QString& module)
         return KService::Ptr();
     }
 
-    if ( service->noDisplay() ) {
+    if (service->noDisplay()) {
         qDebug() << module << "should not be loaded.";
         return KService::Ptr();
     }
@@ -97,9 +95,10 @@ static KService::Ptr locateModule(const QString& module)
 
 bool KCMShell::isRunning()
 {
-    QString owner = QDBusConnection::sessionBus().interface()->serviceOwner(m_serviceName);
-    if( owner == QDBusConnection::sessionBus().baseService() )
+    const QString owner = QDBusConnection::sessionBus().interface()->serviceOwner(m_serviceName);
+    if (owner == QDBusConnection::sessionBus().baseService()) {
         return false; // We are the one and only.
+    }
 
     qDebug() << "kcmshell5 with modules '" << m_serviceName << "' is already running.";
 
@@ -123,14 +122,14 @@ KCMShellMultiDialog::KCMShellMultiDialog(KPageDialog::FaceType dialogFace, QWidg
     QDBusConnection::sessionBus().registerObject("/KCModule/dialog", this, QDBusConnection::ExportScriptableSlots);
 }
 
-void KCMShellMultiDialog::activate( const QByteArray& asn_id )
+void KCMShellMultiDialog::activate(const QByteArray& asn_id)
 {
 #ifdef HAVE_X11
-    KStartupInfo::setNewStartupId( this, asn_id );
+    KStartupInfo::setNewStartupId(this, asn_id);
 #endif
 }
 
-void KCMShell::setServiceName(const QString &dbusName )
+void KCMShell::setServiceName(const QString &dbusName)
 {
     m_serviceName = QLatin1String( "org.kde.kcmshell_" ) + dbusName;
     QDBusConnection::sessionBus().registerService(m_serviceName);
@@ -165,11 +164,11 @@ extern "C" Q_DECL_EXPORT int kdemain(int _argc, char *_argv[])
 
     KCMShell app(_argc, _argv);
 
-    KAboutData aboutData( "kcmshell5", i18n("KDE Control Module"),
-                          PROJECT_VERSION,
-                          i18n("A tool to start single KDE control modules"),
-                          KAboutLicense::GPL,
-                          i18n("(c) 1999-2015, The KDE Developers") );
+    KAboutData aboutData("kcmshell5", i18n("KDE Control Module"),
+                         PROJECT_VERSION,
+                         i18n("A tool to start single KDE control modules"),
+                         KAboutLicense::GPL,
+                         i18n("(c) 1999-2015, The KDE Developers"));
 
     aboutData.addAuthor(i18n("Frans Englich"), i18n("Maintainer"), "frans.englich@kde.org");
     aboutData.addAuthor(i18n("Daniel Molkentin"), QString(), "molkentin@kde.org");
@@ -177,20 +176,20 @@ extern "C" Q_DECL_EXPORT int kdemain(int _argc, char *_argv[])
     aboutData.addAuthor(i18n("Matthias Elter"),QString(), "elter@kde.org");
     aboutData.addAuthor(i18n("Matthias Ettrich"),QString(), "ettrich@kde.org");
     aboutData.addAuthor(i18n("Waldo Bastian"),QString(), "bastian@kde.org");
+    KAboutData::setApplicationData(aboutData);
 
     QCommandLineParser parser;
-    KAboutData::setApplicationData(aboutData);
     parser.addVersionOption();
     parser.addHelpOption();
     aboutData.setupCommandLine(&parser);
 
-    parser.addOption(QCommandLineOption(QLatin1String("list"), i18n("List all possible modules")));
-    parser.addPositionalArgument(QLatin1String("module"), i18n("Configuration module to open"));
-    parser.addOption(QCommandLineOption(QLatin1String("lang"), i18n("Specify a particular language"), QLatin1String("language")));
-    parser.addOption(QCommandLineOption(QLatin1String("silent"), i18n("Do not display main window")));
-    parser.addOption(QCommandLineOption(QLatin1String("args"), i18n("Arguments for the module"), QLatin1String("arguments")));
-    parser.addOption(QCommandLineOption(QLatin1String("icon"), i18n("Use a specific icon for the window"), QLatin1String("icon")));
-    parser.addOption(QCommandLineOption(QLatin1String("caption"), i18n("Use a specific caption for the window"), QLatin1String("caption")));
+    parser.addOption(QCommandLineOption(QStringLiteral("list"), i18n("List all possible modules")));
+    parser.addPositionalArgument(QStringLiteral("module"), i18n("Configuration module to open"));
+    parser.addOption(QCommandLineOption(QStringLiteral("lang"), i18n("Specify a particular language"), QLatin1String("language")));
+    parser.addOption(QCommandLineOption(QStringLiteral("silent"), i18n("Do not display main window")));
+    parser.addOption(QCommandLineOption(QStringLiteral("args"), i18n("Arguments for the module"), QLatin1String("arguments")));
+    parser.addOption(QCommandLineOption(QStringLiteral("icon"), i18n("Use a specific icon for the window"), QLatin1String("icon")));
+    parser.addOption(QCommandLineOption(QStringLiteral("caption"), i18n("Use a specific caption for the window"), QLatin1String("caption")));
 
     parser.process(app);
     aboutData.processCommandLine(&parser);
@@ -200,51 +199,45 @@ extern "C" Q_DECL_EXPORT int kdemain(int _argc, char *_argv[])
                       QLibraryInfo::location(QLibraryInfo::TranslationsPath));
     app.installTranslator(&qtTranslator);
 
-
     const QString lang = parser.value("lang");
-    if( !lang.isEmpty() ) {
+    if (!lang.isEmpty()) {
         QLocale locale(lang);
         QLocale::setDefault(locale);
     }
 
-    if (parser.isSet("list"))
-    {
+    if (parser.isSet("list")) {
         cout << i18n("The following modules are available:").toLocal8Bit().data() << endl;
 
         listModules();
 
         int maxLen=0;
 
-        for( KService::List::ConstIterator it = m_modules.constBegin(); it != m_modules.constEnd(); ++it)
-        {
+        for (KService::List::ConstIterator it = m_modules.constBegin(); it != m_modules.constEnd(); ++it) {
             int len = (*it)->desktopEntryName().length();
             if (len > maxLen)
                 maxLen = len;
         }
 
-        for( KService::List::ConstIterator it = m_modules.constBegin(); it != m_modules.constEnd(); ++it)
-        {
+        for (KService::List::ConstIterator it = m_modules.constBegin(); it != m_modules.constEnd(); ++it) {
             QString entry("%1 - %2");
 
             entry = entry.arg((*it)->desktopEntryName().leftJustified(maxLen, ' '))
-                         .arg(!(*it)->comment().isEmpty() ? (*it)->comment()
-                                 : i18n("No description available"));
+                    .arg(!(*it)->comment().isEmpty() ? (*it)->comment()
+                                                     : i18n("No description available"));
 
             cout << entry.toLocal8Bit().data() << endl;
         }
         return 0;
     }
 
-    if (parser.positionalArguments().count() < 1)
-    {
+    if (parser.positionalArguments().count() < 1) {
         parser.showHelp();
         return -1;
     }
 
     QString serviceName;
     KService::List modules;
-    for (int i = 0; i < parser.positionalArguments().count(); i++)
-    {
+    for (int i = 0; i < parser.positionalArguments().count(); i++) {
         const QString arg = parser.positionalArguments().at(i);
         KService::Ptr service = locateModule(arg);
         if (!service) {
@@ -256,17 +249,18 @@ extern "C" Q_DECL_EXPORT int kdemain(int _argc, char *_argv[])
 
         if (service) {
             modules.append(service);
-            if( !serviceName.isEmpty() )
+            if (!serviceName.isEmpty()) {
                 serviceName += '_';
+            }
             serviceName += arg;
         } else {
-            fprintf(stderr, "%s\n", i18n("Could not find module '%1'. See kcmshell5 --list for the full list of modules.", arg).toLocal8Bit().constData());
+            cerr << i18n("Could not find module '%1'. See kcmshell5 --list for the full list of modules.", arg).toLocal8Bit().constData() << endl;
         }
     }
 
     /* Check if this particular module combination is already running */
     app.setServiceName(serviceName);
-    if( app.isRunning() ) {
+    if (app.isRunning()) {
         app.waitForExit();
         return 0;
     }
@@ -280,7 +274,7 @@ extern "C" Q_DECL_EXPORT int kdemain(int _argc, char *_argv[])
     }
 
     QStringList moduleArgs;
-    QString x = parser.value("args");
+    const QString x = parser.value("args");
     moduleArgs << x.split(QRegExp(" +"));
 
     KCMShellMultiDialog *dlg = new KCMShellMultiDialog(ftype);
@@ -290,13 +284,14 @@ extern "C" Q_DECL_EXPORT int kdemain(int _argc, char *_argv[])
         dlg->setWindowTitle(modules.first()->name());
     }
 
-    for (KService::List::ConstIterator it = modules.constBegin(); it != modules.constEnd(); ++it)
+    for (KService::List::ConstIterator it = modules.constBegin(); it != modules.constEnd(); ++it) {
         dlg->addModule(*it, 0, moduleArgs);
+    }
 
     if (parser.isSet("icon")) {
         dlg->setWindowIcon(QIcon::fromTheme(parser.value("icon")));
     } else if (!parser.isSet("icon") && !modules.isEmpty()) {
-        QString iconName = KCModuleInfo(modules.first()).icon();
+        const QString iconName = KCModuleInfo(modules.first()).icon();
         dlg->setWindowIcon( QIcon::fromTheme(iconName) );
     }
     dlg->exec();
