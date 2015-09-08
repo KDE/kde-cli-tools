@@ -196,8 +196,7 @@ extern "C" Q_DECL_EXPORT int kdemain(int _argc, char *_argv[])
 
     const QString lang = parser.value("lang");
     if (!lang.isEmpty()) {
-        QLocale locale(lang);
-        QLocale::setDefault(locale);
+        cout << i18n("--lang is deprecated. Please set the LANGUAGE environment variable instead").toLocal8Bit().data() << endl;
     }
 
     if (parser.isSet("list")) {
