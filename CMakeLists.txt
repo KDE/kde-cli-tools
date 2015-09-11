@@ -38,12 +38,11 @@ find_package(KF5 REQUIRED COMPONENTS
     KCMUtils
     Kio
     WindowSystem
+    OPTIONAL_COMPONENTS
+    KDELibs4Support
+    Su
+    QUIET
 )
-
-if(UNIX)
-    find_package(Qt5X11Extras ${QT_MIN_VERSION} CONFIG)
-    find_package(KF5 REQUIRED COMPONENTS Su)
-endif()
 
 # Disables automatic conversions from QString (or char *) to QUrl.
 add_definitions(-DQT_NO_URL_CAST_FROM_STRING)
@@ -51,6 +50,7 @@ add_definitions(-DQT_NO_URL_CAST_FROM_STRING)
 find_package(X11)
 if(X11_FOUND AND XCB_XCB_FOUND)
   set(HAVE_X11 1)
+  find_package(Qt5X11Extras ${QT_MIN_VERSION} CONFIG)
 endif()
 
 include(KDEInstallDirs)
@@ -68,12 +68,16 @@ add_subdirectory(ktraderclient)
 add_subdirectory(kioclient)
 add_subdirectory(ksvgtopng)
 
-if(Qt5X11Extras_FOUND)
+if(Qt5X11Extras_FOUND AND KF5KDELibs4Support_FOUND)
     add_subdirectory(kstart)
 endif()
 
-if(UNIX)
+
+if(KF5Su_FOUND)
     add_subdirectory(kdesu)
+endif()
+    
+if(UNIX)
     add_subdirectory(kdeeject)
 endif()
 
