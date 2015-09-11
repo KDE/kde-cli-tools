@@ -76,7 +76,7 @@ endif()
 if(KF5Su_FOUND)
     add_subdirectory(kdesu)
 endif()
-    
+
 if(UNIX)
     add_subdirectory(kdeeject)
 endif()
