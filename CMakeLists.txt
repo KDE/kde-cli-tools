@@ -36,7 +36,7 @@ find_package(KF5 REQUIRED COMPONENTS
     Init
     I18n
     KCMUtils
-    Kio
+    KIO
     WindowSystem
     OPTIONAL_COMPONENTS
     KDELibs4Support
