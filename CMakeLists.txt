@@ -48,6 +48,7 @@ find_package(KF5 REQUIRED COMPONENTS
 add_definitions(-DQT_NO_URL_CAST_FROM_STRING)
 
 find_package(X11)
+find_package(XCB COMPONENTS XCB)
 if(X11_FOUND AND XCB_XCB_FOUND)
   set(HAVE_X11 1)
   find_package(Qt5X11Extras ${QT_MIN_VERSION} CONFIG)
