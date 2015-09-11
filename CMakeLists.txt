@@ -20,8 +20,6 @@ find_package(Qt5 ${QT_MIN_VERSION} CONFIG REQUIRED COMPONENTS
     DBus
 )
 
-find_package(Qt5X11Extras ${QT_MIN_VERSION} CONFIG)
-
 find_package(Qt5Test ${QT_MIN_VERSION} CONFIG QUIET)
 set_package_properties(Qt5Test PROPERTIES
          PURPOSE "Required for tests"
@@ -35,12 +33,17 @@ endif()
 find_package(KF5 REQUIRED COMPONENTS
     Config
     IconThemes
+    Init
     I18n
     KCMUtils
-    Su
-    KDELibs4Support
+    Kio
     WindowSystem
 )
+
+if(UNIX)
+    find_package(Qt5X11Extras ${QT_MIN_VERSION} CONFIG)
+    find_package(KF5 REQUIRED COMPONENTS Su)
+endif()
 
 # Disables automatic conversions from QString (or char *) to QUrl.
 add_definitions(-DQT_NO_URL_CAST_FROM_STRING)
