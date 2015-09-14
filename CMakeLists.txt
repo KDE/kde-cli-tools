@@ -32,6 +32,7 @@ endif()
 
 find_package(KF5 REQUIRED COMPONENTS
     Config
+    DocTools
     IconThemes
     Init
     I18n
