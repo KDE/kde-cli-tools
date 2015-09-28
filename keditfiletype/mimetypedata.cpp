@@ -91,41 +91,46 @@ void MimeTypeData::initFromQMimeType()
     m_autoEmbed = readAutoEmbed();
 
     // Parse XML file to find out if the user specified a custom icon name
-    const QString file = name() + QLatin1String(".xml");
-    const QStringList mimeFiles = QStandardPaths::locateAll(QStandardPaths::GenericDataLocation, "mime/" + file);
-    qDebug() << mimeFiles;
+    QString file = name().toLower() + QLatin1String(".xml");
+    QStringList mimeFiles = QStandardPaths::locateAll(QStandardPaths::GenericDataLocation, "mime/" + file);
     if (mimeFiles.isEmpty()) {
-        qWarning() << "No file found for" << file << ", even though the file appeared in a directory listing.";
-        qWarning() << "Either it was just removed, or the directory doesn't have executable permission...";
-        qWarning() << QStandardPaths::locateAll(QStandardPaths::GenericDataLocation, "mime", QStandardPaths::LocateDirectory);
-    } else {
-        QListIterator<QString> mimeFilesIter(mimeFiles);
-        mimeFilesIter.toBack();
-        while (mimeFilesIter.hasPrevious()) { // global first, then local.
-            const QString fullPath = mimeFilesIter.previous();
-            QFile qfile(fullPath);
-            if (!qfile.open(QFile::ReadOnly))
+        // This is for shared-mime-info < 1.3 that did not lowecase mime names
+        file = name() + QLatin1String(".xml");
+        mimeFiles = QStandardPaths::locateAll(QStandardPaths::GenericDataLocation, "mime/" + file);
+        if (mimeFiles.isEmpty()) {
+            qWarning() << "No file found for" << file << ", even though the file appeared in a directory listing.";
+            qWarning() << "Either it was just removed, or the directory doesn't have executable permission...";
+            qWarning() << QStandardPaths::locateAll(QStandardPaths::GenericDataLocation, "mime", QStandardPaths::LocateDirectory);
+            return;
+        }
+    }
+
+    QListIterator<QString> mimeFilesIter(mimeFiles);
+    mimeFilesIter.toBack();
+    while (mimeFilesIter.hasPrevious()) { // global first, then local.
+        const QString fullPath = mimeFilesIter.previous();
+        QFile qfile(fullPath);
+        if (!qfile.open(QFile::ReadOnly))
+            continue;
+
+        QXmlStreamReader xml(&qfile);
+        if (xml.readNextStartElement()) {
+            if (xml.name() != "mime-type") {
                 continue;
+            }
+            const QString mimeName = xml.attributes().value(QLatin1String("type")).toString();
+            if (mimeName.isEmpty())
+                continue;
+            if (QString::compare(mimeName, name(), Qt::CaseInsensitive) != 0) {
+                qWarning() << "Got name" << mimeName << "in file" << file << "expected" << name();
+            }
 
-            QXmlStreamReader xml(&qfile);
-            if (xml.readNextStartElement()) {
-                if (xml.name() != "mime-type") {
-                    continue;
+            while (xml.readNextStartElement()) {
+                const QStringRef tag = xml.name();
+                if (tag == "icon") {
+                    m_userSpecifiedIcon = xml.attributes().value(QLatin1String("name")).toString();
                 }
-                const QString mimeName = xml.attributes().value(QLatin1String("type")).toString();
-                if (mimeName.isEmpty())
-                    continue;
-                if (mimeName != name()) {
-                    qWarning() << "Got name" << mimeName << "in file" << file << "expected" << name();
-                }
-
-                while (xml.readNextStartElement()) {
-                    const QStringRef tag = xml.name();
-                    if (tag == "icon") {
-                        m_userSpecifiedIcon = xml.attributes().value(QLatin1String("name")).toString();
-                    }
-                    xml.skipCurrentElement();
-                }
+                xml.skipCurrentElement();
             }
         }
     }
