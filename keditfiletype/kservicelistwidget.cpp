@@ -304,10 +304,14 @@ void KServiceListWidget::editService()
         return;
 
     QString path = service->entryPath();
-
-    // If the path to the desktop file is relative, try to get the full
-    // path from KStandardDirs.
-    path = QStandardPaths::locate(QStandardPaths::ApplicationsLocation, path);
+    {
+        // If the path to the desktop file is relative, try to get the full
+        // path from QStandardPaths.
+        QString fullPath = QStandardPaths::locate(QStandardPaths::ApplicationsLocation, path);
+        if (!fullPath.isEmpty()) {
+            path = fullPath;
+        }
+    }
 
     KFileItem item(QUrl::fromLocalFile(path), "application/x-desktop", KFileItem::Unknown);
     KPropertiesDialog dlg(item, this);
