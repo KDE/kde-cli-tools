@@ -18,6 +18,9 @@
 #if defined(HAVE_SYS_WAIT_H)
 #include <sys/wait.h>
 #endif
+#if HAVE_SYS_PRCTL_H
+#include <sys/prctl.h>
+#endif
 
 #include <QFileInfo>
 #include <QFile>
@@ -71,6 +74,11 @@ static int startApp(QCommandLineParser& p);
 
 int main(int argc, char *argv[])
 {
+    // disable ptrace
+#if HAVE_PR_SET_DUMPABLE
+    prctl(PR_SET_DUMPABLE, 0);
+#endif
+
     QApplication app(argc, argv);
 
     // FIXME: this can be considered a poor man's solution, as it's not

@@ -12,7 +12,9 @@ include(ECMInstallIcons)
 include(ECMMarkAsTest)
 include(ECMMarkNonGuiExecutable)
 include(FeatureSummary)
+include(CheckIncludeFile)
 include(CheckIncludeFiles)
+include(CheckSymbolExists)
 include(ECMOptionalAddSubdirectory)
 
 find_package(Qt5 ${QT_MIN_VERSION} CONFIG REQUIRED COMPONENTS
@@ -85,6 +87,11 @@ if(UNIX)
 endif()
 
 check_include_files(sys/wait.h HAVE_SYS_WAIT_H)
+
+check_include_file("sys/prctl.h" HAVE_SYS_PRCTL_H)
+check_symbol_exists(PR_SET_DUMPABLE "sys/prctl.h" HAVE_PR_SET_DUMPABLE)
+add_feature_info("prctl-dumpable" HAVE_PR_SET_DUMPABLE "Required for disallow ptrace on kdesu process")
+
 configure_file (config-kde-cli-tools.h.cmake ${CMAKE_CURRENT_BINARY_DIR}/config-kde-cli-tools.h )
 
 feature_summary(WHAT ALL INCLUDE_QUIET_PACKAGES FATAL_ON_MISSING_REQUIRED_PACKAGES)
