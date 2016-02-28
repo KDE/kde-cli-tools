@@ -28,6 +28,7 @@
 #include <kmimetypetrader.h>
 #include <QStandardPaths>
 #include <QXmlStreamReader>
+#include <QFileInfo>
 
 MimeTypeData::MimeTypeData(const QString& major)
     : m_askSave(AskSaveDefault),
@@ -360,6 +361,10 @@ bool MimeTypeData::sync()
     return needUpdateMimeDb;
 }
 
+static const char s_DefaultApplications[] = "Default Applications";
+static const char s_AddedAssociations[] = "Added Associations";
+static const char s_RemovedAssociations[] = "Removed Associations";
+
 void MimeTypeData::syncServices()
 {
     if (!m_bFullInit)
@@ -373,12 +378,12 @@ void MimeTypeData::syncServices()
     const QStringList oldAppServices = getAppOffers();
     if (oldAppServices != m_appServices) {
         // Save the default application according to mime-apps-spec 1.0
-        KConfigGroup defaultApp(profile, "Default Applications");
+        KConfigGroup defaultApp(profile, s_DefaultApplications);
         saveDefaultApplication(defaultApp, m_appServices);
         // Save preferred services
-        KConfigGroup addedApps(profile, "Added Associations");
+        KConfigGroup addedApps(profile, s_AddedAssociations);
         saveServices(addedApps, m_appServices);
-        KConfigGroup removedApps(profile, "Removed Associations");
+        KConfigGroup removedApps(profile, s_RemovedAssociations);
         saveRemovedServices(removedApps, m_appServices, oldAppServices);
     }
 
@@ -389,6 +394,20 @@ void MimeTypeData::syncServices()
         saveServices(addedParts, m_embedServices);
         KConfigGroup removedParts(profile, "Removed KDE Service Associations");
         saveRemovedServices(removedParts, m_embedServices, oldPartServices);
+    }
+
+    // Clean out any kde-mimeapps.list which would take precedence any cancel our changes.
+    const QString desktops = QString::fromLocal8Bit(qgetenv("XDG_CURRENT_DESKTOP"));
+    foreach (const QString &desktop, desktops.split(":", QString::SkipEmptyParts)) {
+        const QString file = QStandardPaths::writableLocation(QStandardPaths::GenericConfigLocation)
+            + QLatin1Char('/') + desktop.toLower() + QLatin1String("-mimeapps.list");
+        if (QFileInfo::exists(file)) {
+            qDebug() << "Cleaning up" << file;
+            KConfig conf(file, KConfig::NoGlobals);
+            KConfigGroup(&conf, s_DefaultApplications).deleteEntry(name());
+            KConfigGroup(&conf, s_AddedAssociations).deleteEntry(name());
+            KConfigGroup(&conf, s_RemovedAssociations).deleteEntry(name());
+        }
     }
 
     m_appServicesModified = false;
