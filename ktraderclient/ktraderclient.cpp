@@ -46,7 +46,7 @@ int main( int argc, char **argv )
     parser.addOption(QCommandLineOption(QStringList() << QLatin1String("servicetype"), i18n("A servicetype, like KParts/ReadOnlyPart or KMyApp/Plugin"), QLatin1String("servicetype")));
     parser.addOption(QCommandLineOption(QStringList() << QLatin1String("constraint"), i18n("A constraint expressed in the trader query language"), QLatin1String("constraint")));
 
-    parser.addOption(QCommandLineOption(QStringList() << QLatin1String("properties"), i18n("Output all properties")));
+    parser.addOption(QCommandLineOption(QStringList() << QLatin1String("short"), i18n("Output only paths to desktop files")));
 
     parser.process(app);
     aboutData.processCommandLine(&parser);
@@ -54,7 +54,7 @@ int main( int argc, char **argv )
     const QString mimetype = parser.value("mimetype");
     QString servicetype = parser.value("servicetype");
     const QString constraint = parser.value("constraint");
-    const bool outputProperties = parser.isSet("properties");
+    const bool outputProperties = !parser.isSet("short");
 
     if ( mimetype.isEmpty() && servicetype.isEmpty() )
         parser.showHelp();
