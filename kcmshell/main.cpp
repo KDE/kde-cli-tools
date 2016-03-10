@@ -117,7 +117,7 @@ KCMShellMultiDialog::KCMShellMultiDialog(KPageDialog::FaceType dialogFace, QWidg
     : KCMultiDialog(parent)
 {
     setFaceType(dialogFace);
-    setModal(true);
+    setModal(false);
 
     QDBusConnection::sessionBus().registerObject("/KCModule/dialog", this, QDBusConnection::ExportScriptableSlots);
 }
@@ -288,8 +288,10 @@ extern "C" Q_DECL_EXPORT int kdemain(int _argc, char *_argv[])
         const QString iconName = KCModuleInfo(modules.first()).icon();
         dlg->setWindowIcon( QIcon::fromTheme(iconName) );
     }
-    dlg->exec();
-    delete dlg;
+
+    dlg->show();
+
+    app.exec();
 
     return 0;
 }
