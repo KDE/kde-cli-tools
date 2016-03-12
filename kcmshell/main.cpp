@@ -164,11 +164,11 @@ extern "C" Q_DECL_EXPORT int kdemain(int _argc, char *_argv[])
 
     KCMShell app(_argc, _argv);
 
-    KAboutData aboutData("kcmshell5", i18n("KDE Control Module"),
+    KAboutData aboutData("kcmshell5", i18n("System Settings Module"),
                          PROJECT_VERSION,
-                         i18n("A tool to start single KDE control modules"),
+                         i18n("A tool to start single system settings modules"),
                          KAboutLicense::GPL,
-                         i18n("(c) 1999-2015, The KDE Developers"));
+                         i18n("(c) 1999-2016, The KDE Developers"));
 
     aboutData.addAuthor(i18n("Frans Englich"), i18n("Maintainer"), "frans.englich@kde.org");
     aboutData.addAuthor(i18n("Daniel Molkentin"), QString(), "molkentin@kde.org");

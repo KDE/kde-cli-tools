@@ -1,6 +1,6 @@
 /** @mainpage ./kcmshell
 
-KCMShell is a small utility to host KDE control modules independently of
+KCMShell is a small utility to host System Settings modules independently of
 SystemSettings.
 
 @authors
