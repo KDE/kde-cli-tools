@@ -42,28 +42,12 @@ bool ClientApp::m_ok = true;
 static bool s_interactive = true;
 static KIO::JobFlags s_jobFlags = KIO::DefaultFlags;
 
-// Qt5 TODO: use QUrl::fromUserInput(urlArgs, QDir::currentPath());
-QUrl /*KCmdLineArgs::*/makeURL(const QString &urlArg)
+static QUrl makeURL(const QString &urlArg)
 {
-    QFileInfo fileInfo(urlArg);
-    if (!fileInfo.isRelative()) { // i.e. starts with '/', on unix
-        QUrl result = QUrl::fromLocalFile(QDir::fromNativeSeparators(urlArg));
-        return result; // Absolute path.
-    }
-
-    QUrl qurl(urlArg);
-    if (qurl.isRelative() || fileInfo.exists()) {
-        QUrl result = QUrl::fromLocalFile(QDir::currentPath() + QLatin1Char('/') + urlArg);
-#if 0 //Qt5 TODO: QUrlInfo::cleanPath
-        result.cleanPath(); //This did use KUrl::cleanPath()
-#endif
-        return result;  // Relative path
-    }
-
-    return QUrl(urlArg); // Argument is a URL
+    return QUrl::fromUserInput(urlArg, QDir::currentPath());
 }
 
-QList<QUrl> makeUrls(const QStringList& urlArgs)
+static QList<QUrl> makeUrls(const QStringList& urlArgs)
 {
     QList<QUrl> ret;
     foreach(const QString& url, urlArgs) {
@@ -190,7 +174,7 @@ int main( int argc, char **argv )
   return client.doIt(parser) ? 0 /*no error*/ : 1 /*error*/;
 }
 
-bool krun_has_error = false;
+static bool krun_has_error = false;
 
 void ClientApp::delayedQuit()
 {
@@ -408,7 +392,7 @@ bool ClientApp::doIt(const QCommandLineParser& parser)
         fputs( i18nc("@info:shell", "%1: Syntax error, unknown command '%2'\n", qAppName(), command).toLocal8Bit().data(), stderr );
         return false;
     }
-    return true;
+    Q_UNREACHABLE();
 #endif
 }
 
