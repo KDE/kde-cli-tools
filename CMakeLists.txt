@@ -90,7 +90,14 @@ check_include_files(sys/wait.h HAVE_SYS_WAIT_H)
 
 check_include_file("sys/prctl.h" HAVE_SYS_PRCTL_H)
 check_symbol_exists(PR_SET_DUMPABLE "sys/prctl.h" HAVE_PR_SET_DUMPABLE)
-add_feature_info("prctl-dumpable" HAVE_PR_SET_DUMPABLE "Required for disallow ptrace on kdesu process")
+check_include_file("sys/procctl.h" HAVE_SYS_PROCCTL_H)
+check_symbol_exists(PROC_TRACE_CTL "sys/procctl.h" HAVE_PROC_TRACE_CTL)
+if (HAVE_PR_SET_DUMPABLE OR HAVE_PROC_TRACE_CTL)
+  set(CAN_DISABLE_PTRACE TRUE)
+endif()
+add_feature_info("prctl-dumpable"
+                 CAN_DISABLE_PTRACE
+                "Required for disallowing ptrace on kdesu process")
 
 configure_file (config-kde-cli-tools.h.cmake ${CMAKE_CURRENT_BINARY_DIR}/config-kde-cli-tools.h )
 
