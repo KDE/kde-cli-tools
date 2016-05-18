@@ -29,6 +29,7 @@
 #include <QStandardPaths>
 #include <QTest>
 #include <QSignalSpy>
+#include <QLoggingCategory>
 
 #include <mimetypedata.h>
 #include <mimetypewriter.h>
@@ -45,6 +46,8 @@ private Q_SLOTS:
     {
         extern KSERVICE_EXPORT bool kservice_require_kded;
         kservice_require_kded = false;
+
+        QLoggingCategory::setFilterRules(QStringLiteral("kf5.kcoreaddons.kdirwatch.debug=true"));
 
         QStandardPaths::setTestModeEnabled(true);
 
