@@ -21,6 +21,7 @@
 #include "mimetypewriter.h"
 
 #include <QDebug>
+#include <QDir>
 #include <QFile>
 #include <QMimeDatabase>
 #include <QMimeType>
@@ -146,7 +147,10 @@ QString MimeTypeWriterPrivate::localFilePath() const
     // and in ~/.local we don't really expect other packages to be installed anyway...
     QString baseName = m_mimeType;
     baseName.replace('/', '-');
-    return QStandardPaths::writableLocation(QStandardPaths::GenericDataLocation) + QLatin1String("/mime/") + "packages/" + baseName + ".xml" ;
+    QString packagesDirName = QStandardPaths::writableLocation(QStandardPaths::GenericDataLocation) + QLatin1String("/mime/") + "packages/";
+    // create the directory, the saving will fail if it doesn't exist (bug#356237)
+    QDir(packagesDirName).mkpath(QStringLiteral("."));
+    return packagesDirName + baseName + ".xml" ;
 }
 
 static QString existingDefinitionFile(const QString& mimeType)
