@@ -21,9 +21,6 @@
 // Own
 #include "kservicelistwidget.h"
 
-// std
-#include <unistd.h>
-
 // Qt
 #include <QBoxLayout>
 #include <QDebug>
