@@ -95,19 +95,13 @@ static void usage()
     puts(i18n("            #   the short version kioclient rm\n"
               "            #   is also available.\n\n").toLocal8Bit());
 
-    puts(i18n("*** Examples:\n"
-              "  kioclient exec file:/root/Desktop/cdrom.desktop \"Mount default\"\n"
-              "             // Mounts the CDROM\n\n").toLocal8Bit());
+    puts(i18n("*** Examples:\n"));
     puts(i18n("  kioclient exec file:/home/weis/data/test.html\n"
               "             // Opens the file with default binding\n\n").toLocal8Bit());
-    puts(i18n("  kioclient exec file:/home/weis/data/test.html Netscape\n"
-              "             // Opens the file with netscape\n\n").toLocal8Bit());
     puts(i18n("  kioclient exec ftp://localhost/\n"
               "             // Opens new window with URL\n\n").toLocal8Bit());
     puts(i18n("  kioclient exec file:/root/Desktop/emacs.desktop\n"
               "             // Starts emacs\n\n").toLocal8Bit());
-    puts(i18n("  kioclient exec file:/root/Desktop/cdrom.desktop\n"
-              "             // Opens the CDROM's mount directory\n\n").toLocal8Bit());
     puts(i18n("  kioclient exec .\n"
               "             // Opens the current directory. Very convenient.\n\n").toLocal8Bit());
 }
