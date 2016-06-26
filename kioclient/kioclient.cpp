@@ -95,7 +95,7 @@ static void usage()
     puts(i18n("            #   the short version kioclient rm\n"
               "            #   is also available.\n\n").toLocal8Bit());
 
-    puts(i18n("*** Examples:\n"));
+    puts(i18n("*** Examples:\n").toLocal8Bit());
     puts(i18n("  kioclient exec file:/home/weis/data/test.html\n"
               "             // Opens the file with default binding\n\n").toLocal8Bit());
     puts(i18n("  kioclient exec ftp://localhost/\n"
