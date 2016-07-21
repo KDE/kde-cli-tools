@@ -59,8 +59,6 @@ KDEsuDialog::KDEsuDialog(QByteArray user, QByteArray authUser, bool enableKeep, 
     if( withIgnoreButton ) {
         connect(buttonBox()->button(QDialogButtonBox::Ignore), SIGNAL(clicked()), SLOT(slotUser1()));
     }
-
-    setMinimumSize(minimumSizeHint());
 }
 
 
