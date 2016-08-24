@@ -33,14 +33,15 @@
 #include <QTimer>
 #include <QDesktopWidget>
 #include <QApplication>
+#include <QCommandLineParser>
+#include <QCommandLineOption>
 
 #include <kdebug.h>
 #include <kprocess.h>
-#include <klocale.h>
-#include <kcomponentdata.h>
 #include <kwindowsystem.h>
-#include <k4aboutdata.h>
-#include <kcmdlineargs.h>
+#include <kaboutdata.h>
+#include <klocalizedstring.h>
+
 #include <kstartupinfo.h>
 #include <kxmessages.h>
 #include <kdeversion.h>
@@ -289,89 +290,89 @@ void KStart::applyStyle(WId w ) {
 
 int main( int argc, char *argv[] )
 {
+  QApplication app(argc, argv);
   KLocalizedString::setApplicationDomain( "kstart" );
 
-  K4AboutData aboutData( "kstart", 0, ki18n("KStart"), PROJECT_VERSION,
-      ki18n(""
+  KAboutData aboutData(QStringLiteral("kstart"), i18n("KStart"), PROJECT_VERSION,
+      i18n(""
        "Utility to launch applications with special window properties \n"
        "such as iconified, maximized, a certain virtual desktop, a special decoration\n"
        "and so on." ),
-      K4AboutData::License_GPL,
-       ki18n("(C) 1997-2000 Matthias Ettrich (ettrich@kde.org)") );
+      KAboutLicense::GPL,
+      i18n("(C) 1997-2000 Matthias Ettrich (ettrich@kde.org)"));
 
-  aboutData.addAuthor( ki18n("Matthias Ettrich"), KLocalizedString(), "ettrich@kde.org" );
-  aboutData.addAuthor( ki18n("David Faure"), KLocalizedString(), "faure@kde.org" );
-  aboutData.addAuthor( ki18n("Richard J. Moore"), KLocalizedString(), "rich@kde.org" );
+  aboutData.addAuthor( i18n("Matthias Ettrich"), QString(), "ettrich@kde.org" );
+  aboutData.addAuthor( i18n("David Faure"), QString(), "faure@kde.org" );
+  aboutData.addAuthor( i18n("Richard J. Moore"), QString(), "rich@kde.org" );
 
-  KCmdLineArgs::init( argc, argv, &aboutData );
+  QCommandLineParser parser;
+  KAboutData::setApplicationData(aboutData);
+  parser.addVersionOption();
+  parser.addHelpOption();
+  aboutData.setupCommandLine(&parser);
 
 
-  KCmdLineOptions options;
-
-  options.add("!+command", ki18n("Command to execute"));
-  options.add("service <desktopfile>", ki18n("Alternative to <command>: desktop file to start. D-Bus service will be printed to stdout"));
-  options.add("url <url>", ki18n("Optional URL to pass <desktopfile>, when using --service"));
+  parser.addOption(QCommandLineOption(QStringList() << QLatin1String("!+command"), i18n("Command to execute")));
+  parser.addOption(QCommandLineOption(QStringList() << QLatin1String("service"), i18n("Alternative to <command>: desktop file to start. D-Bus service will be printed to stdout"), QLatin1String("desktopfile")));
+  parser.addOption(QCommandLineOption(QStringList() << QLatin1String("url"), i18n("Optional URL to pass <desktopfile>, when using --service"), QLatin1String("url")));
   // "!" means: all options after command are treated as arguments to the command
-  options.add("window <regexp>", ki18n("A regular expression matching the window title"));
-  options.add("windowclass <class>", ki18n("A string matching the window class (WM_CLASS property)\n"
+  parser.addOption(QCommandLineOption(QStringList() << QLatin1String("window"), i18n("A regular expression matching the window title"), QLatin1String("regexp")));
+  parser.addOption(QCommandLineOption(QStringList() << QLatin1String("windowclass <class>"),
+             i18n("A string matching the window class (WM_CLASS property)\n"
                   "The window class can be found out by running\n"
                   "'xprop | grep WM_CLASS' and clicking on a window\n"
                   "(use either both parts separated by a space or only the right part).\n"
                   "NOTE: If you specify neither window title nor window class,\n"
                   "then the very first window to appear will be taken;\n"
-                  "omitting both options is NOT recommended."));
-  options.add("desktop <number>", ki18n("Desktop on which to make the window appear"));
-  options.add("currentdesktop", ki18n("Make the window appear on the desktop that was active\nwhen starting the application"));
-  options.add("alldesktops", ki18n("Make the window appear on all desktops"));
-  options.add("iconify", ki18n("Iconify the window"));
-  options.add("maximize", ki18n("Maximize the window"));
-  options.add("maximize-vertically", ki18n("Maximize the window vertically"));
-  options.add("maximize-horizontally", ki18n("Maximize the window horizontally"));
-  options.add("fullscreen", ki18n("Show window fullscreen"));
-  options.add("type <type>", ki18n("The window type: Normal, Desktop, Dock, Toolbar, \nMenu, Dialog, TopMenu or Override"));
-  options.add("activate", ki18n("Jump to the window even if it is started on a \n"
-                         "different virtual desktop"));
-  options.add("ontop");
-  options.add("keepabove", ki18n("Try to keep the window above other windows"));
-  options.add("onbottom");
-  options.add("keepbelow", ki18n("Try to keep the window below other windows"));
-  options.add("skiptaskbar", ki18n("The window does not get an entry in the taskbar"));
-  options.add("skippager", ki18n("The window does not get an entry on the pager"));
-  KCmdLineArgs::addCmdLineOptions( options ); // Add our own options.
+                  "omitting both options is NOT recommended.")));
+  parser.addOption(QCommandLineOption(QStringList() << QLatin1String("desktop"), i18n("Desktop on which to make the window appear"), QLatin1String("number")));
+  parser.addOption(QCommandLineOption(QStringList() << QLatin1String("currentdesktop"), i18n("Make the window appear on the desktop that was active\nwhen starting the application")));
+  parser.addOption(QCommandLineOption(QStringList() << QLatin1String("alldesktops"), i18n("Make the window appear on all desktops")));
+  parser.addOption(QCommandLineOption(QStringList() << QLatin1String("iconify"), i18n("Iconify the window")));
+  parser.addOption(QCommandLineOption(QStringList() << QLatin1String("maximize"), i18n("Maximize the window")));
+  parser.addOption(QCommandLineOption(QStringList() << QLatin1String("maximize-vertically"), i18n("Maximize the window vertically")));
+  parser.addOption(QCommandLineOption(QStringList() << QLatin1String("maximize-horizontally"), i18n("Maximize the window horizontally")));
+  parser.addOption(QCommandLineOption(QStringList() << QLatin1String("fullscreen"), i18n("Show window fullscreen")));
+  parser.addOption(QCommandLineOption(QStringList() << QLatin1String("type"), i18n("The window type: Normal, Desktop, Dock, Toolbar, \nMenu, Dialog, TopMenu or Override"), QLatin1String("type")));
+  parser.addOption(QCommandLineOption(QStringList() << QLatin1String("activate"),
+                    i18n("Jump to the window even if it is started on a \n"
+                         "different virtual desktop")));
+  parser.addOption(QCommandLineOption(QStringList() << QLatin1String("ontop") << QLatin1String("keepabove"), i18n("Try to keep the window above other windows")));
+  parser.addOption(QCommandLineOption(QStringList() << QLatin1String("onbottom") << QLatin1String("keepbelow"), i18n("Try to keep the window below other windows")));
+  parser.addOption(QCommandLineOption(QStringList() << QLatin1String("skiptaskbar"), i18n("The window does not get an entry in the taskbar")));
+  parser.addOption(QCommandLineOption(QStringList() << QLatin1String("skippager"), i18n("The window does not get an entry on the pager")));
 
-  KComponentData componentData( &aboutData );
-  QApplication app( KCmdLineArgs::qtArgc(), KCmdLineArgs::qtArgv() );
+  parser.process(app);
+  aboutData.processCommandLine(&parser);
 
-  KCmdLineArgs *args = KCmdLineArgs::parsedArgs();
-
-  if (args->isSet("service")) {
-      exe = args->getOption("service");
-      url = args->getOption("url");
+  if (parser.isSet("service")) {
+      exe = parser.value("service");
+      url = parser.value("url");
   } else {
-      if ( args->count() == 0 )
-          KCmdLineArgs::usageError(i18n("No command specified"));
+      if ( parser.positionalArguments().count() == 0 )
+          qCritical() << i18n("No command specified");
 
-      exe = args->arg(0);
+      exe = parser.positionalArguments().at(0);
       proc = new KProcess;
-      for(int i=0; i < args->count(); i++)
-          (*proc) << args->arg(i);
+      for(int i=0; i < parser.positionalArguments().count(); i++)
+          (*proc) << parser.positionalArguments().at(i);
   }
 
-  desktop = args->getOption( "desktop" ).toInt();
-  if ( args->isSet ( "alldesktops")  )
+  desktop = parser.value( "desktop" ).toInt();
+  if ( parser.isSet ( "alldesktops")  )
       desktop = NETWinInfo::OnAllDesktops;
-  if ( args->isSet ( "currentdesktop")  )
+  if ( parser.isSet ( "currentdesktop")  )
       desktop = KWindowSystem::currentDesktop();
 
-  windowtitle = args->getOption( "window" );
-  windowclass = args->getOption( "windowclass" );
+  windowtitle = parser.value( "window" );
+  windowclass = parser.value( "windowclass" );
   if( !windowclass.isEmpty() )
       windowclass = windowclass.toLower();
 
   if( windowtitle.isEmpty() && windowclass.isEmpty())
       kWarning() << "Omitting both --window and --windowclass arguments is not recommended" ;
 
-  QString s = args->getOption( "type" );
+  QString s = parser.value( "type" );
   if ( !s.isEmpty() ) {
       s = s.toLower();
       if ( s == "desktop" )
@@ -392,41 +393,41 @@ int main( int argc, char *argv[] )
 	  windowtype = NET::Normal;
   }
 
-  if ( args->isSet( "keepabove" ) ) {
+  if ( parser.isSet( "keepabove" ) ) {
       state |= NET::KeepAbove;
       mask |= NET::KeepAbove;
-  } else if ( args->isSet( "keepbelow" ) ) {
+  } else if ( parser.isSet( "keepbelow" ) ) {
       state |= NET::KeepBelow;
       mask |= NET::KeepBelow;
   }
 
-  if ( args->isSet( "skiptaskbar" ) ) {
+  if ( parser.isSet( "skiptaskbar" ) ) {
       state |= NET::SkipTaskbar;
       mask |= NET::SkipTaskbar;
   }
 
-  if ( args->isSet( "skippager" ) ) {
+  if ( parser.isSet( "skippager" ) ) {
       state |= NET::SkipPager;
       mask |= NET::SkipPager;
   }
 
-  activate = args->isSet("activate");
+  activate = parser.isSet("activate");
 
-  if ( args->isSet("maximize") ) {
+  if ( parser.isSet("maximize") ) {
       state |= NET::Max;
       mask |= NET::Max;
   }
-  if ( args->isSet("maximize-vertically") ) {
+  if ( parser.isSet("maximize-vertically") ) {
       state |= NET::MaxVert;
       mask |= NET::MaxVert;
   }
-  if ( args->isSet("maximize-horizontally") ) {
+  if ( parser.isSet("maximize-horizontally") ) {
       state |= NET::MaxHoriz;
       mask |= NET::MaxHoriz;
   }
 
-  iconify = args->isSet("iconify");
-  if ( args->isSet("fullscreen") ) {
+  iconify = parser.isSet("iconify");
+  if ( parser.isSet("fullscreen") ) {
       NETRootInfo i( QX11Info::connection(), NET::Supported );
       if( i.isSupported( NET::FullScreen )) {
           state |= NET::FullScreen;
@@ -438,7 +439,6 @@ int main( int argc, char *argv[] )
   }
 
   fcntl(XConnectionNumber(QX11Info::display()), F_SETFD, 1);
-  args->clear();
 
   KStart start;
 
