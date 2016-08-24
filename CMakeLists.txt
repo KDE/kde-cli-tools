@@ -16,6 +16,7 @@ include(CheckIncludeFile)
 include(CheckIncludeFiles)
 include(CheckSymbolExists)
 include(ECMOptionalAddSubdirectory)
+include(KDECompilerSettings NO_POLICY_SCOPE)
 
 find_package(Qt5 ${QT_MIN_VERSION} CONFIG REQUIRED COMPONENTS
     Widgets
@@ -60,7 +61,6 @@ endif()
 
 include(KDEInstallDirs)
 include(KDECMakeSettings)
-include(KDECompilerSettings NO_POLICY_SCOPE)
 
 include_directories(${CMAKE_CURRENT_BINARY_DIR})
 
