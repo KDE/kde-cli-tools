@@ -162,6 +162,10 @@ int main(int argc, char *argv[])
     {
         KMessageBox::sorry(0, i18n("Cannot execute command '%1'.", QString::fromLocal8Bit(command)));
     }
+    if (result == -2)
+    {
+        KMessageBox::sorry(0, i18n("Cannot execute command '%1'. It contains invalid characters.", QString::fromLocal8Bit(command)));
+    }
 
     return result;
 }
@@ -385,6 +389,12 @@ static int startApp(QCommandLineParser& p)
     {
         keep = 0;
         qDebug() << "Don't need password!!\n";
+    }
+
+    for (const QChar character : QString::fromLocal8Bit(command)) {
+        if (!character.isPrint() && character.category() != QChar::Other_Surrogate) {
+            return -2;
+        }
     }
 
     // Start the dialog
