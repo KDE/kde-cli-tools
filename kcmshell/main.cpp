@@ -163,6 +163,7 @@ extern "C" Q_DECL_EXPORT int kdemain(int _argc, char *_argv[])
     KLocalizedString::setApplicationDomain("kcmshell");
 
     KCMShell app(_argc, _argv);
+    app.setAttribute(Qt::AA_UseHighDpiPixmaps, true);
 
     KAboutData aboutData("kcmshell5", i18n("System Settings Module"),
                          PROJECT_VERSION,
