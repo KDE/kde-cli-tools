@@ -177,7 +177,6 @@ extern "C" Q_DECL_EXPORT int kdemain(int _argc, char *_argv[])
     aboutData.addAuthor(i18n("Matthias Elter"),QString(), "elter@kde.org");
     aboutData.addAuthor(i18n("Matthias Ettrich"),QString(), "ettrich@kde.org");
     aboutData.addAuthor(i18n("Waldo Bastian"),QString(), "bastian@kde.org");
-    KAboutData::setApplicationData(aboutData);
 
     QCommandLineParser parser;
     parser.addVersionOption();
@@ -192,8 +191,11 @@ extern "C" Q_DECL_EXPORT int kdemain(int _argc, char *_argv[])
     parser.addOption(QCommandLineOption(QStringLiteral("icon"), i18n("Use a specific icon for the window"), QLatin1String("icon")));
     parser.addOption(QCommandLineOption(QStringLiteral("caption"), i18n("Use a specific caption for the window"), QLatin1String("caption")));
 
-    parser.process(app);
+    parser.parse(app.arguments());
     aboutData.processCommandLine(&parser);
+    KAboutData::setApplicationData(aboutData);
+
+    parser.process(app);
 
     const QString lang = parser.value("lang");
     if (!lang.isEmpty()) {
