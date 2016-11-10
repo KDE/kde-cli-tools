@@ -204,13 +204,7 @@ bool ClientApp::kde_open(const QUrl& url, const QString& mimeType, bool allowExe
         qApp->exec();
         return !krun_has_error;
     } else {
-        QList<QUrl> urls;
-        urls.append( url );
-        const KService::List offers = KMimeTypeTrader::self()->query(
-            mimeType, QLatin1String( "Application" ) );
-        if (offers.isEmpty()) return 1;
-        KService::Ptr serv = offers.first();
-        return KRun::runService( *serv, urls, 0 );
+        return KRun::runUrl(url, mimeType, 0);
     }
 }
 #endif
