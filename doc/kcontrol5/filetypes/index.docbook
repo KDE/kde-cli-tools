@@ -1,7 +1,6 @@
 <?xml version="1.0" ?>
-<!DOCTYPE article PUBLIC "-//KDE//DTD DocBook XML V4.2-Based Variant V1.1//EN"
-"dtd/kdex.dtd" [
-<!ENTITY calligrawords "<application>Calligra Words</application>">
+<!DOCTYPE article PUBLIC "-//KDE//DTD DocBook XML V4.5-Based Variant V1.1//EN"
+"dtd/kdedbx45.dtd" [
 <!ENTITY % addindex "IGNORE">
 <!ENTITY % English "INCLUDE" > <!-- change language only here -->
 ]>
@@ -15,8 +14,8 @@
 <!-- TRANS:ROLES_OF_TRANSLATORS -->
 </authorgroup>
 
-<date>2013-12-05</date>
-<releaseinfo>&kde; 4.12</releaseinfo>
+<date>2016-11-11</date>
+<releaseinfo>Plasma 5.8</releaseinfo>
 
 <keywordset>
 <keyword>KDE</keyword>
@@ -67,10 +66,11 @@ without opening and analyzing the format of each and every file.</para>
 <sect2 id="file-assoc-use">
 <title>How to use this module</title>
 
-<para>You can start this module  
-by opening &systemsettings; and selecting <guilabel>File Associations</guilabel> in the 
-<guilabel>Common Appearance and Behavior</guilabel> category. Alternatively, you can start it by
-typing <command>kcmshell4 filetypes</command> from the terminal or &krunner;.</para>
+<para>You can start this module
+by opening &systemsettings; and selecting <menuchoice><guimenu>Applications</guimenu>
+<guimenuitem>File Associations</guimenuitem></menuchoice> in the
+<guilabel>Personalization</guilabel> category. Alternatively, you can start it by
+typing <command>kcmshell5 filetypes</command> from the terminal or &krunner;.</para>
 
 <para>The file associations are organized into several categories, and
 at a minimum you will have:</para>
@@ -135,6 +135,7 @@ type you want to delete by clicking once with the mouse on the &MIME;
 type name.  Then click the button labeled
 <guibutton>Remove</guibutton>.  The &MIME; type will be deleted
 immediately.</para>
+<para>You can remove only your own &MIME; types.</para>
 
 </sect3>
 
@@ -262,7 +263,7 @@ system.</para>
 applications associated with this file type.  The first program is
 called &okular;.  If your system does not
 have &okular; installed, then &kde;
-automatically starts the second application &krita;.  
+automatically starts the second application &krita;.
 As you can see, this will help keep &kde; running
 strong  as you add and subtract applications.</para></note>
 
@@ -279,15 +280,14 @@ dialog box, you can select the application you want to use for this mime
 type.  Click <guibutton>OK</guibutton> when you are done, and the
 application will be added to the current list.</para>
 
-<para>To change the options of an application for a particular &MIME; type 
-select it in the list and then press the <guibutton>Edit...</guibutton> button. 
-This opens a new dialog with <guilabel>General</guilabel>, 
-<guilabel>Permissions</guilabel>, <guilabel>Applications</guilabel> and
-<guilabel>Preview</guilabel> tabs.
+<para>To change the options of an application for a particular &MIME; type
+select it in the list and then press the <guibutton>Edit...</guibutton> button.
+This opens a new dialog with <guilabel>General</guilabel>,
+<guilabel>Permissions</guilabel> and <guilabel>Applications</guilabel>.
 On the <guilabel>Applications</guilabel> tab you can edit <guilabel>Name</guilabel>,
 <guilabel>Description</guilabel> and <guilabel>Comment</guilabel>.
-In the <guilabel>Command</guilabel> field you can have several place holders 
-following the command, which will be replaced with the actual values 
+In the <guilabel>Command</guilabel> field you can have several place holders
+following the command, which will be replaced with the actual values
 when the actual program is run:</para>
 <itemizedlist>
 <listitem><para>%f - a single file name</para></listitem>
