@@ -84,6 +84,7 @@ endif()
 
 if(UNIX)
     add_subdirectory(kdeeject)
+    add_subdirectory(kbroadcastnotification)
 endif()
 
 check_include_files(sys/wait.h HAVE_SYS_WAIT_H)
