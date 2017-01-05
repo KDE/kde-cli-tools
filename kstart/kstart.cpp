@@ -35,8 +35,8 @@
 #include <QApplication>
 #include <QCommandLineParser>
 #include <QCommandLineOption>
+#include <QDebug>
 
-#include <kdebug.h>
 #include <kprocess.h>
 #include <kwindowsystem.h>
 #include <kaboutdata.h>
@@ -44,7 +44,6 @@
 
 #include <kstartupinfo.h>
 #include <kxmessages.h>
-#include <kdeversion.h>
 
 #include <netwm.h>
 #include <QX11Info>
@@ -100,7 +99,7 @@ KStart::KStart()
         if (KToolInvocation::startServiceByDesktopPath(exe, url, &error, &dbusService, &pid) == 0) {
             printf("%s\n", qPrintable(dbusService));
         } else {
-            kError() << error;
+            qCritical() << error;
         }
     }
 
@@ -370,7 +369,7 @@ int main( int argc, char *argv[] )
       windowclass = windowclass.toLower();
 
   if( windowtitle.isEmpty() && windowclass.isEmpty())
-      kWarning() << "Omitting both --window and --windowclass arguments is not recommended" ;
+      qWarning() << "Omitting both --window and --windowclass arguments is not recommended" ;
 
   QString s = parser.value( "type" );
   if ( !s.isEmpty() ) {

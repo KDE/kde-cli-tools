@@ -42,9 +42,9 @@ find_package(KF5 ${KF5_MIN_VERSION} REQUIRED COMPONENTS
     I18n
     KCMUtils
     KIO
+    Service
     WindowSystem
     OPTIONAL_COMPONENTS
-    KDELibs4Support
     Su
     QUIET
 )
@@ -73,7 +73,7 @@ add_subdirectory(ktraderclient)
 add_subdirectory(kioclient)
 add_subdirectory(ksvgtopng)
 
-if(Qt5X11Extras_FOUND AND KF5KDELibs4Support_FOUND)
+if(Qt5X11Extras_FOUND)
     add_subdirectory(kstart)
 endif()
 
