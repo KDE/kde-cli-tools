@@ -275,6 +275,7 @@ extern "C" Q_DECL_EXPORT int kdemain(int _argc, char *_argv[])
     moduleArgs << x.split(QRegExp(" +"));
 
     KCMShellMultiDialog *dlg = new KCMShellMultiDialog(ftype);
+    dlg->setAttribute(Qt::WA_DeleteOnClose);
     if (parser.isSet("caption")) {
         dlg->setWindowTitle(parser.value("caption"));
     } else if (modules.count() == 1) {
