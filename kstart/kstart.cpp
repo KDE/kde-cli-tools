@@ -316,14 +316,14 @@ int main( int argc, char *argv[] )
   parser.addOption(QCommandLineOption(QStringList() << QLatin1String("url"), i18n("Optional URL to pass <desktopfile>, when using --service"), QLatin1String("url")));
   // "!" means: all options after command are treated as arguments to the command
   parser.addOption(QCommandLineOption(QStringList() << QLatin1String("window"), i18n("A regular expression matching the window title"), QLatin1String("regexp")));
-  parser.addOption(QCommandLineOption(QStringList() << QLatin1String("windowclass <class>"),
+  parser.addOption(QCommandLineOption(QStringList() << QLatin1String("windowclass"),
              i18n("A string matching the window class (WM_CLASS property)\n"
                   "The window class can be found out by running\n"
                   "'xprop | grep WM_CLASS' and clicking on a window\n"
                   "(use either both parts separated by a space or only the right part).\n"
                   "NOTE: If you specify neither window title nor window class,\n"
                   "then the very first window to appear will be taken;\n"
-                  "omitting both options is NOT recommended.")));
+                  "omitting both options is NOT recommended."), QLatin1String("class")));
   parser.addOption(QCommandLineOption(QStringList() << QLatin1String("desktop"), i18n("Desktop on which to make the window appear"), QLatin1String("number")));
   parser.addOption(QCommandLineOption(QStringList() << QLatin1String("currentdesktop"), i18n("Make the window appear on the desktop that was active\nwhen starting the application")));
   parser.addOption(QCommandLineOption(QStringList() << QLatin1String("alldesktops"), i18n("Make the window appear on all desktops")));
