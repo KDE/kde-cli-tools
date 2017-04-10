@@ -57,7 +57,9 @@ static bool caseInsensitiveLessThan(const KService::Ptr s1, const KService::Ptr 
 
 static void listModules()
 {
-    const KService::List services = KServiceTypeTrader::self()->query( "KCModule", "[X-KDE-ParentApp] == 'kcontrol' or [X-KDE-ParentApp] == 'kinfocenter'" );
+    // First condition is what systemsettings does, second what kinfocenter does, make sure this is kept in sync
+    // We need the exist calls because otherwise the trader language aborts if the property doesn't exist and the second part of the or is not evaluated
+    const KService::List services = KServiceTypeTrader::self()->query( QStringLiteral("KCModule"), QStringLiteral("(exist [X-KDE-System-Settings-Parent-Category] and [X-KDE-System-Settings-Parent-Category] != '') or (exist [X-KDE-ParentApp] and [X-KDE-ParentApp] == 'kinfocenter')") );
     for( KService::List::const_iterator it = services.constBegin(); it != services.constEnd(); ++it) {
         const KService::Ptr s = (*it);
         if (!KAuthorized::authorizeControlModule(s->menuId()))
