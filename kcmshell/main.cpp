@@ -162,7 +162,7 @@ void KCMShell::appExit(const QString &appId, const QString &oldName, const QStri
 
 extern "C" Q_DECL_EXPORT int kdemain(int _argc, char *_argv[])
 {
-    KLocalizedString::setApplicationDomain("kcmshell");
+    KLocalizedString::setApplicationDomain("kcmshell5");
 
     KCMShell app(_argc, _argv);
     app.setAttribute(Qt::AA_UseHighDpiPixmaps, true);

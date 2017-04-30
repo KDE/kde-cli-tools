@@ -115,7 +115,7 @@ int main( int argc, char **argv )
   QApplication app(argc, argv);
 #endif
 
-  KLocalizedString::setApplicationDomain("kioclient");
+  KLocalizedString::setApplicationDomain("kioclient5");
 
   QString appName = "kioclient";
   QString programName = i18n("KIO Client");

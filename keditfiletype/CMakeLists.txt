@@ -1,7 +1,7 @@
 add_subdirectory(tests)
 
 # KI18N Translation Domain for this library
-add_definitions(-DTRANSLATION_DOMAIN=\"filetypes\")
+add_definitions(-DTRANSLATION_DOMAIN=\"kcm5_filetypes\")
 
 set(libfiletypes_SRCS
  filetypedetails.cpp

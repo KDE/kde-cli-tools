@@ -1,2 +1,2 @@
 #! /usr/bin/env bash
-$XGETTEXT *.cpp -o $podir/kioclient.pot	
+$XGETTEXT *.cpp -o $podir/kioclient5.pot

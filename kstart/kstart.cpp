@@ -290,7 +290,7 @@ void KStart::applyStyle(WId w ) {
 int main( int argc, char *argv[] )
 {
   QApplication app(argc, argv);
-  KLocalizedString::setApplicationDomain( "kstart" );
+  KLocalizedString::setApplicationDomain( "kstart5" );
 
   KAboutData aboutData(QStringLiteral("kstart"), i18n("KStart"), PROJECT_VERSION,
       i18n(""
