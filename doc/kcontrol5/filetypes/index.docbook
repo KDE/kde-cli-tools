@@ -56,7 +56,7 @@ most common user preferences.</para>
 <para>You can change your current file associations or add new file
 associations using this module.</para>
 
-<para>Each file association is recorded as a mime type.
+<para>Each file association is recorded as a MIME type.
 &MIME; stands for <quote>Multipurpose Internet Mail
 Extensions</quote>. It allows a computer to determine the type of file,
 without opening and analyzing the format of each and every file.</para>
@@ -100,35 +100,35 @@ Types</guilabel>.</para>
 <para>You can explore each of these categories, and see the file
 associations contained within each one, by simply double-clicking on the
 category name.  You will be presented with a list of the associated
-mime-types under that category.</para>
+MIME types under that category.</para>
 
 <tip><para>You can also search for a particular &MIME; type by using the
 search box. The search box is labeled <guilabel>Find file type or filename
 pattern</guilabel> and is located above the category list.</para>
 
 <para>Simply type the first letter of the &MIME; type you are interested
-in.  The categories are automatically expanded, and only the mime-types
+in.  The categories are automatically expanded, and only the MIME types
 that include that letter are displayed.</para>
 
-<para>You can then enter a second character and the mime-types will be
-further limited to mime types containing those two
+<para>You can then enter a second character and the MIME types will be
+further limited to MIME types containing those two
 characters.</para></tip>
 
 <sect3 id="file-assoc-use-add">
-<title>Adding a new mime type</title>
+<title>Adding a new MIME type</title>
 
 <para>If you want to add a new &MIME; type to your file associations,
 you can click on the <guibutton>Add...</guibutton> button.  A small
 dialog box will appear.  You select the category from the drop down
 box labeled <guilabel>Group</guilabel>, and type the &MIME; name in the blank labeled <guilabel>Type
-name</guilabel>.  Click <guibutton>OK</guibutton> to add the new mime
+name</guilabel>.  Click <guibutton>OK</guibutton> to add the new MIME
 type, or click <guibutton>Cancel</guibutton> to not add any new
-mime-types.</para>
+MIME types.</para>
 
 </sect3>
 
 <sect3 id="file-assoc-use-del">
-<title>Removing a mime type</title>
+<title>Removing a MIME type</title>
 
 <para>If you want to remove a &MIME; type, simply select the &MIME;
 type you want to delete by clicking once with the mouse on the &MIME;
@@ -140,7 +140,7 @@ immediately.</para>
 </sect3>
 
 <sect3 id="file-assoc-use-edit">
-<title>Editing a mime types properties</title>
+<title>Editing a MIME types properties</title>
 
 <para>Before you can edit a &MIME; types property, you must first
 specify which &MIME; type.  Simply browse through the categories until
@@ -197,10 +197,10 @@ with the mouse on the icon of your choice, and click
 </sect3>
 
 <sect3 id="file-assoc-use-pattern">
-<title>Editing the mime-type patterns</title>
+<title>Editing the MIME type patterns</title>
 
 <para>The box labeled <guilabel>Filename Patterns</guilabel>, determines
-what files will be included within this mime-type.</para>
+what files will be included within this MIME type.</para>
 
 <para>Usually, files are selected based on their suffix.  (Examples:
 Files that end with <literal role="extension">.wav</literal> are sound
@@ -210,7 +210,7 @@ role="extension">.c</literal> are program files written in C).</para>
 <para>You should enter your filename mask in this combo box.</para>
 
 <para>The asterisk (<literal>*</literal>) is a wildcard character that
-will be used with nearly every mime type mask. A complete discussion
+will be used with nearly every MIME type mask. A complete discussion
 of wildcards is beyond the scope of this manual, but it is important
 to understand that the asterisk (in this context),
 <quote>matches</quote> any number of characters.  As an example:
@@ -227,7 +227,7 @@ determine the file type more accurately.</para></tip>
 </sect3>
 
 <sect3 id="file-assoc-use-desc">
-<title>Editing a mime types description.</title>
+<title>Editing a MIME types description.</title>
 
 <para>You can type a short description of the &MIME; type in the text
 box labeled <guilabel>Description</guilabel>.  This label is to help
@@ -276,7 +276,7 @@ applications. </para>
 
 <para>You can add new applications to the list by clicking the button
 labeled <guibutton>Add</guibutton>.  A dialog box will appear. Using the
-dialog box, you can select the application you want to use for this mime
+dialog box, you can select the application you want to use for this MIME
 type.  Click <guibutton>OK</guibutton> when you are done, and the
 application will be added to the current list.</para>
 
@@ -329,10 +329,10 @@ action</guilabel> group.  These determine how the filemanager views the selected
 <varlistentry><term>Show file in embedded viewer</term>
 <listitem><para>If this is selected, the file will be shown <emphasis>within</emphasis> the filemanager window.</para></listitem></varlistentry>
 <varlistentry><term>Show file in separate viewer</term>
-<listitem><para>This will cause a separate window to be created when showing this mime-type.</para></listitem></varlistentry>
+<listitem><para>This will cause a separate window to be created when showing this MIME type.</para></listitem></varlistentry>
 <varlistentry><term>Use settings for 'application' group</term>
-<listitem><para>This will cause the mime-type to use the settings for the mime-type group.
-(if you are editing an audio mime type, then the settings for the audio group are used).</para></listitem></varlistentry>
+<listitem><para>This will cause the MIME type to use the settings for the MIME type group.
+(if you are editing an audio MIME type, then the settings for the audio group are used).</para></listitem></varlistentry>
 <varlistentry><term>Ask whether to save to disk instead</term>
 <listitem><para>This setting applies only to &konqueror; in browser mode and determines
 if the file is shown in an embedded viewer or if you are asked to save the file to disk instead.</para></listitem></varlistentry>
@@ -355,7 +355,7 @@ appear, under this menu.</para>
 <sect3 id="file-assoc-use-done">
 <title>Making changes permanent</title>
 
-<para>When you are done making any changes to mime types, you can click
+<para>When you are done making any changes to MIME types, you can click
 <guibutton>Apply</guibutton> to make your changes permanent, but keep
 you in this module.</para>
 

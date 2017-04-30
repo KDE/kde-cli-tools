@@ -35,15 +35,15 @@ int main(int argc, char *argv[])
 
     KLocalizedString::setApplicationDomain("kmimetypefinder");
 
-    KAboutData aboutData( QLatin1String("kmimetypefinder"), i18n("MimeType Finder"), QLatin1String(PROJECT_VERSION ));
-    aboutData.setShortDescription(i18n("Gives the mimetype for a given file"));
+    KAboutData aboutData( QLatin1String("kmimetypefinder"), i18n("MIME Type Finder"), QLatin1String(PROJECT_VERSION ));
+    aboutData.setShortDescription(i18n("Gives the MIME type for a given file"));
     QCommandLineParser parser;
     KAboutData::setApplicationData(aboutData);
     parser.addVersionOption();
     parser.addHelpOption();
     aboutData.setupCommandLine(&parser);
-    parser.addOption(QCommandLineOption(QStringList() << QLatin1String("c") << QLatin1String("content"), i18n("Use only the file content for determining the mimetype.")));
-    parser.addOption(QCommandLineOption(QStringList() << QLatin1String("f") << QLatin1String("filename-only"), i18n("Whether use the file name only for determining the mimetype. Not used if -c is specified.")));
+    parser.addOption(QCommandLineOption(QStringList() << QLatin1String("c") << QLatin1String("content"), i18n("Use only the file content for determining the MIME type.")));
+    parser.addOption(QCommandLineOption(QStringList() << QLatin1String("f") << QLatin1String("filename-only"), i18n("Whether use the file name only for determining the MIME type. Not used if -c is specified.")));
     parser.addPositionalArgument(QLatin1String("filename"), i18n("The filename to test. '-' to read from stdin."));
 
     parser.process(app);
