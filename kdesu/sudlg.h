@@ -28,7 +28,7 @@ public:
 private slots:
     void slotUser1();
 protected:
-    bool checkPassword();
+    bool checkPassword() Q_DECL_OVERRIDE;
 
 private:
     SuProcess proc;
