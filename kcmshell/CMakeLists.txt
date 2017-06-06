@@ -10,6 +10,7 @@ target_link_libraries(kdeinit_kcmshell5
    KF5::KCMUtils
    KF5::I18n
    KF5::WindowSystem
+   KF5::Activities
 )
 
 install(TARGETS kdeinit_kcmshell5  ${INSTALL_TARGETS_DEFAULT_ARGS})
