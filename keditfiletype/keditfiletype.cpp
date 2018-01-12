@@ -128,6 +128,7 @@ void FileTypeDialog::slotDatabaseChanged(const QStringList& changedResources)
 int main(int argc, char ** argv)
 {
     QApplication app(argc, argv);
+    app.setAttribute(Qt::AA_UseHighDpiPixmaps, true);
     QApplication::setWindowIcon(QIcon::fromTheme("preferences-desktop-filetype-association"));
 
     KAboutData aboutData( "keditfiletype", i18n("File Type Editor"), PROJECT_VERSION,
