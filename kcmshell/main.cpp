@@ -127,7 +127,8 @@ KCMShellMultiDialog::KCMShellMultiDialog(KPageDialog::FaceType dialogFace, QWidg
 
     connect(this, &KCMShellMultiDialog::currentPageChanged,
             this, [this](KPageWidgetItem *newPage,KPageWidgetItem *oldPage) {
-                KCModuleProxy *activeModule = qobject_cast<KCModuleProxy *>(newPage->widget());
+                Q_UNUSED(oldPage);
+                KCModuleProxy *activeModule = newPage->widget()->findChild<KCModuleProxy *>();
                 if (activeModule) {
                     KActivities::ResourceInstance::notifyAccessed(QUrl("kcm:" + activeModule->moduleInfo().service()->storageId()),
                             "org.kde.systemsettings");
