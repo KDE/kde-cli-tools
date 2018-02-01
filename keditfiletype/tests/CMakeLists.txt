@@ -8,7 +8,7 @@ add_executable(filetypestest
  ../mimetypewriter.cpp
 )
 ecm_mark_as_test(filetypestest)
-add_test(filetypestest filetypestest)
+add_test(NAME filetypestest COMMAND filetypestest)
 target_link_libraries(filetypestest
    KF5::KIOCore
    Qt5::Core
