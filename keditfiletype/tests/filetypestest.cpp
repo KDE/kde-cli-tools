@@ -17,7 +17,6 @@
    Boston, MA 02110-1301, USA.
 */
 
-#include <kprocess.h>
 #include <kservice.h>
 
 #include <kconfiggroup.h>
@@ -25,6 +24,7 @@
 #include <ksycoca.h>
 
 // Qt
+#include <QProcess>
 #include <QDir>
 #include <QStandardPaths>
 #include <QTest>
