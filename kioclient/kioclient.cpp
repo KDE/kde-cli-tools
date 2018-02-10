@@ -389,7 +389,7 @@ void ClientApp::slotResult( KJob * job )
     if (job->error()) {
 #ifndef KIOCORE_ONLY
         if (s_interactive) {
-            static_cast<KIO::Job*>(job)->ui()->showErrorMessage();
+            static_cast<KIO::Job*>(job)->uiDelegate()->showErrorMessage();
         } else
 #endif
         {
