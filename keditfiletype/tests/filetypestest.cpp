@@ -34,8 +34,6 @@
 #include <mimetypedata.h>
 #include <mimetypewriter.h>
 
-#define KDE_MAKE_VERSION( a,b,c ) (((a) << 16) | ((b) << 8) | (c))
-
 
 class FileTypesTest : public QObject
 {
