@@ -204,7 +204,7 @@ bool ClientApp::kde_open(const QUrl& url, const QString& mimeType, bool allowExe
         qApp->exec();
         return !krun_has_error;
     } else {
-        return KRun::runUrl(url, mimeType, nullptr);
+        return KRun::runUrl(url, mimeType, nullptr, KRun::RunFlags(KRun::RunExecutables));
     }
 }
 #endif
