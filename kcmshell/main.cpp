@@ -307,7 +307,6 @@ extern "C" Q_DECL_EXPORT int kdemain(int _argc, char *_argv[])
         dlg->setWindowIcon( QIcon::fromTheme(iconName) );
     }
 
-#if (QT_VERSION >= QT_VERSION_CHECK(5, 7, 0))
     if (modules.count() == 1 && app.desktopFileName() == QLatin1String("org.kde.kcmshell5")) {
         const QString path = QStandardPaths::locate(QStandardPaths::GenericDataLocation,
                                                     QStringLiteral("kservices5/%1.desktop").arg(modules.first()->desktopEntryName()));
@@ -315,7 +314,6 @@ extern "C" Q_DECL_EXPORT int kdemain(int _argc, char *_argv[])
             app.setDesktopFileName(path);
         }
     }
-#endif
 
     dlg->show();
 
