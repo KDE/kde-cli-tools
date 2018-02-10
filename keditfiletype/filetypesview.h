@@ -93,7 +93,7 @@ class TypesListTreeWidget : public QTreeWidget
 {
     Q_OBJECT
 public:
-    TypesListTreeWidget(QWidget *parent)
+    explicit TypesListTreeWidget(QWidget *parent)
       : QTreeWidget(parent) {
     }
 

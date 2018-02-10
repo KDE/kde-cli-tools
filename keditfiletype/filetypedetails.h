@@ -45,7 +45,7 @@ class FileTypeDetails : public QWidget
 {
   Q_OBJECT
 public:
-  FileTypeDetails(QWidget *parent = nullptr);
+    explicit FileTypeDetails(QWidget *parent = nullptr);
 
     /**
      * Set a non-gui "mimetype data" to work on,

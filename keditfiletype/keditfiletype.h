@@ -34,7 +34,7 @@ class FileTypeDialog : public QDialog
 {
     Q_OBJECT
 public:
-    FileTypeDialog(MimeTypeData* mime);
+    explicit FileTypeDialog(MimeTypeData* mime);
     ~FileTypeDialog() override;
 
     void setApplyButtonEnabled(bool);
