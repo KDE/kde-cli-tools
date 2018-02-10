@@ -45,13 +45,13 @@ class FileTypeDetails : public QWidget
 {
   Q_OBJECT
 public:
-  FileTypeDetails(QWidget *parent = 0);
+  FileTypeDetails(QWidget *parent = nullptr);
 
     /**
      * Set a non-gui "mimetype data" to work on,
      * and optionally a gui "treeview item", to update its icon if set.
      */
-    void setMimeTypeData( MimeTypeData * mimeTypeData, TypesListItem* item = 0 );
+    void setMimeTypeData( MimeTypeData * mimeTypeData, TypesListItem* item = nullptr );
 
     /**
      * Called when ksycoca has changed

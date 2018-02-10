@@ -49,7 +49,7 @@
 
 
 FileTypeDialog::FileTypeDialog( MimeTypeData* mime )
-  : QDialog( 0 ),
+  : QDialog( nullptr ),
     m_mimeTypeData(mime)
 {
     init();
@@ -154,7 +154,7 @@ int main(int argc, char ** argv)
 
     QMimeDatabase db;
     QString arg = parser.positionalArguments().first();
-    MimeTypeData* mimeTypeData = 0;
+    MimeTypeData* mimeTypeData = nullptr;
     const bool createType = arg.startsWith('*');
     if ( createType ) {
         QString mimeString = "application/x-kdeuser%1";

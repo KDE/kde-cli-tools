@@ -46,7 +46,7 @@
 #include "typeslistitem.h"
 
 FileTypeDetails::FileTypeDetails( QWidget * parent )
-    : QWidget( parent ), m_mimeTypeData(0), m_item(0)
+    : QWidget( parent ), m_mimeTypeData(nullptr), m_item(nullptr)
 {
 
     QVBoxLayout* topLayout = new QVBoxLayout(this);
@@ -72,7 +72,7 @@ FileTypeDetails::FileTypeDetails( QWidget * parent )
   iconButton->setWhatsThis( i18n("This button displays the icon associated"
                                  " with the selected file type. Click on it to choose a different icon.") );
   iconButton->setFixedSize(70, 70);
-  iconLabel = 0;
+  iconLabel = nullptr;
   hBox->addWidget(iconButton);
 
   QGroupBox *gb = new QGroupBox(i18n("Filename Patterns"), firstWidget);

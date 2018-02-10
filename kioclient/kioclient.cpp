@@ -197,14 +197,14 @@ static void checkArgumentCount(int count, int min, int max)
 bool ClientApp::kde_open(const QUrl& url, const QString& mimeType, bool allowExec)
 {
     if ( mimeType.isEmpty() ) {
-        KRun * run = new KRun( url, 0 );
+        KRun * run = new KRun( url, nullptr );
         run->setRunExecutables(allowExec);
         QObject::connect( run, SIGNAL( finished() ), this, SLOT( delayedQuit() ));
         QObject::connect( run, SIGNAL( error() ), this, SLOT( delayedQuit() ));
         qApp->exec();
         return !krun_has_error;
     } else {
-        return KRun::runUrl(url, mimeType, 0);
+        return KRun::runUrl(url, mimeType, nullptr);
     }
 }
 #endif
@@ -215,7 +215,7 @@ bool ClientApp::doCopy( const QStringList& urls )
     QUrl dest = srcLst.takeLast();
     KIO::Job * job = KIO::copy( srcLst, dest, s_jobFlags );
     if ( !s_interactive )
-        job->setUiDelegate( 0 );
+        job->setUiDelegate( nullptr );
     connect( job, SIGNAL( result( KJob * ) ), this, SLOT( slotResult( KJob * ) ) );
     qApp->exec();
     return m_ok;
@@ -236,7 +236,7 @@ bool ClientApp::doList( const QStringList& urls )
     QUrl dir = makeURL(urls.first());
     KIO::Job * job = KIO::listDir(dir, KIO::HideProgressInfo);
     if ( !s_interactive )
-        job->setUiDelegate(0);
+        job->setUiDelegate(nullptr);
     connect(job, SIGNAL(entries(KIO::Job*,KIO::UDSEntryList)),
             SLOT(slotEntries(KIO::Job*,KIO::UDSEntryList)));
     connect(job, SIGNAL(result(KJob *)), this, SLOT(slotResult(KJob *)));
@@ -250,7 +250,7 @@ bool ClientApp::doMove( const QStringList& urls )
     QUrl dest = srcLst.takeLast();
     KIO::Job * job = KIO::move( srcLst, dest, s_jobFlags );
     if ( !s_interactive )
-        job->setUiDelegate( 0 );
+        job->setUiDelegate( nullptr );
     connect( job, SIGNAL( result( KJob * ) ), this, SLOT( slotResult( KJob * ) ) );
     qApp->exec();
     return m_ok;
@@ -260,7 +260,7 @@ bool ClientApp::doRemove( const QStringList& urls )
 {
     KIO::Job * job = KIO::del( makeUrls(urls), s_jobFlags );
     if ( !s_interactive )
-        job->setUiDelegate( 0 );
+        job->setUiDelegate( nullptr );
     connect( job, SIGNAL( result( KJob * ) ), this, SLOT( slotResult( KJob * ) ) );
     qApp->exec();
     return m_ok;
@@ -297,7 +297,7 @@ bool ClientApp::doIt(const QCommandLineParser& parser)
     {
         checkArgumentCount(argc, 2, 2); // openProperties <url>
         QUrl url = makeURL(parser.positionalArguments().last());
-        KPropertiesDialog * p = new KPropertiesDialog(url, 0 /*no parent*/ );
+        KPropertiesDialog * p = new KPropertiesDialog(url, nullptr /*no parent*/ );
         QObject::connect( p, SIGNAL( destroyed() ), qApp, SLOT( quit() ));
         QObject::connect( p, SIGNAL( canceled() ), this, SLOT( slotDialogCanceled() ));
         p->show();
@@ -312,7 +312,7 @@ bool ClientApp::doIt(const QCommandLineParser& parser)
         QUrl url = makeURL(parser.positionalArguments().last());
         KIO::TransferJob* job = KIO::get(url, KIO::NoReload, s_jobFlags);
         if ( !s_interactive )
-            job->setUiDelegate( 0 );
+            job->setUiDelegate( nullptr );
         connect(job, SIGNAL(data(KIO::Job*,QByteArray) ), this, SLOT(slotPrintData(KIO::Job*,QByteArray)));
         connect(job, SIGNAL( result( KJob * ) ), this, SLOT( slotResult( KJob * ) ) );
         qApp->exec();
@@ -336,13 +336,13 @@ bool ClientApp::doIt(const QCommandLineParser& parser)
 
         if (srcLst.isEmpty())
             return m_ok;
-        QUrl dsturl = QFileDialog::getSaveFileUrl(0, i18n("Destination where to download the files"), (!srcLst.isEmpty()) ? QUrl() : srcLst.first() );
+        QUrl dsturl = QFileDialog::getSaveFileUrl(nullptr, i18n("Destination where to download the files"), (!srcLst.isEmpty()) ? QUrl() : srcLst.first() );
 
         if (dsturl.isEmpty()) // canceled
             return m_ok; // AK - really okay?
         KIO::Job * job = KIO::copy( srcLst, dsturl, s_jobFlags );
         if ( !s_interactive )
-            job->setUiDelegate( 0 );
+            job->setUiDelegate( nullptr );
         connect( job, SIGNAL( result( KJob * ) ), qApp, SLOT( slotResult( KJob * ) ) );
         qApp->exec();
         return m_ok;

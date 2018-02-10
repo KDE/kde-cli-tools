@@ -203,7 +203,7 @@ void FileTypesView::readFileTypes()
         TypesListItem *item = new TypesListItem(groupItem, (*it2));
         m_itemList.append( item );
     }
-    updateDisplay(0L);
+    updateDisplay(nullptr);
 }
 
 void FileTypesView::slotEmbedMajor(const QString &major, bool &embed)

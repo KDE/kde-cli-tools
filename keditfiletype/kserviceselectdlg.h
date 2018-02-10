@@ -38,7 +38,7 @@ public:
      */
     explicit KServiceSelectDlg( const QString& serviceType,
                                 const QString& value = QString(),
-                                QWidget *parent = 0L );
+                                QWidget *parent = nullptr );
 
     ~KServiceSelectDlg() override;
 

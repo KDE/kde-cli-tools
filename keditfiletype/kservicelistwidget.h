@@ -51,7 +51,7 @@ class KServiceListWidget : public QGroupBox
   Q_OBJECT
 public:
   enum { SERVICELIST_APPLICATIONS, SERVICELIST_SERVICES };
-  explicit KServiceListWidget(int kind, QWidget *parent = 0);
+  explicit KServiceListWidget(int kind, QWidget *parent = nullptr);
 
   void setMimeTypeData( MimeTypeData * item );
 

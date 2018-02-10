@@ -52,7 +52,7 @@
 
 // some globals
 
-static KProcess* proc = 0;
+static KProcess* proc = nullptr;
 static QString exe;
 static QString url;
 static QString windowtitle;
@@ -61,8 +61,8 @@ static int desktop = 0;
 static bool activate = false;
 static bool iconify = false;
 static bool fullscreen = false;
-static NET::States state = 0;
-static NET::States mask = 0;
+static NET::States state = {};
+static NET::States mask = {};
 static NET::WindowType windowtype = NET::Unknown;
 
 KStart::KStart()

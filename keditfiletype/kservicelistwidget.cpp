@@ -60,7 +60,7 @@ KServiceListItem::KServiceListItem( const KService::Ptr& pService, int kind )
 KServiceListWidget::KServiceListWidget(int kind, QWidget *parent)
   : QGroupBox( kind == SERVICELIST_APPLICATIONS ? i18n("Application Preference Order")
                : i18n("Services Preference Order"), parent ),
-    m_kind( kind ), m_mimeTypeData( 0L )
+    m_kind( kind ), m_mimeTypeData( nullptr )
 {
   QHBoxLayout *lay= new QHBoxLayout(this);
 
@@ -271,7 +271,7 @@ void KServiceListWidget::addService()
   }
 
   servicesLB->insertItem(0, new KServiceListItem(service, m_kind));
-  servicesLB->setCurrentItem(0);
+  servicesLB->setCurrentItem(nullptr);
 
   updatePreferredServices();
 

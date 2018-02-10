@@ -160,11 +160,11 @@ int main(int argc, char *argv[])
 
     if (result == 127)
     {
-        KMessageBox::sorry(0, i18n("Cannot execute command '%1'.", QString::fromLocal8Bit(command)));
+        KMessageBox::sorry(nullptr, i18n("Cannot execute command '%1'.", QString::fromLocal8Bit(command)));
     }
     if (result == -2)
     {
-        KMessageBox::sorry(0, i18n("Cannot execute command '%1'. It contains invalid characters.", QString::fromLocal8Bit(command)));
+        KMessageBox::sorry(nullptr, i18n("Cannot execute command '%1'. It contains invalid characters.", QString::fromLocal8Bit(command)));
     }
 
     return result;
@@ -202,7 +202,7 @@ static int startApp(QCommandLineParser& p)
     QByteArray user = p.value("u").toLocal8Bit();
     QByteArray auth_user = user;
     struct passwd *pw = getpwnam(user);
-    if (pw == 0L)
+    if (pw == nullptr)
     {
         qCCritical(category) << "User " << user << " does not exist\n";
         p.showHelp(1);
@@ -382,7 +382,7 @@ static int startApp(QCommandLineParser& p)
     if (needpw < 0)
     {
         QString err = i18n("Su returned with an error.\n");
-        KMessageBox::error(0L, err);
+        KMessageBox::error(nullptr, err);
         p.showHelp(1);
     }
     if (needpw == 0)

@@ -297,7 +297,7 @@ extern "C" Q_DECL_EXPORT int kdemain(int _argc, char *_argv[])
     }
 
     for (KService::List::ConstIterator it = modules.constBegin(); it != modules.constEnd(); ++it) {
-        dlg->addModule(*it, 0, moduleArgs);
+        dlg->addModule(*it, nullptr, moduleArgs);
     }
 
     if (parser.isSet("icon")) {

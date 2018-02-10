@@ -32,7 +32,7 @@ class FileGroupDetails : public QWidget
 {
   Q_OBJECT
 public:
-  FileGroupDetails(QWidget *parent = 0);
+  FileGroupDetails(QWidget *parent = nullptr);
 
     void setMimeTypeData( MimeTypeData * mimeTypeData );
 
