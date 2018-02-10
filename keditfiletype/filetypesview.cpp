@@ -26,7 +26,7 @@
 // Qt
 #include <QLabel>
 #include <QLayout>
-#include <QtCore/QTimer>
+#include <QTimer>
 #include <QBoxLayout>
 #include <QPushButton>
 #include <QStandardPaths>

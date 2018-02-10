@@ -1,8 +1,8 @@
 #include <QApplication>
 #include <QImage>
-#include <QtCore/QString>
+#include <QString>
 
-#include <QtSvg/QSvgRenderer>
+#include <QSvgRenderer>
 #include <QPainter>
 #include <iostream>
 

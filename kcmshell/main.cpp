@@ -25,7 +25,7 @@
 
 #include <iostream>
 
-#include <QtDBus/QtDBus>
+#include <QtDBus>
 
 #include <KAboutData>
 #include <QApplication>

@@ -22,8 +22,8 @@
 #ifndef FILETYPESVIEW_H
 #define FILETYPESVIEW_H
 
-#include <QtCore/QList>
-#include <QtCore/QMap>
+#include <QList>
+#include <QMap>
 #include <QLabel>
 #include <QStackedWidget>
 
