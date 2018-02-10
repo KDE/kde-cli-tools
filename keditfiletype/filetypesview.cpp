@@ -87,7 +87,7 @@ FileTypesView::FileTypesView(QWidget *parent, const QVariantList &)
   patternFilterLE = new KLineEdit(this);
   patternFilterLE->setClearButtonShown(true);
   patternFilterLE->setTrapReturnKey(true);
-  patternFilterLE->setClickMessage(i18n("Find file type or filename pattern"));
+  patternFilterLE->setPlaceholderText(i18n("Find file type or filename pattern"));
   leftLayout->addWidget(patternFilterLE);
 
   connect(patternFilterLE, SIGNAL(textChanged(const QString &)),
