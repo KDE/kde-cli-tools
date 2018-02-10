@@ -174,9 +174,9 @@ void KCMShell::appExit(const QString &appId, const QString &oldName, const QStri
 
 extern "C" Q_DECL_EXPORT int kdemain(int _argc, char *_argv[])
 {
+    KCMShell app(_argc, _argv);
     KLocalizedString::setApplicationDomain("kcmshell5");
 
-    KCMShell app(_argc, _argv);
     app.setAttribute(Qt::AA_UseHighDpiPixmaps, true);
 
     KAboutData aboutData("kcmshell5", i18n("System Settings Module"),
