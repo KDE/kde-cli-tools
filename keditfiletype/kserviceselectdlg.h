@@ -40,7 +40,7 @@ public:
                                 const QString& value = QString(),
                                 QWidget *parent = 0L );
 
-    ~KServiceSelectDlg();
+    ~KServiceSelectDlg() override;
 
     /**
      * @return the chosen service

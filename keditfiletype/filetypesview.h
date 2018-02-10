@@ -46,11 +46,11 @@ class FileTypesView : public KCModule
   Q_OBJECT
 public:
   FileTypesView(QWidget *parent, const QVariantList &args);
-  ~FileTypesView();
+  ~FileTypesView() override;
 
-  void load() Q_DECL_OVERRIDE;
-  void save() Q_DECL_OVERRIDE;
-  void defaults() Q_DECL_OVERRIDE;
+  void load() override;
+  void save() override;
+  void defaults() override;
 
 protected Q_SLOTS:
   void addType();
@@ -98,7 +98,8 @@ public:
     }
 
 protected:
-    void drawRow(QPainter *painter, const QStyleOptionViewItem &option, const QModelIndex &index) const Q_DECL_OVERRIDE {
+    void drawRow(QPainter *painter, const QStyleOptionViewItem &option, const QModelIndex &index) const override
+    {
         static_cast<TypesListItem *>(itemFromIndex(index))->loadIcon();
 
         QTreeWidget::drawRow(painter, option, index);

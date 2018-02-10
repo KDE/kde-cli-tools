@@ -46,7 +46,7 @@ public:
      */
     TypesListItem(TypesListItem *parent, const QString& newMimetype);
 
-    ~TypesListItem();
+    ~TypesListItem() override;
 
     void setIcon( const QString& icon );
 

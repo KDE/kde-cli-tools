@@ -35,12 +35,12 @@ class FileTypeDialog : public QDialog
     Q_OBJECT
 public:
     FileTypeDialog(MimeTypeData* mime);
-    virtual ~FileTypeDialog();
+    ~FileTypeDialog() override;
 
     void setApplyButtonEnabled(bool);
 
 public Q_SLOTS:
-    void accept() Q_DECL_OVERRIDE;
+    void accept() override;
 
 protected Q_SLOTS:
     void clientChanged(bool state);

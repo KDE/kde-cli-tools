@@ -21,14 +21,14 @@ class KDEsuDialog
 
 public:
     KDEsuDialog(QByteArray user, QByteArray authUser, bool enableKeep, const QString& icon , bool withIgnoreButton);
-    ~KDEsuDialog();
+    ~KDEsuDialog() override;
 
     enum ResultCodes { AsUser = 10 };
 
 private slots:
     void slotUser1();
 protected:
-    bool checkPassword() Q_DECL_OVERRIDE;
+    bool checkPassword() override;
 
 private:
     SuProcess proc;
