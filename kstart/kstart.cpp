@@ -247,7 +247,7 @@ void KStart::applyStyle(WId w ) {
 	    ;
     }
 
-    NETWinInfo info( QX11Info::connection(), w, QX11Info::appRootWindow(), NET::WMState );
+    NETWinInfo info(QX11Info::connection(), w, QX11Info::appRootWindow(), NET::WMState, NET::Properties2());
 
     if ( ( desktop > 0 && desktop <= KWindowSystem::numberOfDesktops() )
          || desktop == NETWinInfo::OnAllDesktops )
