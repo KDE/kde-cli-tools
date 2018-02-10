@@ -62,6 +62,7 @@ int main(int argc, char *argv[])
     parser.addPositionalArgument(QStringLiteral("body"), i18n("The actual notification body text"));
 
     parser.process(app);
+    aboutData.processCommandLine(&parser);
 
     QVariantMap properties;
     if (parser.isSet(applicationNameOption)) {
