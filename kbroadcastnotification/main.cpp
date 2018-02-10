@@ -32,6 +32,7 @@
 int main(int argc, char *argv[])
 {
     QCoreApplication app(argc, argv);
+    KLocalizedString::setApplicationDomain("kbroadcastnotification");
 
     KAboutData aboutData("kbroadcastnotification", i18n("Broadcast Notifications"),
                          PROJECT_VERSION,
