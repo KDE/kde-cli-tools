@@ -39,6 +39,7 @@ int main(int argc, char *argv[])
                          i18n("A tool that emits a notification for all users by sending it on the system DBus"),
                          KAboutLicense::GPL,
                          i18n("(c) 2016 Kai Uwe Broulik"));
+    KAboutData::setApplicationData(aboutData);
 
     QCommandLineParser parser;
     aboutData.setupCommandLine(&parser);
