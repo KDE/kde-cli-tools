@@ -125,8 +125,7 @@ int main( int argc, char **argv )
   KAboutData::setApplicationData(data);
 
   QCommandLineParser parser;
-  parser.addVersionOption();
-  parser.addHelpOption();
+  data.setupCommandLine(&parser);
   parser.addOption(QCommandLineOption("noninteractive", i18n("Non-interactive use: no message boxes. If you don't want a "
                                                              "graphical connection, use --platform offscreen")));
 
@@ -150,7 +149,6 @@ int main( int argc, char **argv )
 
 //   KCmdLineArgs::addTempFileOption();
 
-  data.setupCommandLine(&parser);
   parser.process(app);
   data.processCommandLine(&parser);
 

@@ -36,12 +36,10 @@ int main( int argc, char **argv )
     aboutData.addAuthor(i18n("David Faure"), QString(), "faure@kde.org");
 
     aboutData.setShortDescription(i18n("A command-line tool for querying the KDE trader system"));
-    QCommandLineParser parser;
     KAboutData::setApplicationData(aboutData);
-    parser.addVersionOption();
-    parser.addHelpOption();
-    aboutData.setupCommandLine(&parser);
 
+    QCommandLineParser parser;
+    aboutData.setupCommandLine(&parser);
     parser.addOption(QCommandLineOption(QStringList() << QLatin1String("mimetype"), i18n("A MIME type"), QLatin1String("mimetype")));
     parser.addOption(QCommandLineOption(QStringList() << QLatin1String("servicetype"), i18n("A servicetype, like KParts/ReadOnlyPart or KMyApp/Plugin"), QLatin1String("servicetype")));
     parser.addOption(QCommandLineOption(QStringList() << QLatin1String("constraint"), i18n("A constraint expressed in the trader query language"), QLatin1String("constraint")));

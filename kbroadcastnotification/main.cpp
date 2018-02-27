@@ -41,8 +41,7 @@ int main(int argc, char *argv[])
                          i18n("(c) 2016 Kai Uwe Broulik"));
 
     QCommandLineParser parser;
-    parser.addHelpOption();
-    parser.addVersionOption();
+    aboutData.setupCommandLine(&parser);
 
     QCommandLineOption applicationNameOption(QStringLiteral("application"), i18n("Name of the application that should be associated with this notification"), QStringLiteral("application"));
     parser.addOption(applicationNameOption);
@@ -56,8 +55,6 @@ int main(int argc, char *argv[])
     parser.addOption(timeoutOption);
     QCommandLineOption persistentOption(QStringLiteral("persistent"), i18n("Keep the notification in the history until the user closes it"));
     parser.addOption(persistentOption);
-
-    aboutData.setupCommandLine(&parser);
 
     parser.addPositionalArgument(QStringLiteral("body"), i18n("The actual notification body text"));
 

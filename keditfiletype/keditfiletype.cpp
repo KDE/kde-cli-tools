@@ -141,8 +141,6 @@ int main(int argc, char ** argv)
 
     QCommandLineParser parser;
     aboutData.setupCommandLine(&parser);
-    parser.addHelpOption();
-    parser.addVersionOption();
     parser.addOption(QCommandLineOption(QStringList() << "parent", i18n("Makes the dialog transient for the window specified by winid"), "winid"));
     parser.addPositionalArgument("mimetype", i18n("File type to edit (e.g. text/html)"));
 

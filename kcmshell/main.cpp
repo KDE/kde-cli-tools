@@ -191,10 +191,9 @@ extern "C" Q_DECL_EXPORT int kdemain(int _argc, char *_argv[])
     aboutData.addAuthor(i18n("Matthias Elter"),QString(), "elter@kde.org");
     aboutData.addAuthor(i18n("Matthias Ettrich"),QString(), "ettrich@kde.org");
     aboutData.addAuthor(i18n("Waldo Bastian"),QString(), "bastian@kde.org");
+    KAboutData::setApplicationData(aboutData);
 
     QCommandLineParser parser;
-    parser.addVersionOption();
-    parser.addHelpOption();
     aboutData.setupCommandLine(&parser);
 
     parser.addOption(QCommandLineOption(QStringLiteral("list"), i18n("List all possible modules")));
@@ -207,7 +206,6 @@ extern "C" Q_DECL_EXPORT int kdemain(int _argc, char *_argv[])
 
     parser.parse(app.arguments());
     aboutData.processCommandLine(&parser);
-    KAboutData::setApplicationData(aboutData);
 
     parser.process(app);
 

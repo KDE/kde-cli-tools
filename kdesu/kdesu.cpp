@@ -114,6 +114,7 @@ int main(int argc, char *argv[])
     // NOTE: if you change the position of the -u switch, be sure to adjust it
     // at the beginning of main()
     QCommandLineParser parser;
+    aboutData.setupCommandLine(&parser);
     parser.addPositionalArgument("command", i18n("Specifies the command to run as separate arguments"));
     parser.addOption(QCommandLineOption("c", i18n("Specifies the command to run as one string"), "command"));
     parser.addOption(QCommandLineOption("f", i18n("Run command under target uid if <file> is not writable"), "file"));
@@ -132,9 +133,6 @@ int main(int argc, char *argv[])
     parser.addOption(QCommandLineOption("attach", i18nc("Transient means that the kdesu app will be attached to the app specified by the winid so that it is like a dialog box rather than some separate program", "Makes the dialog transient for an X app specified by winid"), "winid"));
     parser.addOption(QCommandLineOption("embed", i18n("Embed into a window"), "winid"));
 #endif
-    parser.addHelpOption();
-    parser.addVersionOption();
-
 
     //KApplication::disableAutoDcopRegistration();
     // kdesu doesn't process SM events, so don't even connect to ksmserver
@@ -153,7 +151,6 @@ int main(int argc, char *argv[])
 #endif
     }
 
-    aboutData.setupCommandLine(&parser);
     parser.process(app);
     aboutData.processCommandLine(&parser);
     int result = startApp(parser);

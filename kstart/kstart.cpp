@@ -303,14 +303,10 @@ int main( int argc, char *argv[] )
   aboutData.addAuthor( i18n("Matthias Ettrich"), QString(), "ettrich@kde.org" );
   aboutData.addAuthor( i18n("David Faure"), QString(), "faure@kde.org" );
   aboutData.addAuthor( i18n("Richard J. Moore"), QString(), "rich@kde.org" );
+  KAboutData::setApplicationData(aboutData);
 
   QCommandLineParser parser;
-  KAboutData::setApplicationData(aboutData);
-  parser.addVersionOption();
-  parser.addHelpOption();
   aboutData.setupCommandLine(&parser);
-
-
   parser.addOption(QCommandLineOption(QStringList() << QLatin1String("!+command"), i18n("Command to execute")));
   parser.addOption(QCommandLineOption(QStringList() << QLatin1String("service"), i18n("Alternative to <command>: desktop file to start. D-Bus service will be printed to stdout"), QLatin1String("desktopfile")));
   parser.addOption(QCommandLineOption(QStringList() << QLatin1String("url"), i18n("Optional URL to pass <desktopfile>, when using --service"), QLatin1String("url")));
