@@ -9,4 +9,4 @@ target_link_libraries(ktraderclient5
    Qt5::Core
 )
 
-install(TARGETS ktraderclient5 ${INSTALL_TARGETS_DEFAULT_ARGS} )
+install(TARGETS ktraderclient5 ${KDE_INSTALL_TARGETS_DEFAULT_ARGS})

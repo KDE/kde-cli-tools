@@ -28,7 +28,7 @@ target_link_libraries(kcm_filetypes
     Qt5::DBus
 )
 
-install(TARGETS kcm_filetypes  DESTINATION ${PLUGIN_INSTALL_DIR} )
+install(TARGETS kcm_filetypes  DESTINATION ${KDE_INSTALL_PLUGINDIR} )
 
 ########### next target ###############
 
@@ -49,8 +49,8 @@ if (Q_WS_X11)
   target_link_libraries(keditfiletype5 ${X11_X11_LIB})
 endif ()
 
-install(TARGETS keditfiletype5 ${INSTALL_TARGETS_DEFAULT_ARGS})
+install(TARGETS keditfiletype5 ${KDE_INSTALL_TARGETS_DEFAULT_ARGS})
 
 ########### install files ###############
 
-install( FILES filetypes.desktop  DESTINATION  ${SERVICES_INSTALL_DIR} )
+install( FILES filetypes.desktop  DESTINATION  ${KDE_INSTALL_KSERVICES5DIR} )

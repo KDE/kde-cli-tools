@@ -13,5 +13,5 @@ target_link_libraries(kdeinit_kcmshell5
    KF5::Activities
 )
 
-install(TARGETS kdeinit_kcmshell5  ${INSTALL_TARGETS_DEFAULT_ARGS})
-install(TARGETS kcmshell5          ${INSTALL_TARGETS_DEFAULT_ARGS})
+install(TARGETS kdeinit_kcmshell5  ${KDE_INSTALL_TARGETS_DEFAULT_ARGS})
+install(TARGETS kcmshell5          ${KDE_INSTALL_TARGETS_DEFAULT_ARGS})

@@ -14,4 +14,4 @@ target_link_libraries(kstart5
     KF5::WindowSystem
     ${X11_X11_LIB})
 
-install(TARGETS kstart5 ${INSTALL_TARGETS_DEFAULT_ARGS})
+install(TARGETS kstart5 ${KDE_INSTALL_TARGETS_DEFAULT_ARGS})

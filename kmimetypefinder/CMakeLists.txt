@@ -8,4 +8,4 @@ target_link_libraries(kmimetypefinder5
    Qt5::Core
 )
 
-install(TARGETS kmimetypefinder5 ${INSTALL_TARGETS_DEFAULT_ARGS} )
+install(TARGETS kmimetypefinder5 ${KDE_INSTALL_TARGETS_DEFAULT_ARGS} )
