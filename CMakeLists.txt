@@ -52,6 +52,8 @@ find_package(KF5 ${KF5_MIN_VERSION} REQUIRED COMPONENTS
     QUIET
 )
 
+find_package(LibKWorkspace ${PROJECT_VERSION} REQUIRED)
+
 # Disables automatic conversions from QString (or char *) to QUrl.
 add_definitions(-DQT_NO_URL_CAST_FROM_STRING)
 

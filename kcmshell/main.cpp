@@ -40,6 +40,8 @@
 #include <KStartupInfo>
 #include <KActivities/ResourceInstance>
 
+#include <kworkspace.h>
+
 #include <QIcon>
 #include <QCommandLineParser>
 #include <QCommandLineOption>
@@ -174,7 +176,13 @@ void KCMShell::appExit(const QString &appId, const QString &oldName, const QStri
 
 extern "C" Q_DECL_EXPORT int kdemain(int _argc, char *_argv[])
 {
+    const bool qpaVariable = qEnvironmentVariableIsSet("QT_QPA_PLATFORM");
+    KWorkSpace::detectPlatform(argc, argv);
     KCMShell app(_argc, _argv);
+    if (!qpaVariable) {
+        // don't leak the env variable to processes we start
+        qunsetenv("QT_QPA_PLATFORM");
+    }
     KLocalizedString::setApplicationDomain("kcmshell5");
 
     app.setAttribute(Qt::AA_UseHighDpiPixmaps, true);
