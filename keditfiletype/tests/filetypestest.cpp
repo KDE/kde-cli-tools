@@ -53,10 +53,10 @@ private Q_SLOTS:
         QStringList appsDirs = QStandardPaths::standardLocations(QStandardPaths::ApplicationsLocation);
         //qDebug() << appsDirs;
         m_localApps = appsDirs.first() + '/';
-        m_localConfig = QStandardPaths::writableLocation(QStandardPaths::GenericConfigLocation);
+        m_localConfig = QDir(QStandardPaths::writableLocation(QStandardPaths::GenericConfigLocation));
         QVERIFY(QDir().mkpath(QStandardPaths::writableLocation(QStandardPaths::GenericDataLocation) + QStringLiteral("/mime/packages")));
 
-        QFile::remove(m_localConfig + "mimeapps.list");
+        QFile::remove(m_localConfig.filePath("mimeapps.list"));
 
         // Create fake applications for some tests below.
         bool mustUpdateKSycoca = false;
@@ -286,6 +286,9 @@ private Q_SLOTS:
         QVERIFY(data.sync());
         MimeTypeWriter::runUpdateMimeDatabase();
         //runKBuildSycoca();
+        // QMimeDatabase doesn't even try to update the cache if less than
+        // 5000 ms have passed
+        QTest::qSleep(5000);
         QMimeType mime = db.mimeTypeForName(mimeTypeName);
         QVERIFY(mime.isValid());
         QCOMPARE(mime.comment(), QString("Fake MimeType"));
@@ -342,7 +345,7 @@ private: // helper methods
 
     void checkAddedAssociationsContains(const QString& mimeTypeName, const QString& application)
     {
-        const KConfig config(m_localConfig + "mimeapps.list", KConfig::NoGlobals);
+        const KConfig config(m_localConfig.filePath("mimeapps.list"), KConfig::NoGlobals);
         const KConfigGroup group(&config, "Added Associations");
         const QStringList addedEntries = group.readXdgListEntry(mimeTypeName);
         if (!addedEntries.contains(application)) {
@@ -353,7 +356,7 @@ private: // helper methods
 
     void checkRemovedAssociationsContains(const QString& mimeTypeName, const QString& application)
     {
-        const KConfig config(m_localConfig + "mimeapps.list", KConfig::NoGlobals);
+        const KConfig config(m_localConfig.filePath("mimeapps.list"), KConfig::NoGlobals);
         const KConfigGroup group(&config, "Removed Associations");
         const QStringList removedEntries = group.readXdgListEntry(mimeTypeName);
         if (!removedEntries.contains(application)) {
@@ -364,7 +367,7 @@ private: // helper methods
 
     void checkRemovedAssociationsDoesNotContain(const QString& mimeTypeName, const QString& application)
     {
-        const KConfig config(m_localConfig + "mimeapps.list", KConfig::NoGlobals);
+        const KConfig config(m_localConfig.filePath("mimeapps.list"), KConfig::NoGlobals);
         const KConfigGroup group(&config, "Removed Associations");
         const QStringList removedEntries = group.readXdgListEntry(mimeTypeName);
         if (removedEntries.contains(application)) {
@@ -418,7 +421,7 @@ private: // helper methods
     QString fakeApplication; // storage id of the fake application
     QString fakeApplication2; // storage id of the fake application2
     QString m_localApps;
-    QString m_localConfig;
+    QDir m_localConfig;
     bool m_mimeTypeCreatedSuccessfully;
 };
 
