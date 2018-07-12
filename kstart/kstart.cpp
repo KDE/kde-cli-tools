@@ -87,7 +87,7 @@ KStart::KStart()
             KStartupInfoData data;
             data.addPid( pid );
             data.setName( exe );
-            data.setBin( exe.mid( exe.lastIndexOf( '/' ) + 1 ));
+            data.setBin( exe.mid( exe.lastIndexOf( QLatin1Char('/') ) + 1 ));
             KStartupInfo::sendChange( id, data );
         }
         else
@@ -110,46 +110,46 @@ void KStart::sendRule() {
     KXMessages msg;
     QString message;
     if( !windowtitle.isEmpty() )
-        message += "title=" + windowtitle + "\ntitlematch=3\n"; // 3 = regexp match
+        message += QStringLiteral("title=") + windowtitle + QStringLiteral("\ntitlematch=3\n"); // 3 = regexp match
     if( !windowclass.isEmpty() )
-        message += "wmclass=" + windowclass + "\nwmclassmatch=1\n" // 1 = exact match
-            + "wmclasscomplete="
+        message += QStringLiteral("wmclass=") + windowclass + QStringLiteral("\nwmclassmatch=1\n") // 1 = exact match
+            + QStringLiteral("wmclasscomplete=")
             // if windowclass contains a space (i.e. 2 words, use whole WM_CLASS)
-            + ( windowclass.contains( ' ' ) ? "true" : "false" ) + '\n';
+            + ( windowclass.contains( QLatin1Char(' ') ) ? QStringLiteral("true") : QStringLiteral("false") ) + QLatin1Char('\n');
     if( (!windowtitle.isEmpty()) || (!windowclass.isEmpty()) ) {
         // always ignore these window types
-        message += "types=" + QString().setNum( -1U &
-            ~( NET::TopMenuMask | NET::ToolbarMask | NET::DesktopMask | NET::SplashMask | NET::MenuMask )) + '\n';
+        message += QStringLiteral("types=") + QString().setNum( -1U &
+            ~( NET::TopMenuMask | NET::ToolbarMask | NET::DesktopMask | NET::SplashMask | NET::MenuMask )) + QLatin1Char('\n');
     } else {
         // accept only "normal" windows
-        message += "types=" + QString().setNum( NET::NormalMask | NET::DialogMask ) + '\n';
+        message += QStringLiteral("types=") + QString().setNum( NET::NormalMask | NET::DialogMask ) + QLatin1Char('\n');
     }
     if ( ( desktop > 0 && desktop <= KWindowSystem::numberOfDesktops() )
          || desktop == NETWinInfo::OnAllDesktops ) {
-	message += "desktop=" + QString().setNum( desktop ) + "\ndesktoprule=3\n";
+    message += QStringLiteral("desktop=") + QString().setNum( desktop ) + QStringLiteral("\ndesktoprule=3\n");
     }
     if (activate)
-        message += "fsplevel=0\nfsplevelrule=2\n";
+        message += QStringLiteral("fsplevel=0\nfsplevelrule=2\n");
     if (iconify)
-        message += "minimize=true\nminimizerule=3\n";
+        message += QStringLiteral("minimize=true\nminimizerule=3\n");
     if ( windowtype != NET::Unknown ) {
-        message += "type=" + QString().setNum( windowtype ) + "\ntyperule=2";
+        message += QStringLiteral("type=") + QString().setNum( windowtype ) + QStringLiteral("\ntyperule=2");
     }
     if ( state ) {
         if( state & NET::KeepAbove )
-            message += "above=true\naboverule=3\n";
+            message += QStringLiteral("above=true\naboverule=3\n");
         if( state & NET::KeepBelow )
-            message += "below=true\nbelowrule=3\n";
+            message += QStringLiteral("below=true\nbelowrule=3\n");
         if( state & NET::SkipTaskbar )
-            message += "skiptaskbar=true\nskiptaskbarrule=3\n";
+            message += QStringLiteral("skiptaskbar=true\nskiptaskbarrule=3\n");
         if( state & NET::SkipPager )
-            message += "skippager=true\nskippagerrule=3\n";
+            message += QStringLiteral("skippager=true\nskippagerrule=3\n");
         if( state & NET::MaxVert )
-            message += "maximizevert=true\nmaximizevertrule=3\n";
+            message += QStringLiteral("maximizevert=true\nmaximizevertrule=3\n");
         if( state & NET::MaxHoriz )
-            message += "maximizehoriz=true\nmaximizehorizrule=3\n";
+            message += QStringLiteral("maximizehoriz=true\nmaximizehorizrule=3\n");
         if( state & NET::FullScreen )
-            message += "fullscreen=true\nfullscreenrule=3\n";
+            message += QStringLiteral("fullscreen=true\nfullscreenrule=3\n");
     }
 
     msg.broadcastMessage( "_KDE_NET_WM_TEMPORARY_RULES", message, -1 );
@@ -292,7 +292,7 @@ int main( int argc, char *argv[] )
   QApplication app(argc, argv);
   KLocalizedString::setApplicationDomain( "kstart5" );
 
-  KAboutData aboutData(QStringLiteral("kstart"), i18n("KStart"), PROJECT_VERSION,
+  KAboutData aboutData(QStringLiteral("kstart"), i18n("KStart"), QString::fromLatin1(PROJECT_VERSION),
       i18n(""
        "Utility to launch applications with special window properties \n"
        "such as iconified, maximized, a certain virtual desktop, a special decoration\n"
@@ -300,9 +300,9 @@ int main( int argc, char *argv[] )
       KAboutLicense::GPL,
       i18n("(C) 1997-2000 Matthias Ettrich (ettrich@kde.org)"));
 
-  aboutData.addAuthor( i18n("Matthias Ettrich"), QString(), "ettrich@kde.org" );
-  aboutData.addAuthor( i18n("David Faure"), QString(), "faure@kde.org" );
-  aboutData.addAuthor( i18n("Richard J. Moore"), QString(), "rich@kde.org" );
+  aboutData.addAuthor( i18n("Matthias Ettrich"), QString(), QStringLiteral("ettrich@kde.org") );
+  aboutData.addAuthor( i18n("David Faure"), QString(), QStringLiteral("faure@kde.org") );
+  aboutData.addAuthor( i18n("Richard J. Moore"), QString(), QStringLiteral("rich@kde.org") );
   KAboutData::setApplicationData(aboutData);
 
   QCommandLineParser parser;
@@ -340,9 +340,9 @@ int main( int argc, char *argv[] )
   parser.process(app);
   aboutData.processCommandLine(&parser);
 
-  if (parser.isSet("service")) {
-      exe = parser.value("service");
-      url = parser.value("url");
+  if (parser.isSet(QStringLiteral("service"))) {
+      exe = parser.value(QStringLiteral("service"));
+      url = parser.value(QStringLiteral("url"));
   } else {
       if ( parser.positionalArguments().count() == 0 )
           qCritical() << i18n("No command specified");
@@ -353,76 +353,76 @@ int main( int argc, char *argv[] )
           (*proc) << parser.positionalArguments().at(i);
   }
 
-  desktop = parser.value( "desktop" ).toInt();
-  if ( parser.isSet ( "alldesktops")  )
+  desktop = parser.value( QStringLiteral("desktop") ).toInt();
+  if ( parser.isSet ( QStringLiteral("alldesktops"))  )
       desktop = NETWinInfo::OnAllDesktops;
-  if ( parser.isSet ( "currentdesktop")  )
+  if ( parser.isSet ( QStringLiteral("currentdesktop"))  )
       desktop = KWindowSystem::currentDesktop();
 
-  windowtitle = parser.value( "window" );
-  windowclass = parser.value( "windowclass" );
+  windowtitle = parser.value( QStringLiteral("window" ));
+  windowclass = parser.value( QStringLiteral("windowclass" ));
   if( !windowclass.isEmpty() )
       windowclass = windowclass.toLower();
 
   if( windowtitle.isEmpty() && windowclass.isEmpty())
       qWarning() << "Omitting both --window and --windowclass arguments is not recommended" ;
 
-  QString s = parser.value( "type" );
+  QString s = parser.value( QStringLiteral("type") );
   if ( !s.isEmpty() ) {
       s = s.toLower();
-      if ( s == "desktop" )
+      if ( s == QLatin1String("desktop") )
 	  windowtype = NET::Desktop;
-      else if ( s == "dock" )
+      else if ( s == QLatin1String("dock") )
 	  windowtype = NET::Dock;
-      else if ( s == "toolbar" )
+      else if ( s == QLatin1String("toolbar") )
 	  windowtype = NET::Toolbar;
-      else if ( s == "menu" )
+      else if ( s == QLatin1String("menu") )
 	  windowtype = NET::Menu;
-      else if ( s == "dialog" )
+      else if ( s == QLatin1String("dialog") )
 	  windowtype = NET::Dialog;
-      else if ( s == "override" )
+      else if ( s == QLatin1String("override") )
 	  windowtype = NET::Override;
-      else if ( s == "topmenu" )
+      else if ( s == QLatin1String("topmenu") )
 	  windowtype = NET::TopMenu;
       else
 	  windowtype = NET::Normal;
   }
 
-  if ( parser.isSet( "keepabove" ) ) {
+  if ( parser.isSet( QStringLiteral("keepabove") ) ) {
       state |= NET::KeepAbove;
       mask |= NET::KeepAbove;
-  } else if ( parser.isSet( "keepbelow" ) ) {
+  } else if ( parser.isSet( QStringLiteral("keepbelow") ) ) {
       state |= NET::KeepBelow;
       mask |= NET::KeepBelow;
   }
 
-  if ( parser.isSet( "skiptaskbar" ) ) {
+  if ( parser.isSet( QStringLiteral("skiptaskbar") ) ) {
       state |= NET::SkipTaskbar;
       mask |= NET::SkipTaskbar;
   }
 
-  if ( parser.isSet( "skippager" ) ) {
+  if ( parser.isSet( QStringLiteral("skippager") ) ) {
       state |= NET::SkipPager;
       mask |= NET::SkipPager;
   }
 
-  activate = parser.isSet("activate");
+  activate = parser.isSet(QStringLiteral("activate"));
 
-  if ( parser.isSet("maximize") ) {
+  if ( parser.isSet(QStringLiteral("maximize")) ) {
       state |= NET::Max;
       mask |= NET::Max;
   }
-  if ( parser.isSet("maximize-vertically") ) {
+  if ( parser.isSet(QStringLiteral("maximize-vertically")) ) {
       state |= NET::MaxVert;
       mask |= NET::MaxVert;
   }
-  if ( parser.isSet("maximize-horizontally") ) {
+  if ( parser.isSet(QStringLiteral("maximize-horizontally")) ) {
       state |= NET::MaxHoriz;
       mask |= NET::MaxHoriz;
   }
 
-  iconify = parser.isSet("iconify");
-  if ( parser.isSet("fullscreen") ) {
+  iconify = parser.isSet(QStringLiteral("iconify"));
+  if ( parser.isSet(QStringLiteral("fullscreen")) ) {
       NETRootInfo i( QX11Info::connection(), NET::Supported );
       if( i.isSupported( NET::FullScreen )) {
           state |= NET::FullScreen;

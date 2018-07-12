@@ -33,7 +33,7 @@ int main( int argc, char **argv )
 
     KLocalizedString::setApplicationDomain("ktraderclient5");
     KAboutData aboutData(QLatin1String("ktraderclient"), i18n("KTraderClient"), QLatin1String(PROJECT_VERSION));
-    aboutData.addAuthor(i18n("David Faure"), QString(), "faure@kde.org");
+    aboutData.addAuthor(i18n("David Faure"), QString(), QStringLiteral("faure@kde.org"));
 
     aboutData.setShortDescription(i18n("A command-line tool for querying the KDE trader system"));
     KAboutData::setApplicationData(aboutData);
@@ -49,10 +49,10 @@ int main( int argc, char **argv )
     parser.process(app);
     aboutData.processCommandLine(&parser);
 
-    const QString mimetype = parser.value("mimetype");
-    QString servicetype = parser.value("servicetype");
-    const QString constraint = parser.value("constraint");
-    const bool outputProperties = !parser.isSet("short");
+    const QString mimetype = parser.value(QStringLiteral("mimetype"));
+    QString servicetype = parser.value(QStringLiteral("servicetype"));
+    const QString constraint = parser.value(QStringLiteral("constraint"));
+    const bool outputProperties = !parser.isSet(QStringLiteral("short"));
 
     if ( mimetype.isEmpty() && servicetype.isEmpty() )
         parser.showHelp();
@@ -67,7 +67,7 @@ int main( int argc, char **argv )
     KService::List offers;
     if ( !mimetype.isEmpty() ) {
         if ( servicetype.isEmpty() )
-            servicetype = "Application";
+            servicetype = QStringLiteral("Application");
         offers = KMimeTypeTrader::self()->query( mimetype, servicetype, constraint );
     }
     else
@@ -96,15 +96,15 @@ int main( int argc, char **argv )
                 }
 
                 QString outp = *propIt;
-                outp += " : '";
+                outp += QStringLiteral(" : '");
 
                 switch ( prop.type() )
                 {
                     case QVariant::StringList:
-                        outp += prop.toStringList().join(" - ");
+                        outp += prop.toStringList().join(QStringLiteral(" - "));
                         break;
                     case QVariant::Bool:
-                        outp += prop.toBool() ? "TRUE" : "FALSE";
+                        outp += prop.toBool() ? QStringLiteral("TRUE") : QStringLiteral("FALSE");
                         break;
                     default:
                         outp += prop.toString();

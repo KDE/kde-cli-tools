@@ -34,8 +34,8 @@ int main(int argc, char *argv[])
     QCoreApplication app(argc, argv);
     KLocalizedString::setApplicationDomain("kbroadcastnotification");
 
-    KAboutData aboutData("kbroadcastnotification", i18n("Broadcast Notifications"),
-                         PROJECT_VERSION,
+    KAboutData aboutData(QStringLiteral("kbroadcastnotification"), i18n("Broadcast Notifications"),
+                         QLatin1String(PROJECT_VERSION),
                          i18n("A tool that emits a notification for all users by sending it on the system DBus"),
                          KAboutLicense::GPL,
                          i18n("(c) 2016 Kai Uwe Broulik"));

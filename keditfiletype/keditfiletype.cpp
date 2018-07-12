@@ -98,7 +98,7 @@ void FileTypeDialog::save()
             KBuildSycocaProgressDialog::rebuildKSycoca(this);
         // Trigger reparseConfiguration of filetypesrc in konqueror
         QDBusMessage message =
-            QDBusMessage::createSignal("/KonqMain", "org.kde.Konqueror.Main", "reparseConfiguration");
+            QDBusMessage::createSignal(QStringLiteral("/KonqMain"), QStringLiteral("org.kde.Konqueror.Main"), QStringLiteral("reparseConfiguration"));
         QDBusConnection::sessionBus().send(message);
     }
 }
@@ -118,8 +118,8 @@ void FileTypeDialog::clientChanged(bool state)
 void FileTypeDialog::slotDatabaseChanged(const QStringList& changedResources)
 {
     qDebug() << changedResources;
-    if ( changedResources.contains("xdgdata-mime") // changes in mimetype definitions
-         || changedResources.contains("services") ) { // changes in .desktop files
+    if ( changedResources.contains(QStringLiteral("xdgdata-mime")) // changes in mimetype definitions
+         || changedResources.contains(QStringLiteral("services")) ) { // changes in .desktop files
         m_details->refresh();
     }
 }
@@ -129,20 +129,20 @@ int main(int argc, char ** argv)
 {
     QApplication app(argc, argv);
     app.setAttribute(Qt::AA_UseHighDpiPixmaps, true);
-    QApplication::setWindowIcon(QIcon::fromTheme("preferences-desktop-filetype-association"));
+    QApplication::setWindowIcon(QIcon::fromTheme(QStringLiteral("preferences-desktop-filetype-association")));
 
-    KAboutData aboutData( "keditfiletype", i18n("File Type Editor"), PROJECT_VERSION,
+    KAboutData aboutData( QStringLiteral("keditfiletype"), i18n("File Type Editor"), QLatin1String(PROJECT_VERSION),
        i18n("KDE file type editor - simplified version for editing a single file type"),
        KAboutLicense::GPL,
        i18n("(c) 2000, KDE developers") );
-    aboutData.addAuthor(i18n("Preston Brown"), QString(), "pbrown@kde.org");
-    aboutData.addAuthor(i18n("David Faure"), QString(), "faure@kde.org");
+    aboutData.addAuthor(i18n("Preston Brown"), QString(), QStringLiteral("pbrown@kde.org"));
+    aboutData.addAuthor(i18n("David Faure"), QString(), QStringLiteral("faure@kde.org"));
     KAboutData::setApplicationData(aboutData);
 
     QCommandLineParser parser;
     aboutData.setupCommandLine(&parser);
-    parser.addOption(QCommandLineOption(QStringList() << "parent", i18n("Makes the dialog transient for the window specified by winid"), "winid"));
-    parser.addPositionalArgument("mimetype", i18n("File type to edit (e.g. text/html)"));
+    parser.addOption(QCommandLineOption(QStringList() << QStringLiteral("parent"), i18n("Makes the dialog transient for the window specified by winid"), QStringLiteral("winid")));
+    parser.addPositionalArgument(QStringLiteral("mimetype"), i18n("File type to edit (e.g. text/html)"));
 
     parser.process(app);
     aboutData.processCommandLine(&parser);
@@ -153,9 +153,9 @@ int main(int argc, char ** argv)
     QMimeDatabase db;
     QString arg = parser.positionalArguments().first();
     MimeTypeData* mimeTypeData = nullptr;
-    const bool createType = arg.startsWith('*');
+    const bool createType = arg.startsWith(QLatin1Char('*'));
     if ( createType ) {
-        QString mimeString = "application/x-kdeuser%1";
+        QString mimeString = QStringLiteral("application/x-kdeuser%1");
         QString mimeTypeName;
         int inc = 0;
         bool ok = false;
@@ -190,9 +190,9 @@ int main(int argc, char ** argv)
     }
 
     FileTypeDialog dlg( mimeTypeData );
-    if( parser.isSet( "parent" )) {
+    if( parser.isSet( QStringLiteral("parent") )) {
         bool ok;
-        long id = parser.value("parent").toLong(&ok);
+        long id = parser.value(QStringLiteral("parent")).toLong(&ok);
         if (ok)
             KWindowSystem::setMainWindow( &dlg, (WId)id );
     }

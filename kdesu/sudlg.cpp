@@ -35,22 +35,22 @@ KDEsuDialog::KDEsuDialog(QByteArray user, QByteArray authUser, bool enableKeep, 
     } else {
         if (authUser == "root") {
             if(withIgnoreButton)
-	            prompt = "<qt>" + i18n("The action you requested needs <b>root privileges</b>. "
+                prompt = QStringLiteral("<qt>") + i18n("The action you requested needs <b>root privileges</b>. "
         	    "Please enter <b>root's</b> password below or click "
-	            "Ignore to continue with your current privileges.") + "</qt>";
+                "Ignore to continue with your current privileges.") + QStringLiteral("</qt>");
 	    else
-	            prompt = "<qt>" + i18n("The action you requested needs <b>root privileges</b>. "
-        	    "Please enter <b>root's</b> password below.") + "</qt>";
+                prompt = QStringLiteral("<qt>") + i18n("The action you requested needs <b>root privileges</b>. "
+                "Please enter <b>root's</b> password below.") + QStringLiteral("</qt>");
         } else {
             if(withIgnoreButton)
-	            prompt = "<qt>" + i18n("The action you requested needs additional privileges. "
+                prompt = QStringLiteral("<qt>") + i18n("The action you requested needs additional privileges. "
 	                "Please enter the password for <b>%1</b> below or click "
         	        "Ignore to continue with your current privileges.", QString::fromLatin1(authUser)) +
-	                "</qt>";
+                    QStringLiteral("</qt>");
 	    else
-	            prompt = "<qt>" + i18n("The action you requested needs additional privileges. "
+                prompt = QStringLiteral("<qt>") + i18n("The action you requested needs additional privileges. "
 	                "Please enter the password for <b>%1</b> below.", QString::fromLatin1(authUser)) +
-	                "</qt>";
+                    QStringLiteral("</qt>");
 
         }
     }

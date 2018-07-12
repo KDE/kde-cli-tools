@@ -60,9 +60,9 @@ int main(int argc, char *argv[])
         qstdin.open(stdin, QIODevice::ReadOnly);
         const QByteArray data = qstdin.readAll();
         mime = db.mimeTypeForData(data);
-    } else if (parser.isSet("c")) {
+    } else if (parser.isSet(QStringLiteral("c"))) {
         mime = db.mimeTypeForFile(fileName, QMimeDatabase::MatchContent);
-    } else if (parser.isSet("f")) {
+    } else if (parser.isSet(QStringLiteral("f"))) {
         mime = db.mimeTypeForFile(fileName, QMimeDatabase::MatchExtension);
     } else {
         mime = db.mimeTypeForFile(fileName);

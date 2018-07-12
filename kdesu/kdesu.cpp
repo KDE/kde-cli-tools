@@ -99,15 +99,15 @@ int main(int argc, char *argv[])
 
     KLocalizedString::setApplicationDomain("kdesu5");
 
-    KAboutData aboutData("kdesu", i18n("KDE su"),
-            Version, i18n("Runs a program with elevated privileges."),
+    KAboutData aboutData(QStringLiteral("kdesu"), i18n("KDE su"),
+            QLatin1String(Version), i18n("Runs a program with elevated privileges."),
             KAboutLicense::Artistic,
             i18n("Copyright (c) 1998-2000 Geert Jansen, Pietro Iglio"));
     aboutData.addAuthor(i18n("Geert Jansen"), i18n("Maintainer"),
-            "jansen@kde.org", "http://www.stack.nl/~geertj/");
+            QStringLiteral("jansen@kde.org"), QStringLiteral("http://www.stack.nl/~geertj/"));
     aboutData.addAuthor(i18n("Pietro Iglio"), i18n("Original author"),
-            "iglio@fub.it");
-    app.setWindowIcon(QIcon::fromTheme("dialog-password"));
+            QStringLiteral("iglio@fub.it"));
+    app.setWindowIcon(QIcon::fromTheme(QStringLiteral("dialog-password")));
 
     KAboutData::setApplicationData(aboutData);
 
@@ -115,23 +115,23 @@ int main(int argc, char *argv[])
     // at the beginning of main()
     QCommandLineParser parser;
     aboutData.setupCommandLine(&parser);
-    parser.addPositionalArgument("command", i18n("Specifies the command to run as separate arguments"));
-    parser.addOption(QCommandLineOption("c", i18n("Specifies the command to run as one string"), "command"));
-    parser.addOption(QCommandLineOption("f", i18n("Run command under target uid if <file> is not writable"), "file"));
-    parser.addOption(QCommandLineOption("u", i18n("Specifies the target uid"), "user", duser));
-    parser.addOption(QCommandLineOption("n", i18n("Do not keep password")));
-    parser.addOption(QCommandLineOption("s", i18n("Stop the daemon (forgets all passwords)")));
-    parser.addOption(QCommandLineOption("t", i18n("Enable terminal output (no password keeping)")));
-    parser.addOption(QCommandLineOption("p", i18n("Set priority value: 0 <= prio <= 100, 0 is lowest"), "prio", "50"));
-    parser.addOption(QCommandLineOption("r", i18n("Use realtime scheduling")));
-    parser.addOption(QCommandLineOption("noignorebutton", i18n("Do not display ignore button")));
-    parser.addOption(QCommandLineOption("i", i18n("Specify icon to use in the password dialog"), "icon name"));
-    parser.addOption(QCommandLineOption("d", i18n("Do not show the command to be run in the dialog")));
+    parser.addPositionalArgument(QStringLiteral("command"), i18n("Specifies the command to run as separate arguments"));
+    parser.addOption(QCommandLineOption(QStringLiteral("c"), i18n("Specifies the command to run as one string"), QStringLiteral("command")));
+    parser.addOption(QCommandLineOption(QStringLiteral("f"), i18n("Run command under target uid if <file> is not writable"), QStringLiteral("file")));
+    parser.addOption(QCommandLineOption(QStringLiteral("u"), i18n("Specifies the target uid"), QStringLiteral("user"), QString::fromLatin1(duser)));
+    parser.addOption(QCommandLineOption(QStringLiteral("n"), i18n("Do not keep password")));
+    parser.addOption(QCommandLineOption(QStringLiteral("s"), i18n("Stop the daemon (forgets all passwords)")));
+    parser.addOption(QCommandLineOption(QStringLiteral("t"), i18n("Enable terminal output (no password keeping)")));
+    parser.addOption(QCommandLineOption(QStringLiteral("p"), i18n("Set priority value: 0 <= prio <= 100, 0 is lowest"), QStringLiteral("prio"), QStringLiteral("50")));
+    parser.addOption(QCommandLineOption(QStringLiteral("r"), i18n("Use realtime scheduling")));
+    parser.addOption(QCommandLineOption(QStringLiteral("noignorebutton"), i18n("Do not display ignore button")));
+    parser.addOption(QCommandLineOption(QStringLiteral("i"), i18n("Specify icon to use in the password dialog"), QStringLiteral("icon name")));
+    parser.addOption(QCommandLineOption(QStringLiteral("d"), i18n("Do not show the command to be run in the dialog")));
 #ifdef HAVE_X11
     /* KDialog originally used --embed for attaching the dialog box.  However this is misleading and so we changed to --attach.
      * For consistancy, we silently map --embed to --attach */
-    parser.addOption(QCommandLineOption("attach", i18nc("Transient means that the kdesu app will be attached to the app specified by the winid so that it is like a dialog box rather than some separate program", "Makes the dialog transient for an X app specified by winid"), "winid"));
-    parser.addOption(QCommandLineOption("embed", i18n("Embed into a window"), "winid"));
+    parser.addOption(QCommandLineOption(QStringLiteral("attach"), i18nc("Transient means that the kdesu app will be attached to the app specified by the winid so that it is like a dialog box rather than some separate program", "Makes the dialog transient for an X app specified by winid"), QStringLiteral("winid")));
+    parser.addOption(QCommandLineOption(QStringLiteral("embed"), i18n("Embed into a window"), QStringLiteral("winid")));
 #endif
 
     //KApplication::disableAutoDcopRegistration();
@@ -170,7 +170,7 @@ int main(int argc, char *argv[])
 static int startApp(QCommandLineParser& p)
 {
     // Stop daemon and exit?
-    if (p.isSet("s"))
+    if (p.isSet(QStringLiteral("s")))
     {
         KDEsuClient client;
         if (client.ping() == -1)
@@ -188,15 +188,15 @@ static int startApp(QCommandLineParser& p)
     }
 
     QString icon;
-    if ( p.isSet("i"))
-        icon = p.value("i");
+    if ( p.isSet(QStringLiteral("i")))
+        icon = p.value(QStringLiteral("i"));
 
     bool prompt = true;
-    if ( p.isSet("d"))
+    if ( p.isSet(QStringLiteral("d")))
         prompt = false;
 
     // Get target uid
-    QByteArray user = p.value("u").toLocal8Bit();
+    QByteArray user = p.value(QStringLiteral("u")).toLocal8Bit();
     QByteArray auth_user = user;
     struct passwd *pw = getpwnam(user);
     if (pw == nullptr)
@@ -214,10 +214,10 @@ static int startApp(QCommandLineParser& p)
     }
 
     // If file is writeable, do not change uid
-    QString file = p.value("f");
+    QString file = p.value(QStringLiteral("f"));
     if (other_uid && !file.isEmpty())
     {
-        if (file.startsWith('/'))
+        if (file.startsWith(QLatin1Char('/')))
         {
             file = QStandardPaths::locate(QStandardPaths::GenericConfigLocation, file);
             if (file.isEmpty())
@@ -236,7 +236,7 @@ static int startApp(QCommandLineParser& p)
     }
 
     // Get priority/scheduler
-    QString tmp = p.value("p");
+    QString tmp = p.value(QStringLiteral("p"));
     bool ok;
     int priority = tmp.toInt(&ok);
     if (!ok || (priority < 0) || (priority > 100))
@@ -245,7 +245,7 @@ static int startApp(QCommandLineParser& p)
         p.showHelp(1);
     }
     int scheduler = SuProcess::SchedNormal;
-    if (p.isSet("r"))
+    if (p.isSet(QStringLiteral("r")))
         scheduler = SuProcess::SchedRealtime;
     if ((priority > 50) || (scheduler != SuProcess::SchedNormal))
     {
@@ -254,9 +254,9 @@ static int startApp(QCommandLineParser& p)
     }
 
     // Get command
-    if (p.isSet("c"))
+    if (p.isSet(QStringLiteral("c")))
     {
-        command = p.value("c").toLocal8Bit();
+        command = p.value(QStringLiteral("c")).toLocal8Bit();
         // Accepting additional arguments here is somewhat weird,
         // but one can conceive use cases: have a complex command with
         // redirections and additional file names which need to be quoted
@@ -304,20 +304,20 @@ static int startApp(QCommandLineParser& p)
     }
 
     // Try to exec the command with kdesud.
-    bool keep = !p.isSet("n") && have_daemon;
-    bool terminal = p.isSet("t");
-    bool withIgnoreButton = !p.isSet("noignorebutton");
+    bool keep = !p.isSet(QStringLiteral("n")) && have_daemon;
+    bool terminal = p.isSet(QStringLiteral("t"));
+    bool withIgnoreButton = !p.isSet(QStringLiteral("noignorebutton"));
     int winid = -1;
-    bool attach = p.isSet("attach");
+    bool attach = p.isSet(QStringLiteral("attach"));
     if(attach) {
-        winid = p.value("attach").toInt(&attach, 0);  //C style parsing.  If the string begins with "0x", base 16 is used; if the string begins with "0", base 8 is used; otherwise, base 10 is used.
+        winid = p.value(QStringLiteral("attach")).toInt(&attach, 0);  //C style parsing.  If the string begins with "0x", base 16 is used; if the string begins with "0", base 8 is used; otherwise, base 10 is used.
         if(!attach)
             qCWarning(category) << "Specified winid to attach to is not a valid number";
-    } else if(p.isSet("embed")) {
+    } else if(p.isSet(QStringLiteral("embed"))) {
         /* KDialog originally used --embed for attaching the dialog box.  However this is misleading and so we changed to --attach.
          * For consistancy, we silently map --embed to --attach */
         attach = true;
-        winid = p.value("embed").toInt(&attach, 0);  //C style parsing.  If the string begins with "0x", base 16 is used; if the string begins with "0", base 8 is used; otherwise, base 10 is used.
+        winid = p.value(QStringLiteral("embed")).toInt(&attach, 0);  //C style parsing.  If the string begins with "0x", base 16 is used; if the string begins with "0", base 8 is used; otherwise, base 10 is used.
         if(!attach)
             qCWarning(category) << "Specified winid to attach to is not a valid number";
     }
@@ -416,7 +416,7 @@ static int startApp(QCommandLineParser& p)
             QString prio;
             if (scheduler == SuProcess::SchedRealtime)
                 prio += i18n("realtime: ");
-            prio += QString("%1/100").arg(priority);
+            prio += QStringLiteral("%1/100").arg(priority);
             if (prompt)
                 dlg.addCommentLine(i18n("Priority:"), prio);
         }

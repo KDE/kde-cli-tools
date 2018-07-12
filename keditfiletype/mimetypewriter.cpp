@@ -89,32 +89,32 @@ bool MimeTypeWriter::write()
     if (!d->m_marker.isEmpty()) {
         writer.writeComment(d->m_marker);
     }
-    const QString nsUri = "http://www.freedesktop.org/standards/shared-mime-info";
+    const QString nsUri = QStringLiteral("http://www.freedesktop.org/standards/shared-mime-info");
     writer.writeDefaultNamespace(nsUri);
-    writer.writeStartElement("mime-info");
-    writer.writeStartElement(nsUri, "mime-type");
-    writer.writeAttribute("type", d->m_mimeType);
+    writer.writeStartElement(QStringLiteral("mime-info"));
+    writer.writeStartElement(nsUri, QStringLiteral("mime-type"));
+    writer.writeAttribute(QStringLiteral("type"), d->m_mimeType);
 
     if (!d->m_comment.isEmpty()) {
-        writer.writeStartElement(nsUri, "comment");
+        writer.writeStartElement(nsUri, QStringLiteral("comment"));
         writer.writeCharacters(d->m_comment);
         writer.writeEndElement(); // comment
     }
 
     if (!d->m_iconName.isEmpty()) {
         // User-specified icon name
-        writer.writeStartElement(nsUri, "icon");
-        writer.writeAttribute("name", d->m_iconName);
+        writer.writeStartElement(nsUri, QStringLiteral("icon"));
+        writer.writeAttribute(QStringLiteral("name"), d->m_iconName);
         writer.writeEndElement(); // icon
     }
 
     // Allow this local definition to override the global definition
-    writer.writeStartElement(nsUri, "glob-deleteall");
+    writer.writeStartElement(nsUri, QStringLiteral("glob-deleteall"));
     writer.writeEndElement(); // glob-deleteall
 
     foreach(const QString& pattern, d->m_patterns) {
-        writer.writeStartElement(nsUri, "glob");
-        writer.writeAttribute("pattern", pattern);
+        writer.writeStartElement(nsUri, QStringLiteral("glob"));
+        writer.writeAttribute(QStringLiteral("pattern"), pattern);
         writer.writeEndElement(); // glob
     }
 
@@ -129,7 +129,7 @@ void MimeTypeWriter::runUpdateMimeDatabase()
     const QString localPackageDir = QStandardPaths::writableLocation(QStandardPaths::GenericDataLocation) + QLatin1String("/mime/");
     Q_ASSERT(!localPackageDir.isEmpty());
     KProcess proc;
-    proc << "update-mime-database";
+    proc << QStringLiteral("update-mime-database");
     proc << localPackageDir;
     const int exitCode = proc.execute();
     if (exitCode) {
@@ -146,18 +146,18 @@ QString MimeTypeWriterPrivate::localFilePath() const
     // We could also use Override.xml, says the spec, but then we'd need to merge with other mimetypes,
     // and in ~/.local we don't really expect other packages to be installed anyway...
     QString baseName = m_mimeType;
-    baseName.replace('/', '-');
-    QString packagesDirName = QStandardPaths::writableLocation(QStandardPaths::GenericDataLocation) + QLatin1String("/mime/") + "packages/";
+    baseName.replace(QLatin1Char('/'), QLatin1Char('-'));
+    QString packagesDirName = QStandardPaths::writableLocation(QStandardPaths::GenericDataLocation) + QLatin1String("/mime/") + QStringLiteral("packages/");
     // create the directory, the saving will fail if it doesn't exist (bug#356237)
     QDir(packagesDirName).mkpath(QStringLiteral("."));
-    return packagesDirName + baseName + ".xml" ;
+    return packagesDirName + baseName + QStringLiteral(".xml");
 }
 
 static QString existingDefinitionFile(const QString& mimeType)
 {
     QString baseName = mimeType;
-    baseName.replace('/', '-');
-    return QStandardPaths::locate(QStandardPaths::GenericDataLocation, QLatin1String("mime/") + "packages/" + baseName + ".xml" );
+    baseName.replace(QLatin1Char('/'), QLatin1Char('-'));
+    return QStandardPaths::locate(QStandardPaths::GenericDataLocation, QLatin1String("mime/") + QStringLiteral("packages/") + baseName + QStringLiteral(".xml") );
 }
 
 bool MimeTypeWriter::hasDefinitionFile(const QString& mimeType)
@@ -171,7 +171,7 @@ void MimeTypeWriter::removeOwnMimeType(const QString& mimeType)
     Q_ASSERT(!file.isEmpty());
     QFile::remove(file);
     // We must also remove the generated XML file, update-mime-database doesn't do that, for unknown media types
-    QString xmlFile = QStandardPaths::locate(QStandardPaths::GenericDataLocation, QLatin1String("mime/") + mimeType + ".xml" );
+    QString xmlFile = QStandardPaths::locate(QStandardPaths::GenericDataLocation, QLatin1String("mime/") + mimeType + QStringLiteral(".xml") );
     QFile::remove(xmlFile);
 }
 

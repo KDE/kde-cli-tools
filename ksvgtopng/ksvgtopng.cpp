@@ -51,7 +51,7 @@ int main(int argc, char **argv)
 */
 	}
 
-	img.save(argv[4], "PNG");
+    img.save(QString::fromLatin1(argv[4]), "PNG");
 
 	return 0;
 }

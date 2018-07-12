@@ -117,34 +117,34 @@ int main( int argc, char **argv )
 
   KLocalizedString::setApplicationDomain("kioclient5");
 
-  QString appName = "kioclient";
+  QString appName = QStringLiteral("kioclient");
   QString programName = i18n("KIO Client");
   QString description = i18n("Command-line tool for network-transparent operations");
-  QString version = PROJECT_VERSION;
+  QString version = QLatin1String(PROJECT_VERSION);
   KAboutData data(appName, programName, version, description, KAboutLicense::LGPL_V2);
   KAboutData::setApplicationData(data);
 
   QCommandLineParser parser;
   data.setupCommandLine(&parser);
-  parser.addOption(QCommandLineOption("noninteractive", i18n("Non-interactive use: no message boxes. If you don't want a "
+  parser.addOption(QCommandLineOption(QStringLiteral("noninteractive"), i18n("Non-interactive use: no message boxes. If you don't want a "
                                                              "graphical connection, use --platform offscreen")));
 
   #if !defined(KIOCLIENT_AS_KDEOPEN)
-  parser.addOption(QCommandLineOption("overwrite", i18n("Overwrite destination if it exists (for copy and move)")));
+  parser.addOption(QCommandLineOption(QStringLiteral("overwrite"), i18n("Overwrite destination if it exists (for copy and move)")));
   #endif
 
   #if defined(KIOCLIENT_AS_KDEOPEN)
-  parser.addPositionalArgument("url", i18n("file or URL"), i18n("urls..."));
+  parser.addPositionalArgument(QStringLiteral("url"), i18n("file or URL"), i18n("urls..."));
   #elif defined(KIOCLIENT_AS_KDECP5)
-  parser.addPositionalArgument("src", i18n("Source URL or URLs"), i18n("urls..."));
-  parser.addPositionalArgument("dest", i18n("Destination URL"), i18n("url"));
+  parser.addPositionalArgument(QStringLiteral("src"), i18n("Source URL or URLs"), i18n("urls..."));
+  parser.addPositionalArgument(QStringLiteral("dest"), i18n("Destination URL"), i18n("url"));
   #elif defined(KIOCLIENT_AS_KDEMV5)
-  parser.addPositionalArgument("src", i18n("Source URL or URLs"), i18n("urls..."));
-  parser.addPositionalArgument("dest", i18n("Destination URL"), i18n("url"));
+  parser.addPositionalArgument(QStringLiteral("src"), i18n("Source URL or URLs"), i18n("urls..."));
+  parser.addPositionalArgument(QStringLiteral("dest"), i18n("Destination URL"), i18n("url"));
   #elif defined(KIOCLIENT_AS_KIOCLIENT5)
-  parser.addOption(QCommandLineOption("commands", i18n("Show available commands")));
-  parser.addPositionalArgument("command", i18n("Command (see --commands)"), i18n("command"));
-  parser.addPositionalArgument("URLs", i18n("Arguments for command"), i18n("urls..."));
+  parser.addOption(QCommandLineOption(QStringLiteral("commands"), i18n("Show available commands")));
+  parser.addPositionalArgument(QStringLiteral("command"), i18n("Command (see --commands)"), i18n("command"));
+  parser.addPositionalArgument(QStringLiteral("URLs"), i18n("Arguments for command"), i18n("urls..."));
   #endif
 
 //   KCmdLineArgs::addTempFileOption();
@@ -153,7 +153,7 @@ int main( int argc, char **argv )
   data.processCommandLine(&parser);
 
 #ifdef KIOCLIENT_AS_KIOCLIENT5
-  if ( argc == 1 || parser.isSet("commands") )
+  if ( argc == 1 || parser.isSet(QStringLiteral("commands")) )
   {
     puts(parser.helpText().toLocal8Bit());
     puts("\n\n");
@@ -269,18 +269,18 @@ bool ClientApp::doIt(const QCommandLineParser& parser)
     const int argc = parser.positionalArguments().count();
     checkArgumentCount(argc, 1, 0);
 
-    if ( !parser.isSet( "noninteractive" ) ) {
+    if ( !parser.isSet( QStringLiteral("noninteractive") ) ) {
         s_interactive = false;
         s_jobFlags = KIO::HideProgressInfo;
     }
 #if !defined(KIOCLIENT_AS_KDEOPEN)
-    if (parser.isSet("overwrite")) {
+    if (parser.isSet(QStringLiteral("overwrite"))) {
         s_jobFlags |= KIO::Overwrite;
     }
 #endif
 
 #ifdef KIOCLIENT_AS_KDEOPEN
-    return kde_open(makeURL(parser.positionalArguments().at(0)), QByteArray(), false);
+    return kde_open(makeURL(parser.positionalArguments().at(0)), QString(), false);
 #elif defined(KIOCLIENT_AS_KDECP5)
     checkArgumentCount(argc, 2, 0);
     return doCopy(parser.positionalArguments());
@@ -291,7 +291,7 @@ bool ClientApp::doIt(const QCommandLineParser& parser)
     // Normal kioclient mode
     QString command = parser.positionalArguments().first();
 #ifndef KIOCORE_ONLY
-    if ( command == "openProperties" )
+    if ( command == QLatin1String("openProperties") )
     {
         checkArgumentCount(argc, 2, 2); // openProperties <url>
         QUrl url = makeURL(parser.positionalArguments().last());
@@ -304,7 +304,7 @@ bool ClientApp::doIt(const QCommandLineParser& parser)
     }
     else
 #endif
-        if ( command == "cat" )
+        if ( command == QLatin1String("cat") )
     {
         checkArgumentCount(argc, 2, 2); // cat <url>
         QUrl url = makeURL(parser.positionalArguments().last());
@@ -317,7 +317,7 @@ bool ClientApp::doIt(const QCommandLineParser& parser)
         return m_ok;
     }
 #ifndef KIOCORE_ONLY
-    else if ( command == "exec" )
+    else if ( command ==QLatin1String( "exec") )
     {
         checkArgumentCount(argc, 2, 3);
         return kde_open( makeURL(parser.positionalArguments()[1]),
@@ -325,7 +325,7 @@ bool ClientApp::doIt(const QCommandLineParser& parser)
                              true );
     }
 #endif
-    else if ( command == "download" )
+    else if ( command == QLatin1String("download") )
     {
         checkArgumentCount(argc, 0, 0);
         QStringList args = parser.positionalArguments();
@@ -345,28 +345,28 @@ bool ClientApp::doIt(const QCommandLineParser& parser)
         qApp->exec();
         return m_ok;
     }
-    else if ( command == "copy" || command == "cp" )
+    else if ( command == QLatin1String("copy") || command == QLatin1String("cp") )
     {
         checkArgumentCount(argc, 3, 0); // cp <src> <dest>
         QStringList args = parser.positionalArguments();
         args.removeFirst();
         return doCopy(args);
     }
-    else if ( command == "move" || command == "mv" )
+    else if ( command == QLatin1String("move") || command == QLatin1String("mv") )
     {
         checkArgumentCount(argc, 3, 0); // mv <src> <dest>
         QStringList args = parser.positionalArguments();
         args.removeFirst();
         return doMove(args);
     }
-    else if ( command == "list" || command == "ls" )
+    else if ( command == QLatin1String("list") || command == QLatin1String("ls") )
     {
         checkArgumentCount(argc, 2, 2); // ls <url>
         QStringList args = parser.positionalArguments();
         args.removeFirst();
         return doList(args);
     }
-    else if ( command == "remove" || command == "rm" )
+    else if ( command == QLatin1String("remove") || command == QLatin1String("rm") )
     {
         checkArgumentCount(argc, 2, 0); // rm <url>
         QStringList args = parser.positionalArguments();

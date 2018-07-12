@@ -49,13 +49,12 @@
 
 
 K_PLUGIN_FACTORY(FileTypesViewFactory, registerPlugin<FileTypesView>();)
-K_EXPORT_PLUGIN(FileTypesViewFactory("filetypes"))
 
 
 FileTypesView::FileTypesView(QWidget *parent, const QVariantList &)
-  : KCModule(/*FileTypesViewFactory::aboutData(),*/ parent)
+  : KCModule(parent)
 {
-  m_fileTypesConfig = KSharedConfig::openConfig("filetypesrc", KConfig::NoGlobals);
+  m_fileTypesConfig = KSharedConfig::openConfig(QStringLiteral("filetypesrc"), KConfig::NoGlobals);
 
   setQuickHelp( i18n("<p><h1>File Associations</h1>"
     " This module allows you to choose which applications are associated"
@@ -118,14 +117,14 @@ FileTypesView::FileTypesView(QWidget *parent, const QVariantList &)
   leftLayout->addLayout(btnsLay);
   btnsLay->addStretch(1);
   QPushButton *addTypeB = new QPushButton(i18n("Add..."), this);
-  addTypeB->setIcon(QIcon::fromTheme("list-add"));
+  addTypeB->setIcon(QIcon::fromTheme(QStringLiteral("list-add")));
   connect(addTypeB, SIGNAL(clicked()), SLOT(addType()));
   btnsLay->addWidget(addTypeB);
 
   addTypeB->setWhatsThis( i18n("Click here to add a new file type.") );
 
   m_removeTypeB = new QPushButton(i18n("&Remove"), this);
-  m_removeTypeB->setIcon(QIcon::fromTheme("list-remove"));
+  m_removeTypeB->setIcon(QIcon::fromTheme(QStringLiteral("list-remove")));
   connect(m_removeTypeB, SIGNAL(clicked()), SLOT(removeType()));
   btnsLay->addWidget(m_removeTypeB);
   m_removeTypeB->setEnabled(false);
@@ -186,11 +185,11 @@ void FileTypesView::readFileTypes()
 
     QMimeDatabase db;
     QList<QMimeType> mimetypes = db.allMimeTypes();
-    qSort(mimetypes.begin(), mimetypes.end(), mimeTypeLessThan);
+    std::sort(mimetypes.begin(), mimetypes.end(), mimeTypeLessThan);
     auto it2(mimetypes.constBegin());
     for (; it2 != mimetypes.constEnd(); ++it2) {
         const QString mimetype = (*it2).name();
-        const int index = mimetype.indexOf('/');
+        const int index = mimetype.indexOf(QLatin1Char('/'));
         const QString maj = mimetype.left(index);
         const QString min = mimetype.right(mimetype.length() - index+1);
 
@@ -244,7 +243,7 @@ void FileTypesView::addType()
     NewTypeDialog dialog(allGroups, this);
 
     if (dialog.exec()) {
-        const QString newMimeType = dialog.group() + '/' + dialog.text();
+        const QString newMimeType = dialog.group() + QLatin1Char('/') + dialog.text();
 
         QTreeWidgetItemIterator it(typesLV);
 
@@ -367,7 +366,7 @@ void FileTypesView::updateRemoveButton(TypesListItem* tlitem)
                     canRemove = true;
 
                     // Is there a global definition for it?
-                    const QStringList mimeFiles = QStandardPaths::locateAll(QStandardPaths::GenericDataLocation, QLatin1String("mime/") + mimeType + ".xml" );
+                    const QStringList mimeFiles = QStandardPaths::locateAll(QStandardPaths::GenericDataLocation, QLatin1String("mime/") + mimeType + QStringLiteral(".xml") );
                     qDebug() << mimeFiles;
                     if (mimeFiles.count() >= 2 /*a local and a global*/) {
                         m_removeButtonSaysRevert = true;
@@ -449,7 +448,7 @@ void FileTypesView::save()
       // TODO: the same for dolphin. Or we should probably define a global signal for this.
       // Or a KGlobalSettings thing.
       QDBusMessage message =
-          QDBusMessage::createSignal("/KonqMain", "org.kde.Konqueror.Main", "reparseConfiguration");
+          QDBusMessage::createSignal(QStringLiteral("/KonqMain"), QStringLiteral("org.kde.Konqueror.Main"), QStringLiteral("reparseConfiguration"));
       QDBusConnection::sessionBus().send(message);
   }
 
@@ -471,8 +470,8 @@ void FileTypesView::load()
 void FileTypesView::slotDatabaseChanged(const QStringList& changedResources)
 {
     qDebug() << changedResources;
-    if ( changedResources.contains("xdgdata-mime") // changes in mimetype definitions
-         || changedResources.contains("services") ) { // changes in .desktop files
+    if ( changedResources.contains(QStringLiteral("xdgdata-mime")) // changes in mimetype definitions
+         || changedResources.contains(QStringLiteral("services")) ) { // changes in .desktop files
 
         m_details->refresh();
 

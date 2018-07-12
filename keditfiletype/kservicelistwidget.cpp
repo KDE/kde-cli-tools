@@ -89,7 +89,7 @@ KServiceListWidget::KServiceListWidget(int kind, QWidget *parent)
   lay->addLayout(btnsLay);
 
   servUpButton = new QPushButton(i18n("Move &Up"), this);
-  servUpButton->setIcon(QIcon::fromTheme("arrow-up"));
+  servUpButton->setIcon(QIcon::fromTheme(QStringLiteral("arrow-up")));
   servUpButton->setEnabled(false);
   connect(servUpButton, SIGNAL(clicked()), SLOT(promoteService()));
   btnsLay->addWidget(servUpButton);
@@ -103,7 +103,7 @@ KServiceListWidget::KServiceListWidget(int kind, QWidget *parent)
                         "service, moving it up in the list."));
 
   servDownButton = new QPushButton(i18n("Move &Down"), this);
-  servDownButton->setIcon(QIcon::fromTheme("arrow-down"));
+  servDownButton->setIcon(QIcon::fromTheme(QStringLiteral("arrow-down")));
   servDownButton->setEnabled(false);
   connect(servDownButton, SIGNAL(clicked()), SLOT(demoteService()));
   btnsLay->addWidget(servDownButton);
@@ -116,7 +116,7 @@ KServiceListWidget::KServiceListWidget(int kind, QWidget *parent)
                         "service, moving it down in the list."));
 
   servNewButton = new QPushButton(i18n("Add..."), this);
-  servNewButton->setIcon(QIcon::fromTheme("list-add"));
+  servNewButton->setIcon(QIcon::fromTheme(QStringLiteral("list-add")));
   servNewButton->setEnabled(false);
   connect(servNewButton, SIGNAL(clicked()), SLOT(addService()));
   btnsLay->addWidget(servNewButton);
@@ -124,7 +124,7 @@ KServiceListWidget::KServiceListWidget(int kind, QWidget *parent)
 
 
   servEditButton = new QPushButton(i18n("Edit..."), this);
-  servEditButton->setIcon(QIcon::fromTheme("edit-rename"));
+  servEditButton->setIcon(QIcon::fromTheme(QStringLiteral("edit-rename")));
   servEditButton->setEnabled(false);
   connect(servEditButton, SIGNAL(clicked()), SLOT(editService()));
   btnsLay->addWidget(servEditButton);
@@ -132,7 +132,7 @@ KServiceListWidget::KServiceListWidget(int kind, QWidget *parent)
 
 
   servRemoveButton = new QPushButton(i18n("Remove"), this);
-  servRemoveButton->setIcon(QIcon::fromTheme("list-remove"));
+  servRemoveButton->setIcon(QIcon::fromTheme(QStringLiteral("list-remove")));
   servRemoveButton->setEnabled(false);
   connect(servRemoveButton, SIGNAL(clicked()), SLOT(removeService()));
   btnsLay->addWidget(servRemoveButton);
@@ -310,7 +310,7 @@ void KServiceListWidget::editService()
         }
     }
 
-    KFileItem item(QUrl::fromLocalFile(path), "application/x-desktop", KFileItem::Unknown);
+    KFileItem item(QUrl::fromLocalFile(path), QStringLiteral("application/x-desktop"), KFileItem::Unknown);
     KPropertiesDialog dlg(item, this);
     if (dlg.exec() != QDialog::Accepted)
         return;

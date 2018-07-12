@@ -45,7 +45,7 @@ KServiceSelectDlg::KServiceSelectDlg( const QString& /*serviceType*/, const QStr
     const KService::List allServices = KService::allServices();
     KService::List::const_iterator it(allServices.constBegin());
     for ( ; it != allServices.constEnd() ; ++it )
-      if ( (*it)->hasServiceType( "KParts/ReadOnlyPart" ) )
+      if ( (*it)->hasServiceType( QStringLiteral("KParts/ReadOnlyPart") ) )
       {
           m_listbox->addItem( new KServiceListItem( (*it), KServiceListWidget::SERVICELIST_SERVICES ) );
       }

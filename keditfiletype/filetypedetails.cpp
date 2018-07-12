@@ -96,7 +96,7 @@ FileTypeDetails::FileTypeDetails( QWidget * parent )
   hBox->addLayout(vbox);
 
   addExtButton = new QPushButton(i18n("Add..."), gb);
-  addExtButton->setIcon(QIcon::fromTheme("list-add"));
+  addExtButton->setIcon(QIcon::fromTheme(QStringLiteral("list-add")));
   addExtButton->setEnabled(false);
   connect(addExtButton, SIGNAL(clicked()),
           this, SLOT(addExtension()));
@@ -104,7 +104,7 @@ FileTypeDetails::FileTypeDetails( QWidget * parent )
   addExtButton->setWhatsThis( i18n("Add a new pattern for the selected file type.") );
 
   removeExtButton = new QPushButton(i18n("Remove"), gb);
-  removeExtButton->setIcon(QIcon::fromTheme("list-remove"));
+  removeExtButton->setIcon(QIcon::fromTheme(QStringLiteral("list-remove")));
   removeExtButton->setEnabled(false);
   connect(removeExtButton, SIGNAL(clicked()),
           this, SLOT(removeExtension()));
@@ -145,7 +145,7 @@ FileTypeDetails::FileTypeDetails( QWidget * parent )
 
   QRadioButton *embViewerRadio = new QRadioButton( i18n("Show file in embedded viewer") );
   QRadioButton *sepViewerRadio = new QRadioButton( i18n("Show file in separate viewer") );
-  m_rbGroupSettings = new QRadioButton( QString("Use settings for '%1' group") );
+  m_rbGroupSettings = new QRadioButton( QStringLiteral("Use settings for '%1' group") );
 
   m_chkAskSave = new QCheckBox( i18n("Ask whether to save to disk instead (only for Konqueror browser)") );
   connect(m_chkAskSave, SIGNAL( toggled(bool) ), SLOT( slotAskSaveToggled(bool) ));
@@ -214,7 +214,7 @@ void FileTypeDetails::addExtension()
   bool ok;
   QString ext = QInputDialog::getText(this,
     i18n( "Add New Extension" ), i18n( "Extension:" ),
-    QLineEdit::Normal, "*.", &ok);
+    QLineEdit::Normal, QStringLiteral("*."), &ok);
   if (ok) {
     extensionLB->addItem(ext);
     QStringList patt = m_mimeTypeData->patterns();
@@ -267,11 +267,11 @@ void FileTypeDetails::updateAskSave()
 
     QString dontAskAgainName;
     if (autoEmbed == MimeTypeData::Yes) // Embedded
-        dontAskAgainName = "askEmbedOrSave"+mimeType;
+        dontAskAgainName = QStringLiteral("askEmbedOrSave")+mimeType;
     else
-        dontAskAgainName = "askSave"+mimeType;
+        dontAskAgainName = QStringLiteral("askSave")+mimeType;
 
-    KSharedConfig::Ptr config = KSharedConfig::openConfig("filetypesrc", KConfig::NoGlobals);
+    KSharedConfig::Ptr config = KSharedConfig::openConfig(QStringLiteral("filetypesrc"), KConfig::NoGlobals);
     // default value
     bool ask = config->group("Notification Messages").readEntry(dontAskAgainName, QString()).isEmpty();
     // per-mimetype override if there's one

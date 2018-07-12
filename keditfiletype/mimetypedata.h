@@ -40,7 +40,7 @@ public:
     // Real constructor, used for a new mimetype.
     MimeTypeData(const QString& mimeName, bool /*unused, just to distinguish from the other QString ctor*/);
 
-    QString name() const { return m_isGroup ? m_major : m_major + '/' + m_minor; }
+    QString name() const { return m_isGroup ? m_major : m_major + QLatin1Char('/') + m_minor; }
     QString majorType() const { return m_major; }
     QString minorType() const { return m_minor; }
     void setMinor(const QString& m) { m_minor = m; }
