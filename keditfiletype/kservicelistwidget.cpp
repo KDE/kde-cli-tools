@@ -46,6 +46,8 @@ KServiceListItem::KServiceListItem( const KService::Ptr& pService, int kind )
     else
         setText( i18n( "%1 (%2)", pService->name(), pService->desktopEntryName() ) );
 
+    setIcon( QIcon::fromTheme( pService->icon() ) );
+
     if (!pService->isApplication())
       localPath = QStandardPaths::writableLocation(QStandardPaths::GenericDataLocation) + QStringLiteral("/kservices5/") + desktopPath;
     else
