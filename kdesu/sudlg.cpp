@@ -68,7 +68,7 @@ KDEsuDialog::~KDEsuDialog()
 
 bool KDEsuDialog::checkPassword()
 {
-    int status = proc.checkInstall(password().toLocal8Bit());
+    int status = proc.checkInstall(password().toLocal8Bit().constData());
     switch (status)
     {
     case -1:

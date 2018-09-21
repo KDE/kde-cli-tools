@@ -59,51 +59,51 @@ static QList<QUrl> makeUrls(const QStringList& urlArgs)
 #ifdef KIOCLIENT_AS_KIOCLIENT5
 static void usage()
 {
-    puts(i18n("\nSyntax:\n").toLocal8Bit());
+    puts(i18n("\nSyntax:\n").toLocal8Bit().constData());
     puts(i18n("  kioclient openProperties 'url'\n"
-              "            # Opens a properties menu\n\n").toLocal8Bit());
+              "            # Opens a properties menu\n\n").toLocal8Bit().constData());
     puts(i18n("  kioclient exec 'url' ['mimetype']\n"
               "            # Tries to open the document pointed to by 'url', in the application\n"
               "            #   associated with it in KDE. You may omit 'mimetype'.\n"
               "            #   In this case the mimetype is determined\n"
               "            #   automatically. Of course URL may be the URL of a\n"
               "            #   document, or it may be a *.desktop file.\n"
-              "            #   'url' can be an executable, too.\n").toLocal8Bit());
+              "            #   'url' can be an executable, too.\n").toLocal8Bit().constData());
     puts(i18n("  kioclient move 'src' 'dest'\n"
               "            # Moves the URL 'src' to 'dest'.\n"
-              "            #   'src' may be a list of URLs.\n").toLocal8Bit());
+              "            #   'src' may be a list of URLs.\n").toLocal8Bit().constData());
     puts(i18n("            #   'dest' may be \"trash:/\" to move the files\n"
-              "            #   to the trash.\n").toLocal8Bit());
+              "            #   to the trash.\n").toLocal8Bit().constData());
     puts(i18n("            #   the short version kioclient mv\n"
-              "            #   is also available.\n\n").toLocal8Bit());
+              "            #   is also available.\n\n").toLocal8Bit().constData());
     puts(i18n("  kioclient download ['src']\n"
               "            # Copies the URL 'src' to a user-specified location'.\n"
               "            #   'src' may be a list of URLs, if not present then\n"
-              "            #   a URL will be requested.\n\n").toLocal8Bit());
+              "            #   a URL will be requested.\n\n").toLocal8Bit().constData());
     puts(i18n("  kioclient copy 'src' 'dest'\n"
               "            # Copies the URL 'src' to 'dest'.\n"
-              "            #   'src' may be a list of URLs.\n").toLocal8Bit());
+              "            #   'src' may be a list of URLs.\n").toLocal8Bit().constData());
     puts(i18n("            #   the short version kioclient cp\n"
-              "            #   is also available.\n\n").toLocal8Bit());
+              "            #   is also available.\n\n").toLocal8Bit().constData());
     puts(i18n("  kioclient cat 'url'\n"
-              "            # Writes out the contents of 'url' to stdout\n\n").toLocal8Bit());
+              "            # Writes out the contents of 'url' to stdout\n\n").toLocal8Bit().constData());
     puts(i18n("  kioclient ls 'url'\n"
-              "            # Lists the contents of the directory 'url' to stdout\n\n").toLocal8Bit());
+              "            # Lists the contents of the directory 'url' to stdout\n\n").toLocal8Bit().constData());
     puts(i18n("  kioclient remove 'url'\n"
               "            # Removes the URL\n"
-              "            #   'url' may be a list of URLs.\n").toLocal8Bit());
+              "            #   'url' may be a list of URLs.\n").toLocal8Bit().constData());
     puts(i18n("            #   the short version kioclient rm\n"
-              "            #   is also available.\n\n").toLocal8Bit());
+              "            #   is also available.\n\n").toLocal8Bit().constData());
 
-    puts(i18n("*** Examples:\n").toLocal8Bit());
+    puts(i18n("*** Examples:\n").toLocal8Bit().constData());
     puts(i18n("  kioclient exec file:/home/weis/data/test.html\n"
-              "             // Opens the file with default binding\n\n").toLocal8Bit());
+              "             // Opens the file with default binding\n\n").toLocal8Bit().constData());
     puts(i18n("  kioclient exec ftp://localhost/\n"
-              "             // Opens new window with URL\n\n").toLocal8Bit());
+              "             // Opens new window with URL\n\n").toLocal8Bit().constData());
     puts(i18n("  kioclient exec file:/root/Desktop/emacs.desktop\n"
-              "             // Starts emacs\n\n").toLocal8Bit());
+              "             // Starts emacs\n\n").toLocal8Bit().constData());
     puts(i18n("  kioclient exec .\n"
-              "             // Opens the current directory. Very convenient.\n\n").toLocal8Bit());
+              "             // Opens the current directory. Very convenient.\n\n").toLocal8Bit().constData());
 }
 #endif
 
@@ -155,7 +155,7 @@ int main( int argc, char **argv )
 #ifdef KIOCLIENT_AS_KIOCLIENT5
   if ( argc == 1 || parser.isSet(QStringLiteral("commands")) )
   {
-    puts(parser.helpText().toLocal8Bit());
+    puts(parser.helpText().toLocal8Bit().constData());
     puts("\n\n");
     usage();
     return 0;
@@ -181,12 +181,12 @@ static void checkArgumentCount(int count, int min, int max)
 {
     if (count < min)
     {
-        fputs( i18nc("@info:shell", "%1: Syntax error, not enough arguments\n", qAppName()).toLocal8Bit(), stderr );
+        fputs( i18nc("@info:shell", "%1: Syntax error, not enough arguments\n", qAppName()).toLocal8Bit().constData(), stderr );
         ::exit(1);
     }
     if (max && (count > max))
     {
-        fputs( i18nc("@info:shell", "%1: Syntax error, too many arguments\n", qAppName()).toLocal8Bit(), stderr );
+        fputs( i18nc("@info:shell", "%1: Syntax error, too many arguments\n", qAppName()).toLocal8Bit().constData(), stderr );
         ::exit(1);
     }
 }

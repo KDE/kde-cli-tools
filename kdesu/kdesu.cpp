@@ -196,9 +196,9 @@ static int startApp(QCommandLineParser& p)
         prompt = false;
 
     // Get target uid
-    QByteArray user = p.value(QStringLiteral("u")).toLocal8Bit();
+    const QByteArray user = p.value(QStringLiteral("u")).toLocal8Bit();
     QByteArray auth_user = user;
-    struct passwd *pw = getpwnam(user);
+    struct passwd *pw = getpwnam(user.constData());
     if (pw == nullptr)
     {
         qCCritical(category) << "User " << user << " does not exist\n";
@@ -279,7 +279,7 @@ static int startApp(QCommandLineParser& p)
     // Don't change uid if we're don't need to.
     if (!change_uid)
     {
-        int result = system(command);
+        int result = system(command.constData());
         result = WEXITSTATUS(result);
         return result;
     }
@@ -450,13 +450,13 @@ static int startApp(QCommandLineParser& p)
     // Run command
     if (!change_uid)
     {
-        int result = system(command);
+        int result = system(command.constData());
         result = WEXITSTATUS(result);
         return result;
     }
     else if (keep && have_daemon)
     {
-        client.setPass(password.toLocal8Bit(), timeout);
+        client.setPass(password.toLocal8Bit().constData(), timeout);
         client.setPriority(priority);
         client.setScheduler(scheduler);
         int result = client.exec(command, user, options, env);
@@ -475,7 +475,7 @@ static int startApp(QCommandLineParser& p)
         proc.setPriority(priority);
         proc.setScheduler(scheduler);
         proc.setCommand(command);
-        int result = proc.exec(password.toLocal8Bit());
+        int result = proc.exec(password.toLocal8Bit().constData());
         return result;
     }
     return -1;

@@ -25,7 +25,7 @@ public:
 
     enum ResultCodes { AsUser = 10 };
 
-private slots:
+private Q_SLOTS:
     void slotUser1();
 protected:
     bool checkPassword() override;
