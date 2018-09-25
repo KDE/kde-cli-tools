@@ -116,7 +116,7 @@ FileTypeDetails::FileTypeDetails( QWidget * parent )
   gb->setFixedHeight(gb->minimumSizeHint().height());
 
   description = new KLineEdit(firstWidget);
-  description->setClearButtonShown(true);
+  description->setClearButtonEnabled(true);
   connect(description, SIGNAL(textChanged(const QString &)),
           SLOT(updateDescription(const QString &)));
 
