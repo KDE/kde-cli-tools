@@ -408,7 +408,11 @@ void ClientApp::slotResult( KJob * job )
         }
     }
     m_ok = !job->error();
-    qApp->quit();
+    if (qApp->topLevelWindows().isEmpty()) {
+        qApp->quit();
+    } else {
+        qApp->setQuitOnLastWindowClosed(true);
+    }
 }
 
 void ClientApp::slotDialogCanceled()
