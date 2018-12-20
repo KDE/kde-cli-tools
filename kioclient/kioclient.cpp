@@ -212,8 +212,10 @@ bool ClientApp::doCopy( const QStringList& urls )
     QList<QUrl> srcLst(makeUrls(urls));
     QUrl dest = srcLst.takeLast();
     KIO::Job * job = KIO::copy( srcLst, dest, s_jobFlags );
-    if ( !s_interactive )
+    if ( !s_interactive ) {
         job->setUiDelegate( nullptr );
+        job->setUiDelegateExtension( nullptr );
+    }
     connect( job, SIGNAL( result( KJob * ) ), this, SLOT( slotResult( KJob * ) ) );
     qApp->exec();
     return m_ok;
@@ -233,8 +235,10 @@ bool ClientApp::doList( const QStringList& urls )
 {
     QUrl dir = makeURL(urls.first());
     KIO::Job * job = KIO::listDir(dir, KIO::HideProgressInfo);
-    if ( !s_interactive )
-        job->setUiDelegate(nullptr);
+    if ( !s_interactive ) {
+        job->setUiDelegate( nullptr );
+        job->setUiDelegateExtension( nullptr );
+    }
     connect(job, SIGNAL(entries(KIO::Job*,KIO::UDSEntryList)),
             SLOT(slotEntries(KIO::Job*,KIO::UDSEntryList)));
     connect(job, SIGNAL(result(KJob *)), this, SLOT(slotResult(KJob *)));
@@ -247,8 +251,10 @@ bool ClientApp::doMove( const QStringList& urls )
     QList<QUrl> srcLst(makeUrls(urls));
     QUrl dest = srcLst.takeLast();
     KIO::Job * job = KIO::move( srcLst, dest, s_jobFlags );
-    if ( !s_interactive )
+    if ( !s_interactive ) {
         job->setUiDelegate( nullptr );
+        job->setUiDelegateExtension( nullptr );
+    }
     connect( job, SIGNAL( result( KJob * ) ), this, SLOT( slotResult( KJob * ) ) );
     qApp->exec();
     return m_ok;
@@ -257,8 +263,10 @@ bool ClientApp::doMove( const QStringList& urls )
 bool ClientApp::doRemove( const QStringList& urls )
 {
     KIO::Job * job = KIO::del( makeUrls(urls), s_jobFlags );
-    if ( !s_interactive )
+    if ( !s_interactive ) {
         job->setUiDelegate( nullptr );
+        job->setUiDelegateExtension( nullptr );
+    }
     connect( job, SIGNAL( result( KJob * ) ), this, SLOT( slotResult( KJob * ) ) );
     qApp->exec();
     return m_ok;
@@ -309,8 +317,10 @@ bool ClientApp::doIt(const QCommandLineParser& parser)
         checkArgumentCount(argc, 2, 2); // cat <url>
         QUrl url = makeURL(parser.positionalArguments().last());
         KIO::TransferJob* job = KIO::get(url, KIO::NoReload, s_jobFlags);
-        if ( !s_interactive )
+        if ( !s_interactive ) {
             job->setUiDelegate( nullptr );
+            job->setUiDelegateExtension( nullptr );
+        }
         connect(job, SIGNAL(data(KIO::Job*,QByteArray) ), this, SLOT(slotPrintData(KIO::Job*,QByteArray)));
         connect(job, SIGNAL( result( KJob * ) ), this, SLOT( slotResult( KJob * ) ) );
         qApp->exec();
@@ -339,8 +349,10 @@ bool ClientApp::doIt(const QCommandLineParser& parser)
         if (dsturl.isEmpty()) // canceled
             return m_ok; // AK - really okay?
         KIO::Job * job = KIO::copy( srcLst, dsturl, s_jobFlags );
-        if ( !s_interactive )
+        if ( !s_interactive ) {
             job->setUiDelegate( nullptr );
+            job->setUiDelegateExtension( nullptr );
+        }
         connect( job, SIGNAL( result( KJob * ) ), qApp, SLOT( slotResult( KJob * ) ) );
         qApp->exec();
         return m_ok;
