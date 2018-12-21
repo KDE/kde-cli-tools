@@ -25,10 +25,7 @@ if test $# -ge 1 -a "$1" != "--help"; then
       eject $1 >/dev/null 2>&1
       ;;
   esac
-  if test $? -eq 0; then
-    qdbus org.kde.kdesktop /Desktop refreshIcons
-    exit 0
-  elif test $quiet -eq 0; then
+  if test $quiet -eq 0; then
     kdialog --title "KDE Eject" --error "Eject $1 failed!"
   fi
 else
