@@ -39,7 +39,7 @@
 #include <iostream>
 
 bool ClientApp::m_ok = true;
-static bool s_interactive = true;
+static bool s_interactive = false;
 static KIO::JobFlags s_jobFlags = KIO::DefaultFlags;
 
 static QUrl makeURL(const QString &urlArg)
@@ -126,6 +126,8 @@ int main( int argc, char **argv )
 
   QCommandLineParser parser;
   data.setupCommandLine(&parser);
+  parser.addOption(QCommandLineOption(QStringLiteral("interactive"), i18n("Use message boxes and other native notifications")));
+
   parser.addOption(QCommandLineOption(QStringLiteral("noninteractive"), i18n("Non-interactive use: no message boxes. If you don't want a "
                                                              "graphical connection, use --platform offscreen")));
 
@@ -277,7 +279,11 @@ bool ClientApp::doIt(const QCommandLineParser& parser)
     const int argc = parser.positionalArguments().count();
     checkArgumentCount(argc, 1, 0);
 
-    if ( !parser.isSet( QStringLiteral("noninteractive") ) ) {
+    if (parser.isSet(QStringLiteral("interactive"))) {
+        s_interactive = true;
+    } else {
+        // "noninteractive" is currently the default mode, so we don't check.
+        // The argument still needs to exist for compatibility
         s_interactive = false;
         s_jobFlags = KIO::HideProgressInfo;
     }
