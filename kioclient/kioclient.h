@@ -23,7 +23,6 @@
 #include <kio/udsentry.h>
 
 class QCommandLineParser;
-class QUrl;
 class KJob;
 namespace KIO { class Job; }
 
@@ -44,7 +43,7 @@ private Q_SLOTS:
     void slotDialogCanceled();
 
 private:
-    bool kde_open( const QUrl& url, const QString& mimeType, bool allowExec );
+    bool kde_open( const QString& url, const QString& mimeType, bool allowExec);
     bool doCopy( const QStringList& urls );
     bool doMove( const QStringList& urls );
     bool doList( const QStringList& urls );

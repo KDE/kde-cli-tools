@@ -18,6 +18,7 @@
 
 #include "kioclient.h"
 #include "kio_version.h"
+#include "urlinfo.h"
 
 #include <KIO/CopyJob>
 #include <KIO/DeleteJob>
@@ -37,6 +38,7 @@
 #include <QCommandLineParser>
 #include <QFileDialog>
 #include <QDebug>
+#include <QUrlQuery>
 #include <iostream>
 
 bool ClientApp::m_ok = true;
@@ -195,10 +197,19 @@ static void checkArgumentCount(int count, int min, int max)
 }
 
 #ifndef KIOCORE_ONLY
-bool ClientApp::kde_open(const QUrl& url, const QString& mimeType, bool allowExec)
+bool ClientApp::kde_open(const QString& url, const QString& mimeType, bool allowExec)
 {
+    UrlInfo info(url);
+
+    if(!info.atStart()) {
+        QUrlQuery q;
+        q.addQueryItem(QStringLiteral("line"), QString::number(info.line));
+        q.addQueryItem(QStringLiteral("column"), QString::number(info.column));
+        info.url.setQuery(q);
+    }
+
     if ( mimeType.isEmpty() ) {
-        KRun * run = new KRun( url, nullptr );
+        KRun * run = new KRun( info.url, nullptr );
         run->setRunExecutables(allowExec);
 
 #if KIO_VERSION >= QT_VERSION_CHECK(5,55,0)
@@ -209,7 +220,7 @@ bool ClientApp::kde_open(const QUrl& url, const QString& mimeType, bool allowExe
         qApp->exec();
         return !krun_has_error;
     } else {
-        return KRun::runUrl(url, mimeType, nullptr, KRun::RunFlags(KRun::RunExecutables));
+        return KRun::runUrl(info.url, mimeType, nullptr, KRun::RunFlags(KRun::RunExecutables));
     }
 }
 #endif
@@ -299,7 +310,7 @@ bool ClientApp::doIt(const QCommandLineParser& parser)
 #endif
 
 #ifdef KIOCLIENT_AS_KDEOPEN
-    return kde_open(makeURL(parser.positionalArguments().at(0)), QString(), false);
+    return kde_open(parser.positionalArguments().at(0), QString(), false);
 #elif defined(KIOCLIENT_AS_KDECP5)
     checkArgumentCount(argc, 2, 0);
     return doCopy(parser.positionalArguments());
@@ -341,7 +352,7 @@ bool ClientApp::doIt(const QCommandLineParser& parser)
     else if ( command ==QLatin1String( "exec") )
     {
         checkArgumentCount(argc, 2, 3);
-        return kde_open( makeURL(parser.positionalArguments()[1]),
+        return kde_open( parser.positionalArguments()[1],
                              argc == 3 ? parser.positionalArguments().last() : QString(),
                              true );
     }
