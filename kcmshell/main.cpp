@@ -41,6 +41,7 @@
 #include <KActivities/ResourceInstance>
 
 #include <kworkspace.h>
+#include <KQuickAddons/QtQuickSettings>
 
 #include <QIcon>
 #include <QCommandLineParser>
@@ -184,6 +185,7 @@ extern "C" Q_DECL_EXPORT int kdemain(int _argc, char *_argv[])
         qunsetenv("QT_QPA_PLATFORM");
     }
     KLocalizedString::setApplicationDomain("kcmshell5");
+    KQuickAddons::QtQuickSettings::init();
 
     app.setAttribute(Qt::AA_UseHighDpiPixmaps, true);
 
