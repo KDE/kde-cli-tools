@@ -17,6 +17,7 @@
 */
 
 #include "kioclient.h"
+#include "kio_version.h"
 
 #include <KIO/CopyJob>
 #include <KIO/DeleteJob>
@@ -199,6 +200,10 @@ bool ClientApp::kde_open(const QUrl& url, const QString& mimeType, bool allowExe
     if ( mimeType.isEmpty() ) {
         KRun * run = new KRun( url, nullptr );
         run->setRunExecutables(allowExec);
+
+#if KIO_VERSION >= QT_VERSION_CHECK(5,55,0)
+        run->setFollowRedirections(false);
+#endif
         QObject::connect( run, SIGNAL( finished() ), this, SLOT( delayedQuit() ));
         QObject::connect( run, SIGNAL( error() ), this, SLOT( delayedQuit() ));
         qApp->exec();
@@ -437,4 +442,3 @@ ClientApp::ClientApp()
     : QObject()
 {
 }
-
