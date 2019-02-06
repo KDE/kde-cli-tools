@@ -53,6 +53,7 @@ FileTypeDetails::FileTypeDetails( QWidget * parent )
     topLayout->setContentsMargins(0, 0, 0, 0);
 
     m_mimeTypeLabel = new QLabel(this);
+    m_mimeTypeLabel->setTextInteractionFlags(Qt::TextSelectableByMouse);
     topLayout->addWidget(m_mimeTypeLabel, 0, Qt::AlignCenter);
 
     m_tabWidget = new QTabWidget(this);
