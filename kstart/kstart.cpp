@@ -23,6 +23,8 @@
  * along with this program.  If not, see <http://www.gnu.org/licenses/>.
  */
 
+#include <config-kde-cli-tools.h>
+
 #include <ktoolinvocation.h>
 #include "kstart.h"
 
@@ -68,8 +70,14 @@ static NET::WindowType windowtype = NET::Unknown;
 KStart::KStart()
     :QObject()
 {
+    bool useRule = false;
+
+#ifdef HAVE_X11
+    if (QX11Info::isPlatformX11()) {
     NETRootInfo i( QX11Info::connection(), NET::Supported );
-    bool useRule = i.isSupported( NET::WM2KDETemporaryRules );
+        useRule = i.isSupported( NET::WM2KDETemporaryRules );
+    }
+#endif
 
     if( useRule )
         sendRule();
