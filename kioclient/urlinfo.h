@@ -52,6 +52,15 @@ public:
         }
 
         /**
+         * if the path starts with http:// or any other scheme, except file://
+         * we also don't want to do anything with URL
+         */
+        if (!QUrl(pathOrUrl).isLocalFile()) {
+            url = QUrl::fromUserInput(pathOrUrl, QDir::currentPath(), QUrl::DefaultResolution);
+            return;
+        }
+
+        /**
          * ok, the path as is, is no existing file, now, cut away :xx:yy stuff as cursor
          * this will make test:50 to test with line 50
          */
