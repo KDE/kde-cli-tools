@@ -352,8 +352,10 @@ int main( int argc, char *argv[] )
       exe = parser.value(QStringLiteral("service"));
       url = parser.value(QStringLiteral("url"));
   } else {
-      if ( parser.positionalArguments().count() == 0 )
+      if ( parser.positionalArguments().isEmpty() ) {
           qCritical() << i18n("No command specified");
+          parser.showHelp(1);
+      }
 
       exe = parser.positionalArguments().at(0);
       proc = new KProcess;
