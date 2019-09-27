@@ -55,7 +55,7 @@ public:
          * if the path starts with http:// or any other scheme, except file://
          * we also don't want to do anything with URL
          */
-        if (!QUrl(pathOrUrl).isLocalFile()) {
+        if (!QUrl::fromUserInput(pathOrUrl).isLocalFile()) {
             url = QUrl::fromUserInput(pathOrUrl, QDir::currentPath(), QUrl::DefaultResolution);
             return;
         }
