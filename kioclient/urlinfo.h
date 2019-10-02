@@ -57,7 +57,9 @@ public:
          */
         if (!QUrl::fromUserInput(pathOrUrl).isLocalFile()) {
             url = QUrl::fromUserInput(pathOrUrl, QDir::currentPath(), QUrl::DefaultResolution);
-            return;
+            // relative paths are not isLocalFile(), but not valid too, so we don't want them
+            if(url.isValid())
+                return;
         }
 
         /**
