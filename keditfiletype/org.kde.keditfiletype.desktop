@@ -1,0 +1,8 @@
+[Desktop Entry]
+Name=keditfiletype
+GenericName=File Type Editor
+Exec=keditfiletype5
+Icon=preferences-desktop-filetype-association
+Type=Application
+Terminal=false
+NoDisplay=true

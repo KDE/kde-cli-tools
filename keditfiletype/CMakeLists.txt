@@ -54,3 +54,4 @@ install(TARGETS keditfiletype5 ${KDE_INSTALL_TARGETS_DEFAULT_ARGS})
 ########### install files ###############
 
 install( FILES filetypes.desktop  DESTINATION  ${KDE_INSTALL_KSERVICES5DIR} )
+install( PROGRAMS org.kde.keditfiletype.desktop DESTINATION ${KDE_INSTALL_APPDIR} )
