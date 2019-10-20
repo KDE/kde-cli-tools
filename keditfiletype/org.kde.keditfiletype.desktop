@@ -1,6 +1,24 @@
 [Desktop Entry]
 Name=keditfiletype
+Name[ca]=keditfiletype
+Name[es]=keditfiletype
+Name[gl]=keditfiletype
+Name[nl]=keditfiletype
+Name[pt]=keditfiletype
+Name[pt_BR]=keditfiletype
+Name[uk]=keditfiletype
+Name[x-test]=xxkeditfiletypexx
+Name[zh_TW]=keditfiletype
 GenericName=File Type Editor
+GenericName[ca]=Editor pels tipus de fitxer
+GenericName[es]=Editor de tipo de archivo
+GenericName[gl]=Editor de tipos de ficheiro
+GenericName[nl]=Bewerker van bestandstype
+GenericName[pt]=Editor de Tipos de Ficheiros
+GenericName[pt_BR]=Editor de tipo de arquivo
+GenericName[uk]=Редактор типів файлів
+GenericName[x-test]=xxFile Type Editorxx
+GenericName[zh_TW]=檔案類型編輯工具
 Exec=keditfiletype5
 Icon=preferences-desktop-filetype-association
 Type=Application
