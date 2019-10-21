@@ -142,7 +142,8 @@ KCMShellMultiDialog::KCMShellMultiDialog(KPageDialog::FaceType dialogFace, QWidg
 void KCMShellMultiDialog::activate(const QByteArray& asn_id)
 {
 #ifdef HAVE_X11
-    KStartupInfo::setNewStartupId(this, asn_id);
+    setAttribute(Qt::WA_NativeWindow, true);
+    KStartupInfo::setNewStartupId(windowHandle(), asn_id);
 #endif
 }
 
