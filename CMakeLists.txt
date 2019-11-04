@@ -19,6 +19,7 @@ include(CheckIncludeFile)
 include(CheckIncludeFiles)
 include(CheckSymbolExists)
 include(ECMOptionalAddSubdirectory)
+include(KDEClangFormat)
 
 find_package(Qt5 ${QT_MIN_VERSION} CONFIG REQUIRED COMPONENTS
     Widgets
@@ -105,5 +106,9 @@ add_feature_info("prctl-dumpable"
                 "Required for disallowing ptrace on kdesu process")
 
 configure_file (config-kde-cli-tools.h.cmake ${CMAKE_CURRENT_BINARY_DIR}/config-kde-cli-tools.h )
+
+# add clang-format target for all our real source files
+file(GLOB_RECURSE ALL_CLANG_FORMAT_SOURCE_FILES *.cpp *.h)
+kde_clang_format(${ALL_CLANG_FORMAT_SOURCE_FILES})
 
 feature_summary(WHAT ALL INCLUDE_QUIET_PACKAGES FATAL_ON_MISSING_REQUIRED_PACKAGES)
