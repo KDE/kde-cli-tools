@@ -89,8 +89,8 @@ FileTypesView::FileTypesView(QWidget *parent, const QVariantList &)
   patternFilterLE->setPlaceholderText(i18n("Search for file type or filename pattern..."));
   leftLayout->addWidget(patternFilterLE);
 
-  connect(patternFilterLE, SIGNAL(textChanged(const QString &)),
-          this, SLOT(slotFilter(const QString &)));
+  connect(patternFilterLE, &QLineEdit::textChanged,
+          this, &FileTypesView::slotFilter);
 
   wtstr = i18n("Enter a part of a filename pattern, and only file types with a "
                "matching file pattern will appear in the list. Alternatively, enter "
@@ -102,10 +102,10 @@ FileTypesView::FileTypesView(QWidget *parent, const QVariantList &)
 
   typesLV->setHeaderLabel(i18n("Known Types"));
   leftLayout->addWidget(typesLV);
-  connect(typesLV, SIGNAL(currentItemChanged(QTreeWidgetItem *, QTreeWidgetItem *)),
-          this, SLOT(updateDisplay(QTreeWidgetItem *)));
-  connect(typesLV, SIGNAL(itemDoubleClicked(QTreeWidgetItem *, int)),
-          this, SLOT(slotDoubleClicked(QTreeWidgetItem *)));
+  connect(typesLV, &QTreeWidget::currentItemChanged,
+          this, &FileTypesView::updateDisplay);
+  connect(typesLV, &QTreeWidget::itemDoubleClicked,
+          this, &FileTypesView::slotDoubleClicked);
 
   typesLV->setWhatsThis( i18n("Here you can see a hierarchical list of"
     " the file types which are known on your system. Click on the '+' sign"
@@ -118,14 +118,14 @@ FileTypesView::FileTypesView(QWidget *parent, const QVariantList &)
   btnsLay->addStretch(1);
   QPushButton *addTypeB = new QPushButton(i18n("Add..."), this);
   addTypeB->setIcon(QIcon::fromTheme(QStringLiteral("list-add")));
-  connect(addTypeB, SIGNAL(clicked()), SLOT(addType()));
+  connect(addTypeB, &QAbstractButton::clicked, this, &FileTypesView::addType);
   btnsLay->addWidget(addTypeB);
 
   addTypeB->setWhatsThis( i18n("Click here to add a new file type.") );
 
   m_removeTypeB = new QPushButton(i18n("&Remove"), this);
   m_removeTypeB->setIcon(QIcon::fromTheme(QStringLiteral("list-remove")));
-  connect(m_removeTypeB, SIGNAL(clicked()), SLOT(removeType()));
+  connect(m_removeTypeB, &QAbstractButton::clicked, this, &FileTypesView::removeType);
   btnsLay->addWidget(m_removeTypeB);
   m_removeTypeB->setEnabled(false);
   m_removeButtonSaysRevert = false;
@@ -137,16 +137,16 @@ FileTypesView::FileTypesView(QWidget *parent, const QVariantList &)
 
   // File Type Details
   m_details = new FileTypeDetails( m_widgetStack );
-  connect( m_details, SIGNAL( changed(bool) ),
-           this, SLOT( setDirty(bool) ) );
-  connect( m_details, SIGNAL( embedMajor(const QString &, bool &) ),
-           this, SLOT( slotEmbedMajor(const QString &, bool &)));
+  connect( m_details, &FileTypeDetails::changed,
+           this, &FileTypesView::setDirty );
+  connect( m_details, &FileTypeDetails::embedMajor,
+           this, &FileTypesView::slotEmbedMajor);
   m_widgetStack->insertWidget( 1, m_details /*id*/ );
 
   // File Group Details
   m_groupDetails = new FileGroupDetails( m_widgetStack );
-  connect( m_groupDetails, SIGNAL( changed(bool) ),
-           this, SLOT( setDirty(bool) ) );
+  connect( m_groupDetails, &FileGroupDetails::changed,
+           this, &FileTypesView::setDirty );
   m_widgetStack->insertWidget( 2,m_groupDetails /*id*/ );
 
   // Widget shown on startup

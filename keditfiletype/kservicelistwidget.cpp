@@ -67,9 +67,9 @@ KServiceListWidget::KServiceListWidget(int kind, QWidget *parent)
   QHBoxLayout *lay= new QHBoxLayout(this);
 
   servicesLB = new QListWidget(this);
-  connect(servicesLB, SIGNAL(itemSelectionChanged()), SLOT(enableMoveButtons()));
+  connect(servicesLB, &QListWidget::itemSelectionChanged, this, &KServiceListWidget::enableMoveButtons);
   lay->addWidget(servicesLB);
-  connect( servicesLB, SIGNAL( itemDoubleClicked(QListWidgetItem*)), this, SLOT( editService()));
+  connect( servicesLB, &QListWidget::itemDoubleClicked, this, &KServiceListWidget::editService);
 
   QString wtstr =
     (kind == SERVICELIST_APPLICATIONS ?
@@ -93,7 +93,7 @@ KServiceListWidget::KServiceListWidget(int kind, QWidget *parent)
   servUpButton = new QPushButton(i18n("Move &Up"), this);
   servUpButton->setIcon(QIcon::fromTheme(QStringLiteral("arrow-up")));
   servUpButton->setEnabled(false);
-  connect(servUpButton, SIGNAL(clicked()), SLOT(promoteService()));
+  connect(servUpButton, &QAbstractButton::clicked, this, &KServiceListWidget::promoteService);
   btnsLay->addWidget(servUpButton);
 
   servUpButton->setWhatsThis( kind == SERVICELIST_APPLICATIONS ?
@@ -107,7 +107,7 @@ KServiceListWidget::KServiceListWidget(int kind, QWidget *parent)
   servDownButton = new QPushButton(i18n("Move &Down"), this);
   servDownButton->setIcon(QIcon::fromTheme(QStringLiteral("arrow-down")));
   servDownButton->setEnabled(false);
-  connect(servDownButton, SIGNAL(clicked()), SLOT(demoteService()));
+  connect(servDownButton, &QAbstractButton::clicked, this, &KServiceListWidget::demoteService);
   btnsLay->addWidget(servDownButton);
   servDownButton->setWhatsThis( kind == SERVICELIST_APPLICATIONS ?
                    i18n("Assigns a lower priority to the selected\n"
@@ -120,7 +120,7 @@ KServiceListWidget::KServiceListWidget(int kind, QWidget *parent)
   servNewButton = new QPushButton(i18n("Add..."), this);
   servNewButton->setIcon(QIcon::fromTheme(QStringLiteral("list-add")));
   servNewButton->setEnabled(false);
-  connect(servNewButton, SIGNAL(clicked()), SLOT(addService()));
+  connect(servNewButton, &QAbstractButton::clicked, this, &KServiceListWidget::addService);
   btnsLay->addWidget(servNewButton);
   servNewButton->setWhatsThis( i18n( "Add a new application for this file type." ) );
 
@@ -128,7 +128,7 @@ KServiceListWidget::KServiceListWidget(int kind, QWidget *parent)
   servEditButton = new QPushButton(i18n("Edit..."), this);
   servEditButton->setIcon(QIcon::fromTheme(QStringLiteral("edit-rename")));
   servEditButton->setEnabled(false);
-  connect(servEditButton, SIGNAL(clicked()), SLOT(editService()));
+  connect(servEditButton, &QAbstractButton::clicked, this, &KServiceListWidget::editService);
   btnsLay->addWidget(servEditButton);
   servEditButton->setWhatsThis( i18n( "Edit command line of the selected application." ) );
 
@@ -136,7 +136,7 @@ KServiceListWidget::KServiceListWidget(int kind, QWidget *parent)
   servRemoveButton = new QPushButton(i18n("Remove"), this);
   servRemoveButton->setIcon(QIcon::fromTheme(QStringLiteral("list-remove")));
   servRemoveButton->setEnabled(false);
-  connect(servRemoveButton, SIGNAL(clicked()), SLOT(removeService()));
+  connect(servRemoveButton, &QAbstractButton::clicked, this, &KServiceListWidget::removeService);
   btnsLay->addWidget(servRemoveButton);
   servRemoveButton->setWhatsThis( i18n( "Remove the selected application from the list." ) );
 

@@ -64,13 +64,13 @@ void FileTypeDialog::init()
 {
     m_details = new FileTypeDetails( this );
     m_details->setMimeTypeData( m_mimeTypeData );
-    connect(m_details, SIGNAL(changed(bool)), this, SLOT(clientChanged(bool)));
+    connect(m_details, &FileTypeDetails::changed, this, &FileTypeDialog::clientChanged);
 
     m_buttonBox = new QDialogButtonBox;
     m_buttonBox->setStandardButtons(QDialogButtonBox::Ok | QDialogButtonBox::Apply | QDialogButtonBox::Cancel);
     connect(m_buttonBox, SIGNAL(accepted()), SLOT(accept()));
-    connect(m_buttonBox->button(QDialogButtonBox::Apply), SIGNAL(clicked()), SLOT(save()));
-    connect(m_buttonBox, SIGNAL(rejected()), SLOT(reject()));
+    connect(m_buttonBox->button(QDialogButtonBox::Apply), &QAbstractButton::clicked, this, &FileTypeDialog::save);
+    connect(m_buttonBox, &QDialogButtonBox::rejected, this, &QDialog::reject);
 
     // This code is very similar to kcdialog.cpp
     QVBoxLayout* layout = new QVBoxLayout(this);

@@ -55,9 +55,9 @@ KServiceSelectDlg::KServiceSelectDlg( const QString& /*serviceType*/, const QStr
     m_listbox->setMinimumWidth(400);
     layout->addWidget( m_listbox );
     layout->addWidget( m_buttonBox );
-    connect(m_listbox,SIGNAL(itemDoubleClicked(QListWidgetItem*)),SLOT(accept()));
-    connect(m_buttonBox, SIGNAL(accepted()), SLOT(accept()));
-    connect(m_buttonBox, SIGNAL(rejected()), SLOT(reject()));
+    connect(m_listbox,&QListWidget::itemDoubleClicked,this, &QDialog::accept);
+    connect(m_buttonBox, &QDialogButtonBox::accepted, this, &QDialog::accept);
+    connect(m_buttonBox, &QDialogButtonBox::rejected, this, &QDialog::reject);
 }
 
 KServiceSelectDlg::~KServiceSelectDlg()

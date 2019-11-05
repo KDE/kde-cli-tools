@@ -215,8 +215,8 @@ bool ClientApp::kde_open(const QString& url, const QString& mimeType, bool allow
 #if KIO_VERSION >= QT_VERSION_CHECK(5,55,0)
         run->setFollowRedirections(false);
 #endif
-        QObject::connect( run, SIGNAL( finished() ), this, SLOT( delayedQuit() ));
-        QObject::connect( run, SIGNAL( error() ), this, SLOT( delayedQuit() ));
+        QObject::connect( run, &KRun::finished, this, &ClientApp::delayedQuit);
+        QObject::connect( run, &KRun::error, this, &ClientApp::delayedQuit);
         qApp->exec();
         return !krun_has_error;
     } else {
@@ -234,7 +234,7 @@ bool ClientApp::doCopy( const QStringList& urls )
         job->setUiDelegate( nullptr );
         job->setUiDelegateExtension( nullptr );
     }
-    connect( job, SIGNAL( result( KJob * ) ), this, SLOT( slotResult( KJob * ) ) );
+    connect( job, &KJob::result, this, &ClientApp::slotResult );
     qApp->exec();
     return m_ok;
 }
@@ -259,7 +259,7 @@ bool ClientApp::doList( const QStringList& urls )
     }
     connect(job, SIGNAL(entries(KIO::Job*,KIO::UDSEntryList)),
             SLOT(slotEntries(KIO::Job*,KIO::UDSEntryList)));
-    connect(job, SIGNAL(result(KJob *)), this, SLOT(slotResult(KJob *)));
+    connect(job, &KJob::result, this, &ClientApp::slotResult);
     qApp->exec();
     return m_ok;
 }
@@ -273,7 +273,7 @@ bool ClientApp::doMove( const QStringList& urls )
         job->setUiDelegate( nullptr );
         job->setUiDelegateExtension( nullptr );
     }
-    connect( job, SIGNAL( result( KJob * ) ), this, SLOT( slotResult( KJob * ) ) );
+    connect( job, &KJob::result, this, &ClientApp::slotResult );
     qApp->exec();
     return m_ok;
 }
@@ -285,7 +285,7 @@ bool ClientApp::doRemove( const QStringList& urls )
         job->setUiDelegate( nullptr );
         job->setUiDelegateExtension( nullptr );
     }
-    connect( job, SIGNAL( result( KJob * ) ), this, SLOT( slotResult( KJob * ) ) );
+    connect( job, &KJob::result, this, &ClientApp::slotResult );
     qApp->exec();
     return m_ok;
 }
@@ -327,7 +327,7 @@ bool ClientApp::doIt(const QCommandLineParser& parser)
         QUrl url = makeURL(parser.positionalArguments().last());
         KPropertiesDialog * p = new KPropertiesDialog(url, nullptr /*no parent*/ );
         QObject::connect( p, SIGNAL( destroyed() ), qApp, SLOT( quit() ));
-        QObject::connect( p, SIGNAL( canceled() ), this, SLOT( slotDialogCanceled() ));
+        QObject::connect( p, &KPropertiesDialog::canceled, this, &ClientApp::slotDialogCanceled);
         p->show();
         qApp->exec();
         return m_ok;
@@ -343,8 +343,8 @@ bool ClientApp::doIt(const QCommandLineParser& parser)
             job->setUiDelegate( nullptr );
             job->setUiDelegateExtension( nullptr );
         }
-        connect(job, SIGNAL(data(KIO::Job*,QByteArray) ), this, SLOT(slotPrintData(KIO::Job*,QByteArray)));
-        connect(job, SIGNAL( result( KJob * ) ), this, SLOT( slotResult( KJob * ) ) );
+        connect(job, &KIO::TransferJob::data, this, &ClientApp::slotPrintData);
+        connect(job, &KJob::result, this, &ClientApp::slotResult );
         qApp->exec();
         return m_ok;
     }

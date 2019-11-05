@@ -129,7 +129,7 @@ KCMShellMultiDialog::KCMShellMultiDialog(KPageDialog::FaceType dialogFace, QWidg
     QDBusConnection::sessionBus().registerObject(QStringLiteral("/KCModule/dialog"), this, QDBusConnection::ExportScriptableSlots);
 
     connect(this, &KCMShellMultiDialog::currentPageChanged,
-            this, [this](KPageWidgetItem *newPage,KPageWidgetItem *oldPage) {
+            this, [](KPageWidgetItem *newPage,KPageWidgetItem *oldPage) {
                 Q_UNUSED(oldPage);
                 KCModuleProxy *activeModule = newPage->widget()->findChild<KCModuleProxy *>();
                 if (activeModule) {
@@ -159,8 +159,8 @@ void KCMShell::waitForExit()
     watcher->setConnection(QDBusConnection::sessionBus());
     watcher->setWatchMode(QDBusServiceWatcher::WatchForOwnerChange);
     watcher->addWatchedService(m_serviceName);
-    connect(watcher, SIGNAL(serviceOwnerChanged(QString,QString,QString)),
-            SLOT(appExit(QString,QString,QString)));
+    connect(watcher, &QDBusServiceWatcher::serviceOwnerChanged,
+            this, &KCMShell::appExit);
     exec();
 }
 

@@ -69,7 +69,7 @@ FileTypeDetails::FileTypeDetails( QWidget * parent )
 
   iconButton = new KIconButton(firstWidget);
   iconButton->setIconType(KIconLoader::Desktop, KIconLoader::MimeType);
-  connect(iconButton, SIGNAL(iconChanged(QString)), SLOT(updateIcon(QString)));
+  connect(iconButton, &KIconButton::iconChanged, this, &FileTypeDetails::updateIcon);
   iconButton->setWhatsThis( i18n("This button displays the icon associated"
                                  " with the selected file type. Click on it to choose a different icon.") );
   iconButton->setFixedSize(70, 70);
@@ -82,7 +82,7 @@ FileTypeDetails::FileTypeDetails( QWidget * parent )
   hBox = new QHBoxLayout(gb);
 
   extensionLB = new QListWidget(gb);
-  connect(extensionLB, SIGNAL(itemSelectionChanged()), SLOT(enableExtButtons()));
+  connect(extensionLB, &QListWidget::itemSelectionChanged, this, &FileTypeDetails::enableExtButtons);
   hBox->addWidget(extensionLB);
 
   extensionLB->setFixedHeight(extensionLB->minimumSizeHint().height());
@@ -99,16 +99,16 @@ FileTypeDetails::FileTypeDetails( QWidget * parent )
   addExtButton = new QPushButton(i18n("Add..."), gb);
   addExtButton->setIcon(QIcon::fromTheme(QStringLiteral("list-add")));
   addExtButton->setEnabled(false);
-  connect(addExtButton, SIGNAL(clicked()),
-          this, SLOT(addExtension()));
+  connect(addExtButton, &QAbstractButton::clicked,
+          this, &FileTypeDetails::addExtension);
   vbox->addWidget(addExtButton);
   addExtButton->setWhatsThis( i18n("Add a new pattern for the selected file type.") );
 
   removeExtButton = new QPushButton(i18n("Remove"), gb);
   removeExtButton->setIcon(QIcon::fromTheme(QStringLiteral("list-remove")));
   removeExtButton->setEnabled(false);
-  connect(removeExtButton, SIGNAL(clicked()),
-          this, SLOT(removeExtension()));
+  connect(removeExtButton, &QAbstractButton::clicked,
+          this, &FileTypeDetails::removeExtension);
   vbox->addWidget(removeExtButton);
   removeExtButton->setWhatsThis( i18n("Remove the selected filename pattern.") );
 
@@ -118,8 +118,8 @@ FileTypeDetails::FileTypeDetails( QWidget * parent )
 
   description = new KLineEdit(firstWidget);
   description->setClearButtonEnabled(true);
-  connect(description, SIGNAL(textChanged(const QString &)),
-          SLOT(updateDescription(const QString &)));
+  connect(description, &QLineEdit::textChanged,
+          this, &FileTypeDetails::updateDescription);
 
   QHBoxLayout *descriptionBox = new QHBoxLayout;
   descriptionBox->addWidget(new QLabel(i18n("Description:"),firstWidget));
@@ -132,7 +132,7 @@ FileTypeDetails::FileTypeDetails( QWidget * parent )
   description->setWhatsThis( wtstr );
 
   serviceListWidget = new KServiceListWidget( KServiceListWidget::SERVICELIST_APPLICATIONS, firstWidget );
-  connect( serviceListWidget, SIGNAL(changed(bool)), this, SIGNAL(changed(bool)));
+  connect( serviceListWidget, &KServiceListWidget::changed, this, &FileTypeDetails::changed);
   firstLayout->addWidget(serviceListWidget,5);
 
   // Second tab - Embedding
@@ -149,7 +149,7 @@ FileTypeDetails::FileTypeDetails( QWidget * parent )
   m_rbGroupSettings = new QRadioButton( QStringLiteral("Use settings for '%1' group") );
 
   m_chkAskSave = new QCheckBox( i18n("Ask whether to save to disk instead (only for Konqueror browser)") );
-  connect(m_chkAskSave, SIGNAL( toggled(bool) ), SLOT( slotAskSaveToggled(bool) ));
+  connect(m_chkAskSave, &QAbstractButton::toggled, this, &FileTypeDetails::slotAskSaveToggled);
 
   m_autoEmbedGroup = new QButtonGroup(m_autoEmbedBox);
   m_autoEmbedGroup->addButton(embViewerRadio, 0);
@@ -172,7 +172,7 @@ FileTypeDetails::FileTypeDetails( QWidget * parent )
 
   embedServiceListWidget = new KServiceListWidget( KServiceListWidget::SERVICELIST_SERVICES, secondWidget );
 //  embedServiceListWidget->setMinimumHeight( serviceListWidget->sizeHint().height() );
-  connect( embedServiceListWidget, SIGNAL(changed(bool)), this, SIGNAL(changed(bool)));
+  connect( embedServiceListWidget, &KServiceListWidget::changed, this, &FileTypeDetails::changed);
   secondLayout->addWidget(embedServiceListWidget);
 
   m_tabWidget->addTab( firstWidget, i18n("&General") );

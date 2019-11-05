@@ -57,7 +57,7 @@ KDEsuDialog::KDEsuDialog(QByteArray user, QByteArray authUser, bool enableKeep, 
     setPrompt(prompt);
 
     if( withIgnoreButton ) {
-        connect(buttonBox()->button(QDialogButtonBox::Ignore), SIGNAL(clicked()), SLOT(slotUser1()));
+        connect(buttonBox()->button(QDialogButtonBox::Ignore), &QAbstractButton::clicked, this, &KDEsuDialog::slotUser1);
     }
 }
 

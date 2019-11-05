@@ -83,7 +83,7 @@ KStart::KStart()
         sendRule();
     else {
         // connect to window add to get the NEW windows
-        connect(KWindowSystem::self(), SIGNAL(windowAdded(WId)), SLOT(windowAdded(WId)));
+        connect(KWindowSystem::self(), &KWindowSystem::windowAdded, this, &KStart::windowAdded);
     }
     // propagate the app startup notification info to the started app
     // We are not using KApplication, so the env remained set

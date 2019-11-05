@@ -72,8 +72,8 @@ NewTypeDialog::NewTypeDialog(const QStringList &groups, QWidget *parent)
   mainLayout->addLayout(formLayout);
   mainLayout->addWidget(m_buttonBox);
 
-  connect(m_buttonBox, SIGNAL(accepted()), SLOT(accept()));
-  connect(m_buttonBox, SIGNAL(rejected()), SLOT(reject()));
+  connect(m_buttonBox, &QDialogButtonBox::accepted, this, &QDialog::accept);
+  connect(m_buttonBox, &QDialogButtonBox::rejected, this, &QDialog::reject);
 
   // Set a minimum width so that caption is not half-hidden
   setMinimumWidth(300);
