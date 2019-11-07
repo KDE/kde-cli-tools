@@ -57,6 +57,9 @@ find_package(LibKWorkspace ${PROJECT_VERSION} REQUIRED)
 
 # Disables automatic conversions from QString (or char *) to QUrl.
 add_definitions(-DQT_NO_URL_CAST_FROM_STRING)
+if (EXISTS "${CMAKE_SOURCE_DIR}/.git")
+   add_definitions(-DKF_DISABLE_DEPRECATED_BEFORE_AND_AT=0x060000)
+endif()
 
 find_package(X11)
 find_package(XCB COMPONENTS XCB)

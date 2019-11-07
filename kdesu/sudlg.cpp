@@ -5,7 +5,7 @@
  */
 
 #include "sudlg.h"
-
+#include <kwidgetsaddons_version.h>
 #include <QByteArray>
 
 #include <KLocalizedString>
@@ -16,7 +16,11 @@ KDEsuDialog::KDEsuDialog(QByteArray user, QByteArray authUser, bool enableKeep, 
     : KPasswordDialog(nullptr, enableKeep ? ShowKeepPassword : NoFlags)
 {
     if ( !icon.isEmpty() ) {
+#if KWIDGETSADDONS_VERSION >= QT_VERSION_CHECK(5,63,0)
+        setIcon(QIcon::fromTheme(icon));
+#else
         setPixmap(QIcon::fromTheme(icon).pixmap(style()->pixelMetric(QStyle::PM_LargeIconSize)));
+#endif
     }
 
     if ( withIgnoreButton ) {

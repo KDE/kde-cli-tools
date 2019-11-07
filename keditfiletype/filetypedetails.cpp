@@ -332,7 +332,7 @@ void FileTypeDetails::setMimeTypeData( MimeTypeData * mimeTypeData, TypesListIte
       iconButton->setToolTip(mimeTypeData->icon());
   }
   else
-      iconLabel->setPixmap(DesktopIcon(mimeTypeData->icon()));
+      iconLabel->setPixmap(QIcon::fromTheme(mimeTypeData->icon()).pixmap(KIconLoader::SizeLarge));
   description->setText(mimeTypeData->comment());
   m_rbGroupSettings->setText( i18n("Use settings for '%1' group", mimeTypeData->majorType() ) );
   extensionLB->clear();
