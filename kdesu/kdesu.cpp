@@ -423,8 +423,10 @@ static int startApp(QCommandLineParser& p)
 
 	//Attach dialog
 #ifdef HAVE_X11
-	if(attach)
-            KWindowSystem::setMainWindow(&dlg, (WId)winid);
+        if(attach) {
+            dlg.setAttribute(Qt::WA_NativeWindow, true);
+            KWindowSystem::setMainWindow(dlg.windowHandle(), (WId)winid);
+        }
 #endif
         int ret = dlg.exec();
         if (ret == KDEsuDialog::Rejected)

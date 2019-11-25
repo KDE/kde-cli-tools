@@ -193,8 +193,10 @@ int main(int argc, char ** argv)
     if( parser.isSet( QStringLiteral("parent") )) {
         bool ok;
         long id = parser.value(QStringLiteral("parent")).toLong(&ok);
-        if (ok)
-            KWindowSystem::setMainWindow( &dlg, (WId)id );
+        if (ok) {
+            dlg.setAttribute(Qt::WA_NativeWindow, true);
+            KWindowSystem::setMainWindow(dlg.windowHandle(), (WId)id);
+        }
     }
     if ( !createType )
         dlg.setWindowTitle( i18n("Edit File Type %1", mimeTypeData->name()) );
