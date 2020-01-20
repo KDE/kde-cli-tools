@@ -2,6 +2,7 @@
 Name=keditfiletype
 Name[ca]=keditfiletype
 Name[cs]=keditfiletype
+Name[da]=keditfiletype
 Name[de]=keditfiletype
 Name[en_GB]=keditfiletype
 Name[es]=keditfiletype
@@ -31,6 +32,7 @@ Name[zh_TW]=keditfiletype
 GenericName=File Type Editor
 GenericName[ca]=Editor pels tipus de fitxer
 GenericName[cs]=Editor typu souboru
+GenericName[da]=Redigering af filtyper
 GenericName[de]=Dateityp-Editor
 GenericName[en_GB]=File Type Editor
 GenericName[es]=Editor de tipo de archivo
