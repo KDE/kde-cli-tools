@@ -214,8 +214,7 @@ QStringList MimeTypeData::getAppOffers() const
         KMimeTypeTrader::self()->query(name(), QStringLiteral("Application"));
     KService::List::const_iterator it(offerList.begin());
     for (; it != offerList.constEnd(); ++it) {
-        if ((*it)->allowAsDefault())
-            services.append((*it)->storageId());
+        services.append((*it)->storageId());
     }
     return services;
 }
