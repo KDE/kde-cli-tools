@@ -176,7 +176,7 @@ void KCMShell::appExit(const QString &appId, const QString &oldName, const QStri
     }
 }
 
-extern "C" Q_DECL_EXPORT int kdemain(int _argc, char *_argv[])
+int main(int _argc, char *_argv[])
 {
     const bool qpaVariable = qEnvironmentVariableIsSet("QT_QPA_PLATFORM");
     KWorkSpace::detectPlatform(_argc, _argv);
