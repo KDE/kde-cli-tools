@@ -397,7 +397,11 @@ void MimeTypeData::syncServices()
 
     // Clean out any kde-mimeapps.list which would take precedence any cancel our changes.
     const QString desktops = QString::fromLocal8Bit(qgetenv("XDG_CURRENT_DESKTOP"));
+#if QT_VERSION < QT_VERSION_CHECK(5, 15, 0)
     foreach (const QString &desktop, desktops.split(QLatin1Char(':'), QString::SkipEmptyParts)) {
+#else
+    foreach (const QString &desktop, desktops.split(QLatin1Char(':'), Qt::SkipEmptyParts)) {
+#endif
         const QString file = QStandardPaths::writableLocation(QStandardPaths::GenericConfigLocation)
             + QLatin1Char('/') + desktop.toLower() + QLatin1String("-mimeapps.list");
         if (QFileInfo::exists(file)) {

@@ -74,7 +74,11 @@ int main(int argc, char *argv[])
     }
 
     if (parser.isSet(uidsOption)) {
+#if QT_VERSION < QT_VERSION_CHECK(5, 15, 0)
         const QStringList &uids = parser.value(uidsOption).split(QLatin1Char(','), QString::SkipEmptyParts);
+#else
+        const QStringList &uids = parser.value(uidsOption).split(QLatin1Char(','), Qt::SkipEmptyParts);
+#endif
         if (!uids.isEmpty()) {
             properties.insert(QStringLiteral("uids"), uids);
         }
