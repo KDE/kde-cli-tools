@@ -63,49 +63,49 @@ static QList<QUrl> makeUrls(const QStringList& urlArgs)
 static void usage()
 {
     puts(i18n("\nSyntax:\n").toLocal8Bit().constData());
-    puts(i18n("  kioclient openProperties 'url'\n"
+    puts(i18n("  kioclient5 openProperties 'url'\n"
               "            # Opens a properties menu\n\n").toLocal8Bit().constData());
-    puts(i18n("  kioclient exec 'url' ['mimetype']\n"
+    puts(i18n("  kioclient5 exec 'url' ['mimetype']\n"
               "            # Tries to open the document pointed to by 'url', in the application\n"
               "            #   associated with it in KDE. You may omit 'mimetype'.\n"
               "            #   In this case the mimetype is determined\n"
               "            #   automatically. Of course URL may be the URL of a\n"
               "            #   document, or it may be a *.desktop file.\n"
               "            #   'url' can be an executable, too.\n").toLocal8Bit().constData());
-    puts(i18n("  kioclient move 'src' 'dest'\n"
+    puts(i18n("  kioclient5 move 'src' 'dest'\n"
               "            # Moves the URL 'src' to 'dest'.\n"
               "            #   'src' may be a list of URLs.\n").toLocal8Bit().constData());
     puts(i18n("            #   'dest' may be \"trash:/\" to move the files\n"
               "            #   to the trash.\n").toLocal8Bit().constData());
-    puts(i18n("            #   the short version kioclient mv\n"
+    puts(i18n("            #   the short version kioclient5 mv\n"
               "            #   is also available.\n\n").toLocal8Bit().constData());
-    puts(i18n("  kioclient download ['src']\n"
+    puts(i18n("  kioclient5 download ['src']\n"
               "            # Copies the URL 'src' to a user-specified location'.\n"
               "            #   'src' may be a list of URLs, if not present then\n"
               "            #   a URL will be requested.\n\n").toLocal8Bit().constData());
-    puts(i18n("  kioclient copy 'src' 'dest'\n"
+    puts(i18n("  kioclient5 copy 'src' 'dest'\n"
               "            # Copies the URL 'src' to 'dest'.\n"
               "            #   'src' may be a list of URLs.\n").toLocal8Bit().constData());
-    puts(i18n("            #   the short version kioclient cp\n"
+    puts(i18n("            #   the short version kioclient5 cp\n"
               "            #   is also available.\n\n").toLocal8Bit().constData());
-    puts(i18n("  kioclient cat 'url'\n"
+    puts(i18n("  kioclient5 cat 'url'\n"
               "            # Writes out the contents of 'url' to stdout\n\n").toLocal8Bit().constData());
-    puts(i18n("  kioclient ls 'url'\n"
+    puts(i18n("  kioclient5 ls 'url'\n"
               "            # Lists the contents of the directory 'url' to stdout\n\n").toLocal8Bit().constData());
-    puts(i18n("  kioclient remove 'url'\n"
+    puts(i18n("  kioclient5 remove 'url'\n"
               "            # Removes the URL\n"
               "            #   'url' may be a list of URLs.\n").toLocal8Bit().constData());
-    puts(i18n("            #   the short version kioclient rm\n"
+    puts(i18n("            #   the short version kioclient5 rm\n"
               "            #   is also available.\n\n").toLocal8Bit().constData());
 
     puts(i18n("*** Examples:\n").toLocal8Bit().constData());
-    puts(i18n("  kioclient exec file:/home/weis/data/test.html\n"
+    puts(i18n("  kioclient5 exec file:/home/weis/data/test.html\n"
               "             // Opens the file with default binding\n\n").toLocal8Bit().constData());
-    puts(i18n("  kioclient exec ftp://localhost/\n"
+    puts(i18n("  kioclient5 exec ftp://localhost/\n"
               "             // Opens new window with URL\n\n").toLocal8Bit().constData());
-    puts(i18n("  kioclient exec file:/root/Desktop/emacs.desktop\n"
+    puts(i18n("  kioclient5 exec file:/root/Desktop/emacs.desktop\n"
               "             // Starts emacs\n\n").toLocal8Bit().constData());
-    puts(i18n("  kioclient exec .\n"
+    puts(i18n("  kioclient5 exec .\n"
               "             // Opens the current directory. Very convenient.\n\n").toLocal8Bit().constData());
 }
 #endif
