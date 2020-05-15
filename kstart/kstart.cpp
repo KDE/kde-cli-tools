@@ -29,6 +29,7 @@
 #include "kstart.h"
 
 #include <fcntl.h>
+#include <iostream>
 #include <stdlib.h>
 
 #include <QRegExp>
@@ -38,6 +39,7 @@
 #include <QCommandLineParser>
 #include <QCommandLineOption>
 #include <QDebug>
+#include <QUrl>
 
 #include <kprocess.h>
 #include <kwindowsystem.h>
@@ -47,6 +49,9 @@
 #include <kstartupinfo.h>
 #include <kxmessages.h>
 
+#include <KIO/ApplicationLauncherJob>
+#include <KIO/CommandLauncherJob>
+
 #include <netwm.h>
 #include <QX11Info>
 #include <X11/Xlib.h>
@@ -54,8 +59,10 @@
 
 // some globals
 
-static KProcess* proc = nullptr;
+static QString servicePath; // TODO KF6 remove
+static QString serviceName;
 static QString exe;
+static QStringList exeArgs;
 static QString url;
 static QString windowtitle;
 static QString windowclass;
@@ -90,17 +97,7 @@ KStart::KStart()
     KStartupInfoId id = KStartupInfo::currentStartupIdEnv();
 
     //finally execute the comand
-    if (proc) {
-        if( int pid = proc->startDetached() ) {
-            KStartupInfoData data;
-            data.addPid( pid );
-            data.setName( exe );
-            data.setBin( exe.mid( exe.lastIndexOf( QLatin1Char('/') ) + 1 ));
-            KStartupInfo::sendChange( id, data );
-        }
-        else
-            KStartupInfo::sendFinish( id ); // failed to start
-    } else {
+    if (!servicePath.isEmpty()) { // TODO KF6 remove
         QString error;
         QString dbusService;
         int pid;
@@ -109,6 +106,25 @@ KStart::KStart()
         } else {
             qCritical() << error;
         }
+    } else if (!serviceName.isEmpty()) {
+        KService::Ptr service = KService::serviceByDesktopName(serviceName);
+        if (!service) {
+            qCritical() << "No such service" << exe;
+        } else {
+            auto *job = new KIO::ApplicationLauncherJob(service);
+            if (!url.isEmpty()) {
+                job->setUrls({QUrl(url)}); // TODO use QUrl::fromUserInput(PreferLocalFile)?
+            }
+            job->exec();
+            if (job->error()) {
+                qCritical() << job->errorString();
+            } else {
+                std::cout << job->pid() << std::endl;
+            }
+        }
+    } else {
+        auto *job = new KIO::CommandLauncherJob(exe, exeArgs);
+        job->exec();
     }
 
   QTimer::singleShot( useRule ? 0 : 120 * 1000, qApp, SLOT( quit()));
@@ -316,7 +332,9 @@ int main( int argc, char *argv[] )
   QCommandLineParser parser;
   aboutData.setupCommandLine(&parser);
   parser.addOption(QCommandLineOption(QStringList() << QLatin1String("!+command"), i18n("Command to execute")));
-  parser.addOption(QCommandLineOption(QStringList() << QLatin1String("service"), i18n("Alternative to <command>: desktop file to start. D-Bus service will be printed to stdout"), QLatin1String("desktopfile")));
+  // TODO KF6 remove
+  parser.addOption(QCommandLineOption(QStringList() << QLatin1String("service"), i18n("Alternative to <command>: desktop file path to start. D-Bus service will be printed to stdout. Deprecated: use --application"), QLatin1String("desktopfile")));
+  parser.addOption(QCommandLineOption(QStringList() << QLatin1String("application"), i18n("Alternative to <command>: desktop file to start."), QLatin1String("desktopfile")));
   parser.addOption(QCommandLineOption(QStringList() << QLatin1String("url"), i18n("Optional URL to pass <desktopfile>, when using --service"), QLatin1String("url")));
   // "!" means: all options after command are treated as arguments to the command
   parser.addOption(QCommandLineOption(QStringList() << QLatin1String("window"), i18n("A regular expression matching the window title"), QLatin1String("regexp")));
@@ -349,18 +367,20 @@ int main( int argc, char *argv[] )
   aboutData.processCommandLine(&parser);
 
   if (parser.isSet(QStringLiteral("service"))) {
-      exe = parser.value(QStringLiteral("service"));
+      servicePath = parser.value(QStringLiteral("service"));
+      url = parser.value(QStringLiteral("url"));
+  } else if (parser.isSet(QStringLiteral("application"))) {
+      serviceName = parser.value(QStringLiteral("application"));
       url = parser.value(QStringLiteral("url"));
   } else {
-      if ( parser.positionalArguments().isEmpty() ) {
+      QStringList positionalArgs = parser.positionalArguments();
+      if (positionalArgs.isEmpty()) {
           qCritical() << i18n("No command specified");
           parser.showHelp(1);
       }
 
-      exe = parser.positionalArguments().at(0);
-      proc = new KProcess;
-      for(int i=0; i < parser.positionalArguments().count(); i++)
-          (*proc) << parser.positionalArguments().at(i);
+      exe = positionalArgs.takeFirst();
+      exeArgs = positionalArgs;
   }
 
   desktop = parser.value( QStringLiteral("desktop") ).toInt();

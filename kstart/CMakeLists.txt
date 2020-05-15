@@ -10,6 +10,7 @@ target_link_libraries(kstart5
     Qt5::Widgets
     Qt5::X11Extras
     KF5::I18n
+    KF5::KIOGui
     KF5::Service
     KF5::WindowSystem
     ${X11_X11_LIB})
