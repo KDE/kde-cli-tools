@@ -1,5 +1,6 @@
 [Desktop Entry]
 Name=keditfiletype
+Name[az]=keditfiletype
 Name[ca]=keditfiletype
 Name[cs]=keditfiletype
 Name[da]=keditfiletype
@@ -32,6 +33,7 @@ Name[x-test]=xxkeditfiletypexx
 Name[zh_CN]=文件类型编辑
 Name[zh_TW]=keditfiletype
 GenericName=File Type Editor
+GenericName[az]=Fayl növü redaktoru
 GenericName[ca]=Editor pels tipus de fitxer
 GenericName[cs]=Editor typu souboru
 GenericName[da]=Redigering af filtyper
