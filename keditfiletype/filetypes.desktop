@@ -98,6 +98,7 @@ Name[uz@cyrillic]=Файл тури билан\nбоғлиқлар
 Name[vi]=Tập tin tương ứng
 Name[wa]=Assoçnaedje des fitchîs
 Name[xh]=Uyelemaniso Lwefayile
+Name[x-test]=xxFile Associationsxx
 Name[zh_CN]=文件关联
 Name[zh_TW]=檔案關聯
 
@@ -188,6 +189,7 @@ Comment[uz@cyrillic]=Файл тури билан боғлиқларни мос�
 Comment[vi]=Cấu hình tập tin tương ứng
 Comment[wa]=Apontyî les assoçnaedjes des fitchîs
 Comment[xh]=Qwalasela uloyamiso lwefayile
+Comment[x-test]=xxConfigure file associationsxx
 Comment[zh_CN]=配置文件关联
 Comment[zh_TW]=設定檔案關聯
 
@@ -250,5 +252,6 @@ X-KDE-Keywords[ug]=ھۆججەت تىپى، ھۆججەت مۇناسىۋەتلىر
 X-KDE-Keywords[uk]=Filetypes,File Associations,Mime Types,File Patterns,Files,Pattern,файл,файли,типи файлів,тип,прив’язка,прив’язування,відповідність,взірці,шаблон,файли,взірець,файла
 X-KDE-Keywords[vi]=Kiểu tập tin,Tập tin tương ứng,Kiểu MIME,Mẫu tập tin,Tập tin, Mẫu,Filetypes,File Associations,Mime Types,File Patterns,Files,Pattern
 X-KDE-Keywords[wa]=Sôres di fitchîs,assoçnaedjes des fitchîs,assoçnaedjes di fitchîs,sôres mime,patrons di fitchîs,patron d' fitchîs,modeles di fitchîs,fitchîs,patron,modele
+X-KDE-Keywords[x-test]=xxFiletypesxx,xxFile Associationsxx,xxMime Typesxx,xxFile Patternsxx,xxFilesxx,xxPatternxx
 X-KDE-Keywords[zh_CN]=Filetypes,File Associations,Mime Types,File Patterns,Files,Pattern,文件类型,文件关联,后缀名,文件
 X-KDE-Keywords[zh_TW]=Filetypes,File Associations,Mime Types,File Patterns,Files,Pattern
