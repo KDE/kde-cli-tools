@@ -22,6 +22,7 @@
 #include <kconfiggroup.h>
 #include <kdesktopfile.h>
 #include <ksycoca.h>
+#include <kcoreaddons_version.h>
 
 // Qt
 #include <QProcess>
@@ -45,7 +46,11 @@ private Q_SLOTS:
         extern KSERVICE_EXPORT bool kservice_require_kded;
         kservice_require_kded = false;
 
+#if KCOREADDONS_VERSION >= QT_VERSION_CHECK(5, 73, 0)
+        QLoggingCategory::setFilterRules(QStringLiteral("kf.coreaddons.kdirwatch.debug=true"));
+#else
         QLoggingCategory::setFilterRules(QStringLiteral("kf5.kcoreaddons.kdirwatch.debug=true"));
+#endif
 
         QStandardPaths::setTestModeEnabled(true);
 
