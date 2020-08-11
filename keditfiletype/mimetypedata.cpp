@@ -26,6 +26,7 @@
 #include <ksharedconfig.h>
 #include <kconfiggroup.h>
 #include <kmimetypetrader.h>
+#include <KApplicationTrader>
 #include <QStandardPaths>
 #include <QXmlStreamReader>
 #include <QFileInfo>
@@ -238,7 +239,7 @@ QStringList MimeTypeData::getAppOffers() const
 {
     QStringList services;
     const KService::List offerList
-        = KMimeTypeTrader::self()->query(name(), QStringLiteral("Application"));
+        = KApplicationTrader::queryByMimeType(name());
     KService::List::const_iterator it(offerList.begin());
     for (; it != offerList.constEnd(); ++it) {
         services.append((*it)->storageId());

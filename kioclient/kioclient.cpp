@@ -29,7 +29,6 @@
 #include <KPropertiesDialog>
 #include <KService>
 #include <KRun>
-#include <KMimeTypeTrader>
 #endif
 #include <KAboutData>
 #include <KLocalizedString>
