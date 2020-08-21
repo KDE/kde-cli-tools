@@ -66,8 +66,8 @@ password once for each command.</para>
 from <filename>.desktop</filename> files.</para>
 
 <para>Since <command>kdesu</command> is no longer installed in <userinput>
-$(kde4-config --prefix)</userinput>/bin but in <userinput>kde4-config --path libexec</userinput> 
-and therefore not in your <envar>Path</envar>, you have to use <userinput>$(kde4-config 
+$(kf5-config --prefix)</userinput>/bin but in <userinput>kf5-config --path libexec</userinput>
+and therefore not in your <envar>Path</envar>, you have to use <userinput>$(kf5-config
 --path libexec)<command>kdesu</command></userinput> to launch <command>kdesu</command>.</para>
 </refsect1>
 
@@ -79,7 +79,7 @@ and therefore not in your <envar>Path</envar>, you have to use <userinput>$(kde4
 <term><option>-c <replaceable>command</replaceable></option></term>
 <listitem><para>This specifies the command to run as root. It has to be passed
 in one argument. So if, for example, you want to start a new file manager, you
-would enter at the prompt: <userinput>$(kde4-config --path libexec)<command>kdesu <option>-c <replaceable>
+would enter at the prompt: <userinput>$(kf5-config --path libexec)<command>kdesu <option>-c <replaceable>
 &dolphin;</replaceable></option></command></userinput></para></listitem>
 </varlistentry>
 <varlistentry>
@@ -178,7 +178,7 @@ url="help:/kdesu">help:/kdesu</ulink>
 <para>Run <command>kfmclient</command> as user <systemitem
 class="username">jim</systemitem>, and show the &konqueror; icon in the
 password dialog:</para>
-<screen><userinput>$(kde4-config --path libexec)<command>kdesu</command> <option>-u jim</option> <option>-i konqueror</option> <command>kfmclient</command></userinput></screen>
+<screen><userinput>$(kf5-config --path libexec)<command>kdesu</command> <option>-u jim</option> <option>-i konqueror</option> <command>kfmclient</command></userinput></screen>
 
 </refsect1>
 
@@ -187,7 +187,7 @@ password dialog:</para>
 <para>&kdesu; was written by
 <personname><firstname>Geert</firstname><surname>Jansen</surname></personname> <email>jansen@kde.org</email>
 and <personname><firstname>Pietro</firstname><surname>Iglio</surname></personname>
-<email>iglio@fub.it</email>. 
+<email>iglio@fub.it</email>.
 </para>
 </refsect1>
 

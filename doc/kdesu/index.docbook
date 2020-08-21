@@ -46,8 +46,8 @@
 <!-- from kdebase/runtime/kdesu/FAQ since rev 855297
 kdesu is a libexec program, so does not normally reside in your PATH.
 Use something like:
-<command>$(kde4-config - -path libexec)kdesu - - program_to_run
-  
+<command>$(kf5-config - -path libexec)kdesu - - program_to_run
+
 https://bugs.kde.org/show_bug.cgi?id=194267
 "one needs to create a
 ~/.kde/share/config/kdesurc file to tell KDE to use sudo instead of su."
@@ -76,8 +76,8 @@ dialog, I consider it to be more of a command line &lt;-&gt; &GUI;
 glue instead of a pure &GUI; program.</para>
 
 <para>Since <command>kdesu</command> is no longer installed in <userinput>
-$(kde4-config --prefix)</userinput>/bin but in <userinput>kde4-config --path libexec</userinput> 
-and therefore not in your <envar>Path</envar>, you have to use <userinput>$(kde4-config 
+$(kf5-config --prefix)</userinput>/bin but in <userinput>kf5-config --path libexec</userinput>
+and therefore not in your <envar>Path</envar>, you have to use <userinput>$(kf5-config
 --path libexec)<command>kdesu</command></userinput> to launch <command>kdesu</command>.</para>
 </chapter>
 
@@ -120,7 +120,7 @@ and therefore not in your <envar>Path</envar>, you have to use <userinput>$(kde4
 <term><option>-c <replaceable>command</replaceable></option></term>
 <listitem><para>This specifies the command to run as root. It has to be passed
 in one argument. So if, for example, you want to start a new file manager, you
-would enter at the prompt: <userinput>$(kde4-config --path libexec)<command>kdesu <option>-c <replaceable>
+would enter at the prompt: <userinput>$(kf5-config --path libexec)<command>kdesu <option>-c <replaceable>
 &dolphin;</replaceable></option></command></userinput></para></listitem>
 </varlistentry>
 <varlistentry>
@@ -146,7 +146,7 @@ global &kde; configuration file.</para></listitem>
 just the name, without any extension.</para>
 <para>For instance to run &konqueror; in filemanager mode and show the
 &konqueror; icon in the password dialog:</para>
-<screen><userinput>$(kde4-config --path libexec)<command>kdesu</command>  <option>-i konqueror</option> 
+<screen><userinput>$(kf5-config --path libexec)<command>kdesu</command>  <option>-i konqueror</option>
 <option>-c "konqueror --profile filemanagement"</option></userinput></screen>
 </listitem>
 </varlistentry>
