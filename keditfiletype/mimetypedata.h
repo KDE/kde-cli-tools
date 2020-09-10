@@ -34,11 +34,11 @@ class MimeTypeData
 {
 public:
     // Constructor used for groups
-    MimeTypeData(const QString &major);
+    explicit MimeTypeData(const QString &major);
     // Real constructor, used for an existing mimetype.
-    MimeTypeData(const QMimeType &mime);
+    explicit MimeTypeData(const QMimeType &mime);
     // Real constructor, used for a new mimetype.
-    MimeTypeData(const QString &mimeName,
+    explicit MimeTypeData(const QString &mimeName,
                  bool /*unused, just to distinguish from the other QString ctor*/);
 
     QString name() const

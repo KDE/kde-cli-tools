@@ -42,9 +42,6 @@ class FileTypesTest : public QObject
 private Q_SLOTS:
     void initTestCase()
     {
-        extern KSERVICE_EXPORT bool kservice_require_kded;
-        kservice_require_kded = false;
-
 #if KCOREADDONS_VERSION >= QT_VERSION_CHECK(5, 73, 0)
         QLoggingCategory::setFilterRules(QStringLiteral("kf.coreaddons.kdirwatch.debug=true"));
 #else
@@ -52,6 +49,9 @@ private Q_SLOTS:
 #endif
 
         QStandardPaths::setTestModeEnabled(true);
+
+        // update-mime-database needs to know about that test directory for the mimetype pattern change in testMimeTypePatterns to have an effect
+        qputenv("XDG_DATA_HOME", QFile::encodeName(QStandardPaths::writableLocation(QStandardPaths::GenericDataLocation)));
 
         m_mimeTypeCreatedSuccessfully = false;
         QStringList appsDirs = QStandardPaths::standardLocations(
@@ -91,7 +91,7 @@ private Q_SLOTS:
                           "filetypesrc"));
 
         if (mustUpdateKSycoca) {
-            // Update ksycoca in ~/.kde-unit-test after creating the above
+            // Update ksycoca in ~/.qttest after creating the above [might not be needed anymore]
             runKBuildSycoca();
         }
         KService::Ptr fakeApplicationService = KService::serviceByStorageId(fakeApplication);
@@ -169,7 +169,7 @@ private Q_SLOTS:
         QVERIFY(!data.isDirty());
         data.setPatterns(patterns);
         QVERIFY(data.isDirty());
-        bool needUpdateMimeDb = data.sync();
+        const bool needUpdateMimeDb = data.sync();
         QVERIFY(needUpdateMimeDb);
         MimeTypeWriter::runUpdateMimeDatabase();
 
@@ -180,6 +180,7 @@ private Q_SLOTS:
         // Check what's in QMimeDatabase
         QStringList newPatterns = db.mimeTypeForName(QStringLiteral("text/plain")).globPatterns();
         newPatterns.sort();
+        qDebug() << "QMimeDatabase says" << newPatterns << "we just saved" << patterns;
         QCOMPARE(newPatterns, patterns);
         QVERIFY(!data.isDirty());
 
@@ -204,7 +205,6 @@ private Q_SLOTS:
         QStringList appServices = data.appServices();
         //qDebug() << appServices;
         QVERIFY(!appServices.isEmpty());
-        const QString oldPreferredApp = appServices.first();
         QVERIFY(!appServices.contains(fakeApplication)); // already there? hmm can't really test then
         QVERIFY(!data.isDirty());
         appServices.prepend(fakeApplication);

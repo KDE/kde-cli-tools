@@ -512,7 +512,8 @@ void MimeTypeData::saveDefaultApplication(KConfigGroup &config, const QStringLis
     if (services.isEmpty()) {
         config.deleteEntry(name());
     } else {
-        config.writeXdgListEntry(name(), QStringList(collectStorageIds(services).first()));
+        const QString firstStorageId = collectStorageIds(services).first();
+        config.writeXdgListEntry(name(), {firstStorageId});
     }
 }
 
