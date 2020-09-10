@@ -594,12 +594,18 @@ bool MimeTypeData::matchesFilter(const QString &filter) const
 
 void MimeTypeData::setAppServices(const QStringList &dsl)
 {
+    if (!m_bFullInit) {
+        getMyServiceOffers(); // so that m_bFullInit is true
+    }
     m_appServices = dsl;
     m_appServicesModified = true;
 }
 
 void MimeTypeData::setEmbedServices(const QStringList &dsl)
 {
+    if (!m_bFullInit) {
+        getMyServiceOffers(); // so that m_bFullInit is true
+    }
     m_embedServices = dsl;
     m_embedServicesModified = true;
 }

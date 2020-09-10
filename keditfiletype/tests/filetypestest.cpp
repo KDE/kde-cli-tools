@@ -230,6 +230,9 @@ private Q_SLOTS:
         // Check what's in mimeapps.list
         checkAddedAssociationsContains(mimeTypeName, fakeApplication);
 
+        // Then we get the signal that kbuildsycoca changed
+        data.refresh();
+
         // Now test removing (in the same test, since it's inter-dependent)
         QVERIFY(appServices.removeAll(fakeApplication) > 0);
         data.setAppServices(appServices);
