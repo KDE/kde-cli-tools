@@ -42,7 +42,7 @@ public:
 private:
     KLineEdit *m_typeEd;
     QComboBox *m_groupCombo;
-    QDialogButtonBox* m_buttonBox;
+    QDialogButtonBox *m_buttonBox;
 };
 
 #endif

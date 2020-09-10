@@ -24,17 +24,18 @@
 
 #include <KLocalizedString>
 
-KServiceSelectDlg::KServiceSelectDlg( const QString& /*serviceType*/, const QString& /*value*/, QWidget *parent )
-    : QDialog( parent )
+KServiceSelectDlg::KServiceSelectDlg(const QString & /*serviceType*/, const QString & /*value*/,
+                                     QWidget *parent)
+    : QDialog(parent)
 {
-    setObjectName( QLatin1String( "serviceSelectDlg" ) );
-    setModal( true );
-    setWindowTitle( i18n( "Add Service" ) );
+    setObjectName(QLatin1String("serviceSelectDlg"));
+    setModal(true);
+    setWindowTitle(i18n("Add Service"));
 
     QVBoxLayout *layout = new QVBoxLayout(this);
 
-    layout->addWidget( new QLabel( i18n( "Select service:" ) ) );
-    m_listbox=new QListWidget();
+    layout->addWidget(new QLabel(i18n("Select service:")));
+    m_listbox = new QListWidget();
     m_buttonBox = new QDialogButtonBox;
     m_buttonBox->setStandardButtons(QDialogButtonBox::Ok | QDialogButtonBox::Cancel);
 
@@ -44,18 +45,19 @@ KServiceSelectDlg::KServiceSelectDlg( const QString& /*serviceType*/, const QStr
     // ### Why can't we query for KParts/ReadOnlyPart as the servicetype? Should work fine!
     const KService::List allServices = KService::allServices();
     KService::List::const_iterator it(allServices.constBegin());
-    for ( ; it != allServices.constEnd() ; ++it )
-      if ( (*it)->hasServiceType( QStringLiteral("KParts/ReadOnlyPart") ) )
-      {
-          m_listbox->addItem( new KServiceListItem( (*it), KServiceListWidget::SERVICELIST_SERVICES ) );
-      }
+    for (; it != allServices.constEnd(); ++it) {
+        if ((*it)->hasServiceType(QStringLiteral("KParts/ReadOnlyPart"))) {
+            m_listbox->addItem(new KServiceListItem((*it),
+                                                    KServiceListWidget::SERVICELIST_SERVICES));
+        }
+    }
 
     m_listbox->model()->sort(0);
     m_listbox->setMinimumHeight(350);
     m_listbox->setMinimumWidth(400);
-    layout->addWidget( m_listbox );
-    layout->addWidget( m_buttonBox );
-    connect(m_listbox,&QListWidget::itemDoubleClicked,this, &QDialog::accept);
+    layout->addWidget(m_listbox);
+    layout->addWidget(m_buttonBox);
+    connect(m_listbox, &QListWidget::itemDoubleClicked, this, &QDialog::accept);
     connect(m_buttonBox, &QDialogButtonBox::accepted, this, &QDialog::accept);
     connect(m_buttonBox, &QDialogButtonBox::rejected, this, &QDialog::reject);
 }
@@ -68,5 +70,5 @@ KService::Ptr KServiceSelectDlg::service()
 {
     int selIndex = m_listbox->currentRow();
     KServiceListItem *selItem = static_cast<KServiceListItem *>(m_listbox->item(selIndex));
-    return KService::serviceByDesktopPath( selItem->desktopPath );
+    return KService::serviceByDesktopPath(selItem->desktopPath);
 }

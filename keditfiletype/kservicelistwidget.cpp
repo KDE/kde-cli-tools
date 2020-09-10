@@ -38,269 +38,281 @@
 #include "kserviceselectdlg.h"
 #include "mimetypedata.h"
 
-KServiceListItem::KServiceListItem( const KService::Ptr& pService, int kind )
-    : QListWidgetItem(), storageId(pService->storageId()), desktopPath(pService->entryPath())
+KServiceListItem::KServiceListItem(const KService::Ptr &pService, int kind)
+    : QListWidgetItem()
+    , storageId(pService->storageId())
+    , desktopPath(pService->entryPath())
 {
-    if ( kind == KServiceListWidget::SERVICELIST_APPLICATIONS )
-        setText( pService->name() );
-    else
-        setText( i18n( "%1 (%2)", pService->name(), pService->desktopEntryName() ) );
+    if (kind == KServiceListWidget::SERVICELIST_APPLICATIONS) {
+        setText(pService->name());
+    } else {
+        setText(i18n("%1 (%2)", pService->name(), pService->desktopEntryName()));
+    }
 
-    setIcon( QIcon::fromTheme( pService->icon() ) );
+    setIcon(QIcon::fromTheme(pService->icon()));
 
-    if (!pService->isApplication())
-      localPath = QStandardPaths::writableLocation(QStandardPaths::GenericDataLocation) + QStringLiteral("/kservices5/") + desktopPath;
-    else
-      localPath = pService->locateLocal();
+    if (!pService->isApplication()) {
+        localPath = QStandardPaths::writableLocation(QStandardPaths::GenericDataLocation)
+                    + QStringLiteral("/kservices5/") + desktopPath;
+    } else {
+        localPath = pService->locateLocal();
+    }
 }
-
-
-
-
-
 
 KServiceListWidget::KServiceListWidget(int kind, QWidget *parent)
-  : QGroupBox( kind == SERVICELIST_APPLICATIONS ? i18n("Application Preference Order")
-               : i18n("Services Preference Order"), parent ),
-    m_kind( kind ), m_mimeTypeData( nullptr )
+    : QGroupBox(kind == SERVICELIST_APPLICATIONS ? i18n("Application Preference Order")
+                : i18n("Services Preference Order"), parent)
+    , m_kind(kind)
+    , m_mimeTypeData(nullptr)
 {
-  QHBoxLayout *lay= new QHBoxLayout(this);
+    QHBoxLayout *lay = new QHBoxLayout(this);
 
-  servicesLB = new QListWidget(this);
-  connect(servicesLB, &QListWidget::itemSelectionChanged, this, &KServiceListWidget::enableMoveButtons);
-  lay->addWidget(servicesLB);
-  connect( servicesLB, &QListWidget::itemDoubleClicked, this, &KServiceListWidget::editService);
+    servicesLB = new QListWidget(this);
+    connect(servicesLB, &QListWidget::itemSelectionChanged, this,
+            &KServiceListWidget::enableMoveButtons);
+    lay->addWidget(servicesLB);
+    connect(servicesLB, &QListWidget::itemDoubleClicked, this, &KServiceListWidget::editService);
 
-  QString wtstr =
-    (kind == SERVICELIST_APPLICATIONS ?
-     i18n("This is a list of applications associated with files of the selected"
-          " file type. This list is shown in Konqueror's context menus when you select"
-          " \"Open With...\". If more than one application is associated with this file type,"
-          " then the list is ordered by priority with the uppermost item taking precedence"
-          " over the others.") :
-     i18n("This is a list of services associated with files of the selected"
-          " file type. This list is shown in Konqueror's context menus when you select"
-          " a \"Preview with...\" option. If more than one service is associated with this file type,"
-          " then the list is ordered by priority with the uppermost item taking precedence"
-          " over the others."));
+    QString wtstr
+        = (kind == SERVICELIST_APPLICATIONS
+           ? i18n("This is a list of applications associated with files of the selected"
+                  " file type. This list is shown in Konqueror's context menus when you select"
+                  " \"Open With...\". If more than one application is associated with this file type,"
+                  " then the list is ordered by priority with the uppermost item taking precedence"
+                  " over the others.")
+           : i18n("This is a list of services associated with files of the selected"
+                  " file type. This list is shown in Konqueror's context menus when you select"
+                  " a \"Preview with...\" option. If more than one service is associated with this file type,"
+                  " then the list is ordered by priority with the uppermost item taking precedence"
+                  " over the others."));
 
-  setWhatsThis( wtstr );
-  servicesLB->setWhatsThis( wtstr );
+    setWhatsThis(wtstr);
+    servicesLB->setWhatsThis(wtstr);
 
-  QVBoxLayout *btnsLay= new QVBoxLayout();
-  lay->addLayout(btnsLay);
+    QVBoxLayout *btnsLay = new QVBoxLayout();
+    lay->addLayout(btnsLay);
 
-  servUpButton = new QPushButton(i18n("Move &Up"), this);
-  servUpButton->setIcon(QIcon::fromTheme(QStringLiteral("arrow-up")));
-  servUpButton->setEnabled(false);
-  connect(servUpButton, &QAbstractButton::clicked, this, &KServiceListWidget::promoteService);
-  btnsLay->addWidget(servUpButton);
+    servUpButton = new QPushButton(i18n("Move &Up"), this);
+    servUpButton->setIcon(QIcon::fromTheme(QStringLiteral("arrow-up")));
+    servUpButton->setEnabled(false);
+    connect(servUpButton, &QAbstractButton::clicked, this, &KServiceListWidget::promoteService);
+    btnsLay->addWidget(servUpButton);
 
-  servUpButton->setWhatsThis( kind == SERVICELIST_APPLICATIONS ?
-                   i18n("Assigns a higher priority to the selected\n"
-                        "application, moving it up in the list. Note:  This\n"
-                        "only affects the selected application if the file type is\n"
-                        "associated with more than one application.") :
-                   i18n("Assigns a higher priority to the selected\n"
-                        "service, moving it up in the list."));
+    servUpButton->setWhatsThis(kind == SERVICELIST_APPLICATIONS
+                               ? i18n("Assigns a higher priority to the selected\n"
+                                      "application, moving it up in the list. Note:  This\n"
+                                      "only affects the selected application if the file type is\n"
+                                      "associated with more than one application.")
+                               : i18n("Assigns a higher priority to the selected\n"
+                                      "service, moving it up in the list."));
 
-  servDownButton = new QPushButton(i18n("Move &Down"), this);
-  servDownButton->setIcon(QIcon::fromTheme(QStringLiteral("arrow-down")));
-  servDownButton->setEnabled(false);
-  connect(servDownButton, &QAbstractButton::clicked, this, &KServiceListWidget::demoteService);
-  btnsLay->addWidget(servDownButton);
-  servDownButton->setWhatsThis( kind == SERVICELIST_APPLICATIONS ?
-                   i18n("Assigns a lower priority to the selected\n"
-                        "application, moving it down in the list. Note: This \n"
-                        "only affects the selected application if the file type is\n"
-                        "associated with more than one application."):
-                   i18n("Assigns a lower priority to the selected\n"
-                        "service, moving it down in the list."));
+    servDownButton = new QPushButton(i18n("Move &Down"), this);
+    servDownButton->setIcon(QIcon::fromTheme(QStringLiteral("arrow-down")));
+    servDownButton->setEnabled(false);
+    connect(servDownButton, &QAbstractButton::clicked, this, &KServiceListWidget::demoteService);
+    btnsLay->addWidget(servDownButton);
+    servDownButton->setWhatsThis(kind == SERVICELIST_APPLICATIONS
+                                 ? i18n("Assigns a lower priority to the selected\n"
+                                        "application, moving it down in the list. Note: This \n"
+                                        "only affects the selected application if the file type is\n"
+                                        "associated with more than one application.")
+                                 : i18n("Assigns a lower priority to the selected\n"
+                                        "service, moving it down in the list."));
 
-  servNewButton = new QPushButton(i18n("Add..."), this);
-  servNewButton->setIcon(QIcon::fromTheme(QStringLiteral("list-add")));
-  servNewButton->setEnabled(false);
-  connect(servNewButton, &QAbstractButton::clicked, this, &KServiceListWidget::addService);
-  btnsLay->addWidget(servNewButton);
-  servNewButton->setWhatsThis( i18n( "Add a new application for this file type." ) );
+    servNewButton = new QPushButton(i18n("Add..."), this);
+    servNewButton->setIcon(QIcon::fromTheme(QStringLiteral("list-add")));
+    servNewButton->setEnabled(false);
+    connect(servNewButton, &QAbstractButton::clicked, this, &KServiceListWidget::addService);
+    btnsLay->addWidget(servNewButton);
+    servNewButton->setWhatsThis(i18n("Add a new application for this file type."));
 
+    servEditButton = new QPushButton(i18n("Edit..."), this);
+    servEditButton->setIcon(QIcon::fromTheme(QStringLiteral("edit-rename")));
+    servEditButton->setEnabled(false);
+    connect(servEditButton, &QAbstractButton::clicked, this, &KServiceListWidget::editService);
+    btnsLay->addWidget(servEditButton);
+    servEditButton->setWhatsThis(i18n("Edit command line of the selected application."));
 
-  servEditButton = new QPushButton(i18n("Edit..."), this);
-  servEditButton->setIcon(QIcon::fromTheme(QStringLiteral("edit-rename")));
-  servEditButton->setEnabled(false);
-  connect(servEditButton, &QAbstractButton::clicked, this, &KServiceListWidget::editService);
-  btnsLay->addWidget(servEditButton);
-  servEditButton->setWhatsThis( i18n( "Edit command line of the selected application." ) );
+    servRemoveButton = new QPushButton(i18n("Remove"), this);
+    servRemoveButton->setIcon(QIcon::fromTheme(QStringLiteral("list-remove")));
+    servRemoveButton->setEnabled(false);
+    connect(servRemoveButton, &QAbstractButton::clicked, this, &KServiceListWidget::removeService);
+    btnsLay->addWidget(servRemoveButton);
+    servRemoveButton->setWhatsThis(i18n("Remove the selected application from the list."));
 
-
-  servRemoveButton = new QPushButton(i18n("Remove"), this);
-  servRemoveButton->setIcon(QIcon::fromTheme(QStringLiteral("list-remove")));
-  servRemoveButton->setEnabled(false);
-  connect(servRemoveButton, &QAbstractButton::clicked, this, &KServiceListWidget::removeService);
-  btnsLay->addWidget(servRemoveButton);
-  servRemoveButton->setWhatsThis( i18n( "Remove the selected application from the list." ) );
-
-  btnsLay->addStretch(1);
+    btnsLay->addStretch(1);
 }
 
-void KServiceListWidget::setMimeTypeData( MimeTypeData * mimeTypeData )
+void KServiceListWidget::setMimeTypeData(MimeTypeData *mimeTypeData)
 {
-  m_mimeTypeData = mimeTypeData;
-  if ( servNewButton )
-    servNewButton->setEnabled(true);
-  // will need a selection
-  servUpButton->setEnabled(false);
-  servDownButton->setEnabled(false);
+    m_mimeTypeData = mimeTypeData;
+    if (servNewButton) {
+        servNewButton->setEnabled(true);
+    }
+    // will need a selection
+    servUpButton->setEnabled(false);
+    servDownButton->setEnabled(false);
 
-  servicesLB->clear();
-  servicesLB->setEnabled(false);
+    servicesLB->clear();
+    servicesLB->setEnabled(false);
 
     if (m_mimeTypeData) {
-        const QStringList services = ( m_kind == SERVICELIST_APPLICATIONS )
+        const QStringList services = (m_kind == SERVICELIST_APPLICATIONS)
                                      ? m_mimeTypeData->appServices()
                                      : m_mimeTypeData->embedServices();
 
         if (services.isEmpty()) {
-            if (m_kind == SERVICELIST_APPLICATIONS)
-                servicesLB->addItem(i18nc("No applications associated with this file type", "None"));
-            else
+            if (m_kind == SERVICELIST_APPLICATIONS) {
+                servicesLB->addItem(i18nc("No applications associated with this file type",
+                                          "None"));
+            } else {
                 servicesLB->addItem(i18nc("No components associated with this file type", "None"));
+            }
         } else {
-            Q_FOREACH(const QString& service, services) {
+            Q_FOREACH (const QString &service, services) {
                 KService::Ptr pService = KService::serviceByStorageId(service);
-                if (pService)
-                    servicesLB->addItem( new KServiceListItem(pService, m_kind) );
+                if (pService) {
+                    servicesLB->addItem(new KServiceListItem(pService, m_kind));
+                }
             }
             servicesLB->setEnabled(true);
         }
     }
 
-    if (servRemoveButton)
+    if (servRemoveButton) {
         servRemoveButton->setEnabled(servicesLB->currentRow() > -1);
-    if (servEditButton)
+    }
+    if (servEditButton) {
         servEditButton->setEnabled(servicesLB->currentRow() > -1);
+    }
 }
 
 void KServiceListWidget::promoteService()
 {
-  if (!servicesLB->isEnabled()) {
-    return;
-  }
+    if (!servicesLB->isEnabled()) {
+        return;
+    }
 
-  int selIndex = servicesLB->currentRow();
-  if (selIndex == 0) {
-    return;
-  }
+    int selIndex = servicesLB->currentRow();
+    if (selIndex == 0) {
+        return;
+    }
 
-  QListWidgetItem *selItem = servicesLB->item(selIndex);
-  servicesLB->takeItem(selIndex);
-  servicesLB->insertItem(selIndex-1,selItem);
-  servicesLB->setCurrentRow(selIndex - 1);
+    QListWidgetItem *selItem = servicesLB->item(selIndex);
+    servicesLB->takeItem(selIndex);
+    servicesLB->insertItem(selIndex-1, selItem);
+    servicesLB->setCurrentRow(selIndex - 1);
 
-  updatePreferredServices();
+    updatePreferredServices();
 
-  emit changed(true);
+    emit changed(true);
 }
 
 void KServiceListWidget::demoteService()
 {
-  if (!servicesLB->isEnabled()) {
-    return;
-  }
+    if (!servicesLB->isEnabled()) {
+        return;
+    }
 
-  int selIndex = servicesLB->currentRow();
-  if (selIndex == servicesLB->count() - 1) {
-    return;
-  }
+    int selIndex = servicesLB->currentRow();
+    if (selIndex == servicesLB->count() - 1) {
+        return;
+    }
 
-  QListWidgetItem *selItem = servicesLB->item(selIndex);
-  servicesLB->takeItem(selIndex);
-  servicesLB->insertItem(selIndex + 1, selItem);
-  servicesLB->setCurrentRow(selIndex + 1);
+    QListWidgetItem *selItem = servicesLB->item(selIndex);
+    servicesLB->takeItem(selIndex);
+    servicesLB->insertItem(selIndex + 1, selItem);
+    servicesLB->setCurrentRow(selIndex + 1);
 
-  updatePreferredServices();
+    updatePreferredServices();
 
-  emit changed(true);
+    emit changed(true);
 }
 
 void KServiceListWidget::addService()
 {
-  if (!m_mimeTypeData)
-      return;
+    if (!m_mimeTypeData) {
+        return;
+    }
 
-  KService::Ptr service;
-  if ( m_kind == SERVICELIST_APPLICATIONS )
-  {
-      KOpenWithDialog dlg(m_mimeTypeData->name(), QString(), this);
-      dlg.setSaveNewApplications(true);
-      if (dlg.exec() != QDialog::Accepted)
-          return;
+    KService::Ptr service;
+    if (m_kind == SERVICELIST_APPLICATIONS) {
+        KOpenWithDialog dlg(m_mimeTypeData->name(), QString(), this);
+        dlg.setSaveNewApplications(true);
+        if (dlg.exec() != QDialog::Accepted) {
+            return;
+        }
 
-      service = dlg.service();
+        service = dlg.service();
 
-      Q_ASSERT(service);
-      if (!service)
-          return; // Don't crash if KOpenWith wasn't able to create service.
-  }
-  else
-  {
-      KServiceSelectDlg dlg(m_mimeTypeData->name(), QString(), this);
-      if (dlg.exec() != QDialog::Accepted)
-          return;
-       service = dlg.service();
-       Q_ASSERT(service);
-       if (!service)
-           return;
-  }
+        Q_ASSERT(service);
+        if (!service) {
+            return; // Don't crash if KOpenWith wasn't able to create service.
+        }
+    } else {
+        KServiceSelectDlg dlg(m_mimeTypeData->name(), QString(), this);
+        if (dlg.exec() != QDialog::Accepted) {
+            return;
+        }
+        service = dlg.service();
+        Q_ASSERT(service);
+        if (!service) {
+            return;
+        }
+    }
 
-  // Did the list simply show "None"?
-  const bool hadDummyEntry = ( m_kind == SERVICELIST_APPLICATIONS )
+    // Did the list simply show "None"?
+    const bool hadDummyEntry = (m_kind == SERVICELIST_APPLICATIONS)
                                ? m_mimeTypeData->appServices().isEmpty()
                                : m_mimeTypeData->embedServices().isEmpty();
 
-  if (hadDummyEntry) {
-      delete servicesLB->takeItem(0); // Remove the "None" item.
-      servicesLB->setEnabled(true);
-  } else {
-      // check if it is a duplicate entry
-      for (int index = 0; index < servicesLB->count(); index++) {
-        if (static_cast<KServiceListItem*>( servicesLB->item(index) )->desktopPath
-            == service->entryPath()) {
-          // ##### shouldn't we make the existing entry the default one?
-          return;
+    if (hadDummyEntry) {
+        delete servicesLB->takeItem(0); // Remove the "None" item.
+        servicesLB->setEnabled(true);
+    } else {
+        // check if it is a duplicate entry
+        for (int index = 0; index < servicesLB->count(); index++) {
+            if (static_cast<KServiceListItem *>(servicesLB->item(index))->desktopPath
+                == service->entryPath()) {
+                // ##### shouldn't we make the existing entry the default one?
+                return;
+            }
         }
-      }
-  }
+    }
 
-  servicesLB->insertItem(0, new KServiceListItem(service, m_kind));
-  servicesLB->setCurrentItem(nullptr);
+    servicesLB->insertItem(0, new KServiceListItem(service, m_kind));
+    servicesLB->setCurrentItem(nullptr);
 
-  updatePreferredServices();
+    updatePreferredServices();
 
-  emit changed(true);
+    emit changed(true);
 }
 
 void KServiceListWidget::editService()
 {
-    if (!m_mimeTypeData)
+    if (!m_mimeTypeData) {
         return;
+    }
     const int selected = servicesLB->currentRow();
-    if (selected < 0)
+    if (selected < 0) {
         return;
+    }
 
     // Only edit applications, not services as
     // they don't have any parameters
-    if (m_kind != SERVICELIST_APPLICATIONS)
+    if (m_kind != SERVICELIST_APPLICATIONS) {
         return;
+    }
 
     // Just like popping up an add dialog except that we
     // pass the current command line as a default
-    KServiceListItem *selItem = (KServiceListItem*)servicesLB->item(selected);
+    KServiceListItem *selItem = (KServiceListItem *)servicesLB->item(selected);
     const QString desktopPath = selItem->desktopPath;
 
     KService::Ptr service = KService::serviceByDesktopPath(desktopPath);
-    if (!service)
+    if (!service) {
         return;
+    }
 
     QString path = service->entryPath();
     {
@@ -312,18 +324,21 @@ void KServiceListWidget::editService()
         }
     }
 
-    KFileItem item(QUrl::fromLocalFile(path), QStringLiteral("application/x-desktop"), KFileItem::Unknown);
+    KFileItem item(QUrl::fromLocalFile(path), QStringLiteral("application/x-desktop"),
+                   KFileItem::Unknown);
     KPropertiesDialog dlg(item, this);
-    if (dlg.exec() != QDialog::Accepted)
+    if (dlg.exec() != QDialog::Accepted) {
         return;
+    }
 
     // Note that at this point, ksycoca has been updated,
     // and setMimeTypeData has been called again, so all the items have been recreated.
 
     // Reload service
     service = KService::serviceByDesktopPath(desktopPath);
-    if (!service)
+    if (!service) {
         return;
+    }
 
     // Remove the old one...
     delete servicesLB->takeItem(selected);
@@ -331,7 +346,7 @@ void KServiceListWidget::editService()
     // ...check that it's not a duplicate entry...
     bool addIt = true;
     for (int index = 0; index < servicesLB->count(); index++) {
-        if (static_cast<KServiceListItem*>(servicesLB->item(index))->desktopPath
+        if (static_cast<KServiceListItem *>(servicesLB->item(index))->desktopPath
             == service->entryPath()) {
             addIt = false;
             break;
@@ -351,16 +366,18 @@ void KServiceListWidget::editService()
 
 void KServiceListWidget::removeService()
 {
-  if (!m_mimeTypeData) return;
+    if (!m_mimeTypeData) {
+        return;
+    }
 
-  int selected = servicesLB->currentRow();
+    int selected = servicesLB->currentRow();
 
-  if ( selected >= 0 ) {
-    delete servicesLB->takeItem( selected );
-    updatePreferredServices();
+    if (selected >= 0) {
+        delete servicesLB->takeItem(selected);
+        updatePreferredServices();
 
-    emit changed(true);
-  }
+        emit changed(true);
+    }
 
     // Update buttons and service list again (e.g. to re-add "None")
     setMimeTypeData(m_mimeTypeData);
@@ -368,50 +385,46 @@ void KServiceListWidget::removeService()
 
 void KServiceListWidget::updatePreferredServices()
 {
-  if (!m_mimeTypeData)
-    return;
-  QStringList sl;
-  unsigned int count = servicesLB->count();
+    if (!m_mimeTypeData) {
+        return;
+    }
+    QStringList sl;
+    unsigned int count = servicesLB->count();
 
-  for (unsigned int i = 0; i < count; i++) {
-    KServiceListItem *sli = (KServiceListItem *) servicesLB->item(i);
-    sl.append( sli->storageId );
-  }
-  sl.removeDuplicates();
-  if ( m_kind == SERVICELIST_APPLICATIONS )
-    m_mimeTypeData->setAppServices(sl);
-  else
-    m_mimeTypeData->setEmbedServices(sl);
+    for (unsigned int i = 0; i < count; i++) {
+        KServiceListItem *sli = (KServiceListItem *)servicesLB->item(i);
+        sl.append(sli->storageId);
+    }
+    sl.removeDuplicates();
+    if (m_kind == SERVICELIST_APPLICATIONS) {
+        m_mimeTypeData->setAppServices(sl);
+    } else {
+        m_mimeTypeData->setEmbedServices(sl);
+    }
 }
 
 void KServiceListWidget::enableMoveButtons()
 {
-  int idx = servicesLB->currentRow();
-  if (servicesLB->model()->rowCount() <= 1)
-  {
-    servUpButton->setEnabled(false);
-    servDownButton->setEnabled(false);
-  }
-  else if ( idx == (servicesLB->model()->rowCount() - 1) )
-  {
-    servUpButton->setEnabled(true);
-    servDownButton->setEnabled(false);
-  }
-  else if (idx == 0)
-  {
-    servUpButton->setEnabled(false);
-    servDownButton->setEnabled(true);
-  }
-  else
-  {
-    servUpButton->setEnabled(true);
-    servDownButton->setEnabled(true);
-  }
+    int idx = servicesLB->currentRow();
+    if (servicesLB->model()->rowCount() <= 1) {
+        servUpButton->setEnabled(false);
+        servDownButton->setEnabled(false);
+    } else if (idx == (servicesLB->model()->rowCount() - 1)) {
+        servUpButton->setEnabled(true);
+        servDownButton->setEnabled(false);
+    } else if (idx == 0) {
+        servUpButton->setEnabled(false);
+        servDownButton->setEnabled(true);
+    } else {
+        servUpButton->setEnabled(true);
+        servDownButton->setEnabled(true);
+    }
 
-  if ( servRemoveButton )
-    servRemoveButton->setEnabled(true);
+    if (servRemoveButton) {
+        servRemoveButton->setEnabled(true);
+    }
 
-  if ( servEditButton )
-    servEditButton->setEnabled( m_kind == SERVICELIST_APPLICATIONS );
+    if (servEditButton) {
+        servEditButton->setEnabled(m_kind == SERVICELIST_APPLICATIONS);
+    }
 }
-

@@ -30,28 +30,29 @@
 #include <QXmlStreamReader>
 #include <QFileInfo>
 
-MimeTypeData::MimeTypeData(const QString& major)
-    : m_askSave(AskSaveDefault),
-      m_bNewItem(false),
-      m_bFullInit(true),
-      m_isGroup(true),
-      m_appServicesModified(false),
-      m_embedServicesModified(false),
-      m_userSpecifiedIconModified(false),
-      m_major(major)
+MimeTypeData::MimeTypeData(const QString &major)
+    : m_askSave(AskSaveDefault)
+    , m_bNewItem(false)
+    , m_bFullInit(true)
+    , m_isGroup(true)
+    , m_appServicesModified(false)
+    , m_embedServicesModified(false)
+    , m_userSpecifiedIconModified(false)
+    , m_major(major)
 {
     m_autoEmbed = readAutoEmbed();
 }
 
-MimeTypeData::MimeTypeData(const QMimeType& mime)
-    : m_mimetype(mime),
-      m_askSave(AskSaveDefault), // TODO: the code for initializing this is missing. FileTypeDetails initializes the checkbox instead...
-      m_bNewItem(false),
-      m_bFullInit(false),
-      m_isGroup(false),
-      m_appServicesModified(false),
-      m_embedServicesModified(false),
-      m_userSpecifiedIconModified(false)
+MimeTypeData::MimeTypeData(const QMimeType &mime)
+    : m_mimetype(mime)
+    , m_askSave(AskSaveDefault)
+    ,                            // TODO: the code for initializing this is missing. FileTypeDetails initializes the checkbox instead...
+    m_bNewItem(false)
+    , m_bFullInit(false)
+    , m_isGroup(false)
+    , m_appServicesModified(false)
+    , m_embedServicesModified(false)
+    , m_userSpecifiedIconModified(false)
 {
     const QString mimeName = m_mimetype.name();
     const int index = mimeName.indexOf(QLatin1Char('/'));
@@ -64,15 +65,14 @@ MimeTypeData::MimeTypeData(const QMimeType& mime)
     initFromQMimeType();
 }
 
-MimeTypeData::MimeTypeData(const QString& mimeName, bool)
-    : m_askSave(AskSaveDefault),
-      m_bNewItem(true),
-      m_bFullInit(false),
-      m_isGroup(false),
-      m_appServicesModified(false),
-      m_embedServicesModified(false),
-      m_userSpecifiedIconModified(false)
-
+MimeTypeData::MimeTypeData(const QString &mimeName, bool)
+    : m_askSave(AskSaveDefault)
+    , m_bNewItem(true)
+    , m_bFullInit(false)
+    , m_isGroup(false)
+    , m_appServicesModified(false)
+    , m_embedServicesModified(false)
+    , m_userSpecifiedIconModified(false)
 {
     const int index = mimeName.indexOf(QLatin1Char('/'));
     if (index != -1) {
@@ -93,15 +93,22 @@ void MimeTypeData::initFromQMimeType()
 
     // Parse XML file to find out if the user specified a custom icon name
     QString file = name().toLower() + QLatin1String(".xml");
-    QStringList mimeFiles = QStandardPaths::locateAll(QStandardPaths::GenericDataLocation, QStringLiteral("mime/") + file);
+    QStringList mimeFiles = QStandardPaths::locateAll(QStandardPaths::GenericDataLocation, QStringLiteral(
+                                                          "mime/") + file);
     if (mimeFiles.isEmpty()) {
         // This is for shared-mime-info < 1.3 that did not lowecase mime names
         file = name() + QLatin1String(".xml");
-        mimeFiles = QStandardPaths::locateAll(QStandardPaths::GenericDataLocation, QStringLiteral("mime/") + file);
+        mimeFiles
+            = QStandardPaths::locateAll(QStandardPaths::GenericDataLocation, QStringLiteral(
+                                            "mime/") + file);
         if (mimeFiles.isEmpty()) {
-            qWarning() << "No file found for" << file << ", even though the file appeared in a directory listing.";
-            qWarning() << "Either it was just removed, or the directory doesn't have executable permission...";
-            qWarning() << QStandardPaths::locateAll(QStandardPaths::GenericDataLocation, QStringLiteral("mime"), QStandardPaths::LocateDirectory);
+            qWarning() << "No file found for" << file
+                       << ", even though the file appeared in a directory listing.";
+            qWarning()
+                <<
+            "Either it was just removed, or the directory doesn't have executable permission...";
+            qWarning() << QStandardPaths::locateAll(QStandardPaths::GenericDataLocation, QStringLiteral(
+                                                        "mime"), QStandardPaths::LocateDirectory);
             return;
         }
     }
@@ -111,8 +118,9 @@ void MimeTypeData::initFromQMimeType()
     while (mimeFilesIter.hasPrevious()) { // global first, then local.
         const QString fullPath = mimeFilesIter.previous();
         QFile qfile(fullPath);
-        if (!qfile.open(QFile::ReadOnly))
+        if (!qfile.open(QFile::ReadOnly)) {
             continue;
+        }
 
         QXmlStreamReader xml(&qfile);
         if (xml.readNextStartElement()) {
@@ -120,8 +128,9 @@ void MimeTypeData::initFromQMimeType()
                 continue;
             }
             const QString mimeName = xml.attributes().value(QLatin1String("type")).toString();
-            if (mimeName.isEmpty())
+            if (mimeName.isEmpty()) {
                 continue;
+            }
             if (QString::compare(mimeName, name(), Qt::CaseInsensitive) != 0) {
                 qWarning() << "Got name" << mimeName << "in file" << file << "expected" << name();
             }
@@ -139,16 +148,21 @@ void MimeTypeData::initFromQMimeType()
 
 MimeTypeData::AutoEmbed MimeTypeData::readAutoEmbed() const
 {
-    const KSharedConfig::Ptr config = KSharedConfig::openConfig(QStringLiteral("filetypesrc"), KConfig::NoGlobals);
+    const KSharedConfig::Ptr config = KSharedConfig::openConfig(QStringLiteral(
+                                                                    "filetypesrc"),
+                                                                KConfig::NoGlobals);
     const QString key = QStringLiteral("embed-") + name();
     const KConfigGroup group(config, "EmbedSettings");
     if (m_isGroup) {
         // embedding is false by default except for image/*, multipart/* and inode/* (hardcoded in konq)
-        const bool defaultValue = (m_major == QLatin1String("image") || m_major == QLatin1String("multipart") || m_major == QLatin1String("inode"));
+        const bool defaultValue
+            = (m_major == QLatin1String("image") || m_major == QLatin1String("multipart")
+               || m_major == QLatin1String("inode"));
         return group.readEntry(key, defaultValue) ? Yes : No;
     } else {
-        if (group.hasKey(key))
+        if (group.hasKey(key)) {
             return group.readEntry(key, false) ? Yes : No;
+        }
         // TODO if ( !mimetype.property( "X-KDE-LocalProtocol" ).toString().isEmpty() )
         // TODO    return MimeTypeData::Yes; // embed by default for zip, tar etc.
         return MimeTypeData::UseGroupSetting;
@@ -157,19 +171,22 @@ MimeTypeData::AutoEmbed MimeTypeData::readAutoEmbed() const
 
 void MimeTypeData::writeAutoEmbed()
 {
-    KSharedConfig::Ptr config = KSharedConfig::openConfig(QStringLiteral("filetypesrc"), KConfig::NoGlobals);
-    if (!config->isConfigWritable(true))
+    KSharedConfig::Ptr config = KSharedConfig::openConfig(QStringLiteral(
+                                                              "filetypesrc"), KConfig::NoGlobals);
+    if (!config->isConfigWritable(true)) {
         return;
+    }
 
     const QString key = QStringLiteral("embed-") + name();
     KConfigGroup group(config, "EmbedSettings");
     if (m_isGroup) {
         group.writeEntry(key, m_autoEmbed == Yes);
     } else {
-        if (m_autoEmbed == UseGroupSetting)
+        if (m_autoEmbed == UseGroupSetting) {
             group.deleteEntry(key);
-        else
+        } else {
             group.writeEntry(key, m_autoEmbed == Yes);
+        }
     }
 }
 
@@ -177,28 +194,37 @@ bool MimeTypeData::isEssential() const
 {
     // Keep in sync with KMimeType::checkEssentialMimeTypes
     const QString n = name();
-    if ( n == QLatin1String("application/octet-stream") )
+    if (n == QLatin1String("application/octet-stream")) {
         return true;
-    if ( n == QLatin1String("inode/directory") )
+    }
+    if (n == QLatin1String("inode/directory")) {
         return true;
-    if ( n == QLatin1String("inode/blockdevice") )
+    }
+    if (n == QLatin1String("inode/blockdevice")) {
         return true;
-    if ( n == QLatin1String("inode/chardevice") )
+    }
+    if (n == QLatin1String("inode/chardevice")) {
         return true;
-    if ( n == QLatin1String("inode/socket") )
+    }
+    if (n == QLatin1String("inode/socket")) {
         return true;
-    if ( n == QLatin1String("inode/fifo") )
+    }
+    if (n == QLatin1String("inode/fifo")) {
         return true;
-    if ( n == QLatin1String("application/x-shellscript") )
+    }
+    if (n == QLatin1String("application/x-shellscript")) {
         return true;
-    if ( n == QLatin1String("application/x-executable") )
+    }
+    if (n == QLatin1String("application/x-executable")) {
         return true;
-    if ( n == QLatin1String("application/x-desktop") )
+    }
+    if (n == QLatin1String("application/x-desktop")) {
         return true;
+    }
     return false;
 }
 
-void MimeTypeData::setUserSpecifiedIcon(const QString& icon)
+void MimeTypeData::setUserSpecifiedIcon(const QString &icon)
 {
     if (icon == m_userSpecifiedIcon) {
         return;
@@ -210,8 +236,8 @@ void MimeTypeData::setUserSpecifiedIcon(const QString& icon)
 QStringList MimeTypeData::getAppOffers() const
 {
     QStringList services;
-    const KService::List offerList =
-        KMimeTypeTrader::self()->query(name(), QStringLiteral("Application"));
+    const KService::List offerList
+        = KMimeTypeTrader::self()->query(name(), QStringLiteral("Application"));
     KService::List::const_iterator it(offerList.begin());
     for (; it != offerList.constEnd(); ++it) {
         services.append((*it)->storageId());
@@ -222,10 +248,12 @@ QStringList MimeTypeData::getAppOffers() const
 QStringList MimeTypeData::getPartOffers() const
 {
     QStringList services;
-    const KService::List partOfferList =
-        KMimeTypeTrader::self()->query(name(), QStringLiteral("KParts/ReadOnlyPart"));
-    for ( KService::List::const_iterator it = partOfferList.begin(); it != partOfferList.constEnd(); ++it)
+    const KService::List partOfferList
+        = KMimeTypeTrader::self()->query(name(), QStringLiteral("KParts/ReadOnlyPart"));
+    for (KService::List::const_iterator it = partOfferList.begin(); it != partOfferList.constEnd();
+         ++it) {
         services.append((*it)->storageId());
+    }
     return services;
 }
 
@@ -255,16 +283,19 @@ QStringList MimeTypeData::embedServices() const
 bool MimeTypeData::isMimeTypeDirty() const
 {
     Q_ASSERT(!m_isGroup);
-    if (m_bNewItem)
+    if (m_bNewItem) {
         return true;
+    }
 
     if (!m_mimetype.isValid()) {
-        qWarning() << "MimeTypeData for" << name() << "says 'not new' but is without a mimetype? Should not happen.";
+        qWarning() << "MimeTypeData for" << name()
+                   << "says 'not new' but is without a mimetype? Should not happen.";
         return true;
     }
 
     if (m_mimetype.comment() != m_comment) {
-        qDebug() << "Mimetype Comment Dirty: old=" << m_mimetype.comment() << "m_comment=" << m_comment;
+        qDebug() << "Mimetype Comment Dirty: old=" << m_mimetype.comment() << "m_comment="
+                 << m_comment;
         return true;
     }
     if (m_userSpecifiedIconModified) {
@@ -274,14 +305,15 @@ bool MimeTypeData::isMimeTypeDirty() const
 
     QStringList storedPatterns = m_mimetype.globPatterns();
     storedPatterns.sort(); // see ctor
-    if ( storedPatterns != m_patterns) {
+    if (storedPatterns != m_patterns) {
         qDebug() << "Mimetype Patterns Dirty: old=" << storedPatterns
                  << "m_patterns=" << m_patterns;
         return true;
     }
 
-    if (readAutoEmbed() != m_autoEmbed)
+    if (readAutoEmbed() != m_autoEmbed) {
         return true;
+    }
     return false;
 }
 
@@ -292,25 +324,27 @@ bool MimeTypeData::isServiceListDirty() const
 
 bool MimeTypeData::isDirty() const
 {
-    if ( m_bNewItem ) {
+    if (m_bNewItem) {
         qDebug() << "New item, need to save it";
         return true;
     }
 
-    if ( !m_isGroup ) {
-        if (isServiceListDirty())
+    if (!m_isGroup) {
+        if (isServiceListDirty()) {
             return true;
-        if (isMimeTypeDirty())
+        }
+        if (isMimeTypeDirty()) {
             return true;
-    }
-    else // is a group
-    {
-        if (readAutoEmbed() != m_autoEmbed)
+        }
+    } else { // is a group
+        if (readAutoEmbed() != m_autoEmbed) {
             return true;
+        }
     }
 
-    if (m_askSave != AskSaveDefault)
+    if (m_askSave != AskSaveDefault) {
         return true;
+    }
 
     // nothing seems to have changed, it's not dirty.
     return false;
@@ -324,9 +358,12 @@ bool MimeTypeData::sync()
     }
 
     if (m_askSave != AskSaveDefault) {
-        KSharedConfig::Ptr config = KSharedConfig::openConfig(QStringLiteral("filetypesrc"), KConfig::NoGlobals);
-        if (!config->isConfigWritable(true))
+        KSharedConfig::Ptr config = KSharedConfig::openConfig(QStringLiteral(
+                                                                  "filetypesrc"),
+                                                              KConfig::NoGlobals);
+        if (!config->isConfigWritable(true)) {
             return false;
+        }
         KConfigGroup cg = config->group("Notification Messages");
         if (m_askSave == AskSaveYes) {
             // Ask
@@ -334,8 +371,8 @@ bool MimeTypeData::sync()
             cg.deleteEntry(QStringLiteral("askEmbedOrSave")+name());
         } else {
             // Do not ask, open
-            cg.writeEntry(QStringLiteral("askSave")+name(), QStringLiteral("no") );
-            cg.writeEntry(QStringLiteral("askEmbedOrSave")+name(), QStringLiteral("no") );
+            cg.writeEntry(QStringLiteral("askSave")+name(), QStringLiteral("no"));
+            cg.writeEntry(QStringLiteral("askEmbedOrSave")+name(), QStringLiteral("no"));
         }
     }
 
@@ -349,8 +386,9 @@ bool MimeTypeData::sync()
             mimeTypeWriter.setIconName(m_userSpecifiedIcon);
         }
         mimeTypeWriter.setPatterns(m_patterns);
-        if (!mimeTypeWriter.write())
+        if (!mimeTypeWriter.write()) {
             return false;
+        }
         m_userSpecifiedIconModified = false;
         needUpdateMimeDb = true;
     }
@@ -366,13 +404,17 @@ static const char s_RemovedAssociations[] = "Removed Associations";
 
 void MimeTypeData::syncServices()
 {
-    if (!m_bFullInit)
+    if (!m_bFullInit) {
         return;
+    }
 
-    KSharedConfig::Ptr profile = KSharedConfig::openConfig(QStringLiteral("mimeapps.list"), KConfig::NoGlobals, QStandardPaths::GenericConfigLocation);
+    KSharedConfig::Ptr profile = KSharedConfig::openConfig(QStringLiteral(
+                                                               "mimeapps.list"), KConfig::NoGlobals,
+                                                           QStandardPaths::GenericConfigLocation);
 
-    if (!profile->isConfigWritable(true)) // warn user if mimeapps.list is root-owned (#155126/#94504)
+    if (!profile->isConfigWritable(true)) { // warn user if mimeapps.list is root-owned (#155126/#94504)
         return;
+    }
 
     const QStringList oldAppServices = getAppOffers();
     if (oldAppServices != m_appServices) {
@@ -403,7 +445,8 @@ void MimeTypeData::syncServices()
     foreach (const QString &desktop, desktops.split(QLatin1Char(':'), Qt::SkipEmptyParts)) {
 #endif
         const QString file = QStandardPaths::writableLocation(QStandardPaths::GenericConfigLocation)
-            + QLatin1Char('/') + desktop.toLower() + QLatin1String("-mimeapps.list");
+                             + QLatin1Char('/') + desktop.toLower()
+                             + QLatin1String("-mimeapps.list");
         if (QFileInfo::exists(file)) {
             qDebug() << "Cleaning up" << file;
             KConfig conf(file, KConfig::NoGlobals);
@@ -417,12 +460,11 @@ void MimeTypeData::syncServices()
     m_embedServicesModified = false;
 }
 
-static QStringList collectStorageIds(const QStringList& services)
+static QStringList collectStorageIds(const QStringList &services)
 {
     QStringList serviceList;
     QStringList::const_iterator it(services.begin());
     for (int i = services.count(); it != services.end(); ++it, i--) {
-
         KService::Ptr pService = KService::serviceByStorageId(*it);
         if (!pService) {
             qWarning() << "service with storage id" << *it << "not found";
@@ -434,48 +476,53 @@ static QStringList collectStorageIds(const QStringList& services)
     return serviceList;
 }
 
-void MimeTypeData::saveRemovedServices(KConfigGroup & config, const QStringList& services, const QStringList& oldServices)
+void MimeTypeData::saveRemovedServices(KConfigGroup &config, const QStringList &services,
+                                       const QStringList &oldServices)
 {
     QStringList removedServiceList = config.readXdgListEntry(name());
 
-    Q_FOREACH(const QString& service, services) {
+    Q_FOREACH (const QString &service, services) {
         // If removedServiceList.contains(service), then it was previously removed but has been added back
         removedServiceList.removeAll(service);
     }
-    Q_FOREACH(const QString& oldService, oldServices) {
+    Q_FOREACH (const QString &oldService, oldServices) {
         if (!services.contains(oldService)) {
             // The service was in m_appServices (or m_embedServices) but has been removed
             removedServiceList.append(oldService);
         }
     }
-    if (removedServiceList.isEmpty())
+    if (removedServiceList.isEmpty()) {
         config.deleteEntry(name());
-    else
+    } else {
         config.writeXdgListEntry(name(), removedServiceList);
+    }
 }
 
-void MimeTypeData::saveServices(KConfigGroup & config, const QStringList& services)
+void MimeTypeData::saveServices(KConfigGroup &config, const QStringList &services)
 {
-    if (services.isEmpty())
+    if (services.isEmpty()) {
         config.deleteEntry(name());
-    else
+    } else {
         config.writeXdgListEntry(name(), collectStorageIds(services));
+    }
 }
 
-void MimeTypeData::saveDefaultApplication(KConfigGroup & config, const QStringList& services)
+void MimeTypeData::saveDefaultApplication(KConfigGroup &config, const QStringList &services)
 {
-    if (services.isEmpty())
+    if (services.isEmpty()) {
         config.deleteEntry(name());
-    else
+    } else {
         config.writeXdgListEntry(name(), QStringList(collectStorageIds(services).first()));
+    }
 }
 
 void MimeTypeData::refresh()
 {
-    if (m_isGroup)
+    if (m_isGroup) {
         return;
+    }
     QMimeDatabase db;
-    m_mimetype = db.mimeTypeForName( name() );
+    m_mimetype = db.mimeTypeForName(name());
     if (m_mimetype.isValid()) {
         if (m_bNewItem) {
             qDebug() << "OK, created" << name();
@@ -494,10 +541,12 @@ void MimeTypeData::refresh()
 
 void MimeTypeData::getAskSave(bool &_askSave)
 {
-    if (m_askSave == AskSaveYes)
+    if (m_askSave == AskSaveYes) {
         _askSave = true;
-    if (m_askSave == AskSaveNo)
+    }
+    if (m_askSave == AskSaveNo) {
         _askSave = false;
+    }
 }
 
 void MimeTypeData::setAskSave(bool _askSave)
@@ -508,9 +557,11 @@ void MimeTypeData::setAskSave(bool _askSave)
 bool MimeTypeData::canUseGroupSetting() const
 {
     // "Use group settings" isn't available for zip, tar etc.; those have a builtin default...
-    if (!m_mimetype.isValid()) // e.g. new mimetype
+    if (!m_mimetype.isValid()) { // e.g. new mimetype
         return true;
-    const bool hasLocalProtocolRedirect = !KProtocolManager::protocolForArchiveMimetype(name()).isEmpty();
+    }
+    const bool hasLocalProtocolRedirect
+        = !KProtocolManager::protocolForArchiveMimetype(name()).isEmpty();
     return !hasLocalProtocolRedirect;
 }
 
@@ -524,16 +575,19 @@ void MimeTypeData::setPatterns(const QStringList &p)
     m_patterns.sort();
 }
 
-bool MimeTypeData::matchesFilter(const QString& filter) const
+bool MimeTypeData::matchesFilter(const QString &filter) const
 {
-    if (name().contains(filter, Qt::CaseInsensitive))
+    if (name().contains(filter, Qt::CaseInsensitive)) {
         return true;
+    }
 
-    if (m_comment.contains(filter, Qt::CaseInsensitive))
+    if (m_comment.contains(filter, Qt::CaseInsensitive)) {
         return true;
+    }
 
-    if (!m_patterns.filter(filter, Qt::CaseInsensitive).isEmpty())
+    if (!m_patterns.filter(filter, Qt::CaseInsensitive).isEmpty()) {
         return true;
+    }
 
     return false;
 }
@@ -552,9 +606,11 @@ void MimeTypeData::setEmbedServices(const QStringList &dsl)
 
 QString MimeTypeData::icon() const
 {
-    if (!m_userSpecifiedIcon.isEmpty())
+    if (!m_userSpecifiedIcon.isEmpty()) {
         return m_userSpecifiedIcon;
-    if (m_mimetype.isValid())
+    }
+    if (m_mimetype.isValid()) {
         return m_mimetype.iconName();
+    }
     return QString();
 }

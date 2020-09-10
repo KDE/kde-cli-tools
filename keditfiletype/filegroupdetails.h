@@ -30,23 +30,23 @@ class QButtonGroup;
  */
 class FileGroupDetails : public QWidget
 {
-  Q_OBJECT
+    Q_OBJECT
 public:
     explicit FileGroupDetails(QWidget *parent = nullptr);
 
-    void setMimeTypeData( MimeTypeData * mimeTypeData );
+    void setMimeTypeData(MimeTypeData *mimeTypeData);
 
 Q_SIGNALS:
-  void changed(bool);
+    void changed(bool);
 
 protected Q_SLOTS:
-  void slotAutoEmbedClicked(int button);
+    void slotAutoEmbedClicked(int button);
 
 private:
-    MimeTypeData * m_mimeTypeData;
+    MimeTypeData *m_mimeTypeData;
 
-  // Embedding config
-  QButtonGroup *m_autoEmbed;
+    // Embedding config
+    QButtonGroup *m_autoEmbed;
 };
 
 #endif

@@ -44,15 +44,26 @@ public:
     /**
      * Create a filetype item inside a group, for a new mimetype
      */
-    TypesListItem(TypesListItem *parent, const QString& newMimetype);
+    TypesListItem(TypesListItem *parent, const QString &newMimetype);
 
     ~TypesListItem() override;
 
-    void setIcon( const QString& icon );
+    void setIcon(const QString &icon);
 
-    QString name() const { return m_mimetypeData.name(); }
-    const MimeTypeData& mimeTypeData() const { return m_mimetypeData; }
-    MimeTypeData& mimeTypeData() { return m_mimetypeData; }
+    QString name() const
+    {
+        return m_mimetypeData.name();
+    }
+
+    const MimeTypeData &mimeTypeData() const
+    {
+        return m_mimetypeData;
+    }
+
+    MimeTypeData &mimeTypeData()
+    {
+        return m_mimetypeData;
+    }
 
     void loadIcon(bool forceReload = false);
 

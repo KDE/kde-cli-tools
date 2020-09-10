@@ -25,24 +25,23 @@
 // Qt
 #include <QDebug>
 
-
-TypesListItem::TypesListItem(QTreeWidget *parent, const QString & major)
-  : QTreeWidgetItem(parent),
-    m_mimetypeData(major)
+TypesListItem::TypesListItem(QTreeWidget *parent, const QString &major)
+    : QTreeWidgetItem(parent)
+    , m_mimetypeData(major)
 {
     setText(0, major);
 }
 
 TypesListItem::TypesListItem(TypesListItem *parent, QMimeType mimetype)
-  : QTreeWidgetItem(parent),
-    m_mimetypeData(mimetype)
+    : QTreeWidgetItem(parent)
+    , m_mimetypeData(mimetype)
 {
     setText(0, m_mimetypeData.minorType());
 }
 
-TypesListItem::TypesListItem(TypesListItem *parent, const QString& newMimetype)
-  : QTreeWidgetItem(parent),
-    m_mimetypeData(newMimetype, true)
+TypesListItem::TypesListItem(TypesListItem *parent, const QString &newMimetype)
+    : QTreeWidgetItem(parent)
+    , m_mimetypeData(newMimetype, true)
 {
     setText(0, m_mimetypeData.minorType());
 }
@@ -51,7 +50,7 @@ TypesListItem::~TypesListItem()
 {
 }
 
-void TypesListItem::setIcon( const QString& icon )
+void TypesListItem::setIcon(const QString &icon)
 {
     m_mimetypeData.setUserSpecifiedIcon(icon);
     loadIcon(true);
@@ -63,4 +62,3 @@ void TypesListItem::loadIcon(bool forceReload)
         QTreeWidgetItem::setIcon(0, QIcon::fromTheme(m_mimetypeData.icon()));
     }
 }
-

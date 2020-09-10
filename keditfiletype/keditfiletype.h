@@ -34,7 +34,7 @@ class FileTypeDialog : public QDialog
 {
     Q_OBJECT
 public:
-    explicit FileTypeDialog(MimeTypeData* mime);
+    explicit FileTypeDialog(MimeTypeData *mime);
     ~FileTypeDialog() override;
 
     void setApplyButtonEnabled(bool);
@@ -44,17 +44,16 @@ public Q_SLOTS:
 
 protected Q_SLOTS:
     void clientChanged(bool state);
-    void slotDatabaseChanged(const QStringList& changedResources);
+    void slotDatabaseChanged(const QStringList &changedResources);
 
 private Q_SLOTS:
     void save();
 
 private:
     void init();
-    FileTypeDetails * m_details;
-    MimeTypeData* m_mimeTypeData;
-    QDialogButtonBox* m_buttonBox;
+    FileTypeDetails *m_details;
+    MimeTypeData *m_mimeTypeData;
+    QDialogButtonBox *m_buttonBox;
 };
 
 #endif
-

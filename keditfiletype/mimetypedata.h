@@ -34,23 +34,50 @@ class MimeTypeData
 {
 public:
     // Constructor used for groups
-    MimeTypeData(const QString& major);
+    MimeTypeData(const QString &major);
     // Real constructor, used for an existing mimetype.
-    MimeTypeData(const QMimeType& mime);
+    MimeTypeData(const QMimeType &mime);
     // Real constructor, used for a new mimetype.
-    MimeTypeData(const QString& mimeName, bool /*unused, just to distinguish from the other QString ctor*/);
+    MimeTypeData(const QString &mimeName,
+                 bool /*unused, just to distinguish from the other QString ctor*/);
 
-    QString name() const { return m_isGroup ? m_major : m_major + QLatin1Char('/') + m_minor; }
-    QString majorType() const { return m_major; }
-    QString minorType() const { return m_minor; }
-    void setMinor(const QString& m) { m_minor = m; }
-    QString comment() const { return m_comment; }
-    void setComment(const QString& c) { m_comment = c; }
+    QString name() const
+    {
+        return m_isGroup ? m_major : m_major + QLatin1Char('/') + m_minor;
+    }
+
+    QString majorType() const
+    {
+        return m_major;
+    }
+
+    QString minorType() const
+    {
+        return m_minor;
+    }
+
+    void setMinor(const QString &m)
+    {
+        m_minor = m;
+    }
+
+    QString comment() const
+    {
+        return m_comment;
+    }
+
+    void setComment(const QString &c)
+    {
+        m_comment = c;
+    }
 
     /**
      * Returns true if "this" is a group
      */
-    bool isMeta() const { return m_isGroup; }
+    bool isMeta() const
+    {
+        return m_isGroup;
+    }
 
     /**
      * Returns true if the type is essential, i.e. can't be deleted
@@ -58,19 +85,36 @@ public:
      */
     bool isEssential() const;
     QString icon() const;
-    void setUserSpecifiedIcon(const QString& icon);
-    QStringList patterns() const { return m_patterns; }
+    void setUserSpecifiedIcon(const QString &icon);
+    QStringList patterns() const
+    {
+        return m_patterns;
+    }
+
     void setPatterns(const QStringList &p);
     QStringList appServices() const;
     void setAppServices(const QStringList &dsl);
     QStringList embedServices() const;
     void setEmbedServices(const QStringList &dsl);
 
-    enum AutoEmbed { Yes = 0, No = 1, UseGroupSetting = 2 };
-    AutoEmbed autoEmbed() const { return m_autoEmbed; }
-    void setAutoEmbed( AutoEmbed a ) { m_autoEmbed = a; }
+    enum AutoEmbed {
+        Yes = 0, No = 1, UseGroupSetting = 2
+    };
+    AutoEmbed autoEmbed() const
+    {
+        return m_autoEmbed;
+    }
 
-    const QMimeType& mimeType() const { return m_mimetype; }
+    void setAutoEmbed(AutoEmbed a)
+    {
+        m_autoEmbed = a;
+    }
+
+    const QMimeType &mimeType() const
+    {
+        return m_mimetype;
+    }
+
     bool canUseGroupSetting() const;
 
     void getAskSave(bool &);
@@ -100,12 +144,15 @@ public:
     /**
      * Return true if this is a new mimetype, i.e. one that is not yet on disk
      */
-    bool isNew() const { return m_bNewItem; }
+    bool isNew() const
+    {
+        return m_bNewItem;
+    }
 
     /**
      * Helper method for the filtering in the listview
      */
-    bool matchesFilter(const QString& filter) const;
+    bool matchesFilter(const QString &filter) const;
 
 private:
     void initFromQMimeType();
@@ -116,20 +163,23 @@ private:
     QStringList getPartOffers() const;
     void getMyServiceOffers() const;
     void syncServices();
-    void saveServices(KConfigGroup & config, const QStringList& services);
-    void saveDefaultApplication(KConfigGroup & config, const QStringList& services);
-    void saveRemovedServices(KConfigGroup & config, const QStringList& services, const QStringList& oldServices);
+    void saveServices(KConfigGroup &config, const QStringList &services);
+    void saveDefaultApplication(KConfigGroup &config, const QStringList &services);
+    void saveRemovedServices(KConfigGroup &config, const QStringList &services,
+                             const QStringList &oldServices);
 
     QMimeType m_mimetype;
-    enum AskSave { AskSaveYes = 0, AskSaveNo = 1, AskSaveDefault = 2 };
-    AskSave m_askSave:3;
-    AutoEmbed m_autoEmbed:3;
-    bool m_bNewItem:1;
-    mutable bool m_bFullInit:1; // lazy init of m_appServices and m_embedServices
-    bool m_isGroup:1;
-    bool m_appServicesModified:1;
-    bool m_embedServicesModified:1;
-    bool m_userSpecifiedIconModified:1;
+    enum AskSave {
+        AskSaveYes = 0, AskSaveNo = 1, AskSaveDefault = 2
+    };
+    AskSave m_askSave : 3;
+    AutoEmbed m_autoEmbed : 3;
+    bool m_bNewItem : 1;
+    mutable bool m_bFullInit : 1; // lazy init of m_appServices and m_embedServices
+    bool m_isGroup : 1;
+    bool m_appServicesModified : 1;
+    bool m_embedServicesModified : 1;
+    bool m_userSpecifiedIconModified : 1;
     QString m_major, m_minor, m_comment, m_userSpecifiedIcon;
     QStringList m_patterns;
     mutable QStringList m_appServices;

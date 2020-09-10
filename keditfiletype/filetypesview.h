@@ -43,49 +43,48 @@ class QStackedWidget;
 
 class FileTypesView : public KCModule
 {
-  Q_OBJECT
+    Q_OBJECT
 public:
-  FileTypesView(QWidget *parent, const QVariantList &args);
-  ~FileTypesView() override;
+    FileTypesView(QWidget *parent, const QVariantList &args);
+    ~FileTypesView() override;
 
-  void load() override;
-  void save() override;
-  void defaults() override;
+    void load() override;
+    void save() override;
+    void defaults() override;
 
 protected Q_SLOTS:
-  void addType();
-  void removeType();
-  void updateDisplay(QTreeWidgetItem *);
-  void slotDoubleClicked(QTreeWidgetItem *);
-  void slotFilter(const QString &patternFilter);
-  void setDirty(bool state);
+    void addType();
+    void removeType();
+    void updateDisplay(QTreeWidgetItem *);
+    void slotDoubleClicked(QTreeWidgetItem *);
+    void slotFilter(const QString &patternFilter);
+    void setDirty(bool state);
 
-  void slotDatabaseChanged(const QStringList& changedResources);
-  void slotEmbedMajor(const QString &major, bool &embed);
-
-private:
-  void readFileTypes();
-    void updateRemoveButton(TypesListItem* item);
+    void slotDatabaseChanged(const QStringList &changedResources);
+    void slotEmbedMajor(const QString &major, bool &embed);
 
 private:
-  QTreeWidget *typesLV;
-  QPushButton *m_removeTypeB;
+    void readFileTypes();
+    void updateRemoveButton(TypesListItem *item);
 
-  QStackedWidget * m_widgetStack;
-  FileTypeDetails * m_details;
-  FileGroupDetails * m_groupDetails;
-  QLabel * m_emptyWidget;
+private:
+    QTreeWidget *typesLV;
+    QPushButton *m_removeTypeB;
 
-  KLineEdit *patternFilterLE;
-  QStringList removedList;
-  bool m_dirty;
+    QStackedWidget *m_widgetStack;
+    FileTypeDetails *m_details;
+    FileGroupDetails *m_groupDetails;
+    QLabel *m_emptyWidget;
+
+    KLineEdit *patternFilterLE;
+    QStringList removedList;
+    bool m_dirty;
     bool m_removeButtonSaysRevert;
-    QMap<QString,TypesListItem*> m_majorMap; // groups
-  QList<TypesListItem *> m_itemList;
+    QMap<QString, TypesListItem *> m_majorMap; // groups
+    QList<TypesListItem *> m_itemList;
 
-  KSharedConfig::Ptr m_fileTypesConfig;
+    KSharedConfig::Ptr m_fileTypesConfig;
 };
-
 
 // helper class for loading the icon on request instead of preloading lots of probably
 // unused icons which takes quite a lot of time
@@ -94,11 +93,13 @@ class TypesListTreeWidget : public QTreeWidget
     Q_OBJECT
 public:
     explicit TypesListTreeWidget(QWidget *parent)
-      : QTreeWidget(parent) {
+        : QTreeWidget(parent)
+    {
     }
 
 protected:
-    void drawRow(QPainter *painter, const QStyleOptionViewItem &option, const QModelIndex &index) const override
+    void drawRow(QPainter *painter, const QStyleOptionViewItem &option,
+                 const QModelIndex &index) const override
     {
         static_cast<TypesListItem *>(itemFromIndex(index))->loadIcon();
 

@@ -34,7 +34,7 @@ class KService;
 class KServiceListItem : public QListWidgetItem
 {
 public:
-    KServiceListItem( const KService::Ptr& pService, int kind );
+    KServiceListItem(const KService::Ptr &pService, int kind);
     QString storageId;
     QString desktopPath;
     QString localPath;
@@ -48,33 +48,35 @@ public:
  */
 class KServiceListWidget : public QGroupBox
 {
-  Q_OBJECT
+    Q_OBJECT
 public:
-  enum { SERVICELIST_APPLICATIONS, SERVICELIST_SERVICES };
-  explicit KServiceListWidget(int kind, QWidget *parent = nullptr);
+    enum {
+        SERVICELIST_APPLICATIONS, SERVICELIST_SERVICES
+    };
+    explicit KServiceListWidget(int kind, QWidget *parent = nullptr);
 
-  void setMimeTypeData( MimeTypeData * item );
+    void setMimeTypeData(MimeTypeData *item);
 
 Q_SIGNALS:
-  void changed(bool);
+    void changed(bool);
 
 protected Q_SLOTS:
-  void promoteService();
-  void demoteService();
-  void addService();
-  void editService();
-  void removeService();
-  void enableMoveButtons();
+    void promoteService();
+    void demoteService();
+    void addService();
+    void editService();
+    void removeService();
+    void enableMoveButtons();
 
 protected:
-  void updatePreferredServices();
+    void updatePreferredServices();
 
 private:
-  int m_kind;
-  QListWidget *servicesLB;
-  QPushButton *servUpButton, *servDownButton;
-  QPushButton *servNewButton, *servEditButton, *servRemoveButton;
-  MimeTypeData *m_mimeTypeData;
+    int m_kind;
+    QListWidget *servicesLB;
+    QPushButton *servUpButton, *servDownButton;
+    QPushButton *servNewButton, *servEditButton, *servRemoveButton;
+    MimeTypeData *m_mimeTypeData;
 };
 
 #endif
