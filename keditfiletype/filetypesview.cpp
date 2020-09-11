@@ -223,7 +223,7 @@ void FileTypesView::slotFilter(const QString &patternFilter)
     }
 
     // insert all items and their group that match the filter
-    Q_FOREACH (TypesListItem *it, m_itemList) {
+    for (TypesListItem *it : qAsConst(m_itemList)) {
         const MimeTypeData &mimeTypeData = it->mimeTypeData();
         if (patternFilter.isEmpty() || mimeTypeData.matchesFilter(patternFilter)) {
             TypesListItem *group = m_majorMap.value(mimeTypeData.majorType());
@@ -412,7 +412,7 @@ void FileTypesView::save()
     bool needUpdateSycoca = false;
     bool didIt = false;
     // first, remove those items which we are asked to remove.
-    Q_FOREACH (const QString &mime, removedList) {
+    for (const QString &mime : qAsConst(removedList)) {
         MimeTypeWriter::removeOwnMimeType(mime);
         didIt = true;
         needUpdateMimeDb = true;
@@ -434,7 +434,7 @@ void FileTypesView::save()
         }
         ++it1;
     }
-    Q_FOREACH (TypesListItem *tli, m_itemList) {
+    for (TypesListItem *tli : qAsConst(m_itemList)) {
         if (tli->mimeTypeData().isDirty()) {
             if (tli->mimeTypeData().isServiceListDirty()) {
                 needUpdateSycoca = true;
@@ -496,7 +496,7 @@ void FileTypesView::slotDatabaseChanged(const QStringList &changedResources)
         // important for Apply (how to differentiate those 2?).
         // See BR 35071.
 
-        Q_FOREACH (TypesListItem *tli, m_itemList) {
+        for (TypesListItem *tli : qAsConst(m_itemList)) {
             tli->mimeTypeData().refresh();
         }
     }

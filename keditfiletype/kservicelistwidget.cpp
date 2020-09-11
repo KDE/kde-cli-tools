@@ -169,7 +169,7 @@ void KServiceListWidget::setMimeTypeData(MimeTypeData *mimeTypeData)
                 servicesLB->addItem(i18nc("No components associated with this file type", "None"));
             }
         } else {
-            Q_FOREACH (const QString &service, services) {
+            for (const QString &service : services) {
                 KService::Ptr pService = KService::serviceByStorageId(service);
                 if (pService) {
                     servicesLB->addItem(new KServiceListItem(pService, m_kind));
