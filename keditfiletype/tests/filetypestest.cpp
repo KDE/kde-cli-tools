@@ -167,8 +167,13 @@ private Q_SLOTS:
         // Check what's in QMimeDatabase
         QStringList newPatterns = db.mimeTypeForName(QStringLiteral("text/plain")).globPatterns();
         newPatterns.sort();
+#if QT_VERSION < QT_VERSION_CHECK(6, 0, 0) // adjust to 5.15 if the fix gets backported
+        QEXPECT_FAIL("", "QTBUG-85436 is only fixed in Qt 6.0", Continue);
+#endif
         QCOMPARE(newPatterns, patterns);
-        QVERIFY(!data.isDirty());
+        if (newPatterns == patterns) { // TODO Qt6: remove the if (keep the QVERIFY!)
+            QVERIFY(!data.isDirty());
+        }
 
         // And then removing the custom file by hand should revert to the initial state
         const QString packageFileName = QStandardPaths::writableLocation(QStandardPaths::GenericDataLocation) + QLatin1String("/mime/") + QStringLiteral("packages/text-plain.xml") ;
