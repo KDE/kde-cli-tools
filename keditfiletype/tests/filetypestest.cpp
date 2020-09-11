@@ -182,7 +182,9 @@ private Q_SLOTS:
         newPatterns.sort();
         qDebug() << "QMimeDatabase says" << newPatterns << "we just saved" << patterns;
         QCOMPARE(newPatterns, patterns);
-        QVERIFY(!data.isDirty());
+        if (newPatterns == patterns) { // TODO Qt6: remove the if (keep the QVERIFY!)
+            QVERIFY(!data.isDirty());
+        }
 
         // And then removing the custom file by hand should revert to the initial state
         const QString packageFileName = QStandardPaths::writableLocation(
