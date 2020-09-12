@@ -35,6 +35,8 @@
 #include <mimetypedata.h>
 #include <mimetypewriter.h>
 
+extern Q_CORE_EXPORT int qmime_secondsBetweenChecks; // see qmimeprovider.cpp
+
 class FileTypesTest : public QObject
 {
     Q_OBJECT
