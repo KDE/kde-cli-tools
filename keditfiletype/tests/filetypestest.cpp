@@ -34,7 +34,8 @@
 #include <mimetypedata.h>
 #include <mimetypewriter.h>
 
-extern Q_CORE_EXPORT int qmime_secondsBetweenChecks; // see qmimeprovider.cpp
+// Unfortunately this isn't available in non-developer builds of Qt...
+//extern Q_CORE_EXPORT int qmime_secondsBetweenChecks; // see qmimeprovider.cpp
 
 class FileTypesTest : public QObject
 {
@@ -287,7 +288,9 @@ private Q_SLOTS:
         QVERIFY(data.isDirty());
         QVERIFY(data.sync());
         MimeTypeWriter::runUpdateMimeDatabase();
-        qmime_secondsBetweenChecks = 0; // ensure QMimeDatabase sees it immediately
+        // QMimeDatabase doesn't even try to update the cache if less than
+        // 5000 ms have passed (can't use qmime_secondsBetweenChecks)
+        QTest::qSleep(5000);
         QMimeType mime = db.mimeTypeForName(mimeTypeName);
         QVERIFY(mime.isValid());
         QCOMPARE(mime.comment(), QStringLiteral("Fake MimeType"));
@@ -308,6 +311,9 @@ private Q_SLOTS:
         QVERIFY(MimeTypeWriter::hasDefinitionFile(mimeTypeName));
         MimeTypeWriter::removeOwnMimeType(mimeTypeName);
         MimeTypeWriter::runUpdateMimeDatabase();
+        // QMimeDatabase doesn't even try to update the cache if less than
+        // 5000 ms have passed (can't use qmime_secondsBetweenChecks)
+        QTest::qSleep(5000);
         const QMimeType mime = db.mimeTypeForName(mimeTypeName);
         QVERIFY2(!mime.isValid(), qPrintable(mimeTypeName));
     }
