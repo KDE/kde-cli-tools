@@ -61,30 +61,21 @@ private Q_SLOTS:
         QVERIFY(QDir().mkpath(QStandardPaths::writableLocation(QStandardPaths::GenericDataLocation) + QStringLiteral("/mime/packages")));
 
         QFile::remove(m_localConfig.filePath(QStringLiteral("mimeapps.list")));
+        QFile::remove(m_localConfig.filePath(QStringLiteral("filetypesrc")));
 
         // Create fake applications for some tests below.
-        bool mustUpdateKSycoca = false;
         fakeApplication = QStringLiteral("fakeapplication.desktop");
-        if (createDesktopFile(m_localApps + fakeApplication))
-            mustUpdateKSycoca = true;
+        createDesktopFile(m_localApps + fakeApplication, {QStringLiteral("image/png")});
         fakeApplication2 = QStringLiteral("fakeapplication2.desktop");
-        if (createDesktopFile(m_localApps + fakeApplication2))
-            mustUpdateKSycoca = true;
+        createDesktopFile(m_localApps + fakeApplication2, {QStringLiteral("image/png"), QStringLiteral("text/plain")});
 
         // Cleanup after testMimeTypePatterns if it failed mid-way
         const QString packageFileName = QStandardPaths::writableLocation(QStandardPaths::GenericDataLocation) + QLatin1String("/mime/") + QStringLiteral("packages/text-plain.xml") ;
         if (!packageFileName.isEmpty()) {
             QFile::remove(packageFileName);
             MimeTypeWriter::runUpdateMimeDatabase();
-            mustUpdateKSycoca = true;
         }
 
-        QFile::remove(QStandardPaths::writableLocation(QStandardPaths::GenericConfigLocation) + QLatin1Char('/') + QStringLiteral("filetypesrc"));
-
-        if ( mustUpdateKSycoca ) {
-            // Update ksycoca in ~/.kde-unit-test after creating the above
-            runKBuildSycoca();
-        }
         KService::Ptr fakeApplicationService = KService::serviceByStorageId(fakeApplication);
         QVERIFY(fakeApplicationService);
     }
@@ -197,8 +188,7 @@ private Q_SLOTS:
         MimeTypeData data(db.mimeTypeForName(mimeTypeName));
         QStringList appServices = data.appServices();
         //qDebug() << appServices;
-        QVERIFY(!appServices.isEmpty());
-        const QString oldPreferredApp = appServices.first();
+        QVERIFY(appServices.contains(fakeApplication2));
         QVERIFY(!appServices.contains(fakeApplication)); // already there? hmm can't really test then
         QVERIFY(!data.isDirty());
         appServices.prepend(fakeApplication);
@@ -333,7 +323,6 @@ private Q_SLOTS:
         QVERIFY(data.isDirty());
         QVERIFY(data.sync());
         MimeTypeWriter::runUpdateMimeDatabase();
-        //runKBuildSycoca();
         QMimeType mime = db.mimeTypeForName(mimeTypeName);
         QVERIFY(mime.isValid());
         QCOMPARE(mime.comment(), fakeComment);
@@ -345,8 +334,9 @@ private Q_SLOTS:
 
     void cleanupTestCase()
     {
-        // If we remove it, then every run of the unit test has to run kbuildsycoca... slow.
-        //QFile::remove(QStandardPaths::writableLocation(QStandardPaths::ApplicationsLocation) + QLatin1Char('/') + "fakeapplication.desktop");
+        const QString localAppsDir = QStandardPaths::writableLocation(QStandardPaths::ApplicationsLocation);
+        QFile::remove(localAppsDir + QLatin1String("/fakeapplication.desktop"));
+        QFile::remove(localAppsDir + QLatin1String("/fakeapplication2.desktop"));
     }
 
 private: // helper methods
@@ -403,18 +393,14 @@ private: // helper methods
         qDebug() << "got signal";
     }
 
-    bool createDesktopFile(const QString& path)
+    void createDesktopFile(const QString& path, const QStringList &mimeTypes)
     {
-        if (!QFile::exists(path)) {
-            KDesktopFile file(path);
-            KConfigGroup group = file.desktopGroup();
-            group.writeEntry("Name", "FakeApplication");
-            group.writeEntry("Type", "Application");
-            group.writeEntry("Exec", "ls");
-            group.writeEntry("MimeType", "image/png");
-            return true;
-        }
-        return false;
+        KDesktopFile file(path);
+        KConfigGroup group = file.desktopGroup();
+        group.writeEntry("Name", "FakeApplication");
+        group.writeEntry("Type", "Application");
+        group.writeEntry("Exec", "ls");
+        group.writeXdgListEntry("MimeType", mimeTypes);
     }
 
     void checkMimeTypeServices(const QString& mimeTypeName, const QStringList& expectedServices)
