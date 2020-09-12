@@ -49,6 +49,9 @@ private Q_SLOTS:
 
         QStandardPaths::setTestModeEnabled(true);
 
+        // update-mime-database needs to know about that test directory for the mimetype pattern change in testMimeTypePatterns to have an effect
+        qputenv("XDG_DATA_HOME", QFile::encodeName(QStandardPaths::writableLocation(QStandardPaths::GenericDataLocation)));
+
         m_mimeTypeCreatedSuccessfully = false;
         QStringList appsDirs = QStandardPaths::standardLocations(QStandardPaths::ApplicationsLocation);
         //qDebug() << appsDirs;
