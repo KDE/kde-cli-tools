@@ -34,6 +34,7 @@
 #include <mimetypedata.h>
 #include <mimetypewriter.h>
 
+extern Q_CORE_EXPORT int qmime_secondsBetweenChecks; // see qmimeprovider.cpp
 
 class FileTypesTest : public QObject
 {
@@ -296,10 +297,7 @@ private Q_SLOTS:
         QVERIFY(data.isDirty());
         QVERIFY(data.sync());
         MimeTypeWriter::runUpdateMimeDatabase();
-        //runKBuildSycoca();
-        // QMimeDatabase doesn't even try to update the cache if less than
-        // 5000 ms have passed
-        QTest::qSleep(5000);
+        qmime_secondsBetweenChecks = 0; // ensure QMimeDatabase sees it immediately
         QMimeType mime = db.mimeTypeForName(mimeTypeName);
         QVERIFY(mime.isValid());
         QCOMPARE(mime.comment(), QStringLiteral("Fake MimeType"));
@@ -320,9 +318,8 @@ private Q_SLOTS:
         QVERIFY(MimeTypeWriter::hasDefinitionFile(mimeTypeName));
         MimeTypeWriter::removeOwnMimeType(mimeTypeName);
         MimeTypeWriter::runUpdateMimeDatabase();
-        //runKBuildSycoca();
-        QMimeType mime = db.mimeTypeForName(mimeTypeName);
-        QVERIFY(mime.isValid());
+        const QMimeType mime = db.mimeTypeForName(mimeTypeName);
+        QVERIFY2(!mime.isValid(), qPrintable(mimeTypeName));
     }
 
     void testModifyMimeTypeComment() // of a system mimetype. And check that it's re-read correctly.

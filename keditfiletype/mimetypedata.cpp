@@ -54,6 +54,7 @@ MimeTypeData::MimeTypeData(const QMimeType& mime)
       m_userSpecifiedIconModified(false)
 {
     const QString mimeName = m_mimetype.name();
+    Q_ASSERT(!mimeName.isEmpty());
     const int index = mimeName.indexOf(QLatin1Char('/'));
     if (index != -1) {
         m_major = mimeName.left(index);
