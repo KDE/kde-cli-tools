@@ -32,7 +32,7 @@ int main(int argc, char **argv)
     QCoreApplication app(argc, argv);
     QCoreApplication::setApplicationName(QStringLiteral("kdeinhibit"));
     QCommandLineParser parser;
-
+    parser.setOptionsAfterPositionalArgumentsMode(QCommandLineParser::ParseAsPositionalArguments);
     parser.setApplicationDescription(i18n("Inhibit various desktop functions whilst a command runs"));
 
     QCommandLineOption powerOption(QStringLiteral("power"), i18n("Inhibit power management"));
