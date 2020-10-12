@@ -45,8 +45,8 @@
 </cmdsynopsis>
 <cmdsynopsis>
 <command>kdesu</command>
-<arg choice="opt">KDE Generic Options</arg>
-<arg choice="opt">Qt Generic Options</arg>
+<arg choice="opt">&kde; Generic Options</arg>
+<arg choice="opt">&Qt; Generic Options</arg>
 </cmdsynopsis>
 </refsynopsisdiv>
 
@@ -101,7 +101,7 @@ global &kde; configuration file.</para></listitem>
 </varlistentry>
 <varlistentry>
 <term><option>-i</option> <replaceable>icon name</replaceable></term>
-<listitem><para>Specify icon to use in the password dialog.  You may specify
+<listitem><para>Specify icon to use in the password dialog. You may specify
 just the name, without any extension.</para>
 </listitem>
 </varlistentry>
@@ -114,8 +114,8 @@ password</guilabel> checkbox in the password dialog.</para></listitem>
 <varlistentry>
 <term><option>-p</option> <replaceable>priority</replaceable></term>
 <listitem>
-<para>Set priority value.  The priority is an arbitrary number between 0 and
-100, where 100 means highest priority, and 0 means lowest.  The default is
+<para>Set priority value. The priority is an arbitrary number between 0 and
+100, where 100 means highest priority, and 0 means lowest. The default is
 50.</para>
 </listitem>
 </varlistentry>
@@ -128,7 +128,7 @@ password</guilabel> checkbox in the password dialog.</para></listitem>
 <varlistentry>
 <term><option>-s</option></term>
 <listitem><para>Stop the kdesu daemon. This is the daemon that caches
-successful passwords in the background.  This feature may also be disabled with
+successful passwords in the background. This feature may also be disabled with
 <option>-n</option> when &kdesu; is initially run.</para></listitem>
 </varlistentry>
 <varlistentry>
@@ -167,7 +167,7 @@ password.</para>
 
 <para>More detailed user documentation is available from <ulink
 url="help:/kdesu">help:/kdesu</ulink>
-(either enter this <acronym>URL</acronym> into &konqueror;, or run
+(either enter this &URL; into &konqueror;, or run
 <userinput><command>khelpcenter</command>
 <parameter>help:/kdesu</parameter></userinput>).</para>
 
@@ -185,7 +185,7 @@ password dialog:</para>
 <refsect1>
 <title>Authors</title>
 <para>&kdesu; was written by
-<personname><firstname>Geert</firstname><surname>Jansen</surname></personname> <email>jansen@kde.org</email>
+&Geert.Jansen; &Geert.Jansen.mail;
 and <personname><firstname>Pietro</firstname><surname>Iglio</surname></personname>
 <email>iglio@fub.it</email>.
 </para>

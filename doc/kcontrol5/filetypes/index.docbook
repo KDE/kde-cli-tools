@@ -56,7 +56,7 @@ most common user preferences.</para>
 <para>You can change your current file associations or add new file
 associations using this module.</para>
 
-<para>Each file association is recorded as a MIME type.
+<para>Each file association is recorded as a &MIME; type.
 &MIME; stands for <quote>Multipurpose Internet Mail
 Extensions</quote>. It allows a computer to determine the type of file,
 without opening and analyzing the format of each and every file.</para>
@@ -100,18 +100,18 @@ Types</guilabel>.</para>
 <para>You can explore each of these categories, and see the file
 associations contained within each one, by simply double-clicking on the
 category name.  You will be presented with a list of the associated
-MIME types under that category.</para>
+&MIME; types under that category.</para>
 
 <tip><para>You can also search for a particular &MIME; type by using the
-search box. The search box is labeled <guilabel>Find file type or filename
-pattern</guilabel> and is located above the category list.</para>
+search box. The search box is labeled <guilabel>Search for file type or
+filename pattern...</guilabel> and is located above the category list.</para>
 
 <para>Simply type the first letter of the &MIME; type you are interested
-in.  The categories are automatically expanded, and only the MIME types
+in.  The categories are automatically expanded, and only the &MIME; types
 that include that letter are displayed.</para>
 
-<para>You can then enter a second character and the MIME types will be
-further limited to MIME types containing those two
+<para>You can then enter a second character and the &MIME; types will be
+further limited to &MIME; types containing those two
 characters.</para></tip>
 
 <sect3 id="file-assoc-use-add">
@@ -120,10 +120,10 @@ characters.</para></tip>
 <para>If you want to add a new &MIME; type to your file associations,
 you can click on the <guibutton>Add...</guibutton> button.  A small
 dialog box will appear.  You select the category from the drop down
-box labeled <guilabel>Group</guilabel>, and type the &MIME; name in the blank labeled <guilabel>Type
-name</guilabel>.  Click <guibutton>OK</guibutton> to add the new MIME
-type, or click <guibutton>Cancel</guibutton> to not add any new
-MIME types.</para>
+box labeled <guilabel>Group:</guilabel>, and type the &MIME; name in the
+blank labeled <guilabel>Type name:</guilabel>.  Click <guibutton>OK</guibutton>
+to add the new &MIME; type, or click <guibutton>Cancel</guibutton> to not add
+any new &MIME; types.</para>
 
 </sect3>
 
@@ -165,7 +165,7 @@ will be visible when using &dolphin; or &konqueror; as a file
 manager.</para></listitem>
 <listitem><para><guilabel>Filename Patterns</guilabel> is a search
 pattern which &kde; will use to determine the &MIME; type.</para></listitem>
-<listitem><para><guilabel>Description</guilabel> is a short description
+<listitem><para><guilabel>Description:</guilabel> is a short description
 of the file type. This is for your benefit only.</para></listitem>
 <listitem><para><guilabel>Application Preference Order</guilabel>
 determines which applications will be associated with the specified
@@ -200,7 +200,7 @@ with the mouse on the icon of your choice, and click
 <title>Editing the MIME type patterns</title>
 
 <para>The box labeled <guilabel>Filename Patterns</guilabel>, determines
-what files will be included within this MIME type.</para>
+what files will be included within this &MIME; type.</para>
 
 <para>Usually, files are selected based on their suffix.  (Examples:
 Files that end with <literal role="extension">.wav</literal> are sound
@@ -210,7 +210,7 @@ role="extension">.c</literal> are program files written in C).</para>
 <para>You should enter your filename mask in this combo box.</para>
 
 <para>The asterisk (<literal>*</literal>) is a wildcard character that
-will be used with nearly every MIME type mask. A complete discussion
+will be used with nearly every &MIME; type mask. A complete discussion
 of wildcards is beyond the scope of this manual, but it is important
 to understand that the asterisk (in this context),
 <quote>matches</quote> any number of characters.  As an example:
@@ -227,10 +227,10 @@ determine the file type more accurately.</para></tip>
 </sect3>
 
 <sect3 id="file-assoc-use-desc">
-<title>Editing a MIME types description.</title>
+<title>Editing a MIME types description</title>
 
 <para>You can type a short description of the &MIME; type in the text
-box labeled <guilabel>Description</guilabel>.  This label is to help
+box labeled <guilabel>Description:</guilabel>.  This label is to help
 you, it does not affect the function of the &MIME; type.</para>
 
 </sect3>
@@ -239,7 +239,7 @@ you, it does not affect the function of the &MIME; type.</para>
 <title>Editing the application associations</title>
 
 <para>There are five buttons (<guibutton>Move Up</guibutton>,
-<guibutton>Move Down</guibutton>, <guibutton>Add</guibutton>, <guibutton>Edit</guibutton> and
+<guibutton>Move Down</guibutton>, <guibutton>Add...</guibutton>, <guibutton>Edit...</guibutton> and
 <guibutton>Remove</guibutton>) and a list box (which lists the
 applications) which are used to configure the applications.</para>
 
@@ -275,26 +275,26 @@ the currently selected application up or down the list of
 applications. </para>
 
 <para>You can add new applications to the list by clicking the button
-labeled <guibutton>Add</guibutton>.  A dialog box will appear. Using the
-dialog box, you can select the application you want to use for this MIME
+labeled <guibutton>Add...</guibutton>.  A dialog box will appear. Using the
+dialog box, you can select the application you want to use for this &MIME;
 type.  Click <guibutton>OK</guibutton> when you are done, and the
 application will be added to the current list.</para>
 
 <para>To change the options of an application for a particular &MIME; type
 select it in the list and then press the <guibutton>Edit...</guibutton> button.
-This opens a new dialog with <guilabel>General</guilabel>,
-<guilabel>Permissions</guilabel> and <guilabel>Applications</guilabel>.
-On the <guilabel>Applications</guilabel> tab you can edit <guilabel>Name</guilabel>,
-<guilabel>Description</guilabel> and <guilabel>Comment</guilabel>.
-In the <guilabel>Command</guilabel> field you can have several place holders
+This opens a new dialog with <guilabel>General</guilabel>, <guilabel>Permissions</guilabel>,
+<guilabel>Application</guilabel> and <guilabel>Details</guilabel> tabs.
+On the <guilabel>Application</guilabel> tab you can edit <guilabel>Name:</guilabel>,
+<guilabel>Description:</guilabel> and <guilabel>Comment:</guilabel>.
+In the <guilabel>Command:</guilabel> field you can have several place holders
 following the command, which will be replaced with the actual values
 when the actual program is run:</para>
 <itemizedlist>
 <listitem><para>%f - a single file name</para></listitem>
 <listitem><para>%F - a list of files; use for applications that can open several local files 
 at once</para></listitem>
-<listitem><para>%u - a single URL</para></listitem>
-<listitem><para>%U - a list of URLs</para></listitem>
+<listitem><para>%u - a single &URL;</para></listitem>
+<listitem><para>%U - a list of &URL;s</para></listitem>
 <listitem><para>%d - the folder of the file to open</para></listitem>
 <listitem><para>%D - a list of folders</para></listitem>
 <listitem><para>%i - the icon</para></listitem>
@@ -321,18 +321,17 @@ there will not be an application to view the data document.</para></tip>
 <para>These settings are valid only for &konqueror; used as file manager, &dolphin;
 is not able to use embedded views and opens a file always in the associated application.</para>
 <para>By clicking on the <guilabel>Embedding</guilabel> tab, you are
-presented with four radio buttons in the <guilabel>Left click
-action</guilabel> group.  These determine how the filemanager views the selected
-&MIME; type:</para>
+presented with four radio buttons in the <guilabel>Left Click Action in Konqueror</guilabel>
+group.  These determine how the filemanager views the selected &MIME; type:</para>
 
 <variablelist>
 <varlistentry><term>Show file in embedded viewer</term>
 <listitem><para>If this is selected, the file will be shown <emphasis>within</emphasis> the filemanager window.</para></listitem></varlistentry>
 <varlistentry><term>Show file in separate viewer</term>
-<listitem><para>This will cause a separate window to be created when showing this MIME type.</para></listitem></varlistentry>
+<listitem><para>This will cause a separate window to be created when showing this &MIME; type.</para></listitem></varlistentry>
 <varlistentry><term>Use settings for 'application' group</term>
-<listitem><para>This will cause the MIME type to use the settings for the MIME type group.
-(if you are editing an audio MIME type, then the settings for the audio group are used).</para></listitem></varlistentry>
+<listitem><para>This will cause the &MIME; type to use the settings for the &MIME; type group.
+(if you are editing an audio &MIME; type, then the settings for the audio group are used).</para></listitem></varlistentry>
 <varlistentry><term>Ask whether to save to disk instead</term>
 <listitem><para>This setting applies only to &konqueror; in browser mode and determines
 if the file is shown in an embedded viewer or if you are asked to save the file to disk instead.</para></listitem></varlistentry>
@@ -343,7 +342,7 @@ Order</guilabel>.</para>
 
 <para>When you use a filemanager like &dolphin; or &konqueror;, you can
 <mousebutton>right</mousebutton> mouse click, and a menu will with an
-entry labeled <guimenu>Open with...</guimenu> will appear.  This box
+entry labeled <guimenuitem>Open with...</guimenuitem> will appear.  This box
 lists the applications that will appear, in the order they will
 appear, under this menu.</para>
 
@@ -355,7 +354,7 @@ appear, under this menu.</para>
 <sect3 id="file-assoc-use-done">
 <title>Making changes permanent</title>
 
-<para>When you are done making any changes to MIME types, you can click
+<para>When you are done making any changes to &MIME; types, you can click
 <guibutton>Apply</guibutton> to make your changes permanent, but keep
 you in this module.</para>
 
