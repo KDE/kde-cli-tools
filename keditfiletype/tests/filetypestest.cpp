@@ -22,7 +22,6 @@
 #include <kconfiggroup.h>
 #include <kdesktopfile.h>
 #include <ksycoca.h>
-#include <kcoreaddons_version.h>
 
 // Qt
 #include <QProcess>
@@ -45,11 +44,7 @@ class FileTypesTest : public QObject
 private Q_SLOTS:
     void initTestCase()
     {
-#if KCOREADDONS_VERSION >= QT_VERSION_CHECK(5, 73, 0)
         QLoggingCategory::setFilterRules(QStringLiteral("kf.coreaddons.kdirwatch.debug=true"));
-#else
-        QLoggingCategory::setFilterRules(QStringLiteral("kf5.kcoreaddons.kdirwatch.debug=true"));
-#endif
 
         QStandardPaths::setTestModeEnabled(true);
 

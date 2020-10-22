@@ -211,9 +211,7 @@ bool ClientApp::kde_open(const QString& url, const QString& mimeType, bool allow
         KRun * run = new KRun( info.url, nullptr );
         run->setRunExecutables(allowExec);
 
-#if KIO_VERSION >= QT_VERSION_CHECK(5,55,0)
         run->setFollowRedirections(false);
-#endif
         QObject::connect( run, &KRun::finished, this, &ClientApp::delayedQuit);
         QObject::connect( run, &KRun::error, this, &ClientApp::delayedQuit);
         qApp->exec();
