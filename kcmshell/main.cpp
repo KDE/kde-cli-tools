@@ -28,11 +28,9 @@
 #include <QtDBus>
 
 #include <KAboutData>
-#include <QApplication>
 #include <KAuthorized>
 
 #include <KCModuleInfo>
-#include <KCMultiDialog>
 #include <KCModuleProxy>
 #include <QDebug>
 #include <KLocalizedString>

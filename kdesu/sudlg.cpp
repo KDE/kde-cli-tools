@@ -5,7 +5,6 @@
  */
 
 #include "sudlg.h"
-#include <QByteArray>
 
 #include <KLocalizedString>
 #include <QPushButton>

@@ -24,7 +24,6 @@
 #include "mimetypewriter.h"
 
 // Qt
-#include <QLabel>
 #include <QLayout>
 #include <QTimer>
 #include <QBoxLayout>
