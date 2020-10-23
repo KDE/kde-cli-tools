@@ -2,7 +2,6 @@
 Icon=preferences-desktop-filetype-association
 Type=Service
 X-KDE-ServiceTypes=KCModule
-Exec=kcmshell5 filetypes
 X-DocPath=kcontrol5/filetypes/index.html
 
 X-KDE-Library=kcm_filetypes
