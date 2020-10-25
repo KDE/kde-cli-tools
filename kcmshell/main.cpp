@@ -30,7 +30,6 @@
 #include <KAboutData>
 #include <KAuthorized>
 
-#include <KCModuleInfo>
 #include <KCModuleProxy>
 #include <QDebug>
 #include <KLocalizedString>
@@ -310,7 +309,7 @@ int main(int _argc, char *_argv[])
     if (parser.isSet(QStringLiteral("icon"))) {
         dlg->setWindowIcon(QIcon::fromTheme(parser.value(QStringLiteral("icon"))));
     } else if (!parser.isSet(QStringLiteral("icon")) && !modules.isEmpty()) {
-        const QString iconName = KCModuleInfo(modules.first()).icon();
+        const QString iconName = modules.first()->icon();
         dlg->setWindowIcon( QIcon::fromTheme(iconName) );
     }
 
