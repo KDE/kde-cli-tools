@@ -1,7 +1,7 @@
 cmake_minimum_required(VERSION 3.0)
 
 project(KDE-CLI-Tools)
-set(PROJECT_VERSION "5.20.2")
+set(PROJECT_VERSION "5.20.3")
 
 set(QT_MIN_VERSION "5.15.0")
 set(KF5_MIN_VERSION "5.74")
