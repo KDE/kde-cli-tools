@@ -257,8 +257,9 @@ bool ClientApp::doList( const QStringList& urls )
         job->setUiDelegate( nullptr );
         job->setUiDelegateExtension( nullptr );
     }
-    connect(job, SIGNAL(entries(KIO::Job*,KIO::UDSEntryList)),
-            SLOT(slotEntries(KIO::Job*,KIO::UDSEntryList)));
+    // clang-format off
+    connect(job, SIGNAL(entries(KIO::Job*,KIO::UDSEntryList)), SLOT(slotEntries(KIO::Job*,KIO::UDSEntryList)));
+    // clang-format on
     connect(job, &KJob::result, this, &ClientApp::slotResult);
     qApp->exec();
     return m_ok;
@@ -384,7 +385,9 @@ bool ClientApp::doIt(const QCommandLineParser& parser)
             job->setUiDelegate( nullptr );
             job->setUiDelegateExtension( nullptr );
         }
-        connect( job, SIGNAL( result( KJob * ) ), qApp, SLOT( slotResult( KJob * ) ) );
+        // clang-format off
+        connect(job, SIGNAL(result(Job*)), qApp, SLOT(slotResult(Job*)));
+        // clang-format on
         qApp->exec();
         return m_ok;
     }
