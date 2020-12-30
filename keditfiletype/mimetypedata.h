@@ -21,8 +21,8 @@
 #ifndef MIMETYPEDATA_H
 #define MIMETYPEDATA_H
 
-#include <QMimeType>
 #include <QMimeDatabase>
+#include <QMimeType>
 
 class KConfigGroup;
 
@@ -38,8 +38,7 @@ public:
     // Real constructor, used for an existing mimetype.
     explicit MimeTypeData(const QMimeType &mime);
     // Real constructor, used for a new mimetype.
-    explicit MimeTypeData(const QString &mimeName,
-                 bool /*unused, just to distinguish from the other QString ctor*/);
+    explicit MimeTypeData(const QString &mimeName, bool /*unused, just to distinguish from the other QString ctor*/);
 
     QString name() const
     {
@@ -98,7 +97,9 @@ public:
     void setEmbedServices(const QStringList &dsl);
 
     enum AutoEmbed {
-        Yes = 0, No = 1, UseGroupSetting = 2,
+        Yes = 0,
+        No = 1,
+        UseGroupSetting = 2,
     };
     AutoEmbed autoEmbed() const
     {
@@ -165,12 +166,13 @@ private:
     void syncServices();
     void saveServices(KConfigGroup &config, const QStringList &services);
     void saveDefaultApplication(KConfigGroup &config, const QStringList &services);
-    void saveRemovedServices(KConfigGroup &config, const QStringList &services,
-                             const QStringList &oldServices);
+    void saveRemovedServices(KConfigGroup &config, const QStringList &services, const QStringList &oldServices);
 
     QMimeType m_mimetype;
     enum AskSave {
-        AskSaveYes = 0, AskSaveNo = 1, AskSaveDefault = 2,
+        AskSaveYes = 0,
+        AskSaveNo = 1,
+        AskSaveDefault = 2,
     };
     AskSave m_askSave : 3;
     AutoEmbed m_autoEmbed : 3;

@@ -35,10 +35,10 @@
 // KDE
 #include <kconfig.h>
 #include <kconfiggroup.h>
+#include <kiconbutton.h>
 #include <kicondialog.h>
 #include <klineedit.h>
 #include <klocalizedstring.h>
-#include <kiconbutton.h>
 #include <ksharedconfig.h>
 
 // Local
@@ -71,8 +71,9 @@ FileTypeDetails::FileTypeDetails(QWidget *parent)
     iconButton = new KIconButton(firstWidget);
     iconButton->setIconType(KIconLoader::Desktop, KIconLoader::MimeType);
     connect(iconButton, &KIconButton::iconChanged, this, &FileTypeDetails::updateIcon);
-    iconButton->setWhatsThis(i18n("This button displays the icon associated"
-                                  " with the selected file type. Click on it to choose a different icon."));
+    iconButton->setWhatsThis(
+        i18n("This button displays the icon associated"
+             " with the selected file type. Click on it to choose a different icon."));
     iconButton->setFixedSize(70, 70);
     iconLabel = nullptr;
     hBox->addWidget(iconButton);
@@ -83,16 +84,16 @@ FileTypeDetails::FileTypeDetails(QWidget *parent)
     hBox = new QHBoxLayout(gb);
 
     extensionLB = new QListWidget(gb);
-    connect(extensionLB, &QListWidget::itemSelectionChanged, this,
-            &FileTypeDetails::enableExtButtons);
+    connect(extensionLB, &QListWidget::itemSelectionChanged, this, &FileTypeDetails::enableExtButtons);
     hBox->addWidget(extensionLB);
 
     extensionLB->setFixedHeight(extensionLB->minimumSizeHint().height());
 
-    extensionLB->setWhatsThis(i18n("This box contains a list of patterns that can be"
-                                   " used to identify files of the selected type. For example, the pattern *.txt is"
-                                   " associated with the file type 'text/plain'; all files ending in '.txt' are recognized"
-                                   " as plain text files."));
+    extensionLB->setWhatsThis(
+        i18n("This box contains a list of patterns that can be"
+             " used to identify files of the selected type. For example, the pattern *.txt is"
+             " associated with the file type 'text/plain'; all files ending in '.txt' are recognized"
+             " as plain text files."));
 
     QVBoxLayout *vbox = new QVBoxLayout();
     hBox->addLayout(vbox);
@@ -100,16 +101,14 @@ FileTypeDetails::FileTypeDetails(QWidget *parent)
     addExtButton = new QPushButton(i18n("Add..."), gb);
     addExtButton->setIcon(QIcon::fromTheme(QStringLiteral("list-add")));
     addExtButton->setEnabled(false);
-    connect(addExtButton, &QAbstractButton::clicked,
-            this, &FileTypeDetails::addExtension);
+    connect(addExtButton, &QAbstractButton::clicked, this, &FileTypeDetails::addExtension);
     vbox->addWidget(addExtButton);
     addExtButton->setWhatsThis(i18n("Add a new pattern for the selected file type."));
 
     removeExtButton = new QPushButton(i18n("Remove"), gb);
     removeExtButton->setIcon(QIcon::fromTheme(QStringLiteral("list-remove")));
     removeExtButton->setEnabled(false);
-    connect(removeExtButton, &QAbstractButton::clicked,
-            this, &FileTypeDetails::removeExtension);
+    connect(removeExtButton, &QAbstractButton::clicked, this, &FileTypeDetails::removeExtension);
     vbox->addWidget(removeExtButton);
     removeExtButton->setWhatsThis(i18n("Remove the selected filename pattern."));
 
@@ -119,21 +118,20 @@ FileTypeDetails::FileTypeDetails(QWidget *parent)
 
     description = new KLineEdit(firstWidget);
     description->setClearButtonEnabled(true);
-    connect(description, &QLineEdit::textChanged,
-            this, &FileTypeDetails::updateDescription);
+    connect(description, &QLineEdit::textChanged, this, &FileTypeDetails::updateDescription);
 
     QHBoxLayout *descriptionBox = new QHBoxLayout;
     descriptionBox->addWidget(new QLabel(i18n("Description:"), firstWidget));
     descriptionBox->addWidget(description);
     firstLayout->addLayout(descriptionBox);
 
-    wtstr = i18n("You can enter a short description for files of the selected"
-                 " file type (e.g. 'HTML Page'). This description will be used by applications"
-                 " like Konqueror to display directory content.");
+    wtstr = i18n(
+        "You can enter a short description for files of the selected"
+        " file type (e.g. 'HTML Page'). This description will be used by applications"
+        " like Konqueror to display directory content.");
     description->setWhatsThis(wtstr);
 
-    serviceListWidget = new KServiceListWidget(KServiceListWidget::SERVICELIST_APPLICATIONS,
-                                               firstWidget);
+    serviceListWidget = new KServiceListWidget(KServiceListWidget::SERVICELIST_APPLICATIONS, firstWidget);
     connect(serviceListWidget, &KServiceListWidget::changed, this, &FileTypeDetails::changed);
     firstLayout->addWidget(serviceListWidget, 5);
 
@@ -150,8 +148,7 @@ FileTypeDetails::FileTypeDetails(QWidget *parent)
     QRadioButton *sepViewerRadio = new QRadioButton(i18n("Show file in separate viewer"));
     m_rbGroupSettings = new QRadioButton(QStringLiteral("Use settings for '%1' group"));
 
-    m_chkAskSave
-        = new QCheckBox(i18n("Ask whether to save to disk instead (only for Konqueror browser)"));
+    m_chkAskSave = new QCheckBox(i18n("Ask whether to save to disk instead (only for Konqueror browser)"));
     connect(m_chkAskSave, &QAbstractButton::toggled, this, &FileTypeDetails::slotAskSaveToggled);
 
     m_autoEmbedGroup = new QButtonGroup(m_autoEmbedBox);
@@ -166,16 +163,16 @@ FileTypeDetails::FileTypeDetails(QWidget *parent)
     vbox->addWidget(m_rbGroupSettings);
     vbox->addWidget(m_chkAskSave);
 
-    m_autoEmbedBox->setWhatsThis(i18n("Here you can configure what the Konqueror file manager"
-                                      " will do when you click on a file of this type. Konqueror can either display the file in"
-                                      " an embedded viewer, or start up a separate application. If set to 'Use settings for G group',"
-                                      " the file manager will behave according to the settings of the group G to which this type belongs;"
-                                      " for instance, 'image' if the current file type is image/png. Dolphin"
-                                      " always shows files in a separate viewer."));
+    m_autoEmbedBox->setWhatsThis(
+        i18n("Here you can configure what the Konqueror file manager"
+             " will do when you click on a file of this type. Konqueror can either display the file in"
+             " an embedded viewer, or start up a separate application. If set to 'Use settings for G group',"
+             " the file manager will behave according to the settings of the group G to which this type belongs;"
+             " for instance, 'image' if the current file type is image/png. Dolphin"
+             " always shows files in a separate viewer."));
 
-    embedServiceListWidget = new KServiceListWidget(KServiceListWidget::SERVICELIST_SERVICES,
-                                                    secondWidget);
-//  embedServiceListWidget->setMinimumHeight( serviceListWidget->sizeHint().height() );
+    embedServiceListWidget = new KServiceListWidget(KServiceListWidget::SERVICELIST_SERVICES, secondWidget);
+    //  embedServiceListWidget->setMinimumHeight( serviceListWidget->sizeHint().height() );
     connect(embedServiceListWidget, &KServiceListWidget::changed, this, &FileTypeDetails::changed);
     secondLayout->addWidget(embedServiceListWidget);
 
@@ -221,9 +218,7 @@ void FileTypeDetails::addExtension()
     }
 
     bool ok;
-    QString ext = QInputDialog::getText(this,
-                                        i18n("Add New Extension"), i18n("Extension:"),
-                                        QLineEdit::Normal, QStringLiteral("*."), &ok);
+    QString ext = QInputDialog::getText(this, i18n("Add New Extension"), i18n("Extension:"), QLineEdit::Normal, QStringLiteral("*."), &ok);
     if (ok) {
         extensionLB->addItem(ext);
         QStringList patt = m_mimeTypeData->patterns();
@@ -280,16 +275,14 @@ void FileTypeDetails::updateAskSave()
 
     QString dontAskAgainName;
     if (autoEmbed == MimeTypeData::Yes) { // Embedded
-        dontAskAgainName = QStringLiteral("askEmbedOrSave")+mimeType;
+        dontAskAgainName = QStringLiteral("askEmbedOrSave") + mimeType;
     } else {
-        dontAskAgainName = QStringLiteral("askSave")+mimeType;
+        dontAskAgainName = QStringLiteral("askSave") + mimeType;
     }
 
-    KSharedConfig::Ptr config = KSharedConfig::openConfig(QStringLiteral(
-                                                              "filetypesrc"), KConfig::NoGlobals);
+    KSharedConfig::Ptr config = KSharedConfig::openConfig(QStringLiteral("filetypesrc"), KConfig::NoGlobals);
     // default value
-    bool ask
-        = config->group("Notification Messages").readEntry(dontAskAgainName, QString()).isEmpty();
+    bool ask = config->group("Notification Messages").readEntry(dontAskAgainName, QString()).isEmpty();
     // per-mimetype override if there's one
     m_mimeTypeData->getAskSave(ask);
 
@@ -309,6 +302,7 @@ void FileTypeDetails::updateAskSave()
             // e.g. postscript is different, because takes longer to read, so
             // it's more likely that the user might want to save it.
             // - multipart/* ("server push", see kmultipart)
+            // clang-format off
             if (mime.inherits(QStringLiteral("text/html"))
                 || mime.inherits(QStringLiteral("application/xml"))
                 || mime.inherits(QStringLiteral("inode/directory"))
@@ -317,6 +311,7 @@ void FileTypeDetails::updateAskSave()
                 || mime.inherits(QStringLiteral("multipart/replace"))) {
                 neverAsk = true;
             }
+            // clang-format on
         }
     }
 

@@ -24,11 +24,11 @@
 #include "mimetypewriter.h"
 
 // Qt
-#include <QLayout>
-#include <QTimer>
 #include <QBoxLayout>
+#include <QLayout>
 #include <QPushButton>
 #include <QStandardPaths>
+#include <QTimer>
 #include <qdbusconnection.h>
 #include <qdbusmessage.h>
 #include <qdebug.h>
@@ -42,38 +42,37 @@
 #include <ksycoca.h>
 
 // Local
-#include "newtypedlg.h"
-#include "filetypedetails.h"
 #include "filegroupdetails.h"
+#include "filetypedetails.h"
+#include "newtypedlg.h"
 
-K_PLUGIN_FACTORY(FileTypesViewFactory, registerPlugin<FileTypesView>();
-                 )
+K_PLUGIN_FACTORY(FileTypesViewFactory, registerPlugin<FileTypesView>();)
 
 FileTypesView::FileTypesView(QWidget *parent, const QVariantList &)
     : KCModule(parent)
 {
-    m_fileTypesConfig
-        = KSharedConfig::openConfig(QStringLiteral("filetypesrc"), KConfig::NoGlobals);
+    m_fileTypesConfig = KSharedConfig::openConfig(QStringLiteral("filetypesrc"), KConfig::NoGlobals);
 
-    setQuickHelp(i18n("<p><h1>File Associations</h1>"
-                      " This module allows you to choose which applications are associated"
-                      " with a given type of file. File types are also referred to as MIME types"
-                      " (MIME is an acronym which stands for \"Multipurpose Internet Mail"
-                      " Extensions\").</p><p> A file association consists of the following:"
-                      " <ul><li>Rules for determining the MIME-type of a file, for example"
-                      " the filename pattern *.png, which means 'all files with names that end"
-                      " in .png', is associated with the MIME type \"image/png\";</li>"
-                      " <li>A short description of the MIME-type, for example the description"
-                      " of the MIME type \"image/png\" is simply 'PNG image';</li>"
-                      " <li>An icon to be used for displaying files of the given MIME-type,"
-                      " so that you can easily identify the type of file in a file"
-                      " manager or file-selection dialog (at least for the types you use often);</li>"
-                      " <li>A list of the applications which can be used to open files of the"
-                      " given MIME-type -- if more than one application can be used then the"
-                      " list is ordered by priority.</li></ul>"
-                      " You may be surprised to find that some MIME types have no associated"
-                      " filename patterns; in these cases, KDE is able to determine the"
-                      " MIME-type by directly examining the contents of the file.</p>"));
+    setQuickHelp(
+        i18n("<p><h1>File Associations</h1>"
+             " This module allows you to choose which applications are associated"
+             " with a given type of file. File types are also referred to as MIME types"
+             " (MIME is an acronym which stands for \"Multipurpose Internet Mail"
+             " Extensions\").</p><p> A file association consists of the following:"
+             " <ul><li>Rules for determining the MIME-type of a file, for example"
+             " the filename pattern *.png, which means 'all files with names that end"
+             " in .png', is associated with the MIME type \"image/png\";</li>"
+             " <li>A short description of the MIME-type, for example the description"
+             " of the MIME type \"image/png\" is simply 'PNG image';</li>"
+             " <li>An icon to be used for displaying files of the given MIME-type,"
+             " so that you can easily identify the type of file in a file"
+             " manager or file-selection dialog (at least for the types you use often);</li>"
+             " <li>A list of the applications which can be used to open files of the"
+             " given MIME-type -- if more than one application can be used then the"
+             " list is ordered by priority.</li></ul>"
+             " You may be surprised to find that some MIME types have no associated"
+             " filename patterns; in these cases, KDE is able to determine the"
+             " MIME-type by directly examining the contents of the file.</p>"));
 
     setButtons(Help | Apply);
     QString wtstr;
@@ -88,12 +87,12 @@ FileTypesView::FileTypesView(QWidget *parent, const QVariantList &)
     patternFilterLE->setPlaceholderText(i18n("Search for file type or filename pattern..."));
     leftLayout->addWidget(patternFilterLE);
 
-    connect(patternFilterLE, &QLineEdit::textChanged,
-            this, &FileTypesView::slotFilter);
+    connect(patternFilterLE, &QLineEdit::textChanged, this, &FileTypesView::slotFilter);
 
-    wtstr = i18n("Enter a part of a filename pattern, and only file types with a "
-                 "matching file pattern will appear in the list. Alternatively, enter "
-                 "a part of a file type name as it appears in the list.");
+    wtstr = i18n(
+        "Enter a part of a filename pattern, and only file types with a "
+        "matching file pattern will appear in the list. Alternatively, enter "
+        "a part of a file type name as it appears in the list.");
 
     patternFilterLE->setWhatsThis(wtstr);
 
@@ -101,16 +100,15 @@ FileTypesView::FileTypesView(QWidget *parent, const QVariantList &)
 
     typesLV->setHeaderLabel(i18n("Known Types"));
     leftLayout->addWidget(typesLV);
-    connect(typesLV, &QTreeWidget::currentItemChanged,
-            this, &FileTypesView::updateDisplay);
-    connect(typesLV, &QTreeWidget::itemDoubleClicked,
-            this, &FileTypesView::slotDoubleClicked);
+    connect(typesLV, &QTreeWidget::currentItemChanged, this, &FileTypesView::updateDisplay);
+    connect(typesLV, &QTreeWidget::itemDoubleClicked, this, &FileTypesView::slotDoubleClicked);
 
-    typesLV->setWhatsThis(i18n("Here you can see a hierarchical list of"
-                               " the file types which are known on your system. Click on the '+' sign"
-                               " to expand a category, or the '-' sign to collapse it. Select a file type"
-                               " (e.g. text/html for HTML files) to view/edit the information for that"
-                               " file type using the controls on the right."));
+    typesLV->setWhatsThis(
+        i18n("Here you can see a hierarchical list of"
+             " the file types which are known on your system. Click on the '+' sign"
+             " to expand a category, or the '-' sign to collapse it. Select a file type"
+             " (e.g. text/html for HTML files) to view/edit the information for that"
+             " file type using the controls on the right."));
 
     QHBoxLayout *btnsLay = new QHBoxLayout();
     leftLayout->addLayout(btnsLay);
@@ -136,16 +134,13 @@ FileTypesView::FileTypesView(QWidget *parent, const QVariantList &)
 
     // File Type Details
     m_details = new FileTypeDetails(m_widgetStack);
-    connect(m_details, &FileTypeDetails::changed,
-            this, &FileTypesView::setDirty);
-    connect(m_details, &FileTypeDetails::embedMajor,
-            this, &FileTypesView::slotEmbedMajor);
+    connect(m_details, &FileTypeDetails::changed, this, &FileTypesView::setDirty);
+    connect(m_details, &FileTypeDetails::embedMajor, this, &FileTypesView::slotEmbedMajor);
     m_widgetStack->insertWidget(1, m_details /*id*/);
 
     // File Group Details
     m_groupDetails = new FileGroupDetails(m_widgetStack);
-    connect(m_groupDetails, &FileGroupDetails::changed,
-            this, &FileTypesView::setDirty);
+    connect(m_groupDetails, &FileGroupDetails::changed, this, &FileTypesView::setDirty);
     m_widgetStack->insertWidget(2, m_groupDetails /*id*/);
 
     // Widget shown on startup
@@ -155,8 +150,7 @@ FileTypesView::FileTypesView(QWidget *parent, const QVariantList &)
 
     m_widgetStack->setCurrentWidget(m_emptyWidget);
 
-    connect(KSycoca::self(), SIGNAL(databaseChanged(QStringList)),
-            SLOT(slotDatabaseChanged(QStringList)));
+    connect(KSycoca::self(), SIGNAL(databaseChanged(QStringList)), SLOT(slotDatabaseChanged(QStringList)));
 }
 
 FileTypesView::~FileTypesView()
@@ -191,7 +185,7 @@ void FileTypesView::readFileTypes()
         const QString mimetype = (*it2).name();
         const int index = mimetype.indexOf(QLatin1Char('/'));
         const QString maj = mimetype.left(index);
-        const QString min = mimetype.right(mimetype.length() - index+1);
+        const QString min = mimetype.right(mimetype.length() - index + 1);
 
         TypesListItem *groupItem = m_majorMap.value(maj);
         if (!groupItem) {
@@ -367,15 +361,13 @@ void FileTypesView::updateRemoveButton(TypesListItem *tlitem)
             } else {
                 // We can only remove mimetypes that we defined ourselves, not those from freedesktop.org
                 const QString mimeType = mimeTypeData.name();
-                qDebug() << mimeType << "hasDefinitionFile:" << MimeTypeWriter::hasDefinitionFile(
-                    mimeType);
+                qDebug() << mimeType << "hasDefinitionFile:" << MimeTypeWriter::hasDefinitionFile(mimeType);
                 if (MimeTypeWriter::hasDefinitionFile(mimeType)) {
                     canRemove = true;
 
                     // Is there a global definition for it?
-                    const QStringList mimeFiles = QStandardPaths::locateAll(
-                        QStandardPaths::GenericDataLocation, QLatin1String(
-                            "mime/") + mimeType + QStringLiteral(".xml"));
+                    const QStringList mimeFiles = QStandardPaths::locateAll(QStandardPaths::GenericDataLocation, //
+                                                                            QLatin1String("mime/") + mimeType + QStringLiteral(".xml"));
                     qDebug() << mimeFiles;
                     if (mimeFiles.count() >= 2 /*a local and a global*/) {
                         m_removeButtonSaysRevert = true;
@@ -391,15 +383,18 @@ void FileTypesView::updateRemoveButton(TypesListItem *tlitem)
 
     if (m_removeButtonSaysRevert) {
         m_removeTypeB->setText(i18n("&Revert"));
-        m_removeTypeB->setToolTip(i18n(
-                                      "Revert this file type to its initial system-wide definition"));
-        m_removeTypeB->setWhatsThis(i18n(
-                                        "Click here to revert this file type to its initial system-wide definition, which undoes any changes made to the file type. Note that system-wide file types cannot be deleted. You can however empty their pattern list, to minimize the chances of them being used (but the file type determination from file contents can still end up using them)."));
+        m_removeTypeB->setToolTip(i18n("Revert this file type to its initial system-wide definition"));
+        m_removeTypeB->setWhatsThis(
+            i18n("Click here to revert this file type to its initial system-wide definition, which undoes any changes made to the file type. Note that "
+                 "system-wide file types cannot be deleted. You can however empty their pattern list, to "
+                 "minimize the chances of them being used (but the file type determination from file contents can still end up using them)."));
     } else {
         m_removeTypeB->setText(i18n("&Remove"));
         m_removeTypeB->setToolTip(i18n("Delete this file type definition completely"));
-        m_removeTypeB->setWhatsThis(i18n(
-                                        "Click here to delete this file type definition completely. This is only possible for user-defined file types. System-wide file types cannot be deleted. You can however empty their pattern list, to minimize the chances of them being used (but the file type determination from file contents can still end up using them)."));
+        m_removeTypeB->setWhatsThis(
+            i18n("Click here to delete this file type definition completely. This is only possible for user-defined file types. System-wide file types cannot "
+                 "be deleted. You can however empty their pattern list, to minimize the chances of "
+                 "them being used (but the file type determination from file contents can still end up using them)."));
     }
 
     m_removeTypeB->setEnabled(canRemove);
@@ -461,10 +456,9 @@ void FileTypesView::save()
         // Trigger reparseConfiguration of filetypesrc in konqueror
         // TODO: the same for dolphin. Or we should probably define a global signal for this.
         // Or a KGlobalSettings thing.
-        QDBusMessage message
-            = QDBusMessage::createSignal(QStringLiteral("/KonqMain"),
-                                         QStringLiteral("org.kde.Konqueror.Main"),
-                                         QStringLiteral("reparseConfiguration"));
+        QDBusMessage message = QDBusMessage::createSignal(QStringLiteral("/KonqMain"), //
+                                                          QStringLiteral("org.kde.Konqueror.Main"),
+                                                          QStringLiteral("reparseConfiguration"));
         QDBusConnection::sessionBus().send(message);
     }
 
@@ -486,8 +480,8 @@ void FileTypesView::load()
 void FileTypesView::slotDatabaseChanged(const QStringList &changedResources)
 {
     qDebug() << changedResources;
-    if (changedResources.contains(QStringLiteral("xdgdata-mime"))  // changes in mimetype definitions
-        || changedResources.contains(QStringLiteral("services"))) {   // changes in .desktop files
+    if (changedResources.contains(QStringLiteral("xdgdata-mime")) // changes in mimetype definitions
+        || changedResources.contains(QStringLiteral("services"))) { // changes in .desktop files
         m_details->refresh();
 
         // ksycoca has new KMimeTypes objects for us, make sure to update

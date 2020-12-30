@@ -52,39 +52,34 @@ KServiceListItem::KServiceListItem(const KService::Ptr &pService, int kind)
     setIcon(QIcon::fromTheme(pService->icon()));
 
     if (!pService->isApplication()) {
-        localPath = QStandardPaths::writableLocation(QStandardPaths::GenericDataLocation)
-                    + QStringLiteral("/kservices5/") + desktopPath;
+        localPath = QStandardPaths::writableLocation(QStandardPaths::GenericDataLocation) + QStringLiteral("/kservices5/") + desktopPath;
     } else {
         localPath = pService->locateLocal();
     }
 }
 
 KServiceListWidget::KServiceListWidget(int kind, QWidget *parent)
-    : QGroupBox(kind == SERVICELIST_APPLICATIONS ? i18n("Application Preference Order")
-                : i18n("Services Preference Order"), parent)
+    : QGroupBox(kind == SERVICELIST_APPLICATIONS ? i18n("Application Preference Order") : i18n("Services Preference Order"), parent)
     , m_kind(kind)
     , m_mimeTypeData(nullptr)
 {
     QHBoxLayout *lay = new QHBoxLayout(this);
 
     servicesLB = new QListWidget(this);
-    connect(servicesLB, &QListWidget::itemSelectionChanged, this,
-            &KServiceListWidget::enableMoveButtons);
+    connect(servicesLB, &QListWidget::itemSelectionChanged, this, &KServiceListWidget::enableMoveButtons);
     lay->addWidget(servicesLB);
     connect(servicesLB, &QListWidget::itemDoubleClicked, this, &KServiceListWidget::editService);
 
-    QString wtstr
-        = (kind == SERVICELIST_APPLICATIONS
-           ? i18n("This is a list of applications associated with files of the selected"
-                  " file type. This list is shown in Konqueror's context menus when you select"
-                  " \"Open With...\". If more than one application is associated with this file type,"
-                  " then the list is ordered by priority with the uppermost item taking precedence"
-                  " over the others.")
-           : i18n("This is a list of services associated with files of the selected"
-                  " file type. This list is shown in Konqueror's context menus when you select"
-                  " a \"Preview with...\" option. If more than one service is associated with this file type,"
-                  " then the list is ordered by priority with the uppermost item taking precedence"
-                  " over the others."));
+    QString wtstr = (kind == SERVICELIST_APPLICATIONS ? i18n("This is a list of applications associated with files of the selected"
+                                                             " file type. This list is shown in Konqueror's context menus when you select"
+                                                             " \"Open With...\". If more than one application is associated with this file type,"
+                                                             " then the list is ordered by priority with the uppermost item taking precedence"
+                                                             " over the others.")
+                                                      : i18n("This is a list of services associated with files of the selected"
+                                                             " file type. This list is shown in Konqueror's context menus when you select"
+                                                             " a \"Preview with...\" option. If more than one service is associated with this file type,"
+                                                             " then the list is ordered by priority with the uppermost item taking precedence"
+                                                             " over the others."));
 
     setWhatsThis(wtstr);
     servicesLB->setWhatsThis(wtstr);
@@ -98,26 +93,24 @@ KServiceListWidget::KServiceListWidget(int kind, QWidget *parent)
     connect(servUpButton, &QAbstractButton::clicked, this, &KServiceListWidget::promoteService);
     btnsLay->addWidget(servUpButton);
 
-    servUpButton->setWhatsThis(kind == SERVICELIST_APPLICATIONS
-                               ? i18n("Assigns a higher priority to the selected\n"
-                                      "application, moving it up in the list. Note:  This\n"
-                                      "only affects the selected application if the file type is\n"
-                                      "associated with more than one application.")
-                               : i18n("Assigns a higher priority to the selected\n"
-                                      "service, moving it up in the list."));
+    servUpButton->setWhatsThis(kind == SERVICELIST_APPLICATIONS ? i18n("Assigns a higher priority to the selected\n"
+                                                                       "application, moving it up in the list. Note:  This\n"
+                                                                       "only affects the selected application if the file type is\n"
+                                                                       "associated with more than one application.")
+                                                                : i18n("Assigns a higher priority to the selected\n"
+                                                                       "service, moving it up in the list."));
 
     servDownButton = new QPushButton(i18n("Move &Down"), this);
     servDownButton->setIcon(QIcon::fromTheme(QStringLiteral("arrow-down")));
     servDownButton->setEnabled(false);
     connect(servDownButton, &QAbstractButton::clicked, this, &KServiceListWidget::demoteService);
     btnsLay->addWidget(servDownButton);
-    servDownButton->setWhatsThis(kind == SERVICELIST_APPLICATIONS
-                                 ? i18n("Assigns a lower priority to the selected\n"
-                                        "application, moving it down in the list. Note: This \n"
-                                        "only affects the selected application if the file type is\n"
-                                        "associated with more than one application.")
-                                 : i18n("Assigns a lower priority to the selected\n"
-                                        "service, moving it down in the list."));
+    servDownButton->setWhatsThis(kind == SERVICELIST_APPLICATIONS ? i18n("Assigns a lower priority to the selected\n"
+                                                                         "application, moving it down in the list. Note: This \n"
+                                                                         "only affects the selected application if the file type is\n"
+                                                                         "associated with more than one application.")
+                                                                  : i18n("Assigns a lower priority to the selected\n"
+                                                                         "service, moving it down in the list."));
 
     servNewButton = new QPushButton(i18n("Add..."), this);
     servNewButton->setIcon(QIcon::fromTheme(QStringLiteral("list-add")));
@@ -157,14 +150,11 @@ void KServiceListWidget::setMimeTypeData(MimeTypeData *mimeTypeData)
     servicesLB->setEnabled(false);
 
     if (m_mimeTypeData) {
-        const QStringList services = (m_kind == SERVICELIST_APPLICATIONS)
-                                     ? m_mimeTypeData->appServices()
-                                     : m_mimeTypeData->embedServices();
+        const QStringList services = (m_kind == SERVICELIST_APPLICATIONS) ? m_mimeTypeData->appServices() : m_mimeTypeData->embedServices();
 
         if (services.isEmpty()) {
             if (m_kind == SERVICELIST_APPLICATIONS) {
-                servicesLB->addItem(i18nc("No applications associated with this file type",
-                                          "None"));
+                servicesLB->addItem(i18nc("No applications associated with this file type", "None"));
             } else {
                 servicesLB->addItem(i18nc("No components associated with this file type", "None"));
             }
@@ -200,7 +190,7 @@ void KServiceListWidget::promoteService()
 
     QListWidgetItem *selItem = servicesLB->item(selIndex);
     servicesLB->takeItem(selIndex);
-    servicesLB->insertItem(selIndex-1, selItem);
+    servicesLB->insertItem(selIndex - 1, selItem);
     servicesLB->setCurrentRow(selIndex - 1);
 
     updatePreferredServices();
@@ -262,9 +252,7 @@ void KServiceListWidget::addService()
     }
 
     // Did the list simply show "None"?
-    const bool hadDummyEntry = (m_kind == SERVICELIST_APPLICATIONS)
-                               ? m_mimeTypeData->appServices().isEmpty()
-                               : m_mimeTypeData->embedServices().isEmpty();
+    const bool hadDummyEntry = (m_kind == SERVICELIST_APPLICATIONS) ? m_mimeTypeData->appServices().isEmpty() : m_mimeTypeData->embedServices().isEmpty();
 
     if (hadDummyEntry) {
         delete servicesLB->takeItem(0); // Remove the "None" item.
@@ -272,8 +260,7 @@ void KServiceListWidget::addService()
     } else {
         // check if it is a duplicate entry
         for (int index = 0; index < servicesLB->count(); index++) {
-            if (static_cast<KServiceListItem *>(servicesLB->item(index))->desktopPath
-                == service->entryPath()) {
+            if (static_cast<KServiceListItem *>(servicesLB->item(index))->desktopPath == service->entryPath()) {
                 // ##### shouldn't we make the existing entry the default one?
                 return;
             }
@@ -324,8 +311,7 @@ void KServiceListWidget::editService()
         }
     }
 
-    KFileItem item(QUrl::fromLocalFile(path), QStringLiteral("application/x-desktop"),
-                   KFileItem::Unknown);
+    KFileItem item(QUrl::fromLocalFile(path), QStringLiteral("application/x-desktop"), KFileItem::Unknown);
     KPropertiesDialog dlg(item, this);
     if (dlg.exec() != QDialog::Accepted) {
         return;
@@ -346,8 +332,7 @@ void KServiceListWidget::editService()
     // ...check that it's not a duplicate entry...
     bool addIt = true;
     for (int index = 0; index < servicesLB->count(); index++) {
-        if (static_cast<KServiceListItem *>(servicesLB->item(index))->desktopPath
-            == service->entryPath()) {
+        if (static_cast<KServiceListItem *>(servicesLB->item(index))->desktopPath == service->entryPath()) {
             addIt = false;
             break;
         }

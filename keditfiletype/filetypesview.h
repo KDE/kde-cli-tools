@@ -22,13 +22,13 @@
 #ifndef FILETYPESVIEW_H
 #define FILETYPESVIEW_H
 
+#include <QLabel>
 #include <QList>
 #include <QMap>
-#include <QLabel>
 #include <QStackedWidget>
 
-#include <KSharedConfig>
 #include <KCModule>
+#include <KSharedConfig>
 
 #include "typeslistitem.h"
 
@@ -98,8 +98,7 @@ public:
     }
 
 protected:
-    void drawRow(QPainter *painter, const QStyleOptionViewItem &option,
-                 const QModelIndex &index) const override
+    void drawRow(QPainter *painter, const QStyleOptionViewItem &option, const QModelIndex &index) const override
     {
         static_cast<TypesListItem *>(itemFromIndex(index))->loadIcon();
 

@@ -24,7 +24,10 @@
 
 class QCommandLineParser;
 class KJob;
-namespace KIO { class Job; }
+namespace KIO
+{
+class Job;
+}
 
 class ClientApp : public QObject
 {
@@ -33,21 +36,21 @@ public:
     ClientApp();
 
     /** Parse command-line arguments and "do it" */
-    bool doIt(const QCommandLineParser& parser);
+    bool doIt(const QCommandLineParser &parser);
 
 private Q_SLOTS:
     void slotPrintData(KIO::Job *job, const QByteArray &data);
-    void slotEntries(KIO::Job* job, const KIO::UDSEntryList& );
-    void slotResult( KJob * );
+    void slotEntries(KIO::Job *job, const KIO::UDSEntryList &);
+    void slotResult(KJob *);
     void delayedQuit();
     void slotDialogCanceled();
 
 private:
-    bool kde_open( const QString& url, const QString& mimeType, bool allowExec);
-    bool doCopy( const QStringList& urls );
-    bool doMove( const QStringList& urls );
-    bool doList( const QStringList& urls );
-    bool doRemove( const QStringList& urls );
+    bool kde_open(const QString &url, const QString &mimeType, bool allowExec);
+    bool doCopy(const QStringList &urls);
+    bool doMove(const QStringList &urls);
+    bool doList(const QStringList &urls);
+    bool doRemove(const QStringList &urls);
 
     static bool m_ok;
 };

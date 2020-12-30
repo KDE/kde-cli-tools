@@ -17,15 +17,15 @@ You should have received a copy of the GNU General Public License
 along with this program.  If not, see <http://www.gnu.org/licenses/>.
 *********************************************************************/
 
+#include <QCommandLineOption>
+#include <QCommandLineParser>
 #include <QCoreApplication>
 #include <QDBusConnection>
 #include <QDBusMessage>
-#include <QCommandLineParser>
-#include <QCommandLineOption>
 #include <QDebug>
 
-#include <KProcess>
 #include <KLocalizedString>
+#include <KProcess>
 
 int main(int argc, char **argv)
 {

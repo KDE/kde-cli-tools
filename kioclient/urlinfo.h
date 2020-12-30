@@ -36,8 +36,9 @@ public:
      * Parses an argument and determines its line number and column and full path
      * @param pathOrUrl path passed on e.g. command line to parse into an URL or just an URL
      */
-    UrlInfo(const QString& pathOrUrl)
-        : line(0), column(0)
+    UrlInfo(const QString &pathOrUrl)
+        : line(0)
+        , column(0)
     {
         /**
          * first try: just check if the path is an existing file
@@ -58,8 +59,9 @@ public:
         if (!QUrl::fromUserInput(pathOrUrl).isLocalFile()) {
             url = QUrl::fromUserInput(pathOrUrl, QDir::currentPath(), QUrl::DefaultResolution);
             // relative paths are not isLocalFile(), but not valid too, so we don't want them
-            if(url.isValid())
+            if (url.isValid()) {
                 return;
+            }
         }
 
         /**
@@ -100,9 +102,9 @@ public:
         }
     }
 
-    bool atStart() const {
-        return (line == 0 || line == 1 )
-            && (column == 0 || column == 1);
+    bool atStart() const
+    {
+        return (line == 0 || line == 1) && (column == 0 || column == 1);
     }
 
     /**

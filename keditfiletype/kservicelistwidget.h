@@ -51,7 +51,8 @@ class KServiceListWidget : public QGroupBox
     Q_OBJECT
 public:
     enum {
-        SERVICELIST_APPLICATIONS, SERVICELIST_SERVICES
+        SERVICELIST_APPLICATIONS,
+        SERVICELIST_SERVICES,
     };
     explicit KServiceListWidget(int kind, QWidget *parent = nullptr);
 

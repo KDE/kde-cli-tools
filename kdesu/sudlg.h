@@ -14,25 +14,24 @@
 
 using namespace KDESu;
 
-class KDEsuDialog
-    : public KPasswordDialog
+class KDEsuDialog : public KPasswordDialog
 {
     Q_OBJECT
 
 public:
-    KDEsuDialog(QByteArray user, QByteArray authUser, bool enableKeep, const QString& icon , bool withIgnoreButton);
+    KDEsuDialog(QByteArray user, QByteArray authUser, bool enableKeep, const QString &icon, bool withIgnoreButton);
     ~KDEsuDialog() override;
 
     enum ResultCodes { AsUser = 10 };
 
 private Q_SLOTS:
     void slotUser1();
+
 protected:
     bool checkPassword() override;
 
 private:
     SuProcess proc;
 };
-
 
 #endif // __SuDlg_h_Included__

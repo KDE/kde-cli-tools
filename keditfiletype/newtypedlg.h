@@ -39,6 +39,7 @@ public:
     explicit NewTypeDialog(const QStringList &groups, QWidget *parent);
     QString group() const;
     QString text() const;
+
 private:
     KLineEdit *m_typeEd;
     QComboBox *m_groupCombo;

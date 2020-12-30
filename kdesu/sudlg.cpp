@@ -10,14 +10,14 @@
 #include <QPushButton>
 #include <qstyle.h>
 
-KDEsuDialog::KDEsuDialog(QByteArray user, QByteArray authUser, bool enableKeep, const QString& icon, bool withIgnoreButton)
+KDEsuDialog::KDEsuDialog(QByteArray user, QByteArray authUser, bool enableKeep, const QString &icon, bool withIgnoreButton)
     : KPasswordDialog(nullptr, enableKeep ? ShowKeepPassword : NoFlags)
 {
-    if ( !icon.isEmpty() ) {
+    if (!icon.isEmpty()) {
         setIcon(QIcon::fromTheme(icon));
     }
 
-    if ( withIgnoreButton ) {
+    if (withIgnoreButton) {
         buttonBox()->addButton(QDialogButtonBox::Ignore);
     }
 
@@ -29,36 +29,44 @@ KDEsuDialog::KDEsuDialog(QByteArray user, QByteArray authUser, bool enableKeep, 
 
     QString prompt;
     if (proc.useUsersOwnPassword()) {
-        prompt = i18n("Please enter your password below." );
+        prompt = i18n("Please enter your password below.");
     } else {
         if (authUser == "root") {
-            if(withIgnoreButton)
-                prompt = QStringLiteral("<qt>") + i18n("The action you requested needs <b>root privileges</b>. "
-        	    "Please enter <b>root's</b> password below or click "
-                "Ignore to continue with your current privileges.") + QStringLiteral("</qt>");
-	    else
-                prompt = QStringLiteral("<qt>") + i18n("The action you requested needs <b>root privileges</b>. "
-                "Please enter <b>root's</b> password below.") + QStringLiteral("</qt>");
+            if (withIgnoreButton) {
+                prompt = QStringLiteral("<qt>")
+                    + i18n("The action you requested needs <b>root privileges</b>. "
+                           "Please enter <b>root's</b> password below or click "
+                           "Ignore to continue with your current privileges.")
+                    + QStringLiteral("</qt>");
+            } else {
+                prompt = QStringLiteral("<qt>")
+                    + i18n("The action you requested needs <b>root privileges</b>. "
+                           "Please enter <b>root's</b> password below.")
+                    + QStringLiteral("</qt>");
+            }
         } else {
-            if(withIgnoreButton)
-                prompt = QStringLiteral("<qt>") + i18n("The action you requested needs additional privileges. "
-	                "Please enter the password for <b>%1</b> below or click "
-        	        "Ignore to continue with your current privileges.", QString::fromLatin1(authUser)) +
-                    QStringLiteral("</qt>");
-	    else
-                prompt = QStringLiteral("<qt>") + i18n("The action you requested needs additional privileges. "
-	                "Please enter the password for <b>%1</b> below.", QString::fromLatin1(authUser)) +
-                    QStringLiteral("</qt>");
-
+            if (withIgnoreButton) {
+                prompt = QStringLiteral("<qt>")
+                    + i18n("The action you requested needs additional privileges. "
+                           "Please enter the password for <b>%1</b> below or click "
+                           "Ignore to continue with your current privileges.",
+                           QString::fromLatin1(authUser))
+                    + QStringLiteral("</qt>");
+            } else {
+                prompt = QStringLiteral("<qt>")
+                    + i18n("The action you requested needs additional privileges. "
+                           "Please enter the password for <b>%1</b> below.",
+                           QString::fromLatin1(authUser))
+                    + QStringLiteral("</qt>");
+            }
         }
     }
     setPrompt(prompt);
 
-    if( withIgnoreButton ) {
+    if (withIgnoreButton) {
         connect(buttonBox()->button(QDialogButtonBox::Ignore), &QAbstractButton::clicked, this, &KDEsuDialog::slotUser1);
     }
 }
-
 
 KDEsuDialog::~KDEsuDialog()
 {
@@ -67,8 +75,7 @@ KDEsuDialog::~KDEsuDialog()
 bool KDEsuDialog::checkPassword()
 {
     int status = proc.checkInstall(password().toLocal8Bit().constData());
-    switch (status)
-    {
+    switch (status) {
     case -1:
         showErrorMessage(i18n("Conversation with su failed."), UsernameError);
         return false;
@@ -78,7 +85,8 @@ bool KDEsuDialog::checkPassword()
 
     case SuProcess::SuNotFound:
         showErrorMessage(i18n("The program 'su' could not be found.<br />"
-                             "Ensure your PATH is set correctly."), FatalError);
+                              "Ensure your PATH is set correctly."),
+                         FatalError);
         return false;
 
     case SuProcess::SuNotAllowed:
@@ -90,12 +98,14 @@ bool KDEsuDialog::checkPassword()
         showErrorMessage(i18n("Permission denied.<br />"
                               "Possibly incorrect password, please try again.<br />"
                               "On some systems, you need to be in a special "
-                              "group (often: wheel) to use this program."), PasswordError);
+                              "group (often: wheel) to use this program."),
+                         PasswordError);
         return false;
 
     default:
         showErrorMessage(i18n("Internal error: illegal return from "
-                             "SuProcess::checkInstall()"), FatalError);
+                              "SuProcess::checkInstall()"),
+                         FatalError);
         done(Rejected);
         return false;
     }
@@ -105,4 +115,3 @@ void KDEsuDialog::slotUser1()
 {
     done(AsUser);
 }
-

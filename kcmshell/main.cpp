@@ -30,20 +30,19 @@
 #include <KAboutData>
 #include <KAuthorized>
 
+#include <KActivities/ResourceInstance>
 #include <KCModuleProxy>
-#include <QDebug>
 #include <KLocalizedString>
 #include <KServiceTypeTrader>
 #include <KStartupInfo>
-#include <KActivities/ResourceInstance>
+#include <QDebug>
 
-#include <kworkspace.h>
 #include <KQuickAddons/QtQuickSettings>
+#include <kworkspace.h>
 
-#include <QIcon>
-#include <QCommandLineParser>
 #include <QCommandLineOption>
-
+#include <QCommandLineParser>
+#include <QIcon>
 
 using namespace std;
 
@@ -51,9 +50,7 @@ KService::List m_modules;
 
 static bool caseInsensitiveLessThan(const KService::Ptr s1, const KService::Ptr s2)
 {
-    const int compare = QString::compare(s1->desktopEntryName(),
-                                         s2->desktopEntryName(),
-                                         Qt::CaseInsensitive);
+    const int compare = QString::compare(s1->desktopEntryName(), s2->desktopEntryName(), Qt::CaseInsensitive);
     return (compare < 0);
 }
 
@@ -61,25 +58,30 @@ static void listModules()
 {
     // First condition is what systemsettings does, second what kinfocenter does, make sure this is kept in sync
     // We need the exist calls because otherwise the trader language aborts if the property doesn't exist and the second part of the or is not evaluated
-    const KService::List services = KServiceTypeTrader::self()->query( QStringLiteral("KCModule"), QStringLiteral("(exist [X-KDE-System-Settings-Parent-Category] and [X-KDE-System-Settings-Parent-Category] != '') or (exist [X-KDE-ParentApp] and [X-KDE-ParentApp] == 'kinfocenter')") );
-    for( KService::List::const_iterator it = services.constBegin(); it != services.constEnd(); ++it) {
+    const KService::List services =
+        KServiceTypeTrader::self()->query(QStringLiteral("KCModule"),
+                                          QStringLiteral("(exist [X-KDE-System-Settings-Parent-Category] and [X-KDE-System-Settings-Parent-Category] != '') or "
+                                                         "(exist [X-KDE-ParentApp] and [X-KDE-ParentApp] == 'kinfocenter')"));
+    for (KService::List::const_iterator it = services.constBegin(); it != services.constEnd(); ++it) {
         const KService::Ptr s = (*it);
-        if (!KAuthorized::authorizeControlModule(s->menuId()))
+        if (!KAuthorized::authorizeControlModule(s->menuId())) {
             continue;
+        }
         m_modules.append(s);
     }
 
     std::stable_sort(m_modules.begin(), m_modules.end(), caseInsensitiveLessThan);
 }
 
-static KService::Ptr locateModule(const QString& module)
+static KService::Ptr locateModule(const QString &module)
 {
     QString path = module;
 
-    if (!path.endsWith(QLatin1String(".desktop")))
+    if (!path.endsWith(QLatin1String(".desktop"))) {
         path += QStringLiteral(".desktop");
+    }
 
-    KService::Ptr service = KService::serviceByStorageId( path );
+    KService::Ptr service = KService::serviceByStorageId(path);
     if (!service) {
         return KService::Ptr();
     }
@@ -108,8 +110,7 @@ bool KCMShell::isRunning()
 
     QDBusInterface iface(m_serviceName, QStringLiteral("/KCModule/dialog"), QStringLiteral("org.kde.KCMShellMultiDialog"));
     QDBusReply<void> reply = iface.call(QStringLiteral("activate"), KStartupInfo::startupId());
-    if (!reply.isValid())
-    {
+    if (!reply.isValid()) {
         qDebug() << "Calling D-Bus function dialog::activate() failed.";
         return false; // Error, we have to do it ourselves.
     }
@@ -125,18 +126,17 @@ KCMShellMultiDialog::KCMShellMultiDialog(KPageDialog::FaceType dialogFace, QWidg
 
     QDBusConnection::sessionBus().registerObject(QStringLiteral("/KCModule/dialog"), this, QDBusConnection::ExportScriptableSlots);
 
-    connect(this, &KCMShellMultiDialog::currentPageChanged,
-            this, [](KPageWidgetItem *newPage,KPageWidgetItem *oldPage) {
-                Q_UNUSED(oldPage);
-                KCModuleProxy *activeModule = newPage->widget()->findChild<KCModuleProxy *>();
-                if (activeModule) {
-                    KActivities::ResourceInstance::notifyAccessed(QUrl(QStringLiteral("kcm:") + activeModule->moduleInfo().service()->storageId()),
-                            QStringLiteral("org.kde.systemsettings"));
-                }
-            });
+    connect(this, &KCMShellMultiDialog::currentPageChanged, this, [](KPageWidgetItem *newPage, KPageWidgetItem *oldPage) {
+        Q_UNUSED(oldPage);
+        KCModuleProxy *activeModule = newPage->widget()->findChild<KCModuleProxy *>();
+        if (activeModule) {
+            KActivities::ResourceInstance::notifyAccessed(QUrl(QStringLiteral("kcm:") + activeModule->moduleInfo().service()->storageId()),
+                                                          QStringLiteral("org.kde.systemsettings"));
+        }
+    });
 }
 
-void KCMShellMultiDialog::activate(const QByteArray& asn_id)
+void KCMShellMultiDialog::activate(const QByteArray &asn_id)
 {
 #ifdef HAVE_X11
     setAttribute(Qt::WA_NativeWindow, true);
@@ -146,7 +146,7 @@ void KCMShellMultiDialog::activate(const QByteArray& asn_id)
 
 void KCMShell::setServiceName(const QString &dbusName)
 {
-    m_serviceName = QLatin1String( "org.kde.kcmshell_" ) + dbusName;
+    m_serviceName = QLatin1String("org.kde.kcmshell_") + dbusName;
     QDBusConnection::sessionBus().registerService(m_serviceName);
 }
 
@@ -156,8 +156,7 @@ void KCMShell::waitForExit()
     watcher->setConnection(QDBusConnection::sessionBus());
     watcher->setWatchMode(QDBusServiceWatcher::WatchForOwnerChange);
     watcher->addWatchedService(m_serviceName);
-    connect(watcher, &QDBusServiceWatcher::serviceOwnerChanged,
-            this, &KCMShell::appExit);
+    connect(watcher, &QDBusServiceWatcher::serviceOwnerChanged, this, &KCMShell::appExit);
     exec();
 }
 
@@ -166,8 +165,7 @@ void KCMShell::appExit(const QString &appId, const QString &oldName, const QStri
     Q_UNUSED(appId);
     Q_UNUSED(newName);
 
-    if (!oldName.isEmpty())
-    {
+    if (!oldName.isEmpty()) {
         qDebug() << "'" << appId << "' closed, quitting.";
         qApp->quit();
     }
@@ -187,7 +185,8 @@ int main(int _argc, char *_argv[])
 
     app.setAttribute(Qt::AA_UseHighDpiPixmaps, true);
 
-    KAboutData aboutData(QStringLiteral("kcmshell5"), i18n("System Settings Module"),
+    KAboutData aboutData(QStringLiteral("kcmshell5"), //
+                         i18n("System Settings Module"),
                          QLatin1String(PROJECT_VERSION),
                          i18n("A tool to start single system settings modules"),
                          KAboutLicense::GPL,
@@ -195,10 +194,10 @@ int main(int _argc, char *_argv[])
 
     aboutData.addAuthor(i18n("Frans Englich"), i18n("Maintainer"), QStringLiteral("frans.englich@kde.org"));
     aboutData.addAuthor(i18n("Daniel Molkentin"), QString(), QStringLiteral("molkentin@kde.org"));
-    aboutData.addAuthor(i18n("Matthias Hoelzer-Kluepfel"),QString(), QStringLiteral("hoelzer@kde.org"));
-    aboutData.addAuthor(i18n("Matthias Elter"),QString(), QStringLiteral("elter@kde.org"));
-    aboutData.addAuthor(i18n("Matthias Ettrich"),QString(), QStringLiteral("ettrich@kde.org"));
-    aboutData.addAuthor(i18n("Waldo Bastian"),QString(), QStringLiteral("bastian@kde.org"));
+    aboutData.addAuthor(i18n("Matthias Hoelzer-Kluepfel"), QString(), QStringLiteral("hoelzer@kde.org"));
+    aboutData.addAuthor(i18n("Matthias Elter"), QString(), QStringLiteral("elter@kde.org"));
+    aboutData.addAuthor(i18n("Matthias Ettrich"), QString(), QStringLiteral("ettrich@kde.org"));
+    aboutData.addAuthor(i18n("Waldo Bastian"), QString(), QStringLiteral("bastian@kde.org"));
     KAboutData::setApplicationData(aboutData);
 
     QCommandLineParser parser;
@@ -227,20 +226,22 @@ int main(int _argc, char *_argv[])
 
         listModules();
 
-        int maxLen=0;
+        int maxLen = 0;
 
         for (KService::List::ConstIterator it = m_modules.constBegin(); it != m_modules.constEnd(); ++it) {
             int len = (*it)->desktopEntryName().length();
-            if (len > maxLen)
+            if (len > maxLen) {
                 maxLen = len;
+            }
         }
 
         for (KService::List::ConstIterator it = m_modules.constBegin(); it != m_modules.constEnd(); ++it) {
             QString entry(QStringLiteral("%1 - %2"));
 
-            entry = entry.arg((*it)->desktopEntryName().leftJustified(maxLen, QLatin1Char(' ')))
-                    .arg(!(*it)->comment().isEmpty() ? (*it)->comment()
-                                                     : i18n("No description available"));
+            entry = entry
+                        .arg((*it)->desktopEntryName().leftJustified(maxLen, QLatin1Char(' '))) //
+                        .arg(!(*it)->comment().isEmpty() ? (*it)->comment() //
+                                                         : i18n("No description available"));
 
             cout << entry.toLocal8Bit().data() << endl;
         }
@@ -310,12 +311,12 @@ int main(int _argc, char *_argv[])
         dlg->setWindowIcon(QIcon::fromTheme(parser.value(QStringLiteral("icon"))));
     } else if (!parser.isSet(QStringLiteral("icon")) && !modules.isEmpty()) {
         const QString iconName = modules.first()->icon();
-        dlg->setWindowIcon( QIcon::fromTheme(iconName) );
+        dlg->setWindowIcon(QIcon::fromTheme(iconName));
     }
 
     if (modules.count() == 1 && app.desktopFileName() == QLatin1String("org.kde.kcmshell5")) {
-        const QString path = QStandardPaths::locate(QStandardPaths::GenericDataLocation,
-                                                    QStringLiteral("kservices5/%1.desktop").arg(modules.first()->desktopEntryName()));
+        const QString path =
+            QStandardPaths::locate(QStandardPaths::GenericDataLocation, QStringLiteral("kservices5/%1.desktop").arg(modules.first()->desktopEntryName()));
         if (!path.isEmpty()) {
             app.setDesktopFileName(path);
         }

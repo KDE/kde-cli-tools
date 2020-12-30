@@ -25,8 +25,8 @@
 #include <QBoxLayout>
 #include <QComboBox>
 #include <QDialogButtonBox>
-#include <QFrame>
 #include <QFormLayout>
+#include <QFrame>
 #include <QLabel>
 #include <QLayout>
 
@@ -51,8 +51,9 @@ NewTypeDialog::NewTypeDialog(const QStringList &groups, QWidget *parent)
     m_groupCombo->setCurrentIndex(m_groupCombo->findText(QStringLiteral("application"))); // certainly a better default than "all"
     formLayout->addRow(l, m_groupCombo);
 
-    m_groupCombo->setWhatsThis(i18n("Select the category under which"
-                                    " the new file type should be added."));
+    m_groupCombo->setWhatsThis(
+        i18n("Select the category under which"
+             " the new file type should be added."));
 
     // Line 1: mimetype name
 
@@ -61,8 +62,9 @@ NewTypeDialog::NewTypeDialog(const QStringList &groups, QWidget *parent)
     m_typeEd = new KLineEdit;
     formLayout->addRow(l, m_typeEd);
 
-    m_typeEd->setWhatsThis(i18n(
-                               "Type the name of the file type. For instance, if you selected 'image' as category and you type 'custom' here, the file type 'image/custom' will be created."));
+    m_typeEd->setWhatsThis(
+        i18n("Type the name of the file type. For instance, if you selected 'image' as category and you type 'custom' here, the file type 'image/custom' will "
+             "be created."));
 
     m_typeEd->setFocus();
 

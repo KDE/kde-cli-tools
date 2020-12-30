@@ -21,8 +21,8 @@
 #define __keditfiletype_h
 
 #include <QDialog>
-#include <QMimeType>
 #include <QMimeDatabase>
+#include <QMimeType>
 
 class QDialogButtonBox;
 

@@ -24,8 +24,8 @@
 #include "mimetypedata.h"
 #include <QTreeWidgetItem>
 
-#include <QMimeType>
 #include <QMimeDatabase>
+#include <QMimeType>
 
 // TODO different subclasses for mimetypes and groups?
 class TypesListItem : public QTreeWidgetItem

@@ -24,18 +24,18 @@
 #include <ksycoca.h>
 
 // Qt
-#include <QProcess>
 #include <QDir>
+#include <QLoggingCategory>
+#include <QProcess>
+#include <QSignalSpy>
 #include <QStandardPaths>
 #include <QTest>
-#include <QSignalSpy>
-#include <QLoggingCategory>
 
 #include <mimetypedata.h>
 #include <mimetypewriter.h>
 
 // Unfortunately this isn't available in non-developer builds of Qt...
-//extern Q_CORE_EXPORT int qmime_secondsBetweenChecks; // see qmimeprovider.cpp
+// extern Q_CORE_EXPORT int qmime_secondsBetweenChecks; // see qmimeprovider.cpp
 
 class FileTypesTest : public QObject
 {
@@ -52,14 +52,11 @@ private Q_SLOTS:
         qputenv("XDG_DATA_HOME", QFile::encodeName(QStandardPaths::writableLocation(QStandardPaths::GenericDataLocation)));
 
         m_mimeTypeCreatedSuccessfully = false;
-        QStringList appsDirs = QStandardPaths::standardLocations(
-            QStandardPaths::ApplicationsLocation);
-        //qDebug() << appsDirs;
+        QStringList appsDirs = QStandardPaths::standardLocations(QStandardPaths::ApplicationsLocation);
+        // qDebug() << appsDirs;
         m_localApps = appsDirs.first() + QLatin1Char('/');
-        m_localConfig
-            = QDir(QStandardPaths::writableLocation(QStandardPaths::GenericConfigLocation));
-        QVERIFY(QDir().mkpath(QStandardPaths::writableLocation(QStandardPaths::GenericDataLocation)
-                              + QStringLiteral("/mime/packages")));
+        m_localConfig = QDir(QStandardPaths::writableLocation(QStandardPaths::GenericConfigLocation));
+        QVERIFY(QDir().mkpath(QStandardPaths::writableLocation(QStandardPaths::GenericDataLocation) + QStringLiteral("/mime/packages")));
 
         QFile::remove(m_localConfig.filePath(QStringLiteral("mimeapps.list")));
         QFile::remove(m_localConfig.filePath(QStringLiteral("filetypesrc")));
@@ -71,9 +68,8 @@ private Q_SLOTS:
         createDesktopFile(m_localApps + fakeApplication2, {QStringLiteral("image/png"), QStringLiteral("text/plain")});
 
         // Cleanup after testMimeTypePatterns if it failed mid-way
-        const QString packageFileName = QStandardPaths::writableLocation(
-            QStandardPaths::GenericDataLocation) + QLatin1String("/mime/") + QStringLiteral(
-            "packages/text-plain.xml");
+        const QString packageFileName =
+            QStandardPaths::writableLocation(QStandardPaths::GenericDataLocation) + QLatin1String("/mime/") + QStringLiteral("packages/text-plain.xml");
         if (!packageFileName.isEmpty()) {
             QFile::remove(packageFileName);
             MimeTypeWriter::runUpdateMimeDatabase();
@@ -174,9 +170,8 @@ private Q_SLOTS:
         }
 
         // And then removing the custom file by hand should revert to the initial state
-        const QString packageFileName = QStandardPaths::writableLocation(
-            QStandardPaths::GenericDataLocation) + QLatin1String("/mime/") + QStringLiteral(
-            "packages/text-plain.xml");
+        const QString packageFileName =
+            QStandardPaths::writableLocation(QStandardPaths::GenericDataLocation) + QLatin1String("/mime/") + QStringLiteral("packages/text-plain.xml");
         QVERIFY(!packageFileName.isEmpty());
         QFile::remove(packageFileName);
         MimeTypeWriter::runUpdateMimeDatabase();
@@ -192,7 +187,7 @@ private Q_SLOTS:
         QString mimeTypeName = QStringLiteral("application/rtf"); // use inherited mimetype to test #321706
         MimeTypeData data(db.mimeTypeForName(mimeTypeName));
         QStringList appServices = data.appServices();
-        //qDebug() << appServices;
+        // qDebug() << appServices;
         QVERIFY(appServices.contains(fakeApplication2));
         QVERIFY(!appServices.contains(fakeApplication)); // already there? hmm can't really test then
         QVERIFY(!data.isDirty());
@@ -302,9 +297,7 @@ private Q_SLOTS:
         QCOMPARE(mime.globPatterns(), patterns); // must sort them if more than one
 
         // Testcase for the shaman.xml bug
-        QCOMPARE(db.mimeTypeForFile(QStringLiteral(
-                                        "/whatever/foo.pkg.tar.gz")).name(),
-                 QStringLiteral("fake/unit-test-fake-mimetype"));
+        QCOMPARE(db.mimeTypeForFile(QStringLiteral("/whatever/foo.pkg.tar.gz")).name(), QStringLiteral("fake/unit-test-fake-mimetype"));
 
         m_mimeTypeCreatedSuccessfully = true;
     }
@@ -354,11 +347,9 @@ private Q_SLOTS:
     }
 
 private: // helper methods
-
     void checkAddedAssociationsContains(const QString &mimeTypeName, const QString &application)
     {
-        const KConfig config(m_localConfig.filePath(QStringLiteral("mimeapps.list")),
-                             KConfig::NoGlobals);
+        const KConfig config(m_localConfig.filePath(QStringLiteral("mimeapps.list")), KConfig::NoGlobals);
         const KConfigGroup group(&config, "Added Associations");
         const QStringList addedEntries = group.readXdgListEntry(mimeTypeName);
         if (!addedEntries.contains(application)) {
@@ -369,8 +360,7 @@ private: // helper methods
 
     void checkRemovedAssociationsContains(const QString &mimeTypeName, const QString &application)
     {
-        const KConfig config(m_localConfig.filePath(QStringLiteral("mimeapps.list")),
-                             KConfig::NoGlobals);
+        const KConfig config(m_localConfig.filePath(QStringLiteral("mimeapps.list")), KConfig::NoGlobals);
         const KConfigGroup group(&config, "Removed Associations");
         const QStringList removedEntries = group.readXdgListEntry(mimeTypeName);
         if (!removedEntries.contains(application)) {
@@ -379,11 +369,9 @@ private: // helper methods
         }
     }
 
-    void checkRemovedAssociationsDoesNotContain(const QString &mimeTypeName,
-                                                const QString &application)
+    void checkRemovedAssociationsDoesNotContain(const QString &mimeTypeName, const QString &application)
     {
-        const KConfig config(m_localConfig.filePath(QStringLiteral("mimeapps.list")),
-                             KConfig::NoGlobals);
+        const KConfig config(m_localConfig.filePath(QStringLiteral("mimeapps.list")), KConfig::NoGlobals);
         const KConfigGroup group(&config, "Removed Associations");
         const QStringList removedEntries = group.readXdgListEntry(mimeTypeName);
         if (removedEntries.contains(application)) {
@@ -398,9 +386,8 @@ private: // helper methods
         // (The real KCM code simply does the refresh in a slot, asynchronously)
 
         QProcess proc;
-        //proc.setProcessChannelMode(QProcess::ForwardedChannels);
-        const QString kbuildsycoca
-            = QStandardPaths::findExecutable(QLatin1String(KBUILDSYCOCA_EXENAME));
+        // proc.setProcessChannelMode(QProcess::ForwardedChannels);
+        const QString kbuildsycoca = QStandardPaths::findExecutable(QLatin1String(KBUILDSYCOCA_EXENAME));
         QVERIFY(!kbuildsycoca.isEmpty());
         QStringList args;
         args << QStringLiteral("--testmode");
@@ -412,7 +399,7 @@ private: // helper methods
         qDebug() << "got signal";
     }
 
-    void createDesktopFile(const QString& path, const QStringList &mimeTypes)
+    void createDesktopFile(const QString &path, const QStringList &mimeTypes)
     {
         KDesktopFile file(path);
         KConfigGroup group = file.desktopGroup();

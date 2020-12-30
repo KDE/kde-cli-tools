@@ -24,8 +24,7 @@
 
 #include <KLocalizedString>
 
-KServiceSelectDlg::KServiceSelectDlg(const QString & /*serviceType*/, const QString & /*value*/,
-                                     QWidget *parent)
+KServiceSelectDlg::KServiceSelectDlg(const QString & /*serviceType*/, const QString & /*value*/, QWidget *parent)
     : QDialog(parent)
 {
     setObjectName(QLatin1String("serviceSelectDlg"));
@@ -47,8 +46,7 @@ KServiceSelectDlg::KServiceSelectDlg(const QString & /*serviceType*/, const QStr
     KService::List::const_iterator it(allServices.constBegin());
     for (; it != allServices.constEnd(); ++it) {
         if ((*it)->hasServiceType(QStringLiteral("KParts/ReadOnlyPart"))) {
-            m_listbox->addItem(new KServiceListItem((*it),
-                                                    KServiceListWidget::SERVICELIST_SERVICES));
+            m_listbox->addItem(new KServiceListItem((*it), KServiceListWidget::SERVICELIST_SERVICES));
         }
     }
 

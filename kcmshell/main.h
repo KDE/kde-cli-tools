@@ -22,9 +22,9 @@
 #ifndef MAIN_H
 #define MAIN_H
 
-#include <QApplication>
 #include <KCMultiDialog>
 #include <KPageDialog>
+#include <QApplication>
 
 /**
  * The application instance for kcmshell.
@@ -34,7 +34,10 @@ class KCMShell : public QApplication
     Q_OBJECT
 
 public:
-    KCMShell(int &argc, char** argv) : QApplication(argc, argv) {}
+    KCMShell(int &argc, char **argv)
+        : QApplication(argc, argv)
+    {
+    }
 
     /**
      * Sets m_serviceName basically to @p serviceName,
@@ -42,7 +45,7 @@ public:
      *
      * @param serviceName name to set the D-BUS name to
      */
-    void setServiceName(const QString &serviceName );
+    void setServiceName(const QString &serviceName);
 
     /**
      * Waits until the last instance of kcmshell with the same
@@ -59,18 +62,15 @@ private Q_SLOTS:
 
     /**
      */
-    void appExit( const QString &appId, const QString &, const QString & );
+    void appExit(const QString &appId, const QString &, const QString &);
 
 private:
-
     /**
      * The D-Bus name which actually is registered.
      * For example "kcmshell_mouse".
      */
     QString m_serviceName;
-
 };
-
 
 /**
  * Essentially a plain KCMultiDialog, but has the additional functionality
@@ -84,7 +84,6 @@ class KCMShellMultiDialog : public KCMultiDialog
     Q_CLASSINFO("D-Bus Interface", "org.kde.KCMShellMultiDialog")
 
 public:
-
     /**
      * Constructor. Parameter @p dialogFace is passed to KCMultiDialog
      * unchanged.
@@ -97,8 +96,7 @@ public Q_SLOTS:
      * Activate a module with id @p asn_id . This is used when
      * black helicopters are spotted overhead.
      */
-    virtual Q_SCRIPTABLE void activate( const QByteArray& asn_id );
-
+    virtual Q_SCRIPTABLE void activate(const QByteArray &asn_id);
 };
 
 // vim: sw=4 et sts=4
