@@ -1,1 +1,14 @@
+*~
+build/
+apidocs/
+Doxyfile
+*.patch
+CMakeCache.txt
+CMakeFiles
+cmake_install.cmake
+CMakeLists.txt.user
+CMakeLists.txt.user.*
 .clang-format
+/build*/
+cmake-build-debug*
+.idea
