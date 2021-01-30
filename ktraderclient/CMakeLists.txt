@@ -6,7 +6,7 @@ target_link_libraries(ktraderclient5
    KF5::Service    # KService, traders...
    KF5::CoreAddons # KAboutData
    KF5::I18n       # i18n
-   Qt5::Core
+   Qt::Core
 )
 
 install(TARGETS ktraderclient5 ${KDE_INSTALL_TARGETS_DEFAULT_ARGS})

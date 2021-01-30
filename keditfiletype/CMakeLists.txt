@@ -25,7 +25,7 @@ target_link_libraries(kcm_filetypes
     KF5::IconThemes
     KF5::I18n
     KF5::KIOWidgets # KOpenWithDialog, KBuildSycocaProgressDialog
-    Qt5::DBus
+    Qt::DBus
 )
 
 install(TARGETS kcm_filetypes  DESTINATION ${KDE_INSTALL_PLUGINDIR} )
@@ -43,7 +43,7 @@ target_link_libraries(keditfiletype5
     KF5::KIOWidgets # KOpenWithDialog, KBuildSycocaProgressDialog
     KF5::WindowSystem
     KF5::I18n
-    Qt5::DBus
+    Qt::DBus
 )
 if (Q_WS_X11)
   target_link_libraries(keditfiletype5 ${X11_X11_LIB})

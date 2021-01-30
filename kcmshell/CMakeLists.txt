@@ -6,7 +6,7 @@ target_compile_definitions(kcmshell5 PRIVATE -DPROJECT_VERSION="${PROJECT_VERSIO
 ecm_mark_nongui_executable(kcmshell5)
 
 target_link_libraries(kcmshell5
-   Qt5::DBus
+   Qt::DBus
    KF5::KCMUtils
    KF5::I18n
    KF5::WindowSystem
