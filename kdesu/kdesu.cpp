@@ -1,8 +1,8 @@
 /* vi: ts=8 sts=4 sw=4
  *
  * This file is part of the KDE project, module kdesu.
- * Copyright (C) 1998 Pietro Iglio <iglio@fub.it>
- * Copyright (C) 1999,2000 Geert Jansen <jansen@kde.org>
+ * SPDX-FileCopyrightText: 1998 Pietro Iglio <iglio@fub.it>
+ * SPDX-FileCopyrightText: 1999, 2000 Geert Jansen <jansen@kde.org>
  */
 
 #include <config-kde-cli-tools.h>

@@ -1,7 +1,7 @@
 /* vi: ts=8 sts=4 sw=4
  *
  * This file is part of the KDE project, module kdesu.
- * Copyright (C) 2000 Geert Jansen <jansen@kde.org>
+ * SPDX-FileCopyrightText: 2000 Geert Jansen <jansen@kde.org>
  */
 
 #include "sudlg.h"
