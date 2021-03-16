@@ -3,6 +3,7 @@
  * This file is part of the KDE project, module kdesu.
  * SPDX-FileCopyrightText: 1998 Pietro Iglio <iglio@fub.it>
  * SPDX-FileCopyrightText: 1999, 2000 Geert Jansen <jansen@kde.org>
+ * SPDX-License-Identifier: Artistic-2.0
  */
 
 #include <config-kde-cli-tools.h>

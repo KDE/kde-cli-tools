@@ -2,6 +2,7 @@
  *
  * This file is part of the KDE project, module kdesu.
  * SPDX-FileCopyrightText: 2000 Geert Jansen <jansen@kde.org>
+ * SPDX-License-Identifier: Artistic-2.0
  */
 
 #include "sudlg.h"
