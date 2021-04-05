@@ -43,6 +43,7 @@ target_link_libraries(keditfiletype5
     KF5::KIOWidgets # KOpenWithDialog, KBuildSycocaProgressDialog
     KF5::WindowSystem
     KF5::I18n
+    KF5::Service
     Qt::DBus
 )
 if (Q_WS_X11)

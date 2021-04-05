@@ -11,6 +11,7 @@ ecm_mark_as_test(filetypestest)
 add_test(NAME filetypestest COMMAND filetypestest)
 target_link_libraries(filetypestest
    KF5::KIOCore
+   KF5::Service
    Qt::Core
    Qt::Gui
    Qt::Test
