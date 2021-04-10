@@ -15,8 +15,8 @@
 #ifndef KIOCORE_ONLY
 #include <KIO/ApplicationLauncherJob>
 #include <KIO/JobUiDelegate>
+#include <KIO/OpenUrlJob>
 #include <KPropertiesDialog>
-#include <KRun>
 #include <KService>
 #endif
 #include <KAboutData>
@@ -195,18 +195,6 @@ int main(int argc, char **argv)
     return client.doIt(parser) ? 0 /*no error*/ : 1 /*error*/;
 }
 
-static bool krun_has_error = false;
-
-void ClientApp::delayedQuit()
-{
-#ifndef KIOCORE_ONLY
-    // don't access the KRun instance later, it will be deleted after calling slots
-    if (static_cast<const KRun *>(sender())->hasError()) {
-        krun_has_error = true;
-    }
-#endif
-}
-
 static void checkArgumentCount(int count, int min, int max)
 {
     if (count < min) {
@@ -231,18 +219,19 @@ bool ClientApp::kde_open(const QString &url, const QString &mimeType, bool allow
         info.url.setQuery(q);
     }
 
-    if (mimeType.isEmpty()) {
-        KRun *run = new KRun(info.url, nullptr);
-        run->setRunExecutables(allowExec);
-
-        run->setFollowRedirections(false);
-        QObject::connect(run, &KRun::finished, this, &ClientApp::delayedQuit);
-        QObject::connect(run, &KRun::error, this, &ClientApp::delayedQuit);
-        qApp->exec();
-        return !krun_has_error;
-    } else {
-        return KRun::runUrl(info.url, mimeType, nullptr, KRun::RunFlags(KRun::RunExecutables));
-    }
+    auto *job = new KIO::OpenUrlJob(info.url, mimeType);
+    job->setUiDelegate(new KIO::JobUiDelegate(KJobUiDelegate::AutoHandlingEnabled, nullptr));
+    job->setRunExecutables(allowExec);
+    job->setFollowRedirections(false);
+    bool job_had_error = false;
+    QObject::connect(job, &KJob::result, this, [&](KJob *job) {
+        if (job->error()) {
+            job_had_error = true;
+        }
+    });
+    job->start();
+    qApp->exec();
+    return !job_had_error;
 }
 #endif
 

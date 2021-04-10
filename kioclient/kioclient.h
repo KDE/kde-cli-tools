@@ -30,7 +30,6 @@ private Q_SLOTS:
     void slotPrintData(KIO::Job *job, const QByteArray &data);
     void slotEntries(KIO::Job *job, const KIO::UDSEntryList &);
     void slotResult(KJob *);
-    void delayedQuit();
     void slotDialogCanceled();
 
 private:
