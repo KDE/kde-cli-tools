@@ -55,5 +55,5 @@ void FileGroupDetails::slotAutoEmbedClicked(int button)
         return;
     }
     m_mimeTypeData->setAutoEmbed((MimeTypeData::AutoEmbed)button);
-    emit changed(true);
+    Q_EMIT changed(true);
 }

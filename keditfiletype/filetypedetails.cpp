@@ -184,7 +184,7 @@ void FileTypeDetails::updateIcon(const QString &icon)
         m_item->setIcon(icon);
     }
 
-    emit changed(true);
+    Q_EMIT changed(true);
 }
 
 void FileTypeDetails::updateDescription(const QString &desc)
@@ -195,7 +195,7 @@ void FileTypeDetails::updateDescription(const QString &desc)
 
     m_mimeTypeData->setComment(desc);
 
-    emit changed(true);
+    Q_EMIT changed(true);
 }
 
 void FileTypeDetails::addExtension()
@@ -212,7 +212,7 @@ void FileTypeDetails::addExtension()
         patt += ext;
         m_mimeTypeData->setPatterns(patt);
         updateRemoveButton();
-        emit changed(true);
+        Q_EMIT changed(true);
     }
 }
 
@@ -229,7 +229,7 @@ void FileTypeDetails::removeExtension()
     m_mimeTypeData->setPatterns(patt);
     delete extensionLB->takeItem(extensionLB->currentRow());
     updateRemoveButton();
-    emit changed(true);
+    Q_EMIT changed(true);
 }
 
 void FileTypeDetails::slotAutoEmbedClicked(int button)
@@ -242,7 +242,7 @@ void FileTypeDetails::slotAutoEmbedClicked(int button)
 
     updateAskSave();
 
-    emit changed(true);
+    Q_EMIT changed(true);
 }
 
 void FileTypeDetails::updateAskSave()
@@ -315,7 +315,7 @@ void FileTypeDetails::slotAskSaveToggled(bool askSave)
     }
 
     m_mimeTypeData->setAskSave(askSave);
-    emit changed(true);
+    Q_EMIT changed(true);
 }
 
 void FileTypeDetails::setMimeTypeData(MimeTypeData *mimeTypeData, TypesListItem *item)

@@ -183,7 +183,7 @@ void KServiceListWidget::promoteService()
 
     updatePreferredServices();
 
-    emit changed(true);
+    Q_EMIT changed(true);
 }
 
 void KServiceListWidget::demoteService()
@@ -204,7 +204,7 @@ void KServiceListWidget::demoteService()
 
     updatePreferredServices();
 
-    emit changed(true);
+    Q_EMIT changed(true);
 }
 
 void KServiceListWidget::addService()
@@ -260,7 +260,7 @@ void KServiceListWidget::addService()
 
     updatePreferredServices();
 
-    emit changed(true);
+    Q_EMIT changed(true);
 }
 
 void KServiceListWidget::editService()
@@ -334,7 +334,7 @@ void KServiceListWidget::editService()
 
     updatePreferredServices();
 
-    emit changed(true);
+    Q_EMIT changed(true);
 }
 
 void KServiceListWidget::removeService()
@@ -349,7 +349,7 @@ void KServiceListWidget::removeService()
         delete servicesLB->takeItem(selected);
         updatePreferredServices();
 
-        emit changed(true);
+        Q_EMIT changed(true);
     }
 
     // Update buttons and service list again (e.g. to re-add "None")
