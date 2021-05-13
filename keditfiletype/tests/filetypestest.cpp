@@ -148,8 +148,8 @@ private Q_SLOTS:
         // Check what's in QMimeDatabase
         QStringList newPatterns = db.mimeTypeForName(QStringLiteral("text/plain")).globPatterns();
         newPatterns.sort();
-#if QT_VERSION < QT_VERSION_CHECK(6, 0, 0) // adjust to 5.15 if the fix gets backported
-        QEXPECT_FAIL("", "QTBUG-85436 is only fixed in Qt 6.0", Continue);
+#if QT_VERSION < QT_VERSION_CHECK(5, 15, 2)
+        QEXPECT_FAIL("", "QTBUG-85436 is only fixed in Qt 5.15.2", Continue);
 #endif
         QCOMPARE(newPatterns, patterns);
         if (newPatterns == patterns) { // TODO Qt6: remove the if (keep the QVERIFY!)
