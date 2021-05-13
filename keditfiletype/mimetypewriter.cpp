@@ -98,7 +98,7 @@ bool MimeTypeWriter::write()
     writer.writeStartElement(nsUri, QStringLiteral("glob-deleteall"));
     writer.writeEndElement(); // glob-deleteall
 
-    foreach (const QString &pattern, d->m_patterns) {
+    for (const QString &pattern : qAsConst(d->m_patterns)) {
         writer.writeStartElement(nsUri, QStringLiteral("glob"));
         writer.writeAttribute(QStringLiteral("pattern"), pattern);
         writer.writeEndElement(); // glob

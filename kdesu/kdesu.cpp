@@ -267,7 +267,8 @@ static int startApp(QCommandLineParser &p)
             p.showHelp(1);
         }
     }
-    foreach (const QString &arg, p.positionalArguments()) {
+    const auto positionalArguments = p.positionalArguments();
+    for (const QString &arg : positionalArguments) {
         command += ' ';
         command += QFile::encodeName(KShell::quoteArg(arg));
     }

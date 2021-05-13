@@ -41,7 +41,7 @@ static QUrl makeURL(const QString &urlArg)
 static QList<QUrl> makeUrls(const QStringList &urlArgs)
 {
     QList<QUrl> ret;
-    foreach (const QString &url, urlArgs) {
+    for (const QString &url : urlArgs) {
         ret += makeURL(url);
     }
     return ret;
