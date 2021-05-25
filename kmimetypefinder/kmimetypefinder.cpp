@@ -2,7 +2,7 @@
  *  SPDX-FileCopyrightText: 2002 David Faure <faure@kde.org>
  *  SPDX-FileCopyrightText: 2008 Pino Toscano <pino@kde.org>
  *
- *  SPDX-License-Identifier: LGPL-2.0-only
+ *  SPDX-License-Identifier: LGPL-2.0-or-later
  */
 
 #include <KAboutData>
