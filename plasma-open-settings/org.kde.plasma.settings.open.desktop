@@ -1,0 +1,10 @@
+#  SPDX-FileCopyrightText: 2021 Aleix Pol Gonzalez <aleixpol@kde.org>
+#  SPDX-License-Identifier: CC0-1.0
+
+[Desktop Entry]
+Name=Open System Settings
+MimeType=x-scheme-handler/systemsettings
+Exec=plasma-open-settings %u
+Icon=systemsettings
+Type=Application
+NoDisplay=true
