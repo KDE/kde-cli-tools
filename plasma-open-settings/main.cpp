@@ -28,8 +28,8 @@ int main(int argc, char **argv)
     aboutData.addAuthor(QStringLiteral("Aleix Pol i Gonzalez"), {}, QStringLiteral("aleixpol@kde.org"));
 
     const QUrl url(app.arguments().constLast());
-    QString moduleName = url.path();
-    if (!url.isRelative()) {
+    QString moduleName = url.host().isEmpty() ? url.path() : url.host();
+    if (moduleName.startsWith('/')) {
         moduleName = moduleName.mid(1);
     }
     KIO::CommandLauncherJob *job = nullptr;
