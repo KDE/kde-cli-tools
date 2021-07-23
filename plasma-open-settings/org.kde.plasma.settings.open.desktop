@@ -3,6 +3,16 @@
 
 [Desktop Entry]
 Name=Open System Settings
+Name[az]=Sistem Ayarlarını açın
+Name[ca]=Obre l'Arranjament del sistema
+Name[es]=Abrir las preferencias del sistema
+Name[eu]=Ireki Sistemako ezarpenak
+Name[nl]=Systeeminstellingen openen
+Name[pt]=Abrir a Configuração do Sistema
+Name[pt_BR]=Abrir configurações do sistema
+Name[sv]=Öppna systeminställningar
+Name[uk]=Відкрити «Системні параметри»
+Name[x-test]=xxOpen System Settingsxx
 MimeType=x-scheme-handler/systemsettings
 Exec=plasma-open-settings %u
 Icon=systemsettings
