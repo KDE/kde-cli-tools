@@ -5,11 +5,15 @@
 Name=Open System Settings
 Name[az]=Sistem Ayarlarını açın
 Name[ca]=Obre l'Arranjament del sistema
+Name[cs]=Otevřít nastavení systému
+Name[el]=Άνοιγμα ρυθμίσεων συστήματος
 Name[es]=Abrir las preferencias del sistema
 Name[eu]=Ireki Sistemako ezarpenak
 Name[nl]=Systeeminstellingen openen
 Name[pt]=Abrir a Configuração do Sistema
 Name[pt_BR]=Abrir configurações do sistema
+Name[sk]=Otvoriť Systémové nastavenia
+Name[sl]=Odpri sistemske nastavitve
 Name[sv]=Öppna systeminställningar
 Name[uk]=Відкрити «Системні параметри»
 Name[x-test]=xxOpen System Settingsxx
