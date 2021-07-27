@@ -13,7 +13,10 @@
 
 #include <iostream>
 
-#include <QtDBus>
+#include <QDBusConnection>
+#include <QDBusConnectionInterface>
+#include <QDBusInterface>
+#include <QDBusServiceWatcher>
 
 #include <KAboutData>
 #include <KAuthorized>
