@@ -7,33 +7,31 @@
 
 */
 
-#include <config-kde-cli-tools.h>
-
 #include "main.h"
 
-#include <iostream>
+#include <config-kde-cli-tools.h>
 
+#include <QCommandLineOption>
+#include <QCommandLineParser>
 #include <QDBusConnection>
 #include <QDBusConnectionInterface>
 #include <QDBusInterface>
 #include <QDBusServiceWatcher>
+#include <QIcon>
+#include <QStandardPaths>
 
 #include <KAboutData>
-#include <KAuthorized>
-
 #include <KActivities/ResourceInstance>
+#include <KAuthorized>
 #include <KCModuleProxy>
 #include <KLocalizedString>
+#include <KQuickAddons/QtQuickSettings>
 #include <KServiceTypeTrader>
 #include <KStartupInfo>
 #include <QDebug>
-
-#include <KQuickAddons/QtQuickSettings>
 #include <kworkspace.h>
 
-#include <QCommandLineOption>
-#include <QCommandLineParser>
-#include <QIcon>
+#include <iostream>
 
 using namespace std;
 
