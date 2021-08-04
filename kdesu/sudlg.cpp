@@ -22,8 +22,6 @@ KDEsuDialog::KDEsuDialog(QByteArray user, QByteArray authUser, bool enableKeep, 
         buttonBox()->addButton(QDialogButtonBox::Ignore);
     }
 
-    QString superUserCommand = proc.superUserCommand();
-
     proc.setUser(authUser);
 
     setWindowTitle(i18n("Run as %1", QString::fromLatin1(user)));

@@ -32,10 +32,9 @@ KServiceSelectDlg::KServiceSelectDlg(const QString & /*serviceType*/, const QStr
     // So we have to do it the slow way
     // ### Why can't we query for KParts/ReadOnlyPart as the servicetype? Should work fine!
     const KService::List allServices = KService::allServices();
-    KService::List::const_iterator it(allServices.constBegin());
-    for (; it != allServices.constEnd(); ++it) {
-        if ((*it)->hasServiceType(QStringLiteral("KParts/ReadOnlyPart"))) {
-            m_listbox->addItem(new KServiceListItem((*it), KServiceListWidget::SERVICELIST_SERVICES));
+    for (const auto &service : allServices) {
+        if (service->hasServiceType(QStringLiteral("KParts/ReadOnlyPart"))) {
+            m_listbox->addItem(new KServiceListItem(service, KServiceListWidget::SERVICELIST_SERVICES));
         }
     }
 

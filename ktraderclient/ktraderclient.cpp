@@ -72,23 +72,20 @@ int main(int argc, char **argv)
     printf("got %d offers.\n", offers.count());
 
     int i = 0;
-    KService::List::ConstIterator it = offers.constBegin();
-    const KService::List::ConstIterator end = offers.constEnd();
-    for (; it != end; ++it, ++i) {
+    for (const auto &service : std::as_const(offers)) {
         if (outputProperties) {
-            printf("---- Offer %d ----\n", i);
-            QStringList props = (*it)->propertyNames();
-            QStringList::ConstIterator propIt = props.constBegin();
-            QStringList::ConstIterator propEnd = props.constEnd();
-            for (; propIt != propEnd; ++propIt) {
-                QVariant prop = (*it)->property(*propIt);
+            printf("---- Offer %d ----\n", i++);
+
+            const QStringList props = service->propertyNames();
+            for (const QString &propName : props) {
+                QVariant prop = service->property(propName);
 
                 if (!prop.isValid()) {
-                    printf("Invalid property %s\n", (*propIt).toLocal8Bit().data());
+                    printf("Invalid property %s\n", propName.toLocal8Bit().data());
                     continue;
                 }
 
-                QString outp = *propIt;
+                QString outp = propName;
                 outp += QStringLiteral(" : '");
 
                 switch (prop.type()) {
@@ -108,7 +105,7 @@ int main(int argc, char **argv)
                 }
             }
         } else {
-            printf("%s\n", (*it)->entryPath().toLocal8Bit().constData());
+            printf("%s\n", service->entryPath().toLocal8Bit().constData());
         }
     }
     return 0;

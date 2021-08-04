@@ -95,10 +95,9 @@ void MimeTypeData::initFromQMimeType()
         }
     }
 
-    QListIterator<QString> mimeFilesIter(mimeFiles);
-    mimeFilesIter.toBack();
-    while (mimeFilesIter.hasPrevious()) { // global first, then local.
-        const QString fullPath = mimeFilesIter.previous();
+    // Reverse iterator to get global first, then local.
+    for (auto rIt = mimeFiles.crbegin(); rIt != mimeFiles.crend(); ++rIt) {
+        const QString fullPath = *rIt;
         QFile qfile(fullPath);
         if (!qfile.open(QFile::ReadOnly)) {
             continue;
@@ -212,23 +211,22 @@ void MimeTypeData::setUserSpecifiedIcon(const QString &icon)
 
 QStringList MimeTypeData::getAppOffers() const
 {
-    QStringList services;
+    QStringList serviceIds;
     const KService::List offerList = KApplicationTrader::queryByMimeType(name());
-    KService::List::const_iterator it(offerList.begin());
-    for (; it != offerList.constEnd(); ++it) {
-        services.append((*it)->storageId());
+    for (const auto &servicePtr : offerList) {
+        serviceIds.append(servicePtr->storageId());
     }
-    return services;
+    return serviceIds;
 }
 
 QStringList MimeTypeData::getPartOffers() const
 {
-    QStringList services;
+    QStringList servicesIds;
     const KService::List partOfferList = KMimeTypeTrader::self()->query(name(), QStringLiteral("KParts/ReadOnlyPart"));
-    for (KService::List::const_iterator it = partOfferList.begin(); it != partOfferList.constEnd(); ++it) {
-        services.append((*it)->storageId());
+    for (const auto &servicePtr : partOfferList) {
+        servicesIds.append(servicePtr->storageId());
     }
-    return services;
+    return servicesIds;
 }
 
 void MimeTypeData::getMyServiceOffers() const
@@ -425,18 +423,19 @@ void MimeTypeData::syncServices()
 
 static QStringList collectStorageIds(const QStringList &services)
 {
-    QStringList serviceList;
-    QStringList::const_iterator it(services.begin());
-    for (int i = services.count(); it != services.end(); ++it, i--) {
-        KService::Ptr pService = KService::serviceByStorageId(*it);
+    QStringList storageIds;
+
+    for (const QString &service : services) {
+        KService::Ptr pService = KService::serviceByStorageId(service);
         if (!pService) {
-            qWarning() << "service with storage id" << *it << "not found";
+            qWarning() << "service with storage id" << service << "not found";
             continue; // Where did that one go?
         }
 
-        serviceList.append(pService->storageId());
+        storageIds.append(pService->storageId());
     }
-    return serviceList;
+
+    return storageIds;
 }
 
 void MimeTypeData::saveRemovedServices(KConfigGroup &config, const QStringList &services, const QStringList &oldServices)
@@ -473,8 +472,12 @@ void MimeTypeData::saveDefaultApplication(KConfigGroup &config, const QStringLis
 {
     if (services.isEmpty()) {
         config.deleteEntry(name());
-    } else {
-        const QString firstStorageId = collectStorageIds(services).first();
+        return;
+    }
+
+    const QStringList storageIds = collectStorageIds(services);
+    if (!storageIds.isEmpty()) {
+        const QString firstStorageId = storageIds.at(0);
         config.writeXdgListEntry(name(), {firstStorageId});
     }
 }

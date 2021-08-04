@@ -378,7 +378,8 @@ static int startApp(QCommandLineParser &p)
         qDebug() << "Don't need password!!\n";
     }
 
-    for (const QChar character : QString::fromLocal8Bit(command)) {
+    const QString cmd = QString::fromLocal8Bit(command);
+    for (const QChar character : cmd) {
         if (!character.isPrint() && character.category() != QChar::Other_Surrogate) {
             return -2;
         }

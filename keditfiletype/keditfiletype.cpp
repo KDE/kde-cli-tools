@@ -143,7 +143,7 @@ int main(int argc, char **argv)
     }
 
     QMimeDatabase db;
-    QString arg = parser.positionalArguments().first();
+    const QString arg = parser.positionalArguments().at(0);
     MimeTypeData *mimeTypeData = nullptr;
     const bool createType = arg.startsWith(QLatin1Char('*'));
     if (createType) {

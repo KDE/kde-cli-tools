@@ -171,7 +171,6 @@ void FileTypesView::readFileTypes()
         const QString mimetype = (*it2).name();
         const int index = mimetype.indexOf(QLatin1Char('/'));
         const QString maj = mimetype.left(index);
-        const QString min = mimetype.right(mimetype.length() - index + 1);
 
         TypesListItem *groupItem = m_majorMap.value(maj);
         if (!groupItem) {
@@ -225,8 +224,6 @@ void FileTypesView::addType()
 
     if (dialog.exec()) {
         const QString newMimeType = dialog.group() + QLatin1Char('/') + dialog.text();
-
-        QTreeWidgetItemIterator it(typesLV);
 
         TypesListItem *group = m_majorMap.value(dialog.group());
         if (!group) {
@@ -402,9 +399,8 @@ void FileTypesView::save()
 
     // now go through all entries and sync those which are dirty.
     // don't use typesLV, it may be filtered
-    QMap<QString, TypesListItem *>::iterator it1 = m_majorMap.begin();
-    while (it1 != m_majorMap.end()) {
-        TypesListItem *tli = *it1;
+    for (auto it = m_majorMap.cbegin(); it != m_majorMap.cend(); ++it) {
+        TypesListItem *tli = it.value();
         if (tli->mimeTypeData().isDirty()) {
             qDebug() << "Entry " << tli->name() << " is dirty. Saving.";
             if (tli->mimeTypeData().sync()) {
@@ -412,8 +408,8 @@ void FileTypesView::save()
             }
             didIt = true;
         }
-        ++it1;
     }
+
     for (TypesListItem *tli : qAsConst(m_itemList)) {
         if (tli->mimeTypeData().isDirty()) {
             if (tli->mimeTypeData().isServiceListDirty()) {

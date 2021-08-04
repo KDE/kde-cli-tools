@@ -23,6 +23,7 @@
 #include <QDebug>
 #include <QDesktopWidget>
 #include <QRegExp>
+#include <QScreen>
 #include <QTimer>
 #include <QUrl>
 
@@ -173,7 +174,6 @@ void KStart::sendRule()
     }
 
     msg.broadcastMessage("_KDE_NET_WM_TEMPORARY_RULES", message, -1);
-    qApp->flush();
 }
 
 const NET::WindowTypes SUPPORTED_WINDOW_TYPES_MASK = NET::NormalMask | NET::DesktopMask | NET::DockMask | NET::ToolbarMask | NET::MenuMask | NET::DialogMask
@@ -258,7 +258,6 @@ void KStart::applyStyle(WId w)
 {
     if (state || iconify || windowtype != NET::Unknown || desktop >= 1) {
         XWithdrawWindow(QX11Info::display(), w, QX11Info::appScreen());
-        QApplication::flush();
 
         while (!wstate_withdrawn(w)) {
             ;
@@ -290,7 +289,7 @@ void KStart::applyStyle(WId w)
     }
 
     if (fullscreen) {
-        QRect r = QApplication::desktop()->screenGeometry();
+        QRect r = QGuiApplication::primaryScreen()->geometry();
         XMoveResizeWindow(QX11Info::display(), w, r.x(), r.y(), r.width(), r.height());
     }
 
@@ -302,8 +301,6 @@ void KStart::applyStyle(WId w)
     if (activate) {
         KWindowSystem::forceActiveWindow(w);
     }
-
-    QApplication::flush();
 }
 
 int main(int argc, char *argv[])

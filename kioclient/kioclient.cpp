@@ -251,26 +251,27 @@ bool ClientApp::doCopy(const QStringList &urls)
 
 void ClientApp::slotEntries(KIO::Job *, const KIO::UDSEntryList &list)
 {
-    KIO::UDSEntryList::ConstIterator it = list.begin();
-    for (; it != list.end(); ++it) {
+    for (const auto &entry : list) {
         // For each file...
-        QString name = (*it).stringValue(KIO::UDSEntry::UDS_NAME);
-        std::cout << qPrintable(name) << std::endl;
+        std::cout << qPrintable(entry.stringValue(KIO::UDSEntry::UDS_NAME)) << '\n';
     }
+
+    std::cout << std::endl;
 }
 
 bool ClientApp::doList(const QStringList &urls)
 {
-    QUrl dir = makeURL(urls.first());
-    KIO::Job *job = KIO::listDir(dir, KIO::HideProgressInfo);
+    const QUrl dir = makeURL(urls.at(0));
+
+    KIO::ListJob *job = KIO::listDir(dir, KIO::HideProgressInfo);
     if (!s_interactive) {
         job->setUiDelegate(nullptr);
         job->setUiDelegateExtension(nullptr);
     }
-    // clang-format off
-    connect(job, SIGNAL(entries(KIO::Job*,KIO::UDSEntryList)), SLOT(slotEntries(KIO::Job*,KIO::UDSEntryList)));
-    // clang-format on
+
+    connect(job, &KIO::ListJob::entries, this, &ClientApp::slotEntries);
     connect(job, &KJob::result, this, &ClientApp::slotResult);
+
     qApp->exec();
     return m_ok;
 }
@@ -278,13 +279,16 @@ bool ClientApp::doList(const QStringList &urls)
 bool ClientApp::doMove(const QStringList &urls)
 {
     QList<QUrl> srcLst(makeUrls(urls));
-    QUrl dest = srcLst.takeLast();
+    const QUrl dest = srcLst.takeLast();
+
     KIO::Job *job = KIO::move(srcLst, dest, s_jobFlags);
     if (!s_interactive) {
         job->setUiDelegate(nullptr);
         job->setUiDelegateExtension(nullptr);
     }
+
     connect(job, &KJob::result, this, &ClientApp::slotResult);
+
     qApp->exec();
     return m_ok;
 }
@@ -296,7 +300,9 @@ bool ClientApp::doRemove(const QStringList &urls)
         job->setUiDelegate(nullptr);
         job->setUiDelegateExtension(nullptr);
     }
+
     connect(job, &KJob::result, this, &ClientApp::slotResult);
+
     qApp->exec();
     return m_ok;
 }
@@ -330,22 +336,25 @@ bool ClientApp::doIt(const QCommandLineParser &parser)
     return doMove(parser.positionalArguments());
 #else
     // Normal kioclient mode
-    QString command = parser.positionalArguments().first();
+    const QString command = parser.positionalArguments().at(0);
 #ifndef KIOCORE_ONLY
     if (command == QLatin1String("openProperties")) {
         checkArgumentCount(argc, 2, 2); // openProperties <url>
-        QUrl url = makeURL(parser.positionalArguments().last());
-        KPropertiesDialog *p = new KPropertiesDialog(url, nullptr /*no parent*/);
-        QObject::connect(p, SIGNAL(destroyed()), qApp, SLOT(quit()));
-        QObject::connect(p, &KPropertiesDialog::canceled, this, &ClientApp::slotDialogCanceled);
-        p->show();
+        const QUrl url = makeURL(parser.positionalArguments().constLast());
+
+        KPropertiesDialog *dlg = new KPropertiesDialog(url, nullptr /*no parent*/);
+        QObject::connect(dlg, &QObject::destroyed, qApp, &QCoreApplication::quit);
+        QObject::connect(dlg, &KPropertiesDialog::canceled, this, &ClientApp::slotDialogCanceled);
+        dlg->show();
+
         qApp->exec();
         return m_ok;
     } else
 #endif
         if (command == QLatin1String("cat")) {
         checkArgumentCount(argc, 2, 2); // cat <url>
-        QUrl url = makeURL(parser.positionalArguments().last());
+        const QUrl url = makeURL(parser.positionalArguments().constLast());
+
         KIO::TransferJob *job = KIO::get(url, KIO::NoReload, s_jobFlags);
         if (!s_interactive) {
             job->setUiDelegate(nullptr);
@@ -353,18 +362,20 @@ bool ClientApp::doIt(const QCommandLineParser &parser)
         }
         connect(job, &KIO::TransferJob::data, this, &ClientApp::slotPrintData);
         connect(job, &KJob::result, this, &ClientApp::slotResult);
+
         qApp->exec();
         return m_ok;
     }
 #ifndef KIOCORE_ONLY
     else if (command == QLatin1String("exec")) {
         checkArgumentCount(argc, 2, 3);
-        return kde_open(parser.positionalArguments()[1], argc == 3 ? parser.positionalArguments().last() : QString(), true);
+        return kde_open(parser.positionalArguments().at(1), argc == 3 ? parser.positionalArguments().constLast() : QString(), true);
     } else if (command == QLatin1String("appmenu")) {
         auto *job = new KIO::ApplicationLauncherJob();
         job->setUiDelegate(new KIO::JobUiDelegate(KJobUiDelegate::AutoHandlingEnabled, nullptr));
         connect(job, &KJob::result, this, &ClientApp::slotResult);
         job->start();
+
         qApp->exec();
         return m_ok;
     }
@@ -373,24 +384,26 @@ bool ClientApp::doIt(const QCommandLineParser &parser)
         checkArgumentCount(argc, 0, 0);
         QStringList args = parser.positionalArguments();
         args.removeFirst();
-        QList<QUrl> srcLst = makeUrls(args);
+        const QList<QUrl> srcLst = makeUrls(args);
 
         if (srcLst.isEmpty()) {
             return m_ok;
         }
-        QUrl dsturl = QFileDialog::getSaveFileUrl(nullptr, i18n("Destination where to download the files"), (!srcLst.isEmpty()) ? QUrl() : srcLst.first());
+
+        const QUrl dsturl = QFileDialog::getSaveFileUrl(nullptr, i18n("Destination where to download the files"), srcLst.at(0));
 
         if (dsturl.isEmpty()) { // canceled
             return m_ok; // AK - really okay?
         }
+
         KIO::Job *job = KIO::copy(srcLst, dsturl, s_jobFlags);
         if (!s_interactive) {
             job->setUiDelegate(nullptr);
             job->setUiDelegateExtension(nullptr);
         }
-        // clang-format off
-        connect(job, SIGNAL(result(Job*)), qApp, SLOT(slotResult(Job*)));
-        // clang-format on
+
+        connect(job, &KJob::result, this, &ClientApp::slotResult);
+
         qApp->exec();
         return m_ok;
     } else if (command == QLatin1String("copy") || command == QLatin1String("cp")) {
