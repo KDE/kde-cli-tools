@@ -17,7 +17,9 @@
 #include <QDBusConnectionInterface>
 #include <QDBusInterface>
 #include <QDBusServiceWatcher>
+#include <QDebug>
 #include <QIcon>
+#include <QRegularExpression>
 #include <QStandardPaths>
 
 #include <KAboutData>
@@ -28,38 +30,30 @@
 #include <KQuickAddons/QtQuickSettings>
 #include <KServiceTypeTrader>
 #include <KStartupInfo>
-#include <QDebug>
 #include <kworkspace.h>
 
+#include <algorithm>
 #include <iostream>
 
-using namespace std;
-
-KService::List m_modules;
-
-static bool caseInsensitiveLessThan(const KService::Ptr s1, const KService::Ptr s2)
-{
-    const int compare = QString::compare(s1->desktopEntryName(), s2->desktopEntryName(), Qt::CaseInsensitive);
-    return (compare < 0);
-}
-
-static void listModules()
+static KService::List listModules()
 {
     // First condition is what systemsettings does, second what kinfocenter does, make sure this is kept in sync
     // We need the exist calls because otherwise the trader language aborts if the property doesn't exist and the second part of the or is not evaluated
-    const KService::List services =
+    KService::List services =
         KServiceTypeTrader::self()->query(QStringLiteral("KCModule"),
                                           QStringLiteral("(exist [X-KDE-System-Settings-Parent-Category] and [X-KDE-System-Settings-Parent-Category] != '') or "
                                                          "(exist [X-KDE-ParentApp] and [X-KDE-ParentApp] == 'kinfocenter')"));
-    for (KService::List::const_iterator it = services.constBegin(); it != services.constEnd(); ++it) {
-        const KService::Ptr s = (*it);
-        if (!KAuthorized::authorizeControlModule(s->menuId())) {
-            continue;
-        }
-        m_modules.append(s);
-    }
 
-    std::stable_sort(m_modules.begin(), m_modules.end(), caseInsensitiveLessThan);
+    auto it = std::remove_if(services.begin(), services.end(), [](const KService::Ptr &service) {
+        return !KAuthorized::authorizeControlModule(service->menuId());
+    });
+    services.erase(it, services.end());
+
+    std::stable_sort(services.begin(), services.end(), [](const KService::Ptr s1, const KService::Ptr s2) {
+        return QString::compare(s1->desktopEntryName(), s2->desktopEntryName(), Qt::CaseInsensitive) < 0;
+    });
+
+    return services;
 }
 
 static KService::Ptr locateModule(const QString &module)
@@ -207,45 +201,46 @@ int main(int _argc, char *_argv[])
 
     const QString lang = parser.value(QStringLiteral("lang"));
     if (!lang.isEmpty()) {
-        cout << i18n("--lang is deprecated. Please set the LANGUAGE environment variable instead").toLocal8Bit().data() << endl;
+        std::cout << i18n("--lang is deprecated. Please set the LANGUAGE environment variable instead").toLocal8Bit().constData() << std::endl;
     }
 
     if (parser.isSet(QStringLiteral("list"))) {
-        cout << i18n("The following modules are available:").toLocal8Bit().data() << endl;
+        std::cout << i18n("The following modules are available:").toLocal8Bit().constData() << '\n';
 
-        listModules();
+        const KService::List allModules = listModules();
 
         int maxLen = 0;
 
-        for (KService::List::ConstIterator it = m_modules.constBegin(); it != m_modules.constEnd(); ++it) {
-            int len = (*it)->desktopEntryName().length();
-            if (len > maxLen) {
-                maxLen = len;
+        for (const auto &service : allModules) {
+            const int len = service->desktopEntryName().size();
+            maxLen = std::max(maxLen, len);
+        }
+
+        for (const auto &service : allModules) {
+            QString comment = service->comment();
+            if (comment.isEmpty()) {
+                comment = i18n("No description available");
             }
+
+            const QString entry = QStringLiteral("%1 - %2").arg(service->desktopEntryName().leftJustified(maxLen, QLatin1Char(' ')), comment);
+
+            std::cout << entry.toLocal8Bit().constData() << '\n';
         }
 
-        for (KService::List::ConstIterator it = m_modules.constBegin(); it != m_modules.constEnd(); ++it) {
-            QString entry(QStringLiteral("%1 - %2"));
+        std::cout << std::endl;
 
-            entry = entry
-                        .arg((*it)->desktopEntryName().leftJustified(maxLen, QLatin1Char(' '))) //
-                        .arg(!(*it)->comment().isEmpty() ? (*it)->comment() //
-                                                         : i18n("No description available"));
-
-            cout << entry.toLocal8Bit().data() << endl;
-        }
         return 0;
     }
 
-    if (parser.positionalArguments().count() < 1) {
+    if (parser.positionalArguments().isEmpty()) {
         parser.showHelp();
         return -1;
     }
 
     QString serviceName;
     KService::List modules;
-    for (int i = 0; i < parser.positionalArguments().count(); i++) {
-        const QString arg = parser.positionalArguments().at(i);
+    const QStringList args = parser.positionalArguments();
+    for (const QString &arg : args) {
         KService::Ptr service = locateModule(arg);
         if (!service) {
             service = locateModule(QStringLiteral("kcm_") + arg);
@@ -261,7 +256,7 @@ int main(int _argc, char *_argv[])
             }
             serviceName += arg;
         } else {
-            cerr << i18n("Could not find module '%1'. See kcmshell5 --list for the full list of modules.", arg).toLocal8Bit().constData() << endl;
+            std::cerr << i18n("Could not find module '%1'. See kcmshell5 --list for the full list of modules.", arg).toLocal8Bit().constData() << std::endl;
         }
     }
 
@@ -274,36 +269,37 @@ int main(int _argc, char *_argv[])
 
     KPageDialog::FaceType ftype = KPageDialog::Plain;
 
-    if (modules.count() < 1) {
+    const int modCount = modules.count();
+    if (modCount == 0) {
         return -1;
-    } else if (modules.count() > 1) {
+    }
+
+    if (modCount > 1) {
         ftype = KPageDialog::List;
     }
 
-    QStringList moduleArgs;
-    const QString x = parser.value(QStringLiteral("args"));
-    moduleArgs << x.split(QRegExp(QStringLiteral(" +")));
-
     KCMShellMultiDialog *dlg = new KCMShellMultiDialog(ftype);
     dlg->setAttribute(Qt::WA_DeleteOnClose);
+
     if (parser.isSet(QStringLiteral("caption"))) {
         dlg->setWindowTitle(parser.value(QStringLiteral("caption")));
-    } else if (modules.count() == 1) {
-        dlg->setWindowTitle(modules.first()->name());
+    } else if (modCount == 1) {
+        dlg->setWindowTitle(modules.at(0)->name());
     }
 
-    for (KService::List::ConstIterator it = modules.constBegin(); it != modules.constEnd(); ++it) {
-        dlg->addModule(*it, nullptr, moduleArgs);
+    const QStringList moduleArgs = parser.value(QStringLiteral("args")).split(QRegularExpression(QStringLiteral(" +")));
+    for (const auto &servicePtr : modules) {
+        dlg->addModule(servicePtr, nullptr, moduleArgs);
     }
 
     if (parser.isSet(QStringLiteral("icon"))) {
         dlg->setWindowIcon(QIcon::fromTheme(parser.value(QStringLiteral("icon"))));
-    } else if (!parser.isSet(QStringLiteral("icon")) && !modules.isEmpty()) {
-        const QString iconName = modules.first()->icon();
+    } else {
+        const QString iconName = modules.at(0)->icon();
         dlg->setWindowIcon(QIcon::fromTheme(iconName));
     }
 
-    if (modules.count() == 1 && app.desktopFileName() == QLatin1String("org.kde.kcmshell5")) {
+    if (modCount == 1 && app.desktopFileName() == QLatin1String("org.kde.kcmshell5")) {
         const QString path =
             QStandardPaths::locate(QStandardPaths::GenericDataLocation, QStringLiteral("kservices5/%1.desktop").arg(modules.first()->desktopEntryName()));
         if (!path.isEmpty()) {
