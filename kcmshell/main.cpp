@@ -114,9 +114,8 @@ KCMShellMultiDialog::KCMShellMultiDialog(KPageDialog::FaceType dialogFace, QWidg
         Q_UNUSED(oldPage);
         KCModuleProxy *activeModule = newPage->widget()->findChild<KCModuleProxy *>();
         if (activeModule) {
-            const QString storageId =
-                activeModule->moduleInfo().service() ? activeModule->moduleInfo().service()->storageId() : activeModule->metaData().pluginId();
-            KActivities::ResourceInstance::notifyAccessed(QUrl(QLatin1String("kcm:") + storageId), QStringLiteral("org.kde.systemsettings"));
+            KActivities::ResourceInstance::notifyAccessed(QUrl(QLatin1String("kcm:") + activeModule->metaData().pluginId()),
+                                                          QStringLiteral("org.kde.systemsettings"));
         }
     });
 }
@@ -242,36 +241,33 @@ int main(int _argc, char *_argv[])
     QString serviceName;
     QList<KPluginMetaData> metaDataList;
 
-    KService::List modules;
     QStringList args = parser.positionalArguments();
     args.removeDuplicates();
-    for (auto it = args.begin(); it != args.end();) {
-        KPluginMetaData data(*it);
+    for (const QString &arg : args) {
+        KPluginMetaData data(arg);
         if (data.isValid()) {
             metaDataList << data;
-            it = args.erase(it);
         } else {
-            ++it;
-        }
-    }
-
-    for (const QString &arg : std::as_const(args)) {
-        KService::Ptr service = locateModule(arg);
-        if (!service) {
-            service = locateModule(QStringLiteral("kcm_") + arg);
-        }
-        if (!service) {
-            service = locateModule(QStringLiteral("kcm") + arg);
-        }
-
-        if (service) {
-            modules.append(service);
-            if (!serviceName.isEmpty()) {
-                serviceName += QLatin1Char('_');
+            KService::Ptr service = locateModule(arg);
+            if (!service) {
+                service = locateModule(QStringLiteral("kcm_") + arg);
             }
-            serviceName += arg;
-        } else {
-            std::cerr << i18n("Could not find module '%1'. See kcmshell5 --list for the full list of modules.", arg).toLocal8Bit().constData() << std::endl;
+            if (!service) {
+                service = locateModule(QStringLiteral("kcm") + arg);
+            }
+
+            if (service) {
+                if (!serviceName.isEmpty()) {
+                    serviceName += QLatin1Char('_');
+                }
+                serviceName += arg;
+
+                const QString file = QStandardPaths::locate(QStandardPaths::GenericDataLocation, QLatin1String("/kservices5/") + service->entryPath());
+                auto data = KPluginMetaData::fromDesktopFile(file);
+                metaDataList << data;
+            } else {
+                std::cerr << i18n("Could not find module '%1'. See kcmshell5 --list for the full list of modules.", arg).toLocal8Bit().constData() << std::endl;
+            }
         }
     }
 
@@ -284,7 +280,7 @@ int main(int _argc, char *_argv[])
 
     KPageDialog::FaceType ftype = KPageDialog::Plain;
 
-    const int modCount = modules.count() + metaDataList.count();
+    const int modCount = metaDataList.count();
     if (modCount == 0) {
         return -1;
     }
@@ -299,28 +295,23 @@ int main(int _argc, char *_argv[])
     if (parser.isSet(QStringLiteral("caption"))) {
         dlg->setWindowTitle(parser.value(QStringLiteral("caption")));
     } else if (modCount == 1) {
-        dlg->setWindowTitle(modules.isEmpty() ? metaDataList.constFirst().name() : modules.constFirst()->name());
+        dlg->setWindowTitle(metaDataList.constFirst().name());
     }
 
     const QStringList moduleArgs = parser.value(QStringLiteral("args")).split(QRegularExpression(QStringLiteral(" +")));
     for (const KPluginMetaData &m : std::as_const(metaDataList)) {
         dlg->addModule(m, moduleArgs);
     }
-    for (const auto &servicePtr : modules) {
-        dlg->addModule(servicePtr, nullptr, moduleArgs);
-    }
 
     if (parser.isSet(QStringLiteral("icon"))) {
         dlg->setWindowIcon(QIcon::fromTheme(parser.value(QStringLiteral("icon"))));
     } else {
-        const QString iconName = modules.isEmpty() ? metaDataList.at(0).iconName() : modules.at(0)->icon();
-        dlg->setWindowIcon(QIcon::fromTheme(iconName));
+        dlg->setWindowIcon(QIcon::fromTheme(metaDataList.constFirst().iconName()));
     }
 
-    if (modules.count() == 1 && app.desktopFileName() == QLatin1String("org.kde.kcmshell5")) {
-        const QString path =
-            QStandardPaths::locate(QStandardPaths::GenericDataLocation, QStringLiteral("kservices5/%1.desktop").arg(modules.first()->desktopEntryName()));
-        if (!path.isEmpty()) {
+    if (app.desktopFileName() == QLatin1String("org.kde.kcmshell5")) {
+        const QString path = metaDataList.constFirst().metaDataFileName();
+        if (!path.isEmpty() && !path.endsWith(QLatin1String(".desktop"))) {
             app.setDesktopFileName(path);
         }
     }
