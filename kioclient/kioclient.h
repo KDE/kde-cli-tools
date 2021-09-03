@@ -30,6 +30,7 @@ private Q_SLOTS:
     void slotPrintData(KIO::Job *job, const QByteArray &data);
     void slotEntries(KIO::Job *job, const KIO::UDSEntryList &);
     void slotResult(KJob *);
+    void slotStatResult(KJob *);
     void slotDialogCanceled();
 
 private:
@@ -38,6 +39,7 @@ private:
     bool doMove(const QStringList &urls);
     bool doList(const QStringList &urls);
     bool doRemove(const QStringList &urls);
+    bool doStat(const QStringList &urls);
 
     static bool m_ok;
 };

@@ -16,6 +16,8 @@
 #include <KIO/ApplicationLauncherJob>
 #include <KIO/JobUiDelegate>
 #include <KIO/OpenUrlJob>
+#include <KIO/StatJob>
+#include <KIO/UDSEntry>
 #include <KPropertiesDialog>
 #include <KService>
 #endif
@@ -107,6 +109,10 @@ static void usage()
              .constData());
     puts(i18n("            #   the short version kioclient5 rm\n"
               "            #   is also available.\n\n")
+             .toLocal8Bit()
+             .constData());
+    puts(i18n("  kioclient5 stat 'url'\n"
+              "            # Shows all of the available information for 'url'\n\n")
              .toLocal8Bit()
              .constData());
     puts(i18n("  kioclient5 appmenu\n"
@@ -307,6 +313,23 @@ bool ClientApp::doRemove(const QStringList &urls)
     return m_ok;
 }
 
+bool ClientApp::doStat(const QStringList &urls)
+{
+    KIO::Job *job = KIO::statDetails(makeURL(urls.first()),
+                                     KIO::StatJob::SourceSide,
+                                     (KIO::StatBasic | KIO::StatUser | KIO::StatTime | KIO::StatInode | KIO::StatMimeType | KIO::StatAcl),
+                                     s_jobFlags);
+    if (!s_interactive) {
+        job->setUiDelegate(nullptr);
+        job->setUiDelegateExtension(nullptr);
+    }
+
+    connect(job, &KJob::result, this, &ClientApp::slotStatResult);
+
+    qApp->exec();
+    return m_ok;
+}
+
 bool ClientApp::doIt(const QCommandLineParser &parser)
 {
     const int argc = parser.positionalArguments().count();
@@ -426,6 +449,11 @@ bool ClientApp::doIt(const QCommandLineParser &parser)
         QStringList args = parser.positionalArguments();
         args.removeFirst();
         return doRemove(args);
+    } else if (command == QLatin1String("stat")) {
+        checkArgumentCount(argc, 2, 2); // stat <url>
+        QStringList args = parser.positionalArguments();
+        args.removeFirst();
+        return doStat(args);
     } else {
         fputs(i18nc("@info:shell", "%1: Syntax error, unknown command '%2'\n", qAppName(), command).toLocal8Bit().data(), stderr);
         return false;
@@ -443,7 +471,7 @@ void ClientApp::slotResult(KJob *job)
         } else
 #endif
         {
-            qWarning() << job->errorString();
+            fputs(qPrintable(i18nc("@info:shell", "%1: %2\n", qAppName(), job->errorString())), stderr);
         }
     }
     m_ok = !job->error();
@@ -465,6 +493,81 @@ void ClientApp::slotPrintData(KIO::Job *, const QByteArray &data)
     if (!data.isEmpty()) {
         std::cout.write(data.constData(), data.size());
     }
+}
+
+static void showStatField(const KIO::UDSEntry &entry, uint field, const char *name)
+{
+    if (!entry.contains(field))
+        return;
+    std::cout << qPrintable(QString::fromLocal8Bit(name).leftJustified(20, ' ')) << "  ";
+
+    if (field == KIO::UDSEntry::UDS_ACCESS) {
+        std::cout << qPrintable(QString("0%1").arg(entry.numberValue(field), 3, 8, QLatin1Char('0')));
+    } else if (field == KIO::UDSEntry::UDS_FILE_TYPE) {
+        std::cout << qPrintable(QString("0%1").arg((entry.numberValue(field) & S_IFMT), 6, 8, QLatin1Char('0')));
+    } else if (field & KIO::UDSEntry::UDS_STRING) {
+        std::cout << qPrintable(entry.stringValue(field));
+    } else if ((field & KIO::UDSEntry::UDS_TIME) == KIO::UDSEntry::UDS_TIME) {
+        // The previous comparison is necessary because the value
+        // of UDS_TIME is 0x04000000|UDS_NUMBER which is 0x06000000.
+        // So simply testing with (field & KIO::UDSEntry::UDS_TIME)
+        // would be true for both UDS_TIME and UDS_NUMBER fields.
+        // The same would happen if UDS_NUMBER were tested first.
+        const QDateTime dt = QDateTime::fromSecsSinceEpoch(entry.numberValue(field));
+        if (dt.isValid())
+            std::cout << qPrintable(dt.toString(Qt::TextDate));
+    } else if (field & KIO::UDSEntry::UDS_NUMBER) {
+        std::cout << entry.numberValue(field);
+    }
+    std::cout << std::endl;
+}
+
+void ClientApp::slotStatResult(KJob *job)
+{
+    if (!job->error()) {
+        KIO::StatJob *statJob = qobject_cast<KIO::StatJob *>(job);
+        Q_ASSERT(statJob != nullptr);
+        const KIO::UDSEntry &result = statJob->statResult();
+
+        showStatField(result, KIO::UDSEntry::UDS_NAME, "NAME");
+        showStatField(result, KIO::UDSEntry::UDS_DISPLAY_NAME, "DISPLAY_NAME");
+        showStatField(result, KIO::UDSEntry::UDS_COMMENT, "COMMENT");
+        showStatField(result, KIO::UDSEntry::UDS_SIZE, "SIZE");
+        // This is not requested for the StatJob, so should never be seen
+        showStatField(result, KIO::UDSEntry::UDS_RECURSIVE_SIZE, "RECURSIVE_SIZE");
+
+        showStatField(result, KIO::UDSEntry::UDS_FILE_TYPE, "FILE_TYPE");
+        showStatField(result, KIO::UDSEntry::UDS_USER, "USER");
+        showStatField(result, KIO::UDSEntry::UDS_GROUP, "GROUP");
+        showStatField(result, KIO::UDSEntry::UDS_HIDDEN, "HIDDEN");
+        showStatField(result, KIO::UDSEntry::UDS_DEVICE_ID, "DEVICE_ID");
+        showStatField(result, KIO::UDSEntry::UDS_INODE, "INODE");
+
+        showStatField(result, KIO::UDSEntry::UDS_LINK_DEST, "LINK_DEST");
+        showStatField(result, KIO::UDSEntry::UDS_URL, "URL");
+        showStatField(result, KIO::UDSEntry::UDS_LOCAL_PATH, "LOCAL_PATH");
+        showStatField(result, KIO::UDSEntry::UDS_TARGET_URL, "TARGET_URL");
+
+        showStatField(result, KIO::UDSEntry::UDS_MIME_TYPE, "MIME_TYPE");
+        showStatField(result, KIO::UDSEntry::UDS_GUESSED_MIME_TYPE, "GUESSED_MIME_TYPE");
+
+        showStatField(result, KIO::UDSEntry::UDS_ICON_NAME, "ICON_NAME");
+        showStatField(result, KIO::UDSEntry::UDS_ICON_OVERLAY_NAMES, "ICON_OVERLAY_NAMES");
+
+        showStatField(result, KIO::UDSEntry::UDS_ACCESS, "ACCESS");
+        showStatField(result, KIO::UDSEntry::UDS_EXTENDED_ACL, "EXTENDED_ACL");
+        showStatField(result, KIO::UDSEntry::UDS_ACL_STRING, "ACL_STRING");
+        showStatField(result, KIO::UDSEntry::UDS_DEFAULT_ACL_STRING, "DEFAULT_ACL_STRING");
+
+        showStatField(result, KIO::UDSEntry::UDS_MODIFICATION_TIME, "MODIFICATION_TIME");
+        showStatField(result, KIO::UDSEntry::UDS_ACCESS_TIME, "ACCESS_TIME");
+        showStatField(result, KIO::UDSEntry::UDS_CREATION_TIME, "CREATION_TIME");
+
+        showStatField(result, KIO::UDSEntry::UDS_XML_PROPERTIES, "XML_PROPERTIES");
+        showStatField(result, KIO::UDSEntry::UDS_DISPLAY_TYPE, "DISPLAY_TYPE");
+    }
+
+    slotResult(job);
 }
 
 ClientApp::ClientApp()
