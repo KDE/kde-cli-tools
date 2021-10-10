@@ -18,7 +18,8 @@ set(libfiletypes_SRCS
 
 set(kcm_filetypes_SRCS filetypesview.cpp ${libfiletypes_SRCS})
 
-add_library(kcm_filetypes MODULE ${kcm_filetypes_SRCS})
+kcoreaddons_add_plugin(kcm_filetypes SOURCES ${kcm_filetypes_SRCS} INSTALL_NAMESPACE "plasma/kcms/systemsettings")
+kcoreaddons_desktop_to_json(kcm_filetypes filetypes.desktop)
 
 target_link_libraries(kcm_filetypes
     KF5::ConfigWidgets
@@ -27,8 +28,6 @@ target_link_libraries(kcm_filetypes
     KF5::KIOWidgets # KOpenWithDialog, KBuildSycocaProgressDialog
     Qt::DBus
 )
-
-install(TARGETS kcm_filetypes  DESTINATION ${KDE_INSTALL_PLUGINDIR} )
 
 ########### next target ###############
 
@@ -54,5 +53,4 @@ install(TARGETS keditfiletype5 ${KDE_INSTALL_TARGETS_DEFAULT_ARGS})
 
 ########### install files ###############
 
-install( FILES filetypes.desktop  DESTINATION  ${KDE_INSTALL_KSERVICES5DIR} )
 install( PROGRAMS org.kde.keditfiletype.desktop DESTINATION ${KDE_INSTALL_APPDIR} )
