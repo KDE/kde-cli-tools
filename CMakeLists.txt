@@ -74,6 +74,13 @@ include_directories(${CMAKE_CURRENT_BINARY_DIR})
 
 add_subdirectory(doc)
 
+
+function(install_compat_symlink executable_target)
+    add_custom_command(TARGET ${executable_target} POST_BUILD
+                    COMMAND ${CMAKE_COMMAND} -E create_symlink ${executable_target} ${executable_target}5)
+    install(FILES ${CMAKE_CURRENT_BINARY_DIR}/${executable_target}5 DESTINATION ${KDE_INSTALL_FULL_BINDIR})
+endfunction()
+
 add_subdirectory(kcmshell)
 add_subdirectory(keditfiletype)
 add_subdirectory(kmimetypefinder)

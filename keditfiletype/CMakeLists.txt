@@ -41,10 +41,10 @@ target_link_libraries(kcm_filetypes
 
 set(keditfiletype_SRCS keditfiletype.cpp keditfiletype.h ${libfiletypes_SRCS})
 
-add_executable(keditfiletype5 ${keditfiletype_SRCS})
-target_compile_definitions(keditfiletype5 PRIVATE -DPROJECT_VERSION="${PROJECT_VERSION}")
+add_executable(keditfiletype ${keditfiletype_SRCS})
+target_compile_definitions(keditfiletype PRIVATE -DPROJECT_VERSION="${PROJECT_VERSION}")
 
-target_link_libraries(keditfiletype5
+target_link_libraries(keditfiletype
     KF5::ConfigCore
     KF5::IconThemes
     KF5::KIOWidgets # KOpenWithDialog, KBuildSycocaProgressDialog
@@ -54,7 +54,8 @@ target_link_libraries(keditfiletype5
     Qt::DBus
 )
 
-install(TARGETS keditfiletype5 ${KDE_INSTALL_TARGETS_DEFAULT_ARGS})
+install_compat_symlink(keditfiletype)
+install(TARGETS keditfiletype DESTINATION ${KDE_INSTALL_FULL_BINDIR})
 
 ########### install files ###############
 
