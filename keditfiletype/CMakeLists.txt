@@ -12,6 +12,14 @@ set(libfiletypes_SRCS
  mimetypewriter.cpp
  newtypedlg.cpp
  kserviceselectdlg.cpp
+ filetypedetails.h
+ filegroupdetails.h
+ kservicelistwidget.h
+ typeslistitem.h
+ mimetypedata.h
+ mimetypewriter.h
+ newtypedlg.h
+ kserviceselectdlg.h
 )
 
 ########### next target ###############
@@ -31,7 +39,7 @@ target_link_libraries(kcm_filetypes
 
 ########### next target ###############
 
-set(keditfiletype_SRCS keditfiletype.cpp ${libfiletypes_SRCS})
+set(keditfiletype_SRCS keditfiletype.cpp keditfiletype.h ${libfiletypes_SRCS})
 
 add_executable(keditfiletype5 ${keditfiletype_SRCS})
 target_compile_definitions(keditfiletype5 PRIVATE -DPROJECT_VERSION="${PROJECT_VERSION}")
