@@ -36,6 +36,15 @@
 #include <algorithm>
 #include <iostream>
 
+inline QVector<KPluginMetaData> findKCMsMetaData()
+{
+    QVector<KPluginMetaData> metaDataList = KPluginMetaData::findPlugins(QStringLiteral("plasma/kcms"));
+    metaDataList << KPluginMetaData::findPlugins(QStringLiteral("plasma/kcms/systemsettings"));
+    metaDataList << KPluginMetaData::findPlugins(QStringLiteral("plasma/kcms/systemsettings_qwidgets"));
+    metaDataList << KPluginMetaData::findPlugins(QStringLiteral("plasma/kcms/kinfocenter"));
+    return metaDataList;
+}
+
 static KService::List listModules()
 {
     // First condition is what systemsettings does, second what kinfocenter does, make sure this is kept in sync
@@ -248,6 +257,15 @@ int main(int _argc, char *_argv[])
         if (data.isValid()) {
             metaDataList << data;
         } else {
+            // Look in the namespaces for systemsettings/kinfocenter
+            const static auto knownKCMs = findKCMsMetaData();
+            for (const KPluginMetaData &data : knownKCMs) {
+                const QStringList possibleIds{arg, QStringLiteral("kcm_") + arg, QStringLiteral("kcm") + arg};
+                if (possibleIds.contains(data.pluginId())) {
+                    metaDataList << data;
+                    continue;
+                }
+            }
             KService::Ptr service = locateModule(arg);
             if (!service) {
                 service = locateModule(QStringLiteral("kcm_") + arg);
