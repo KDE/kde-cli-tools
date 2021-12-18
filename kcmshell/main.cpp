@@ -329,8 +329,11 @@ int main(int _argc, char *_argv[])
 
     if (app.desktopFileName() == QLatin1String("org.kde.kcmshell5")) {
         const QString path = metaDataList.constFirst().metaDataFileName();
-        if (!path.isEmpty() && !path.endsWith(QLatin1String(".desktop"))) {
+
+        if (path.endsWith(QLatin1String(".desktop"))) {
             app.setDesktopFileName(path);
+        } else {
+            app.setDesktopFileName(metaDataList.constFirst().pluginId());
         }
     }
 
