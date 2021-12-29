@@ -53,9 +53,6 @@ target_link_libraries(keditfiletype5
     KF5::Service
     Qt::DBus
 )
-if (Q_WS_X11)
-  target_link_libraries(keditfiletype5 ${X11_X11_LIB})
-endif ()
 
 install(TARGETS keditfiletype5 ${KDE_INSTALL_TARGETS_DEFAULT_ARGS})
 
