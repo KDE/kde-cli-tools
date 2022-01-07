@@ -259,12 +259,16 @@ int main(int _argc, char *_argv[])
         } else {
             // Look in the namespaces for systemsettings/kinfocenter
             const static auto knownKCMs = findKCMsMetaData();
-            for (const KPluginMetaData &data : knownKCMs) {
-                const QStringList possibleIds{arg, QStringLiteral("kcm_") + arg, QStringLiteral("kcm") + arg};
-                if (possibleIds.contains(data.pluginId())) {
+            const QStringList possibleIds{arg, QStringLiteral("kcm_") + arg, QStringLiteral("kcm") + arg};
+            bool foundKCM = std::any_of(knownKCMs.begin(), knownKCMs.end(), [&possibleIds, &metaDataList](const KPluginMetaData &data) {
+                bool idMatches = possibleIds.contains(data.pluginId());
+                if (idMatches) {
                     metaDataList << data;
-                    continue;
                 }
+                return idMatches;
+            });
+            if (foundKCM) {
+                continue;
             }
             KService::Ptr service = locateModule(arg);
             if (!service) {
