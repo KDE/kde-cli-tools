@@ -53,80 +53,97 @@ static QList<QUrl> makeUrls(const QStringList &urlArgs)
 static void usage()
 {
     puts(i18n("\nSyntax:\n").toLocal8Bit().constData());
-    puts(i18n("  kioclient openProperties 'url'\n"
-              "            # Opens a properties menu\n\n")
+    puts(i18nc("The argument is the command \"kioclient openProperties\"",
+               "  %1 'url'\n"
+               "            # Opens a properties dialog of 'url'\n\n",
+               "kioclient openProperties")
              .toLocal8Bit()
              .constData());
-    puts(i18n("  kioclient exec 'url' ['mimetype']\n"
-              "            # Tries to open the document pointed to by 'url', in the application\n"
-              "            #   associated with it in KDE. You may omit 'mimetype'.\n"
-              "            #   In this case the mimetype is determined\n"
-              "            #   automatically. Of course URL may be the URL of a\n"
-              "            #   document, or it may be a *.desktop file.\n"
-              "            #   'url' can be an executable, too.\n")
+
+    puts(i18nc("The argument is the command \"kioclient exec\"",
+               "  %1 'url' ['mimetype']\n"
+               "            # Tries to open the document pointed to by 'url', in the application\n"
+               "            # associated with it in KDE. You may omit 'mimetype'.\n"
+               "            # In that case the mimetype is determined automatically.\n"
+               "            # 'url' can be the URL of a document, a *.desktop file,\n"
+               "            # or an executable.\n",
+               "kioclient exec")
              .toLocal8Bit()
              .constData());
-    puts(i18n("  kioclient move 'src' 'dest'\n"
-              "            # Moves the URL 'src' to 'dest'.\n"
-              "            #   'src' may be a list of URLs.\n")
+
+    puts(i18nc("The argument is the command \"kioclient move\"",
+               "  %1 'src' 'dest'\n"
+               "            # Moves the URL 'src' to 'dest'.\n"
+               "            #   'src' may be a list of URLs.\n"
+               "            #   'dest' may be \"trash:/\" to move the files to the trash.\n"
+               "            #   The short version 'kioclient mv' is also available.\n\n",
+               "kioclient move")
              .toLocal8Bit()
              .constData());
-    puts(i18n("            #   'dest' may be \"trash:/\" to move the files\n"
-              "            #   to the trash.\n")
+
+    puts(i18nc("The argument is the command \"kioclient download\"",
+               "  %1 ['src']\n"
+               "            # Copies the URL 'src' to a user-specified location.\n"
+               "            #   'src' may be a list of URLs, if not present then\n"
+               "            #   a URL will be requested.\n\n",
+               "kioclient download")
              .toLocal8Bit()
              .constData());
-    puts(i18n("            #   the short version kioclient mv\n"
-              "            #   is also available.\n\n")
+
+    puts(i18nc("The argument is the command \"kioclient copy\"",
+               "  %1 'src' 'dest'\n"
+               "            # Copies the URL 'src' to 'dest'.\n"
+               "            #   'src' may be a list of URLs.\n"
+               "            #   The short version 'kioclient cp' is also available.\n\n",
+               "kioclient copy")
              .toLocal8Bit()
              .constData());
-    puts(i18n("  kioclient download ['src']\n"
-              "            # Copies the URL 'src' to a user-specified location'.\n"
-              "            #   'src' may be a list of URLs, if not present then\n"
-              "            #   a URL will be requested.\n\n")
+
+    puts(i18nc("The argument is the command \"kioclient cat\"",
+               "  %1 'url'\n"
+               "            # Prints the contents of the file 'url' to the standard output\n\n",
+               "kioclient cat")
              .toLocal8Bit()
              .constData());
-    puts(i18n("  kioclient copy 'src' 'dest'\n"
-              "            # Copies the URL 'src' to 'dest'.\n"
-              "            #   'src' may be a list of URLs.\n")
+
+    puts(i18nc("The argument is the command \"kioclient ls\"",
+               "  %1 'url'\n"
+               "            # Lists the contents of the directory 'url' to stdout\n\n",
+               "kioclient ls")
              .toLocal8Bit()
              .constData());
-    puts(i18n("            #   the short version kioclient cp\n"
-              "            #   is also available.\n\n")
+
+    puts(i18nc("The argument is the command \"kioclient remove\"",
+               "  %1 'url'\n"
+               "            # Removes the URL\n"
+               "            #   'url' may be a list of URLs.\n"
+               "            #   The short version 'kioclient rm' is also available.\n\n",
+               "kioclient remove")
              .toLocal8Bit()
              .constData());
-    puts(i18n("  kioclient cat 'url'\n"
-              "            # Writes out the contents of 'url' to stdout\n\n")
+
+    puts(i18nc("The argument is the command \"kioclient stat\"",
+               "  %1 'url'\n"
+               "            # Shows all of the available information for 'url'\n\n",
+               "kioclient stat")
              .toLocal8Bit()
              .constData());
-    puts(i18n("  kioclient ls 'url'\n"
-              "            # Lists the contents of the directory 'url' to stdout\n\n")
-             .toLocal8Bit()
-             .constData());
-    puts(i18n("  kioclient remove 'url'\n"
-              "            # Removes the URL\n"
-              "            #   'url' may be a list of URLs.\n")
-             .toLocal8Bit()
-             .constData());
-    puts(i18n("            #   the short version kioclient rm\n"
-              "            #   is also available.\n\n")
-             .toLocal8Bit()
-             .constData());
-    puts(i18n("  kioclient stat 'url'\n"
-              "            # Shows all of the available information for 'url'\n\n")
-             .toLocal8Bit()
-             .constData());
-    puts(i18n("  kioclient appmenu\n"
-              "            # Opens a basic application launcher.\n\n")
+
+    puts(i18nc("The argument is the command \"kioclient appmenu\"",
+               "  %1\n"
+               "            # Opens a basic application launcher\n\n",
+               "kioclient appmenu")
              .toLocal8Bit()
              .constData());
 
     puts(i18n("*** Examples:\n").toLocal8Bit().constData());
     puts(i18n("  kioclient exec file:/home/weis/data/test.html\n"
-              "             // Opens the file with default binding\n\n")
+              "             // Opens the file with the default application associated\n"
+              "             // with this MimeType\n\n")
              .toLocal8Bit()
              .constData());
     puts(i18n("  kioclient exec ftp://localhost/\n"
-              "             // Opens new window with URL\n\n")
+              "             // Opens URL with the default handler for ftp:// scheme\n\n")
              .toLocal8Bit()
              .constData());
     puts(i18n("  kioclient exec file:/root/Desktop/emacs.desktop\n"
@@ -134,7 +151,8 @@ static void usage()
              .toLocal8Bit()
              .constData());
     puts(i18n("  kioclient exec .\n"
-              "             // Opens the current directory. Very convenient.\n\n")
+              "             // Opens the current directory in the default\n"
+              "             // file manager. Very convenient.\n\n")
              .toLocal8Bit()
              .constData());
 }
