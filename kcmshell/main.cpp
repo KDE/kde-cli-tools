@@ -217,22 +217,27 @@ int main(int _argc, char *_argv[])
     if (parser.isSet(QStringLiteral("list"))) {
         std::cout << i18n("The following modules are available:").toLocal8Bit().constData() << '\n';
 
-        const KService::List allModules = listModules();
+        QVector<KPluginMetaData> plugins = findKCMsMetaData();
+        const KService::List services = listModules();
+        for (const auto &service : services) {
+            const QString file = QStandardPaths::locate(QStandardPaths::GenericDataLocation, QLatin1String("/kservices5/") + service->entryPath());
+            plugins << KPluginMetaData::fromDesktopFile(file);
+        }
 
         int maxLen = 0;
 
-        for (const auto &service : allModules) {
-            const int len = service->desktopEntryName().size();
+        for (const auto &plugin : plugins) {
+            const int len = plugin.pluginId().size();
             maxLen = std::max(maxLen, len);
         }
 
-        for (const auto &service : allModules) {
-            QString comment = service->comment();
+        for (const auto &plugin : plugins) {
+            QString comment = plugin.description();
             if (comment.isEmpty()) {
                 comment = i18n("No description available");
             }
 
-            const QString entry = QStringLiteral("%1 - %2").arg(service->desktopEntryName().leftJustified(maxLen, QLatin1Char(' ')), comment);
+            const QString entry = QStringLiteral("%1 - %2").arg(plugin.pluginId().leftJustified(maxLen, QLatin1Char(' ')), comment);
 
             std::cout << entry.toLocal8Bit().constData() << '\n';
         }
