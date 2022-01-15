@@ -9,12 +9,12 @@
 #define TYPESLISTITEM_H
 
 #include "mimetypedata.h"
-#include <QTreeWidgetItem>
+#include "typeslistitembase.h"
 
 #include <QMimeType>
 
 // TODO different subclasses for mimetypes and groups?
-class TypesListItem : public QTreeWidgetItem
+class TypesListItem : public TypesListItemBase
 {
 public:
     /**
@@ -51,7 +51,7 @@ public:
         return m_mimetypeData;
     }
 
-    void loadIcon(bool forceReload = false);
+    virtual void loadIcon(bool forceReload = false) override;
 
 private:
     MimeTypeData m_mimetypeData;

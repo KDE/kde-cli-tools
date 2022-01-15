@@ -1,6 +1,7 @@
 /*  This file is part of the KDE project
     SPDX-FileCopyrightText: 2000-2008 David Faure <faure@kde.org>
     SPDX-FileCopyrightText: 2008 Urs Wolfer <uwolfer @ kde.org>
+    SPDX-FileCopyrightText: 2022 Marco Rebhan <me@dblsaiko.net>
 
     SPDX-License-Identifier: GPL-2.0-only OR GPL-3.0-only OR LicenseRef-KDE-Accepted-GPL
 */
@@ -11,8 +12,10 @@
 
 // Qt
 #include <QHBoxLayout>
+#include <QLabel>
 #include <QMimeDatabase>
 #include <QPushButton>
+#include <QStackedWidget>
 #include <QStandardPaths>
 #include <QVBoxLayout>
 #include <qdbusconnection.h>
@@ -30,7 +33,10 @@
 // Local
 #include "filegroupdetails.h"
 #include "filetypedetails.h"
+#include "kservicelistwidget.h"
+#include "multiapplydialog.h"
 #include "newtypedlg.h"
+#include "typeslisttreewidget.h"
 
 K_PLUGIN_CLASS_WITH_JSON(FileTypesView, "kcm_filetypes.json")
 
@@ -99,8 +105,10 @@ FileTypesView::FileTypesView(QObject *parent, const KPluginMetaData &data, const
 
     // File Type Details
     m_details = new FileTypeDetails(m_widgetStack);
+    m_details->allowMultiApply(true);
     connect(m_details, &FileTypeDetails::changed, this, &FileTypesView::setDirty);
     connect(m_details, &FileTypeDetails::embedMajor, this, &FileTypesView::slotEmbedMajor);
+    connect(m_details, &FileTypeDetails::multiApply, this, &FileTypesView::multiApply);
     m_widgetStack->insertWidget(1, m_details /*id*/);
 
     // File Group Details
@@ -171,6 +179,34 @@ void FileTypesView::slotEmbedMajor(const QString &major, bool &embed)
     }
 
     embed = (groupItem->mimeTypeData().autoEmbed() == MimeTypeData::Yes);
+}
+
+void FileTypesView::multiApply(int type)
+{
+    auto *current = static_cast<TypesListItem *>(typesLV->currentItem());
+    MultiApplyDialog d(current, m_itemList, widget());
+
+    if (d.exec()) {
+        bool changed = false;
+
+        for (auto *item : d.selected()) {
+            if (type == KServiceListWidget::SERVICELIST_APPLICATIONS) {
+                if (item->mimeTypeData().appServices() != current->mimeTypeData().appServices()) {
+                    item->mimeTypeData().setAppServices(current->mimeTypeData().appServices());
+                    changed = true;
+                }
+            } else if (type == KServiceListWidget::SERVICELIST_SERVICES) {
+                if (item->mimeTypeData().embedServices() != current->mimeTypeData().embedServices()) {
+                    item->mimeTypeData().setEmbedServices(current->mimeTypeData().embedServices());
+                    changed = true;
+                }
+            }
+        }
+
+        if (changed) {
+            setDirty(true);
+        }
+    }
 }
 
 void FileTypesView::slotFilter(const QString &patternFilter)

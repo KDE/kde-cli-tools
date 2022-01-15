@@ -36,7 +36,7 @@ public:
 };
 
 /**
- * This widget holds a list of services, with 5 buttons to manage it.
+ * This widget holds a list of services, with 6 buttons to manage it.
  * It's a separate class so that it can be used by both tabs of the
  * module, once for applications and once for services.
  * The "kind" is determined by the argument given to the constructor.
@@ -53,8 +53,11 @@ public:
 
     void setMimeTypeData(MimeTypeData *item);
 
+    void allowMultiApply(bool allow);
+
 Q_SIGNALS:
     void changed(bool);
+    void multiApply(int kind);
 
 protected Q_SLOTS:
     void promoteService();
@@ -62,6 +65,7 @@ protected Q_SLOTS:
     void addService();
     void editService();
     void removeService();
+    void applyTo();
     void enableMoveButtons();
 
 protected:
@@ -72,7 +76,9 @@ private:
     QListWidget *servicesLB;
     QPushButton *servUpButton, *servDownButton;
     QPushButton *servNewButton, *servEditButton, *servRemoveButton;
+    QPushButton *servApplyToButton;
     MimeTypeData *m_mimeTypeData;
+    bool m_allowMultiApply;
 };
 
 #endif

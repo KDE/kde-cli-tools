@@ -57,6 +57,7 @@ KServiceListWidget::KServiceListWidget(int kind, QWidget *parent)
     : QGroupBox(kind == SERVICELIST_APPLICATIONS ? i18n("Application Preference Order") : i18n("Services Preference Order"), parent)
     , m_kind(kind)
     , m_mimeTypeData(nullptr)
+    , m_allowMultiApply(false)
 {
     QHBoxLayout *lay = new QHBoxLayout(this);
 
@@ -128,6 +129,13 @@ KServiceListWidget::KServiceListWidget(int kind, QWidget *parent)
     btnsLay->addWidget(servRemoveButton);
     servRemoveButton->setWhatsThis(i18n("Remove the selected application from the list."));
 
+    servApplyToButton = new QPushButton(i18n("Apply To..."), this);
+    servApplyToButton->setIcon(QIcon::fromTheme(QStringLiteral("edit-copy")));
+    servApplyToButton->setEnabled(false);
+    connect(servApplyToButton, &QAbstractButton::clicked, this, &KServiceListWidget::applyTo);
+    btnsLay->addWidget(servApplyToButton);
+    servApplyToButton->setWhatsThis(i18n("Apply the current preference order to other file types."));
+
     btnsLay->addStretch(1);
 }
 
@@ -169,6 +177,18 @@ void KServiceListWidget::setMimeTypeData(MimeTypeData *mimeTypeData)
     }
     if (servEditButton) {
         servEditButton->setEnabled(servicesLB->currentRow() > -1);
+    }
+    if (servApplyToButton) {
+        servApplyToButton->setEnabled(m_allowMultiApply);
+    }
+}
+
+void KServiceListWidget::allowMultiApply(bool allow)
+{
+    m_allowMultiApply = allow;
+
+    if (m_mimeTypeData && servApplyToButton) {
+        servApplyToButton->setEnabled(m_allowMultiApply);
     }
 }
 
@@ -381,6 +401,11 @@ void KServiceListWidget::updatePreferredServices()
     } else {
         m_mimeTypeData->setEmbedServices(sl);
     }
+}
+
+void KServiceListWidget::applyTo()
+{
+    Q_EMIT multiApply(m_kind);
 }
 
 void KServiceListWidget::enableMoveButtons()

@@ -46,6 +46,7 @@ protected Q_SLOTS:
 
     void slotDatabaseChanged();
     void slotEmbedMajor(const QString &major, bool &embed);
+    void multiApply(int type);
 
 private:
     void readFileTypes();
@@ -68,26 +69,6 @@ private:
     QList<TypesListItem *> m_itemList;
 
     KSharedConfig::Ptr m_fileTypesConfig;
-};
-
-// helper class for loading the icon on request instead of preloading lots of probably
-// unused icons which takes quite a lot of time
-class TypesListTreeWidget : public QTreeWidget
-{
-    Q_OBJECT
-public:
-    explicit TypesListTreeWidget(QWidget *parent)
-        : QTreeWidget(parent)
-    {
-    }
-
-protected:
-    void drawRow(QPainter *painter, const QStyleOptionViewItem &option, const QModelIndex &index) const override
-    {
-        static_cast<TypesListItem *>(itemFromIndex(index))->loadIcon();
-
-        QTreeWidget::drawRow(painter, option, index);
-    }
 };
 
 #endif

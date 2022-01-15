@@ -12,21 +12,21 @@
 // Qt
 
 TypesListItem::TypesListItem(QTreeWidget *parent, const QString &major)
-    : QTreeWidgetItem(parent)
+    : TypesListItemBase(parent)
     , m_mimetypeData(major)
 {
     setText(0, major);
 }
 
 TypesListItem::TypesListItem(TypesListItem *parent, QMimeType mimetype)
-    : QTreeWidgetItem(parent)
+    : TypesListItemBase(parent)
     , m_mimetypeData(mimetype)
 {
     setText(0, m_mimetypeData.minorType());
 }
 
 TypesListItem::TypesListItem(TypesListItem *parent, const QString &newMimetype)
-    : QTreeWidgetItem(parent)
+    : TypesListItemBase(parent)
     , m_mimetypeData(newMimetype, true)
 {
     setText(0, m_mimetypeData.minorType());

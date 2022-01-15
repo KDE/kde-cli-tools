@@ -45,6 +45,8 @@ public:
      */
     void refresh();
 
+    void allowMultiApply(bool allow);
+
 protected:
     void updateRemoveButton();
     void updateAskSave();
@@ -52,6 +54,7 @@ protected:
 Q_SIGNALS:
     void embedMajor(const QString &major, bool &embed); // To adjust whether major type is being embedded
     void changed(bool);
+    void multiApply(int kind);
 
 protected Q_SLOTS:
     void updateIcon(const QString &icon);

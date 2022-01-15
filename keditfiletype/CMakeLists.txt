@@ -8,16 +8,24 @@ set(libfiletypes_SRCS
  filegroupdetails.cpp
  kservicelistwidget.cpp
  typeslistitem.cpp
+ typeslistitembase.cpp
+ typeslistproxyitem.cpp
+ typeslisttreewidget.cpp
  mimetypedata.cpp
  mimetypewriter.cpp
+ multiapplydialog.cpp
  newtypedlg.cpp
  kserviceselectdlg.cpp
  filetypedetails.h
  filegroupdetails.h
  kservicelistwidget.h
  typeslistitem.h
+ typeslistitembase.h
+ typeslistproxyitem.h
+ typeslisttreewidget.h
  mimetypedata.h
  mimetypewriter.h
+ multiapplydialog.h
  newtypedlg.h
  kserviceselectdlg.h
 )

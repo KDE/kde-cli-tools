@@ -119,6 +119,7 @@ FileTypeDetails::FileTypeDetails(QWidget *parent)
 
     serviceListWidget = new KServiceListWidget(KServiceListWidget::SERVICELIST_APPLICATIONS, firstWidget);
     connect(serviceListWidget, &KServiceListWidget::changed, this, &FileTypeDetails::changed);
+    connect(serviceListWidget, &KServiceListWidget::multiApply, this, &FileTypeDetails::multiApply);
     firstLayout->addWidget(serviceListWidget, 5);
 
     // Second tab - Embedding
@@ -160,6 +161,7 @@ FileTypeDetails::FileTypeDetails(QWidget *parent)
     embedServiceListWidget = new KServiceListWidget(KServiceListWidget::SERVICELIST_SERVICES, secondWidget);
     //  embedServiceListWidget->setMinimumHeight( serviceListWidget->sizeHint().height() );
     connect(embedServiceListWidget, &KServiceListWidget::changed, this, &FileTypeDetails::changed);
+    connect(embedServiceListWidget, &KServiceListWidget::multiApply, this, &FileTypeDetails::multiApply);
     secondLayout->addWidget(embedServiceListWidget);
 
     m_tabWidget->addTab(firstWidget, i18n("&General"));
@@ -359,4 +361,10 @@ void FileTypeDetails::refresh()
     // Called when ksycoca has been updated -> refresh data, then widgets
     m_mimeTypeData->refresh();
     setMimeTypeData(m_mimeTypeData, m_item);
+}
+
+void FileTypeDetails::allowMultiApply(bool allow)
+{
+    serviceListWidget->allowMultiApply(allow);
+    embedServiceListWidget->allowMultiApply(allow);
 }
