@@ -27,7 +27,6 @@ set(libfiletypes_SRCS
 set(kcm_filetypes_SRCS filetypesview.cpp ${libfiletypes_SRCS})
 
 kcoreaddons_add_plugin(kcm_filetypes SOURCES ${kcm_filetypes_SRCS} INSTALL_NAMESPACE "plasma/kcms/systemsettings_qwidgets")
-kcoreaddons_desktop_to_json(kcm_filetypes filetypes.desktop)
 
 target_link_libraries(kcm_filetypes
     KF5::ConfigWidgets
@@ -59,4 +58,5 @@ install(TARGETS keditfiletype DESTINATION ${KDE_INSTALL_FULL_BINDIR})
 
 ########### install files ###############
 
+install( FILES kcm_filetypes.desktop DESTINATION ${KDE_INSTALL_APPDIR} )
 install( PROGRAMS org.kde.keditfiletype.desktop DESTINATION ${KDE_INSTALL_APPDIR} )

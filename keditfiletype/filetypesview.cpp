@@ -32,7 +32,7 @@
 #include "filetypedetails.h"
 #include "newtypedlg.h"
 
-K_PLUGIN_CLASS_WITH_JSON(FileTypesView, "filetypes.json")
+K_PLUGIN_CLASS_WITH_JSON(FileTypesView, "kcm_filetypes.json")
 
 FileTypesView::FileTypesView(QWidget *parent, const QVariantList &)
     : KCModule(parent)
