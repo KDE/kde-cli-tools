@@ -1,10 +1,13 @@
 {
     "KPlugin": {
         "Description": "Configure file associations",
+        "Description[az]": "Fayl bağlantılarını tənzimləyin",
         "Description[ca@valencia]": "Configura les associacions de fitxer",
         "Description[ca]": "Configura les associacions de fitxers",
         "Description[es]": "Configurar las asociaciones de archivos",
+        "Description[fr]": "Configurer les associations de fichiers",
         "Description[nl]": "Hier kunt u de bestandsassociaties instellen",
+        "Description[sl]": "Nastavi datotečne asociacije",
         "Description[sv]": "Anpassa filbindningar",
         "Description[uk]": "Налаштування прив’язки файлів",
         "Description[x-test]": "xxConfigure file associationsxx",
