@@ -34,8 +34,8 @@ int main(int argc, char **argv)
     }
     KIO::CommandLauncherJob *job = nullptr;
     int ret = 0;
-    if (!QStandardPaths::findExecutable("systemsettings5").isEmpty()) {
-        job = new KIO::CommandLauncherJob(QStringLiteral("systemsettings5"), {moduleName});
+    if (!QStandardPaths::findExecutable("systemsettings").isEmpty()) {
+        job = new KIO::CommandLauncherJob(QStringLiteral("systemsettings"), {moduleName});
         job->setDesktopName(QStringLiteral("org.kde.systemsettings"));
     } else if (!QStandardPaths::findExecutable("plasma-settings").isEmpty()) {
         job = new KIO::CommandLauncherJob(QStringLiteral("plasma-settings"), {"-m", moduleName});
