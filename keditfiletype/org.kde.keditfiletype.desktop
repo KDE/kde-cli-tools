@@ -1,8 +1,13 @@
 [Desktop Entry]
 Name=File Type Editor
+Name[ca]=Editor dels tipus de fitxers
+Name[es]=Editor de tipo de archivo
+Name[nl]=Bewerker van bestandstype
+Name[uk]=Редактор типів файлів
+Name[x-test]=xxFile Type Editorxx
 GenericName=File Type Editor
 GenericName[az]=Fayl növü redaktoru
-GenericName[ca]=Editor per als tipus de fitxers
+GenericName[ca]=Editor dels tipus de fitxers
 GenericName[ca@valencia]=Editor per als tipus de fitxer
 GenericName[cs]=Editor typu souboru
 GenericName[da]=Redigering af filtyper
