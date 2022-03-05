@@ -2,6 +2,7 @@
 Name=File Type Editor
 Name[az]=Fayl növü redaktoru
 Name[ca]=Editor dels tipus de fitxers
+Name[cs]=Editor typu souboru
 Name[en_GB]=File Type Editor
 Name[es]=Editor de tipo de archivo
 Name[eu]=Fitxategi-mota editorea
@@ -11,6 +12,7 @@ Name[it]=Editor dei tipi di file
 Name[ko]=파일 형식 편집기
 Name[nl]=Bewerker van bestandstype
 Name[pl]=Edytor rodzaju pliku
+Name[pt_BR]=Editor de tipo de arquivo
 Name[ru]=Редактор типов файлов
 Name[sl]=Urejevalnik vrst datotek
 Name[sv]=Filtypeditor
