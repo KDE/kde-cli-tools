@@ -2,6 +2,7 @@
 Name=File Type Editor
 Name[az]=Fayl növü redaktoru
 Name[ca]=Editor dels tipus de fitxers
+Name[ca@valencia]=Editor dels tipus de fitxers
 Name[cs]=Editor typu souboru
 Name[de]=Dateityp-Editor
 Name[en_GB]=File Type Editor
@@ -23,7 +24,7 @@ Name[x-test]=xxFile Type Editorxx
 GenericName=File Type Editor
 GenericName[az]=Fayl növü redaktoru
 GenericName[ca]=Editor dels tipus de fitxers
-GenericName[ca@valencia]=Editor per als tipus de fitxer
+GenericName[ca@valencia]=Editor dels tipus de fitxers
 GenericName[cs]=Editor typu souboru
 GenericName[da]=Redigering af filtyper
 GenericName[de]=Dateityp-Editor
