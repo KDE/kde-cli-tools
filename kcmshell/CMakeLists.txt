@@ -11,7 +11,6 @@ target_link_libraries(kcmshell5
    KF5::I18n
    KF5::WindowSystem
    KF5::Activities
-   KF5::QuickAddons
    PW::KWorkspace
 )
 

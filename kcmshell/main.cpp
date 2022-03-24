@@ -28,7 +28,6 @@
 #include <KCModuleProxy>
 #include <KLocalizedString>
 #include <KPluginMetaData>
-#include <KQuickAddons/QtQuickSettings>
 #include <KServiceTypeTrader>
 #include <KStartupInfo>
 #include <kworkspace.h>
@@ -174,7 +173,6 @@ int main(int _argc, char *_argv[])
         qunsetenv("QT_QPA_PLATFORM");
     }
     KLocalizedString::setApplicationDomain("kcmshell5");
-    KQuickAddons::QtQuickSettings::init();
 
     app.setAttribute(Qt::AA_UseHighDpiPixmaps, true);
 
