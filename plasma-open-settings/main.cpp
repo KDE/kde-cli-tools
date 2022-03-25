@@ -32,16 +32,27 @@ int main(int argc, char **argv)
     if (moduleName.startsWith('/')) {
         moduleName = moduleName.mid(1);
     }
+
+    QString args;
+    if (int idx = moduleName.indexOf('/'); idx > 0) {
+        args = moduleName.mid(idx + 1);
+        moduleName = moduleName.left(idx);
+    } else {
+        args = url.path();
+        args = args.mid(1);
+    }
+
     KIO::CommandLauncherJob *job = nullptr;
     int ret = 0;
     if (!QStandardPaths::findExecutable("systemsettings").isEmpty()) {
-        job = new KIO::CommandLauncherJob(QStringLiteral("systemsettings"), {moduleName});
+        job = new KIO::CommandLauncherJob(QStringLiteral("systemsettings"), {moduleName, QStringLiteral("--args"), args});
         job->setDesktopName(QStringLiteral("org.kde.systemsettings"));
     } else if (!QStandardPaths::findExecutable("plasma-settings").isEmpty()) {
+        // TODO needs --args support in plasma-settings
         job = new KIO::CommandLauncherJob(QStringLiteral("plasma-settings"), {"-m", moduleName});
         job->setDesktopName(QStringLiteral("org.kde.plasma.settings"));
     } else if (!QStandardPaths::findExecutable("kcmshell5").isEmpty()) {
-        job = new KIO::CommandLauncherJob(QStringLiteral("kcmshell5"), {moduleName});
+        job = new KIO::CommandLauncherJob(QStringLiteral("kcmshell5"), {moduleName, QStringLiteral("--args"), args});
     } else if (!QStandardPaths::findExecutable("kdialog").isEmpty()) {
         job = new KIO::CommandLauncherJob(QStringLiteral("kdialog"), {"--error", i18n("Could not open: %1", moduleName)});
         ret = 1;
