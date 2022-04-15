@@ -23,6 +23,7 @@
         "Description[tr]": "Dosya ilişkilendirmelerini yapılandır",
         "Description[uk]": "Налаштування прив’язки файлів",
         "Description[x-test]": "xxConfigure file associationsxx",
+        "Description[zh_CN]": "配置文件关联",
         "Icon": "preferences-desktop-filetype-association",
         "Name": "File Associations",
         "Name[af]": "Lêer Assosiasies",
