@@ -33,6 +33,7 @@ target_link_libraries(kcm_filetypes
     KF5::IconThemes
     KF5::I18n
     KF5::KIOWidgets # KOpenWithDialog, KBuildSycocaProgressDialog
+    KF5::Parts
     Qt::DBus
 )
 
@@ -50,6 +51,7 @@ target_link_libraries(keditfiletype
     KF5::WindowSystem
     KF5::I18n
     KF5::Service
+    KF5::Parts
     Qt::DBus
 )
 

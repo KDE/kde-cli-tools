@@ -12,6 +12,7 @@ add_test(NAME filetypestest COMMAND filetypestest)
 target_link_libraries(filetypestest
    KF5::KIOCore
    KF5::Service
+   KF5::Parts
    Qt::Core
    Qt::Gui
    Qt::Test

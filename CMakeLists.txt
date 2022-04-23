@@ -53,6 +53,7 @@ find_package(KF5 ${KF5_MIN_VERSION} REQUIRED COMPONENTS
     Service
     WindowSystem
     Activities
+    Parts
     OPTIONAL_COMPONENTS
     Su
     QUIET

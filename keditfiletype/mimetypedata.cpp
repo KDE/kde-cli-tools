@@ -8,11 +8,11 @@
 #include "mimetypedata.h"
 #include "mimetypewriter.h"
 #include <KApplicationTrader>
+#include <KParts/PartLoader>
 #include <QFileInfo>
 #include <QStandardPaths>
 #include <QXmlStreamReader>
 #include <kconfiggroup.h>
-#include <kmimetypetrader.h>
 #include <kprotocolmanager.h>
 #include <kservice.h>
 #include <ksharedconfig.h>
@@ -222,9 +222,9 @@ QStringList MimeTypeData::getAppOffers() const
 QStringList MimeTypeData::getPartOffers() const
 {
     QStringList servicesIds;
-    const KService::List partOfferList = KMimeTypeTrader::self()->query(name(), QStringLiteral("KParts/ReadOnlyPart"));
-    for (const auto &servicePtr : partOfferList) {
-        servicesIds.append(servicePtr->storageId());
+    const auto partOfferList = KParts::PartLoader::partsForMimeType(name());
+    for (const auto &metaData : partOfferList) {
+        servicesIds.append(metaData.pluginId());
     }
     return servicesIds;
 }
