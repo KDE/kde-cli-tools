@@ -24,6 +24,7 @@ include(CheckIncludeFiles)
 include(CheckSymbolExists)
 include(ECMOptionalAddSubdirectory)
 include(KDEClangFormat)
+include(ECMDeprecationSettings)
 
 include(KDEGitCommitHooks)
 
@@ -67,8 +68,12 @@ find_package(X11)
 find_package(XCB COMPONENTS XCB)
 if(X11_FOUND AND XCB_XCB_FOUND)
   set(HAVE_X11 1)
-  find_package(Qt5X11Extras ${QT_MIN_VERSION} CONFIG)
+  if (QT_MAJOR_VERSION EQUAL "5")
+    find_package(Qt5X11Extras ${QT_MIN_VERSION} CONFIG)
+  endif()
 endif()
+
+ecm_set_disabled_deprecation_versions(QT 5.15.2)
 
 include_directories(${CMAKE_CURRENT_BINARY_DIR})
 

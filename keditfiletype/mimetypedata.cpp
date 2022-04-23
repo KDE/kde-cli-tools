@@ -117,7 +117,7 @@ void MimeTypeData::initFromQMimeType()
             }
 
             while (xml.readNextStartElement()) {
-                const QStringRef tag = xml.name();
+                const auto tag = xml.name();
                 if (tag == QLatin1String("icon")) {
                     m_userSpecifiedIcon = xml.attributes().value(QLatin1String("name")).toString();
                 }

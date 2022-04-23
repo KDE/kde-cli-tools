@@ -7,7 +7,7 @@
 #ifndef MIMETYPEWRITER_H
 #define MIMETYPEWRITER_H
 
-class QStringList;
+#include <QtContainerFwd>
 class QString;
 class MimeTypeWriterPrivate;
 

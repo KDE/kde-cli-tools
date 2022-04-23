@@ -8,9 +8,9 @@
 #define _NEWTYPEDLG_H
 
 #include <QDialog>
+#include <QtContainerFwd>
 
 class QDialogButtonBox;
-class QStringList;
 class KLineEdit;
 class QComboBox;
 
