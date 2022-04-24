@@ -28,7 +28,9 @@
 #include <KCModuleProxy>
 #include <KLocalizedString>
 #include <KPluginMetaData>
+#if KCOREADDONS_BUILD_DEPRECATED_SINCE(5, 92)
 #include <KServiceTypeTrader>
+#endif
 #include <KStartupInfo>
 #include <kworkspace.h>
 
@@ -43,7 +45,7 @@ inline QVector<KPluginMetaData> findKCMsMetaData()
     metaDataList << KPluginMetaData::findPlugins(QStringLiteral("plasma/kcms/kinfocenter"));
     return metaDataList;
 }
-
+#if KCOREADDONS_BUILD_DEPRECATED_SINCE(5, 92)
 static KService::List listModules()
 {
     // First condition is what systemsettings does, second what kinfocenter does, make sure this is kept in sync
@@ -64,6 +66,7 @@ static KService::List listModules()
 
     return services;
 }
+#endif
 
 static KService::Ptr locateModule(const QString &module)
 {
@@ -216,12 +219,13 @@ int main(int _argc, char *_argv[])
         std::cout << i18n("The following modules are available:").toLocal8Bit().constData() << '\n';
 
         QVector<KPluginMetaData> plugins = findKCMsMetaData();
+#if KCOREADDONS_BUILD_DEPRECATED_SINCE(5, 92)
         const KService::List services = listModules();
         for (const auto &service : services) {
             const QString file = QStandardPaths::locate(QStandardPaths::GenericDataLocation, QLatin1String("/kservices5/") + service->entryPath());
             plugins << KPluginMetaData::fromDesktopFile(file);
         }
-
+#endif
         int maxLen = 0;
 
         for (const auto &plugin : plugins) {
