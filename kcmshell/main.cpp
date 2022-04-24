@@ -173,9 +173,9 @@ int main(int _argc, char *_argv[])
         qunsetenv("QT_QPA_PLATFORM");
     }
     KLocalizedString::setApplicationDomain("kcmshell5");
-
+#if QT_VERSION < QT_VERSION_CHECK(6, 0, 0)
     app.setAttribute(Qt::AA_UseHighDpiPixmaps, true);
-
+#endif
     KAboutData aboutData(QStringLiteral("kcmshell5"), //
                          i18n("System Settings Module"),
                          QLatin1String(PROJECT_VERSION),
