@@ -66,7 +66,6 @@ static KService::List listModules()
 
     return services;
 }
-#endif
 
 static KService::Ptr locateModule(const QString &module)
 {
@@ -93,6 +92,7 @@ static KService::Ptr locateModule(const QString &module)
 
     return service;
 }
+#endif
 
 bool KCMShell::isRunning()
 {
@@ -277,6 +277,7 @@ int main(int _argc, char *_argv[])
             if (foundKCM) {
                 continue;
             }
+#if KCOREADDONS_BUILD_DEPRECATED_SINCE(5, 92)
             KService::Ptr service = locateModule(arg);
             if (!service) {
                 service = locateModule(QStringLiteral("kcm_") + arg);
@@ -297,6 +298,7 @@ int main(int _argc, char *_argv[])
             } else {
                 std::cerr << i18n("Could not find module '%1'. See kcmshell5 --list for the full list of modules.", arg).toLocal8Bit().constData() << std::endl;
             }
+#endif
         }
     }
 
