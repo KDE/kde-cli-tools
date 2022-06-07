@@ -2,7 +2,7 @@
     "KPlugin": {
         "Description": "Configure file associations",
         "Description[az]": "Fayl bağlantılarını tənzimləyin",
-        "Description[ca@valencia]": "Configura les associacions de fitxer",
+        "Description[ca@valencia]": "Configura les associacions de ficher",
         "Description[ca]": "Configura les associacions de fitxers",
         "Description[cs]": "Nastavení asociací souborů",
         "Description[de]": "Dateizuordnungen einrichten",
@@ -40,7 +40,7 @@
         "Name[bn_IN]": "ফাইল-অ্যাপ্লিকেশন জুটি",
         "Name[br]": "Kevreañ restroù",
         "Name[bs]": "Pridruženja datotekema",
-        "Name[ca@valencia]": "Associacions de fitxer",
+        "Name[ca@valencia]": "Associacions de ficher",
         "Name[ca]": "Associacions de fitxers",
         "Name[cs]": "Asociace souborů",
         "Name[csb]": "Pòwiązania lopków",
