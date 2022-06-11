@@ -16,7 +16,7 @@
 
 #include <sys/resource.h>
 #include <sys/time.h>
-#if defined(HAVE_SYS_WAIT_H)
+#if HAVE_SYS_WAIT_H
 #include <sys/wait.h>
 #endif
 #if HAVE_SYS_PRCTL_H
