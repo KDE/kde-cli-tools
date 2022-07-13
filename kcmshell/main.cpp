@@ -18,6 +18,7 @@
 #include <QDBusInterface>
 #include <QDBusServiceWatcher>
 #include <QDebug>
+#include <QDir>
 #include <QIcon>
 #include <QRegularExpression>
 #include <QStandardPaths>
@@ -222,8 +223,14 @@ int main(int _argc, char *_argv[])
 #if KCOREADDONS_BUILD_DEPRECATED_SINCE(5, 92)
         const KService::List services = listModules();
         for (const auto &service : services) {
-            const QString file = QStandardPaths::locate(QStandardPaths::GenericDataLocation, QLatin1String("/kservices5/") + service->entryPath());
-            plugins << KPluginMetaData::fromDesktopFile(file);
+            const QString file = QDir::isAbsolutePath(service->entryPath())
+                ? service->entryPath()
+                : QStandardPaths::locate(QStandardPaths::GenericDataLocation, QLatin1String("/kservices5/") + service->entryPath());
+            if (file.isEmpty()) {
+                std::cerr << i18n("Could not find entry %1", service->entryPath()).toLocal8Bit().constData() << '\n';
+            } else {
+                plugins << KPluginMetaData::fromDesktopFile(file);
+            }
         }
 #endif
         int maxLen = 0;
