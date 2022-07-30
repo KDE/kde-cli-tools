@@ -165,10 +165,10 @@ int main(int argc, char *argv[])
     int result = startApp(parser);
 
     if (result == 127) {
-        KMessageBox::sorry(nullptr, i18n("Cannot execute command '%1'.", QString::fromLocal8Bit(command)));
+        KMessageBox::error(nullptr, i18n("Cannot execute command '%1'.", QString::fromLocal8Bit(command)));
     }
     if (result == -2) {
-        KMessageBox::sorry(nullptr, i18n("Cannot execute command '%1'. It contains invalid characters.", QString::fromLocal8Bit(command)));
+        KMessageBox::error(nullptr, i18n("Cannot execute command '%1'. It contains invalid characters.", QString::fromLocal8Bit(command)));
     }
 
     return result;
