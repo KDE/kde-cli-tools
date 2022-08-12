@@ -104,8 +104,6 @@ KStart::KStart()
             job->exec();
             if (job->error()) {
                 qCritical() << job->errorString();
-            } else {
-                std::cout << job->pid() << std::endl;
             }
         }
     } else {
