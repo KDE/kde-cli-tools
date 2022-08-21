@@ -14,7 +14,12 @@
 #include <kio/transferjob.h>
 #ifndef KIOCORE_ONLY
 #include <KIO/ApplicationLauncherJob>
+#include <kio_version.h>
+#if KIO_VERSION >= QT_VERSION_CHECK(5, 98, 0)
+#include <KIO/JobUiDelegateFactory>
+#else
 #include <KIO/JobUiDelegate>
+#endif
 #include <KIO/OpenUrlJob>
 #include <KIO/StatJob>
 #include <KIO/UDSEntry>
@@ -244,7 +249,11 @@ bool ClientApp::kde_open(const QString &url, const QString &mimeType, bool allow
     }
 
     auto *job = new KIO::OpenUrlJob(info.url, mimeType);
+#if KIO_VERSION >= QT_VERSION_CHECK(5, 98, 0)
+    job->setUiDelegate(KIO::createDefaultJobUiDelegate(KJobUiDelegate::AutoHandlingEnabled, nullptr));
+#else
     job->setUiDelegate(new KIO::JobUiDelegate(KJobUiDelegate::AutoHandlingEnabled, nullptr));
+#endif
     job->setRunExecutables(allowExec);
     job->setFollowRedirections(false);
     bool job_had_error = false;
@@ -413,7 +422,11 @@ bool ClientApp::doIt(const QCommandLineParser &parser)
         return kde_open(parser.positionalArguments().at(1), argc == 3 ? parser.positionalArguments().constLast() : QString(), true);
     } else if (command == QLatin1String("appmenu")) {
         auto *job = new KIO::ApplicationLauncherJob();
+#if KIO_VERSION >= QT_VERSION_CHECK(5, 98, 0)
+        job->setUiDelegate(KIO::createDefaultJobUiDelegate(KJobUiDelegate::AutoHandlingEnabled, nullptr));
+#else
         job->setUiDelegate(new KIO::JobUiDelegate(KJobUiDelegate::AutoHandlingEnabled, nullptr));
+#endif
         connect(job, &KJob::result, this, &ClientApp::slotResult);
         job->start();
 
