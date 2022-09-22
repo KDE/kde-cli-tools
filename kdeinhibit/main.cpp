@@ -33,6 +33,9 @@ int main(int argc, char **argv)
     QCommandLineOption colorCorrectOption(QStringLiteral("colorCorrect"), i18n("Inhibit colour correction (night mode)"));
     parser.addOption(colorCorrectOption);
 
+    QCommandLineOption notificationsOption(QStringLiteral("notifications"), i18n("Inhibit notifications (Do not disturb)"));
+    parser.addOption(notificationsOption);
+
     parser.addPositionalArgument(QStringLiteral("command..."), i18n("Command to run"));
 
     parser.addHelpOption();
@@ -74,6 +77,14 @@ int main(int argc, char **argv)
                                                                   QStringLiteral("org.kde.kwin.ColorCorrect"),
                                                                   QStringLiteral("inhibit"));
         // no arguments needed
+        warnOnError(QDBusConnection::sessionBus().call(inhibitCall));
+    }
+    if (parser.isSet(notificationsOption)) {
+        QDBusMessage inhibitCall = QDBusMessage::createMethodCall(QStringLiteral("org.freedesktop.Notifications"),
+                                                                  QStringLiteral("/org/freedesktop/Notifications"),
+                                                                  QStringLiteral("org.freedesktop.Notifications"),
+                                                                  QStringLiteral("Inhibit"));
+        inhibitCall.setArguments({i18nc("Script as in shell script", "Running Script"), command.first(), QVariantMap()});
         warnOnError(QDBusConnection::sessionBus().call(inhibitCall));
     }
 
