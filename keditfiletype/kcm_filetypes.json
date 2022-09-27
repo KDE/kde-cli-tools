@@ -1,5 +1,6 @@
 {
     "KPlugin": {
+        "BugReportUrl": "https://bugs.kde.org/enter_bug.cgi?product=systemsettings&component=kcm_filetypes",
         "Description": "Configure file associations",
         "Description[az]": "Fayl bağlantılarını tənzimləyin",
         "Description[bg]": "Конфигуриране на файлови връзки",
