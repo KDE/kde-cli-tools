@@ -8,7 +8,6 @@
 #include <KIO/CommandLauncherJob>
 #include <KLocalizedString>
 #include <QGuiApplication>
-#include <QProcess>
 #include <QStandardPaths>
 #include <QTextStream>
 #include <QUrl>

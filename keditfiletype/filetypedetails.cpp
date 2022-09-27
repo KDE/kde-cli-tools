@@ -8,16 +8,15 @@
 #include "filetypedetails.h"
 
 // Qt
-#include <QBoxLayout>
 #include <QButtonGroup>
 #include <QCheckBox>
-#include <QDebug>
 #include <QInputDialog>
 #include <QLabel>
-#include <QLayout>
 #include <QListWidget>
+#include <QMimeDatabase>
 #include <QPushButton>
 #include <QRadioButton>
+#include <QVBoxLayout>
 
 // KDE
 #include <kconfig.h>

@@ -9,13 +9,10 @@
 #include "newtypedlg.h"
 
 // Qt
-#include <QBoxLayout>
 #include <QComboBox>
 #include <QDialogButtonBox>
 #include <QFormLayout>
-#include <QFrame>
 #include <QLabel>
-#include <QLayout>
 
 // KDE
 #include <klineedit.h>

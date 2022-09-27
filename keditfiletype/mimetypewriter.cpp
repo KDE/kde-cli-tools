@@ -9,8 +9,6 @@
 #include <QDebug>
 #include <QDir>
 #include <QFile>
-#include <QMimeDatabase>
-#include <QMimeType>
 #include <QStandardPaths>
 #include <QXmlStreamWriter>
 

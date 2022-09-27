@@ -10,11 +10,11 @@
 #include "mimetypewriter.h"
 
 // Qt
-#include <QBoxLayout>
-#include <QLayout>
+#include <QHBoxLayout>
+#include <QMimeDatabase>
 #include <QPushButton>
 #include <QStandardPaths>
-#include <QTimer>
+#include <QVBoxLayout>
 #include <qdbusconnection.h>
 #include <qdbusmessage.h>
 #include <qdebug.h>

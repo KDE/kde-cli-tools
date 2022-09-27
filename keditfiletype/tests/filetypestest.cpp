@@ -13,6 +13,7 @@
 // Qt
 #include <QDir>
 #include <QLoggingCategory>
+#include <QMimeDatabase>
 #include <QProcess>
 #include <QSignalSpy>
 #include <QStandardPaths>

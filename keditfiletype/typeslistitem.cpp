@@ -10,7 +10,6 @@
 #include "typeslistitem.h"
 
 // Qt
-#include <QDebug>
 
 TypesListItem::TypesListItem(QTreeWidget *parent, const QString &major)
     : QTreeWidgetItem(parent)

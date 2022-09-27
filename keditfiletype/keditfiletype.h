@@ -8,8 +8,6 @@
 #define __keditfiletype_h
 
 #include <QDialog>
-#include <QMimeDatabase>
-#include <QMimeType>
 
 class QDialogButtonBox;
 

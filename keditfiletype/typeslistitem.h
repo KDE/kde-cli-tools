@@ -11,7 +11,6 @@
 #include "mimetypedata.h"
 #include <QTreeWidgetItem>
 
-#include <QMimeDatabase>
 #include <QMimeType>
 
 // TODO different subclasses for mimetypes and groups?

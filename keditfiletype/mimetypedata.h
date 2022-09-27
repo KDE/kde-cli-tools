@@ -8,7 +8,6 @@
 #ifndef MIMETYPEDATA_H
 #define MIMETYPEDATA_H
 
-#include <QMimeDatabase>
 #include <QMimeType>
 
 class KConfigGroup;

@@ -10,6 +10,7 @@
 #include <KApplicationTrader>
 #include <KParts/PartLoader>
 #include <QFileInfo>
+#include <QMimeDatabase>
 #include <QStandardPaths>
 #include <QXmlStreamReader>
 #include <kconfiggroup.h>

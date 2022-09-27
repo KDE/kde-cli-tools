@@ -10,11 +10,10 @@
 #include "kservicelistwidget.h"
 
 // Qt
-#include <QBoxLayout>
-#include <QDebug>
-#include <QLayout>
+#include <QHBoxLayout>
 #include <QPushButton>
 #include <QStandardPaths>
+#include <QVBoxLayout>
 
 // KDE
 #include <klocalizedstring.h>

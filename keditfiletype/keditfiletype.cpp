@@ -10,15 +10,15 @@
 
 // Qt
 #include <QApplication>
-#include <QBoxLayout>
 #include <QCommandLineOption>
 #include <QCommandLineParser>
 #include <QDBusConnection>
 #include <QDBusMessage>
 #include <QDebug>
 #include <QDialogButtonBox>
-#include <QFile>
+#include <QMimeDatabase>
 #include <QPushButton>
+#include <QVBoxLayout>
 
 // KDE
 #include <kaboutdata.h>

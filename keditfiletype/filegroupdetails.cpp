@@ -9,8 +9,8 @@
 
 #include <QButtonGroup>
 #include <QGroupBox>
-#include <QLayout>
 #include <QRadioButton>
+#include <QVBoxLayout>
 
 #include <klocalizedstring.h>
 
