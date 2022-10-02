@@ -1,0 +1,222 @@
+# translation of kstart.po to Esperanto
+# Esperantaj mesaĝoj por "kstart"
+# Copyright (C) 1998, 2004, 2007 Free Software Foundation, Inc.
+#
+#
+# Wolfram Diestel <wolfram@steloj.de>, 1998.
+# Matthias Peick <matthias@peick.de>, 2004.
+# Stéphane Fillod <f8cfe@free.fr>, 2007.
+# Cindy McKee <cfmckee@gmail.com>, 2007.
+# Michael Moroni <michael.moroni@mailoo.org>, 2012.
+msgid ""
+msgstr ""
+"Project-Id-Version: kstart\n"
+"Report-Msgid-Bugs-To: https://bugs.kde.org\n"
+"POT-Creation-Date: 2022-08-17 00:46+0000\n"
+"PO-Revision-Date: 2012-05-28 20:30+0200\n"
+"Last-Translator: Michael Moroni <michael.moroni@mailoo.org>\n"
+"Language-Team: Esperanto <kde-i18n-doc@kde.org>\n"
+"Language: eo\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: Lokalize 1.4\n"
+"Plural-Forms: nplurals=2; plural=n != 1;\n"
+
+#, kde-format
+msgctxt "NAME OF TRANSLATORS"
+msgid "Your names"
+msgstr "Wolfram Diestel,Steffen Pietsch, Michael Moroni"
+
+#, kde-format
+msgctxt "EMAIL OF TRANSLATORS"
+msgid "Your emails"
+msgstr ""
+"wolfram@steloj.de, steffen.pietsch@berlinonline.de, michael.moroni@mailoo.org"
+
+#: kstart.cpp:310
+#, kde-format
+msgid "KStart"
+msgstr "KStart"
+
+#: kstart.cpp:312
+#, kde-format
+msgid ""
+"Utility to launch applications with special window properties \n"
+"such as iconified, maximized, a certain virtual desktop, a special "
+"decoration\n"
+"and so on."
+msgstr ""
+"Utilaĵo por lanĉi aplikaĵojn kun apartaj ecoj de fenestro\n"
+"kiel ekzemple piktogramigite, maksimumigite, sur kelka labortablo, kun "
+"aparta ornamo\n"
+"kaj tiel plu."
+
+#: kstart.cpp:317
+#, kde-format
+msgid "(C) 1997-2000 Matthias Ettrich (ettrich@kde.org)"
+msgstr "(C) 1997-2000 Matthias ETTRICH (ettrich@kde.org)"
+
+#: kstart.cpp:319
+#, kde-format
+msgid "Matthias Ettrich"
+msgstr "Matthias ETTRICH"
+
+#: kstart.cpp:320
+#, kde-format
+msgid "David Faure"
+msgstr "David FAURE"
+
+#: kstart.cpp:321
+#, kde-format
+msgid "Richard J. Moore"
+msgstr "Richard J. MOORE"
+
+#: kstart.cpp:326
+#, kde-format
+msgid "Command to execute"
+msgstr "Rulenda komando"
+
+#: kstart.cpp:330
+#, fuzzy, kde-format
+#| msgid ""
+#| "Alternative to <command>: desktop file to start. D-Bus service will be "
+#| "printed to stdout"
+msgid ""
+"Alternative to <command>: desktop file path to start. D-Bus service will be "
+"printed to stdout. Deprecated: use --application"
+msgstr ""
+"Alternativo al <command>: startigenda labortabla dosiero. Servo D-Bus "
+"estoseligota al stdout"
+
+#: kstart.cpp:333
+#, fuzzy, kde-format
+#| msgid ""
+#| "Alternative to <command>: desktop file to start. D-Bus service will be "
+#| "printed to stdout"
+msgid "Alternative to <command>: desktop file to start."
+msgstr ""
+"Alternativo al <command>: startigenda labortabla dosiero. Servo D-Bus "
+"estoseligota al stdout"
+
+#: kstart.cpp:336
+#, kde-format
+msgid "Optional URL to pass <desktopfile>, when using --service"
+msgstr "Opcia URL por transdoni <desktopfile>, kiam uzanta --service"
+
+#: kstart.cpp:339
+#, kde-format
+msgid "A regular expression matching the window title"
+msgstr "Regula esprimo, kiu kongruas kun la titolo de la fenestro"
+
+#: kstart.cpp:341
+#, kde-format
+msgid ""
+"A string matching the window class (WM_CLASS property)\n"
+"The window class can be found out by running\n"
+"'xprop | grep WM_CLASS' and clicking on a window\n"
+"(use either both parts separated by a space or only the right part).\n"
+"NOTE: If you specify neither window title nor window class,\n"
+"then the very first window to appear will be taken;\n"
+"omitting both options is NOT recommended."
+msgstr ""
+"Ĉeno kiu kongruas kun la klaso de la fenestro (eco WM_CLASS)\n"
+"Oni povas eltrovi la klason de la fenestro per plenumado de\n"
+"'xprop | grep WM_CLASS' kaj alklako sur fenestro\n"
+"(uzu aŭ ambaŭ partojn apartigitajn per spaceto aŭ nur la dekstran parton).\n"
+"NOTO: Se vi donas nek la titolon de la fenestro, nek la klason de la "
+"fenestro,\n"
+"tiam la unua aperanta fenestro estos uzata;\n"
+"Ellaso de ambaŭ opcioj NE estas rekomendita."
+
+#: kstart.cpp:350
+#, kde-format
+msgid "Desktop on which to make the window appear"
+msgstr "Labortablo, sur kiu aperigi la fenestron"
+
+#: kstart.cpp:352
+#, kde-format
+msgid ""
+"Make the window appear on the desktop that was active\n"
+"when starting the application"
+msgstr ""
+"Aperigi la fenestron sur la labortablo, kiu estis aktiva\n"
+"kiam startiganta la aplikaĵon"
+
+#: kstart.cpp:353
+#, kde-format
+msgid "Make the window appear on all desktops"
+msgstr "Aperigi la fenestron sur ĉiuj labortabloj"
+
+#: kstart.cpp:354
+#, kde-format
+msgid "Iconify the window"
+msgstr "Piktogramigi la fenestron"
+
+#: kstart.cpp:355
+#, kde-format
+msgid "Maximize the window"
+msgstr "Maksimumigi la fenestron"
+
+#: kstart.cpp:356
+#, kde-format
+msgid "Maximize the window vertically"
+msgstr "Vertikle maksimumigi la fenestron"
+
+#: kstart.cpp:357
+#, kde-format
+msgid "Maximize the window horizontally"
+msgstr "Horizontale maksimumigi la fenestron"
+
+#: kstart.cpp:358
+#, kde-format
+msgid "Show window fullscreen"
+msgstr "Tutekrane montri la fenestron"
+
+#: kstart.cpp:360
+#, kde-format
+msgid ""
+"The window type: Normal, Desktop, Dock, Toolbar, \n"
+"Menu, Dialog, TopMenu or Override"
+msgstr ""
+"La speco de fenestro: Normal (Normala), \n"
+"Desktop (Labortablo), Dock (Doko), \n"
+"Toolbar (Ilobreto), Menu (Menuo), Dialog (Dialogo), \n"
+"TopMenu (SupraMenuo) aŭ Override (Neornamita)"
+
+#: kstart.cpp:363
+#, kde-format
+msgid ""
+"Jump to the window even if it is started on a \n"
+"different virtual desktop"
+msgstr ""
+"Salti al la fenestro ankaŭ se ĝi lanĉiĝis sur\n"
+"alia labortablo"
+
+#: kstart.cpp:366
+#, kde-format
+msgid "Try to keep the window above other windows"
+msgstr "Klopodi manteni la fenestron super ĉiuj aliaj fenestroj"
+
+#: kstart.cpp:368
+#, kde-format
+msgid "Try to keep the window below other windows"
+msgstr "Klopodi manteni la fenestron sub ĉiuj aliaj fenestroj"
+
+#: kstart.cpp:369
+#, kde-format
+msgid "The window does not get an entry in the taskbar"
+msgstr "La fenestro ne obtenas eron en la taskbreto"
+
+#: kstart.cpp:370
+#, kde-format
+msgid "The window does not get an entry on the pager"
+msgstr "La fenestro ne obtenas eron en la paĝilo"
+
+#: kstart.cpp:384
+#, kde-format
+msgid "No command specified"
+msgstr "Neniu specifita komando"
+
+#~ msgid "The window is sent to the system tray in Kicker"
+#~ msgstr "La fenestro estas sendita al la sistempleto en Kicker"

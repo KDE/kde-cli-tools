@@ -1,0 +1,206 @@
+# Copyright (C) YEAR This_file_is_part_of_KDE
+# This file is distributed under the same license as the PACKAGE package.
+#
+# Zlatko Popov <zlatkopopov@fsa-bg.org>, 2006, 2007.
+# Yasen Pramatarov <yasen@lindeas.com>, 2009, 2011.
+# Mincho Kondarev <mkondarev@yahoo.de>, 2022.
+msgid ""
+msgstr ""
+"Project-Id-Version: kstart\n"
+"Report-Msgid-Bugs-To: https://bugs.kde.org\n"
+"POT-Creation-Date: 2022-08-17 00:46+0000\n"
+"PO-Revision-Date: 2022-05-20 19:12+0200\n"
+"Last-Translator: Mincho Kondarev <mkondarev@yahoo.de>\n"
+"Language-Team: Bulgarian <dict@fsa-bg.org>\n"
+"Language: bg\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: Lokalize 22.04.0\n"
+"Plural-Forms: nplurals=2; plural=n != 1;\n"
+
+#, kde-format
+msgctxt "NAME OF TRANSLATORS"
+msgid "Your names"
+msgstr "Ясен Праматаров"
+
+#, kde-format
+msgctxt "EMAIL OF TRANSLATORS"
+msgid "Your emails"
+msgstr "yasen@lindeas.com"
+
+#: kstart.cpp:310
+#, kde-format
+msgid "KStart"
+msgstr "KStart"
+
+#: kstart.cpp:312
+#, kde-format
+msgid ""
+"Utility to launch applications with special window properties \n"
+"such as iconified, maximized, a certain virtual desktop, a special "
+"decoration\n"
+"and so on."
+msgstr ""
+"Помощна програма за стартиране на приложения със специални свойства на "
+"прозореца\n"
+"като максимизиран, в икона, определен виртуален работен плот, специална "
+"декорация\n"
+"и така нататък."
+
+#: kstart.cpp:317
+#, kde-format
+msgid "(C) 1997-2000 Matthias Ettrich (ettrich@kde.org)"
+msgstr "(C) 1997-2000 Matthias Ettrich (ettrich@kde.org)"
+
+#: kstart.cpp:319
+#, kde-format
+msgid "Matthias Ettrich"
+msgstr "Matthias Ettrich"
+
+#: kstart.cpp:320
+#, kde-format
+msgid "David Faure"
+msgstr "David Faure"
+
+#: kstart.cpp:321
+#, kde-format
+msgid "Richard J. Moore"
+msgstr "Richard J. Moore"
+
+#: kstart.cpp:326
+#, kde-format
+msgid "Command to execute"
+msgstr "Команда за изпълнение"
+
+#: kstart.cpp:330
+#, kde-format
+msgid ""
+"Alternative to <command>: desktop file path to start. D-Bus service will be "
+"printed to stdout. Deprecated: use --application"
+msgstr ""
+"Алтернатива на <command>: път към desktop файла за стартиране. D-Bus "
+"услугата ще бъде отпечатана в stdout. Изоставено: използвайте --application"
+
+#: kstart.cpp:333
+#, kde-format
+msgid "Alternative to <command>: desktop file to start."
+msgstr "Алтернатива на <command>:  desktop файл за стартиране."
+
+#: kstart.cpp:336
+#, kde-format
+msgid "Optional URL to pass <desktopfile>, when using --service"
+msgstr ""
+"Опционални URL за предаване на <desktopfile>, когато се използва --service"
+
+#: kstart.cpp:339
+#, kde-format
+msgid "A regular expression matching the window title"
+msgstr "Регулярен израз за заглавието на прозореца"
+
+#: kstart.cpp:341
+#, kde-format
+msgid ""
+"A string matching the window class (WM_CLASS property)\n"
+"The window class can be found out by running\n"
+"'xprop | grep WM_CLASS' and clicking on a window\n"
+"(use either both parts separated by a space or only the right part).\n"
+"NOTE: If you specify neither window title nor window class,\n"
+"then the very first window to appear will be taken;\n"
+"omitting both options is NOT recommended."
+msgstr ""
+"Низ, съответстващ на класа на прозореца (свойство WM_CLASS)\n"
+"Класът на прозореца може да бъде открит, като стартирате\n"
+"'xprop | grep WM_CLASS 'и щракване върху прозорец\n"
+"(използвайте или двете части, разделени с интервал, или само дясната част).\n"
+"ЗАБЕЛЕЖКА: Ако не посочите нито заглавие на прозорец, нито клас на "
+"прозорец,\n"
+"тогава ще се вземе първият прозорец, който ще се появи;\n"
+"пропускането на двете опции НЕ се препоръчва."
+
+#: kstart.cpp:350
+#, kde-format
+msgid "Desktop on which to make the window appear"
+msgstr "Работен плот, на който да се появи прозорецът"
+
+#: kstart.cpp:352
+#, kde-format
+msgid ""
+"Make the window appear on the desktop that was active\n"
+"when starting the application"
+msgstr ""
+"Показване на прозореца на работния плот, който е бил активен\n"
+"при стартиране на приложението"
+
+#: kstart.cpp:353
+#, kde-format
+msgid "Make the window appear on all desktops"
+msgstr "Прозорецът да е на всички работни плотове"
+
+#: kstart.cpp:354
+#, kde-format
+msgid "Iconify the window"
+msgstr "Свиване на прозореца в икона"
+
+#: kstart.cpp:355
+#, kde-format
+msgid "Maximize the window"
+msgstr "Максимизиране на прозореца"
+
+#: kstart.cpp:356
+#, kde-format
+msgid "Maximize the window vertically"
+msgstr "Максимизиране на прозореца вертикално"
+
+#: kstart.cpp:357
+#, kde-format
+msgid "Maximize the window horizontally"
+msgstr "Максимизиране на прозореца хоризонтално"
+
+#: kstart.cpp:358
+#, kde-format
+msgid "Show window fullscreen"
+msgstr "Прозорецът на цял екран"
+
+#: kstart.cpp:360
+#, kde-format
+msgid ""
+"The window type: Normal, Desktop, Dock, Toolbar, \n"
+"Menu, Dialog, TopMenu or Override"
+msgstr ""
+"Типът на прозореца: Нормален, Работен плот, Док, Лента с инструменти,\n"
+"Меню, Диалог, TopMenu или Замяна"
+
+#: kstart.cpp:363
+#, kde-format
+msgid ""
+"Jump to the window even if it is started on a \n"
+"different virtual desktop"
+msgstr ""
+"Преминаване към прозореца, дори ако е стартиран на\n"
+"различен виртуален работен плот"
+
+#: kstart.cpp:366
+#, kde-format
+msgid "Try to keep the window above other windows"
+msgstr "Прозорецът да се държи над останалите прозорци"
+
+#: kstart.cpp:368
+#, kde-format
+msgid "Try to keep the window below other windows"
+msgstr "Прозорецът да се държи под останалите прозорци"
+
+#: kstart.cpp:369
+#, kde-format
+msgid "The window does not get an entry in the taskbar"
+msgstr "Прозорецът не получава запис за лентата със задачи"
+
+#: kstart.cpp:370
+#, kde-format
+msgid "The window does not get an entry on the pager"
+msgstr "Прозорецът не получава запис в списъка с програми"
+
+#: kstart.cpp:384
+#, kde-format
+msgid "No command specified"
+msgstr "Не е указана команда"

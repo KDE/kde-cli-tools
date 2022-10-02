@@ -1,0 +1,257 @@
+# Copyright (C) YEAR This file is copyright:
+# This file is distributed under the same license as the kde-cli-tools package.
+#
+# enolp <enolp@softastur.org>, 2019, 2020, 2021.
+msgid ""
+msgstr ""
+"Project-Id-Version: kde-cli-tools\n"
+"Report-Msgid-Bugs-To: https://bugs.kde.org\n"
+"POT-Creation-Date: 2021-08-06 00:18+0000\n"
+"PO-Revision-Date: 2021-01-14 19:06+0100\n"
+"Last-Translator: enolp <enolp@softastur.org>\n"
+"Language-Team: Asturian <alministradores@softastur.org>\n"
+"Language: ast\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=n != 1;\n"
+"X-Generator: Lokalize 20.12.1\n"
+
+#, kde-format
+msgctxt "NAME OF TRANSLATORS"
+msgid "Your names"
+msgstr "Softastur"
+
+#, kde-format
+msgctxt "EMAIL OF TRANSLATORS"
+msgid "Your emails"
+msgstr "alministradores@softastur.org"
+
+#: kdesu.cpp:105
+#, kde-format
+msgid "KDE su"
+msgstr "KDE su"
+
+#: kdesu.cpp:107
+#, kde-format
+msgid "Runs a program with elevated privileges."
+msgstr "Executa un programa con privilexos alzaos."
+
+#: kdesu.cpp:109
+#, kde-format
+msgid "Copyright (c) 1998-2000 Geert Jansen, Pietro Iglio"
+msgstr "Copyright (c) 1998-2000 Geert Jansen y Pietro Iglio"
+
+#: kdesu.cpp:110
+#, kde-format
+msgid "Geert Jansen"
+msgstr "Geert Jansen"
+
+#: kdesu.cpp:110
+#, kde-format
+msgid "Maintainer"
+msgstr "Caltenedor"
+
+#: kdesu.cpp:111
+#, kde-format
+msgid "Pietro Iglio"
+msgstr "Pietro Iglio"
+
+#: kdesu.cpp:111
+#, kde-format
+msgid "Original author"
+msgstr "Autor orixinal"
+
+#: kdesu.cpp:120
+#, kde-format
+msgid "Specifies the command to run as separate arguments"
+msgstr "Especifica'l comandu a executar como argumentos separtaos"
+
+#: kdesu.cpp:121
+#, kde-format
+msgid "Specifies the command to run as one string"
+msgstr "Especifica'l comandu a executar como una cadena"
+
+#: kdesu.cpp:122
+#, kde-format
+msgid "Run command under target uid if <file> is not writable"
+msgstr "Executa'l comandu so l'UID de destín si <ficheru> nun ye escribible"
+
+#: kdesu.cpp:123
+#, kde-format
+msgid "Specifies the target uid"
+msgstr "Especifica l'UID de destín"
+
+#: kdesu.cpp:124
+#, kde-format
+msgid "Do not keep password"
+msgstr "Nun caltién la contraseña"
+
+#: kdesu.cpp:125
+#, kde-format
+msgid "Stop the daemon (forgets all passwords)"
+msgstr "Para'l degorriu (escaez toles contraseñes)"
+
+#: kdesu.cpp:126
+#, kde-format
+msgid "Enable terminal output (no password keeping)"
+msgstr "Activa la salida de la terminal (ensin caltener contraseñes)"
+
+#: kdesu.cpp:128
+#, kde-format
+msgid "Set priority value: 0 <= prio <= 100, 0 is lowest"
+msgstr "Afita'l valor de la prioridá: 0-100, 0 ye lo más baxo"
+
+#: kdesu.cpp:129
+#, kde-format
+msgid "Use realtime scheduling"
+msgstr "Usa la planificación a tiempu real"
+
+#: kdesu.cpp:130
+#, kde-format
+msgid "Do not display ignore button"
+msgstr "Nun amuesa'l botón Inorar"
+
+#: kdesu.cpp:131
+#, kde-format
+msgid "Specify icon to use in the password dialog"
+msgstr "Especifica l'iconu a usar nel diálogu de la contraseña"
+
+#: kdesu.cpp:132
+#, kde-format
+msgid "Do not show the command to be run in the dialog"
+msgstr "Nun amuesa'l comandu a executar nel diálogu"
+
+#: kdesu.cpp:139
+#, kde-format
+msgctxt ""
+"Transient means that the kdesu app will be attached to the app specified by "
+"the winid so that it is like a dialog box rather than some separate program"
+msgid "Makes the dialog transient for an X app specified by winid"
+msgstr ""
+"Fai que'l diálogu s'axunte a una aplicación de X especificada pol winid"
+
+#: kdesu.cpp:141
+#, kde-format
+msgid "Embed into a window"
+msgstr "Empotra'l programa nuna ventana"
+
+#: kdesu.cpp:168
+#, kde-format
+msgid "Cannot execute command '%1'."
+msgstr "Nun pue executase'l comandu «%1»."
+
+#: kdesu.cpp:171
+#, kde-format
+msgid "Cannot execute command '%1'. It contains invalid characters."
+msgstr ""
+"Nun pue executase'l comandu «%1», contién caráuteres que nun son válidos."
+
+#: kdesu.cpp:245
+#, kde-format
+msgid "Illegal priority: %1"
+msgstr "Prioridá illegal: %1"
+
+#: kdesu.cpp:266
+#, kde-format
+msgid "No command specified."
+msgstr "Nun s'especificó nengún comandu."
+
+#: kdesu.cpp:372
+#, kde-format
+msgid "Su returned with an error.\n"
+msgstr "su volvió con un fallu.\n"
+
+#: kdesu.cpp:400
+#, kde-format
+msgid "Command:"
+msgstr "Comandu:"
+
+#: kdesu.cpp:409
+#, kde-format
+msgid "realtime: "
+msgstr "tiempu real: "
+
+#: kdesu.cpp:413
+#, kde-format
+msgid "Priority:"
+msgstr "Prioridá:"
+
+#: sudlg.cpp:27
+#, kde-format
+msgid "Run as %1"
+msgstr "Execución como %1"
+
+#: sudlg.cpp:31
+#, kde-format
+msgid "Please enter your password below."
+msgstr "Introduz la contraseña embaxo, por favor."
+
+#: sudlg.cpp:36
+#, kde-format
+msgid ""
+"The action you requested needs <b>root privileges</b>. Please enter "
+"<b>root's</b> password below or click Ignore to continue with your current "
+"privileges."
+msgstr ""
+"L'aición que solicitesti precisa <b>privilexos de root</b>. Introduz la "
+"contraseña de <b>root</b> embaxo o calca n'Inorar pa siguir colos privilexos "
+"actuales."
+
+#: sudlg.cpp:42
+#, kde-format
+msgid ""
+"The action you requested needs <b>root privileges</b>. Please enter "
+"<b>root's</b> password below."
+msgstr ""
+"L'aición que solicitesti precisa <b>privilexos de root</b>. Introduz la "
+"contraseña de <b>root</b> embaxo."
+
+#: sudlg.cpp:49
+#, kde-format
+msgid ""
+"The action you requested needs additional privileges. Please enter the "
+"password for <b>%1</b> below or click Ignore to continue with your current "
+"privileges."
+msgstr ""
+"L'aición que solicitesti precisa privilexos adicionales. Introduz la "
+"contraseña de <b>%1</b> embaxo o calca n'Inorar pa siguir colos privilexos "
+"actuales."
+
+#: sudlg.cpp:56
+#, kde-format
+msgid ""
+"The action you requested needs additional privileges. Please enter the "
+"password for <b>%1</b> below."
+msgstr ""
+"L'aición que solicitesti precisa privilexos adicionales. Introduz la "
+"contraseña de <b>%1</b> embaxo."
+
+#: sudlg.cpp:79
+#, kde-format
+msgid "Conversation with su failed."
+msgstr "Falló la conversación con su."
+
+#: sudlg.cpp:86
+#, kde-format
+msgid ""
+"The program 'su' could not be found.<br />Ensure your PATH is set correctly."
+msgstr ""
+"El programa «su» nun pudo atopase.<br />Asegúrate de que'l PATH s'afitó "
+"correutamente."
+
+#: sudlg.cpp:97
+#, kde-format
+msgid ""
+"Permission denied.<br />Possibly incorrect password, please try again.<br /"
+">On some systems, you need to be in a special group (often: wheel) to use "
+"this program."
+msgstr ""
+"Ñegóse'l permisu.<br />Quiciabes la contraseña seya incorreuta, volvi "
+"tentalo<br />En dalgunos sistemes precises tar nun grupu especial (davezu: "
+"wheel) pa usar esti programa."
+
+#: sudlg.cpp:105
+#, kde-format
+msgid "Internal error: illegal return from SuProcess::checkInstall()"
+msgstr "Fallu internu: devolución illegal de SuProcess::checkInstall()"

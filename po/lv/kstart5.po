@@ -1,0 +1,216 @@
+# translation of kstart.po to Latvian
+# Copyright (C) 2007, 2008 Free Software Foundation, Inc.
+#
+# Maris Nartiss <maris.kde@gmail.com>, 2007, 2008.
+# Viesturs Zarins <viesturs.zarins@mii.lu.lv>, 2008.
+# Viesturs Zariņš <viesturs.zarins@mii.lu.lv>, 2009.
+msgid ""
+msgstr ""
+"Project-Id-Version: kstart\n"
+"Report-Msgid-Bugs-To: https://bugs.kde.org\n"
+"POT-Creation-Date: 2022-08-17 00:46+0000\n"
+"PO-Revision-Date: 2009-05-21 19:35+0300\n"
+"Last-Translator: Viesturs Zariņš <viesturs.zarins@mii.lu.lv>\n"
+"Language-Team: Latvian <locale@laka.lv>\n"
+"Language: lv\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: Lokalize 0.3\n"
+"Plural-Forms: nplurals=3; plural=(n%10==1 && n%100!=11 ? 0 : n != 0 ? 1 : "
+"2);\n"
+
+#, kde-format
+msgctxt "NAME OF TRANSLATORS"
+msgid "Your names"
+msgstr "Andris Maziks, Māris Nartišs"
+
+#, kde-format
+msgctxt "EMAIL OF TRANSLATORS"
+msgid "Your emails"
+msgstr "andris.m@delfi.lv, maris.kde@gmail.com"
+
+#: kstart.cpp:310
+#, kde-format
+msgid "KStart"
+msgstr "KStart"
+
+#: kstart.cpp:312
+#, kde-format
+msgid ""
+"Utility to launch applications with special window properties \n"
+"such as iconified, maximized, a certain virtual desktop, a special "
+"decoration\n"
+"and so on."
+msgstr ""
+"Utilīta programmu palaišanai ar speciālām loga īpašībām \n"
+"tādām kā ikonizēts, maksimizēts, konkrēta virtuālā darbvirsma, speciāla "
+"dekorācija\n"
+"un tā tālāk."
+
+#: kstart.cpp:317
+#, kde-format
+msgid "(C) 1997-2000 Matthias Ettrich (ettrich@kde.org)"
+msgstr "(C) 1997-2000 Matthias Ettrich (ettrich@kde.org)"
+
+#: kstart.cpp:319
+#, kde-format
+msgid "Matthias Ettrich"
+msgstr "Matthias Ettrich"
+
+#: kstart.cpp:320
+#, kde-format
+msgid "David Faure"
+msgstr "David Faure"
+
+#: kstart.cpp:321
+#, kde-format
+msgid "Richard J. Moore"
+msgstr "Richard J. Moore"
+
+#: kstart.cpp:326
+#, kde-format
+msgid "Command to execute"
+msgstr "Izpildāmā komanda"
+
+#: kstart.cpp:330
+#, fuzzy, kde-format
+#| msgid ""
+#| "Alternative to <command>: desktop file to start. D-Bus service will be "
+#| "printed to stdout"
+msgid ""
+"Alternative to <command>: desktop file path to start. D-Bus service will be "
+"printed to stdout. Deprecated: use --application"
+msgstr ""
+"Alternatīva <command>: palaižamais desktop fails. Tiks izdrukāts D-bus "
+"serviss uz stdout"
+
+#: kstart.cpp:333
+#, fuzzy, kde-format
+#| msgid ""
+#| "Alternative to <command>: desktop file to start. D-Bus service will be "
+#| "printed to stdout"
+msgid "Alternative to <command>: desktop file to start."
+msgstr ""
+"Alternatīva <command>: palaižamais desktop fails. Tiks izdrukāts D-bus "
+"serviss uz stdout"
+
+#: kstart.cpp:336
+#, kde-format
+msgid "Optional URL to pass <desktopfile>, when using --service"
+msgstr "Papildus URL, ko padot <desktopfile>, lietojot --service"
+
+#: kstart.cpp:339
+#, kde-format
+msgid "A regular expression matching the window title"
+msgstr "Regulāra izteiksme, kurai atbilst loga nosaukums"
+
+#: kstart.cpp:341
+#, kde-format
+msgid ""
+"A string matching the window class (WM_CLASS property)\n"
+"The window class can be found out by running\n"
+"'xprop | grep WM_CLASS' and clicking on a window\n"
+"(use either both parts separated by a space or only the right part).\n"
+"NOTE: If you specify neither window title nor window class,\n"
+"then the very first window to appear will be taken;\n"
+"omitting both options is NOT recommended."
+msgstr ""
+"Teksta rindiņa, kura atbilst loga klasei (WM_CLASS īpašībai)\n"
+"Loga klasi var nosakidrot darbinot komandu\n"
+"'xprop | grep WM_CLASS' un uzklikšķinot uz loga\n"
+"(izmantojiet vai nu abas daļas, kuras atdalītas ar atstarpi, vai \n"
+"arī tikai labo daļu).\n"
+"PIEZĪME: Ja nenorādīsiet ne loga nosaukumu, ne klasi, tad pats\n"
+"pirmais logs, kas parādīsies, tiks izmantots, tādēļ abu opciju\n"
+"izlaišana tetiek rekomendēta."
+
+#: kstart.cpp:350
+#, kde-format
+msgid "Desktop on which to make the window appear"
+msgstr "Darbvirsma, uz kuras jāparādās logam"
+
+#: kstart.cpp:352
+#, kde-format
+msgid ""
+"Make the window appear on the desktop that was active\n"
+"when starting the application"
+msgstr ""
+"Liek logam parādīties uz darbvirsmas, kas bija aktīva\n"
+"palaižot programmu,"
+
+#: kstart.cpp:353
+#, kde-format
+msgid "Make the window appear on all desktops"
+msgstr "Logs parādīsies uz visām darbvirsmām"
+
+#: kstart.cpp:354
+#, kde-format
+msgid "Iconify the window"
+msgstr "Ikonizē logu"
+
+#: kstart.cpp:355
+#, kde-format
+msgid "Maximize the window"
+msgstr "Maksimizē logu"
+
+#: kstart.cpp:356
+#, kde-format
+msgid "Maximize the window vertically"
+msgstr "Maksimizē logu vertikāli"
+
+#: kstart.cpp:357
+#, kde-format
+msgid "Maximize the window horizontally"
+msgstr "Maksimizē logu horizontāli"
+
+#: kstart.cpp:358
+#, kde-format
+msgid "Show window fullscreen"
+msgstr "Rādīt logu pilnekrāna režīmā"
+
+#: kstart.cpp:360
+#, kde-format
+msgid ""
+"The window type: Normal, Desktop, Dock, Toolbar, \n"
+"Menu, Dialog, TopMenu or Override"
+msgstr ""
+"Loga tips: Normāls, Darbvirsma, Doks, Rīkjosla, \n"
+"Izvēlne, Dialogs, Virzizvēlne vai Pārklājošs"
+
+#: kstart.cpp:363
+#, kde-format
+msgid ""
+"Jump to the window even if it is started on a \n"
+"different virtual desktop"
+msgstr ""
+"Pārlēkt uz logu arī tad, ja tas palaists \n"
+"citā virtuālajā darbvirsmā"
+
+#: kstart.cpp:366
+#, kde-format
+msgid "Try to keep the window above other windows"
+msgstr "Mēģināt paturēt logu virs citiem logiem"
+
+#: kstart.cpp:368
+#, kde-format
+msgid "Try to keep the window below other windows"
+msgstr "Mēģināt paturēt logu zem citiem logiem"
+
+#: kstart.cpp:369
+#, kde-format
+msgid "The window does not get an entry in the taskbar"
+msgstr "Logam nav ieraksta uzdevumjoslā"
+
+#: kstart.cpp:370
+#, kde-format
+msgid "The window does not get an entry on the pager"
+msgstr "Logs neizdara ierakstu programmu pārslēdzējā"
+
+#: kstart.cpp:384
+#, kde-format
+msgid "No command specified"
+msgstr "Komanda nav norādīta"
+
+#~ msgid "The window is sent to the system tray in Kicker"
+#~ msgstr "Logs ir nosūtīts uz sistēmas tekni iekš Kicker."

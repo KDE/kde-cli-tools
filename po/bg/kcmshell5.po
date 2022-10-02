@@ -1,0 +1,141 @@
+# Copyright (C) YEAR This_file_is_part_of_KDE
+# This file is distributed under the same license as the PACKAGE package.
+#
+# Zlatko Popov <zlatkopopov@fsa-bg.org>, 2008.
+# Yasen Pramatarov <yasen@lindeas.com>, 2010, 2011.
+# Mincho Kondarev <mkondarev@yahoo.de>, 2022.
+msgid ""
+msgstr ""
+"Project-Id-Version: kcmshell\n"
+"Report-Msgid-Bugs-To: https://bugs.kde.org\n"
+"POT-Creation-Date: 2022-06-29 00:46+0000\n"
+"PO-Revision-Date: 2022-06-28 09:53+0200\n"
+"Last-Translator: Mincho Kondarev <mkondarev@yahoo.de>\n"
+"Language-Team: Bulgarian <kde-i18n-doc@kde.org>\n"
+"Language: bg\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: Lokalize 22.04.2\n"
+"Plural-Forms: nplurals=2; plural=n != 1;\n"
+
+#, kde-format
+msgctxt "NAME OF TRANSLATORS"
+msgid "Your names"
+msgstr "Златко Попов"
+
+#, kde-format
+msgctxt "EMAIL OF TRANSLATORS"
+msgid "Your emails"
+msgstr "zlatkopopov@fsa-bg.org"
+
+#: main.cpp:183
+#, kde-format
+msgid "System Settings Module"
+msgstr "Модул за системни настройки"
+
+#: main.cpp:185
+#, kde-format
+msgid "A tool to start single system settings modules"
+msgstr "Инструмент за стартиране на единични модули за системни настройки"
+
+#: main.cpp:187
+#, kde-format
+msgid "(c) 1999-2016, The KDE Developers"
+msgstr "(c) 1999-2016, Разработчиците на KDE"
+
+#: main.cpp:189
+#, kde-format
+msgid "Frans Englich"
+msgstr "Frans Englich"
+
+#: main.cpp:189
+#, kde-format
+msgid "Maintainer"
+msgstr "Поддръжка"
+
+#: main.cpp:190
+#, kde-format
+msgid "Daniel Molkentin"
+msgstr "Daniel Molkentin"
+
+#: main.cpp:191
+#, kde-format
+msgid "Matthias Hoelzer-Kluepfel"
+msgstr "Matthias Hoelzer-Kluepfel"
+
+#: main.cpp:192
+#, kde-format
+msgid "Matthias Elter"
+msgstr "Matthias Elter"
+
+#: main.cpp:193
+#, kde-format
+msgid "Matthias Ettrich"
+msgstr "Matthias Ettrich"
+
+#: main.cpp:194
+#, kde-format
+msgid "Waldo Bastian"
+msgstr "Waldo Bastian"
+
+#: main.cpp:200
+#, kde-format
+msgid "List all possible modules"
+msgstr "Списък с всички възможни модули"
+
+#: main.cpp:201
+#, kde-format
+msgid "Configuration module to open"
+msgstr "Отваряне на модул"
+
+#: main.cpp:202
+#, kde-format
+msgid "Specify a particular language"
+msgstr "Определен език"
+
+#: main.cpp:203
+#, kde-format
+msgid "Do not display main window"
+msgstr "Без показване на главния прозорец"
+
+#: main.cpp:204
+#, kde-format
+msgid "Arguments for the module"
+msgstr "Параметри на модула"
+
+#: main.cpp:205
+#, kde-format
+msgid "Use a specific icon for the window"
+msgstr "Използване на конкретна икона за прозореца"
+
+#: main.cpp:206
+#, kde-format
+msgid "Use a specific caption for the window"
+msgstr "Използване на конкретен надпис за прозореца"
+
+#: main.cpp:215
+#, kde-format
+msgid ""
+"--lang is deprecated. Please set the LANGUAGE environment variable instead"
+msgstr ""
+"--lang е изоставен. Моля, вместо това задайте променливата LANGUAGE на среда"
+
+#: main.cpp:219
+#, kde-format
+msgid "The following modules are available:"
+msgstr "Налични са следните модули:"
+
+#: main.cpp:239
+#, kde-format
+msgid "No description available"
+msgstr "Няма описание"
+
+#: main.cpp:303
+#, kde-format
+msgid ""
+"Could not find module '%1'. See kcmshell5 --list for the full list of "
+"modules."
+msgstr ""
+"Неуспешно намиране на модул \"%1\". Вижте kcmshell5 --list за пълния списък "
+"на модули."

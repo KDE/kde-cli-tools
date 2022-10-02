@@ -1,0 +1,68 @@
+# Albanian translation for kdebase-runtime
+# Copyright (c) 2009 Rosetta Contributors and Canonical Ltd 2009
+# This file is distributed under the same license as the kdebase-runtime package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2009.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: kdebase-runtime\n"
+"Report-Msgid-Bugs-To: https://bugs.kde.org\n"
+"POT-Creation-Date: 2021-03-18 02:47+0100\n"
+"PO-Revision-Date: 2009-05-02 20:07+0000\n"
+"Last-Translator: Vilson Gjeci <vilsongjeci@gmail.com>\n"
+"Language-Team: Albanian <sq@li.org>\n"
+"Language: sq\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Launchpad-Export-Date: 2011-04-22 15:53+0000\n"
+"X-Generator: Launchpad (build 12883)\n"
+"Plural-Forms: nplurals=2; plural=n != 1;\n"
+
+#, kde-format
+msgctxt "NAME OF TRANSLATORS"
+msgid "Your names"
+msgstr ""
+
+#, kde-format
+msgctxt "EMAIL OF TRANSLATORS"
+msgid "Your emails"
+msgstr ""
+
+#: ktraderclient.cpp:22
+#, kde-format
+msgid "KTraderClient"
+msgstr "KTraderClient"
+
+#: ktraderclient.cpp:23
+#, kde-format
+msgid "David Faure"
+msgstr ""
+
+#: ktraderclient.cpp:25
+#, kde-format
+msgid "A command-line tool for querying the KDE trader system"
+msgstr "Një mjet i rreshtit të komandave për sistemin e trgtisë së KDE"
+
+#: ktraderclient.cpp:30
+#, kde-format
+msgid "A MIME type"
+msgstr ""
+
+#: ktraderclient.cpp:32
+#, kde-format
+msgid "A servicetype, like KParts/ReadOnlyPart or KMyApp/Plugin"
+msgstr "Nj servicetype, si KParts/ReadOnlyPart apo KMyApp/Plugin"
+
+#: ktraderclient.cpp:35
+#, kde-format
+msgid "A constraint expressed in the trader query language"
+msgstr "Një shtërngues i shprehur në gjuhën e tregtisë"
+
+#: ktraderclient.cpp:38
+#, kde-format
+msgid "Output only paths to desktop files"
+msgstr ""
+
+#~ msgid "A mimetype"
+#~ msgstr "Një mimetype"

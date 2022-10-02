@@ -1,0 +1,142 @@
+# translation of kcmshell.po to Telugu
+# Copyright (C) YEAR This_file_is_part_of_KDE
+# This file is distributed under the same license as the PACKAGE package.
+#
+# Krishna Babu K <kkrothap@redhat.com>, 2009.
+msgid ""
+msgstr ""
+"Project-Id-Version: kcmshell\n"
+"Report-Msgid-Bugs-To: https://bugs.kde.org\n"
+"POT-Creation-Date: 2022-06-29 00:46+0000\n"
+"PO-Revision-Date: 2009-01-16 22:16+0530\n"
+"Last-Translator: Krishna Babu K <kkrothap@redhat.com>\n"
+"Language-Team: Telugu <en@li.org>\n"
+"Language: te\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: KBabel 1.11.4\n"
+"Plural-Forms: nplurals=2; plural=(n != 1)\n"
+
+#, kde-format
+msgctxt "NAME OF TRANSLATORS"
+msgid "Your names"
+msgstr "కృష్ణబాబు కె , విజయ్ కిరణ్ కముజు"
+
+#, kde-format
+msgctxt "EMAIL OF TRANSLATORS"
+msgid "Your emails"
+msgstr "k.meetme@gmail.com,infyquest@gmail.com"
+
+#: main.cpp:183
+#, kde-format
+msgid "System Settings Module"
+msgstr ""
+
+#: main.cpp:185
+#, fuzzy, kde-format
+#| msgid "A tool to start single KDE control modules"
+msgid "A tool to start single system settings modules"
+msgstr "ఒంటరి KDE నియంత్రణ మాడ్యూళ్ళను ప్రారంభించుటకు వొక సాధనము"
+
+#: main.cpp:187
+#, fuzzy, kde-format
+#| msgid "(c) 1999-2004, The KDE Developers"
+msgid "(c) 1999-2016, The KDE Developers"
+msgstr "(c) 1999-2004, KDE అభివృద్దికారులు"
+
+#: main.cpp:189
+#, kde-format
+msgid "Frans Englich"
+msgstr "ఫ్రన్స్ ఎగ్లిచ్"
+
+#: main.cpp:189
+#, kde-format
+msgid "Maintainer"
+msgstr "సంరక్షకుడు"
+
+#: main.cpp:190
+#, kde-format
+msgid "Daniel Molkentin"
+msgstr "డానియల్ మాల్కెన్టిన్"
+
+#: main.cpp:191
+#, kde-format
+msgid "Matthias Hoelzer-Kluepfel"
+msgstr "మథయాస్ హొయెల్జర్-క్లూప్ఫెల్"
+
+#: main.cpp:192
+#, kde-format
+msgid "Matthias Elter"
+msgstr "మథయాస్ ఎల్టర్"
+
+#: main.cpp:193
+#, kde-format
+msgid "Matthias Ettrich"
+msgstr "మథయాస్ ఎట్ట్రిచ్"
+
+#: main.cpp:194
+#, kde-format
+msgid "Waldo Bastian"
+msgstr "వాల్డొ బాస్టియన్"
+
+#: main.cpp:200
+#, kde-format
+msgid "List all possible modules"
+msgstr "అన్ని సాధ్యమగు మాడ్యూళ్ళను జాబితాచేయుము"
+
+#: main.cpp:201
+#, kde-format
+msgid "Configuration module to open"
+msgstr "తెరుచుటకు మాడ్యూల్‌ను ఆకృతీకరించుము"
+
+#: main.cpp:202
+#, kde-format
+msgid "Specify a particular language"
+msgstr "ఒక భాషను తెలుపుము"
+
+#: main.cpp:203
+#, kde-format
+msgid "Do not display main window"
+msgstr "ముఖ్య విండోను ప్రదర్శించవద్దు"
+
+#: main.cpp:204
+#, kde-format
+msgid "Arguments for the module"
+msgstr ""
+
+#: main.cpp:205
+#, kde-format
+msgid "Use a specific icon for the window"
+msgstr ""
+
+#: main.cpp:206
+#, kde-format
+msgid "Use a specific caption for the window"
+msgstr ""
+
+#: main.cpp:215
+#, kde-format
+msgid ""
+"--lang is deprecated. Please set the LANGUAGE environment variable instead"
+msgstr ""
+
+#: main.cpp:219
+#, kde-format
+msgid "The following modules are available:"
+msgstr "ఈ క్రింది మాడ్యూళ్ళు అందుబాటులో వున్నాయి:"
+
+#: main.cpp:239
+#, kde-format
+msgid "No description available"
+msgstr "ఎటువంటి వివరణ అందుబాటులో లేదు"
+
+#: main.cpp:303
+#, kde-format
+msgid ""
+"Could not find module '%1'. See kcmshell5 --list for the full list of "
+"modules."
+msgstr ""
+
+#~ msgid "KDE Control Module"
+#~ msgstr "KDE నియంత్రణ మాడ్యూల్"

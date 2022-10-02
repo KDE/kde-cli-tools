@@ -1,0 +1,136 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: kdeorg\n"
+"Report-Msgid-Bugs-To: https://bugs.kde.org\n"
+"POT-Creation-Date: 2022-06-29 00:46+0000\n"
+"PO-Revision-Date: 2022-09-20 01:55\n"
+"Last-Translator: \n"
+"Language-Team: Chinese Simplified\n"
+"Language: zh_CN\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
+"X-Crowdin-Project: kdeorg\n"
+"X-Crowdin-Project-ID: 269464\n"
+"X-Crowdin-Language: zh-CN\n"
+"X-Crowdin-File: /kf5-trunk/messages/kde-cli-tools/kcmshell5.pot\n"
+"X-Crowdin-File-ID: 4480\n"
+
+#, kde-format
+msgctxt "NAME OF TRANSLATORS"
+msgid "Your names"
+msgstr "Wang Jian"
+
+#, kde-format
+msgctxt "EMAIL OF TRANSLATORS"
+msgid "Your emails"
+msgstr "lark@linux.net.cn"
+
+#: main.cpp:183
+#, kde-format
+msgid "System Settings Module"
+msgstr "系统设置模块"
+
+#: main.cpp:185
+#, kde-format
+msgid "A tool to start single system settings modules"
+msgstr "一个启动单个系统设置模块的工具"
+
+#: main.cpp:187
+#, kde-format
+msgid "(c) 1999-2016, The KDE Developers"
+msgstr "(c) 1999-2016, The KDE Developers"
+
+#: main.cpp:189
+#, kde-format
+msgid "Frans Englich"
+msgstr "Frans Englich"
+
+#: main.cpp:189
+#, kde-format
+msgid "Maintainer"
+msgstr "维护者"
+
+#: main.cpp:190
+#, kde-format
+msgid "Daniel Molkentin"
+msgstr "Daniel Molkentin"
+
+#: main.cpp:191
+#, kde-format
+msgid "Matthias Hoelzer-Kluepfel"
+msgstr "Matthias Hoelzer-Kluepfel"
+
+#: main.cpp:192
+#, kde-format
+msgid "Matthias Elter"
+msgstr "Matthias Elter"
+
+#: main.cpp:193
+#, kde-format
+msgid "Matthias Ettrich"
+msgstr "Matthias Ettrich"
+
+#: main.cpp:194
+#, kde-format
+msgid "Waldo Bastian"
+msgstr "Waldo Bastian"
+
+#: main.cpp:200
+#, kde-format
+msgid "List all possible modules"
+msgstr "列出所有可能的模块"
+
+#: main.cpp:201
+#, kde-format
+msgid "Configuration module to open"
+msgstr "要打开的配置模块"
+
+#: main.cpp:202
+#, kde-format
+msgid "Specify a particular language"
+msgstr "指定特定语言"
+
+#: main.cpp:203
+#, kde-format
+msgid "Do not display main window"
+msgstr "不显示主窗口"
+
+#: main.cpp:204
+#, kde-format
+msgid "Arguments for the module"
+msgstr "模块参数"
+
+#: main.cpp:205
+#, kde-format
+msgid "Use a specific icon for the window"
+msgstr "对窗口使用特定图标"
+
+#: main.cpp:206
+#, kde-format
+msgid "Use a specific caption for the window"
+msgstr "对窗口使用特定标题"
+
+#: main.cpp:215
+#, kde-format
+msgid ""
+"--lang is deprecated. Please set the LANGUAGE environment variable instead"
+msgstr "--lang 已废弃。请设置 LANGUAGE 环境变量"
+
+#: main.cpp:219
+#, kde-format
+msgid "The following modules are available:"
+msgstr "下列模块可用："
+
+#: main.cpp:239
+#, kde-format
+msgid "No description available"
+msgstr "没有可用的描述"
+
+#: main.cpp:303
+#, kde-format
+msgid ""
+"Could not find module '%1'. See kcmshell5 --list for the full list of "
+"modules."
+msgstr "无法找到模块“%1”。请运行 kcmshell5 --list 查看完整的模块列表。"

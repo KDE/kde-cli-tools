@@ -1,0 +1,210 @@
+# Thomas Diehl <thd@kde.org>, 2002, 2003, 2004, 2005.
+# Stephan Johach <hunsum@gmx.de>, 2005.
+# Thomas Reitelbach <tr@erdfunkstelle.de>, 2006, 2007, 2009.
+# Frederik Schwarzer <schwarzer@kde.org>, 2011.
+# Burkhard Lück <lueck@hube-lueck.de>, 2020.
+msgid ""
+msgstr ""
+"Project-Id-Version: kstart\n"
+"Report-Msgid-Bugs-To: https://bugs.kde.org\n"
+"POT-Creation-Date: 2022-08-17 00:46+0000\n"
+"PO-Revision-Date: 2020-09-17 09:40+0200\n"
+"Last-Translator: Burkhard Lück <lueck@hube-lueck.de>\n"
+"Language-Team: German <kde-i18n-de@kde.org>\n"
+"Language: de\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=n != 1;\n"
+
+#, kde-format
+msgctxt "NAME OF TRANSLATORS"
+msgid "Your names"
+msgstr "Thomas Diehl"
+
+#, kde-format
+msgctxt "EMAIL OF TRANSLATORS"
+msgid "Your emails"
+msgstr "thd@kde.org"
+
+#: kstart.cpp:310
+#, kde-format
+msgid "KStart"
+msgstr "KStart"
+
+#: kstart.cpp:312
+#, kde-format
+msgid ""
+"Utility to launch applications with special window properties \n"
+"such as iconified, maximized, a certain virtual desktop, a special "
+"decoration\n"
+"and so on."
+msgstr ""
+"Dienstprogramm, um Programme mit bestimmten KDE-Fenstereigenschaften zu "
+"starten\n"
+"wie z. B. als Symbol, maximiert, auf einer bestimmten Arbeitsfläche, mit "
+"einer bestimmten Dekoration\n"
+"und so weiter."
+
+#: kstart.cpp:317
+#, kde-format
+msgid "(C) 1997-2000 Matthias Ettrich (ettrich@kde.org)"
+msgstr "© 1997–2000 Matthias Ettrich (ettrich@kde.org)"
+
+#: kstart.cpp:319
+#, kde-format
+msgid "Matthias Ettrich"
+msgstr "Matthias Ettrich"
+
+#: kstart.cpp:320
+#, kde-format
+msgid "David Faure"
+msgstr "David Faure"
+
+#: kstart.cpp:321
+#, kde-format
+msgid "Richard J. Moore"
+msgstr "Richard J. Moore"
+
+#: kstart.cpp:326
+#, kde-format
+msgid "Command to execute"
+msgstr "Auszuführender Befehl"
+
+#: kstart.cpp:330
+#, kde-format
+msgid ""
+"Alternative to <command>: desktop file path to start. D-Bus service will be "
+"printed to stdout. Deprecated: use --application"
+msgstr ""
+"Alternative zu <command>: zu startende .desktop-Datei. Der D-Bus-Dienst wird "
+"an die Standardausgabe ausgegeben. Veraltet, benutzen Sie statt dessen -"
+"application"
+
+#: kstart.cpp:333
+#, kde-format
+msgid "Alternative to <command>: desktop file to start."
+msgstr "Alternative zu <command>: zu startende .desktop-Datei."
+
+#: kstart.cpp:336
+#, kde-format
+msgid "Optional URL to pass <desktopfile>, when using --service"
+msgstr ""
+"Optionale URL zu <desktopfile>, wenn der Parameter --service verwendet wird"
+
+#: kstart.cpp:339
+#, kde-format
+msgid "A regular expression matching the window title"
+msgstr "Regulärer Ausdruck, der mit dem Fenstertitel übereinstimmt"
+
+#: kstart.cpp:341
+#, kde-format
+msgid ""
+"A string matching the window class (WM_CLASS property)\n"
+"The window class can be found out by running\n"
+"'xprop | grep WM_CLASS' and clicking on a window\n"
+"(use either both parts separated by a space or only the right part).\n"
+"NOTE: If you specify neither window title nor window class,\n"
+"then the very first window to appear will be taken;\n"
+"omitting both options is NOT recommended."
+msgstr ""
+"Zeichenfolge, die der Fensterklasse entspricht (WM_CLASS property).\n"
+"Diese Klasse lässt sich herausfinden durch Eingabe von\n"
+"„xprop | grep WM_CLASS“ und Klicken auf ein Fenster.\n"
+"(verwenden Sie beide Teile durch ein Leerzeichen getrennt oder nur den "
+"rechten)\n"
+"Beachten Sie: Wenn Sie weder Fenstertitel noch -klasse eingeben,\n"
+"wird das nächste Fenster zugrunde gelegt, das sich öffnet.\n"
+"Es ist daher nicht empfehlenswert, beide Optionen zu überspringen."
+
+#: kstart.cpp:350
+#, kde-format
+msgid "Desktop on which to make the window appear"
+msgstr "Arbeitsfläche, auf der das Fenster erscheinen soll"
+
+#: kstart.cpp:352
+#, kde-format
+msgid ""
+"Make the window appear on the desktop that was active\n"
+"when starting the application"
+msgstr ""
+"Lässt das Fenster auf derjenigen Arbeitsfläche erscheinen,\n"
+"die beim Start des Programms aktiv war."
+
+#: kstart.cpp:353
+#, kde-format
+msgid "Make the window appear on all desktops"
+msgstr "Fenster soll auf allen Arbeitsflächen erscheinen."
+
+#: kstart.cpp:354
+#, kde-format
+msgid "Iconify the window"
+msgstr "Fenster als Symbol darstellen"
+
+#: kstart.cpp:355
+#, kde-format
+msgid "Maximize the window"
+msgstr "Fenster maximieren"
+
+#: kstart.cpp:356
+#, kde-format
+msgid "Maximize the window vertically"
+msgstr "Fenster senkrecht maximieren"
+
+#: kstart.cpp:357
+#, kde-format
+msgid "Maximize the window horizontally"
+msgstr "Fenster waagerecht maximieren"
+
+#: kstart.cpp:358
+#, kde-format
+msgid "Show window fullscreen"
+msgstr "Fenster im Vollbildmodus anzeigen"
+
+#: kstart.cpp:360
+#, kde-format
+msgid ""
+"The window type: Normal, Desktop, Dock, Toolbar, \n"
+"Menu, Dialog, TopMenu or Override"
+msgstr ""
+"Der Fenstertyp: Normal, Desktop (Arbeitsfläche), Dock (angedockt), Toolbar "
+"(Werkzeugleiste),\n"
+"Menu (Menü), Dialog, TopMenu (Menü oben) oder Override (Überschreiben)"
+
+#: kstart.cpp:363
+#, kde-format
+msgid ""
+"Jump to the window even if it is started on a \n"
+"different virtual desktop"
+msgstr ""
+"In Fenster springen, auch wenn es auf einer anderen Arbeitsfläche \n"
+"gestartet wurde."
+
+#: kstart.cpp:366
+#, kde-format
+msgid "Try to keep the window above other windows"
+msgstr "Fenster möglichst im Vordergrund halten"
+
+#: kstart.cpp:368
+#, kde-format
+msgid "Try to keep the window below other windows"
+msgstr "Fenster möglichst im Hintergrund halten"
+
+#: kstart.cpp:369
+#, kde-format
+msgid "The window does not get an entry in the taskbar"
+msgstr "Das Fenster erhält keinen Eintrag in der Fensterleiste."
+
+#: kstart.cpp:370
+#, kde-format
+msgid "The window does not get an entry on the pager"
+msgstr "Das Fenster erhält keinen Eintrag im Arbeitsflächenumschalter."
+
+#: kstart.cpp:384
+#, kde-format
+msgid "No command specified"
+msgstr "Kein Befehl angegeben"
+
+#~ msgid "The window is sent to the system tray in Kicker"
+#~ msgstr ""
+#~ "Das Fenster wird in den Systemabschnitt der Kontrollleiste eingebettet."

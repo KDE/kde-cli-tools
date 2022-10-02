@@ -1,0 +1,57 @@
+# Copyright (C) YEAR This file is copyright:
+# This file is distributed under the same license as the kde-cli-tools package.
+#
+# enolp <enolp@softastur.org>, 2020.
+msgid ""
+msgstr ""
+"Project-Id-Version: kde-cli-tools\n"
+"Report-Msgid-Bugs-To: https://bugs.kde.org\n"
+"POT-Creation-Date: 2021-03-18 02:47+0100\n"
+"PO-Revision-Date: 2020-11-10 18:36+0100\n"
+"Last-Translator: enolp <enolp@softastur.org>\n"
+"Language-Team: Asturian <alministradores@softastur.org>\n"
+"Language: ast\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=n != 1;\n"
+"X-Generator: Lokalize 20.08.3\n"
+
+#, kde-format
+msgctxt "NAME OF TRANSLATORS"
+msgid "Your names"
+msgstr "Softastur"
+
+#, kde-format
+msgctxt "EMAIL OF TRANSLATORS"
+msgid "Your emails"
+msgstr "alministradores@softastur.org"
+
+#: kmimetypefinder.cpp:26
+#, kde-format
+msgid "MIME Type Finder"
+msgstr "Buscador de tipos MIME"
+
+#: kmimetypefinder.cpp:27
+#, kde-format
+msgid "Gives the MIME type for a given file"
+msgstr "Forne'l tipu MIME d'un ficheru apurríu"
+
+#: kmimetypefinder.cpp:33
+#, kde-format
+msgid "Use only the file content for determining the MIME type."
+msgstr "Usa namás el conteníu de los ficheros pa determinar el tipu MIME."
+
+#: kmimetypefinder.cpp:35
+#, kde-format
+msgid ""
+"Whether use the file name only for determining the MIME type. Not used if -c "
+"is specified."
+msgstr ""
+"Usa'l nome de los ficheros pa determinar el tipu MIME o non. Nun s'usa si "
+"s'especifica «-c»"
+
+#: kmimetypefinder.cpp:36
+#, kde-format
+msgid "The filename to test. '-' to read from stdin."
+msgstr "El nome del ficheru a probar. «-» pa lleer dende la entrada estándar."

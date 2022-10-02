@@ -1,0 +1,139 @@
+# translation of kcmshell.po to hebrew
+#
+# Diego Iastrubni <elcuco@kde.org>, 2005, 2008, 2012.
+# elkana bardugo <ttv200@gmail.com>, 2016.
+# Elkana Bardugo <ttv200@gmail.com>, 2017. #zanata
+msgid ""
+msgstr ""
+"Project-Id-Version: kcmshell5\n"
+"Report-Msgid-Bugs-To: https://bugs.kde.org\n"
+"POT-Creation-Date: 2022-06-29 00:46+0000\n"
+"PO-Revision-Date: 2017-05-16 06:53-0400\n"
+"Last-Translator: Copied by Zanata <copied-by-zanata@zanata.org>\n"
+"Language-Team: Hebrew <kde-i18n-doc@kde.org>\n"
+"Language: he\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: Zanata 3.9.6\n"
+"Plural-Forms: nplurals=2; plural=n != 1;\n"
+
+#, kde-format
+msgctxt "NAME OF TRANSLATORS"
+msgid "Your names"
+msgstr "צוות התרגום של KDE ישראל"
+
+#, kde-format
+msgctxt "EMAIL OF TRANSLATORS"
+msgid "Your emails"
+msgstr "kde-l10n-he@kde.org"
+
+#: main.cpp:183
+#, kde-format
+msgid "System Settings Module"
+msgstr "מודל הגדרות מערכת"
+
+#: main.cpp:185
+#, kde-format
+msgid "A tool to start single system settings modules"
+msgstr "כלי להפעלת מודול בודד מהמודולים הקיימים עבור מרכז הבקרה של KDE"
+
+#: main.cpp:187
+#, kde-format
+msgid "(c) 1999-2016, The KDE Developers"
+msgstr "(c) 1999-2016, The KDE Developers"
+
+#: main.cpp:189
+#, kde-format
+msgid "Frans Englich"
+msgstr "Frans Englich"
+
+#: main.cpp:189
+#, kde-format
+msgid "Maintainer"
+msgstr "מתחזק"
+
+#: main.cpp:190
+#, kde-format
+msgid "Daniel Molkentin"
+msgstr "Daniel Molkentin"
+
+#: main.cpp:191
+#, kde-format
+msgid "Matthias Hoelzer-Kluepfel"
+msgstr "Matthias Hoelzer-Kluepfel"
+
+#: main.cpp:192
+#, kde-format
+msgid "Matthias Elter"
+msgstr "Matthias Elter"
+
+#: main.cpp:193
+#, kde-format
+msgid "Matthias Ettrich"
+msgstr "Matthias Ettrich"
+
+#: main.cpp:194
+#, kde-format
+msgid "Waldo Bastian"
+msgstr "Waldo Bastian"
+
+#: main.cpp:200
+#, kde-format
+msgid "List all possible modules"
+msgstr "הצג את כל המודולים הזמינים"
+
+#: main.cpp:201
+#, kde-format
+msgid "Configuration module to open"
+msgstr "מודול התצורה לפתיחה"
+
+#: main.cpp:202
+#, kde-format
+msgid "Specify a particular language"
+msgstr "ציין שפה מסוימת"
+
+#: main.cpp:203
+#, kde-format
+msgid "Do not display main window"
+msgstr "אל תציג חלון ראשי"
+
+#: main.cpp:204
+#, kde-format
+msgid "Arguments for the module"
+msgstr "ארגומנטים עבור המודול"
+
+#: main.cpp:205
+#, kde-format
+msgid "Use a specific icon for the window"
+msgstr "השתמש בסמל ספציפי לחלון"
+
+#: main.cpp:206
+#, kde-format
+msgid "Use a specific caption for the window"
+msgstr "השתמש בכותרת ספציפית לחלון"
+
+#: main.cpp:215
+#, kde-format
+msgid ""
+"--lang is deprecated. Please set the LANGUAGE environment variable instead"
+msgstr "המשתנה lang אינו נתמך יותר. הגדר את משתנה הסביבה LANGUAGE במקום"
+
+#: main.cpp:219
+#, kde-format
+msgid "The following modules are available:"
+msgstr "המודולים הבאים זמינים:"
+
+#: main.cpp:239
+#, kde-format
+msgid "No description available"
+msgstr "לא קיים תיאור"
+
+#: main.cpp:303
+#, kde-format
+msgid ""
+"Could not find module '%1'. See kcmshell5 --list for the full list of "
+"modules."
+msgstr ""
+"אין אפשרות למצוא את המודול \"%1\". ראה kcmshell5 --list  עבור רשימת כל "
+"המודולים הזמינים."

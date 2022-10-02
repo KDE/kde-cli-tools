@@ -1,0 +1,205 @@
+# Translation of kstart5 to Norwegian Bokmål
+#
+# Hans Petter Bieker <bieker@kde.org>, 1998, 1999, 2000.
+# Knut Erik Hollund <khollund@responze.net>, 2003.
+# Knut Yrvin <knut.yrvin@gmail.com>, 2005.
+# Bjørn Steensrud <bjornst@skogkatt.homelinux.org>, 2007, 2009.
+msgid ""
+msgstr ""
+"Project-Id-Version: kstart\n"
+"Report-Msgid-Bugs-To: https://bugs.kde.org\n"
+"POT-Creation-Date: 2022-08-17 00:46+0000\n"
+"PO-Revision-Date: 2009-02-09 10:56+0100\n"
+"Last-Translator: Bjørn Steensrud <bjornst@skogkatt.homelinux.org>\n"
+"Language-Team: Norwegian Bokmål <l10n-no@lister.huftis.org>\n"
+"Language: nb\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: Lokalize 0.3\n"
+"Plural-Forms: nplurals=2; plural=n != 1;\n"
+"X-Environment: kde\n"
+"X-Accelerator-Marker: &\n"
+"X-Text-Markup: kde4\n"
+
+#, kde-format
+msgctxt "NAME OF TRANSLATORS"
+msgid "Your names"
+msgstr "Christian A. Strømmen"
+
+#, kde-format
+msgctxt "EMAIL OF TRANSLATORS"
+msgid "Your emails"
+msgstr "number1@realityx.net"
+
+#: kstart.cpp:310
+#, kde-format
+msgid "KStart"
+msgstr "KStart"
+
+#: kstart.cpp:312
+#, kde-format
+msgid ""
+"Utility to launch applications with special window properties \n"
+"such as iconified, maximized, a certain virtual desktop, a special "
+"decoration\n"
+"and so on."
+msgstr ""
+"Verktøy for å starte programmer med spesielle vindusegenskaper,\n"
+"slik som ikonisert, maksimert, på ett gitt skrivebord, med en spesiell "
+"dekorasjon\n"
+"og lignende."
+
+#: kstart.cpp:317
+#, kde-format
+msgid "(C) 1997-2000 Matthias Ettrich (ettrich@kde.org)"
+msgstr "© 1997–2000 Matthias Ettrich (ettrich@kde.org)"
+
+#: kstart.cpp:319
+#, kde-format
+msgid "Matthias Ettrich"
+msgstr "Matthias Ettrich"
+
+#: kstart.cpp:320
+#, kde-format
+msgid "David Faure"
+msgstr "David Faure"
+
+#: kstart.cpp:321
+#, kde-format
+msgid "Richard J. Moore"
+msgstr "Richard J. Moore"
+
+#: kstart.cpp:326
+#, kde-format
+msgid "Command to execute"
+msgstr "Kommando som skal utføres"
+
+#: kstart.cpp:330
+#, kde-format
+msgid ""
+"Alternative to <command>: desktop file path to start. D-Bus service will be "
+"printed to stdout. Deprecated: use --application"
+msgstr ""
+
+#: kstart.cpp:333
+#, kde-format
+msgid "Alternative to <command>: desktop file to start."
+msgstr ""
+
+#: kstart.cpp:336
+#, kde-format
+msgid "Optional URL to pass <desktopfile>, when using --service"
+msgstr "Valgfri URL som skal sendes til <desktopfile> når --service brukes"
+
+#: kstart.cpp:339
+#, kde-format
+msgid "A regular expression matching the window title"
+msgstr "Et regulært uttrykk som passer med vindustittelen"
+
+#: kstart.cpp:341
+#, kde-format
+msgid ""
+"A string matching the window class (WM_CLASS property)\n"
+"The window class can be found out by running\n"
+"'xprop | grep WM_CLASS' and clicking on a window\n"
+"(use either both parts separated by a space or only the right part).\n"
+"NOTE: If you specify neither window title nor window class,\n"
+"then the very first window to appear will be taken;\n"
+"omitting both options is NOT recommended."
+msgstr ""
+"En streng som passer med vindusklassen (egenskapen \n"
+"WM_CLASS). Du finner vindusklassen ved å kjøre \n"
+"«xprop | grep WM_CLASS» og velg et vindu.\n"
+"(Bruk enten begge deler skilt med mellomrom\n"
+"eller bare den høyre delen.)\n"
+"MERK: Hvis du ikke oppgir verken vindustittel eller \n"
+"vindusklasse, blir det første vinduet som vises tatt.\n"
+"Dette er ikke anbefalt."
+
+#: kstart.cpp:350
+#, kde-format
+msgid "Desktop on which to make the window appear"
+msgstr "Skrivebordet hvor vinduet skal vises"
+
+#: kstart.cpp:352
+#, kde-format
+msgid ""
+"Make the window appear on the desktop that was active\n"
+"when starting the application"
+msgstr ""
+"Vis vinduet på det skrivebordet som var aktivt \n"
+"da programmet startet"
+
+#: kstart.cpp:353
+#, kde-format
+msgid "Make the window appear on all desktops"
+msgstr "Vis vinduet på alle skrivebordene"
+
+#: kstart.cpp:354
+#, kde-format
+msgid "Iconify the window"
+msgstr "Ikoniser vindu"
+
+#: kstart.cpp:355
+#, kde-format
+msgid "Maximize the window"
+msgstr "Maksimer vindu"
+
+#: kstart.cpp:356
+#, kde-format
+msgid "Maximize the window vertically"
+msgstr "Maksimer vinduet loddrett"
+
+#: kstart.cpp:357
+#, kde-format
+msgid "Maximize the window horizontally"
+msgstr "Maksimer vinduet vannrett"
+
+#: kstart.cpp:358
+#, kde-format
+msgid "Show window fullscreen"
+msgstr "Viser vinduet i fullskjerm"
+
+#: kstart.cpp:360
+#, kde-format
+msgid ""
+"The window type: Normal, Desktop, Dock, Toolbar, \n"
+"Menu, Dialog, TopMenu or Override"
+msgstr ""
+"Vindustype: normal, skrivebord, Dock, verktøylinje, \n"
+"meny, dialog, toppmeny eller overstyrt"
+
+#: kstart.cpp:363
+#, kde-format
+msgid ""
+"Jump to the window even if it is started on a \n"
+"different virtual desktop"
+msgstr ""
+"Hopp til vinduet selv om det blir startet på\n"
+"et annet skrivebord"
+
+#: kstart.cpp:366
+#, kde-format
+msgid "Try to keep the window above other windows"
+msgstr "Prøv å holde vinduet oppå alle andre vinduer"
+
+#: kstart.cpp:368
+#, kde-format
+msgid "Try to keep the window below other windows"
+msgstr "Prøv å hold vinduet under alle andre vinduer"
+
+#: kstart.cpp:369
+#, kde-format
+msgid "The window does not get an entry in the taskbar"
+msgstr "Vinduet blir ikke ført opp i oppgavelinja"
+
+#: kstart.cpp:370
+#, kde-format
+msgid "The window does not get an entry on the pager"
+msgstr "Vinduet blir ikke ført opp på miniskrivebordet"
+
+#: kstart.cpp:384
+#, kde-format
+msgid "No command specified"
+msgstr "Ingen kommando oppgitt"

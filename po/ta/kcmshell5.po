@@ -1,0 +1,148 @@
+# SOME DESCRIPTIVE TITLE.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: kcmshell\n"
+"Report-Msgid-Bugs-To: https://bugs.kde.org\n"
+"POT-Creation-Date: 2022-06-29 00:46+0000\n"
+"PO-Revision-Date: 2005-04-25 00:26-0800\n"
+"Last-Translator: Tamil PC <tamilpc@ambalam.com>\n"
+"Language-Team: KDE <kde-i18n-doc@kde.org>\n"
+"Language: ta\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=n != 1;\n"
+
+#, kde-format
+msgctxt "NAME OF TRANSLATORS"
+msgid "Your names"
+msgstr "jayalakshmibalaji"
+
+#, kde-format
+msgctxt "EMAIL OF TRANSLATORS"
+msgid "Your emails"
+msgstr "jayalakshmibalaji@hotmail.com"
+
+#: main.cpp:183
+#, kde-format
+msgid "System Settings Module"
+msgstr ""
+
+#: main.cpp:185
+#, fuzzy, kde-format
+#| msgid "A tool to start single KDE control modules"
+msgid "A tool to start single system settings modules"
+msgstr "ஒற்றை கேடியி கட்டுப்பாட்டு பகுதிகளை துவக்க ஒரு கருவி"
+
+#: main.cpp:187
+#, fuzzy, kde-format
+#| msgid "(c) 1999-2004, The KDE Developers"
+msgid "(c) 1999-2016, The KDE Developers"
+msgstr "(c) 1999-2004, கேடியி மேம்பாட்டாளர்கள்"
+
+#: main.cpp:189
+#, kde-format
+msgid "Frans Englich"
+msgstr ""
+
+#: main.cpp:189
+#, kde-format
+msgid "Maintainer"
+msgstr "மேம்பாட்டாளர்"
+
+#: main.cpp:190
+#, kde-format
+msgid "Daniel Molkentin"
+msgstr ""
+
+#: main.cpp:191
+#, kde-format
+msgid "Matthias Hoelzer-Kluepfel"
+msgstr ""
+
+#: main.cpp:192
+#, kde-format
+msgid "Matthias Elter"
+msgstr ""
+
+#: main.cpp:193
+#, kde-format
+msgid "Matthias Ettrich"
+msgstr ""
+
+#: main.cpp:194
+#, kde-format
+msgid "Waldo Bastian"
+msgstr ""
+
+#: main.cpp:200
+#, kde-format
+msgid "List all possible modules"
+msgstr "அனைத்து செய்யக்கூடிய பகுதிகளின் பட்டியல்"
+
+#: main.cpp:201
+#, kde-format
+msgid "Configuration module to open"
+msgstr "திறக்கவேண்டிய வடிவமைப்பு பகுதி"
+
+#: main.cpp:202
+#, kde-format
+msgid "Specify a particular language"
+msgstr "ஒரு குறிப்பிட்ட மொழியை குறிப்பிடு"
+
+#: main.cpp:203
+#, kde-format
+msgid "Do not display main window"
+msgstr "பிரதான சாளரத்தில் காட்டாதே."
+
+#: main.cpp:204
+#, kde-format
+msgid "Arguments for the module"
+msgstr ""
+
+#: main.cpp:205
+#, kde-format
+msgid "Use a specific icon for the window"
+msgstr ""
+
+#: main.cpp:206
+#, kde-format
+msgid "Use a specific caption for the window"
+msgstr ""
+
+#: main.cpp:215
+#, kde-format
+msgid ""
+"--lang is deprecated. Please set the LANGUAGE environment variable instead"
+msgstr ""
+
+#: main.cpp:219
+#, kde-format
+msgid "The following modules are available:"
+msgstr "பின்வரும் பகுதிகள் இருக்கின்றன:"
+
+#: main.cpp:239
+#, kde-format
+msgid "No description available"
+msgstr "விவரம் இல்லை"
+
+#: main.cpp:303
+#, kde-format
+msgid ""
+"Could not find module '%1'. See kcmshell5 --list for the full list of "
+"modules."
+msgstr ""
+
+#~ msgid "KDE Control Module"
+#~ msgstr "கேடியி கட்டுப்பாட்டு பகுதி"
+
+#~ msgid "Embeds the module with buttons in window with id <id>"
+#~ msgstr "அடையாள எண்ணுடன் கூடிய சாளரத்தில் பகுதியை பட்டன்களுடன் உட்பொதிக்கிறது.<id>"
+
+#~ msgid "Embeds the module without buttons in window with id <id>"
+#~ msgstr "அடையாள எண்ணுடன் கூடிய சாளரத்தில் பகுதியை பட்டன்களுடன் உட்பொதிக்கிறது.<id>"
+
+#~ msgid "Configure - %1"
+#~ msgstr "வடிவமை - %1"

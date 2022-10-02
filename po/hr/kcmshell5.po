@@ -1,0 +1,158 @@
+# Translation of kcmshell to Croatian
+#
+# Marko Dimjasevic <marko@dimjasevic.net>, 2011.
+msgid ""
+msgstr ""
+"Project-Id-Version: \n"
+"Report-Msgid-Bugs-To: https://bugs.kde.org\n"
+"POT-Creation-Date: 2022-06-29 00:46+0000\n"
+"PO-Revision-Date: 2011-03-04 19:07+0100\n"
+"Last-Translator: Marko Dimjasevic <marko@dimjasevic.net>\n"
+"Language-Team: Croatian <kde-croatia-list@lists.sourceforge.net>\n"
+"Language: hr\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=3; plural=(n%10==1 && n%100!=11 ? 0 : n%10>=2 && n"
+"%10<=4 && (n%100<10 || n%100>=20) ? 1 : 2);\n"
+"X-Environment: kde\n"
+"X-Accelerator-Marker: &\n"
+"X-Text-Markup: kde4\n"
+"X-Generator: Lokalize 1.2\n"
+
+#, kde-format
+msgctxt "NAME OF TRANSLATORS"
+msgid "Your names"
+msgstr "Renato Pavičić, Andrej Dundović"
+
+#, kde-format
+msgctxt "EMAIL OF TRANSLATORS"
+msgid "Your emails"
+msgstr "renato@translator-shop.org, adundovi@gmail.com"
+
+#: main.cpp:183
+#, kde-format
+msgid "System Settings Module"
+msgstr ""
+
+#: main.cpp:185
+#, fuzzy, kde-format
+#| msgid "A tool to start single KDE control modules"
+msgid "A tool to start single system settings modules"
+msgstr "Alat za pokretanje jednog KDE upravljačkog modula"
+
+#: main.cpp:187
+#, fuzzy, kde-format
+#| msgid "(c) 1999-2004, The KDE Developers"
+msgid "(c) 1999-2016, The KDE Developers"
+msgstr "© 1999–2004 The KDE Developers"
+
+#: main.cpp:189
+#, kde-format
+msgid "Frans Englich"
+msgstr "Frans Englich"
+
+#: main.cpp:189
+#, kde-format
+msgid "Maintainer"
+msgstr "Održavatelj"
+
+#: main.cpp:190
+#, kde-format
+msgid "Daniel Molkentin"
+msgstr "Daniel Molkentin"
+
+#: main.cpp:191
+#, kde-format
+msgid "Matthias Hoelzer-Kluepfel"
+msgstr "Matthias Hoelzer-Kluepfel"
+
+#: main.cpp:192
+#, kde-format
+msgid "Matthias Elter"
+msgstr "Matthias Elter"
+
+#: main.cpp:193
+#, kde-format
+msgid "Matthias Ettrich"
+msgstr "Matthias Ettrich"
+
+#: main.cpp:194
+#, kde-format
+msgid "Waldo Bastian"
+msgstr "Waldo Bastian"
+
+#: main.cpp:200
+#, kde-format
+msgid "List all possible modules"
+msgstr "Ispis svih mogućih modula"
+
+#: main.cpp:201
+#, kde-format
+msgid "Configuration module to open"
+msgstr "Konfiguriranje modula za pokretanje"
+
+#: main.cpp:202
+#, kde-format
+msgid "Specify a particular language"
+msgstr "Određivanje pojedinog jezika"
+
+#: main.cpp:203
+#, kde-format
+msgid "Do not display main window"
+msgstr "Ne prikazuj glavni prozor"
+
+#: main.cpp:204
+#, kde-format
+msgid "Arguments for the module"
+msgstr "Argumenti za modul"
+
+#: main.cpp:205
+#, kde-format
+msgid "Use a specific icon for the window"
+msgstr ""
+
+#: main.cpp:206
+#, kde-format
+msgid "Use a specific caption for the window"
+msgstr ""
+
+#: main.cpp:215
+#, kde-format
+msgid ""
+"--lang is deprecated. Please set the LANGUAGE environment variable instead"
+msgstr ""
+
+#: main.cpp:219
+#, kde-format
+msgid "The following modules are available:"
+msgstr "Raspoloživi su sljedeći moduli:"
+
+#: main.cpp:239
+#, kde-format
+msgid "No description available"
+msgstr "Nema raspoloživog opisa"
+
+#: main.cpp:303
+#, fuzzy, kde-format
+#| msgid ""
+#| "Could not find module '%1'. See kcmshell4 --list for the full list of "
+#| "modules."
+msgid ""
+"Could not find module '%1'. See kcmshell5 --list for the full list of "
+"modules."
+msgstr ""
+"Ne mogu pronaći modul '%1'. Pogledajte kcmshell4 --list za potpunu listu "
+"modula."
+
+#~ msgid "KDE Control Module"
+#~ msgstr "KDE upravljački modul"
+
+#~ msgid "Embeds the module with buttons in window with id <id>"
+#~ msgstr "Module s gumbima ugrađuje u prozor pomoću oznake <id>"
+
+#~ msgid "Embeds the module without buttons in window with id <id>"
+#~ msgstr "Module bez gumba ugrađuje u prozor pomoću oznake <id>"
+
+#~ msgid "Configure - %1"
+#~ msgstr "Konfiguriranje - %1"

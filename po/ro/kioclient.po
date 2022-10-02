@@ -1,0 +1,503 @@
+# Traducerea kioclient.po în Română
+# translation of kioclient to Romanian
+# Copyright (C) 2008 This_file_is_part_of_KDE
+# This file is distributed under the same license as the kioclient package.
+# Laurenţiu Buzdugan <lbuz@rolix.org>, 2008".
+# Sergiu Bivol <sergiu@cip.md>, 2008.
+# Sergiu Bivol <sergiu@cip.md>, 2009, 2010, 2011.
+# Sergiu Bivol <sergiu@cip.md>, 2009, 2010, 2012, 2013.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: kioclient\n"
+"Report-Msgid-Bugs-To: https://bugs.kde.org\n"
+"POT-Creation-Date: 2022-08-22 00:47+0000\n"
+"PO-Revision-Date: 2013-11-23 19:31+0200\n"
+"Last-Translator: Sergiu Bivol <sergiu@ase.md>\n"
+"Language-Team: Romanian <kde-i18n-ro@kde.org>\n"
+"Language: ro\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=3; plural=n==1 ? 0 : (n==0 || (n%100 > 0 && n%100 < "
+"20)) ? 1 : 2;\n"
+
+#, kde-format
+msgctxt "NAME OF TRANSLATORS"
+msgid "Your names"
+msgstr ""
+
+#, kde-format
+msgctxt "EMAIL OF TRANSLATORS"
+msgid "Your emails"
+msgstr ""
+
+#: kioclient.cpp:60
+#, kde-format
+msgid ""
+"\n"
+"Syntax:\n"
+msgstr ""
+"\n"
+"Sintaxă:\n"
+
+#: kioclient.cpp:62
+#, fuzzy, kde-format
+#| msgid ""
+#| "  kioclient openProperties 'url'\n"
+#| "            # Opens a properties menu\n"
+#| "\n"
+msgctxt "The argument is the command \"kioclient openProperties\""
+msgid ""
+"  %1 'url'\n"
+"            # Opens a properties dialog of 'url'\n"
+"\n"
+msgstr ""
+"  kioclient openProperties 'url'\n"
+"            # Deschide un meniu cu proprietăți\n"
+"\n"
+
+#: kioclient.cpp:69
+#, fuzzy, kde-format
+#| msgid ""
+#| "  kioclient exec 'url' ['mimetype']\n"
+#| "            # Tries to open the document pointed to by 'url', in the "
+#| "application\n"
+#| "            #   associated with it in KDE. You may omit 'mimetype'.\n"
+#| "            #   In this case the mimetype is determined\n"
+#| "            #   automatically. Of course URL may be the URL of a\n"
+#| "            #   document, or it may be a *.desktop file.\n"
+#| "            #   'url' can be an executable, too.\n"
+msgctxt "The argument is the command \"kioclient exec\""
+msgid ""
+"  %1 'url' ['mimetype']\n"
+"            # Tries to open the document pointed to by 'url', in the "
+"application\n"
+"            # associated with it in KDE. You may omit 'mimetype'.\n"
+"            # In that case the mimetype is determined automatically.\n"
+"            # 'url' can be the URL of a document, a *.desktop file,\n"
+"            # or an executable.\n"
+msgstr ""
+"  kioclient exec 'url' ['mimetype']\n"
+"            # Încearcă să deschidă documentul indicat de 'url', în "
+"aplicația\n"
+"            #   asociată cu acesta în KDE. Puteți omite 'mimetype'.\n"
+"            #   În acest caz, tipul MIME este determinat automat.\n"
+"            #   Desigur, URL poate fi URL-ul unui document, sau\n"
+"            #   poate fi un fișier *.desktop.\n"
+"            #   'url' poate fi executabil la rândul său.\n"
+
+#: kioclient.cpp:80
+#, kde-format
+msgctxt "The argument is the command \"kioclient move\""
+msgid ""
+"  %1 'src' 'dest'\n"
+"            # Moves the URL 'src' to 'dest'.\n"
+"            #   'src' may be a list of URLs.\n"
+"            #   'dest' may be \"trash:/\" to move the files to the trash.\n"
+"            #   The short version 'kioclient mv' is also available.\n"
+"\n"
+msgstr ""
+
+#: kioclient.cpp:90
+#, fuzzy, kde-format
+#| msgid ""
+#| "  kioclient download ['src']\n"
+#| "            # Copies the URL 'src' to a user-specified location'.\n"
+#| "            #   'src' may be a list of URLs, if not present then\n"
+#| "            #   a URL will be requested.\n"
+#| "\n"
+msgctxt "The argument is the command \"kioclient download\""
+msgid ""
+"  %1 ['src']\n"
+"            # Copies the URL 'src' to a user-specified location.\n"
+"            #   'src' may be a list of URLs, if not present then\n"
+"            #   a URL will be requested.\n"
+"\n"
+msgstr ""
+"  kioclient download ['src']\n"
+"            # Copiază URL-ul 'src' la o locație specificată de utilizator.\n"
+"            #   'src' poate fi o listă de URL-uri. Dacă nu e specificat, \n"
+"            #   va fi cerut un URL.\n"
+"\n"
+
+#: kioclient.cpp:99
+#, fuzzy, kde-format
+#| msgid ""
+#| "  kioclient copy 'src' 'dest'\n"
+#| "            # Copies the URL 'src' to 'dest'.\n"
+#| "            #   'src' may be a list of URLs.\n"
+msgctxt "The argument is the command \"kioclient copy\""
+msgid ""
+"  %1 'src' 'dest'\n"
+"            # Copies the URL 'src' to 'dest'.\n"
+"            #   'src' may be a list of URLs.\n"
+"            #   The short version 'kioclient cp' is also available.\n"
+"\n"
+msgstr ""
+"  kioclient copy 'src' 'dest'\n"
+"            # Copiază URL-ul 'src' la 'dest'.\n"
+"            #   'src' poate fi o listă de URL-uri.\n"
+
+#: kioclient.cpp:108
+#, fuzzy, kde-format
+#| msgid ""
+#| "  kioclient ls 'url'\n"
+#| "            # Lists the contents of the directory 'url' to stdout\n"
+#| "\n"
+msgctxt "The argument is the command \"kioclient cat\""
+msgid ""
+"  %1 'url'\n"
+"            # Prints the contents of the file 'url' to the standard output\n"
+"\n"
+msgstr ""
+"  kioclient ls 'url'\n"
+"            # Scrie conținutul dosarului „url” la stdout\n"
+"\n"
+
+#: kioclient.cpp:115
+#, fuzzy, kde-format
+#| msgid ""
+#| "  kioclient ls 'url'\n"
+#| "            # Lists the contents of the directory 'url' to stdout\n"
+#| "\n"
+msgctxt "The argument is the command \"kioclient ls\""
+msgid ""
+"  %1 'url'\n"
+"            # Lists the contents of the directory 'url' to stdout\n"
+"\n"
+msgstr ""
+"  kioclient ls 'url'\n"
+"            # Scrie conținutul dosarului „url” la stdout\n"
+"\n"
+
+#: kioclient.cpp:122
+#, fuzzy, kde-format
+#| msgid ""
+#| "  kioclient remove 'url'\n"
+#| "            # Removes the URL\n"
+#| "            #   'url' may be a list of URLs.\n"
+msgctxt "The argument is the command \"kioclient remove\""
+msgid ""
+"  %1 'url'\n"
+"            # Removes the URL\n"
+"            #   'url' may be a list of URLs.\n"
+"            #   The short version 'kioclient rm' is also available.\n"
+"\n"
+msgstr ""
+"  kioclient remove 'url'\n"
+"            # Elimină URL-ul\n"
+"            #   'url' poate fi o listă de URL-uri.\n"
+
+#: kioclient.cpp:131
+#, fuzzy, kde-format
+#| msgid ""
+#| "  kioclient cat 'url'\n"
+#| "            # Writes out the contents of 'url' to stdout\n"
+#| "\n"
+msgctxt "The argument is the command \"kioclient stat\""
+msgid ""
+"  %1 'url'\n"
+"            # Shows all of the available information for 'url'\n"
+"\n"
+msgstr ""
+"  kioclient cat 'url'\n"
+"            # Afișează conținutul 'url' la stdout\n"
+"\n"
+
+#: kioclient.cpp:138
+#, fuzzy, kde-format
+#| msgid ""
+#| "  kioclient openProperties 'url'\n"
+#| "            # Opens a properties menu\n"
+#| "\n"
+msgctxt "The argument is the command \"kioclient appmenu\""
+msgid ""
+"  %1\n"
+"            # Opens a basic application launcher\n"
+"\n"
+msgstr ""
+"  kioclient openProperties 'url'\n"
+"            # Deschide un meniu cu proprietăți\n"
+"\n"
+
+#: kioclient.cpp:144
+#, kde-format
+msgid "*** Examples:\n"
+msgstr ""
+
+#: kioclient.cpp:145
+#, fuzzy, kde-format
+#| msgid ""
+#| "  kioclient exec file:/home/weis/data/test.html\n"
+#| "             // Opens the file with default binding\n"
+#| "\n"
+msgid ""
+"  kioclient exec file:/home/weis/data/test.html\n"
+"             // Opens the file with the default application associated\n"
+"             // with this MimeType\n"
+"\n"
+msgstr ""
+"  kioclient exec file:/home/weis/data/test.html\n"
+"             // Deschide fișierul cu asociereaa implicită\n"
+"\n"
+
+#: kioclient.cpp:150
+#, fuzzy, kde-format
+#| msgid ""
+#| "  kioclient exec ftp://localhost/\n"
+#| "             // Opens new window with URL\n"
+#| "\n"
+msgid ""
+"  kioclient exec ftp://localhost/\n"
+"             // Opens URL with the default handler for ftp:// scheme\n"
+"\n"
+msgstr ""
+"  kioclient exec ftp://localhost/\n"
+"             // Deschide o fereastră nouă cu URL\n"
+"\n"
+
+#: kioclient.cpp:154
+#, fuzzy, kde-format
+#| msgid ""
+#| "  kioclient exec file:/root/Desktop/emacs.desktop\n"
+#| "             // Starts emacs\n"
+#| "\n"
+msgid ""
+"  kioclient exec file:/root/Desktop/emacs.desktop\n"
+"             // Starts emacs\n"
+"\n"
+msgstr ""
+"  kioclient exec file:/root/Desktop/emacs.desktop\n"
+"             // Lansează emacs\n"
+"\n"
+
+#: kioclient.cpp:158
+#, fuzzy, kde-format
+#| msgid ""
+#| "  kioclient exec .\n"
+#| "             // Opens the current directory. Very convenient.\n"
+#| "\n"
+msgid ""
+"  kioclient exec .\n"
+"             // Opens the current directory in the default\n"
+"             // file manager. Very convenient.\n"
+"\n"
+msgstr ""
+"  kioclient exec .\n"
+"             // Deschide directorul curent. Foarte comod.\n"
+"\n"
+
+#: kioclient.cpp:177
+#, kde-format
+msgid "KIO Client"
+msgstr "Client KIO"
+
+#: kioclient.cpp:178
+#, kde-format
+msgid "Command-line tool for network-transparent operations"
+msgstr ""
+"Instrument în linie de comandă pentru operații transparente pentru rețea"
+
+#: kioclient.cpp:185
+#, kde-format
+msgid "Use message boxes and other native notifications"
+msgstr ""
+
+#: kioclient.cpp:188
+#, kde-format
+msgid ""
+"Non-interactive use: no message boxes. If you don't want a graphical "
+"connection, use --platform offscreen"
+msgstr ""
+
+#: kioclient.cpp:192
+#, kde-format
+msgid "Overwrite destination if it exists (for copy and move)"
+msgstr "Suprascrie destinația dacă există (pentru copiere și mutare)"
+
+#: kioclient.cpp:196
+#, kde-format
+msgid "file or URL"
+msgstr "fișier sau URL"
+
+#: kioclient.cpp:196 kioclient.cpp:198 kioclient.cpp:201 kioclient.cpp:206
+#, kde-format
+msgid "urls..."
+msgstr ""
+
+#: kioclient.cpp:198 kioclient.cpp:201
+#, kde-format
+msgid "Source URL or URLs"
+msgstr "URL sau URL-urile sursă"
+
+#: kioclient.cpp:199 kioclient.cpp:202
+#, kde-format
+msgid "Destination URL"
+msgstr "URL-ul destinație"
+
+#: kioclient.cpp:199 kioclient.cpp:202
+#, kde-format
+msgid "url"
+msgstr ""
+
+#: kioclient.cpp:204
+#, kde-format
+msgid "Show available commands"
+msgstr "Arată comenzile disponibile"
+
+#: kioclient.cpp:205
+#, kde-format
+msgid "Command (see --commands)"
+msgstr "Comandă (vezi --commands)"
+
+#: kioclient.cpp:205
+#, kde-format
+msgid "command"
+msgstr ""
+
+#: kioclient.cpp:206
+#, kde-format
+msgid "Arguments for command"
+msgstr "Argumente pentru comandă"
+
+#: kioclient.cpp:230
+#, kde-format
+msgctxt "@info:shell"
+msgid "%1: Syntax error, not enough arguments\n"
+msgstr "%1: eroare de sintaxă: argumente insuficiente\n"
+
+#: kioclient.cpp:234
+#, kde-format
+msgctxt "@info:shell"
+msgid "%1: Syntax error, too many arguments\n"
+msgstr "%1: eroare de sintaxă: prea multe argumente\n"
+
+#: kioclient.cpp:447
+#, kde-format
+msgid "Destination where to download the files"
+msgstr ""
+
+#: kioclient.cpp:489
+#, kde-format
+msgctxt "@info:shell"
+msgid "%1: Syntax error, unknown command '%2'\n"
+msgstr "%1: eroare de sintaxă: comandă „%2” necunoscută\n"
+
+#: kioclient.cpp:505
+#, kde-format
+msgctxt "@info:shell"
+msgid "%1: %2\n"
+msgstr ""
+
+#, fuzzy
+#~| msgid ""
+#~| "  kioclient move 'src' 'dest'\n"
+#~| "            # Moves the URL 'src' to 'dest'.\n"
+#~| "            #   'src' may be a list of URLs.\n"
+#~ msgid ""
+#~ "  kioclient move 'src' 'dest'\n"
+#~ "            # Moves the URL 'src' to 'dest'.\n"
+#~ "            #   'src' may be a list of URLs.\n"
+#~ msgstr ""
+#~ "  kioclient move 'src' 'dest'\n"
+#~ "            # Mută URL-ul 'src' la 'dest'.\n"
+#~ "            #   'src' poate fi o listă de URL-uri.\n"
+
+#~ msgid ""
+#~ "            #   'dest' may be \"trash:/\" to move the files\n"
+#~ "            #   to the trash.\n"
+#~ msgstr ""
+#~ "            #   'dest' poate fi „trash:/” pentru a muta fișierele\n"
+#~ "            #   la gunoi.\n"
+
+#, fuzzy
+#~| msgid ""
+#~| "            #   the short version kioclient mv\n"
+#~| "            #   is also available.\n"
+#~| "\n"
+#~ msgid ""
+#~ "            #   the short version kioclient mv\n"
+#~ "            #   is also available.\n"
+#~ "\n"
+#~ msgstr ""
+#~ "            #   versiunea scurtă kioclient mv\n"
+#~ "            #   este disponibilă.\n"
+#~ "\n"
+
+#, fuzzy
+#~| msgid ""
+#~| "            #   the short version kioclient cp\n"
+#~| "            #   is also available.\n"
+#~| "\n"
+#~ msgid ""
+#~ "            #   the short version kioclient cp\n"
+#~ "            #   is also available.\n"
+#~ "\n"
+#~ msgstr ""
+#~ "            #   versiunea scurtă kioclient cp\n"
+#~ "            #   este disponibilă.\n"
+#~ "\n"
+
+#, fuzzy
+#~| msgid ""
+#~| "  kioclient cat 'url'\n"
+#~| "            # Writes out the contents of 'url' to stdout\n"
+#~| "\n"
+#~ msgid ""
+#~ "  kioclient cat 'url'\n"
+#~ "            # Writes out the contents of 'url' to stdout\n"
+#~ "\n"
+#~ msgstr ""
+#~ "  kioclient cat 'url'\n"
+#~ "            # Afișează conținutul 'url' la stdout\n"
+#~ "\n"
+
+#, fuzzy
+#~| msgid ""
+#~| "            #   the short version kioclient rm\n"
+#~| "            #   is also available.\n"
+#~| "\n"
+#~ msgid ""
+#~ "            #   the short version kioclient rm\n"
+#~ "            #   is also available.\n"
+#~ "\n"
+#~ msgstr ""
+#~ "            #   versiunea scurtă kioclient rm\n"
+#~ "            #   este disponibilă.\n"
+#~ "\n"
+
+#~ msgid ""
+#~ "*** Examples:\n"
+#~ "  kioclient exec file:/root/Desktop/cdrom.desktop \"Mount default\"\n"
+#~ "             // Mounts the CDROM\n"
+#~ "\n"
+#~ msgstr ""
+#~ "*** Exemple:\n"
+#~ "  kioclient exec file:/root/Desktop/cdrom.desktop \"Mount default\"\n"
+#~ "             // Montează CD-ROM-ul\n"
+#~ "\n"
+
+#~ msgid ""
+#~ "  kioclient exec file:/home/weis/data/test.html Netscape\n"
+#~ "             // Opens the file with netscape\n"
+#~ "\n"
+#~ msgstr ""
+#~ "  kioclient exec file:/home/weis/data/test.html Netscape\n"
+#~ "             // Deschide fișierul cu netscape\n"
+#~ "\n"
+
+#~ msgid ""
+#~ "  kioclient exec file:/root/Desktop/cdrom.desktop\n"
+#~ "             // Opens the CDROM's mount directory\n"
+#~ "\n"
+#~ msgstr ""
+#~ "  kioclient exec file:/root/Desktop/cdrom.desktop\n"
+#~ "             // Deschide directorul de montare a CD-ROM-ului\n"
+#~ "\n"
+
+#~ msgid "Non-interactive use: no message boxes"
+#~ msgstr "Utilizare neinteractivă: fără casete de mesaj"
+
+#~ msgid "Unable to download from an invalid URL."
+#~ msgstr "Imposibil de descărcat de la un URL nevalid."

@@ -1,0 +1,66 @@
+# Translation of ktraderclient5 to Norwegian Bokmål
+#
+# Bjørn Kvisli <bjorn.kvisli@gmail.com>, 2007.
+# Bjørn Steensrud <bjornst@skogkatt.homelinux.org>, 2008, 2015.
+msgid ""
+msgstr ""
+"Project-Id-Version: ktraderclient\n"
+"Report-Msgid-Bugs-To: https://bugs.kde.org\n"
+"POT-Creation-Date: 2021-03-18 02:47+0100\n"
+"PO-Revision-Date: 2015-02-06 22:26+0100\n"
+"Last-Translator: Bjørn Steensrud <bjornst@skogkatt.homelinux.org>\n"
+"Language-Team: Norwegian Bokmål <l10n-no@lister.huftis.org>\n"
+"Language: nb\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: Lokalize 1.5\n"
+"Plural-Forms: nplurals=2; plural=n != 1;\n"
+"X-Environment: kde\n"
+"X-Accelerator-Marker: &\n"
+"X-Text-Markup: kde4\n"
+
+#, kde-format
+msgctxt "NAME OF TRANSLATORS"
+msgid "Your names"
+msgstr "Bjørn Steensrud"
+
+#, kde-format
+msgctxt "EMAIL OF TRANSLATORS"
+msgid "Your emails"
+msgstr "bjornst@skogkatt.homelinux.org"
+
+#: ktraderclient.cpp:22
+#, kde-format
+msgid "KTraderClient"
+msgstr "KTraderClient"
+
+#: ktraderclient.cpp:23
+#, kde-format
+msgid "David Faure"
+msgstr "David Faure"
+
+#: ktraderclient.cpp:25
+#, kde-format
+msgid "A command-line tool for querying the KDE trader system"
+msgstr "Et kommandolinje-verktøy for å spørre mot KDE trader-systemet"
+
+#: ktraderclient.cpp:30
+#, kde-format
+msgid "A MIME type"
+msgstr ""
+
+#: ktraderclient.cpp:32
+#, kde-format
+msgid "A servicetype, like KParts/ReadOnlyPart or KMyApp/Plugin"
+msgstr "en type tjeneste, slik som KParts/ReadOnlyPart eller KMyApp/Plugin"
+
+#: ktraderclient.cpp:35
+#, kde-format
+msgid "A constraint expressed in the trader query language"
+msgstr "en skranke uttrykt i trader spørrespråket"
+
+#: ktraderclient.cpp:38
+#, kde-format
+msgid "Output only paths to desktop files"
+msgstr ""

@@ -1,0 +1,142 @@
+# translation of kcmshell.po to
+# Danish translation of kcmshell
+#
+# Erik Kjær Pedersen <erik@binghamton.edu>, 2004, 2005.
+# Martin Schlander <mschlander@opensuse.org>, 2008, 2010, 2011, 2014, 2015, 2016.
+msgid ""
+msgstr ""
+"Project-Id-Version: kcmshell\n"
+"Report-Msgid-Bugs-To: https://bugs.kde.org\n"
+"POT-Creation-Date: 2022-06-29 00:46+0000\n"
+"PO-Revision-Date: 2016-06-18 14:50+0100\n"
+"Last-Translator: Martin Schlander <mschlander@opensuse.org>\n"
+"Language-Team: Danish <dansk@dansk-gruppen.dk>\n"
+"Language: da\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: Lokalize 2.0\n"
+"Plural-Forms: nplurals=2; plural=n != 1;\n"
+
+#, kde-format
+msgctxt "NAME OF TRANSLATORS"
+msgid "Your names"
+msgstr "Erik Kjær Pedersen"
+
+#, kde-format
+msgctxt "EMAIL OF TRANSLATORS"
+msgid "Your emails"
+msgstr "erik@binghamton.edu"
+
+#: main.cpp:183
+#, kde-format
+msgid "System Settings Module"
+msgstr "Systemindstillinger-modul"
+
+#: main.cpp:185
+#, kde-format
+msgid "A tool to start single system settings modules"
+msgstr "Et værktøj til at starte enkelte systemindstillinger-moduler"
+
+#: main.cpp:187
+#, kde-format
+msgid "(c) 1999-2016, The KDE Developers"
+msgstr "(c) 1999-2016, KDE's udviklere"
+
+#: main.cpp:189
+#, kde-format
+msgid "Frans Englich"
+msgstr "Frans Englich"
+
+#: main.cpp:189
+#, kde-format
+msgid "Maintainer"
+msgstr "Vedligeholder"
+
+#: main.cpp:190
+#, kde-format
+msgid "Daniel Molkentin"
+msgstr "Daniel Molkentin"
+
+#: main.cpp:191
+#, kde-format
+msgid "Matthias Hoelzer-Kluepfel"
+msgstr "Matthias Hoelzer-Kluepfel"
+
+#: main.cpp:192
+#, kde-format
+msgid "Matthias Elter"
+msgstr "Matthias Elter"
+
+#: main.cpp:193
+#, kde-format
+msgid "Matthias Ettrich"
+msgstr "Matthias Ettrich"
+
+#: main.cpp:194
+#, kde-format
+msgid "Waldo Bastian"
+msgstr "Waldo Bastian"
+
+#: main.cpp:200
+#, kde-format
+msgid "List all possible modules"
+msgstr "Liste af alle mulige moduler"
+
+#: main.cpp:201
+#, kde-format
+msgid "Configuration module to open"
+msgstr "Indstillingsmodul som skal åbnes"
+
+#: main.cpp:202
+#, kde-format
+msgid "Specify a particular language"
+msgstr "Angiv et bestemt sprog"
+
+#: main.cpp:203
+#, kde-format
+msgid "Do not display main window"
+msgstr "Vis ikke hovedvinduet"
+
+#: main.cpp:204
+#, kde-format
+msgid "Arguments for the module"
+msgstr "Argumenter til modulet"
+
+#: main.cpp:205
+#, kde-format
+msgid "Use a specific icon for the window"
+msgstr "Brug et specifikt ikon til vinduet"
+
+#: main.cpp:206
+#, kde-format
+msgid "Use a specific caption for the window"
+msgstr "Brug en specifik overskrift til vinduet"
+
+#: main.cpp:215
+#, kde-format
+msgid ""
+"--lang is deprecated. Please set the LANGUAGE environment variable instead"
+msgstr "--lang er under udfasning. Sæt venligt miljøvariablen LANGUAGE"
+
+#: main.cpp:219
+#, kde-format
+msgid "The following modules are available:"
+msgstr "Følgende moduler er tilgængelige:"
+
+#: main.cpp:239
+#, kde-format
+msgid "No description available"
+msgstr "Ingen beskrivelse tilgængelig"
+
+#: main.cpp:303
+#, kde-format
+msgid ""
+"Could not find module '%1'. See kcmshell5 --list for the full list of "
+"modules."
+msgstr ""
+"Kunne ikke finde modulet \"%1\". Se \"kcmshell5 --list\" for hele listen "
+"over moduler."
+
+#~ msgid "KDE Control Module"
+#~ msgstr "KDE Kontrolmodul"

@@ -1,0 +1,210 @@
+# Bosnian translation for kdebase-runtime
+# Copyright (c) 2010 Rosetta Contributors and Canonical Ltd 2010
+# This file is distributed under the same license as the kdebase-runtime package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2010.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: kdebase-runtime\n"
+"Report-Msgid-Bugs-To: https://bugs.kde.org\n"
+"POT-Creation-Date: 2022-08-17 00:46+0000\n"
+"PO-Revision-Date: 2014-10-20 19:46+0000\n"
+"Last-Translator: Samir Ribić <Unknown>\n"
+"Language-Team: Bosnian <bs@li.org>\n"
+"Language: bs\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Launchpad-Export-Date: 2014-10-21 06:49+0000\n"
+"X-Generator: Launchpad (build 17203)\n"
+"Plural-Forms: nplurals=3; plural=n%10==1 && n%100!=11 ? 0 : n%10>=2 && n"
+"%10<=4 && (n%100<10 || n%100>=20) ? 1 : 2;\n"
+
+#, kde-format
+msgctxt "NAME OF TRANSLATORS"
+msgid "Your names"
+msgstr ""
+
+#, kde-format
+msgctxt "EMAIL OF TRANSLATORS"
+msgid "Your emails"
+msgstr ""
+
+#: kstart.cpp:310
+#, kde-format
+msgid "KStart"
+msgstr "KStart"
+
+#: kstart.cpp:312
+#, kde-format
+msgid ""
+"Utility to launch applications with special window properties \n"
+"such as iconified, maximized, a certain virtual desktop, a special "
+"decoration\n"
+"and so on."
+msgstr ""
+"Alat za pokretanje programa čiji prozori imaju posebne\n"
+"osobine, kao npr. pretvoreni u ikone, maksimizirani, poseban\n"
+"desktop, poseban ukras i slično."
+
+#: kstart.cpp:317
+#, kde-format
+msgid "(C) 1997-2000 Matthias Ettrich (ettrich@kde.org)"
+msgstr "(C) 1997-2000 Matthias Ettrich (ettrich@kde.org)"
+
+#: kstart.cpp:319
+#, kde-format
+msgid "Matthias Ettrich"
+msgstr "Matthias Ettrich"
+
+#: kstart.cpp:320
+#, kde-format
+msgid "David Faure"
+msgstr "David Faure"
+
+#: kstart.cpp:321
+#, kde-format
+msgid "Richard J. Moore"
+msgstr "Richard J. Moore"
+
+#: kstart.cpp:326
+#, kde-format
+msgid "Command to execute"
+msgstr "Naredba koju treba izvršiti"
+
+#: kstart.cpp:330
+#, fuzzy, kde-format
+#| msgid ""
+#| "Alternative to <command>: desktop file to start. D-Bus service will be "
+#| "printed to stdout"
+msgid ""
+"Alternative to <command>: desktop file path to start. D-Bus service will be "
+"printed to stdout. Deprecated: use --application"
+msgstr ""
+"Alternativa naredbi: .desktop fajl za pokretanje. D‑Bus servis će biti "
+"ispisan na stdiz."
+
+#: kstart.cpp:333
+#, fuzzy, kde-format
+#| msgid ""
+#| "Alternative to <command>: desktop file to start. D-Bus service will be "
+#| "printed to stdout"
+msgid "Alternative to <command>: desktop file to start."
+msgstr ""
+"Alternativa naredbi: .desktop fajl za pokretanje. D‑Bus servis će biti "
+"ispisan na stdiz."
+
+#: kstart.cpp:336
+#, kde-format
+msgid "Optional URL to pass <desktopfile>, when using --service"
+msgstr "Opcioni URL za prosljeđivanje .desktop datoteke, uz --service"
+
+#: kstart.cpp:339
+#, kde-format
+msgid "A regular expression matching the window title"
+msgstr "Regularni izraz koji odgovara naslovu prozora"
+
+#: kstart.cpp:341
+#, kde-format
+msgid ""
+"A string matching the window class (WM_CLASS property)\n"
+"The window class can be found out by running\n"
+"'xprop | grep WM_CLASS' and clicking on a window\n"
+"(use either both parts separated by a space or only the right part).\n"
+"NOTE: If you specify neither window title nor window class,\n"
+"then the very first window to appear will be taken;\n"
+"omitting both options is NOT recommended."
+msgstr ""
+"String koji odgovara klasi prozora (osobina WM_CLASS)\n"
+"Klasa prozora se može otkriti izvršavajući naredbu\n"
+"'xprop | grep WM_CLASS' i klikom na prozor.\n"
+"NAPOMENA: Ako ne navedete ni naslov ni klasu prozora,\n"
+"prvi prozor koji se pojavi će biti uzet; ispuštanje\n"
+"obje opcije NIJE preporučeno."
+
+#: kstart.cpp:350
+#, kde-format
+msgid "Desktop on which to make the window appear"
+msgstr "Desktop na kojem se prozor treba pojaviti"
+
+#: kstart.cpp:352
+#, kde-format
+msgid ""
+"Make the window appear on the desktop that was active\n"
+"when starting the application"
+msgstr ""
+"Neka se prozor pojavi na desktopu koji je bio ativan\n"
+"kada je pokrenut program."
+
+#: kstart.cpp:353
+#, kde-format
+msgid "Make the window appear on all desktops"
+msgstr "Neka se prozor pojavi na svim desktopima"
+
+#: kstart.cpp:354
+#, kde-format
+msgid "Iconify the window"
+msgstr "Pretvori prozor u ikonu"
+
+#: kstart.cpp:355
+#, kde-format
+msgid "Maximize the window"
+msgstr "Povećaj prozor"
+
+#: kstart.cpp:356
+#, kde-format
+msgid "Maximize the window vertically"
+msgstr "Maksimizuj prozor vertikalno"
+
+#: kstart.cpp:357
+#, kde-format
+msgid "Maximize the window horizontally"
+msgstr "Maksimizuj prozor horizontalno"
+
+#: kstart.cpp:358
+#, kde-format
+msgid "Show window fullscreen"
+msgstr "Prikaži prozor na čitavom ekranu"
+
+#: kstart.cpp:360
+#, kde-format
+msgid ""
+"The window type: Normal, Desktop, Dock, Toolbar, \n"
+"Menu, Dialog, TopMenu or Override"
+msgstr ""
+"Tip prozora: normalni, površ, sidrište, traka \n"
+"alatki, meni, dijalog, glavni meni ili potiskivanje"
+
+#: kstart.cpp:363
+#, kde-format
+msgid ""
+"Jump to the window even if it is started on a \n"
+"different virtual desktop"
+msgstr ""
+"Idi na prozor i u slučaju da se nalazi na nekom \n"
+"drugom virtualnom desktopu."
+
+#: kstart.cpp:366
+#, kde-format
+msgid "Try to keep the window above other windows"
+msgstr "Pokušaj sačuvati prozor iznad ostalih prozora"
+
+#: kstart.cpp:368
+#, kde-format
+msgid "Try to keep the window below other windows"
+msgstr "Pokušaj zadržati prozor ispod ostalih prozora"
+
+#: kstart.cpp:369
+#, kde-format
+msgid "The window does not get an entry in the taskbar"
+msgstr "Prozor se neće pojaviti na traci sa zadacima"
+
+#: kstart.cpp:370
+#, kde-format
+msgid "The window does not get an entry on the pager"
+msgstr "Prozor se neće pojaviti na pageru"
+
+#: kstart.cpp:384
+#, kde-format
+msgid "No command specified"
+msgstr "Nije navedena nijedna naredba"

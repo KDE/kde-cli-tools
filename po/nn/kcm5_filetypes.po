@@ -1,0 +1,537 @@
+# Translation of kcm5_filetypes to Norwegian Nynorsk
+#
+# Gaute Hvoslef Kvalnes <gaute@verdsveven.com>, 1999, 2000, 2003, 2004, 2005.
+# Karl Ove Hufthammer <karl@huftis.org>, 2004, 2007, 2008, 2010, 2015, 2019.
+# Eirik U. Birkeland <eirbir@gmail.com>, 2008, 2009, 2010, 2011.
+msgid ""
+msgstr ""
+"Project-Id-Version: filetypes\n"
+"Report-Msgid-Bugs-To: https://bugs.kde.org\n"
+"POT-Creation-Date: 2022-09-28 00:51+0000\n"
+"PO-Revision-Date: 2019-02-02 18:23+0100\n"
+"Last-Translator: Karl Ove Hufthammer <karl@huftis.org>\n"
+"Language-Team: Norwegian Nynorsk <l10n-no@lister.huftis.org>\n"
+"Language: nn\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: Lokalize 18.12.1\n"
+"Plural-Forms: nplurals=2; plural=n != 1;\n"
+"X-Environment: kde\n"
+"X-Accelerator-Marker: &\n"
+"X-Text-Markup: kde4\n"
+
+#, kde-format
+msgctxt "NAME OF TRANSLATORS"
+msgid "Your names"
+msgstr "Gaute Hvoslef Kvalnes,Karl Ove Hufthammer"
+
+#, kde-format
+msgctxt "EMAIL OF TRANSLATORS"
+msgid "Your emails"
+msgstr "gaute@verdsveven.com,karl@huftis.org"
+
+#: filegroupdetails.cpp:22
+#, kde-format
+msgid "Left Click Action (only for Konqueror file manager)"
+msgstr "Venstreklikkhandling (berre for Konqueror)"
+
+#: filegroupdetails.cpp:26 filetypedetails.cpp:133
+#, kde-format
+msgid "Show file in embedded viewer"
+msgstr "Vis fila i eit innebyggbart visingsprogram"
+
+#: filegroupdetails.cpp:27 filetypedetails.cpp:134
+#, kde-format
+msgid "Show file in separate viewer"
+msgstr "Vis fila i eit eige visingsprogram"
+
+#: filegroupdetails.cpp:36
+#, kde-format
+msgid ""
+"Here you can configure what the Konqueror file manager will do when you "
+"click on a file belonging to this group. Konqueror can display the file in "
+"an embedded viewer or start up a separate application. You can change this "
+"setting for a specific file type in the 'Embedding' tab of the file type "
+"configuration. Dolphin  shows files always in a separate viewer"
+msgstr ""
+"Her kan du velja kva filhandsamaren Konqueror skal gjera når du vel ei fil "
+"som høyrer til denne gruppa. Konqueror kan visa fila i eit visingsprogram "
+"inni Konqueror-vindauget eller starta eit eige visingsprogram. Du kan endra "
+"innstillingane for ein filtype under «Innebygging» i filtypeoppsettet. "
+"Dolphin viser alltid filene i eit eige visingsprogram."
+
+#: filetypedetails.cpp:61
+#, kde-format
+msgid ""
+"This button displays the icon associated with the selected file type. Click "
+"on it to choose a different icon."
+msgstr ""
+"Denne knappen viser ikonet som høyrer til den valde filtypen. Trykk på han "
+"for å velja eit anna ikon."
+
+#: filetypedetails.cpp:67
+#, kde-format
+msgid "Filename Patterns"
+msgstr "Filnamnmønster"
+
+#: filetypedetails.cpp:79
+#, kde-format
+msgid ""
+"This box contains a list of patterns that can be used to identify files of "
+"the selected type. For example, the pattern *.txt is associated with the "
+"file type 'text/plain'; all files ending in '.txt' are recognized as plain "
+"text files."
+msgstr ""
+"Denne boksen inneheld ei liste over mønster som kan brukast for å kjenna att "
+"filer av den valde typen. Du brukar for eksempel mønsteret *.txt for "
+"filtypen «text/plain», slik at alle filer som sluttar på «.txt» vert kjende "
+"att som reine tekstfiler."
+
+#: filetypedetails.cpp:87 filetypesview.cpp:103 kservicelistwidget.cpp:102
+#, kde-format
+msgid "Add..."
+msgstr "Legg til …"
+
+#: filetypedetails.cpp:92
+#, kde-format
+msgid "Add a new pattern for the selected file type."
+msgstr "Legg til eit nytt mønster for den valde filtypen."
+
+#: filetypedetails.cpp:94 kservicelistwidget.cpp:116
+#, kde-format
+msgid "Remove"
+msgstr "Fjern"
+
+#: filetypedetails.cpp:99
+#, kde-format
+msgid "Remove the selected filename pattern."
+msgstr "Fjern det valde filnamnmønsteret."
+
+#: filetypedetails.cpp:110
+#, kde-format
+msgid "Description:"
+msgstr "Skildring:"
+
+#: filetypedetails.cpp:115
+#, kde-format
+msgid ""
+"You can enter a short description for files of the selected file type (e.g. "
+"'HTML Page'). This description will be used by applications like Konqueror "
+"to display directory content."
+msgstr ""
+"Her kan du skriva ei kort skildring for filer av den valde typen (for "
+"eksempel «HTML-side»). Denne skildringa vert brukt av program som Konqueror "
+"for vising av mapper."
+
+#: filetypedetails.cpp:128
+#, kde-format
+msgid "Left Click Action in Konqueror"
+msgstr "Venstreklikkhandling i Konqueror"
+
+#: filetypedetails.cpp:137
+#, kde-format
+msgid "Ask whether to save to disk instead (only for Konqueror browser)"
+msgstr "Spør om det skal lagrast til disk i staden (berre for Konqueror)"
+
+#: filetypedetails.cpp:153
+#, kde-format
+msgid ""
+"Here you can configure what the Konqueror file manager will do when you "
+"click on a file of this type. Konqueror can either display the file in an "
+"embedded viewer, or start up a separate application. If set to 'Use settings "
+"for G group', the file manager will behave according to the settings of the "
+"group G to which this type belongs; for instance, 'image' if the current "
+"file type is image/png. Dolphin always shows files in a separate viewer."
+msgstr ""
+"Her kan du velja kva filhandsamaren Konqueror skal gjera når du vel ei fil "
+"av denne typen. Konqueror kan anten visa fila i eit visingsprogram inni "
+"Konqueror-vindauget eller starta eit eige visingsprogram. Dersom du vel "
+"«Bruk innstillingane for gruppa G», vil filhandsamaren bruka innstillingane "
+"for gruppa G som filtypen høyrer til, for eksempel «image» («bilete») dersom "
+"filtypen er «image/png». Dolphin viser alltid filene i eit eige "
+"visingsprogram."
+
+#: filetypedetails.cpp:165
+#, kde-format
+msgid "&General"
+msgstr "&Generelt"
+
+#: filetypedetails.cpp:166
+#, kde-format
+msgid "&Embedding"
+msgstr "&Innebygging"
+
+#: filetypedetails.cpp:207
+#, kde-format
+msgid "Add New Extension"
+msgstr "Legg til nytt etternamn"
+
+#: filetypedetails.cpp:207
+#, kde-format
+msgid "Extension:"
+msgstr "Etternamn:"
+
+#: filetypedetails.cpp:325
+#, kde-format
+msgid "File type %1"
+msgstr "Filtype %1"
+
+#: filetypedetails.cpp:333
+#, kde-format
+msgid "Use settings for '%1' group"
+msgstr "Bruk innstillingane for gruppa «%1»"
+
+# skip-rule: klammeform
+#: filetypesview.cpp:44
+#, kde-format
+msgid ""
+"<p><h1>File Associations</h1> This module allows you to choose which "
+"applications are associated with a given type of file. File types are also "
+"referred to as MIME types (MIME is an acronym which stands for "
+"\"Multipurpose Internet Mail Extensions\").</p><p> A file association "
+"consists of the following: <ul><li>Rules for determining the MIME-type of a "
+"file, for example the filename pattern *.png, which means 'all files with "
+"names that end in .png', is associated with the MIME type \"image/png\";</"
+"li> <li>A short description of the MIME-type, for example the description of "
+"the MIME type \"image/png\" is simply 'PNG image';</li> <li>An icon to be "
+"used for displaying files of the given MIME-type, so that you can easily "
+"identify the type of file in a file manager or file-selection dialog (at "
+"least for the types you use often);</li> <li>A list of the applications "
+"which can be used to open files of the given MIME-type -- if more than one "
+"application can be used then the list is ordered by priority.</li></ul> You "
+"may be surprised to find that some MIME types have no associated filename "
+"patterns; in these cases, KDE is able to determine the MIME-type by directly "
+"examining the contents of the file.</p>"
+msgstr ""
+"<p><h1>Filtilknytingar</h1> I denne modulen kan du velja kva for program som "
+"skal knytast til kvar filtype. Filtypar vert ofte kalla MIME-typar "
+"(forkortinga MIME står for «Multipurpose Internet Mail Extensions»).</"
+"p><p>Ei filtilknyting inneheld: <ul><li>Reglar for å avgjera MIME-typen til "
+"ei fil. Filnamnmønsteret *.png, som tyder «alle filer med namn som sluttar "
+"på .png», kan for eksempel vera knytt til MIME-typen «image/png».</li><li>Ei "
+"kort skildring av MIME-typen. Skildringa av MIME-typen «image/png» er ganske "
+"enkelt «PNG-bilete».</li><li>Eit ikon for vising av filer av denne MIME-"
+"typen, slik at du kan lett kan kjenna att filtypen i ein filhandsamar eller "
+"i eit opna/lagra-vindauge i eit program (iallfall for filtypar du brukar "
+"ofte).</li><li>Ei liste over program du kan bruka til å opna filer med denne "
+"MIME-typen. Dersom fleire program kan brukast, vert lista sortert etter "
+"prioritet.</li></ul> Du er kanskje overraska over at nokre MIME-typar ikkje "
+"har tilhøyrande filnamnmønster? I desse tilfella kan KDE avgjera MIME-typen "
+"ved å granska innhaldet direkte.</p>"
+
+#: filetypesview.cpp:74
+#, kde-format
+msgid "Search for file type or filename pattern..."
+msgstr "Søk etter filtype eller filnamnmønster …"
+
+#: filetypesview.cpp:80
+#, kde-format
+msgid ""
+"Enter a part of a filename pattern, and only file types with a matching file "
+"pattern will appear in the list. Alternatively, enter a part of a file type "
+"name as it appears in the list."
+msgstr ""
+"Skriv ein del av eit filnamnmønster. Berre filtypar som passar mønsteret "
+"vert då viste i lista. Du kan òg skriva inn ein del av eit filtypenamn slik "
+"det står i lista."
+
+#: filetypesview.cpp:88
+#, kde-format
+msgid "Known Types"
+msgstr "Kjende typar"
+
+#: filetypesview.cpp:94
+#, kde-format
+msgid ""
+"Here you can see a hierarchical list of the file types which are known on "
+"your system. Click on the '+' sign to expand a category, or the '-' sign to "
+"collapse it. Select a file type (e.g. text/html for HTML files) to view/edit "
+"the information for that file type using the controls on the right."
+msgstr ""
+"Her ser du ei hierarkisk liste over filtypane som er kjende på systemet "
+"ditt. Trykk på plussteiknet (+) for å utvida ein kategori, eller "
+"minusteiknet (–) for å gøyma han. Vel ein filtype (for eksempel «text/html» "
+"for HTML-filer) for å visa eller endra informasjonen for filtypen ved hjelp "
+"av kontrollane til høgre."
+
+#: filetypesview.cpp:108
+#, kde-format
+msgid "Click here to add a new file type."
+msgstr "Klikk her for å leggja til ein ny filtype."
+
+#: filetypesview.cpp:110 filetypesview.cpp:376
+#, kde-format
+msgid "&Remove"
+msgstr "&Fjern"
+
+#: filetypesview.cpp:134
+#, kde-format
+msgid "Select a file type by name or by extension"
+msgstr "Vel ein filtype ved namn eller etternamn"
+
+#: filetypesview.cpp:369
+#, kde-format
+msgid "&Revert"
+msgstr "&Tilbakestill"
+
+#: filetypesview.cpp:370
+#, kde-format
+msgid "Revert this file type to its initial system-wide definition"
+msgstr "Tilbakestill denne filtypen til den opphavlege systemdefinisjonen"
+
+#: filetypesview.cpp:372
+#, kde-format
+msgid ""
+"Click here to revert this file type to its initial system-wide definition, "
+"which undoes any changes made to the file type. Note that system-wide file "
+"types cannot be deleted. You can however empty their pattern list, to "
+"minimize the chances of them being used (but the file type determination "
+"from file contents can still end up using them)."
+msgstr ""
+"Trykk her for å tilbakestilla denne filtypen til den opphavlege "
+"systemdefinisjonen. Merk at slike systemfiltypar ikkje kan slettast. Men du "
+"kan tømma mønsterlista deira, slik at det vert mindre sjanse for at dei vert "
+"brukte. Det kan likevel henda ein slik filtype vert brukt ved fastsetjing av "
+"filtype etter filinnhald."
+
+#: filetypesview.cpp:377
+#, kde-format
+msgid "Delete this file type definition completely"
+msgstr "Slett denne filtypedefinisjonen heilt"
+
+#: filetypesview.cpp:379
+#, kde-format
+msgid ""
+"Click here to delete this file type definition completely. This is only "
+"possible for user-defined file types. System-wide file types cannot be "
+"deleted. You can however empty their pattern list, to minimize the chances "
+"of them being used (but the file type determination from file contents can "
+"still end up using them)."
+msgstr ""
+"Trykk her for å sletta denne filtypedefinisjonen heilt. Dette er berre "
+"mogleg for brukartilpassa filtypar. Systemfiltypar kan ikkje slettast. Men "
+"du kan tømma mønsterlista deira, slik at det vert mindre sjanse for at dei "
+"vert brukte. Det kan likevel henda ein slik filtype vert brukt ved "
+"fastsetjing av filtype etter filinnhald."
+
+#: keditfiletype.cpp:124
+#, kde-format
+msgid "File Type Editor"
+msgstr "Filtyperedigering"
+
+#: keditfiletype.cpp:126
+#, kde-format
+msgid ""
+"KDE file type editor - simplified version for editing a single file type"
+msgstr ""
+"Redigering av filtypar i KDE – forenkla versjon for redigering av "
+"einskildfiltypar"
+
+#: keditfiletype.cpp:128
+#, kde-format
+msgid "(c) 2000, KDE developers"
+msgstr "© 2000 KDE-utviklarane"
+
+#: keditfiletype.cpp:129
+#, kde-format
+msgid "Preston Brown"
+msgstr "Preston Brown"
+
+#: keditfiletype.cpp:130
+#, kde-format
+msgid "David Faure"
+msgstr "David Faure"
+
+#: keditfiletype.cpp:136
+#, kde-format
+msgid "Makes the dialog transient for the window specified by winid"
+msgstr ""
+"Gjer dialogvindauget forbigåande for vindauget som vindaugs-ID-en høyrer til"
+
+#: keditfiletype.cpp:138
+#, kde-format
+msgid "File type to edit (e.g. text/html)"
+msgstr "Filtype som skal endrast (for eksempel «text/html»)"
+
+#: keditfiletype.cpp:169
+#, kde-format
+msgid "%1 File"
+msgstr "%1-fil"
+
+#: keditfiletype.cpp:196
+#, kde-format
+msgid "Edit File Type %1"
+msgstr "Rediger filtype %1"
+
+#: keditfiletype.cpp:198
+#, kde-format
+msgid "Create New File Type %1"
+msgstr "Lag ny filtype %1"
+
+#: kservicelistwidget.cpp:36
+#, kde-format
+msgid "%1 (%2)"
+msgstr "%1 (%2)"
+
+#: kservicelistwidget.cpp:49
+#, kde-format
+msgid "Application Preference Order"
+msgstr "Føretrekt programrekkjefølgje"
+
+#: kservicelistwidget.cpp:49
+#, kde-format
+msgid "Services Preference Order"
+msgstr "Føretrekt tenesterekkjefølgje"
+
+#: kservicelistwidget.cpp:60
+#, kde-format
+msgid ""
+"This is a list of applications associated with files of the selected file "
+"type. This list is shown in Konqueror's context menus when you select \"Open "
+"With...\". If more than one application is associated with this file type, "
+"then the list is ordered by priority with the uppermost item taking "
+"precedence over the others."
+msgstr ""
+"Dette er ei liste over program som er knytte til filer av den valde "
+"filtypen. Lista vert vist i Konqueror når du vel «Opna med». Dersom fleire "
+"enn eitt program er knytte til filtypen, har programmet øvst i lista "
+"prioritet over dei andre."
+
+#: kservicelistwidget.cpp:65
+#, kde-format
+msgid ""
+"This is a list of services associated with files of the selected file type. "
+"This list is shown in Konqueror's context menus when you select a \"Preview "
+"with...\" option. If more than one service is associated with this file "
+"type, then the list is ordered by priority with the uppermost item taking "
+"precedence over the others."
+msgstr ""
+"Dette er ei liste over tenester som er knytte til filer av den valde "
+"filtypen. Denne lista vert vist i Konqueror når du vel «Førehandsvis med». "
+"Dersom fleire enn éi teneste er knytte til filtypen, har programmet øvst i "
+"lista prioritet over dei andre."
+
+#: kservicelistwidget.cpp:77
+#, kde-format
+msgid "Move &Up"
+msgstr "Flytt &opp"
+
+#: kservicelistwidget.cpp:83
+#, kde-format
+msgid ""
+"Assigns a higher priority to the selected\n"
+"application, moving it up in the list. Note:  This\n"
+"only affects the selected application if the file type is\n"
+"associated with more than one application."
+msgstr ""
+"Gjev det valde programmet høgare prioritet, og flyttar det oppover\n"
+"i lista. Merk at dette berre påverkar det valde programmet\n"
+"dersom filtypen er knytt til fleire enn eitt program."
+
+#: kservicelistwidget.cpp:87
+#, kde-format
+msgid ""
+"Assigns a higher priority to the selected\n"
+"service, moving it up in the list."
+msgstr ""
+"Gjev den valde tenesta høgare prioritet,\n"
+"og flyttar ho oppover i lista."
+
+#: kservicelistwidget.cpp:90
+#, kde-format
+msgid "Move &Down"
+msgstr "Flytt &ned"
+
+#: kservicelistwidget.cpp:95
+#, kde-format
+msgid ""
+"Assigns a lower priority to the selected\n"
+"application, moving it down in the list. Note: This \n"
+"only affects the selected application if the file type is\n"
+"associated with more than one application."
+msgstr ""
+"Gjev det valde programmet lågare prioritet, og flyttar det oppover\n"
+"i lista. Merk at dette berre påverkar det valde programmet\n"
+"dersom filtypen er knytt til fleire enn eitt program."
+
+#: kservicelistwidget.cpp:99
+#, kde-format
+msgid ""
+"Assigns a lower priority to the selected\n"
+"service, moving it down in the list."
+msgstr ""
+"Gjev den valde tenesta lågare priotitet,\n"
+"og flyttar ho nedover i lista."
+
+#: kservicelistwidget.cpp:107
+#, kde-format
+msgid "Add a new application for this file type."
+msgstr "Legg til eit nytt program for denne filtypen."
+
+#: kservicelistwidget.cpp:109
+#, kde-format
+msgid "Edit..."
+msgstr "Endra …"
+
+#: kservicelistwidget.cpp:114
+#, kde-format
+msgid "Edit command line of the selected application."
+msgstr "Endra kommandolinja til det valde programmet."
+
+#: kservicelistwidget.cpp:121
+#, kde-format
+msgid "Remove the selected application from the list."
+msgstr "Fjern det valde programmet frå lista."
+
+#: kservicelistwidget.cpp:144
+#, kde-format
+msgctxt "No applications associated with this file type"
+msgid "None"
+msgstr "Ingen"
+
+#: kservicelistwidget.cpp:146
+#, kde-format
+msgctxt "No components associated with this file type"
+msgid "None"
+msgstr "Ingen"
+
+#: kserviceselectdlg.cpp:21
+#, kde-format
+msgid "Add Service"
+msgstr "Legg til teneste"
+
+#: kserviceselectdlg.cpp:25
+#, kde-format
+msgid "Select service:"
+msgstr "Vel teneste:"
+
+#: newtypedlg.cpp:25
+#, kde-format
+msgid "Create New File Type"
+msgstr "Lag ny filtype"
+
+#: newtypedlg.cpp:30
+#, kde-format
+msgid "Group:"
+msgstr "Gruppe:"
+
+#: newtypedlg.cpp:39
+#, kde-format
+msgid "Select the category under which the new file type should be added."
+msgstr "Vel kva kategori den nye fila skal leggjast til."
+
+#: newtypedlg.cpp:44
+#, kde-format
+msgid "Type name:"
+msgstr "Typenamn:"
+
+#: newtypedlg.cpp:50
+#, kde-format
+msgid ""
+"Type the name of the file type. For instance, if you selected 'image' as "
+"category and you type 'custom' here, the file type 'image/custom' will be "
+"created."
+msgstr ""
+"Skriv inn namnet på filtypen. Viss du for eksempel har valt «image» som "
+"kategori og skriv inn «custom», vert filtypen «image/custom» lagt til."

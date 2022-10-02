@@ -1,0 +1,211 @@
+# translation of kstart.po to Chinese Traditional
+#
+# Traditional Chinese Translation of kstart
+# Copyright (C) 2001, 2002, 2003, 2007 Free Software Foundation, Inc.
+#
+# Jing-Jong Shyue <shyue@sonoma.com.tw>, 2001.
+# Yuan-Chen Cheng <ycheng@slat.org>, 2002.
+# Tsung-Chien Ho <iitze@hotmail.com>, 2003.
+# Frank Weng (a.k.a. Franklin) <franklin at goodhorse dot idv dot tw>, 2007, 2009.
+# Franklin Weng <franklin at goodhorse dot idv dot tw>, 2007.
+# pan93412 <pan93412@gmail.com>, 2019.
+msgid ""
+msgstr ""
+"Project-Id-Version: kstart\n"
+"Report-Msgid-Bugs-To: https://bugs.kde.org\n"
+"POT-Creation-Date: 2022-08-17 00:46+0000\n"
+"PO-Revision-Date: 2019-01-19 19:40+0800\n"
+"Last-Translator: pan93412 <pan93412@gmail.com>\n"
+"Language-Team: Chinese <zh-l10n@lists.linux.org.tw>\n"
+"Language: zh_TW\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: Lokalize 18.12.1\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
+
+#, kde-format
+msgctxt "NAME OF TRANSLATORS"
+msgid "Your names"
+msgstr "薛景中, 鄭原真"
+
+#, kde-format
+msgctxt "EMAIL OF TRANSLATORS"
+msgid "Your emails"
+msgstr "shyue@sonoma.com.tw, ycheng@slat.org"
+
+#: kstart.cpp:310
+#, kde-format
+msgid "KStart"
+msgstr "KStart"
+
+#: kstart.cpp:312
+#, kde-format
+msgid ""
+"Utility to launch applications with special window properties \n"
+"such as iconified, maximized, a certain virtual desktop, a special "
+"decoration\n"
+"and so on."
+msgstr ""
+"用來啟動特殊視窗內容的啟動程式工具\n"
+"例如圖示化, 最大化, 特定虛擬桌面, 特殊裝飾等\n"
+" "
+
+#: kstart.cpp:317
+#, kde-format
+msgid "(C) 1997-2000 Matthias Ettrich (ettrich@kde.org)"
+msgstr "(C) 1997-2000 Matthias Ettrich (ettrich@kde.org)"
+
+#: kstart.cpp:319
+#, kde-format
+msgid "Matthias Ettrich"
+msgstr "Matthias Ettrich"
+
+#: kstart.cpp:320
+#, kde-format
+msgid "David Faure"
+msgstr "David Faure"
+
+#: kstart.cpp:321
+#, kde-format
+msgid "Richard J. Moore"
+msgstr "Richard J. Moore"
+
+#: kstart.cpp:326
+#, kde-format
+msgid "Command to execute"
+msgstr "要執行的指令"
+
+#: kstart.cpp:330
+#, fuzzy, kde-format
+#| msgid ""
+#| "Alternative to <command>: desktop file to start. D-Bus service will be "
+#| "printed to stdout"
+msgid ""
+"Alternative to <command>: desktop file path to start. D-Bus service will be "
+"printed to stdout. Deprecated: use --application"
+msgstr "<command> 的變化：要啟動的桌面檔。D-BUS 服務會印在標準輸出。"
+
+#: kstart.cpp:333
+#, fuzzy, kde-format
+#| msgid ""
+#| "Alternative to <command>: desktop file to start. D-Bus service will be "
+#| "printed to stdout"
+msgid "Alternative to <command>: desktop file to start."
+msgstr "<command> 的變化：要啟動的桌面檔。D-BUS 服務會印在標準輸出。"
+
+#: kstart.cpp:336
+#, kde-format
+msgid "Optional URL to pass <desktopfile>, when using --service"
+msgstr "使用 --service 選項時，要傳送 <desktopfile> 的網址，選擇性的。"
+
+#: kstart.cpp:339
+#, kde-format
+msgid "A regular expression matching the window title"
+msgstr "比對視窗標題的正則表達式"
+
+#: kstart.cpp:341
+#, kde-format
+msgid ""
+"A string matching the window class (WM_CLASS property)\n"
+"The window class can be found out by running\n"
+"'xprop | grep WM_CLASS' and clicking on a window\n"
+"(use either both parts separated by a space or only the right part).\n"
+"NOTE: If you specify neither window title nor window class,\n"
+"then the very first window to appear will be taken;\n"
+"omitting both options is NOT recommended."
+msgstr ""
+"符合視窗類別(WM_CLASS property)的字串\n"
+"視窗類別可執行「xprop | grep WM_CLASS」\n"
+"或單擊視窗(使用以空白分開的兩部分或僅右\n"
+"半部)來取得。\n"
+"注意：如果您不指定視窗標題或視窗類別，\n"
+"出現在最前面的視窗會被選取；\n"
+"不建議將兩個選項皆取消使用。"
+
+#: kstart.cpp:350
+#, kde-format
+msgid "Desktop on which to make the window appear"
+msgstr "讓視窗出現的桌面"
+
+#: kstart.cpp:352
+#, kde-format
+msgid ""
+"Make the window appear on the desktop that was active\n"
+"when starting the application"
+msgstr ""
+"啟動應用程式時立即將出現在桌面上的視窗\n"
+"設為動作中"
+
+#: kstart.cpp:353
+#, kde-format
+msgid "Make the window appear on all desktops"
+msgstr "讓視窗出現在所有桌面"
+
+#: kstart.cpp:354
+#, kde-format
+msgid "Iconify the window"
+msgstr "視窗圖示化"
+
+#: kstart.cpp:355
+#, kde-format
+msgid "Maximize the window"
+msgstr "最大化視窗"
+
+#: kstart.cpp:356
+#, kde-format
+msgid "Maximize the window vertically"
+msgstr "垂直最大化視窗"
+
+#: kstart.cpp:357
+#, kde-format
+msgid "Maximize the window horizontally"
+msgstr "水平最大化視窗"
+
+#: kstart.cpp:358
+#, kde-format
+msgid "Show window fullscreen"
+msgstr "將視窗全螢幕顯示"
+
+#: kstart.cpp:360
+#, kde-format
+msgid ""
+"The window type: Normal, Desktop, Dock, Toolbar, \n"
+"Menu, Dialog, TopMenu or Override"
+msgstr ""
+"視窗類別：一般、桌面、嵌入、工具列\n"
+"選單、對話框、頂層選單或覆蓋"
+
+#: kstart.cpp:363
+#, kde-format
+msgid ""
+"Jump to the window even if it is started on a \n"
+"different virtual desktop"
+msgstr ""
+"跳到視窗\n"
+"就算是在別的虛擬桌面啟動"
+
+#: kstart.cpp:366
+#, kde-format
+msgid "Try to keep the window above other windows"
+msgstr "使視窗保持在其他視窗的上面"
+
+#: kstart.cpp:368
+#, kde-format
+msgid "Try to keep the window below other windows"
+msgstr "使視窗保持在其他視窗的下面"
+
+#: kstart.cpp:369
+#, kde-format
+msgid "The window does not get an entry in the taskbar"
+msgstr "這個視窗無法取得工作列進入點"
+
+#: kstart.cpp:370
+#, kde-format
+msgid "The window does not get an entry on the pager"
+msgstr "這個視窗無法取得虛擬桌面管理器進入點"
+
+#: kstart.cpp:384
+#, kde-format
+msgid "No command specified"
+msgstr "沒有指定指令"

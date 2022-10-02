@@ -1,0 +1,64 @@
+# Copyright (C) YEAR This_file_is_part_of_KDE
+# This file is distributed under the same license as the PACKAGE package.
+#
+# Lê Hoàng Phương <herophuong93@gmail.com>, 2011.
+# Phu Hung Nguyen <phu.nguyen@kdemail.net>, 2022.
+msgid ""
+msgstr ""
+"Project-Id-Version: \n"
+"Report-Msgid-Bugs-To: https://bugs.kde.org\n"
+"POT-Creation-Date: 2021-03-18 02:47+0100\n"
+"PO-Revision-Date: 2022-05-05 14:37+0200\n"
+"Last-Translator: Phu Hung Nguyen <phu.nguyen@kdemail.net>\n"
+"Language-Team: Vietnamese <kde-l10n-vi@kde.org>\n"
+"Language: vi\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: Lokalize 21.12.2\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
+
+#, kde-format
+msgctxt "NAME OF TRANSLATORS"
+msgid "Your names"
+msgstr "Nguyễn Hùng Phú"
+
+#, kde-format
+msgctxt "EMAIL OF TRANSLATORS"
+msgid "Your emails"
+msgstr "phu.nguyen@kdemail.net"
+
+#: ktraderclient.cpp:22
+#, kde-format
+msgid "KTraderClient"
+msgstr "KTraderClient"
+
+#: ktraderclient.cpp:23
+#, kde-format
+msgid "David Faure"
+msgstr "David Faure"
+
+#: ktraderclient.cpp:25
+#, kde-format
+msgid "A command-line tool for querying the KDE trader system"
+msgstr "Một công cụ dòng lệnh để truy vấn hệ thống trao đổi (trader) của KDE"
+
+#: ktraderclient.cpp:30
+#, kde-format
+msgid "A MIME type"
+msgstr "Một kiểu MIME"
+
+#: ktraderclient.cpp:32
+#, kde-format
+msgid "A servicetype, like KParts/ReadOnlyPart or KMyApp/Plugin"
+msgstr "Một kiểu dịch vụ, chẳng hạn như KParts/ReadOnlyPart hay KMyApp/Plugin"
+
+#: ktraderclient.cpp:35
+#, kde-format
+msgid "A constraint expressed in the trader query language"
+msgstr "Một ràng buộc được thể hiện trong ngôn ngữ truy vấn trao đổi (trader)"
+
+#: ktraderclient.cpp:38
+#, kde-format
+msgid "Output only paths to desktop files"
+msgstr "Chỉ xuất ra các đường dẫn đến các tệp desktop"
