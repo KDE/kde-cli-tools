@@ -280,7 +280,7 @@ msgstr "Selecciona un tipus de fitxer per nom o per extensió"
 #: filetypesview.cpp:369
 #, kde-format
 msgid "&Revert"
-msgstr "&Revertix"
+msgstr "Re&vertix"
 
 #: filetypesview.cpp:370
 #, kde-format
