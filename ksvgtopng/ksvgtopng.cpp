@@ -1,4 +1,4 @@
-#include <QApplication>
+#include <QGuiApplication>
 #include <QImage>
 #include <QString>
 
@@ -14,7 +14,7 @@ int main(int argc, char **argv)
     // Initialize Qt application, otherwise for some svg files it can segfault with:
     // ASSERT failure in QFontDatabase: "A QApplication object needs to be
     // constructed before FontConfig is used."
-    QApplication app(argc, argv);
+    QGuiApplication app(argc, argv);
 
     if (argc < 5) {
         cout << "Usage : ksvgtopng width height svgfilename outputfilename" << endl;
