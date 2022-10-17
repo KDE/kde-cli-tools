@@ -83,20 +83,19 @@ msgid ""
 "Alternative to <command>: desktop file path to start. D-Bus service will be "
 "printed to stdout. Deprecated: use --application"
 msgstr ""
-"Alternativa a <ordre>: camí del fitxer «desktop» que s'ha d'iniciar. El "
-"servei de D-Bus s'imprimirà a l'eixida estàndard (stdout). Obsolet: "
-"utilitzeu «--application»"
+"Alternativa a <ordre>: camí del fitxer «desktop» que s'iniciarà. El servei "
+"de D-Bus s'imprimirà a l'eixida estàndard (stdout). Obsolet: utilitzeu «--"
+"application»"
 
 #: kstart.cpp:333
 #, kde-format
 msgid "Alternative to <command>: desktop file to start."
-msgstr "Alternativa a <ordre>: fitxer «desktop» que s'ha d'iniciar."
+msgstr "Alternativa a <ordre>: fitxer «desktop» que s'iniciarà."
 
 #: kstart.cpp:336
 #, kde-format
 msgid "Optional URL to pass <desktopfile>, when using --service"
-msgstr ""
-"URL opcional que s'ha de passar <desktopfile>, quan s'utilitza --service"
+msgstr "URL opcional que es passarà <desktopfile>, quan s'utilitza --service"
 
 #: kstart.cpp:339
 #, kde-format
