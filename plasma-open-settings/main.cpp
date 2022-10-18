@@ -12,6 +12,14 @@
 #include <QTextStream>
 #include <QUrl>
 
+KIO::CommandLauncherJob *openPlasmaSettings(QString &moduleName)
+{
+    // TODO needs --args support in plasma-settings
+    KIO::CommandLauncherJob *job = new KIO::CommandLauncherJob(QStringLiteral("plasma-settings"), {"-m", moduleName});
+    job->setDesktopName(QStringLiteral("org.kde.plasma.settings"));
+    return job;
+}
+
 int main(int argc, char **argv)
 {
     QGuiApplication app(argc, argv);
@@ -43,13 +51,18 @@ int main(int argc, char **argv)
 
     KIO::CommandLauncherJob *job = nullptr;
     int ret = 0;
-    if (!QStandardPaths::findExecutable("systemsettings").isEmpty()) {
+
+    QString plasmaPlatform = qgetenv("PLASMA_PLATFORM");
+    bool isMobile = plasmaPlatform.contains("phone");
+
+    if (isMobile && !QStandardPaths::findExecutable("plasma-settings").isEmpty()) {
+        // plasma-settings has priority for mobile
+        job = openPlasmaSettings(moduleName);
+    } else if (!QStandardPaths::findExecutable("systemsettings").isEmpty()) {
         job = new KIO::CommandLauncherJob(QStringLiteral("systemsettings"), {moduleName, QStringLiteral("--args"), args});
         job->setDesktopName(QStringLiteral("org.kde.systemsettings"));
     } else if (!QStandardPaths::findExecutable("plasma-settings").isEmpty()) {
-        // TODO needs --args support in plasma-settings
-        job = new KIO::CommandLauncherJob(QStringLiteral("plasma-settings"), {"-m", moduleName});
-        job->setDesktopName(QStringLiteral("org.kde.plasma.settings"));
+        job = openPlasmaSettings(moduleName);
     } else if (!QStandardPaths::findExecutable("kcmshell5").isEmpty()) {
         job = new KIO::CommandLauncherJob(QStringLiteral("kcmshell5"), {moduleName, QStringLiteral("--args"), args});
     } else if (!QStandardPaths::findExecutable("kdialog").isEmpty()) {
