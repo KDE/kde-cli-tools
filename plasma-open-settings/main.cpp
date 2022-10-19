@@ -52,8 +52,7 @@ int main(int argc, char **argv)
     KIO::CommandLauncherJob *job = nullptr;
     int ret = 0;
 
-    QString plasmaPlatform = qgetenv("PLASMA_PLATFORM");
-    bool isMobile = plasmaPlatform.contains("phone");
+    const bool isMobile = qgetenv("PLASMA_PLATFORM").contains("phone");
 
     if (isMobile && !QStandardPaths::findExecutable("plasma-settings").isEmpty()) {
         // plasma-settings has priority for mobile
