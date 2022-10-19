@@ -7,6 +7,7 @@
 #include <KAboutData>
 #include <KIO/CommandLauncherJob>
 #include <KLocalizedString>
+#include <KRuntimePlatform>
 #include <QGuiApplication>
 #include <QStandardPaths>
 #include <QTextStream>
@@ -52,9 +53,7 @@ int main(int argc, char **argv)
     KIO::CommandLauncherJob *job = nullptr;
     int ret = 0;
 
-    const bool isMobile = qgetenv("PLASMA_PLATFORM").contains("phone");
-
-    if (isMobile && !QStandardPaths::findExecutable("plasma-settings").isEmpty()) {
+    if (KRuntimePlatform::runtimePlatform().contains("phone") && !QStandardPaths::findExecutable("plasma-settings").isEmpty()) {
         // plasma-settings has priority for mobile
         job = openPlasmaSettings(moduleName);
     } else if (!QStandardPaths::findExecutable("systemsettings").isEmpty()) {
