@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kde-cli-tools\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2022-09-28 00:51+0000\n"
+"POT-Creation-Date: 2022-10-21 00:48+0000\n"
 "PO-Revision-Date: 2021-07-22 15:07-0300\n"
 "Last-Translator: Luiz Fernando Ranghetti <elchevive@opensuse.org>\n"
 "Language-Team: Brazilian Portuguese <kde-i18n-pt_BR@kde.org>\n"
@@ -27,22 +27,22 @@ msgctxt "EMAIL OF TRANSLATORS"
 msgid "Your emails"
 msgstr "elchevive@opensuse.org"
 
-#: main.cpp:21
+#: main.cpp:30
 #, kde-format
 msgid "App to open Settings app"
 msgstr "Aplicativo para abrir o aplicativo de configurações"
 
-#: main.cpp:23
+#: main.cpp:32
 #, kde-format
 msgid "A tool to start system settings"
 msgstr "Uma ferramenta para iniciar as configurações do sistema"
 
-#: main.cpp:25
+#: main.cpp:34
 #, kde-format
 msgid "(c) 2021, The KDE Developers"
 msgstr "(c) 2021, Os desenvolvedores do KDE"
 
-#: main.cpp:56
+#: main.cpp:67
 #, kde-format
 msgid "Could not open: %1"
 msgstr "Não foi possível abrir: %1"

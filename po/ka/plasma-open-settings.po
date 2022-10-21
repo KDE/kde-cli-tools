@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kde-cli-tools\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2022-09-28 00:51+0000\n"
+"POT-Creation-Date: 2022-10-21 00:48+0000\n"
 "PO-Revision-Date: 2022-08-23 12:59+0200\n"
 "Last-Translator: Temuri Doghonadze <temuri.doghonadze@gmail.com>\n"
 "Language-Team: Georgian <kde-i18n-doc@kde.org>\n"
@@ -28,22 +28,22 @@ msgctxt "EMAIL OF TRANSLATORS"
 msgid "Your emails"
 msgstr "Temuri.doghonadze@gmail.com"
 
-#: main.cpp:21
+#: main.cpp:30
 #, kde-format
 msgid "App to open Settings app"
 msgstr "პარამეტრების გამხსნელი აპი"
 
-#: main.cpp:23
+#: main.cpp:32
 #, kde-format
 msgid "A tool to start system settings"
 msgstr "ხელსაწყო პარამეტრების ფანჯრის გასაშვებად"
 
-#: main.cpp:25
+#: main.cpp:34
 #, kde-format
 msgid "(c) 2021, The KDE Developers"
 msgstr "(c) 2021, The KDE Developers"
 
-#: main.cpp:56
+#: main.cpp:67
 #, kde-format
 msgid "Could not open: %1"
 msgstr "%1-ის გახსნა შეუძლებელია"
