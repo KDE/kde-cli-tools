@@ -284,10 +284,7 @@ static int startApp(QCommandLineParser &p)
     bool just_started = false;
     bool have_daemon = true;
     KDEsuClient client;
-    if (!client.isServerSGID()) {
-        qCWarning(category) << "Daemon not safe (not sgid), not using it.\n";
-        have_daemon = false;
-    } else if (client.ping() == -1) {
+    if (client.ping() == -1) {
         if (client.startServer() == -1) {
             qCWarning(category) << "Could not start daemon, reduced functionality.\n";
             have_daemon = false;
