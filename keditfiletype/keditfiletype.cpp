@@ -66,7 +66,7 @@ void FileTypeDialog::init()
 
     setApplyButtonEnabled(false);
 
-    connect(KSycoca::self(), SIGNAL(databaseChanged(QStringList)), SLOT(slotDatabaseChanged(QStringList)));
+    connect(KSycoca::self(), qOverload<>(&KSycoca::databaseChanged), this, &FileTypeDialog::slotDatabaseChanged);
 }
 
 void FileTypeDialog::setApplyButtonEnabled(bool enabled)
@@ -103,13 +103,9 @@ void FileTypeDialog::clientChanged(bool state)
     m_buttonBox->button(QDialogButtonBox::Apply)->setEnabled(state);
 }
 
-void FileTypeDialog::slotDatabaseChanged(const QStringList &changedResources)
+void FileTypeDialog::slotDatabaseChanged()
 {
-    qDebug() << changedResources;
-    if (changedResources.contains(QStringLiteral("xdgdata-mime")) // changes in mimetype definitions
-        || changedResources.contains(QStringLiteral("services"))) { // changes in .desktop files
-        m_details->refresh();
-    }
+    m_details->refresh();
 }
 
 int main(int argc, char **argv)

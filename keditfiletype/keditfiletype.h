@@ -29,7 +29,7 @@ public Q_SLOTS:
 
 protected Q_SLOTS:
     void clientChanged(bool state);
-    void slotDatabaseChanged(const QStringList &changedResources);
+    void slotDatabaseChanged();
 
 private Q_SLOTS:
     void save();

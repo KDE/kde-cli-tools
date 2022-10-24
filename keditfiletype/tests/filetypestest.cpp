@@ -377,7 +377,7 @@ private: // helper methods
         QStringList args;
         args << QStringLiteral("--testmode");
         proc.start(kbuildsycoca, args);
-        QSignalSpy spy(KSycoca::self(), SIGNAL(databaseChanged(QStringList)));
+        QSignalSpy spy(KSycoca::self(), qOverload<>(&KSycoca::databaseChanged));
         proc.waitForFinished();
         qDebug() << "waiting for signal";
         QVERIFY(spy.wait(10000));

@@ -46,7 +46,7 @@ protected Q_SLOTS:
     void slotFilter(const QString &patternFilter);
     void setDirty(bool state);
 
-    void slotDatabaseChanged(const QStringList &changedResources);
+    void slotDatabaseChanged();
     void slotEmbedMajor(const QString &major, bool &embed);
 
 private:

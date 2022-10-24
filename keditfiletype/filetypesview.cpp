@@ -137,7 +137,7 @@ FileTypesView::FileTypesView(QWidget *parent, const QVariantList &)
 
     m_widgetStack->setCurrentWidget(m_emptyWidget);
 
-    connect(KSycoca::self(), SIGNAL(databaseChanged(QStringList)), SLOT(slotDatabaseChanged(QStringList)));
+    connect(KSycoca::self(), qOverload<>(&KSycoca::databaseChanged), this, &FileTypesView::slotDatabaseChanged);
 }
 
 FileTypesView::~FileTypesView()
@@ -460,21 +460,17 @@ void FileTypesView::load()
     setEnabled(true);
 }
 
-void FileTypesView::slotDatabaseChanged(const QStringList &changedResources)
+void FileTypesView::slotDatabaseChanged()
 {
-    qDebug() << changedResources;
-    if (changedResources.contains(QStringLiteral("xdgdata-mime")) // changes in mimetype definitions
-        || changedResources.contains(QStringLiteral("services"))) { // changes in .desktop files
-        m_details->refresh();
+    m_details->refresh();
 
-        // ksycoca has new KMimeTypes objects for us, make sure to update
-        // our 'copies' to be in sync with it. Not important for OK, but
-        // important for Apply (how to differentiate those 2?).
-        // See BR 35071.
+    // ksycoca has new KMimeTypes objects for us, make sure to update
+    // our 'copies' to be in sync with it. Not important for OK, but
+    // important for Apply (how to differentiate those 2?).
+    // See BR 35071.
 
-        for (TypesListItem *tli : qAsConst(m_itemList)) {
-            tli->mimeTypeData().refresh();
-        }
+    for (TypesListItem *tli : qAsConst(m_itemList)) {
+        tli->mimeTypeData().refresh();
     }
 }
 
