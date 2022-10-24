@@ -119,8 +119,8 @@ msgstr "Pencere için özel bir resim yazısı kullan"
 msgid ""
 "--lang is deprecated. Please set the LANGUAGE environment variable instead"
 msgstr ""
-"--lang parametresi artık kullanılmıyor. Bunun yerine lütfen LANGUAGE "
-"çevresel değişkenini atayın"
+"--lang parametresi artık kullanılmıyor. Bunun yerine lütfen LANGUAGE çevre "
+"değişkenini atayın"
 
 #: main.cpp:219
 #, kde-format
@@ -140,6 +140,3 @@ msgid ""
 msgstr ""
 "'%1' modülü bulunamadı. Modüllerin tam listesi için kcmshell5 --list "
 "komutunu kullanın."
-
-#~ msgid "KDE Control Module"
-#~ msgstr "KDE Yapılandırma Modülü"
