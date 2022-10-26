@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: filetypes\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2022-09-28 00:51+0000\n"
+"POT-Creation-Date: 2022-10-26 00:47+0000\n"
 "PO-Revision-Date: 2013-10-18 20:18+0000\n"
 "Last-Translator: Samir Ribić <Unknown>\n"
 "Language-Team: Bosnian <lokal@linux.org.ba>\n"
@@ -315,12 +315,12 @@ msgstr ""
 "izglede da će biti upotrijebljeni (do upotrebe može doći i na osnovu analize "
 "sadržaja datoteke)."
 
-#: keditfiletype.cpp:124
+#: keditfiletype.cpp:120
 #, fuzzy, kde-format
 msgid "File Type Editor"
 msgstr "Tip datoteke %1"
 
-#: keditfiletype.cpp:126
+#: keditfiletype.cpp:122
 #, kde-format
 msgid ""
 "KDE file type editor - simplified version for editing a single file type"
@@ -328,42 +328,42 @@ msgstr ""
 "KDE editor tipova datoteka - pojednostavljena verzija za editovanje jednog "
 "tipa"
 
-#: keditfiletype.cpp:128
+#: keditfiletype.cpp:124
 #, kde-format
 msgid "(c) 2000, KDE developers"
 msgstr "(c) 2000, KDE programeri"
 
-#: keditfiletype.cpp:129
+#: keditfiletype.cpp:125
 #, kde-format
 msgid "Preston Brown"
 msgstr "Preston Brown"
 
-#: keditfiletype.cpp:130
+#: keditfiletype.cpp:126
 #, kde-format
 msgid "David Faure"
 msgstr "David Faure"
 
-#: keditfiletype.cpp:136
+#: keditfiletype.cpp:132
 #, kde-format
 msgid "Makes the dialog transient for the window specified by winid"
 msgstr "Učini da dijalog bude prolazan za prozor koji je dat winid-om"
 
-#: keditfiletype.cpp:138
+#: keditfiletype.cpp:134
 #, kde-format
 msgid "File type to edit (e.g. text/html)"
 msgstr "Vrsta datoteke za izmjenu (npr. text/html)"
 
-#: keditfiletype.cpp:169
+#: keditfiletype.cpp:165
 #, kde-format
 msgid "%1 File"
 msgstr "%1 datoteka"
 
-#: keditfiletype.cpp:196
+#: keditfiletype.cpp:192
 #, kde-format
 msgid "Edit File Type %1"
 msgstr "Edituj tip datoteke: %1"
 
-#: keditfiletype.cpp:198
+#: keditfiletype.cpp:194
 #, kde-format
 msgid "Create New File Type %1"
 msgstr "Napravi novi tip datoteke %1"

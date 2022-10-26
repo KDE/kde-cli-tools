@@ -10,7 +10,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: filetypes\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2022-09-28 00:51+0000\n"
+"POT-Creation-Date: 2022-10-26 00:47+0000\n"
 "PO-Revision-Date: 2021-10-19 18:34+0200\n"
 "Last-Translator: Eduard Werner <edi.werner@gmx.de>\n"
 "Language-Team: en_US <kde-i18n-doc@lists.kde.org>\n"
@@ -304,12 +304,12 @@ msgid ""
 "still end up using them)."
 msgstr ""
 
-#: keditfiletype.cpp:124
+#: keditfiletype.cpp:120
 #, kde-format
 msgid "File Type Editor"
 msgstr "Wobdźěłar za družinu dataje"
 
-#: keditfiletype.cpp:126
+#: keditfiletype.cpp:122
 #, kde-format
 msgid ""
 "KDE file type editor - simplified version for editing a single file type"
@@ -317,42 +317,42 @@ msgstr ""
 "KDE editor družinow datajow - zjednorjena werzija za editowanje jeničkeje "
 "datajoweje družiny"
 
-#: keditfiletype.cpp:128
+#: keditfiletype.cpp:124
 #, kde-format
 msgid "(c) 2000, KDE developers"
 msgstr "(c) 2000, KDE wuwiwarjo"
 
-#: keditfiletype.cpp:129
+#: keditfiletype.cpp:125
 #, kde-format
 msgid "Preston Brown"
 msgstr "Preston Brown"
 
-#: keditfiletype.cpp:130
+#: keditfiletype.cpp:126
 #, kde-format
 msgid "David Faure"
 msgstr "David Faure"
 
-#: keditfiletype.cpp:136
+#: keditfiletype.cpp:132
 #, kde-format
 msgid "Makes the dialog transient for the window specified by winid"
 msgstr "Sčini nachwilny dialog za wokno, specifikowane přez winid"
 
-#: keditfiletype.cpp:138
+#: keditfiletype.cpp:134
 #, kde-format
 msgid "File type to edit (e.g. text/html)"
 msgstr "Družina dataje, kiž ma so editować (na př. text/html)"
 
-#: keditfiletype.cpp:169
+#: keditfiletype.cpp:165
 #, kde-format
 msgid "%1 File"
 msgstr "%1 dataja"
 
-#: keditfiletype.cpp:196
+#: keditfiletype.cpp:192
 #, kde-format
 msgid "Edit File Type %1"
 msgstr "Edituj družinu datajow %1"
 
-#: keditfiletype.cpp:198
+#: keditfiletype.cpp:194
 #, kde-format
 msgid "Create New File Type %1"
 msgstr "Nowu datajowu družinu '%1' stworić"

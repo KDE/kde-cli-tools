@@ -1,6 +1,6 @@
 # translation of filetypes.po to Polish
 # translation of filetypes.po to
-# Version: $Revision: 1634720 $
+# Version: $Revision: 1636722 $
 # Translated by Artur Skura <artur@linux.com.pl>
 # minor updates by Jacek Stolarczyk <jacek@mer.chemia.polsl.gliwice.pl>
 # Latest translation by Daniel Koć <kocio@bigfoot.com>
@@ -13,7 +13,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: filetypes\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2022-09-28 00:51+0000\n"
+"POT-Creation-Date: 2022-10-26 00:47+0000\n"
 "PO-Revision-Date: 2021-05-02 07:35+0200\n"
 "Last-Translator: Łukasz Wojniłowicz <lukasz.wojnilowicz@gmail.com>\n"
 "Language-Team: Polish <kde-i18n-doc@kde.org>\n"
@@ -322,12 +322,12 @@ msgstr ""
 "wzorców, co zmniejszy szanse, że zostaną one wykorzystane (ale pliki "
 "rozpoznawane na podstawie zawartości nadal będą używać rodzajów systemowych)."
 
-#: keditfiletype.cpp:124
+#: keditfiletype.cpp:120
 #, kde-format
 msgid "File Type Editor"
 msgstr "Edytor rodzaju pliku"
 
-#: keditfiletype.cpp:126
+#: keditfiletype.cpp:122
 #, kde-format
 msgid ""
 "KDE file type editor - simplified version for editing a single file type"
@@ -335,44 +335,44 @@ msgstr ""
 "Edytor rodzajów plików KDE - wersja uproszczona do zmiany rodzaju "
 "pojedynczych plików"
 
-#: keditfiletype.cpp:128
+#: keditfiletype.cpp:124
 #, kde-format
 msgid "(c) 2000, KDE developers"
 msgstr "(c) 2000, twórcy KDE"
 
-#: keditfiletype.cpp:129
+#: keditfiletype.cpp:125
 #, kde-format
 msgid "Preston Brown"
 msgstr "Preston Brown"
 
-#: keditfiletype.cpp:130
+#: keditfiletype.cpp:126
 #, kde-format
 msgid "David Faure"
 msgstr "David Faure"
 
-#: keditfiletype.cpp:136
+#: keditfiletype.cpp:132
 #, kde-format
 msgid "Makes the dialog transient for the window specified by winid"
 msgstr ""
 "Sprawia, że okienko dialogowe jest traktowane jako tymczasowe dla okien o "
 "podanym identyfikatorze"
 
-#: keditfiletype.cpp:138
+#: keditfiletype.cpp:134
 #, kde-format
 msgid "File type to edit (e.g. text/html)"
 msgstr "Rodzaj pliku do zmiany (np. text/html)"
 
-#: keditfiletype.cpp:169
+#: keditfiletype.cpp:165
 #, kde-format
 msgid "%1 File"
 msgstr "Plik %1"
 
-#: keditfiletype.cpp:196
+#: keditfiletype.cpp:192
 #, kde-format
 msgid "Edit File Type %1"
 msgstr "Zmień rodzaj pliku %1"
 
-#: keditfiletype.cpp:198
+#: keditfiletype.cpp:194
 #, kde-format
 msgid "Create New File Type %1"
 msgstr "Utwórz nowy rodzaj pliku %1"

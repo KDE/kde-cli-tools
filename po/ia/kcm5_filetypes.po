@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2022-09-28 00:51+0000\n"
+"POT-Creation-Date: 2022-10-26 00:47+0000\n"
 "PO-Revision-Date: 2021-08-04 22:44+0200\n"
 "Last-Translator: giovanni <g.sora@tiscali.it>\n"
 "Language-Team: Interlingua <kde-i18n-doc@kde.org>\n"
@@ -318,12 +318,12 @@ msgstr ""
 "usate (ma le determination del typo de file ex contentos de file pote ancora "
 "terminar usante los)."
 
-#: keditfiletype.cpp:124
+#: keditfiletype.cpp:120
 #, kde-format
 msgid "File Type Editor"
 msgstr "Editor de Typo de file"
 
-#: keditfiletype.cpp:126
+#: keditfiletype.cpp:122
 #, kde-format
 msgid ""
 "KDE file type editor - simplified version for editing a single file type"
@@ -331,42 +331,42 @@ msgstr ""
 "Redactor (Editor) de typo de file de KDE - version simplificate per editar "
 "un sol typo de file."
 
-#: keditfiletype.cpp:128
+#: keditfiletype.cpp:124
 #, kde-format
 msgid "(c) 2000, KDE developers"
 msgstr "(c) 2000, disveloppatores de KDE"
 
-#: keditfiletype.cpp:129
+#: keditfiletype.cpp:125
 #, kde-format
 msgid "Preston Brown"
 msgstr "Preston Brown"
 
-#: keditfiletype.cpp:130
+#: keditfiletype.cpp:126
 #, kde-format
 msgid "David Faure"
 msgstr "David Faure"
 
-#: keditfiletype.cpp:136
+#: keditfiletype.cpp:132
 #, kde-format
 msgid "Makes the dialog transient for the window specified by winid"
 msgstr "Il pone le dialogo transiente pro le fenestra specificate per winid"
 
-#: keditfiletype.cpp:138
+#: keditfiletype.cpp:134
 #, kde-format
 msgid "File type to edit (e.g. text/html)"
 msgstr "Typo de file de editar (p.ex. text/html)"
 
-#: keditfiletype.cpp:169
+#: keditfiletype.cpp:165
 #, kde-format
 msgid "%1 File"
 msgstr "File %1"
 
-#: keditfiletype.cpp:196
+#: keditfiletype.cpp:192
 #, kde-format
 msgid "Edit File Type %1"
 msgstr "Edita typo de file %1"
 
-#: keditfiletype.cpp:198
+#: keditfiletype.cpp:194
 #, kde-format
 msgid "Create New File Type %1"
 msgstr "Crea un nove typo de file %1"

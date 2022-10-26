@@ -15,7 +15,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kcm5_filetypes\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2022-09-28 00:51+0000\n"
+"POT-Creation-Date: 2022-10-26 00:47+0000\n"
 "PO-Revision-Date: 2019-01-18 14:17-0200\n"
 "Last-Translator: André Marcelo Alvarenga <alvarenga@kde.org>\n"
 "Language-Team: Brazilian Portuguese <kde-i18n-pt_br@kde.org>\n"
@@ -329,12 +329,12 @@ msgstr ""
 "estes serem usados (mas a determinação do tipo de arquivo a partir do seu "
 "conteúdo possa à mesma vir a usá-los)."
 
-#: keditfiletype.cpp:124
+#: keditfiletype.cpp:120
 #, kde-format
 msgid "File Type Editor"
 msgstr "Editor de tipo de arquivo"
 
-#: keditfiletype.cpp:126
+#: keditfiletype.cpp:122
 #, kde-format
 msgid ""
 "KDE file type editor - simplified version for editing a single file type"
@@ -342,42 +342,42 @@ msgstr ""
 "Editor de tipo de arquivo do KDE - versão simplificada para edição de um "
 "tipo de arquivo único"
 
-#: keditfiletype.cpp:128
+#: keditfiletype.cpp:124
 #, kde-format
 msgid "(c) 2000, KDE developers"
 msgstr "(c) 2000, Os desenvolvedores do KDE"
 
-#: keditfiletype.cpp:129
+#: keditfiletype.cpp:125
 #, kde-format
 msgid "Preston Brown"
 msgstr "Preston Brown"
 
-#: keditfiletype.cpp:130
+#: keditfiletype.cpp:126
 #, kde-format
 msgid "David Faure"
 msgstr "David Faure"
 
-#: keditfiletype.cpp:136
+#: keditfiletype.cpp:132
 #, kde-format
 msgid "Makes the dialog transient for the window specified by winid"
 msgstr "Torna o diálogo transitório para a janela especificada pelo winid"
 
-#: keditfiletype.cpp:138
+#: keditfiletype.cpp:134
 #, kde-format
 msgid "File type to edit (e.g. text/html)"
 msgstr "Tipo de arquivo à editar (p. ex., text/html)"
 
-#: keditfiletype.cpp:169
+#: keditfiletype.cpp:165
 #, kde-format
 msgid "%1 File"
 msgstr "Arquivo %1"
 
-#: keditfiletype.cpp:196
+#: keditfiletype.cpp:192
 #, kde-format
 msgid "Edit File Type %1"
 msgstr "Editar tipo de arquivo %1"
 
-#: keditfiletype.cpp:198
+#: keditfiletype.cpp:194
 #, kde-format
 msgid "Create New File Type %1"
 msgstr "Criar um novo tipo de arquivo %1"

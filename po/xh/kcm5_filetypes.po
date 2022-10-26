@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: filetypes\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2022-09-28 00:51+0000\n"
+"POT-Creation-Date: 2022-10-26 00:47+0000\n"
 "PO-Revision-Date: 2002-11-01 10:25SAST\n"
 "Last-Translator: Lwandle Mgidlana <lwandle@translate.org.za>\n"
 "Language-Team: Xhosa <xhosa@translate.org.za>\n"
@@ -319,13 +319,13 @@ msgid ""
 "still end up using them)."
 msgstr ""
 
-#: keditfiletype.cpp:124
+#: keditfiletype.cpp:120
 #, fuzzy, kde-format
 #| msgid "Edit File Type %1"
 msgid "File Type Editor"
 msgstr "Hlela Udidi Lwefayile %1"
 
-#: keditfiletype.cpp:126
+#: keditfiletype.cpp:122
 #, kde-format
 msgid ""
 "KDE file type editor - simplified version for editing a single file type"
@@ -333,42 +333,42 @@ msgstr ""
 "Umhleli wohlobo lwefayile ye KDE - uguqulelo kolunye ulwimi olulula "
 "lokuhlela hlobo lwefayile eyodwa"
 
-#: keditfiletype.cpp:128
+#: keditfiletype.cpp:124
 #, kde-format
 msgid "(c) 2000, KDE developers"
 msgstr "(c) 2000, Ababhekisi phambili be KDE"
 
-#: keditfiletype.cpp:129
+#: keditfiletype.cpp:125
 #, kde-format
 msgid "Preston Brown"
 msgstr ""
 
-#: keditfiletype.cpp:130
+#: keditfiletype.cpp:126
 #, kde-format
 msgid "David Faure"
 msgstr ""
 
-#: keditfiletype.cpp:136
+#: keditfiletype.cpp:132
 #, kde-format
 msgid "Makes the dialog transient for the window specified by winid"
 msgstr ""
 
-#: keditfiletype.cpp:138
+#: keditfiletype.cpp:134
 #, kde-format
 msgid "File type to edit (e.g. text/html)"
 msgstr "Uhlobo lwefayile ezakuhlelwa (umzekelo. umbhalo/html)"
 
-#: keditfiletype.cpp:169
+#: keditfiletype.cpp:165
 #, kde-format
 msgid "%1 File"
 msgstr ""
 
-#: keditfiletype.cpp:196
+#: keditfiletype.cpp:192
 #, kde-format
 msgid "Edit File Type %1"
 msgstr "Hlela Udidi Lwefayile %1"
 
-#: keditfiletype.cpp:198
+#: keditfiletype.cpp:194
 #, fuzzy, kde-format
 msgid "Create New File Type %1"
 msgstr "Yenza Udidi Olutsha Lwefayile"

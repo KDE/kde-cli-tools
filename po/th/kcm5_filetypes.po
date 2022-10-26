@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: filetypes\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2022-09-28 00:51+0000\n"
+"POT-Creation-Date: 2022-10-26 00:47+0000\n"
 "PO-Revision-Date: 2010-12-17 20:21+0700\n"
 "Last-Translator: Thanomsub Noppaburana <donga.nb@gmail.com>\n"
 "Language-Team: Thai <thai-l10n@googlegroups.com>\n"
@@ -304,54 +304,54 @@ msgstr ""
 "เพื่อลดโอกาสที่พวกมันจะถูกใช้ให้เหลือน้อยที่สุด (แต่การตัดสินใจเลือกประเภทแฟ้ม "
 "โดยพิจารณาจากเนื้อหาของแฟ้มจะยังคงถูกใช้อยู่)"
 
-#: keditfiletype.cpp:124
+#: keditfiletype.cpp:120
 #, fuzzy, kde-format
 #| msgid "File type %1"
 msgid "File Type Editor"
 msgstr "ประเภทแฟ้ม %1"
 
-#: keditfiletype.cpp:126
+#: keditfiletype.cpp:122
 #, kde-format
 msgid ""
 "KDE file type editor - simplified version for editing a single file type"
 msgstr "ตัวแก้ไขประเภทแฟ้มของ KDE - รุ่นพื้นฐาน สำหรับแก้ไขประเภทแฟ้มได้ครั้งละหนึ่งประเภท"
 
-#: keditfiletype.cpp:128
+#: keditfiletype.cpp:124
 #, kde-format
 msgid "(c) 2000, KDE developers"
 msgstr "สงวนลิขสิทธิ์ (c) 2000, กลุ่มผู้พัฒนา KDE"
 
-#: keditfiletype.cpp:129
+#: keditfiletype.cpp:125
 #, kde-format
 msgid "Preston Brown"
 msgstr "Preston Brown"
 
-#: keditfiletype.cpp:130
+#: keditfiletype.cpp:126
 #, kde-format
 msgid "David Faure"
 msgstr "David Faure"
 
-#: keditfiletype.cpp:136
+#: keditfiletype.cpp:132
 #, kde-format
 msgid "Makes the dialog transient for the window specified by winid"
 msgstr "สร้างกล่องโต้ตอบชั่วคราวให้กับหน้าต่างที่ระบุด้วยหมายเลขหน้าต่าง"
 
-#: keditfiletype.cpp:138
+#: keditfiletype.cpp:134
 #, kde-format
 msgid "File type to edit (e.g. text/html)"
 msgstr "ประเภทแฟ้มที่จะแก้ไข (เช่น text/html)"
 
-#: keditfiletype.cpp:169
+#: keditfiletype.cpp:165
 #, kde-format
 msgid "%1 File"
 msgstr "แฟ้ม %1"
 
-#: keditfiletype.cpp:196
+#: keditfiletype.cpp:192
 #, kde-format
 msgid "Edit File Type %1"
 msgstr "แก้ไขประเภทแฟ้ม %1"
 
-#: keditfiletype.cpp:198
+#: keditfiletype.cpp:194
 #, kde-format
 msgid "Create New File Type %1"
 msgstr "สร้างประเภทแฟ้ม %1 ใหม่"
