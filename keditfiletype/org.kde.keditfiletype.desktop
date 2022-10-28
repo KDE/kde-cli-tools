@@ -1,5 +1,6 @@
 [Desktop Entry]
 Name=File Type Editor
+Name[ar]=محرر نوع الملف
 Name[az]=Fayl növü redaktoru
 Name[bg]=Редактор на файлов вид
 Name[ca]=Editor dels tipus de fitxers
@@ -29,6 +30,7 @@ Name[uk]=Редактор типів файлів
 Name[vi]=Trình biên tập kiểu tệp
 Name[x-test]=xxFile Type Editorxx
 GenericName=File Type Editor
+GenericName[ar]=محرر نوع الملف
 GenericName[az]=Fayl növü redaktoru
 GenericName[bg]=Редактор на файлов вид
 GenericName[ca]=Editor dels tipus de fitxers

@@ -1,6 +1,7 @@
 {
     "KPlugin": {
         "Description": "Configure file associations",
+        "Description[ar]": "اضبط ارتباطات الملفّات",
         "Description[az]": "Fayl bağlantılarını tənzimləyin",
         "Description[bg]": "Конфигуриране на файлови връзки",
         "Description[ca@valencia]": "Configura les associacions de fitxer",
