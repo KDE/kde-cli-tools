@@ -5,7 +5,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kde-cli-tools\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2022-09-28 00:51+0000\n"
+"POT-Creation-Date: 2022-10-21 00:48+0000\n"
 "PO-Revision-Date: 2021-09-18 20:02+0200\n"
 "Last-Translator: Karl Ove Hufthammer <karl@huftis.org>\n"
 "Language-Team: Norwegian Nynorsk <l10n-no@lister.huftis.org>\n"
@@ -29,22 +29,22 @@ msgctxt "EMAIL OF TRANSLATORS"
 msgid "Your emails"
 msgstr "karl@huftis.org"
 
-#: main.cpp:21
+#: main.cpp:30
 #, kde-format
 msgid "App to open Settings app"
 msgstr "App for å opna innstillingsapp"
 
-#: main.cpp:23
+#: main.cpp:32
 #, kde-format
 msgid "A tool to start system settings"
 msgstr "Verktøy for å starta systeminnstillingar"
 
-#: main.cpp:25
+#: main.cpp:34
 #, kde-format
 msgid "(c) 2021, The KDE Developers"
 msgstr "© 2021 KDE-utviklarane"
 
-#: main.cpp:56
+#: main.cpp:67
 #, kde-format
 msgid "Could not open: %1"
 msgstr "Klarte ikkje opna: %1"

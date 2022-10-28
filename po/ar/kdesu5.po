@@ -7,23 +7,23 @@
 # محمد سعد  Mohamed SAAD <metehyi@free.fr>, 2006.
 # AbdulAziz AlSharif <a.a-a.s@hotmail.com>, 2007.
 # Youssef Chahibi <chahibi@gmail.com>, 2007.
-# zayed <zayed.alsaidi@gmail.com>, 2008.
+# zayed <zayed.alsaidi@gmail.com>, 2008, 2022.
 # Abdalrahim Fakhouri <abdilra7eem@yahoo.com>, 2012.
 msgid ""
 msgstr ""
 "Project-Id-Version: kdesu\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2021-08-06 00:18+0000\n"
-"PO-Revision-Date: 2012-02-09 18:57+0200\n"
-"Last-Translator: Abdalrahim Fakhouri <abdilra7eem@yahoo.com>\n"
-"Language-Team: Arabic <linuxac-kde-arabic-team@googlegroups.com>\n"
+"PO-Revision-Date: 2022-10-27 11:53+0400\n"
+"Last-Translator: Zayed Al-Saidi <zayed.alsaidi@gmail.com>\n"
+"Language-Team: ar\n"
 "Language: ar\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=6; plural=n==0 ? 0 : n==1 ? 1 : n==2 ? 2 : n%100>=3 "
 "&& n%100<=10 ? 3 : n%100>=11 && n%100<=99 ? 4 : 5;\n"
-"X-Generator: Translate Toolkit 1.10.0\n"
+"X-Generator: Lokalize 21.12.3\n"
 
 #, kde-format
 msgctxt "NAME OF TRANSLATORS"
@@ -146,7 +146,7 @@ msgstr ""
 #: kdesu.cpp:141
 #, kde-format
 msgid "Embed into a window"
-msgstr ""
+msgstr "ضمن في نافذة"
 
 #: kdesu.cpp:168
 #, kde-format
@@ -154,10 +154,9 @@ msgid "Cannot execute command '%1'."
 msgstr "لا يمكن تنفيذ الأمر '%1'."
 
 #: kdesu.cpp:171
-#, fuzzy, kde-format
-#| msgid "Cannot execute command '%1'."
+#, kde-format
 msgid "Cannot execute command '%1'. It contains invalid characters."
-msgstr "لا يمكن تنفيذ الأمر '%1'."
+msgstr "لا يمكن تنفيذ الأمر '%1'. يحويى على محارف غير صالحة."
 
 #: kdesu.cpp:245
 #, kde-format
@@ -256,6 +255,8 @@ msgid ""
 ">On some systems, you need to be in a special group (often: wheel) to use "
 "this program."
 msgstr ""
+"رفض الإذن. <br /> احتمالية أن كلمة السر خاطئة، الرجاء المحاولة من جديد.<br /"
+"> في بعض الأنظمة ستحتاج إلى مجموعة خاصة لاستخدام هذا التطبيق."
 
 #: sudlg.cpp:105
 #, kde-format
