@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kdesu\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2021-08-06 00:18+0000\n"
+"POT-Creation-Date: 2022-10-30 00:47+0000\n"
 "PO-Revision-Date: 2019-12-07 14:14+0200\n"
 "Last-Translator: Maris Nartiss <maris.kde@gmail.com>\n"
 "Language-Team: Latvian <kde-i18n-doc@kde.org>\n"
@@ -158,22 +158,22 @@ msgstr "Neatļauta prioritāte: %1"
 msgid "No command specified."
 msgstr "Nav norādīta komanda."
 
-#: kdesu.cpp:372
+#: kdesu.cpp:369
 #, kde-format
 msgid "Su returned with an error.\n"
 msgstr "Su atgrieza kļūdu.\n"
 
-#: kdesu.cpp:400
+#: kdesu.cpp:397
 #, kde-format
 msgid "Command:"
 msgstr "Komanda:"
 
-#: kdesu.cpp:409
+#: kdesu.cpp:406
 #, kde-format
 msgid "realtime: "
 msgstr "reāllaikā: "
 
-#: kdesu.cpp:413
+#: kdesu.cpp:410
 #, kde-format
 msgid "Priority:"
 msgstr "Prioritāte:"

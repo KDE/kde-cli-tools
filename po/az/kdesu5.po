@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kde-cli-tools\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2021-08-06 00:18+0000\n"
+"POT-Creation-Date: 2022-10-30 00:47+0000\n"
 "PO-Revision-Date: 2021-10-29 17:51+0400\n"
 "Last-Translator: Kheyyam Gojayev <xxmn77@gmail.com>\n"
 "Language-Team: Azerbaijani <kde-i18n-doc@kde.org>\n"
@@ -155,22 +155,22 @@ msgstr "Yolverilməz üstünlük: %1"
 msgid "No command specified."
 msgstr "Əmr göstərilməyib."
 
-#: kdesu.cpp:372
+#: kdesu.cpp:369
 #, kde-format
 msgid "Su returned with an error.\n"
 msgstr "Su səhv olduğunu bildirdi.\n"
 
-#: kdesu.cpp:400
+#: kdesu.cpp:397
 #, kde-format
 msgid "Command:"
 msgstr "Əmr:"
 
-#: kdesu.cpp:409
+#: kdesu.cpp:406
 #, kde-format
 msgid "realtime: "
 msgstr "Gerçək zaman:"
 
-#: kdesu.cpp:413
+#: kdesu.cpp:410
 #, kde-format
 msgid "Priority:"
 msgstr "Üstünlük:"

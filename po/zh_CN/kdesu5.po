@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kdeorg\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2021-08-06 00:18+0000\n"
+"POT-Creation-Date: 2022-10-30 00:47+0000\n"
 "PO-Revision-Date: 2022-10-22 05:28\n"
 "Last-Translator: \n"
 "Language-Team: Chinese Simplified\n"
@@ -155,22 +155,22 @@ msgstr "无效的优先级：%1"
 msgid "No command specified."
 msgstr "没有指定命令。"
 
-#: kdesu.cpp:372
+#: kdesu.cpp:369
 #, kde-format
 msgid "Su returned with an error.\n"
 msgstr "Su 返回错误。\n"
 
-#: kdesu.cpp:400
+#: kdesu.cpp:397
 #, kde-format
 msgid "Command:"
 msgstr "命令："
 
-#: kdesu.cpp:409
+#: kdesu.cpp:406
 #, kde-format
 msgid "realtime: "
 msgstr "实时："
 
-#: kdesu.cpp:413
+#: kdesu.cpp:410
 #, kde-format
 msgid "Priority:"
 msgstr "优先级："

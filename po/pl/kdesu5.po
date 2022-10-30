@@ -1,5 +1,5 @@
 # translation of kdesu.po to Polish
-# Version: $Revision: 1606235 $
+# Version: $Revision: 1637015 $
 # Michal Rudolf <mrudolf@kdewebdev.org>, 2003, 2004, 2005, 2006, 2008, 2009.
 # Robert Gomulka <rgom@o2.pl>, 2006.
 # Łukasz Wojniłowicz <lukasz.wojnilowicz@gmail.com>, 2011, 2014, 2015, 2016, 2017.
@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kdesu\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2021-08-06 00:18+0000\n"
+"POT-Creation-Date: 2022-10-30 00:47+0000\n"
 "PO-Revision-Date: 2017-12-09 07:42+0100\n"
 "Last-Translator: Łukasz Wojniłowicz <lukasz.wojnilowicz@gmail.com>\n"
 "Language-Team: Polish <kde-i18n-doc@kde.org>\n"
@@ -159,22 +159,22 @@ msgstr "Błędny priorytet: %1"
 msgid "No command specified."
 msgstr "Brak polecenia."
 
-#: kdesu.cpp:372
+#: kdesu.cpp:369
 #, kde-format
 msgid "Su returned with an error.\n"
 msgstr "'su' zwróciło błąd.\n"
 
-#: kdesu.cpp:400
+#: kdesu.cpp:397
 #, kde-format
 msgid "Command:"
 msgstr "Polecenie:"
 
-#: kdesu.cpp:409
+#: kdesu.cpp:406
 #, kde-format
 msgid "realtime: "
 msgstr "czas rzeczywisty: "
 
-#: kdesu.cpp:413
+#: kdesu.cpp:410
 #, kde-format
 msgid "Priority:"
 msgstr "Priorytet:"
