@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kdesu\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2021-08-06 00:18+0000\n"
+"POT-Creation-Date: 2022-10-30 00:47+0000\n"
 "PO-Revision-Date: 2016-10-11 23:34+0100\n"
 "Last-Translator: Karl Ove Hufthammer <karl@huftis.org>\n"
 "Language-Team: Norwegian Nynorsk <l10n-no@lister.huftis.org>\n"
@@ -160,22 +160,22 @@ msgstr "Ugyldig prioritet: %1"
 msgid "No command specified."
 msgstr "Ingen kommando valt."
 
-#: kdesu.cpp:372
+#: kdesu.cpp:369
 #, kde-format
 msgid "Su returned with an error.\n"
 msgstr "Kommandoen «su» avslutta med ein feilkode.\n"
 
-#: kdesu.cpp:400
+#: kdesu.cpp:397
 #, kde-format
 msgid "Command:"
 msgstr "Kommando:"
 
-#: kdesu.cpp:409
+#: kdesu.cpp:406
 #, kde-format
 msgid "realtime: "
 msgstr "sanntid: "
 
-#: kdesu.cpp:413
+#: kdesu.cpp:410
 #, kde-format
 msgid "Priority:"
 msgstr "Prioritet:"
@@ -217,8 +217,9 @@ msgid ""
 "password for <b>%1</b> below or click Ignore to continue with your current "
 "privileges."
 msgstr ""
-"Du treng utvida løyve for handlinga du vil utføra. Oppgje passordet for <b>"
-"%1</b> nedanfor, eller trykk «Ignorer» for å halda fram med gjeldande løyve."
+"Du treng utvida løyve for handlinga du vil utføra. Oppgje passordet for "
+"<b>%1</b> nedanfor, eller trykk «Ignorer» for å halda fram med gjeldande "
+"løyve."
 
 #: sudlg.cpp:56
 #, kde-format
@@ -226,8 +227,8 @@ msgid ""
 "The action you requested needs additional privileges. Please enter the "
 "password for <b>%1</b> below."
 msgstr ""
-"Du treng utvida løyve for handlinga du vil utføra. Oppgje passordet for <b>"
-"%1</b> nedanfor."
+"Du treng utvida løyve for handlinga du vil utføra. Oppgje passordet for "
+"<b>%1</b> nedanfor."
 
 #: sudlg.cpp:79
 #, kde-format

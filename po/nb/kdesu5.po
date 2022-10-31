@@ -10,7 +10,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kdesu\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2021-08-06 00:18+0000\n"
+"POT-Creation-Date: 2022-10-30 00:47+0000\n"
 "PO-Revision-Date: 2014-04-25 18:42+0200\n"
 "Last-Translator: Bjørn Steensrud <bjornst@skogkatt.homelinux.org>\n"
 "Language-Team: Norwegian Bokmål <l10n-no@lister.huftis.org>\n"
@@ -163,22 +163,22 @@ msgstr "Ugyldig prioritet: %1"
 msgid "No command specified."
 msgstr "Ingen kommando ble oppgitt."
 
-#: kdesu.cpp:372
+#: kdesu.cpp:369
 #, kde-format
 msgid "Su returned with an error.\n"
 msgstr "«Su» avsluttet med en feil.\n"
 
-#: kdesu.cpp:400
+#: kdesu.cpp:397
 #, kde-format
 msgid "Command:"
 msgstr "Kommando:"
 
-#: kdesu.cpp:409
+#: kdesu.cpp:406
 #, kde-format
 msgid "realtime: "
 msgstr "sanntid: "
 
-#: kdesu.cpp:413
+#: kdesu.cpp:410
 #, kde-format
 msgid "Priority:"
 msgstr "Prioritet:"
@@ -220,8 +220,8 @@ msgid ""
 "password for <b>%1</b> below or click Ignore to continue with your current "
 "privileges."
 msgstr ""
-"Handlinga du ba om trenger høyere privilegier. Skriv inn passordet til <b>"
-"%1</b> under eller trykk Overse for å fortsette med gjeldende privilegier."
+"Handlinga du ba om trenger høyere privilegier. Skriv inn passordet til "
+"<b>%1</b> under eller trykk Overse for å fortsette med gjeldende privilegier."
 
 #: sudlg.cpp:56
 #, kde-format
@@ -229,8 +229,8 @@ msgid ""
 "The action you requested needs additional privileges. Please enter the "
 "password for <b>%1</b> below."
 msgstr ""
-"Handlinga du ba om trenger høyere privilegier. Skriv inn passordet til <b>"
-"%1</b> nedenfor."
+"Handlinga du ba om trenger høyere privilegier. Skriv inn passordet til "
+"<b>%1</b> nedenfor."
 
 #: sudlg.cpp:79
 #, kde-format
