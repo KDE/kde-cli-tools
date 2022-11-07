@@ -133,7 +133,7 @@ msgid ""
 "Make the window appear on the desktop that was active\n"
 "when starting the application"
 msgstr ""
-"Fes aparéixer la finestra a l'escriptori que estava actiu\n"
+"Fes aparéixer la finestra en l'escriptori que estava actiu\n"
 "en iniciar l'aplicació"
 
 #: kstart.cpp:353
