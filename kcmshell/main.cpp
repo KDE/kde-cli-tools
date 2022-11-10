@@ -101,7 +101,7 @@ bool KCMShell::isRunning()
         return false; // We are the one and only.
     }
 
-    qDebug() << "kcmshell5 with modules '" << m_serviceName << "' is already running.";
+    qDebug() << "kcmshell5 with modules" << m_serviceName << "is already running.";
 
     QDBusInterface iface(m_serviceName, QStringLiteral("/KCModule/dialog"), QStringLiteral("org.kde.KCMShellMultiDialog"));
     QDBusReply<void> reply = iface.call(QStringLiteral("activate"), KStartupInfo::startupId());
