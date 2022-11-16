@@ -16,7 +16,7 @@ msgstr ""
 "Project-Id-Version: filetypes\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2022-10-26 00:47+0000\n"
-"PO-Revision-Date: 2022-03-29 13:59+0300\n"
+"PO-Revision-Date: 2022-11-15 05:05+0300\n"
 "Last-Translator: Emir SARI <emir_sari@icloud.com>\n"
 "Language-Team: Turkish <kde-l10n-tr@kde.org>\n"
 "Language: tr\n"
@@ -24,7 +24,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n > 1);\n"
-"X-Generator: Lokalize 21.12.3\n"
+"X-Generator: Lokalize 22.08.3\n"
 
 #, kde-format
 msgctxt "NAME OF TRANSLATORS"
@@ -492,7 +492,7 @@ msgstr "Seçilen uygulamanın komut satırını düzenleyin."
 #: kservicelistwidget.cpp:121
 #, kde-format
 msgid "Remove the selected application from the list."
-msgstr "Seçili uygulamayı listeden çıkart."
+msgstr "Seçili uygulamayı listeden çıkar."
 
 #: kservicelistwidget.cpp:144
 #, kde-format
