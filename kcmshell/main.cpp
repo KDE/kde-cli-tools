@@ -161,7 +161,7 @@ void KCMShell::appExit(const QString &appId, const QString &oldName, const QStri
     Q_UNUSED(newName);
 
     if (!oldName.isEmpty()) {
-        qDebug() << "'" << appId << "' closed, quitting.";
+        qDebug() << appId << "closed, quitting.";
         qApp->quit();
     }
 }
