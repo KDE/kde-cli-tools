@@ -1,20 +1,21 @@
 # Thomas Reitelbach <tr@erdfunkstelle.de>, 2007, 2008, 2009.
 # Frederik Schwarzer <schwarzer@kde.org>, 2009, 2010, 2011, 2013, 2021, 2022.
 # Burkhard Lück <lueck@hube-lueck.de>, 2012, 2013, 2014, 2016, 2019, 2020, 2021.
+# Alois Spitzbart <spitz234@hotmail.com>, 2022.
 msgid ""
 msgstr ""
 "Project-Id-Version: kioclient\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2022-08-22 00:47+0000\n"
-"PO-Revision-Date: 2022-06-10 00:29+0200\n"
-"Last-Translator: Frederik Schwarzer <schwarzer@kde.org>\n"
+"PO-Revision-Date: 2022-11-11 12:26+0100\n"
+"Last-Translator: Alois Spitzbart <spitz234@hotmail.com>\n"
 "Language-Team: German <kde-i18n-de@kde.org>\n"
 "Language: de\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Generator: Lokalize 21.12.2\n"
+"X-Generator: Lokalize 22.08.2\n"
 
 #, kde-format
 msgctxt "NAME OF TRANSLATORS"
@@ -81,6 +82,13 @@ msgid ""
 "            #   The short version 'kioclient mv' is also available.\n"
 "\n"
 msgstr ""
+"  %1 „src“ „dest“\n"
+"            # Verschiebt die URL „src“ nach „dest“.\n"
+"            #  „src“ kann eine Liste von URLs sein.\n"
+"            #  „dest“ kann „trash:/“ sein, um die Dateien in den Papierkorb "
+"zu verschieben.\n"
+"            #  Die Kurzversion „kioclient mv“ ist auch verfügbar.\n"
+"\n"
 
 #: kioclient.cpp:90
 #, kde-format
@@ -181,11 +189,7 @@ msgid "*** Examples:\n"
 msgstr "*** Beispiele:\n"
 
 #: kioclient.cpp:145
-#, fuzzy, kde-format
-#| msgid ""
-#| "  kioclient exec file:/home/weis/data/test.html\n"
-#| "             // Opens the file with default binding\n"
-#| "\n"
+#, kde-format
 msgid ""
 "  kioclient exec file:/home/weis/data/test.html\n"
 "             // Opens the file with the default application associated\n"
@@ -193,22 +197,20 @@ msgid ""
 "\n"
 msgstr ""
 "  kioclient exec file:/home/weis/data/test.html\n"
-"             // Öffnet die Datei mit der Standardanwendung.\n"
+"             // Öffnet die Datei mit der Standardanwendung,\n"
+"             // die dem MIME-Typ zugeordnet ist.\n"
 "\n"
 
 #: kioclient.cpp:150
-#, fuzzy, kde-format
-#| msgid ""
-#| "  kioclient exec ftp://localhost/\n"
-#| "             // Opens new window with URL\n"
-#| "\n"
+#, kde-format
 msgid ""
 "  kioclient exec ftp://localhost/\n"
 "             // Opens URL with the default handler for ftp:// scheme\n"
 "\n"
 msgstr ""
 "  kioclient exec ftp://localhost/\n"
-"             // Öffnet ein neues Fenster mit der Adresse.\n"
+"             // Öffnet die URL mit dem Standardhandler für das ftp://-"
+"Schema.\n"
 "\n"
 
 #: kioclient.cpp:154
@@ -223,11 +225,7 @@ msgstr ""
 "\n"
 
 #: kioclient.cpp:158
-#, fuzzy, kde-format
-#| msgid ""
-#| "  kioclient exec .\n"
-#| "             // Opens the current directory. Very convenient.\n"
-#| "\n"
+#, kde-format
 msgid ""
 "  kioclient exec .\n"
 "             // Opens the current directory in the default\n"
@@ -235,7 +233,8 @@ msgid ""
 "\n"
 msgstr ""
 "  kioclient exec .\n"
-"             // Öffnet den aktuellen Arbeitsordner – sehr komfortabel.\n"
+"             // Öffnet den aktuellen Arbeitsordner im Standard-\n"
+"             // Dateiverwaltungsprogramm – sehr komfortabel.\n"
 "\n"
 
 #: kioclient.cpp:177
