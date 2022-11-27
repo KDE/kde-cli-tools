@@ -78,7 +78,7 @@ ecm_set_disabled_deprecation_versions(QT 5.15.2)
 include_directories(${CMAKE_CURRENT_BINARY_DIR})
 
 add_subdirectory(doc)
-
+kdoctools_install(po)
 
 function(install_compat_symlink executable_target)
     add_custom_command(TARGET ${executable_target} POST_BUILD
