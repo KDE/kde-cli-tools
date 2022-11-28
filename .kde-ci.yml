@@ -19,7 +19,7 @@ Dependencies:
     'frameworks/kjobwidgets': '@latest'
     'frameworks/kpty': '@latest'
     'frameworks/kservice': '@latest'
-    'frameworks/ksu': '@latest'
+    'frameworks/kdesu': '@latest'
     'frameworks/kwidgetsaddons': '@latest'
     'frameworks/kwindowsystem': '@latest'
     'frameworks/solid': '@latest'
