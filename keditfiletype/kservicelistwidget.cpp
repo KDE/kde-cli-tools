@@ -45,6 +45,13 @@ KServiceListItem::KServiceListItem(const KService::Ptr &pService, int kind)
     }
 }
 
+PluginListItem::PluginListItem(const KPluginMetaData &metaData)
+    : QListWidgetItem()
+{
+    setText(i18n("%1 (%2)", metaData.name(), metaData.pluginId()));
+    setIcon(QIcon::fromTheme(metaData.iconName()));
+}
+
 KServiceListWidget::KServiceListWidget(int kind, QWidget *parent)
     : QGroupBox(kind == SERVICELIST_APPLICATIONS ? i18n("Application Preference Order") : i18n("Services Preference Order"), parent)
     , m_kind(kind)

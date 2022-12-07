@@ -12,6 +12,27 @@
 #include <QVBoxLayout>
 
 #include <KLocalizedString>
+#include <KMimeTypeTrader>
+#include <kplugininfo.h>
+
+#if KSERVICE_BUILD_DEPRECATED_SINCE(5, 102)
+KService::List allParts()
+{
+    KService::List result;
+    const KService::List allServices = KService::allServices();
+    for (const auto &service : allServices) {
+        if (service->hasServiceType(QStringLiteral("KParts/ReadOnlyPart"))) {
+            result << service;
+        }
+    }
+    return result;
+}
+#else
+QVector<KPluginMetaData> allParts()
+{
+    return KPluginMetaData::findPlugins(QStringLiteral("kf" QT_STRINGIFY(QT_VERSION_MAJOR) "/parts"));
+}
+#endif
 
 KServiceSelectDlg::KServiceSelectDlg(const QString & /*serviceType*/, const QString & /*value*/, QWidget *parent)
     : QDialog(parent)
@@ -27,15 +48,14 @@ KServiceSelectDlg::KServiceSelectDlg(const QString & /*serviceType*/, const QStr
     m_buttonBox = new QDialogButtonBox;
     m_buttonBox->setStandardButtons(QDialogButtonBox::Ok | QDialogButtonBox::Cancel);
 
-    // Can't make a KTrader query since we don't have a servicetype to give,
-    // we want all services that are not applications.......
-    // So we have to do it the slow way
-    // ### Why can't we query for KParts/ReadOnlyPart as the servicetype? Should work fine!
-    const KService::List allServices = KService::allServices();
-    for (const auto &service : allServices) {
-        if (service->hasServiceType(QStringLiteral("KParts/ReadOnlyPart"))) {
-            m_listbox->addItem(new KServiceListItem(service, KServiceListWidget::SERVICELIST_SERVICES));
-        }
+    const auto parts = allParts();
+
+    for (const auto &part : parts) {
+#if KSERVICE_BUILD_DEPRECATED_SINCE(5, 102)
+        m_listbox->addItem(new KServiceListItem(part, KServiceListWidget::SERVICELIST_SERVICES));
+#else
+        m_listbox->addItem(new PluginListItem(part));
+#endif
     }
 
     m_listbox->model()->sort(0);

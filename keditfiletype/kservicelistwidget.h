@@ -11,6 +11,8 @@
 
 #include <QGroupBox>
 #include <QListWidget>
+
+#include <KPluginMetaData>
 #include <kservice.h>
 
 class QPushButton;
@@ -25,6 +27,12 @@ public:
     QString storageId;
     QString desktopPath;
     QString localPath;
+};
+
+class PluginListItem : public QListWidgetItem
+{
+public:
+    PluginListItem(const KPluginMetaData &metaData);
 };
 
 /**
