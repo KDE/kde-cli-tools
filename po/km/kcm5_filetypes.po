@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: filetypes\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2022-10-26 00:47+0000\n"
+"POT-Creation-Date: 2022-12-14 00:48+0000\n"
 "PO-Revision-Date: 2010-11-08 09:44+0700\n"
 "Last-Translator: Khoem Sokhem <khoemsokhem@khmeros.info>\n"
 "Language-Team: Khmer <support@khmeros.info>\n"
@@ -83,7 +83,7 @@ msgstr ""
 "លំនាំ *.txt ត្រូវ​បាន​ភ្ជាប់​ជា​មួយ​ប្រភេទ​ឯកសារ 'text/plain' ឯកសារ​ទាំង​អស់​បញ្ចប់​ដោយ '.txt' ត្រូវ​"
 "បាន​ស្គាល់​ថា​ជា​ឯកសារ​អត្ថបទ​ធម្មតា ។"
 
-#: filetypedetails.cpp:87 filetypesview.cpp:103 kservicelistwidget.cpp:102
+#: filetypedetails.cpp:87 filetypesview.cpp:103 kservicelistwidget.cpp:109
 #, kde-format
 msgid "Add..."
 msgstr "បន្ថែម..."
@@ -93,7 +93,7 @@ msgstr "បន្ថែម..."
 msgid "Add a new pattern for the selected file type."
 msgstr "បន្ថែម​លំនាំ​ថ្មី​មួយ សម្រាប់​ប្រភេទ​ឯកសារ​ដែល​បាន​ជ្រើស ។"
 
-#: filetypedetails.cpp:94 kservicelistwidget.cpp:116
+#: filetypedetails.cpp:94 kservicelistwidget.cpp:123
 #, kde-format
 msgid "Remove"
 msgstr "យក​ចេញ"
@@ -352,22 +352,22 @@ msgstr "កែសម្រួល​ប្រភេទ​ឯកសារ %1"
 msgid "Create New File Type %1"
 msgstr "បង្កើត​ប្រភេទ​ឯកសារ​ថ្មី %1"
 
-#: kservicelistwidget.cpp:36
+#: kservicelistwidget.cpp:36 kservicelistwidget.cpp:51
 #, kde-format
 msgid "%1 (%2)"
 msgstr "%1 (%2)"
 
-#: kservicelistwidget.cpp:49
+#: kservicelistwidget.cpp:56
 #, kde-format
 msgid "Application Preference Order"
 msgstr "លំដាប់​ចំណូល​ចិត្ត​កម្មវិធី"
 
-#: kservicelistwidget.cpp:49
+#: kservicelistwidget.cpp:56
 #, kde-format
 msgid "Services Preference Order"
 msgstr "លំដាប់​ចំណូល​ចិត្ត​សេវា"
 
-#: kservicelistwidget.cpp:60
+#: kservicelistwidget.cpp:67
 #, kde-format
 msgid ""
 "This is a list of applications associated with files of the selected file "
@@ -381,7 +381,7 @@ msgstr ""
 "កម្មវិធី​ច្រើន​ជាង​មួយ​ត្រូវ​បាន​ភ្ជាប់​ជាមួយ​ប្រភេទ​ឯកសារ​នេះ នោះ​បញ្ជី​ត្រូវ​បាន​​តម្រៀប​តាម​អាទិភាព​ដោយ​ធាតុ​នៅ​"
 "លើ​គេបំផុត មាន​អាទិភាព​លើ​ធាតុ​ផ្សេង​ទៀត ។"
 
-#: kservicelistwidget.cpp:65
+#: kservicelistwidget.cpp:72
 #, kde-format
 msgid ""
 "This is a list of services associated with files of the selected file type. "
@@ -395,12 +395,12 @@ msgstr ""
 "ច្រើនជាង​មួយ​ត្រូវ​បាន​ភ្ជាប់​ជា​មួយ​ប្រភេទ​ឯកសារ​នេះ បន្ទាប់​បញ្ជី​ត្រូវ​បាន​តម្រៀប​​តាម​អាទិភាព​ជា​មួយ​ធាតុ​ដែល​នៅ​"
 "លើ​បំផុត​នៅ​លើ​អា​ផ្សេង ។"
 
-#: kservicelistwidget.cpp:77
+#: kservicelistwidget.cpp:84
 #, kde-format
 msgid "Move &Up"
 msgstr "ផ្លាស់ទី​ឡើង​លើ"
 
-#: kservicelistwidget.cpp:83
+#: kservicelistwidget.cpp:90
 #, kde-format
 msgid ""
 "Assigns a higher priority to the selected\n"
@@ -413,7 +413,7 @@ msgstr ""
 "មាន​ឥទ្ធិពល​ចំពោះ​តែ​កម្មវិធី​ដែល​បាន​ជ្រើស​ប៉ុណ្ណោះ តែ​ក្នុង​ករណី​ប្រភេទ​ឯកសារ\n"
 "ត្រូវ​បាន​ភ្ជាប់​ជាមួយ​កម្មវិធី​ច្រើន​ជាង​មួយ ។"
 
-#: kservicelistwidget.cpp:87
+#: kservicelistwidget.cpp:94
 #, kde-format
 msgid ""
 "Assigns a higher priority to the selected\n"
@@ -422,12 +422,12 @@ msgstr ""
 "ផ្ដល់​អាទិភាព​ខ្ពស់​ជាង​ទៅ​សេវា​ដែល​បាន​ជ្រើស\n"
 "ដោយ​ផ្លាស់ទី​វា​ឡើង​លើ​​នៅ​ក្នុង​បញ្ជី ។"
 
-#: kservicelistwidget.cpp:90
+#: kservicelistwidget.cpp:97
 #, kde-format
 msgid "Move &Down"
 msgstr "ផ្លាស់ទី​ចុះ​ក្រោម"
 
-#: kservicelistwidget.cpp:95
+#: kservicelistwidget.cpp:102
 #, kde-format
 msgid ""
 "Assigns a lower priority to the selected\n"
@@ -440,7 +440,7 @@ msgstr ""
 "មាន​ឥទ្ធិពល​ចំពោះ​តែ​កម្មវិធី​ដែល​បាន​ជ្រើសប៉ុណ្ណោះ តែ​ក្នុង​ករណី​ប្រភេទ​ឯកសារ\n"
 "ត្រូវ​បាន​ភ្ជាប់​ជាមួយ​កម្មវិធី​ច្រើន​ជាង​មួយ ។"
 
-#: kservicelistwidget.cpp:99
+#: kservicelistwidget.cpp:106
 #, kde-format
 msgid ""
 "Assigns a lower priority to the selected\n"
@@ -449,44 +449,44 @@ msgstr ""
 "ផ្ដល់​អាទិភាព​ទាប​ជាង​ទៅ​សេវា​ដែលបាន​ជ្រើស\n"
 "ដោយ​ផ្លាស់ទី​វា​ចុះក្រោម​​នៅ​ក្នុង​បញ្ជី ។"
 
-#: kservicelistwidget.cpp:107
+#: kservicelistwidget.cpp:114
 #, kde-format
 msgid "Add a new application for this file type."
 msgstr "បន្ថែម​កម្មវិធី​ថ្មី​សម្រាប់​ប្រភេទ​ឯកសារ​នេះ ។"
 
-#: kservicelistwidget.cpp:109
+#: kservicelistwidget.cpp:116
 #, kde-format
 msgid "Edit..."
 msgstr "កែសម្រួល..."
 
-#: kservicelistwidget.cpp:114
+#: kservicelistwidget.cpp:121
 #, kde-format
 msgid "Edit command line of the selected application."
 msgstr "កែសម្រួល​បន្ទាត់​បញ្ជា​របស់​កម្មវិធី​ដែល​បាន​ជ្រើស ។"
 
-#: kservicelistwidget.cpp:121
+#: kservicelistwidget.cpp:128
 #, kde-format
 msgid "Remove the selected application from the list."
 msgstr "យក​កម្មវិធី​ដែល​បាន​ជ្រើស​ចេញ​ពី​បញ្ជី ។"
 
-#: kservicelistwidget.cpp:144
+#: kservicelistwidget.cpp:151
 #, kde-format
 msgctxt "No applications associated with this file type"
 msgid "None"
 msgstr "គ្មាន"
 
-#: kservicelistwidget.cpp:146
+#: kservicelistwidget.cpp:153
 #, kde-format
 msgctxt "No components associated with this file type"
 msgid "None"
 msgstr "គ្មាន"
 
-#: kserviceselectdlg.cpp:21
+#: kserviceselectdlg.cpp:42
 #, kde-format
 msgid "Add Service"
 msgstr "បន្ថែម​សេវា"
 
-#: kserviceselectdlg.cpp:25
+#: kserviceselectdlg.cpp:46
 #, kde-format
 msgid "Select service:"
 msgstr "ជ្រើស​សេវា ៖"

@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: filetypes\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2022-10-26 00:47+0000\n"
+"POT-Creation-Date: 2022-12-14 00:48+0000\n"
 "PO-Revision-Date: 2011-07-16 01:02+0800\n"
 "Last-Translator: Sharuzzaman Ahmat Raslan <sharuzzaman@gmail.com>\n"
 "Language-Team: Malay <kedidiemas@yahoogroups.com>\n"
@@ -86,7 +86,7 @@ msgstr ""
 "fail untuk jenis dipilih. Sebagai contoh, corak *.txt dikaitkan dengan jenis "
 "fail 'teks/plain'; semua fail denganakhiran '.txt' adalah fail teks plain."
 
-#: filetypedetails.cpp:87 filetypesview.cpp:103 kservicelistwidget.cpp:102
+#: filetypedetails.cpp:87 filetypesview.cpp:103 kservicelistwidget.cpp:109
 #, kde-format
 msgid "Add..."
 msgstr "Tambah..."
@@ -96,7 +96,7 @@ msgstr "Tambah..."
 msgid "Add a new pattern for the selected file type."
 msgstr "Tambah corak baru untuk jenis fail dipilih."
 
-#: filetypedetails.cpp:94 kservicelistwidget.cpp:116
+#: filetypedetails.cpp:94 kservicelistwidget.cpp:123
 #, kde-format
 msgid "Remove"
 msgstr "Buang"
@@ -360,22 +360,22 @@ msgstr "Edit Fail Jenis %1"
 msgid "Create New File Type %1"
 msgstr "Cipta Fail Baru Jenis %1"
 
-#: kservicelistwidget.cpp:36
+#: kservicelistwidget.cpp:36 kservicelistwidget.cpp:51
 #, kde-format
 msgid "%1 (%2)"
 msgstr "%1 (%2)"
 
-#: kservicelistwidget.cpp:49
+#: kservicelistwidget.cpp:56
 #, kde-format
 msgid "Application Preference Order"
 msgstr "Susunan Keutamaan Aplikasi"
 
-#: kservicelistwidget.cpp:49
+#: kservicelistwidget.cpp:56
 #, kde-format
 msgid "Services Preference Order"
 msgstr "Susuan Servis Keutamaan"
 
-#: kservicelistwidget.cpp:60
+#: kservicelistwidget.cpp:67
 #, kde-format
 msgid ""
 "This is a list of applications associated with files of the selected file "
@@ -390,7 +390,7 @@ msgstr ""
 "jenis fail ini, senarai tersebut akan disusun dengan kepentingan item "
 "teratas lebih dahulu dari yang lain."
 
-#: kservicelistwidget.cpp:65
+#: kservicelistwidget.cpp:72
 #, kde-format
 msgid ""
 "This is a list of services associated with files of the selected file type. "
@@ -405,12 +405,12 @@ msgstr ""
 "dipadankan dengan jenis fail ini, senarai tersebut akan disusun dengan "
 "kepentingan item teratas lebih dahulu dari yang lain."
 
-#: kservicelistwidget.cpp:77
+#: kservicelistwidget.cpp:84
 #, kde-format
 msgid "Move &Up"
 msgstr "Pinda&h Atas"
 
-#: kservicelistwidget.cpp:83
+#: kservicelistwidget.cpp:90
 #, kde-format
 msgid ""
 "Assigns a higher priority to the selected\n"
@@ -423,7 +423,7 @@ msgstr ""
 "hanya memberi kesan kepada aplikasi dipilih jika jenis fail\n"
 "di sepadankan dengan lebih dari satu aplikasi."
 
-#: kservicelistwidget.cpp:87
+#: kservicelistwidget.cpp:94
 #, kde-format
 msgid ""
 "Assigns a higher priority to the selected\n"
@@ -432,12 +432,12 @@ msgstr ""
 "Tugaskan keutamaan lebih tinggi kepada\n"
 "servis dipilih, menaikkan ke atas senarai."
 
-#: kservicelistwidget.cpp:90
+#: kservicelistwidget.cpp:97
 #, kde-format
 msgid "Move &Down"
 msgstr "Pin&dah Bawah"
 
-#: kservicelistwidget.cpp:95
+#: kservicelistwidget.cpp:102
 #, kde-format
 msgid ""
 "Assigns a lower priority to the selected\n"
@@ -450,7 +450,7 @@ msgstr ""
 "hanya memberi kesan kepada aplikasi dipilih jika jenis fail\n"
 "di sepadankan dengan lebih dari satu aplikasi."
 
-#: kservicelistwidget.cpp:99
+#: kservicelistwidget.cpp:106
 #, kde-format
 msgid ""
 "Assigns a lower priority to the selected\n"
@@ -459,44 +459,44 @@ msgstr ""
 "Tugaskan keutamaan lebih rendah kepada\n"
 "servis dipilih, menurunkan ke atas senarai."
 
-#: kservicelistwidget.cpp:107
+#: kservicelistwidget.cpp:114
 #, kde-format
 msgid "Add a new application for this file type."
 msgstr "Tambah aplikasi baru untuk jenis fail ini."
 
-#: kservicelistwidget.cpp:109
+#: kservicelistwidget.cpp:116
 #, kde-format
 msgid "Edit..."
 msgstr "Edit..."
 
-#: kservicelistwidget.cpp:114
+#: kservicelistwidget.cpp:121
 #, kde-format
 msgid "Edit command line of the selected application."
 msgstr "Edit arahan untuk aplikasi dipilih."
 
-#: kservicelistwidget.cpp:121
+#: kservicelistwidget.cpp:128
 #, kde-format
 msgid "Remove the selected application from the list."
 msgstr "Buang aplikasi dipilih daripada senarai."
 
-#: kservicelistwidget.cpp:144
+#: kservicelistwidget.cpp:151
 #, kde-format
 msgctxt "No applications associated with this file type"
 msgid "None"
 msgstr "Tiada"
 
-#: kservicelistwidget.cpp:146
+#: kservicelistwidget.cpp:153
 #, kde-format
 msgctxt "No components associated with this file type"
 msgid "None"
 msgstr "Tiada"
 
-#: kserviceselectdlg.cpp:21
+#: kserviceselectdlg.cpp:42
 #, kde-format
 msgid "Add Service"
 msgstr "Tambah Servis"
 
-#: kserviceselectdlg.cpp:25
+#: kserviceselectdlg.cpp:46
 #, kde-format
 msgid "Select service:"
 msgstr "Pilih servis:"

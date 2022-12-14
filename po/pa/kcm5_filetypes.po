@@ -9,7 +9,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: filetypes\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2022-10-26 00:47+0000\n"
+"POT-Creation-Date: 2022-12-14 00:48+0000\n"
 "PO-Revision-Date: 2011-06-28 20:00+0530\n"
 "Last-Translator: A S Alam <aalam@users.sf.net>\n"
 "Language-Team: Punjabi/Panjabi <punjabi-users@lists.sf.net>\n"
@@ -85,7 +85,7 @@ msgstr ""
 "ਹੈ। ਉਦਾਹਰਨ ਲਈ ਪੈਟਰਨ *.txt ਫਾਈਲ ਕਿਸਮ 'text/plain' ਨਾਲ ਸੰਬੰਧਿਤ ਹੈ, ਸਾਰੀਆਂ ਫਾਈਲ ਜੋ ਕਿ "
 "*.txt' ਨਾਲ ਖਤਮ ਹੋਣਗੀਆਂ ਨੂੰ ਸਧਾਰਨ ਪਾਠ ਫਾਈਲਾਂ ਮੰਨਿਆ ਜਾਵੇਗਾ।"
 
-#: filetypedetails.cpp:87 filetypesview.cpp:103 kservicelistwidget.cpp:102
+#: filetypedetails.cpp:87 filetypesview.cpp:103 kservicelistwidget.cpp:109
 #, kde-format
 msgid "Add..."
 msgstr "ਸ਼ਾਮਿਲ..."
@@ -95,7 +95,7 @@ msgstr "ਸ਼ਾਮਿਲ..."
 msgid "Add a new pattern for the selected file type."
 msgstr "ਚੁਣੀਆਂ ਫਾਈਲ ਕਿਸਮ ਲਈ ਇੱਕ ਨਵਾਂ ਪੈਟਰਨ ਸ਼ਾਮਿਲ ਕਰੋ।"
 
-#: filetypedetails.cpp:94 kservicelistwidget.cpp:116
+#: filetypedetails.cpp:94 kservicelistwidget.cpp:123
 #, kde-format
 msgid "Remove"
 msgstr "ਹਟਾਓ"
@@ -346,22 +346,22 @@ msgstr "ਫਾਈਲ ਕਿਸਮ %1 ਸੋਧੋ"
 msgid "Create New File Type %1"
 msgstr "ਨਵੀਂ ਫਾਈਲ ਕਿਸਮ %1 ਬਣਾਓ"
 
-#: kservicelistwidget.cpp:36
+#: kservicelistwidget.cpp:36 kservicelistwidget.cpp:51
 #, kde-format
 msgid "%1 (%2)"
 msgstr "%1 (%2)"
 
-#: kservicelistwidget.cpp:49
+#: kservicelistwidget.cpp:56
 #, kde-format
 msgid "Application Preference Order"
 msgstr "ਐਪਲੀਕੇਸ਼ਨ ਪਸੰਦ ਕਰਮ"
 
-#: kservicelistwidget.cpp:49
+#: kservicelistwidget.cpp:56
 #, kde-format
 msgid "Services Preference Order"
 msgstr "ਸਰਵਿਸ ਪਸੰਦ ਕ੍ਰਮ"
 
-#: kservicelistwidget.cpp:60
+#: kservicelistwidget.cpp:67
 #, kde-format
 msgid ""
 "This is a list of applications associated with files of the selected file "
@@ -371,7 +371,7 @@ msgid ""
 "precedence over the others."
 msgstr ""
 
-#: kservicelistwidget.cpp:65
+#: kservicelistwidget.cpp:72
 #, kde-format
 msgid ""
 "This is a list of services associated with files of the selected file type. "
@@ -381,12 +381,12 @@ msgid ""
 "precedence over the others."
 msgstr ""
 
-#: kservicelistwidget.cpp:77
+#: kservicelistwidget.cpp:84
 #, kde-format
 msgid "Move &Up"
 msgstr "ਉੱਤੇ ਭੇਜੋ(&U)"
 
-#: kservicelistwidget.cpp:83
+#: kservicelistwidget.cpp:90
 #, kde-format
 msgid ""
 "Assigns a higher priority to the selected\n"
@@ -399,7 +399,7 @@ msgstr ""
 "ਜੇਕਰ ਇੱਕ ਫਾਈਲ ਕਿਸਮ ਇੱਕ ਤੋਂ ਵਧੇਰੇ ਕਾਰਜ ਲਈ\n"
 "ਸੰਬੰਧਿਤ ਹੈ, ਇਹ ਤਾਂ ਹੀ ਪ੍ਰਭਾਵੀ ਹੈ।"
 
-#: kservicelistwidget.cpp:87
+#: kservicelistwidget.cpp:94
 #, kde-format
 msgid ""
 "Assigns a higher priority to the selected\n"
@@ -408,12 +408,12 @@ msgstr ""
 "ਲਿਸਫ ਵਿੱਚ ਚੁਣੇ ਕਾਰਜ ਲਈ ਪਹਿਲ ਵਧਾਉਣ ਲਈ\n"
 "ਉੱਤੇ ਭੇਜੋ।"
 
-#: kservicelistwidget.cpp:90
+#: kservicelistwidget.cpp:97
 #, kde-format
 msgid "Move &Down"
 msgstr "ਹੇਠਾਂ ਭੇਜੋ(&D)"
 
-#: kservicelistwidget.cpp:95
+#: kservicelistwidget.cpp:102
 #, kde-format
 msgid ""
 "Assigns a lower priority to the selected\n"
@@ -426,7 +426,7 @@ msgstr ""
 "ਜੇਕਰ ਇੱਕ ਫਾਈਲ ਕਿਸਮ ਇੱਕ ਤੋਂ ਵਧੇਰੇ ਕਾਰਜ ਲਈ\n"
 "ਸੰਬੰਧਿਤ ਹੈ, ਇਹ ਤਾਂ ਹੀ ਪ੍ਰਭਾਵੀ ਹੈ।"
 
-#: kservicelistwidget.cpp:99
+#: kservicelistwidget.cpp:106
 #, kde-format
 msgid ""
 "Assigns a lower priority to the selected\n"
@@ -435,44 +435,44 @@ msgstr ""
 "ਲਿਸਟ ਵਿੱਚ ਚੁਣੇ ਕਾਰਜ ਲਈ ਪਹਿਲ ਘਟਾਉਣ ਲਈ\n"
 "ਹੇਠਾਂ ਭੇਜੋ।"
 
-#: kservicelistwidget.cpp:107
+#: kservicelistwidget.cpp:114
 #, kde-format
 msgid "Add a new application for this file type."
 msgstr "ਇਸ ਫਾਈਲ ਕਿਸਮ ਲਈ ਨਵਾਂ ਕਾਰਜ ਜੋੜੋ।"
 
-#: kservicelistwidget.cpp:109
+#: kservicelistwidget.cpp:116
 #, kde-format
 msgid "Edit..."
 msgstr "ਸੋਧ..."
 
-#: kservicelistwidget.cpp:114
+#: kservicelistwidget.cpp:121
 #, kde-format
 msgid "Edit command line of the selected application."
 msgstr "ਚੁਣੇ ਕਾਰਜ ਦੀ ਕਮਾਂਡ ਲਾਇਨ ਸੋਧੋ।"
 
-#: kservicelistwidget.cpp:121
+#: kservicelistwidget.cpp:128
 #, kde-format
 msgid "Remove the selected application from the list."
 msgstr "ਲਿਸਟ ਵਿਚੋਂ ਚੁਣੇ ਕਾਰਜ ਹਟਾਓ।"
 
-#: kservicelistwidget.cpp:144
+#: kservicelistwidget.cpp:151
 #, kde-format
 msgctxt "No applications associated with this file type"
 msgid "None"
 msgstr "ਕੋਈ ਨਹੀਂ"
 
-#: kservicelistwidget.cpp:146
+#: kservicelistwidget.cpp:153
 #, kde-format
 msgctxt "No components associated with this file type"
 msgid "None"
 msgstr "ਕੋਈ ਨਹੀਂ"
 
-#: kserviceselectdlg.cpp:21
+#: kserviceselectdlg.cpp:42
 #, kde-format
 msgid "Add Service"
 msgstr "ਸਰਵਿਸ ਹਟਾਓ"
 
-#: kserviceselectdlg.cpp:25
+#: kserviceselectdlg.cpp:46
 #, kde-format
 msgid "Select service:"
 msgstr "ਸਰਵਿਸ ਚੁਣੋ:"

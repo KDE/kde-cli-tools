@@ -2,8 +2,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kdeorg\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2022-10-26 00:47+0000\n"
-"PO-Revision-Date: 2022-12-01 06:52\n"
+"POT-Creation-Date: 2022-12-14 00:48+0000\n"
+"PO-Revision-Date: 2022-12-13 12:21\n"
 "Last-Translator: \n"
 "Language-Team: Chinese Simplified\n"
 "Language: zh_CN\n"
@@ -79,7 +79,7 @@ msgstr ""
 "这个菜单中包含可以确定文件类型的模式列表。例如，模式 *.txt 和文件类型“text/"
 "plain”相关联；所有“.txt”结尾的文件会被当作普通文本文件。"
 
-#: filetypedetails.cpp:87 filetypesview.cpp:103 kservicelistwidget.cpp:102
+#: filetypedetails.cpp:87 filetypesview.cpp:103 kservicelistwidget.cpp:109
 #, kde-format
 msgid "Add..."
 msgstr "添加..."
@@ -89,7 +89,7 @@ msgstr "添加..."
 msgid "Add a new pattern for the selected file type."
 msgstr "为选中的文件类型添加一个新的模式。"
 
-#: filetypedetails.cpp:94 kservicelistwidget.cpp:116
+#: filetypedetails.cpp:94 kservicelistwidget.cpp:123
 #, kde-format
 msgid "Remove"
 msgstr "删除"
@@ -341,22 +341,22 @@ msgstr "编辑文件类型 %1"
 msgid "Create New File Type %1"
 msgstr "创建新的文件类型 %1"
 
-#: kservicelistwidget.cpp:36
+#: kservicelistwidget.cpp:36 kservicelistwidget.cpp:51
 #, kde-format
 msgid "%1 (%2)"
 msgstr "%1 (%2)"
 
-#: kservicelistwidget.cpp:49
+#: kservicelistwidget.cpp:56
 #, kde-format
 msgid "Application Preference Order"
 msgstr "程序优先顺序"
 
-#: kservicelistwidget.cpp:49
+#: kservicelistwidget.cpp:56
 #, kde-format
 msgid "Services Preference Order"
 msgstr "服务优先顺序"
 
-#: kservicelistwidget.cpp:60
+#: kservicelistwidget.cpp:67
 #, kde-format
 msgid ""
 "This is a list of applications associated with files of the selected file "
@@ -369,7 +369,7 @@ msgstr ""
 "现在 Konqueror 的右键菜单中。若有多个程序和这个文件类型相关联，列表按照优先级"
 "自上往下排列。"
 
-#: kservicelistwidget.cpp:65
+#: kservicelistwidget.cpp:72
 #, kde-format
 msgid ""
 "This is a list of services associated with files of the selected file type. "
@@ -382,12 +382,12 @@ msgstr ""
 "在 Konqueror 的右键菜单中。若有多个服务和此文件类型相关联，列表按照优先级自上"
 "往下排列。"
 
-#: kservicelistwidget.cpp:77
+#: kservicelistwidget.cpp:84
 #, kde-format
 msgid "Move &Up"
 msgstr "上移(&U)"
 
-#: kservicelistwidget.cpp:83
+#: kservicelistwidget.cpp:90
 #, kde-format
 msgid ""
 "Assigns a higher priority to the selected\n"
@@ -399,7 +399,7 @@ msgstr ""
 "上移它。注意：如果这个文件类型和多个\n"
 "程序关联，这仅影响选中的程序。"
 
-#: kservicelistwidget.cpp:87
+#: kservicelistwidget.cpp:94
 #, kde-format
 msgid ""
 "Assigns a higher priority to the selected\n"
@@ -408,12 +408,12 @@ msgstr ""
 "提高选中服务的优先级，\n"
 "在列表中上移它。"
 
-#: kservicelistwidget.cpp:90
+#: kservicelistwidget.cpp:97
 #, kde-format
 msgid "Move &Down"
 msgstr "下移(&D)"
 
-#: kservicelistwidget.cpp:95
+#: kservicelistwidget.cpp:102
 #, kde-format
 msgid ""
 "Assigns a lower priority to the selected\n"
@@ -425,7 +425,7 @@ msgstr ""
 "下移它。注意：如果该文件类型和多个\n"
 "程序关联，此改动仅影响选中的程序。"
 
-#: kservicelistwidget.cpp:99
+#: kservicelistwidget.cpp:106
 #, kde-format
 msgid ""
 "Assigns a lower priority to the selected\n"
@@ -434,44 +434,44 @@ msgstr ""
 "降低选中服务的优先级，\n"
 "在列表中下移它。"
 
-#: kservicelistwidget.cpp:107
+#: kservicelistwidget.cpp:114
 #, kde-format
 msgid "Add a new application for this file type."
 msgstr "为此文件类型添加新的程序。"
 
-#: kservicelistwidget.cpp:109
+#: kservicelistwidget.cpp:116
 #, kde-format
 msgid "Edit..."
 msgstr "编辑..."
 
-#: kservicelistwidget.cpp:114
+#: kservicelistwidget.cpp:121
 #, kde-format
 msgid "Edit command line of the selected application."
 msgstr "编辑选中程序的命令行。"
 
-#: kservicelistwidget.cpp:121
+#: kservicelistwidget.cpp:128
 #, kde-format
 msgid "Remove the selected application from the list."
 msgstr "从列表中删除选中的程序。"
 
-#: kservicelistwidget.cpp:144
+#: kservicelistwidget.cpp:151
 #, kde-format
 msgctxt "No applications associated with this file type"
 msgid "None"
 msgstr "无"
 
-#: kservicelistwidget.cpp:146
+#: kservicelistwidget.cpp:153
 #, kde-format
 msgctxt "No components associated with this file type"
 msgid "None"
 msgstr "无"
 
-#: kserviceselectdlg.cpp:21
+#: kserviceselectdlg.cpp:42
 #, kde-format
 msgid "Add Service"
 msgstr "添加服务"
 
-#: kserviceselectdlg.cpp:25
+#: kserviceselectdlg.cpp:46
 #, kde-format
 msgid "Select service:"
 msgstr "选择服务："

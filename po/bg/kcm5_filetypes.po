@@ -2,7 +2,7 @@
 # Bulgarian translation of KDE.
 # This file is licensed under the GPL.
 #
-# $Id: kcm5_filetypes.po 1636722 2022-10-26 01:37:32Z scripty $
+# $Id: kcm5_filetypes.po 1639977 2022-12-14 01:41:18Z scripty $
 #
 # Zlatko Popov <zlatkopopov@fsa-bg.org>, 2007, 2008.
 # Yasen Pramatarov <yasen@lidneas.com>, 2009, 2011.
@@ -12,7 +12,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: filetypes\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2022-10-26 00:47+0000\n"
+"POT-Creation-Date: 2022-12-14 00:48+0000\n"
 "PO-Revision-Date: 2022-05-20 19:01+0200\n"
 "Last-Translator: Mincho Kondarev <mkondarev@yahoo.de>\n"
 "Language-Team: Bulgarian <dict@fsa-bg.org>\n"
@@ -88,7 +88,7 @@ msgstr ""
 "свързано с вида \"text/plain\" (обикновен текст) и всички файлове, имащи "
 "разширение \"txt\" се разпознават като текстови."
 
-#: filetypedetails.cpp:87 filetypesview.cpp:103 kservicelistwidget.cpp:102
+#: filetypedetails.cpp:87 filetypesview.cpp:103 kservicelistwidget.cpp:109
 #, kde-format
 msgid "Add..."
 msgstr "Добавяне..."
@@ -98,7 +98,7 @@ msgstr "Добавяне..."
 msgid "Add a new pattern for the selected file type."
 msgstr "Добавяне на ново разширение за избрания вид файл."
 
-#: filetypedetails.cpp:94 kservicelistwidget.cpp:116
+#: filetypedetails.cpp:94 kservicelistwidget.cpp:123
 #, kde-format
 msgid "Remove"
 msgstr "Изтриване"
@@ -361,22 +361,22 @@ msgstr "Редактиране на вида файл %1"
 msgid "Create New File Type %1"
 msgstr "Създаване на нов вид файл %1"
 
-#: kservicelistwidget.cpp:36
+#: kservicelistwidget.cpp:36 kservicelistwidget.cpp:51
 #, kde-format
 msgid "%1 (%2)"
 msgstr "%1 (%2)"
 
-#: kservicelistwidget.cpp:49
+#: kservicelistwidget.cpp:56
 #, kde-format
 msgid "Application Preference Order"
 msgstr "Предпочитан ред за програмите"
 
-#: kservicelistwidget.cpp:49
+#: kservicelistwidget.cpp:56
 #, kde-format
 msgid "Services Preference Order"
 msgstr "Предпочитан ред за услугите"
 
-#: kservicelistwidget.cpp:60
+#: kservicelistwidget.cpp:67
 #, kde-format
 msgid ""
 "This is a list of applications associated with files of the selected file "
@@ -390,7 +390,7 @@ msgstr ""
 "\"Отваряне с...\". Ако има повече от една програма асоциирана с този вид "
 "файл, тогава редът в списъка задава реда на показване на програмите в менюто."
 
-#: kservicelistwidget.cpp:65
+#: kservicelistwidget.cpp:72
 #, kde-format
 msgid ""
 "This is a list of services associated with files of the selected file type. "
@@ -405,12 +405,12 @@ msgstr ""
 "(услуга) асоциирана с този вид файл, тогава редът в списъка задава реда на "
 "показване в менюто."
 
-#: kservicelistwidget.cpp:77
+#: kservicelistwidget.cpp:84
 #, kde-format
 msgid "Move &Up"
 msgstr "На&горе"
 
-#: kservicelistwidget.cpp:83
+#: kservicelistwidget.cpp:90
 #, kde-format
 msgid ""
 "Assigns a higher priority to the selected\n"
@@ -423,7 +423,7 @@ msgstr ""
 "се отразява на избраното приложение, само\n"
 "ако за вида файл има повече от едно приложение."
 
-#: kservicelistwidget.cpp:87
+#: kservicelistwidget.cpp:94
 #, kde-format
 msgid ""
 "Assigns a higher priority to the selected\n"
@@ -432,12 +432,12 @@ msgstr ""
 "Задава по-висок приоритет на избраната\n"
 "услуга и я премества нагоре."
 
-#: kservicelistwidget.cpp:90
+#: kservicelistwidget.cpp:97
 #, kde-format
 msgid "Move &Down"
 msgstr "На&долу"
 
-#: kservicelistwidget.cpp:95
+#: kservicelistwidget.cpp:102
 #, kde-format
 msgid ""
 "Assigns a lower priority to the selected\n"
@@ -450,7 +450,7 @@ msgstr ""
 "се отразява на избраното приложение, само\n"
 "ако за вида файл има повече от едно приложение."
 
-#: kservicelistwidget.cpp:99
+#: kservicelistwidget.cpp:106
 #, kde-format
 msgid ""
 "Assigns a lower priority to the selected\n"
@@ -459,44 +459,44 @@ msgstr ""
 "Задава по-нисък приоритет на избраната\n"
 "услуга и я премества надолу."
 
-#: kservicelistwidget.cpp:107
+#: kservicelistwidget.cpp:114
 #, kde-format
 msgid "Add a new application for this file type."
 msgstr "Добавяне на нова програма за отваряне на избрания вид файл."
 
-#: kservicelistwidget.cpp:109
+#: kservicelistwidget.cpp:116
 #, kde-format
 msgid "Edit..."
 msgstr "Редактиране..."
 
-#: kservicelistwidget.cpp:114
+#: kservicelistwidget.cpp:121
 #, kde-format
 msgid "Edit command line of the selected application."
 msgstr "Редактиране на командния ред на избраната програма."
 
-#: kservicelistwidget.cpp:121
+#: kservicelistwidget.cpp:128
 #, kde-format
 msgid "Remove the selected application from the list."
 msgstr "Изтриване на избраната програма от списъка."
 
-#: kservicelistwidget.cpp:144
+#: kservicelistwidget.cpp:151
 #, kde-format
 msgctxt "No applications associated with this file type"
 msgid "None"
 msgstr "Без"
 
-#: kservicelistwidget.cpp:146
+#: kservicelistwidget.cpp:153
 #, kde-format
 msgctxt "No components associated with this file type"
 msgid "None"
 msgstr "Без"
 
-#: kserviceselectdlg.cpp:21
+#: kserviceselectdlg.cpp:42
 #, kde-format
 msgid "Add Service"
 msgstr "Добавяне на услуга"
 
-#: kserviceselectdlg.cpp:25
+#: kserviceselectdlg.cpp:46
 #, kde-format
 msgid "Select service:"
 msgstr "Избор на услуга:"
