@@ -32,7 +32,6 @@
 #include <kprocess.h>
 #include <kwindowsystem.h>
 
-#include <kstartupinfo.h>
 #include <kxmessages.h>
 
 #include <KIO/ApplicationLauncherJob>
@@ -78,9 +77,6 @@ KStart::KStart()
         // connect to window add to get the NEW windows
         connect(KWindowSystem::self(), &KWindowSystem::windowAdded, this, &KStart::windowAdded);
     }
-    // propagate the app startup notification info to the started app
-    // We are not using KApplication, so the env remained set
-    KStartupInfoId id = KStartupInfo::currentStartupIdEnv();
 
     // finally execute the comand
     if (!servicePath.isEmpty()) { // TODO KF6 remove
