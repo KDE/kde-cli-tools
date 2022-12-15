@@ -15,6 +15,7 @@
 #include <iostream>
 #include <stdlib.h>
 
+#include "private/qtx11extras_p.h"
 #include <QCommandLineOption>
 #include <QCommandLineParser>
 #include <QDebug>
@@ -38,6 +39,13 @@ static QString url;
 KStart::KStart()
     : QObject()
 {
+#ifdef HAVE_X11
+    if (QX11Info::isPlatformX11()) {
+        // propagate the startup identification to the started process
+        qputenv("DESKTOP_STARTUP_ID", QX11Info::nextStartupId());
+    }
+#endif
+
     if (!serviceName.isEmpty()) {
         KService::Ptr service = KService::serviceByDesktopName(serviceName);
         if (!service) {
