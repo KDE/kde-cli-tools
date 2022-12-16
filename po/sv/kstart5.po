@@ -9,7 +9,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kstart\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2022-08-17 00:46+0000\n"
+"POT-Creation-Date: 2022-12-16 00:51+0000\n"
 "PO-Revision-Date: 2020-06-06 10:38+0200\n"
 "Last-Translator: Stefan Asserhäll <stefan.asserhall@bredband.net>\n"
 "Language-Team: Swedish <kde-i18n-doc@kde.org>\n"
@@ -30,12 +30,12 @@ msgctxt "EMAIL OF TRANSLATORS"
 msgid "Your emails"
 msgstr "newzella@linux.nu,awl@hem.passagen.se"
 
-#: kstart.cpp:310
+#: kstart.cpp:306
 #, kde-format
 msgid "KStart"
 msgstr "Kstart"
 
-#: kstart.cpp:312
+#: kstart.cpp:308
 #, kde-format
 msgid ""
 "Utility to launch applications with special window properties \n"
@@ -47,32 +47,32 @@ msgstr ""
 "som t ex ikonifierad, maximerad, på ett speciellt virtuellt skrivbord, med "
 "en speciell dekoration osv."
 
-#: kstart.cpp:317
+#: kstart.cpp:313
 #, kde-format
 msgid "(C) 1997-2000 Matthias Ettrich (ettrich@kde.org)"
 msgstr "© 1997-2000 Matthias Ettrich (ettrich@kde.org)"
 
-#: kstart.cpp:319
+#: kstart.cpp:315
 #, kde-format
 msgid "Matthias Ettrich"
 msgstr "Matthias Ettrich"
 
-#: kstart.cpp:320
+#: kstart.cpp:316
 #, kde-format
 msgid "David Faure"
 msgstr "David Faure"
 
-#: kstart.cpp:321
+#: kstart.cpp:317
 #, kde-format
 msgid "Richard J. Moore"
 msgstr "Richard J. Moore"
 
-#: kstart.cpp:326
+#: kstart.cpp:322
 #, kde-format
 msgid "Command to execute"
 msgstr "Kommando att köra"
 
-#: kstart.cpp:330
+#: kstart.cpp:326
 #, kde-format
 msgid ""
 "Alternative to <command>: desktop file path to start. D-Bus service will be "
@@ -81,22 +81,22 @@ msgstr ""
 "Alternativ till <command>: sökväg till skrivbordsfil att starta. D-Bus "
 "tjänst skrivs ut på standardutmatningen. Avråds från: använd --application"
 
-#: kstart.cpp:333
+#: kstart.cpp:329
 #, kde-format
 msgid "Alternative to <command>: desktop file to start."
 msgstr "Alternativ till <command>: skrivbordsfil att starta."
 
-#: kstart.cpp:336
+#: kstart.cpp:332
 #, kde-format
 msgid "Optional URL to pass <desktopfile>, when using --service"
 msgstr "Valfri webbadress för att ange <desktopfile>, när --service används"
 
-#: kstart.cpp:339
+#: kstart.cpp:335
 #, kde-format
 msgid "A regular expression matching the window title"
 msgstr "Ett reguljärt uttryck som matchar fönstrets namn"
 
-#: kstart.cpp:341
+#: kstart.cpp:337
 #, kde-format
 msgid ""
 "A string matching the window class (WM_CLASS property)\n"
@@ -115,12 +115,12 @@ msgstr ""
 "så används det allra första fönstret som visas.\n"
 "Att utelämna båda väljarna rekommenderas INTE."
 
-#: kstart.cpp:350
+#: kstart.cpp:346
 #, kde-format
 msgid "Desktop on which to make the window appear"
 msgstr "Det skrivbord som fönstret ska visas på"
 
-#: kstart.cpp:352
+#: kstart.cpp:348
 #, kde-format
 msgid ""
 "Make the window appear on the desktop that was active\n"
@@ -129,37 +129,37 @@ msgstr ""
 "Gör att fönstret visar sig på det skrivbord som var aktivt när\n"
 "programmet startades"
 
-#: kstart.cpp:353
+#: kstart.cpp:349
 #, kde-format
 msgid "Make the window appear on all desktops"
 msgstr "Gör att fönstret visas på alla skrivbord"
 
-#: kstart.cpp:354
+#: kstart.cpp:350
 #, kde-format
 msgid "Iconify the window"
 msgstr "Ikonifiera fönstret"
 
-#: kstart.cpp:355
+#: kstart.cpp:351
 #, kde-format
 msgid "Maximize the window"
 msgstr "Maximera fönstret"
 
-#: kstart.cpp:356
+#: kstart.cpp:352
 #, kde-format
 msgid "Maximize the window vertically"
 msgstr "Maximera fönstret vertikalt"
 
-#: kstart.cpp:357
+#: kstart.cpp:353
 #, kde-format
 msgid "Maximize the window horizontally"
 msgstr "Maximera fönstret horisontellt"
 
-#: kstart.cpp:358
+#: kstart.cpp:354
 #, kde-format
 msgid "Show window fullscreen"
 msgstr "Visa fönstret med fullskärmsläge"
 
-#: kstart.cpp:360
+#: kstart.cpp:356
 #, kde-format
 msgid ""
 "The window type: Normal, Desktop, Dock, Toolbar, \n"
@@ -168,7 +168,7 @@ msgstr ""
 "Fönstertyp: Normal, skrivbord, dockad, verktyg, \n"
 "meny, dialog, toppmeny eller överskriden"
 
-#: kstart.cpp:363
+#: kstart.cpp:359
 #, kde-format
 msgid ""
 "Jump to the window even if it is started on a \n"
@@ -177,27 +177,27 @@ msgstr ""
 "Hoppa till fönstret även om det öppnas på ett \n"
 "annat virtuellt skrivbord"
 
-#: kstart.cpp:366
+#: kstart.cpp:362
 #, kde-format
 msgid "Try to keep the window above other windows"
 msgstr "Försök hålla fönstret ovanför alla andra fönster"
 
-#: kstart.cpp:368
+#: kstart.cpp:364
 #, kde-format
 msgid "Try to keep the window below other windows"
 msgstr "Försök hålla fönstret under alla andra fönster"
 
-#: kstart.cpp:369
+#: kstart.cpp:365
 #, kde-format
 msgid "The window does not get an entry in the taskbar"
 msgstr "Fönstret får inte någon post i aktivitetsfältet"
 
-#: kstart.cpp:370
+#: kstart.cpp:366
 #, kde-format
 msgid "The window does not get an entry on the pager"
 msgstr "Fönstret får inte någon post i skrivbordsvisningen"
 
-#: kstart.cpp:384
+#: kstart.cpp:380
 #, kde-format
 msgid "No command specified"
 msgstr "Inget kommando angavs"

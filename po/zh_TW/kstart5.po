@@ -13,7 +13,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kstart\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2022-08-17 00:46+0000\n"
+"POT-Creation-Date: 2022-12-16 00:51+0000\n"
 "PO-Revision-Date: 2019-01-19 19:40+0800\n"
 "Last-Translator: pan93412 <pan93412@gmail.com>\n"
 "Language-Team: Chinese <zh-l10n@lists.linux.org.tw>\n"
@@ -34,12 +34,12 @@ msgctxt "EMAIL OF TRANSLATORS"
 msgid "Your emails"
 msgstr "shyue@sonoma.com.tw, ycheng@slat.org"
 
-#: kstart.cpp:310
+#: kstart.cpp:306
 #, kde-format
 msgid "KStart"
 msgstr "KStart"
 
-#: kstart.cpp:312
+#: kstart.cpp:308
 #, kde-format
 msgid ""
 "Utility to launch applications with special window properties \n"
@@ -51,32 +51,32 @@ msgstr ""
 "例如圖示化, 最大化, 特定虛擬桌面, 特殊裝飾等\n"
 " "
 
-#: kstart.cpp:317
+#: kstart.cpp:313
 #, kde-format
 msgid "(C) 1997-2000 Matthias Ettrich (ettrich@kde.org)"
 msgstr "(C) 1997-2000 Matthias Ettrich (ettrich@kde.org)"
 
-#: kstart.cpp:319
+#: kstart.cpp:315
 #, kde-format
 msgid "Matthias Ettrich"
 msgstr "Matthias Ettrich"
 
-#: kstart.cpp:320
+#: kstart.cpp:316
 #, kde-format
 msgid "David Faure"
 msgstr "David Faure"
 
-#: kstart.cpp:321
+#: kstart.cpp:317
 #, kde-format
 msgid "Richard J. Moore"
 msgstr "Richard J. Moore"
 
-#: kstart.cpp:326
+#: kstart.cpp:322
 #, kde-format
 msgid "Command to execute"
 msgstr "要執行的指令"
 
-#: kstart.cpp:330
+#: kstart.cpp:326
 #, fuzzy, kde-format
 #| msgid ""
 #| "Alternative to <command>: desktop file to start. D-Bus service will be "
@@ -86,7 +86,7 @@ msgid ""
 "printed to stdout. Deprecated: use --application"
 msgstr "<command> 的變化：要啟動的桌面檔。D-BUS 服務會印在標準輸出。"
 
-#: kstart.cpp:333
+#: kstart.cpp:329
 #, fuzzy, kde-format
 #| msgid ""
 #| "Alternative to <command>: desktop file to start. D-Bus service will be "
@@ -94,17 +94,17 @@ msgstr "<command> 的變化：要啟動的桌面檔。D-BUS 服務會印在標�
 msgid "Alternative to <command>: desktop file to start."
 msgstr "<command> 的變化：要啟動的桌面檔。D-BUS 服務會印在標準輸出。"
 
-#: kstart.cpp:336
+#: kstart.cpp:332
 #, kde-format
 msgid "Optional URL to pass <desktopfile>, when using --service"
 msgstr "使用 --service 選項時，要傳送 <desktopfile> 的網址，選擇性的。"
 
-#: kstart.cpp:339
+#: kstart.cpp:335
 #, kde-format
 msgid "A regular expression matching the window title"
 msgstr "比對視窗標題的正則表達式"
 
-#: kstart.cpp:341
+#: kstart.cpp:337
 #, kde-format
 msgid ""
 "A string matching the window class (WM_CLASS property)\n"
@@ -123,12 +123,12 @@ msgstr ""
 "出現在最前面的視窗會被選取；\n"
 "不建議將兩個選項皆取消使用。"
 
-#: kstart.cpp:350
+#: kstart.cpp:346
 #, kde-format
 msgid "Desktop on which to make the window appear"
 msgstr "讓視窗出現的桌面"
 
-#: kstart.cpp:352
+#: kstart.cpp:348
 #, kde-format
 msgid ""
 "Make the window appear on the desktop that was active\n"
@@ -137,37 +137,37 @@ msgstr ""
 "啟動應用程式時立即將出現在桌面上的視窗\n"
 "設為動作中"
 
-#: kstart.cpp:353
+#: kstart.cpp:349
 #, kde-format
 msgid "Make the window appear on all desktops"
 msgstr "讓視窗出現在所有桌面"
 
-#: kstart.cpp:354
+#: kstart.cpp:350
 #, kde-format
 msgid "Iconify the window"
 msgstr "視窗圖示化"
 
-#: kstart.cpp:355
+#: kstart.cpp:351
 #, kde-format
 msgid "Maximize the window"
 msgstr "最大化視窗"
 
-#: kstart.cpp:356
+#: kstart.cpp:352
 #, kde-format
 msgid "Maximize the window vertically"
 msgstr "垂直最大化視窗"
 
-#: kstart.cpp:357
+#: kstart.cpp:353
 #, kde-format
 msgid "Maximize the window horizontally"
 msgstr "水平最大化視窗"
 
-#: kstart.cpp:358
+#: kstart.cpp:354
 #, kde-format
 msgid "Show window fullscreen"
 msgstr "將視窗全螢幕顯示"
 
-#: kstart.cpp:360
+#: kstart.cpp:356
 #, kde-format
 msgid ""
 "The window type: Normal, Desktop, Dock, Toolbar, \n"
@@ -176,7 +176,7 @@ msgstr ""
 "視窗類別：一般、桌面、嵌入、工具列\n"
 "選單、對話框、頂層選單或覆蓋"
 
-#: kstart.cpp:363
+#: kstart.cpp:359
 #, kde-format
 msgid ""
 "Jump to the window even if it is started on a \n"
@@ -185,27 +185,27 @@ msgstr ""
 "跳到視窗\n"
 "就算是在別的虛擬桌面啟動"
 
-#: kstart.cpp:366
+#: kstart.cpp:362
 #, kde-format
 msgid "Try to keep the window above other windows"
 msgstr "使視窗保持在其他視窗的上面"
 
-#: kstart.cpp:368
+#: kstart.cpp:364
 #, kde-format
 msgid "Try to keep the window below other windows"
 msgstr "使視窗保持在其他視窗的下面"
 
-#: kstart.cpp:369
+#: kstart.cpp:365
 #, kde-format
 msgid "The window does not get an entry in the taskbar"
 msgstr "這個視窗無法取得工作列進入點"
 
-#: kstart.cpp:370
+#: kstart.cpp:366
 #, kde-format
 msgid "The window does not get an entry on the pager"
 msgstr "這個視窗無法取得虛擬桌面管理器進入點"
 
-#: kstart.cpp:384
+#: kstart.cpp:380
 #, kde-format
 msgid "No command specified"
 msgstr "沒有指定指令"

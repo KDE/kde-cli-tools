@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kstart\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2022-08-17 00:46+0000\n"
+"POT-Creation-Date: 2022-12-16 00:51+0000\n"
 "PO-Revision-Date: 2002-10-26 10:48SAST\n"
 "Last-Translator: Lwandle Mgidlana <lwandle@translate.org.za>\n"
 "Language-Team: Xhosa <xhosa@translate.org.za>\n"
@@ -29,12 +29,12 @@ msgctxt "EMAIL OF TRANSLATORS"
 msgid "Your emails"
 msgstr "lwandle@translate.org.za"
 
-#: kstart.cpp:310
+#: kstart.cpp:306
 #, kde-format
 msgid "KStart"
 msgstr "KStart"
 
-#: kstart.cpp:312
+#: kstart.cpp:308
 #, kde-format
 msgid ""
 "Utility to launch applications with special window properties \n"
@@ -46,54 +46,54 @@ msgstr ""
 "njenge iconified,ezenwe nkulu, idesktop ethile yesiqhamo, uhombiso oluthile\n"
 "njalo-njalo."
 
-#: kstart.cpp:317
+#: kstart.cpp:313
 #, kde-format
 msgid "(C) 1997-2000 Matthias Ettrich (ettrich@kde.org)"
 msgstr ""
 
-#: kstart.cpp:319
+#: kstart.cpp:315
 #, kde-format
 msgid "Matthias Ettrich"
 msgstr ""
 
-#: kstart.cpp:320
+#: kstart.cpp:316
 #, kde-format
 msgid "David Faure"
 msgstr ""
 
-#: kstart.cpp:321
+#: kstart.cpp:317
 #, kde-format
 msgid "Richard J. Moore"
 msgstr ""
 
-#: kstart.cpp:326
+#: kstart.cpp:322
 #, fuzzy, kde-format
 msgid "Command to execute"
 msgstr "Umyalelo ozakuphunyezwa."
 
-#: kstart.cpp:330
+#: kstart.cpp:326
 #, kde-format
 msgid ""
 "Alternative to <command>: desktop file path to start. D-Bus service will be "
 "printed to stdout. Deprecated: use --application"
 msgstr ""
 
-#: kstart.cpp:333
+#: kstart.cpp:329
 #, kde-format
 msgid "Alternative to <command>: desktop file to start."
 msgstr ""
 
-#: kstart.cpp:336
+#: kstart.cpp:332
 #, kde-format
 msgid "Optional URL to pass <desktopfile>, when using --service"
 msgstr ""
 
-#: kstart.cpp:339
+#: kstart.cpp:335
 #, kde-format
 msgid "A regular expression matching the window title"
 msgstr ""
 
-#: kstart.cpp:341
+#: kstart.cpp:337
 #, fuzzy, kde-format
 msgid ""
 "A string matching the window class (WM_CLASS property)\n"
@@ -108,12 +108,12 @@ msgstr ""
 "Ukuba awukhankanyi ibenye, ngoko iwindow yokuqala\n"
 "ukuvela izakuthathwa. Ingathethelelwa!"
 
-#: kstart.cpp:350
+#: kstart.cpp:346
 #, fuzzy, kde-format
 msgid "Desktop on which to make the window appear"
 msgstr "Desktop apho kwenziwa i window ivele."
 
-#: kstart.cpp:352
+#: kstart.cpp:348
 #, fuzzy, kde-format
 msgid ""
 "Make the window appear on the desktop that was active\n"
@@ -122,38 +122,38 @@ msgstr ""
 "Yenza iwindow ivele kwidesktop ebisebenza\n"
 "xa bekuqalwa isucelo. "
 
-#: kstart.cpp:353
+#: kstart.cpp:349
 #, kde-format
 msgid "Make the window appear on all desktops"
 msgstr "Yenza i window ivele kuzo zonke ii desktops"
 
-#: kstart.cpp:354
+#: kstart.cpp:350
 #, kde-format
 msgid "Iconify the window"
 msgstr "Yenza uphawu lomfanekiso lwe window"
 
-#: kstart.cpp:355
+#: kstart.cpp:351
 #, kde-format
 msgid "Maximize the window"
 msgstr "Yenza nkulu i window"
 
-#: kstart.cpp:356
+#: kstart.cpp:352
 #, fuzzy, kde-format
 msgid "Maximize the window vertically"
 msgstr "Yenza nkulu i window"
 
-#: kstart.cpp:357
+#: kstart.cpp:353
 #, fuzzy, kde-format
 msgid "Maximize the window horizontally"
 msgstr "Yenza nkulu i window"
 
-#: kstart.cpp:358
+#: kstart.cpp:354
 #, fuzzy, kde-format
 msgid "Show window fullscreen"
 msgstr ""
 "Bonisa i window yekhusi elipheleleyo. Iquka ukuba chwetheza Ukunganaki."
 
-#: kstart.cpp:360
+#: kstart.cpp:356
 #, fuzzy, kde-format
 msgid ""
 "The window type: Normal, Desktop, Dock, Toolbar, \n"
@@ -162,7 +162,7 @@ msgstr ""
 "Udidi lwe window: Eqhelekileyo, Desktop, Dock, Isixhobo, \n"
 "Menu, Incoko yababini, Menu Ephezulu okanye Qhuba ngaphezulu"
 
-#: kstart.cpp:363
+#: kstart.cpp:359
 #, kde-format
 msgid ""
 "Jump to the window even if it is started on a \n"
@@ -171,27 +171,27 @@ msgstr ""
 "Xhumela kwi window nokuba iqale nge\n"
 "desktop eyahlukileyo"
 
-#: kstart.cpp:366
+#: kstart.cpp:362
 #, fuzzy, kde-format
 msgid "Try to keep the window above other windows"
 msgstr "Yenza i window ihlale rhoqo phezu kwayo nayiphi i window"
 
-#: kstart.cpp:368
+#: kstart.cpp:364
 #, fuzzy, kde-format
 msgid "Try to keep the window below other windows"
 msgstr "Yenza i window ihlale rhoqo phezu kwayo nayiphi i window"
 
-#: kstart.cpp:369
+#: kstart.cpp:365
 #, kde-format
 msgid "The window does not get an entry in the taskbar"
 msgstr "Window ayilufumani ungeno kwi bar yomsebenzi"
 
-#: kstart.cpp:370
+#: kstart.cpp:366
 #, kde-format
 msgid "The window does not get an entry on the pager"
 msgstr "Window ayilufumani ungeno kwi pager"
 
-#: kstart.cpp:384
+#: kstart.cpp:380
 #, kde-format
 msgid "No command specified"
 msgstr "Akukho myalelo ukhankanywayo"

@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kstart\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2022-08-17 00:46+0000\n"
+"POT-Creation-Date: 2022-12-16 00:51+0000\n"
 "PO-Revision-Date: 2009-04-09 15:39+0700\n"
 "Last-Translator: Khoem Sokhem <khoemsokhem@khmeros.info>\n"
 "Language-Team: Khmer <support@khmeros.info>\n"
@@ -28,12 +28,12 @@ msgctxt "EMAIL OF TRANSLATORS"
 msgid "Your emails"
 msgstr "khoemsokhem@khmeros.info,​​evannak@khmeros.info,piseth_dv@khmeros.info"
 
-#: kstart.cpp:310
+#: kstart.cpp:306
 #, kde-format
 msgid "KStart"
 msgstr "KStart"
 
-#: kstart.cpp:312
+#: kstart.cpp:308
 #, kde-format
 msgid ""
 "Utility to launch applications with special window properties \n"
@@ -45,32 +45,32 @@ msgstr ""
 "ដូចជា កំណត់​រូប​តំណាង ពង្រីក​អតិបរិមា ផ្ទៃតុ​និម្មិត​ជាក់លាក់​មួយ ការ​តុបតែង​ពិសេស\n"
 "និង​ច្រើន​ទៀត ។"
 
-#: kstart.cpp:317
+#: kstart.cpp:313
 #, kde-format
 msgid "(C) 1997-2000 Matthias Ettrich (ettrich@kde.org)"
 msgstr "រក្សា​សិទ្ធិ​ឆ្នាំ ១៩៩៧-២០០០ ដោយ​លោក Matthias Ettrich (ettrich@kde.org)"
 
-#: kstart.cpp:319
+#: kstart.cpp:315
 #, kde-format
 msgid "Matthias Ettrich"
 msgstr "Matthias Ettrich"
 
-#: kstart.cpp:320
+#: kstart.cpp:316
 #, kde-format
 msgid "David Faure"
 msgstr "David Faure"
 
-#: kstart.cpp:321
+#: kstart.cpp:317
 #, kde-format
 msgid "Richard J. Moore"
 msgstr "Richard J. Moore"
 
-#: kstart.cpp:326
+#: kstart.cpp:322
 #, kde-format
 msgid "Command to execute"
 msgstr "ពាក្យ​បញ្ជា​ត្រូវ​ប្រតិបត្តិ"
 
-#: kstart.cpp:330
+#: kstart.cpp:326
 #, fuzzy, kde-format
 #| msgid ""
 #| "Alternative to <command>: desktop file to start. D-Bus service will be "
@@ -82,7 +82,7 @@ msgstr ""
 "ជម្រើស​ទៅ <command> ៖ ឯកសារ​ផ្ទៃតុ​ត្រូវ​ចាប់ផ្ដើម ។ សេវា D-Bus នឹង​ត្រូ​វបានបោះពុម្ព​ទៅ​កាន់ "
 "stdout"
 
-#: kstart.cpp:333
+#: kstart.cpp:329
 #, fuzzy, kde-format
 #| msgid ""
 #| "Alternative to <command>: desktop file to start. D-Bus service will be "
@@ -92,17 +92,17 @@ msgstr ""
 "ជម្រើស​ទៅ <command> ៖ ឯកសារ​ផ្ទៃតុ​ត្រូវ​ចាប់ផ្ដើម ។ សេវា D-Bus នឹង​ត្រូ​វបានបោះពុម្ព​ទៅ​កាន់ "
 "stdout"
 
-#: kstart.cpp:336
+#: kstart.cpp:332
 #, kde-format
 msgid "Optional URL to pass <desktopfile>, when using --service"
 msgstr "URL ជា​ជម្រើស​ត្រូ​វចម្លង​ <desktopfile> នៅពេល​ប្រើ --service"
 
-#: kstart.cpp:339
+#: kstart.cpp:335
 #, kde-format
 msgid "A regular expression matching the window title"
 msgstr "កន្សោម​ធម្មតា​ដែល​ផ្គូផ្គង​ចំណង​ជើង​បង្អួច"
 
-#: kstart.cpp:341
+#: kstart.cpp:337
 #, kde-format
 msgid ""
 "A string matching the window class (WM_CLASS property)\n"
@@ -121,12 +121,12 @@ msgstr ""
 "នោះ​បង្អួច​មុន​គេ​ដែល​ត្រូវ​បង្ហាញ នឹង​ត្រូវ​យក\n"
 "បំបាត់​ជម្រើស​ទាំង​ពីរ​គឺ មិន​ត្រូវ​បាន​ផ្ដល់​អនុសាសន៍​ទេ ។"
 
-#: kstart.cpp:350
+#: kstart.cpp:346
 #, kde-format
 msgid "Desktop on which to make the window appear"
 msgstr "ផ្ទៃតុ​ដែល​ត្រូវ​ធ្វើ​ឲ្យ​បង្អួច​លេចឡើង​លើ"
 
-#: kstart.cpp:352
+#: kstart.cpp:348
 #, kde-format
 msgid ""
 "Make the window appear on the desktop that was active\n"
@@ -135,37 +135,37 @@ msgstr ""
 "ធ្វើ​ឲ្យ​បង្អួច​លេចឡើង​លើ​ផ្ទៃតុ ដែល​សកម្ម\n"
 "ពេល​ចាប់ផ្ដើម​កម្មវិធី"
 
-#: kstart.cpp:353
+#: kstart.cpp:349
 #, kde-format
 msgid "Make the window appear on all desktops"
 msgstr "ធ្វើ​ឲ្យ​បង្អួច​លេចឡើង​លើ​ផ្ទៃតុ​ទាំងអស់"
 
-#: kstart.cpp:354
+#: kstart.cpp:350
 #, kde-format
 msgid "Iconify the window"
 msgstr "កំណត់​រូប​តំណាង​បង្អួច"
 
-#: kstart.cpp:355
+#: kstart.cpp:351
 #, kde-format
 msgid "Maximize the window"
 msgstr "ពង្រីក​បង្អួច​អតិបរមា"
 
-#: kstart.cpp:356
+#: kstart.cpp:352
 #, kde-format
 msgid "Maximize the window vertically"
 msgstr "ពង្រីក​បង្អួច​បញ្ឈរ​អតិបរមា"
 
-#: kstart.cpp:357
+#: kstart.cpp:353
 #, kde-format
 msgid "Maximize the window horizontally"
 msgstr "ពង្រីក​បង្អួច​ផ្ដេក​អតិបរមា"
 
-#: kstart.cpp:358
+#: kstart.cpp:354
 #, kde-format
 msgid "Show window fullscreen"
 msgstr "បង្ហាញ​បង្អួច​ពេញ​អេក្រង់"
 
-#: kstart.cpp:360
+#: kstart.cpp:356
 #, kde-format
 msgid ""
 "The window type: Normal, Desktop, Dock, Toolbar, \n"
@@ -174,7 +174,7 @@ msgstr ""
 "ប្រភេទ​បង្អួច ៖ ធម្មតា ផ្ទៃតុ ចូលផែ របារ​ឧបករណ៍\n"
 "ម៉ឺនុយ ប្រអប់ ម៉ឺនុយ​កំពូល ឬ បដិសេធ"
 
-#: kstart.cpp:363
+#: kstart.cpp:359
 #, kde-format
 msgid ""
 "Jump to the window even if it is started on a \n"
@@ -183,27 +183,27 @@ msgstr ""
 "លោត​ទៅ​បង្អួច ទោះ​បី​ជា​វា​ត្រូវ​បាន​ចាប់ផ្ដើម​លើ \n"
 "ផ្ទៃតុ​និម្មិត​ខុស​គ្នា​ក៏​ដោយ"
 
-#: kstart.cpp:366
+#: kstart.cpp:362
 #, kde-format
 msgid "Try to keep the window above other windows"
 msgstr "ព្យាយាម​រក្សា​បង្អួច​នៅ​លើ​បង្អួច​ផ្សេង​ទៀត"
 
-#: kstart.cpp:368
+#: kstart.cpp:364
 #, kde-format
 msgid "Try to keep the window below other windows"
 msgstr "ព្យាយាម​រក្សា​បង្អួច​នៅ​ក្រោម​បង្អួច​ផ្សេង​ទៀត"
 
-#: kstart.cpp:369
+#: kstart.cpp:365
 #, kde-format
 msgid "The window does not get an entry in the taskbar"
 msgstr "បង្អួច​មិន​ទទួល​បាន​ធាតុ​បញ្ចូល​មួយ​ក្នុង​របារ​ភារកិច្ច​ឡើយ"
 
-#: kstart.cpp:370
+#: kstart.cpp:366
 #, kde-format
 msgid "The window does not get an entry on the pager"
 msgstr "បង្អួច​នេះ​មិន​យក​ធាតុ​លើ​ភេកយ័រ​ទេ"
 
-#: kstart.cpp:384
+#: kstart.cpp:380
 #, kde-format
 msgid "No command specified"
 msgstr "មិន​បាន​បញ្ជាក់​ពាក្យ​បញ្ជា"
