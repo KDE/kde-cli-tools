@@ -190,23 +190,6 @@ void KStart::windowAdded(WId w)
             return; // no match
         }
     }
-    if (!windowclass.isEmpty()) {
-#ifdef __GNUC__
-#warning "Porting required"
-#endif
-#if 0
-        XClassHint hint;
-        if( !XGetClassHint( QX11Info::display(), w, &hint ))
-            return;
-        Q3CString cls = windowclass.contains( ' ' )
-            ? Q3CString( hint.res_name ) + ' ' + hint.res_class : Q3CString( hint.res_class );
-        cls = cls.toLower();
-        XFree( hint.res_name );
-	XFree( hint.res_class );
-        if( cls != windowclass )
-            return;
-#endif
-    }
     if (windowtitle.isEmpty() && windowclass.isEmpty()) {
         // accept only "normal" windows
         if (info.windowType(SUPPORTED_WINDOW_TYPES_MASK) != NET::Unknown && info.windowType(SUPPORTED_WINDOW_TYPES_MASK) != NET::Normal
@@ -218,44 +201,10 @@ void KStart::windowAdded(WId w)
     QApplication::exit();
 }
 
-// extern Atom qt_wm_state; // defined in qapplication_x11.cpp
-static bool wstate_withdrawn(WId winid)
-{
-    Q_UNUSED(winid);
-
-#ifdef __GNUC__
-#warning "Porting required."
-#endif
-    // Porting info: The Qt4 equivalent for qt_wm_state is qt_x11Data->atoms[QX11Data::WM_STATE]
-    // which can be accessed via the macro ATOM(WM_STATE). Unfortunately, neither of these seem
-    // to be exported out of the Qt environment. This value may have to be acquired from somewhere else.
-    /*
-        Atom type;
-        int format;
-        unsigned long length, after;
-        unsigned char *data;
-        int r = XGetWindowProperty( QX11Info::display(), winid, qt_wm_state, 0, 2,
-                    false, AnyPropertyType, &type, &format,
-                    &length, &after, &data );
-        bool withdrawn = true;
-        if ( r == Success && data && format == 32 ) {
-        quint32 *wstate = (quint32*)data;
-        withdrawn  = (*wstate == WithdrawnState );
-        XFree( (char *)data );
-        }
-        return withdrawn;
-    */
-    return true;
-}
-
 void KStart::applyStyle(WId w)
 {
     if (state || iconify || windowtype != NET::Unknown || desktop >= 1) {
         XWithdrawWindow(QX11Info::display(), w, QX11Info::appScreen());
-
-        while (!wstate_withdrawn(w)) {
-            ;
-        }
     }
 
     NETWinInfo info(QX11Info::connection(), w, QX11Info::appRootWindow(), NET::WMState, NET::Properties2());
