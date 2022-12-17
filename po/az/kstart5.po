@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kde-cli-tools\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2022-12-16 00:51+0000\n"
+"POT-Creation-Date: 2022-12-17 00:51+0000\n"
 "PO-Revision-Date: 2022-07-03 13:56+0400\n"
 "Last-Translator: Kheyyam <xxmn77@gmail.com>\n"
 "Language-Team: Azerbaijani <kde-i18n-doc@kde.org>\n"
@@ -27,12 +27,12 @@ msgctxt "EMAIL OF TRANSLATORS"
 msgid "Your emails"
 msgstr "xxmn77@gmail.com"
 
-#: kstart.cpp:306
+#: kstart.cpp:255
 #, kde-format
 msgid "KStart"
 msgstr "KStart"
 
-#: kstart.cpp:308
+#: kstart.cpp:257
 #, kde-format
 msgid ""
 "Utility to launch applications with special window properties \n"
@@ -44,32 +44,32 @@ msgstr ""
 "ikon kimi, tam ekran boyu, müəyyən virtual iş masası, xüsusi \n"
 "dekorasiya kimi başlatmaq üçün köməkçi proqram."
 
-#: kstart.cpp:313
+#: kstart.cpp:262
 #, kde-format
 msgid "(C) 1997-2000 Matthias Ettrich (ettrich@kde.org)"
 msgstr "(C) 1997-2000 Matthias Ettrich (ettrich@kde.org)"
 
-#: kstart.cpp:315
+#: kstart.cpp:264
 #, kde-format
 msgid "Matthias Ettrich"
 msgstr "Matthias Ettrich"
 
-#: kstart.cpp:316
+#: kstart.cpp:265
 #, kde-format
 msgid "David Faure"
 msgstr "David Faure"
 
-#: kstart.cpp:317
+#: kstart.cpp:266
 #, kde-format
 msgid "Richard J. Moore"
 msgstr "Richard J. Moore"
 
-#: kstart.cpp:322
+#: kstart.cpp:271
 #, kde-format
 msgid "Command to execute"
 msgstr "İcra əmri"
 
-#: kstart.cpp:326
+#: kstart.cpp:275
 #, kde-format
 msgid ""
 "Alternative to <command>: desktop file path to start. D-Bus service will be "
@@ -78,24 +78,24 @@ msgstr ""
 "<əmr>üçün alternativ: başlamaq üçün iş masası faylı. D-Bus xidməti standart "
 "çıxışda göstəriləcək."
 
-#: kstart.cpp:329
+#: kstart.cpp:278
 #, kde-format
 msgid "Alternative to <command>: desktop file to start."
 msgstr "<əmr> üçün alternativ: başlamaq üçün iş masası faylı."
 
-#: kstart.cpp:332
+#: kstart.cpp:281
 #, kde-format
 msgid "Optional URL to pass <desktopfile>, when using --service"
 msgstr ""
 "--service parametri istifadə edilərkən <desktopfile> -a keçid üçün ixtiyari "
 "URL"
 
-#: kstart.cpp:335
+#: kstart.cpp:284
 #, kde-format
 msgid "A regular expression matching the window title"
 msgstr "Pəncərə başlığına uyğun müntəzəm ifadə"
 
-#: kstart.cpp:337
+#: kstart.cpp:286
 #, kde-format
 msgid ""
 "A string matching the window class (WM_CLASS property)\n"
@@ -113,12 +113,12 @@ msgstr ""
 "xüsusiyyətləri istifadə olunacaqdır. və buna görə də hər iki\n"
 "parametri ötürmək tövsiyyə olunmur."
 
-#: kstart.cpp:346
+#: kstart.cpp:295
 #, kde-format
 msgid "Desktop on which to make the window appear"
 msgstr "Pəncərənin peyda olduğu İş masası"
 
-#: kstart.cpp:348
+#: kstart.cpp:297
 #, kde-format
 msgid ""
 "Make the window appear on the desktop that was active\n"
@@ -127,37 +127,37 @@ msgstr ""
 "Tətbiqin işə düşməsi zamanı pəncərənin görünəcəyi İş\n"
 "Masasını aktiv etmək"
 
-#: kstart.cpp:349
+#: kstart.cpp:298
 #, kde-format
 msgid "Make the window appear on all desktops"
 msgstr "Pəncərəni bütün İş Masalarında göstərir"
 
-#: kstart.cpp:350
+#: kstart.cpp:299
 #, kde-format
 msgid "Iconify the window"
 msgstr "Pəncərəni kiçiltmək"
 
-#: kstart.cpp:351
+#: kstart.cpp:300
 #, kde-format
 msgid "Maximize the window"
 msgstr "Pəncərəni tam genişləndirmək"
 
-#: kstart.cpp:352
+#: kstart.cpp:301
 #, kde-format
 msgid "Maximize the window vertically"
 msgstr "Pəncərəni üfüqi genişləndirmək"
 
-#: kstart.cpp:353
+#: kstart.cpp:302
 #, kde-format
 msgid "Maximize the window horizontally"
 msgstr "Pəncərəni şaquli genişləndirmək"
 
-#: kstart.cpp:354
+#: kstart.cpp:303
 #, kde-format
 msgid "Show window fullscreen"
 msgstr "Pəncərəni ekran boyü göstərmək"
 
-#: kstart.cpp:356
+#: kstart.cpp:305
 #, kde-format
 msgid ""
 "The window type: Normal, Desktop, Dock, Toolbar, \n"
@@ -167,7 +167,7 @@ msgstr ""
 "Menyu, Dialoq, Üst menyu (TopMenu) və ya üstünə keçirmək \n"
 "(Override)"
 
-#: kstart.cpp:359
+#: kstart.cpp:308
 #, kde-format
 msgid ""
 "Jump to the window even if it is started on a \n"
@@ -176,27 +176,27 @@ msgstr ""
 "Başqa bir virtual İş masasında açımış olsa da \n"
 "pəncərəyə keçmək"
 
-#: kstart.cpp:362
+#: kstart.cpp:311
 #, kde-format
 msgid "Try to keep the window above other windows"
 msgstr "Pəncərəni digər pəncərələrin üstündə saxlamaq"
 
-#: kstart.cpp:364
+#: kstart.cpp:313
 #, kde-format
 msgid "Try to keep the window below other windows"
 msgstr "Pəncərəni digər pəncərələrin altında saxlamaq"
 
-#: kstart.cpp:365
+#: kstart.cpp:314
 #, kde-format
 msgid "The window does not get an entry in the taskbar"
 msgstr "Pəncərəni tapşırıq panelində göstərməmək"
 
-#: kstart.cpp:366
+#: kstart.cpp:315
 #, kde-format
 msgid "The window does not get an entry on the pager"
 msgstr "Dəyişdirərkən pəncərərəni pəncərələr siyahısında göstərmənək"
 
-#: kstart.cpp:380
+#: kstart.cpp:329
 #, kde-format
 msgid "No command specified"
 msgstr "Əmr göstərilməyib"

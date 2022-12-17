@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kstart stable\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2022-12-16 00:51+0000\n"
+"POT-Creation-Date: 2022-12-17 00:51+0000\n"
 "PO-Revision-Date: 2005-09-13 15:33+0200\n"
 "Last-Translator: Kobus Venter <kabousv@therugby.co.za>\n"
 "Language-Team: AFRIKAANS <translate-discuss-af@lists.sourceforge.net>\n"
@@ -28,12 +28,12 @@ msgctxt "EMAIL OF TRANSLATORS"
 msgid "Your emails"
 msgstr "frix@expertron.co.za, juanita.franz@vr-web.de, kabousv@therugby.co.za"
 
-#: kstart.cpp:306
+#: kstart.cpp:255
 #, kde-format
 msgid "KStart"
 msgstr "Kstart"
 
-#: kstart.cpp:308
+#: kstart.cpp:257
 #, kde-format
 msgid ""
 "Utility to launch applications with special window properties \n"
@@ -46,54 +46,54 @@ msgstr ""
 "versiering\n"
 "en sodat op."
 
-#: kstart.cpp:313
+#: kstart.cpp:262
 #, kde-format
 msgid "(C) 1997-2000 Matthias Ettrich (ettrich@kde.org)"
 msgstr ""
 
-#: kstart.cpp:315
+#: kstart.cpp:264
 #, kde-format
 msgid "Matthias Ettrich"
 msgstr ""
 
-#: kstart.cpp:316
+#: kstart.cpp:265
 #, kde-format
 msgid "David Faure"
 msgstr ""
 
-#: kstart.cpp:317
+#: kstart.cpp:266
 #, kde-format
 msgid "Richard J. Moore"
 msgstr ""
 
-#: kstart.cpp:322
+#: kstart.cpp:271
 #, kde-format
 msgid "Command to execute"
 msgstr "Opdrag om uit te voer"
 
-#: kstart.cpp:326
+#: kstart.cpp:275
 #, kde-format
 msgid ""
 "Alternative to <command>: desktop file path to start. D-Bus service will be "
 "printed to stdout. Deprecated: use --application"
 msgstr ""
 
-#: kstart.cpp:329
+#: kstart.cpp:278
 #, kde-format
 msgid "Alternative to <command>: desktop file to start."
 msgstr ""
 
-#: kstart.cpp:332
+#: kstart.cpp:281
 #, kde-format
 msgid "Optional URL to pass <desktopfile>, when using --service"
 msgstr ""
 
-#: kstart.cpp:335
+#: kstart.cpp:284
 #, kde-format
 msgid "A regular expression matching the window title"
 msgstr "'n Gewone uitdrukking passend tot die venster titel"
 
-#: kstart.cpp:337
+#: kstart.cpp:286
 #, kde-format
 msgid ""
 "A string matching the window class (WM_CLASS property)\n"
@@ -113,12 +113,12 @@ msgstr ""
 "dan sal die heel eerste venster wat verskyn geneem word;\n"
 "weglating van beide opsies word nie aanbeveel nie."
 
-#: kstart.cpp:346
+#: kstart.cpp:295
 #, kde-format
 msgid "Desktop on which to make the window appear"
 msgstr "Werkskerm waarop die venster gemaak verskyn word"
 
-#: kstart.cpp:348
+#: kstart.cpp:297
 #, kde-format
 msgid ""
 "Make the window appear on the desktop that was active\n"
@@ -127,37 +127,37 @@ msgstr ""
 "Maak die venster verskyn op die werkskerm wat was aktief\n"
 "wanneer begin die aansoek"
 
-#: kstart.cpp:349
+#: kstart.cpp:298
 #, kde-format
 msgid "Make the window appear on all desktops"
 msgstr "Maak die venster verskyn op alle werkskerms"
 
-#: kstart.cpp:350
+#: kstart.cpp:299
 #, kde-format
 msgid "Iconify the window"
 msgstr "Ikoonifiseer die venster"
 
-#: kstart.cpp:351
+#: kstart.cpp:300
 #, kde-format
 msgid "Maximize the window"
 msgstr "Maksimeer die venster"
 
-#: kstart.cpp:352
+#: kstart.cpp:301
 #, kde-format
 msgid "Maximize the window vertically"
 msgstr "Maksimeer die venster vertikaal"
 
-#: kstart.cpp:353
+#: kstart.cpp:302
 #, kde-format
 msgid "Maximize the window horizontally"
 msgstr "Maksimeer die venster horisontaal"
 
-#: kstart.cpp:354
+#: kstart.cpp:303
 #, kde-format
 msgid "Show window fullscreen"
 msgstr "Vertoon venster volskerm"
 
-#: kstart.cpp:356
+#: kstart.cpp:305
 #, fuzzy, kde-format
 msgid ""
 "The window type: Normal, Desktop, Dock, Toolbar, \n"
@@ -166,7 +166,7 @@ msgstr ""
 "Die venster tipe: Normaal, Werkskerm, Koppel, Gereedskap, \n"
 "Kieslys, Dialoog, BoonsteKieslys of Oorskryf"
 
-#: kstart.cpp:359
+#: kstart.cpp:308
 #, kde-format
 msgid ""
 "Jump to the window even if it is started on a \n"
@@ -175,27 +175,27 @@ msgstr ""
 "Spring na die venster al as dit is beginne op 'n \n"
 "ander virtuele werkskerm"
 
-#: kstart.cpp:362
+#: kstart.cpp:311
 #, kde-format
 msgid "Try to keep the window above other windows"
 msgstr "Probeer om die venster altyd bo ander vensters te hou"
 
-#: kstart.cpp:364
+#: kstart.cpp:313
 #, kde-format
 msgid "Try to keep the window below other windows"
 msgstr "Probeer om die venster altyd onder ander venster te hou"
 
-#: kstart.cpp:365
+#: kstart.cpp:314
 #, kde-format
 msgid "The window does not get an entry in the taskbar"
 msgstr "Die venster doen nie kry 'n inskrywing in Die kasbar"
 
-#: kstart.cpp:366
+#: kstart.cpp:315
 #, kde-format
 msgid "The window does not get an entry on the pager"
 msgstr "Die venster doen nie kry 'n inskrywing op Die boodskapper"
 
-#: kstart.cpp:380
+#: kstart.cpp:329
 #, kde-format
 msgid "No command specified"
 msgstr "Nee opdrag gespesifiseer"

@@ -11,7 +11,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kstart\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2022-12-16 00:51+0000\n"
+"POT-Creation-Date: 2022-12-17 00:51+0000\n"
 "PO-Revision-Date: 2009-05-20 11:21+0000\n"
 "Last-Translator: Sveinn í Felli <sveinki@nett.is>\n"
 "Language-Team: Icelandic <kde-isl@molar.is>\n"
@@ -34,12 +34,12 @@ msgctxt "EMAIL OF TRANSLATORS"
 msgid "Your emails"
 msgstr "ra@ra.is"
 
-#: kstart.cpp:306
+#: kstart.cpp:255
 #, kde-format
 msgid "KStart"
 msgstr "KStart"
 
-#: kstart.cpp:308
+#: kstart.cpp:257
 #, kde-format
 msgid ""
 "Utility to launch applications with special window properties \n"
@@ -51,32 +51,32 @@ msgstr ""
 "sem í táknmynd, með hámarksstærð, á ákveðnu skjáborði, á öllum skjáborðum\n"
 "eða með tiltekna tegund af skreytingum og svo framvegis."
 
-#: kstart.cpp:313
+#: kstart.cpp:262
 #, kde-format
 msgid "(C) 1997-2000 Matthias Ettrich (ettrich@kde.org)"
 msgstr "(C) 1997-2000 Matthias Ettrich (ettrich@kde.org)"
 
-#: kstart.cpp:315
+#: kstart.cpp:264
 #, kde-format
 msgid "Matthias Ettrich"
 msgstr "Matthias Ettrich"
 
-#: kstart.cpp:316
+#: kstart.cpp:265
 #, kde-format
 msgid "David Faure"
 msgstr "David Faure"
 
-#: kstart.cpp:317
+#: kstart.cpp:266
 #, kde-format
 msgid "Richard J. Moore"
 msgstr "Richard J. Moore"
 
-#: kstart.cpp:322
+#: kstart.cpp:271
 #, kde-format
 msgid "Command to execute"
 msgstr "Skipun að framkvæma"
 
-#: kstart.cpp:326
+#: kstart.cpp:275
 #, fuzzy, kde-format
 #| msgid ""
 #| "Alternative to <command>: desktop file to start. D-Bus service will be "
@@ -88,7 +88,7 @@ msgstr ""
 "Valmöguleiki á móti <command>: desktop skrá sem sæst er. D-Bus þjónustan "
 "verður send á stdout"
 
-#: kstart.cpp:329
+#: kstart.cpp:278
 #, fuzzy, kde-format
 #| msgid ""
 #| "Alternative to <command>: desktop file to start. D-Bus service will be "
@@ -98,17 +98,17 @@ msgstr ""
 "Valmöguleiki á móti <command>: desktop skrá sem sæst er. D-Bus þjónustan "
 "verður send á stdout"
 
-#: kstart.cpp:332
+#: kstart.cpp:281
 #, kde-format
 msgid "Optional URL to pass <desktopfile>, when using --service"
 msgstr "Möguleg slóð til að gefa <desktopfile>, þegar notað er --service"
 
-#: kstart.cpp:335
+#: kstart.cpp:284
 #, kde-format
 msgid "A regular expression matching the window title"
 msgstr "Regluleg segð sem passar við titil gluggans"
 
-#: kstart.cpp:337
+#: kstart.cpp:286
 #, kde-format
 msgid ""
 "A string matching the window class (WM_CLASS property)\n"
@@ -128,12 +128,12 @@ msgstr ""
 "verður fyrsti glugginn sem birtist notaður;\n"
 "EKKI er ráðlagt að sleppa báðum valkostunum."
 
-#: kstart.cpp:346
+#: kstart.cpp:295
 #, kde-format
 msgid "Desktop on which to make the window appear"
 msgstr "Skjáborðið sem glugginn á að birtast á"
 
-#: kstart.cpp:348
+#: kstart.cpp:297
 #, kde-format
 msgid ""
 "Make the window appear on the desktop that was active\n"
@@ -142,37 +142,37 @@ msgstr ""
 "Láta glugga birtast á því skjáborði sem var virkt þegar\n"
 "forritið var ræst."
 
-#: kstart.cpp:349
+#: kstart.cpp:298
 #, kde-format
 msgid "Make the window appear on all desktops"
 msgstr "Láta gluggann birtist á öllum skjáborðum"
 
-#: kstart.cpp:350
+#: kstart.cpp:299
 #, kde-format
 msgid "Iconify the window"
 msgstr "Breyta glugga í táknmynd"
 
-#: kstart.cpp:351
+#: kstart.cpp:300
 #, kde-format
 msgid "Maximize the window"
 msgstr "Hámarka stærð glugga"
 
-#: kstart.cpp:352
+#: kstart.cpp:301
 #, kde-format
 msgid "Maximize the window vertically"
 msgstr "Hámarka gluggann loðrétt"
 
-#: kstart.cpp:353
+#: kstart.cpp:302
 #, kde-format
 msgid "Maximize the window horizontally"
 msgstr "Hámarka gluggann lárétt"
 
-#: kstart.cpp:354
+#: kstart.cpp:303
 #, kde-format
 msgid "Show window fullscreen"
 msgstr "Láta gluggann fylla allan skjáinn"
 
-#: kstart.cpp:356
+#: kstart.cpp:305
 #, kde-format
 msgid ""
 "The window type: Normal, Desktop, Dock, Toolbar, \n"
@@ -181,34 +181,34 @@ msgstr ""
 "Tegund gluggans: \"Normal\", \"Desktop\", \"Dock\", \"Toolbar\", \n"
 "\"Menu\", \"Dialog\" \"TopMenu\" eða \"Override\""
 
-#: kstart.cpp:359
+#: kstart.cpp:308
 #, kde-format
 msgid ""
 "Jump to the window even if it is started on a \n"
 "different virtual desktop"
 msgstr "Stökkva að glugga þó hann birtist á öðru skjáborði"
 
-#: kstart.cpp:362
+#: kstart.cpp:311
 #, kde-format
 msgid "Try to keep the window above other windows"
 msgstr "Fleytir glugganum alltaf yfir aðra glugga"
 
-#: kstart.cpp:364
+#: kstart.cpp:313
 #, kde-format
 msgid "Try to keep the window below other windows"
 msgstr "Reyna að halda glugganum undir öðrum gluggum"
 
-#: kstart.cpp:365
+#: kstart.cpp:314
 #, kde-format
 msgid "The window does not get an entry in the taskbar"
 msgstr "Glugginn birtist ekki á verkefnaslánni"
 
-#: kstart.cpp:366
+#: kstart.cpp:315
 #, kde-format
 msgid "The window does not get an entry on the pager"
 msgstr "Glugginn birtist ekki á verkefnaslánni"
 
-#: kstart.cpp:380
+#: kstart.cpp:329
 #, kde-format
 msgid "No command specified"
 msgstr "Engin skipun gefin"

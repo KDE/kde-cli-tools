@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kstart\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2022-12-16 00:51+0000\n"
+"POT-Creation-Date: 2022-12-17 00:51+0000\n"
 "PO-Revision-Date: 2006-12-17 12:26+0000\n"
 "Last-Translator: Mashrab Kuvatov <kmashrab@uni-bremen.de>\n"
 "Language-Team: Uzbek <floss-uz-l10n@googlegroups.com>\n"
@@ -27,12 +27,12 @@ msgctxt "EMAIL OF TRANSLATORS"
 msgid "Your emails"
 msgstr "kmashrab@uni-bremen.de"
 
-#: kstart.cpp:306
+#: kstart.cpp:255
 #, kde-format
 msgid "KStart"
 msgstr "KStart"
 
-#: kstart.cpp:308
+#: kstart.cpp:257
 #, kde-format
 msgid ""
 "Utility to launch applications with special window properties \n"
@@ -41,54 +41,54 @@ msgid ""
 "and so on."
 msgstr ""
 
-#: kstart.cpp:313
+#: kstart.cpp:262
 #, kde-format
 msgid "(C) 1997-2000 Matthias Ettrich (ettrich@kde.org)"
 msgstr ""
 
-#: kstart.cpp:315
+#: kstart.cpp:264
 #, kde-format
 msgid "Matthias Ettrich"
 msgstr ""
 
-#: kstart.cpp:316
+#: kstart.cpp:265
 #, kde-format
 msgid "David Faure"
 msgstr ""
 
-#: kstart.cpp:317
+#: kstart.cpp:266
 #, kde-format
 msgid "Richard J. Moore"
 msgstr ""
 
-#: kstart.cpp:322
+#: kstart.cpp:271
 #, kde-format
 msgid "Command to execute"
 msgstr "Bajarish uchun buyruq"
 
-#: kstart.cpp:326
+#: kstart.cpp:275
 #, kde-format
 msgid ""
 "Alternative to <command>: desktop file path to start. D-Bus service will be "
 "printed to stdout. Deprecated: use --application"
 msgstr ""
 
-#: kstart.cpp:329
+#: kstart.cpp:278
 #, kde-format
 msgid "Alternative to <command>: desktop file to start."
 msgstr ""
 
-#: kstart.cpp:332
+#: kstart.cpp:281
 #, kde-format
 msgid "Optional URL to pass <desktopfile>, when using --service"
 msgstr ""
 
-#: kstart.cpp:335
+#: kstart.cpp:284
 #, kde-format
 msgid "A regular expression matching the window title"
 msgstr ""
 
-#: kstart.cpp:337
+#: kstart.cpp:286
 #, kde-format
 msgid ""
 "A string matching the window class (WM_CLASS property)\n"
@@ -100,83 +100,83 @@ msgid ""
 "omitting both options is NOT recommended."
 msgstr ""
 
-#: kstart.cpp:346
+#: kstart.cpp:295
 #, kde-format
 msgid "Desktop on which to make the window appear"
 msgstr "Oynani koʻrsatilgan ish stolida koʻrsatish"
 
-#: kstart.cpp:348
+#: kstart.cpp:297
 #, kde-format
 msgid ""
 "Make the window appear on the desktop that was active\n"
 "when starting the application"
 msgstr ""
 
-#: kstart.cpp:349
+#: kstart.cpp:298
 #, kde-format
 msgid "Make the window appear on all desktops"
 msgstr "Oynani hamma ish stollarida koʻrsatish"
 
-#: kstart.cpp:350
+#: kstart.cpp:299
 #, kde-format
 msgid "Iconify the window"
 msgstr "Oynani yigʻish"
 
-#: kstart.cpp:351
+#: kstart.cpp:300
 #, kde-format
 msgid "Maximize the window"
 msgstr "Oynani yoyish"
 
-#: kstart.cpp:352
+#: kstart.cpp:301
 #, kde-format
 msgid "Maximize the window vertically"
 msgstr "Oynani boʻyiga yoyish"
 
-#: kstart.cpp:353
+#: kstart.cpp:302
 #, kde-format
 msgid "Maximize the window horizontally"
 msgstr "Oynani eniga yoyish"
 
-#: kstart.cpp:354
+#: kstart.cpp:303
 #, kde-format
 msgid "Show window fullscreen"
 msgstr "Oynani butun ekranda koʻrsatish"
 
-#: kstart.cpp:356
+#: kstart.cpp:305
 #, kde-format
 msgid ""
 "The window type: Normal, Desktop, Dock, Toolbar, \n"
 "Menu, Dialog, TopMenu or Override"
 msgstr ""
 
-#: kstart.cpp:359
+#: kstart.cpp:308
 #, kde-format
 msgid ""
 "Jump to the window even if it is started on a \n"
 "different virtual desktop"
 msgstr ""
 
-#: kstart.cpp:362
+#: kstart.cpp:311
 #, kde-format
 msgid "Try to keep the window above other windows"
 msgstr "Oynani eng yuqorida saqlash"
 
-#: kstart.cpp:364
+#: kstart.cpp:313
 #, kde-format
 msgid "Try to keep the window below other windows"
 msgstr "Oynani eng pastda saqlash"
 
-#: kstart.cpp:365
+#: kstart.cpp:314
 #, kde-format
 msgid "The window does not get an entry in the taskbar"
 msgstr "Oyna vazifalar paneliga qoʻshilmasin"
 
-#: kstart.cpp:366
+#: kstart.cpp:315
 #, kde-format
 msgid "The window does not get an entry on the pager"
 msgstr "Oyna peyjerga qoʻshilmasin"
 
-#: kstart.cpp:380
+#: kstart.cpp:329
 #, kde-format
 msgid "No command specified"
 msgstr "Hech qanday buyruq koʻrsatilmagan"

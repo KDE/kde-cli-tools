@@ -12,7 +12,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kstart5\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2022-12-16 00:51+0000\n"
+"POT-Creation-Date: 2022-12-17 00:51+0000\n"
 "PO-Revision-Date: 2020-06-01 15:56+0300\n"
 "Last-Translator: Yuri Chornoivan <yurchor@ukr.net>\n"
 "Language-Team: Ukrainian <kde-i18n-uk@kde.org>\n"
@@ -34,12 +34,12 @@ msgctxt "EMAIL OF TRANSLATORS"
 msgid "Your emails"
 msgstr "yurchor@ukr.net"
 
-#: kstart.cpp:306
+#: kstart.cpp:255
 #, kde-format
 msgid "KStart"
 msgstr "KStart"
 
-#: kstart.cpp:308
+#: kstart.cpp:257
 #, kde-format
 msgid ""
 "Utility to launch applications with special window properties \n"
@@ -51,32 +51,32 @@ msgstr ""
 "такими, як мінімізоване, максимізоване, на певній стільниці,\n"
 "особливе обрамлення тощо."
 
-#: kstart.cpp:313
+#: kstart.cpp:262
 #, kde-format
 msgid "(C) 1997-2000 Matthias Ettrich (ettrich@kde.org)"
 msgstr "© Matthias Ettrich (ettrich@kde.org), 1997–2000"
 
-#: kstart.cpp:315
+#: kstart.cpp:264
 #, kde-format
 msgid "Matthias Ettrich"
 msgstr "Matthias Ettrich"
 
-#: kstart.cpp:316
+#: kstart.cpp:265
 #, kde-format
 msgid "David Faure"
 msgstr "David Faure"
 
-#: kstart.cpp:317
+#: kstart.cpp:266
 #, kde-format
 msgid "Richard J. Moore"
 msgstr "Richard J. Moore"
 
-#: kstart.cpp:322
+#: kstart.cpp:271
 #, kde-format
 msgid "Command to execute"
 msgstr "Виконати команду"
 
-#: kstart.cpp:326
+#: kstart.cpp:275
 #, kde-format
 msgid ""
 "Alternative to <command>: desktop file path to start. D-Bus service will be "
@@ -86,24 +86,24 @@ msgstr ""
 "служби D-Bus буде спрямовано до stdout. Застарілий: скористайтеся замість "
 "цього параметра параметром --application"
 
-#: kstart.cpp:329
+#: kstart.cpp:278
 #, kde-format
 msgid "Alternative to <command>: desktop file to start."
 msgstr "Альтернатива <command>: файл .desktop, який слід виконати."
 
-#: kstart.cpp:332
+#: kstart.cpp:281
 #, kde-format
 msgid "Optional URL to pass <desktopfile>, when using --service"
 msgstr ""
 "Додатковий URL, який слід передати <desktopfile> у разі використання "
 "параметра --service"
 
-#: kstart.cpp:335
+#: kstart.cpp:284
 #, kde-format
 msgid "A regular expression matching the window title"
 msgstr "Формальний вираз, що відповідає заголовку вікна"
 
-#: kstart.cpp:337
+#: kstart.cpp:286
 #, kde-format
 msgid ""
 "A string matching the window class (WM_CLASS property)\n"
@@ -124,12 +124,12 @@ msgstr ""
 "найперше вікно, яке з'явиться на екрані,\n"
 "не вказувати жодного з параметрів НЕ рекомендується."
 
-#: kstart.cpp:346
+#: kstart.cpp:295
 #, kde-format
 msgid "Desktop on which to make the window appear"
 msgstr "Стільниця, на якій має з'явитися вікно"
 
-#: kstart.cpp:348
+#: kstart.cpp:297
 #, kde-format
 msgid ""
 "Make the window appear on the desktop that was active\n"
@@ -138,37 +138,37 @@ msgstr ""
 "Примусити вікно з'являтися на стільниці, з якої\n"
 "запущено програму"
 
-#: kstart.cpp:349
+#: kstart.cpp:298
 #, kde-format
 msgid "Make the window appear on all desktops"
 msgstr "Зробити так, щоб вікно з'являлося на всіх стільницях"
 
-#: kstart.cpp:350
+#: kstart.cpp:299
 #, kde-format
 msgid "Iconify the window"
 msgstr "Мінімізувати вікно"
 
-#: kstart.cpp:351
+#: kstart.cpp:300
 #, kde-format
 msgid "Maximize the window"
 msgstr "Максимізувати вікно"
 
-#: kstart.cpp:352
+#: kstart.cpp:301
 #, kde-format
 msgid "Maximize the window vertically"
 msgstr "Максимізувати вікно вертикально"
 
-#: kstart.cpp:353
+#: kstart.cpp:302
 #, kde-format
 msgid "Maximize the window horizontally"
 msgstr "Максимізувати вікно горизонтально"
 
-#: kstart.cpp:354
+#: kstart.cpp:303
 #, kde-format
 msgid "Show window fullscreen"
 msgstr "Розгорнути вікно на весь екран"
 
-#: kstart.cpp:356
+#: kstart.cpp:305
 #, kde-format
 msgid ""
 "The window type: Normal, Desktop, Dock, Toolbar, \n"
@@ -177,7 +177,7 @@ msgstr ""
 "Тип вікна: Нормальне, Стільниця, Пришвартоване, \n"
 "Пенал, Меню, Діалогове або Верхнє"
 
-#: kstart.cpp:359
+#: kstart.cpp:308
 #, kde-format
 msgid ""
 "Jump to the window even if it is started on a \n"
@@ -186,27 +186,27 @@ msgstr ""
 "Перейти у вікно, навіть якщо воно відкрилося на іншій \n"
 "віртуальній стільниці"
 
-#: kstart.cpp:362
+#: kstart.cpp:311
 #, kde-format
 msgid "Try to keep the window above other windows"
 msgstr "Залишати вікно понад усіма іншими вікнами"
 
-#: kstart.cpp:364
+#: kstart.cpp:313
 #, kde-format
 msgid "Try to keep the window below other windows"
 msgstr "Залишати вікно попід усіма іншими вікнами"
 
-#: kstart.cpp:365
+#: kstart.cpp:314
 #, kde-format
 msgid "The window does not get an entry in the taskbar"
 msgstr "Вікно не має свого пункту в смужці задач"
 
-#: kstart.cpp:366
+#: kstart.cpp:315
 #, kde-format
 msgid "The window does not get an entry on the pager"
 msgstr "Вікно не має свого пункту в пейджері"
 
-#: kstart.cpp:380
+#: kstart.cpp:329
 #, kde-format
 msgid "No command specified"
 msgstr "Команду не вказано"

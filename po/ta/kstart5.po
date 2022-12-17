@@ -10,7 +10,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kstart\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2022-12-16 00:51+0000\n"
+"POT-Creation-Date: 2022-12-17 00:51+0000\n"
 "PO-Revision-Date: 2004-11-16 00:00-0800\n"
 "Last-Translator: Tamil PC <tamilpc@ambalam.com>\n"
 "Language-Team:  <ta@li.org>\n"
@@ -32,12 +32,12 @@ msgstr ""
 "sshanmu@yahoo.com,gomathiss@hotmail.com,t_vasee@yahoo.com, "
 "prabu_anand2000@yahoo.com"
 
-#: kstart.cpp:306
+#: kstart.cpp:255
 #, kde-format
 msgid "KStart"
 msgstr "Kதொடங்கல்"
 
-#: kstart.cpp:308
+#: kstart.cpp:257
 #, kde-format
 msgid ""
 "Utility to launch applications with special window properties \n"
@@ -49,54 +49,54 @@ msgstr ""
 "சிறப்பு அலங்கரிப்பு, போன்றவையுள்ள பயன்பாடுகளை இறக்க தேவைபடும் பயன்பாடு\n"
 "மற்றும் பல."
 
-#: kstart.cpp:313
+#: kstart.cpp:262
 #, kde-format
 msgid "(C) 1997-2000 Matthias Ettrich (ettrich@kde.org)"
 msgstr ""
 
-#: kstart.cpp:315
+#: kstart.cpp:264
 #, kde-format
 msgid "Matthias Ettrich"
 msgstr ""
 
-#: kstart.cpp:316
+#: kstart.cpp:265
 #, kde-format
 msgid "David Faure"
 msgstr ""
 
-#: kstart.cpp:317
+#: kstart.cpp:266
 #, kde-format
 msgid "Richard J. Moore"
 msgstr ""
 
-#: kstart.cpp:322
+#: kstart.cpp:271
 #, kde-format
 msgid "Command to execute"
 msgstr "செயல்படுத்த வேண்டிய கட்டளை"
 
-#: kstart.cpp:326
+#: kstart.cpp:275
 #, kde-format
 msgid ""
 "Alternative to <command>: desktop file path to start. D-Bus service will be "
 "printed to stdout. Deprecated: use --application"
 msgstr ""
 
-#: kstart.cpp:329
+#: kstart.cpp:278
 #, kde-format
 msgid "Alternative to <command>: desktop file to start."
 msgstr ""
 
-#: kstart.cpp:332
+#: kstart.cpp:281
 #, kde-format
 msgid "Optional URL to pass <desktopfile>, when using --service"
 msgstr ""
 
-#: kstart.cpp:335
+#: kstart.cpp:284
 #, kde-format
 msgid "A regular expression matching the window title"
 msgstr "சாளர தலைப்பில் பொருந்தக் கூடிய முறையான தொடர்"
 
-#: kstart.cpp:337
+#: kstart.cpp:286
 #, kde-format
 msgid ""
 "A string matching the window class (WM_CLASS property)\n"
@@ -114,12 +114,12 @@ msgstr ""
 "முதலில் தோன்றும் சாளரம் எடுத்துக் கொள்ளப்படும்;\n"
 "இரண்டு விருப்பத் தேர்வுகளையும் விட இயலாது."
 
-#: kstart.cpp:346
+#: kstart.cpp:295
 #, kde-format
 msgid "Desktop on which to make the window appear"
 msgstr "சாளரம் தோன்ற செய்ய வேண்டிய மேல்மேசை"
 
-#: kstart.cpp:348
+#: kstart.cpp:297
 #, kde-format
 msgid ""
 "Make the window appear on the desktop that was active\n"
@@ -128,37 +128,37 @@ msgstr ""
 "பயன்பாடை துவக்கும்போது செயலில் உள்ள சாளரத்தை மேல்மேசையில்\n"
 "தோன்ற செய்யவேண்டும்."
 
-#: kstart.cpp:349
+#: kstart.cpp:298
 #, kde-format
 msgid "Make the window appear on all desktops"
 msgstr "சாளரத்தை அனைத்து மேசைகளிலும் தோன்றும்படி செய்ய வேண்டும்"
 
-#: kstart.cpp:350
+#: kstart.cpp:299
 #, kde-format
 msgid "Iconify the window"
 msgstr "சாளரத்தை குறும்படமாக்கு"
 
-#: kstart.cpp:351
+#: kstart.cpp:300
 #, kde-format
 msgid "Maximize the window"
 msgstr "சாளரத்தை பெரிதாக்கு"
 
-#: kstart.cpp:352
+#: kstart.cpp:301
 #, kde-format
 msgid "Maximize the window vertically"
 msgstr "சாளரத்தை செங்குத்தாக பெரிதாக்கு"
 
-#: kstart.cpp:353
+#: kstart.cpp:302
 #, kde-format
 msgid "Maximize the window horizontally"
 msgstr "சாளரத்தை கிடைமட்டமாக பெரிதாக்கு"
 
-#: kstart.cpp:354
+#: kstart.cpp:303
 #, kde-format
 msgid "Show window fullscreen"
 msgstr "சாளரத்தின் முழுத்திரையை காட்டு."
 
-#: kstart.cpp:356
+#: kstart.cpp:305
 #, fuzzy, kde-format
 msgid ""
 "The window type: Normal, Desktop, Dock, Toolbar, \n"
@@ -167,7 +167,7 @@ msgstr ""
 "சாளர வகை: சாதாரண, மேசை, குறுக்கு, கருவி, \n"
 "பட்டி, உரையாடல் அல்லது மேலெழுது"
 
-#: kstart.cpp:359
+#: kstart.cpp:308
 #, kde-format
 msgid ""
 "Jump to the window even if it is started on a \n"
@@ -176,27 +176,27 @@ msgstr ""
 "வேறு மாய மேசையில் தொடங்கினாலும், அந்த சாளரத்துக்கு \n"
 "மாறவும்"
 
-#: kstart.cpp:362
+#: kstart.cpp:311
 #, kde-format
 msgid "Try to keep the window above other windows"
 msgstr "எப்பொழுதும் சாளரத்தை வேறு சாளரத்தின் மேல் தங்க வைக்கவும்."
 
-#: kstart.cpp:364
+#: kstart.cpp:313
 #, kde-format
 msgid "Try to keep the window below other windows"
 msgstr "எப்பொழுதும் சாளரத்தை வேறு சாளரத்தின் மேல் தங்க வைக்கவும்."
 
-#: kstart.cpp:365
+#: kstart.cpp:314
 #, kde-format
 msgid "The window does not get an entry in the taskbar"
 msgstr "கருவிபட்டையில் சாளரத்திற்கு நுழைவு கிடைக்காது"
 
-#: kstart.cpp:366
+#: kstart.cpp:315
 #, kde-format
 msgid "The window does not get an entry on the pager"
 msgstr "கருவிபட்டையில் சாளரத்திற்கு நுழைவு கிடைக்காது"
 
-#: kstart.cpp:380
+#: kstart.cpp:329
 #, kde-format
 msgid "No command specified"
 msgstr "கட்டளை எதுவும் குறிப்பிடப்படவில்லை"

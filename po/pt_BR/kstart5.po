@@ -13,7 +13,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kstart\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2022-12-16 00:51+0000\n"
+"POT-Creation-Date: 2022-12-17 00:51+0000\n"
 "PO-Revision-Date: 2020-06-01 17:48-0300\n"
 "Last-Translator: Luiz Fernando Ranghetti <elchevive@opensuse.org>\n"
 "Language-Team: Brazilian Portuguese <kde-i18n-pt_BR@kde.org>\n"
@@ -34,13 +34,13 @@ msgctxt "EMAIL OF TRANSLATORS"
 msgid "Your emails"
 msgstr "alvarenga@kde.org"
 
-#: kstart.cpp:306
+#: kstart.cpp:255
 #, kde-format
 msgid "KStart"
 msgstr "KStart"
 
 # Máximo de caracteres na linha: 80 (mensagem de terminal)
-#: kstart.cpp:308
+#: kstart.cpp:257
 #, kde-format
 msgid ""
 "Utility to launch applications with special window properties \n"
@@ -52,33 +52,33 @@ msgstr ""
 "como por exemplo, minimizada, maximizada, em uma área de trabalho virtual\n"
 "predefinida, com uma decoração especial, e assim por diante."
 
-#: kstart.cpp:313
+#: kstart.cpp:262
 #, kde-format
 msgid "(C) 1997-2000 Matthias Ettrich (ettrich@kde.org)"
 msgstr "(C) 1997-2000 Matthias Ettrich (ettrich@kde.org)"
 
-#: kstart.cpp:315
+#: kstart.cpp:264
 #, kde-format
 msgid "Matthias Ettrich"
 msgstr "Matthias Ettrich"
 
-#: kstart.cpp:316
+#: kstart.cpp:265
 #, kde-format
 msgid "David Faure"
 msgstr "David Faure"
 
-#: kstart.cpp:317
+#: kstart.cpp:266
 #, kde-format
 msgid "Richard J. Moore"
 msgstr "Richard J. Moore"
 
-#: kstart.cpp:322
+#: kstart.cpp:271
 #, kde-format
 msgid "Command to execute"
 msgstr "Comando a executar"
 
 # É necessário quebra de linha para não misturar a mensagem em um terminal com 80 caracteres.
-#: kstart.cpp:326
+#: kstart.cpp:275
 #, kde-format
 msgid ""
 "Alternative to <command>: desktop file path to start. D-Bus service will be "
@@ -88,14 +88,14 @@ msgstr ""
 "Bus será mostrado no stdout. Descontinuado: use --application"
 
 # É necessário quebra de linha para não misturar a mensagem em um terminal com 80 caracteres.
-#: kstart.cpp:329
+#: kstart.cpp:278
 #, kde-format
 msgid "Alternative to <command>: desktop file to start."
 msgstr "Alternativa ao <comando>: arquivo desktop a iniciar."
 
 # É necessário quebra de linha para não misturar a mensagem em um terminal com 80 caracteres.
 # Não traduzir <desktopfile>
-#: kstart.cpp:332
+#: kstart.cpp:281
 #, kde-format
 msgid "Optional URL to pass <desktopfile>, when using --service"
 msgstr ""
@@ -103,7 +103,7 @@ msgstr ""
 "--service"
 
 # É necessário quebra de linha para não misturar a mensagem em um terminal com 80 caracteres.
-#: kstart.cpp:335
+#: kstart.cpp:284
 #, kde-format
 msgid "A regular expression matching the window title"
 msgstr ""
@@ -111,7 +111,7 @@ msgstr ""
 "janela"
 
 # É necessário quebra de linha para não misturar a mensagem em um terminal com 80 caracteres.
-#: kstart.cpp:337
+#: kstart.cpp:286
 #, kde-format
 msgid ""
 "A string matching the window class (WM_CLASS property)\n"
@@ -132,13 +132,13 @@ msgstr ""
 "considerada. NÃO é recomendado omitir as duas opções\n"
 "ao mesmo tempo."
 
-#: kstart.cpp:346
+#: kstart.cpp:295
 #, kde-format
 msgid "Desktop on which to make the window appear"
 msgstr "Área de trabalho na qual a janela deve aparecer"
 
 # Máximo de caracteres na linha: 52 (mensagem de terminal)
-#: kstart.cpp:348
+#: kstart.cpp:297
 #, kde-format
 msgid ""
 "Make the window appear on the desktop that was active\n"
@@ -147,38 +147,38 @@ msgstr ""
 "Faz a janela aparecer na área de trabalho que estava\n"
 "ativa quando o aplicativo foi iniciado"
 
-#: kstart.cpp:349
+#: kstart.cpp:298
 #, kde-format
 msgid "Make the window appear on all desktops"
 msgstr "Faz a janela aparecer em todas as áreas de trabalho"
 
-#: kstart.cpp:350
+#: kstart.cpp:299
 #, kde-format
 msgid "Iconify the window"
 msgstr "Minimiza a janela"
 
-#: kstart.cpp:351
+#: kstart.cpp:300
 #, kde-format
 msgid "Maximize the window"
 msgstr "Maximiza a janela"
 
-#: kstart.cpp:352
+#: kstart.cpp:301
 #, kde-format
 msgid "Maximize the window vertically"
 msgstr "Maximiza a janela verticalmente"
 
-#: kstart.cpp:353
+#: kstart.cpp:302
 #, kde-format
 msgid "Maximize the window horizontally"
 msgstr "Maximiza a janela horizontalmente"
 
-#: kstart.cpp:354
+#: kstart.cpp:303
 #, kde-format
 msgid "Show window fullscreen"
 msgstr "Mostra a janela em tela inteira"
 
 # Máximo de caracteres na linha: 52 (mensagem de terminal)
-#: kstart.cpp:356
+#: kstart.cpp:305
 #, kde-format
 msgid ""
 "The window type: Normal, Desktop, Dock, Toolbar, \n"
@@ -189,7 +189,7 @@ msgstr ""
 "Substituir"
 
 # Máximo de caracteres na linha: 52 (mensagem de terminal)
-#: kstart.cpp:359
+#: kstart.cpp:308
 #, kde-format
 msgid ""
 "Jump to the window even if it is started on a \n"
@@ -198,27 +198,27 @@ msgstr ""
 "Focaliza a janela mesmo que ela seja iniciada em\n"
 "uma diferente área de trabalho virtual"
 
-#: kstart.cpp:362
+#: kstart.cpp:311
 #, kde-format
 msgid "Try to keep the window above other windows"
 msgstr "Tenta manter a janela sobre as outras"
 
-#: kstart.cpp:364
+#: kstart.cpp:313
 #, kde-format
 msgid "Try to keep the window below other windows"
 msgstr "Tenta manter a janela abaixo das outras"
 
-#: kstart.cpp:365
+#: kstart.cpp:314
 #, kde-format
 msgid "The window does not get an entry in the taskbar"
 msgstr "A janela não aparecerá na barra de tarefas"
 
-#: kstart.cpp:366
+#: kstart.cpp:315
 #, kde-format
 msgid "The window does not get an entry on the pager"
 msgstr "A janela não aparecerá no pager"
 
-#: kstart.cpp:380
+#: kstart.cpp:329
 #, kde-format
 msgid "No command specified"
 msgstr "Nenhum comando foi especificado"
