@@ -181,7 +181,7 @@ msgid ""
 "Jump to the window even if it is started on a \n"
 "different virtual desktop"
 msgstr ""
-"Passa a la finestra fins i tot si s'inicia a \n"
+"Passa a la finestra fins i tot si s'inicia en \n"
 "un escriptori virtual diferent"
 
 #: kstart.cpp:311
