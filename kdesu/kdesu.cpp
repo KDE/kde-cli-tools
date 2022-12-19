@@ -58,22 +58,6 @@ const char *Version = PROJECT_VERSION;
 
 // NOTE: if you change the position of the -u switch, be sure to adjust it
 // at the beginning of main()
-#if 0
-// D-BUS has no equivalent
-QByteArray dcopNetworkId()
-{
-    QByteArray result;
-    result.resize(1025);
-    QFile file(DCOPClient::dcopServerFile());
-    if (!file.open(QIODevice::ReadOnly))
-        return "";
-    int i = file.readLine(result.data(), 1024);
-    if (i <= 0)
-        return "";
-    result.data()[i-1] = '\0'; // strip newline
-    return result;
-}
-#endif
 
 static int startApp(QCommandLineParser &p);
 
