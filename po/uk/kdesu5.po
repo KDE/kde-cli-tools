@@ -12,7 +12,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kdesu5\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2022-10-30 00:47+0000\n"
+"POT-Creation-Date: 2022-12-21 00:48+0000\n"
 "PO-Revision-Date: 2016-09-10 12:51+0300\n"
 "Last-Translator: Yuri Chornoivan <yurchor@ukr.net>\n"
 "Language-Team: Ukrainian <kde-i18n-uk@kde.org>\n"
@@ -34,102 +34,102 @@ msgctxt "EMAIL OF TRANSLATORS"
 msgid "Your emails"
 msgstr "rysin@kde.org,kov@tokyo.email.ne.jp,ivanpetrouchtchak@yahoo.com"
 
-#: kdesu.cpp:105
+#: kdesu.cpp:89
 #, kde-format
 msgid "KDE su"
 msgstr "KDE su"
 
-#: kdesu.cpp:107
+#: kdesu.cpp:91
 #, kde-format
 msgid "Runs a program with elevated privileges."
 msgstr "Виконує програму з підвищеними правами доступу."
 
-#: kdesu.cpp:109
+#: kdesu.cpp:93
 #, kde-format
 msgid "Copyright (c) 1998-2000 Geert Jansen, Pietro Iglio"
 msgstr "© Geert Jansen, Pietro Iglio, 1998–2000"
 
-#: kdesu.cpp:110
+#: kdesu.cpp:94
 #, kde-format
 msgid "Geert Jansen"
 msgstr "Geert Jansen"
 
-#: kdesu.cpp:110
+#: kdesu.cpp:94
 #, kde-format
 msgid "Maintainer"
 msgstr "Супровід"
 
-#: kdesu.cpp:111
+#: kdesu.cpp:95
 #, kde-format
 msgid "Pietro Iglio"
 msgstr "Pietro Iglio"
 
-#: kdesu.cpp:111
+#: kdesu.cpp:95
 #, kde-format
 msgid "Original author"
 msgstr "Перший автор"
 
-#: kdesu.cpp:120
+#: kdesu.cpp:104
 #, kde-format
 msgid "Specifies the command to run as separate arguments"
 msgstr "Визначає команду, яку буде виконано як окремий параметр"
 
-#: kdesu.cpp:121
+#: kdesu.cpp:105
 #, kde-format
 msgid "Specifies the command to run as one string"
 msgstr "Визначає команду, яку буде виконано як єдиний рядок"
 
-#: kdesu.cpp:122
+#: kdesu.cpp:106
 #, kde-format
 msgid "Run command under target uid if <file> is not writable"
 msgstr "Виконує команду з певним UID, якщо <file> недоступний для запису"
 
-#: kdesu.cpp:123
+#: kdesu.cpp:107
 #, kde-format
 msgid "Specifies the target uid"
 msgstr "Встановлює UID для виконання"
 
-#: kdesu.cpp:124
+#: kdesu.cpp:108
 #, kde-format
 msgid "Do not keep password"
 msgstr "Не зберігати пароль"
 
-#: kdesu.cpp:125
+#: kdesu.cpp:109
 #, kde-format
 msgid "Stop the daemon (forgets all passwords)"
 msgstr "Зупинити фонову службу (забуває всі паролі)"
 
-#: kdesu.cpp:126
+#: kdesu.cpp:110
 #, kde-format
 msgid "Enable terminal output (no password keeping)"
 msgstr "Дозволити вивід на термінал (паролі не зберігаються)"
 
-#: kdesu.cpp:128
+#: kdesu.cpp:112
 #, kde-format
 msgid "Set priority value: 0 <= prio <= 100, 0 is lowest"
 msgstr "Встановити пріоритет: 0 <= пріор <= 100, 0 — найнижчий"
 
-#: kdesu.cpp:129
+#: kdesu.cpp:113
 #, kde-format
 msgid "Use realtime scheduling"
 msgstr "Планування у реальному часі"
 
-#: kdesu.cpp:130
+#: kdesu.cpp:114
 #, kde-format
 msgid "Do not display ignore button"
 msgstr "Не показувати кнопку «Ігнорувати»"
 
-#: kdesu.cpp:131
+#: kdesu.cpp:115
 #, kde-format
 msgid "Specify icon to use in the password dialog"
 msgstr "Встановлює піктограму для діалогового вікна запиту пароля"
 
-#: kdesu.cpp:132
+#: kdesu.cpp:116
 #, kde-format
 msgid "Do not show the command to be run in the dialog"
 msgstr "Не показувати команду в діалоговому вікні"
 
-#: kdesu.cpp:139
+#: kdesu.cpp:123
 #, kde-format
 msgctxt ""
 "Transient means that the kdesu app will be attached to the app specified by "
@@ -137,49 +137,49 @@ msgctxt ""
 msgid "Makes the dialog transient for an X app specified by winid"
 msgstr "Робить вікно пов’язаним з програмою X з вказаним winid"
 
-#: kdesu.cpp:141
+#: kdesu.cpp:125
 #, kde-format
 msgid "Embed into a window"
 msgstr "Вбудувати до вікна"
 
-#: kdesu.cpp:168
+#: kdesu.cpp:152
 #, kde-format
 msgid "Cannot execute command '%1'."
 msgstr "Не вдалося виконати команду «%1»."
 
-#: kdesu.cpp:171
+#: kdesu.cpp:155
 #, kde-format
 msgid "Cannot execute command '%1'. It contains invalid characters."
 msgstr ""
 "Не вдалося виконати команду «%1». У рядку команди містяться некоректні "
 "символи."
 
-#: kdesu.cpp:245
+#: kdesu.cpp:229
 #, kde-format
 msgid "Illegal priority: %1"
 msgstr "Некоректний пріоритет: %1"
 
-#: kdesu.cpp:266
+#: kdesu.cpp:250
 #, kde-format
 msgid "No command specified."
 msgstr "Не вказана команда."
 
-#: kdesu.cpp:369
+#: kdesu.cpp:353
 #, kde-format
 msgid "Su returned with an error.\n"
 msgstr "Su завершено з помилкою.\n"
 
-#: kdesu.cpp:397
+#: kdesu.cpp:381
 #, kde-format
 msgid "Command:"
 msgstr "Команда:"
 
-#: kdesu.cpp:406
+#: kdesu.cpp:390
 #, kde-format
 msgid "realtime: "
 msgstr "реальний час: "
 
-#: kdesu.cpp:410
+#: kdesu.cpp:394
 #, kde-format
 msgid "Priority:"
 msgstr "Пріоритет:"

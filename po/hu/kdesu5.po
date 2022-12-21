@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: KDE 4.2\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2022-10-30 00:47+0000\n"
+"POT-Creation-Date: 2022-12-21 00:48+0000\n"
 "PO-Revision-Date: 2017-02-14 22:41+0100\n"
 "Last-Translator: Kiszel Kristóf <kiszel.kristof@gmail.com>\n"
 "Language-Team: Hungarian <kde-l10n-hu@kde.org>\n"
@@ -27,103 +27,103 @@ msgctxt "EMAIL OF TRANSLATORS"
 msgid "Your emails"
 msgstr "ulysses@kubuntu.org,tszanto@interware.hu"
 
-#: kdesu.cpp:105
+#: kdesu.cpp:89
 #, kde-format
 msgid "KDE su"
 msgstr "KDE su"
 
-#: kdesu.cpp:107
+#: kdesu.cpp:91
 #, kde-format
 msgid "Runs a program with elevated privileges."
 msgstr "Program futtatása magasabb jogosultsággal."
 
-#: kdesu.cpp:109
+#: kdesu.cpp:93
 #, kde-format
 msgid "Copyright (c) 1998-2000 Geert Jansen, Pietro Iglio"
 msgstr "(c) Geert Jansen, Pietro Iglio, 1998-2000."
 
-#: kdesu.cpp:110
+#: kdesu.cpp:94
 #, kde-format
 msgid "Geert Jansen"
 msgstr "Geert Jansen"
 
-#: kdesu.cpp:110
+#: kdesu.cpp:94
 #, kde-format
 msgid "Maintainer"
 msgstr "Karbantartó"
 
-#: kdesu.cpp:111
+#: kdesu.cpp:95
 #, kde-format
 msgid "Pietro Iglio"
 msgstr "Pietro Iglio"
 
-#: kdesu.cpp:111
+#: kdesu.cpp:95
 #, kde-format
 msgid "Original author"
 msgstr "Eredeti szerző"
 
-#: kdesu.cpp:120
+#: kdesu.cpp:104
 #, kde-format
 msgid "Specifies the command to run as separate arguments"
 msgstr "A végrehajtandó parancs külön argumentumonként"
 
-#: kdesu.cpp:121
+#: kdesu.cpp:105
 #, kde-format
 msgid "Specifies the command to run as one string"
 msgstr "A végrehajtandó parancs egy sztringként"
 
-#: kdesu.cpp:122
+#: kdesu.cpp:106
 #, kde-format
 msgid "Run command under target uid if <file> is not writable"
 msgstr ""
 "A parancs végrehajtása más felhasználóazonosítóval, ha a <fájl> nem írható"
 
-#: kdesu.cpp:123
+#: kdesu.cpp:107
 #, kde-format
 msgid "Specifies the target uid"
 msgstr "Más felhasználóazonosító (UID)"
 
-#: kdesu.cpp:124
+#: kdesu.cpp:108
 #, kde-format
 msgid "Do not keep password"
 msgstr "A jelszó mentése nélkül"
 
-#: kdesu.cpp:125
+#: kdesu.cpp:109
 #, kde-format
 msgid "Stop the daemon (forgets all passwords)"
 msgstr "A szolgáltatás leállítása (az elmentett jelszavak el lesznek dobva)"
 
-#: kdesu.cpp:126
+#: kdesu.cpp:110
 #, kde-format
 msgid "Enable terminal output (no password keeping)"
 msgstr "Terminálkimenet engedélyezése (nem menti el a jelszavakat)"
 
-#: kdesu.cpp:128
+#: kdesu.cpp:112
 #, kde-format
 msgid "Set priority value: 0 <= prio <= 100, 0 is lowest"
 msgstr "Prioritás: 0 <= prio <= 100, 0 a legalacsonyabb"
 
-#: kdesu.cpp:129
+#: kdesu.cpp:113
 #, kde-format
 msgid "Use realtime scheduling"
 msgstr "Valós idejű ütemezés használata"
 
-#: kdesu.cpp:130
+#: kdesu.cpp:114
 #, kde-format
 msgid "Do not display ignore button"
 msgstr "Ne jelenjen meg Figyelmen kívül hagyás gomb"
 
-#: kdesu.cpp:131
+#: kdesu.cpp:115
 #, kde-format
 msgid "Specify icon to use in the password dialog"
 msgstr "A jelszóablakban használt ikon"
 
-#: kdesu.cpp:132
+#: kdesu.cpp:116
 #, kde-format
 msgid "Do not show the command to be run in the dialog"
 msgstr "Ne jelenjen meg a párbeszédablakban végrehajtandó parancs"
 
-#: kdesu.cpp:139
+#: kdesu.cpp:123
 #, kde-format
 msgctxt ""
 "Transient means that the kdesu app will be attached to the app specified by "
@@ -133,48 +133,48 @@ msgstr ""
 "A párbeszédablakot tranzienssé teszi a megadott azonosítójú X-alkalmazás "
 "számára"
 
-#: kdesu.cpp:141
+#: kdesu.cpp:125
 #, kde-format
 msgid "Embed into a window"
 msgstr "Beágyazás egy ablakba"
 
-#: kdesu.cpp:168
+#: kdesu.cpp:152
 #, kde-format
 msgid "Cannot execute command '%1'."
 msgstr "Nem hajtható végre a parancs: „%1”."
 
-#: kdesu.cpp:171
+#: kdesu.cpp:155
 #, kde-format
 msgid "Cannot execute command '%1'. It contains invalid characters."
 msgstr ""
 "Nem hajtható végre a parancs: „%1”. Érvénytelen karaktereket tartalmaz."
 
-#: kdesu.cpp:245
+#: kdesu.cpp:229
 #, kde-format
 msgid "Illegal priority: %1"
 msgstr "Érvénytelen prioritás: %1"
 
-#: kdesu.cpp:266
+#: kdesu.cpp:250
 #, kde-format
 msgid "No command specified."
 msgstr "Nincs megadva parancs."
 
-#: kdesu.cpp:369
+#: kdesu.cpp:353
 #, kde-format
 msgid "Su returned with an error.\n"
 msgstr "Az 'su' hibajelzést adott.\n"
 
-#: kdesu.cpp:397
+#: kdesu.cpp:381
 #, kde-format
 msgid "Command:"
 msgstr "Parancs:"
 
-#: kdesu.cpp:406
+#: kdesu.cpp:390
 #, kde-format
 msgid "realtime: "
 msgstr "valós idejű: "
 
-#: kdesu.cpp:410
+#: kdesu.cpp:394
 #, kde-format
 msgid "Priority:"
 msgstr "Prioritás:"

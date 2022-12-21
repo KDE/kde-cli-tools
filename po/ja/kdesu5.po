@@ -12,7 +12,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kdesu\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2022-10-30 00:47+0000\n"
+"POT-Creation-Date: 2022-12-21 00:48+0000\n"
 "PO-Revision-Date: 2014-02-22 22:39-0800\n"
 "Last-Translator: Fumiaki Okushi <okushi@kde.gr.jp>\n"
 "Language-Team: Japanese <kde-jp@kde.org>\n"
@@ -35,103 +35,103 @@ msgctxt "EMAIL OF TRANSLATORS"
 msgid "Your emails"
 msgstr "kom@kde.gr.jp,shinobo@leo.bekkoame.ne.jp,md81@bird.emai.ne.jp"
 
-#: kdesu.cpp:105
+#: kdesu.cpp:89
 #, kde-format
 msgid "KDE su"
 msgstr "KDE su"
 
-#: kdesu.cpp:107
+#: kdesu.cpp:91
 #, kde-format
 msgid "Runs a program with elevated privileges."
 msgstr "上位の権限でプログラムを実行します。"
 
-#: kdesu.cpp:109
+#: kdesu.cpp:93
 #, kde-format
 msgid "Copyright (c) 1998-2000 Geert Jansen, Pietro Iglio"
 msgstr "Copyright (c) 1998-2000 Geert Jansen, Pietro Iglio"
 
-#: kdesu.cpp:110
+#: kdesu.cpp:94
 #, kde-format
 msgid "Geert Jansen"
 msgstr "Geert Jansen"
 
-#: kdesu.cpp:110
+#: kdesu.cpp:94
 #, kde-format
 msgid "Maintainer"
 msgstr "メンテナ"
 
-#: kdesu.cpp:111
+#: kdesu.cpp:95
 #, kde-format
 msgid "Pietro Iglio"
 msgstr "Pietro Iglio"
 
-#: kdesu.cpp:111
+#: kdesu.cpp:95
 #, kde-format
 msgid "Original author"
 msgstr "オリジナルの作者"
 
-#: kdesu.cpp:120
+#: kdesu.cpp:104
 #, fuzzy, kde-format
 #| msgid "Specifies the command to run"
 msgid "Specifies the command to run as separate arguments"
 msgstr "実行するコマンドを指定"
 
-#: kdesu.cpp:121
+#: kdesu.cpp:105
 #, kde-format
 msgid "Specifies the command to run as one string"
 msgstr "実行するコマンドを一つの文字列として指定"
 
-#: kdesu.cpp:122
+#: kdesu.cpp:106
 #, kde-format
 msgid "Run command under target uid if <file> is not writable"
 msgstr "<file> が書き込み不可であればターゲット UID でコマンドを実行"
 
-#: kdesu.cpp:123
+#: kdesu.cpp:107
 #, kde-format
 msgid "Specifies the target uid"
 msgstr "ターゲット UID を指定"
 
-#: kdesu.cpp:124
+#: kdesu.cpp:108
 #, kde-format
 msgid "Do not keep password"
 msgstr "パスワードを保持しない"
 
-#: kdesu.cpp:125
+#: kdesu.cpp:109
 #, kde-format
 msgid "Stop the daemon (forgets all passwords)"
 msgstr "デーモンを停止 (すべてのパスワードを消去)"
 
-#: kdesu.cpp:126
+#: kdesu.cpp:110
 #, kde-format
 msgid "Enable terminal output (no password keeping)"
 msgstr "端末出力を有効に (パスワードは保持しない)"
 
-#: kdesu.cpp:128
+#: kdesu.cpp:112
 #, kde-format
 msgid "Set priority value: 0 <= prio <= 100, 0 is lowest"
 msgstr "優先度の設定: 0 <= 優先度 <= 100、0 が最小"
 
-#: kdesu.cpp:129
+#: kdesu.cpp:113
 #, kde-format
 msgid "Use realtime scheduling"
 msgstr "リアルタイムスケジューリングを使う"
 
-#: kdesu.cpp:130
+#: kdesu.cpp:114
 #, kde-format
 msgid "Do not display ignore button"
 msgstr "「無視」ボタンを表示しない"
 
-#: kdesu.cpp:131
+#: kdesu.cpp:115
 #, kde-format
 msgid "Specify icon to use in the password dialog"
 msgstr "パスワード入力ダイアログで使用するアイコンを指定する"
 
-#: kdesu.cpp:132
+#: kdesu.cpp:116
 #, kde-format
 msgid "Do not show the command to be run in the dialog"
 msgstr "ダイアログで実行されるコマンドを表示しない"
 
-#: kdesu.cpp:139
+#: kdesu.cpp:123
 #, kde-format
 msgctxt ""
 "Transient means that the kdesu app will be attached to the app specified by "
@@ -141,47 +141,47 @@ msgstr ""
 "このダイアログを winid で指定された X アプリケーションに対して一時的なものに"
 "する"
 
-#: kdesu.cpp:141
+#: kdesu.cpp:125
 #, kde-format
 msgid "Embed into a window"
 msgstr ""
 
-#: kdesu.cpp:168
+#: kdesu.cpp:152
 #, kde-format
 msgid "Cannot execute command '%1'."
 msgstr ""
 
-#: kdesu.cpp:171
+#: kdesu.cpp:155
 #, kde-format
 msgid "Cannot execute command '%1'. It contains invalid characters."
 msgstr ""
 
-#: kdesu.cpp:245
+#: kdesu.cpp:229
 #, kde-format
 msgid "Illegal priority: %1"
 msgstr "無効な優先度: %1"
 
-#: kdesu.cpp:266
+#: kdesu.cpp:250
 #, kde-format
 msgid "No command specified."
 msgstr "コマンドが指定されていません。"
 
-#: kdesu.cpp:369
+#: kdesu.cpp:353
 #, kde-format
 msgid "Su returned with an error.\n"
 msgstr "su がエラーを返しました。\n"
 
-#: kdesu.cpp:397
+#: kdesu.cpp:381
 #, kde-format
 msgid "Command:"
 msgstr "コマンド:"
 
-#: kdesu.cpp:406
+#: kdesu.cpp:390
 #, kde-format
 msgid "realtime: "
 msgstr "リアルタイム:"
 
-#: kdesu.cpp:410
+#: kdesu.cpp:394
 #, kde-format
 msgid "Priority:"
 msgstr "優先度:"

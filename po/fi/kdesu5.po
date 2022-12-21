@@ -15,7 +15,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kdesu\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2022-10-30 00:47+0000\n"
+"POT-Creation-Date: 2022-12-21 00:48+0000\n"
 "PO-Revision-Date: 2016-11-13 13:31+0200\n"
 "Last-Translator: Lasse Liehu <lasse.liehu@gmail.com>\n"
 "Language-Team: Finnish <kde-i18n-doc@kde.org>\n"
@@ -40,104 +40,104 @@ msgstr ""
 "kim.enkovaara@iki.fi,teemu.rytilahti@kde-fi.org,ilpo@iki.fi,piippo@cc."
 "helsinki.fi,karvonen.jorma@gmail.com"
 
-#: kdesu.cpp:105
+#: kdesu.cpp:89
 #, kde-format
 msgid "KDE su"
 msgstr "KDE su"
 
-#: kdesu.cpp:107
+#: kdesu.cpp:91
 #, kde-format
 msgid "Runs a program with elevated privileges."
 msgstr "Suorittaa ohjelman korotetuilla oikeuksilla."
 
-#: kdesu.cpp:109
+#: kdesu.cpp:93
 #, kde-format
 msgid "Copyright (c) 1998-2000 Geert Jansen, Pietro Iglio"
 msgstr "Copyright © 1998–2000 Geert Jansen, Pietro Iglio"
 
-#: kdesu.cpp:110
+#: kdesu.cpp:94
 #, kde-format
 msgid "Geert Jansen"
 msgstr "Geert Jansen"
 
-#: kdesu.cpp:110
+#: kdesu.cpp:94
 #, kde-format
 msgid "Maintainer"
 msgstr "Ylläpitäjä"
 
-#: kdesu.cpp:111
+#: kdesu.cpp:95
 #, kde-format
 msgid "Pietro Iglio"
 msgstr "Pietro Iglio"
 
-#: kdesu.cpp:111
+#: kdesu.cpp:95
 #, kde-format
 msgid "Original author"
 msgstr "Alkuperäinen tekijä"
 
-#: kdesu.cpp:120
+#: kdesu.cpp:104
 #, kde-format
 msgid "Specifies the command to run as separate arguments"
 msgstr "Määrittää erillisparametrein ajettavan komennon"
 
-#: kdesu.cpp:121
+#: kdesu.cpp:105
 #, kde-format
 msgid "Specifies the command to run as one string"
 msgstr "Määrittää yhtenä merkkijonona ajettavan komennon"
 
-#: kdesu.cpp:122
+#: kdesu.cpp:106
 #, kde-format
 msgid "Run command under target uid if <file> is not writable"
 msgstr ""
 "Suorita komento kohdekäyttäjänä, jos <tiedosto> ei ole kirjoitettavissa"
 
-#: kdesu.cpp:123
+#: kdesu.cpp:107
 #, kde-format
 msgid "Specifies the target uid"
 msgstr "Määrittelee kohdekäyttäjän"
 
-#: kdesu.cpp:124
+#: kdesu.cpp:108
 #, kde-format
 msgid "Do not keep password"
 msgstr "Älä säilytä salasanaa"
 
-#: kdesu.cpp:125
+#: kdesu.cpp:109
 #, kde-format
 msgid "Stop the daemon (forgets all passwords)"
 msgstr "Pysäytä taustaprosessi (unohtaa kaikki salasanat)"
 
-#: kdesu.cpp:126
+#: kdesu.cpp:110
 #, kde-format
 msgid "Enable terminal output (no password keeping)"
 msgstr "Käytä terminaalitulostusta (ei salasanan tallennusta)"
 
-#: kdesu.cpp:128
+#: kdesu.cpp:112
 #, kde-format
 msgid "Set priority value: 0 <= prio <= 100, 0 is lowest"
 msgstr "Aseta prioriteetti: 0 <= prio <= 100, 0 on matalin"
 
 # Scheduling voisi olla aikataulutus tai  (prosessien) vuorottelu, mutta valitsin tähän ajoituksen.
-#: kdesu.cpp:129
+#: kdesu.cpp:113
 #, kde-format
 msgid "Use realtime scheduling"
 msgstr "Käytä reaaliaika-ajoitusta"
 
-#: kdesu.cpp:130
+#: kdesu.cpp:114
 #, kde-format
 msgid "Do not display ignore button"
 msgstr "Älä näytä Hylkää-painiketta"
 
-#: kdesu.cpp:131
+#: kdesu.cpp:115
 #, kde-format
 msgid "Specify icon to use in the password dialog"
 msgstr "Määrittele salasanaikkunassa käytettävä kuvake"
 
-#: kdesu.cpp:132
+#: kdesu.cpp:116
 #, kde-format
 msgid "Do not show the command to be run in the dialog"
 msgstr "Älä näytä suoritettavaa komentoa valintaikkunassa"
 
-#: kdesu.cpp:139
+#: kdesu.cpp:123
 #, kde-format
 msgctxt ""
 "Transient means that the kdesu app will be attached to the app specified by "
@@ -145,47 +145,47 @@ msgctxt ""
 msgid "Makes the dialog transient for an X app specified by winid"
 msgstr "Tekee valintaikkunan tilapäiseksi winid-määritellylle X-sovellukselle"
 
-#: kdesu.cpp:141
+#: kdesu.cpp:125
 #, kde-format
 msgid "Embed into a window"
 msgstr "Upota ikkunaan"
 
-#: kdesu.cpp:168
+#: kdesu.cpp:152
 #, kde-format
 msgid "Cannot execute command '%1'."
 msgstr "Ei voitu suorittaa komentoa ”%1”."
 
-#: kdesu.cpp:171
+#: kdesu.cpp:155
 #, kde-format
 msgid "Cannot execute command '%1'. It contains invalid characters."
 msgstr "Ei voitu suorittaa komentoa ”%1”. Siinä on virheellisiä merkkejä."
 
-#: kdesu.cpp:245
+#: kdesu.cpp:229
 #, kde-format
 msgid "Illegal priority: %1"
 msgstr "Virheellinen prioriteetti: %1"
 
-#: kdesu.cpp:266
+#: kdesu.cpp:250
 #, kde-format
 msgid "No command specified."
 msgstr "Komentoa ei ole määritelty."
 
-#: kdesu.cpp:369
+#: kdesu.cpp:353
 #, kde-format
 msgid "Su returned with an error.\n"
 msgstr "Su palautti virheen.\n"
 
-#: kdesu.cpp:397
+#: kdesu.cpp:381
 #, kde-format
 msgid "Command:"
 msgstr "Komento:"
 
-#: kdesu.cpp:406
+#: kdesu.cpp:390
 #, kde-format
 msgid "realtime: "
 msgstr "reaaliaika: "
 
-#: kdesu.cpp:410
+#: kdesu.cpp:394
 #, kde-format
 msgid "Priority:"
 msgstr "Prioriteetti: "
