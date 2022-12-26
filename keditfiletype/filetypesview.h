@@ -18,14 +18,12 @@
 
 #include "typeslistitem.h"
 
-class QLabel;
 class QTreeWidget;
 class QTreeWidgetItem;
 class QPushButton;
 class KLineEdit;
 class FileTypeDetails;
 class FileGroupDetails;
-class QStackedWidget;
 
 class FileTypesView : public KCModule
 {
