@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: kde-cli-tools\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2022-12-14 00:48+0000\n"
-"PO-Revision-Date: 2022-08-23 12:48+0200\n"
+"PO-Revision-Date: 2022-12-28 06:13+0100\n"
 "Last-Translator: Temuri Doghonadze <temuri.doghonadze@gmail.com>\n"
 "Language-Team: Georgian <kde-i18n-doc@kde.org>\n"
 "Language: ka\n"
@@ -16,7 +16,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
-"X-Generator: Poedit 3.1.1\n"
+"X-Generator: Poedit 3.2.2\n"
 
 #, kde-format
 msgctxt "NAME OF TRANSLATORS"
@@ -31,17 +31,17 @@ msgstr "Temuri.doghonadze@gmail.com"
 #: filegroupdetails.cpp:22
 #, kde-format
 msgid "Left Click Action (only for Konqueror file manager)"
-msgstr ""
+msgstr "მარცხენა წკაპის ქმედება (მხოლოდ Konqueror-ის ფაილის მმარველისთვის)"
 
 #: filegroupdetails.cpp:26 filetypedetails.cpp:133
 #, kde-format
 msgid "Show file in embedded viewer"
-msgstr ""
+msgstr "ჩაშენებულ დამთვალიერებელში ჩვენება"
 
 #: filegroupdetails.cpp:27 filetypedetails.cpp:134
 #, kde-format
 msgid "Show file in separate viewer"
-msgstr ""
+msgstr "ცალკე დამთვალიერებელში ჩვენება"
 
 #: filegroupdetails.cpp:36
 #, kde-format
@@ -63,7 +63,7 @@ msgstr ""
 #: filetypedetails.cpp:67
 #, kde-format
 msgid "Filename Patterns"
-msgstr ""
+msgstr "ფაილის სახელის შაბლონები"
 
 #: filetypedetails.cpp:79
 #, kde-format
@@ -82,7 +82,7 @@ msgstr "დამატება..."
 #: filetypedetails.cpp:92
 #, kde-format
 msgid "Add a new pattern for the selected file type."
-msgstr ""
+msgstr "მონიშნული ფაილის ტიპისთვის ახალი შაბლონის დამატება."
 
 #: filetypedetails.cpp:94 kservicelistwidget.cpp:123
 #, kde-format
@@ -92,7 +92,7 @@ msgstr "წაშლა"
 #: filetypedetails.cpp:99
 #, kde-format
 msgid "Remove the selected filename pattern."
-msgstr ""
+msgstr "მონიშნული ფაილის სახელის შაბლონს წაშლა."
 
 #: filetypedetails.cpp:110
 #, kde-format
@@ -136,7 +136,7 @@ msgstr "&ზოგადი"
 #: filetypedetails.cpp:166
 #, kde-format
 msgid "&Embedding"
-msgstr ""
+msgstr "&ჩაშენება"
 
 #: filetypedetails.cpp:207
 #, kde-format
@@ -156,7 +156,7 @@ msgstr "ფაილის ტიპი: %1"
 #: filetypedetails.cpp:333
 #, kde-format
 msgid "Use settings for '%1' group"
-msgstr ""
+msgstr "პარამეტრების გამოყენება '%1' ჯგუფისთვის"
 
 #: filetypesview.cpp:44
 #, kde-format
@@ -183,7 +183,7 @@ msgstr ""
 #: filetypesview.cpp:74
 #, kde-format
 msgid "Search for file type or filename pattern..."
-msgstr ""
+msgstr "ფაილის ტიპის ან ნიმუშის მოძებნა..."
 
 #: filetypesview.cpp:80
 #, kde-format
@@ -245,7 +245,7 @@ msgstr ""
 #: filetypesview.cpp:377
 #, kde-format
 msgid "Delete this file type definition completely"
-msgstr ""
+msgstr "ფაილის ამ ტიპის სრულად წაშლა"
 
 #: filetypesview.cpp:379
 #, kde-format
@@ -291,7 +291,7 @@ msgstr ""
 #: keditfiletype.cpp:134
 #, kde-format
 msgid "File type to edit (e.g. text/html)"
-msgstr ""
+msgstr "ჩასასწორებელი ფაილის ტიპი (მაგ: text/html)"
 
 #: keditfiletype.cpp:165
 #, kde-format
@@ -316,12 +316,12 @@ msgstr "%1 (%2)"
 #: kservicelistwidget.cpp:56
 #, kde-format
 msgid "Application Preference Order"
-msgstr ""
+msgstr "აპლიკაციების მისაღები მიმდევრობა"
 
 #: kservicelistwidget.cpp:56
 #, kde-format
 msgid "Services Preference Order"
-msgstr ""
+msgstr "სერვისების მისაღები მიმდევრობა"
 
 #: kservicelistwidget.cpp:67
 #, kde-format
@@ -388,7 +388,7 @@ msgstr ""
 #: kservicelistwidget.cpp:114
 #, kde-format
 msgid "Add a new application for this file type."
-msgstr ""
+msgstr "ამ ფაილის ტიპისთვის ახალი აპლიკაციის დამატება."
 
 #: kservicelistwidget.cpp:116
 #, kde-format
@@ -398,12 +398,12 @@ msgstr "ჩასწორება..."
 #: kservicelistwidget.cpp:121
 #, kde-format
 msgid "Edit command line of the selected application."
-msgstr ""
+msgstr "მონიშნული აპლიკაციის ბრძანების სტრიქონის ჩასწორება."
 
 #: kservicelistwidget.cpp:128
 #, kde-format
 msgid "Remove the selected application from the list."
-msgstr ""
+msgstr "მონიშნული აპლიკაციის სიიდან წაშლა."
 
 #: kservicelistwidget.cpp:151
 #, kde-format
