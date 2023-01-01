@@ -11,7 +11,7 @@ msgstr ""
 "Project-Id-Version: kdesu\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2022-12-21 00:48+0000\n"
-"PO-Revision-Date: 2022-12-11 20:02+0300\n"
+"PO-Revision-Date: 2022-12-31 17:39+0300\n"
 "Last-Translator: Emir SARI <emir_sari@icloud.com>\n"
 "Language-Team: Turkish <kde-l10n-tr@kde.org>\n"
 "Language: tr\n"
@@ -39,7 +39,7 @@ msgstr "KDE su"
 #: kdesu.cpp:91
 #, kde-format
 msgid "Runs a program with elevated privileges."
-msgstr "Yüksek dereceli izinler gerektiren programları çalıştırır."
+msgstr "Bir programı, yükseltilmiş ayrıcalıklarla çalıştırır"
 
 #: kdesu.cpp:93
 #, kde-format
@@ -198,9 +198,9 @@ msgid ""
 "<b>root's</b> password below or click Ignore to continue with your current "
 "privileges."
 msgstr ""
-"Yapmak istediğiniz işlem <b>yönetici hakları</b> gerektiriyor. Lütfen "
-"<b>yönetici</b> parolasını girin, ya da şimdiki yetkilerle sürdürmek için "
-"'Yok Say düğmesine tıklayın."
+"Yapmak istediğiniz işlem <b>yönetici ayrıcalıkları</b> gerektiriyor. Lütfen "
+"<b>yönetici</b> parolasını girin veya geçerli yetkilerle sürdürmek için Yok "
+"Say düğmesine tıklayın."
 
 #: sudlg.cpp:42
 #, kde-format
@@ -208,8 +208,8 @@ msgid ""
 "The action you requested needs <b>root privileges</b>. Please enter "
 "<b>root's</b> password below."
 msgstr ""
-"Yapmak istediğiniz işlem <b>yönetici hakları</b> gerektiriyor. Lütfen "
-"aşağıya <b>root</b> parolasını girin."
+"Yapmak istediğiniz işlem <b>yönetici ayrıcalıkları</b> gerektiriyor. Lütfen "
+"aşağıya <b>yönetici</b> parolasını girin."
 
 #: sudlg.cpp:49
 #, kde-format
@@ -218,9 +218,9 @@ msgid ""
 "password for <b>%1</b> below or click Ignore to continue with your current "
 "privileges."
 msgstr ""
-"Yapmak istediğiniz işlem için ek yetkilere gereksiniminiz var. Lütfen <b>%1</"
-"b> kullanıcısının parolasını girin ya da mevcut yetkilerinizle işlemi "
-"sürdürmek için Yok Say düğmesine tıklayın."
+"Yapmak istediğiniz işlem için ek ayrıcalıklara gereksiniminiz var. Lütfen <b>"
+"%1</b> kullanıcısının parolasını girin veya geçerli ayrıcalıklarınızla "
+"işlemi sürdürmek için Yok Say düğmesine tıklayın."
 
 #: sudlg.cpp:56
 #, kde-format
@@ -228,7 +228,7 @@ msgid ""
 "The action you requested needs additional privileges. Please enter the "
 "password for <b>%1</b> below."
 msgstr ""
-"Yapmak istediğiniz işlem için ek yetkilere gereksiniminiz var. Lütfen "
+"Yapmak istediğiniz işlem için ek ayrıcalıklara gereksiniminiz var. Lütfen "
 "aşağıya <b>%1</b> kullanıcısının parolasını girin."
 
 #: sudlg.cpp:79
