@@ -1,16 +1,17 @@
-# translation of kcmshell.po to Esperanto
-# Copyright (C) YEAR This_file_is_part_of_KDE
-# This file is distributed under the same license as the PACKAGE package.
-#
+# translation of kcmshell5.pot to Esperanto
+# Copyright (C) 2007 Free Software Foundation, Inc.
+# This file is distributed under the same license as the kde-cli-tools package.
 # Cindy McKee <cfmckee@gmail.com>, 2007.
 # Michael Moroni <michael.moroni@mailoo.org>, 2012.
+# Oliver Kellogg <okellogg@users.sourceforge.net>, 2023.
+#
 msgid ""
 msgstr ""
 "Project-Id-Version: kcmshell\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2022-06-29 00:46+0000\n"
-"PO-Revision-Date: 2012-05-23 18:43+0200\n"
-"Last-Translator: Michael Moroni <michael.moroni@mailoo.org>\n"
+"PO-Revision-Date: 2023-01-07 01:00+0100\n"
+"Last-Translator: Oliver Kellogg <okellogg@users.sourceforge.net>\n"
 "Language-Team: Esperanto <kde-i18n-doc@kde.org>\n"
 "Language: eo\n"
 "MIME-Version: 1.0\n"
@@ -32,19 +33,17 @@ msgstr "cfmckee@gmail.com, michael.moroni@mailoo.org"
 #: main.cpp:183
 #, kde-format
 msgid "System Settings Module"
-msgstr ""
+msgstr "Sistemagorda Moduko"
 
 #: main.cpp:185
-#, fuzzy, kde-format
-#| msgid "A tool to start single KDE control modules"
+#, kde-format
 msgid "A tool to start single system settings modules"
-msgstr "Ilo por startigi unuopajn stirmodulojn de KDE"
+msgstr "Ilo por startigi unuopajn stirmodulojn"
 
 #: main.cpp:187
-#, fuzzy, kde-format
-#| msgid "(c) 1999-2004, The KDE Developers"
+#, kde-format
 msgid "(c) 1999-2016, The KDE Developers"
-msgstr "(c) 1999-2004, La programistoj de KDE"
+msgstr "(c) 1999-2016, La programistoj de KDE"
 
 #: main.cpp:189
 #, kde-format
@@ -109,12 +108,12 @@ msgstr "Argumentoj por la modulo"
 #: main.cpp:205
 #, kde-format
 msgid "Use a specific icon for the window"
-msgstr ""
+msgstr "Uzi specifan piktogramon por la fenestro"
 
 #: main.cpp:206
 #, kde-format
 msgid "Use a specific caption for the window"
-msgstr ""
+msgstr "Uzi specifan bildotekston por la fenestro"
 
 #: main.cpp:215
 #, kde-format
@@ -140,6 +139,3 @@ msgid ""
 msgstr ""
 "Ne povis trovi modulon '%1'. Vidu kcmshell5 --list por la tuta listo de "
 "moduloj."
-
-#~ msgid "KDE Control Module"
-#~ msgstr "Stirmodulo de KDE"
