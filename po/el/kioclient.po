@@ -13,7 +13,7 @@ msgstr ""
 "Project-Id-Version: kioclient\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2022-08-22 00:47+0000\n"
-"PO-Revision-Date: 2023-01-05 16:07+0200\n"
+"PO-Revision-Date: 2023-01-07 08:56+0200\n"
 "Last-Translator: Stelios <sstavra@gmail.com>\n"
 "Language-Team: Greek <kde-i18n-el@kde.org>\n"
 "Language: el\n"
@@ -121,7 +121,7 @@ msgstr ""
 "  %1 'src' 'dest'\n"
 "            # Αντιγράφει το URL 'src' στο 'dest'.\n"
 "            # Το 'src' μπορεί να είναι λίστα από URL.\n"
-"            # Η σύντομη έκδοση 'kioclient cp' είανι επίσης διαθέσιμη.\n"
+"            # Η σύντομη έκδοση 'kioclient cp' είναι επίσης διαθέσιμη.\n"
 "\n"
 
 #: kioclient.cpp:108
@@ -150,13 +150,7 @@ msgstr ""
 "\n"
 
 #: kioclient.cpp:122
-#, fuzzy, kde-format
-#| msgid ""
-#| "  %1 'url'\n"
-#| "            # Removes the URL\n"
-#| "            #   'url' may be a list of URLs.\n"
-#| "            #   The short version 'kioclient rm' is also available.\n"
-#| "\n"
+#, kde-format
 msgctxt "The argument is the command \"kioclient remove\""
 msgid ""
 "  %1 'url'\n"
