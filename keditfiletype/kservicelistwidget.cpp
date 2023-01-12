@@ -39,7 +39,8 @@ KServiceListItem::KServiceListItem(const KService::Ptr &pService, int kind)
     setIcon(QIcon::fromTheme(pService->icon()));
 
     if (!pService->isApplication()) {
-        localPath = QStandardPaths::writableLocation(QStandardPaths::GenericDataLocation) + QStringLiteral("/kservices5/") + desktopPath;
+        localPath = QStandardPaths::writableLocation(QStandardPaths::GenericDataLocation) + QStringLiteral("/kservices" QT_STRINGIFY(QT_VERSION_MAJOR))
+            + QLatin1Char('/') + desktopPath;
     } else {
         localPath = pService->locateLocal();
     }
