@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: filetypes\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2022-12-14 00:48+0000\n"
+"POT-Creation-Date: 2023-01-15 00:57+0000\n"
 "PO-Revision-Date: 2009-01-16 22:16+0530\n"
 "Last-Translator: Krishna Babu K <kkrothap@redhat.com>\n"
 "Language-Team: Telugu <en@li.org>\n"
@@ -76,7 +76,7 @@ msgid ""
 "text files."
 msgstr ""
 
-#: filetypedetails.cpp:87 filetypesview.cpp:103 kservicelistwidget.cpp:109
+#: filetypedetails.cpp:87 filetypesview.cpp:103 kservicelistwidget.cpp:110
 #, kde-format
 msgid "Add..."
 msgstr "కలుపు..."
@@ -86,7 +86,7 @@ msgstr "కలుపు..."
 msgid "Add a new pattern for the selected file type."
 msgstr "ఎంపికచేసిన ఫైలు రకమునకు కొత్త మాదిరిని జతచేయుము."
 
-#: filetypedetails.cpp:94 kservicelistwidget.cpp:123
+#: filetypedetails.cpp:94 kservicelistwidget.cpp:124
 #, kde-format
 msgid "Remove"
 msgstr "తొలగించు"
@@ -318,22 +318,22 @@ msgstr "ఫైలు రకము %1ను సరికూర్చుము"
 msgid "Create New File Type %1"
 msgstr "కొత్త ఫైలు రకము %1ను సృష్టించుము"
 
-#: kservicelistwidget.cpp:36 kservicelistwidget.cpp:51
+#: kservicelistwidget.cpp:36 kservicelistwidget.cpp:52
 #, kde-format
 msgid "%1 (%2)"
 msgstr "%1 (%2)"
 
-#: kservicelistwidget.cpp:56
+#: kservicelistwidget.cpp:57
 #, kde-format
 msgid "Application Preference Order"
 msgstr "అనువర్తనము అభీష్ట క్రమము"
 
-#: kservicelistwidget.cpp:56
+#: kservicelistwidget.cpp:57
 #, kde-format
 msgid "Services Preference Order"
 msgstr "సేవల అభీష్ట క్రమము"
 
-#: kservicelistwidget.cpp:67
+#: kservicelistwidget.cpp:68
 #, kde-format
 msgid ""
 "This is a list of applications associated with files of the selected file "
@@ -343,7 +343,7 @@ msgid ""
 "precedence over the others."
 msgstr ""
 
-#: kservicelistwidget.cpp:72
+#: kservicelistwidget.cpp:73
 #, kde-format
 msgid ""
 "This is a list of services associated with files of the selected file type. "
@@ -353,12 +353,12 @@ msgid ""
 "precedence over the others."
 msgstr ""
 
-#: kservicelistwidget.cpp:84
+#: kservicelistwidget.cpp:85
 #, kde-format
 msgid "Move &Up"
 msgstr "(&U) పైకి కదుపుము"
 
-#: kservicelistwidget.cpp:90
+#: kservicelistwidget.cpp:91
 #, kde-format
 msgid ""
 "Assigns a higher priority to the selected\n"
@@ -371,7 +371,7 @@ msgstr ""
 "వొకటికన్నా యెక్కువ అనువర్తనములతో సంభందించివుంటే మాత్రమే\n"
 "యిది ఎంపికచేసిన అనువర్తనమును ప్రభావితం చేస్తుంది."
 
-#: kservicelistwidget.cpp:94
+#: kservicelistwidget.cpp:95
 #, kde-format
 msgid ""
 "Assigns a higher priority to the selected\n"
@@ -380,12 +380,12 @@ msgstr ""
 "ఎంపికచేసిన సేవకు అదిక ప్రాముఖ్యతను యిస్తుంది, దానిని\n"
 "జాబితానందు పైకి కదుపుతుంది."
 
-#: kservicelistwidget.cpp:97
+#: kservicelistwidget.cpp:98
 #, kde-format
 msgid "Move &Down"
 msgstr "(&D) క్రిందికి కదుపు"
 
-#: kservicelistwidget.cpp:102
+#: kservicelistwidget.cpp:103
 #, kde-format
 msgid ""
 "Assigns a lower priority to the selected\n"
@@ -398,7 +398,7 @@ msgstr ""
 "వొకటికన్నా యెక్కువ అనువర్తనములతో సంభందించివుంటే మాత్రమే\n"
 "యిది ఎంపికచేసిన అనువర్తనమును ప్రభావితం చేస్తుంది."
 
-#: kservicelistwidget.cpp:106
+#: kservicelistwidget.cpp:107
 #, kde-format
 msgid ""
 "Assigns a lower priority to the selected\n"
@@ -407,33 +407,33 @@ msgstr ""
 "ఎంపికచేసిన సేవకు తక్కువ ప్రాముఖ్యతను యిస్తుంది, దానిని\n"
 "జాబితానందు క్రిందికి కదుపుతుంది."
 
-#: kservicelistwidget.cpp:114
+#: kservicelistwidget.cpp:115
 #, kde-format
 msgid "Add a new application for this file type."
 msgstr "ఈ ఫైలు రకముకు కొత్త అనువర్తనమును జతచేయుము."
 
-#: kservicelistwidget.cpp:116
+#: kservicelistwidget.cpp:117
 #, kde-format
 msgid "Edit..."
 msgstr "మార్చు..."
 
-#: kservicelistwidget.cpp:121
+#: kservicelistwidget.cpp:122
 #, kde-format
 msgid "Edit command line of the selected application."
 msgstr "ఎంపికచేసిన అనువర్తనముయొక్క ఆదేశ వరుసను సరికూర్చుము."
 
-#: kservicelistwidget.cpp:128
+#: kservicelistwidget.cpp:129
 #, kde-format
 msgid "Remove the selected application from the list."
 msgstr "ఎంపికచేసిన అనువర్తనమును జాబితానుండి తొలగించుము."
 
-#: kservicelistwidget.cpp:151
+#: kservicelistwidget.cpp:152
 #, kde-format
 msgctxt "No applications associated with this file type"
 msgid "None"
 msgstr "ఏదీకాదు"
 
-#: kservicelistwidget.cpp:153
+#: kservicelistwidget.cpp:154
 #, kde-format
 msgctxt "No components associated with this file type"
 msgid "None"

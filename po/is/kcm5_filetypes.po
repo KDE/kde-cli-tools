@@ -9,7 +9,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: filetypes\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2022-12-14 00:48+0000\n"
+"POT-Creation-Date: 2023-01-15 00:57+0000\n"
 "PO-Revision-Date: 2015-04-17 12:06+0000\n"
 "Last-Translator: Sveinn í Felli <sv1@fellsnet.is>\n"
 "Language-Team: Icelandic <kde-isl@molar.is>\n"
@@ -89,7 +89,7 @@ msgstr ""
 "txt tengd skráategundinni 'text/plain'. Það merkir að allar skrár sem enda á "
 "'.txt' eru taldar vera venjulegar textaskrár."
 
-#: filetypedetails.cpp:87 filetypesview.cpp:103 kservicelistwidget.cpp:109
+#: filetypedetails.cpp:87 filetypesview.cpp:103 kservicelistwidget.cpp:110
 #, kde-format
 msgid "Add..."
 msgstr "Bæta við..."
@@ -99,7 +99,7 @@ msgstr "Bæta við..."
 msgid "Add a new pattern for the selected file type."
 msgstr "Skilgreina nýja síu fyrir þessa skráategund."
 
-#: filetypedetails.cpp:94 kservicelistwidget.cpp:123
+#: filetypedetails.cpp:94 kservicelistwidget.cpp:124
 #, kde-format
 msgid "Remove"
 msgstr "Fjarlægja"
@@ -369,22 +369,22 @@ msgstr "Breyta skráartegund: %1"
 msgid "Create New File Type %1"
 msgstr "Búa til nýja skráartegund %1"
 
-#: kservicelistwidget.cpp:36 kservicelistwidget.cpp:51
+#: kservicelistwidget.cpp:36 kservicelistwidget.cpp:52
 #, kde-format
 msgid "%1 (%2)"
 msgstr "%1 (%2)"
 
-#: kservicelistwidget.cpp:56
+#: kservicelistwidget.cpp:57
 #, kde-format
 msgid "Application Preference Order"
 msgstr "Forgangsröðun forrita"
 
-#: kservicelistwidget.cpp:56
+#: kservicelistwidget.cpp:57
 #, kde-format
 msgid "Services Preference Order"
 msgstr "Forgangsröðun þjónusta"
 
-#: kservicelistwidget.cpp:67
+#: kservicelistwidget.cpp:68
 #, kde-format
 msgid ""
 "This is a list of applications associated with files of the selected file "
@@ -398,7 +398,7 @@ msgstr ""
 "en eitt forrit er tengt þessari skráargerð er listinn forgangsraðaður þannig "
 "að það efsta hefur forgang yfir hin."
 
-#: kservicelistwidget.cpp:72
+#: kservicelistwidget.cpp:73
 #, kde-format
 msgid ""
 "This is a list of services associated with files of the selected file type. "
@@ -413,12 +413,12 @@ msgstr ""
 "er tengt aðgerðum með viðkomandi skráargerð, þá er listinn er "
 "forgangsraðaður þannig að efsta færslan er tekin fram yfir aðrar."
 
-#: kservicelistwidget.cpp:84
+#: kservicelistwidget.cpp:85
 #, kde-format
 msgid "Move &Up"
 msgstr "Færa &upp"
 
-#: kservicelistwidget.cpp:90
+#: kservicelistwidget.cpp:91
 #, kde-format
 msgid ""
 "Assigns a higher priority to the selected\n"
@@ -430,7 +430,7 @@ msgstr ""
 "listann. Þetta hefur einungis áhrif á forgang forritsins með tilliti \n"
 "til þessarar skráategundar."
 
-#: kservicelistwidget.cpp:94
+#: kservicelistwidget.cpp:95
 #, kde-format
 msgid ""
 "Assigns a higher priority to the selected\n"
@@ -439,12 +439,12 @@ msgstr ""
 "Gefur þjónustu hærri forgang, sem færir\n"
 "hana upp listann."
 
-#: kservicelistwidget.cpp:97
+#: kservicelistwidget.cpp:98
 #, kde-format
 msgid "Move &Down"
 msgstr "Færa &niður"
 
-#: kservicelistwidget.cpp:102
+#: kservicelistwidget.cpp:103
 #, kde-format
 msgid ""
 "Assigns a lower priority to the selected\n"
@@ -456,7 +456,7 @@ msgstr ""
 "listann. Þetta hefur einungis áhrif á forgang forritsins með tilliti \n"
 "til þessarar skráategundar."
 
-#: kservicelistwidget.cpp:106
+#: kservicelistwidget.cpp:107
 #, kde-format
 msgid ""
 "Assigns a lower priority to the selected\n"
@@ -465,33 +465,33 @@ msgstr ""
 "Lækkar forgang þessa forrits, sem jafngildir því að \n"
 "færa það neðar á listann."
 
-#: kservicelistwidget.cpp:114
+#: kservicelistwidget.cpp:115
 #, kde-format
 msgid "Add a new application for this file type."
 msgstr "Tengir nýtt forrit við þessa skráartegund."
 
-#: kservicelistwidget.cpp:116
+#: kservicelistwidget.cpp:117
 #, kde-format
 msgid "Edit..."
 msgstr "Breyta..."
 
-#: kservicelistwidget.cpp:121
+#: kservicelistwidget.cpp:122
 #, kde-format
 msgid "Edit command line of the selected application."
 msgstr "Breyta skipanalínu forritsins."
 
-#: kservicelistwidget.cpp:128
+#: kservicelistwidget.cpp:129
 #, kde-format
 msgid "Remove the selected application from the list."
 msgstr "Fjarlægir forritið úr listanum."
 
-#: kservicelistwidget.cpp:151
+#: kservicelistwidget.cpp:152
 #, kde-format
 msgctxt "No applications associated with this file type"
 msgid "None"
 msgstr "Engin"
 
-#: kservicelistwidget.cpp:153
+#: kservicelistwidget.cpp:154
 #, kde-format
 msgctxt "No components associated with this file type"
 msgid "None"

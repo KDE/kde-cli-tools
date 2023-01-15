@@ -9,7 +9,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: filetypes\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2022-12-14 00:48+0000\n"
+"POT-Creation-Date: 2023-01-15 00:57+0000\n"
 "PO-Revision-Date: 2008-12-30 20:48+0200\n"
 "Last-Translator: Omer Ensari <oensari@gmail.com>\n"
 "Language-Team: Kurdish <ku@li.org>\n"
@@ -92,7 +92,7 @@ msgstr ""
 "lîsteya qalibên ji bo minandinê hene. Mînak: ji bo deq/pexşan qalibê *.txt "
 "Hemû pelên bi niçika .txt dê wekî pelên deqî bên dîtin."
 
-#: filetypedetails.cpp:87 filetypesview.cpp:103 kservicelistwidget.cpp:109
+#: filetypedetails.cpp:87 filetypesview.cpp:103 kservicelistwidget.cpp:110
 #, kde-format
 msgid "Add..."
 msgstr "Têxe..."
@@ -102,7 +102,7 @@ msgstr "Têxe..."
 msgid "Add a new pattern for the selected file type."
 msgstr "Ji bo pelê hilbijartî qalibeke nû têxê."
 
-#: filetypedetails.cpp:94 kservicelistwidget.cpp:123
+#: filetypedetails.cpp:94 kservicelistwidget.cpp:124
 #, kde-format
 msgid "Remove"
 msgstr "Rakirin"
@@ -371,22 +371,22 @@ msgstr "Cureyê Pelan %1 Sererast Bike"
 msgid "Create New File Type %1"
 msgstr "Cureyekî Nû yê Pelê %1 Biafirîne"
 
-#: kservicelistwidget.cpp:36 kservicelistwidget.cpp:51
+#: kservicelistwidget.cpp:36 kservicelistwidget.cpp:52
 #, kde-format
 msgid "%1 (%2)"
 msgstr "%1 (%2)"
 
-#: kservicelistwidget.cpp:56
+#: kservicelistwidget.cpp:57
 #, kde-format
 msgid "Application Preference Order"
 msgstr "Rêzkirina Hilbijartina Sepanan"
 
-#: kservicelistwidget.cpp:56
+#: kservicelistwidget.cpp:57
 #, kde-format
 msgid "Services Preference Order"
 msgstr "Rêzkirina Hilbijartina Servîsan"
 
-#: kservicelistwidget.cpp:67
+#: kservicelistwidget.cpp:68
 #, kde-format
 msgid ""
 "This is a list of applications associated with files of the selected file "
@@ -400,7 +400,7 @@ msgstr ""
 "nîşandan. Dema ku ji yekê zêdetir cure bi pelekî ve hatin têkildarkirin, dê "
 "sepana jortirîn bê hilbijartin."
 
-#: kservicelistwidget.cpp:72
+#: kservicelistwidget.cpp:73
 #, kde-format
 msgid ""
 "This is a list of services associated with files of the selected file type. "
@@ -414,12 +414,12 @@ msgstr ""
 "hilbijart dê bê nîşandan. Dema ku ji yekê zêdetir cure bi pelê ve hatiye "
 "têkildar kirin, dê sepana jortirîn bê hilbijartin."
 
-#: kservicelistwidget.cpp:84
+#: kservicelistwidget.cpp:85
 #, kde-format
 msgid "Move &Up"
 msgstr "Bibe J&orê"
 
-#: kservicelistwidget.cpp:90
+#: kservicelistwidget.cpp:91
 #, kde-format
 msgid ""
 "Assigns a higher priority to the selected\n"
@@ -432,7 +432,7 @@ msgstr ""
 "pel bi gelek sepanan re têkildar be, ev kiryar dê tenê\n"
 "li ser sepana hilbijartî bandorê bike."
 
-#: kservicelistwidget.cpp:94
+#: kservicelistwidget.cpp:95
 #, kde-format
 msgid ""
 "Assigns a higher priority to the selected\n"
@@ -441,12 +441,12 @@ msgstr ""
 "Servîsa hilbijartî di lîsteyê de bibe jorê\n"
 "da ku li pêş be."
 
-#: kservicelistwidget.cpp:97
+#: kservicelistwidget.cpp:98
 #, kde-format
 msgid "Move &Down"
 msgstr "Bîne J&êrê"
 
-#: kservicelistwidget.cpp:102
+#: kservicelistwidget.cpp:103
 #, kde-format
 msgid ""
 "Assigns a lower priority to the selected\n"
@@ -459,7 +459,7 @@ msgstr ""
 "pel bi gelek sepanan re têkildar be, ev kiryar dê tenê\n"
 "li ser sepana hilbijartî bandorê bike."
 
-#: kservicelistwidget.cpp:106
+#: kservicelistwidget.cpp:107
 #, kde-format
 msgid ""
 "Assigns a lower priority to the selected\n"
@@ -468,33 +468,33 @@ msgstr ""
 "Servîsa hilbijartî di lîsteyê de bîne jêrê\n"
 "da ku li paş be."
 
-#: kservicelistwidget.cpp:114
+#: kservicelistwidget.cpp:115
 #, kde-format
 msgid "Add a new application for this file type."
 msgstr "Ji bo vî cureyê pelan sepaneke nû têxê."
 
-#: kservicelistwidget.cpp:116
+#: kservicelistwidget.cpp:117
 #, kde-format
 msgid "Edit..."
 msgstr "Sererastkirin..."
 
-#: kservicelistwidget.cpp:121
+#: kservicelistwidget.cpp:122
 #, kde-format
 msgid "Edit command line of the selected application."
 msgstr "Fermana sepana hilbijartî têkevê."
 
-#: kservicelistwidget.cpp:128
+#: kservicelistwidget.cpp:129
 #, kde-format
 msgid "Remove the selected application from the list."
 msgstr "Sepana hilbijartî ji lîsteyê rake."
 
-#: kservicelistwidget.cpp:151
+#: kservicelistwidget.cpp:152
 #, kde-format
 msgctxt "No applications associated with this file type"
 msgid "None"
 msgstr "Ne yek jî"
 
-#: kservicelistwidget.cpp:153
+#: kservicelistwidget.cpp:154
 #, kde-format
 msgctxt "No components associated with this file type"
 msgid "None"

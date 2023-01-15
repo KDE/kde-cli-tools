@@ -9,7 +9,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: filetypes\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2022-12-14 00:48+0000\n"
+"POT-Creation-Date: 2023-01-15 00:57+0000\n"
 "PO-Revision-Date: 2014-07-24 00:37+0430\n"
 "Last-Translator: Mohi Mirdamadi <mohi@ubuntu.ir>\n"
 "Language-Team: Farsi (Persian) <kde-i18n-fa@kde.org>\n"
@@ -87,7 +87,7 @@ msgstr ""
 "استفاده می‌شوند. برای مثال، الگوی txt.* مربوط به نوع پرونده »متن/ساده« است؛ "
 "همه پرونده‌های منتهی به »txt.« به عنوان پرونده‌های متنی ساده شناخته می‌شوند."
 
-#: filetypedetails.cpp:87 filetypesview.cpp:103 kservicelistwidget.cpp:109
+#: filetypedetails.cpp:87 filetypesview.cpp:103 kservicelistwidget.cpp:110
 #, kde-format
 msgid "Add..."
 msgstr "افزودن..."
@@ -97,7 +97,7 @@ msgstr "افزودن..."
 msgid "Add a new pattern for the selected file type."
 msgstr "افزودن الگوی جدید برای نوع پرونده برگزیده."
 
-#: filetypedetails.cpp:94 kservicelistwidget.cpp:123
+#: filetypedetails.cpp:94 kservicelistwidget.cpp:124
 #, kde-format
 msgid "Remove"
 msgstr "حذف"
@@ -355,22 +355,22 @@ msgstr "ویرایش پرونده از نوع %1"
 msgid "Create New File Type %1"
 msgstr "ایجاد پرونده جدید از نوع %1"
 
-#: kservicelistwidget.cpp:36 kservicelistwidget.cpp:51
+#: kservicelistwidget.cpp:36 kservicelistwidget.cpp:52
 #, kde-format
 msgid "%1 (%2)"
 msgstr "%1 (%2)"
 
-#: kservicelistwidget.cpp:56
+#: kservicelistwidget.cpp:57
 #, kde-format
 msgid "Application Preference Order"
 msgstr "ترتیب تنظیم کاربرد"
 
-#: kservicelistwidget.cpp:56
+#: kservicelistwidget.cpp:57
 #, kde-format
 msgid "Services Preference Order"
 msgstr "ترتیب تنظیم خدمات"
 
-#: kservicelistwidget.cpp:67
+#: kservicelistwidget.cpp:68
 #, kde-format
 msgid ""
 "This is a list of applications associated with files of the selected file "
@@ -385,7 +385,7 @@ msgstr ""
 "فهرست بر اساس اولویت مرتب می‌شود، به طوری که بالاترین مورد بر دیگران تقدم "
 "می‌گیرد."
 
-#: kservicelistwidget.cpp:72
+#: kservicelistwidget.cpp:73
 #, kde-format
 msgid ""
 "This is a list of services associated with files of the selected file type. "
@@ -400,12 +400,12 @@ msgstr ""
 "باشد، فهرست بر اساس اولویت مرتب می‌شود، به طوری که بالاترین مورد بر دیگران "
 "تقدم می‌گیرد."
 
-#: kservicelistwidget.cpp:84
+#: kservicelistwidget.cpp:85
 #, kde-format
 msgid "Move &Up"
 msgstr "حرکت &به بالا‌"
 
-#: kservicelistwidget.cpp:90
+#: kservicelistwidget.cpp:91
 #, kde-format
 msgid ""
 "Assigns a higher priority to the selected\n"
@@ -418,7 +418,7 @@ msgstr ""
 "تنها وقتی بر کاربرد برگزیده اثر می‌گذارد، که نوع پرونده\n"
 "با بیش از یک کاربرد در ارتباط باشد."
 
-#: kservicelistwidget.cpp:94
+#: kservicelistwidget.cpp:95
 #, kde-format
 msgid ""
 "Assigns a higher priority to the selected\n"
@@ -427,12 +427,12 @@ msgstr ""
 "با حرکت خدمت برگزیده به بالای فهرست، اولویت بالاتری را به آن\n"
 "اختصاص می‌دهد."
 
-#: kservicelistwidget.cpp:97
+#: kservicelistwidget.cpp:98
 #, kde-format
 msgid "Move &Down"
 msgstr "حرکت &به پایین‌"
 
-#: kservicelistwidget.cpp:102
+#: kservicelistwidget.cpp:103
 #, kde-format
 msgid ""
 "Assigns a lower priority to the selected\n"
@@ -445,7 +445,7 @@ msgstr ""
 "تنها وقتی بر کاربرد برگزیده اثر می‌گذارد، که نوع پرونده\n"
 "با بیش از یک کاربرد در ارتباط باشد."
 
-#: kservicelistwidget.cpp:106
+#: kservicelistwidget.cpp:107
 #, kde-format
 msgid ""
 "Assigns a lower priority to the selected\n"
@@ -454,33 +454,33 @@ msgstr ""
 "با حرکت خدمت برگزیده به پایین، اولویت پایین‌تری را به آن\n"
 "اختصاص می‌دهد."
 
-#: kservicelistwidget.cpp:114
+#: kservicelistwidget.cpp:115
 #, kde-format
 msgid "Add a new application for this file type."
 msgstr "افزودن کاربرد جدید برای این نوع پرونده."
 
-#: kservicelistwidget.cpp:116
+#: kservicelistwidget.cpp:117
 #, kde-format
 msgid "Edit..."
 msgstr "ویرایش..."
 
-#: kservicelistwidget.cpp:121
+#: kservicelistwidget.cpp:122
 #, kde-format
 msgid "Edit command line of the selected application."
 msgstr "ویرایش خط فرمان کاربرد برگزیده."
 
-#: kservicelistwidget.cpp:128
+#: kservicelistwidget.cpp:129
 #, kde-format
 msgid "Remove the selected application from the list."
 msgstr "حذف کاربرد برگزیده از فهرست."
 
-#: kservicelistwidget.cpp:151
+#: kservicelistwidget.cpp:152
 #, kde-format
 msgctxt "No applications associated with this file type"
 msgid "None"
 msgstr "هیچ‌کدام"
 
-#: kservicelistwidget.cpp:153
+#: kservicelistwidget.cpp:154
 #, kde-format
 msgctxt "No components associated with this file type"
 msgid "None"

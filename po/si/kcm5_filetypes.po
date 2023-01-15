@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: filetypes\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2022-12-14 00:48+0000\n"
+"POT-Creation-Date: 2023-01-15 00:57+0000\n"
 "PO-Revision-Date: 2009-12-30 08:58+0530\n"
 "Last-Translator: Danishka Navin <danishka@gmail.com>\n"
 "Language-Team: Sinhala <danishka@gmail.com>\n"
@@ -87,7 +87,7 @@ msgstr ""
 "උදාහරණයක් ලෙස, *.txt රටාව 'text/plain' ගොනු වර්ගයට අදාල වේ; '.txt' ගෙන් අවසන් වන "
 "සියළු ගොනු සරල පෙළ ගොනු ලෙස හඳුනාගැනේ."
 
-#: filetypedetails.cpp:87 filetypesview.cpp:103 kservicelistwidget.cpp:109
+#: filetypedetails.cpp:87 filetypesview.cpp:103 kservicelistwidget.cpp:110
 #, kde-format
 msgid "Add..."
 msgstr "එක් කරන්න..."
@@ -97,7 +97,7 @@ msgstr "එක් කරන්න..."
 msgid "Add a new pattern for the selected file type."
 msgstr "තෝරාගත් ගොනු වර්ගයට නව රටාවක් එක් කරන්න."
 
-#: filetypedetails.cpp:94 kservicelistwidget.cpp:123
+#: filetypedetails.cpp:94 kservicelistwidget.cpp:124
 #, kde-format
 msgid "Remove"
 msgstr "ඉවත් කරන්න"
@@ -366,22 +366,22 @@ msgstr "%1  ගොණු වර්ගය සකසන්න"
 msgid "Create New File Type %1"
 msgstr "%1 නව ගොණු වර්ගය සාදන්න"
 
-#: kservicelistwidget.cpp:36 kservicelistwidget.cpp:51
+#: kservicelistwidget.cpp:36 kservicelistwidget.cpp:52
 #, kde-format
 msgid "%1 (%2)"
 msgstr "%1 (%2)"
 
-#: kservicelistwidget.cpp:56
+#: kservicelistwidget.cpp:57
 #, kde-format
 msgid "Application Preference Order"
 msgstr "භාවිතයෙදවුම් අභිප්‍රේත පිළිවෙල"
 
-#: kservicelistwidget.cpp:56
+#: kservicelistwidget.cpp:57
 #, kde-format
 msgid "Services Preference Order"
 msgstr "සේවා අභිප්‍රේත පිළිවෙල"
 
-#: kservicelistwidget.cpp:67
+#: kservicelistwidget.cpp:68
 #, kde-format
 msgid ""
 "This is a list of applications associated with files of the selected file "
@@ -395,7 +395,7 @@ msgstr ""
 "වැඩි යෙදුම් ගණනක් සහයෝගී විට, ලැයිස්තුව ප්‍රමුඛතාව මත පෙළ ගැසෙන අතර ඉහළින්ම තැබෙන යෙදුට "
 "අනික්වාට වඩා වැඩි ප්‍රමුඛතාවක් හිමිවේ."
 
-#: kservicelistwidget.cpp:72
+#: kservicelistwidget.cpp:73
 #, kde-format
 msgid ""
 "This is a list of services associated with files of the selected file type. "
@@ -409,12 +409,12 @@ msgstr ""
 "වැඩි සේවා ගණනක් සහයෝගී විට, ලැයිස්තුව ප්‍රමුඛතාව මත පෙළ ගැසෙන අතර ඉහළින්ම තැබෙන සේවාවට "
 "අනික්වාට වඩා වැඩි ප්‍රමුඛතාවක් හිමිවේ."
 
-#: kservicelistwidget.cpp:84
+#: kservicelistwidget.cpp:85
 #, kde-format
 msgid "Move &Up"
 msgstr "ඉහළට ගෙනයන්න  (&U)"
 
-#: kservicelistwidget.cpp:90
+#: kservicelistwidget.cpp:91
 #, kde-format
 msgid ""
 "Assigns a higher priority to the selected\n"
@@ -427,7 +427,7 @@ msgstr ""
 "ගොනු වර්ගය එක් භාවිත යෙදවුමකට වඩා සහාය දක්වනෙනේ නම්\n"
 "පමණි."
 
-#: kservicelistwidget.cpp:94
+#: kservicelistwidget.cpp:95
 #, kde-format
 msgid ""
 "Assigns a higher priority to the selected\n"
@@ -436,12 +436,12 @@ msgstr ""
 "තෝරාගත් සේවාවට ඉහළ ප්‍රමුඛතාවක් දීම සඳහා\n"
 "එය ලැයිස්තුවේ ඉහළට ගෙනයන්න."
 
-#: kservicelistwidget.cpp:97
+#: kservicelistwidget.cpp:98
 #, kde-format
 msgid "Move &Down"
 msgstr "පහළට ගෙනයන්න (&D)"
 
-#: kservicelistwidget.cpp:102
+#: kservicelistwidget.cpp:103
 #, kde-format
 msgid ""
 "Assigns a lower priority to the selected\n"
@@ -454,7 +454,7 @@ msgstr ""
 "ගොනු වර්ගය එක් භාවිත යෙදවුමකට වඩා සහාය දක්වනෙනේ නම්\n"
 "පමණි."
 
-#: kservicelistwidget.cpp:106
+#: kservicelistwidget.cpp:107
 #, kde-format
 msgid ""
 "Assigns a lower priority to the selected\n"
@@ -463,33 +463,33 @@ msgstr ""
 "තෝරාගත් සේවාවට අඩු ප්‍රමුඛතාවක් දීම සඳහා\n"
 "එය ලැයිස්තුවේ පහළට ගෙනයන්න."
 
-#: kservicelistwidget.cpp:114
+#: kservicelistwidget.cpp:115
 #, kde-format
 msgid "Add a new application for this file type."
 msgstr "මෙම ගොනු වර්ගය සඳහා නව භාවිතයෙදවුමක් එක් කරන්න"
 
-#: kservicelistwidget.cpp:116
+#: kservicelistwidget.cpp:117
 #, kde-format
 msgid "Edit..."
 msgstr "සකසන්න..."
 
-#: kservicelistwidget.cpp:121
+#: kservicelistwidget.cpp:122
 #, kde-format
 msgid "Edit command line of the selected application."
 msgstr "තෝරාගත් භාවිත යෙදවුමේ විධානීය රේඛාව සකසන්න"
 
-#: kservicelistwidget.cpp:128
+#: kservicelistwidget.cpp:129
 #, kde-format
 msgid "Remove the selected application from the list."
 msgstr "තෝරාගත් භාවිතයෙදවුම ලැයිස්තුවෙන් ඉවත් කරන්න."
 
-#: kservicelistwidget.cpp:151
+#: kservicelistwidget.cpp:152
 #, kde-format
 msgctxt "No applications associated with this file type"
 msgid "None"
 msgstr "කිසිවක් නැත"
 
-#: kservicelistwidget.cpp:153
+#: kservicelistwidget.cpp:154
 #, kde-format
 msgctxt "No components associated with this file type"
 msgid "None"

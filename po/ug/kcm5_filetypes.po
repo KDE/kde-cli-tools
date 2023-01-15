@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: filetypes\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2022-12-14 00:48+0000\n"
+"POT-Creation-Date: 2023-01-15 00:57+0000\n"
 "PO-Revision-Date: 2013-09-08 07:04+0900\n"
 "Last-Translator: Gheyret Kenji <gheyret@gmail.com>\n"
 "Language-Team: Uyghur Computer Science Association <UKIJ@yahoogroups.com>\n"
@@ -85,7 +85,7 @@ msgstr ""
 "بولغان ھۆججەتلەرنى كۆرسىتىدۇ؛ ھۆججەت ئاتى ‹.txt› بولغان بارلىق ھۆججەتلەر "
 "ئادەتتە تېكىست ھۆججەتلىرى دەپ قارىلىدۇ."
 
-#: filetypedetails.cpp:87 filetypesview.cpp:103 kservicelistwidget.cpp:109
+#: filetypedetails.cpp:87 filetypesview.cpp:103 kservicelistwidget.cpp:110
 #, kde-format
 msgid "Add..."
 msgstr "قوش…"
@@ -95,7 +95,7 @@ msgstr "قوش…"
 msgid "Add a new pattern for the selected file type."
 msgstr "تاللانغان بۇ تىپتىكى ھۆججەتكە يېڭى ئەندىزە قوشىدۇ."
 
-#: filetypedetails.cpp:94 kservicelistwidget.cpp:123
+#: filetypedetails.cpp:94 kservicelistwidget.cpp:124
 #, kde-format
 msgid "Remove"
 msgstr "چىقىرىۋەت"
@@ -350,22 +350,22 @@ msgstr "ھۆججەت تىپى %1 نى تەھرىرلەش"
 msgid "Create New File Type %1"
 msgstr "يېڭى ھۆججەت تىپى %1 نى قۇرۇش"
 
-#: kservicelistwidget.cpp:36 kservicelistwidget.cpp:51
+#: kservicelistwidget.cpp:36 kservicelistwidget.cpp:52
 #, kde-format
 msgid "%1 (%2)"
 msgstr "%1 (%2)"
 
-#: kservicelistwidget.cpp:56
+#: kservicelistwidget.cpp:57
 #, kde-format
 msgid "Application Preference Order"
 msgstr "پروگرامما مەرتىۋە تەرتىپى"
 
-#: kservicelistwidget.cpp:56
+#: kservicelistwidget.cpp:57
 #, kde-format
 msgid "Services Preference Order"
 msgstr "مۇلازىمەتلەر مەرتىۋە تەرتىپى"
 
-#: kservicelistwidget.cpp:67
+#: kservicelistwidget.cpp:68
 #, kde-format
 msgid ""
 "This is a list of applications associated with files of the selected file "
@@ -379,7 +379,7 @@ msgstr ""
 "تاللانغاندا كۆرسىتىلىدۇ. ئەگەر بۇ ھۆججەت تىپىغا بىردىن كۆپ پروگرامما "
 "مۇناسىۋەتلەشتۈرۈلگەن بولسا مەرتىۋىسى بويىچە تىزىلىپ كۆرسىتىلىدۇ."
 
-#: kservicelistwidget.cpp:72
+#: kservicelistwidget.cpp:73
 #, kde-format
 msgid ""
 "This is a list of services associated with files of the selected file type. "
@@ -393,12 +393,12 @@ msgstr ""
 "تاللانغاندا كۆرسىتىلىدۇ. ئەگەر بۇ ھۆججەت تىپىغا بىردىن كۆپ پروگرامما "
 "مۇناسىۋەتلەشتۈرۈلگەن بولسا مەرتىۋىسى بويىچە تىزىلىپ كۆرسىتىلىدۇ."
 
-#: kservicelistwidget.cpp:84
+#: kservicelistwidget.cpp:85
 #, kde-format
 msgid "Move &Up"
 msgstr "يۇقىرىغا(&U)"
 
-#: kservicelistwidget.cpp:90
+#: kservicelistwidget.cpp:91
 #, kde-format
 msgid ""
 "Assigns a higher priority to the selected\n"
@@ -411,7 +411,7 @@ msgstr ""
 "تىپىغا بىرنەچچە پروگرامما ماسلاشتۇرۇلغان بولسا، بۇ پەقەت \n"
 "تاللانغان پروگراممىغىلا تەسىر قىلىدۇ."
 
-#: kservicelistwidget.cpp:94
+#: kservicelistwidget.cpp:95
 #, kde-format
 msgid ""
 "Assigns a higher priority to the selected\n"
@@ -420,12 +420,12 @@ msgstr ""
 "تاللانغان مۇلازىمەتكە يۇقكىرى مەرتىۋە بېرىپ، \n"
 "ئۇنى تىزىمنىڭ ئۈستىگە يۆتكەيدۇ."
 
-#: kservicelistwidget.cpp:97
+#: kservicelistwidget.cpp:98
 #, kde-format
 msgid "Move &Down"
 msgstr "تۆۋەنگە(&D)"
 
-#: kservicelistwidget.cpp:102
+#: kservicelistwidget.cpp:103
 #, kde-format
 msgid ""
 "Assigns a lower priority to the selected\n"
@@ -438,7 +438,7 @@ msgstr ""
 "تىپىغا بىرنەچچە پروگرامما ماسلاشتۇرۇلغان بولسا، بۇ پەقەت \n"
 "تاللانغان پروگراممىغىلا تەسىر قىلىدۇ."
 
-#: kservicelistwidget.cpp:106
+#: kservicelistwidget.cpp:107
 #, kde-format
 msgid ""
 "Assigns a lower priority to the selected\n"
@@ -447,33 +447,33 @@ msgstr ""
 "تاللانغان مۇلازىمەتكە تۆۋەن مەرتىۋە بېرىپ، \n"
 "ئۇنى تىزىمنىڭ ئاستىغا يۆتكەيدۇ."
 
-#: kservicelistwidget.cpp:114
+#: kservicelistwidget.cpp:115
 #, kde-format
 msgid "Add a new application for this file type."
 msgstr "بۇ تىپتىكى ھۆججەتكە يېڭى پروگرامما قوشىدۇ."
 
-#: kservicelistwidget.cpp:116
+#: kservicelistwidget.cpp:117
 #, kde-format
 msgid "Edit..."
 msgstr "تەھرىر…"
 
-#: kservicelistwidget.cpp:121
+#: kservicelistwidget.cpp:122
 #, kde-format
 msgid "Edit command line of the selected application."
 msgstr "تاللانغان پروگراممىنىڭ بۇيرۇق قۇرىنى تەھرىرلەيدۇ."
 
-#: kservicelistwidget.cpp:128
+#: kservicelistwidget.cpp:129
 #, kde-format
 msgid "Remove the selected application from the list."
 msgstr "تىزىمدىن تاللانغان پروگراممىنى چىقىرىۋېتىدۇ."
 
-#: kservicelistwidget.cpp:151
+#: kservicelistwidget.cpp:152
 #, kde-format
 msgctxt "No applications associated with this file type"
 msgid "None"
 msgstr "يوق"
 
-#: kservicelistwidget.cpp:153
+#: kservicelistwidget.cpp:154
 #, kde-format
 msgctxt "No components associated with this file type"
 msgid "None"

@@ -16,7 +16,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: filetypes\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2022-12-14 00:48+0000\n"
+"POT-Creation-Date: 2023-01-15 00:57+0000\n"
 "PO-Revision-Date: 2020-09-05 17:15+0300\n"
 "Last-Translator: Stelios <sstavra@gmail.com>\n"
 "Language-Team: Greek <kde-i18n-el@kde.org>\n"
@@ -97,7 +97,7 @@ msgstr ""
 "*.txt είναι συσχετισμένο με τον τύπο αρχείου 'text/plain', όλα τα αρχεία που "
 "τελειώνουν σε '.txt' αναγνωρίζονται σαν αρχεία απλού κειμένου."
 
-#: filetypedetails.cpp:87 filetypesview.cpp:103 kservicelistwidget.cpp:109
+#: filetypedetails.cpp:87 filetypesview.cpp:103 kservicelistwidget.cpp:110
 #, kde-format
 msgid "Add..."
 msgstr "Προσθήκη..."
@@ -107,7 +107,7 @@ msgstr "Προσθήκη..."
 msgid "Add a new pattern for the selected file type."
 msgstr "Προσθήκη ενός νέου μοτίβου για τον επιλεγμένο τύπο αρχείου."
 
-#: filetypedetails.cpp:94 kservicelistwidget.cpp:123
+#: filetypedetails.cpp:94 kservicelistwidget.cpp:124
 #, kde-format
 msgid "Remove"
 msgstr "Αφαίρεση"
@@ -385,22 +385,22 @@ msgstr "Επεξεργασία τύπου αρχείου %1"
 msgid "Create New File Type %1"
 msgstr "Δημιουργία νέου τύπου αρχείου %1"
 
-#: kservicelistwidget.cpp:36 kservicelistwidget.cpp:51
+#: kservicelistwidget.cpp:36 kservicelistwidget.cpp:52
 #, kde-format
 msgid "%1 (%2)"
 msgstr "%1 (%2)"
 
-#: kservicelistwidget.cpp:56
+#: kservicelistwidget.cpp:57
 #, kde-format
 msgid "Application Preference Order"
 msgstr "Σειρά προτίμησης εφαρμογών"
 
-#: kservicelistwidget.cpp:56
+#: kservicelistwidget.cpp:57
 #, kde-format
 msgid "Services Preference Order"
 msgstr "Σειρά προτίμησης υπηρεσιών"
 
-#: kservicelistwidget.cpp:67
+#: kservicelistwidget.cpp:68
 #, kde-format
 msgid ""
 "This is a list of applications associated with files of the selected file "
@@ -415,7 +415,7 @@ msgstr ""
 "συσχετισμένη με αυτόν τον τύπο αρχείου, τότε η λίστα ταξινομείται κατά "
 "προτεραιότητα με το κορυφαίο αντικείμενο να προηγείται των άλλων."
 
-#: kservicelistwidget.cpp:72
+#: kservicelistwidget.cpp:73
 #, kde-format
 msgid ""
 "This is a list of services associated with files of the selected file type. "
@@ -430,12 +430,12 @@ msgstr ""
 "είναι συσχετισμένη με αυτόν τον τύπο αρχείου, τότε η λίστα ταξινομείται κατά "
 "προτεραιότητα με το κορυφαίο αντικείμενο να προηγείται των άλλων."
 
-#: kservicelistwidget.cpp:84
+#: kservicelistwidget.cpp:85
 #, kde-format
 msgid "Move &Up"
 msgstr "Μετακίνηση &πάνω"
 
-#: kservicelistwidget.cpp:90
+#: kservicelistwidget.cpp:91
 #, kde-format
 msgid ""
 "Assigns a higher priority to the selected\n"
@@ -448,7 +448,7 @@ msgstr ""
 "επηρεάζει την επιλεγμένη εφαρμογή μόνο, αν ο τύπος αρχείου\n"
 "είναι συσχετισμένος με πάνω από μία εφαρμογή."
 
-#: kservicelistwidget.cpp:94
+#: kservicelistwidget.cpp:95
 #, kde-format
 msgid ""
 "Assigns a higher priority to the selected\n"
@@ -457,12 +457,12 @@ msgstr ""
 "Δίνει μια υψηλότερη προτεραιότητα στην επιλεγμένη\n"
 "υπηρεσία, μετακινώντας την πιο πάνω στη λίστα."
 
-#: kservicelistwidget.cpp:97
+#: kservicelistwidget.cpp:98
 #, kde-format
 msgid "Move &Down"
 msgstr "Μετακίνηση &κάτω"
 
-#: kservicelistwidget.cpp:102
+#: kservicelistwidget.cpp:103
 #, kde-format
 msgid ""
 "Assigns a lower priority to the selected\n"
@@ -475,7 +475,7 @@ msgstr ""
 "επηρεάζει την επιλεγμένη εφαρμογή μόνο, αν ο τύπος αρχείου\n"
 "είναι συσχετισμένος με πάνω από μία εφαρμογή."
 
-#: kservicelistwidget.cpp:106
+#: kservicelistwidget.cpp:107
 #, kde-format
 msgid ""
 "Assigns a lower priority to the selected\n"
@@ -484,33 +484,33 @@ msgstr ""
 "Δίνει μια χαμηλότερη προτεραιότητα στην επιλεγμένη\n"
 "υπηρεσία, μετακινώντας την πιο κάτω στη λίστα."
 
-#: kservicelistwidget.cpp:114
+#: kservicelistwidget.cpp:115
 #, kde-format
 msgid "Add a new application for this file type."
 msgstr "Προσθήκη μιας νέας εφαρμογής για αυτόν τον τύπο αρχείου."
 
-#: kservicelistwidget.cpp:116
+#: kservicelistwidget.cpp:117
 #, kde-format
 msgid "Edit..."
 msgstr "Επεξεργασία..."
 
-#: kservicelistwidget.cpp:121
+#: kservicelistwidget.cpp:122
 #, kde-format
 msgid "Edit command line of the selected application."
 msgstr "Επεξεργασία της γραμμής εντολής για την επιλεγμένη εφαρμογή."
 
-#: kservicelistwidget.cpp:128
+#: kservicelistwidget.cpp:129
 #, kde-format
 msgid "Remove the selected application from the list."
 msgstr "Αφαίρεση της επιλεγμένης εφαρμογής από τη λίστα."
 
-#: kservicelistwidget.cpp:151
+#: kservicelistwidget.cpp:152
 #, kde-format
 msgctxt "No applications associated with this file type"
 msgid "None"
 msgstr "Κανένα"
 
-#: kservicelistwidget.cpp:153
+#: kservicelistwidget.cpp:154
 #, kde-format
 msgctxt "No components associated with this file type"
 msgid "None"

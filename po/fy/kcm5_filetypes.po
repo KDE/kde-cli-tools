@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: filetypes\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2022-12-14 00:48+0000\n"
+"POT-Creation-Date: 2023-01-15 00:57+0000\n"
 "PO-Revision-Date: 2009-12-19 18:22+0100\n"
 "Last-Translator: Berend Ytsma <berendy@gmail.com>\n"
 "Language-Team: Frysk <kde-i18n-fry@kde.org>\n"
@@ -85,7 +85,7 @@ msgstr ""
 "ferbûn mei it triemtype 'tekst/plain'; alle triemmen dy't einigje op '.txt' "
 "wurde lykas teksttriemmen werkend."
 
-#: filetypedetails.cpp:87 filetypesview.cpp:103 kservicelistwidget.cpp:109
+#: filetypedetails.cpp:87 filetypesview.cpp:103 kservicelistwidget.cpp:110
 #, kde-format
 msgid "Add..."
 msgstr "Taheakje..."
@@ -95,7 +95,7 @@ msgstr "Taheakje..."
 msgid "Add a new pattern for the selected file type."
 msgstr "Heakje in nij patroan ta foar it selektearre triemtype."
 
-#: filetypedetails.cpp:94 kservicelistwidget.cpp:123
+#: filetypedetails.cpp:94 kservicelistwidget.cpp:124
 #, kde-format
 msgid "Remove"
 msgstr "Fuortsmite"
@@ -367,22 +367,22 @@ msgstr "Triemtype %1 bewurkje"
 msgid "Create New File Type %1"
 msgstr "Nij triemtype %1 oanmeitsje"
 
-#: kservicelistwidget.cpp:36 kservicelistwidget.cpp:51
+#: kservicelistwidget.cpp:36 kservicelistwidget.cpp:52
 #, kde-format
 msgid "%1 (%2)"
 msgstr "%1 (%2)"
 
-#: kservicelistwidget.cpp:56
+#: kservicelistwidget.cpp:57
 #, kde-format
 msgid "Application Preference Order"
 msgstr "Tapassings foar dit triemtype"
 
-#: kservicelistwidget.cpp:56
+#: kservicelistwidget.cpp:57
 #, kde-format
 msgid "Services Preference Order"
 msgstr "Tsjinsten foar dit triemtype"
 
-#: kservicelistwidget.cpp:67
+#: kservicelistwidget.cpp:68
 #, kde-format
 msgid ""
 "This is a list of applications associated with files of the selected file "
@@ -397,7 +397,7 @@ msgstr ""
 "triemtype, dan is de list oardere op prioriteit, wêrby de boppenste "
 "tapassing yn de list as earste keazen wurdt om de triem mei te iepenjen."
 
-#: kservicelistwidget.cpp:72
+#: kservicelistwidget.cpp:73
 #, kde-format
 msgid ""
 "This is a list of services associated with files of the selected file type. "
@@ -412,12 +412,12 @@ msgstr ""
 "dit triemtype, dan is de list oardere op prioriteit, wêrby de boppenste item "
 "foargiet foar alle oaren."
 
-#: kservicelistwidget.cpp:84
+#: kservicelistwidget.cpp:85
 #, kde-format
 msgid "Move &Up"
 msgstr "Omheech &ferpleatse"
 
-#: kservicelistwidget.cpp:90
+#: kservicelistwidget.cpp:91
 #, kde-format
 msgid ""
 "Assigns a higher priority to the selected\n"
@@ -431,7 +431,7 @@ msgstr ""
 "programma oft it triemtype besibbe\n"
 "is mei mear as ien programma."
 
-#: kservicelistwidget.cpp:94
+#: kservicelistwidget.cpp:95
 #, kde-format
 msgid ""
 "Assigns a higher priority to the selected\n"
@@ -440,12 +440,12 @@ msgstr ""
 "Jout in hegere prioriteit oan de selektearre tsjinst\n"
 "troch dizze heger in de list te setten."
 
-#: kservicelistwidget.cpp:97
+#: kservicelistwidget.cpp:98
 #, kde-format
 msgid "Move &Down"
 msgstr "Omleech fe&rpleatse"
 
-#: kservicelistwidget.cpp:102
+#: kservicelistwidget.cpp:103
 #, kde-format
 msgid ""
 "Assigns a lower priority to the selected\n"
@@ -459,7 +459,7 @@ msgstr ""
 "programma oft it triemtype besibbe\n"
 "is mei mear as ien programma."
 
-#: kservicelistwidget.cpp:106
+#: kservicelistwidget.cpp:107
 #, kde-format
 msgid ""
 "Assigns a lower priority to the selected\n"
@@ -468,33 +468,33 @@ msgstr ""
 "Jout in legere prioriteit oan de selektearre tsjinst\n"
 "troch dizze leger in de list te setten."
 
-#: kservicelistwidget.cpp:114
+#: kservicelistwidget.cpp:115
 #, kde-format
 msgid "Add a new application for this file type."
 msgstr "Heakje in nij programma ta foar dit triemtype."
 
-#: kservicelistwidget.cpp:116
+#: kservicelistwidget.cpp:117
 #, kde-format
 msgid "Edit..."
 msgstr "Bewurkje..."
 
-#: kservicelistwidget.cpp:121
+#: kservicelistwidget.cpp:122
 #, kde-format
 msgid "Edit command line of the selected application."
 msgstr "Pas de kommandorigel oan fan it selektearre programma."
 
-#: kservicelistwidget.cpp:128
+#: kservicelistwidget.cpp:129
 #, kde-format
 msgid "Remove the selected application from the list."
 msgstr "Smyt it selektearre programma út de list."
 
-#: kservicelistwidget.cpp:151
+#: kservicelistwidget.cpp:152
 #, kde-format
 msgctxt "No applications associated with this file type"
 msgid "None"
 msgstr "Gjint"
 
-#: kservicelistwidget.cpp:153
+#: kservicelistwidget.cpp:154
 #, kde-format
 msgctxt "No components associated with this file type"
 msgid "None"

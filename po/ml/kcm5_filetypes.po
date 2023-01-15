@@ -9,7 +9,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: filetypes\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2022-12-14 00:48+0000\n"
+"POT-Creation-Date: 2023-01-15 00:57+0000\n"
 "PO-Revision-Date: 2019-12-12 23:00+0000\n"
 "Last-Translator: Vivek KJ Pazhedath <vivekkj2004@gmail.com>\n"
 "Language-Team: Swathantra Malayalam Computing | സ്വതന്ത്ര മലയാളം കമ്പ്യൂട്ടിങ് "
@@ -86,7 +86,7 @@ msgstr ""
 "ലഭ്യമാകുന്നു. ഉദാഹരണത്തിനു്, *.txt എന്നത് 'text/plain' തരത്തിലുള്ള ഫയലാകുന്നു; '.txt' എന്ന് "
 "അവസാനിക്കുന്ന ഫയലുകള്‍ പ്ലെയിന്‍ ടെക്സ്റ്റ് ഫയലുകള്‍ ആകുന്നു."
 
-#: filetypedetails.cpp:87 filetypesview.cpp:103 kservicelistwidget.cpp:109
+#: filetypedetails.cpp:87 filetypesview.cpp:103 kservicelistwidget.cpp:110
 #, kde-format
 msgid "Add..."
 msgstr "ചേര്‍ക്കുക..."
@@ -96,7 +96,7 @@ msgstr "ചേര്‍ക്കുക..."
 msgid "Add a new pattern for the selected file type."
 msgstr "തെരഞ്ഞെടുത്ത തരത്തിലുള്ള ഫയലിനു് ഒരു പുതിയ മാതൃക ചേര്‍ക്കുക."
 
-#: filetypedetails.cpp:94 kservicelistwidget.cpp:123
+#: filetypedetails.cpp:94 kservicelistwidget.cpp:124
 #, kde-format
 msgid "Remove"
 msgstr "നീക്കം ചെയ്യുക"
@@ -358,22 +358,22 @@ msgstr "%1 എന്ന തരത്തിലുള്ള ഫയലില്‍ 
 msgid "Create New File Type %1"
 msgstr "%1 എന്ന തരത്തിലുള്ള പുതിയ ഫയല്‍ ഉണ്ടാക്കുക"
 
-#: kservicelistwidget.cpp:36 kservicelistwidget.cpp:51
+#: kservicelistwidget.cpp:36 kservicelistwidget.cpp:52
 #, kde-format
 msgid "%1 (%2)"
 msgstr "%1 (%2)"
 
-#: kservicelistwidget.cpp:56
+#: kservicelistwidget.cpp:57
 #, kde-format
 msgid "Application Preference Order"
 msgstr "പ്രയോഗത്തിനുള്ള മുന്‍ഗണനാ ക്രമം"
 
-#: kservicelistwidget.cpp:56
+#: kservicelistwidget.cpp:57
 #, kde-format
 msgid "Services Preference Order"
 msgstr "സേവനങ്ങളുടെ മുന്‍ഗണനാ ക്രമം"
 
-#: kservicelistwidget.cpp:67
+#: kservicelistwidget.cpp:68
 #, kde-format
 msgid ""
 "This is a list of applications associated with files of the selected file "
@@ -387,7 +387,7 @@ msgstr ""
 "മാത്രകയോട് അനുബന്ധിച്ച് ഒന്നിലധികം സേവനങ്ങളുടെങ്ങില്‍, മുകളിലുള്ള വസ്തുക്കള്‍ മറ്റുള്ളവരെ "
 "പിന്തള്ളിയുള്ള ചിട്ടപ്പെടുത്തയിട്ടുള്ള പട്ടിക."
 
-#: kservicelistwidget.cpp:72
+#: kservicelistwidget.cpp:73
 #, kde-format
 msgid ""
 "This is a list of services associated with files of the selected file type. "
@@ -401,12 +401,12 @@ msgstr ""
 "ഫയല്‍ മാത്രകയോട് അനുബന്ധിച്ച് ഒന്നിലധികം സേവനങ്ങളുടെങ്ങില്‍, മുകളിലുള്ള വസ്തുക്കള്‍ മറ്റുള്ളവരെ "
 "പിന്തള്ളിയുള്ള ചിട്ടപ്പെടുത്തയിട്ടുള്ള പട്ടിക."
 
-#: kservicelistwidget.cpp:84
+#: kservicelistwidget.cpp:85
 #, kde-format
 msgid "Move &Up"
 msgstr "&മുകളിലേക്ക് നീങ്ങുക"
 
-#: kservicelistwidget.cpp:90
+#: kservicelistwidget.cpp:91
 #, kde-format
 msgid ""
 "Assigns a higher priority to the selected\n"
@@ -418,7 +418,7 @@ msgstr ""
 "കൂടിയ മുന്‍ഗണന നല്‍കുന്നു എന്നര്‍ത്ഥം. കുറിപ്പ്: ഒരു പ്രയോഗത്തിലേറെ \n"
 "ഈ ഫയല്‍ തരത്തിനു ബന്ധമുണ്ടെങ്കില്‍, ഈ പ്രവര്‍ത്തി തെരഞ്ഞെടുത്ത പ്രയോഗത്തിനു മാത്രമേ ബാധകമാകുകയുള്ളൂ."
 
-#: kservicelistwidget.cpp:94
+#: kservicelistwidget.cpp:95
 #, kde-format
 msgid ""
 "Assigns a higher priority to the selected\n"
@@ -427,12 +427,12 @@ msgstr ""
 "പട്ടികയില്‍ ഒരു സേവനം മുകളിലേക്കു നീക്കിയാല്‍, അതിനു്\n"
 "കൂടിയ മുന്‍ഗണന നല്‍കുന്നു എന്നര്‍ത്ഥം."
 
-#: kservicelistwidget.cpp:97
+#: kservicelistwidget.cpp:98
 #, kde-format
 msgid "Move &Down"
 msgstr "&താഴേക്ക് നീങ്ങുക"
 
-#: kservicelistwidget.cpp:102
+#: kservicelistwidget.cpp:103
 #, kde-format
 msgid ""
 "Assigns a lower priority to the selected\n"
@@ -444,7 +444,7 @@ msgstr ""
 "കുറഞ്ഞ മുന്‍ഗണന നല്‍കുന്നു എന്നര്‍ത്ഥം. കുറിപ്പ്: ഒരു പ്രയോഗത്തിലേറെ \n"
 "ഈ ഫയല്‍ തരത്തിനു ബന്ധമുണ്ടെങ്കില്‍, ഈ പ്രവര്‍ത്തി തെരഞ്ഞെടുത്ത പ്രയോഗത്തിനു മാത്രമേ ബാധകമാകുകയുള്ളൂ."
 
-#: kservicelistwidget.cpp:106
+#: kservicelistwidget.cpp:107
 #, kde-format
 msgid ""
 "Assigns a lower priority to the selected\n"
@@ -453,33 +453,33 @@ msgstr ""
 "പട്ടികയില്‍ ഒരു സേവനം താഴേക്കു നീക്കിയാല്‍, അതിനു്\n"
 "കുറഞ്ഞ മുന്‍ഗണന നല്‍കുന്നു എന്നര്‍ത്ഥം."
 
-#: kservicelistwidget.cpp:114
+#: kservicelistwidget.cpp:115
 #, kde-format
 msgid "Add a new application for this file type."
 msgstr "ഈ ഫയല്‍ രീതിയ്ക്കു് ഒരു പുതിയ പ്രയോഗം ചേര്‍ക്കുക."
 
-#: kservicelistwidget.cpp:116
+#: kservicelistwidget.cpp:117
 #, kde-format
 msgid "Edit..."
 msgstr "മാറ്റം വരുത്തുക..."
 
-#: kservicelistwidget.cpp:121
+#: kservicelistwidget.cpp:122
 #, kde-format
 msgid "Edit command line of the selected application."
 msgstr "തെരഞ്ഞെടുത്ത പ്രയോഗത്തിന്റെ കമാന്‍ഡ് ലൈനില്‍ മാറ്റം വരുത്തുക."
 
-#: kservicelistwidget.cpp:128
+#: kservicelistwidget.cpp:129
 #, kde-format
 msgid "Remove the selected application from the list."
 msgstr "പട്ടികയില്‍ നിന്നും തെരഞ്ഞെടുത്ത പ്രയോഗം നീക്കം ചെയ്യുക."
 
-#: kservicelistwidget.cpp:151
+#: kservicelistwidget.cpp:152
 #, kde-format
 msgctxt "No applications associated with this file type"
 msgid "None"
 msgstr "ഒന്നുമില്ല"
 
-#: kservicelistwidget.cpp:153
+#: kservicelistwidget.cpp:154
 #, kde-format
 msgctxt "No components associated with this file type"
 msgid "None"
