@@ -32,6 +32,7 @@
 #include <KServiceTypeTrader>
 #endif
 #include <KStartupInfo>
+#include <kcmutils_version.h>
 #include <kworkspace.h>
 
 #include <algorithm>
@@ -204,6 +205,8 @@ int main(int _argc, char *_argv[])
     parser.addOption(QCommandLineOption(QStringLiteral("args"), i18n("Arguments for the module"), QLatin1String("arguments")));
     parser.addOption(QCommandLineOption(QStringLiteral("icon"), i18n("Use a specific icon for the window"), QLatin1String("icon")));
     parser.addOption(QCommandLineOption(QStringLiteral("caption"), i18n("Use a specific caption for the window"), QLatin1String("caption")));
+    parser.addOption(
+        QCommandLineOption(QStringLiteral("highlight-non-defaults"), i18n("Show an indicator when settings have changed from their default value")));
 
     parser.parse(app.arguments());
     aboutData.processCommandLine(&parser);
@@ -343,6 +346,12 @@ int main(int _argc, char *_argv[])
     } else {
         dlg->setWindowIcon(QIcon::fromTheme(metaDataList.constFirst().iconName()));
     }
+
+#if KCMUTILS_VERSION >= QT_VERSION_CHECK(5, 240, 0)
+    if (parser.isSet(QStringLiteral("highlight-non-defaults"))) {
+        dlg->setDefaultsIndicatorsVisible(true);
+    }
+#endif
 
     if (app.desktopFileName() == QLatin1String("org.kde.kcmshell5")) {
         const QString path = metaDataList.constFirst().metaDataFileName();
