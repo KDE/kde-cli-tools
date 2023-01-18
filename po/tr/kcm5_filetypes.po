@@ -16,7 +16,7 @@ msgstr ""
 "Project-Id-Version: filetypes\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2023-01-15 00:57+0000\n"
-"PO-Revision-Date: 2023-01-09 01:08+0300\n"
+"PO-Revision-Date: 2023-01-17 22:05+0300\n"
 "Last-Translator: Emir SARI <emir_sari@icloud.com>\n"
 "Language-Team: Turkish <kde-l10n-tr@kde.org>\n"
 "Language: tr\n"
@@ -24,7 +24,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n > 1);\n"
-"X-Generator: Lokalize 22.12.0\n"
+"X-Generator: Lokalize 22.12.1\n"
 
 #, kde-format
 msgctxt "NAME OF TRANSLATORS"
@@ -44,7 +44,7 @@ msgstr "Sol Tıklama Eylemi (sadece Konqueror dosya yöneticisi için)"
 #: filegroupdetails.cpp:26 filetypedetails.cpp:133
 #, kde-format
 msgid "Show file in embedded viewer"
-msgstr "Dosyayı yerleştirilmiş göstericide göster"
+msgstr "Dosyayı gömülü görüntüleyicide göster"
 
 #: filegroupdetails.cpp:27 filetypedetails.cpp:134
 #, kde-format
@@ -62,10 +62,10 @@ msgid ""
 msgstr ""
 "Buradan Konqueror dosya yöneticisinin bu gruba ait bir dosyaya "
 "tıkladığınızda ne yapacağını belirleyebilirsiniz. Konqueror dosyayı yerleşik "
-"bir göstericide gösterebilir ya da ayrı bir uygulama başlatabilir. Belirli "
-"bir dosya türü için bu yapılandırmayı dosya türü yapılandırmasında "
-"'Yerleştirilmiş' bölümünden değiştirebilirsiniz. Dolphin her zaman dosyaları "
-"ayrı bir göstericide gösterir"
+"bir görüntüleyicide gösterebilir veya ayrı bir uygulama başlatabilir. "
+"Belirli bir dosya türü için bu yapılandırmayı dosya türü yapılandırmasında "
+"'Gömülüm' bölümünden değiştirebilirsiniz. Dolphin her zaman dosyaları ayrı "
+"bir görüntüleyicide gösterir"
 
 #: filetypedetails.cpp:61
 #, kde-format
@@ -151,12 +151,12 @@ msgid ""
 "file type is image/png. Dolphin always shows files in a separate viewer."
 msgstr ""
 "Buradan Konqueror dosya yöneticisinin bu tür bir dosyaya tıkladığınızda ne "
-"yapacağını belirleyebilirsiniz. Konqueror dosyayı yerleşik bir göstericide "
-"gösterebilir ya da ayrı bir uygulama başlatabilir. Eğer 'Grup ayarlarını "
-"kullan' seçilmiş ise Konqueror bu grup için belirlenmiş ayarlara göre "
-"hareket edecektir, örnek olarak image/png dosya türü için 'image' grubunun "
-"ayarları kullanılır. Dolphin her zaman dosyaları ayrı bir göstericide "
-"gösterir."
+"yapacağını belirleyebilirsiniz. Konqueror dosyayı yerleşik bir "
+"görüntüleyicide gösterebilir veya ayrı bir uygulama başlatabilir. Eğer 'Grup "
+"ayarlarını kullan' seçilmiş ise Konqueror bu grup için belirlenmiş ayarlara "
+"göre hareket edecektir; örnek olarak image/png dosya türü için 'image' "
+"grubunun ayarları kullanılır. Dolphin her zaman dosyaları ayrı bir "
+"görüntüleyicide gösterir."
 
 #: filetypedetails.cpp:165
 #, kde-format
@@ -166,7 +166,7 @@ msgstr "&Genel"
 #: filetypedetails.cpp:166
 #, kde-format
 msgid "&Embedding"
-msgstr "&Yerleştirilmiş"
+msgstr "&Gömülüm"
 
 #: filetypedetails.cpp:207
 #, kde-format
