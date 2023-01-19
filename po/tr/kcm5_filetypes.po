@@ -16,7 +16,7 @@ msgstr ""
 "Project-Id-Version: filetypes\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2023-01-15 00:57+0000\n"
-"PO-Revision-Date: 2023-01-17 22:05+0300\n"
+"PO-Revision-Date: 2023-01-18 22:31+0300\n"
 "Last-Translator: Emir SARI <emir_sari@icloud.com>\n"
 "Language-Team: Turkish <kde-l10n-tr@kde.org>\n"
 "Language: tr\n"
@@ -39,7 +39,7 @@ msgstr "gorkem@kde.org.tr"
 #: filegroupdetails.cpp:22
 #, kde-format
 msgid "Left Click Action (only for Konqueror file manager)"
-msgstr "Sol Tıklama Eylemi (sadece Konqueror dosya yöneticisi için)"
+msgstr "Sol Tıklama Eylemi (yalnızca Konqueror dosya yöneticisi için)"
 
 #: filegroupdetails.cpp:26 filetypedetails.cpp:133
 #, kde-format
@@ -138,7 +138,7 @@ msgstr "Konqueror'da Sol Tıklama Eylemi"
 #: filetypedetails.cpp:137
 #, kde-format
 msgid "Ask whether to save to disk instead (only for Konqueror browser)"
-msgstr "Diske kaydedilip kaydedilmeyeceğini sor (Sadece Konqueror için)"
+msgstr "Diske kaydedilip kaydedilmeyeceğini sor (Yalnızca Konqueror için)"
 
 #: filetypedetails.cpp:153
 #, kde-format
@@ -316,7 +316,7 @@ msgid ""
 "still end up using them)."
 msgstr ""
 "Bu dosya türünün tanımını tamamen silmek için bu seçeneği kullanabilirsiniz. "
-"Bu seçenek sadece kullanıcı tarafında tanımlanmış dosya türleri için "
+"Bu seçenek yalnızca kullanıcı tarafında tanımlanmış dosya türleri için "
 "geçerlidir. Sistem genel ayarları dosya tipleri silinemez; ancak isterseniz "
 "ilgili eylem listesini boşaltarak kullanılmalarını engelleyebilirsiniz (yine "
 "de dosya içeriğine bakarak etkin olan bazı eylemler çalışmayı sürdürebilir)."
@@ -434,7 +434,7 @@ msgid ""
 msgstr ""
 "Seçili uygulamayı listenin daha yukarısına alarak, ona\n"
 "daha yüksek bir öncelik kazandırır. Not: Dosya türü birden\n"
-"fazla uygulamayla ilişkilendirilmişse, bu işlem sadece seçili\n"
+"fazla uygulamayla ilişkilendirilmişse, bu işlem yalnızca seçili\n"
 "uygulamayı etkileyecektir."
 
 #: kservicelistwidget.cpp:95
@@ -461,7 +461,7 @@ msgid ""
 msgstr ""
 "Seçili uygulamayı listenin daha aşağısına almak,\n"
 "ona daha düşük bir öncelik verir. Not: Dosya türü birden \n"
-"fazla uygulamayla ilişkilendirilmişse, bu işlem sadece seçili\n"
+"fazla uygulamayla ilişkilendirilmişse, bu işlem yalnızca seçili\n"
 "uygulamayı etkileyecektir."
 
 #: kservicelistwidget.cpp:107
