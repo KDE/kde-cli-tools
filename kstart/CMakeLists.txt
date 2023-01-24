@@ -4,7 +4,7 @@ set_package_properties(X11 PROPERTIES DESCRIPTION "X11 libraries"
                         TYPE REQUIRED
                     )
 
-add_executable(kstart kstart.cpp)
+add_executable(kstart kstart.cpp kstart.h)
 target_compile_definitions(kstart PRIVATE -DPROJECT_VERSION="${PROJECT_VERSION}")
 target_link_libraries(kstart
     Qt::Widgets

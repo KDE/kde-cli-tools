@@ -1,7 +1,7 @@
 #  SPDX-FileCopyrightText: 2021 Aleix Pol Gonzalez <aleixpol@kde.org>
 #  SPDX-License-Identifier: GPL-2.0-or-later
 
-add_executable(plasma-open-settings main.cpp)
+add_executable(plasma-open-settings main.cpp main.h)
 target_compile_definitions(plasma-open-settings PRIVATE -DPROJECT_VERSION="${PROJECT_VERSION}")
 target_link_libraries(plasma-open-settings Qt::Core KF5::CoreAddons KF5::KIOGui KF5::I18n)
 install(TARGETS plasma-open-settings ${KDE_INSTALL_TARGETS_DEFAULT_ARGS})

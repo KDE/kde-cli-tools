@@ -24,7 +24,7 @@ set(libfiletypes_SRCS
 
 ########### next target ###############
 
-set(kcm_filetypes_SRCS filetypesview.cpp ${libfiletypes_SRCS})
+set(kcm_filetypes_SRCS filetypesview.cpp filetypesview.h ${libfiletypes_SRCS})
 
 kcoreaddons_add_plugin(kcm_filetypes SOURCES ${kcm_filetypes_SRCS} INSTALL_NAMESPACE "plasma/kcms/systemsettings_qwidgets")
 

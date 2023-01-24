@@ -1,4 +1,4 @@
-add_executable(kbroadcastnotification main.cpp)
+add_executable(kbroadcastnotification main.cpp main.h)
 target_compile_definitions(kbroadcastnotification PRIVATE -DPROJECT_VERSION="${PROJECT_VERSION}")
 target_link_libraries(kbroadcastnotification Qt::DBus KF5::CoreAddons KF5::I18n)
 

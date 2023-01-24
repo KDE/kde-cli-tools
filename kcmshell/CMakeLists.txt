@@ -1,5 +1,5 @@
 
-set(kcmshell_KDEINIT_SRCS main.cpp )
+set(kcmshell_KDEINIT_SRCS main.cpp main.h )
 
 add_executable(kcmshell5 ${kcmshell_KDEINIT_SRCS})
 target_compile_definitions(kcmshell5 PRIVATE -DPROJECT_VERSION="${PROJECT_VERSION}")
