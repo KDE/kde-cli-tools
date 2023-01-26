@@ -62,21 +62,8 @@ static NET::WindowType windowtype = NET::Unknown;
 KStart::KStart()
     : QObject()
 {
-    bool useRule = false;
-
-#ifdef HAVE_X11
-    if (QX11Info::isPlatformX11()) {
-        NETRootInfo i(QX11Info::connection(), NET::Supported);
-        useRule = i.isSupported(NET::WM2KDETemporaryRules);
-    }
-#endif
-
-    if (useRule) {
-        sendRule();
-    } else {
-        // connect to window add to get the NEW windows
-        connect(KWindowSystem::self(), &KWindowSystem::windowAdded, this, &KStart::windowAdded);
-    }
+    // connect to window add to get the NEW windows
+    connect(KWindowSystem::self(), &KWindowSystem::windowAdded, this, &KStart::windowAdded);
 
     // finally execute the comand
     if (!servicePath.isEmpty()) { // TODO KF6 remove
@@ -107,67 +94,7 @@ KStart::KStart()
         job->exec();
     }
 
-    QTimer::singleShot(useRule ? 0 : 120 * 1000, qApp, SLOT(quit()));
-}
-
-void KStart::sendRule()
-{
-    KXMessages msg;
-    QString message;
-    if (!windowtitle.isEmpty()) {
-        message += QStringLiteral("title=") + windowtitle + QStringLiteral("\ntitlematch=3\n"); // 3 = regexp match
-    }
-    if (!windowclass.isEmpty()) {
-        message += QStringLiteral("wmclass=") + windowclass + QStringLiteral("\nwmclassmatch=1\n") // 1 = exact match
-            + QStringLiteral("wmclasscomplete=")
-            // if windowclass contains a space (i.e. 2 words, use whole WM_CLASS)
-            + (windowclass.contains(QLatin1Char(' ')) ? QStringLiteral("true") : QStringLiteral("false")) + QLatin1Char('\n');
-    }
-    if ((!windowtitle.isEmpty()) || (!windowclass.isEmpty())) {
-        // always ignore these window types
-        message += QStringLiteral("types=")
-            + QString().setNum(-1U & ~(NET::TopMenuMask | NET::ToolbarMask | NET::DesktopMask | NET::SplashMask | NET::MenuMask)) + QLatin1Char('\n');
-    } else {
-        // accept only "normal" windows
-        message += QStringLiteral("types=") + QString().setNum(NET::NormalMask | NET::DialogMask) + QLatin1Char('\n');
-    }
-    if ((desktop > 0 && desktop <= KWindowSystem::numberOfDesktops()) || desktop == NETWinInfo::OnAllDesktops) {
-        message += QStringLiteral("desktop=") + QString().setNum(desktop) + QStringLiteral("\ndesktoprule=3\n");
-    }
-    if (activate) {
-        message += QStringLiteral("fsplevel=0\nfsplevelrule=2\n");
-    }
-    if (iconify) {
-        message += QStringLiteral("minimize=true\nminimizerule=3\n");
-    }
-    if (windowtype != NET::Unknown) {
-        message += QStringLiteral("type=") + QString().setNum(windowtype) + QStringLiteral("\ntyperule=2");
-    }
-    if (state) {
-        if (state & NET::KeepAbove) {
-            message += QStringLiteral("above=true\naboverule=3\n");
-        }
-        if (state & NET::KeepBelow) {
-            message += QStringLiteral("below=true\nbelowrule=3\n");
-        }
-        if (state & NET::SkipTaskbar) {
-            message += QStringLiteral("skiptaskbar=true\nskiptaskbarrule=3\n");
-        }
-        if (state & NET::SkipPager) {
-            message += QStringLiteral("skippager=true\nskippagerrule=3\n");
-        }
-        if (state & NET::MaxVert) {
-            message += QStringLiteral("maximizevert=true\nmaximizevertrule=3\n");
-        }
-        if (state & NET::MaxHoriz) {
-            message += QStringLiteral("maximizehoriz=true\nmaximizehorizrule=3\n");
-        }
-        if (state & NET::FullScreen) {
-            message += QStringLiteral("fullscreen=true\nfullscreenrule=3\n");
-        }
-    }
-
-    msg.broadcastMessage("_KDE_NET_WM_TEMPORARY_RULES", message, -1);
+    QTimer::singleShot(120 * 1000, qApp, SLOT(quit()));
 }
 
 const NET::WindowTypes SUPPORTED_WINDOW_TYPES_MASK = NET::NormalMask | NET::DesktopMask | NET::DockMask | NET::ToolbarMask | NET::MenuMask | NET::DialogMask

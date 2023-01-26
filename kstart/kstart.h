@@ -28,7 +28,6 @@ public Q_SLOTS:
 
 private:
     void applyStyle(WId);
-    void sendRule();
 };
 
 #endif
