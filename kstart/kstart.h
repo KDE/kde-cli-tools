@@ -11,7 +11,7 @@
 #ifndef KSTART_H
 #define KSTART_H
 
-#include <QWidget>
+#include <QObject>
 
 class KStart : public QObject
 {
@@ -19,15 +19,6 @@ class KStart : public QObject
 
 public:
     KStart();
-    ~KStart() override
-    {
-    }
-
-public Q_SLOTS:
-    void windowAdded(WId);
-
-private:
-    void applyStyle(WId);
 };
 
 #endif
