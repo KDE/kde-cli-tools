@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kcmshell\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2022-06-29 00:46+0000\n"
+"POT-Creation-Date: 2023-01-28 00:59+0000\n"
 "PO-Revision-Date: 2013-02-23 17:39+0530\n"
 "Last-Translator: Chetan Khona <chetan@kompkin.com>\n"
 "Language-Team: Marathi <kde-i18n-doc@kde.org>\n"
@@ -33,110 +33,115 @@ msgstr ""
 "sandeep.shedmake@gmail.com, \n"
 "chetan@kompkin.com"
 
-#: main.cpp:183
+#: main.cpp:184
 #, kde-format
 msgid "System Settings Module"
 msgstr ""
 
-#: main.cpp:185
+#: main.cpp:186
 #, fuzzy, kde-format
 #| msgid "A tool to start single KDE control modules"
 msgid "A tool to start single system settings modules"
 msgstr "एकमेव केडीई नियंत्रण विभाग प्रारंभ करण्याकरिता साधन"
 
-#: main.cpp:187
+#: main.cpp:188
 #, fuzzy, kde-format
 #| msgid "(c) 1999-2004, The KDE Developers"
 msgid "(c) 1999-2016, The KDE Developers"
 msgstr "(c) 1999-2004, The केडीई Developers"
 
-#: main.cpp:189
+#: main.cpp:190
 #, kde-format
 msgid "Frans Englich"
 msgstr "Frans Englich"
 
-#: main.cpp:189
+#: main.cpp:190
 #, kde-format
 msgid "Maintainer"
 msgstr "पालक"
 
-#: main.cpp:190
+#: main.cpp:191
 #, kde-format
 msgid "Daniel Molkentin"
 msgstr "Daniel Molkentin"
 
-#: main.cpp:191
+#: main.cpp:192
 #, kde-format
 msgid "Matthias Hoelzer-Kluepfel"
 msgstr "मैथियास होल्ज़र-क्लूपफेल"
 
-#: main.cpp:192
+#: main.cpp:193
 #, kde-format
 msgid "Matthias Elter"
 msgstr "Matthias Elter"
 
-#: main.cpp:193
+#: main.cpp:194
 #, kde-format
 msgid "Matthias Ettrich"
 msgstr "Matthias Ettrich"
 
-#: main.cpp:194
+#: main.cpp:195
 #, kde-format
 msgid "Waldo Bastian"
 msgstr "Waldo Bastian"
 
-#: main.cpp:200
+#: main.cpp:201
 #, kde-format
 msgid "List all possible modules"
 msgstr "संभाव्य विभाग दर्शवा"
 
-#: main.cpp:201
+#: main.cpp:202
 #, kde-format
 msgid "Configuration module to open"
 msgstr "उघडण्याचा संयोजना विभाग"
 
-#: main.cpp:202
+#: main.cpp:203
 #, kde-format
 msgid "Specify a particular language"
 msgstr "ठराविक भाषा निर्देशीत करा"
 
-#: main.cpp:203
+#: main.cpp:204
 #, kde-format
 msgid "Do not display main window"
 msgstr "मुख्य चौकट दर्शवू नका"
 
-#: main.cpp:204
+#: main.cpp:205
 #, kde-format
 msgid "Arguments for the module"
 msgstr "विभागासाठी बाबी "
 
-#: main.cpp:205
+#: main.cpp:206
 #, kde-format
 msgid "Use a specific icon for the window"
 msgstr ""
 
-#: main.cpp:206
+#: main.cpp:207
 #, kde-format
 msgid "Use a specific caption for the window"
 msgstr ""
 
-#: main.cpp:215
+#: main.cpp:209
+#, kde-format
+msgid "Show an indicator when settings have changed from their default value"
+msgstr ""
+
+#: main.cpp:218
 #, kde-format
 msgid ""
 "--lang is deprecated. Please set the LANGUAGE environment variable instead"
 msgstr ""
 
-#: main.cpp:219
+#: main.cpp:222
 #, kde-format
 msgid "The following modules are available:"
 msgstr "खालील विभाग उपलब्ध आहे:"
 
-#: main.cpp:239
+#: main.cpp:242
 #, kde-format
 msgid "No description available"
 msgstr "वर्णन उपलब्ध नाही"
 
-#: main.cpp:303
+#: main.cpp:306
 #, fuzzy, kde-format
 #| msgid ""
 #| "Could not find module '%1'. See kcmshell4 --list for the full list of "

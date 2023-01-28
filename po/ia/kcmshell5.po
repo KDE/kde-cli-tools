@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2022-06-29 00:46+0000\n"
+"POT-Creation-Date: 2023-01-28 00:59+0000\n"
 "PO-Revision-Date: 2020-09-16 22:49+0100\n"
 "Last-Translator: Giovanni Sora <g.sora@tiscali.it>\n"
 "Language-Team: Interlingua <kde-i18n-doc@kde.org>\n"
@@ -27,92 +27,97 @@ msgctxt "EMAIL OF TRANSLATORS"
 msgid "Your emails"
 msgstr "g.sora@tiscali.it"
 
-#: main.cpp:183
+#: main.cpp:184
 #, kde-format
 msgid "System Settings Module"
 msgstr "Modulo de Preferentias de Systema"
 
-#: main.cpp:185
+#: main.cpp:186
 #, kde-format
 msgid "A tool to start single system settings modules"
 msgstr "Un instrumento pro initiar singule modulos de preferentias de systema"
 
-#: main.cpp:187
+#: main.cpp:188
 #, kde-format
 msgid "(c) 1999-2016, The KDE Developers"
 msgstr "(c) 1999-2016, Le disveloppatores de KDE"
 
-#: main.cpp:189
+#: main.cpp:190
 #, kde-format
 msgid "Frans Englich"
 msgstr "Frans Englich"
 
-#: main.cpp:189
+#: main.cpp:190
 #, kde-format
 msgid "Maintainer"
 msgstr "Mantenitor"
 
-#: main.cpp:190
+#: main.cpp:191
 #, kde-format
 msgid "Daniel Molkentin"
 msgstr "Daniel Molkentin"
 
-#: main.cpp:191
+#: main.cpp:192
 #, kde-format
 msgid "Matthias Hoelzer-Kluepfel"
 msgstr "Matthias Hoelzer-Kluepfel"
 
-#: main.cpp:192
+#: main.cpp:193
 #, kde-format
 msgid "Matthias Elter"
 msgstr "Matthias Elter"
 
-#: main.cpp:193
+#: main.cpp:194
 #, kde-format
 msgid "Matthias Ettrich"
 msgstr "Matthias Ettrich"
 
-#: main.cpp:194
+#: main.cpp:195
 #, kde-format
 msgid "Waldo Bastian"
 msgstr "Waldo Bastian"
 
-#: main.cpp:200
+#: main.cpp:201
 #, kde-format
 msgid "List all possible modules"
 msgstr "Lista omne possibile modulos"
 
-#: main.cpp:201
+#: main.cpp:202
 #, kde-format
 msgid "Configuration module to open"
 msgstr "Modulo de configuration de aperir"
 
-#: main.cpp:202
+#: main.cpp:203
 #, kde-format
 msgid "Specify a particular language"
 msgstr "Specifica un specific linguage"
 
-#: main.cpp:203
+#: main.cpp:204
 #, kde-format
 msgid "Do not display main window"
 msgstr "Non monstra fenestra principal"
 
-#: main.cpp:204
+#: main.cpp:205
 #, kde-format
 msgid "Arguments for the module"
 msgstr "Argumentos pro le modulo"
 
-#: main.cpp:205
+#: main.cpp:206
 #, kde-format
 msgid "Use a specific icon for the window"
 msgstr "Usa un icone specific per le fenestra"
 
-#: main.cpp:206
+#: main.cpp:207
 #, kde-format
 msgid "Use a specific caption for the window"
 msgstr "Usa un legenda specific per le fenestra"
 
-#: main.cpp:215
+#: main.cpp:209
+#, kde-format
+msgid "Show an indicator when settings have changed from their default value"
+msgstr ""
+
+#: main.cpp:218
 #, kde-format
 msgid ""
 "--lang is deprecated. Please set the LANGUAGE environment variable instead"
@@ -120,17 +125,17 @@ msgstr ""
 "--lang es deprecate. Pro favor in loco tu fixa le variabile e ambiente "
 "LANGUAGE "
 
-#: main.cpp:219
+#: main.cpp:222
 #, kde-format
 msgid "The following modules are available:"
 msgstr "Le sequente modulos es disponibile:"
 
-#: main.cpp:239
+#: main.cpp:242
 #, kde-format
 msgid "No description available"
 msgstr "Necun Description disponibile"
 
-#: main.cpp:303
+#: main.cpp:306
 #, kde-format
 msgid ""
 "Could not find module '%1'. See kcmshell5 --list for the full list of "
