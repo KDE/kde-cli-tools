@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: kde-cli-tools\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2023-01-28 00:59+0000\n"
-"PO-Revision-Date: 2022-08-23 12:50+0200\n"
+"PO-Revision-Date: 2023-01-28 07:39+0100\n"
 "Last-Translator: Temuri Doghonadze <temuri.doghonadze@gmail.com>\n"
 "Language-Team: Georgian <kde-i18n-doc@kde.org>\n"
 "Language: ka\n"
@@ -16,7 +16,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
-"X-Generator: Poedit 3.1.1\n"
+"X-Generator: Poedit 3.2.2\n"
 
 #, kde-format
 msgctxt "NAME OF TRANSLATORS"
@@ -46,7 +46,7 @@ msgstr "(c) 1999-2016, The KDE -ის პროგრამისტები"
 #: main.cpp:190
 #, kde-format
 msgid "Frans Englich"
-msgstr ""
+msgstr "Frans Englich"
 
 #: main.cpp:190
 #, kde-format
@@ -117,12 +117,13 @@ msgstr "ფანჯრისთვის სათაურის მითი�
 #, kde-format
 msgid "Show an indicator when settings have changed from their default value"
 msgstr ""
+"ინდიკატორის ჩვენება პარამეტრების ნაგულისხმებ მნიშვნელობებზე დაბრუნებისას"
 
 #: main.cpp:218
 #, kde-format
 msgid ""
 "--lang is deprecated. Please set the LANGUAGE environment variable instead"
-msgstr ""
+msgstr "--lang მოძველებულია. სჯობს გარემოს ცვლადი LANGUAGE გამოიყენოთ"
 
 #: main.cpp:222
 #, kde-format
@@ -140,3 +141,4 @@ msgid ""
 "Could not find module '%1'. See kcmshell5 --list for the full list of "
 "modules."
 msgstr ""
+"მოდული '%1' ვერ ვიპოვე. მოდულების სიის სანახავად იხილეთ kcmshell5 --list ."

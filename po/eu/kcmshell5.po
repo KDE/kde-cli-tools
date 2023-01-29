@@ -5,29 +5,29 @@
 #
 # Translators:
 # Marcos  <marcos@euskalgnu.org>, 2005, 2007.
-# Iñigo Salvador Azurmendi <xalba@euskalnet.net>, 2011, 2014, 2018.
+# Iñigo Salvador Azurmendi <xalba@euskalnet.net>, 2011, 2014, 2018, 2023.
 # Hizkuntza Politikarako Sailburuordetza <hizpol@ej-gv.es>, 2013.
 msgid ""
 msgstr ""
 "Project-Id-Version: kcmshell5\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2023-01-28 00:59+0000\n"
-"PO-Revision-Date: 2018-07-14 22:18+0100\n"
-"Last-Translator: Iñigo Salvador Azurmendi <xalba@euskalnet.net>\n"
-"Language-Team: Basque <kde-i18n-doc@kde.org>\n"
+"PO-Revision-Date: 2023-01-29 00:16+0100\n"
+"Last-Translator: Iñigo Salvador Azurmendi <xalba@ni.eus>\n"
+"Language-Team: Basque\n"
 "Language: eu\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Generator: Lokalize 2.0\n"
+"X-Generator: Lokalize 22.12.1\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
 
 #, kde-format
 msgctxt "NAME OF TRANSLATORS"
 msgid "Your names"
 msgstr ""
-"Marcos Goyeneche,Iñigo Salvador Azurmendi,Hizkuntza Politikarako "
-"Sailburuordetza"
+"Iñigo Salvador Azurmendi,Hizkuntza Politikarako Sailburuordetza,Marcos "
+"Goyeneche"
 
 #, kde-format
 msgctxt "EMAIL OF TRANSLATORS"
@@ -123,6 +123,7 @@ msgstr "Erabili berariazko goiburu bat leihoarentzako"
 #, kde-format
 msgid "Show an indicator when settings have changed from their default value"
 msgstr ""
+"Erakutsi adierazle bat ezarpenak haien balio lehenetsietatik aldatu direnean"
 
 #: main.cpp:218
 #, kde-format
