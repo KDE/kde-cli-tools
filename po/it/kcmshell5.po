@@ -3,13 +3,13 @@
 # Andrea Rizzi <rizzi@kde.org>, 2005.
 # Dario Panico <Dareus_Persarumrex@fastwebnet.it>, 2008.
 # Pino Toscano <toscano.pino@tiscali.it>, 2011.
-# Vincenzo Reale <smart2128vr@gmail.com>, 2014, 2015.
+# Vincenzo Reale <smart2128vr@gmail.com>, 2014, 2015, 2023.
 msgid ""
 msgstr ""
 "Project-Id-Version: kcmshell\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2023-01-28 00:59+0000\n"
-"PO-Revision-Date: 2016-03-17 20:31+0100\n"
+"PO-Revision-Date: 2023-01-28 19:49+0100\n"
 "Last-Translator: Vincenzo Reale <smart2128vr@gmail.com>\n"
 "Language-Team: Italian <kde-i18n-it@kde.org>\n"
 "Language: it\n"
@@ -17,7 +17,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
-"X-Generator: Lokalize 2.0\n"
+"X-Generator: Lokalize 22.12.1\n"
 
 #, kde-format
 msgctxt "NAME OF TRANSLATORS"
@@ -118,6 +118,8 @@ msgstr "Utilizza un titolo specifico per la finestra"
 #, kde-format
 msgid "Show an indicator when settings have changed from their default value"
 msgstr ""
+"Mostra un indicatore quando le impostazioni sono modificate rispetto al loro "
+"valore predefinito"
 
 #: main.cpp:218
 #, kde-format
