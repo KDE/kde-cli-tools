@@ -8,13 +8,13 @@
 # Ozan Çağlayan <ozan@pardus.org.tr>, 2010, 2013.
 # Ongun Kanat <ongun.kanat@gmail.com>, 2014.
 # Volkan Gezer <volkangezer@gmail.com>, 2017.
-# Emir SARI <emir_sari@icloud.com>, 2022.
+# Emir SARI <emir_sari@icloud.com>, 2022, 2023.
 msgid ""
 msgstr ""
 "Project-Id-Version: kioclient\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2022-08-22 00:47+0000\n"
-"PO-Revision-Date: 2022-04-06 14:13+0300\n"
+"PO-Revision-Date: 2023-02-01 13:01+0300\n"
 "Last-Translator: Emir SARI <emir_sari@icloud.com>\n"
 "Language-Team: Turkish <kde-l10n-tr@kde.org>\n"
 "Language: tr\n"
@@ -22,7 +22,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n > 1);\n"
-"X-Generator: Lokalize 21.12.3\n"
+"X-Generator: Lokalize 22.12.1\n"
 
 #, kde-format
 msgctxt "NAME OF TRANSLATORS"
@@ -88,7 +88,8 @@ msgstr ""
 "  %1 'kaynak' 'hedef'\n"
 "            # 'kaynak' URL'yi 'hedef'e taşır.\n"
 "            #   'kaynak', bir URL listesi olabilir.\n"
-"            #   'hedef', dosyaları çöpe taşımak için \"trash:/\" olabilir.\n"
+"            #   'hedef', dosyaları çöp kutusuna taşımak için \"trash:/\" "
+"olabilir.\n"
 "            #   Kısa sürüm 'kioclient mv' de ayrıca kullanılabilir.\n"
 "\n"
 
