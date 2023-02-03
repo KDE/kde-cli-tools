@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kstart\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2022-12-17 00:51+0000\n"
+"POT-Creation-Date: 2023-02-03 01:00+0000\n"
 "PO-Revision-Date: 2020-09-17 09:40+0200\n"
 "Last-Translator: Burkhard Lück <lueck@hube-lueck.de>\n"
 "Language-Team: German <kde-i18n-de@kde.org>\n"
@@ -27,51 +27,42 @@ msgctxt "EMAIL OF TRANSLATORS"
 msgid "Your emails"
 msgstr "thd@kde.org"
 
-#: kstart.cpp:255
+#: kstart.cpp:78
 #, kde-format
 msgid "KStart"
 msgstr "KStart"
 
-#: kstart.cpp:257
+#: kstart.cpp:80
 #, kde-format
-msgid ""
-"Utility to launch applications with special window properties \n"
-"such as iconified, maximized, a certain virtual desktop, a special "
-"decoration\n"
-"and so on."
+msgid "Utility to launch applications"
 msgstr ""
-"Dienstprogramm, um Programme mit bestimmten KDE-Fenstereigenschaften zu "
-"starten\n"
-"wie z. B. als Symbol, maximiert, auf einer bestimmten Arbeitsfläche, mit "
-"einer bestimmten Dekoration\n"
-"und so weiter."
 
-#: kstart.cpp:262
+#: kstart.cpp:82
 #, kde-format
 msgid "(C) 1997-2000 Matthias Ettrich (ettrich@kde.org)"
 msgstr "© 1997–2000 Matthias Ettrich (ettrich@kde.org)"
 
-#: kstart.cpp:264
+#: kstart.cpp:84
 #, kde-format
 msgid "Matthias Ettrich"
 msgstr "Matthias Ettrich"
 
-#: kstart.cpp:265
+#: kstart.cpp:85
 #, kde-format
 msgid "David Faure"
 msgstr "David Faure"
 
-#: kstart.cpp:266
+#: kstart.cpp:86
 #, kde-format
 msgid "Richard J. Moore"
 msgstr "Richard J. Moore"
 
-#: kstart.cpp:271
+#: kstart.cpp:91
 #, kde-format
 msgid "Command to execute"
 msgstr "Auszuführender Befehl"
 
-#: kstart.cpp:275
+#: kstart.cpp:95
 #, kde-format
 msgid ""
 "Alternative to <command>: desktop file path to start. D-Bus service will be "
@@ -81,129 +72,109 @@ msgstr ""
 "an die Standardausgabe ausgegeben. Veraltet, benutzen Sie statt dessen -"
 "application"
 
-#: kstart.cpp:278
+#: kstart.cpp:98
 #, kde-format
 msgid "Alternative to <command>: desktop file to start."
 msgstr "Alternative zu <command>: zu startende .desktop-Datei."
 
-#: kstart.cpp:281
+#: kstart.cpp:101
 #, kde-format
 msgid "Optional URL to pass <desktopfile>, when using --service"
 msgstr ""
 "Optionale URL zu <desktopfile>, wenn der Parameter --service verwendet wird"
 
-#: kstart.cpp:284
-#, kde-format
-msgid "A regular expression matching the window title"
-msgstr "Regulärer Ausdruck, der mit dem Fenstertitel übereinstimmt"
-
-#: kstart.cpp:286
-#, kde-format
-msgid ""
-"A string matching the window class (WM_CLASS property)\n"
-"The window class can be found out by running\n"
-"'xprop | grep WM_CLASS' and clicking on a window\n"
-"(use either both parts separated by a space or only the right part).\n"
-"NOTE: If you specify neither window title nor window class,\n"
-"then the very first window to appear will be taken;\n"
-"omitting both options is NOT recommended."
-msgstr ""
-"Zeichenfolge, die der Fensterklasse entspricht (WM_CLASS property).\n"
-"Diese Klasse lässt sich herausfinden durch Eingabe von\n"
-"„xprop | grep WM_CLASS“ und Klicken auf ein Fenster.\n"
-"(verwenden Sie beide Teile durch ein Leerzeichen getrennt oder nur den "
-"rechten)\n"
-"Beachten Sie: Wenn Sie weder Fenstertitel noch -klasse eingeben,\n"
-"wird das nächste Fenster zugrunde gelegt, das sich öffnet.\n"
-"Es ist daher nicht empfehlenswert, beide Optionen zu überspringen."
-
-#: kstart.cpp:295
-#, kde-format
-msgid "Desktop on which to make the window appear"
-msgstr "Arbeitsfläche, auf der das Fenster erscheinen soll"
-
-#: kstart.cpp:297
-#, kde-format
-msgid ""
-"Make the window appear on the desktop that was active\n"
-"when starting the application"
-msgstr ""
-"Lässt das Fenster auf derjenigen Arbeitsfläche erscheinen,\n"
-"die beim Start des Programms aktiv war."
-
-#: kstart.cpp:298
-#, kde-format
-msgid "Make the window appear on all desktops"
-msgstr "Fenster soll auf allen Arbeitsflächen erscheinen."
-
-#: kstart.cpp:299
-#, kde-format
-msgid "Iconify the window"
-msgstr "Fenster als Symbol darstellen"
-
-#: kstart.cpp:300
-#, kde-format
-msgid "Maximize the window"
-msgstr "Fenster maximieren"
-
-#: kstart.cpp:301
-#, kde-format
-msgid "Maximize the window vertically"
-msgstr "Fenster senkrecht maximieren"
-
-#: kstart.cpp:302
-#, kde-format
-msgid "Maximize the window horizontally"
-msgstr "Fenster waagerecht maximieren"
-
-#: kstart.cpp:303
-#, kde-format
-msgid "Show window fullscreen"
-msgstr "Fenster im Vollbildmodus anzeigen"
-
-#: kstart.cpp:305
-#, kde-format
-msgid ""
-"The window type: Normal, Desktop, Dock, Toolbar, \n"
-"Menu, Dialog, TopMenu or Override"
-msgstr ""
-"Der Fenstertyp: Normal, Desktop (Arbeitsfläche), Dock (angedockt), Toolbar "
-"(Werkzeugleiste),\n"
-"Menu (Menü), Dialog, TopMenu (Menü oben) oder Override (Überschreiben)"
-
-#: kstart.cpp:308
-#, kde-format
-msgid ""
-"Jump to the window even if it is started on a \n"
-"different virtual desktop"
-msgstr ""
-"In Fenster springen, auch wenn es auf einer anderen Arbeitsfläche \n"
-"gestartet wurde."
-
-#: kstart.cpp:311
-#, kde-format
-msgid "Try to keep the window above other windows"
-msgstr "Fenster möglichst im Vordergrund halten"
-
-#: kstart.cpp:313
-#, kde-format
-msgid "Try to keep the window below other windows"
-msgstr "Fenster möglichst im Hintergrund halten"
-
-#: kstart.cpp:314
-#, kde-format
-msgid "The window does not get an entry in the taskbar"
-msgstr "Das Fenster erhält keinen Eintrag in der Fensterleiste."
-
-#: kstart.cpp:315
-#, kde-format
-msgid "The window does not get an entry on the pager"
-msgstr "Das Fenster erhält keinen Eintrag im Arbeitsflächenumschalter."
-
-#: kstart.cpp:329
+#: kstart.cpp:115
 #, kde-format
 msgid "No command specified"
 msgstr "Kein Befehl angegeben"
+
+#~ msgid ""
+#~ "Utility to launch applications with special window properties \n"
+#~ "such as iconified, maximized, a certain virtual desktop, a special "
+#~ "decoration\n"
+#~ "and so on."
+#~ msgstr ""
+#~ "Dienstprogramm, um Programme mit bestimmten KDE-Fenstereigenschaften zu "
+#~ "starten\n"
+#~ "wie z. B. als Symbol, maximiert, auf einer bestimmten Arbeitsfläche, mit "
+#~ "einer bestimmten Dekoration\n"
+#~ "und so weiter."
+
+#~ msgid "A regular expression matching the window title"
+#~ msgstr "Regulärer Ausdruck, der mit dem Fenstertitel übereinstimmt"
+
+#~ msgid ""
+#~ "A string matching the window class (WM_CLASS property)\n"
+#~ "The window class can be found out by running\n"
+#~ "'xprop | grep WM_CLASS' and clicking on a window\n"
+#~ "(use either both parts separated by a space or only the right part).\n"
+#~ "NOTE: If you specify neither window title nor window class,\n"
+#~ "then the very first window to appear will be taken;\n"
+#~ "omitting both options is NOT recommended."
+#~ msgstr ""
+#~ "Zeichenfolge, die der Fensterklasse entspricht (WM_CLASS property).\n"
+#~ "Diese Klasse lässt sich herausfinden durch Eingabe von\n"
+#~ "„xprop | grep WM_CLASS“ und Klicken auf ein Fenster.\n"
+#~ "(verwenden Sie beide Teile durch ein Leerzeichen getrennt oder nur den "
+#~ "rechten)\n"
+#~ "Beachten Sie: Wenn Sie weder Fenstertitel noch -klasse eingeben,\n"
+#~ "wird das nächste Fenster zugrunde gelegt, das sich öffnet.\n"
+#~ "Es ist daher nicht empfehlenswert, beide Optionen zu überspringen."
+
+#~ msgid "Desktop on which to make the window appear"
+#~ msgstr "Arbeitsfläche, auf der das Fenster erscheinen soll"
+
+#~ msgid ""
+#~ "Make the window appear on the desktop that was active\n"
+#~ "when starting the application"
+#~ msgstr ""
+#~ "Lässt das Fenster auf derjenigen Arbeitsfläche erscheinen,\n"
+#~ "die beim Start des Programms aktiv war."
+
+#~ msgid "Make the window appear on all desktops"
+#~ msgstr "Fenster soll auf allen Arbeitsflächen erscheinen."
+
+#~ msgid "Iconify the window"
+#~ msgstr "Fenster als Symbol darstellen"
+
+#~ msgid "Maximize the window"
+#~ msgstr "Fenster maximieren"
+
+#~ msgid "Maximize the window vertically"
+#~ msgstr "Fenster senkrecht maximieren"
+
+#~ msgid "Maximize the window horizontally"
+#~ msgstr "Fenster waagerecht maximieren"
+
+#~ msgid "Show window fullscreen"
+#~ msgstr "Fenster im Vollbildmodus anzeigen"
+
+#~ msgid ""
+#~ "The window type: Normal, Desktop, Dock, Toolbar, \n"
+#~ "Menu, Dialog, TopMenu or Override"
+#~ msgstr ""
+#~ "Der Fenstertyp: Normal, Desktop (Arbeitsfläche), Dock (angedockt), "
+#~ "Toolbar (Werkzeugleiste),\n"
+#~ "Menu (Menü), Dialog, TopMenu (Menü oben) oder Override (Überschreiben)"
+
+#~ msgid ""
+#~ "Jump to the window even if it is started on a \n"
+#~ "different virtual desktop"
+#~ msgstr ""
+#~ "In Fenster springen, auch wenn es auf einer anderen Arbeitsfläche \n"
+#~ "gestartet wurde."
+
+#~ msgid "Try to keep the window above other windows"
+#~ msgstr "Fenster möglichst im Vordergrund halten"
+
+#~ msgid "Try to keep the window below other windows"
+#~ msgstr "Fenster möglichst im Hintergrund halten"
+
+#~ msgid "The window does not get an entry in the taskbar"
+#~ msgstr "Das Fenster erhält keinen Eintrag in der Fensterleiste."
+
+#~ msgid "The window does not get an entry on the pager"
+#~ msgstr "Das Fenster erhält keinen Eintrag im Arbeitsflächenumschalter."
 
 #~ msgid "The window is sent to the system tray in Kicker"
 #~ msgstr ""

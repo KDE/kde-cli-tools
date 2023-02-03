@@ -14,7 +14,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kstart\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2022-12-17 00:51+0000\n"
+"POT-Creation-Date: 2023-02-03 01:00+0000\n"
 "PO-Revision-Date: 2020-08-23 13:09+0300\n"
 "Last-Translator: Alexander Yavorsky <kekcuha@gmail.com>\n"
 "Language-Team: Russian <kde-russian@lists.kde.ru>\n"
@@ -40,49 +40,42 @@ msgctxt "EMAIL OF TRANSLATORS"
 msgid "Your emails"
 msgstr "dyp@perchine.com,Hermann.Zheboldov@shq.ru,mokhin@bog.msu.ru"
 
-#: kstart.cpp:255
+#: kstart.cpp:78
 #, kde-format
 msgid "KStart"
 msgstr "KStart"
 
-#: kstart.cpp:257
+#: kstart.cpp:80
 #, kde-format
-msgid ""
-"Utility to launch applications with special window properties \n"
-"such as iconified, maximized, a certain virtual desktop, a special "
-"decoration\n"
-"and so on."
+msgid "Utility to launch applications"
 msgstr ""
-"Программа для запуска приложений со специальными свойствами окна,\n"
-"такими как свёрнутое, распахнутое, на определённом рабочем столе \n"
-"и так далее."
 
-#: kstart.cpp:262
+#: kstart.cpp:82
 #, kde-format
 msgid "(C) 1997-2000 Matthias Ettrich (ettrich@kde.org)"
 msgstr "© Matthias Ettrich (ettrich@kde.org), 1997-2000"
 
-#: kstart.cpp:264
+#: kstart.cpp:84
 #, kde-format
 msgid "Matthias Ettrich"
 msgstr "Matthias Ettrich"
 
-#: kstart.cpp:265
+#: kstart.cpp:85
 #, kde-format
 msgid "David Faure"
 msgstr "David Faure"
 
-#: kstart.cpp:266
+#: kstart.cpp:86
 #, kde-format
 msgid "Richard J. Moore"
 msgstr "Ричард Дж. Мур (Richard J. Moore)"
 
-#: kstart.cpp:271
+#: kstart.cpp:91
 #, kde-format
 msgid "Command to execute"
 msgstr "Выполнить команду."
 
-#: kstart.cpp:275
+#: kstart.cpp:95
 #, kde-format
 msgid ""
 "Alternative to <command>: desktop file path to start. D-Bus service will be "
@@ -92,128 +85,106 @@ msgstr ""
 "D-Bus будет направлен в стандартный поток вывода. Эта команда является "
 "устаревшей, используйте команду --application"
 
-#: kstart.cpp:278
+#: kstart.cpp:98
 #, kde-format
 msgid "Alternative to <command>: desktop file to start."
 msgstr "Альтернатива вызова команды <command> - запуск файла .desktop."
 
-#: kstart.cpp:281
+#: kstart.cpp:101
 #, kde-format
 msgid "Optional URL to pass <desktopfile>, when using --service"
 msgstr ""
 "Дополнительный URL к <desktopfile> при использовании параметра --service."
 
-#: kstart.cpp:284
-#, kde-format
-msgid "A regular expression matching the window title"
-msgstr "Регулярное выражение, соответствующее заголовку окна."
-
-#: kstart.cpp:286
-#, kde-format
-msgid ""
-"A string matching the window class (WM_CLASS property)\n"
-"The window class can be found out by running\n"
-"'xprop | grep WM_CLASS' and clicking on a window\n"
-"(use either both parts separated by a space or only the right part).\n"
-"NOTE: If you specify neither window title nor window class,\n"
-"then the very first window to appear will be taken;\n"
-"omitting both options is NOT recommended."
-msgstr ""
-"Строка, соответствующая классу окна (свойство WM_CLASS).\n"
-"Класс окна можно определить, запустив команду\n"
-"«xprop | grep WM_CLASS» и потом щёлкнув на окне.\n"
-"Примечание: если вы не укажете ни заголовок, ни \n"
-"класс окна, будет взято первое же попавшееся окно,\n"
-"поэтому пропускать оба параметра не рекомендуется."
-
-#: kstart.cpp:295
-#, kde-format
-msgid "Desktop on which to make the window appear"
-msgstr "Рабочий стол, на котором появится окно"
-
-#: kstart.cpp:297
-#, kde-format
-msgid ""
-"Make the window appear on the desktop that was active\n"
-"when starting the application"
-msgstr ""
-"Поместить окно на рабочий стол, который был \n"
-"активен при запуске приложения."
-
-#: kstart.cpp:298
-#, kde-format
-msgid "Make the window appear on all desktops"
-msgstr "Поместить окно на все рабочие столы."
-
-#: kstart.cpp:299
-#, kde-format
-msgid "Iconify the window"
-msgstr "Свернуть окно."
-
-#: kstart.cpp:300
-#, kde-format
-msgid "Maximize the window"
-msgstr "Распахнуть окно."
-
-#: kstart.cpp:301
-#, kde-format
-msgid "Maximize the window vertically"
-msgstr "Развернуть окно по вертикали."
-
-#: kstart.cpp:302
-#, kde-format
-msgid "Maximize the window horizontally"
-msgstr "Развернуть окно по горизонтали."
-
-#: kstart.cpp:303
-#, kde-format
-msgid "Show window fullscreen"
-msgstr "Распахнуть окно на полный экран."
-
-#: kstart.cpp:305
-#, kde-format
-msgid ""
-"The window type: Normal, Desktop, Dock, Toolbar, \n"
-"Menu, Dialog, TopMenu or Override"
-msgstr ""
-"Типы окон: обычное (Normal), рабочий стол \n"
-"(Desktop), встроенное в панель (Dock), инструмент \n"
-"(Tool), меню (Menu), диалог (Dialog), панель меню \n"
-"(TopMenu) или перекрытое (Override)."
-
-#: kstart.cpp:308
-#, kde-format
-msgid ""
-"Jump to the window even if it is started on a \n"
-"different virtual desktop"
-msgstr ""
-"Переключиться на окно, даже если оно запущено\n"
-"на другом рабочем столе."
-
-#: kstart.cpp:311
-#, kde-format
-msgid "Try to keep the window above other windows"
-msgstr "Держать окно поверх всех остальных окон."
-
-#: kstart.cpp:313
-#, kde-format
-msgid "Try to keep the window below other windows"
-msgstr "Держать окно под остальными окнами."
-
-#: kstart.cpp:314
-#, kde-format
-msgid "The window does not get an entry in the taskbar"
-msgstr "Не показывать окно на панели задач."
-
-#: kstart.cpp:315
-#, kde-format
-msgid "The window does not get an entry on the pager"
-msgstr "Не показывать окно не показывается в списке окон при переключении."
-
-#: kstart.cpp:329
+#: kstart.cpp:115
 #, kde-format
 msgid "No command specified"
 msgstr "Команда не определена"
+
+#~ msgid ""
+#~ "Utility to launch applications with special window properties \n"
+#~ "such as iconified, maximized, a certain virtual desktop, a special "
+#~ "decoration\n"
+#~ "and so on."
+#~ msgstr ""
+#~ "Программа для запуска приложений со специальными свойствами окна,\n"
+#~ "такими как свёрнутое, распахнутое, на определённом рабочем столе \n"
+#~ "и так далее."
+
+#~ msgid "A regular expression matching the window title"
+#~ msgstr "Регулярное выражение, соответствующее заголовку окна."
+
+#~ msgid ""
+#~ "A string matching the window class (WM_CLASS property)\n"
+#~ "The window class can be found out by running\n"
+#~ "'xprop | grep WM_CLASS' and clicking on a window\n"
+#~ "(use either both parts separated by a space or only the right part).\n"
+#~ "NOTE: If you specify neither window title nor window class,\n"
+#~ "then the very first window to appear will be taken;\n"
+#~ "omitting both options is NOT recommended."
+#~ msgstr ""
+#~ "Строка, соответствующая классу окна (свойство WM_CLASS).\n"
+#~ "Класс окна можно определить, запустив команду\n"
+#~ "«xprop | grep WM_CLASS» и потом щёлкнув на окне.\n"
+#~ "Примечание: если вы не укажете ни заголовок, ни \n"
+#~ "класс окна, будет взято первое же попавшееся окно,\n"
+#~ "поэтому пропускать оба параметра не рекомендуется."
+
+#~ msgid "Desktop on which to make the window appear"
+#~ msgstr "Рабочий стол, на котором появится окно"
+
+#~ msgid ""
+#~ "Make the window appear on the desktop that was active\n"
+#~ "when starting the application"
+#~ msgstr ""
+#~ "Поместить окно на рабочий стол, который был \n"
+#~ "активен при запуске приложения."
+
+#~ msgid "Make the window appear on all desktops"
+#~ msgstr "Поместить окно на все рабочие столы."
+
+#~ msgid "Iconify the window"
+#~ msgstr "Свернуть окно."
+
+#~ msgid "Maximize the window"
+#~ msgstr "Распахнуть окно."
+
+#~ msgid "Maximize the window vertically"
+#~ msgstr "Развернуть окно по вертикали."
+
+#~ msgid "Maximize the window horizontally"
+#~ msgstr "Развернуть окно по горизонтали."
+
+#~ msgid "Show window fullscreen"
+#~ msgstr "Распахнуть окно на полный экран."
+
+#~ msgid ""
+#~ "The window type: Normal, Desktop, Dock, Toolbar, \n"
+#~ "Menu, Dialog, TopMenu or Override"
+#~ msgstr ""
+#~ "Типы окон: обычное (Normal), рабочий стол \n"
+#~ "(Desktop), встроенное в панель (Dock), инструмент \n"
+#~ "(Tool), меню (Menu), диалог (Dialog), панель меню \n"
+#~ "(TopMenu) или перекрытое (Override)."
+
+#~ msgid ""
+#~ "Jump to the window even if it is started on a \n"
+#~ "different virtual desktop"
+#~ msgstr ""
+#~ "Переключиться на окно, даже если оно запущено\n"
+#~ "на другом рабочем столе."
+
+#~ msgid "Try to keep the window above other windows"
+#~ msgstr "Держать окно поверх всех остальных окон."
+
+#~ msgid "Try to keep the window below other windows"
+#~ msgstr "Держать окно под остальными окнами."
+
+#~ msgid "The window does not get an entry in the taskbar"
+#~ msgstr "Не показывать окно на панели задач."
+
+#~ msgid "The window does not get an entry on the pager"
+#~ msgstr "Не показывать окно не показывается в списке окон при переключении."
 
 #~ msgid "The window is sent to the system tray in Kicker"
 #~ msgstr "Окно входит в системный лоток панели задач"

@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kstart\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2022-12-17 00:51+0000\n"
+"POT-Creation-Date: 2023-02-03 01:00+0000\n"
 "PO-Revision-Date: 2013-02-22 14:26+0530\n"
 "Last-Translator: Chetan Khona <chetan@kompkin.com>\n"
 "Language-Team: Marathi <kde-i18n-doc@kde.org>\n"
@@ -33,48 +33,42 @@ msgstr ""
 "sandeep.shedmake@gmail.com, \n"
 "chetan@kompkin.com"
 
-#: kstart.cpp:255
+#: kstart.cpp:78
 #, kde-format
 msgid "KStart"
 msgstr "केस्टार्ट"
 
-#: kstart.cpp:257
+#: kstart.cpp:80
 #, kde-format
-msgid ""
-"Utility to launch applications with special window properties \n"
-"such as iconified, maximized, a certain virtual desktop, a special "
-"decoration\n"
-"and so on."
+msgid "Utility to launch applications"
 msgstr ""
-"हा उपकार्यक्रम विशेष चौकट गुणधर्म वापरुन अनुप्रयोग सुरु करतो.\n"
-"उदा. चिन्हाकृत, अधिकतम आकार, आभासी डेस्कटॉप, विशेष सजावट इत्यादि."
 
-#: kstart.cpp:262
+#: kstart.cpp:82
 #, kde-format
 msgid "(C) 1997-2000 Matthias Ettrich (ettrich@kde.org)"
 msgstr "(C) 1997-2000 मात्थिआस एट्टरिच (ettrich@kde.org)"
 
-#: kstart.cpp:264
+#: kstart.cpp:84
 #, kde-format
 msgid "Matthias Ettrich"
 msgstr "मात्थिआस एट्टरिच"
 
-#: kstart.cpp:265
+#: kstart.cpp:85
 #, kde-format
 msgid "David Faure"
 msgstr "डेविड फ़ॉउर"
 
-#: kstart.cpp:266
+#: kstart.cpp:86
 #, kde-format
 msgid "Richard J. Moore"
 msgstr "रिचर्ड जे. मूर"
 
-#: kstart.cpp:271
+#: kstart.cpp:91
 #, kde-format
 msgid "Command to execute"
 msgstr "कार्यान्वित करण्याचा आदेश"
 
-#: kstart.cpp:275
+#: kstart.cpp:95
 #, fuzzy, kde-format
 #| msgid ""
 #| "Alternative to <command>: desktop file to start. D-Bus service will be "
@@ -85,7 +79,7 @@ msgid ""
 msgstr ""
 "<command> ला पर्याय : डेस्कटॉप फाईल सुुुरु होत आहे. D-Bus सेवा stdout ला छापण्यात येइल."
 
-#: kstart.cpp:278
+#: kstart.cpp:98
 #, fuzzy, kde-format
 #| msgid ""
 #| "Alternative to <command>: desktop file to start. D-Bus service will be "
@@ -94,120 +88,97 @@ msgid "Alternative to <command>: desktop file to start."
 msgstr ""
 "<command> ला पर्याय : डेस्कटॉप फाईल सुुुरु होत आहे. D-Bus सेवा stdout ला छापण्यात येइल."
 
-#: kstart.cpp:281
+#: kstart.cpp:101
 #, kde-format
 msgid "Optional URL to pass <desktopfile>, when using --service"
 msgstr " --service वापरताना ऐच्छिक URL <desktopfile> ला पाठविला जाईल"
 
-#: kstart.cpp:284
-#, kde-format
-msgid "A regular expression matching the window title"
-msgstr "नियमित अभिव्यक्तिसह जुळणारे चौकटचे शिर्षक"
-
-#: kstart.cpp:286
-#, kde-format
-msgid ""
-"A string matching the window class (WM_CLASS property)\n"
-"The window class can be found out by running\n"
-"'xprop | grep WM_CLASS' and clicking on a window\n"
-"(use either both parts separated by a space or only the right part).\n"
-"NOTE: If you specify neither window title nor window class,\n"
-"then the very first window to appear will be taken;\n"
-"omitting both options is NOT recommended."
-msgstr ""
-"चौकट वर्गास जुळणारी अक्षरमाळा (WM_CLASS गुणधर्म)\n"
-"'xprop | grep WM_CLASS' हे चालवुन व चौकटीवर क्लिक करून चौकट वर्ग शोधता येतो.\n"
-"(दोन्ही भाग वेगवेगळे वापरा किंवा फक्त उजवा भाग वापरा.)\n"
-"नोंद : जर तुम्ही चौकटीचे शिर्षक किंवा चौकटीचा वर्ग वापरला नाही,\n"
-"तर सर्वात पहिली चौकट घेतली जाईल;\n"
-"दोन्ही पर्याय वगळणे हे योग्य नाही."
-
-#: kstart.cpp:295
-#, kde-format
-msgid "Desktop on which to make the window appear"
-msgstr "चौकट प्रदर्शित करण्यासाठीचे डेस्कटॉप"
-
-#: kstart.cpp:297
-#, kde-format
-msgid ""
-"Make the window appear on the desktop that was active\n"
-"when starting the application"
-msgstr ""
-"अनुप्रयोग सुरु करतेवेळी सक्रिय डेस्कटॉपवर\n"
-"चौकट प्रदर्शित करा"
-
-#: kstart.cpp:298
-#, kde-format
-msgid "Make the window appear on all desktops"
-msgstr "सर्व डेस्कटॉपवर चौकट प्रदर्शित करा"
-
-#: kstart.cpp:299
-#, kde-format
-msgid "Iconify the window"
-msgstr "चौकट चिन्हाकृत करा"
-
-#: kstart.cpp:300
-#, kde-format
-msgid "Maximize the window"
-msgstr "चौकट मोठे करा"
-
-#: kstart.cpp:301
-#, kde-format
-msgid "Maximize the window vertically"
-msgstr "चौकट उभेरित्या मोठे करा"
-
-#: kstart.cpp:302
-#, kde-format
-msgid "Maximize the window horizontally"
-msgstr "चौकट आडवेरित्या मोठे करा"
-
-#: kstart.cpp:303
-#, kde-format
-msgid "Show window fullscreen"
-msgstr "चौकट पूर्ण स्क्रीन वर दर्शवा"
-
-#: kstart.cpp:305
-#, kde-format
-msgid ""
-"The window type: Normal, Desktop, Dock, Toolbar, \n"
-"Menu, Dialog, TopMenu or Override"
-msgstr ""
-"चौकट प्रकार: सामान्य, डेस्कटॉप, डॉक, साधपट्टी, \n"
-"मेन्यू, संवाद, टॉपमेन्यू किंवा ओवरराइड"
-
-#: kstart.cpp:308
-#, kde-format
-msgid ""
-"Jump to the window even if it is started on a \n"
-"different virtual desktop"
-msgstr ""
-"अन्य आभासी डेस्कटॉपवर सुरु असल्यावरही \n"
-"त्या चौकटकडे जा"
-
-#: kstart.cpp:311
-#, kde-format
-msgid "Try to keep the window above other windows"
-msgstr "या चौकटीला इतर चौकटींपेक्षा वर ठेवण्याचा प्रयत्न करा"
-
-#: kstart.cpp:313
-#, kde-format
-msgid "Try to keep the window below other windows"
-msgstr "या चौकटीला इतर चौकटींच्या तुलनेत खाली ठेवण्याचा प्रयत्न करा"
-
-#: kstart.cpp:314
-#, kde-format
-msgid "The window does not get an entry in the taskbar"
-msgstr "या चौकटीला कार्यपट्टी अंतर्गत नोंदणी प्राप्त होत नाही"
-
-#: kstart.cpp:315
-#, kde-format
-msgid "The window does not get an entry on the pager"
-msgstr "या चौकटीला पेजर अंतर्गत नोंदणी प्राप्त होत नाही"
-
-#: kstart.cpp:329
+#: kstart.cpp:115
 #, kde-format
 msgid "No command specified"
 msgstr "कोणताही आदेश दिलेला नाही"
+
+#~ msgid ""
+#~ "Utility to launch applications with special window properties \n"
+#~ "such as iconified, maximized, a certain virtual desktop, a special "
+#~ "decoration\n"
+#~ "and so on."
+#~ msgstr ""
+#~ "हा उपकार्यक्रम विशेष चौकट गुणधर्म वापरुन अनुप्रयोग सुरु करतो.\n"
+#~ "उदा. चिन्हाकृत, अधिकतम आकार, आभासी डेस्कटॉप, विशेष सजावट इत्यादि."
+
+#~ msgid "A regular expression matching the window title"
+#~ msgstr "नियमित अभिव्यक्तिसह जुळणारे चौकटचे शिर्षक"
+
+#~ msgid ""
+#~ "A string matching the window class (WM_CLASS property)\n"
+#~ "The window class can be found out by running\n"
+#~ "'xprop | grep WM_CLASS' and clicking on a window\n"
+#~ "(use either both parts separated by a space or only the right part).\n"
+#~ "NOTE: If you specify neither window title nor window class,\n"
+#~ "then the very first window to appear will be taken;\n"
+#~ "omitting both options is NOT recommended."
+#~ msgstr ""
+#~ "चौकट वर्गास जुळणारी अक्षरमाळा (WM_CLASS गुणधर्म)\n"
+#~ "'xprop | grep WM_CLASS' हे चालवुन व चौकटीवर क्लिक करून चौकट वर्ग शोधता येतो.\n"
+#~ "(दोन्ही भाग वेगवेगळे वापरा किंवा फक्त उजवा भाग वापरा.)\n"
+#~ "नोंद : जर तुम्ही चौकटीचे शिर्षक किंवा चौकटीचा वर्ग वापरला नाही,\n"
+#~ "तर सर्वात पहिली चौकट घेतली जाईल;\n"
+#~ "दोन्ही पर्याय वगळणे हे योग्य नाही."
+
+#~ msgid "Desktop on which to make the window appear"
+#~ msgstr "चौकट प्रदर्शित करण्यासाठीचे डेस्कटॉप"
+
+#~ msgid ""
+#~ "Make the window appear on the desktop that was active\n"
+#~ "when starting the application"
+#~ msgstr ""
+#~ "अनुप्रयोग सुरु करतेवेळी सक्रिय डेस्कटॉपवर\n"
+#~ "चौकट प्रदर्शित करा"
+
+#~ msgid "Make the window appear on all desktops"
+#~ msgstr "सर्व डेस्कटॉपवर चौकट प्रदर्शित करा"
+
+#~ msgid "Iconify the window"
+#~ msgstr "चौकट चिन्हाकृत करा"
+
+#~ msgid "Maximize the window"
+#~ msgstr "चौकट मोठे करा"
+
+#~ msgid "Maximize the window vertically"
+#~ msgstr "चौकट उभेरित्या मोठे करा"
+
+#~ msgid "Maximize the window horizontally"
+#~ msgstr "चौकट आडवेरित्या मोठे करा"
+
+#~ msgid "Show window fullscreen"
+#~ msgstr "चौकट पूर्ण स्क्रीन वर दर्शवा"
+
+#~ msgid ""
+#~ "The window type: Normal, Desktop, Dock, Toolbar, \n"
+#~ "Menu, Dialog, TopMenu or Override"
+#~ msgstr ""
+#~ "चौकट प्रकार: सामान्य, डेस्कटॉप, डॉक, साधपट्टी, \n"
+#~ "मेन्यू, संवाद, टॉपमेन्यू किंवा ओवरराइड"
+
+#~ msgid ""
+#~ "Jump to the window even if it is started on a \n"
+#~ "different virtual desktop"
+#~ msgstr ""
+#~ "अन्य आभासी डेस्कटॉपवर सुरु असल्यावरही \n"
+#~ "त्या चौकटकडे जा"
+
+#~ msgid "Try to keep the window above other windows"
+#~ msgstr "या चौकटीला इतर चौकटींपेक्षा वर ठेवण्याचा प्रयत्न करा"
+
+#~ msgid "Try to keep the window below other windows"
+#~ msgstr "या चौकटीला इतर चौकटींच्या तुलनेत खाली ठेवण्याचा प्रयत्न करा"
+
+#~ msgid "The window does not get an entry in the taskbar"
+#~ msgstr "या चौकटीला कार्यपट्टी अंतर्गत नोंदणी प्राप्त होत नाही"
+
+#~ msgid "The window does not get an entry on the pager"
+#~ msgstr "या चौकटीला पेजर अंतर्गत नोंदणी प्राप्त होत नाही"
 
 #~ msgid "The window is sent to the system tray in Kicker"
 #~ msgstr "या चौकटीला किकर अंतर्गत प्रणाली ट्रे कडे पाठविले जाते"

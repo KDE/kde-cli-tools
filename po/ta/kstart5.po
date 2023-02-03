@@ -10,7 +10,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kstart\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2022-12-17 00:51+0000\n"
+"POT-Creation-Date: 2023-02-03 01:00+0000\n"
 "PO-Revision-Date: 2004-11-16 00:00-0800\n"
 "Last-Translator: Tamil PC <tamilpc@ambalam.com>\n"
 "Language-Team:  <ta@li.org>\n"
@@ -32,174 +32,146 @@ msgstr ""
 "sshanmu@yahoo.com,gomathiss@hotmail.com,t_vasee@yahoo.com, "
 "prabu_anand2000@yahoo.com"
 
-#: kstart.cpp:255
+#: kstart.cpp:78
 #, kde-format
 msgid "KStart"
 msgstr "Kதொடங்கல்"
 
-#: kstart.cpp:257
+#: kstart.cpp:80
 #, kde-format
-msgid ""
-"Utility to launch applications with special window properties \n"
-"such as iconified, maximized, a certain virtual desktop, a special "
-"decoration\n"
-"and so on."
+msgid "Utility to launch applications"
 msgstr ""
-"சிறப்பு சாளர சொத்துக்கள், சிறியதாக்கபட்ட, பெரியதாக்கபட்ட, சில மாய மேசை, \n"
-"சிறப்பு அலங்கரிப்பு, போன்றவையுள்ள பயன்பாடுகளை இறக்க தேவைபடும் பயன்பாடு\n"
-"மற்றும் பல."
 
-#: kstart.cpp:262
+#: kstart.cpp:82
 #, kde-format
 msgid "(C) 1997-2000 Matthias Ettrich (ettrich@kde.org)"
 msgstr ""
 
-#: kstart.cpp:264
+#: kstart.cpp:84
 #, kde-format
 msgid "Matthias Ettrich"
 msgstr ""
 
-#: kstart.cpp:265
+#: kstart.cpp:85
 #, kde-format
 msgid "David Faure"
 msgstr ""
 
-#: kstart.cpp:266
+#: kstart.cpp:86
 #, kde-format
 msgid "Richard J. Moore"
 msgstr ""
 
-#: kstart.cpp:271
+#: kstart.cpp:91
 #, kde-format
 msgid "Command to execute"
 msgstr "செயல்படுத்த வேண்டிய கட்டளை"
 
-#: kstart.cpp:275
+#: kstart.cpp:95
 #, kde-format
 msgid ""
 "Alternative to <command>: desktop file path to start. D-Bus service will be "
 "printed to stdout. Deprecated: use --application"
 msgstr ""
 
-#: kstart.cpp:278
+#: kstart.cpp:98
 #, kde-format
 msgid "Alternative to <command>: desktop file to start."
 msgstr ""
 
-#: kstart.cpp:281
+#: kstart.cpp:101
 #, kde-format
 msgid "Optional URL to pass <desktopfile>, when using --service"
 msgstr ""
 
-#: kstart.cpp:284
-#, kde-format
-msgid "A regular expression matching the window title"
-msgstr "சாளர தலைப்பில் பொருந்தக் கூடிய முறையான தொடர்"
-
-#: kstart.cpp:286
-#, kde-format
-msgid ""
-"A string matching the window class (WM_CLASS property)\n"
-"The window class can be found out by running\n"
-"'xprop | grep WM_CLASS' and clicking on a window\n"
-"(use either both parts separated by a space or only the right part).\n"
-"NOTE: If you specify neither window title nor window class,\n"
-"then the very first window to appear will be taken;\n"
-"omitting both options is NOT recommended."
-msgstr ""
-"சாளர வகுப்புக்கு பொருந்தும் சரம் (WM_CLASS property).\n"
-"சாளர வகுப்பு இதை இயக்கும் போது காணவில்லை\n"
-"'xprop | grep WM_CLASS' மற்றும் சாளரத்தை சொடுக்கும் போது.\n"
-"குறிப்பு: சாளர தலைப்பு அல்லது வகுப்பை குறிப்பிட்டால்,\n"
-"முதலில் தோன்றும் சாளரம் எடுத்துக் கொள்ளப்படும்;\n"
-"இரண்டு விருப்பத் தேர்வுகளையும் விட இயலாது."
-
-#: kstart.cpp:295
-#, kde-format
-msgid "Desktop on which to make the window appear"
-msgstr "சாளரம் தோன்ற செய்ய வேண்டிய மேல்மேசை"
-
-#: kstart.cpp:297
-#, kde-format
-msgid ""
-"Make the window appear on the desktop that was active\n"
-"when starting the application"
-msgstr ""
-"பயன்பாடை துவக்கும்போது செயலில் உள்ள சாளரத்தை மேல்மேசையில்\n"
-"தோன்ற செய்யவேண்டும்."
-
-#: kstart.cpp:298
-#, kde-format
-msgid "Make the window appear on all desktops"
-msgstr "சாளரத்தை அனைத்து மேசைகளிலும் தோன்றும்படி செய்ய வேண்டும்"
-
-#: kstart.cpp:299
-#, kde-format
-msgid "Iconify the window"
-msgstr "சாளரத்தை குறும்படமாக்கு"
-
-#: kstart.cpp:300
-#, kde-format
-msgid "Maximize the window"
-msgstr "சாளரத்தை பெரிதாக்கு"
-
-#: kstart.cpp:301
-#, kde-format
-msgid "Maximize the window vertically"
-msgstr "சாளரத்தை செங்குத்தாக பெரிதாக்கு"
-
-#: kstart.cpp:302
-#, kde-format
-msgid "Maximize the window horizontally"
-msgstr "சாளரத்தை கிடைமட்டமாக பெரிதாக்கு"
-
-#: kstart.cpp:303
-#, kde-format
-msgid "Show window fullscreen"
-msgstr "சாளரத்தின் முழுத்திரையை காட்டு."
-
-#: kstart.cpp:305
-#, fuzzy, kde-format
-msgid ""
-"The window type: Normal, Desktop, Dock, Toolbar, \n"
-"Menu, Dialog, TopMenu or Override"
-msgstr ""
-"சாளர வகை: சாதாரண, மேசை, குறுக்கு, கருவி, \n"
-"பட்டி, உரையாடல் அல்லது மேலெழுது"
-
-#: kstart.cpp:308
-#, kde-format
-msgid ""
-"Jump to the window even if it is started on a \n"
-"different virtual desktop"
-msgstr ""
-"வேறு மாய மேசையில் தொடங்கினாலும், அந்த சாளரத்துக்கு \n"
-"மாறவும்"
-
-#: kstart.cpp:311
-#, kde-format
-msgid "Try to keep the window above other windows"
-msgstr "எப்பொழுதும் சாளரத்தை வேறு சாளரத்தின் மேல் தங்க வைக்கவும்."
-
-#: kstart.cpp:313
-#, kde-format
-msgid "Try to keep the window below other windows"
-msgstr "எப்பொழுதும் சாளரத்தை வேறு சாளரத்தின் மேல் தங்க வைக்கவும்."
-
-#: kstart.cpp:314
-#, kde-format
-msgid "The window does not get an entry in the taskbar"
-msgstr "கருவிபட்டையில் சாளரத்திற்கு நுழைவு கிடைக்காது"
-
-#: kstart.cpp:315
-#, kde-format
-msgid "The window does not get an entry on the pager"
-msgstr "கருவிபட்டையில் சாளரத்திற்கு நுழைவு கிடைக்காது"
-
-#: kstart.cpp:329
+#: kstart.cpp:115
 #, kde-format
 msgid "No command specified"
 msgstr "கட்டளை எதுவும் குறிப்பிடப்படவில்லை"
+
+#~ msgid ""
+#~ "Utility to launch applications with special window properties \n"
+#~ "such as iconified, maximized, a certain virtual desktop, a special "
+#~ "decoration\n"
+#~ "and so on."
+#~ msgstr ""
+#~ "சிறப்பு சாளர சொத்துக்கள், சிறியதாக்கபட்ட, பெரியதாக்கபட்ட, சில மாய மேசை, \n"
+#~ "சிறப்பு அலங்கரிப்பு, போன்றவையுள்ள பயன்பாடுகளை இறக்க தேவைபடும் பயன்பாடு\n"
+#~ "மற்றும் பல."
+
+#~ msgid "A regular expression matching the window title"
+#~ msgstr "சாளர தலைப்பில் பொருந்தக் கூடிய முறையான தொடர்"
+
+#~ msgid ""
+#~ "A string matching the window class (WM_CLASS property)\n"
+#~ "The window class can be found out by running\n"
+#~ "'xprop | grep WM_CLASS' and clicking on a window\n"
+#~ "(use either both parts separated by a space or only the right part).\n"
+#~ "NOTE: If you specify neither window title nor window class,\n"
+#~ "then the very first window to appear will be taken;\n"
+#~ "omitting both options is NOT recommended."
+#~ msgstr ""
+#~ "சாளர வகுப்புக்கு பொருந்தும் சரம் (WM_CLASS property).\n"
+#~ "சாளர வகுப்பு இதை இயக்கும் போது காணவில்லை\n"
+#~ "'xprop | grep WM_CLASS' மற்றும் சாளரத்தை சொடுக்கும் போது.\n"
+#~ "குறிப்பு: சாளர தலைப்பு அல்லது வகுப்பை குறிப்பிட்டால்,\n"
+#~ "முதலில் தோன்றும் சாளரம் எடுத்துக் கொள்ளப்படும்;\n"
+#~ "இரண்டு விருப்பத் தேர்வுகளையும் விட இயலாது."
+
+#~ msgid "Desktop on which to make the window appear"
+#~ msgstr "சாளரம் தோன்ற செய்ய வேண்டிய மேல்மேசை"
+
+#~ msgid ""
+#~ "Make the window appear on the desktop that was active\n"
+#~ "when starting the application"
+#~ msgstr ""
+#~ "பயன்பாடை துவக்கும்போது செயலில் உள்ள சாளரத்தை மேல்மேசையில்\n"
+#~ "தோன்ற செய்யவேண்டும்."
+
+#~ msgid "Make the window appear on all desktops"
+#~ msgstr "சாளரத்தை அனைத்து மேசைகளிலும் தோன்றும்படி செய்ய வேண்டும்"
+
+#~ msgid "Iconify the window"
+#~ msgstr "சாளரத்தை குறும்படமாக்கு"
+
+#~ msgid "Maximize the window"
+#~ msgstr "சாளரத்தை பெரிதாக்கு"
+
+#~ msgid "Maximize the window vertically"
+#~ msgstr "சாளரத்தை செங்குத்தாக பெரிதாக்கு"
+
+#~ msgid "Maximize the window horizontally"
+#~ msgstr "சாளரத்தை கிடைமட்டமாக பெரிதாக்கு"
+
+#~ msgid "Show window fullscreen"
+#~ msgstr "சாளரத்தின் முழுத்திரையை காட்டு."
+
+#, fuzzy
+#~ msgid ""
+#~ "The window type: Normal, Desktop, Dock, Toolbar, \n"
+#~ "Menu, Dialog, TopMenu or Override"
+#~ msgstr ""
+#~ "சாளர வகை: சாதாரண, மேசை, குறுக்கு, கருவி, \n"
+#~ "பட்டி, உரையாடல் அல்லது மேலெழுது"
+
+#~ msgid ""
+#~ "Jump to the window even if it is started on a \n"
+#~ "different virtual desktop"
+#~ msgstr ""
+#~ "வேறு மாய மேசையில் தொடங்கினாலும், அந்த சாளரத்துக்கு \n"
+#~ "மாறவும்"
+
+#~ msgid "Try to keep the window above other windows"
+#~ msgstr "எப்பொழுதும் சாளரத்தை வேறு சாளரத்தின் மேல் தங்க வைக்கவும்."
+
+#~ msgid "Try to keep the window below other windows"
+#~ msgstr "எப்பொழுதும் சாளரத்தை வேறு சாளரத்தின் மேல் தங்க வைக்கவும்."
+
+#~ msgid "The window does not get an entry in the taskbar"
+#~ msgstr "கருவிபட்டையில் சாளரத்திற்கு நுழைவு கிடைக்காது"
+
+#~ msgid "The window does not get an entry on the pager"
+#~ msgstr "கருவிபட்டையில் சாளரத்திற்கு நுழைவு கிடைக்காது"
 
 #~ msgid "The window is sent to the system tray in Kicker"
 #~ msgstr "இச் சாளரம் Kicker இலுள்ள அமைப்புத் தட்டுக்கு அனுப்பப்படும்"

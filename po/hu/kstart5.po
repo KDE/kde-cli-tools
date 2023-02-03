@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: KDE 4.0\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2022-12-17 00:51+0000\n"
+"POT-Creation-Date: 2023-02-03 01:00+0000\n"
 "PO-Revision-Date: 2021-11-04 13:58+0100\n"
 "Last-Translator: Kristof Kiszel <kiszel.kristof@gmail.com>\n"
 "Language-Team: Hungarian <kde-l10n-hu@kde.org>\n"
@@ -28,50 +28,42 @@ msgctxt "EMAIL OF TRANSLATORS"
 msgid "Your emails"
 msgstr "kiszel.kristof@gmail.com,miketkf@yahoo.com,tszanto@interware.hu"
 
-#: kstart.cpp:255
+#: kstart.cpp:78
 #, kde-format
 msgid "KStart"
 msgstr "KStart"
 
-#: kstart.cpp:257
+#: kstart.cpp:80
 #, kde-format
-msgid ""
-"Utility to launch applications with special window properties \n"
-"such as iconified, maximized, a certain virtual desktop, a special "
-"decoration\n"
-"and so on."
+msgid "Utility to launch applications"
 msgstr ""
-"Ezzel a segédprogrammal speciális ablaktulajdonságú KDE\n"
-"alkalmazásokat lehet indítani (például ikonizált vagy maximalizált "
-"ablakban,\n"
-"egy megadott munkaasztalon vagy speciális vezérlőelemekkel ellátva)"
 
-#: kstart.cpp:262
+#: kstart.cpp:82
 #, kde-format
 msgid "(C) 1997-2000 Matthias Ettrich (ettrich@kde.org)"
 msgstr "(c) Matthias Ettrich (ettrich@kde.org), 1997-2000."
 
-#: kstart.cpp:264
+#: kstart.cpp:84
 #, kde-format
 msgid "Matthias Ettrich"
 msgstr "Matthias Ettrich"
 
-#: kstart.cpp:265
+#: kstart.cpp:85
 #, kde-format
 msgid "David Faure"
 msgstr "David Faure"
 
-#: kstart.cpp:266
+#: kstart.cpp:86
 #, kde-format
 msgid "Richard J. Moore"
 msgstr "Richard J. Moore"
 
-#: kstart.cpp:271
+#: kstart.cpp:91
 #, kde-format
 msgid "Command to execute"
 msgstr "Végrehajtandó parancs"
 
-#: kstart.cpp:275
+#: kstart.cpp:95
 #, kde-format
 msgid ""
 "Alternative to <command>: desktop file path to start. D-Bus service will be "
@@ -81,126 +73,106 @@ msgstr ""
 "D-Bus szolgáltatás a standard kimenetre fog írni. Elavult: használja az --"
 "application kapcsolót"
 
-#: kstart.cpp:278
+#: kstart.cpp:98
 #, kde-format
 msgid "Alternative to <command>: desktop file to start."
 msgstr "Alternatíva a <parancs> parancsra: az indítandó asztali fájl."
 
-#: kstart.cpp:281
+#: kstart.cpp:101
 #, kde-format
 msgid "Optional URL to pass <desktopfile>, when using --service"
 msgstr "Az <asztali fájl> opcionális URL-címei a --service használatakor"
 
-#: kstart.cpp:284
-#, kde-format
-msgid "A regular expression matching the window title"
-msgstr "Ablakcímhez illeszkedő reguláris kifejezés"
-
-#: kstart.cpp:286
-#, kde-format
-msgid ""
-"A string matching the window class (WM_CLASS property)\n"
-"The window class can be found out by running\n"
-"'xprop | grep WM_CLASS' and clicking on a window\n"
-"(use either both parts separated by a space or only the right part).\n"
-"NOTE: If you specify neither window title nor window class,\n"
-"then the very first window to appear will be taken;\n"
-"omitting both options is NOT recommended."
-msgstr ""
-"Az ablakosztályhoz (WM_CLASS tulajdonság) illeszkedő\n"
-"reguláris kifejezés. Az ablakosztály kiíratható az\n"
-"'xprop | grep WM_CLASS' paranccsal (rá kell kattintani az ablakra).\n"
-"Mindkét rész megadható szóközzel elválasztva vagy elég a jobb oldali rész.\n"
-"Megjegyzés: Ha sem az ablak címét, sem az osztályát nem adja meg,\n"
-"akkor a legelső megjelenő ablak fog illeszkedni,\n"
-"ezért célszerű legalább az egyiket megadni."
-
-#: kstart.cpp:295
-#, kde-format
-msgid "Desktop on which to make the window appear"
-msgstr "Az asztal, amelyen az ablak megjelenik"
-
-#: kstart.cpp:297
-#, kde-format
-msgid ""
-"Make the window appear on the desktop that was active\n"
-"when starting the application"
-msgstr ""
-"Az alkalmazás azon a munkaasztalon fog megjelenni,\n"
-"amelyik az indítás pillanatában aktív volt"
-
-#: kstart.cpp:298
-#, kde-format
-msgid "Make the window appear on all desktops"
-msgstr "Az ablak jelenjen meg minden asztalon"
-
-#: kstart.cpp:299
-#, kde-format
-msgid "Iconify the window"
-msgstr "Az ablak ikonizálása"
-
-#: kstart.cpp:300
-#, kde-format
-msgid "Maximize the window"
-msgstr "Az ablak maximalizálása"
-
-#: kstart.cpp:301
-#, kde-format
-msgid "Maximize the window vertically"
-msgstr "Az ablak maximalizálása függőlegesen"
-
-#: kstart.cpp:302
-#, kde-format
-msgid "Maximize the window horizontally"
-msgstr "Az ablak maximalizálása vízszintesen"
-
-#: kstart.cpp:303
-#, kde-format
-msgid "Show window fullscreen"
-msgstr "Az ablak teljes képernyős módban jelenjen meg"
-
-#: kstart.cpp:305
-#, kde-format
-msgid ""
-"The window type: Normal, Desktop, Dock, Toolbar, \n"
-"Menu, Dialog, TopMenu or Override"
-msgstr ""
-"Ablaktípus: normál, asztali, dokkolt, eszköztár, \n"
-"menü, párbeszédablak, felső szintű menü vagy felülbírálás"
-
-#: kstart.cpp:308
-#, kde-format
-msgid ""
-"Jump to the window even if it is started on a \n"
-"different virtual desktop"
-msgstr ""
-"Ugrás az ablakra, még akkor is, ha egy másik\n"
-"asztalon jelenik meg"
-
-#: kstart.cpp:311
-#, kde-format
-msgid "Try to keep the window above other windows"
-msgstr "Az ablak lehetőleg mindig a többi ablak fölött maradjon"
-
-#: kstart.cpp:313
-#, kde-format
-msgid "Try to keep the window below other windows"
-msgstr "Az ablak lehetőleg mindig a többi ablak alatt maradjon"
-
-#: kstart.cpp:314
-#, kde-format
-msgid "The window does not get an entry in the taskbar"
-msgstr "Ez az ablak nem jelenik meg a tálcán"
-
-#: kstart.cpp:315
-#, kde-format
-msgid "The window does not get an entry on the pager"
-msgstr "Ennek az ablaknak nem lesz bejegyzése a lapozóablakban"
-
-#: kstart.cpp:329
+#: kstart.cpp:115
 #, kde-format
 msgid "No command specified"
 msgstr "Nincs megadva parancs"
+
+#~ msgid ""
+#~ "Utility to launch applications with special window properties \n"
+#~ "such as iconified, maximized, a certain virtual desktop, a special "
+#~ "decoration\n"
+#~ "and so on."
+#~ msgstr ""
+#~ "Ezzel a segédprogrammal speciális ablaktulajdonságú KDE\n"
+#~ "alkalmazásokat lehet indítani (például ikonizált vagy maximalizált "
+#~ "ablakban,\n"
+#~ "egy megadott munkaasztalon vagy speciális vezérlőelemekkel ellátva)"
+
+#~ msgid "A regular expression matching the window title"
+#~ msgstr "Ablakcímhez illeszkedő reguláris kifejezés"
+
+#~ msgid ""
+#~ "A string matching the window class (WM_CLASS property)\n"
+#~ "The window class can be found out by running\n"
+#~ "'xprop | grep WM_CLASS' and clicking on a window\n"
+#~ "(use either both parts separated by a space or only the right part).\n"
+#~ "NOTE: If you specify neither window title nor window class,\n"
+#~ "then the very first window to appear will be taken;\n"
+#~ "omitting both options is NOT recommended."
+#~ msgstr ""
+#~ "Az ablakosztályhoz (WM_CLASS tulajdonság) illeszkedő\n"
+#~ "reguláris kifejezés. Az ablakosztály kiíratható az\n"
+#~ "'xprop | grep WM_CLASS' paranccsal (rá kell kattintani az ablakra).\n"
+#~ "Mindkét rész megadható szóközzel elválasztva vagy elég a jobb oldali "
+#~ "rész.\n"
+#~ "Megjegyzés: Ha sem az ablak címét, sem az osztályát nem adja meg,\n"
+#~ "akkor a legelső megjelenő ablak fog illeszkedni,\n"
+#~ "ezért célszerű legalább az egyiket megadni."
+
+#~ msgid "Desktop on which to make the window appear"
+#~ msgstr "Az asztal, amelyen az ablak megjelenik"
+
+#~ msgid ""
+#~ "Make the window appear on the desktop that was active\n"
+#~ "when starting the application"
+#~ msgstr ""
+#~ "Az alkalmazás azon a munkaasztalon fog megjelenni,\n"
+#~ "amelyik az indítás pillanatában aktív volt"
+
+#~ msgid "Make the window appear on all desktops"
+#~ msgstr "Az ablak jelenjen meg minden asztalon"
+
+#~ msgid "Iconify the window"
+#~ msgstr "Az ablak ikonizálása"
+
+#~ msgid "Maximize the window"
+#~ msgstr "Az ablak maximalizálása"
+
+#~ msgid "Maximize the window vertically"
+#~ msgstr "Az ablak maximalizálása függőlegesen"
+
+#~ msgid "Maximize the window horizontally"
+#~ msgstr "Az ablak maximalizálása vízszintesen"
+
+#~ msgid "Show window fullscreen"
+#~ msgstr "Az ablak teljes képernyős módban jelenjen meg"
+
+#~ msgid ""
+#~ "The window type: Normal, Desktop, Dock, Toolbar, \n"
+#~ "Menu, Dialog, TopMenu or Override"
+#~ msgstr ""
+#~ "Ablaktípus: normál, asztali, dokkolt, eszköztár, \n"
+#~ "menü, párbeszédablak, felső szintű menü vagy felülbírálás"
+
+#~ msgid ""
+#~ "Jump to the window even if it is started on a \n"
+#~ "different virtual desktop"
+#~ msgstr ""
+#~ "Ugrás az ablakra, még akkor is, ha egy másik\n"
+#~ "asztalon jelenik meg"
+
+#~ msgid "Try to keep the window above other windows"
+#~ msgstr "Az ablak lehetőleg mindig a többi ablak fölött maradjon"
+
+#~ msgid "Try to keep the window below other windows"
+#~ msgstr "Az ablak lehetőleg mindig a többi ablak alatt maradjon"
+
+#~ msgid "The window does not get an entry in the taskbar"
+#~ msgstr "Ez az ablak nem jelenik meg a tálcán"
+
+#~ msgid "The window does not get an entry on the pager"
+#~ msgstr "Ennek az ablaknak nem lesz bejegyzése a lapozóablakban"
 
 #~ msgid "The window is sent to the system tray in Kicker"
 #~ msgstr "Az ablak a paneltálcában fog megjelenni"

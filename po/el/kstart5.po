@@ -13,7 +13,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kstart\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2022-12-17 00:51+0000\n"
+"POT-Creation-Date: 2023-02-03 01:00+0000\n"
 "PO-Revision-Date: 2020-09-05 17:22+0300\n"
 "Last-Translator: Stelios <sstavra@gmail.com>\n"
 "Language-Team: Greek <kde-i18n-el@kde.org>\n"
@@ -36,50 +36,42 @@ msgstr ""
 "el97146@mail.ntua.gr,sdramis@egnatia.ee.auth.gr,sngeorgaras@otenet.gr,"
 "manolis@koppermind.homelinux.org"
 
-#: kstart.cpp:255
+#: kstart.cpp:78
 #, kde-format
 msgid "KStart"
 msgstr "KStart"
 
-#: kstart.cpp:257
+#: kstart.cpp:80
 #, kde-format
-msgid ""
-"Utility to launch applications with special window properties \n"
-"such as iconified, maximized, a certain virtual desktop, a special "
-"decoration\n"
-"and so on."
+msgid "Utility to launch applications"
 msgstr ""
-"Εργαλείο για την εκτέλεση εφαρμογών με ειδικές ιδιότητες παραθύρου \n"
-"όπως εικονιδιοποιημένο, μεγιστοποιημένο, μια συγκεκριμένη επιφάνεια "
-"εργασίας, με κάποια συγκεκριμένη διακόσμηση\n"
-"κ.ο.κ."
 
-#: kstart.cpp:262
+#: kstart.cpp:82
 #, kde-format
 msgid "(C) 1997-2000 Matthias Ettrich (ettrich@kde.org)"
 msgstr "(C) 1997-2000 Matthias Ettrich (ettrich@kde.org)"
 
-#: kstart.cpp:264
+#: kstart.cpp:84
 #, kde-format
 msgid "Matthias Ettrich"
 msgstr "Matthias Ettrich"
 
-#: kstart.cpp:265
+#: kstart.cpp:85
 #, kde-format
 msgid "David Faure"
 msgstr "David Faure"
 
-#: kstart.cpp:266
+#: kstart.cpp:86
 #, kde-format
 msgid "Richard J. Moore"
 msgstr "Richard J. Moore"
 
-#: kstart.cpp:271
+#: kstart.cpp:91
 #, kde-format
 msgid "Command to execute"
 msgstr "Εντολή για εκτέλεση"
 
-#: kstart.cpp:275
+#: kstart.cpp:95
 #, kde-format
 msgid ""
 "Alternative to <command>: desktop file path to start. D-Bus service will be "
@@ -88,128 +80,107 @@ msgstr ""
 "Εναλλακτικό του <command>: διαδρομή αρχείου desktop για εκκίνηση. Η υπηρεσία "
 "D-Bus θα αποτυπωθεί στο stdout. Παλαιωμένο: χρησιμοποιήστε --application"
 
-#: kstart.cpp:278
+#: kstart.cpp:98
 #, kde-format
 msgid "Alternative to <command>: desktop file to start."
 msgstr "Εναλλακτικό του <command>: αρχείο desktop για εκκίνηση."
 
-#: kstart.cpp:281
+#: kstart.cpp:101
 #, kde-format
 msgid "Optional URL to pass <desktopfile>, when using --service"
 msgstr "Προαιρετικό URL για το <desktopfile>, όταν γίνεται χρήση της --service"
 
-#: kstart.cpp:284
-#, kde-format
-msgid "A regular expression matching the window title"
-msgstr "Μία κανονική έκφραση που ταιριάζει με τον τίτλο του παραθύρου"
-
-#: kstart.cpp:286
-#, kde-format
-msgid ""
-"A string matching the window class (WM_CLASS property)\n"
-"The window class can be found out by running\n"
-"'xprop | grep WM_CLASS' and clicking on a window\n"
-"(use either both parts separated by a space or only the right part).\n"
-"NOTE: If you specify neither window title nor window class,\n"
-"then the very first window to appear will be taken;\n"
-"omitting both options is NOT recommended."
-msgstr ""
-"Μια γραμματοσειρά που ταιριάζει με την κλάση του παραθύρου (ιδιότητα "
-"WM_CLASS)\n"
-"Η κλάση παραθύρου μπορεί να βρεθεί εκτελώντας\n"
-"το 'xprop | grep WM_CLASS' και κάνοντας κλικ σε ένα παράθυρο\n"
-"(χρησιμοποιήστε είτε και τα δύο μέρη χωρισμένα με ένα κενό ή μόνο το δεξί "
-"μέρος).\n"
-"Σημείωση: Αν δεν ορίσετε ένα τίτλο ή μία κλάση παραθύρου,\n"
-"τότε θα ληφθεί το πρώτο παράθυρο που θα εμφανιστεί\n"
-"παραλείποντας και τις δύο επιλογές. ΔΕ ΣΥΝΙΣΤΑΤΑΙ."
-
-#: kstart.cpp:295
-#, kde-format
-msgid "Desktop on which to make the window appear"
-msgstr "Επιφάνεια εργασίας όπου θα εμφανιστεί το παράθυρο"
-
-#: kstart.cpp:297
-#, kde-format
-msgid ""
-"Make the window appear on the desktop that was active\n"
-"when starting the application"
-msgstr ""
-"Το παράθυρο να εμφανιστεί στην επιφάνεια εργασίας που ήταν ενεργή\n"
-"κατά την εκκίνηση της εφαρμογής"
-
-#: kstart.cpp:298
-#, kde-format
-msgid "Make the window appear on all desktops"
-msgstr "Να φαίνεται το παράθυρο σε όλες τις επιφάνειες εργασίας"
-
-#: kstart.cpp:299
-#, kde-format
-msgid "Iconify the window"
-msgstr "Εικονιδιοποίηση του παραθύρου"
-
-#: kstart.cpp:300
-#, kde-format
-msgid "Maximize the window"
-msgstr "Μεγιστοποίηση του παραθύρου"
-
-#: kstart.cpp:301
-#, kde-format
-msgid "Maximize the window vertically"
-msgstr "Μεγιστοποίηση του παραθύρου κατακόρυφα"
-
-#: kstart.cpp:302
-#, kde-format
-msgid "Maximize the window horizontally"
-msgstr "Μεγιστοποίηση του παραθύρου οριζόντια"
-
-#: kstart.cpp:303
-#, kde-format
-msgid "Show window fullscreen"
-msgstr "Εμφάνιση του παραθύρου σε πλήρη οθόνη"
-
-#: kstart.cpp:305
-#, kde-format
-msgid ""
-"The window type: Normal, Desktop, Dock, Toolbar, \n"
-"Menu, Dialog, TopMenu or Override"
-msgstr ""
-"Ο τύπος του παραθύρου: Κανονικό, Επιφάνεια εργασίας, Dock, Εργαλείο,\n"
-"Μενού, Διάλογος, TopMenu ή Προσπέραση"
-
-#: kstart.cpp:308
-#, kde-format
-msgid ""
-"Jump to the window even if it is started on a \n"
-"different virtual desktop"
-msgstr ""
-"Μεταπήδηση στο παράθυρο ακόμα και αν ξεκινήσει \n"
-"σε μια άλλη επιφάνεια εργασίας"
-
-#: kstart.cpp:311
-#, kde-format
-msgid "Try to keep the window above other windows"
-msgstr "Προσπάθεια διατήρησης παραθύρου πάνω από τα άλλα παράθυρα"
-
-#: kstart.cpp:313
-#, kde-format
-msgid "Try to keep the window below other windows"
-msgstr "Προσπάθεια διατήρησης παραθύρου κάτω από τα άλλα παράθυρα"
-
-#: kstart.cpp:314
-#, kde-format
-msgid "The window does not get an entry in the taskbar"
-msgstr "Το παράθυρο δεν αποκτά καταχώρηση στη γραμμή εργασιών"
-
-#: kstart.cpp:315
-#, kde-format
-msgid "The window does not get an entry on the pager"
-msgstr "Το παράθυρο αυτό δεν εμφανίζει καταχώρηση στον επιλογέα σελίδας"
-
-#: kstart.cpp:329
+#: kstart.cpp:115
 #, kde-format
 msgid "No command specified"
 msgstr "Δεν καθορίστηκε κάποια εντολή"
+
+#~ msgid ""
+#~ "Utility to launch applications with special window properties \n"
+#~ "such as iconified, maximized, a certain virtual desktop, a special "
+#~ "decoration\n"
+#~ "and so on."
+#~ msgstr ""
+#~ "Εργαλείο για την εκτέλεση εφαρμογών με ειδικές ιδιότητες παραθύρου \n"
+#~ "όπως εικονιδιοποιημένο, μεγιστοποιημένο, μια συγκεκριμένη επιφάνεια "
+#~ "εργασίας, με κάποια συγκεκριμένη διακόσμηση\n"
+#~ "κ.ο.κ."
+
+#~ msgid "A regular expression matching the window title"
+#~ msgstr "Μία κανονική έκφραση που ταιριάζει με τον τίτλο του παραθύρου"
+
+#~ msgid ""
+#~ "A string matching the window class (WM_CLASS property)\n"
+#~ "The window class can be found out by running\n"
+#~ "'xprop | grep WM_CLASS' and clicking on a window\n"
+#~ "(use either both parts separated by a space or only the right part).\n"
+#~ "NOTE: If you specify neither window title nor window class,\n"
+#~ "then the very first window to appear will be taken;\n"
+#~ "omitting both options is NOT recommended."
+#~ msgstr ""
+#~ "Μια γραμματοσειρά που ταιριάζει με την κλάση του παραθύρου (ιδιότητα "
+#~ "WM_CLASS)\n"
+#~ "Η κλάση παραθύρου μπορεί να βρεθεί εκτελώντας\n"
+#~ "το 'xprop | grep WM_CLASS' και κάνοντας κλικ σε ένα παράθυρο\n"
+#~ "(χρησιμοποιήστε είτε και τα δύο μέρη χωρισμένα με ένα κενό ή μόνο το δεξί "
+#~ "μέρος).\n"
+#~ "Σημείωση: Αν δεν ορίσετε ένα τίτλο ή μία κλάση παραθύρου,\n"
+#~ "τότε θα ληφθεί το πρώτο παράθυρο που θα εμφανιστεί\n"
+#~ "παραλείποντας και τις δύο επιλογές. ΔΕ ΣΥΝΙΣΤΑΤΑΙ."
+
+#~ msgid "Desktop on which to make the window appear"
+#~ msgstr "Επιφάνεια εργασίας όπου θα εμφανιστεί το παράθυρο"
+
+#~ msgid ""
+#~ "Make the window appear on the desktop that was active\n"
+#~ "when starting the application"
+#~ msgstr ""
+#~ "Το παράθυρο να εμφανιστεί στην επιφάνεια εργασίας που ήταν ενεργή\n"
+#~ "κατά την εκκίνηση της εφαρμογής"
+
+#~ msgid "Make the window appear on all desktops"
+#~ msgstr "Να φαίνεται το παράθυρο σε όλες τις επιφάνειες εργασίας"
+
+#~ msgid "Iconify the window"
+#~ msgstr "Εικονιδιοποίηση του παραθύρου"
+
+#~ msgid "Maximize the window"
+#~ msgstr "Μεγιστοποίηση του παραθύρου"
+
+#~ msgid "Maximize the window vertically"
+#~ msgstr "Μεγιστοποίηση του παραθύρου κατακόρυφα"
+
+#~ msgid "Maximize the window horizontally"
+#~ msgstr "Μεγιστοποίηση του παραθύρου οριζόντια"
+
+#~ msgid "Show window fullscreen"
+#~ msgstr "Εμφάνιση του παραθύρου σε πλήρη οθόνη"
+
+#~ msgid ""
+#~ "The window type: Normal, Desktop, Dock, Toolbar, \n"
+#~ "Menu, Dialog, TopMenu or Override"
+#~ msgstr ""
+#~ "Ο τύπος του παραθύρου: Κανονικό, Επιφάνεια εργασίας, Dock, Εργαλείο,\n"
+#~ "Μενού, Διάλογος, TopMenu ή Προσπέραση"
+
+#~ msgid ""
+#~ "Jump to the window even if it is started on a \n"
+#~ "different virtual desktop"
+#~ msgstr ""
+#~ "Μεταπήδηση στο παράθυρο ακόμα και αν ξεκινήσει \n"
+#~ "σε μια άλλη επιφάνεια εργασίας"
+
+#~ msgid "Try to keep the window above other windows"
+#~ msgstr "Προσπάθεια διατήρησης παραθύρου πάνω από τα άλλα παράθυρα"
+
+#~ msgid "Try to keep the window below other windows"
+#~ msgstr "Προσπάθεια διατήρησης παραθύρου κάτω από τα άλλα παράθυρα"
+
+#~ msgid "The window does not get an entry in the taskbar"
+#~ msgstr "Το παράθυρο δεν αποκτά καταχώρηση στη γραμμή εργασιών"
+
+#~ msgid "The window does not get an entry on the pager"
+#~ msgstr "Το παράθυρο αυτό δεν εμφανίζει καταχώρηση στον επιλογέα σελίδας"
 
 #~ msgid "The window is sent to the system tray in Kicker"
 #~ msgstr "Το παράθυρο στέλνεται στο πλαίσιο συστήματος του Kicker"

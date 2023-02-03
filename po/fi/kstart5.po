@@ -13,7 +13,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kstart\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2022-12-17 00:51+0000\n"
+"POT-Creation-Date: 2023-02-03 01:00+0000\n"
 "PO-Revision-Date: 2020-07-21 15:02+0300\n"
 "Last-Translator: Tommi Nieminen <translator@legisign.org>\n"
 "Language-Team: Finnish <kde-i18n-doc@kde.org>\n"
@@ -35,49 +35,42 @@ msgctxt "EMAIL OF TRANSLATORS"
 msgid "Your emails"
 msgstr "kim.enkovaara@iki.fi,eleknader@phnet.fi,ilpo@iki.fi"
 
-#: kstart.cpp:255
+#: kstart.cpp:78
 #, kde-format
 msgid "KStart"
 msgstr "KStart"
 
-#: kstart.cpp:257
+#: kstart.cpp:80
 #, kde-format
-msgid ""
-"Utility to launch applications with special window properties \n"
-"such as iconified, maximized, a certain virtual desktop, a special "
-"decoration\n"
-"and so on."
+msgid "Utility to launch applications"
 msgstr ""
-"Työkalu, jonka avulla voidaan käynnistää sovelluksia erikoisilla\n"
-"KDE:n ikkunaominaisuuksilla kuten kuvakkeena, suurennettuna, jollain\n"
-"työpöydällä, erikoiskehyksellä tai naulattuna."
 
-#: kstart.cpp:262
+#: kstart.cpp:82
 #, kde-format
 msgid "(C) 1997-2000 Matthias Ettrich (ettrich@kde.org)"
 msgstr "© 1997–2000 Matthias Ettrich (ettrich@kde.org)"
 
-#: kstart.cpp:264
+#: kstart.cpp:84
 #, kde-format
 msgid "Matthias Ettrich"
 msgstr "Matthias Ettrich"
 
-#: kstart.cpp:265
+#: kstart.cpp:85
 #, kde-format
 msgid "David Faure"
 msgstr "David Faure"
 
-#: kstart.cpp:266
+#: kstart.cpp:86
 #, kde-format
 msgid "Richard J. Moore"
 msgstr "Richard J. Moore"
 
-#: kstart.cpp:271
+#: kstart.cpp:91
 #, kde-format
 msgid "Command to execute"
 msgstr "Suoritettava komento"
 
-#: kstart.cpp:275
+#: kstart.cpp:95
 #, kde-format
 msgid ""
 "Alternative to <command>: desktop file path to start. D-Bus service will be "
@@ -87,128 +80,107 @@ msgstr ""
 "palvelu tulostetaan vakiotulostusvirtaan. Vanhentunut: Käytä --application-"
 "valitsinta"
 
-#: kstart.cpp:278
+#: kstart.cpp:98
 #, kde-format
 msgid "Alternative to <command>: desktop file to start."
 msgstr "Vaihtoehto valinnalle <command>: käynnistettävä työpöytätiedosto."
 
-#: kstart.cpp:281
+#: kstart.cpp:101
 #, kde-format
 msgid "Optional URL to pass <desktopfile>, when using --service"
 msgstr ""
 "Valinnainen välitettävä osoite <desktopfile> käytettäessä valitsinta --"
 "service"
 
-#: kstart.cpp:284
-#, kde-format
-msgid "A regular expression matching the window title"
-msgstr "Säännöllinen lauseke ikkunan otsikkoon"
-
-#: kstart.cpp:286
-#, kde-format
-msgid ""
-"A string matching the window class (WM_CLASS property)\n"
-"The window class can be found out by running\n"
-"'xprop | grep WM_CLASS' and clicking on a window\n"
-"(use either both parts separated by a space or only the right part).\n"
-"NOTE: If you specify neither window title nor window class,\n"
-"then the very first window to appear will be taken;\n"
-"omitting both options is NOT recommended."
-msgstr ""
-"Ikkunaluokkaan (VM_CLASS ominaisuus) täsmäävä teksti\n"
-"Ikkunaluokka voidaan löytää ajamalla\n"
-"'xprop | grep WM_CLASS'  ja napsauttamalla ikkunaa\n"
-"(käytä joko kumpaakin eroteltua osaa välilyönnillä tai vain oikeaa osaa).\n"
-"HUOM: Jos et määrittele ikkunan otsikkoa etkä ikkunan luokkaa,\n"
-"otetaan ensimmäinen löytyvä ikkuna.\n"
-"Kummankin valinnan valtsemattajättämistä ei suositella."
-
-#: kstart.cpp:295
-#, kde-format
-msgid "Desktop on which to make the window appear"
-msgstr "Työpöytä jolle ikkuna avataan. "
-
-#: kstart.cpp:297
-#, kde-format
-msgid ""
-"Make the window appear on the desktop that was active\n"
-"when starting the application"
-msgstr ""
-"Avaa ikkuna työpöydälle, joka oli käytössä\n"
-"ohjelmaa käynnistettäessä. "
-
-#: kstart.cpp:298
-#, kde-format
-msgid "Make the window appear on all desktops"
-msgstr "Näytä ikkuna kaikilla työpöydillä"
-
-#: kstart.cpp:299
-#, kde-format
-msgid "Iconify the window"
-msgstr "Pienennä ikkuna"
-
-#: kstart.cpp:300
-#, kde-format
-msgid "Maximize the window"
-msgstr "Suurenna ikkuna"
-
-#: kstart.cpp:301
-#, kde-format
-msgid "Maximize the window vertically"
-msgstr "Suurenna ikkuna pystysuunnassa"
-
-#: kstart.cpp:302
-#, kde-format
-msgid "Maximize the window horizontally"
-msgstr "Suurenna ikkuna vaakasuunnassa"
-
-#: kstart.cpp:303
-#, kde-format
-msgid "Show window fullscreen"
-msgstr "Näytä ikkuna koko näytön kokoisena"
-
-#: kstart.cpp:305
-#, kde-format
-msgid ""
-"The window type: Normal, Desktop, Dock, Toolbar, \n"
-"Menu, Dialog, TopMenu or Override"
-msgstr ""
-"Ikkunan tyyppi: Normaali, Työpöytä, Upotettu, Työkalurivi, \n"
-"Valikko, Dialogi, Ylävalikko tai Ohita"
-
-#: kstart.cpp:308
-#, kde-format
-msgid ""
-"Jump to the window even if it is started on a \n"
-"different virtual desktop"
-msgstr ""
-"Hyppää ikkunaan, vaikka se on käynnistetty \n"
-"toisella työpöydällä"
-
-#: kstart.cpp:311
-#, kde-format
-msgid "Try to keep the window above other windows"
-msgstr "Yritä pitää ikkuna muiden ikkunoiden päällä"
-
-#: kstart.cpp:313
-#, kde-format
-msgid "Try to keep the window below other windows"
-msgstr "Yritä pitää ikkuna muiden ikkunoiden alla"
-
-#: kstart.cpp:314
-#, kde-format
-msgid "The window does not get an entry in the taskbar"
-msgstr "Ikkuna ei näy tehtäväpalkissa"
-
-#: kstart.cpp:315
-#, kde-format
-msgid "The window does not get an entry on the pager"
-msgstr "Ikkuna ei näy sivuttajassa"
-
-#: kstart.cpp:329
+#: kstart.cpp:115
 #, kde-format
 msgid "No command specified"
 msgstr "Ei komentoa"
+
+#~ msgid ""
+#~ "Utility to launch applications with special window properties \n"
+#~ "such as iconified, maximized, a certain virtual desktop, a special "
+#~ "decoration\n"
+#~ "and so on."
+#~ msgstr ""
+#~ "Työkalu, jonka avulla voidaan käynnistää sovelluksia erikoisilla\n"
+#~ "KDE:n ikkunaominaisuuksilla kuten kuvakkeena, suurennettuna, jollain\n"
+#~ "työpöydällä, erikoiskehyksellä tai naulattuna."
+
+#~ msgid "A regular expression matching the window title"
+#~ msgstr "Säännöllinen lauseke ikkunan otsikkoon"
+
+#~ msgid ""
+#~ "A string matching the window class (WM_CLASS property)\n"
+#~ "The window class can be found out by running\n"
+#~ "'xprop | grep WM_CLASS' and clicking on a window\n"
+#~ "(use either both parts separated by a space or only the right part).\n"
+#~ "NOTE: If you specify neither window title nor window class,\n"
+#~ "then the very first window to appear will be taken;\n"
+#~ "omitting both options is NOT recommended."
+#~ msgstr ""
+#~ "Ikkunaluokkaan (VM_CLASS ominaisuus) täsmäävä teksti\n"
+#~ "Ikkunaluokka voidaan löytää ajamalla\n"
+#~ "'xprop | grep WM_CLASS'  ja napsauttamalla ikkunaa\n"
+#~ "(käytä joko kumpaakin eroteltua osaa välilyönnillä tai vain oikeaa "
+#~ "osaa).\n"
+#~ "HUOM: Jos et määrittele ikkunan otsikkoa etkä ikkunan luokkaa,\n"
+#~ "otetaan ensimmäinen löytyvä ikkuna.\n"
+#~ "Kummankin valinnan valtsemattajättämistä ei suositella."
+
+#~ msgid "Desktop on which to make the window appear"
+#~ msgstr "Työpöytä jolle ikkuna avataan. "
+
+#~ msgid ""
+#~ "Make the window appear on the desktop that was active\n"
+#~ "when starting the application"
+#~ msgstr ""
+#~ "Avaa ikkuna työpöydälle, joka oli käytössä\n"
+#~ "ohjelmaa käynnistettäessä. "
+
+#~ msgid "Make the window appear on all desktops"
+#~ msgstr "Näytä ikkuna kaikilla työpöydillä"
+
+#~ msgid "Iconify the window"
+#~ msgstr "Pienennä ikkuna"
+
+#~ msgid "Maximize the window"
+#~ msgstr "Suurenna ikkuna"
+
+#~ msgid "Maximize the window vertically"
+#~ msgstr "Suurenna ikkuna pystysuunnassa"
+
+#~ msgid "Maximize the window horizontally"
+#~ msgstr "Suurenna ikkuna vaakasuunnassa"
+
+#~ msgid "Show window fullscreen"
+#~ msgstr "Näytä ikkuna koko näytön kokoisena"
+
+#~ msgid ""
+#~ "The window type: Normal, Desktop, Dock, Toolbar, \n"
+#~ "Menu, Dialog, TopMenu or Override"
+#~ msgstr ""
+#~ "Ikkunan tyyppi: Normaali, Työpöytä, Upotettu, Työkalurivi, \n"
+#~ "Valikko, Dialogi, Ylävalikko tai Ohita"
+
+#~ msgid ""
+#~ "Jump to the window even if it is started on a \n"
+#~ "different virtual desktop"
+#~ msgstr ""
+#~ "Hyppää ikkunaan, vaikka se on käynnistetty \n"
+#~ "toisella työpöydällä"
+
+#~ msgid "Try to keep the window above other windows"
+#~ msgstr "Yritä pitää ikkuna muiden ikkunoiden päällä"
+
+#~ msgid "Try to keep the window below other windows"
+#~ msgstr "Yritä pitää ikkuna muiden ikkunoiden alla"
+
+#~ msgid "The window does not get an entry in the taskbar"
+#~ msgstr "Ikkuna ei näy tehtäväpalkissa"
+
+#~ msgid "The window does not get an entry on the pager"
+#~ msgstr "Ikkuna ei näy sivuttajassa"
 
 #~ msgid "The window is sent to the system tray in Kicker"
 #~ msgstr "Ikkuna on lähetetty paneelin ilmoitusalueelle."

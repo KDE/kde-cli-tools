@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kdeorg\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2022-12-17 00:51+0000\n"
+"POT-Creation-Date: 2023-02-03 01:00+0000\n"
 "PO-Revision-Date: 2023-01-12 10:30\n"
 "Last-Translator: \n"
 "Language-Team: Chinese Simplified\n"
@@ -27,48 +27,42 @@ msgctxt "EMAIL OF TRANSLATORS"
 msgid "Your emails"
 msgstr "kde-china@kde.org"
 
-#: kstart.cpp:255
+#: kstart.cpp:78
 #, kde-format
 msgid "KStart"
 msgstr "KStart"
 
-#: kstart.cpp:257
+#: kstart.cpp:80
 #, kde-format
-msgid ""
-"Utility to launch applications with special window properties \n"
-"such as iconified, maximized, a certain virtual desktop, a special "
-"decoration\n"
-"and so on."
+msgid "Utility to launch applications"
 msgstr ""
-"用来启动特殊窗口属性的程序的工具。这些特殊属性包括\n"
-"最小化、最大化、在特定桌面、特殊的装饰或其他。"
 
-#: kstart.cpp:262
+#: kstart.cpp:82
 #, kde-format
 msgid "(C) 1997-2000 Matthias Ettrich (ettrich@kde.org)"
 msgstr "(C) 1997-2000 Matthias Ettrich (ettrich@kde.org)"
 
-#: kstart.cpp:264
+#: kstart.cpp:84
 #, kde-format
 msgid "Matthias Ettrich"
 msgstr "Matthias Ettrich"
 
-#: kstart.cpp:265
+#: kstart.cpp:85
 #, kde-format
 msgid "David Faure"
 msgstr "David Faure"
 
-#: kstart.cpp:266
+#: kstart.cpp:86
 #, kde-format
 msgid "Richard J. Moore"
 msgstr "Richard J. Moore"
 
-#: kstart.cpp:271
+#: kstart.cpp:91
 #, kde-format
 msgid "Command to execute"
 msgstr "要执行的命令"
 
-#: kstart.cpp:275
+#: kstart.cpp:95
 #, kde-format
 msgid ""
 "Alternative to <command>: desktop file path to start. D-Bus service will be "
@@ -77,118 +71,95 @@ msgstr ""
 "指定<command>参数的替换项：要启动的 desktop 文件路径。此外 D-Bus 服务路径将打"
 "印到标准输出。弃用的：--application"
 
-#: kstart.cpp:278
+#: kstart.cpp:98
 #, kde-format
 msgid "Alternative to <command>: desktop file to start."
 msgstr "指定<command>参数的替换项：要启动的 desktop 文件。"
 
-#: kstart.cpp:281
+#: kstart.cpp:101
 #, kde-format
 msgid "Optional URL to pass <desktopfile>, when using --service"
 msgstr ""
 "当使用 --service 选项时，传递给<desktop 文件>参数的 URL 地址，这是可选项"
 
-#: kstart.cpp:284
-#, kde-format
-msgid "A regular expression matching the window title"
-msgstr "匹配窗口标题的正则表达式"
-
-#: kstart.cpp:286
-#, kde-format
-msgid ""
-"A string matching the window class (WM_CLASS property)\n"
-"The window class can be found out by running\n"
-"'xprop | grep WM_CLASS' and clicking on a window\n"
-"(use either both parts separated by a space or only the right part).\n"
-"NOTE: If you specify neither window title nor window class,\n"
-"then the very first window to appear will be taken;\n"
-"omitting both options is NOT recommended."
-msgstr ""
-"匹配窗口类(WM_CLASS 属性)的字符串\n"
-"要找出窗口类，可以运行“xprop | grep WM_CLASS”并单击窗口(用空格来分隔两部分，"
-"或者只有右侧部分)。\n"
-"注意：如果您既没有指定窗口标题也没有指定窗口类，则前面的窗\n"
-"口将会执行相应的操作；所以我们不推荐您省略全部选项。"
-
-#: kstart.cpp:295
-#, kde-format
-msgid "Desktop on which to make the window appear"
-msgstr "窗口出现的桌面"
-
-#: kstart.cpp:297
-#, kde-format
-msgid ""
-"Make the window appear on the desktop that was active\n"
-"when starting the application"
-msgstr "当启动程序时，窗口出现在活动桌面"
-
-#: kstart.cpp:298
-#, kde-format
-msgid "Make the window appear on all desktops"
-msgstr "窗口出现在所有桌面"
-
-#: kstart.cpp:299
-#, kde-format
-msgid "Iconify the window"
-msgstr "最小化窗口"
-
-#: kstart.cpp:300
-#, kde-format
-msgid "Maximize the window"
-msgstr "最大化窗口"
-
-#: kstart.cpp:301
-#, kde-format
-msgid "Maximize the window vertically"
-msgstr "垂直最大化窗口"
-
-#: kstart.cpp:302
-#, kde-format
-msgid "Maximize the window horizontally"
-msgstr "水平最大化窗口"
-
-#: kstart.cpp:303
-#, kde-format
-msgid "Show window fullscreen"
-msgstr "全屏显示窗口"
-
-#: kstart.cpp:305
-#, kde-format
-msgid ""
-"The window type: Normal, Desktop, Dock, Toolbar, \n"
-"Menu, Dialog, TopMenu or Override"
-msgstr ""
-"窗口类型：普通、桌面、嵌入、工具、\n"
-"菜单、对话框、顶级菜单或 Override"
-
-#: kstart.cpp:308
-#, kde-format
-msgid ""
-"Jump to the window even if it is started on a \n"
-"different virtual desktop"
-msgstr "即使窗口在另外一个桌面启动也切换到此窗口"
-
-#: kstart.cpp:311
-#, kde-format
-msgid "Try to keep the window above other windows"
-msgstr "保持窗口总在其他窗口之上"
-
-#: kstart.cpp:313
-#, kde-format
-msgid "Try to keep the window below other windows"
-msgstr "保持窗口总在其他窗口之下"
-
-#: kstart.cpp:314
-#, kde-format
-msgid "The window does not get an entry in the taskbar"
-msgstr "窗口不在任务栏里"
-
-#: kstart.cpp:315
-#, kde-format
-msgid "The window does not get an entry on the pager"
-msgstr "窗口不存在于虚拟桌面切换器中"
-
-#: kstart.cpp:329
+#: kstart.cpp:115
 #, kde-format
 msgid "No command specified"
 msgstr "没有指定命令"
+
+#~ msgid ""
+#~ "Utility to launch applications with special window properties \n"
+#~ "such as iconified, maximized, a certain virtual desktop, a special "
+#~ "decoration\n"
+#~ "and so on."
+#~ msgstr ""
+#~ "用来启动特殊窗口属性的程序的工具。这些特殊属性包括\n"
+#~ "最小化、最大化、在特定桌面、特殊的装饰或其他。"
+
+#~ msgid "A regular expression matching the window title"
+#~ msgstr "匹配窗口标题的正则表达式"
+
+#~ msgid ""
+#~ "A string matching the window class (WM_CLASS property)\n"
+#~ "The window class can be found out by running\n"
+#~ "'xprop | grep WM_CLASS' and clicking on a window\n"
+#~ "(use either both parts separated by a space or only the right part).\n"
+#~ "NOTE: If you specify neither window title nor window class,\n"
+#~ "then the very first window to appear will be taken;\n"
+#~ "omitting both options is NOT recommended."
+#~ msgstr ""
+#~ "匹配窗口类(WM_CLASS 属性)的字符串\n"
+#~ "要找出窗口类，可以运行“xprop | grep WM_CLASS”并单击窗口(用空格来分隔两部"
+#~ "分，或者只有右侧部分)。\n"
+#~ "注意：如果您既没有指定窗口标题也没有指定窗口类，则前面的窗\n"
+#~ "口将会执行相应的操作；所以我们不推荐您省略全部选项。"
+
+#~ msgid "Desktop on which to make the window appear"
+#~ msgstr "窗口出现的桌面"
+
+#~ msgid ""
+#~ "Make the window appear on the desktop that was active\n"
+#~ "when starting the application"
+#~ msgstr "当启动程序时，窗口出现在活动桌面"
+
+#~ msgid "Make the window appear on all desktops"
+#~ msgstr "窗口出现在所有桌面"
+
+#~ msgid "Iconify the window"
+#~ msgstr "最小化窗口"
+
+#~ msgid "Maximize the window"
+#~ msgstr "最大化窗口"
+
+#~ msgid "Maximize the window vertically"
+#~ msgstr "垂直最大化窗口"
+
+#~ msgid "Maximize the window horizontally"
+#~ msgstr "水平最大化窗口"
+
+#~ msgid "Show window fullscreen"
+#~ msgstr "全屏显示窗口"
+
+#~ msgid ""
+#~ "The window type: Normal, Desktop, Dock, Toolbar, \n"
+#~ "Menu, Dialog, TopMenu or Override"
+#~ msgstr ""
+#~ "窗口类型：普通、桌面、嵌入、工具、\n"
+#~ "菜单、对话框、顶级菜单或 Override"
+
+#~ msgid ""
+#~ "Jump to the window even if it is started on a \n"
+#~ "different virtual desktop"
+#~ msgstr "即使窗口在另外一个桌面启动也切换到此窗口"
+
+#~ msgid "Try to keep the window above other windows"
+#~ msgstr "保持窗口总在其他窗口之上"
+
+#~ msgid "Try to keep the window below other windows"
+#~ msgstr "保持窗口总在其他窗口之下"
+
+#~ msgid "The window does not get an entry in the taskbar"
+#~ msgstr "窗口不在任务栏里"
+
+#~ msgid "The window does not get an entry on the pager"
+#~ msgstr "窗口不存在于虚拟桌面切换器中"

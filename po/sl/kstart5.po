@@ -2,7 +2,7 @@
 # Translation of kstart.po to Slovenian
 # KDEBASE translation to Slovenian language.
 # Copyright (C) 2000, 2003, 2004, 2005, 2007 Free Software Foundation, Inc.
-# $Id: kstart5.po 1640122 2022-12-17 01:42:20Z scripty $
+# $Id: kstart5.po 1643780 2023-02-03 01:51:24Z scripty $
 # $Source$
 #
 # Roman Maurer <roman.maurer@hermes.si>, 2000.
@@ -16,7 +16,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kstart\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2022-12-17 00:51+0000\n"
+"POT-Creation-Date: 2023-02-03 01:00+0000\n"
 "PO-Revision-Date: 2021-07-23 07:21+0200\n"
 "Last-Translator: Matjaž Jeran <matjaz.jeran@amis.net>\n"
 "Language-Team: Slovenian <lugos-slo@lugos.si>\n"
@@ -39,49 +39,42 @@ msgid "Your emails"
 msgstr ""
 "roman.maurer@amis.net,markos@elite.org,gregor.rakar@kiss.si,andrejm@ubuntu.si"
 
-#: kstart.cpp:255
+#: kstart.cpp:78
 #, kde-format
 msgid "KStart"
 msgstr "KStart"
 
-#: kstart.cpp:257
+#: kstart.cpp:80
 #, kde-format
-msgid ""
-"Utility to launch applications with special window properties \n"
-"such as iconified, maximized, a certain virtual desktop, a special "
-"decoration\n"
-"and so on."
+msgid "Utility to launch applications"
 msgstr ""
-"Pripomoček za zagon programov s posebnimi okenskimi lastnosti KDE,\n"
-"kot je ikoniziranje, razpenjanje, določeno navidezno namizje,\n"
-"posebni okraski in tako naprej."
 
-#: kstart.cpp:262
+#: kstart.cpp:82
 #, kde-format
 msgid "(C) 1997-2000 Matthias Ettrich (ettrich@kde.org)"
 msgstr "(C) 1997-2000 Matthias Ettrich (ettrich@kde.org)"
 
-#: kstart.cpp:264
+#: kstart.cpp:84
 #, kde-format
 msgid "Matthias Ettrich"
 msgstr "Matthias Ettrich"
 
-#: kstart.cpp:265
+#: kstart.cpp:85
 #, kde-format
 msgid "David Faure"
 msgstr "David Faure"
 
-#: kstart.cpp:266
+#: kstart.cpp:86
 #, kde-format
 msgid "Richard J. Moore"
 msgstr "Richard J. Moore"
 
-#: kstart.cpp:271
+#: kstart.cpp:91
 #, kde-format
 msgid "Command to execute"
 msgstr "Ukaz, ki naj se izvede"
 
-#: kstart.cpp:275
+#: kstart.cpp:95
 #, kde-format
 msgid ""
 "Alternative to <command>: desktop file path to start. D-Bus service will be "
@@ -90,124 +83,102 @@ msgstr ""
 "Druga možnost za <ukaz>: datoteka *.desktop za zagon. Storitev D-Bus bo "
 "izpisana na standardni izhod stdout. Zastarelo: use --application"
 
-#: kstart.cpp:278
+#: kstart.cpp:98
 #, kde-format
 msgid "Alternative to <command>: desktop file to start."
 msgstr "Druga možnost za <ukaz>: datoteka *.desktop za zagon."
 
-#: kstart.cpp:281
+#: kstart.cpp:101
 #, kde-format
 msgid "Optional URL to pass <desktopfile>, when using --service"
 msgstr ""
 "Izbirni naslov URL za posredovanje <datoteke-desktop> pri uporabi --service"
 
-#: kstart.cpp:284
-#, kde-format
-msgid "A regular expression matching the window title"
-msgstr "Regularni izraz, ki ustreza naslovu okna"
-
-#: kstart.cpp:286
-#, kde-format
-msgid ""
-"A string matching the window class (WM_CLASS property)\n"
-"The window class can be found out by running\n"
-"'xprop | grep WM_CLASS' and clicking on a window\n"
-"(use either both parts separated by a space or only the right part).\n"
-"NOTE: If you specify neither window title nor window class,\n"
-"then the very first window to appear will be taken;\n"
-"omitting both options is NOT recommended."
-msgstr ""
-"Niz, ki se ujema z okenskim razredom (lastnost WM_CLASS)\n"
-"Okenski razred lahko najdete tako, da zaženete\n"
-"»xprop | grep WM_CLASS« in kliknete na okno\n"
-"(ločite oba dela s presledkom ali uporabite samo desni del).\n"
-"OPOMBA: Če ne navedete ne naslova okna ne okenskega\n"
-"razreda, potem bo vzeto prvo okno, ki se bo prikazalo;\n"
-"izpustitev obeh možnosti NI PRIPOROČENO."
-
-#: kstart.cpp:295
-#, kde-format
-msgid "Desktop on which to make the window appear"
-msgstr "Namizje, na katerem naj se prikaže okno"
-
-#: kstart.cpp:297
-#, kde-format
-msgid ""
-"Make the window appear on the desktop that was active\n"
-"when starting the application"
-msgstr ""
-"Okno naj se pojavi na namizju, \n"
-"ki je dejavno v času zagona programa"
-
-#: kstart.cpp:298
-#, kde-format
-msgid "Make the window appear on all desktops"
-msgstr "Okno se naj prikaže na vseh namizjih"
-
-#: kstart.cpp:299
-#, kde-format
-msgid "Iconify the window"
-msgstr "Ikoniziraj okno"
-
-#: kstart.cpp:300
-#, kde-format
-msgid "Maximize the window"
-msgstr "Razpni okno"
-
-#: kstart.cpp:301
-#, kde-format
-msgid "Maximize the window vertically"
-msgstr "Razpni okno navpično"
-
-#: kstart.cpp:302
-#, kde-format
-msgid "Maximize the window horizontally"
-msgstr "Razpni okno vodoravno"
-
-#: kstart.cpp:303
-#, kde-format
-msgid "Show window fullscreen"
-msgstr "Prikaži okno čez cel zaslon"
-
-#: kstart.cpp:305
-#, kde-format
-msgid ""
-"The window type: Normal, Desktop, Dock, Toolbar, \n"
-"Menu, Dialog, TopMenu or Override"
-msgstr ""
-"Vrste oken: navadno, namizje, zasidrano, orodna vrstica, \n"
-"meni, pogovorno okno, vrhnji_meni ali prepiši"
-
-#: kstart.cpp:308
-#, kde-format
-msgid ""
-"Jump to the window even if it is started on a \n"
-"different virtual desktop"
-msgstr ""
-"Skoči v okno, četudi je zagnano na drugem\n"
-"navideznem omizju"
-
-#: kstart.cpp:311
-#, kde-format
-msgid "Try to keep the window above other windows"
-msgstr "Poskušaj ohraniti okno nad ostalimi okni"
-
-#: kstart.cpp:313
-#, kde-format
-msgid "Try to keep the window below other windows"
-msgstr "Poskušaj ohraniti okno pod ostalimi okni"
-
-#: kstart.cpp:314
-#, kde-format
-msgid "The window does not get an entry in the taskbar"
-msgstr "Okno ne dobi vnosa v opravilni vrstici"
-
-#: kstart.cpp:315
-#, kde-format
-msgid "The window does not get an entry on the pager"
-msgstr "Okno ne dobi vnosa v pozivniku"
-
-#: kstart.cpp:329
+#: kstart.cpp:115
 #, kde-format
 msgid "No command specified"
 msgstr "Ni podanega ukaza"
+
+#~ msgid ""
+#~ "Utility to launch applications with special window properties \n"
+#~ "such as iconified, maximized, a certain virtual desktop, a special "
+#~ "decoration\n"
+#~ "and so on."
+#~ msgstr ""
+#~ "Pripomoček za zagon programov s posebnimi okenskimi lastnosti KDE,\n"
+#~ "kot je ikoniziranje, razpenjanje, določeno navidezno namizje,\n"
+#~ "posebni okraski in tako naprej."
+
+#~ msgid "A regular expression matching the window title"
+#~ msgstr "Regularni izraz, ki ustreza naslovu okna"
+
+#~ msgid ""
+#~ "A string matching the window class (WM_CLASS property)\n"
+#~ "The window class can be found out by running\n"
+#~ "'xprop | grep WM_CLASS' and clicking on a window\n"
+#~ "(use either both parts separated by a space or only the right part).\n"
+#~ "NOTE: If you specify neither window title nor window class,\n"
+#~ "then the very first window to appear will be taken;\n"
+#~ "omitting both options is NOT recommended."
+#~ msgstr ""
+#~ "Niz, ki se ujema z okenskim razredom (lastnost WM_CLASS)\n"
+#~ "Okenski razred lahko najdete tako, da zaženete\n"
+#~ "»xprop | grep WM_CLASS« in kliknete na okno\n"
+#~ "(ločite oba dela s presledkom ali uporabite samo desni del).\n"
+#~ "OPOMBA: Če ne navedete ne naslova okna ne okenskega\n"
+#~ "razreda, potem bo vzeto prvo okno, ki se bo prikazalo;\n"
+#~ "izpustitev obeh možnosti NI PRIPOROČENO."
+
+#~ msgid "Desktop on which to make the window appear"
+#~ msgstr "Namizje, na katerem naj se prikaže okno"
+
+#~ msgid ""
+#~ "Make the window appear on the desktop that was active\n"
+#~ "when starting the application"
+#~ msgstr ""
+#~ "Okno naj se pojavi na namizju, \n"
+#~ "ki je dejavno v času zagona programa"
+
+#~ msgid "Make the window appear on all desktops"
+#~ msgstr "Okno se naj prikaže na vseh namizjih"
+
+#~ msgid "Iconify the window"
+#~ msgstr "Ikoniziraj okno"
+
+#~ msgid "Maximize the window"
+#~ msgstr "Razpni okno"
+
+#~ msgid "Maximize the window vertically"
+#~ msgstr "Razpni okno navpično"
+
+#~ msgid "Maximize the window horizontally"
+#~ msgstr "Razpni okno vodoravno"
+
+#~ msgid "Show window fullscreen"
+#~ msgstr "Prikaži okno čez cel zaslon"
+
+#~ msgid ""
+#~ "The window type: Normal, Desktop, Dock, Toolbar, \n"
+#~ "Menu, Dialog, TopMenu or Override"
+#~ msgstr ""
+#~ "Vrste oken: navadno, namizje, zasidrano, orodna vrstica, \n"
+#~ "meni, pogovorno okno, vrhnji_meni ali prepiši"
+
+#~ msgid ""
+#~ "Jump to the window even if it is started on a \n"
+#~ "different virtual desktop"
+#~ msgstr ""
+#~ "Skoči v okno, četudi je zagnano na drugem\n"
+#~ "navideznem omizju"
+
+#~ msgid "Try to keep the window above other windows"
+#~ msgstr "Poskušaj ohraniti okno nad ostalimi okni"
+
+#~ msgid "Try to keep the window below other windows"
+#~ msgstr "Poskušaj ohraniti okno pod ostalimi okni"
+
+#~ msgid "The window does not get an entry in the taskbar"
+#~ msgstr "Okno ne dobi vnosa v opravilni vrstici"
+
+#~ msgid "The window does not get an entry on the pager"
+#~ msgstr "Okno ne dobi vnosa v pozivniku"

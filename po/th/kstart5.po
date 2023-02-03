@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kstart\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2022-12-17 00:51+0000\n"
+"POT-Creation-Date: 2023-02-03 01:00+0000\n"
 "PO-Revision-Date: 2010-02-11 20:34+0700\n"
 "Last-Translator: Thanomsub Noppaburana <donga.nb@gmail.com>\n"
 "Language-Team: Thai <thai-l10n@googlegroups.com>\n"
@@ -29,49 +29,42 @@ msgctxt "EMAIL OF TRANSLATORS"
 msgid "Your emails"
 msgstr "donga.nb@gmail.com"
 
-#: kstart.cpp:255
+#: kstart.cpp:78
 #, kde-format
 msgid "KStart"
 msgstr "KStart"
 
-#: kstart.cpp:257
+#: kstart.cpp:80
 #, kde-format
-msgid ""
-"Utility to launch applications with special window properties \n"
-"such as iconified, maximized, a certain virtual desktop, a special "
-"decoration\n"
-"and so on."
+msgid "Utility to launch applications"
 msgstr ""
-"เครื่องมือเรียกใช้โปรแกรม พร้อมคุณสมบัติพิเศษของหน้าต่าง \n"
-"เช่น ย่อเป็นไอคอน, ขยายใหญ่สุด, บนพื้นที่ทำงานเสมือน,\n"
-"รูปแบบหน้าต่างแบบพิเศษ และอื่น ๆ"
 
-#: kstart.cpp:262
+#: kstart.cpp:82
 #, kde-format
 msgid "(C) 1997-2000 Matthias Ettrich (ettrich@kde.org)"
 msgstr "(C) 1997-2000 Matthias Ettrich (ettrich@kde.org)"
 
-#: kstart.cpp:264
+#: kstart.cpp:84
 #, kde-format
 msgid "Matthias Ettrich"
 msgstr "Matthias Ettrich"
 
-#: kstart.cpp:265
+#: kstart.cpp:85
 #, kde-format
 msgid "David Faure"
 msgstr "David Faure"
 
-#: kstart.cpp:266
+#: kstart.cpp:86
 #, kde-format
 msgid "Richard J. Moore"
 msgstr "Richard J. Moore"
 
-#: kstart.cpp:271
+#: kstart.cpp:91
 #, kde-format
 msgid "Command to execute"
 msgstr "คำสั่งที่จะประมวลผล"
 
-#: kstart.cpp:275
+#: kstart.cpp:95
 #, fuzzy, kde-format
 #| msgid ""
 #| "Alternative to <command>: desktop file to start. D-Bus service will be "
@@ -83,7 +76,7 @@ msgstr ""
 "ทางเลือกอื่นของ <command>: แฟ้มพื้นที่ทำงานที่จะเริ่มการทำงานบริการ D-Bus "
 "จะทำการพิมพ์ผลส่งออกไปทาง stdout"
 
-#: kstart.cpp:278
+#: kstart.cpp:98
 #, fuzzy, kde-format
 #| msgid ""
 #| "Alternative to <command>: desktop file to start. D-Bus service will be "
@@ -93,121 +86,99 @@ msgstr ""
 "ทางเลือกอื่นของ <command>: แฟ้มพื้นที่ทำงานที่จะเริ่มการทำงานบริการ D-Bus "
 "จะทำการพิมพ์ผลส่งออกไปทาง stdout"
 
-#: kstart.cpp:281
+#: kstart.cpp:101
 #, kde-format
 msgid "Optional URL to pass <desktopfile>, when using --service"
 msgstr "ตัวเลือกเพิ่มเติมที่อยู่ URL ที่จะส่งไปให้กับ <desktopfile> เมื่อมีการใช้ --service"
 
-#: kstart.cpp:284
-#, kde-format
-msgid "A regular expression matching the window title"
-msgstr "นิพจน์การค้นหาให้ตรงกับหัวเรื่องหน้าต่าง"
-
-#: kstart.cpp:286
-#, kde-format
-msgid ""
-"A string matching the window class (WM_CLASS property)\n"
-"The window class can be found out by running\n"
-"'xprop | grep WM_CLASS' and clicking on a window\n"
-"(use either both parts separated by a space or only the right part).\n"
-"NOTE: If you specify neither window title nor window class,\n"
-"then the very first window to appear will be taken;\n"
-"omitting both options is NOT recommended."
-msgstr ""
-"ข้อความที่ตรงกับคลาสของหน้าต่าง (คุณสมบัติ WM_CLASS)\n"
-"คุณสามารถหาคลาสของหน้าต่างได้ โดยการเรียกคำสั่ง\n"
-"'xprop | grep WM_CLASS' และคลิกบนหน้าต่างที่ต้องการ\n"
-"(แยกคำสั่งทั้งสองส่วนด้วยการเว้นวรรคหรือ เว้นวรรคเฉพาะคำสั่งทางขวามือ)\n"
-"ข้อควรจำ: หากคุณไม่ได้ระบุทั้งหัวเรื่องหน้าต่างหรือคลาสของหน้าต่าง\n"
-"จะทำให้หน้าต่างแรกที่ปรากฏได้รับผลจากตัวเลือกนี้\n"
-"จึงไม่ขอแนะนำให้ใช้ตัวเลือกทั้งสองพร้อมกัน"
-
-#: kstart.cpp:295
-#, kde-format
-msgid "Desktop on which to make the window appear"
-msgstr "พื้นที่ทำงานที่ต้องการให้หน้าต่างปรากฎ"
-
-#: kstart.cpp:297
-#, kde-format
-msgid ""
-"Make the window appear on the desktop that was active\n"
-"when starting the application"
-msgstr ""
-"ให้หน้าต่างปรากฎบนพื้นที่ทำงานที่กำลังใช้งานอยู่\n"
-"เมื่อเริ่มการทำงานของโปรแกรม"
-
-#: kstart.cpp:298
-#, kde-format
-msgid "Make the window appear on all desktops"
-msgstr "ทำให้หน้าต่างปรากฎอยู่ทุกพื้นที่ทำงาน"
-
-#: kstart.cpp:299
-#, kde-format
-msgid "Iconify the window"
-msgstr "ย่อหน้าต่างเป็นไอคอน"
-
-#: kstart.cpp:300
-#, kde-format
-msgid "Maximize the window"
-msgstr "ขยายหน้าต่างใหญ่สุด"
-
-#: kstart.cpp:301
-#, kde-format
-msgid "Maximize the window vertically"
-msgstr "ขยายหน้าต่างใหญ่สุดทางแนวตั้ง"
-
-#: kstart.cpp:302
-#, kde-format
-msgid "Maximize the window horizontally"
-msgstr "ขยายหน้าต่างใหญ่สุดทางแนวนอน"
-
-#: kstart.cpp:303
-#, kde-format
-msgid "Show window fullscreen"
-msgstr "แสดงหน้าต่างแบบเต็มจอภาพ"
-
-#: kstart.cpp:305
-#, kde-format
-msgid ""
-"The window type: Normal, Desktop, Dock, Toolbar, \n"
-"Menu, Dialog, TopMenu or Override"
-msgstr ""
-"ประเภทหน้าต่าง: ปกติ, พื้นที่ทำงาน, รางแนบถาด, แถบเครื่องมือ, \n"
-"เมนู, กล่องโต้ตอบ, เมนูบนสุด หรือใช้แทน"
-
-#: kstart.cpp:308
-#, kde-format
-msgid ""
-"Jump to the window even if it is started on a \n"
-"different virtual desktop"
-msgstr ""
-"กระโดดไปยังหน้าต่าง แม้ว่ามันจะเริ่มการทำงาน\n"
-"ในพื้นที่ทำงานอื่นก็ตาม"
-
-#: kstart.cpp:311
-#, kde-format
-msgid "Try to keep the window above other windows"
-msgstr "ให้หน้าต่างอยู่เหนือหน้าต่างอื่นเสมอ"
-
-#: kstart.cpp:313
-#, kde-format
-msgid "Try to keep the window below other windows"
-msgstr "ให้หน้าต่างอยู่ด้านล่างหน้าต่างอื่นเสมอ"
-
-#: kstart.cpp:314
-#, kde-format
-msgid "The window does not get an entry in the taskbar"
-msgstr "หน้าต่างไม่ปรากฎในส่วนแถบหน้าต่างงาน"
-
-#: kstart.cpp:315
-#, kde-format
-msgid "The window does not get an entry on the pager"
-msgstr "หน้าต่างไม่ปรากฎในรายการของตัวสลับพื้นที่ทำงาน"
-
-#: kstart.cpp:329
+#: kstart.cpp:115
 #, kde-format
 msgid "No command specified"
 msgstr "ยังไม่ได้ระบุคำสั่ง"
+
+#~ msgid ""
+#~ "Utility to launch applications with special window properties \n"
+#~ "such as iconified, maximized, a certain virtual desktop, a special "
+#~ "decoration\n"
+#~ "and so on."
+#~ msgstr ""
+#~ "เครื่องมือเรียกใช้โปรแกรม พร้อมคุณสมบัติพิเศษของหน้าต่าง \n"
+#~ "เช่น ย่อเป็นไอคอน, ขยายใหญ่สุด, บนพื้นที่ทำงานเสมือน,\n"
+#~ "รูปแบบหน้าต่างแบบพิเศษ และอื่น ๆ"
+
+#~ msgid "A regular expression matching the window title"
+#~ msgstr "นิพจน์การค้นหาให้ตรงกับหัวเรื่องหน้าต่าง"
+
+#~ msgid ""
+#~ "A string matching the window class (WM_CLASS property)\n"
+#~ "The window class can be found out by running\n"
+#~ "'xprop | grep WM_CLASS' and clicking on a window\n"
+#~ "(use either both parts separated by a space or only the right part).\n"
+#~ "NOTE: If you specify neither window title nor window class,\n"
+#~ "then the very first window to appear will be taken;\n"
+#~ "omitting both options is NOT recommended."
+#~ msgstr ""
+#~ "ข้อความที่ตรงกับคลาสของหน้าต่าง (คุณสมบัติ WM_CLASS)\n"
+#~ "คุณสามารถหาคลาสของหน้าต่างได้ โดยการเรียกคำสั่ง\n"
+#~ "'xprop | grep WM_CLASS' และคลิกบนหน้าต่างที่ต้องการ\n"
+#~ "(แยกคำสั่งทั้งสองส่วนด้วยการเว้นวรรคหรือ เว้นวรรคเฉพาะคำสั่งทางขวามือ)\n"
+#~ "ข้อควรจำ: หากคุณไม่ได้ระบุทั้งหัวเรื่องหน้าต่างหรือคลาสของหน้าต่าง\n"
+#~ "จะทำให้หน้าต่างแรกที่ปรากฏได้รับผลจากตัวเลือกนี้\n"
+#~ "จึงไม่ขอแนะนำให้ใช้ตัวเลือกทั้งสองพร้อมกัน"
+
+#~ msgid "Desktop on which to make the window appear"
+#~ msgstr "พื้นที่ทำงานที่ต้องการให้หน้าต่างปรากฎ"
+
+#~ msgid ""
+#~ "Make the window appear on the desktop that was active\n"
+#~ "when starting the application"
+#~ msgstr ""
+#~ "ให้หน้าต่างปรากฎบนพื้นที่ทำงานที่กำลังใช้งานอยู่\n"
+#~ "เมื่อเริ่มการทำงานของโปรแกรม"
+
+#~ msgid "Make the window appear on all desktops"
+#~ msgstr "ทำให้หน้าต่างปรากฎอยู่ทุกพื้นที่ทำงาน"
+
+#~ msgid "Iconify the window"
+#~ msgstr "ย่อหน้าต่างเป็นไอคอน"
+
+#~ msgid "Maximize the window"
+#~ msgstr "ขยายหน้าต่างใหญ่สุด"
+
+#~ msgid "Maximize the window vertically"
+#~ msgstr "ขยายหน้าต่างใหญ่สุดทางแนวตั้ง"
+
+#~ msgid "Maximize the window horizontally"
+#~ msgstr "ขยายหน้าต่างใหญ่สุดทางแนวนอน"
+
+#~ msgid "Show window fullscreen"
+#~ msgstr "แสดงหน้าต่างแบบเต็มจอภาพ"
+
+#~ msgid ""
+#~ "The window type: Normal, Desktop, Dock, Toolbar, \n"
+#~ "Menu, Dialog, TopMenu or Override"
+#~ msgstr ""
+#~ "ประเภทหน้าต่าง: ปกติ, พื้นที่ทำงาน, รางแนบถาด, แถบเครื่องมือ, \n"
+#~ "เมนู, กล่องโต้ตอบ, เมนูบนสุด หรือใช้แทน"
+
+#~ msgid ""
+#~ "Jump to the window even if it is started on a \n"
+#~ "different virtual desktop"
+#~ msgstr ""
+#~ "กระโดดไปยังหน้าต่าง แม้ว่ามันจะเริ่มการทำงาน\n"
+#~ "ในพื้นที่ทำงานอื่นก็ตาม"
+
+#~ msgid "Try to keep the window above other windows"
+#~ msgstr "ให้หน้าต่างอยู่เหนือหน้าต่างอื่นเสมอ"
+
+#~ msgid "Try to keep the window below other windows"
+#~ msgstr "ให้หน้าต่างอยู่ด้านล่างหน้าต่างอื่นเสมอ"
+
+#~ msgid "The window does not get an entry in the taskbar"
+#~ msgstr "หน้าต่างไม่ปรากฎในส่วนแถบหน้าต่างงาน"
+
+#~ msgid "The window does not get an entry on the pager"
+#~ msgstr "หน้าต่างไม่ปรากฎในรายการของตัวสลับพื้นที่ทำงาน"
 
 #~ msgid "The window is sent to the system tray in Kicker"
 #~ msgstr "หน้าต่างถูกส่งไปยังส่วนถาดระบบใน Kicker"

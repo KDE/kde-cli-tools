@@ -10,7 +10,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kstart\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2022-12-17 00:51+0000\n"
+"POT-Creation-Date: 2023-02-03 01:00+0000\n"
 "PO-Revision-Date: 2007-05-27 15:00+0900\n"
 "Last-Translator: Yukiko Bando <ybando@k6.dion.ne.jp>\n"
 "Language-Team: Japanese <kde-jp@kde.org>\n"
@@ -35,172 +35,143 @@ msgstr ""
 "kom@kde.gr.jp,shinobo@leo.bekkoame.ne.jp,ryuk@user.script.nu, fumiaki@okushi."
 "com"
 
-#: kstart.cpp:255
+#: kstart.cpp:78
 #, kde-format
 msgid "KStart"
 msgstr "KStart"
 
-#: kstart.cpp:257
+#: kstart.cpp:80
 #, kde-format
-msgid ""
-"Utility to launch applications with special window properties \n"
-"such as iconified, maximized, a certain virtual desktop, a special "
-"decoration\n"
-"and so on."
+msgid "Utility to launch applications"
 msgstr ""
-"ウィンドウのプロパティを指定してアプリケーションを起動するためのユーティリ"
-"ティ\n"
-"(アイコン化、最大化、仮想デスクトップの指定、ウィンドウ装飾など)"
 
-#: kstart.cpp:262
+#: kstart.cpp:82
 #, kde-format
 msgid "(C) 1997-2000 Matthias Ettrich (ettrich@kde.org)"
 msgstr "(C) 1997-2000 Matthias Ettrich (ettrich@kde.org)"
 
-#: kstart.cpp:264
+#: kstart.cpp:84
 #, kde-format
 msgid "Matthias Ettrich"
 msgstr "Matthias Ettrich"
 
-#: kstart.cpp:265
+#: kstart.cpp:85
 #, kde-format
 msgid "David Faure"
 msgstr "David Faure"
 
-#: kstart.cpp:266
+#: kstart.cpp:86
 #, kde-format
 msgid "Richard J. Moore"
 msgstr "Richard J. Moore"
 
-#: kstart.cpp:271
+#: kstart.cpp:91
 #, kde-format
 msgid "Command to execute"
 msgstr "実行するコマンド"
 
-#: kstart.cpp:275
+#: kstart.cpp:95
 #, kde-format
 msgid ""
 "Alternative to <command>: desktop file path to start. D-Bus service will be "
 "printed to stdout. Deprecated: use --application"
 msgstr ""
 
-#: kstart.cpp:278
+#: kstart.cpp:98
 #, kde-format
 msgid "Alternative to <command>: desktop file to start."
 msgstr ""
 
-#: kstart.cpp:281
+#: kstart.cpp:101
 #, kde-format
 msgid "Optional URL to pass <desktopfile>, when using --service"
 msgstr ""
 
-#: kstart.cpp:284
-#, kde-format
-msgid "A regular expression matching the window title"
-msgstr "ウィンドウタイトルにマッチする正規表現"
-
-#: kstart.cpp:286
-#, kde-format
-msgid ""
-"A string matching the window class (WM_CLASS property)\n"
-"The window class can be found out by running\n"
-"'xprop | grep WM_CLASS' and clicking on a window\n"
-"(use either both parts separated by a space or only the right part).\n"
-"NOTE: If you specify neither window title nor window class,\n"
-"then the very first window to appear will be taken;\n"
-"omitting both options is NOT recommended."
-msgstr ""
-"ウィンドウクラス (WM_CLASS プロパティ) にマッチする文字列\n"
-"ウィンドウクラスを知るには “xprop | grep WM_CLASS” を実行し\n"
-"ウィンドウをクリックします。\n"
-"(スペースを挟んで両方指定するか、右側だけ指定)\n"
-"注: ウィンドウタイトルもウィンドウクラスも指定しない場合、\n"
-"一番最初に現れたウィンドウが使われます。\n"
-"両方のオプションの省略は推奨されません。"
-
-#: kstart.cpp:295
-#, kde-format
-msgid "Desktop on which to make the window appear"
-msgstr "ウィンドウを表示するデスクトップ"
-
-#: kstart.cpp:297
-#, kde-format
-msgid ""
-"Make the window appear on the desktop that was active\n"
-"when starting the application"
-msgstr ""
-"アプリケーションを起動する際にアクティブなデスクトップに\n"
-"ウィンドウを表示"
-
-#: kstart.cpp:298
-#, kde-format
-msgid "Make the window appear on all desktops"
-msgstr "ウィンドウをすべてのデスクトップに表示"
-
-#: kstart.cpp:299
-#, kde-format
-msgid "Iconify the window"
-msgstr "ウィンドウをアイコン化"
-
-#: kstart.cpp:300
-#, kde-format
-msgid "Maximize the window"
-msgstr "ウィンドウを最大化"
-
-#: kstart.cpp:301
-#, kde-format
-msgid "Maximize the window vertically"
-msgstr "ウィンドウを垂直に最大化"
-
-#: kstart.cpp:302
-#, kde-format
-msgid "Maximize the window horizontally"
-msgstr "ウィンドウを水平に最大化"
-
-#: kstart.cpp:303
-#, kde-format
-msgid "Show window fullscreen"
-msgstr "ウィンドウをフルスクリーン表示"
-
-#: kstart.cpp:305
-#, kde-format
-msgid ""
-"The window type: Normal, Desktop, Dock, Toolbar, \n"
-"Menu, Dialog, TopMenu or Override"
-msgstr ""
-"ウィンドウタイプ:\n"
-"Normal (標準), Desktop (デスクトップ), Dock (ドック), \n"
-"Toolbar (ツールバー), Menu (メニュー), Dialog (ダイアログ), \n"
-"TopMenu (トップメニュー) または Override (オーバーライド)"
-
-#: kstart.cpp:308
-#, kde-format
-msgid ""
-"Jump to the window even if it is started on a \n"
-"different virtual desktop"
-msgstr "別の仮想デスクトップで起動されても、そのウィンドウに移動"
-
-#: kstart.cpp:311
-#, kde-format
-msgid "Try to keep the window above other windows"
-msgstr "ウィンドウを常に前面に表示するよう試みる"
-
-#: kstart.cpp:313
-#, kde-format
-msgid "Try to keep the window below other windows"
-msgstr "ウィンドウを常に背面に表示するよう試みる"
-
-#: kstart.cpp:314
-#, kde-format
-msgid "The window does not get an entry in the taskbar"
-msgstr "ウィンドウをタスクバーに表示しない"
-
-#: kstart.cpp:315
-#, kde-format
-msgid "The window does not get an entry on the pager"
-msgstr "ウィンドウをページャに表示しない"
-
-#: kstart.cpp:329
+#: kstart.cpp:115
 #, kde-format
 msgid "No command specified"
 msgstr "コマンドが指定されていません"
+
+#~ msgid ""
+#~ "Utility to launch applications with special window properties \n"
+#~ "such as iconified, maximized, a certain virtual desktop, a special "
+#~ "decoration\n"
+#~ "and so on."
+#~ msgstr ""
+#~ "ウィンドウのプロパティを指定してアプリケーションを起動するためのユーティリ"
+#~ "ティ\n"
+#~ "(アイコン化、最大化、仮想デスクトップの指定、ウィンドウ装飾など)"
+
+#~ msgid "A regular expression matching the window title"
+#~ msgstr "ウィンドウタイトルにマッチする正規表現"
+
+#~ msgid ""
+#~ "A string matching the window class (WM_CLASS property)\n"
+#~ "The window class can be found out by running\n"
+#~ "'xprop | grep WM_CLASS' and clicking on a window\n"
+#~ "(use either both parts separated by a space or only the right part).\n"
+#~ "NOTE: If you specify neither window title nor window class,\n"
+#~ "then the very first window to appear will be taken;\n"
+#~ "omitting both options is NOT recommended."
+#~ msgstr ""
+#~ "ウィンドウクラス (WM_CLASS プロパティ) にマッチする文字列\n"
+#~ "ウィンドウクラスを知るには “xprop | grep WM_CLASS” を実行し\n"
+#~ "ウィンドウをクリックします。\n"
+#~ "(スペースを挟んで両方指定するか、右側だけ指定)\n"
+#~ "注: ウィンドウタイトルもウィンドウクラスも指定しない場合、\n"
+#~ "一番最初に現れたウィンドウが使われます。\n"
+#~ "両方のオプションの省略は推奨されません。"
+
+#~ msgid "Desktop on which to make the window appear"
+#~ msgstr "ウィンドウを表示するデスクトップ"
+
+#~ msgid ""
+#~ "Make the window appear on the desktop that was active\n"
+#~ "when starting the application"
+#~ msgstr ""
+#~ "アプリケーションを起動する際にアクティブなデスクトップに\n"
+#~ "ウィンドウを表示"
+
+#~ msgid "Make the window appear on all desktops"
+#~ msgstr "ウィンドウをすべてのデスクトップに表示"
+
+#~ msgid "Iconify the window"
+#~ msgstr "ウィンドウをアイコン化"
+
+#~ msgid "Maximize the window"
+#~ msgstr "ウィンドウを最大化"
+
+#~ msgid "Maximize the window vertically"
+#~ msgstr "ウィンドウを垂直に最大化"
+
+#~ msgid "Maximize the window horizontally"
+#~ msgstr "ウィンドウを水平に最大化"
+
+#~ msgid "Show window fullscreen"
+#~ msgstr "ウィンドウをフルスクリーン表示"
+
+#~ msgid ""
+#~ "The window type: Normal, Desktop, Dock, Toolbar, \n"
+#~ "Menu, Dialog, TopMenu or Override"
+#~ msgstr ""
+#~ "ウィンドウタイプ:\n"
+#~ "Normal (標準), Desktop (デスクトップ), Dock (ドック), \n"
+#~ "Toolbar (ツールバー), Menu (メニュー), Dialog (ダイアログ), \n"
+#~ "TopMenu (トップメニュー) または Override (オーバーライド)"
+
+#~ msgid ""
+#~ "Jump to the window even if it is started on a \n"
+#~ "different virtual desktop"
+#~ msgstr "別の仮想デスクトップで起動されても、そのウィンドウに移動"
+
+#~ msgid "Try to keep the window above other windows"
+#~ msgstr "ウィンドウを常に前面に表示するよう試みる"
+
+#~ msgid "Try to keep the window below other windows"
+#~ msgstr "ウィンドウを常に背面に表示するよう試みる"
+
+#~ msgid "The window does not get an entry in the taskbar"
+#~ msgstr "ウィンドウをタスクバーに表示しない"
+
+#~ msgid "The window does not get an entry on the pager"
+#~ msgstr "ウィンドウをページャに表示しない"

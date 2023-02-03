@@ -5,7 +5,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kstart\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2022-12-17 00:51+0000\n"
+"POT-Creation-Date: 2023-02-03 01:00+0000\n"
 "PO-Revision-Date: 2010-03-03 05:43+0600\n"
 "Last-Translator: \n"
 "Language-Team: Kazakh <kde-i18n-doc@kde.org>\n"
@@ -27,49 +27,42 @@ msgctxt "EMAIL OF TRANSLATORS"
 msgid "Your emails"
 msgstr "sairan@computer.org"
 
-#: kstart.cpp:255
+#: kstart.cpp:78
 #, kde-format
 msgid "KStart"
 msgstr "KStart"
 
-#: kstart.cpp:257
+#: kstart.cpp:80
 #, kde-format
-msgid ""
-"Utility to launch applications with special window properties \n"
-"such as iconified, maximized, a certain virtual desktop, a special "
-"decoration\n"
-"and so on."
+msgid "Utility to launch applications"
 msgstr ""
-"Қолданбаларды арнаулы қасиетті (таңбашаға түйілген, кең\n"
-"жайылған, нақты бір виртуалды үстелде, арнаулы\n"
-"безендіруімен т.б.) терезелі қылып жегу утилитасы."
 
-#: kstart.cpp:262
+#: kstart.cpp:82
 #, kde-format
 msgid "(C) 1997-2000 Matthias Ettrich (ettrich@kde.org)"
 msgstr "(C) 1997-2000 Matthias Ettrich (ettrich@kde.org)"
 
-#: kstart.cpp:264
+#: kstart.cpp:84
 #, kde-format
 msgid "Matthias Ettrich"
 msgstr "Matthias Ettrich"
 
-#: kstart.cpp:265
+#: kstart.cpp:85
 #, kde-format
 msgid "David Faure"
 msgstr "David Faure"
 
-#: kstart.cpp:266
+#: kstart.cpp:86
 #, kde-format
 msgid "Richard J. Moore"
 msgstr "Richard J. Moore"
 
-#: kstart.cpp:271
+#: kstart.cpp:91
 #, kde-format
 msgid "Command to execute"
 msgstr "Орындайтын команда"
 
-#: kstart.cpp:275
+#: kstart.cpp:95
 #, fuzzy, kde-format
 #| msgid ""
 #| "Alternative to <command>: desktop file to start. D-Bus service will be "
@@ -81,7 +74,7 @@ msgstr ""
 "<command> деген командамен жегудің басқа түрі: desktop файл арқылы. D-Bus "
 "қызметі мәліметін stdout дегенге шығарады."
 
-#: kstart.cpp:278
+#: kstart.cpp:98
 #, fuzzy, kde-format
 #| msgid ""
 #| "Alternative to <command>: desktop file to start. D-Bus service will be "
@@ -91,124 +84,102 @@ msgstr ""
 "<command> деген командамен жегудің басқа түрі: desktop файл арқылы. D-Bus "
 "қызметі мәліметін stdout дегенге шығарады."
 
-#: kstart.cpp:281
+#: kstart.cpp:101
 #, kde-format
 msgid "Optional URL to pass <desktopfile>, when using --service"
 msgstr ""
 "Егер --service параметрі қолданса бұл қосымша URL-ге  <desktopfile> файлы "
 "беріледі"
 
-#: kstart.cpp:284
-#, kde-format
-msgid "A regular expression matching the window title"
-msgstr "Терезе айдарына сәйкес келетін үлгі өрнегі"
-
-#: kstart.cpp:286
-#, kde-format
-msgid ""
-"A string matching the window class (WM_CLASS property)\n"
-"The window class can be found out by running\n"
-"'xprop | grep WM_CLASS' and clicking on a window\n"
-"(use either both parts separated by a space or only the right part).\n"
-"NOTE: If you specify neither window title nor window class,\n"
-"then the very first window to appear will be taken;\n"
-"omitting both options is NOT recommended."
-msgstr ""
-"Терезе класына (WM_CLASS қасиетіне) сәйкес келетін жол\n"
-"Терезенің класын 'xprop | grep WM_CLASS' командасын беріп,\n"
-"өзгерген меңзерімен керек терезені түртіп, білуге болады.\n"
-"Ескерту: Егер терезенің айдары да класы да келтірілмесе,\n"
-"онда кез келген бірінші пайда болған терезесі алынады,\n"
-"бұндайы онша дұрыс ЕМЕС деп табылады."
-
-#: kstart.cpp:295
-#, kde-format
-msgid "Desktop on which to make the window appear"
-msgstr "Осы терезені көрсететін үстел"
-
-#: kstart.cpp:297
-#, kde-format
-msgid ""
-"Make the window appear on the desktop that was active\n"
-"when starting the application"
-msgstr ""
-"Қолданба басталғанда назарда болған үстелінде\n"
-"терезесін көрсету"
-
-#: kstart.cpp:298
-#, kde-format
-msgid "Make the window appear on all desktops"
-msgstr "Терезені бүкіл үстелдерде көрсету"
-
-#: kstart.cpp:299
-#, kde-format
-msgid "Iconify the window"
-msgstr "Терезені таңбашаға түйіп кою"
-
-#: kstart.cpp:300
-#, kde-format
-msgid "Maximize the window"
-msgstr "Терезені кең жаю"
-
-#: kstart.cpp:301
-#, kde-format
-msgid "Maximize the window vertically"
-msgstr "Терезені тігінен кең жаю"
-
-#: kstart.cpp:302
-#, kde-format
-msgid "Maximize the window horizontally"
-msgstr "Терезені жатығынан кең жаю"
-
-#: kstart.cpp:303
-#, kde-format
-msgid "Show window fullscreen"
-msgstr "Терезені толық экранға жаю"
-
-#: kstart.cpp:305
-#, kde-format
-msgid ""
-"The window type: Normal, Desktop, Dock, Toolbar, \n"
-"Menu, Dialog, TopMenu or Override"
-msgstr ""
-"Терезенің түрлері: Кәдімгі (Normal), Үстел (Desktop),\n"
-"Ендірілген (Dock), Құралдар (Toollbar), Мәзір (Menu),\n"
-"Диалог (Dialog), Мәзір панелі (TopMenu) немесе\n"
-"Үстінен басылған (Override)"
-
-#: kstart.cpp:308
-#, kde-format
-msgid ""
-"Jump to the window even if it is started on a \n"
-"different virtual desktop"
-msgstr ""
-"Басқа виртуалды үстелде басталған болса да,\n"
-"терезесіне ауысу"
-
-#: kstart.cpp:311
-#, kde-format
-msgid "Try to keep the window above other windows"
-msgstr "Терезені бет алдында ұстауға тырысу"
-
-#: kstart.cpp:313
-#, kde-format
-msgid "Try to keep the window below other windows"
-msgstr "Терезені артында ұстауға тырысу"
-
-#: kstart.cpp:314
-#, kde-format
-msgid "The window does not get an entry in the taskbar"
-msgstr "Терезесі тапсырмалар панелінде көрсетілмейді"
-
-#: kstart.cpp:315
-#, kde-format
-msgid "The window does not get an entry on the pager"
-msgstr "Терезесі үстел ақтарғышында көрсетілмейді"
-
-#: kstart.cpp:329
+#: kstart.cpp:115
 #, kde-format
 msgid "No command specified"
 msgstr "Командасы келтірілмеген"
+
+#~ msgid ""
+#~ "Utility to launch applications with special window properties \n"
+#~ "such as iconified, maximized, a certain virtual desktop, a special "
+#~ "decoration\n"
+#~ "and so on."
+#~ msgstr ""
+#~ "Қолданбаларды арнаулы қасиетті (таңбашаға түйілген, кең\n"
+#~ "жайылған, нақты бір виртуалды үстелде, арнаулы\n"
+#~ "безендіруімен т.б.) терезелі қылып жегу утилитасы."
+
+#~ msgid "A regular expression matching the window title"
+#~ msgstr "Терезе айдарына сәйкес келетін үлгі өрнегі"
+
+#~ msgid ""
+#~ "A string matching the window class (WM_CLASS property)\n"
+#~ "The window class can be found out by running\n"
+#~ "'xprop | grep WM_CLASS' and clicking on a window\n"
+#~ "(use either both parts separated by a space or only the right part).\n"
+#~ "NOTE: If you specify neither window title nor window class,\n"
+#~ "then the very first window to appear will be taken;\n"
+#~ "omitting both options is NOT recommended."
+#~ msgstr ""
+#~ "Терезе класына (WM_CLASS қасиетіне) сәйкес келетін жол\n"
+#~ "Терезенің класын 'xprop | grep WM_CLASS' командасын беріп,\n"
+#~ "өзгерген меңзерімен керек терезені түртіп, білуге болады.\n"
+#~ "Ескерту: Егер терезенің айдары да класы да келтірілмесе,\n"
+#~ "онда кез келген бірінші пайда болған терезесі алынады,\n"
+#~ "бұндайы онша дұрыс ЕМЕС деп табылады."
+
+#~ msgid "Desktop on which to make the window appear"
+#~ msgstr "Осы терезені көрсететін үстел"
+
+#~ msgid ""
+#~ "Make the window appear on the desktop that was active\n"
+#~ "when starting the application"
+#~ msgstr ""
+#~ "Қолданба басталғанда назарда болған үстелінде\n"
+#~ "терезесін көрсету"
+
+#~ msgid "Make the window appear on all desktops"
+#~ msgstr "Терезені бүкіл үстелдерде көрсету"
+
+#~ msgid "Iconify the window"
+#~ msgstr "Терезені таңбашаға түйіп кою"
+
+#~ msgid "Maximize the window"
+#~ msgstr "Терезені кең жаю"
+
+#~ msgid "Maximize the window vertically"
+#~ msgstr "Терезені тігінен кең жаю"
+
+#~ msgid "Maximize the window horizontally"
+#~ msgstr "Терезені жатығынан кең жаю"
+
+#~ msgid "Show window fullscreen"
+#~ msgstr "Терезені толық экранға жаю"
+
+#~ msgid ""
+#~ "The window type: Normal, Desktop, Dock, Toolbar, \n"
+#~ "Menu, Dialog, TopMenu or Override"
+#~ msgstr ""
+#~ "Терезенің түрлері: Кәдімгі (Normal), Үстел (Desktop),\n"
+#~ "Ендірілген (Dock), Құралдар (Toollbar), Мәзір (Menu),\n"
+#~ "Диалог (Dialog), Мәзір панелі (TopMenu) немесе\n"
+#~ "Үстінен басылған (Override)"
+
+#~ msgid ""
+#~ "Jump to the window even if it is started on a \n"
+#~ "different virtual desktop"
+#~ msgstr ""
+#~ "Басқа виртуалды үстелде басталған болса да,\n"
+#~ "терезесіне ауысу"
+
+#~ msgid "Try to keep the window above other windows"
+#~ msgstr "Терезені бет алдында ұстауға тырысу"
+
+#~ msgid "Try to keep the window below other windows"
+#~ msgstr "Терезені артында ұстауға тырысу"
+
+#~ msgid "The window does not get an entry in the taskbar"
+#~ msgstr "Терезесі тапсырмалар панелінде көрсетілмейді"
+
+#~ msgid "The window does not get an entry on the pager"
+#~ msgstr "Терезесі үстел ақтарғышында көрсетілмейді"
 
 #~ msgid "The window is sent to the system tray in Kicker"
 #~ msgstr "Терезесі панельдегі жүйелік сөреде көрсетіледі"

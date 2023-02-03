@@ -13,7 +13,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kstart\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2022-12-17 00:51+0000\n"
+"POT-Creation-Date: 2023-02-03 01:00+0000\n"
 "PO-Revision-Date: 2022-03-29 14:06+0300\n"
 "Last-Translator: Emir SARI <emir_sari@icloud.com>\n"
 "Language-Team: Turkish <kde-l10n-tr@kde.org>\n"
@@ -34,49 +34,42 @@ msgctxt "EMAIL OF TRANSLATORS"
 msgid "Your emails"
 msgstr "omer_fad@hotmail.com, ibrahim@pardus.org.tr"
 
-#: kstart.cpp:255
+#: kstart.cpp:78
 #, kde-format
 msgid "KStart"
 msgstr "KStart"
 
-#: kstart.cpp:257
+#: kstart.cpp:80
 #, kde-format
-msgid ""
-"Utility to launch applications with special window properties \n"
-"such as iconified, maximized, a certain virtual desktop, a special "
-"decoration\n"
-"and so on."
+msgid "Utility to launch applications"
 msgstr ""
-"Uygulamaları özel KDE pencere özellikleriyle, mesela simge halinde, \n"
-"ekranı kaplar biçimde, belli bir sanal masaüstünde, özel bir dekorasyonla\n"
-"ya da yapışkan olarak başlatmak için yardımcı bir program."
 
-#: kstart.cpp:262
+#: kstart.cpp:82
 #, kde-format
 msgid "(C) 1997-2000 Matthias Ettrich (ettrich@kde.org)"
 msgstr "(C) 1997-2000 Matthias Ettrich (ettrich@kde.org)"
 
-#: kstart.cpp:264
+#: kstart.cpp:84
 #, kde-format
 msgid "Matthias Ettrich"
 msgstr "Matthias Ettrich"
 
-#: kstart.cpp:265
+#: kstart.cpp:85
 #, kde-format
 msgid "David Faure"
 msgstr "David Faure"
 
-#: kstart.cpp:266
+#: kstart.cpp:86
 #, kde-format
 msgid "Richard J. Moore"
 msgstr "Richard J. Moore"
 
-#: kstart.cpp:271
+#: kstart.cpp:91
 #, kde-format
 msgid "Command to execute"
 msgstr "Çalıştırılacak komut"
 
-#: kstart.cpp:275
+#: kstart.cpp:95
 #, kde-format
 msgid ""
 "Alternative to <command>: desktop file path to start. D-Bus service will be "
@@ -85,123 +78,102 @@ msgstr ""
 "<komut> komutuna alternatif: Başlatılacak masaüstü dosyası. D-Bus servisi "
 "stdout çıktırına basılacak. Artık kullanılmıyor: --application kullanın"
 
-#: kstart.cpp:278
+#: kstart.cpp:98
 #, kde-format
 msgid "Alternative to <command>: desktop file to start."
 msgstr "<komut> komutuna alternatif: başlatılacak masaüstü dosyası."
 
-#: kstart.cpp:281
+#: kstart.cpp:101
 #, kde-format
 msgid "Optional URL to pass <desktopfile>, when using --service"
 msgstr ""
 "Geçiş için kullanılacak seçimlik adres <desktopfile>, --service kullanılırken"
 
-#: kstart.cpp:284
-#, kde-format
-msgid "A regular expression matching the window title"
-msgstr "Pencere başlığı ile eşleşen bir düzenli ifade"
-
-#: kstart.cpp:286
-#, kde-format
-msgid ""
-"A string matching the window class (WM_CLASS property)\n"
-"The window class can be found out by running\n"
-"'xprop | grep WM_CLASS' and clicking on a window\n"
-"(use either both parts separated by a space or only the right part).\n"
-"NOTE: If you specify neither window title nor window class,\n"
-"then the very first window to appear will be taken;\n"
-"omitting both options is NOT recommended."
-msgstr ""
-"(WM_CLASS property) Pencere sınıfıyla eşleşen dizi\n"
-"Pencere sınıfı 'xprop | grep WM_CLASS' komutu çalıştırılıp\n"
-"pencere üzerine tıklandığında bulunabilir.\n"
-"NOT: Pencere sınıfı veya pencere başlığı belirtmezseniz\n"
-"ilk görünen pencere alınacaktır;\n"
-"her iki seçeneği de boş bırakmak tavsiye edilmez."
-
-#: kstart.cpp:295
-#, kde-format
-msgid "Desktop on which to make the window appear"
-msgstr "Pencerenin açılacağı masaüstü"
-
-#: kstart.cpp:297
-#, kde-format
-msgid ""
-"Make the window appear on the desktop that was active\n"
-"when starting the application"
-msgstr ""
-"Uygulama başlatılırken pencerenin gösterileceği masaüstünü\n"
-"aktifleştir"
-
-#: kstart.cpp:298
-#, kde-format
-msgid "Make the window appear on all desktops"
-msgstr "Pencereyi tüm masaüstlerinde görünür yapar"
-
-#: kstart.cpp:299
-#, kde-format
-msgid "Iconify the window"
-msgstr "Pencereyi simgeleştirir"
-
-#: kstart.cpp:300
-#, kde-format
-msgid "Maximize the window"
-msgstr "Pencereye ekranı kaplatır"
-
-#: kstart.cpp:301
-#, kde-format
-msgid "Maximize the window vertically"
-msgstr "Pencereye dikey olarak ekranı kaplatır"
-
-#: kstart.cpp:302
-#, kde-format
-msgid "Maximize the window horizontally"
-msgstr "Pencereye yatay olarak ekranı kaplatır"
-
-#: kstart.cpp:303
-#, kde-format
-msgid "Show window fullscreen"
-msgstr "Pencereyi tam ekran olarak göster"
-
-#: kstart.cpp:305
-#, kde-format
-msgid ""
-"The window type: Normal, Desktop, Dock, Toolbar, \n"
-"Menu, Dialog, TopMenu or Override"
-msgstr ""
-"Pencere türü: Normal, Masaüstü, Gömülü, Araç Çubuğu, \n"
-"Menü, Pencere, Üst Menü ya da Üzerinde Tut"
-
-#: kstart.cpp:308
-#, kde-format
-msgid ""
-"Jump to the window even if it is started on a \n"
-"different virtual desktop"
-msgstr ""
-"Başka bir sanal masaüstünde başlamış olsa bile, \n"
-"pencereye atlar"
-
-#: kstart.cpp:311
-#, kde-format
-msgid "Try to keep the window above other windows"
-msgstr "Pencereyi her zaman diğer pencerelerin üzerinde tut"
-
-#: kstart.cpp:313
-#, kde-format
-msgid "Try to keep the window below other windows"
-msgstr "Pencereyi her zaman diğer pencerelerin altında tutar"
-
-#: kstart.cpp:314
-#, kde-format
-msgid "The window does not get an entry in the taskbar"
-msgstr "Pencere görev çubuğunda görünmesin"
-
-#: kstart.cpp:315
-#, kde-format
-msgid "The window does not get an entry on the pager"
-msgstr "Pencere sayfalayıcı üzerinde görünmesin"
-
-#: kstart.cpp:329
+#: kstart.cpp:115
 #, kde-format
 msgid "No command specified"
 msgstr "Komut belirtilmedi"
+
+#~ msgid ""
+#~ "Utility to launch applications with special window properties \n"
+#~ "such as iconified, maximized, a certain virtual desktop, a special "
+#~ "decoration\n"
+#~ "and so on."
+#~ msgstr ""
+#~ "Uygulamaları özel KDE pencere özellikleriyle, mesela simge halinde, \n"
+#~ "ekranı kaplar biçimde, belli bir sanal masaüstünde, özel bir "
+#~ "dekorasyonla\n"
+#~ "ya da yapışkan olarak başlatmak için yardımcı bir program."
+
+#~ msgid "A regular expression matching the window title"
+#~ msgstr "Pencere başlığı ile eşleşen bir düzenli ifade"
+
+#~ msgid ""
+#~ "A string matching the window class (WM_CLASS property)\n"
+#~ "The window class can be found out by running\n"
+#~ "'xprop | grep WM_CLASS' and clicking on a window\n"
+#~ "(use either both parts separated by a space or only the right part).\n"
+#~ "NOTE: If you specify neither window title nor window class,\n"
+#~ "then the very first window to appear will be taken;\n"
+#~ "omitting both options is NOT recommended."
+#~ msgstr ""
+#~ "(WM_CLASS property) Pencere sınıfıyla eşleşen dizi\n"
+#~ "Pencere sınıfı 'xprop | grep WM_CLASS' komutu çalıştırılıp\n"
+#~ "pencere üzerine tıklandığında bulunabilir.\n"
+#~ "NOT: Pencere sınıfı veya pencere başlığı belirtmezseniz\n"
+#~ "ilk görünen pencere alınacaktır;\n"
+#~ "her iki seçeneği de boş bırakmak tavsiye edilmez."
+
+#~ msgid "Desktop on which to make the window appear"
+#~ msgstr "Pencerenin açılacağı masaüstü"
+
+#~ msgid ""
+#~ "Make the window appear on the desktop that was active\n"
+#~ "when starting the application"
+#~ msgstr ""
+#~ "Uygulama başlatılırken pencerenin gösterileceği masaüstünü\n"
+#~ "aktifleştir"
+
+#~ msgid "Make the window appear on all desktops"
+#~ msgstr "Pencereyi tüm masaüstlerinde görünür yapar"
+
+#~ msgid "Iconify the window"
+#~ msgstr "Pencereyi simgeleştirir"
+
+#~ msgid "Maximize the window"
+#~ msgstr "Pencereye ekranı kaplatır"
+
+#~ msgid "Maximize the window vertically"
+#~ msgstr "Pencereye dikey olarak ekranı kaplatır"
+
+#~ msgid "Maximize the window horizontally"
+#~ msgstr "Pencereye yatay olarak ekranı kaplatır"
+
+#~ msgid "Show window fullscreen"
+#~ msgstr "Pencereyi tam ekran olarak göster"
+
+#~ msgid ""
+#~ "The window type: Normal, Desktop, Dock, Toolbar, \n"
+#~ "Menu, Dialog, TopMenu or Override"
+#~ msgstr ""
+#~ "Pencere türü: Normal, Masaüstü, Gömülü, Araç Çubuğu, \n"
+#~ "Menü, Pencere, Üst Menü ya da Üzerinde Tut"
+
+#~ msgid ""
+#~ "Jump to the window even if it is started on a \n"
+#~ "different virtual desktop"
+#~ msgstr ""
+#~ "Başka bir sanal masaüstünde başlamış olsa bile, \n"
+#~ "pencereye atlar"
+
+#~ msgid "Try to keep the window above other windows"
+#~ msgstr "Pencereyi her zaman diğer pencerelerin üzerinde tut"
+
+#~ msgid "Try to keep the window below other windows"
+#~ msgstr "Pencereyi her zaman diğer pencerelerin altında tutar"
+
+#~ msgid "The window does not get an entry in the taskbar"
+#~ msgstr "Pencere görev çubuğunda görünmesin"
+
+#~ msgid "The window does not get an entry on the pager"
+#~ msgstr "Pencere sayfalayıcı üzerinde görünmesin"

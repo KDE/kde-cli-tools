@@ -13,7 +13,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kde-cli-tools\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2022-12-17 00:51+0000\n"
+"POT-Creation-Date: 2023-02-03 01:00+0000\n"
 "PO-Revision-Date: 2020-06-26 11:36+0200\n"
 "Last-Translator: Iñigo Salvador Azurmendi <xalba@ni.eus>\n"
 "Language-Team: Basque <kde-i18n-eu@kde.org>\n"
@@ -38,50 +38,42 @@ msgstr ""
 "marcos@euskalgnu.org,juanirigoien@irakasle.net,xalba@euskalnet.net,hizpol@ej-"
 "gv.es"
 
-#: kstart.cpp:255
+#: kstart.cpp:78
 #, kde-format
 msgid "KStart"
 msgstr "KStart"
 
-#: kstart.cpp:257
+#: kstart.cpp:80
 #, kde-format
-msgid ""
-"Utility to launch applications with special window properties \n"
-"such as iconified, maximized, a certain virtual desktop, a special "
-"decoration\n"
-"and so on."
+msgid "Utility to launch applications"
 msgstr ""
-"Leiho-propietate bereziak —hala nola ikonotuak, maximizatuak, \n"
-"alegiazko mahaigain jakin bat, apaindura berezikoak, etab.— dituzten "
-"aplikazioak\n"
-"abiarazteko utilitatea."
 
-#: kstart.cpp:262
+#: kstart.cpp:82
 #, kde-format
 msgid "(C) 1997-2000 Matthias Ettrich (ettrich@kde.org)"
 msgstr "(C) 1997-2000 Matthias Ettrich (ettrich@kde.org)"
 
-#: kstart.cpp:264
+#: kstart.cpp:84
 #, kde-format
 msgid "Matthias Ettrich"
 msgstr "Matthias Ettrich"
 
-#: kstart.cpp:265
+#: kstart.cpp:85
 #, kde-format
 msgid "David Faure"
 msgstr "David Faure"
 
-#: kstart.cpp:266
+#: kstart.cpp:86
 #, kde-format
 msgid "Richard J. Moore"
 msgstr "Richard J. Moore"
 
-#: kstart.cpp:271
+#: kstart.cpp:91
 #, kde-format
 msgid "Command to execute"
 msgstr "Exekutatu beharreko komandoa"
 
-#: kstart.cpp:275
+#: kstart.cpp:95
 #, kde-format
 msgid ""
 "Alternative to <command>: desktop file path to start. D-Bus service will be "
@@ -91,127 +83,107 @@ msgstr ""
 "D-Bus zerbitzua irteerako estandarrean inprimatuko da. Baztertu da: erabili "
 "--application"
 
-#: kstart.cpp:278
+#: kstart.cpp:98
 #, kde-format
 msgid "Alternative to <command>: desktop file to start."
 msgstr "<command>-(r)en ordezkoa: abiarazi beharreko mahaigaineko fitxategia."
 
-#: kstart.cpp:281
+#: kstart.cpp:101
 #, kde-format
 msgid "Optional URL to pass <desktopfile>, when using --service"
 msgstr ""
 "'--service' erabiltzean <desktopfile>-(e)ra pasatu beharreko aukerako URLa"
 
-#: kstart.cpp:284
-#, kde-format
-msgid "A regular expression matching the window title"
-msgstr "Leihoko tituluarekin bat datorren adierazpen erregular bat"
-
-#: kstart.cpp:286
-#, kde-format
-msgid ""
-"A string matching the window class (WM_CLASS property)\n"
-"The window class can be found out by running\n"
-"'xprop | grep WM_CLASS' and clicking on a window\n"
-"(use either both parts separated by a space or only the right part).\n"
-"NOTE: If you specify neither window title nor window class,\n"
-"then the very first window to appear will be taken;\n"
-"omitting both options is NOT recommended."
-msgstr ""
-"Leiho klasearekin bat datorren kate bat (WM_CLASS propietatea)\n"
-"Leiho klasea aurkitzeko, exekutatu\n"
-"'xprop | grep WM_CLASS', eta egin klik leiho batean\n"
-"(erabili bi aldeak, zuriune batez bereizita, edo eskuineko zatia bakarrik).\n"
-"OHARRA: leihoko titulurik edo leiho klaserik ez baduzu zehazten,\n"
-"azaltzen den lehen leihoa hartuko da;\n"
-"EZ da gomendagarria bi aukerak zehaztu gabe uztea."
-
-#: kstart.cpp:295
-#, kde-format
-msgid "Desktop on which to make the window appear"
-msgstr "Leihoa zer mahaigainetan agertaraziko den"
-
-#: kstart.cpp:297
-#, kde-format
-msgid ""
-"Make the window appear on the desktop that was active\n"
-"when starting the application"
-msgstr ""
-"Agertarazi leihoa aplikazioa abiaraztean aktibo\n"
-"zegoen mahaigainean"
-
-#: kstart.cpp:298
-#, kde-format
-msgid "Make the window appear on all desktops"
-msgstr "Agerrarazi leihoa mahaigain guztietan"
-
-#: kstart.cpp:299
-#, kde-format
-msgid "Iconify the window"
-msgstr "Ikonotu leihoa"
-
-#: kstart.cpp:300
-#, kde-format
-msgid "Maximize the window"
-msgstr "Maximizatu leihoa"
-
-#: kstart.cpp:301
-#, kde-format
-msgid "Maximize the window vertically"
-msgstr "Maximizatu leihoa bertikalki"
-
-#: kstart.cpp:302
-#, kde-format
-msgid "Maximize the window horizontally"
-msgstr "Maximizatu leihoa horizontalki"
-
-#: kstart.cpp:303
-#, kde-format
-msgid "Show window fullscreen"
-msgstr "Erakutsi leihoa pantaila osoan"
-
-#: kstart.cpp:305
-#, kde-format
-msgid ""
-"The window type: Normal, Desktop, Dock, Toolbar, \n"
-"Menu, Dialog, TopMenu or Override"
-msgstr ""
-"Leiho mota hauek: arrunta, mahaigaina, ainguratua, tresna-barra, \n"
-"menua, elkarrizketa-koadroa, menu nagusia edo gainidatzia"
-
-#: kstart.cpp:308
-#, kde-format
-msgid ""
-"Jump to the window even if it is started on a \n"
-"different virtual desktop"
-msgstr ""
-"Joan leihora, nahiz eta beste alegiazko \n"
-"mahaigain batean abiarazi"
-
-#: kstart.cpp:311
-#, kde-format
-msgid "Try to keep the window above other windows"
-msgstr "Saiatu leihoa besteen gainean mantentzen"
-
-#: kstart.cpp:313
-#, kde-format
-msgid "Try to keep the window below other windows"
-msgstr "Saiatu leihoa besteen azpian mantentzen"
-
-#: kstart.cpp:314
-#, kde-format
-msgid "The window does not get an entry in the taskbar"
-msgstr "Leihoak ez du sarrerarik lortzen ataza-barran"
-
-#: kstart.cpp:315
-#, kde-format
-msgid "The window does not get an entry on the pager"
-msgstr "Leihoak ez du sarrerarik lortzen bilagailuan"
-
-#: kstart.cpp:329
+#: kstart.cpp:115
 #, kde-format
 msgid "No command specified"
 msgstr "Ez da komandorik zehaztu"
+
+#~ msgid ""
+#~ "Utility to launch applications with special window properties \n"
+#~ "such as iconified, maximized, a certain virtual desktop, a special "
+#~ "decoration\n"
+#~ "and so on."
+#~ msgstr ""
+#~ "Leiho-propietate bereziak —hala nola ikonotuak, maximizatuak, \n"
+#~ "alegiazko mahaigain jakin bat, apaindura berezikoak, etab.— dituzten "
+#~ "aplikazioak\n"
+#~ "abiarazteko utilitatea."
+
+#~ msgid "A regular expression matching the window title"
+#~ msgstr "Leihoko tituluarekin bat datorren adierazpen erregular bat"
+
+#~ msgid ""
+#~ "A string matching the window class (WM_CLASS property)\n"
+#~ "The window class can be found out by running\n"
+#~ "'xprop | grep WM_CLASS' and clicking on a window\n"
+#~ "(use either both parts separated by a space or only the right part).\n"
+#~ "NOTE: If you specify neither window title nor window class,\n"
+#~ "then the very first window to appear will be taken;\n"
+#~ "omitting both options is NOT recommended."
+#~ msgstr ""
+#~ "Leiho klasearekin bat datorren kate bat (WM_CLASS propietatea)\n"
+#~ "Leiho klasea aurkitzeko, exekutatu\n"
+#~ "'xprop | grep WM_CLASS', eta egin klik leiho batean\n"
+#~ "(erabili bi aldeak, zuriune batez bereizita, edo eskuineko zatia "
+#~ "bakarrik).\n"
+#~ "OHARRA: leihoko titulurik edo leiho klaserik ez baduzu zehazten,\n"
+#~ "azaltzen den lehen leihoa hartuko da;\n"
+#~ "EZ da gomendagarria bi aukerak zehaztu gabe uztea."
+
+#~ msgid "Desktop on which to make the window appear"
+#~ msgstr "Leihoa zer mahaigainetan agertaraziko den"
+
+#~ msgid ""
+#~ "Make the window appear on the desktop that was active\n"
+#~ "when starting the application"
+#~ msgstr ""
+#~ "Agertarazi leihoa aplikazioa abiaraztean aktibo\n"
+#~ "zegoen mahaigainean"
+
+#~ msgid "Make the window appear on all desktops"
+#~ msgstr "Agerrarazi leihoa mahaigain guztietan"
+
+#~ msgid "Iconify the window"
+#~ msgstr "Ikonotu leihoa"
+
+#~ msgid "Maximize the window"
+#~ msgstr "Maximizatu leihoa"
+
+#~ msgid "Maximize the window vertically"
+#~ msgstr "Maximizatu leihoa bertikalki"
+
+#~ msgid "Maximize the window horizontally"
+#~ msgstr "Maximizatu leihoa horizontalki"
+
+#~ msgid "Show window fullscreen"
+#~ msgstr "Erakutsi leihoa pantaila osoan"
+
+#~ msgid ""
+#~ "The window type: Normal, Desktop, Dock, Toolbar, \n"
+#~ "Menu, Dialog, TopMenu or Override"
+#~ msgstr ""
+#~ "Leiho mota hauek: arrunta, mahaigaina, ainguratua, tresna-barra, \n"
+#~ "menua, elkarrizketa-koadroa, menu nagusia edo gainidatzia"
+
+#~ msgid ""
+#~ "Jump to the window even if it is started on a \n"
+#~ "different virtual desktop"
+#~ msgstr ""
+#~ "Joan leihora, nahiz eta beste alegiazko \n"
+#~ "mahaigain batean abiarazi"
+
+#~ msgid "Try to keep the window above other windows"
+#~ msgstr "Saiatu leihoa besteen gainean mantentzen"
+
+#~ msgid "Try to keep the window below other windows"
+#~ msgstr "Saiatu leihoa besteen azpian mantentzen"
+
+#~ msgid "The window does not get an entry in the taskbar"
+#~ msgstr "Leihoak ez du sarrerarik lortzen ataza-barran"
+
+#~ msgid "The window does not get an entry on the pager"
+#~ msgstr "Leihoak ez du sarrerarik lortzen bilagailuan"
 
 #~ msgid "The window is sent to the system tray in Kicker"
 #~ msgstr "Leihoa sistemaren erretilura bidaliko da Kickerren."

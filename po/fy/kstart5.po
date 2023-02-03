@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kstart\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2022-12-17 00:51+0000\n"
+"POT-Creation-Date: 2023-02-03 01:00+0000\n"
 "PO-Revision-Date: 2010-07-20 13:49+0100\n"
 "Last-Translator: Berend Ytsma <berendy@gmail.com>\n"
 "Language-Team: Frysk <kde-i18n-fry@kde.org>\n"
@@ -28,50 +28,42 @@ msgctxt "EMAIL OF TRANSLATORS"
 msgid "Your emails"
 msgstr "berendy@gmail.com"
 
-#: kstart.cpp:255
+#: kstart.cpp:78
 #, kde-format
 msgid "KStart"
 msgstr "KStart"
 
-#: kstart.cpp:257
+#: kstart.cpp:80
 #, kde-format
-msgid ""
-"Utility to launch applications with special window properties \n"
-"such as iconified, maximized, a certain virtual desktop, a special "
-"decoration\n"
-"and so on."
+msgid "Utility to launch applications"
 msgstr ""
-"In helpmiddel om applikaasjes mei spesjale finstereigenskippen op te "
-"starten, \n"
-"sa as minimalisearre, maksimalisearre, op in bepaald buroblêd, mei in \n"
-"bysûndere dekoraasje ezh."
 
-#: kstart.cpp:262
+#: kstart.cpp:82
 #, kde-format
 msgid "(C) 1997-2000 Matthias Ettrich (ettrich@kde.org)"
 msgstr "(C) 1997-2000 Matthias Ettrich (ettrich@kde.org)"
 
-#: kstart.cpp:264
+#: kstart.cpp:84
 #, kde-format
 msgid "Matthias Ettrich"
 msgstr "Matthias Ettrich"
 
-#: kstart.cpp:265
+#: kstart.cpp:85
 #, kde-format
 msgid "David Faure"
 msgstr "David Faure"
 
-#: kstart.cpp:266
+#: kstart.cpp:86
 #, kde-format
 msgid "Richard J. Moore"
 msgstr "Richard J. Moore"
 
-#: kstart.cpp:271
+#: kstart.cpp:91
 #, kde-format
 msgid "Command to execute"
 msgstr "Kommando om út te fieren"
 
-#: kstart.cpp:275
+#: kstart.cpp:95
 #, fuzzy, kde-format
 #| msgid ""
 #| "Alternative to <command>: desktop file to start. D-Bus service will be "
@@ -83,7 +75,7 @@ msgstr ""
 "Alternatyf nei <command>: Te starten buroblêd triem. D-Bus tsjinst sil "
 "printe wurde nei stdout"
 
-#: kstart.cpp:278
+#: kstart.cpp:98
 #, fuzzy, kde-format
 #| msgid ""
 #| "Alternative to <command>: desktop file to start. D-Bus service will be "
@@ -93,123 +85,102 @@ msgstr ""
 "Alternatyf nei <command>: Te starten buroblêd triem. D-Bus tsjinst sil "
 "printe wurde nei stdout"
 
-#: kstart.cpp:281
+#: kstart.cpp:101
 #, kde-format
 msgid "Optional URL to pass <desktopfile>, when using --service"
 msgstr ""
 "Opsjonele URL-adres om troch te jaan <desktopfile>, wylst brûkend --service"
 
-#: kstart.cpp:284
-#, kde-format
-msgid "A regular expression matching the window title"
-msgstr "In gewoane eksresje ferlykber is mei de finstertitel"
-
-#: kstart.cpp:286
-#, kde-format
-msgid ""
-"A string matching the window class (WM_CLASS property)\n"
-"The window class can be found out by running\n"
-"'xprop | grep WM_CLASS' and clicking on a window\n"
-"(use either both parts separated by a space or only the right part).\n"
-"NOTE: If you specify neither window title nor window class,\n"
-"then the very first window to appear will be taken;\n"
-"omitting both options is NOT recommended."
-msgstr ""
-"In tekentrieme dy ferlykber is mei de finsterklasse (WM_CLASS eigenskip)\n"
-"De finsterklasse kin fûn wurde troch it útfieren fan\n"
-"'xprop | grep WM_CLASS' en it oanklikken fan it finster.\n"
-"(brûk of beide dielen, skieden troch in spaasje of allinnich it "
-"rjochterdiel).\n"
-"Tink derom: ast gjin finsterklasse of finstertitel spesifisearret,\n"
-"dan wurd it alderearste finster\n"
-"dat ferskynt brûkt. Net oan te rieden."
-
-#: kstart.cpp:295
-#, kde-format
-msgid "Desktop on which to make the window appear"
-msgstr "Buroblêd wêrop it finster sil ferskin"
-
-#: kstart.cpp:297
-#, kde-format
-msgid ""
-"Make the window appear on the desktop that was active\n"
-"when starting the application"
-msgstr ""
-"Lit it finster ferskine op it buroblêd dat aktyf wie\n"
-"doe't de applikaasje start wurde."
-
-#: kstart.cpp:298
-#, kde-format
-msgid "Make the window appear on all desktops"
-msgstr "Lit it finster op alle buroblêden ferskine."
-
-#: kstart.cpp:299
-#, kde-format
-msgid "Iconify the window"
-msgstr "It finster minimalisearre"
-
-#: kstart.cpp:300
-#, kde-format
-msgid "Maximize the window"
-msgstr "It finster maksimalisearre"
-
-#: kstart.cpp:301
-#, kde-format
-msgid "Maximize the window vertically"
-msgstr "It finster fertikaal maksimalisearre"
-
-#: kstart.cpp:302
-#, kde-format
-msgid "Maximize the window horizontally"
-msgstr "It finster horizontaal maksimalisearre"
-
-#: kstart.cpp:303
-#, kde-format
-msgid "Show window fullscreen"
-msgstr "Folslein skerm sjen litte"
-
-#: kstart.cpp:305
-#, kde-format
-msgid ""
-"The window type: Normal, Desktop, Dock, Toolbar, \n"
-"Menu, Dialog, TopMenu or Override"
-msgstr ""
-"It finstertype: Normaal, Buroblêd, Fêst, Arkbalke, \n"
-"Menu, Dialooch, TopMenu or Oerwâldzje"
-
-#: kstart.cpp:308
-#, kde-format
-msgid ""
-"Jump to the window even if it is started on a \n"
-"different virtual desktop"
-msgstr ""
-"Ljep nei it buroblêd wêrop it finster ferskynt\n"
-"(as dat tuskentiids feroare is)"
-
-#: kstart.cpp:311
-#, kde-format
-msgid "Try to keep the window above other windows"
-msgstr "Pleats it finster op de foargrûn"
-
-#: kstart.cpp:313
-#, kde-format
-msgid "Try to keep the window below other windows"
-msgstr "Pleats it finster efter de oare finsters"
-
-#: kstart.cpp:314
-#, kde-format
-msgid "The window does not get an entry in the taskbar"
-msgstr "It finster krijt gjin knop op de wurkbalke"
-
-#: kstart.cpp:315
-#, kde-format
-msgid "The window does not get an entry on the pager"
-msgstr "It finster ferskynt net yn de net yn de pager"
-
-#: kstart.cpp:329
+#: kstart.cpp:115
 #, kde-format
 msgid "No command specified"
 msgstr "Gjin kommando oantsjutte"
+
+#~ msgid ""
+#~ "Utility to launch applications with special window properties \n"
+#~ "such as iconified, maximized, a certain virtual desktop, a special "
+#~ "decoration\n"
+#~ "and so on."
+#~ msgstr ""
+#~ "In helpmiddel om applikaasjes mei spesjale finstereigenskippen op te "
+#~ "starten, \n"
+#~ "sa as minimalisearre, maksimalisearre, op in bepaald buroblêd, mei in \n"
+#~ "bysûndere dekoraasje ezh."
+
+#~ msgid "A regular expression matching the window title"
+#~ msgstr "In gewoane eksresje ferlykber is mei de finstertitel"
+
+#~ msgid ""
+#~ "A string matching the window class (WM_CLASS property)\n"
+#~ "The window class can be found out by running\n"
+#~ "'xprop | grep WM_CLASS' and clicking on a window\n"
+#~ "(use either both parts separated by a space or only the right part).\n"
+#~ "NOTE: If you specify neither window title nor window class,\n"
+#~ "then the very first window to appear will be taken;\n"
+#~ "omitting both options is NOT recommended."
+#~ msgstr ""
+#~ "In tekentrieme dy ferlykber is mei de finsterklasse (WM_CLASS eigenskip)\n"
+#~ "De finsterklasse kin fûn wurde troch it útfieren fan\n"
+#~ "'xprop | grep WM_CLASS' en it oanklikken fan it finster.\n"
+#~ "(brûk of beide dielen, skieden troch in spaasje of allinnich it "
+#~ "rjochterdiel).\n"
+#~ "Tink derom: ast gjin finsterklasse of finstertitel spesifisearret,\n"
+#~ "dan wurd it alderearste finster\n"
+#~ "dat ferskynt brûkt. Net oan te rieden."
+
+#~ msgid "Desktop on which to make the window appear"
+#~ msgstr "Buroblêd wêrop it finster sil ferskin"
+
+#~ msgid ""
+#~ "Make the window appear on the desktop that was active\n"
+#~ "when starting the application"
+#~ msgstr ""
+#~ "Lit it finster ferskine op it buroblêd dat aktyf wie\n"
+#~ "doe't de applikaasje start wurde."
+
+#~ msgid "Make the window appear on all desktops"
+#~ msgstr "Lit it finster op alle buroblêden ferskine."
+
+#~ msgid "Iconify the window"
+#~ msgstr "It finster minimalisearre"
+
+#~ msgid "Maximize the window"
+#~ msgstr "It finster maksimalisearre"
+
+#~ msgid "Maximize the window vertically"
+#~ msgstr "It finster fertikaal maksimalisearre"
+
+#~ msgid "Maximize the window horizontally"
+#~ msgstr "It finster horizontaal maksimalisearre"
+
+#~ msgid "Show window fullscreen"
+#~ msgstr "Folslein skerm sjen litte"
+
+#~ msgid ""
+#~ "The window type: Normal, Desktop, Dock, Toolbar, \n"
+#~ "Menu, Dialog, TopMenu or Override"
+#~ msgstr ""
+#~ "It finstertype: Normaal, Buroblêd, Fêst, Arkbalke, \n"
+#~ "Menu, Dialooch, TopMenu or Oerwâldzje"
+
+#~ msgid ""
+#~ "Jump to the window even if it is started on a \n"
+#~ "different virtual desktop"
+#~ msgstr ""
+#~ "Ljep nei it buroblêd wêrop it finster ferskynt\n"
+#~ "(as dat tuskentiids feroare is)"
+
+#~ msgid "Try to keep the window above other windows"
+#~ msgstr "Pleats it finster op de foargrûn"
+
+#~ msgid "Try to keep the window below other windows"
+#~ msgstr "Pleats it finster efter de oare finsters"
+
+#~ msgid "The window does not get an entry in the taskbar"
+#~ msgstr "It finster krijt gjin knop op de wurkbalke"
+
+#~ msgid "The window does not get an entry on the pager"
+#~ msgstr "It finster ferskynt net yn de net yn de pager"
 
 #~ msgid "The window is sent to the system tray in Kicker"
 #~ msgstr "It finster ferskynt yn it systeemfak fan Kicker"

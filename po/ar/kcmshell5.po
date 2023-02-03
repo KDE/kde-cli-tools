@@ -2,14 +2,14 @@
 # translation of kcmshell.po to
 # محمد سعد  Mohamed SAAD <metehyi@free.fr>, 2006.
 # Youssef Chahibi <chahibi@gmail.com>, 2007.
-# zayed <zayed.alsaidi@gmail.com>, 2008, 2022.
+# zayed <zayed.alsaidi@gmail.com>, 2008, 2022, 2023.
 # Abdalrahim G. Fakhouri <abdilra7eem@yahoo.com>, 2011.
 msgid ""
 msgstr ""
 "Project-Id-Version: kcmshell\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2023-01-28 00:59+0000\n"
-"PO-Revision-Date: 2022-10-27 11:25+0400\n"
+"PO-Revision-Date: 2023-02-02 12:30+0400\n"
 "Last-Translator: Zayed Al-Saidi <zayed.alsaidi@gmail.com>\n"
 "Language-Team: ar\n"
 "Language: ar\n"
@@ -118,7 +118,7 @@ msgstr "استعمل وصف محدد للنافذة"
 #: main.cpp:209
 #, kde-format
 msgid "Show an indicator when settings have changed from their default value"
-msgstr ""
+msgstr "اعرض مؤشر عند تغيير الإعدادات عن القيمة المبدئية"
 
 #: main.cpp:218
 #, kde-format

@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kstart\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2022-12-17 00:51+0000\n"
+"POT-Creation-Date: 2023-02-03 01:00+0000\n"
 "PO-Revision-Date: 2009-05-21 19:35+0300\n"
 "Last-Translator: Viesturs Zariņš <viesturs.zarins@mii.lu.lv>\n"
 "Language-Team: Latvian <locale@laka.lv>\n"
@@ -30,50 +30,42 @@ msgctxt "EMAIL OF TRANSLATORS"
 msgid "Your emails"
 msgstr "andris.m@delfi.lv, maris.kde@gmail.com"
 
-#: kstart.cpp:255
+#: kstart.cpp:78
 #, kde-format
 msgid "KStart"
 msgstr "KStart"
 
-#: kstart.cpp:257
+#: kstart.cpp:80
 #, kde-format
-msgid ""
-"Utility to launch applications with special window properties \n"
-"such as iconified, maximized, a certain virtual desktop, a special "
-"decoration\n"
-"and so on."
+msgid "Utility to launch applications"
 msgstr ""
-"Utilīta programmu palaišanai ar speciālām loga īpašībām \n"
-"tādām kā ikonizēts, maksimizēts, konkrēta virtuālā darbvirsma, speciāla "
-"dekorācija\n"
-"un tā tālāk."
 
-#: kstart.cpp:262
+#: kstart.cpp:82
 #, kde-format
 msgid "(C) 1997-2000 Matthias Ettrich (ettrich@kde.org)"
 msgstr "(C) 1997-2000 Matthias Ettrich (ettrich@kde.org)"
 
-#: kstart.cpp:264
+#: kstart.cpp:84
 #, kde-format
 msgid "Matthias Ettrich"
 msgstr "Matthias Ettrich"
 
-#: kstart.cpp:265
+#: kstart.cpp:85
 #, kde-format
 msgid "David Faure"
 msgstr "David Faure"
 
-#: kstart.cpp:266
+#: kstart.cpp:86
 #, kde-format
 msgid "Richard J. Moore"
 msgstr "Richard J. Moore"
 
-#: kstart.cpp:271
+#: kstart.cpp:91
 #, kde-format
 msgid "Command to execute"
 msgstr "Izpildāmā komanda"
 
-#: kstart.cpp:275
+#: kstart.cpp:95
 #, fuzzy, kde-format
 #| msgid ""
 #| "Alternative to <command>: desktop file to start. D-Bus service will be "
@@ -85,7 +77,7 @@ msgstr ""
 "Alternatīva <command>: palaižamais desktop fails. Tiks izdrukāts D-bus "
 "serviss uz stdout"
 
-#: kstart.cpp:278
+#: kstart.cpp:98
 #, fuzzy, kde-format
 #| msgid ""
 #| "Alternative to <command>: desktop file to start. D-Bus service will be "
@@ -95,122 +87,101 @@ msgstr ""
 "Alternatīva <command>: palaižamais desktop fails. Tiks izdrukāts D-bus "
 "serviss uz stdout"
 
-#: kstart.cpp:281
+#: kstart.cpp:101
 #, kde-format
 msgid "Optional URL to pass <desktopfile>, when using --service"
 msgstr "Papildus URL, ko padot <desktopfile>, lietojot --service"
 
-#: kstart.cpp:284
-#, kde-format
-msgid "A regular expression matching the window title"
-msgstr "Regulāra izteiksme, kurai atbilst loga nosaukums"
-
-#: kstart.cpp:286
-#, kde-format
-msgid ""
-"A string matching the window class (WM_CLASS property)\n"
-"The window class can be found out by running\n"
-"'xprop | grep WM_CLASS' and clicking on a window\n"
-"(use either both parts separated by a space or only the right part).\n"
-"NOTE: If you specify neither window title nor window class,\n"
-"then the very first window to appear will be taken;\n"
-"omitting both options is NOT recommended."
-msgstr ""
-"Teksta rindiņa, kura atbilst loga klasei (WM_CLASS īpašībai)\n"
-"Loga klasi var nosakidrot darbinot komandu\n"
-"'xprop | grep WM_CLASS' un uzklikšķinot uz loga\n"
-"(izmantojiet vai nu abas daļas, kuras atdalītas ar atstarpi, vai \n"
-"arī tikai labo daļu).\n"
-"PIEZĪME: Ja nenorādīsiet ne loga nosaukumu, ne klasi, tad pats\n"
-"pirmais logs, kas parādīsies, tiks izmantots, tādēļ abu opciju\n"
-"izlaišana tetiek rekomendēta."
-
-#: kstart.cpp:295
-#, kde-format
-msgid "Desktop on which to make the window appear"
-msgstr "Darbvirsma, uz kuras jāparādās logam"
-
-#: kstart.cpp:297
-#, kde-format
-msgid ""
-"Make the window appear on the desktop that was active\n"
-"when starting the application"
-msgstr ""
-"Liek logam parādīties uz darbvirsmas, kas bija aktīva\n"
-"palaižot programmu,"
-
-#: kstart.cpp:298
-#, kde-format
-msgid "Make the window appear on all desktops"
-msgstr "Logs parādīsies uz visām darbvirsmām"
-
-#: kstart.cpp:299
-#, kde-format
-msgid "Iconify the window"
-msgstr "Ikonizē logu"
-
-#: kstart.cpp:300
-#, kde-format
-msgid "Maximize the window"
-msgstr "Maksimizē logu"
-
-#: kstart.cpp:301
-#, kde-format
-msgid "Maximize the window vertically"
-msgstr "Maksimizē logu vertikāli"
-
-#: kstart.cpp:302
-#, kde-format
-msgid "Maximize the window horizontally"
-msgstr "Maksimizē logu horizontāli"
-
-#: kstart.cpp:303
-#, kde-format
-msgid "Show window fullscreen"
-msgstr "Rādīt logu pilnekrāna režīmā"
-
-#: kstart.cpp:305
-#, kde-format
-msgid ""
-"The window type: Normal, Desktop, Dock, Toolbar, \n"
-"Menu, Dialog, TopMenu or Override"
-msgstr ""
-"Loga tips: Normāls, Darbvirsma, Doks, Rīkjosla, \n"
-"Izvēlne, Dialogs, Virzizvēlne vai Pārklājošs"
-
-#: kstart.cpp:308
-#, kde-format
-msgid ""
-"Jump to the window even if it is started on a \n"
-"different virtual desktop"
-msgstr ""
-"Pārlēkt uz logu arī tad, ja tas palaists \n"
-"citā virtuālajā darbvirsmā"
-
-#: kstart.cpp:311
-#, kde-format
-msgid "Try to keep the window above other windows"
-msgstr "Mēģināt paturēt logu virs citiem logiem"
-
-#: kstart.cpp:313
-#, kde-format
-msgid "Try to keep the window below other windows"
-msgstr "Mēģināt paturēt logu zem citiem logiem"
-
-#: kstart.cpp:314
-#, kde-format
-msgid "The window does not get an entry in the taskbar"
-msgstr "Logam nav ieraksta uzdevumjoslā"
-
-#: kstart.cpp:315
-#, kde-format
-msgid "The window does not get an entry on the pager"
-msgstr "Logs neizdara ierakstu programmu pārslēdzējā"
-
-#: kstart.cpp:329
+#: kstart.cpp:115
 #, kde-format
 msgid "No command specified"
 msgstr "Komanda nav norādīta"
+
+#~ msgid ""
+#~ "Utility to launch applications with special window properties \n"
+#~ "such as iconified, maximized, a certain virtual desktop, a special "
+#~ "decoration\n"
+#~ "and so on."
+#~ msgstr ""
+#~ "Utilīta programmu palaišanai ar speciālām loga īpašībām \n"
+#~ "tādām kā ikonizēts, maksimizēts, konkrēta virtuālā darbvirsma, speciāla "
+#~ "dekorācija\n"
+#~ "un tā tālāk."
+
+#~ msgid "A regular expression matching the window title"
+#~ msgstr "Regulāra izteiksme, kurai atbilst loga nosaukums"
+
+#~ msgid ""
+#~ "A string matching the window class (WM_CLASS property)\n"
+#~ "The window class can be found out by running\n"
+#~ "'xprop | grep WM_CLASS' and clicking on a window\n"
+#~ "(use either both parts separated by a space or only the right part).\n"
+#~ "NOTE: If you specify neither window title nor window class,\n"
+#~ "then the very first window to appear will be taken;\n"
+#~ "omitting both options is NOT recommended."
+#~ msgstr ""
+#~ "Teksta rindiņa, kura atbilst loga klasei (WM_CLASS īpašībai)\n"
+#~ "Loga klasi var nosakidrot darbinot komandu\n"
+#~ "'xprop | grep WM_CLASS' un uzklikšķinot uz loga\n"
+#~ "(izmantojiet vai nu abas daļas, kuras atdalītas ar atstarpi, vai \n"
+#~ "arī tikai labo daļu).\n"
+#~ "PIEZĪME: Ja nenorādīsiet ne loga nosaukumu, ne klasi, tad pats\n"
+#~ "pirmais logs, kas parādīsies, tiks izmantots, tādēļ abu opciju\n"
+#~ "izlaišana tetiek rekomendēta."
+
+#~ msgid "Desktop on which to make the window appear"
+#~ msgstr "Darbvirsma, uz kuras jāparādās logam"
+
+#~ msgid ""
+#~ "Make the window appear on the desktop that was active\n"
+#~ "when starting the application"
+#~ msgstr ""
+#~ "Liek logam parādīties uz darbvirsmas, kas bija aktīva\n"
+#~ "palaižot programmu,"
+
+#~ msgid "Make the window appear on all desktops"
+#~ msgstr "Logs parādīsies uz visām darbvirsmām"
+
+#~ msgid "Iconify the window"
+#~ msgstr "Ikonizē logu"
+
+#~ msgid "Maximize the window"
+#~ msgstr "Maksimizē logu"
+
+#~ msgid "Maximize the window vertically"
+#~ msgstr "Maksimizē logu vertikāli"
+
+#~ msgid "Maximize the window horizontally"
+#~ msgstr "Maksimizē logu horizontāli"
+
+#~ msgid "Show window fullscreen"
+#~ msgstr "Rādīt logu pilnekrāna režīmā"
+
+#~ msgid ""
+#~ "The window type: Normal, Desktop, Dock, Toolbar, \n"
+#~ "Menu, Dialog, TopMenu or Override"
+#~ msgstr ""
+#~ "Loga tips: Normāls, Darbvirsma, Doks, Rīkjosla, \n"
+#~ "Izvēlne, Dialogs, Virzizvēlne vai Pārklājošs"
+
+#~ msgid ""
+#~ "Jump to the window even if it is started on a \n"
+#~ "different virtual desktop"
+#~ msgstr ""
+#~ "Pārlēkt uz logu arī tad, ja tas palaists \n"
+#~ "citā virtuālajā darbvirsmā"
+
+#~ msgid "Try to keep the window above other windows"
+#~ msgstr "Mēģināt paturēt logu virs citiem logiem"
+
+#~ msgid "Try to keep the window below other windows"
+#~ msgstr "Mēģināt paturēt logu zem citiem logiem"
+
+#~ msgid "The window does not get an entry in the taskbar"
+#~ msgstr "Logam nav ieraksta uzdevumjoslā"
+
+#~ msgid "The window does not get an entry on the pager"
+#~ msgstr "Logs neizdara ierakstu programmu pārslēdzējā"
 
 #~ msgid "The window is sent to the system tray in Kicker"
 #~ msgstr "Logs ir nosūtīts uz sistēmas tekni iekš Kicker."

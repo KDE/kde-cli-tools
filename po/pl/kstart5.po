@@ -1,6 +1,6 @@
 # translation of kstart.po to Polish
 # translation of kstart.po to
-# Version: $Revision: 1640122 $
+# Version: $Revision: 1643780 $
 # Piotr Roszatycki <dexter@debian.org>, 1999-2000.
 # Michał Rudolf <mrudolf@kdewebdev.org>, 2002.
 # Michal Rudolf <mrudolf@kdewebdev.org>, 2003, 2004, 2005, 2009.
@@ -11,7 +11,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kstart\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2022-12-17 00:51+0000\n"
+"POT-Creation-Date: 2023-02-03 01:00+0000\n"
 "PO-Revision-Date: 2020-12-27 09:34+0100\n"
 "Last-Translator: Łukasz Wojniłowicz <lukasz.wojnilowicz@gmail.com>\n"
 "Language-Team: Polish <kdei18n-pl-devel@lists.sourceforge.net>\n"
@@ -33,49 +33,42 @@ msgctxt "EMAIL OF TRANSLATORS"
 msgid "Your emails"
 msgstr "mrudolf@kdewebdev.org, lukasz.wojnilowicz@gmail.com"
 
-#: kstart.cpp:255
+#: kstart.cpp:78
 #, kde-format
 msgid "KStart"
 msgstr "KStart"
 
-#: kstart.cpp:257
+#: kstart.cpp:80
 #, kde-format
-msgid ""
-"Utility to launch applications with special window properties \n"
-"such as iconified, maximized, a certain virtual desktop, a special "
-"decoration\n"
-"and so on."
+msgid "Utility to launch applications"
 msgstr ""
-"Narzędzie do uruchamiania programów ze specjalnymi właściwościami okna,\n"
-"takimi jak ikonizacja, maksymalizacja, określony pulpit, specjalne\n"
-"dekoracje itp."
 
-#: kstart.cpp:262
+#: kstart.cpp:82
 #, kde-format
 msgid "(C) 1997-2000 Matthias Ettrich (ettrich@kde.org)"
 msgstr "(C) 1997-2000 Matthias Ettrich (ettrich@kde.org)"
 
-#: kstart.cpp:264
+#: kstart.cpp:84
 #, kde-format
 msgid "Matthias Ettrich"
 msgstr "Matthias Ettrich"
 
-#: kstart.cpp:265
+#: kstart.cpp:85
 #, kde-format
 msgid "David Faure"
 msgstr "David Faure"
 
-#: kstart.cpp:266
+#: kstart.cpp:86
 #, kde-format
 msgid "Richard J. Moore"
 msgstr "Richard J. Moore"
 
-#: kstart.cpp:271
+#: kstart.cpp:91
 #, kde-format
 msgid "Command to execute"
 msgstr "Polecenie do wykonania"
 
-#: kstart.cpp:275
+#: kstart.cpp:95
 #, kde-format
 msgid ""
 "Alternative to <command>: desktop file path to start. D-Bus service will be "
@@ -84,121 +77,99 @@ msgstr ""
 "Zamiennie dla <polecenie>: plik pulpitu do uruchomienia. Usługa D-Bus będzie "
 "wypisywać wiadomości na standardowe wyjście. Przestarzałe: użyj --application"
 
-#: kstart.cpp:278
+#: kstart.cpp:98
 #, kde-format
 msgid "Alternative to <command>: desktop file to start."
 msgstr "Zamiennie dla <polecenie>: plik pulpitu do uruchomienia."
 
-#: kstart.cpp:281
+#: kstart.cpp:101
 #, kde-format
 msgid "Optional URL to pass <desktopfile>, when using --service"
 msgstr "Opcjonalny adres URL dla <desktopfile> użytego z parametrem --service"
 
-#: kstart.cpp:284
-#, kde-format
-msgid "A regular expression matching the window title"
-msgstr "Wyrażenie regularne pasujące do tytułu okna"
-
-#: kstart.cpp:286
-#, kde-format
-msgid ""
-"A string matching the window class (WM_CLASS property)\n"
-"The window class can be found out by running\n"
-"'xprop | grep WM_CLASS' and clicking on a window\n"
-"(use either both parts separated by a space or only the right part).\n"
-"NOTE: If you specify neither window title nor window class,\n"
-"then the very first window to appear will be taken;\n"
-"omitting both options is NOT recommended."
-msgstr ""
-"Napis pasujący do klasy okna (WM_CLASS).\n"
-"Klasę okna można sprawdzić, uruchamiając 'xprop | grep WM_CLASS'\n"
-"i klikając na odpowiednim oknie (użyj obu części rozdzielonych spacją albo "
-"tylko odpowiedniej części).\n"
-"Uwaga: Jeśli nie podasz ani tytułu, ani klasy okna, wybrane zostanie \n"
-"pierwsze okno, które się pojawi - pomijanie obu opcji NIE jest zalecane."
-
-#: kstart.cpp:295
-#, kde-format
-msgid "Desktop on which to make the window appear"
-msgstr "Pulpit, na którym ma pojawić się okno"
-
-#: kstart.cpp:297
-#, kde-format
-msgid ""
-"Make the window appear on the desktop that was active\n"
-"when starting the application"
-msgstr "Wyświetl okno na pulpicie aktywnym podczas uruchamiania programu"
-
-#: kstart.cpp:298
-#, kde-format
-msgid "Make the window appear on all desktops"
-msgstr "Wyświetl okno na wszystkich pulpitach"
-
-#: kstart.cpp:299
-#, kde-format
-msgid "Iconify the window"
-msgstr "Minimalizuj okno"
-
-#: kstart.cpp:300
-#, kde-format
-msgid "Maximize the window"
-msgstr "Maksymalizuj okno"
-
-#: kstart.cpp:301
-#, kde-format
-msgid "Maximize the window vertically"
-msgstr "Maksymalizuj okno w pionie"
-
-#: kstart.cpp:302
-#, kde-format
-msgid "Maximize the window horizontally"
-msgstr "Maksymalizuj okno w poziomie"
-
-#: kstart.cpp:303
-#, kde-format
-msgid "Show window fullscreen"
-msgstr "Pokaż okno w trybie pełnoekranowym"
-
-#: kstart.cpp:305
-#, kde-format
-msgid ""
-"The window type: Normal, Desktop, Dock, Toolbar, \n"
-"Menu, Dialog, TopMenu or Override"
-msgstr ""
-"Typ okna: Normal, Desktop, Dock, Toolbar, Menu,\n"
-"Dialog, TopMenu lub Override"
-
-#: kstart.cpp:308
-#, kde-format
-msgid ""
-"Jump to the window even if it is started on a \n"
-"different virtual desktop"
-msgstr "Pokaż okno, nawet gdy jest wyświetlone na innym pulpicie"
-
-#: kstart.cpp:311
-#, kde-format
-msgid "Try to keep the window above other windows"
-msgstr "Okno zawsze będzie umieszczane przed innymi"
-
-#: kstart.cpp:313
-#, kde-format
-msgid "Try to keep the window below other windows"
-msgstr "Okno zawsze będzie umieszczane za innymi"
-
-#: kstart.cpp:314
-#, kde-format
-msgid "The window does not get an entry in the taskbar"
-msgstr "Okno nie będzie wyświetlane na pasku zadań"
-
-#: kstart.cpp:315
-#, kde-format
-msgid "The window does not get an entry on the pager"
-msgstr "Okno nie będzie wyświetlane na podglądzie pulpitu"
-
-#: kstart.cpp:329
+#: kstart.cpp:115
 #, kde-format
 msgid "No command specified"
 msgstr "Nie określono polecenia"
+
+#~ msgid ""
+#~ "Utility to launch applications with special window properties \n"
+#~ "such as iconified, maximized, a certain virtual desktop, a special "
+#~ "decoration\n"
+#~ "and so on."
+#~ msgstr ""
+#~ "Narzędzie do uruchamiania programów ze specjalnymi właściwościami okna,\n"
+#~ "takimi jak ikonizacja, maksymalizacja, określony pulpit, specjalne\n"
+#~ "dekoracje itp."
+
+#~ msgid "A regular expression matching the window title"
+#~ msgstr "Wyrażenie regularne pasujące do tytułu okna"
+
+#~ msgid ""
+#~ "A string matching the window class (WM_CLASS property)\n"
+#~ "The window class can be found out by running\n"
+#~ "'xprop | grep WM_CLASS' and clicking on a window\n"
+#~ "(use either both parts separated by a space or only the right part).\n"
+#~ "NOTE: If you specify neither window title nor window class,\n"
+#~ "then the very first window to appear will be taken;\n"
+#~ "omitting both options is NOT recommended."
+#~ msgstr ""
+#~ "Napis pasujący do klasy okna (WM_CLASS).\n"
+#~ "Klasę okna można sprawdzić, uruchamiając 'xprop | grep WM_CLASS'\n"
+#~ "i klikając na odpowiednim oknie (użyj obu części rozdzielonych spacją "
+#~ "albo tylko odpowiedniej części).\n"
+#~ "Uwaga: Jeśli nie podasz ani tytułu, ani klasy okna, wybrane zostanie \n"
+#~ "pierwsze okno, które się pojawi - pomijanie obu opcji NIE jest zalecane."
+
+#~ msgid "Desktop on which to make the window appear"
+#~ msgstr "Pulpit, na którym ma pojawić się okno"
+
+#~ msgid ""
+#~ "Make the window appear on the desktop that was active\n"
+#~ "when starting the application"
+#~ msgstr "Wyświetl okno na pulpicie aktywnym podczas uruchamiania programu"
+
+#~ msgid "Make the window appear on all desktops"
+#~ msgstr "Wyświetl okno na wszystkich pulpitach"
+
+#~ msgid "Iconify the window"
+#~ msgstr "Minimalizuj okno"
+
+#~ msgid "Maximize the window"
+#~ msgstr "Maksymalizuj okno"
+
+#~ msgid "Maximize the window vertically"
+#~ msgstr "Maksymalizuj okno w pionie"
+
+#~ msgid "Maximize the window horizontally"
+#~ msgstr "Maksymalizuj okno w poziomie"
+
+#~ msgid "Show window fullscreen"
+#~ msgstr "Pokaż okno w trybie pełnoekranowym"
+
+#~ msgid ""
+#~ "The window type: Normal, Desktop, Dock, Toolbar, \n"
+#~ "Menu, Dialog, TopMenu or Override"
+#~ msgstr ""
+#~ "Typ okna: Normal, Desktop, Dock, Toolbar, Menu,\n"
+#~ "Dialog, TopMenu lub Override"
+
+#~ msgid ""
+#~ "Jump to the window even if it is started on a \n"
+#~ "different virtual desktop"
+#~ msgstr "Pokaż okno, nawet gdy jest wyświetlone na innym pulpicie"
+
+#~ msgid "Try to keep the window above other windows"
+#~ msgstr "Okno zawsze będzie umieszczane przed innymi"
+
+#~ msgid "Try to keep the window below other windows"
+#~ msgstr "Okno zawsze będzie umieszczane za innymi"
+
+#~ msgid "The window does not get an entry in the taskbar"
+#~ msgstr "Okno nie będzie wyświetlane na pasku zadań"
+
+#~ msgid "The window does not get an entry on the pager"
+#~ msgstr "Okno nie będzie wyświetlane na podglądzie pulpitu"
 
 #~ msgid "The window is sent to the system tray in Kicker"
 #~ msgstr "Okno będzie umieszczone na tacce systemowej Kickera"

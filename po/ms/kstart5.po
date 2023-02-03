@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kstart\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2022-12-17 00:51+0000\n"
+"POT-Creation-Date: 2023-02-03 01:00+0000\n"
 "PO-Revision-Date: 2009-03-12 23:54+0800\n"
 "Last-Translator: Sharuzzaman Ahmat Raslan <sharuzzaman@myrealbox.com>\n"
 "Language-Team: Malay <kedidiemas@yahoogroups.com>\n"
@@ -29,49 +29,42 @@ msgctxt "EMAIL OF TRANSLATORS"
 msgid "Your emails"
 msgstr "mnajem@linxumail.org"
 
-#: kstart.cpp:255
+#: kstart.cpp:78
 #, kde-format
 msgid "KStart"
 msgstr "KStart"
 
-#: kstart.cpp:257
+#: kstart.cpp:80
 #, kde-format
-msgid ""
-"Utility to launch applications with special window properties \n"
-"such as iconified, maximized, a certain virtual desktop, a special "
-"decoration\n"
-"and so on."
+msgid "Utility to launch applications"
 msgstr ""
-"Utiliti untuk melancarkan aplikasi dengan ciri-ciri isitimewa tetingkap \n"
-"seperti diikonkan, dimaksimakan, ruang kerja maya, hiasan khas,\n"
-"dan lain-lain."
 
-#: kstart.cpp:262
+#: kstart.cpp:82
 #, kde-format
 msgid "(C) 1997-2000 Matthias Ettrich (ettrich@kde.org)"
 msgstr "(C) 1997-2000 Matthias Ettrich (ettrich@kde.org)"
 
-#: kstart.cpp:264
+#: kstart.cpp:84
 #, kde-format
 msgid "Matthias Ettrich"
 msgstr "Matthias Ettrich"
 
-#: kstart.cpp:265
+#: kstart.cpp:85
 #, kde-format
 msgid "David Faure"
 msgstr "David Faure"
 
-#: kstart.cpp:266
+#: kstart.cpp:86
 #, kde-format
 msgid "Richard J. Moore"
 msgstr "Richard J. Moore"
 
-#: kstart.cpp:271
+#: kstart.cpp:91
 #, kde-format
 msgid "Command to execute"
 msgstr "Arahan untuk laksanakan"
 
-#: kstart.cpp:275
+#: kstart.cpp:95
 #, fuzzy, kde-format
 #| msgid ""
 #| "Alternative to <command>: desktop file to start. D-Bus service will be "
@@ -83,7 +76,7 @@ msgstr ""
 "Alternatif kepada <command>: fail desktop untuk memulakan. Servis D-Bus akan "
 "dipaparkan ke stdout"
 
-#: kstart.cpp:278
+#: kstart.cpp:98
 #, fuzzy, kde-format
 #| msgid ""
 #| "Alternative to <command>: desktop file to start. D-Bus service will be "
@@ -93,123 +86,101 @@ msgstr ""
 "Alternatif kepada <command>: fail desktop untuk memulakan. Servis D-Bus akan "
 "dipaparkan ke stdout"
 
-#: kstart.cpp:281
+#: kstart.cpp:101
 #, kde-format
 msgid "Optional URL to pass <desktopfile>, when using --service"
 msgstr ""
 "URL pilihan untuk menghantar <desktopfile>, apabila penggunakan --service"
 
-#: kstart.cpp:284
-#, kde-format
-msgid "A regular expression matching the window title"
-msgstr "Ungkapan Nalar (regexp) sepadan dengan tajuk tetingkap"
-
-#: kstart.cpp:286
-#, kde-format
-msgid ""
-"A string matching the window class (WM_CLASS property)\n"
-"The window class can be found out by running\n"
-"'xprop | grep WM_CLASS' and clicking on a window\n"
-"(use either both parts separated by a space or only the right part).\n"
-"NOTE: If you specify neither window title nor window class,\n"
-"then the very first window to appear will be taken;\n"
-"omitting both options is NOT recommended."
-msgstr ""
-"Satu rentetan sepadan dengan kelas tetingkap (ciri-ciri WM_CLASS)\n"
-"Kelas tetingkap boleh dicari dengan melaksanakan\n"
-"'xprop | grep WM_CLASS' dan klik pada tetingkap\n"
-"(guna sama ada kedua-dua bahagian diasing dengan ruang atau hanya bahagian "
-"kanan).\n"
-"NOTA: Jika anda nyatakan tiada tajuk tetingkap ataupun kelas tetingkap,\n"
-"oleh itu tetingkap pertama muncul akan diambil;\n"
-"meninggalkan kedua-dua pilihan adalah TIDAK digalakkan."
-
-#: kstart.cpp:295
-#, kde-format
-msgid "Desktop on which to make the window appear"
-msgstr "Ruang kerja di mana tetingkap dipaparkan."
-
-#: kstart.cpp:297
-#, kde-format
-msgid ""
-"Make the window appear on the desktop that was active\n"
-"when starting the application"
-msgstr ""
-"Jadikan tetingkap muncul pada desktop yang aktif\n"
-"apabila memulakan aplikasi"
-
-#: kstart.cpp:298
-#, kde-format
-msgid "Make the window appear on all desktops"
-msgstr "Jadikan tetingkap dipaparkan di semua ruang kerja"
-
-#: kstart.cpp:299
-#, kde-format
-msgid "Iconify the window"
-msgstr "Ikonkan tetingkap"
-
-#: kstart.cpp:300
-#, kde-format
-msgid "Maximize the window"
-msgstr "Maksimakan tetingkap"
-
-#: kstart.cpp:301
-#, kde-format
-msgid "Maximize the window vertically"
-msgstr "Maksimakan tetingkap"
-
-#: kstart.cpp:302
-#, kde-format
-msgid "Maximize the window horizontally"
-msgstr "Maksimakan tetingkap mengufuk"
-
-#: kstart.cpp:303
-#, kde-format
-msgid "Show window fullscreen"
-msgstr "Papar tetingkap skrinpenuh"
-
-#: kstart.cpp:305
-#, kde-format
-msgid ""
-"The window type: Normal, Desktop, Dock, Toolbar, \n"
-"Menu, Dialog, TopMenu or Override"
-msgstr ""
-"Jenis tetingkap: Normal, Desktop, Labuh, Bar Alat, \n"
-"Menu, Dialog, MenuAtas atau Tindih"
-
-#: kstart.cpp:308
-#, kde-format
-msgid ""
-"Jump to the window even if it is started on a \n"
-"different virtual desktop"
-msgstr ""
-"Lonpat ke tetingkap walaupun ianya dimulakan pada \n"
-"desktop maya yang berbeza"
-
-#: kstart.cpp:311
-#, kde-format
-msgid "Try to keep the window above other windows"
-msgstr "Cuba jadikan tetingkap di atas tetingkap lain"
-
-#: kstart.cpp:313
-#, kde-format
-msgid "Try to keep the window below other windows"
-msgstr "Cuba jadikan tetingkap di bawah tetingkap lain"
-
-#: kstart.cpp:314
-#, kde-format
-msgid "The window does not get an entry in the taskbar"
-msgstr "Tetingkap tidak mendapat ruang pada papan tugas"
-
-#: kstart.cpp:315
-#, kde-format
-msgid "The window does not get an entry on the pager"
-msgstr "Tetingkap tidak mendapat ruang pada laman"
-
-#: kstart.cpp:329
+#: kstart.cpp:115
 #, kde-format
 msgid "No command specified"
 msgstr "Tiada arahan ditentukan"
+
+#~ msgid ""
+#~ "Utility to launch applications with special window properties \n"
+#~ "such as iconified, maximized, a certain virtual desktop, a special "
+#~ "decoration\n"
+#~ "and so on."
+#~ msgstr ""
+#~ "Utiliti untuk melancarkan aplikasi dengan ciri-ciri isitimewa tetingkap \n"
+#~ "seperti diikonkan, dimaksimakan, ruang kerja maya, hiasan khas,\n"
+#~ "dan lain-lain."
+
+#~ msgid "A regular expression matching the window title"
+#~ msgstr "Ungkapan Nalar (regexp) sepadan dengan tajuk tetingkap"
+
+#~ msgid ""
+#~ "A string matching the window class (WM_CLASS property)\n"
+#~ "The window class can be found out by running\n"
+#~ "'xprop | grep WM_CLASS' and clicking on a window\n"
+#~ "(use either both parts separated by a space or only the right part).\n"
+#~ "NOTE: If you specify neither window title nor window class,\n"
+#~ "then the very first window to appear will be taken;\n"
+#~ "omitting both options is NOT recommended."
+#~ msgstr ""
+#~ "Satu rentetan sepadan dengan kelas tetingkap (ciri-ciri WM_CLASS)\n"
+#~ "Kelas tetingkap boleh dicari dengan melaksanakan\n"
+#~ "'xprop | grep WM_CLASS' dan klik pada tetingkap\n"
+#~ "(guna sama ada kedua-dua bahagian diasing dengan ruang atau hanya "
+#~ "bahagian kanan).\n"
+#~ "NOTA: Jika anda nyatakan tiada tajuk tetingkap ataupun kelas tetingkap,\n"
+#~ "oleh itu tetingkap pertama muncul akan diambil;\n"
+#~ "meninggalkan kedua-dua pilihan adalah TIDAK digalakkan."
+
+#~ msgid "Desktop on which to make the window appear"
+#~ msgstr "Ruang kerja di mana tetingkap dipaparkan."
+
+#~ msgid ""
+#~ "Make the window appear on the desktop that was active\n"
+#~ "when starting the application"
+#~ msgstr ""
+#~ "Jadikan tetingkap muncul pada desktop yang aktif\n"
+#~ "apabila memulakan aplikasi"
+
+#~ msgid "Make the window appear on all desktops"
+#~ msgstr "Jadikan tetingkap dipaparkan di semua ruang kerja"
+
+#~ msgid "Iconify the window"
+#~ msgstr "Ikonkan tetingkap"
+
+#~ msgid "Maximize the window"
+#~ msgstr "Maksimakan tetingkap"
+
+#~ msgid "Maximize the window vertically"
+#~ msgstr "Maksimakan tetingkap"
+
+#~ msgid "Maximize the window horizontally"
+#~ msgstr "Maksimakan tetingkap mengufuk"
+
+#~ msgid "Show window fullscreen"
+#~ msgstr "Papar tetingkap skrinpenuh"
+
+#~ msgid ""
+#~ "The window type: Normal, Desktop, Dock, Toolbar, \n"
+#~ "Menu, Dialog, TopMenu or Override"
+#~ msgstr ""
+#~ "Jenis tetingkap: Normal, Desktop, Labuh, Bar Alat, \n"
+#~ "Menu, Dialog, MenuAtas atau Tindih"
+
+#~ msgid ""
+#~ "Jump to the window even if it is started on a \n"
+#~ "different virtual desktop"
+#~ msgstr ""
+#~ "Lonpat ke tetingkap walaupun ianya dimulakan pada \n"
+#~ "desktop maya yang berbeza"
+
+#~ msgid "Try to keep the window above other windows"
+#~ msgstr "Cuba jadikan tetingkap di atas tetingkap lain"
+
+#~ msgid "Try to keep the window below other windows"
+#~ msgstr "Cuba jadikan tetingkap di bawah tetingkap lain"
+
+#~ msgid "The window does not get an entry in the taskbar"
+#~ msgstr "Tetingkap tidak mendapat ruang pada papan tugas"
+
+#~ msgid "The window does not get an entry on the pager"
+#~ msgstr "Tetingkap tidak mendapat ruang pada laman"
 
 #~ msgid "The window is sent to the system tray in Kicker"
 #~ msgstr "Tetingkap dihantar ke dulang sistem di dalam Kicker."

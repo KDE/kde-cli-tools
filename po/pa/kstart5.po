@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kstart\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2022-12-17 00:51+0000\n"
+"POT-Creation-Date: 2023-02-03 01:00+0000\n"
 "PO-Revision-Date: 2018-01-07 21:32-0600\n"
 "Last-Translator: A S Alam <aalam@fedoraproject.org>\n"
 "Language-Team: Punjabi <punjabi-users@lists.sf.net>\n"
@@ -28,168 +28,129 @@ msgctxt "EMAIL OF TRANSLATORS"
 msgid "Your emails"
 msgstr "alam.yellow@gmail.com"
 
-#: kstart.cpp:255
+#: kstart.cpp:78
 #, kde-format
 msgid "KStart"
 msgstr "ਕੇ-ਸਟਾਰਟ"
 
-#: kstart.cpp:257
+#: kstart.cpp:80
 #, kde-format
-msgid ""
-"Utility to launch applications with special window properties \n"
-"such as iconified, maximized, a certain virtual desktop, a special "
-"decoration\n"
-"and so on."
+msgid "Utility to launch applications"
 msgstr ""
-"ਸਹੂਲਤ, ਜੋ ਕਿ ਐਪਲੀਕੇਸ਼ਨ ਖਾਸ ਵਿੰਡੋ ਵਿਸ਼ੇਸ਼ਤਾਵਾਂ ਨਾਲ ਚਲਾਉਦੀ ਹੈ, ਜਿਵੇਂ ਕਿ\n"
-"ਆਈਕਾਨ-ਰੂਪ, ਵੱਧੋ-ਵੱਧ, ਇੱਕ ਖਾਸ ਡੈਸਕਟਾਪ ਵਿੱਚ, ਇੱਕ ਖਾਸ ਸਜਾਵਟ ਨਾਲ ਅਤੇ\n"
-"ਹੋਰ।"
 
-#: kstart.cpp:262
+#: kstart.cpp:82
 #, kde-format
 msgid "(C) 1997-2000 Matthias Ettrich (ettrich@kde.org)"
 msgstr "(C) ੧੯੯੭-੨੦੦੦ Matthias Ettrich (ettrich@kde.org)"
 
-#: kstart.cpp:264
+#: kstart.cpp:84
 #, kde-format
 msgid "Matthias Ettrich"
 msgstr "ਮੈਥੂਸ ਇੱਟਰਿਚ"
 
-#: kstart.cpp:265
+#: kstart.cpp:85
 #, kde-format
 msgid "David Faure"
 msgstr "ਡੇਵਿਡ ਫਾਉਰੀ"
 
-#: kstart.cpp:266
+#: kstart.cpp:86
 #, kde-format
 msgid "Richard J. Moore"
 msgstr "ਰਿਚਰਡ ਜੇ. ਮੂਰੇ"
 
-#: kstart.cpp:271
+#: kstart.cpp:91
 #, kde-format
 msgid "Command to execute"
 msgstr "ਚਲਾਉਣ ਲਈ ਕਮਾਂਡ"
 
-#: kstart.cpp:275
+#: kstart.cpp:95
 #, kde-format
 msgid ""
 "Alternative to <command>: desktop file path to start. D-Bus service will be "
 "printed to stdout. Deprecated: use --application"
 msgstr ""
 
-#: kstart.cpp:278
+#: kstart.cpp:98
 #, kde-format
 msgid "Alternative to <command>: desktop file to start."
 msgstr ""
 
-#: kstart.cpp:281
+#: kstart.cpp:101
 #, kde-format
 msgid "Optional URL to pass <desktopfile>, when using --service"
 msgstr ""
 
-#: kstart.cpp:284
-#, kde-format
-msgid "A regular expression matching the window title"
-msgstr "ਵਿੰਡੋ ਟਾਇਟਲ ਨਾਲ ਮੇਲ ਖਾਂਦਾ ਨਿਯਮਿਤ ਸਮੀਕਰਨ "
-
-#: kstart.cpp:286
-#, kde-format
-msgid ""
-"A string matching the window class (WM_CLASS property)\n"
-"The window class can be found out by running\n"
-"'xprop | grep WM_CLASS' and clicking on a window\n"
-"(use either both parts separated by a space or only the right part).\n"
-"NOTE: If you specify neither window title nor window class,\n"
-"then the very first window to appear will be taken;\n"
-"omitting both options is NOT recommended."
-msgstr ""
-
-#: kstart.cpp:295
-#, kde-format
-msgid "Desktop on which to make the window appear"
-msgstr "ਡੈਸਕਟਾਪ, ਜਿਸ ਉੱਤੇ ਕਿ ਵਿੰਡੋ ਉਪਲੱਬਧ ਹੋਵੇਗੀ"
-
-#: kstart.cpp:297
-#, kde-format
-msgid ""
-"Make the window appear on the desktop that was active\n"
-"when starting the application"
-msgstr ""
-"ਵਿੰਡੋ ਨੂੰ ਉਸੇ ਡੈਸਕਟਾਪ ਵਿੱਚ ਸਰਗਰਮ ਕਰੋ, ਜਿਸ ਵਿੱਚ\n"
-"ਕਿ ਐਪਲੀਕੇਸ਼ਨ ਸ਼ੁਰੂ ਹੋਈ ਹੋਵੇ।"
-
-#: kstart.cpp:298
-#, kde-format
-msgid "Make the window appear on all desktops"
-msgstr "ਵਿੰਡੋ ਨੂੰ ਸਭ ਡੈਸਕਟਾਪ ਵਿੱਚ ਉਪਲੱਬਧ ਕਰਵਾਓ"
-
-#: kstart.cpp:299
-#, kde-format
-msgid "Iconify the window"
-msgstr "ਵਿੰਡੋ ਆਈਕਾਨ-ਰੂਪ ਵਿੱਚ"
-
-#: kstart.cpp:300
-#, kde-format
-msgid "Maximize the window"
-msgstr "ਵਿੰਡੋ ਵੱਧੋ-ਵੱਧ"
-
-#: kstart.cpp:301
-#, kde-format
-msgid "Maximize the window vertically"
-msgstr "ਲੰਬਕਾਰੀ ਵਿੰਡੋ ਵੱਧੋ-ਵੱਧ ਕਰੋ"
-
-#: kstart.cpp:302
-#, kde-format
-msgid "Maximize the window horizontally"
-msgstr "ਖਿਤਿਜੀ ਵਿੰਡੋ ਵੱਧੋ-ਵੱਧ"
-
-#: kstart.cpp:303
-#, kde-format
-msgid "Show window fullscreen"
-msgstr "ਵਿੰਡੋ ਪੂਰੀ ਸਕਰੀਨ ਉੱਤੇ ਵੇਖੋ"
-
-#: kstart.cpp:305
-#, kde-format
-msgid ""
-"The window type: Normal, Desktop, Dock, Toolbar, \n"
-"Menu, Dialog, TopMenu or Override"
-msgstr ""
-"ਵਿੰਡੋ ਕਿਸਮ ਸਧਾਰਨ, ਡੈਸਕਟਾਪ, ਤਰਦਾ, ਟੂਲਬਾਰ,\n"
-"ਮੇਨੂ, ਡਾਈਲਾਗ, ਉੱਤੇ-ਮੇਨੂ ਜਾਂ ਉੱਤੇ"
-
-#: kstart.cpp:308
-#, kde-format
-msgid ""
-"Jump to the window even if it is started on a \n"
-"different virtual desktop"
-msgstr ""
-"ਵਿੰਡੋ ਉੱਤੇ ਜਾਓ, ਭਾਵੇਂ ਕਿ ਇਹ ਵੱਖਰੇ ਵੁਰਚੁਅਲ ਡੈਸਕਟਾਪ\n"
-"ਵਿੱਚ ਖੁੱਲ੍ਹੀ ਹੋਵੇ।"
-
-#: kstart.cpp:311
-#, kde-format
-msgid "Try to keep the window above other windows"
-msgstr "ਵਿੰਡੋ ਨੂੰ ਹੋਰ ਵਿੰਡੋਜ਼ ਦੇ ਉੱਤੇ ਰੱਖਣ ਦੀ ਕੋਸ਼ਿਸ ਕਰੋ"
-
-#: kstart.cpp:313
-#, kde-format
-msgid "Try to keep the window below other windows"
-msgstr "ਵਿੰਡੋ ਨੂੰ ਹੋਰ ਵਿੰਡੋਜ਼ ਤੋਂ ਹੇਠਾਂ ਰੱਖਣ ਦੀ ਕੋਸ਼ਿਸ ਕਰੋ"
-
-#: kstart.cpp:314
-#, kde-format
-msgid "The window does not get an entry in the taskbar"
-msgstr "ਵਿੰਡੋ ਟਾਸਕਬਾਰ ਵਿੱਚ ਐਂਟਰੀ ਨਾ ਲਵੇ"
-
-#: kstart.cpp:315
-#, kde-format
-msgid "The window does not get an entry on the pager"
-msgstr "ਵਿੰਡੋ ਪੇਜ਼ਰ ਵਿੱਚ ਐਂਟਰੀ ਨਾ ਲਵੇ"
-
-#: kstart.cpp:329
+#: kstart.cpp:115
 #, kde-format
 msgid "No command specified"
 msgstr "ਕੋਈ ਕਮਾਂਡ ਨਹੀਂ ਦਿੱਤੀ"
+
+#~ msgid ""
+#~ "Utility to launch applications with special window properties \n"
+#~ "such as iconified, maximized, a certain virtual desktop, a special "
+#~ "decoration\n"
+#~ "and so on."
+#~ msgstr ""
+#~ "ਸਹੂਲਤ, ਜੋ ਕਿ ਐਪਲੀਕੇਸ਼ਨ ਖਾਸ ਵਿੰਡੋ ਵਿਸ਼ੇਸ਼ਤਾਵਾਂ ਨਾਲ ਚਲਾਉਦੀ ਹੈ, ਜਿਵੇਂ ਕਿ\n"
+#~ "ਆਈਕਾਨ-ਰੂਪ, ਵੱਧੋ-ਵੱਧ, ਇੱਕ ਖਾਸ ਡੈਸਕਟਾਪ ਵਿੱਚ, ਇੱਕ ਖਾਸ ਸਜਾਵਟ ਨਾਲ ਅਤੇ\n"
+#~ "ਹੋਰ।"
+
+#~ msgid "A regular expression matching the window title"
+#~ msgstr "ਵਿੰਡੋ ਟਾਇਟਲ ਨਾਲ ਮੇਲ ਖਾਂਦਾ ਨਿਯਮਿਤ ਸਮੀਕਰਨ "
+
+#~ msgid "Desktop on which to make the window appear"
+#~ msgstr "ਡੈਸਕਟਾਪ, ਜਿਸ ਉੱਤੇ ਕਿ ਵਿੰਡੋ ਉਪਲੱਬਧ ਹੋਵੇਗੀ"
+
+#~ msgid ""
+#~ "Make the window appear on the desktop that was active\n"
+#~ "when starting the application"
+#~ msgstr ""
+#~ "ਵਿੰਡੋ ਨੂੰ ਉਸੇ ਡੈਸਕਟਾਪ ਵਿੱਚ ਸਰਗਰਮ ਕਰੋ, ਜਿਸ ਵਿੱਚ\n"
+#~ "ਕਿ ਐਪਲੀਕੇਸ਼ਨ ਸ਼ੁਰੂ ਹੋਈ ਹੋਵੇ।"
+
+#~ msgid "Make the window appear on all desktops"
+#~ msgstr "ਵਿੰਡੋ ਨੂੰ ਸਭ ਡੈਸਕਟਾਪ ਵਿੱਚ ਉਪਲੱਬਧ ਕਰਵਾਓ"
+
+#~ msgid "Iconify the window"
+#~ msgstr "ਵਿੰਡੋ ਆਈਕਾਨ-ਰੂਪ ਵਿੱਚ"
+
+#~ msgid "Maximize the window"
+#~ msgstr "ਵਿੰਡੋ ਵੱਧੋ-ਵੱਧ"
+
+#~ msgid "Maximize the window vertically"
+#~ msgstr "ਲੰਬਕਾਰੀ ਵਿੰਡੋ ਵੱਧੋ-ਵੱਧ ਕਰੋ"
+
+#~ msgid "Maximize the window horizontally"
+#~ msgstr "ਖਿਤਿਜੀ ਵਿੰਡੋ ਵੱਧੋ-ਵੱਧ"
+
+#~ msgid "Show window fullscreen"
+#~ msgstr "ਵਿੰਡੋ ਪੂਰੀ ਸਕਰੀਨ ਉੱਤੇ ਵੇਖੋ"
+
+#~ msgid ""
+#~ "The window type: Normal, Desktop, Dock, Toolbar, \n"
+#~ "Menu, Dialog, TopMenu or Override"
+#~ msgstr ""
+#~ "ਵਿੰਡੋ ਕਿਸਮ ਸਧਾਰਨ, ਡੈਸਕਟਾਪ, ਤਰਦਾ, ਟੂਲਬਾਰ,\n"
+#~ "ਮੇਨੂ, ਡਾਈਲਾਗ, ਉੱਤੇ-ਮੇਨੂ ਜਾਂ ਉੱਤੇ"
+
+#~ msgid ""
+#~ "Jump to the window even if it is started on a \n"
+#~ "different virtual desktop"
+#~ msgstr ""
+#~ "ਵਿੰਡੋ ਉੱਤੇ ਜਾਓ, ਭਾਵੇਂ ਕਿ ਇਹ ਵੱਖਰੇ ਵੁਰਚੁਅਲ ਡੈਸਕਟਾਪ\n"
+#~ "ਵਿੱਚ ਖੁੱਲ੍ਹੀ ਹੋਵੇ।"
+
+#~ msgid "Try to keep the window above other windows"
+#~ msgstr "ਵਿੰਡੋ ਨੂੰ ਹੋਰ ਵਿੰਡੋਜ਼ ਦੇ ਉੱਤੇ ਰੱਖਣ ਦੀ ਕੋਸ਼ਿਸ ਕਰੋ"
+
+#~ msgid "Try to keep the window below other windows"
+#~ msgstr "ਵਿੰਡੋ ਨੂੰ ਹੋਰ ਵਿੰਡੋਜ਼ ਤੋਂ ਹੇਠਾਂ ਰੱਖਣ ਦੀ ਕੋਸ਼ਿਸ ਕਰੋ"
+
+#~ msgid "The window does not get an entry in the taskbar"
+#~ msgstr "ਵਿੰਡੋ ਟਾਸਕਬਾਰ ਵਿੱਚ ਐਂਟਰੀ ਨਾ ਲਵੇ"
+
+#~ msgid "The window does not get an entry on the pager"
+#~ msgstr "ਵਿੰਡੋ ਪੇਜ਼ਰ ਵਿੱਚ ਐਂਟਰੀ ਨਾ ਲਵੇ"
 
 #~ msgid "The window is sent to the system tray in Kicker"
 #~ msgstr "ਵਿੰਡੋ ਕਿੱਕਰ ਵਿੱਚ ਸਿਸਟਮ ਟਰੇ ਵਿੱਚ ਭੇਜਿਆ ਗਿਆ ਹੈ"

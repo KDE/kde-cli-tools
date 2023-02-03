@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kstart\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2022-12-17 00:51+0000\n"
+"POT-Creation-Date: 2023-02-03 01:00+0000\n"
 "PO-Revision-Date: 2022-05-20 19:12+0200\n"
 "Last-Translator: Mincho Kondarev <mkondarev@yahoo.de>\n"
 "Language-Team: Bulgarian <dict@fsa-bg.org>\n"
@@ -29,51 +29,42 @@ msgctxt "EMAIL OF TRANSLATORS"
 msgid "Your emails"
 msgstr "yasen@lindeas.com"
 
-#: kstart.cpp:255
+#: kstart.cpp:78
 #, kde-format
 msgid "KStart"
 msgstr "KStart"
 
-#: kstart.cpp:257
+#: kstart.cpp:80
 #, kde-format
-msgid ""
-"Utility to launch applications with special window properties \n"
-"such as iconified, maximized, a certain virtual desktop, a special "
-"decoration\n"
-"and so on."
+msgid "Utility to launch applications"
 msgstr ""
-"Помощна програма за стартиране на приложения със специални свойства на "
-"прозореца\n"
-"като максимизиран, в икона, определен виртуален работен плот, специална "
-"декорация\n"
-"и така нататък."
 
-#: kstart.cpp:262
+#: kstart.cpp:82
 #, kde-format
 msgid "(C) 1997-2000 Matthias Ettrich (ettrich@kde.org)"
 msgstr "(C) 1997-2000 Matthias Ettrich (ettrich@kde.org)"
 
-#: kstart.cpp:264
+#: kstart.cpp:84
 #, kde-format
 msgid "Matthias Ettrich"
 msgstr "Matthias Ettrich"
 
-#: kstart.cpp:265
+#: kstart.cpp:85
 #, kde-format
 msgid "David Faure"
 msgstr "David Faure"
 
-#: kstart.cpp:266
+#: kstart.cpp:86
 #, kde-format
 msgid "Richard J. Moore"
 msgstr "Richard J. Moore"
 
-#: kstart.cpp:271
+#: kstart.cpp:91
 #, kde-format
 msgid "Command to execute"
 msgstr "Команда за изпълнение"
 
-#: kstart.cpp:275
+#: kstart.cpp:95
 #, kde-format
 msgid ""
 "Alternative to <command>: desktop file path to start. D-Bus service will be "
@@ -82,125 +73,106 @@ msgstr ""
 "Алтернатива на <command>: път към desktop файла за стартиране. D-Bus "
 "услугата ще бъде отпечатана в stdout. Изоставено: използвайте --application"
 
-#: kstart.cpp:278
+#: kstart.cpp:98
 #, kde-format
 msgid "Alternative to <command>: desktop file to start."
 msgstr "Алтернатива на <command>:  desktop файл за стартиране."
 
-#: kstart.cpp:281
+#: kstart.cpp:101
 #, kde-format
 msgid "Optional URL to pass <desktopfile>, when using --service"
 msgstr ""
 "Опционални URL за предаване на <desktopfile>, когато се използва --service"
 
-#: kstart.cpp:284
-#, kde-format
-msgid "A regular expression matching the window title"
-msgstr "Регулярен израз за заглавието на прозореца"
-
-#: kstart.cpp:286
-#, kde-format
-msgid ""
-"A string matching the window class (WM_CLASS property)\n"
-"The window class can be found out by running\n"
-"'xprop | grep WM_CLASS' and clicking on a window\n"
-"(use either both parts separated by a space or only the right part).\n"
-"NOTE: If you specify neither window title nor window class,\n"
-"then the very first window to appear will be taken;\n"
-"omitting both options is NOT recommended."
-msgstr ""
-"Низ, съответстващ на класа на прозореца (свойство WM_CLASS)\n"
-"Класът на прозореца може да бъде открит, като стартирате\n"
-"'xprop | grep WM_CLASS 'и щракване върху прозорец\n"
-"(използвайте или двете части, разделени с интервал, или само дясната част).\n"
-"ЗАБЕЛЕЖКА: Ако не посочите нито заглавие на прозорец, нито клас на "
-"прозорец,\n"
-"тогава ще се вземе първият прозорец, който ще се появи;\n"
-"пропускането на двете опции НЕ се препоръчва."
-
-#: kstart.cpp:295
-#, kde-format
-msgid "Desktop on which to make the window appear"
-msgstr "Работен плот, на който да се появи прозорецът"
-
-#: kstart.cpp:297
-#, kde-format
-msgid ""
-"Make the window appear on the desktop that was active\n"
-"when starting the application"
-msgstr ""
-"Показване на прозореца на работния плот, който е бил активен\n"
-"при стартиране на приложението"
-
-#: kstart.cpp:298
-#, kde-format
-msgid "Make the window appear on all desktops"
-msgstr "Прозорецът да е на всички работни плотове"
-
-#: kstart.cpp:299
-#, kde-format
-msgid "Iconify the window"
-msgstr "Свиване на прозореца в икона"
-
-#: kstart.cpp:300
-#, kde-format
-msgid "Maximize the window"
-msgstr "Максимизиране на прозореца"
-
-#: kstart.cpp:301
-#, kde-format
-msgid "Maximize the window vertically"
-msgstr "Максимизиране на прозореца вертикално"
-
-#: kstart.cpp:302
-#, kde-format
-msgid "Maximize the window horizontally"
-msgstr "Максимизиране на прозореца хоризонтално"
-
-#: kstart.cpp:303
-#, kde-format
-msgid "Show window fullscreen"
-msgstr "Прозорецът на цял екран"
-
-#: kstart.cpp:305
-#, kde-format
-msgid ""
-"The window type: Normal, Desktop, Dock, Toolbar, \n"
-"Menu, Dialog, TopMenu or Override"
-msgstr ""
-"Типът на прозореца: Нормален, Работен плот, Док, Лента с инструменти,\n"
-"Меню, Диалог, TopMenu или Замяна"
-
-#: kstart.cpp:308
-#, kde-format
-msgid ""
-"Jump to the window even if it is started on a \n"
-"different virtual desktop"
-msgstr ""
-"Преминаване към прозореца, дори ако е стартиран на\n"
-"различен виртуален работен плот"
-
-#: kstart.cpp:311
-#, kde-format
-msgid "Try to keep the window above other windows"
-msgstr "Прозорецът да се държи над останалите прозорци"
-
-#: kstart.cpp:313
-#, kde-format
-msgid "Try to keep the window below other windows"
-msgstr "Прозорецът да се държи под останалите прозорци"
-
-#: kstart.cpp:314
-#, kde-format
-msgid "The window does not get an entry in the taskbar"
-msgstr "Прозорецът не получава запис за лентата със задачи"
-
-#: kstart.cpp:315
-#, kde-format
-msgid "The window does not get an entry on the pager"
-msgstr "Прозорецът не получава запис в списъка с програми"
-
-#: kstart.cpp:329
+#: kstart.cpp:115
 #, kde-format
 msgid "No command specified"
 msgstr "Не е указана команда"
+
+#~ msgid ""
+#~ "Utility to launch applications with special window properties \n"
+#~ "such as iconified, maximized, a certain virtual desktop, a special "
+#~ "decoration\n"
+#~ "and so on."
+#~ msgstr ""
+#~ "Помощна програма за стартиране на приложения със специални свойства на "
+#~ "прозореца\n"
+#~ "като максимизиран, в икона, определен виртуален работен плот, специална "
+#~ "декорация\n"
+#~ "и така нататък."
+
+#~ msgid "A regular expression matching the window title"
+#~ msgstr "Регулярен израз за заглавието на прозореца"
+
+#~ msgid ""
+#~ "A string matching the window class (WM_CLASS property)\n"
+#~ "The window class can be found out by running\n"
+#~ "'xprop | grep WM_CLASS' and clicking on a window\n"
+#~ "(use either both parts separated by a space or only the right part).\n"
+#~ "NOTE: If you specify neither window title nor window class,\n"
+#~ "then the very first window to appear will be taken;\n"
+#~ "omitting both options is NOT recommended."
+#~ msgstr ""
+#~ "Низ, съответстващ на класа на прозореца (свойство WM_CLASS)\n"
+#~ "Класът на прозореца може да бъде открит, като стартирате\n"
+#~ "'xprop | grep WM_CLASS 'и щракване върху прозорец\n"
+#~ "(използвайте или двете части, разделени с интервал, или само дясната "
+#~ "част).\n"
+#~ "ЗАБЕЛЕЖКА: Ако не посочите нито заглавие на прозорец, нито клас на "
+#~ "прозорец,\n"
+#~ "тогава ще се вземе първият прозорец, който ще се появи;\n"
+#~ "пропускането на двете опции НЕ се препоръчва."
+
+#~ msgid "Desktop on which to make the window appear"
+#~ msgstr "Работен плот, на който да се появи прозорецът"
+
+#~ msgid ""
+#~ "Make the window appear on the desktop that was active\n"
+#~ "when starting the application"
+#~ msgstr ""
+#~ "Показване на прозореца на работния плот, който е бил активен\n"
+#~ "при стартиране на приложението"
+
+#~ msgid "Make the window appear on all desktops"
+#~ msgstr "Прозорецът да е на всички работни плотове"
+
+#~ msgid "Iconify the window"
+#~ msgstr "Свиване на прозореца в икона"
+
+#~ msgid "Maximize the window"
+#~ msgstr "Максимизиране на прозореца"
+
+#~ msgid "Maximize the window vertically"
+#~ msgstr "Максимизиране на прозореца вертикално"
+
+#~ msgid "Maximize the window horizontally"
+#~ msgstr "Максимизиране на прозореца хоризонтално"
+
+#~ msgid "Show window fullscreen"
+#~ msgstr "Прозорецът на цял екран"
+
+#~ msgid ""
+#~ "The window type: Normal, Desktop, Dock, Toolbar, \n"
+#~ "Menu, Dialog, TopMenu or Override"
+#~ msgstr ""
+#~ "Типът на прозореца: Нормален, Работен плот, Док, Лента с инструменти,\n"
+#~ "Меню, Диалог, TopMenu или Замяна"
+
+#~ msgid ""
+#~ "Jump to the window even if it is started on a \n"
+#~ "different virtual desktop"
+#~ msgstr ""
+#~ "Преминаване към прозореца, дори ако е стартиран на\n"
+#~ "различен виртуален работен плот"
+
+#~ msgid "Try to keep the window above other windows"
+#~ msgstr "Прозорецът да се държи над останалите прозорци"
+
+#~ msgid "Try to keep the window below other windows"
+#~ msgstr "Прозорецът да се държи под останалите прозорци"
+
+#~ msgid "The window does not get an entry in the taskbar"
+#~ msgstr "Прозорецът не получава запис за лентата със задачи"
+
+#~ msgid "The window does not get an entry on the pager"
+#~ msgstr "Прозорецът не получава запис в списъка с програми"

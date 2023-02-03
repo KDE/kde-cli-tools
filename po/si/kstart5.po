@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kstart\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2022-12-17 00:51+0000\n"
+"POT-Creation-Date: 2023-02-03 01:00+0000\n"
 "PO-Revision-Date: 2009-12-13 06:18+0530\n"
 "Last-Translator: Danishka Navin <danishka@gmail.com>\n"
 "Language-Team: Sinhala <danishka@gmail.com>\n"
@@ -27,49 +27,42 @@ msgctxt "EMAIL OF TRANSLATORS"
 msgid "Your emails"
 msgstr "danishka@gmail.com"
 
-#: kstart.cpp:255
+#: kstart.cpp:78
 #, kde-format
 msgid "KStart"
 msgstr "KStart"
 
-#: kstart.cpp:257
+#: kstart.cpp:80
 #, kde-format
-msgid ""
-"Utility to launch applications with special window properties \n"
-"such as iconified, maximized, a certain virtual desktop, a special "
-"decoration\n"
-"and so on."
+msgid "Utility to launch applications"
 msgstr ""
-"විශේෂ කවුළු වත්කම් සමඟ භාවිතයෙදවුම් ආරම්භ කිරීමට උපාංගයක් \n"
-"අයිකන කල, විහිදූ, දෙනලද අතත්‍ය වැඩතල, විශේෂ  සැරසිලි\n"
-"හා තවත්."
 
-#: kstart.cpp:262
+#: kstart.cpp:82
 #, kde-format
 msgid "(C) 1997-2000 Matthias Ettrich (ettrich@kde.org)"
 msgstr "(C) 1997-2000 Matthias Ettrich (ettrich@kde.org)"
 
-#: kstart.cpp:264
+#: kstart.cpp:84
 #, kde-format
 msgid "Matthias Ettrich"
 msgstr "Matthias Ettrich"
 
-#: kstart.cpp:265
+#: kstart.cpp:85
 #, kde-format
 msgid "David Faure"
 msgstr "David Faure"
 
-#: kstart.cpp:266
+#: kstart.cpp:86
 #, kde-format
 msgid "Richard J. Moore"
 msgstr "Richard J. Moore"
 
-#: kstart.cpp:271
+#: kstart.cpp:91
 #, kde-format
 msgid "Command to execute"
 msgstr "ක්‍රියාත්මක වීමට විධානය"
 
-#: kstart.cpp:275
+#: kstart.cpp:95
 #, fuzzy, kde-format
 #| msgid ""
 #| "Alternative to <command>: desktop file to start. D-Bus service will be "
@@ -79,7 +72,7 @@ msgid ""
 "printed to stdout. Deprecated: use --application"
 msgstr "<command>ට විකල්පයක්: ආරම්භයට වැඩතල ගොනුව. D-Bus සේවාව stdout වෙත මුද්‍රණය වේ"
 
-#: kstart.cpp:278
+#: kstart.cpp:98
 #, fuzzy, kde-format
 #| msgid ""
 #| "Alternative to <command>: desktop file to start. D-Bus service will be "
@@ -87,121 +80,100 @@ msgstr "<command>ට විකල්පයක්: ආරම්භයට වැ�
 msgid "Alternative to <command>: desktop file to start."
 msgstr "<command>ට විකල්පයක්: ආරම්භයට වැඩතල ගොනුව. D-Bus සේවාව stdout වෙත මුද්‍රණය වේ"
 
-#: kstart.cpp:281
+#: kstart.cpp:101
 #, fuzzy, kde-format
 msgid "Optional URL to pass <desktopfile>, when using --service"
 msgstr "සේවාව (--s) භාවිත කරන විට, ගමන්කරන විකල්ප  URL ලිපිනය <desktopfile>"
 
-#: kstart.cpp:284
-#, kde-format
-msgid "A regular expression matching the window title"
-msgstr "කවුළු මාතෘකාවට ගැලපෙන සාමාන්‍ය යෙදුම"
-
-#: kstart.cpp:286
-#, kde-format
-msgid ""
-"A string matching the window class (WM_CLASS property)\n"
-"The window class can be found out by running\n"
-"'xprop | grep WM_CLASS' and clicking on a window\n"
-"(use either both parts separated by a space or only the right part).\n"
-"NOTE: If you specify neither window title nor window class,\n"
-"then the very first window to appear will be taken;\n"
-"omitting both options is NOT recommended."
-msgstr ""
-"(WM_CLASS property) කාණ්ඩයට ගැලපෙන පෙල\n"
-"'xprop | grep WM_CLASS' ක්‍රියාත්මක කිරීමෙන් හා \n"
-"කවුළුව මත ක්ලික් කිරීමෙන්  සොයාගත හැක\n"
-"(දෙපසම හිස් ඉඩකින් වෙන්කර හෝ දකුණුපස පමණක් භාවිත කරන්න).\n"
-"සලකන්න: කවුළු මාතෘකාව හෝ කවුළු කාණ්ඩය ලබාදී නොමැති නම්,\n"
-"ප්‍රථමයෙන් පෙනෙන කවුළුව ගනු ලැබේ;\n"
-"විකල්ප දෙකම මඟහැරීම නිර්දේශ නොකෙරේ."
-
-#: kstart.cpp:295
-#, kde-format
-msgid "Desktop on which to make the window appear"
-msgstr "වැඩතලය පෙන්වන කවුළුව මත"
-
-#: kstart.cpp:297
-#, kde-format
-msgid ""
-"Make the window appear on the desktop that was active\n"
-"when starting the application"
-msgstr ""
-"භාවිතයෙදවුම ආරම්භ කරනවිට සක්‍රීයව පවතින වැඩතලය මත\n"
-"කවුළුව පෙන්වන්න"
-
-#: kstart.cpp:298
-#, kde-format
-msgid "Make the window appear on all desktops"
-msgstr "කවුළුව සියළුම වැඩතල වල පෙන්වන්න"
-
-#: kstart.cpp:299
-#, fuzzy, kde-format
-msgid "Iconify the window"
-msgstr "කවුළුවට අයිකන යොදන්න"
-
-#: kstart.cpp:300
-#, kde-format
-msgid "Maximize the window"
-msgstr "කවුළුව විහිදන්න"
-
-#: kstart.cpp:301
-#, kde-format
-msgid "Maximize the window vertically"
-msgstr "කවූළුව සිරස්ව විහිදන්න"
-
-#: kstart.cpp:302
-#, kde-format
-msgid "Maximize the window horizontally"
-msgstr "කවුළුව තිරස්ව විහිදන්න"
-
-#: kstart.cpp:303
-#, kde-format
-msgid "Show window fullscreen"
-msgstr "කවුළුම මුළු තිරයේ පෙන්වන්න"
-
-#: kstart.cpp:305
-#, kde-format
-msgid ""
-"The window type: Normal, Desktop, Dock, Toolbar, \n"
-"Menu, Dialog, TopMenu or Override"
-msgstr ""
-"කවුළු වර්ගය: සාමාන්‍ය, වැඩතල, ඩොක්, ටූල්බාර්, \n"
-"මෙනු, සංවාද, ඉහළමෙනු හෝ අතික්‍රමණය"
-
-#: kstart.cpp:308
-#, kde-format
-msgid ""
-"Jump to the window even if it is started on a \n"
-"different virtual desktop"
-msgstr ""
-"වෙනත් අතත්‍ය වැඩතලයක ආරම්භ කර තිබුනද \n"
-"කවුළුව වෙත පනින්න"
-
-#: kstart.cpp:311
-#, kde-format
-msgid "Try to keep the window above other windows"
-msgstr "කවුළුව අනෙක් කවුළු වලට ඉහළින් තැබීමට උත්සාහ කරන්න"
-
-#: kstart.cpp:313
-#, kde-format
-msgid "Try to keep the window below other windows"
-msgstr "කවුළුව අනෙක් කවුළු වලට පහළින් තැබීමට උත්සාහ කරන්න"
-
-#: kstart.cpp:314
-#, kde-format
-msgid "The window does not get an entry in the taskbar"
-msgstr "ටාස්ක්බාරය මත කවුළුව ඇතුළත් කිරීමක් නොදරයි"
-
-#: kstart.cpp:315
-#, kde-format
-msgid "The window does not get an entry on the pager"
-msgstr "පේජරය මත කවුළු ඇතුළත් කිරීමක් නොදරයි"
-
-#: kstart.cpp:329
+#: kstart.cpp:115
 #, kde-format
 msgid "No command specified"
 msgstr "විධානයක් සපයා නොමැත"
+
+#~ msgid ""
+#~ "Utility to launch applications with special window properties \n"
+#~ "such as iconified, maximized, a certain virtual desktop, a special "
+#~ "decoration\n"
+#~ "and so on."
+#~ msgstr ""
+#~ "විශේෂ කවුළු වත්කම් සමඟ භාවිතයෙදවුම් ආරම්භ කිරීමට උපාංගයක් \n"
+#~ "අයිකන කල, විහිදූ, දෙනලද අතත්‍ය වැඩතල, විශේෂ  සැරසිලි\n"
+#~ "හා තවත්."
+
+#~ msgid "A regular expression matching the window title"
+#~ msgstr "කවුළු මාතෘකාවට ගැලපෙන සාමාන්‍ය යෙදුම"
+
+#~ msgid ""
+#~ "A string matching the window class (WM_CLASS property)\n"
+#~ "The window class can be found out by running\n"
+#~ "'xprop | grep WM_CLASS' and clicking on a window\n"
+#~ "(use either both parts separated by a space or only the right part).\n"
+#~ "NOTE: If you specify neither window title nor window class,\n"
+#~ "then the very first window to appear will be taken;\n"
+#~ "omitting both options is NOT recommended."
+#~ msgstr ""
+#~ "(WM_CLASS property) කාණ්ඩයට ගැලපෙන පෙල\n"
+#~ "'xprop | grep WM_CLASS' ක්‍රියාත්මක කිරීමෙන් හා \n"
+#~ "කවුළුව මත ක්ලික් කිරීමෙන්  සොයාගත හැක\n"
+#~ "(දෙපසම හිස් ඉඩකින් වෙන්කර හෝ දකුණුපස පමණක් භාවිත කරන්න).\n"
+#~ "සලකන්න: කවුළු මාතෘකාව හෝ කවුළු කාණ්ඩය ලබාදී නොමැති නම්,\n"
+#~ "ප්‍රථමයෙන් පෙනෙන කවුළුව ගනු ලැබේ;\n"
+#~ "විකල්ප දෙකම මඟහැරීම නිර්දේශ නොකෙරේ."
+
+#~ msgid "Desktop on which to make the window appear"
+#~ msgstr "වැඩතලය පෙන්වන කවුළුව මත"
+
+#~ msgid ""
+#~ "Make the window appear on the desktop that was active\n"
+#~ "when starting the application"
+#~ msgstr ""
+#~ "භාවිතයෙදවුම ආරම්භ කරනවිට සක්‍රීයව පවතින වැඩතලය මත\n"
+#~ "කවුළුව පෙන්වන්න"
+
+#~ msgid "Make the window appear on all desktops"
+#~ msgstr "කවුළුව සියළුම වැඩතල වල පෙන්වන්න"
+
+#, fuzzy
+#~ msgid "Iconify the window"
+#~ msgstr "කවුළුවට අයිකන යොදන්න"
+
+#~ msgid "Maximize the window"
+#~ msgstr "කවුළුව විහිදන්න"
+
+#~ msgid "Maximize the window vertically"
+#~ msgstr "කවූළුව සිරස්ව විහිදන්න"
+
+#~ msgid "Maximize the window horizontally"
+#~ msgstr "කවුළුව තිරස්ව විහිදන්න"
+
+#~ msgid "Show window fullscreen"
+#~ msgstr "කවුළුම මුළු තිරයේ පෙන්වන්න"
+
+#~ msgid ""
+#~ "The window type: Normal, Desktop, Dock, Toolbar, \n"
+#~ "Menu, Dialog, TopMenu or Override"
+#~ msgstr ""
+#~ "කවුළු වර්ගය: සාමාන්‍ය, වැඩතල, ඩොක්, ටූල්බාර්, \n"
+#~ "මෙනු, සංවාද, ඉහළමෙනු හෝ අතික්‍රමණය"
+
+#~ msgid ""
+#~ "Jump to the window even if it is started on a \n"
+#~ "different virtual desktop"
+#~ msgstr ""
+#~ "වෙනත් අතත්‍ය වැඩතලයක ආරම්භ කර තිබුනද \n"
+#~ "කවුළුව වෙත පනින්න"
+
+#~ msgid "Try to keep the window above other windows"
+#~ msgstr "කවුළුව අනෙක් කවුළු වලට ඉහළින් තැබීමට උත්සාහ කරන්න"
+
+#~ msgid "Try to keep the window below other windows"
+#~ msgstr "කවුළුව අනෙක් කවුළු වලට පහළින් තැබීමට උත්සාහ කරන්න"
+
+#~ msgid "The window does not get an entry in the taskbar"
+#~ msgstr "ටාස්ක්බාරය මත කවුළුව ඇතුළත් කිරීමක් නොදරයි"
+
+#~ msgid "The window does not get an entry on the pager"
+#~ msgstr "පේජරය මත කවුළු ඇතුළත් කිරීමක් නොදරයි"
 
 #~ msgid "The window is sent to the system tray in Kicker"
 #~ msgstr "කිකර් තුළ කවුළුව පද්ධති තැටියට යවන ලදී"

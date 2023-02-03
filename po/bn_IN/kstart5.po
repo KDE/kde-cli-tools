@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kstart\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2022-12-17 00:51+0000\n"
+"POT-Creation-Date: 2023-02-03 01:00+0000\n"
 "PO-Revision-Date: 2009-01-12 16:25+0530\n"
 "Last-Translator: Runa Bhattacharjee <runab@redhat.com>\n"
 "Language-Team: Bengali INDIA <fedora-trans-bn_IN@redhat.com>\n"
@@ -28,166 +28,120 @@ msgctxt "EMAIL OF TRANSLATORS"
 msgid "Your emails"
 msgstr "runab@redhat.com"
 
-#: kstart.cpp:255
+#: kstart.cpp:78
 #, kde-format
 msgid "KStart"
 msgstr "KStart"
 
-#: kstart.cpp:257
+#: kstart.cpp:80
 #, kde-format
-msgid ""
-"Utility to launch applications with special window properties \n"
-"such as iconified, maximized, a certain virtual desktop, a special "
-"decoration\n"
-"and so on."
+msgid "Utility to launch applications"
 msgstr ""
 
-#: kstart.cpp:262
+#: kstart.cpp:82
 #, kde-format
 msgid "(C) 1997-2000 Matthias Ettrich (ettrich@kde.org)"
 msgstr "(C) ১৯৯৭-২০০০ ম্যাথায়েস এট্রিখ (ettrich@kde.org)"
 
-#: kstart.cpp:264
+#: kstart.cpp:84
 #, kde-format
 msgid "Matthias Ettrich"
 msgstr "ম্যাথায়েস এট্রিখ"
 
-#: kstart.cpp:265
+#: kstart.cpp:85
 #, kde-format
 msgid "David Faure"
 msgstr "ডেভিড ফেউরে"
 
-#: kstart.cpp:266
+#: kstart.cpp:86
 #, kde-format
 msgid "Richard J. Moore"
 msgstr "রিচার্ড জে. মুর"
 
-#: kstart.cpp:271
+#: kstart.cpp:91
 #, kde-format
 msgid "Command to execute"
 msgstr "সঞ্চালনযোগ্য কমান্ড"
 
-#: kstart.cpp:275
+#: kstart.cpp:95
 #, kde-format
 msgid ""
 "Alternative to <command>: desktop file path to start. D-Bus service will be "
 "printed to stdout. Deprecated: use --application"
 msgstr ""
 
-#: kstart.cpp:278
+#: kstart.cpp:98
 #, kde-format
 msgid "Alternative to <command>: desktop file to start."
 msgstr ""
 
-#: kstart.cpp:281
+#: kstart.cpp:101
 #, kde-format
 msgid "Optional URL to pass <desktopfile>, when using --service"
 msgstr ""
 
-#: kstart.cpp:284
-#, kde-format
-msgid "A regular expression matching the window title"
-msgstr "উইন্ডোর শিরোনামের সাথে মেলানো একটি রেগুলার এক্সপ্রেশন"
-
-#: kstart.cpp:286
-#, kde-format
-msgid ""
-"A string matching the window class (WM_CLASS property)\n"
-"The window class can be found out by running\n"
-"'xprop | grep WM_CLASS' and clicking on a window\n"
-"(use either both parts separated by a space or only the right part).\n"
-"NOTE: If you specify neither window title nor window class,\n"
-"then the very first window to appear will be taken;\n"
-"omitting both options is NOT recommended."
-msgstr ""
-
-#: kstart.cpp:295
-#, kde-format
-msgid "Desktop on which to make the window appear"
-msgstr "উইন্ডো প্রদর্শনের জন্য একটি ডেস্কটপ"
-
-#: kstart.cpp:297
-#, kde-format
-msgid ""
-"Make the window appear on the desktop that was active\n"
-"when starting the application"
-msgstr ""
-"অ্যাপ্লিকেশন আরম্ভকালে সক্রিয় ডেস্কটপের মধ্যে উইন্ডো\n"
-"প্রদর্শন করা হবে"
-
-#: kstart.cpp:298
-#, kde-format
-msgid "Make the window appear on all desktops"
-msgstr "সকল ডেস্কটপের মধ্যে উইন্ডো প্রদর্শিত হবে"
-
-#: kstart.cpp:299
-#, kde-format
-msgid "Iconify the window"
-msgstr "উইন্ডোটি আইকনে রূপান্তর করা হবে"
-
-#: kstart.cpp:300
-#, kde-format
-msgid "Maximize the window"
-msgstr "উইন্ডোর সর্বোচ্চ মাপ ধার্য করা হবে"
-
-#: kstart.cpp:301
-#, kde-format
-msgid "Maximize the window vertically"
-msgstr "উলম্ব দিশায় উইন্ডোর সর্বোচ্চ মাপ ধার্য করা হবে"
-
-#: kstart.cpp:302
-#, kde-format
-msgid "Maximize the window horizontally"
-msgstr "অনুভূমিক দিশায় উইন্ডোর সর্বোচ্চ মাপ ধার্য করা হবে"
-
-#: kstart.cpp:303
-#, kde-format
-msgid "Show window fullscreen"
-msgstr "সম্পূর্ণ পর্দায় উইন্ডো প্রদর্শন করা হবে"
-
-#: kstart.cpp:305
-#, kde-format
-msgid ""
-"The window type: Normal, Desktop, Dock, Toolbar, \n"
-"Menu, Dialog, TopMenu or Override"
-msgstr ""
-"উইন্ডোর ধরন: Normal (স্বাভাবিক), Desktop (ডেস্কটপ), Dock (আটক করা), Toolbar (টুল-"
-"বার), \n"
-"Menu (মেনু), Dialog (ডায়লগ), TopMenu (টপ-মেনু) অথবা Override (উপেক্ষাকারী)"
-
-#: kstart.cpp:308
-#, kde-format
-msgid ""
-"Jump to the window even if it is started on a \n"
-"different virtual desktop"
-msgstr ""
-"ভিন্ন ডেস্কটপে স্থাপিত হলেও, সংশ্লিষ্ট উইন্ডোর \n"
-"মধ্যে চলা হবে"
-
-#: kstart.cpp:311
-#, kde-format
-msgid "Try to keep the window above other windows"
-msgstr "উইন্ডোটি অন্যান্য উইন্ডোর উপর স্থাপিত হবে"
-
-#: kstart.cpp:313
-#, kde-format
-msgid "Try to keep the window below other windows"
-msgstr "উইন্ডোটি অন্যান্য উইন্ডোর নীচে স্থাপিত হবে"
-
-#: kstart.cpp:314
-#, kde-format
-msgid "The window does not get an entry in the taskbar"
-msgstr "উইন্ডো সংক্রান্ত কোনো এনট্রি টাস্ক-বারের মধ্যে অন্তর্ভুক্ত করা হবে না"
-
-#: kstart.cpp:315
-#, kde-format
-msgid "The window does not get an entry on the pager"
-msgstr "উইন্ডো সংক্রান্ত কোনো এনট্রি পেজারের মধ্যে অন্তর্ভুক্ত করা হবে না"
-
-#: kstart.cpp:329
+#: kstart.cpp:115
 #, kde-format
 msgid "No command specified"
 msgstr "কোনো কমান্ড ধার্য করা হয়নি"
+
+#~ msgid "A regular expression matching the window title"
+#~ msgstr "উইন্ডোর শিরোনামের সাথে মেলানো একটি রেগুলার এক্সপ্রেশন"
+
+#~ msgid "Desktop on which to make the window appear"
+#~ msgstr "উইন্ডো প্রদর্শনের জন্য একটি ডেস্কটপ"
+
+#~ msgid ""
+#~ "Make the window appear on the desktop that was active\n"
+#~ "when starting the application"
+#~ msgstr ""
+#~ "অ্যাপ্লিকেশন আরম্ভকালে সক্রিয় ডেস্কটপের মধ্যে উইন্ডো\n"
+#~ "প্রদর্শন করা হবে"
+
+#~ msgid "Make the window appear on all desktops"
+#~ msgstr "সকল ডেস্কটপের মধ্যে উইন্ডো প্রদর্শিত হবে"
+
+#~ msgid "Iconify the window"
+#~ msgstr "উইন্ডোটি আইকনে রূপান্তর করা হবে"
+
+#~ msgid "Maximize the window"
+#~ msgstr "উইন্ডোর সর্বোচ্চ মাপ ধার্য করা হবে"
+
+#~ msgid "Maximize the window vertically"
+#~ msgstr "উলম্ব দিশায় উইন্ডোর সর্বোচ্চ মাপ ধার্য করা হবে"
+
+#~ msgid "Maximize the window horizontally"
+#~ msgstr "অনুভূমিক দিশায় উইন্ডোর সর্বোচ্চ মাপ ধার্য করা হবে"
+
+#~ msgid "Show window fullscreen"
+#~ msgstr "সম্পূর্ণ পর্দায় উইন্ডো প্রদর্শন করা হবে"
+
+#~ msgid ""
+#~ "The window type: Normal, Desktop, Dock, Toolbar, \n"
+#~ "Menu, Dialog, TopMenu or Override"
+#~ msgstr ""
+#~ "উইন্ডোর ধরন: Normal (স্বাভাবিক), Desktop (ডেস্কটপ), Dock (আটক করা), Toolbar "
+#~ "(টুল-বার), \n"
+#~ "Menu (মেনু), Dialog (ডায়লগ), TopMenu (টপ-মেনু) অথবা Override (উপেক্ষাকারী)"
+
+#~ msgid ""
+#~ "Jump to the window even if it is started on a \n"
+#~ "different virtual desktop"
+#~ msgstr ""
+#~ "ভিন্ন ডেস্কটপে স্থাপিত হলেও, সংশ্লিষ্ট উইন্ডোর \n"
+#~ "মধ্যে চলা হবে"
+
+#~ msgid "Try to keep the window above other windows"
+#~ msgstr "উইন্ডোটি অন্যান্য উইন্ডোর উপর স্থাপিত হবে"
+
+#~ msgid "Try to keep the window below other windows"
+#~ msgstr "উইন্ডোটি অন্যান্য উইন্ডোর নীচে স্থাপিত হবে"
+
+#~ msgid "The window does not get an entry in the taskbar"
+#~ msgstr "উইন্ডো সংক্রান্ত কোনো এনট্রি টাস্ক-বারের মধ্যে অন্তর্ভুক্ত করা হবে না"
+
+#~ msgid "The window does not get an entry on the pager"
+#~ msgstr "উইন্ডো সংক্রান্ত কোনো এনট্রি পেজারের মধ্যে অন্তর্ভুক্ত করা হবে না"
 
 #~ msgid "The window is sent to the system tray in Kicker"
 #~ msgstr "উইন্ডোটি, Kicker-র মধ্যে উপস্থিত সিস্টেম ট্রের মধ্যে স্থাপিত হবে"
