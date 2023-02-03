@@ -552,6 +552,3 @@ msgstr ""
 "Teclegeu el nom del tipus de fitxer. Per exemple, si seleccioneu la "
 "categoria «image» i aquí introduïu «custom», es crearà el tipus de fitxer "
 "«image/custom»."
-
-#~ msgid "KEditFileType"
-#~ msgstr "KEditFileType"
