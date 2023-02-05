@@ -2,7 +2,7 @@
 # Translation of kstart.po to Slovenian
 # KDEBASE translation to Slovenian language.
 # Copyright (C) 2000, 2003, 2004, 2005, 2007 Free Software Foundation, Inc.
-# $Id: kstart5.po 1643780 2023-02-03 01:51:24Z scripty $
+# $Id: kstart5.po 1643857 2023-02-04 08:06:03Z matjazjeran $
 # $Source$
 #
 # Roman Maurer <roman.maurer@hermes.si>, 2000.
@@ -11,20 +11,20 @@
 # Andrej Vernekar <andrej.vernekar@moj.net>, 2007.
 # Jure Repinc <jlp@holodeck1.com>, 2009.
 # Andrej Mernik <andrejm@ubuntu.si>, 2013, 2014.
-# Matjaž Jeran <matjaz.jeran@amis.net>, 2020.
+# Matjaž Jeran <matjaz.jeran@amis.net>, 2020, 2023.
 msgid ""
 msgstr ""
 "Project-Id-Version: kstart\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2023-02-03 01:00+0000\n"
-"PO-Revision-Date: 2021-07-23 07:21+0200\n"
+"PO-Revision-Date: 2023-02-04 08:36+0100\n"
 "Last-Translator: Matjaž Jeran <matjaz.jeran@amis.net>\n"
 "Language-Team: Slovenian <lugos-slo@lugos.si>\n"
 "Language: sl\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Generator: Poedit 3.0\n"
+"X-Generator: Lokalize 22.12.1\n"
 "Plural-Forms: nplurals=4; plural=(n%100==1 ? 1 : n%100==2 ? 2 : n%100==3 || n"
 "%100==4 ? 3 : 0);\n"
 
@@ -47,7 +47,7 @@ msgstr "KStart"
 #: kstart.cpp:80
 #, kde-format
 msgid "Utility to launch applications"
-msgstr ""
+msgstr "Uporabni program za zagon aplikacij"
 
 #: kstart.cpp:82
 #, kde-format
