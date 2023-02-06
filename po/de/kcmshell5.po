@@ -1,7 +1,8 @@
 # Stephan Johach <hunsum@gmx.de>, 2005.
-# Thomas Reitelbach, 2007.
 # Frederik Schwarzer <schwarzer@kde.org>, 2010, 2011, 2016.
 # Burkhard Lück <lueck@hube-lueck.de>, 2014, 2015.
+# Frank Steinmetzger <dev-kde@felsenfleischer.de>, 2023.
+# Thomas Reitelbach, 2007.
 msgid ""
 msgstr ""
 "Project-Id-Version: kcmshell\n"
@@ -15,6 +16,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
+"X-Generator: Lokalize 22.12.1\n"
 
 #, kde-format
 msgctxt "NAME OF TRANSLATORS"
