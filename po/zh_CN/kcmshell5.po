@@ -3,7 +3,7 @@ msgstr ""
 "Project-Id-Version: kdeorg\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2023-01-28 00:59+0000\n"
-"PO-Revision-Date: 2023-01-12 10:30\n"
+"PO-Revision-Date: 2023-02-07 11:01\n"
 "Last-Translator: \n"
 "Language-Team: Chinese Simplified\n"
 "Language: zh_CN\n"
@@ -20,12 +20,12 @@ msgstr ""
 #, kde-format
 msgctxt "NAME OF TRANSLATORS"
 msgid "Your names"
-msgstr "Wang Jian"
+msgstr "Tyson Tan, Wang Jian"
 
 #, kde-format
 msgctxt "EMAIL OF TRANSLATORS"
 msgid "Your emails"
-msgstr "lark@linux.net.cn"
+msgstr "tysontan@tysontan.com, lark@linux.net.cn"
 
 #: main.cpp:184
 #, kde-format
@@ -35,7 +35,7 @@ msgstr "系统设置模块"
 #: main.cpp:186
 #, kde-format
 msgid "A tool to start single system settings modules"
-msgstr "一个启动单个系统设置模块的工具"
+msgstr "用于启动单个系统设置模块的工具"
 
 #: main.cpp:188
 #, kde-format
@@ -80,7 +80,7 @@ msgstr "Waldo Bastian"
 #: main.cpp:201
 #, kde-format
 msgid "List all possible modules"
-msgstr "列出所有可能的模块"
+msgstr "列出所有可用模块"
 
 #: main.cpp:202
 #, kde-format
@@ -90,7 +90,7 @@ msgstr "要打开的配置模块"
 #: main.cpp:203
 #, kde-format
 msgid "Specify a particular language"
-msgstr "指定特定语言"
+msgstr "指定一种语言"
 
 #: main.cpp:204
 #, kde-format
@@ -105,23 +105,23 @@ msgstr "模块参数"
 #: main.cpp:206
 #, kde-format
 msgid "Use a specific icon for the window"
-msgstr "对窗口使用特定图标"
+msgstr "窗口显示指定的图标"
 
 #: main.cpp:207
 #, kde-format
 msgid "Use a specific caption for the window"
-msgstr "对窗口使用特定标题"
+msgstr "窗口显示指定的标题"
 
 #: main.cpp:209
 #, kde-format
 msgid "Show an indicator when settings have changed from their default value"
-msgstr ""
+msgstr "显示标识以标记非默认值的设置项"
 
 #: main.cpp:218
 #, kde-format
 msgid ""
 "--lang is deprecated. Please set the LANGUAGE environment variable instead"
-msgstr "--lang 已废弃。请设置 LANGUAGE 环境变量"
+msgstr "--lang 参数已被废弃。请改为设置 LANGUAGE 环境变量"
 
 #: main.cpp:222
 #, kde-format
