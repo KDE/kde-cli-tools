@@ -3,13 +3,13 @@
 # Andrea Rizzi <rizzi@sns.it>, 2007.
 # Nicola Ruggero <nicola@nxnt.org>, 2009.
 # Federico Zenith <federico.zenith@member.fsf.org>, 2010.
-# Paolo Zamponi <zapaolo@email.it>, 2020.
+# Paolo Zamponi <zapaolo@email.it>, 2020, 2023.
 msgid ""
 msgstr ""
 "Project-Id-Version: kstart\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2022-12-17 00:51+0000\n"
-"PO-Revision-Date: 2020-06-11 15:40+0200\n"
+"PO-Revision-Date: 2023-02-04 07:46+0100\n"
 "Last-Translator: Paolo Zamponi <zapaolo@email.it>\n"
 "Language-Team: Italian <kde-i18n-it@kde.org>\n"
 "Language: it\n"
@@ -17,7 +17,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
-"X-Generator: Lokalize 20.04.1\n"
+"X-Generator: Lokalize 22.12.1\n"
 
 #, kde-format
 msgctxt "NAME OF TRANSLATORS"
@@ -42,10 +42,10 @@ msgid ""
 "decoration\n"
 "and so on."
 msgstr ""
-"Utilità per avviare le applicazioni con proprietà speciali della finestra\n"
+"Programma per avviare le applicazioni con proprietà speciali della finestra\n"
 "(ad es. ridotta a icona, massimizzata, su un certo desktop virtuale, con "
 "una\n"
-"decorazione speciale e così via)."
+"decorazione speciale, e così via)."
 
 #: kstart.cpp:262
 #, kde-format
