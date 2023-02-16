@@ -3,7 +3,7 @@ msgstr ""
 "Project-Id-Version: kstart\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2023-02-03 01:00+0000\n"
-"PO-Revision-Date: 2020-06-03 00:52+0100\n"
+"PO-Revision-Date: 2023-02-15 16:19+0000\n"
 "Last-Translator: Pedro Morais <morais@kde.org>\n"
 "Language-Team: pt <kde-i18n-pt@kde.org>\n"
 "Language: pt\n"
@@ -34,7 +34,7 @@ msgstr "KStart"
 #: kstart.cpp:80
 #, kde-format
 msgid "Utility to launch applications"
-msgstr ""
+msgstr "Utilitário para lançar aplicações"
 
 #: kstart.cpp:82
 #, kde-format
@@ -84,87 +84,3 @@ msgstr "URL opcional a passar ao <ficheiro desktop>, ao usar o '--service'"
 #, kde-format
 msgid "No command specified"
 msgstr "Não foi especificado nenhum comando"
-
-#~ msgid ""
-#~ "Utility to launch applications with special window properties \n"
-#~ "such as iconified, maximized, a certain virtual desktop, a special "
-#~ "decoration\n"
-#~ "and so on."
-#~ msgstr ""
-#~ "Um utilitário para lançar as aplicações com propriedades especiais,\n"
-#~ "como, por exemplo, lançá-las minimizadas, maximizadas, num determinado\n"
-#~ "ecrã virtual, com uma decoração especial, e assim por diante."
-
-#~ msgid "A regular expression matching the window title"
-#~ msgstr "Uma expressão regular condizente com o título da janela"
-
-#~ msgid ""
-#~ "A string matching the window class (WM_CLASS property)\n"
-#~ "The window class can be found out by running\n"
-#~ "'xprop | grep WM_CLASS' and clicking on a window\n"
-#~ "(use either both parts separated by a space or only the right part).\n"
-#~ "NOTE: If you specify neither window title nor window class,\n"
-#~ "then the very first window to appear will be taken;\n"
-#~ "omitting both options is NOT recommended."
-#~ msgstr ""
-#~ "Um texto a indicar o classe da janela (propriedade WM_CLASS).\n"
-#~ "A classes da janela pode ser obtida executando\n"
-#~ "'xprop | grep WM_CLASS' e carregando na janela.\n"
-#~ "(utilize ambas as partes separadas por espaço ou só a da direita).\n"
-#~ "NOTA: Se não indicar nem o título da janela nem a classe,\n"
-#~ "a primeira janela a aparecer será tomada em conta;\n"
-#~ "NÃO é recomendado que omita as duas opções."
-
-#~ msgid "Desktop on which to make the window appear"
-#~ msgstr "O ecrã onde a janela aparece"
-
-#~ msgid ""
-#~ "Make the window appear on the desktop that was active\n"
-#~ "when starting the application"
-#~ msgstr ""
-#~ "Fazer a janela aparecer no ecrã que estava activo\n"
-#~ "quando a aplicação foi iniciada"
-
-#~ msgid "Make the window appear on all desktops"
-#~ msgstr "Fazer a janela aparecer em todos os ecrãs"
-
-#~ msgid "Iconify the window"
-#~ msgstr "Minimizar a janela"
-
-#~ msgid "Maximize the window"
-#~ msgstr "Maximizar a janela"
-
-#~ msgid "Maximize the window vertically"
-#~ msgstr "Maximizar a janela verticalmente"
-
-#~ msgid "Maximize the window horizontally"
-#~ msgstr "Maximizar a janela horizontalmente"
-
-#~ msgid "Show window fullscreen"
-#~ msgstr "Mostrar a janela no ecrã completo"
-
-#~ msgid ""
-#~ "The window type: Normal, Desktop, Dock, Toolbar, \n"
-#~ "Menu, Dialog, TopMenu or Override"
-#~ msgstr ""
-#~ "O tipo de janela: Normal, Desktop, Dock, Toolbar, \n"
-#~ "Menu, Dialog, TopMenu ou Override"
-
-#~ msgid ""
-#~ "Jump to the window even if it is started on a \n"
-#~ "different virtual desktop"
-#~ msgstr ""
-#~ "Saltar para a janela, mesmo que esta seja iniciada\n"
-#~ "num ecrã virtual diferente"
-
-#~ msgid "Try to keep the window above other windows"
-#~ msgstr "Tentar que janela fique por cima de todas as outras"
-
-#~ msgid "Try to keep the window below other windows"
-#~ msgstr "Tentar que a janela fique por baixo de todas as outras"
-
-#~ msgid "The window does not get an entry in the taskbar"
-#~ msgstr "A janela não aparece na barra de tarefas"
-
-#~ msgid "The window does not get an entry on the pager"
-#~ msgstr "A janela não aparece na miniatura dos ecrãs"
