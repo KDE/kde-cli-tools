@@ -196,8 +196,8 @@ void FileTypesView::multiApply(int type)
                     changed = true;
                 }
             } else if (type == KServiceListWidget::SERVICELIST_SERVICES) {
-                if (item->mimeTypeData().embedServices() != current->mimeTypeData().embedServices()) {
-                    item->mimeTypeData().setEmbedServices(current->mimeTypeData().embedServices());
+                if (item->mimeTypeData().embedParts() != current->mimeTypeData().embedParts()) {
+                    item->mimeTypeData().setEmbedParts(current->mimeTypeData().embedParts());
                     changed = true;
                 }
             }

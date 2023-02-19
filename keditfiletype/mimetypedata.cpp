@@ -233,7 +233,7 @@ QStringList MimeTypeData::getPartOffers() const
 void MimeTypeData::getMyServiceOffers() const
 {
     m_appServices = getAppOffers();
-    m_embedServices = getPartOffers();
+    m_embedParts = getPartOffers();
     m_bFullInit = true;
 }
 
@@ -245,12 +245,12 @@ QStringList MimeTypeData::appServices() const
     return m_appServices;
 }
 
-QStringList MimeTypeData::embedServices() const
+QStringList MimeTypeData::embedParts() const
 {
     if (!m_bFullInit) {
         getMyServiceOffers();
     }
-    return m_embedServices;
+    return m_embedParts;
 }
 
 bool MimeTypeData::isMimeTypeDirty() const
@@ -395,12 +395,15 @@ void MimeTypeData::syncServices()
     }
 
     const QStringList oldPartServices = getPartOffers();
-    if (oldPartServices != m_embedServices) {
-        // Handle removed services
-        KConfigGroup addedParts(profile, "Added KDE Service Associations");
-        saveServices(addedParts, m_embedServices);
-        KConfigGroup removedParts(profile, "Removed KDE Service Associations");
-        saveRemovedServices(removedParts, m_embedServices, oldPartServices);
+    if (oldPartServices != m_embedParts) {
+        KConfigGroup addedParts(profile, "Added KDE Part Associations");
+        if (m_embedParts.isEmpty()) {
+            addedParts.deleteEntry(name());
+        } else {
+            addedParts.writeXdgListEntry(name(), m_embedParts);
+        }
+        KConfigGroup removedParts(profile, "Removed KDE Part Associations");
+        saveRemovedServices(removedParts, m_embedParts, oldPartServices);
     }
 
     // Clean out any kde-mimeapps.list which would take precedence any cancel our changes.
@@ -567,12 +570,12 @@ void MimeTypeData::setAppServices(const QStringList &dsl)
     m_appServicesModified = true;
 }
 
-void MimeTypeData::setEmbedServices(const QStringList &dsl)
+void MimeTypeData::setEmbedParts(const QStringList &dsl)
 {
     if (!m_bFullInit) {
         getMyServiceOffers(); // so that m_bFullInit is true
     }
-    m_embedServices = dsl;
+    m_embedParts = dsl;
     m_embedServicesModified = true;
 }
 

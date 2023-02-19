@@ -13,6 +13,7 @@
 #include <QListWidget>
 
 #include <KPluginMetaData>
+#include <kpluginmetadata.h>
 #include <kservice.h>
 
 class QPushButton;
@@ -23,7 +24,7 @@ class KService;
 class KServiceListItem : public QListWidgetItem
 {
 public:
-    KServiceListItem(const KService::Ptr &pService, int kind);
+    explicit KServiceListItem(const KService::Ptr &pService);
     QString storageId;
     QString desktopPath;
     QString localPath;
@@ -32,7 +33,8 @@ public:
 class PluginListItem : public QListWidgetItem
 {
 public:
-    PluginListItem(const KPluginMetaData &metaData);
+    PluginListItem(const KPluginMetaData &data);
+    KPluginMetaData metaData;
 };
 
 /**
@@ -45,11 +47,11 @@ class KServiceListWidget : public QGroupBox
 {
     Q_OBJECT
 public:
-    enum {
+    enum Kind {
         SERVICELIST_APPLICATIONS,
         SERVICELIST_SERVICES,
     };
-    explicit KServiceListWidget(int kind, QWidget *parent = nullptr);
+    explicit KServiceListWidget(Kind kind, QWidget *parent = nullptr);
 
     void setMimeTypeData(MimeTypeData *item);
 
@@ -72,7 +74,7 @@ protected:
     void updatePreferredServices();
 
 private:
-    int m_kind;
+    Kind m_kind;
     QListWidget *servicesLB;
     QPushButton *servUpButton, *servDownButton;
     QPushButton *servNewButton, *servEditButton, *servRemoveButton;

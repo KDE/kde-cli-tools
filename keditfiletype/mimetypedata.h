@@ -79,8 +79,8 @@ public:
     void setPatterns(const QStringList &p);
     QStringList appServices() const;
     void setAppServices(const QStringList &dsl);
-    QStringList embedServices() const;
-    void setEmbedServices(const QStringList &dsl);
+    QStringList embedParts() const;
+    void setEmbedParts(const QStringList &dsl);
 
     enum AutoEmbed {
         Yes = 0,
@@ -171,7 +171,7 @@ private:
     QString m_major, m_minor, m_comment, m_userSpecifiedIcon;
     QStringList m_patterns;
     mutable QStringList m_appServices;
-    mutable QStringList m_embedServices;
+    mutable QStringList m_embedParts;
 };
 
 #endif /* MIMETYPEDATA_H */

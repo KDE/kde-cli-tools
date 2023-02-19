@@ -25,17 +25,12 @@
 #include "kserviceselectdlg.h"
 #include "mimetypedata.h"
 
-KServiceListItem::KServiceListItem(const KService::Ptr &pService, int kind)
+KServiceListItem::KServiceListItem(const KService::Ptr &pService)
     : QListWidgetItem()
     , storageId(pService->storageId())
     , desktopPath(pService->entryPath())
 {
-    if (kind == KServiceListWidget::SERVICELIST_APPLICATIONS) {
-        setText(pService->name());
-    } else {
-        setText(i18n("%1 (%2)", pService->name(), pService->desktopEntryName()));
-    }
-
+    setText(pService->name());
     setIcon(QIcon::fromTheme(pService->icon()));
 
     if (!pService->isApplication()) {
@@ -46,14 +41,15 @@ KServiceListItem::KServiceListItem(const KService::Ptr &pService, int kind)
     }
 }
 
-PluginListItem::PluginListItem(const KPluginMetaData &metaData)
+PluginListItem::PluginListItem(const KPluginMetaData &data)
     : QListWidgetItem()
+    , metaData(data)
 {
     setText(i18n("%1 (%2)", metaData.name(), metaData.pluginId()));
     setIcon(QIcon::fromTheme(metaData.iconName()));
 }
 
-KServiceListWidget::KServiceListWidget(int kind, QWidget *parent)
+KServiceListWidget::KServiceListWidget(Kind kind, QWidget *parent)
     : QGroupBox(kind == SERVICELIST_APPLICATIONS ? i18n("Application Preference Order") : i18n("Services Preference Order"), parent)
     , m_kind(kind)
     , m_mimeTypeData(nullptr)
@@ -153,19 +149,27 @@ void KServiceListWidget::setMimeTypeData(MimeTypeData *mimeTypeData)
     servicesLB->setEnabled(false);
 
     if (m_mimeTypeData) {
-        const QStringList services = (m_kind == SERVICELIST_APPLICATIONS) ? m_mimeTypeData->appServices() : m_mimeTypeData->embedServices();
-
-        if (services.isEmpty()) {
-            if (m_kind == SERVICELIST_APPLICATIONS) {
-                servicesLB->addItem(i18nc("No applications associated with this file type", "None"));
-            } else {
+        if (m_kind == SERVICELIST_APPLICATIONS) {
+            const QStringList services = m_mimeTypeData->appServices();
+            if (services.isEmpty()) {
+                if (m_kind == SERVICELIST_APPLICATIONS) {
+                    servicesLB->addItem(i18nc("No applications associated with this file type", "None"));
+                }
+            }
+            for (const QString &service : services) {
+                if (KService::Ptr pService = KService::serviceByStorageId(service)) {
+                    servicesLB->addItem(new KServiceListItem(pService));
+                }
+            }
+            servicesLB->setEnabled(true);
+        } else {
+            const QStringList parts = m_mimeTypeData->embedParts();
+            if (parts.isEmpty()) {
                 servicesLB->addItem(i18nc("No components associated with this file type", "None"));
             }
-        } else {
-            for (const QString &service : services) {
-                KService::Ptr pService = KService::serviceByStorageId(service);
-                if (pService) {
-                    servicesLB->addItem(new KServiceListItem(pService, m_kind));
+            for (const QString &partId : parts) {
+                if (KPluginMetaData data(QStringLiteral("kf" QT_STRINGIFY(QT_VERSION_MAJOR) "/parts/") + partId); data.isValid()) {
+                    servicesLB->addItem(new PluginListItem(data));
                 }
             }
             servicesLB->setEnabled(true);
@@ -240,7 +244,6 @@ void KServiceListWidget::addService()
         return;
     }
 
-    KService::Ptr service;
     if (m_kind == SERVICELIST_APPLICATIONS) {
         KOpenWithDialog dlg(m_mimeTypeData->name(), QString(), this);
         dlg.setSaveNewApplications(true);
@@ -248,45 +251,36 @@ void KServiceListWidget::addService()
             return;
         }
 
-        service = dlg.service();
+        KService::Ptr service = dlg.service();
 
         Q_ASSERT(service);
         if (!service) {
             return; // Don't crash if KOpenWith wasn't able to create service.
         }
+        servicesLB->insertItem(0, new KServiceListItem(service));
     } else {
-        KServiceSelectDlg dlg(m_mimeTypeData->name(), QString(), this);
+        KPartSelectDlg dlg(this);
         if (dlg.exec() != QDialog::Accepted) {
             return;
         }
-        service = dlg.service();
-        Q_ASSERT(service);
-        if (!service) {
-            return;
+        const bool valid = dlg.chosenPart().isValid();
+        Q_ASSERT(valid);
+        if (valid) {
+            auto item = new PluginListItem(dlg.chosenPart());
+            servicesLB->insertItem(0, item);
         }
     }
 
     // Did the list simply show "None"?
-    const bool hadDummyEntry = (m_kind == SERVICELIST_APPLICATIONS) ? m_mimeTypeData->appServices().isEmpty() : m_mimeTypeData->embedServices().isEmpty();
+    const bool hadDummyEntry = (m_kind == SERVICELIST_APPLICATIONS) ? m_mimeTypeData->appServices().isEmpty() : m_mimeTypeData->embedParts().isEmpty();
 
     if (hadDummyEntry) {
         delete servicesLB->takeItem(0); // Remove the "None" item.
         servicesLB->setEnabled(true);
-    } else {
-        // check if it is a duplicate entry
-        for (int index = 0; index < servicesLB->count(); index++) {
-            if (static_cast<KServiceListItem *>(servicesLB->item(index))->desktopPath == service->entryPath()) {
-                // ##### shouldn't we make the existing entry the default one?
-                return;
-            }
-        }
     }
 
-    servicesLB->insertItem(0, new KServiceListItem(service, m_kind));
     servicesLB->setCurrentItem(nullptr);
-
     updatePreferredServices();
-
     Q_EMIT changed(true);
 }
 
@@ -355,7 +349,7 @@ void KServiceListWidget::editService()
 
     // ...and add it in the same place as the old one:
     if (addIt) {
-        servicesLB->insertItem(selected, new KServiceListItem(service, m_kind));
+        servicesLB->insertItem(selected, new KServiceListItem(service));
         servicesLB->setCurrentRow(selected);
     }
 
@@ -390,16 +384,20 @@ void KServiceListWidget::updatePreferredServices()
     }
     QStringList sl;
     unsigned int count = servicesLB->count();
-
     for (unsigned int i = 0; i < count; i++) {
-        KServiceListItem *sli = (KServiceListItem *)servicesLB->item(i);
-        sl.append(sli->storageId);
+        if (m_kind == SERVICELIST_APPLICATIONS) {
+            auto sli = (KServiceListItem *)servicesLB->item(i);
+            sl.append(sli->storageId);
+        } else {
+            auto pluginItem = (PluginListItem *)servicesLB->item(i);
+            sl.append(pluginItem->metaData.pluginId());
+        }
     }
     sl.removeDuplicates();
     if (m_kind == SERVICELIST_APPLICATIONS) {
         m_mimeTypeData->setAppServices(sl);
     } else {
-        m_mimeTypeData->setEmbedServices(sl);
+        m_mimeTypeData->setEmbedParts(sl);
     }
 }
 

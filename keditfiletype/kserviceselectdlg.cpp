@@ -18,7 +18,7 @@ QVector<KPluginMetaData> allParts()
     return KPluginMetaData::findPlugins(QStringLiteral("kf" QT_STRINGIFY(QT_VERSION_MAJOR) "/parts"));
 }
 
-KServiceSelectDlg::KServiceSelectDlg(const QString & /*serviceType*/, const QString & /*value*/, QWidget *parent)
+KPartSelectDlg::KPartSelectDlg(QWidget *parent)
     : QDialog(parent)
 {
     setObjectName(QLatin1String("serviceSelectDlg"));
@@ -33,8 +33,7 @@ KServiceSelectDlg::KServiceSelectDlg(const QString & /*serviceType*/, const QStr
     m_buttonBox->setStandardButtons(QDialogButtonBox::Ok | QDialogButtonBox::Cancel);
 
     const auto parts = allParts();
-
-    for (const auto &part : parts) {
+    for (const KPluginMetaData &part : parts) {
         m_listbox->addItem(new PluginListItem(part));
     }
 
@@ -48,13 +47,13 @@ KServiceSelectDlg::KServiceSelectDlg(const QString & /*serviceType*/, const QStr
     connect(m_buttonBox, &QDialogButtonBox::rejected, this, &QDialog::reject);
 }
 
-KServiceSelectDlg::~KServiceSelectDlg()
+KPartSelectDlg::~KPartSelectDlg()
 {
 }
 
-KService::Ptr KServiceSelectDlg::service()
+KPluginMetaData KPartSelectDlg::chosenPart()
 {
     int selIndex = m_listbox->currentRow();
-    KServiceListItem *selItem = static_cast<KServiceListItem *>(m_listbox->item(selIndex));
-    return KService::serviceByDesktopPath(selItem->desktopPath);
+    auto selItem = static_cast<PluginListItem *>(m_listbox->item(selIndex));
+    return selItem->metaData;
 }

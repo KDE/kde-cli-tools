@@ -10,11 +10,11 @@
 #include <QDialog>
 #include <QListWidget>
 
-#include <kservice.h>
+#include <KPluginMetaData>
 
 class QDialogButtonBox;
 
-class KServiceSelectDlg : public QDialog
+class KPartSelectDlg : public QDialog
 {
     Q_OBJECT
 public:
@@ -25,14 +25,14 @@ public:
      * @param value is the initial service to select (not implemented currently)
      * @param parent parent widget
      */
-    explicit KServiceSelectDlg(const QString &serviceType, const QString &value = QString(), QWidget *parent = nullptr);
+    explicit KPartSelectDlg(QWidget *parent = nullptr);
 
-    ~KServiceSelectDlg() override;
+    ~KPartSelectDlg() override;
 
     /**
      * @return the chosen service
      */
-    KService::Ptr service();
+    KPluginMetaData chosenPart();
 
 private:
     QListWidget *m_listbox;
