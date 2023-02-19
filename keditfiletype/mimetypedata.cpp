@@ -223,6 +223,7 @@ QStringList MimeTypeData::getAppOffers() const
 QStringList MimeTypeData::getPartOffers() const
 {
     QStringList servicesIds;
+    // We do not do any sorting, because KParts uses the order in which the entries are saved
     const auto partOfferList = KParts::PartLoader::partsForMimeType(name());
     for (const auto &metaData : partOfferList) {
         servicesIds.append(metaData.pluginId());
