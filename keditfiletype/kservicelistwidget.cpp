@@ -155,24 +155,26 @@ void KServiceListWidget::setMimeTypeData(MimeTypeData *mimeTypeData)
                 if (m_kind == SERVICELIST_APPLICATIONS) {
                     servicesLB->addItem(i18nc("No applications associated with this file type", "None"));
                 }
-            }
-            for (const QString &service : services) {
-                if (KService::Ptr pService = KService::serviceByStorageId(service)) {
-                    servicesLB->addItem(new KServiceListItem(pService));
+            } else {
+                for (const QString &service : services) {
+                    if (KService::Ptr pService = KService::serviceByStorageId(service)) {
+                        servicesLB->addItem(new KServiceListItem(pService));
+                    }
                 }
+                servicesLB->setEnabled(true);
             }
-            servicesLB->setEnabled(true);
         } else {
             const QStringList parts = m_mimeTypeData->embedParts();
             if (parts.isEmpty()) {
-                servicesLB->addItem(i18nc("No components associated with this file type", "None"));
-            }
-            for (const QString &partId : parts) {
-                if (KPluginMetaData data(QStringLiteral("kf" QT_STRINGIFY(QT_VERSION_MAJOR) "/parts/") + partId); data.isValid()) {
-                    servicesLB->addItem(new PluginListItem(data));
+                servicesLB->addItem(new QListWidgetItem(i18nc("No components associated with this file type", "None"), nullptr, -1));
+            } else {
+                servicesLB->setEnabled(true);
+                for (const QString &partId : parts) {
+                    if (KPluginMetaData data(QStringLiteral("kf" QT_STRINGIFY(QT_VERSION_MAJOR) "/parts/") + partId); data.isValid()) {
+                        servicesLB->addItem(new PluginListItem(data));
+                    }
                 }
             }
-            servicesLB->setEnabled(true);
         }
     }
 
@@ -271,11 +273,10 @@ void KServiceListWidget::addService()
         }
     }
 
-    // Did the list simply show "None"?
-    const bool hadDummyEntry = (m_kind == SERVICELIST_APPLICATIONS) ? m_mimeTypeData->appServices().isEmpty() : m_mimeTypeData->embedParts().isEmpty();
-
-    if (hadDummyEntry) {
-        delete servicesLB->takeItem(0); // Remove the "None" item.
+    // We inserted a new service at the beginning, if we had a None entry before, it must
+    // be the second on in the element. Check the type to be sure of it
+    if (servicesLB->count() > 0 && servicesLB->item(1)->type() == -1) {
+        delete servicesLB->takeItem(1);
         servicesLB->setEnabled(true);
     }
 
@@ -385,6 +386,7 @@ void KServiceListWidget::updatePreferredServices()
     QStringList sl;
     unsigned int count = servicesLB->count();
     for (unsigned int i = 0; i < count; i++) {
+        Q_ASSERT(servicesLB->item(i)->type() != -1);
         if (m_kind == SERVICELIST_APPLICATIONS) {
             auto sli = (KServiceListItem *)servicesLB->item(i);
             sl.append(sli->storageId);
