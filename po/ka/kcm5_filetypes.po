@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: kde-cli-tools\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2023-01-15 00:57+0000\n"
-"PO-Revision-Date: 2023-01-07 08:20+0100\n"
+"PO-Revision-Date: 2023-02-18 07:45+0100\n"
 "Last-Translator: Temuri Doghonadze <temuri.doghonadze@gmail.com>\n"
 "Language-Team: Georgian <kde-i18n-doc@kde.org>\n"
 "Language: ka\n"
@@ -115,7 +115,7 @@ msgstr "მარცხენა ღილაკის წკაპის ქმ
 #: filetypedetails.cpp:137
 #, kde-format
 msgid "Ask whether to save to disk instead (only for Konqueror browser)"
-msgstr ""
+msgstr "კითხვა, შევინახო თუ არა დისკზე (მხოლოდ Konqueror-სთვის)"
 
 #: filetypedetails.cpp:153
 #, kde-format
@@ -442,7 +442,7 @@ msgstr "ჯგუფი:"
 #: newtypedlg.cpp:39
 #, kde-format
 msgid "Select the category under which the new file type should be added."
-msgstr ""
+msgstr "აირჩიეთ კატეგორია, სადაც ახალი ფაილის ტიპი დაემატება."
 
 #: newtypedlg.cpp:44
 #, kde-format

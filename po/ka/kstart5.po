@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: kde-cli-tools\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2022-12-17 00:51+0000\n"
-"PO-Revision-Date: 2022-08-23 12:58+0200\n"
+"PO-Revision-Date: 2023-02-18 07:46+0100\n"
 "Last-Translator: Temuri Doghonadze <temuri.doghonadze@gmail.com>\n"
 "Language-Team: Georgian <kde-i18n-doc@kde.org>\n"
 "Language: ka\n"
@@ -16,7 +16,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
-"X-Generator: Poedit 3.1.1\n"
+"X-Generator: Poedit 3.2.2\n"
 
 #, kde-format
 msgctxt "NAME OF TRANSLATORS"
@@ -73,16 +73,20 @@ msgid ""
 "Alternative to <command>: desktop file path to start. D-Bus service will be "
 "printed to stdout. Deprecated: use --application"
 msgstr ""
+"<ბრძანების> ალტერნატივა: გასაშვები .desktop ფაილი. D-Bus-ის სერვისი stdout-"
+"ზე იქნება გამოტანილი. მოძველებულია. გამოიყენეთ --application"
 
 #: kstart.cpp:278
 #, kde-format
 msgid "Alternative to <command>: desktop file to start."
-msgstr ""
+msgstr "<ბრძანების> ალტერნატივა: გასაშვები .desktop ფაილი."
 
 #: kstart.cpp:281
 #, kde-format
 msgid "Optional URL to pass <desktopfile>, when using --service"
 msgstr ""
+"<desktopfile>-სთვის არასავალდებულო URL-ის გადაცემა --service -ის "
+"გამოყენებისას"
 
 #: kstart.cpp:284
 #, kde-format
@@ -180,4 +184,4 @@ msgstr ""
 #: kstart.cpp:329
 #, kde-format
 msgid "No command specified"
-msgstr ""
+msgstr "ბრძანება მითითებული არაა"
