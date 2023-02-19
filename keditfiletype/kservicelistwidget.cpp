@@ -259,6 +259,9 @@ void KServiceListWidget::addService()
         if (!service) {
             return; // Don't crash if KOpenWith wasn't able to create service.
         }
+        if (m_mimeTypeData->appServices().contains(service->storageId())) {
+            return;
+        }
         servicesLB->insertItem(0, new KServiceListItem(service));
     } else {
         KPartSelectDlg dlg(this);
@@ -267,10 +270,11 @@ void KServiceListWidget::addService()
         }
         const bool valid = dlg.chosenPart().isValid();
         Q_ASSERT(valid);
-        if (valid) {
-            auto item = new PluginListItem(dlg.chosenPart());
-            servicesLB->insertItem(0, item);
+        if (m_mimeTypeData->embedParts().contains(dlg.chosenPart().pluginId())) {
+            return;
         }
+        auto item = new PluginListItem(dlg.chosenPart());
+        servicesLB->insertItem(0, item);
     }
 
     // We inserted a new service at the beginning, if we had a None entry before, it must
