@@ -4,7 +4,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: ktraderclient5\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2019-05-20 03:23+0200\n"
+"POT-Creation-Date: 2021-03-18 02:47+0100\n"
 "PO-Revision-Date: 2017-05-07 21:01+0200\n"
 "Last-Translator: Chusslove Illich <caslav.ilic@gmx.net>\n"
 "Language-Team: Serbian <kde-i18n-sr@kde.org>\n"
@@ -28,39 +28,39 @@ msgctxt "EMAIL OF TRANSLATORS"
 msgid "Your emails"
 msgstr "caslav.ilic@gmx.net"
 
-#: ktraderclient.cpp:35
+#: ktraderclient.cpp:22
 #, kde-format
 msgid "KTraderClient"
 msgstr "KTraderClient"
 
-#: ktraderclient.cpp:36
+#: ktraderclient.cpp:23
 #, kde-format
 msgid "David Faure"
 msgstr "David For"
 
-#: ktraderclient.cpp:38
+#: ktraderclient.cpp:25
 #, kde-format
 msgid "A command-line tool for querying the KDE trader system"
 msgstr "Alatka komandne linije za upitivanje KDE‑ovog sistema trgovaca"
 
-#: ktraderclient.cpp:43
+#: ktraderclient.cpp:30
 #, kde-format
 msgid "A MIME type"
 msgstr "MIME tip"
 
 # literal-segment: KParts/ReadOnlyPart
 # literal-segment: KMyApp/Plugin
-#: ktraderclient.cpp:44
+#: ktraderclient.cpp:32
 #, kde-format
 msgid "A servicetype, like KParts/ReadOnlyPart or KMyApp/Plugin"
 msgstr "Tip servisa, kao KParts/ReadOnlyPart ili KMyApp/Plugin"
 
-#: ktraderclient.cpp:45
+#: ktraderclient.cpp:35
 #, kde-format
 msgid "A constraint expressed in the trader query language"
 msgstr "Ograničenje izraženo upitnim jezikom trgovaca"
 
-#: ktraderclient.cpp:47
+#: ktraderclient.cpp:38
 #, kde-format
 msgid "Output only paths to desktop files"
 msgstr "Ispiši samo putanje do .desktop fajlova"

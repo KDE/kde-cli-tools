@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kdesu5\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2019-11-08 03:31+0100\n"
+"POT-Creation-Date: 2022-12-21 00:48+0000\n"
 "PO-Revision-Date: 2017-09-28 17:58+0200\n"
 "Last-Translator: Chusslove Illich <caslav.ilic@gmx.net>\n"
 "Language-Team: Serbian <kde-i18n-sr@kde.org>\n"
@@ -31,102 +31,102 @@ msgctxt "EMAIL OF TRANSLATORS"
 msgid "Your emails"
 msgstr "caslav.ilic@gmx.net"
 
-#: kdesu.cpp:102
+#: kdesu.cpp:89
 #, kde-format
 msgid "KDE su"
 msgstr "КДЕ су"
 
-#: kdesu.cpp:103
+#: kdesu.cpp:91
 #, kde-format
 msgid "Runs a program with elevated privileges."
 msgstr "Покреће програм са уздигнутим овлашћењима."
 
-#: kdesu.cpp:105
+#: kdesu.cpp:93
 #, kde-format
 msgid "Copyright (c) 1998-2000 Geert Jansen, Pietro Iglio"
 msgstr "© 1998-2000, Герт Јансен, Пијетро Иљо"
 
-#: kdesu.cpp:106
+#: kdesu.cpp:94
 #, kde-format
 msgid "Geert Jansen"
 msgstr "Герт Јансен"
 
-#: kdesu.cpp:106
+#: kdesu.cpp:94
 #, kde-format
 msgid "Maintainer"
 msgstr "одржавалац"
 
-#: kdesu.cpp:108
+#: kdesu.cpp:95
 #, kde-format
 msgid "Pietro Iglio"
 msgstr "Пијетро Иљо"
 
-#: kdesu.cpp:108
+#: kdesu.cpp:95
 #, kde-format
 msgid "Original author"
 msgstr "првобитни аутор"
 
-#: kdesu.cpp:118
+#: kdesu.cpp:104
 #, kde-format
 msgid "Specifies the command to run as separate arguments"
 msgstr "Задаје наредбу коју треба извршити, као засебне аргументе"
 
-#: kdesu.cpp:119
+#: kdesu.cpp:105
 #, kde-format
 msgid "Specifies the command to run as one string"
 msgstr "Задаје наредбу коју треба извршити, као једну ниску"
 
-#: kdesu.cpp:120
+#: kdesu.cpp:106
 #, kde-format
 msgid "Run command under target uid if <file> is not writable"
 msgstr "Изврши наредбу под циљним УИД‑ом ако фајл није уписив"
 
-#: kdesu.cpp:121
+#: kdesu.cpp:107
 #, kde-format
 msgid "Specifies the target uid"
 msgstr "Задаје циљни УИД"
 
-#: kdesu.cpp:122
+#: kdesu.cpp:108
 #, kde-format
 msgid "Do not keep password"
 msgstr "Не памти лозинку"
 
-#: kdesu.cpp:123
+#: kdesu.cpp:109
 #, kde-format
 msgid "Stop the daemon (forgets all passwords)"
 msgstr "Заустави демон (заборавља све лозинке)"
 
-#: kdesu.cpp:124
+#: kdesu.cpp:110
 #, kde-format
 msgid "Enable terminal output (no password keeping)"
 msgstr "Укључи терминалски излаз (без памћења лозинке)"
 
-#: kdesu.cpp:125
+#: kdesu.cpp:112
 #, kde-format
 msgid "Set priority value: 0 <= prio <= 100, 0 is lowest"
 msgstr "Постави приоритет: 0 <= приоритет <= 100, 0 најнижи"
 
-#: kdesu.cpp:126
+#: kdesu.cpp:113
 #, kde-format
 msgid "Use realtime scheduling"
 msgstr "Стварновременско распоређивање"
 
-#: kdesu.cpp:127
+#: kdesu.cpp:114
 #, kde-format
 msgid "Do not display ignore button"
 msgstr "Не приказуј дугме за игнорисање"
 
-#: kdesu.cpp:128
+#: kdesu.cpp:115
 #, kde-format
 msgid "Specify icon to use in the password dialog"
 msgstr "Задаје иконицу у дијалогу за лозинке"
 
-#: kdesu.cpp:129
+#: kdesu.cpp:116
 #, kde-format
 msgid "Do not show the command to be run in the dialog"
 msgstr "Не приказуј наредбу за извршавање у дијалогу"
 
-#: kdesu.cpp:133
+#: kdesu.cpp:123
 #, kde-format
 msgctxt ""
 "Transient means that the kdesu app will be attached to the app specified by "
@@ -134,62 +134,62 @@ msgctxt ""
 msgid "Makes the dialog transient for an X app specified by winid"
 msgstr "Чини дијалог везаним за икс програм одређен ИД‑ом прозора"
 
-#: kdesu.cpp:134
+#: kdesu.cpp:125
 #, kde-format
 msgid "Embed into a window"
 msgstr "Угнезди у прозор"
 
-#: kdesu.cpp:160
+#: kdesu.cpp:152
 #, kde-format
 msgid "Cannot execute command '%1'."
 msgstr "Не могу да извршим наредбу „%1“."
 
-#: kdesu.cpp:164
+#: kdesu.cpp:155
 #, kde-format
 msgid "Cannot execute command '%1'. It contains invalid characters."
 msgstr "Не могу да извршим наредбу „%1“. Садржи лоше знакове."
 
-#: kdesu.cpp:244
+#: kdesu.cpp:229
 #, kde-format
 msgid "Illegal priority: %1"
 msgstr "Неисправан приоритет: %1"
 
-#: kdesu.cpp:269
+#: kdesu.cpp:250
 #, kde-format
 msgid "No command specified."
 msgstr "Није наведена наредба."
 
-#: kdesu.cpp:381
+#: kdesu.cpp:353
 #, kde-format
 msgid "Su returned with an error.\n"
 msgstr "su врати грешку.\n"
 
-#: kdesu.cpp:410
+#: kdesu.cpp:381
 #, kde-format
 msgid "Command:"
 msgstr "Наредба:"
 
-#: kdesu.cpp:418
+#: kdesu.cpp:390
 #, kde-format
 msgid "realtime: "
 msgstr "Стварновременско: "
 
-#: kdesu.cpp:421
+#: kdesu.cpp:394
 #, kde-format
 msgid "Priority:"
 msgstr "Приоритет:"
 
-#: sudlg.cpp:34
+#: sudlg.cpp:27
 #, kde-format
 msgid "Run as %1"
 msgstr "Покрени као %1"
 
-#: sudlg.cpp:38
+#: sudlg.cpp:31
 #, kde-format
 msgid "Please enter your password below."
 msgstr "Унесите своју лозинку."
 
-#: sudlg.cpp:42
+#: sudlg.cpp:36
 #, kde-format
 msgid ""
 "The action you requested needs <b>root privileges</b>. Please enter "
@@ -200,7 +200,7 @@ msgstr ""
 "лозинку или кликните на дугме <i>Игнориши</i> да продужите са тренутним "
 "овлашћењима."
 
-#: sudlg.cpp:46
+#: sudlg.cpp:42
 #, kde-format
 msgid ""
 "The action you requested needs <b>root privileges</b>. Please enter "
@@ -209,7 +209,7 @@ msgstr ""
 "Радња коју сте захтевали тражи <em>корена овлашћења</em>. Унесите испод "
 "<b>корену</b> лозинку."
 
-#: sudlg.cpp:50
+#: sudlg.cpp:49
 #, kde-format
 msgid ""
 "The action you requested needs additional privileges. Please enter the "
@@ -220,7 +220,7 @@ msgstr ""
 "корисника <b>%1</b> или кликните на дугме <i>Игнориши</i> да продужите са "
 "тренутним овлашћењима."
 
-#: sudlg.cpp:55
+#: sudlg.cpp:56
 #, kde-format
 msgid ""
 "The action you requested needs additional privileges. Please enter the "
@@ -243,7 +243,7 @@ msgstr ""
 "исправно постављена."
 
 # literal-segment: wheel
-#: sudlg.cpp:96
+#: sudlg.cpp:97
 #, kde-format
 msgid ""
 "Permission denied.<br />Possibly incorrect password, please try again.<br /"
@@ -254,7 +254,7 @@ msgstr ""
 "неким системима морате бити у специјалној групи (често: <tt>wheel</tt>) да "
 "бисте користили овај програм."
 
-#: sudlg.cpp:103
+#: sudlg.cpp:105
 #, kde-format
 msgid "Internal error: illegal return from SuProcess::checkInstall()"
 msgstr "Унутрашња грешка: неисправно враћање из „SuProcess::checkInstall()“"

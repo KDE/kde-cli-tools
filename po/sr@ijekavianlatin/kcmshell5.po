@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kcmshell5\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2019-10-22 03:11+0200\n"
+"POT-Creation-Date: 2023-01-28 00:59+0000\n"
 "PO-Revision-Date: 2017-09-28 17:58+0200\n"
 "Last-Translator: Chusslove Illich <caslav.ilic@gmx.net>\n"
 "Language-Team: Serbian <kde-i18n-sr@kde.org>\n"
@@ -30,108 +30,113 @@ msgctxt "EMAIL OF TRANSLATORS"
 msgid "Your emails"
 msgstr "toptan@kde.org.yu,caslav.ilic@gmx.net"
 
-#: main.cpp:193
+#: main.cpp:184
 #, kde-format
 msgid "System Settings Module"
 msgstr "Modul Sistemskih postavki"
 
-#: main.cpp:195
+#: main.cpp:186
 #, kde-format
 msgid "A tool to start single system settings modules"
 msgstr "Samostalno pokretanje modula Sistemskih postavki"
 
-#: main.cpp:197
+#: main.cpp:188
 #, kde-format
 msgid "(c) 1999-2016, The KDE Developers"
 msgstr "© 1999–2016, programeri KDE‑a"
 
-#: main.cpp:199
+#: main.cpp:190
 #, kde-format
 msgid "Frans Englich"
 msgstr "Frans Englih"
 
-#: main.cpp:199
+#: main.cpp:190
 #, kde-format
 msgid "Maintainer"
 msgstr "održavalac"
 
-#: main.cpp:200
+#: main.cpp:191
 #, kde-format
 msgid "Daniel Molkentin"
 msgstr "Danijel Molkentin"
 
-#: main.cpp:201
+#: main.cpp:192
 #, kde-format
 msgid "Matthias Hoelzer-Kluepfel"
 msgstr "Matijas Helcer-Klipfel"
 
-#: main.cpp:202
+#: main.cpp:193
 #, kde-format
 msgid "Matthias Elter"
 msgstr "Matijas Elter"
 
-#: main.cpp:203
+#: main.cpp:194
 #, kde-format
 msgid "Matthias Ettrich"
 msgstr "Matijas Etrih"
 
-#: main.cpp:204
+#: main.cpp:195
 #, kde-format
 msgid "Waldo Bastian"
 msgstr "Valdo Bastijan"
 
-#: main.cpp:210
+#: main.cpp:201
 #, kde-format
 msgid "List all possible modules"
 msgstr "Spisak svih mogućih modula"
 
-#: main.cpp:211
+#: main.cpp:202
 #, kde-format
 msgid "Configuration module to open"
 msgstr "Kontrolni modul koji treba otvoriti"
 
-#: main.cpp:212
+#: main.cpp:203
 #, kde-format
 msgid "Specify a particular language"
 msgstr "Pokreni na određenom jeziku"
 
-#: main.cpp:213
+#: main.cpp:204
 #, kde-format
 msgid "Do not display main window"
 msgstr "Bez glavnog prozora"
 
-#: main.cpp:214
+#: main.cpp:205
 #, kde-format
 msgid "Arguments for the module"
 msgstr "Argumenti za modul"
 
-#: main.cpp:215
+#: main.cpp:206
 #, kde-format
 msgid "Use a specific icon for the window"
 msgstr "Koristi zadatu ikonicu za prozor"
 
-#: main.cpp:216
+#: main.cpp:207
 #, kde-format
 msgid "Use a specific caption for the window"
 msgstr "Koristi zadati natpis za prozor"
 
-#: main.cpp:225
+#: main.cpp:209
+#, kde-format
+msgid "Show an indicator when settings have changed from their default value"
+msgstr ""
+
+#: main.cpp:218
 #, kde-format
 msgid ""
 "--lang is deprecated. Please set the LANGUAGE environment variable instead"
 msgstr "--lang je prevaziđena. Koristite promenljivu okruženja LANGUAGE."
 
-#: main.cpp:229
+#: main.cpp:222
 #, kde-format
 msgid "The following modules are available:"
 msgstr "Dostupni su sljedeći moduli:"
 
-#: main.cpp:246
+#: main.cpp:242
 #, kde-format
 msgid "No description available"
 msgstr "Nema opisa"
 
-#: main.cpp:277
+#: main.cpp:306
 #, kde-format
 msgid ""
 "Could not find module '%1'. See kcmshell5 --list for the full list of "

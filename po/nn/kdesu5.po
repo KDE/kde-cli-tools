@@ -217,9 +217,8 @@ msgid ""
 "password for <b>%1</b> below or click Ignore to continue with your current "
 "privileges."
 msgstr ""
-"Du treng utvida løyve for handlinga du vil utføra. Oppgje passordet for "
-"<b>%1</b> nedanfor, eller trykk «Ignorer» for å halda fram med gjeldande "
-"løyve."
+"Du treng utvida løyve for handlinga du vil utføra. Oppgje passordet for <b>"
+"%1</b> nedanfor, eller trykk «Ignorer» for å halda fram med gjeldande løyve."
 
 #: sudlg.cpp:56
 #, kde-format
@@ -227,8 +226,8 @@ msgid ""
 "The action you requested needs additional privileges. Please enter the "
 "password for <b>%1</b> below."
 msgstr ""
-"Du treng utvida løyve for handlinga du vil utføra. Oppgje passordet for "
-"<b>%1</b> nedanfor."
+"Du treng utvida løyve for handlinga du vil utføra. Oppgje passordet for <b>"
+"%1</b> nedanfor."
 
 #: sudlg.cpp:79
 #, kde-format

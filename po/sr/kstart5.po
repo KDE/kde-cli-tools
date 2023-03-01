@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kstart5\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2020-05-31 18:12+0200\n"
+"POT-Creation-Date: 2023-02-03 01:00+0000\n"
 "PO-Revision-Date: 2017-09-28 17:58+0200\n"
 "Last-Translator: Chusslove Illich <caslav.ilic@gmx.net>\n"
 "Language-Team: Serbian <kde-i18n-sr@kde.org>\n"
@@ -31,49 +31,42 @@ msgctxt "EMAIL OF TRANSLATORS"
 msgid "Your emails"
 msgstr "toptan@kde.org.yu,caslav.ilic@gmx.net"
 
-#: kstart.cpp:319
+#: kstart.cpp:78
 #, kde-format
 msgid "KStart"
 msgstr "К‑покрет"
 
-#: kstart.cpp:320
+#: kstart.cpp:80
 #, kde-format
-msgid ""
-"Utility to launch applications with special window properties \n"
-"such as iconified, maximized, a certain virtual desktop, a special "
-"decoration\n"
-"and so on."
+msgid "Utility to launch applications"
 msgstr ""
-"Алатка за покретање програма са посебним параметрима \n"
-"прозора, као што су иконизован, максимизован, на одређеној \n"
-"виртуелној површи, са посебном декорацијом, итд."
 
-#: kstart.cpp:325
+#: kstart.cpp:82
 #, kde-format
 msgid "(C) 1997-2000 Matthias Ettrich (ettrich@kde.org)"
 msgstr "© 1997-2000, Матијас Етрих"
 
-#: kstart.cpp:327
+#: kstart.cpp:84
 #, kde-format
 msgid "Matthias Ettrich"
 msgstr "Матијас Етрих"
 
-#: kstart.cpp:328
+#: kstart.cpp:85
 #, kde-format
 msgid "David Faure"
 msgstr "Давид Фор"
 
-#: kstart.cpp:329
+#: kstart.cpp:86
 #, kde-format
 msgid "Richard J. Moore"
 msgstr "Ричард Мур"
 
-#: kstart.cpp:334
+#: kstart.cpp:91
 #, kde-format
 msgid "Command to execute"
 msgstr "Наредба за извршавање"
 
-#: kstart.cpp:336
+#: kstart.cpp:95
 #, fuzzy, kde-format
 #| msgid ""
 #| "Alternative to <command>: desktop file to start. D-Bus service will be "
@@ -85,7 +78,7 @@ msgstr ""
 "Алтернатива наредби: .десктоп фајл за покретање. Д‑бус сервис ће бити "
 "исписан на стдиз."
 
-#: kstart.cpp:337
+#: kstart.cpp:98
 #, fuzzy, kde-format
 #| msgid ""
 #| "Alternative to <command>: desktop file to start. D-Bus service will be "
@@ -95,118 +88,96 @@ msgstr ""
 "Алтернатива наредби: .десктоп фајл за покретање. Д‑бус сервис ће бити "
 "исписан на стдиз."
 
-#: kstart.cpp:338
+#: kstart.cpp:101
 #, kde-format
 msgid "Optional URL to pass <desktopfile>, when using --service"
 msgstr "Опциони УРЛ за прослеђивање .десктоп фајла, уз --service"
 
-#: kstart.cpp:340
-#, kde-format
-msgid "A regular expression matching the window title"
-msgstr "Регуларни израз за поклапање наслова прозора"
-
-#: kstart.cpp:342
-#, kde-format
-msgid ""
-"A string matching the window class (WM_CLASS property)\n"
-"The window class can be found out by running\n"
-"'xprop | grep WM_CLASS' and clicking on a window\n"
-"(use either both parts separated by a space or only the right part).\n"
-"NOTE: If you specify neither window title nor window class,\n"
-"then the very first window to appear will be taken;\n"
-"omitting both options is NOT recommended."
-msgstr ""
-"Низ за поклапање класе прозора (својство „WM_CLASS“)\n"
-"Класа прозора се може сазнати извршавањем\n"
-"„xprop | grep WM_CLASS“ и кликом на прозор\n"
-"(узмите или оба дела раздвојена размаком или само десни део).\n"
-"НАПОМЕНА: Ако не задате ни наслов ни класу прозора,\n"
-"биће узет први прозор који се појави.\n"
-"Изостављање обе опције НИЈЕ препоручљиво."
-
-#: kstart.cpp:349
-#, kde-format
-msgid "Desktop on which to make the window appear"
-msgstr "Површ на којој ће се прозор појавити"
-
-#: kstart.cpp:350
-#, kde-format
-msgid ""
-"Make the window appear on the desktop that was active\n"
-"when starting the application"
-msgstr ""
-"Прозор треба да се појави на површи која\n"
-"је била активна при покретању програма"
-
-#: kstart.cpp:351
-#, kde-format
-msgid "Make the window appear on all desktops"
-msgstr "Прозор треба да се појави на свим површима"
-
-#: kstart.cpp:352
-#, kde-format
-msgid "Iconify the window"
-msgstr "Иконификуј прозор"
-
-#: kstart.cpp:353
-#, kde-format
-msgid "Maximize the window"
-msgstr "Максимизуј прозор"
-
-#: kstart.cpp:354
-#, kde-format
-msgid "Maximize the window vertically"
-msgstr "Усправно максимизуј прозор"
-
-#: kstart.cpp:355
-#, kde-format
-msgid "Maximize the window horizontally"
-msgstr "Водоравно максимизуј прозор"
-
-#: kstart.cpp:356
-#, kde-format
-msgid "Show window fullscreen"
-msgstr "Прикажи прозор преко целог екрана"
-
-#: kstart.cpp:357
-#, kde-format
-msgid ""
-"The window type: Normal, Desktop, Dock, Toolbar, \n"
-"Menu, Dialog, TopMenu or Override"
-msgstr ""
-"Тип прозора: нормални, површ, сидриште, трака \n"
-"алатки, мени, дијалог, главни мени или потискивање"
-
-#: kstart.cpp:359
-#, kde-format
-msgid ""
-"Jump to the window even if it is started on a \n"
-"different virtual desktop"
-msgstr ""
-"Скочи на прозор иако је покренут на \n"
-"на другој виртуелној површи"
-
-#: kstart.cpp:361
-#, kde-format
-msgid "Try to keep the window above other windows"
-msgstr "Покушај да увек држиш прозор изнад других"
-
-#: kstart.cpp:362
-#, kde-format
-msgid "Try to keep the window below other windows"
-msgstr "Покушај да увек држиш прозор испод других"
-
-#: kstart.cpp:363
-#, kde-format
-msgid "The window does not get an entry in the taskbar"
-msgstr "Прозор се не појављује у траци задатака"
-
-#: kstart.cpp:364
-#, kde-format
-msgid "The window does not get an entry on the pager"
-msgstr "Прозор се не појављује у листачу"
-
-#: kstart.cpp:378
+#: kstart.cpp:115
 #, kde-format
 msgid "No command specified"
 msgstr "Нема ниједне наредбе"
+
+#~ msgid ""
+#~ "Utility to launch applications with special window properties \n"
+#~ "such as iconified, maximized, a certain virtual desktop, a special "
+#~ "decoration\n"
+#~ "and so on."
+#~ msgstr ""
+#~ "Алатка за покретање програма са посебним параметрима \n"
+#~ "прозора, као што су иконизован, максимизован, на одређеној \n"
+#~ "виртуелној површи, са посебном декорацијом, итд."
+
+#~ msgid "A regular expression matching the window title"
+#~ msgstr "Регуларни израз за поклапање наслова прозора"
+
+#~ msgid ""
+#~ "A string matching the window class (WM_CLASS property)\n"
+#~ "The window class can be found out by running\n"
+#~ "'xprop | grep WM_CLASS' and clicking on a window\n"
+#~ "(use either both parts separated by a space or only the right part).\n"
+#~ "NOTE: If you specify neither window title nor window class,\n"
+#~ "then the very first window to appear will be taken;\n"
+#~ "omitting both options is NOT recommended."
+#~ msgstr ""
+#~ "Низ за поклапање класе прозора (својство „WM_CLASS“)\n"
+#~ "Класа прозора се може сазнати извршавањем\n"
+#~ "„xprop | grep WM_CLASS“ и кликом на прозор\n"
+#~ "(узмите или оба дела раздвојена размаком или само десни део).\n"
+#~ "НАПОМЕНА: Ако не задате ни наслов ни класу прозора,\n"
+#~ "биће узет први прозор који се појави.\n"
+#~ "Изостављање обе опције НИЈЕ препоручљиво."
+
+#~ msgid "Desktop on which to make the window appear"
+#~ msgstr "Површ на којој ће се прозор појавити"
+
+#~ msgid ""
+#~ "Make the window appear on the desktop that was active\n"
+#~ "when starting the application"
+#~ msgstr ""
+#~ "Прозор треба да се појави на површи која\n"
+#~ "је била активна при покретању програма"
+
+#~ msgid "Make the window appear on all desktops"
+#~ msgstr "Прозор треба да се појави на свим површима"
+
+#~ msgid "Iconify the window"
+#~ msgstr "Иконификуј прозор"
+
+#~ msgid "Maximize the window"
+#~ msgstr "Максимизуј прозор"
+
+#~ msgid "Maximize the window vertically"
+#~ msgstr "Усправно максимизуј прозор"
+
+#~ msgid "Maximize the window horizontally"
+#~ msgstr "Водоравно максимизуј прозор"
+
+#~ msgid "Show window fullscreen"
+#~ msgstr "Прикажи прозор преко целог екрана"
+
+#~ msgid ""
+#~ "The window type: Normal, Desktop, Dock, Toolbar, \n"
+#~ "Menu, Dialog, TopMenu or Override"
+#~ msgstr ""
+#~ "Тип прозора: нормални, површ, сидриште, трака \n"
+#~ "алатки, мени, дијалог, главни мени или потискивање"
+
+#~ msgid ""
+#~ "Jump to the window even if it is started on a \n"
+#~ "different virtual desktop"
+#~ msgstr ""
+#~ "Скочи на прозор иако је покренут на \n"
+#~ "на другој виртуелној површи"
+
+#~ msgid "Try to keep the window above other windows"
+#~ msgstr "Покушај да увек држиш прозор изнад других"
+
+#~ msgid "Try to keep the window below other windows"
+#~ msgstr "Покушај да увек држиш прозор испод других"
+
+#~ msgid "The window does not get an entry in the taskbar"
+#~ msgstr "Прозор се не појављује у траци задатака"
+
+#~ msgid "The window does not get an entry on the pager"
+#~ msgstr "Прозор се не појављује у листачу"
