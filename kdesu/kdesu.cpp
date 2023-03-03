@@ -32,6 +32,7 @@
 #include <QFile>
 #include <QFileInfo>
 #include <QLoggingCategory>
+#include <private/qtx11extras_p.h>
 
 #include <KSharedConfig>
 #include <kaboutdata.h>
@@ -301,7 +302,7 @@ static int startApp(QCommandLineParser &p)
 
     QList<QByteArray> env;
     QByteArray options;
-    env << ("DESKTOP_STARTUP_ID=" + KStartupInfo::startupId());
+    env << ("DESKTOP_STARTUP_ID=" + QX11Info::nextStartupId());
 
     //     TODO: Maybe should port this to XDG_*, somehow?
     //     if (pw->pw_uid)
