@@ -12,8 +12,6 @@
 #include <QVBoxLayout>
 
 #include <KLocalizedString>
-#include <KMimeTypeTrader>
-#include <kplugininfo.h>
 
 #if KSERVICE_BUILD_DEPRECATED_SINCE(5, 102)
 KService::List allParts()

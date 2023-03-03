@@ -25,7 +25,6 @@
 #include <kbuildsycocaprogressdialog.h>
 #include <klocalizedstring.h>
 
-#include <kservicetypeprofile.h>
 #include <ksycoca.h>
 
 #include <kwindowsystem.h>

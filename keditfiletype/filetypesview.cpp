@@ -24,7 +24,6 @@
 #include <klineedit.h>
 #include <klocalizedstring.h>
 #include <kpluginfactory.h>
-#include <kservicetypeprofile.h>
 
 #include <ksycoca.h>
 
