@@ -10,9 +10,9 @@ add_executable(filetypestest
 ecm_mark_as_test(filetypestest)
 add_test(NAME filetypestest COMMAND filetypestest)
 target_link_libraries(filetypestest
-   KF5::KIOCore
-   KF5::Service
-   KF5::Parts
+   KF6::KIOCore
+   KF6::Service
+   KF6::Parts
    Qt::Core
    Qt::Gui
    Qt::Test

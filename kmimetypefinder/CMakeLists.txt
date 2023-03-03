@@ -3,8 +3,8 @@ target_compile_definitions(kmimetypefinder PRIVATE -DPROJECT_VERSION="${PROJECT_
 ecm_mark_nongui_executable(kmimetypefinder)
 
 target_link_libraries(kmimetypefinder
-   KF5::CoreAddons # KAboutData
-   KF5::I18n       # i18n
+   KF6::CoreAddons # KAboutData
+   KF6::I18n       # i18n
    Qt::Core
 )
 

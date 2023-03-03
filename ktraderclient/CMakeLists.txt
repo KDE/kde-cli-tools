@@ -3,9 +3,9 @@ target_compile_definitions(ktraderclient5 PRIVATE -DPROJECT_VERSION="${PROJECT_V
 ecm_mark_nongui_executable(ktraderclient5)
 
 target_link_libraries(ktraderclient5
-   KF5::Service    # KService, traders...
-   KF5::CoreAddons # KAboutData
-   KF5::I18n       # i18n
+   KF6::Service    # KService, traders...
+   KF6::CoreAddons # KAboutData
+   KF6::I18n       # i18n
    Qt::Core
 )
 

@@ -30,11 +30,11 @@ kcoreaddons_add_plugin(kcm_filetypes SOURCES ${kcm_filetypes_SRCS} INSTALL_NAMES
 
 kcmutils_generate_desktop_file(kcm_filetypes)
 target_link_libraries(kcm_filetypes
-    KF5::ConfigWidgets
-    KF5::IconThemes
-    KF5::I18n
-    KF5::KIOWidgets # KOpenWithDialog, KBuildSycocaProgressDialog
-    KF5::Parts
+    KF6::ConfigWidgets
+    KF6::IconThemes
+    KF6::I18n
+    KF6::KIOWidgets # KOpenWithDialog, KBuildSycocaProgressDialog
+    KF6::Parts
     Qt::DBus
 )
 
@@ -46,13 +46,13 @@ add_executable(keditfiletype ${keditfiletype_SRCS})
 target_compile_definitions(keditfiletype PRIVATE -DPROJECT_VERSION="${PROJECT_VERSION}")
 
 target_link_libraries(keditfiletype
-    KF5::ConfigCore
-    KF5::IconThemes
-    KF5::KIOWidgets # KOpenWithDialog, KBuildSycocaProgressDialog
-    KF5::WindowSystem
-    KF5::I18n
-    KF5::Service
-    KF5::Parts
+    KF6::ConfigCore
+    KF6::IconThemes
+    KF6::KIOWidgets # KOpenWithDialog, KBuildSycocaProgressDialog
+    KF6::WindowSystem
+    KF6::I18n
+    KF6::Service
+    KF6::Parts
     Qt::DBus
 )
 
