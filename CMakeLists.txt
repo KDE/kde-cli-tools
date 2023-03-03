@@ -87,7 +87,6 @@ function(install_compat_symlink executable_target)
     install(FILES ${CMAKE_CURRENT_BINARY_DIR}/${executable_target}5 DESTINATION ${KDE_INSTALL_FULL_BINDIR})
 endfunction()
 
-add_subdirectory(kcmshell)
 add_subdirectory(keditfiletype)
 add_subdirectory(kmimetypefinder)
 if (QT_MAJOR_VERSION EQUAL "5")
