@@ -43,7 +43,7 @@ msgstr "أداة لبدء وحدات إعدادات النظام بشكل منف
 #: main.cpp:187
 #, kde-format
 msgid "(c) 1999-2016, The KDE Developers"
-msgstr "© ١٩٩٩-٢٠١٦ لمطوري كدي"
+msgstr "© ١٩٩٩-٢٠١٦ لمطوري كِيدِي"
 
 #: main.cpp:189
 #, kde-format
@@ -141,4 +141,4 @@ msgstr ""
 "على مخرجات kcmshell5 --list."
 
 #~ msgid "KDE Control Module"
-#~ msgstr "وحدة التحكم للكيدي"
+#~ msgstr "وحدة التحكم للكِيدِي"

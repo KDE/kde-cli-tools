@@ -42,7 +42,7 @@ msgstr ""
 #: kdesu.cpp:89
 #, kde-format
 msgid "KDE su"
-msgstr "كدي su"
+msgstr "كِيدِي su"
 
 #: kdesu.cpp:91
 #, kde-format

@@ -313,12 +313,12 @@ msgstr "محرر نوع الملف"
 #, kde-format
 msgid ""
 "KDE file type editor - simplified version for editing a single file type"
-msgstr "محرِّر نوع الملف لـِكدي - إصدار مبسّط لتحرير نوع ملف وحيد"
+msgstr "محرِّر نوع الملف لـِكِيدِي - إصدار مبسّط لتحرير نوع ملف وحيد"
 
 #: keditfiletype.cpp:124
 #, kde-format
 msgid "(c) 2000, KDE developers"
-msgstr "(c) 2000, مطوري كدي"
+msgstr "(c) 2000, مطوري كِيدِي"
 
 #: keditfiletype.cpp:125
 #, kde-format
@@ -525,7 +525,7 @@ msgstr ""
 "'خاص' هنا سينشئ نوع الملف وسيكون 'صوره/خاص."
 
 #~ msgid "KEditFileType"
-#~ msgstr "محرر نمط ملفات كدي"
+#~ msgstr "محرر نمط ملفات كِيدِي"
 
 #~ msgid ""
 #~ "This is the icon associated with the selected file type. Choosing a "
