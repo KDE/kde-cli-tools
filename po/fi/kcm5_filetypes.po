@@ -18,7 +18,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: filetypes\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-01-15 00:57+0000\n"
+"POT-Creation-Date: 2023-03-05 03:09+0000\n"
 "PO-Revision-Date: 2021-07-22 19:14+0300\n"
 "Last-Translator: Tommi Nieminen <translator@legisign.org>\n"
 "Language-Team: Finnish <kde-i18n-doc@kde.org>\n"
@@ -102,7 +102,7 @@ msgstr ""
 "johonkin tiedostotyyppiin. Esimerkiksi *.txt osoittaa tyypiksi ”text/plain”. "
 "Tiedostoja, joiden pääte on ”.txt”, pidetään siis tekstitiedostoina."
 
-#: filetypedetails.cpp:87 filetypesview.cpp:103 kservicelistwidget.cpp:110
+#: filetypedetails.cpp:87 filetypesview.cpp:102 kservicelistwidget.cpp:110
 #, kde-format
 msgid "Add..."
 msgstr "Lisää…"
@@ -195,7 +195,7 @@ msgstr "Tiedostotyyppi %1"
 msgid "Use settings for '%1' group"
 msgstr "Käytä ryhmän ”%1” asetuksia"
 
-#: filetypesview.cpp:44
+#: filetypesview.cpp:43
 #, kde-format
 msgid ""
 "<p><h1>File Associations</h1> This module allows you to choose which "
@@ -233,12 +233,12 @@ msgstr ""
 "tiedostonimikuvioita. Tällöin KDE päättelee tiedoston tyypin suoraan sen "
 "sisällöstä.</p>"
 
-#: filetypesview.cpp:74
+#: filetypesview.cpp:73
 #, kde-format
 msgid "Search for file type or filename pattern..."
 msgstr "Etsi tiedostotyyppiä tai nimikuviota…"
 
-#: filetypesview.cpp:80
+#: filetypesview.cpp:79
 #, kde-format
 msgid ""
 "Enter a part of a filename pattern, and only file types with a matching file "
@@ -249,12 +249,12 @@ msgstr ""
 "tiedostotyypit. Vaihtoehtoisesti voi kirjoittaa osan tiedostotyypin nimeä "
 "muodossa, jossa se luettelossa esiintyy."
 
-#: filetypesview.cpp:88
+#: filetypesview.cpp:87
 #, kde-format
 msgid "Known Types"
 msgstr "Tunnetut tyypit"
 
-#: filetypesview.cpp:94
+#: filetypesview.cpp:93
 #, kde-format
 msgid ""
 "Here you can see a hierarchical list of the file types which are known on "
@@ -268,32 +268,32 @@ msgstr ""
 "HTML-tiedostoille ”text/html”) ja käyttämällä oikean reunan "
 "toimintopainikkeita."
 
-#: filetypesview.cpp:108
+#: filetypesview.cpp:107
 #, kde-format
 msgid "Click here to add a new file type."
 msgstr "Lisää uusi tiedostotyyppi napsauttamalla tästä."
 
-#: filetypesview.cpp:110 filetypesview.cpp:376
+#: filetypesview.cpp:109 filetypesview.cpp:375
 #, kde-format
 msgid "&Remove"
 msgstr "&Poista"
 
-#: filetypesview.cpp:134
+#: filetypesview.cpp:133
 #, kde-format
 msgid "Select a file type by name or by extension"
 msgstr "Valitse tiedostotyyppi nimen tai päätteen mukaan"
 
-#: filetypesview.cpp:369
+#: filetypesview.cpp:368
 #, kde-format
 msgid "&Revert"
 msgstr "&Palauta"
 
-#: filetypesview.cpp:370
+#: filetypesview.cpp:369
 #, kde-format
 msgid "Revert this file type to its initial system-wide definition"
 msgstr "Palauta tyyppi alkuperäiseen järjestelmänlaajuiseen määritykseensä"
 
-#: filetypesview.cpp:372
+#: filetypesview.cpp:371
 #, kde-format
 msgid ""
 "Click here to revert this file type to its initial system-wide definition, "
@@ -309,12 +309,12 @@ msgstr ""
 "käytetyksi pienenee, mutta niin voi kuitenkin käydä, jos tyyppi päätellään "
 "tiedoston sisällöstä."
 
-#: filetypesview.cpp:377
+#: filetypesview.cpp:376
 #, kde-format
 msgid "Delete this file type definition completely"
 msgstr "Poista tämän tiedostotyypin määritys kokonaan"
 
-#: filetypesview.cpp:379
+#: filetypesview.cpp:378
 #, kde-format
 msgid ""
 "Click here to delete this file type definition completely. This is only "
@@ -329,12 +329,12 @@ msgstr ""
 "jolloin niiden mahdollisuus tulla käytetyksi pienenee, mutta tiedostotyyppi "
 "voidaan myös päätellä tiedoston sisällöstä."
 
-#: keditfiletype.cpp:120
+#: keditfiletype.cpp:119
 #, kde-format
 msgid "File Type Editor"
 msgstr "Tiedostotyyppimuokkain"
 
-#: keditfiletype.cpp:122
+#: keditfiletype.cpp:121
 #, kde-format
 msgid ""
 "KDE file type editor - simplified version for editing a single file type"
@@ -342,42 +342,42 @@ msgstr ""
 "KDE:n tiedostotyyppimuokkain – yksinkertaistettu versio yksittäisen "
 "tiedostotyypin muokkaamiseen"
 
-#: keditfiletype.cpp:124
+#: keditfiletype.cpp:123
 #, kde-format
 msgid "(c) 2000, KDE developers"
 msgstr "© 2000, KDE:n kehittäjät"
 
-#: keditfiletype.cpp:125
+#: keditfiletype.cpp:124
 #, kde-format
 msgid "Preston Brown"
 msgstr "Preston Brown"
 
-#: keditfiletype.cpp:126
+#: keditfiletype.cpp:125
 #, kde-format
 msgid "David Faure"
 msgstr "David Faure"
 
-#: keditfiletype.cpp:132
+#: keditfiletype.cpp:131
 #, kde-format
 msgid "Makes the dialog transient for the window specified by winid"
 msgstr "Tekee ikkunasta määritetyn ikkunan ali-ikkunan"
 
-#: keditfiletype.cpp:134
+#: keditfiletype.cpp:133
 #, kde-format
 msgid "File type to edit (e.g. text/html)"
 msgstr "Muokattava tiedostotyyppi (esim. text/html)"
 
-#: keditfiletype.cpp:165
+#: keditfiletype.cpp:164
 #, kde-format
 msgid "%1 File"
 msgstr "%1-tiedosto"
 
-#: keditfiletype.cpp:192
+#: keditfiletype.cpp:191
 #, kde-format
 msgid "Edit File Type %1"
 msgstr "Muokkaa tiedostotyyppiä %1"
 
-#: keditfiletype.cpp:194
+#: keditfiletype.cpp:193
 #, kde-format
 msgid "Create New File Type %1"
 msgstr "Luo uusi tiedostotyyppi %1"
@@ -513,12 +513,12 @@ msgctxt "No components associated with this file type"
 msgid "None"
 msgstr "Ei mitään"
 
-#: kserviceselectdlg.cpp:42
+#: kserviceselectdlg.cpp:26
 #, kde-format
 msgid "Add Service"
 msgstr "Lisää palvelu"
 
-#: kserviceselectdlg.cpp:46
+#: kserviceselectdlg.cpp:30
 #, kde-format
 msgid "Select service:"
 msgstr "Valitse palvelu:"

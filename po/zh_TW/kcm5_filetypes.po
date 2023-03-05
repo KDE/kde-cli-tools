@@ -14,7 +14,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: filetypes\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-01-15 00:57+0000\n"
+"POT-Creation-Date: 2023-03-05 03:09+0000\n"
 "PO-Revision-Date: 2019-01-12 20:46+0800\n"
 "Last-Translator: pan93412 <pan93412@gmail.com>\n"
 "Language-Team: Chinese <zh-l10n@lists.linux.org.tw>\n"
@@ -86,7 +86,7 @@ msgstr ""
 "這個方塊中包含了一系列可以用來識別這個檔案類型的樣式. 舉例而言, 樣式 *.txt 關"
 "聯於 'text/plain' 類型; 所有以 '.txt' 結束的檔名都會被當作純文字文件."
 
-#: filetypedetails.cpp:87 filetypesview.cpp:103 kservicelistwidget.cpp:110
+#: filetypedetails.cpp:87 filetypesview.cpp:102 kservicelistwidget.cpp:110
 #, kde-format
 msgid "Add..."
 msgstr "增加..."
@@ -176,7 +176,7 @@ msgstr "檔案型態 %1"
 msgid "Use settings for '%1' group"
 msgstr "使用'%1'群組設定"
 
-#: filetypesview.cpp:44
+#: filetypesview.cpp:43
 #, kde-format
 msgid ""
 "<p><h1>File Associations</h1> This module allows you to choose which "
@@ -207,12 +207,12 @@ msgstr ""
 "果有多於一個程式可以使用，這個列表會依據優先值排序。</li></ul> 您可能會發現有"
 "些 MIME 類別沒有相關的檔名樣式；此時，KDE 會依據檔案內容決定 MIME 類別。</p>"
 
-#: filetypesview.cpp:74
+#: filetypesview.cpp:73
 #, kde-format
 msgid "Search for file type or filename pattern..."
 msgstr "搜尋檔案型態或檔名樣式…"
 
-#: filetypesview.cpp:80
+#: filetypesview.cpp:79
 #, kde-format
 msgid ""
 "Enter a part of a filename pattern, and only file types with a matching file "
@@ -222,12 +222,12 @@ msgstr ""
 "輸入檔案名稱的部分樣式。只有符合樣式的檔案才會出現在列表中。另外也可以輸入檔"
 "案型態名稱的一部份。"
 
-#: filetypesview.cpp:88
+#: filetypesview.cpp:87
 #, kde-format
 msgid "Known Types"
 msgstr "已知類型"
 
-#: filetypesview.cpp:94
+#: filetypesview.cpp:93
 #, kde-format
 msgid ""
 "Here you can see a hierarchical list of the file types which are known on "
@@ -238,32 +238,32 @@ msgstr ""
 "你可以看到在你系統上安裝的文件類型的分級列表. 按下 '+' 符號來展開類別, '-' 來"
 "收攏. 您選擇一個文件類型 (例如 text/html) 用右側的按鈕來編輯."
 
-#: filetypesview.cpp:108
+#: filetypesview.cpp:107
 #, kde-format
 msgid "Click here to add a new file type."
 msgstr "點選這裡新增加檔案類型"
 
-#: filetypesview.cpp:110 filetypesview.cpp:376
+#: filetypesview.cpp:109 filetypesview.cpp:375
 #, kde-format
 msgid "&Remove"
 msgstr "移除(&R)"
 
-#: filetypesview.cpp:134
+#: filetypesview.cpp:133
 #, kde-format
 msgid "Select a file type by name or by extension"
 msgstr "選擇依據檔案名稱或延伸檔名選擇檔案類別"
 
-#: filetypesview.cpp:369
+#: filetypesview.cpp:368
 #, kde-format
 msgid "&Revert"
 msgstr "返回(&R)"
 
-#: filetypesview.cpp:370
+#: filetypesview.cpp:369
 #, kde-format
 msgid "Revert this file type to its initial system-wide definition"
 msgstr "將此檔案型態返回原始的系統定義"
 
-#: filetypesview.cpp:372
+#: filetypesview.cpp:371
 #, kde-format
 msgid ""
 "Click here to revert this file type to its initial system-wide definition, "
@@ -276,12 +276,12 @@ msgstr ""
 "統檔案型態是不能刪除的，不過您可以將樣式清單清空，盡量避免被用到此型態（若是"
 "依據檔案內容來判斷，則還是有可能會使用此型態）。"
 
-#: filetypesview.cpp:377
+#: filetypesview.cpp:376
 #, kde-format
 msgid "Delete this file type definition completely"
 msgstr "完全刪除此檔案型態定義"
 
-#: filetypesview.cpp:379
+#: filetypesview.cpp:378
 #, kde-format
 msgid ""
 "Click here to delete this file type definition completely. This is only "
@@ -294,53 +294,53 @@ msgstr ""
 "檔案型態不行。不過您可以清空檔案型態的樣式清單，盡量避免被用到此型態（若是依"
 "據檔案內容來判斷，則還是有可能會使用此型態）。"
 
-#: keditfiletype.cpp:120
+#: keditfiletype.cpp:119
 #, kde-format
 msgid "File Type Editor"
 msgstr "檔案型態編輯器"
 
-#: keditfiletype.cpp:122
+#: keditfiletype.cpp:121
 #, kde-format
 msgid ""
 "KDE file type editor - simplified version for editing a single file type"
 msgstr "KDE 檔案類別編輯器 - 簡易版用於編輯單一檔案類別"
 
-#: keditfiletype.cpp:124
+#: keditfiletype.cpp:123
 #, kde-format
 msgid "(c) 2000, KDE developers"
 msgstr "(c) 2000, KDE 發展團隊"
 
-#: keditfiletype.cpp:125
+#: keditfiletype.cpp:124
 #, kde-format
 msgid "Preston Brown"
 msgstr "Preston Brown"
 
-#: keditfiletype.cpp:126
+#: keditfiletype.cpp:125
 #, kde-format
 msgid "David Faure"
 msgstr "David Faure"
 
-#: keditfiletype.cpp:132
+#: keditfiletype.cpp:131
 #, kde-format
 msgid "Makes the dialog transient for the window specified by winid"
 msgstr "讓 winid 指定視窗的對話盒設為透明"
 
-#: keditfiletype.cpp:134
+#: keditfiletype.cpp:133
 #, kde-format
 msgid "File type to edit (e.g. text/html)"
 msgstr "要編輯的檔案類型 (例如 text/html)"
 
-#: keditfiletype.cpp:165
+#: keditfiletype.cpp:164
 #, kde-format
 msgid "%1 File"
 msgstr "%1 檔案"
 
-#: keditfiletype.cpp:192
+#: keditfiletype.cpp:191
 #, kde-format
 msgid "Edit File Type %1"
 msgstr "編輯檔案類別 %1"
 
-#: keditfiletype.cpp:194
+#: keditfiletype.cpp:193
 #, kde-format
 msgid "Create New File Type %1"
 msgstr "建立新的檔案類別 %1"
@@ -471,12 +471,12 @@ msgctxt "No components associated with this file type"
 msgid "None"
 msgstr "無"
 
-#: kserviceselectdlg.cpp:42
+#: kserviceselectdlg.cpp:26
 #, kde-format
 msgid "Add Service"
 msgstr "新增服務"
 
-#: kserviceselectdlg.cpp:46
+#: kserviceselectdlg.cpp:30
 #, kde-format
 msgid "Select service:"
 msgstr "選擇服務"

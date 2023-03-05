@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kdeorg\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-01-15 00:57+0000\n"
+"POT-Creation-Date: 2023-03-05 03:09+0000\n"
 "PO-Revision-Date: 2023-02-24 12:43\n"
 "Last-Translator: \n"
 "Language-Team: Chinese Simplified\n"
@@ -79,7 +79,7 @@ msgstr ""
 "这个菜单中包含可以确定文件类型的模式列表。例如，模式 *.txt 和文件类型“text/"
 "plain”相关联；所有“.txt”结尾的文件会被当作普通文本文件。"
 
-#: filetypedetails.cpp:87 filetypesview.cpp:103 kservicelistwidget.cpp:110
+#: filetypedetails.cpp:87 filetypesview.cpp:102 kservicelistwidget.cpp:110
 #, kde-format
 msgid "Add..."
 msgstr "添加..."
@@ -169,7 +169,7 @@ msgstr "文件类型 %1"
 msgid "Use settings for '%1' group"
 msgstr "使用“%1”组的设置"
 
-#: filetypesview.cpp:44
+#: filetypesview.cpp:43
 #, kde-format
 msgid ""
 "<p><h1>File Associations</h1> This module allows you to choose which "
@@ -201,12 +201,12 @@ msgstr ""
 "些 MIME 类型没有相关联的文件名模式；这种情况下，Konqueror 可以通过直接查看文"
 "件内容来决定其 MIME 类型。</p>"
 
-#: filetypesview.cpp:74
+#: filetypesview.cpp:73
 #, kde-format
 msgid "Search for file type or filename pattern..."
 msgstr "搜索文件类型或文件名模式..."
 
-#: filetypesview.cpp:80
+#: filetypesview.cpp:79
 #, kde-format
 msgid ""
 "Enter a part of a filename pattern, and only file types with a matching file "
@@ -216,12 +216,12 @@ msgstr ""
 "输入文件名模式的一部分。只有匹配此文件名模式的文件类型才会显示在列表中。作为"
 "备选做法，您也可以输入列表中有的文件类型名称来筛选。"
 
-#: filetypesview.cpp:88
+#: filetypesview.cpp:87
 #, kde-format
 msgid "Known Types"
 msgstr "已知类型"
 
-#: filetypesview.cpp:94
+#: filetypesview.cpp:93
 #, kde-format
 msgid ""
 "Here you can see a hierarchical list of the file types which are known on "
@@ -233,32 +233,32 @@ msgstr ""
 "或者在“-”上单击来折叠它。选择一个文件类型(例如 text/html 表示的 HTML 文件)，"
 "用右侧的控制按钮来查看和编辑这种文件类型的信息。"
 
-#: filetypesview.cpp:108
+#: filetypesview.cpp:107
 #, kde-format
 msgid "Click here to add a new file type."
 msgstr "单击此处可以添加新的文件类型。"
 
-#: filetypesview.cpp:110 filetypesview.cpp:376
+#: filetypesview.cpp:109 filetypesview.cpp:375
 #, kde-format
 msgid "&Remove"
 msgstr "删除(&R)"
 
-#: filetypesview.cpp:134
+#: filetypesview.cpp:133
 #, kde-format
 msgid "Select a file type by name or by extension"
 msgstr "按名字或扩展名来选择文件类型"
 
-#: filetypesview.cpp:369
+#: filetypesview.cpp:368
 #, kde-format
 msgid "&Revert"
 msgstr "还原(&R)"
 
-#: filetypesview.cpp:370
+#: filetypesview.cpp:369
 #, kde-format
 msgid "Revert this file type to its initial system-wide definition"
 msgstr "将此文件类型的定义还原为系统全局的初始值"
 
-#: filetypesview.cpp:372
+#: filetypesview.cpp:371
 #, kde-format
 msgid ""
 "Click here to revert this file type to its initial system-wide definition, "
@@ -272,12 +272,12 @@ msgstr ""
 "式列表以将其涉及的用途最小化(但当根据文件内容确定文件类型时，还会应用此类定"
 "义)。"
 
-#: filetypesview.cpp:377
+#: filetypesview.cpp:376
 #, kde-format
 msgid "Delete this file type definition completely"
 msgstr "完全删除此文件类型定义"
 
-#: filetypesview.cpp:379
+#: filetypesview.cpp:378
 #, kde-format
 msgid ""
 "Click here to delete this file type definition completely. This is only "
@@ -290,53 +290,53 @@ msgstr ""
 "全局的文件类型不能被删除，不过您可以清空相应的模式列表以将其涉及的用途最小化"
 "(但当根据文件内容确定文件类型时，还会应用此类定义)。"
 
-#: keditfiletype.cpp:120
+#: keditfiletype.cpp:119
 #, kde-format
 msgid "File Type Editor"
 msgstr "文件类型"
 
-#: keditfiletype.cpp:122
+#: keditfiletype.cpp:121
 #, kde-format
 msgid ""
 "KDE file type editor - simplified version for editing a single file type"
 msgstr "KDE 文件类型编辑器 - 编辑单个文件类型的简化编辑器"
 
-#: keditfiletype.cpp:124
+#: keditfiletype.cpp:123
 #, kde-format
 msgid "(c) 2000, KDE developers"
 msgstr "(c) 2000, KDE developers"
 
-#: keditfiletype.cpp:125
+#: keditfiletype.cpp:124
 #, kde-format
 msgid "Preston Brown"
 msgstr "Preston Brown"
 
-#: keditfiletype.cpp:126
+#: keditfiletype.cpp:125
 #, kde-format
 msgid "David Faure"
 msgstr "David Faure"
 
-#: keditfiletype.cpp:132
+#: keditfiletype.cpp:131
 #, kde-format
 msgid "Makes the dialog transient for the window specified by winid"
 msgstr "将由 winid 指定的窗口中的对话框设为透明"
 
-#: keditfiletype.cpp:134
+#: keditfiletype.cpp:133
 #, kde-format
 msgid "File type to edit (e.g. text/html)"
 msgstr "要编辑的文件类型 (例如 text/html)"
 
-#: keditfiletype.cpp:165
+#: keditfiletype.cpp:164
 #, kde-format
 msgid "%1 File"
 msgstr "%1 文件"
 
-#: keditfiletype.cpp:192
+#: keditfiletype.cpp:191
 #, kde-format
 msgid "Edit File Type %1"
 msgstr "编辑文件类型 %1"
 
-#: keditfiletype.cpp:194
+#: keditfiletype.cpp:193
 #, kde-format
 msgid "Create New File Type %1"
 msgstr "创建新的文件类型 %1"
@@ -466,12 +466,12 @@ msgctxt "No components associated with this file type"
 msgid "None"
 msgstr "无"
 
-#: kserviceselectdlg.cpp:42
+#: kserviceselectdlg.cpp:26
 #, kde-format
 msgid "Add Service"
 msgstr "添加服务"
 
-#: kserviceselectdlg.cpp:46
+#: kserviceselectdlg.cpp:30
 #, kde-format
 msgid "Select service:"
 msgstr "选择服务："

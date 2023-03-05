@@ -11,7 +11,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kdesu5\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2022-12-21 00:48+0000\n"
+"POT-Creation-Date: 2023-03-05 03:09+0000\n"
 "PO-Revision-Date: 2018-07-14 23:18+0100\n"
 "Last-Translator: Iñigo Salvador Azurmendi <xalba@euskalnet.net>\n"
 "Language-Team: Basque <kde-i18n-doc@kde.org>\n"
@@ -35,104 +35,104 @@ msgid "Your emails"
 msgstr ""
 "etxaurre@teleline.es,marcos@euskalgnu.org,xalba@euskalnet.net,hizpol@ej-gv.es"
 
-#: kdesu.cpp:89
+#: kdesu.cpp:90
 #, kde-format
 msgid "KDE su"
 msgstr "KDE su"
 
-#: kdesu.cpp:91
+#: kdesu.cpp:92
 #, kde-format
 msgid "Runs a program with elevated privileges."
 msgstr "Pribilegio handiekin exekutatzen ditu programak."
 
-#: kdesu.cpp:93
+#: kdesu.cpp:94
 #, kde-format
 msgid "Copyright (c) 1998-2000 Geert Jansen, Pietro Iglio"
 msgstr "Copyright (c) 1998-2000 Geert Jansen, Pietro Iglio"
 
-#: kdesu.cpp:94
+#: kdesu.cpp:95
 #, kde-format
 msgid "Geert Jansen"
 msgstr "Geert Jansen"
 
-#: kdesu.cpp:94
+#: kdesu.cpp:95
 #, kde-format
 msgid "Maintainer"
 msgstr "Arduraduna"
 
-#: kdesu.cpp:95
+#: kdesu.cpp:96
 #, kde-format
 msgid "Pietro Iglio"
 msgstr "Pietro Iglio"
 
-#: kdesu.cpp:95
+#: kdesu.cpp:96
 #, kde-format
 msgid "Original author"
 msgstr "Jatorrizko egilea"
 
-#: kdesu.cpp:104
+#: kdesu.cpp:105
 #, kde-format
 msgid "Specifies the command to run as separate arguments"
 msgstr "Exekutatu beharreko komandoa argumentu bereizi gisa zehazten du"
 
-#: kdesu.cpp:105
+#: kdesu.cpp:106
 #, kde-format
 msgid "Specifies the command to run as one string"
 msgstr "Exekutatu beharreko komandoa kate gisa zehazten du"
 
-#: kdesu.cpp:106
+#: kdesu.cpp:107
 #, kde-format
 msgid "Run command under target uid if <file> is not writable"
 msgstr ""
 "Exekutatu komandoa helburuko UIDarekin, <file> fitxategian idatz ezin "
 "badaiteke"
 
-#: kdesu.cpp:107
+#: kdesu.cpp:108
 #, kde-format
 msgid "Specifies the target uid"
 msgstr "Helburuko UIDa zehazten du"
 
-#: kdesu.cpp:108
+#: kdesu.cpp:109
 #, kde-format
 msgid "Do not keep password"
 msgstr "Ez gorde pasahitza"
 
-#: kdesu.cpp:109
+#: kdesu.cpp:110
 #, kde-format
 msgid "Stop the daemon (forgets all passwords)"
 msgstr "Gelditu daimona (ahaztu pasahitz guztiak)"
 
-#: kdesu.cpp:110
+#: kdesu.cpp:111
 #, kde-format
 msgid "Enable terminal output (no password keeping)"
 msgstr "Gaitu terminal-irteera (ez da pasahitzik gordeko)"
 
-#: kdesu.cpp:112
+#: kdesu.cpp:113
 #, kde-format
 msgid "Set priority value: 0 <= prio <= 100, 0 is lowest"
 msgstr "Ezarri lehentasun: 0 <= lehent. <= 100, 0 da txikiena"
 
-#: kdesu.cpp:113
+#: kdesu.cpp:114
 #, kde-format
 msgid "Use realtime scheduling"
 msgstr "Erabili denbora errealeko antolaketa"
 
-#: kdesu.cpp:114
+#: kdesu.cpp:115
 #, kde-format
 msgid "Do not display ignore button"
 msgstr "Ez bistaratu ez ikusi egiteko botoia"
 
-#: kdesu.cpp:115
+#: kdesu.cpp:116
 #, kde-format
 msgid "Specify icon to use in the password dialog"
 msgstr "Zehaztu pasahitzaren elkarrizketa-koadroan erabili beharreko ikonoa"
 
-#: kdesu.cpp:116
+#: kdesu.cpp:117
 #, kde-format
 msgid "Do not show the command to be run in the dialog"
 msgstr "Ez erakutsi elkarrizketa-koadroan exekutatu beharreko komandoa"
 
-#: kdesu.cpp:123
+#: kdesu.cpp:124
 #, kde-format
 msgctxt ""
 "Transient means that the kdesu app will be attached to the app specified by "
@@ -141,47 +141,47 @@ msgid "Makes the dialog transient for an X app specified by winid"
 msgstr ""
 "winIDk zehaztutako X aplikazio baten elkarrizketa-koadroa iragankor egiten du"
 
-#: kdesu.cpp:125
+#: kdesu.cpp:126
 #, kde-format
 msgid "Embed into a window"
 msgstr "Txertatu leiho batean"
 
-#: kdesu.cpp:152
+#: kdesu.cpp:153
 #, kde-format
 msgid "Cannot execute command '%1'."
 msgstr "Ezin da exekutatu '%1' komandoa."
 
-#: kdesu.cpp:155
+#: kdesu.cpp:156
 #, kde-format
 msgid "Cannot execute command '%1'. It contains invalid characters."
 msgstr "Ezin da exekutatu '%1' komandoa. Baliogabeko karaktereak ditu."
 
-#: kdesu.cpp:229
+#: kdesu.cpp:230
 #, kde-format
 msgid "Illegal priority: %1"
 msgstr "Lehentasun legez kanpokoa: %1"
 
-#: kdesu.cpp:250
+#: kdesu.cpp:251
 #, kde-format
 msgid "No command specified."
 msgstr "Ez da komandorik zehaztu."
 
-#: kdesu.cpp:353
+#: kdesu.cpp:354
 #, kde-format
 msgid "Su returned with an error.\n"
 msgstr "Su-k errorea itzuli du.\n"
 
-#: kdesu.cpp:381
+#: kdesu.cpp:382
 #, kde-format
 msgid "Command:"
 msgstr "Komandoa:"
 
-#: kdesu.cpp:390
+#: kdesu.cpp:391
 #, kde-format
 msgid "realtime: "
 msgstr "denbora erreala: "
 
-#: kdesu.cpp:394
+#: kdesu.cpp:395
 #, kde-format
 msgid "Priority:"
 msgstr "Lehentasuna:"

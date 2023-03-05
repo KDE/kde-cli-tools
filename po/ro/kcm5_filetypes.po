@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: filetypes\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-01-15 00:57+0000\n"
+"POT-Creation-Date: 2023-03-05 03:09+0000\n"
 "PO-Revision-Date: 2020-09-19 15:52+0100\n"
 "Last-Translator: Sergiu Bivol <sergiu@cip.md>\n"
 "Language-Team: Romanian\n"
@@ -88,7 +88,7 @@ msgstr ""
 "tipul de fișier „text/plain”. Astfel, toate fișierele terminate în „.txt” "
 "vor fi recunoscute ca fișiere de text simplu."
 
-#: filetypedetails.cpp:87 filetypesview.cpp:103 kservicelistwidget.cpp:110
+#: filetypedetails.cpp:87 filetypesview.cpp:102 kservicelistwidget.cpp:110
 #, kde-format
 msgid "Add..."
 msgstr "Adaugă..."
@@ -183,7 +183,7 @@ msgstr "Tip fișier %1"
 msgid "Use settings for '%1' group"
 msgstr "Folosește configurările grupului „%1”"
 
-#: filetypesview.cpp:44
+#: filetypesview.cpp:43
 #, kde-format
 msgid ""
 "<p><h1>File Associations</h1> This module allows you to choose which "
@@ -223,12 +223,12 @@ msgstr ""
 "asociate. În aceste cazuri, KDE poate să determine tipul MIME examinând "
 "direct conținutul fișierului.</p>"
 
-#: filetypesview.cpp:74
+#: filetypesview.cpp:73
 #, kde-format
 msgid "Search for file type or filename pattern..."
 msgstr "Caută după tip de fișier sau model de denumire..."
 
-#: filetypesview.cpp:80
+#: filetypesview.cpp:79
 #, kde-format
 msgid ""
 "Enter a part of a filename pattern, and only file types with a matching file "
@@ -239,12 +239,12 @@ msgstr ""
 "tipurile de fișier care se potrivesc cu șablonul. Suplimentar, puteți "
 "introduce o parte din denumirea tipului de fișier așa cum apare în listă."
 
-#: filetypesview.cpp:88
+#: filetypesview.cpp:87
 #, kde-format
 msgid "Known Types"
 msgstr "Tipuri cunoscute"
 
-#: filetypesview.cpp:94
+#: filetypesview.cpp:93
 #, kde-format
 msgid ""
 "Here you can see a hierarchical list of the file types which are known on "
@@ -258,32 +258,32 @@ msgstr ""
 "exemplu \"text/html\" pentru fișiere HTML) pentru a-l edita utilizând "
 "controalele din partea dreaptă."
 
-#: filetypesview.cpp:108
+#: filetypesview.cpp:107
 #, kde-format
 msgid "Click here to add a new file type."
 msgstr "Apăsați aici pentru a adăuga un tip nou de fișier."
 
-#: filetypesview.cpp:110 filetypesview.cpp:376
+#: filetypesview.cpp:109 filetypesview.cpp:375
 #, kde-format
 msgid "&Remove"
 msgstr "&Elimină"
 
-#: filetypesview.cpp:134
+#: filetypesview.cpp:133
 #, kde-format
 msgid "Select a file type by name or by extension"
 msgstr "Alegeți un tip de fișier după denumire sau extensie"
 
-#: filetypesview.cpp:369
+#: filetypesview.cpp:368
 #, kde-format
 msgid "&Revert"
 msgstr "&Restabilește"
 
-#: filetypesview.cpp:370
+#: filetypesview.cpp:369
 #, kde-format
 msgid "Revert this file type to its initial system-wide definition"
 msgstr "Restabilește acest tip de fișier la definiția sa inițială din sistem"
 
-#: filetypesview.cpp:372
+#: filetypesview.cpp:371
 #, kde-format
 msgid ""
 "Click here to revert this file type to its initial system-wide definition, "
@@ -299,12 +299,12 @@ msgstr ""
 "șansa utilizării lor (totuși procedura de determinare a tipului fișierului "
 "bazată pe conținutul acestuia poate să ajungă să le folosească)."
 
-#: filetypesview.cpp:377
+#: filetypesview.cpp:376
 #, kde-format
 msgid "Delete this file type definition completely"
 msgstr "Șterge complet definiția acestui tip de fișier"
 
-#: filetypesview.cpp:379
+#: filetypesview.cpp:378
 #, kde-format
 msgid ""
 "Click here to delete this file type definition completely. This is only "
@@ -320,12 +320,12 @@ msgstr ""
 "utilizării lor (dar procedura de determinare a tipului fișierului bazată pe "
 "conținutul acestuia poate să ajungă să le folosească)."
 
-#: keditfiletype.cpp:120
+#: keditfiletype.cpp:119
 #, kde-format
 msgid "File Type Editor"
 msgstr "Redactor tipuri de fișiere"
 
-#: keditfiletype.cpp:122
+#: keditfiletype.cpp:121
 #, kde-format
 msgid ""
 "KDE file type editor - simplified version for editing a single file type"
@@ -333,43 +333,43 @@ msgstr ""
 "Redactor tipuri de fișiere pentru KDE - versiune simplificată pentru "
 "redactarea unui singur tip de fișier"
 
-#: keditfiletype.cpp:124
+#: keditfiletype.cpp:123
 #, kde-format
 msgid "(c) 2000, KDE developers"
 msgstr "(c) 2000, Programatorii KDE"
 
-#: keditfiletype.cpp:125
+#: keditfiletype.cpp:124
 #, kde-format
 msgid "Preston Brown"
 msgstr "Preston Brown"
 
-#: keditfiletype.cpp:126
+#: keditfiletype.cpp:125
 #, kde-format
 msgid "David Faure"
 msgstr "David Faure"
 
-#: keditfiletype.cpp:132
+#: keditfiletype.cpp:131
 #, kde-format
 msgid "Makes the dialog transient for the window specified by winid"
 msgstr ""
 "Face ca dialogul să fie temporar pentru fereastra cu „winid”-ul specificat"
 
-#: keditfiletype.cpp:134
+#: keditfiletype.cpp:133
 #, kde-format
 msgid "File type to edit (e.g. text/html)"
 msgstr "Tipul de fișier de modificat (de ex. text/html)"
 
-#: keditfiletype.cpp:165
+#: keditfiletype.cpp:164
 #, kde-format
 msgid "%1 File"
 msgstr "Fișier %1"
 
-#: keditfiletype.cpp:192
+#: keditfiletype.cpp:191
 #, kde-format
 msgid "Edit File Type %1"
 msgstr "Modificare tip de fișier %1"
 
-#: keditfiletype.cpp:194
+#: keditfiletype.cpp:193
 #, kde-format
 msgid "Create New File Type %1"
 msgstr "Creează tip de fișier nou %1"
@@ -505,12 +505,12 @@ msgctxt "No components associated with this file type"
 msgid "None"
 msgstr "Niciuna"
 
-#: kserviceselectdlg.cpp:42
+#: kserviceselectdlg.cpp:26
 #, kde-format
 msgid "Add Service"
 msgstr "Adaugă serviciu"
 
-#: kserviceselectdlg.cpp:46
+#: kserviceselectdlg.cpp:30
 #, kde-format
 msgid "Select service:"
 msgstr "Alege serviciul:"

@@ -7,7 +7,7 @@ msgstr ""
 "Project-Id-Version: kcmshell\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2023-01-28 00:59+0000\n"
-"PO-Revision-Date: 2023-02-21 21:04+0100\n"
+"PO-Revision-Date: 2023-03-04 16:25+0100\n"
 "Last-Translator: Karl Ove Hufthammer <karl@huftis.org>\n"
 "Language-Team: Norwegian Nynorsk <l10n-no@lister.huftis.org>\n"
 "Language: nn\n"
@@ -108,7 +108,7 @@ msgstr "Argument for modulen"
 #: main.cpp:206
 #, kde-format
 msgid "Use a specific icon for the window"
-msgstr "Bruk vald ikon for vindauget"
+msgstr "Bruk valt ikon for vindauget"
 
 #: main.cpp:207
 #, kde-format

@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: filetypes\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-01-15 00:57+0000\n"
+"POT-Creation-Date: 2023-03-05 03:09+0000\n"
 "PO-Revision-Date: 2007-11-05 13:33+0545\n"
 "Last-Translator: Shyam Krishna Bal <shyamkrishna_bal@yahoo.com>\n"
 "Language-Team: Nepali <info@mpp.org.np>\n"
@@ -90,7 +90,7 @@ msgstr ""
 "गर्छ । उदाहरणका लागि, *.txt बाँन्की 'text/plain' फाइल प्रकारसँग सम्बन्धित छ; '. "
 "txt' मा अन्त्य हुने सबै फाइलहरू सादा पाठ फाइलको रुपमा परिचान गरिन्छ ।"
 
-#: filetypedetails.cpp:87 filetypesview.cpp:103 kservicelistwidget.cpp:110
+#: filetypedetails.cpp:87 filetypesview.cpp:102 kservicelistwidget.cpp:110
 #, kde-format
 msgid "Add..."
 msgstr "थप्नुहोस्..."
@@ -193,7 +193,7 @@ msgstr "फाइल प्रकार %1 सम्पादन गर्नु
 msgid "Use settings for '%1' group"
 msgstr "'%1' समूहका लागि सेटिङ प्रयोग गर्नुहोस्"
 
-#: filetypesview.cpp:44
+#: filetypesview.cpp:43
 #, fuzzy, kde-format
 #| msgid ""
 #| "<p><h1>File Associations</h1> This module allows you to choose which "
@@ -249,13 +249,13 @@ msgstr ""
 "कन्क्वेरर फाइल सामाग्रीहरूको प्रत्यक्ष परीक्षणद्वारा माइम प्रकार निर्धारण गर्न सक्षम हुन्छ ।"
 "</p>"
 
-#: filetypesview.cpp:74
+#: filetypesview.cpp:73
 #, fuzzy, kde-format
 #| msgid "F&ind filename pattern:"
 msgid "Search for file type or filename pattern..."
 msgstr "फाइलनाम बाँन्की फेला पार्नुहोस्:"
 
-#: filetypesview.cpp:80
+#: filetypesview.cpp:79
 #, fuzzy, kde-format
 #| msgid ""
 #| "Enter a part of a filename pattern. Only file types with a matching file "
@@ -268,12 +268,12 @@ msgstr ""
 "फाइलनाम बाँन्कीको भाग प्रविष्ट गर्नुहोस् । सूचीमा फाइल प्रकारसँग मिल्ने फाइल बाँन्की देखा "
 "पर्नेछन् ।"
 
-#: filetypesview.cpp:88
+#: filetypesview.cpp:87
 #, kde-format
 msgid "Known Types"
 msgstr "ज्ञात प्रकार"
 
-#: filetypesview.cpp:94
+#: filetypesview.cpp:93
 #, kde-format
 msgid ""
 "Here you can see a hierarchical list of the file types which are known on "
@@ -286,33 +286,33 @@ msgstr ""
 "दायाँ तिर control प्रयोग गरेर फाइल प्रकार सूचना अवलोकन/सम्पादन गर्न फाइल प्रकार "
 "(जस्तै: HTML फाइलहरूका लागि text/html) चयन गर्नुहोस् ।"
 
-#: filetypesview.cpp:108
+#: filetypesview.cpp:107
 #, kde-format
 msgid "Click here to add a new file type."
 msgstr "नयाँ फाइल प्रकार थप्न यहाँ क्लिक गर्नुहोस् ।"
 
-#: filetypesview.cpp:110 filetypesview.cpp:376
+#: filetypesview.cpp:109 filetypesview.cpp:375
 #, kde-format
 msgid "&Remove"
 msgstr "हटाउनुहोस्"
 
-#: filetypesview.cpp:134
+#: filetypesview.cpp:133
 #, kde-format
 msgid "Select a file type by name or by extension"
 msgstr "नाम वा विस्तारद्वारा फाइल प्रकार चयन गर्नुहोस्"
 
-#: filetypesview.cpp:369
+#: filetypesview.cpp:368
 #, fuzzy, kde-format
 #| msgid "&Remove"
 msgid "&Revert"
 msgstr "हटाउनुहोस्"
 
-#: filetypesview.cpp:370
+#: filetypesview.cpp:369
 #, kde-format
 msgid "Revert this file type to its initial system-wide definition"
 msgstr ""
 
-#: filetypesview.cpp:372
+#: filetypesview.cpp:371
 #, kde-format
 msgid ""
 "Click here to revert this file type to its initial system-wide definition, "
@@ -322,12 +322,12 @@ msgid ""
 "from file contents can still end up using them)."
 msgstr ""
 
-#: filetypesview.cpp:377
+#: filetypesview.cpp:376
 #, kde-format
 msgid "Delete this file type definition completely"
 msgstr ""
 
-#: filetypesview.cpp:379
+#: filetypesview.cpp:378
 #, kde-format
 msgid ""
 "Click here to delete this file type definition completely. This is only "
@@ -337,55 +337,55 @@ msgid ""
 "still end up using them)."
 msgstr ""
 
-#: keditfiletype.cpp:120
+#: keditfiletype.cpp:119
 #, fuzzy, kde-format
 #| msgid "Edit File Type %1"
 msgid "File Type Editor"
 msgstr "फाइल प्रकार %1 सम्पादन गर्नुहोस्"
 
-#: keditfiletype.cpp:122
+#: keditfiletype.cpp:121
 #, kde-format
 msgid ""
 "KDE file type editor - simplified version for editing a single file type"
 msgstr ""
 "केडीई फाइल प्रकार सम्पादक - एकल फाइल प्रकार सम्पादनका लागि सुधार गरिएको संस्करण"
 
-#: keditfiletype.cpp:124
+#: keditfiletype.cpp:123
 #, kde-format
 msgid "(c) 2000, KDE developers"
 msgstr "(c) 2000, केडीई विकासकर्ता"
 
-#: keditfiletype.cpp:125
+#: keditfiletype.cpp:124
 #, kde-format
 msgid "Preston Brown"
 msgstr "प्रेस्टन ब्रोन"
 
-#: keditfiletype.cpp:126
+#: keditfiletype.cpp:125
 #, kde-format
 msgid "David Faure"
 msgstr "डेभिड फाउर"
 
-#: keditfiletype.cpp:132
+#: keditfiletype.cpp:131
 #, kde-format
 msgid "Makes the dialog transient for the window specified by winid"
 msgstr "विन आईडीद्वारा निर्दिष्ट सञ्झ्यालका लागि संवाद अस्थायी बनाउँछ"
 
-#: keditfiletype.cpp:134
+#: keditfiletype.cpp:133
 #, kde-format
 msgid "File type to edit (e.g. text/html)"
 msgstr "सम्पादनका लागि फाइल प्रकार (जस्तै: text/html)"
 
-#: keditfiletype.cpp:165
+#: keditfiletype.cpp:164
 #, kde-format
 msgid "%1 File"
 msgstr "%1 फाइल"
 
-#: keditfiletype.cpp:192
+#: keditfiletype.cpp:191
 #, kde-format
 msgid "Edit File Type %1"
 msgstr "फाइल प्रकार %1 सम्पादन गर्नुहोस्"
 
-#: keditfiletype.cpp:194
+#: keditfiletype.cpp:193
 #, kde-format
 msgid "Create New File Type %1"
 msgstr "नयाँ फाइल प्रकार %1 सिर्जना गर्नुहोस्"
@@ -527,12 +527,12 @@ msgctxt "No components associated with this file type"
 msgid "None"
 msgstr "कुनै पनि होइन"
 
-#: kserviceselectdlg.cpp:42
+#: kserviceselectdlg.cpp:26
 #, kde-format
 msgid "Add Service"
 msgstr "सेवा थप्नुहोस्"
 
-#: kserviceselectdlg.cpp:46
+#: kserviceselectdlg.cpp:30
 #, kde-format
 msgid "Select service:"
 msgstr "सेवा चयन गर्नुहोस्:"

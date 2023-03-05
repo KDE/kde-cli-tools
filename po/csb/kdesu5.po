@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kdesu\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2022-12-21 00:48+0000\n"
+"POT-Creation-Date: 2023-03-05 03:09+0000\n"
 "PO-Revision-Date: 2009-05-13 19:55+0200\n"
 "Last-Translator: Mark Kwidzińśczi <mark@linuxcsb.org>\n"
 "Language-Team: Kaszëbsczi <i18n-csb@linuxcsb.org>\n"
@@ -29,105 +29,105 @@ msgctxt "EMAIL OF TRANSLATORS"
 msgid "Your emails"
 msgstr "mark@linuxcsb.org, michol@linuxcsb.org"
 
-#: kdesu.cpp:89
+#: kdesu.cpp:90
 #, kde-format
 msgid "KDE su"
 msgstr "KDE su"
 
-#: kdesu.cpp:91
+#: kdesu.cpp:92
 #, kde-format
 msgid "Runs a program with elevated privileges."
 msgstr "Zrëszô programã z wëższim pioritetã."
 
-#: kdesu.cpp:93
+#: kdesu.cpp:94
 #, kde-format
 msgid "Copyright (c) 1998-2000 Geert Jansen, Pietro Iglio"
 msgstr "Copyright (c) 1998-2000 Geert Jansen, Pietro Iglio"
 
-#: kdesu.cpp:94
+#: kdesu.cpp:95
 #, kde-format
 msgid "Geert Jansen"
 msgstr "Geert Jansen"
 
-#: kdesu.cpp:94
+#: kdesu.cpp:95
 #, kde-format
 msgid "Maintainer"
 msgstr "Òpiekùn"
 
-#: kdesu.cpp:95
+#: kdesu.cpp:96
 #, kde-format
 msgid "Pietro Iglio"
 msgstr "Pietro Iglio"
 
-#: kdesu.cpp:95
+#: kdesu.cpp:96
 #, kde-format
 msgid "Original author"
 msgstr "Ùsôdzca pierszi wersëji"
 
-#: kdesu.cpp:104
+#: kdesu.cpp:105
 #, fuzzy, kde-format
 #| msgid "Specifies the command to run"
 msgid "Specifies the command to run as separate arguments"
 msgstr "Pòlét do zrëszeniô"
 
-#: kdesu.cpp:105
+#: kdesu.cpp:106
 #, fuzzy, kde-format
 #| msgid "Specifies the command to run"
 msgid "Specifies the command to run as one string"
 msgstr "Pòlét do zrëszeniô"
 
-#: kdesu.cpp:106
+#: kdesu.cpp:107
 #, kde-format
 msgid "Run command under target uid if <file> is not writable"
 msgstr ""
 "Zrëszë pòlét z pòdónym ID brëkòwnika, eżle <lopk> je do blós do czëtaniô"
 
-#: kdesu.cpp:107
+#: kdesu.cpp:108
 #, kde-format
 msgid "Specifies the target uid"
 msgstr "Òtaksowùjë docélowy uid"
 
-#: kdesu.cpp:108
+#: kdesu.cpp:109
 #, kde-format
 msgid "Do not keep password"
 msgstr "Nie trzëmôj parolë"
 
-#: kdesu.cpp:109
+#: kdesu.cpp:110
 #, kde-format
 msgid "Stop the daemon (forgets all passwords)"
 msgstr "Zatrzëmôj ùsłëżnotã (zabëjë wszëtczé parole)"
 
-#: kdesu.cpp:110
+#: kdesu.cpp:111
 #, kde-format
 msgid "Enable terminal output (no password keeping)"
 msgstr "Włączë wińdzenié na terminal (bez trzëmaniô paroli)"
 
-#: kdesu.cpp:112
+#: kdesu.cpp:113
 #, kde-format
 msgid "Set priority value: 0 <= prio <= 100, 0 is lowest"
 msgstr "Nastôwi pioritet midze 0 a 100 (0 - nômiészi)"
 
-#: kdesu.cpp:113
+#: kdesu.cpp:114
 #, kde-format
 msgid "Use realtime scheduling"
 msgstr "Brëkùjë régòwaniô w jawernym czasie"
 
-#: kdesu.cpp:114
+#: kdesu.cpp:115
 #, kde-format
 msgid "Do not display ignore button"
 msgstr "Nie wëskrzeniwôj knąpë Òprzestóń"
 
-#: kdesu.cpp:115
+#: kdesu.cpp:116
 #, kde-format
 msgid "Specify icon to use in the password dialog"
 msgstr "Ikòna do wëzwëskaniô w òknie paroli"
 
-#: kdesu.cpp:116
+#: kdesu.cpp:117
 #, kde-format
 msgid "Do not show the command to be run in the dialog"
 msgstr "Nie pòkazëjë pòlétu zrëszanegò w òknie"
 
-#: kdesu.cpp:123
+#: kdesu.cpp:124
 #, kde-format
 msgctxt ""
 "Transient means that the kdesu app will be attached to the app specified by "
@@ -137,47 +137,47 @@ msgstr ""
 "Robi nen dialog transparentnym na jaczis czas dlô òkna wskazónegò przez "
 "winid "
 
-#: kdesu.cpp:125
+#: kdesu.cpp:126
 #, kde-format
 msgid "Embed into a window"
 msgstr ""
 
-#: kdesu.cpp:152
+#: kdesu.cpp:153
 #, kde-format
 msgid "Cannot execute command '%1'."
 msgstr ""
 
-#: kdesu.cpp:155
+#: kdesu.cpp:156
 #, kde-format
 msgid "Cannot execute command '%1'. It contains invalid characters."
 msgstr ""
 
-#: kdesu.cpp:229
+#: kdesu.cpp:230
 #, kde-format
 msgid "Illegal priority: %1"
 msgstr "Zmiłkòwi prioritet: %1"
 
-#: kdesu.cpp:250
+#: kdesu.cpp:251
 #, kde-format
 msgid "No command specified."
 msgstr "Felëje pòlétu."
 
-#: kdesu.cpp:353
+#: kdesu.cpp:354
 #, kde-format
 msgid "Su returned with an error.\n"
 msgstr "'su' zwrócëło felã.\n"
 
-#: kdesu.cpp:381
+#: kdesu.cpp:382
 #, kde-format
 msgid "Command:"
 msgstr "Pòlét:"
 
-#: kdesu.cpp:390
+#: kdesu.cpp:391
 #, kde-format
 msgid "realtime: "
 msgstr "jawerny czas: "
 
-#: kdesu.cpp:394
+#: kdesu.cpp:395
 #, kde-format
 msgid "Priority:"
 msgstr "Prioritet:"

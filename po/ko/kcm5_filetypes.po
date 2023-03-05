@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: filetypes\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-01-15 00:57+0000\n"
+"POT-Creation-Date: 2023-03-05 03:09+0000\n"
 "PO-Revision-Date: 2022-04-16 22:49+0200\n"
 "Last-Translator: Shinjo Park <kde@peremen.name>\n"
 "Language-Team: Korean <kde-kr@kde.org>\n"
@@ -83,7 +83,7 @@ msgstr ""
 "를 들어 *.txt는 파일 형식 'text/plain'과 연관이 있으며 '.txt'로 끝나는 모든 "
 "파일 형식은 일반 텍스트 파일로 인식하게 됩니다."
 
-#: filetypedetails.cpp:87 filetypesview.cpp:103 kservicelistwidget.cpp:110
+#: filetypedetails.cpp:87 filetypesview.cpp:102 kservicelistwidget.cpp:110
 #, kde-format
 msgid "Add..."
 msgstr "추가..."
@@ -174,7 +174,7 @@ msgstr "파일 형식 %1"
 msgid "Use settings for '%1' group"
 msgstr "'%1' 그룹의 설정 사용하기"
 
-#: filetypesview.cpp:44
+#: filetypesview.cpp:43
 #, kde-format
 msgid ""
 "<p><h1>File Associations</h1> This module allows you to choose which "
@@ -209,12 +209,12 @@ msgstr ""
 "이 없을 수도 있습니다. 이런 경우에는 KDE에서 파일의 내용을 파악하여 MIME-형식"
 "을 결정합니다.</p>"
 
-#: filetypesview.cpp:74
+#: filetypesview.cpp:73
 #, kde-format
 msgid "Search for file type or filename pattern..."
 msgstr "파일 형식이나 파일 이름 패턴 찾기..."
 
-#: filetypesview.cpp:80
+#: filetypesview.cpp:79
 #, kde-format
 msgid ""
 "Enter a part of a filename pattern, and only file types with a matching file "
@@ -224,12 +224,12 @@ msgstr ""
 "파일 이름 패턴의 일부를 입력하면 입력한 패턴과 일치하는 파일 형식을 보여줍니"
 "다. 또는 목록에 보이는 대로 파일 형식 이름을 입력해도 됩니다."
 
-#: filetypesview.cpp:88
+#: filetypesview.cpp:87
 #, kde-format
 msgid "Known Types"
 msgstr "알려진 형식"
 
-#: filetypesview.cpp:94
+#: filetypesview.cpp:93
 #, kde-format
 msgid ""
 "Here you can see a hierarchical list of the file types which are known on "
@@ -242,32 +242,32 @@ msgstr ""
 "형식을 선택하면 (예: HTML 파일의 경우 text/html) 오른쪽에 있는 도구를 사용해"
 "서 파일 형식의 정보를 보거나 편집할 수 있습니다."
 
-#: filetypesview.cpp:108
+#: filetypesview.cpp:107
 #, kde-format
 msgid "Click here to add a new file type."
 msgstr "새로운 파일 형식을 추가하려면 여기를 클릭하십시오."
 
-#: filetypesview.cpp:110 filetypesview.cpp:376
+#: filetypesview.cpp:109 filetypesview.cpp:375
 #, kde-format
 msgid "&Remove"
 msgstr "삭제(&R)"
 
-#: filetypesview.cpp:134
+#: filetypesview.cpp:133
 #, kde-format
 msgid "Select a file type by name or by extension"
 msgstr "확장자나 이름으로 파일 형식 선택"
 
-#: filetypesview.cpp:369
+#: filetypesview.cpp:368
 #, kde-format
 msgid "&Revert"
 msgstr "되돌리기(&R)"
 
-#: filetypesview.cpp:370
+#: filetypesview.cpp:369
 #, kde-format
 msgid "Revert this file type to its initial system-wide definition"
 msgstr "파일 형식을 초기 시스템 기본값으로 되돌립니다"
 
-#: filetypesview.cpp:372
+#: filetypesview.cpp:371
 #, kde-format
 msgid ""
 "Click here to revert this file type to its initial system-wide definition, "
@@ -281,12 +281,12 @@ msgstr ""
 "정하여 사용되는 정도를 줄일 수는 있습니다. 그렇다 하더라도 파일 형식에서 확장"
 "자를 추측할 때는 이 정보를 사용합니다."
 
-#: filetypesview.cpp:377
+#: filetypesview.cpp:376
 #, kde-format
 msgid "Delete this file type definition completely"
 msgstr "파일 형식 정의를 완전히 삭제합니다"
 
-#: filetypesview.cpp:379
+#: filetypesview.cpp:378
 #, kde-format
 msgid ""
 "Click here to delete this file type definition completely. This is only "
@@ -300,53 +300,53 @@ msgstr ""
 "도를 줄일 수는 있습니다. 그렇다 하더라도 파일 형식에서 확장자를 추측할 때는 "
 "이 정보를 사용합니다."
 
-#: keditfiletype.cpp:120
+#: keditfiletype.cpp:119
 #, kde-format
 msgid "File Type Editor"
 msgstr "파일 형식 편집기"
 
-#: keditfiletype.cpp:122
+#: keditfiletype.cpp:121
 #, kde-format
 msgid ""
 "KDE file type editor - simplified version for editing a single file type"
 msgstr "KDE 파일 형식 편집기 - 하나의 파일 형식을 편집하는 간단한 버전"
 
-#: keditfiletype.cpp:124
+#: keditfiletype.cpp:123
 #, kde-format
 msgid "(c) 2000, KDE developers"
 msgstr "(c) 2000, KDE developers"
 
-#: keditfiletype.cpp:125
+#: keditfiletype.cpp:124
 #, kde-format
 msgid "Preston Brown"
 msgstr "Preston Brown"
 
-#: keditfiletype.cpp:126
+#: keditfiletype.cpp:125
 #, kde-format
 msgid "David Faure"
 msgstr "David Faure"
 
-#: keditfiletype.cpp:132
+#: keditfiletype.cpp:131
 #, kde-format
 msgid "Makes the dialog transient for the window specified by winid"
 msgstr "대화 상자를 winid로 지정한 창에 연결하기"
 
-#: keditfiletype.cpp:134
+#: keditfiletype.cpp:133
 #, kde-format
 msgid "File type to edit (e.g. text/html)"
 msgstr "편집하려는 파일 형식 (예. text/html)"
 
-#: keditfiletype.cpp:165
+#: keditfiletype.cpp:164
 #, kde-format
 msgid "%1 File"
 msgstr "%1 파일"
 
-#: keditfiletype.cpp:192
+#: keditfiletype.cpp:191
 #, kde-format
 msgid "Edit File Type %1"
 msgstr "파일 형식 %1을(를) 편집"
 
-#: keditfiletype.cpp:194
+#: keditfiletype.cpp:193
 #, kde-format
 msgid "Create New File Type %1"
 msgstr "새 파일 형식 %1 만들기"
@@ -480,12 +480,12 @@ msgctxt "No components associated with this file type"
 msgid "None"
 msgstr "없음"
 
-#: kserviceselectdlg.cpp:42
+#: kserviceselectdlg.cpp:26
 #, kde-format
 msgid "Add Service"
 msgstr "서비스 추가"
 
-#: kserviceselectdlg.cpp:46
+#: kserviceselectdlg.cpp:30
 #, kde-format
 msgid "Select service:"
 msgstr "서비스 선택:"

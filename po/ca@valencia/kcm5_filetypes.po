@@ -12,7 +12,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kde-cli-tools\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-01-15 00:57+0000\n"
+"POT-Creation-Date: 2023-03-05 03:09+0000\n"
 "PO-Revision-Date: 2022-09-07 19:42+0200\n"
 "Last-Translator: Josep M. Ferrer <txemaq@gmail.com>\n"
 "Language-Team: Catalan <kde-i18n-ca@kde.org>\n"
@@ -92,7 +92,7 @@ msgstr ""
 "associat amb el tipus de fitxer «text/plain», de manera que tots els fitxers "
 "que s'acaben en «.txt» seran reconeguts com a fitxers de text net."
 
-#: filetypedetails.cpp:87 filetypesview.cpp:103 kservicelistwidget.cpp:110
+#: filetypedetails.cpp:87 filetypesview.cpp:102 kservicelistwidget.cpp:110
 #, kde-format
 msgid "Add..."
 msgstr "Afig..."
@@ -186,7 +186,7 @@ msgstr "Tipus de fitxer %1"
 msgid "Use settings for '%1' group"
 msgstr "Utilitza la configuració per al grup «%1»"
 
-#: filetypesview.cpp:44
+#: filetypesview.cpp:43
 #, kde-format
 msgid ""
 "<p><h1>File Associations</h1> This module allows you to choose which "
@@ -226,12 +226,12 @@ msgstr ""
 "associats. En estos casos, KDE pot determinar el tipus MIME examinant "
 "directament el contingut del fitxer.</p>"
 
-#: filetypesview.cpp:74
+#: filetypesview.cpp:73
 #, kde-format
 msgid "Search for file type or filename pattern..."
 msgstr "Busca pel tipus de fitxer o pel patró del nom de fitxer..."
 
-#: filetypesview.cpp:80
+#: filetypesview.cpp:79
 #, kde-format
 msgid ""
 "Enter a part of a filename pattern, and only file types with a matching file "
@@ -243,12 +243,12 @@ msgstr ""
 "alternativa, introduïu una part del nom del tipus de fitxer tal com apareix "
 "en la llista."
 
-#: filetypesview.cpp:88
+#: filetypesview.cpp:87
 #, kde-format
 msgid "Known Types"
 msgstr "Tipus coneguts"
 
-#: filetypesview.cpp:94
+#: filetypesview.cpp:93
 #, kde-format
 msgid ""
 "Here you can see a hierarchical list of the file types which are known on "
@@ -262,33 +262,33 @@ msgstr ""
 "per a fitxers HTML) per a veure o editar la informació d'este tipus de "
 "fitxer utilitzant els controls de la dreta."
 
-#: filetypesview.cpp:108
+#: filetypesview.cpp:107
 #, kde-format
 msgid "Click here to add a new file type."
 msgstr "Feu clic ací per a afegir un tipus de fitxer nou."
 
-#: filetypesview.cpp:110 filetypesview.cpp:376
+#: filetypesview.cpp:109 filetypesview.cpp:375
 #, kde-format
 msgid "&Remove"
 msgstr "&Elimina"
 
-#: filetypesview.cpp:134
+#: filetypesview.cpp:133
 #, kde-format
 msgid "Select a file type by name or by extension"
 msgstr "Selecciona un tipus de fitxer per nom o per extensió"
 
-#: filetypesview.cpp:369
+#: filetypesview.cpp:368
 #, kde-format
 msgid "&Revert"
 msgstr "Re&vertix"
 
-#: filetypesview.cpp:370
+#: filetypesview.cpp:369
 #, kde-format
 msgid "Revert this file type to its initial system-wide definition"
 msgstr ""
 "Revertix este tipus de fitxer a la seua definició inicial global del sistema"
 
-#: filetypesview.cpp:372
+#: filetypesview.cpp:371
 #, kde-format
 msgid ""
 "Click here to revert this file type to its initial system-wide definition, "
@@ -305,12 +305,12 @@ msgstr ""
 "tipus de fitxer a partir del contingut del fitxer encara els pot acabar "
 "utilitzant)."
 
-#: filetypesview.cpp:377
+#: filetypesview.cpp:376
 #, kde-format
 msgid "Delete this file type definition completely"
 msgstr "Suprimix completament esta definició de tipus de fitxer"
 
-#: filetypesview.cpp:379
+#: filetypesview.cpp:378
 #, kde-format
 msgid ""
 "Click here to delete this file type definition completely. This is only "
@@ -326,12 +326,12 @@ msgstr ""
 "siguen utilitzats (però la determinació del tipus de fitxer a partir del "
 "contingut del fitxer encara els pot acabar utilitzant)."
 
-#: keditfiletype.cpp:120
+#: keditfiletype.cpp:119
 #, kde-format
 msgid "File Type Editor"
 msgstr "Editor per als tipus de fitxer"
 
-#: keditfiletype.cpp:122
+#: keditfiletype.cpp:121
 #, kde-format
 msgid ""
 "KDE file type editor - simplified version for editing a single file type"
@@ -339,42 +339,42 @@ msgstr ""
 "Editor per als tipus de fitxer de KDE: versió simplificada per a editar un "
 "sol tipus de fitxer"
 
-#: keditfiletype.cpp:124
+#: keditfiletype.cpp:123
 #, kde-format
 msgid "(c) 2000, KDE developers"
 msgstr "(c) 2000, els desenvolupadors de KDE"
 
-#: keditfiletype.cpp:125
+#: keditfiletype.cpp:124
 #, kde-format
 msgid "Preston Brown"
 msgstr "Preston Brown"
 
-#: keditfiletype.cpp:126
+#: keditfiletype.cpp:125
 #, kde-format
 msgid "David Faure"
 msgstr "David Faure"
 
-#: keditfiletype.cpp:132
+#: keditfiletype.cpp:131
 #, kde-format
 msgid "Makes the dialog transient for the window specified by winid"
 msgstr "Fes transitori el diàleg per a la finestra especificada per «winid»"
 
-#: keditfiletype.cpp:134
+#: keditfiletype.cpp:133
 #, kde-format
 msgid "File type to edit (e.g. text/html)"
 msgstr "Tipus de fitxer que s'ha d'editar (p. ex. text/html)"
 
-#: keditfiletype.cpp:165
+#: keditfiletype.cpp:164
 #, kde-format
 msgid "%1 File"
 msgstr "Fitxer %1"
 
-#: keditfiletype.cpp:192
+#: keditfiletype.cpp:191
 #, kde-format
 msgid "Edit File Type %1"
 msgstr "Edita el tipus de fitxer %1"
 
-#: keditfiletype.cpp:194
+#: keditfiletype.cpp:193
 #, kde-format
 msgid "Create New File Type %1"
 msgstr "Crea un tipus de fitxer nou %1"
@@ -510,12 +510,12 @@ msgctxt "No components associated with this file type"
 msgid "None"
 msgstr "Cap"
 
-#: kserviceselectdlg.cpp:42
+#: kserviceselectdlg.cpp:26
 #, kde-format
 msgid "Add Service"
 msgstr "Afig servei"
 
-#: kserviceselectdlg.cpp:46
+#: kserviceselectdlg.cpp:30
 #, kde-format
 msgid "Select service:"
 msgstr "Servei seleccionat:"

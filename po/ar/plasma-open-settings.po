@@ -41,7 +41,7 @@ msgstr "أداة لبدء وحدات إعدادات النظام"
 #: main.cpp:34
 #, kde-format
 msgid "(c) 2021, The KDE Developers"
-msgstr "© ٢٠٢١ ، لمطوري كدي"
+msgstr "© ٢٠٢١ ، لمطوري كِيدِي"
 
 #: main.cpp:67
 #, kde-format

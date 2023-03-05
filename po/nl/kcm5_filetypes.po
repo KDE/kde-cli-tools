@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-01-15 00:57+0000\n"
+"POT-Creation-Date: 2023-03-05 03:09+0000\n"
 "PO-Revision-Date: 2019-01-12 10:30+0100\n"
 "Last-Translator: Freek de Kruijf <freekdekruijf@kde.nl>\n"
 "Language-Team: Dutch <kde-i18n-nl@kde.org>\n"
@@ -85,7 +85,7 @@ msgstr ""
 "txt is geassocieerd met het bestandstype 'text/plain'. Alle bestanden die "
 "eindigen op '.txt' worden zo als tekstbestanden herkend."
 
-#: filetypedetails.cpp:87 filetypesview.cpp:103 kservicelistwidget.cpp:110
+#: filetypedetails.cpp:87 filetypesview.cpp:102 kservicelistwidget.cpp:110
 #, kde-format
 msgid "Add..."
 msgstr "Toevoegen..."
@@ -181,7 +181,7 @@ msgstr "Bestandstype %1"
 msgid "Use settings for '%1' group"
 msgstr "Gebruikt instellingen van groep '%1'"
 
-#: filetypesview.cpp:44
+#: filetypesview.cpp:43
 #, kde-format
 msgid ""
 "<p><h1>File Associations</h1> This module allows you to choose which "
@@ -220,12 +220,12 @@ msgstr ""
 "geen bestandsnaampatroon. In die gevallen kan KDE het bestandstype bepalen "
 "door naar de inhoud van bestanden te kijken.</p>"
 
-#: filetypesview.cpp:74
+#: filetypesview.cpp:73
 #, kde-format
 msgid "Search for file type or filename pattern..."
 msgstr "Naar bestandstype of bestandsnaampatroon zoeken..."
 
-#: filetypesview.cpp:80
+#: filetypesview.cpp:79
 #, kde-format
 msgid ""
 "Enter a part of a filename pattern, and only file types with a matching file "
@@ -237,12 +237,12 @@ msgstr ""
 "gedeelte van de naam van een bestandstype invoeren, zoals die in de lijst "
 "aanwezig is."
 
-#: filetypesview.cpp:88
+#: filetypesview.cpp:87
 #, kde-format
 msgid "Known Types"
 msgstr "Bekende typen"
 
-#: filetypesview.cpp:94
+#: filetypesview.cpp:93
 #, kde-format
 msgid ""
 "Here you can see a hierarchical list of the file types which are known on "
@@ -255,32 +255,32 @@ msgstr ""
 "om deze weer dicht te klappen. Klik op de naam van een bestandstype (bijv. "
 "'html') om uw voorkeuren betreffende dit bestandstype in te stellen."
 
-#: filetypesview.cpp:108
+#: filetypesview.cpp:107
 #, kde-format
 msgid "Click here to add a new file type."
 msgstr "Klik hier om een nieuw bestandstype toe te voegen."
 
-#: filetypesview.cpp:110 filetypesview.cpp:376
+#: filetypesview.cpp:109 filetypesview.cpp:375
 #, kde-format
 msgid "&Remove"
 msgstr "&Verwijderen"
 
-#: filetypesview.cpp:134
+#: filetypesview.cpp:133
 #, kde-format
 msgid "Select a file type by name or by extension"
 msgstr "Selecteer een bestandstype bij zijn naam of extensie."
 
-#: filetypesview.cpp:369
+#: filetypesview.cpp:368
 #, kde-format
 msgid "&Revert"
 msgstr "Te&rugzetten"
 
-#: filetypesview.cpp:370
+#: filetypesview.cpp:369
 #, kde-format
 msgid "Revert this file type to its initial system-wide definition"
 msgstr "Zet dit bestand terug naar zijn systeembrede definitie"
 
-#: filetypesview.cpp:372
+#: filetypesview.cpp:371
 #, kde-format
 msgid ""
 "Click here to revert this file type to its initial system-wide definition, "
@@ -296,12 +296,12 @@ msgstr ""
 "minimaliseren dat ze worden gebruikt (maar het bepalen van het bestandstype "
 "uit de inhoud van het bestand kan nog steeds eindigen in hun gebruikt)."
 
-#: filetypesview.cpp:377
+#: filetypesview.cpp:376
 #, kde-format
 msgid "Delete this file type definition completely"
 msgstr "Verwijder deze bestandstypedefinitie volledig"
 
-#: filetypesview.cpp:379
+#: filetypesview.cpp:378
 #, kde-format
 msgid ""
 "Click here to delete this file type definition completely. This is only "
@@ -317,12 +317,12 @@ msgstr ""
 "bepalen van het bestandstype uit de inhoud van het bestand kan er nog steeds "
 "toe leiden dat ze worden gebruikt)."
 
-#: keditfiletype.cpp:120
+#: keditfiletype.cpp:119
 #, kde-format
 msgid "File Type Editor"
 msgstr "Bewerker van bestandstype"
 
-#: keditfiletype.cpp:122
+#: keditfiletype.cpp:121
 #, kde-format
 msgid ""
 "KDE file type editor - simplified version for editing a single file type"
@@ -330,43 +330,43 @@ msgstr ""
 "KDE Bestandstype Bewerker - vereenvoudigde versie voor het bewerken van "
 "losse bestandstypen"
 
-#: keditfiletype.cpp:124
+#: keditfiletype.cpp:123
 #, kde-format
 msgid "(c) 2000, KDE developers"
 msgstr "(c) 2000, KDE-ontwikkelaars"
 
-#: keditfiletype.cpp:125
+#: keditfiletype.cpp:124
 #, kde-format
 msgid "Preston Brown"
 msgstr "Preston Brown"
 
-#: keditfiletype.cpp:126
+#: keditfiletype.cpp:125
 #, kde-format
 msgid "David Faure"
 msgstr "David Faure"
 
-#: keditfiletype.cpp:132
+#: keditfiletype.cpp:131
 #, kde-format
 msgid "Makes the dialog transient for the window specified by winid"
 msgstr ""
 "Maakt de dialoog tijdelijk voor het venster dat is opgegeven door winid"
 
-#: keditfiletype.cpp:134
+#: keditfiletype.cpp:133
 #, kde-format
 msgid "File type to edit (e.g. text/html)"
 msgstr "Bestandstype om te bewerken (bijv. text/html)"
 
-#: keditfiletype.cpp:165
+#: keditfiletype.cpp:164
 #, kde-format
 msgid "%1 File"
 msgstr "%1 bestand"
 
-#: keditfiletype.cpp:192
+#: keditfiletype.cpp:191
 #, kde-format
 msgid "Edit File Type %1"
 msgstr "Bestandstype %1 bewerken"
 
-#: keditfiletype.cpp:194
+#: keditfiletype.cpp:193
 #, kde-format
 msgid "Create New File Type %1"
 msgstr "Nieuw bestandstype %1 aanmaken"
@@ -505,12 +505,12 @@ msgctxt "No components associated with this file type"
 msgid "None"
 msgstr "Geen"
 
-#: kserviceselectdlg.cpp:42
+#: kserviceselectdlg.cpp:26
 #, kde-format
 msgid "Add Service"
 msgstr "Service toevoegen"
 
-#: kserviceselectdlg.cpp:46
+#: kserviceselectdlg.cpp:30
 #, kde-format
 msgid "Select service:"
 msgstr "Dienst selecteren:"

@@ -15,7 +15,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kcm5_filetypes\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-01-15 00:57+0000\n"
+"POT-Creation-Date: 2023-03-05 03:09+0000\n"
 "PO-Revision-Date: 2019-01-18 14:17-0200\n"
 "Last-Translator: André Marcelo Alvarenga <alvarenga@kde.org>\n"
 "Language-Team: Brazilian Portuguese <kde-i18n-pt_br@kde.org>\n"
@@ -96,7 +96,7 @@ msgstr ""
 "tipo de arquivo 'text/plain' e todos os arquivos que terminam em '.txt' são "
 "reconhecidos como arquivos de texto simples."
 
-#: filetypedetails.cpp:87 filetypesview.cpp:103 kservicelistwidget.cpp:110
+#: filetypedetails.cpp:87 filetypesview.cpp:102 kservicelistwidget.cpp:110
 #, kde-format
 msgid "Add..."
 msgstr "Adicionar..."
@@ -191,7 +191,7 @@ msgstr "Tipo de arquivo %1"
 msgid "Use settings for '%1' group"
 msgstr "Usar as configurações do grupo '%1'"
 
-#: filetypesview.cpp:44
+#: filetypesview.cpp:43
 #, kde-format
 msgid ""
 "<p><h1>File Associations</h1> This module allows you to choose which "
@@ -231,12 +231,12 @@ msgstr ""
 "associados; nesses casos, o KDE é capaz de determinar o tipo MIME examinando "
 "diretamente o conteúdo do arquivo.</p>"
 
-#: filetypesview.cpp:74
+#: filetypesview.cpp:73
 #, kde-format
 msgid "Search for file type or filename pattern..."
 msgstr "Procurar por tipo ou padrão de nome de arquivo..."
 
-#: filetypesview.cpp:80
+#: filetypesview.cpp:79
 #, kde-format
 msgid ""
 "Enter a part of a filename pattern, and only file types with a matching file "
@@ -248,12 +248,12 @@ msgstr ""
 "Alternativamente, informe uma parte de um nome de tipo de arquivo como ele "
 "aparece na lista."
 
-#: filetypesview.cpp:88
+#: filetypesview.cpp:87
 #, kde-format
 msgid "Known Types"
 msgstr "Tipos conhecidos"
 
-#: filetypesview.cpp:94
+#: filetypesview.cpp:93
 #, kde-format
 msgid ""
 "Here you can see a hierarchical list of the file types which are known on "
@@ -267,32 +267,32 @@ msgstr ""
 "para arquivos HTML) para ver/editar as informações para este tipo de arquivo "
 "usando os controle à direita."
 
-#: filetypesview.cpp:108
+#: filetypesview.cpp:107
 #, kde-format
 msgid "Click here to add a new file type."
 msgstr "Clique aqui para adicionar um novo tipo de arquivo."
 
-#: filetypesview.cpp:110 filetypesview.cpp:376
+#: filetypesview.cpp:109 filetypesview.cpp:375
 #, kde-format
 msgid "&Remove"
 msgstr "&Remover"
 
-#: filetypesview.cpp:134
+#: filetypesview.cpp:133
 #, kde-format
 msgid "Select a file type by name or by extension"
 msgstr "Selecione um tipo de arquivo por nome ou extensão"
 
-#: filetypesview.cpp:369
+#: filetypesview.cpp:368
 #, kde-format
 msgid "&Revert"
 msgstr "&Reverter"
 
-#: filetypesview.cpp:370
+#: filetypesview.cpp:369
 #, kde-format
 msgid "Revert this file type to its initial system-wide definition"
 msgstr "Reverter este tipo de arquivo para a definição inicial do sistema"
 
-#: filetypesview.cpp:372
+#: filetypesview.cpp:371
 #, kde-format
 msgid ""
 "Click here to revert this file type to its initial system-wide definition, "
@@ -308,12 +308,12 @@ msgstr ""
 "minimizar as chances de estes serem usados (mas a determinação do tipo de "
 "arquivo a partir do seu conteúdo possa à mesma vir a usá-los)."
 
-#: filetypesview.cpp:377
+#: filetypesview.cpp:376
 #, kde-format
 msgid "Delete this file type definition completely"
 msgstr "Excluir completamente esta definição de tipo de arquivo"
 
-#: filetypesview.cpp:379
+#: filetypesview.cpp:378
 #, kde-format
 msgid ""
 "Click here to delete this file type definition completely. This is only "
@@ -329,12 +329,12 @@ msgstr ""
 "estes serem usados (mas a determinação do tipo de arquivo a partir do seu "
 "conteúdo possa à mesma vir a usá-los)."
 
-#: keditfiletype.cpp:120
+#: keditfiletype.cpp:119
 #, kde-format
 msgid "File Type Editor"
 msgstr "Editor de tipo de arquivo"
 
-#: keditfiletype.cpp:122
+#: keditfiletype.cpp:121
 #, kde-format
 msgid ""
 "KDE file type editor - simplified version for editing a single file type"
@@ -342,42 +342,42 @@ msgstr ""
 "Editor de tipo de arquivo do KDE - versão simplificada para edição de um "
 "tipo de arquivo único"
 
-#: keditfiletype.cpp:124
+#: keditfiletype.cpp:123
 #, kde-format
 msgid "(c) 2000, KDE developers"
 msgstr "(c) 2000, Os desenvolvedores do KDE"
 
-#: keditfiletype.cpp:125
+#: keditfiletype.cpp:124
 #, kde-format
 msgid "Preston Brown"
 msgstr "Preston Brown"
 
-#: keditfiletype.cpp:126
+#: keditfiletype.cpp:125
 #, kde-format
 msgid "David Faure"
 msgstr "David Faure"
 
-#: keditfiletype.cpp:132
+#: keditfiletype.cpp:131
 #, kde-format
 msgid "Makes the dialog transient for the window specified by winid"
 msgstr "Torna o diálogo transitório para a janela especificada pelo winid"
 
-#: keditfiletype.cpp:134
+#: keditfiletype.cpp:133
 #, kde-format
 msgid "File type to edit (e.g. text/html)"
 msgstr "Tipo de arquivo à editar (p. ex., text/html)"
 
-#: keditfiletype.cpp:165
+#: keditfiletype.cpp:164
 #, kde-format
 msgid "%1 File"
 msgstr "Arquivo %1"
 
-#: keditfiletype.cpp:192
+#: keditfiletype.cpp:191
 #, kde-format
 msgid "Edit File Type %1"
 msgstr "Editar tipo de arquivo %1"
 
-#: keditfiletype.cpp:194
+#: keditfiletype.cpp:193
 #, kde-format
 msgid "Create New File Type %1"
 msgstr "Criar um novo tipo de arquivo %1"
@@ -513,12 +513,12 @@ msgctxt "No components associated with this file type"
 msgid "None"
 msgstr "Nenhum"
 
-#: kserviceselectdlg.cpp:42
+#: kserviceselectdlg.cpp:26
 #, kde-format
 msgid "Add Service"
 msgstr "Adicionar serviço"
 
-#: kserviceselectdlg.cpp:46
+#: kserviceselectdlg.cpp:30
 #, kde-format
 msgid "Select service:"
 msgstr "Selecionar serviço:"

@@ -44,7 +44,7 @@ msgstr "ديفيد فيور"
 #: ktraderclient.cpp:25
 #, kde-format
 msgid "A command-line tool for querying the KDE trader system"
-msgstr "أداة سطر الأوامر  لاستعلام نظام trader  للكدي"
+msgstr "أداة سطر الأوامر  لاستعلام نظام trader  للكِيدِي"
 
 #: ktraderclient.cpp:30
 #, kde-format

@@ -9,7 +9,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: filetypes\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-01-15 00:57+0000\n"
+"POT-Creation-Date: 2023-03-05 03:09+0000\n"
 "PO-Revision-Date: 2007-08-22 09:26+0000\n"
 "Last-Translator: Darafei Praliaskouski <komzpa@licei2.com>\n"
 "Language-Team: Belarusian <i18n@mova.org>\n"
@@ -94,7 +94,7 @@ msgstr ""
 "Напрыклад, шаблон *.txt звязаны з тыпам файлаў'text/plain'; усе файлы, назвы "
 "якіх заканчваюцца на '.txt', распазнаюцца як звычайныя тэкставыя файлы."
 
-#: filetypedetails.cpp:87 filetypesview.cpp:103 kservicelistwidget.cpp:110
+#: filetypedetails.cpp:87 filetypesview.cpp:102 kservicelistwidget.cpp:110
 #, kde-format
 msgid "Add..."
 msgstr "Дадаць..."
@@ -198,7 +198,7 @@ msgstr "Змяніць тып файлаў %1"
 msgid "Use settings for '%1' group"
 msgstr "Выкарыстоўваць наладкі для групы '%1'"
 
-#: filetypesview.cpp:44
+#: filetypesview.cpp:43
 #, fuzzy, kde-format
 #| msgid ""
 #| "<p><h1>File Associations</h1> This module allows you to choose which "
@@ -253,13 +253,13 @@ msgstr ""
 "што некаторыя тыпы MIME не маюць вызначаных для іх шаблонаў назваў файлаў; у "
 "гэтым выпадку Konqueror спрабуе вызначыць тып MIME па змесце файла."
 
-#: filetypesview.cpp:74
+#: filetypesview.cpp:73
 #, fuzzy, kde-format
 #| msgid "F&ind filename pattern:"
 msgid "Search for file type or filename pattern..."
 msgstr "Ш&укаць шаблон назваў файлаў:"
 
-#: filetypesview.cpp:80
+#: filetypesview.cpp:79
 #, fuzzy, kde-format
 #| msgid ""
 #| "Enter a part of a filename pattern. Only file types with a matching file "
@@ -272,12 +272,12 @@ msgstr ""
 "Увядзіце частку шаблону назвы файла. У гэтым спісе будуць паказвацца толькі "
 "тыпы файлаў з такім жа шаблонам."
 
-#: filetypesview.cpp:88
+#: filetypesview.cpp:87
 #, kde-format
 msgid "Known Types"
 msgstr "Вядомыя тыпы"
 
-#: filetypesview.cpp:94
+#: filetypesview.cpp:93
 #, kde-format
 msgid ""
 "Here you can see a hierarchical list of the file types which are known on "
@@ -290,33 +290,33 @@ msgstr ""
 "згарнуць яе. Выберыце тып файлаў (напр. text/html для файлаў HTML), каб "
 "праглядзець інфармацыю ці змяніць тып файлаў."
 
-#: filetypesview.cpp:108
+#: filetypesview.cpp:107
 #, kde-format
 msgid "Click here to add a new file type."
 msgstr "Націсніце тут, каб дадаць новы тып файлаў."
 
-#: filetypesview.cpp:110 filetypesview.cpp:376
+#: filetypesview.cpp:109 filetypesview.cpp:375
 #, kde-format
 msgid "&Remove"
 msgstr "&Выдаліць"
 
-#: filetypesview.cpp:134
+#: filetypesview.cpp:133
 #, kde-format
 msgid "Select a file type by name or by extension"
 msgstr "Выберыце тып файлаў па назве ці па пашырэнні"
 
-#: filetypesview.cpp:369
+#: filetypesview.cpp:368
 #, fuzzy, kde-format
 #| msgid "&Remove"
 msgid "&Revert"
 msgstr "&Выдаліць"
 
-#: filetypesview.cpp:370
+#: filetypesview.cpp:369
 #, kde-format
 msgid "Revert this file type to its initial system-wide definition"
 msgstr ""
 
-#: filetypesview.cpp:372
+#: filetypesview.cpp:371
 #, kde-format
 msgid ""
 "Click here to revert this file type to its initial system-wide definition, "
@@ -326,12 +326,12 @@ msgid ""
 "from file contents can still end up using them)."
 msgstr ""
 
-#: filetypesview.cpp:377
+#: filetypesview.cpp:376
 #, kde-format
 msgid "Delete this file type definition completely"
 msgstr ""
 
-#: filetypesview.cpp:379
+#: filetypesview.cpp:378
 #, kde-format
 msgid ""
 "Click here to delete this file type definition completely. This is only "
@@ -341,13 +341,13 @@ msgid ""
 "still end up using them)."
 msgstr ""
 
-#: keditfiletype.cpp:120
+#: keditfiletype.cpp:119
 #, fuzzy, kde-format
 #| msgid "Edit File Type %1"
 msgid "File Type Editor"
 msgstr "Змяніць тып файлаў %1"
 
-#: keditfiletype.cpp:122
+#: keditfiletype.cpp:121
 #, kde-format
 msgid ""
 "KDE file type editor - simplified version for editing a single file type"
@@ -355,42 +355,42 @@ msgstr ""
 "Рэдактар тыпаў файлаў для KDE - спрошчаная версія для змянення асобнага тыпу "
 "файлаў"
 
-#: keditfiletype.cpp:124
+#: keditfiletype.cpp:123
 #, kde-format
 msgid "(c) 2000, KDE developers"
 msgstr "(c) 2000, Распрацоўшчыкі KDE"
 
-#: keditfiletype.cpp:125
+#: keditfiletype.cpp:124
 #, kde-format
 msgid "Preston Brown"
 msgstr "Прэстан Браўн"
 
-#: keditfiletype.cpp:126
+#: keditfiletype.cpp:125
 #, kde-format
 msgid "David Faure"
 msgstr "Дэвід Фор"
 
-#: keditfiletype.cpp:132
+#: keditfiletype.cpp:131
 #, kde-format
 msgid "Makes the dialog transient for the window specified by winid"
 msgstr "Робіць дыялог мадальным для акна, вызначанага ў winid"
 
-#: keditfiletype.cpp:134
+#: keditfiletype.cpp:133
 #, kde-format
 msgid "File type to edit (e.g. text/html)"
 msgstr "Змяніць тып файлаў (напр: text/html)"
 
-#: keditfiletype.cpp:165
+#: keditfiletype.cpp:164
 #, kde-format
 msgid "%1 File"
 msgstr "%1 Файл"
 
-#: keditfiletype.cpp:192
+#: keditfiletype.cpp:191
 #, kde-format
 msgid "Edit File Type %1"
 msgstr "Змяніць тып файлаў %1"
 
-#: keditfiletype.cpp:194
+#: keditfiletype.cpp:193
 #, kde-format
 msgid "Create New File Type %1"
 msgstr "Стварыць новы тып файлаў %1"
@@ -532,12 +532,12 @@ msgctxt "No components associated with this file type"
 msgid "None"
 msgstr "Няма"
 
-#: kserviceselectdlg.cpp:42
+#: kserviceselectdlg.cpp:26
 #, kde-format
 msgid "Add Service"
 msgstr "Дадаць сервіс"
 
-#: kserviceselectdlg.cpp:46
+#: kserviceselectdlg.cpp:30
 #, kde-format
 msgid "Select service:"
 msgstr "Выберыце сервіс:"

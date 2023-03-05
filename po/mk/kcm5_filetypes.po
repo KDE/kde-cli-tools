@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: filetypes\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-01-15 00:57+0000\n"
+"POT-Creation-Date: 2023-03-05 03:09+0000\n"
 "PO-Revision-Date: 2010-01-29 22:16+0100\n"
 "Last-Translator: Bozidar Proevski <bobibobi@freemail.com.mk>\n"
 "Language-Team: Macedonian <mkde-l10n@lists.sourceforge.net>\n"
@@ -88,7 +88,7 @@ msgstr ""
 "од типот „text/plain“; односно сите датотеки што завршуваат на „.txt“ се "
 "препознаваат како текстуални датотеки."
 
-#: filetypedetails.cpp:87 filetypesview.cpp:103 kservicelistwidget.cpp:110
+#: filetypedetails.cpp:87 filetypesview.cpp:102 kservicelistwidget.cpp:110
 #, kde-format
 msgid "Add..."
 msgstr "Додај..."
@@ -184,7 +184,7 @@ msgstr "Тип на датотека %1"
 msgid "Use settings for '%1' group"
 msgstr "Користи ги поставувањата за групата „%1“"
 
-#: filetypesview.cpp:44
+#: filetypesview.cpp:43
 #, kde-format
 msgid ""
 "<p><h1>File Associations</h1> This module allows you to choose which "
@@ -223,13 +223,13 @@ msgstr ""
 "случаи, Konqueror е способен автоматски да го одреди MIME типот преку "
 "непосредно испитување на содржината на датотеката.</p>"
 
-#: filetypesview.cpp:74
+#: filetypesview.cpp:73
 #, fuzzy, kde-format
 #| msgid "Find file type or filename pattern"
 msgid "Search for file type or filename pattern..."
 msgstr "Пронајди тип на датотека или облик на име"
 
-#: filetypesview.cpp:80
+#: filetypesview.cpp:79
 #, kde-format
 msgid ""
 "Enter a part of a filename pattern, and only file types with a matching file "
@@ -240,12 +240,12 @@ msgstr ""
 "совпаѓаат со обликот ќе се појават во листата. Или може да внесете дел од "
 "името на типот на датотека како што се појавува во листата."
 
-#: filetypesview.cpp:88
+#: filetypesview.cpp:87
 #, kde-format
 msgid "Known Types"
 msgstr "Познати типови"
 
-#: filetypesview.cpp:94
+#: filetypesview.cpp:93
 #, kde-format
 msgid ""
 "Here you can see a hierarchical list of the file types which are known on "
@@ -259,32 +259,32 @@ msgstr ""
 "HTML датотеки) за да ги видите или измените информациите за тој тип "
 "користејќи ги контролите оддесно."
 
-#: filetypesview.cpp:108
+#: filetypesview.cpp:107
 #, kde-format
 msgid "Click here to add a new file type."
 msgstr "Кликнете тука за да додадете нов тип на датотека."
 
-#: filetypesview.cpp:110 filetypesview.cpp:376
+#: filetypesview.cpp:109 filetypesview.cpp:375
 #, kde-format
 msgid "&Remove"
 msgstr "&Отстрани"
 
-#: filetypesview.cpp:134
+#: filetypesview.cpp:133
 #, kde-format
 msgid "Select a file type by name or by extension"
 msgstr "Изберете тип на датотека според име или наставка"
 
-#: filetypesview.cpp:369
+#: filetypesview.cpp:368
 #, kde-format
 msgid "&Revert"
 msgstr "В&рати назад"
 
-#: filetypesview.cpp:370
+#: filetypesview.cpp:369
 #, kde-format
 msgid "Revert this file type to its initial system-wide definition"
 msgstr "Го враќа типот на датотеки на почетната системска дефиниција"
 
-#: filetypesview.cpp:372
+#: filetypesview.cpp:371
 #, kde-format
 msgid ""
 "Click here to revert this file type to its initial system-wide definition, "
@@ -300,12 +300,12 @@ msgstr ""
 "тие да бидат употребени (но одредувањето на типот на датотека според "
 "содржината на датотеката сепак може да биде употребено)."
 
-#: filetypesview.cpp:377
+#: filetypesview.cpp:376
 #, kde-format
 msgid "Delete this file type definition completely"
 msgstr "Целосно ја брише дефиницијата на овој тип датотеки"
 
-#: filetypesview.cpp:379
+#: filetypesview.cpp:378
 #, kde-format
 msgid ""
 "Click here to delete this file type definition completely. This is only "
@@ -321,13 +321,13 @@ msgstr ""
 "одредувањето на типот на датотека според содржината на датотеката сепак може "
 "да биде употребено)."
 
-#: keditfiletype.cpp:120
+#: keditfiletype.cpp:119
 #, fuzzy, kde-format
 #| msgid "File type %1"
 msgid "File Type Editor"
 msgstr "Тип на датотека %1"
 
-#: keditfiletype.cpp:122
+#: keditfiletype.cpp:121
 #, kde-format
 msgid ""
 "KDE file type editor - simplified version for editing a single file type"
@@ -335,42 +335,42 @@ msgstr ""
 "KDE Уредувач на типови на датотеки - поедноставена верзија за уредување на "
 "еден тип на датотека"
 
-#: keditfiletype.cpp:124
+#: keditfiletype.cpp:123
 #, kde-format
 msgid "(c) 2000, KDE developers"
 msgstr "(c) 2000, развивачите на KDE"
 
-#: keditfiletype.cpp:125
+#: keditfiletype.cpp:124
 #, kde-format
 msgid "Preston Brown"
 msgstr "Preston Brown"
 
-#: keditfiletype.cpp:126
+#: keditfiletype.cpp:125
 #, kde-format
 msgid "David Faure"
 msgstr "David Faure"
 
-#: keditfiletype.cpp:132
+#: keditfiletype.cpp:131
 #, kde-format
 msgid "Makes the dialog transient for the window specified by winid"
 msgstr "Го прави дијалогот транзиентен за прозорецот зададен со winid"
 
-#: keditfiletype.cpp:134
+#: keditfiletype.cpp:133
 #, kde-format
 msgid "File type to edit (e.g. text/html)"
 msgstr "Тип на датотека за изменување (на пр. text/html)"
 
-#: keditfiletype.cpp:165
+#: keditfiletype.cpp:164
 #, kde-format
 msgid "%1 File"
 msgstr "%1-датотека"
 
-#: keditfiletype.cpp:192
+#: keditfiletype.cpp:191
 #, kde-format
 msgid "Edit File Type %1"
 msgstr "Уреди тип на датотека %1"
 
-#: keditfiletype.cpp:194
+#: keditfiletype.cpp:193
 #, kde-format
 msgid "Create New File Type %1"
 msgstr "Создај нов тип на датотека %1"
@@ -508,12 +508,12 @@ msgctxt "No components associated with this file type"
 msgid "None"
 msgstr "Нема"
 
-#: kserviceselectdlg.cpp:42
+#: kserviceselectdlg.cpp:26
 #, kde-format
 msgid "Add Service"
 msgstr "Додај сервис"
 
-#: kserviceselectdlg.cpp:46
+#: kserviceselectdlg.cpp:30
 #, kde-format
 msgid "Select service:"
 msgstr "Изберете сервис:"

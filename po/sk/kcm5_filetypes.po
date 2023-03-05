@@ -13,7 +13,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: filetypes\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-01-15 00:57+0000\n"
+"POT-Creation-Date: 2023-03-05 03:09+0000\n"
 "PO-Revision-Date: 2019-11-18 10:22+0100\n"
 "Last-Translator: Matej Mrenica <matejm98mthw@gmail.com>\n"
 "Language-Team: Slovak <kde-i18n-doc@kde.org>\n"
@@ -92,7 +92,7 @@ msgstr ""
 "'text/plain'; všetky súbory končiace príponou '.txt' sú rozoznané ako "
 "jednoduché textové súbory."
 
-#: filetypedetails.cpp:87 filetypesview.cpp:103 kservicelistwidget.cpp:110
+#: filetypedetails.cpp:87 filetypesview.cpp:102 kservicelistwidget.cpp:110
 #, kde-format
 msgid "Add..."
 msgstr "Pridať..."
@@ -185,7 +185,7 @@ msgstr "Typ súboru %1"
 msgid "Use settings for '%1' group"
 msgstr "Použiť nastavenie pre skupinu '%1'"
 
-#: filetypesview.cpp:44
+#: filetypesview.cpp:43
 #, kde-format
 msgid ""
 "<p><h1>File Associations</h1> This module allows you to choose which "
@@ -223,12 +223,12 @@ msgstr ""
 "nemajú priradené vzorky názvov súborov! V týchto prípadoch je Konqueror "
 "schopný rozoznať MIME typ preskúmaním priamo obsahu súboru.</p>"
 
-#: filetypesview.cpp:74
+#: filetypesview.cpp:73
 #, kde-format
 msgid "Search for file type or filename pattern..."
 msgstr "Nájsť typ súboru alebo názvov súboru podľa vzoru"
 
-#: filetypesview.cpp:80
+#: filetypesview.cpp:79
 #, kde-format
 msgid ""
 "Enter a part of a filename pattern, and only file types with a matching file "
@@ -239,12 +239,12 @@ msgstr ""
 "so zodpovedajúcou vzorkou. Eventuálne vložte časť názvu typu súboru tak, ako "
 "sa zobrazuje v zozname."
 
-#: filetypesview.cpp:88
+#: filetypesview.cpp:87
 #, kde-format
 msgid "Known Types"
 msgstr "Známe typy"
 
-#: filetypesview.cpp:94
+#: filetypesview.cpp:93
 #, kde-format
 msgid ""
 "Here you can see a hierarchical list of the file types which are known on "
@@ -257,32 +257,32 @@ msgstr ""
 "zbalíte. Vyberte typ súboru (napr. text/html pre HTML súbory) na prezeranie/"
 "úpravu informácií pre tento typ súboru použitím ovládacích prvkov napravo."
 
-#: filetypesview.cpp:108
+#: filetypesview.cpp:107
 #, kde-format
 msgid "Click here to add a new file type."
 msgstr "Kliknite sem, aby ste pridali nový typ súboru."
 
-#: filetypesview.cpp:110 filetypesview.cpp:376
+#: filetypesview.cpp:109 filetypesview.cpp:375
 #, kde-format
 msgid "&Remove"
 msgstr "O&dstrániť"
 
-#: filetypesview.cpp:134
+#: filetypesview.cpp:133
 #, kde-format
 msgid "Select a file type by name or by extension"
 msgstr "Zvoľte typ súboru podľa názvu alebo prípony"
 
-#: filetypesview.cpp:369
+#: filetypesview.cpp:368
 #, kde-format
 msgid "&Revert"
 msgstr "V&rátiť"
 
-#: filetypesview.cpp:370
+#: filetypesview.cpp:369
 #, kde-format
 msgid "Revert this file type to its initial system-wide definition"
 msgstr "Vráti tento typ súboru späť na štandardnú systémovú definíciu"
 
-#: filetypesview.cpp:372
+#: filetypesview.cpp:371
 #, kde-format
 msgid ""
 "Click here to revert this file type to its initial system-wide definition, "
@@ -297,12 +297,12 @@ msgstr ""
 "čím znížite pravdepodobnosť, že budú použité (ale typ súboru získaný z jeho "
 "obsahu bude stále v systéme použitý)."
 
-#: filetypesview.cpp:377
+#: filetypesview.cpp:376
 #, kde-format
 msgid "Delete this file type definition completely"
 msgstr "Úplne odstrániť túto definíciu typu súboru"
 
-#: filetypesview.cpp:379
+#: filetypesview.cpp:378
 #, kde-format
 msgid ""
 "Click here to delete this file type definition completely. This is only "
@@ -317,54 +317,54 @@ msgstr ""
 "znížite pravdepodobnosť, že budú použité (ale typ súboru získaný z jeho "
 "obsahu bude stále v systéme použitý)."
 
-#: keditfiletype.cpp:120
+#: keditfiletype.cpp:119
 #, kde-format
 msgid "File Type Editor"
 msgstr "Editor typov súborov"
 
-#: keditfiletype.cpp:122
+#: keditfiletype.cpp:121
 #, kde-format
 msgid ""
 "KDE file type editor - simplified version for editing a single file type"
 msgstr ""
 "KDE editor typov súborov - zjednodušená verzia pre úpravu jedného typu súboru"
 
-#: keditfiletype.cpp:124
+#: keditfiletype.cpp:123
 #, kde-format
 msgid "(c) 2000, KDE developers"
 msgstr "(c) 2000, vývojári KDE"
 
-#: keditfiletype.cpp:125
+#: keditfiletype.cpp:124
 #, kde-format
 msgid "Preston Brown"
 msgstr "Preston Brown"
 
-#: keditfiletype.cpp:126
+#: keditfiletype.cpp:125
 #, kde-format
 msgid "David Faure"
 msgstr "David Faure"
 
-#: keditfiletype.cpp:132
+#: keditfiletype.cpp:131
 #, kde-format
 msgid "Makes the dialog transient for the window specified by winid"
 msgstr "Urobí dialóg podriadený oknu so zadaným winid"
 
-#: keditfiletype.cpp:134
+#: keditfiletype.cpp:133
 #, kde-format
 msgid "File type to edit (e.g. text/html)"
 msgstr "Typ súboru na editovanie (napr. text/html)"
 
-#: keditfiletype.cpp:165
+#: keditfiletype.cpp:164
 #, kde-format
 msgid "%1 File"
 msgstr "Súbor %1"
 
-#: keditfiletype.cpp:192
+#: keditfiletype.cpp:191
 #, kde-format
 msgid "Edit File Type %1"
 msgstr "Upraviť typ súboru %1"
 
-#: keditfiletype.cpp:194
+#: keditfiletype.cpp:193
 #, kde-format
 msgid "Create New File Type %1"
 msgstr "Vytvoriť nový typ súboru %1"
@@ -499,12 +499,12 @@ msgctxt "No components associated with this file type"
 msgid "None"
 msgstr "Žiadna"
 
-#: kserviceselectdlg.cpp:42
+#: kserviceselectdlg.cpp:26
 #, kde-format
 msgid "Add Service"
 msgstr "Pridať službu"
 
-#: kserviceselectdlg.cpp:46
+#: kserviceselectdlg.cpp:30
 #, kde-format
 msgid "Select service:"
 msgstr "Vyberte službu:"

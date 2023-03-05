@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kde-cli-tools\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-01-15 00:57+0000\n"
+"POT-Creation-Date: 2023-03-05 03:09+0000\n"
 "PO-Revision-Date: 2022-07-03 14:28+0400\n"
 "Last-Translator: Kheyyam <xxmn77@gmail.com>\n"
 "Language-Team: Azerbaijani <kde-i18n-doc@kde.org>\n"
@@ -84,7 +84,7 @@ msgstr ""
 "növünə bağlıdır. '.txt' sonluğu ilə bitən bütün fayllar düz mətn sənədləri "
 "kimi tanınır."
 
-#: filetypedetails.cpp:87 filetypesview.cpp:103 kservicelistwidget.cpp:110
+#: filetypedetails.cpp:87 filetypesview.cpp:102 kservicelistwidget.cpp:110
 #, kde-format
 msgid "Add..."
 msgstr "Əlavə edin..."
@@ -178,7 +178,7 @@ msgstr "Fayl növü %1"
 msgid "Use settings for '%1' group"
 msgstr "'%1' qrup üçün ayarları istifadə edin"
 
-#: filetypesview.cpp:44
+#: filetypesview.cpp:43
 #, kde-format
 msgid ""
 "<p><h1>File Associations</h1> This module allows you to choose which "
@@ -217,12 +217,12 @@ msgstr ""
 "nümunələrinin olmadığını aşkarlamaq sizi təəcübləndirə bilər; Bu halda KDE "
 "faylın tərkibini araşdıraraq növünü müəyyən etməyə qadirdir.</p>"
 
-#: filetypesview.cpp:74
+#: filetypesview.cpp:73
 #, kde-format
 msgid "Search for file type or filename pattern..."
 msgstr "Fayl növü və fayl adı nümunəsi üçün axtarış..."
 
-#: filetypesview.cpp:80
+#: filetypesview.cpp:79
 #, kde-format
 msgid ""
 "Enter a part of a filename pattern, and only file types with a matching file "
@@ -233,12 +233,12 @@ msgstr ""
 "nümunəsinə sahib fayl növləri görünür. Alternativ olaraq fayl növü adının "
 "bir hissəsini siyahıda göründüyü kimi daxil edin."
 
-#: filetypesview.cpp:88
+#: filetypesview.cpp:87
 #, kde-format
 msgid "Known Types"
 msgstr "Naməlum növlər"
 
-#: filetypesview.cpp:94
+#: filetypesview.cpp:93
 #, kde-format
 msgid ""
 "Here you can see a hierarchical list of the file types which are known on "
@@ -251,33 +251,33 @@ msgstr ""
 "yığır. Sağdakı idarəetməni istifadə edərək baxmaq/düzəliş etmək üçün fayl "
 "növünü (məs.,HTML faylları üçün, text/html) seçin."
 
-#: filetypesview.cpp:108
+#: filetypesview.cpp:107
 #, kde-format
 msgid "Click here to add a new file type."
 msgstr "Yeni fayl tipi əlavə etmək üçün buraya vurun."
 
-#: filetypesview.cpp:110 filetypesview.cpp:376
+#: filetypesview.cpp:109 filetypesview.cpp:375
 #, kde-format
 msgid "&Remove"
 msgstr "&silin"
 
-#: filetypesview.cpp:134
+#: filetypesview.cpp:133
 #, kde-format
 msgid "Select a file type by name or by extension"
 msgstr "Adına və genişlənməsinə görə fayl növlərini seçin"
 
-#: filetypesview.cpp:369
+#: filetypesview.cpp:368
 #, kde-format
 msgid "&Revert"
 msgstr "Əvvəlki halına qayta&rmaq"
 
-#: filetypesview.cpp:370
+#: filetypesview.cpp:369
 #, kde-format
 msgid "Revert this file type to its initial system-wide definition"
 msgstr ""
 "Bu fayl növünü sistem tərəfindən təyin edilən ilkin vəziyyətinə qaytarın"
 
-#: filetypesview.cpp:372
+#: filetypesview.cpp:371
 #, kde-format
 msgid ""
 "Click here to revert this file type to its initial system-wide definition, "
@@ -292,12 +292,12 @@ msgstr ""
 "nümunələr siyahısını boşalda bilərsiniz (lakin fayl tərkibindəki fayl "
 "növləri yenə istifadə oluna bilər)."
 
-#: filetypesview.cpp:377
+#: filetypesview.cpp:376
 #, kde-format
 msgid "Delete this file type definition completely"
 msgstr "Bu fayl növü açıqlamalarını tamamilə silin"
 
-#: filetypesview.cpp:379
+#: filetypesview.cpp:378
 #, kde-format
 msgid ""
 "Click here to delete this file type definition completely. This is only "
@@ -312,12 +312,12 @@ msgstr ""
 "nümunələr siyahısını boşalda bilərsiniz (lakin fayl tərkibindəki fayl "
 "növləri yenə istifadə oluna bilər)."
 
-#: keditfiletype.cpp:120
+#: keditfiletype.cpp:119
 #, kde-format
 msgid "File Type Editor"
 msgstr "Fayl növü redaktoru"
 
-#: keditfiletype.cpp:122
+#: keditfiletype.cpp:121
 #, kde-format
 msgid ""
 "KDE file type editor - simplified version for editing a single file type"
@@ -325,43 +325,43 @@ msgstr ""
 "KDE fayl növü redaktoru - tək fayl növlərinə düzəliş etmək üçün "
 "sadələşdirilmiş versiyadır"
 
-#: keditfiletype.cpp:124
+#: keditfiletype.cpp:123
 #, kde-format
 msgid "(c) 2000, KDE developers"
 msgstr "(c) 2000, KDE tərtibatçıları"
 
-#: keditfiletype.cpp:125
+#: keditfiletype.cpp:124
 #, kde-format
 msgid "Preston Brown"
 msgstr "Preston Brown"
 
-#: keditfiletype.cpp:126
+#: keditfiletype.cpp:125
 #, kde-format
 msgid "David Faure"
 msgstr "David Faure"
 
-#: keditfiletype.cpp:132
+#: keditfiletype.cpp:131
 #, kde-format
 msgid "Makes the dialog transient for the window specified by winid"
 msgstr ""
 "Dialoq pəncərəsini winid tərəfindən göstərilən pəncərə ilə əlaqələndirir"
 
-#: keditfiletype.cpp:134
+#: keditfiletype.cpp:133
 #, kde-format
 msgid "File type to edit (e.g. text/html)"
 msgstr "Düzəliş üçün fayl növü (məs., text/html)"
 
-#: keditfiletype.cpp:165
+#: keditfiletype.cpp:164
 #, kde-format
 msgid "%1 File"
 msgstr "%1 Fayl"
 
-#: keditfiletype.cpp:192
+#: keditfiletype.cpp:191
 #, kde-format
 msgid "Edit File Type %1"
 msgstr "Düzəliş olunan fayl növü %1"
 
-#: keditfiletype.cpp:194
+#: keditfiletype.cpp:193
 #, kde-format
 msgid "Create New File Type %1"
 msgstr "Yeni fayl növü yarat %1"
@@ -501,12 +501,12 @@ msgctxt "No components associated with this file type"
 msgid "None"
 msgstr "Heç biri"
 
-#: kserviceselectdlg.cpp:42
+#: kserviceselectdlg.cpp:26
 #, kde-format
 msgid "Add Service"
 msgstr "Xidmət əlavə edin"
 
-#: kserviceselectdlg.cpp:46
+#: kserviceselectdlg.cpp:30
 #, kde-format
 msgid "Select service:"
 msgstr "Xidməti seçin:"
