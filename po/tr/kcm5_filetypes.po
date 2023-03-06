@@ -16,7 +16,7 @@ msgstr ""
 "Project-Id-Version: filetypes\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2023-03-05 03:09+0000\n"
-"PO-Revision-Date: 2023-01-18 22:31+0300\n"
+"PO-Revision-Date: 2023-03-05 14:13+0300\n"
 "Last-Translator: Emir SARI <emir_sari@icloud.com>\n"
 "Language-Team: Turkish <kde-l10n-tr@kde.org>\n"
 "Language: tr\n"
@@ -24,7 +24,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n > 1);\n"
-"X-Generator: Lokalize 22.12.1\n"
+"X-Generator: Lokalize 22.12.3\n"
 
 #, kde-format
 msgctxt "NAME OF TRANSLATORS"
@@ -39,7 +39,7 @@ msgstr "gorkem@kde.org.tr"
 #: filegroupdetails.cpp:22
 #, kde-format
 msgid "Left Click Action (only for Konqueror file manager)"
-msgstr "Sol Tıklama Eylemi (yalnızca Konqueror dosya yöneticisi için)"
+msgstr "Sol Tık Eylemi (yalnızca Konqueror dosya yöneticisi için)"
 
 #: filegroupdetails.cpp:26 filetypedetails.cpp:133
 #, kde-format
@@ -90,8 +90,8 @@ msgid ""
 "text files."
 msgstr ""
 "Bu kutuda, seçili türdeki dosyaları tanımlamak için kullanılabilecek "
-"dizgilerin listesi yer almaktadır. Ör. metin/düz dosya türü için *.txt "
-"kalıbını kullanırsanız .txt ile biten tüm dosyalar düz metin dosyası olarak "
+"dizgilerin listesi yer almaktadır. Ör. text/plain için *.txt kalıbını "
+"kullanırsanız .txt ile biten tüm dosyalar düz metin dosyası olarak "
 "tanınacaktır."
 
 #: filetypedetails.cpp:87 filetypesview.cpp:102 kservicelistwidget.cpp:110
@@ -102,7 +102,7 @@ msgstr "Ekle..."
 #: filetypedetails.cpp:92
 #, kde-format
 msgid "Add a new pattern for the selected file type."
-msgstr "Seçili dosya türü için yeni bir dizgi ekle."
+msgstr "Seçili dosya türü için yeni bir dizgi ekleyin."
 
 #: filetypedetails.cpp:94 kservicelistwidget.cpp:124
 #, kde-format
@@ -133,7 +133,7 @@ msgstr ""
 #: filetypedetails.cpp:128
 #, kde-format
 msgid "Left Click Action in Konqueror"
-msgstr "Konqueror'da Sol Tıklama Eylemi"
+msgstr "Konqueror'da Sol Tık Eylemi"
 
 #: filetypedetails.cpp:137
 #, kde-format
@@ -186,7 +186,7 @@ msgstr "Dosya türü %1"
 #: filetypedetails.cpp:333
 #, kde-format
 msgid "Use settings for '%1' group"
-msgstr "Ayarları '%1' grubu için kullan"
+msgstr "'%1' grubu için ayarları kullan"
 
 #: filetypesview.cpp:43
 #, kde-format
@@ -229,7 +229,7 @@ msgstr ""
 #: filetypesview.cpp:73
 #, kde-format
 msgid "Search for file type or filename pattern..."
-msgstr "Dosya türü veya dosya adı dizgisini arayın..."
+msgstr "Dosya türü veya dosya adı dizgisi ara..."
 
 #: filetypesview.cpp:79
 #, kde-format
@@ -362,7 +362,7 @@ msgstr "Düzenlenecek dosya türü (örn. text/html)"
 #: keditfiletype.cpp:164
 #, kde-format
 msgid "%1 File"
-msgstr "%1 Dosya"
+msgstr "%1 Dosyası"
 
 #: keditfiletype.cpp:191
 #, kde-format
@@ -387,7 +387,7 @@ msgstr "Uygulama Tercih Sırası"
 #: kservicelistwidget.cpp:57
 #, kde-format
 msgid "Services Preference Order"
-msgstr "Servis Tercih Sırası"
+msgstr "Hizmetler Tercih Sırası"
 
 #: kservicelistwidget.cpp:68
 #, kde-format
@@ -443,8 +443,8 @@ msgid ""
 "Assigns a higher priority to the selected\n"
 "service, moving it up in the list."
 msgstr ""
-"Seçilen servisi listede yukarıya hareket\n"
-"ettirerek, daha yüksek bir öncelik ata."
+"Seçili hizmeti listede yukarı taşıyarak\n"
+"daha yüksek bir öncelik atar."
 
 #: kservicelistwidget.cpp:98
 #, kde-format
@@ -470,8 +470,8 @@ msgid ""
 "Assigns a lower priority to the selected\n"
 "service, moving it down in the list."
 msgstr ""
-"Seçilen servisi listede aşağıya hareket\n"
-"ettirerek daha düşük bir öncelik atayabilirsiniz."
+"Seçili hizmeti listede aşağı taşıyarak\n"
+"daha düşük bir öncelik atar."
 
 #: kservicelistwidget.cpp:115
 #, kde-format
@@ -508,17 +508,17 @@ msgstr "Hiçbiri"
 #: kserviceselectdlg.cpp:26
 #, kde-format
 msgid "Add Service"
-msgstr "Servis Ekle"
+msgstr "Hizmet Ekle"
 
 #: kserviceselectdlg.cpp:30
 #, kde-format
 msgid "Select service:"
-msgstr "Servisi seç:"
+msgstr "Hizmet seç:"
 
 #: newtypedlg.cpp:25
 #, kde-format
 msgid "Create New File Type"
-msgstr "Yeni bir Dosya Türü Ekle"
+msgstr "Yeni Dosya Türü Oluştur"
 
 #: newtypedlg.cpp:30
 #, kde-format
@@ -542,9 +542,9 @@ msgid ""
 "category and you type 'custom' here, the file type 'image/custom' will be "
 "created."
 msgstr ""
-"Bir dosya türünin adını yazın. Örneğin, eğer kategori olarak 'resim' ögesini "
-"seçip 'özel' seçeneğini belirtirseniz dosya türü 'resim/özel' dosya türü "
-"oluşturulacaktır."
+"Bir dosya türü adını yazın. Örneğin, eğer kategori olarak 'image' ögesini "
+"seçip 'custom' seçeneğini belirtirseniz dosya türü 'image/custom' dosya türü "
+"olarak oluşturulacaktır."
 
 #~ msgid "KEditFileType"
 #~ msgstr "KEditDosyaTürü"
