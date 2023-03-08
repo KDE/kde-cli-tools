@@ -8,13 +8,13 @@
 # Ozan Çağlayan <ozan@pardus.org.tr>, 2010, 2013.
 # Ongun Kanat <ongun.kanat@gmail.com>, 2014.
 # Volkan Gezer <volkangezer@gmail.com>, 2017.
-# Emir SARI <emir_sari@icloud.com>, 2022.
+# Emir SARI <emir_sari@icloud.com>, 2022, 2023.
 msgid ""
 msgstr ""
 "Project-Id-Version: kioclient\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2022-08-22 00:47+0000\n"
-"PO-Revision-Date: 2022-04-06 14:13+0300\n"
+"PO-Revision-Date: 2023-03-07 19:14+0300\n"
 "Last-Translator: Emir SARI <emir_sari@icloud.com>\n"
 "Language-Team: Turkish <kde-l10n-tr@kde.org>\n"
 "Language: tr\n"
@@ -22,7 +22,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n > 1);\n"
-"X-Generator: Lokalize 21.12.3\n"
+"X-Generator: Lokalize 22.12.3\n"
 
 #, kde-format
 msgctxt "NAME OF TRANSLATORS"
@@ -51,7 +51,7 @@ msgid ""
 "            # Opens a properties dialog of 'url'\n"
 "\n"
 msgstr ""
-"  %1 'url'\n"
+"  %1 'URL'\n"
 "            # 'url'nin bir özellikler penceresini açar'\n"
 "\n"
 
@@ -67,7 +67,7 @@ msgid ""
 "            # 'url' can be the URL of a document, a *.desktop file,\n"
 "            # or an executable.\n"
 msgstr ""
-"  %1 'url' ['mimetürü']\n"
+"  %1 'URL' ['mimetürü']\n"
 "            # 'url' tarafından gösterilen belgeyi KDE'de "
 "ilişkilendirilen             #   uygulamada açmayı dener. 'mimetürü'nü yok\n"
 "            #   sayabilirsiniz. Bu durumda, mime türü kendiliğinden\n"
@@ -103,8 +103,8 @@ msgid ""
 "\n"
 msgstr ""
 "  %1 ['kaynak']\n"
-"            # 'kaynak' adresini kullanıcının belirlediği\n"
-"            #   konuma kopyalanır. 'kaynak' bir adresler\n"
+"            # 'kaynak' URL'sini kullanıcının belirlediği\n"
+"            #   konuma kopyalanır. 'kaynak' bir URL'ler\n"
 "            #   listesi olabilir. Eğer yoksa bir URL istenir.\n"
 "\n"
 
@@ -132,7 +132,7 @@ msgid ""
 "            # Prints the contents of the file 'url' to the standard output\n"
 "\n"
 msgstr ""
-"  %1 'url'\n"
+"  %1 'URL'\n"
 "            # 'url'de bulunan dizin içeriğini standart çıktıya yazdırır\n"
 "\n"
 
@@ -144,7 +144,7 @@ msgid ""
 "            # Lists the contents of the directory 'url' to stdout\n"
 "\n"
 msgstr ""
-"  %1 'url'\n"
+"  %1 'URL'\n"
 "            # 'url'de bulunan dizin içeriğini standart çıktıya listeler\n"
 "\n"
 
@@ -158,9 +158,9 @@ msgid ""
 "            #   The short version 'kioclient rm' is also available.\n"
 "\n"
 msgstr ""
-"  %1 'url'\n"
+"  %1 'URL'\n"
 "            # URL'yi kaldırır\n"
-"            #   'url' bir adresler listesi olabilir.\n"
+"            #   'URL' bir URL'ler listesi olabilir.\n"
 "            #   Kısa sürüm 'kioclient rm' ayrıca vardır.\n"
 
 #: kioclient.cpp:131
@@ -171,7 +171,7 @@ msgid ""
 "            # Shows all of the available information for 'url'\n"
 "\n"
 msgstr ""
-"  %1 'url'\n"
+"  %1 'URL'\n"
 "            # 'url' için tüm kullanılabilir bilgiyi gösterir\n"
 "\n"
 
@@ -272,27 +272,27 @@ msgstr "Hedef mevcutsa üzerine yaz (kopyala ve taşı işlemi için)"
 #: kioclient.cpp:196
 #, kde-format
 msgid "file or URL"
-msgstr "dosya veya adres"
+msgstr "dosya veya URL"
 
 #: kioclient.cpp:196 kioclient.cpp:198 kioclient.cpp:201 kioclient.cpp:206
 #, kde-format
 msgid "urls..."
-msgstr "urller..."
+msgstr "URL'ler..."
 
 #: kioclient.cpp:198 kioclient.cpp:201
 #, kde-format
 msgid "Source URL or URLs"
-msgstr "Kaynak Adres ya da Adresler"
+msgstr "Kaynak URL veya URL'ler"
 
 #: kioclient.cpp:199 kioclient.cpp:202
 #, kde-format
 msgid "Destination URL"
-msgstr "Hedef Adres"
+msgstr "Hedef URL"
 
 #: kioclient.cpp:199 kioclient.cpp:202
 #, kde-format
 msgid "url"
-msgstr "url"
+msgstr "URL"
 
 #: kioclient.cpp:204
 #, kde-format
