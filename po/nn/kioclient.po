@@ -7,7 +7,7 @@ msgstr ""
 "Project-Id-Version: kioclient\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2022-08-22 00:47+0000\n"
-"PO-Revision-Date: 2023-03-07 21:50+0100\n"
+"PO-Revision-Date: 2023-03-09 20:00+0100\n"
 "Last-Translator: Karl Ove Hufthammer <karl@huftis.org>\n"
 "Language-Team: Norwegian Nynorsk <l10n-no@lister.huftis.org>\n"
 "Language: nn\n"
@@ -47,6 +47,9 @@ msgid ""
 "            # Opens a properties dialog of 'url'\n"
 "\n"
 msgstr ""
+"  %1 'adresse'\n"
+"            # Opnar eigenskapsvindauge for 'adresse'\n"
+"\n"
 
 #: kioclient.cpp:69
 #, kde-format
