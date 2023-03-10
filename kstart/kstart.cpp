@@ -11,7 +11,6 @@
 #include <config-kde-cli-tools.h>
 
 #include "kstart.h"
-#include <ktoolinvocation.h>
 
 #include <iostream>
 #include <stdlib.h>
@@ -31,7 +30,6 @@
 
 // some globals
 
-static QString servicePath; // TODO KF6 remove
 static QString serviceName;
 static QString exe;
 static QStringList exeArgs;
@@ -40,16 +38,7 @@ static QString url;
 KStart::KStart()
     : QObject()
 {
-    if (!servicePath.isEmpty()) { // TODO KF6 remove
-        QString error;
-        QString dbusService;
-        int pid;
-        if (KToolInvocation::startServiceByDesktopPath(exe, url, &error, &dbusService, &pid) == 0) {
-            printf("%s\n", qPrintable(dbusService));
-        } else {
-            qCritical() << error;
-        }
-    } else if (!serviceName.isEmpty()) {
+    if (!serviceName.isEmpty()) {
         KService::Ptr service = KService::serviceByDesktopName(serviceName);
         if (!service) {
             qCritical() << "No such service" << exe;
@@ -89,11 +78,6 @@ int main(int argc, char *argv[])
     QCommandLineParser parser;
     aboutData.setupCommandLine(&parser);
     parser.addOption(QCommandLineOption(QStringList() << QLatin1String("!+command"), i18n("Command to execute")));
-    // TODO KF6 remove
-    parser.addOption(
-        QCommandLineOption(QStringList() << QLatin1String("service"),
-                           i18n("Alternative to <command>: desktop file path to start. D-Bus service will be printed to stdout. Deprecated: use --application"),
-                           QLatin1String("desktopfile")));
     parser.addOption(QCommandLineOption(QStringList() << QLatin1String("application"),
                                         i18n("Alternative to <command>: desktop file to start."),
                                         QLatin1String("desktopfile")));
@@ -103,10 +87,7 @@ int main(int argc, char *argv[])
     parser.process(app);
     aboutData.processCommandLine(&parser);
 
-    if (parser.isSet(QStringLiteral("service"))) {
-        servicePath = parser.value(QStringLiteral("service"));
-        url = parser.value(QStringLiteral("url"));
-    } else if (parser.isSet(QStringLiteral("application"))) {
+    if (parser.isSet(QStringLiteral("application"))) {
         serviceName = parser.value(QStringLiteral("application"));
         url = parser.value(QStringLiteral("url"));
     } else {
