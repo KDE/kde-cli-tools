@@ -14,7 +14,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kstart\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-02-03 01:00+0000\n"
+"POT-Creation-Date: 2023-03-11 02:40+0000\n"
 "PO-Revision-Date: 2023-02-19 13:36+0300\n"
 "Last-Translator: Alexander Yavorsky <kekcuha@gmail.com>\n"
 "Language-Team: Russian <kde-russian@lists.kde.ru>\n"
@@ -40,66 +40,64 @@ msgctxt "EMAIL OF TRANSLATORS"
 msgid "Your emails"
 msgstr "dyp@perchine.com,Hermann.Zheboldov@shq.ru,mokhin@bog.msu.ru"
 
-#: kstart.cpp:78
+#: kstart.cpp:67
 #, kde-format
 msgid "KStart"
 msgstr "KStart"
 
-#: kstart.cpp:80
+#: kstart.cpp:69
 #, kde-format
 msgid "Utility to launch applications"
 msgstr "Инструмент для запуска приложений"
 
-#: kstart.cpp:82
+#: kstart.cpp:71
 #, kde-format
 msgid "(C) 1997-2000 Matthias Ettrich (ettrich@kde.org)"
 msgstr "© Matthias Ettrich (ettrich@kde.org), 1997-2000"
 
-#: kstart.cpp:84
+#: kstart.cpp:73
 #, kde-format
 msgid "Matthias Ettrich"
 msgstr "Matthias Ettrich"
 
-#: kstart.cpp:85
+#: kstart.cpp:74
 #, kde-format
 msgid "David Faure"
 msgstr "David Faure"
 
-#: kstart.cpp:86
+#: kstart.cpp:75
 #, kde-format
 msgid "Richard J. Moore"
 msgstr "Ричард Дж. Мур (Richard J. Moore)"
 
-#: kstart.cpp:91
+#: kstart.cpp:80
 #, kde-format
 msgid "Command to execute"
 msgstr "Выполнить команду."
 
-#: kstart.cpp:95
-#, kde-format
-msgid ""
-"Alternative to <command>: desktop file path to start. D-Bus service will be "
-"printed to stdout. Deprecated: use --application"
-msgstr ""
-"Альтернатива вызова команды <command> - запуск файла .desktop. Вывод службы "
-"D-Bus будет направлен в стандартный поток вывода. Эта команда является "
-"устаревшей, используйте команду --application"
-
-#: kstart.cpp:98
+#: kstart.cpp:82
 #, kde-format
 msgid "Alternative to <command>: desktop file to start."
 msgstr "Альтернатива вызова команды <command> - запуск файла .desktop."
 
-#: kstart.cpp:101
+#: kstart.cpp:85
 #, kde-format
 msgid "Optional URL to pass <desktopfile>, when using --service"
 msgstr ""
 "Дополнительный URL к <desktopfile> при использовании параметра --service."
 
-#: kstart.cpp:115
+#: kstart.cpp:96
 #, kde-format
 msgid "No command specified"
 msgstr "Команда не определена"
+
+#~ msgid ""
+#~ "Alternative to <command>: desktop file path to start. D-Bus service will "
+#~ "be printed to stdout. Deprecated: use --application"
+#~ msgstr ""
+#~ "Альтернатива вызова команды <command> - запуск файла .desktop. Вывод "
+#~ "службы D-Bus будет направлен в стандартный поток вывода. Эта команда "
+#~ "является устаревшей, используйте команду --application"
 
 #~ msgid ""
 #~ "Utility to launch applications with special window properties \n"

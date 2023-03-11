@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kstart 0\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-02-03 01:00+0000\n"
+"POT-Creation-Date: 2023-03-11 02:40+0000\n"
 "PO-Revision-Date: 2009-08-22 22:25+0200\n"
 "Last-Translator: Zarko Pintar <zarko.pintar@gmail.com>\n"
 "Language-Team: Croatian <kde-croatia-list@lists.sourceforge.net>\n"
@@ -33,54 +33,42 @@ msgstr ""
 "lokalizacija@linux.hr, lokalizacija@linux.hr, lokalizacija@linux.hr, zarko."
 "pintar@gmail.com"
 
-#: kstart.cpp:78
+#: kstart.cpp:67
 #, kde-format
 msgid "KStart"
 msgstr "KStart"
 
-#: kstart.cpp:80
+#: kstart.cpp:69
 #, kde-format
 msgid "Utility to launch applications"
 msgstr ""
 
-#: kstart.cpp:82
+#: kstart.cpp:71
 #, kde-format
 msgid "(C) 1997-2000 Matthias Ettrich (ettrich@kde.org)"
 msgstr "© 1997–2000 Matthias Ettrich (ettrich@kde.org)"
 
-#: kstart.cpp:84
+#: kstart.cpp:73
 #, kde-format
 msgid "Matthias Ettrich"
 msgstr "Matthias Ettrich"
 
-#: kstart.cpp:85
+#: kstart.cpp:74
 #, kde-format
 msgid "David Faure"
 msgstr "David Faure"
 
-#: kstart.cpp:86
+#: kstart.cpp:75
 #, kde-format
 msgid "Richard J. Moore"
 msgstr "Richard J. Moore"
 
-#: kstart.cpp:91
+#: kstart.cpp:80
 #, kde-format
 msgid "Command to execute"
 msgstr "Naredbu za izvršiti."
 
-#: kstart.cpp:95
-#, fuzzy, kde-format
-#| msgid ""
-#| "Alternative to <command>: desktop file to start. D-Bus service will be "
-#| "printed to stdout"
-msgid ""
-"Alternative to <command>: desktop file path to start. D-Bus service will be "
-"printed to stdout. Deprecated: use --application"
-msgstr ""
-"Zamjena za <command>: datoteka radne površine za pokrenuti. D-Bus servis će "
-"biti ispisan na stdout"
-
-#: kstart.cpp:98
+#: kstart.cpp:82
 #, fuzzy, kde-format
 #| msgid ""
 #| "Alternative to <command>: desktop file to start. D-Bus service will be "
@@ -90,15 +78,26 @@ msgstr ""
 "Zamjena za <command>: datoteka radne površine za pokrenuti. D-Bus servis će "
 "biti ispisan na stdout"
 
-#: kstart.cpp:101
+#: kstart.cpp:85
 #, kde-format
 msgid "Optional URL to pass <desktopfile>, when using --service"
 msgstr "Izborni URL za propustiti <desktopfile>, kada se koristi --service"
 
-#: kstart.cpp:115
+#: kstart.cpp:96
 #, kde-format
 msgid "No command specified"
 msgstr "Bez određene naredbe"
+
+#, fuzzy
+#~| msgid ""
+#~| "Alternative to <command>: desktop file to start. D-Bus service will be "
+#~| "printed to stdout"
+#~ msgid ""
+#~ "Alternative to <command>: desktop file path to start. D-Bus service will "
+#~ "be printed to stdout. Deprecated: use --application"
+#~ msgstr ""
+#~ "Zamjena za <command>: datoteka radne površine za pokrenuti. D-Bus servis "
+#~ "će biti ispisan na stdout"
 
 #~ msgid ""
 #~ "Utility to launch applications with special window properties \n"

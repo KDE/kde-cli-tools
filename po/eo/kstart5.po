@@ -12,7 +12,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kstart\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-02-03 01:00+0000\n"
+"POT-Creation-Date: 2023-03-11 02:40+0000\n"
 "PO-Revision-Date: 2023-01-07 01:00+0100\n"
 "Last-Translator: Oliver Kellogg <okellogg@users.sourceforge.net>\n"
 "Language-Team: Esperanto <kde-i18n-doc@kde.org>\n"
@@ -34,64 +34,62 @@ msgid "Your emails"
 msgstr ""
 "wolfram@steloj.de, steffen.pietsch@berlinonline.de, michael.moroni@mailoo.org"
 
-#: kstart.cpp:78
+#: kstart.cpp:67
 #, kde-format
 msgid "KStart"
 msgstr "KStart"
 
-#: kstart.cpp:80
+#: kstart.cpp:69
 #, kde-format
 msgid "Utility to launch applications"
 msgstr ""
 
-#: kstart.cpp:82
+#: kstart.cpp:71
 #, kde-format
 msgid "(C) 1997-2000 Matthias Ettrich (ettrich@kde.org)"
 msgstr "(C) 1997-2000 Matthias ETTRICH (ettrich@kde.org)"
 
-#: kstart.cpp:84
+#: kstart.cpp:73
 #, kde-format
 msgid "Matthias Ettrich"
 msgstr "Matthias ETTRICH"
 
-#: kstart.cpp:85
+#: kstart.cpp:74
 #, kde-format
 msgid "David Faure"
 msgstr "David FAURE"
 
-#: kstart.cpp:86
+#: kstart.cpp:75
 #, kde-format
 msgid "Richard J. Moore"
 msgstr "Richard J. MOORE"
 
-#: kstart.cpp:91
+#: kstart.cpp:80
 #, kde-format
 msgid "Command to execute"
 msgstr "Rulenda komando"
 
-#: kstart.cpp:95
-#, kde-format
-msgid ""
-"Alternative to <command>: desktop file path to start. D-Bus service will be "
-"printed to stdout. Deprecated: use --application"
-msgstr ""
-"Alternativo al <command>: startigenda labortabla dosierpado. Servo D-Bus "
-"estos eligota al stdout. Evitinda: uzu --application"
-
-#: kstart.cpp:98
+#: kstart.cpp:82
 #, kde-format
 msgid "Alternative to <command>: desktop file to start."
 msgstr "Alternativo al <command>: startigenda labortabla dosiero."
 
-#: kstart.cpp:101
+#: kstart.cpp:85
 #, kde-format
 msgid "Optional URL to pass <desktopfile>, when using --service"
 msgstr "Opcia URL por transdoni <desktopfile>, kiam uzanta --service"
 
-#: kstart.cpp:115
+#: kstart.cpp:96
 #, kde-format
 msgid "No command specified"
 msgstr "Neniu specifita komando"
+
+#~ msgid ""
+#~ "Alternative to <command>: desktop file path to start. D-Bus service will "
+#~ "be printed to stdout. Deprecated: use --application"
+#~ msgstr ""
+#~ "Alternativo al <command>: startigenda labortabla dosierpado. Servo D-Bus "
+#~ "estos eligota al stdout. Evitinda: uzu --application"
 
 #~ msgid ""
 #~ "Utility to launch applications with special window properties \n"

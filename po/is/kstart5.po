@@ -11,7 +11,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kstart\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-02-03 01:00+0000\n"
+"POT-Creation-Date: 2023-03-11 02:40+0000\n"
 "PO-Revision-Date: 2009-05-20 11:21+0000\n"
 "Last-Translator: Sveinn í Felli <sveinki@nett.is>\n"
 "Language-Team: Icelandic <kde-isl@molar.is>\n"
@@ -34,54 +34,42 @@ msgctxt "EMAIL OF TRANSLATORS"
 msgid "Your emails"
 msgstr "ra@ra.is"
 
-#: kstart.cpp:78
+#: kstart.cpp:67
 #, kde-format
 msgid "KStart"
 msgstr "KStart"
 
-#: kstart.cpp:80
+#: kstart.cpp:69
 #, kde-format
 msgid "Utility to launch applications"
 msgstr ""
 
-#: kstart.cpp:82
+#: kstart.cpp:71
 #, kde-format
 msgid "(C) 1997-2000 Matthias Ettrich (ettrich@kde.org)"
 msgstr "(C) 1997-2000 Matthias Ettrich (ettrich@kde.org)"
 
-#: kstart.cpp:84
+#: kstart.cpp:73
 #, kde-format
 msgid "Matthias Ettrich"
 msgstr "Matthias Ettrich"
 
-#: kstart.cpp:85
+#: kstart.cpp:74
 #, kde-format
 msgid "David Faure"
 msgstr "David Faure"
 
-#: kstart.cpp:86
+#: kstart.cpp:75
 #, kde-format
 msgid "Richard J. Moore"
 msgstr "Richard J. Moore"
 
-#: kstart.cpp:91
+#: kstart.cpp:80
 #, kde-format
 msgid "Command to execute"
 msgstr "Skipun að framkvæma"
 
-#: kstart.cpp:95
-#, fuzzy, kde-format
-#| msgid ""
-#| "Alternative to <command>: desktop file to start. D-Bus service will be "
-#| "printed to stdout"
-msgid ""
-"Alternative to <command>: desktop file path to start. D-Bus service will be "
-"printed to stdout. Deprecated: use --application"
-msgstr ""
-"Valmöguleiki á móti <command>: desktop skrá sem sæst er. D-Bus þjónustan "
-"verður send á stdout"
-
-#: kstart.cpp:98
+#: kstart.cpp:82
 #, fuzzy, kde-format
 #| msgid ""
 #| "Alternative to <command>: desktop file to start. D-Bus service will be "
@@ -91,15 +79,26 @@ msgstr ""
 "Valmöguleiki á móti <command>: desktop skrá sem sæst er. D-Bus þjónustan "
 "verður send á stdout"
 
-#: kstart.cpp:101
+#: kstart.cpp:85
 #, kde-format
 msgid "Optional URL to pass <desktopfile>, when using --service"
 msgstr "Möguleg slóð til að gefa <desktopfile>, þegar notað er --service"
 
-#: kstart.cpp:115
+#: kstart.cpp:96
 #, kde-format
 msgid "No command specified"
 msgstr "Engin skipun gefin"
+
+#, fuzzy
+#~| msgid ""
+#~| "Alternative to <command>: desktop file to start. D-Bus service will be "
+#~| "printed to stdout"
+#~ msgid ""
+#~ "Alternative to <command>: desktop file path to start. D-Bus service will "
+#~ "be printed to stdout. Deprecated: use --application"
+#~ msgstr ""
+#~ "Valmöguleiki á móti <command>: desktop skrá sem sæst er. D-Bus þjónustan "
+#~ "verður send á stdout"
 
 #~ msgid ""
 #~ "Utility to launch applications with special window properties \n"
