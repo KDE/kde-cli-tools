@@ -1,20 +1,20 @@
 # translation of kcmshell.po to Slovak
 # Stanislav Visnovsky <visnovsky@kde.org>, 2005.
 # Michal Sulek <misurel@gmail.com>, 2009, 2011.
-# Roman Paholík <wizzardsk@gmail.com>, 2014, 2015, 2016.
+# Roman Paholík <wizzardsk@gmail.com>, 2014, 2015, 2016, 2023.
 msgid ""
 msgstr ""
 "Project-Id-Version: kcmshell\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2023-01-28 00:59+0000\n"
-"PO-Revision-Date: 2016-03-15 19:43+0100\n"
+"PO-Revision-Date: 2023-03-11 15:13+0100\n"
 "Last-Translator: Roman Paholik <wizzardsk@gmail.com>\n"
 "Language-Team: Slovak <kde-sk@linux.sk>\n"
 "Language: sk\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Generator: Lokalize 2.0\n"
+"X-Generator: Lokalize 22.12.3\n"
 "Plural-Forms: nplurals=3; plural=(n==1) ? 0 : (n>=2 && n<=4) ? 1 : 2;\n"
 
 #, kde-format
@@ -115,7 +115,7 @@ msgstr "Použiť špecifický popis pre okno"
 #: main.cpp:209
 #, kde-format
 msgid "Show an indicator when settings have changed from their default value"
-msgstr ""
+msgstr "Zobraziť indikátor, ak sa nastavenia zmenili z predvolenej hodnoty"
 
 #: main.cpp:218
 #, kde-format

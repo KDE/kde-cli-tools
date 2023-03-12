@@ -81,12 +81,3 @@ msgstr "Valfri adresse for å oppgje <desktopfile> når --service vert brukt"
 #, kde-format
 msgid "No command specified"
 msgstr "Ingen kommando oppgjeven"
-
-# skip-rule: mellomrom-før
-#~ msgid ""
-#~ "Alternative to <command>: desktop file path to start. D-Bus service will "
-#~ "be printed to stdout. Deprecated: use --application"
-#~ msgstr ""
-#~ "Alternativ til <command>: Adressa til skrivebordsfila som skal startast. "
-#~ "D-Bus-tenesta vert skriven ut på standard ut. Utdatert. Bruk heller «--"
-#~ "application»."
