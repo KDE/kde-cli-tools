@@ -11,7 +11,7 @@
 #include <QByteArray>
 
 #include <KPasswordDialog>
-#include <kdesu/su.h>
+#include <KDESu/SuProcess>
 
 using namespace KDESu;
 

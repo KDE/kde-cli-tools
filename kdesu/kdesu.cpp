@@ -46,7 +46,7 @@
 
 #include <kdesu/client.h>
 #include <kdesu/defaults.h>
-#include <kdesu/su.h>
+#include <kdesu/suprocess.h>
 
 #include "sudlg.h"
 
