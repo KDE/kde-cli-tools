@@ -70,9 +70,3 @@ msgstr ""
 #, kde-format
 msgid "Output only paths to desktop files"
 msgstr "Mostra només els camins als fitxers «desktop»"
-
-#~ msgid "A mimetype"
-#~ msgstr "Un tipus MIME"
-
-#~ msgid "Output all properties"
-#~ msgstr "Mostra totes les propietats"
