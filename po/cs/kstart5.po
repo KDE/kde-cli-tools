@@ -78,10 +78,3 @@ msgstr "Volitelná URL, která se předá <desktopfile> při použití --service
 #, kde-format
 msgid "No command specified"
 msgstr "Není udán žádný příkaz"
-
-#~ msgid ""
-#~ "Alternative to <command>: desktop file path to start. D-Bus service will "
-#~ "be printed to stdout. Deprecated: use --application"
-#~ msgstr ""
-#~ "Alternativa k <příkaz>: soubor plochy s cestou ke spuštění. Výstup Služby "
-#~ "D-Bus bude na stdout. Zastaralé: použijte --application"

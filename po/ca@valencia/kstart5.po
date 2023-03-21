@@ -84,11 +84,3 @@ msgstr "URL opcional que es passarà <desktopfile>, quan s'utilitza --service"
 #, kde-format
 msgid "No command specified"
 msgstr "No s'ha especificat cap ordre"
-
-#~ msgid ""
-#~ "Alternative to <command>: desktop file path to start. D-Bus service will "
-#~ "be printed to stdout. Deprecated: use --application"
-#~ msgstr ""
-#~ "Alternativa a <ordre>: camí del fitxer «desktop» que s'iniciarà. El "
-#~ "servei de D-Bus s'imprimirà a l'eixida estàndard (stdout). Obsolet: "
-#~ "utilitzeu «--application»"
