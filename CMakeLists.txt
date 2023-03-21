@@ -60,7 +60,6 @@ find_package(KF6 ${KF6_MIN_VERSION} REQUIRED COMPONENTS
     Su
     QUIET
 )
-find_package(LibKWorkspace ${PROJECT_VERSION} REQUIRED)
 
 # Disables automatic conversions from QString (or char *) to QUrl.
 add_definitions(-DQT_NO_URL_CAST_FROM_STRING)

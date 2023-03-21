@@ -24,6 +24,5 @@ Dependencies:
     'frameworks/kwindowsystem': '@latest-kf6'
     'frameworks/solid': '@latest-kf6'
     'frameworks/kparts': '@latest-kf6'
-    'plasma/plasma-workspace': '@same'
 Options:
   require-passing-tests-on: [ 'Linux/Qt5', 'FreeBSD/Qt5']
