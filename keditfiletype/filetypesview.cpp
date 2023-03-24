@@ -34,40 +34,19 @@
 
 K_PLUGIN_CLASS_WITH_JSON(FileTypesView, "kcm_filetypes.json")
 
-FileTypesView::FileTypesView(QWidget *parent, const QVariantList &)
-    : KCModule(parent)
+FileTypesView::FileTypesView(QObject *parent, const KPluginMetaData &data, const QVariantList &args)
+    : KCModule(parent, data, args)
 {
     m_fileTypesConfig = KSharedConfig::openConfig(QStringLiteral("filetypesrc"), KConfig::NoGlobals);
-
-    setQuickHelp(
-        i18n("<p><h1>File Associations</h1>"
-             " This module allows you to choose which applications are associated"
-             " with a given type of file. File types are also referred to as MIME types"
-             " (MIME is an acronym which stands for \"Multipurpose Internet Mail"
-             " Extensions\").</p><p> A file association consists of the following:"
-             " <ul><li>Rules for determining the MIME-type of a file, for example"
-             " the filename pattern *.png, which means 'all files with names that end"
-             " in .png', is associated with the MIME type \"image/png\";</li>"
-             " <li>A short description of the MIME-type, for example the description"
-             " of the MIME type \"image/png\" is simply 'PNG image';</li>"
-             " <li>An icon to be used for displaying files of the given MIME-type,"
-             " so that you can easily identify the type of file in a file"
-             " manager or file-selection dialog (at least for the types you use often);</li>"
-             " <li>A list of the applications which can be used to open files of the"
-             " given MIME-type -- if more than one application can be used then the"
-             " list is ordered by priority.</li></ul>"
-             " You may be surprised to find that some MIME types have no associated"
-             " filename patterns; in these cases, KDE is able to determine the"
-             " MIME-type by directly examining the contents of the file.</p>"));
 
     setButtons(Help | Apply);
     QString wtstr;
 
-    QHBoxLayout *l = new QHBoxLayout(this);
+    QHBoxLayout *l = new QHBoxLayout(widget());
     QVBoxLayout *leftLayout = new QVBoxLayout();
     l->addLayout(leftLayout);
 
-    patternFilterLE = new KLineEdit(this);
+    patternFilterLE = new KLineEdit(widget());
     patternFilterLE->setClearButtonEnabled(true);
     patternFilterLE->setTrapReturnKey(true);
     patternFilterLE->setPlaceholderText(i18n("Search for file type or filename pattern..."));
@@ -82,7 +61,7 @@ FileTypesView::FileTypesView(QWidget *parent, const QVariantList &)
 
     patternFilterLE->setWhatsThis(wtstr);
 
-    typesLV = new TypesListTreeWidget(this);
+    typesLV = new TypesListTreeWidget(widget());
 
     typesLV->setHeaderLabel(i18n("Known Types"));
     leftLayout->addWidget(typesLV);
@@ -99,14 +78,14 @@ FileTypesView::FileTypesView(QWidget *parent, const QVariantList &)
     QHBoxLayout *btnsLay = new QHBoxLayout();
     leftLayout->addLayout(btnsLay);
     btnsLay->addStretch(1);
-    QPushButton *addTypeB = new QPushButton(i18n("Add..."), this);
+    QPushButton *addTypeB = new QPushButton(i18n("Add..."), widget());
     addTypeB->setIcon(QIcon::fromTheme(QStringLiteral("list-add")));
     connect(addTypeB, &QAbstractButton::clicked, this, &FileTypesView::addType);
     btnsLay->addWidget(addTypeB);
 
     addTypeB->setWhatsThis(i18n("Click here to add a new file type."));
 
-    m_removeTypeB = new QPushButton(i18n("&Remove"), this);
+    m_removeTypeB = new QPushButton(i18n("&Remove"), widget());
     m_removeTypeB->setIcon(QIcon::fromTheme(QStringLiteral("list-remove")));
     connect(m_removeTypeB, &QAbstractButton::clicked, this, &FileTypesView::removeType);
     btnsLay->addWidget(m_removeTypeB);
@@ -114,7 +93,7 @@ FileTypesView::FileTypesView(QWidget *parent, const QVariantList &)
     m_removeButtonSaysRevert = false;
 
     // For the right panel, prepare a widget stack
-    m_widgetStack = new QStackedWidget(this);
+    m_widgetStack = new QStackedWidget(widget());
 
     l->addWidget(m_widgetStack);
 
@@ -145,7 +124,7 @@ FileTypesView::~FileTypesView()
 
 void FileTypesView::setDirty(bool state)
 {
-    Q_EMIT changed(state);
+    setNeedsSave(state);
     m_dirty = state;
 }
 
@@ -220,7 +199,7 @@ void FileTypesView::addType()
 {
     const QStringList allGroups = m_majorMap.keys();
 
-    NewTypeDialog dialog(allGroups, this);
+    NewTypeDialog dialog(allGroups, widget());
 
     if (dialog.exec()) {
         const QString newMimeType = dialog.group() + QLatin1Char('/') + dialog.text();
@@ -431,7 +410,7 @@ void FileTypesView::save()
         MimeTypeWriter::runUpdateMimeDatabase();
     }
     if (needUpdateSycoca) {
-        KBuildSycocaProgressDialog::rebuildKSycoca(this);
+        KBuildSycocaProgressDialog::rebuildKSycoca(widget());
     }
 
     if (didIt) { // TODO make more specific: only if autoEmbed changed? Well, maybe this is useful for icon and glob changes too...
@@ -449,14 +428,14 @@ void FileTypesView::save()
 
 void FileTypesView::load()
 {
-    setEnabled(false);
-    setCursor(Qt::WaitCursor);
+    widget()->setEnabled(false);
+    widget()->setCursor(Qt::WaitCursor);
 
     readFileTypes();
 
-    unsetCursor();
+    widget()->unsetCursor();
     setDirty(false);
-    setEnabled(true);
+    widget()->setEnabled(true);
 }
 
 void FileTypesView::slotDatabaseChanged()

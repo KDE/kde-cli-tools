@@ -29,7 +29,7 @@ class FileTypesView : public KCModule
 {
     Q_OBJECT
 public:
-    FileTypesView(QWidget *parent, const QVariantList &args);
+    FileTypesView(QObject *parent, const KPluginMetaData &data, const QVariantList &args);
     ~FileTypesView() override;
 
     void load() override;

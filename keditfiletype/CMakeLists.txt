@@ -33,6 +33,7 @@ target_link_libraries(kcm_filetypes
     KF6::ConfigWidgets
     KF6::IconThemes
     KF6::I18n
+    KF6::KCMUtils
     KF6::KIOWidgets # KOpenWithDialog, KBuildSycocaProgressDialog
     KF6::Parts
     Qt::DBus
