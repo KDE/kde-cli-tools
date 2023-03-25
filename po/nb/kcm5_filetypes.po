@@ -11,7 +11,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: filetypes\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-03-05 03:09+0000\n"
+"POT-Creation-Date: 2023-03-25 02:10+0000\n"
 "PO-Revision-Date: 2014-11-07 18:02+0100\n"
 "Last-Translator: Bjørn Steensrud <bjornst@skogkatt.homelinux.org>\n"
 "Language-Team: Norwegian Bokmål <l10n-no@lister.huftis.org>\n"
@@ -92,7 +92,7 @@ msgstr ""
 "for filtypen text/plain slik at alle filer som slutter på '.txt' vil bli "
 "gjenkjent som rene tekstfiler."
 
-#: filetypedetails.cpp:87 filetypesview.cpp:102 kservicelistwidget.cpp:110
+#: filetypedetails.cpp:87 filetypesview.cpp:81 kservicelistwidget.cpp:110
 #, kde-format
 msgid "Add..."
 msgstr "Legg til …"
@@ -186,49 +186,12 @@ msgstr "Filtype %1"
 msgid "Use settings for '%1' group"
 msgstr "Bruk innstillingene for gruppa «%1»"
 
-#: filetypesview.cpp:43
-#, kde-format
-msgid ""
-"<p><h1>File Associations</h1> This module allows you to choose which "
-"applications are associated with a given type of file. File types are also "
-"referred to as MIME types (MIME is an acronym which stands for "
-"\"Multipurpose Internet Mail Extensions\").</p><p> A file association "
-"consists of the following: <ul><li>Rules for determining the MIME-type of a "
-"file, for example the filename pattern *.png, which means 'all files with "
-"names that end in .png', is associated with the MIME type \"image/png\";</"
-"li> <li>A short description of the MIME-type, for example the description of "
-"the MIME type \"image/png\" is simply 'PNG image';</li> <li>An icon to be "
-"used for displaying files of the given MIME-type, so that you can easily "
-"identify the type of file in a file manager or file-selection dialog (at "
-"least for the types you use often);</li> <li>A list of the applications "
-"which can be used to open files of the given MIME-type -- if more than one "
-"application can be used then the list is ordered by priority.</li></ul> You "
-"may be surprised to find that some MIME types have no associated filename "
-"patterns; in these cases, KDE is able to determine the MIME-type by directly "
-"examining the contents of the file.</p>"
-msgstr ""
-"<p><h1>Filtilordninger</h1>Med denne modulen kan du velge hvilket program "
-"som er tilordnet en gitt filtype. Filtyper blir også kalt  MIME-typer (MIME "
-"er et akronym som står for «Multipurpose Internet Mail Extensions».)</"
-"p><p>En filtilordning består av følgende:<ul><li>Regler for å bestemme MIME-"
-"typen til en fil. F eks betyr filmønsteret *.kwd 'alle filnavn som slutter "
-"på .kwd' og er tilordnet MIME-typen «x-kword».</li><li>En kort beskrivelse "
-"av MIME-typen. F.eks. beskrivelsen av MIME-typen «x-kword» er bare 'KWord-"
-"dokument'.</li> <li>Et ikon som brukes til å vise den gitte MIME-typen slik "
-"at du lett kan se mime-typen den tilhører, f.eks. Konqueror-visning (i det "
-"minste for typer du bruker ofte).</li><li>En liste over programmer som kan "
-"brukes til å åpne filer med den oppgitte MIME-typen. Hvis mer enn ett "
-"program kan bli brukt, vil denne lista være sortert etter prioritet.</li></"
-"ul>Du kan bli overrasket når du finner MIME-typer uten mønster til filnavn! "
-"I slike tilfeller vil Konqueror kunne bestemme MIME-typen direkte ved å se "
-"på innholdet til fila.</p>"
-
-#: filetypesview.cpp:73
+#: filetypesview.cpp:52
 #, kde-format
 msgid "Search for file type or filename pattern..."
 msgstr ""
 
-#: filetypesview.cpp:79
+#: filetypesview.cpp:58
 #, kde-format
 msgid ""
 "Enter a part of a filename pattern, and only file types with a matching file "
@@ -239,12 +202,12 @@ msgstr ""
 "filmønsteret vil opptre i lista. Det kan også oppgis en del av et "
 "filtypenavn slik det vises i lista."
 
-#: filetypesview.cpp:87
+#: filetypesview.cpp:66
 #, kde-format
 msgid "Known Types"
 msgstr "Kjente typer"
 
-#: filetypesview.cpp:93
+#: filetypesview.cpp:72
 #, kde-format
 msgid ""
 "Here you can see a hierarchical list of the file types which are known on "
@@ -257,33 +220,33 @@ msgstr ""
 "trekke den sammen. Velg en filtype (f.eks. text/html for HTML-filer) for å "
 "redigere den ved hjelp av kontrollene til høyre."
 
-#: filetypesview.cpp:107
+#: filetypesview.cpp:86
 #, kde-format
 msgid "Click here to add a new file type."
 msgstr "Klikk her for å legge til en ny filtype."
 
-#: filetypesview.cpp:109 filetypesview.cpp:375
+#: filetypesview.cpp:88 filetypesview.cpp:354
 #, kde-format
 msgid "&Remove"
 msgstr "&Fjern"
 
-#: filetypesview.cpp:133
+#: filetypesview.cpp:112
 #, kde-format
 msgid "Select a file type by name or by extension"
 msgstr "Velg en filtype etter navn eller etternavn"
 
-#: filetypesview.cpp:368
+#: filetypesview.cpp:347
 #, kde-format
 msgid "&Revert"
 msgstr "&Tilbakestill"
 
-#: filetypesview.cpp:369
+#: filetypesview.cpp:348
 #, kde-format
 msgid "Revert this file type to its initial system-wide definition"
 msgstr ""
 "Tilbakestill denne filtypen til sin opprinelige definisjon for hele systemet"
 
-#: filetypesview.cpp:371
+#: filetypesview.cpp:350
 #, kde-format
 msgid ""
 "Click here to revert this file type to its initial system-wide definition, "
@@ -299,12 +262,12 @@ msgstr ""
 "filtypebestemmelser ut fra innholdet i fila kan fremdeles komme til å bruke "
 "dem)."
 
-#: filetypesview.cpp:376
+#: filetypesview.cpp:355
 #, kde-format
 msgid "Delete this file type definition completely"
 msgstr "Slett denne filtypedefinisjonen fullstendig"
 
-#: filetypesview.cpp:378
+#: filetypesview.cpp:357
 #, kde-format
 msgid ""
 "Click here to delete this file type definition completely. This is only "
@@ -539,3 +502,40 @@ msgid ""
 msgstr ""
 "Oppgi navnet på filtypen. Hvis du dor eksempel valgte «image» som kategori "
 "og du oppgir «custom» her, så blir filtypen «image/custom» bli opprettet."
+
+#~ msgid ""
+#~ "<p><h1>File Associations</h1> This module allows you to choose which "
+#~ "applications are associated with a given type of file. File types are "
+#~ "also referred to as MIME types (MIME is an acronym which stands for "
+#~ "\"Multipurpose Internet Mail Extensions\").</p><p> A file association "
+#~ "consists of the following: <ul><li>Rules for determining the MIME-type of "
+#~ "a file, for example the filename pattern *.png, which means 'all files "
+#~ "with names that end in .png', is associated with the MIME type \"image/png"
+#~ "\";</li> <li>A short description of the MIME-type, for example the "
+#~ "description of the MIME type \"image/png\" is simply 'PNG image';</li> "
+#~ "<li>An icon to be used for displaying files of the given MIME-type, so "
+#~ "that you can easily identify the type of file in a file manager or file-"
+#~ "selection dialog (at least for the types you use often);</li> <li>A list "
+#~ "of the applications which can be used to open files of the given MIME-"
+#~ "type -- if more than one application can be used then the list is ordered "
+#~ "by priority.</li></ul> You may be surprised to find that some MIME types "
+#~ "have no associated filename patterns; in these cases, KDE is able to "
+#~ "determine the MIME-type by directly examining the contents of the file.</"
+#~ "p>"
+#~ msgstr ""
+#~ "<p><h1>Filtilordninger</h1>Med denne modulen kan du velge hvilket program "
+#~ "som er tilordnet en gitt filtype. Filtyper blir også kalt  MIME-typer "
+#~ "(MIME er et akronym som står for «Multipurpose Internet Mail "
+#~ "Extensions».)</p><p>En filtilordning består av følgende:<ul><li>Regler "
+#~ "for å bestemme MIME-typen til en fil. F eks betyr filmønsteret *.kwd "
+#~ "'alle filnavn som slutter på .kwd' og er tilordnet MIME-typen «x-kword».</"
+#~ "li><li>En kort beskrivelse av MIME-typen. F.eks. beskrivelsen av MIME-"
+#~ "typen «x-kword» er bare 'KWord-dokument'.</li> <li>Et ikon som brukes til "
+#~ "å vise den gitte MIME-typen slik at du lett kan se mime-typen den "
+#~ "tilhører, f.eks. Konqueror-visning (i det minste for typer du bruker "
+#~ "ofte).</li><li>En liste over programmer som kan brukes til å åpne filer "
+#~ "med den oppgitte MIME-typen. Hvis mer enn ett program kan bli brukt, vil "
+#~ "denne lista være sortert etter prioritet.</li></ul>Du kan bli overrasket "
+#~ "når du finner MIME-typer uten mønster til filnavn! I slike tilfeller vil "
+#~ "Konqueror kunne bestemme MIME-typen direkte ved å se på innholdet til "
+#~ "fila.</p>"

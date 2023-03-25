@@ -9,7 +9,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: filetypes\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-03-05 03:09+0000\n"
+"POT-Creation-Date: 2023-03-25 02:10+0000\n"
 "PO-Revision-Date: 2010-11-25 07:43+0100\n"
 "Last-Translator: Manfred Wiese <m.j.wiese@web.de>\n"
 "Language-Team: Low Saxon <kde-i18n-nds@kde.org>\n"
@@ -87,7 +87,7 @@ msgstr ""
 "plain\", also höört all Dateien, vun de de Naam op \".txt\" endt, den Typ "
 "\"text/plain\" to."
 
-#: filetypedetails.cpp:87 filetypesview.cpp:102 kservicelistwidget.cpp:110
+#: filetypedetails.cpp:87 filetypesview.cpp:81 kservicelistwidget.cpp:110
 #, kde-format
 msgid "Add..."
 msgstr "Tofögen..."
@@ -182,50 +182,13 @@ msgstr "Dateityp %1"
 msgid "Use settings for '%1' group"
 msgstr "Instellen för \"%1\"-Koppel övernehmen"
 
-#: filetypesview.cpp:43
-#, kde-format
-msgid ""
-"<p><h1>File Associations</h1> This module allows you to choose which "
-"applications are associated with a given type of file. File types are also "
-"referred to as MIME types (MIME is an acronym which stands for "
-"\"Multipurpose Internet Mail Extensions\").</p><p> A file association "
-"consists of the following: <ul><li>Rules for determining the MIME-type of a "
-"file, for example the filename pattern *.png, which means 'all files with "
-"names that end in .png', is associated with the MIME type \"image/png\";</"
-"li> <li>A short description of the MIME-type, for example the description of "
-"the MIME type \"image/png\" is simply 'PNG image';</li> <li>An icon to be "
-"used for displaying files of the given MIME-type, so that you can easily "
-"identify the type of file in a file manager or file-selection dialog (at "
-"least for the types you use often);</li> <li>A list of the applications "
-"which can be used to open files of the given MIME-type -- if more than one "
-"application can be used then the list is ordered by priority.</li></ul> You "
-"may be surprised to find that some MIME types have no associated filename "
-"patterns; in these cases, KDE is able to determine the MIME-type by directly "
-"examining the contents of the file.</p>"
-msgstr ""
-"<p><h1>Datei-Tohören</h1> Mit dit Moduul kannst Du de Dateitypen fastleggen, "
-"na de en Programm tohöört. Dateitypen warrt ok MIME-Typen nöömt (MIME is'n "
-"Afkörten för \"Multipurpose Internet Mail Extensions\").</p><p> En Datei-"
-"Tohören besteiht ut: <ul><li>Regeln för't Faststellen vun den MIME-Typ vun "
-"en Datei. Dat Datei-Muster »*.png« a.B. bedüüdt \"All Dateien, de ehr Naams "
-"op ».png« ophoolt\", un höört den MIME-Typ \"image/png\" to.</li> <li>En "
-"kort Beschrieven vun den MIME-Typ, a.B. de Beschrieven vun den MIME-Typ "
-"\"image/png\", is eenfach \"PNG-Bild\".</li> <li>En Lüttbild, dat a.B. in "
-"Konqueror för de Dateien vun dissen Typ wiest warrt, so sik de Typ vun de "
-"Datei eenfach faststellen laat (tominnst bi de faken bruukt Typen).</li> "
-"<li>En List vun Programmen, de mit Dateien vun den MIME-Typ wat anfangen "
-"köönt. Wenn mehr as een Programm angeven is, warrt de List na Prioriteet "
-"ornt.</li></ul> Villicht büst du baff, dat en Reeg MIME-Typen keen Datei-"
-"Muster tohöört. In disse Fäll kann Konqueror dor den MIME-Typ mit "
-"faststellen, dat he direktemang den Inholt ünnersöcht.</p>"
-
-#: filetypesview.cpp:73
+#: filetypesview.cpp:52
 #, fuzzy, kde-format
 #| msgid "Find file type or filename pattern"
 msgid "Search for file type or filename pattern..."
 msgstr "Dateityp oder -muster söken"
 
-#: filetypesview.cpp:79
+#: filetypesview.cpp:58
 #, kde-format
 msgid ""
 "Enter a part of a filename pattern, and only file types with a matching file "
@@ -236,12 +199,12 @@ msgstr ""
 "mit en passen Muster. Du kannst ok en Deel vun en Dateityp sien Beteken "
 "ingeven, as se op de List steiht."
 
-#: filetypesview.cpp:87
+#: filetypesview.cpp:66
 #, kde-format
 msgid "Known Types"
 msgstr "Begäng Typen"
 
-#: filetypesview.cpp:93
+#: filetypesview.cpp:72
 #, kde-format
 msgid ""
 "Here you can see a hierarchical list of the file types which are known on "
@@ -255,33 +218,33 @@ msgstr ""
 "Du de Informatschonen för den utsöchten Dateityp (t.B. \"text/html\" för "
 "HTML-Dateien) ankieken oder bewerken."
 
-#: filetypesview.cpp:107
+#: filetypesview.cpp:86
 #, kde-format
 msgid "Click here to add a new file type."
 msgstr "Klick hier, wenn Du en niegen Dateityp tofögen wullt."
 
-#: filetypesview.cpp:109 filetypesview.cpp:375
+#: filetypesview.cpp:88 filetypesview.cpp:354
 #, kde-format
 msgid "&Remove"
 msgstr "&Wegmaken"
 
-#: filetypesview.cpp:133
+#: filetypesview.cpp:112
 #, kde-format
 msgid "Select a file type by name or by extension"
 msgstr "Dateityp na Naam oder Verwiedern utsöken"
 
-#: filetypesview.cpp:368
+#: filetypesview.cpp:347
 #, kde-format
 msgid "&Revert"
 msgstr "&Torüchdreihen"
 
-#: filetypesview.cpp:369
+#: filetypesview.cpp:348
 #, kde-format
 msgid "Revert this file type to its initial system-wide definition"
 msgstr ""
 "Dissen Dateityp op sien orginale Towiesen as \"Systeemwiet\" torüchsetten"
 
-#: filetypesview.cpp:371
+#: filetypesview.cpp:350
 #, kde-format
 msgid ""
 "Click here to revert this file type to its initial system-wide definition, "
@@ -296,12 +259,12 @@ msgstr ""
 "wohrschienlich nich bruukt (warrt de Dateityp över den Inholt fastslaan, mag "
 "dat aver liekers so kamen)."
 
-#: filetypesview.cpp:376
+#: filetypesview.cpp:355
 #, kde-format
 msgid "Delete this file type definition completely"
 msgstr "Dissen Dateityp heel wegdoon"
 
-#: filetypesview.cpp:378
+#: filetypesview.cpp:357
 #, kde-format
 msgid ""
 "Click here to delete this file type definition completely. This is only "
@@ -541,6 +504,43 @@ msgstr ""
 "Giff hier den Naam vun den Dateityp in. Wenn Du a.B. \"image\" as Kategorie "
 "utsöcht hest, un Du giffst hier \"egen\" in, warrt de Dateityp \"image/egen"
 "\" opstellt."
+
+#~ msgid ""
+#~ "<p><h1>File Associations</h1> This module allows you to choose which "
+#~ "applications are associated with a given type of file. File types are "
+#~ "also referred to as MIME types (MIME is an acronym which stands for "
+#~ "\"Multipurpose Internet Mail Extensions\").</p><p> A file association "
+#~ "consists of the following: <ul><li>Rules for determining the MIME-type of "
+#~ "a file, for example the filename pattern *.png, which means 'all files "
+#~ "with names that end in .png', is associated with the MIME type \"image/png"
+#~ "\";</li> <li>A short description of the MIME-type, for example the "
+#~ "description of the MIME type \"image/png\" is simply 'PNG image';</li> "
+#~ "<li>An icon to be used for displaying files of the given MIME-type, so "
+#~ "that you can easily identify the type of file in a file manager or file-"
+#~ "selection dialog (at least for the types you use often);</li> <li>A list "
+#~ "of the applications which can be used to open files of the given MIME-"
+#~ "type -- if more than one application can be used then the list is ordered "
+#~ "by priority.</li></ul> You may be surprised to find that some MIME types "
+#~ "have no associated filename patterns; in these cases, KDE is able to "
+#~ "determine the MIME-type by directly examining the contents of the file.</"
+#~ "p>"
+#~ msgstr ""
+#~ "<p><h1>Datei-Tohören</h1> Mit dit Moduul kannst Du de Dateitypen "
+#~ "fastleggen, na de en Programm tohöört. Dateitypen warrt ok MIME-Typen "
+#~ "nöömt (MIME is'n Afkörten för \"Multipurpose Internet Mail Extensions\")."
+#~ "</p><p> En Datei-Tohören besteiht ut: <ul><li>Regeln för't Faststellen "
+#~ "vun den MIME-Typ vun en Datei. Dat Datei-Muster »*.png« a.B. bedüüdt "
+#~ "\"All Dateien, de ehr Naams op ».png« ophoolt\", un höört den MIME-Typ "
+#~ "\"image/png\" to.</li> <li>En kort Beschrieven vun den MIME-Typ, a.B. de "
+#~ "Beschrieven vun den MIME-Typ \"image/png\", is eenfach \"PNG-Bild\".</li> "
+#~ "<li>En Lüttbild, dat a.B. in Konqueror för de Dateien vun dissen Typ "
+#~ "wiest warrt, so sik de Typ vun de Datei eenfach faststellen laat "
+#~ "(tominnst bi de faken bruukt Typen).</li> <li>En List vun Programmen, de "
+#~ "mit Dateien vun den MIME-Typ wat anfangen köönt. Wenn mehr as een "
+#~ "Programm angeven is, warrt de List na Prioriteet ornt.</li></ul> Villicht "
+#~ "büst du baff, dat en Reeg MIME-Typen keen Datei-Muster tohöört. In disse "
+#~ "Fäll kann Konqueror dor den MIME-Typ mit faststellen, dat he direktemang "
+#~ "den Inholt ünnersöcht.</p>"
 
 #~ msgid "KEditFileType"
 #~ msgstr "KEditFileType"

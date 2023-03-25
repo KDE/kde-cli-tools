@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: filetypes\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-03-05 03:09+0000\n"
+"POT-Creation-Date: 2023-03-25 02:10+0000\n"
 "PO-Revision-Date: 2010-11-08 09:44+0700\n"
 "Last-Translator: Khoem Sokhem <khoemsokhem@khmeros.info>\n"
 "Language-Team: Khmer <support@khmeros.info>\n"
@@ -83,7 +83,7 @@ msgstr ""
 "លំនាំ *.txt ត្រូវ​បាន​ភ្ជាប់​ជា​មួយ​ប្រភេទ​ឯកសារ 'text/plain' ឯកសារ​ទាំង​អស់​បញ្ចប់​ដោយ '.txt' ត្រូវ​"
 "បាន​ស្គាល់​ថា​ជា​ឯកសារ​អត្ថបទ​ធម្មតា ។"
 
-#: filetypedetails.cpp:87 filetypesview.cpp:102 kservicelistwidget.cpp:110
+#: filetypedetails.cpp:87 filetypesview.cpp:81 kservicelistwidget.cpp:110
 #, kde-format
 msgid "Add..."
 msgstr "បន្ថែម..."
@@ -174,48 +174,13 @@ msgstr "ប្រភេទ​ឯកសារ %1"
 msgid "Use settings for '%1' group"
 msgstr "ប្រើ​ការ​កំណត់​សម្រាប់​ក្រុម '%1'"
 
-#: filetypesview.cpp:43
-#, kde-format
-msgid ""
-"<p><h1>File Associations</h1> This module allows you to choose which "
-"applications are associated with a given type of file. File types are also "
-"referred to as MIME types (MIME is an acronym which stands for "
-"\"Multipurpose Internet Mail Extensions\").</p><p> A file association "
-"consists of the following: <ul><li>Rules for determining the MIME-type of a "
-"file, for example the filename pattern *.png, which means 'all files with "
-"names that end in .png', is associated with the MIME type \"image/png\";</"
-"li> <li>A short description of the MIME-type, for example the description of "
-"the MIME type \"image/png\" is simply 'PNG image';</li> <li>An icon to be "
-"used for displaying files of the given MIME-type, so that you can easily "
-"identify the type of file in a file manager or file-selection dialog (at "
-"least for the types you use often);</li> <li>A list of the applications "
-"which can be used to open files of the given MIME-type -- if more than one "
-"application can be used then the list is ordered by priority.</li></ul> You "
-"may be surprised to find that some MIME types have no associated filename "
-"patterns; in these cases, KDE is able to determine the MIME-type by directly "
-"examining the contents of the file.</p>"
-msgstr ""
-"<p><h1>ការ​ភ្ជាប់​ឯកសារ</h1> ម៉ូឌុល​នេះ​អនុញ្ញាត​ឲ្យ​អ្នក​ជ្រើស​កម្មវិធី​ណាមួយ​ត្រូវ​បានភ្ជាប់​ទៅនឹង​ប្រភេទ​"
-"ឯកសារ​ដែល​បានផ្ដល់ ។ ប្រភេទ​ឯកសារ​ក៏ត្រូវ​សំអាង​លើ​ប្រភេទ MIME ដែរ (MIME គឺជា​អក្សរ​កាត់​ដែល​បាន​មក​"
-"ពី \"Multipurpose Internet Mail Extensions\") ។</p><p> ការ​ភ្ជាប់​ឯកសារ​មាន​ដូច​ខាង​"
-"ក្រោម ៖ <ul><li>ក្បួន​សម្រាប់​កំណត់​ប្រភេទ MIME របស់​ឯកសារ ឧទាហរណ៍ លំនាំ​ឈ្មោះ​ឯកសារ *.png ដែល​"
-"មាន​ន័យ​ថា 'ឯកសារ​ទាំងអស់​ដែល​ឈ្មោះ​បញ្ចប់​ដោយ .png' ត្រូវ​បាន​ភ្ជាប់​ជា​មួយ​នឹង​ប្រភេទ MIME \"image/"
-"png\";</li> <li>សេចក្ដី​ពិពណ៌នា​ខ្លី​របស់​ប្រភេទ MIME ឧទាហរណ៍ សេចក្ដី​ពិពណ៌នា​របស់​ប្រភេទ MIME "
-"\"image/png\" តាម​ធម្មតា 'រូបភាព PNG'</li> <li>រូបតំណាង​ត្រូវ​បាន​ប្រើ​សម្រាប់​បង្ហាញ​ឯកសារ​របស់​"
-"ប្រភេទ MIME ដែល​បាន​ផ្ដល់ ដូច្នេះ​អ្នក​អាចបញ្ជាក់​អត្តសញ្ញាណ​យ៉ាង​ងាយ​នូវ​ប្រភេទ​ឯកសារ​នៅ​ក្នុង​កម្មវិធី​"
-"គ្រប់គ្រង​ឯកសារ ឬ​ប្រអប់​ជ្រើស​ឯកសារ (យ៉ាងហោចណាស់​សម្រាប់​ប្រភេទ​ដែល​អ្នក​ប្រើ​ញឹកញាប់)</li> <li>បញ្ជី​"
-"របស់​កម្មវិធី​ដែល​អាច​ត្រូវ​បាន​ប្រើ​ដើម្បី​បើក​ឯកសារ​របស់​ប្រភេទ MIME ដែល​បាន​ផ្ដល់ ប្រសិន​បើកម្មវិធី​ច្រើនជាង​"
-"មួយ​អាច​ត្រូវ​បាន​ប្រើ​ បន្ទាប់​មក​បញ្ជី​​ត្រូវ​បាន​តម្រៀប​​តាម​អាទិភាព ។</li></ul> អ្នក​អាច​ភ្ញាក់​ផ្អើល​ ដើម្បី​"
-"រកប្រភេទ MIME មួយ​ចំនួន​ដែល​គ្មាន​លំនាំ​​​ឈ្មោះ​ឯកសារ​ត្រូវ​បាន​ភ្ជាប់ នៅ​ក្នុង​ករណី​ទាំង​នេះ KDE អាច​កំណត់​"
-"ប្រភេទ MIME ដោយ​ពិនិត្យ​លើ​មាតិកា​របស់​ឯកសារ​ដោយ​ផ្ទាល់ ។</p>"
-
-#: filetypesview.cpp:73
+#: filetypesview.cpp:52
 #, fuzzy, kde-format
 #| msgid "Find file type or filename pattern"
 msgid "Search for file type or filename pattern..."
 msgstr "រក​ប្រភេទ​ឯកសារ ឬ​លំនាំ​ឈ្មោះ​ឯកសារ"
 
-#: filetypesview.cpp:79
+#: filetypesview.cpp:58
 #, kde-format
 msgid ""
 "Enter a part of a filename pattern, and only file types with a matching file "
@@ -225,12 +190,12 @@ msgstr ""
 "បញ្ចូល​ផ្នែក​​របស់​​លំនាំ​ឈ្មោះ​ឯកសារ ។ មាន​តែ​ប្រភេទ​ឯកសារ​ដែល​លំនាំ​របស់​វា​ផ្គូផ្គង​ប៉ុណ្ណោះ នឹង​​បង្ហាញ​នៅ​ក្នុង​"
 "បញ្ជី ។"
 
-#: filetypesview.cpp:87
+#: filetypesview.cpp:66
 #, kde-format
 msgid "Known Types"
 msgstr "ប្រភេទ​ដែល​ស្គាល់"
 
-#: filetypesview.cpp:93
+#: filetypesview.cpp:72
 #, kde-format
 msgid ""
 "Here you can see a hierarchical list of the file types which are known on "
@@ -242,32 +207,32 @@ msgstr ""
 "ដើម្បី​បន្លាយ​ប្រភេទ​មួយ ឬ​សញ្ញា '-' ដើម្បី​វេញ​វា ។ ជ្រើស​ប្រភេទ​ឯកសារ​មួយ (ឧ. text/html សម្រាប់​"
 "ឯកសារ HTML) ដើម្បី​មើល/កែសម្រួល​ព័ត៌មាន សម្រាប់​ប្រភេទ​ឯកសារ​នោះ ដោយ​ប្រើ​វត្ថុ​បញ្ជា​នៅ​ខាង​ស្ដាំ ។"
 
-#: filetypesview.cpp:107
+#: filetypesview.cpp:86
 #, kde-format
 msgid "Click here to add a new file type."
 msgstr "ចុច​ទីនេះ​ដើម្បី​បន្ថែម​ប្រភេទ​ឯកសារ​ថ្មី​មួយ ។"
 
-#: filetypesview.cpp:109 filetypesview.cpp:375
+#: filetypesview.cpp:88 filetypesview.cpp:354
 #, kde-format
 msgid "&Remove"
 msgstr "យក​ចេញ​"
 
-#: filetypesview.cpp:133
+#: filetypesview.cpp:112
 #, kde-format
 msgid "Select a file type by name or by extension"
 msgstr "ជ្រើស​ប្រភេទ​ឯកសារ​មួយ តាម​រយៈ​ឈ្មោះ ឬ​កន្ទុយ​ឯកសារ​"
 
-#: filetypesview.cpp:368
+#: filetypesview.cpp:347
 #, kde-format
 msgid "&Revert"
 msgstr "ដាក់​បញ្ច្រាស​"
 
-#: filetypesview.cpp:369
+#: filetypesview.cpp:348
 #, kde-format
 msgid "Revert this file type to its initial system-wide definition"
 msgstr "ដាក់​បញ្ច្រាស​ប្រភេទ​ឯកសារ​នេះ ទៅ​នឹង​ការ​កំណត់​ពេញ​ប្រព័ន្ធ​ដំបូង​របស់​វា"
 
-#: filetypesview.cpp:371
+#: filetypesview.cpp:350
 #, kde-format
 msgid ""
 "Click here to revert this file type to its initial system-wide definition, "
@@ -281,12 +246,12 @@ msgstr ""
 "ដោយ​អ្នក​អាច​សម្អាត​បញ្ជីលំនាំ​របស់​ពួកវា​បាន ដើម្បី​បង្រួម​ការ​ផ្លាស់ប្ដូរ​អប្បបរមា​របស់ពួកវា​ដែល​កំពុង​ប្រើ "
 "(ប៉ុន្តែ​ការ​កំណត់​ប្រភេទ​ឯកសារ​ពី​មាតិកា​​ឯកសារ​អាច​បញ្ចប់​ការ​ប្រើ​បាន) ។"
 
-#: filetypesview.cpp:376
+#: filetypesview.cpp:355
 #, kde-format
 msgid "Delete this file type definition completely"
 msgstr "លុប​កា​រកំណត់​ប្រភេទ​ឯកសារ​នេះ​ទាំង​ស្រុង"
 
-#: filetypesview.cpp:378
+#: filetypesview.cpp:357
 #, kde-format
 msgid ""
 "Click here to delete this file type definition completely. This is only "
@@ -520,6 +485,41 @@ msgid ""
 msgstr ""
 "វាយ​​ឈ្មោះ​របស់​ប្រភេទ​ឯកសារ ។ ឧទាហរណ៍ ប្រសិន​បើ​អ្នក​បាន​ជ្រើស 'រូបភាព' ជា​ប្រភេទ និង​អ្នក​វាយ "
 "'ផ្ទាល់ខ្លួន' ​នៅ​ទីនេះ ប្រភេទ​ឯកសារ 'រូបភាព/ផ្ទាល់ខ្លួន' នឹង​ត្រូវ​បាន​បង្កើត ។"
+
+#~ msgid ""
+#~ "<p><h1>File Associations</h1> This module allows you to choose which "
+#~ "applications are associated with a given type of file. File types are "
+#~ "also referred to as MIME types (MIME is an acronym which stands for "
+#~ "\"Multipurpose Internet Mail Extensions\").</p><p> A file association "
+#~ "consists of the following: <ul><li>Rules for determining the MIME-type of "
+#~ "a file, for example the filename pattern *.png, which means 'all files "
+#~ "with names that end in .png', is associated with the MIME type \"image/png"
+#~ "\";</li> <li>A short description of the MIME-type, for example the "
+#~ "description of the MIME type \"image/png\" is simply 'PNG image';</li> "
+#~ "<li>An icon to be used for displaying files of the given MIME-type, so "
+#~ "that you can easily identify the type of file in a file manager or file-"
+#~ "selection dialog (at least for the types you use often);</li> <li>A list "
+#~ "of the applications which can be used to open files of the given MIME-"
+#~ "type -- if more than one application can be used then the list is ordered "
+#~ "by priority.</li></ul> You may be surprised to find that some MIME types "
+#~ "have no associated filename patterns; in these cases, KDE is able to "
+#~ "determine the MIME-type by directly examining the contents of the file.</"
+#~ "p>"
+#~ msgstr ""
+#~ "<p><h1>ការ​ភ្ជាប់​ឯកសារ</h1> ម៉ូឌុល​នេះ​អនុញ្ញាត​ឲ្យ​អ្នក​ជ្រើស​កម្មវិធី​ណាមួយ​ត្រូវ​បានភ្ជាប់​ទៅនឹង​ប្រភេទ​"
+#~ "ឯកសារ​ដែល​បានផ្ដល់ ។ ប្រភេទ​ឯកសារ​ក៏ត្រូវ​សំអាង​លើ​ប្រភេទ MIME ដែរ (MIME គឺជា​អក្សរ​កាត់​ដែល​បាន​"
+#~ "មក​ពី \"Multipurpose Internet Mail Extensions\") ។</p><p> ការ​ភ្ជាប់​ឯកសារ​មាន​ដូច​"
+#~ "ខាង​ក្រោម ៖ <ul><li>ក្បួន​សម្រាប់​កំណត់​ប្រភេទ MIME របស់​ឯកសារ ឧទាហរណ៍ លំនាំ​ឈ្មោះ​ឯកសារ *."
+#~ "png ដែល​មាន​ន័យ​ថា 'ឯកសារ​ទាំងអស់​ដែល​ឈ្មោះ​បញ្ចប់​ដោយ .png' ត្រូវ​បាន​ភ្ជាប់​ជា​មួយ​នឹង​ប្រភេទ MIME "
+#~ "\"image/png\";</li> <li>សេចក្ដី​ពិពណ៌នា​ខ្លី​របស់​ប្រភេទ MIME ឧទាហរណ៍ សេចក្ដី​ពិពណ៌នា​របស់​"
+#~ "ប្រភេទ MIME \"image/png\" តាម​ធម្មតា 'រូបភាព PNG'</li> <li>រូបតំណាង​ត្រូវ​បាន​ប្រើ​"
+#~ "សម្រាប់​បង្ហាញ​ឯកសារ​របស់​ប្រភេទ MIME ដែល​បាន​ផ្ដល់ ដូច្នេះ​អ្នក​អាចបញ្ជាក់​អត្តសញ្ញាណ​យ៉ាង​ងាយ​នូវ​"
+#~ "ប្រភេទ​ឯកសារ​នៅ​ក្នុង​កម្មវិធី​គ្រប់គ្រង​ឯកសារ ឬ​ប្រអប់​ជ្រើស​ឯកសារ (យ៉ាងហោចណាស់​សម្រាប់​ប្រភេទ​ដែល​អ្នក​"
+#~ "ប្រើ​ញឹកញាប់)</li> <li>បញ្ជី​របស់​កម្មវិធី​ដែល​អាច​ត្រូវ​បាន​ប្រើ​ដើម្បី​បើក​ឯកសារ​របស់​ប្រភេទ MIME ដែល​"
+#~ "បាន​ផ្ដល់ ប្រសិន​បើកម្មវិធី​ច្រើនជាង​មួយ​អាច​ត្រូវ​បាន​ប្រើ​ បន្ទាប់​មក​បញ្ជី​​ត្រូវ​បាន​តម្រៀប​​តាម​អាទិភាព ។</"
+#~ "li></ul> អ្នក​អាច​ភ្ញាក់​ផ្អើល​ ដើម្បី​រកប្រភេទ MIME មួយ​ចំនួន​ដែល​គ្មាន​លំនាំ​​​ឈ្មោះ​ឯកសារ​ត្រូវ​បាន​"
+#~ "ភ្ជាប់ នៅ​ក្នុង​ករណី​ទាំង​នេះ KDE អាច​កំណត់​ប្រភេទ MIME ដោយ​ពិនិត្យ​លើ​មាតិកា​របស់​ឯកសារ​ដោយ​ផ្ទាល់ ។</"
+#~ "p>"
 
 #~ msgid "KEditFileType"
 #~ msgstr "KEditFileType"

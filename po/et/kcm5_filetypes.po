@@ -9,7 +9,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: filetypes\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-03-05 03:09+0000\n"
+"POT-Creation-Date: 2023-03-25 02:10+0000\n"
 "PO-Revision-Date: 2019-10-30 14:47+0200\n"
 "Last-Translator: Marek Laane <qiilaq69@gmail.com>\n"
 "Language-Team: Estonian <kde-et@lists.linux.ee>\n"
@@ -87,7 +87,7 @@ msgstr ""
 "'text/plain' puhul, tunnistatakse kõik failid laiendiga '.txt' tavalisteks "
 "tekstifailideks."
 
-#: filetypedetails.cpp:87 filetypesview.cpp:102 kservicelistwidget.cpp:110
+#: filetypedetails.cpp:87 filetypesview.cpp:81 kservicelistwidget.cpp:110
 #, kde-format
 msgid "Add..."
 msgstr "Lisa..."
@@ -179,49 +179,12 @@ msgstr "Failitüüp %1"
 msgid "Use settings for '%1' group"
 msgstr "Kasutatakse grupi '%1' seadistusi"
 
-#: filetypesview.cpp:43
-#, kde-format
-msgid ""
-"<p><h1>File Associations</h1> This module allows you to choose which "
-"applications are associated with a given type of file. File types are also "
-"referred to as MIME types (MIME is an acronym which stands for "
-"\"Multipurpose Internet Mail Extensions\").</p><p> A file association "
-"consists of the following: <ul><li>Rules for determining the MIME-type of a "
-"file, for example the filename pattern *.png, which means 'all files with "
-"names that end in .png', is associated with the MIME type \"image/png\";</"
-"li> <li>A short description of the MIME-type, for example the description of "
-"the MIME type \"image/png\" is simply 'PNG image';</li> <li>An icon to be "
-"used for displaying files of the given MIME-type, so that you can easily "
-"identify the type of file in a file manager or file-selection dialog (at "
-"least for the types you use often);</li> <li>A list of the applications "
-"which can be used to open files of the given MIME-type -- if more than one "
-"application can be used then the list is ordered by priority.</li></ul> You "
-"may be surprised to find that some MIME types have no associated filename "
-"patterns; in these cases, KDE is able to determine the MIME-type by directly "
-"examining the contents of the file.</p>"
-msgstr ""
-"<p><h1>Failide seosed</h1> See moodul võimaldab sul valida, millised "
-"rakendused on seotud millise failitüübiga. Mõnikord räägitakse "
-"failitüüpidest ka kui MIME tüüpidest (MIME - \"Multipurpose Internet Mail "
-"Extensions\").</p><p> Failide seosed koosnevad järgnevatest elementidest: "
-"<ul><li>Reegel faili MIME tüübi määramiseks. Näiteks faili muster *.png, mis "
-"tähendab 'kõik failid, mille nimi lõpeb stringiga .png', on seotud MIME "
-"tüübiga \"image/png\".</li><li>Lühike MIME tüübi kirjeldus (näiteks MIME "
-"tüübi \"image/png\" kirjeldus on lihtsalt 'PNG pilt').</li><li>Ikoon, mida "
-"kasutatakse antud MIME tüübiga faili näitamisel, nii et sul on võimalik "
-"failitüüp määrata lihtsalt ikoonile peale vaadates (vähemalt nende failide "
-"puhul, mida sa tihedamini kasutad).</li><li>Rakenduste nimekiri, mida "
-"kasutatakse antud MIME tüübiga failide avamisel. Kui rakendusi on rohkem kui "
-"üks, on nad vastavalt prioriteedile järjestatud.</li></ul> Sa võid olla "
-"üllatunud, et mõnel failitüübil polegi mustrit. Sel juhul on KDE võimeline "
-"tuvastama faili MIME tüüpi otse, analüüsides selle faili sisu.</p>"
-
-#: filetypesview.cpp:73
+#: filetypesview.cpp:52
 #, kde-format
 msgid "Search for file type or filename pattern..."
 msgstr "Otsimine failitüübi- või failinime mustri järgi ..."
 
-#: filetypesview.cpp:79
+#: filetypesview.cpp:58
 #, kde-format
 msgid ""
 "Enter a part of a filename pattern, and only file types with a matching file "
@@ -232,12 +195,12 @@ msgstr ""
 "mis langevad kokku otsitava mustriga. Teine võimalus on sisestada osa "
 "failtüübi nimest, nagu see esineb nimekirjas."
 
-#: filetypesview.cpp:87
+#: filetypesview.cpp:66
 #, kde-format
 msgid "Known Types"
 msgstr "Teadaolevad tüübid"
 
-#: filetypesview.cpp:93
+#: filetypesview.cpp:72
 #, kde-format
 msgid ""
 "Here you can see a hierarchical list of the file types which are known on "
@@ -251,32 +214,32 @@ msgstr ""
 "nimekirjast (nt. text/html HTML-failide puhul) ning kasuta siis paremal "
 "olevaid võimalusi."
 
-#: filetypesview.cpp:107
+#: filetypesview.cpp:86
 #, kde-format
 msgid "Click here to add a new file type."
 msgstr "Klõpsa siia uue failitüübi lisamiseks."
 
-#: filetypesview.cpp:109 filetypesview.cpp:375
+#: filetypesview.cpp:88 filetypesview.cpp:354
 #, kde-format
 msgid "&Remove"
 msgstr "&Eemalda"
 
-#: filetypesview.cpp:133
+#: filetypesview.cpp:112
 #, kde-format
 msgid "Select a file type by name or by extension"
 msgstr "Vali nime või laiendi järgi failitüüp"
 
-#: filetypesview.cpp:368
+#: filetypesview.cpp:347
 #, kde-format
 msgid "&Revert"
 msgstr "&Lähtesta"
 
-#: filetypesview.cpp:369
+#: filetypesview.cpp:348
 #, kde-format
 msgid "Revert this file type to its initial system-wide definition"
 msgstr "Failitüübi lähtestamine algsele süsteemsele väärtusele"
 
-#: filetypesview.cpp:371
+#: filetypesview.cpp:350
 #, kde-format
 msgid ""
 "Click here to revert this file type to its initial system-wide definition, "
@@ -291,12 +254,12 @@ msgstr ""
 "nimekirja, mis väldib üldiselt nende kasutamist (siiski võib see juhtuda, "
 "kui failitüüp määratakse kindlaks faili sisu järgi)."
 
-#: filetypesview.cpp:376
+#: filetypesview.cpp:355
 #, kde-format
 msgid "Delete this file type definition completely"
 msgstr "Failitüübi määratluse lõplik kustutamine"
 
-#: filetypesview.cpp:378
+#: filetypesview.cpp:357
 #, kde-format
 msgid ""
 "Click here to delete this file type definition completely. This is only "
@@ -532,6 +495,43 @@ msgid ""
 msgstr ""
 "Kirjuta failitüübi nimi. Kui näiteks valisid pildikategooria ('image') ja "
 "kirjutad siia 'custom', luuakse failitüüp 'image/custom'."
+
+#~ msgid ""
+#~ "<p><h1>File Associations</h1> This module allows you to choose which "
+#~ "applications are associated with a given type of file. File types are "
+#~ "also referred to as MIME types (MIME is an acronym which stands for "
+#~ "\"Multipurpose Internet Mail Extensions\").</p><p> A file association "
+#~ "consists of the following: <ul><li>Rules for determining the MIME-type of "
+#~ "a file, for example the filename pattern *.png, which means 'all files "
+#~ "with names that end in .png', is associated with the MIME type \"image/png"
+#~ "\";</li> <li>A short description of the MIME-type, for example the "
+#~ "description of the MIME type \"image/png\" is simply 'PNG image';</li> "
+#~ "<li>An icon to be used for displaying files of the given MIME-type, so "
+#~ "that you can easily identify the type of file in a file manager or file-"
+#~ "selection dialog (at least for the types you use often);</li> <li>A list "
+#~ "of the applications which can be used to open files of the given MIME-"
+#~ "type -- if more than one application can be used then the list is ordered "
+#~ "by priority.</li></ul> You may be surprised to find that some MIME types "
+#~ "have no associated filename patterns; in these cases, KDE is able to "
+#~ "determine the MIME-type by directly examining the contents of the file.</"
+#~ "p>"
+#~ msgstr ""
+#~ "<p><h1>Failide seosed</h1> See moodul võimaldab sul valida, millised "
+#~ "rakendused on seotud millise failitüübiga. Mõnikord räägitakse "
+#~ "failitüüpidest ka kui MIME tüüpidest (MIME - \"Multipurpose Internet Mail "
+#~ "Extensions\").</p><p> Failide seosed koosnevad järgnevatest elementidest: "
+#~ "<ul><li>Reegel faili MIME tüübi määramiseks. Näiteks faili muster *.png, "
+#~ "mis tähendab 'kõik failid, mille nimi lõpeb stringiga .png', on seotud "
+#~ "MIME tüübiga \"image/png\".</li><li>Lühike MIME tüübi kirjeldus (näiteks "
+#~ "MIME tüübi \"image/png\" kirjeldus on lihtsalt 'PNG pilt').</"
+#~ "li><li>Ikoon, mida kasutatakse antud MIME tüübiga faili näitamisel, nii "
+#~ "et sul on võimalik failitüüp määrata lihtsalt ikoonile peale vaadates "
+#~ "(vähemalt nende failide puhul, mida sa tihedamini kasutad).</"
+#~ "li><li>Rakenduste nimekiri, mida kasutatakse antud MIME tüübiga failide "
+#~ "avamisel. Kui rakendusi on rohkem kui üks, on nad vastavalt prioriteedile "
+#~ "järjestatud.</li></ul> Sa võid olla üllatunud, et mõnel failitüübil "
+#~ "polegi mustrit. Sel juhul on KDE võimeline tuvastama faili MIME tüüpi "
+#~ "otse, analüüsides selle faili sisu.</p>"
 
 #~ msgid "KEditFileType"
 #~ msgstr "KEditFileType"

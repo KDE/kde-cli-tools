@@ -5,7 +5,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kdebase/filetypes.po\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-03-05 03:09+0000\n"
+"POT-Creation-Date: 2023-03-25 02:10+0000\n"
 "PO-Revision-Date: 2004-12-03 14:52-0500\n"
 "Last-Translator: Kevin Scannell <kscanne@gmail.com>\n"
 "Language-Team: Irish <gaeilge-gnulinux@lists.sourceforge.net>\n"
@@ -85,7 +85,7 @@ msgstr ""
 "'text/plain' agus sa chaoi sin aithnítear gach comhad le hiarmhír '.txt' mar "
 "chomhad gnáth-théacs."
 
-#: filetypedetails.cpp:87 filetypesview.cpp:102 kservicelistwidget.cpp:110
+#: filetypedetails.cpp:87 filetypesview.cpp:81 kservicelistwidget.cpp:110
 #, kde-format
 msgid "Add..."
 msgstr "Cuir Leis..."
@@ -178,52 +178,13 @@ msgstr "Cineál comhaid %1"
 msgid "Use settings for '%1' group"
 msgstr "Bain úsáid as socruithe do ghrúpa '%1'"
 
-#: filetypesview.cpp:43
-#, kde-format
-msgid ""
-"<p><h1>File Associations</h1> This module allows you to choose which "
-"applications are associated with a given type of file. File types are also "
-"referred to as MIME types (MIME is an acronym which stands for "
-"\"Multipurpose Internet Mail Extensions\").</p><p> A file association "
-"consists of the following: <ul><li>Rules for determining the MIME-type of a "
-"file, for example the filename pattern *.png, which means 'all files with "
-"names that end in .png', is associated with the MIME type \"image/png\";</"
-"li> <li>A short description of the MIME-type, for example the description of "
-"the MIME type \"image/png\" is simply 'PNG image';</li> <li>An icon to be "
-"used for displaying files of the given MIME-type, so that you can easily "
-"identify the type of file in a file manager or file-selection dialog (at "
-"least for the types you use often);</li> <li>A list of the applications "
-"which can be used to open files of the given MIME-type -- if more than one "
-"application can be used then the list is ordered by priority.</li></ul> You "
-"may be surprised to find that some MIME types have no associated filename "
-"patterns; in these cases, KDE is able to determine the MIME-type by directly "
-"examining the contents of the file.</p>"
-msgstr ""
-"<p><h1>Comhcheangail Chomhaid</h1> Leis an modúl seo, is féidir leat "
-"feidhmchlár a chomhcheangal le gach cineál comhaid. Tugtar 'cineálacha MIME' "
-"ar na cineálacha comhaid seo de ghnáth (is acrainm é MIME a sheasann do "
-"\"Multipurpose Internet Mail Extensions\".)</p><p> Is éard atá i "
-"gcomhcheangal comhaid ná na rudaí seo a leanas: <ul><li>Rialacha a deir go "
-"bhfuil comhaid áirithe den chineál MIME, mar shampla comhaid atá "
-"comhoiriúnach leis an bpatrún *.kwd, baineann siad leis an gcineál MIME \"x-"
-"kword\";</li> <li>Cur síos beag ar an gcineál MIME, mar shampla is é 'KWord "
-"document' an cur síos iomlán ar an gcineál \"x-kword\";</li> <li>Deilbhín a "
-"úsáidtear nuair a thaispeántar comhaid den chineál MIME, sa chaoi gur féidir "
-"leat comhaid den chineál seo a aithint in amharc Konqueror mar shampla "
-"(bhuel, na cineálacha a úsáideann tú go minic ar a laghad);</li> <li>Liosta "
-"feidhmchlár lenar féidir comhaid den chineál seo a oscailt -- má tá níos mó "
-"ná feidhmchlár amháin ann, is in ord tosaíochta é an liosta.</li></ul>Seans "
-"nach bhfuil fhios agat go bhfuil roinnt cineálacha MIME gan phatrúin "
-"chomhaid a mbaineann leo; sna cásanna seo, is féidir le Konqueror an cineál "
-"MIME a dhéanamh amach go díreach trí inneachar an chomhaid a iniúchadh.</p>"
-
-#: filetypesview.cpp:73
+#: filetypesview.cpp:52
 #, fuzzy, kde-format
 #| msgid "Find file type or filename pattern"
 msgid "Search for file type or filename pattern..."
 msgstr "Aimsigh cineál comhaid nó patrún comhadainm"
 
-#: filetypesview.cpp:79
+#: filetypesview.cpp:58
 #, kde-format
 msgid ""
 "Enter a part of a filename pattern, and only file types with a matching file "
@@ -234,12 +195,12 @@ msgstr ""
 "cineálacha comhaid atá comhoiriúnach don phatrún.  Is é sin, nó cuir isteach "
 "cuid de chineál comhaid go díreach mar atá sa liosta."
 
-#: filetypesview.cpp:87
+#: filetypesview.cpp:66
 #, kde-format
 msgid "Known Types"
 msgstr "Cineálacha Aitheanta"
 
-#: filetypesview.cpp:93
+#: filetypesview.cpp:72
 #, kde-format
 msgid ""
 "Here you can see a hierarchical list of the file types which are known on "
@@ -253,34 +214,34 @@ msgstr ""
 "haghaidh comhad HTML) chun faisnéis an chineáil sin a iniúchadh nó a chur in "
 "eagar leis na rialtáin ar dheis."
 
-#: filetypesview.cpp:107
+#: filetypesview.cpp:86
 #, kde-format
 msgid "Click here to add a new file type."
 msgstr "Cliceáil anseo chun cineál nua comhaid a chur leis."
 
-#: filetypesview.cpp:109 filetypesview.cpp:375
+#: filetypesview.cpp:88 filetypesview.cpp:354
 #, kde-format
 msgid "&Remove"
 msgstr "&Bain"
 
-#: filetypesview.cpp:133
+#: filetypesview.cpp:112
 #, kde-format
 msgid "Select a file type by name or by extension"
 msgstr "Roghnaigh cineál comhaid de réir ainm nó iarmhíre"
 
-#: filetypesview.cpp:368
+#: filetypesview.cpp:347
 #, kde-format
 msgid "&Revert"
 msgstr "&Réamhshocrú"
 
-#: filetypesview.cpp:369
+#: filetypesview.cpp:348
 #, kde-format
 msgid "Revert this file type to its initial system-wide definition"
 msgstr ""
 "Fill ar shainmhíniú réamhshocraithe ar an gcineál comhaid seo ar fud an "
 "chórais"
 
-#: filetypesview.cpp:371
+#: filetypesview.cpp:350
 #, kde-format
 msgid ""
 "Click here to revert this file type to its initial system-wide definition, "
@@ -296,12 +257,12 @@ msgstr ""
 "ghlanadh amach sa chaoi gur lú an seans go mbainfear úsáid as (cé go bhfuil "
 "seans fós go mbainfear úsáid as trí anailís a dhéanamh ar inneachar comhaid)."
 
-#: filetypesview.cpp:376
+#: filetypesview.cpp:355
 #, kde-format
 msgid "Delete this file type definition completely"
 msgstr "Scrios an sainmhíniú seo ar chineál comhaid go hiomlán"
 
-#: filetypesview.cpp:378
+#: filetypesview.cpp:357
 #, kde-format
 msgid ""
 "Click here to delete this file type definition completely. This is only "
@@ -544,6 +505,45 @@ msgstr ""
 "Iontráil ainm an chineáil comhaid.  Mar shampla, má roghnaíonn tú 'image' "
 "mar chatagóir agus iontrálann tú 'custom' anseo, cruthófar an cineál 'image/"
 "custom'."
+
+#~ msgid ""
+#~ "<p><h1>File Associations</h1> This module allows you to choose which "
+#~ "applications are associated with a given type of file. File types are "
+#~ "also referred to as MIME types (MIME is an acronym which stands for "
+#~ "\"Multipurpose Internet Mail Extensions\").</p><p> A file association "
+#~ "consists of the following: <ul><li>Rules for determining the MIME-type of "
+#~ "a file, for example the filename pattern *.png, which means 'all files "
+#~ "with names that end in .png', is associated with the MIME type \"image/png"
+#~ "\";</li> <li>A short description of the MIME-type, for example the "
+#~ "description of the MIME type \"image/png\" is simply 'PNG image';</li> "
+#~ "<li>An icon to be used for displaying files of the given MIME-type, so "
+#~ "that you can easily identify the type of file in a file manager or file-"
+#~ "selection dialog (at least for the types you use often);</li> <li>A list "
+#~ "of the applications which can be used to open files of the given MIME-"
+#~ "type -- if more than one application can be used then the list is ordered "
+#~ "by priority.</li></ul> You may be surprised to find that some MIME types "
+#~ "have no associated filename patterns; in these cases, KDE is able to "
+#~ "determine the MIME-type by directly examining the contents of the file.</"
+#~ "p>"
+#~ msgstr ""
+#~ "<p><h1>Comhcheangail Chomhaid</h1> Leis an modúl seo, is féidir leat "
+#~ "feidhmchlár a chomhcheangal le gach cineál comhaid. Tugtar 'cineálacha "
+#~ "MIME' ar na cineálacha comhaid seo de ghnáth (is acrainm é MIME a "
+#~ "sheasann do \"Multipurpose Internet Mail Extensions\".)</p><p> Is éard "
+#~ "atá i gcomhcheangal comhaid ná na rudaí seo a leanas: <ul><li>Rialacha a "
+#~ "deir go bhfuil comhaid áirithe den chineál MIME, mar shampla comhaid atá "
+#~ "comhoiriúnach leis an bpatrún *.kwd, baineann siad leis an gcineál MIME "
+#~ "\"x-kword\";</li> <li>Cur síos beag ar an gcineál MIME, mar shampla is é "
+#~ "'KWord document' an cur síos iomlán ar an gcineál \"x-kword\";</li> "
+#~ "<li>Deilbhín a úsáidtear nuair a thaispeántar comhaid den chineál MIME, "
+#~ "sa chaoi gur féidir leat comhaid den chineál seo a aithint in amharc "
+#~ "Konqueror mar shampla (bhuel, na cineálacha a úsáideann tú go minic ar a "
+#~ "laghad);</li> <li>Liosta feidhmchlár lenar féidir comhaid den chineál seo "
+#~ "a oscailt -- má tá níos mó ná feidhmchlár amháin ann, is in ord "
+#~ "tosaíochta é an liosta.</li></ul>Seans nach bhfuil fhios agat go bhfuil "
+#~ "roinnt cineálacha MIME gan phatrúin chomhaid a mbaineann leo; sna cásanna "
+#~ "seo, is féidir le Konqueror an cineál MIME a dhéanamh amach go díreach "
+#~ "trí inneachar an chomhaid a iniúchadh.</p>"
 
 #~ msgid "KEditFileType"
 #~ msgstr "KEditFileType"

@@ -9,7 +9,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: filetypes\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-03-05 03:09+0000\n"
+"POT-Creation-Date: 2023-03-25 02:10+0000\n"
 "PO-Revision-Date: 2011-06-28 20:00+0530\n"
 "Last-Translator: A S Alam <aalam@users.sf.net>\n"
 "Language-Team: Punjabi/Panjabi <punjabi-users@lists.sf.net>\n"
@@ -85,7 +85,7 @@ msgstr ""
 "ਹੈ। ਉਦਾਹਰਨ ਲਈ ਪੈਟਰਨ *.txt ਫਾਈਲ ਕਿਸਮ 'text/plain' ਨਾਲ ਸੰਬੰਧਿਤ ਹੈ, ਸਾਰੀਆਂ ਫਾਈਲ ਜੋ ਕਿ "
 "*.txt' ਨਾਲ ਖਤਮ ਹੋਣਗੀਆਂ ਨੂੰ ਸਧਾਰਨ ਪਾਠ ਫਾਈਲਾਂ ਮੰਨਿਆ ਜਾਵੇਗਾ।"
 
-#: filetypedetails.cpp:87 filetypesview.cpp:102 kservicelistwidget.cpp:110
+#: filetypedetails.cpp:87 filetypesview.cpp:81 kservicelistwidget.cpp:110
 #, kde-format
 msgid "Add..."
 msgstr "ਸ਼ਾਮਿਲ..."
@@ -177,47 +177,13 @@ msgstr "ਫਾਈਲ ਟਾਈਪ %1"
 msgid "Use settings for '%1' group"
 msgstr "ਗਰੁੱਪ '%1' ਲਈ ਸੈਟਿੰਗ ਵਰਤੋਂ"
 
-#: filetypesview.cpp:43
-#, kde-format
-msgid ""
-"<p><h1>File Associations</h1> This module allows you to choose which "
-"applications are associated with a given type of file. File types are also "
-"referred to as MIME types (MIME is an acronym which stands for "
-"\"Multipurpose Internet Mail Extensions\").</p><p> A file association "
-"consists of the following: <ul><li>Rules for determining the MIME-type of a "
-"file, for example the filename pattern *.png, which means 'all files with "
-"names that end in .png', is associated with the MIME type \"image/png\";</"
-"li> <li>A short description of the MIME-type, for example the description of "
-"the MIME type \"image/png\" is simply 'PNG image';</li> <li>An icon to be "
-"used for displaying files of the given MIME-type, so that you can easily "
-"identify the type of file in a file manager or file-selection dialog (at "
-"least for the types you use often);</li> <li>A list of the applications "
-"which can be used to open files of the given MIME-type -- if more than one "
-"application can be used then the list is ordered by priority.</li></ul> You "
-"may be surprised to find that some MIME types have no associated filename "
-"patterns; in these cases, KDE is able to determine the MIME-type by directly "
-"examining the contents of the file.</p>"
-msgstr ""
-"<p><h1>ਫਾਈਲ ਸਬੰਧ</h1> ਇਹ ਮੋਡੀਊਲ ਤੁਹਾਨੂੰ ਇੱਕ ਦਿੱਤੀ ਫਾਈਲ ਟਾਈਪ ਨਾਲ ਸਬੰਧਿਤ ਐਪਲੀਕੇਸ਼ਨ ਚੁਣਨ "
-"ਲਈ ਸਹਾਇਕ ਹੈ। ਫਾਈਲ ਟਾਈਪ ਨੂੰ MIME ਟਾਈਪ (MIME \"ਮਲਟੀਪਰਪਜ਼ ਇੰਟਰਨੈੱਟ ਮੇਲ ਇਕਸਟੈਨਸ਼ਨ\" ਦਾ ਛੋਟਾ "
-"ਰੂਪ ਹੈ।)</p><p>ਇੱਕ ਫਾਈਲ ਸਬੰਧ ਵਿੱਚ ਅੱਗੇ ਦਿੱਤੇ ਭਾਗ ਹਨ: <ul><li>ਇੱਕ ਫਾਈਲ ਲਈ MIME-ਟਾਈਪ "
-"ਪਛਾਣਨ ਲਈ ਰੂਲ, ਜਿਵੇਂ *.png ਪੈਟਰਨ ਫਾਈਲ ਨਾਂ, ਦਾ ਮਤਲਬ ਹੈ .png' ਨਾਲ ਖਤਮ ਹੋਣ ਵਾਲੀਆਂ ਸਭ "
-"ਫਾਈਲਾਂ', \"image/png\" MIME ਟਾਈਪ ਨਾਲ ਸਬੰਧ ਹੈ;</li><li>MIME ਟਾਈਪ ਦਾ ਸੰਖੇਪ ਵੇਰਵਾ, "
-"ਜਿਵੇਂ ਕਿ \"image/png\" MIME ਟਾਈਪ ਲਈ 'PNG ਚਿੱਤਰ';</li><li>ਦਿੱਤੀ MIME-ਟਾਈਪ ਦੀਆਂ "
-"ਫਾਈਲਾਂ ਵੇਖਾਉਣ ਲਈ ਇੱਕ ਆਈਕਾਨ, ਤਾਂ ਕਿ ਤੁਸੀਂ ਫਾਈਲਾਂ ਦੀ ਟਾਈਪ ਨੂੰ, ਫਾਈਲ ਮੈਨੇਜਰ ਜਾਂ ਫਾਈਲ-ਚੋਣ "
-"ਡਾਈਲਗ ਵੱਚ ਪਛਾਣ ਸਕੋ (ਘੱਟੋ-ਘੱਟ ਅਕਸਰ ਵਰਤਣ ਵਾਲੀਆਂ ਫਾਈਲਾਂ ਲਈ);</li> <li>ਦਿੱਤੀ MIME-ਟਾਈਪ "
-"ਦੀਆਂ ਫਾਈਲਾਂ ਖੋਲ੍ਹਣ ਵਾਸਤੇ ਵਰਤੀਆਂ ਜਾਂਦੀਆਂ ਐਪਲੀਕੇਸ਼ਨਾਂ ਦੀ ਲਿਸਟ -- ਜੇ ਇੱਕ ਤੋਂ ਵੱਧ ਐਪਲੀਕੇਸ਼ਨਾਂ ਹੋਣ ਤਾਂ "
-"ਲਿਸਟ ਵਿੱਚ ਦਰਜਾ ਕੰਮ ਕਰਦਾ ਹੈ। </li></ul> ਤੁਸੀਂ ਇਹ ਜਾਣ ਕੇ ਹੈਰਾਨ ਹੋਵੋਗੇ ਕਿ ਕੁਝ MIME ਟਾਈਪ "
-"ਨਾਲ ਕੋਈ ਫਾਈਲ-ਨਾਂ ਪੈਟਰਨ ਸਬੰਧਤ ਨਹੀਂ ਹੁੰਦਾ ਹੈ। ਇਸ ਹਾਲਤ ਵਿੱਚ, KDE ਫਾਈਲ ਦੀ ਸਮਗਰੀ ਵੇਖ ਕੇ MIME-"
-"ਟਾਈਪ ਪਛਾਣ ਸਕਦਾ ਹੈ।</p>"
-
-#: filetypesview.cpp:73
+#: filetypesview.cpp:52
 #, fuzzy, kde-format
 #| msgid "Find file type or filename pattern"
 msgid "Search for file type or filename pattern..."
 msgstr "ਫਾਈਲ ਟਾਈਪ ਜਾਂ ਫਾਈਲ-ਨਾਂ ਪੈਟਰਨ ਖੋਜ"
 
-#: filetypesview.cpp:79
+#: filetypesview.cpp:58
 #, kde-format
 msgid ""
 "Enter a part of a filename pattern, and only file types with a matching file "
@@ -226,12 +192,12 @@ msgid ""
 msgstr ""
 "ਫਾਈਲ ਨਾਂ ਪੈਟਰਨ ਲਈ ਹਿੱਸਾ ਭਰੋ। ਸਿਰਫ ਪੈਟਰਨ ਨਾਲ ਮੇਲ ਖਾਂਦੀਆਂ ਫਾਈਲ ਕਿਸਮਾਂ ਹੀ ਉਪਲੱਬਧ ਹੋ ਸਕਣਗੀਆਂ।"
 
-#: filetypesview.cpp:87
+#: filetypesview.cpp:66
 #, kde-format
 msgid "Known Types"
 msgstr "ਜਾਣੀਆਂ ਟਾਈਪਾਂ"
 
-#: filetypesview.cpp:93
+#: filetypesview.cpp:72
 #, kde-format
 msgid ""
 "Here you can see a hierarchical list of the file types which are known on "
@@ -244,32 +210,32 @@ msgstr ""
 "ਕਰਨਾ ਚਾਹੁੰਦੇ ਹੋ। ਸੱਜਾ ਬਟਨ ਵਰਤ ਕੇ ਜਾਣਕਾਰੀ ਵੇਖਣ/ਸੋਧਣ ਲਈ ਫਾਈਲ ਕਿਸਮ ਚੁਣੋ (ਜਿਵੇਂ ਕਿ HTML "
 "ਫਾਈਲਾਂ ਲਈ ਪਾਠ/html )।"
 
-#: filetypesview.cpp:107
+#: filetypesview.cpp:86
 #, kde-format
 msgid "Click here to add a new file type."
 msgstr "ਨਵੀਂ ਫਾਈਲ ਟਾਈਪ ਸ਼ਾਮਿਲ ਕਰਨ ਲਈ ਇਥੇ ਦਬਾਓ।"
 
-#: filetypesview.cpp:109 filetypesview.cpp:375
+#: filetypesview.cpp:88 filetypesview.cpp:354
 #, kde-format
 msgid "&Remove"
 msgstr "ਹਟਾਓ(&R)"
 
-#: filetypesview.cpp:133
+#: filetypesview.cpp:112
 #, kde-format
 msgid "Select a file type by name or by extension"
 msgstr "ਫਾਈਲ ਟਾਈਪ ਨੂੰ ਨਾਂ ਜਾਂ ਇਕਸਟੈਨਸ਼ਨ ਅਨੁਸਾਰ ਚੁਣੋ"
 
-#: filetypesview.cpp:368
+#: filetypesview.cpp:347
 #, kde-format
 msgid "&Revert"
 msgstr "ਵਾਪਸ ਲਵੋ(&R)"
 
-#: filetypesview.cpp:369
+#: filetypesview.cpp:348
 #, kde-format
 msgid "Revert this file type to its initial system-wide definition"
 msgstr "ਇਸ ਫਾਈਲ ਕਿਸਮ ਨੂੰ ਇਸ ਦੀ ਸ਼ੁਰੂਆਤੀ ਸਿਸਟਮ ਲਈ ਦਿੱਤੀ ਪ੍ਰੀਭਾਸ਼ਾ ਲਈ ਵਾਪਸ ਪਰਤਾਉ"
 
-#: filetypesview.cpp:371
+#: filetypesview.cpp:350
 #, kde-format
 msgid ""
 "Click here to revert this file type to its initial system-wide definition, "
@@ -279,12 +245,12 @@ msgid ""
 "from file contents can still end up using them)."
 msgstr ""
 
-#: filetypesview.cpp:376
+#: filetypesview.cpp:355
 #, kde-format
 msgid "Delete this file type definition completely"
 msgstr "ਇਹ ਫਾਈਲ ਕਿਸਮ ਪ੍ਰੀਭਾਸ਼ਾ ਪੂਰੀ ਤਰ੍ਹਾਂ ਹਟਾਓ"
 
-#: filetypesview.cpp:378
+#: filetypesview.cpp:357
 #, kde-format
 msgid ""
 "Click here to delete this file type definition completely. This is only "
@@ -506,6 +472,39 @@ msgid ""
 msgstr ""
 "ਫਾਈਲ ਕਿਸਮ ਦੇ ਨਾਂ ਦੀ ਕਿਸਮ ਹੈ। ਜਿਵੇਂ ਕਿ, ਜੇ ਤੁਸੀਂ 'image' ਨੂੰ ਵਰਗ ਵਜੋਂ ਚੁਣਦੇ ਹੋ ਤਾਂ ਤੁਸੀਂ ਇੱਥੇ "
 "'custom' ਲਿਖ ਸਕਦੇ ਹੋ ਤਾਂ ਫਾਈਲ ਕਿਸਮ 'image/custom' ਨੂੰ ਬਣਾਇਆ ਜਾਵੇਗਾ।"
+
+#~ msgid ""
+#~ "<p><h1>File Associations</h1> This module allows you to choose which "
+#~ "applications are associated with a given type of file. File types are "
+#~ "also referred to as MIME types (MIME is an acronym which stands for "
+#~ "\"Multipurpose Internet Mail Extensions\").</p><p> A file association "
+#~ "consists of the following: <ul><li>Rules for determining the MIME-type of "
+#~ "a file, for example the filename pattern *.png, which means 'all files "
+#~ "with names that end in .png', is associated with the MIME type \"image/png"
+#~ "\";</li> <li>A short description of the MIME-type, for example the "
+#~ "description of the MIME type \"image/png\" is simply 'PNG image';</li> "
+#~ "<li>An icon to be used for displaying files of the given MIME-type, so "
+#~ "that you can easily identify the type of file in a file manager or file-"
+#~ "selection dialog (at least for the types you use often);</li> <li>A list "
+#~ "of the applications which can be used to open files of the given MIME-"
+#~ "type -- if more than one application can be used then the list is ordered "
+#~ "by priority.</li></ul> You may be surprised to find that some MIME types "
+#~ "have no associated filename patterns; in these cases, KDE is able to "
+#~ "determine the MIME-type by directly examining the contents of the file.</"
+#~ "p>"
+#~ msgstr ""
+#~ "<p><h1>ਫਾਈਲ ਸਬੰਧ</h1> ਇਹ ਮੋਡੀਊਲ ਤੁਹਾਨੂੰ ਇੱਕ ਦਿੱਤੀ ਫਾਈਲ ਟਾਈਪ ਨਾਲ ਸਬੰਧਿਤ ਐਪਲੀਕੇਸ਼ਨ "
+#~ "ਚੁਣਨ ਲਈ ਸਹਾਇਕ ਹੈ। ਫਾਈਲ ਟਾਈਪ ਨੂੰ MIME ਟਾਈਪ (MIME \"ਮਲਟੀਪਰਪਜ਼ ਇੰਟਰਨੈੱਟ ਮੇਲ ਇਕਸਟੈਨਸ਼ਨ\" "
+#~ "ਦਾ ਛੋਟਾ ਰੂਪ ਹੈ।)</p><p>ਇੱਕ ਫਾਈਲ ਸਬੰਧ ਵਿੱਚ ਅੱਗੇ ਦਿੱਤੇ ਭਾਗ ਹਨ: <ul><li>ਇੱਕ ਫਾਈਲ ਲਈ "
+#~ "MIME-ਟਾਈਪ ਪਛਾਣਨ ਲਈ ਰੂਲ, ਜਿਵੇਂ *.png ਪੈਟਰਨ ਫਾਈਲ ਨਾਂ, ਦਾ ਮਤਲਬ ਹੈ .png' ਨਾਲ ਖਤਮ ਹੋਣ "
+#~ "ਵਾਲੀਆਂ ਸਭ ਫਾਈਲਾਂ', \"image/png\" MIME ਟਾਈਪ ਨਾਲ ਸਬੰਧ ਹੈ;</li><li>MIME ਟਾਈਪ ਦਾ "
+#~ "ਸੰਖੇਪ ਵੇਰਵਾ, ਜਿਵੇਂ ਕਿ \"image/png\" MIME ਟਾਈਪ ਲਈ 'PNG ਚਿੱਤਰ';</li><li>ਦਿੱਤੀ MIME-"
+#~ "ਟਾਈਪ ਦੀਆਂ ਫਾਈਲਾਂ ਵੇਖਾਉਣ ਲਈ ਇੱਕ ਆਈਕਾਨ, ਤਾਂ ਕਿ ਤੁਸੀਂ ਫਾਈਲਾਂ ਦੀ ਟਾਈਪ ਨੂੰ, ਫਾਈਲ ਮੈਨੇਜਰ ਜਾਂ "
+#~ "ਫਾਈਲ-ਚੋਣ ਡਾਈਲਗ ਵੱਚ ਪਛਾਣ ਸਕੋ (ਘੱਟੋ-ਘੱਟ ਅਕਸਰ ਵਰਤਣ ਵਾਲੀਆਂ ਫਾਈਲਾਂ ਲਈ);</li> <li>ਦਿੱਤੀ "
+#~ "MIME-ਟਾਈਪ ਦੀਆਂ ਫਾਈਲਾਂ ਖੋਲ੍ਹਣ ਵਾਸਤੇ ਵਰਤੀਆਂ ਜਾਂਦੀਆਂ ਐਪਲੀਕੇਸ਼ਨਾਂ ਦੀ ਲਿਸਟ -- ਜੇ ਇੱਕ ਤੋਂ ਵੱਧ "
+#~ "ਐਪਲੀਕੇਸ਼ਨਾਂ ਹੋਣ ਤਾਂ ਲਿਸਟ ਵਿੱਚ ਦਰਜਾ ਕੰਮ ਕਰਦਾ ਹੈ। </li></ul> ਤੁਸੀਂ ਇਹ ਜਾਣ ਕੇ ਹੈਰਾਨ ਹੋਵੋਗੇ "
+#~ "ਕਿ ਕੁਝ MIME ਟਾਈਪ ਨਾਲ ਕੋਈ ਫਾਈਲ-ਨਾਂ ਪੈਟਰਨ ਸਬੰਧਤ ਨਹੀਂ ਹੁੰਦਾ ਹੈ। ਇਸ ਹਾਲਤ ਵਿੱਚ, KDE ਫਾਈਲ "
+#~ "ਦੀ ਸਮਗਰੀ ਵੇਖ ਕੇ MIME-ਟਾਈਪ ਪਛਾਣ ਸਕਦਾ ਹੈ।</p>"
 
 #~ msgid "KEditFileType"
 #~ msgstr "ਕੇਆਡਿਟਫਾਈਲ ਟਾਈਪ"

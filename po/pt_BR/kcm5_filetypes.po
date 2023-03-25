@@ -15,7 +15,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kcm5_filetypes\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-03-05 03:09+0000\n"
+"POT-Creation-Date: 2023-03-25 02:10+0000\n"
 "PO-Revision-Date: 2019-01-18 14:17-0200\n"
 "Last-Translator: André Marcelo Alvarenga <alvarenga@kde.org>\n"
 "Language-Team: Brazilian Portuguese <kde-i18n-pt_br@kde.org>\n"
@@ -96,7 +96,7 @@ msgstr ""
 "tipo de arquivo 'text/plain' e todos os arquivos que terminam em '.txt' são "
 "reconhecidos como arquivos de texto simples."
 
-#: filetypedetails.cpp:87 filetypesview.cpp:102 kservicelistwidget.cpp:110
+#: filetypedetails.cpp:87 filetypesview.cpp:81 kservicelistwidget.cpp:110
 #, kde-format
 msgid "Add..."
 msgstr "Adicionar..."
@@ -191,52 +191,12 @@ msgstr "Tipo de arquivo %1"
 msgid "Use settings for '%1' group"
 msgstr "Usar as configurações do grupo '%1'"
 
-#: filetypesview.cpp:43
-#, kde-format
-msgid ""
-"<p><h1>File Associations</h1> This module allows you to choose which "
-"applications are associated with a given type of file. File types are also "
-"referred to as MIME types (MIME is an acronym which stands for "
-"\"Multipurpose Internet Mail Extensions\").</p><p> A file association "
-"consists of the following: <ul><li>Rules for determining the MIME-type of a "
-"file, for example the filename pattern *.png, which means 'all files with "
-"names that end in .png', is associated with the MIME type \"image/png\";</"
-"li> <li>A short description of the MIME-type, for example the description of "
-"the MIME type \"image/png\" is simply 'PNG image';</li> <li>An icon to be "
-"used for displaying files of the given MIME-type, so that you can easily "
-"identify the type of file in a file manager or file-selection dialog (at "
-"least for the types you use often);</li> <li>A list of the applications "
-"which can be used to open files of the given MIME-type -- if more than one "
-"application can be used then the list is ordered by priority.</li></ul> You "
-"may be surprised to find that some MIME types have no associated filename "
-"patterns; in these cases, KDE is able to determine the MIME-type by directly "
-"examining the contents of the file.</p>"
-msgstr ""
-"<p><h1>Associações de arquivos</h1> Este módulo permite que você escolha "
-"quais aplicativos serão associados a um determinado tipo de arquivo. Tipos "
-"de arquivos também são conhecidos como tipos MIME (MIME é um acrônimo para "
-"\"Multipurpose Internet Mail Extensions\".)</p><p> Uma associação de arquivo "
-"consiste no seguinte: <ul><li>Regras para determinação do tipo MIME de um "
-"arquivo, por exemplo o padrão de nome de arquivo *.png, que significa 'todos "
-"os arquivos com nomes que terminam em .png', está associado ao tipo MIME "
-"\"image/png\";</li> <li>Uma breve descrição do tipo MIME, por exemplo a "
-"descrição do tipo MIME \"image/png\" é simplesmente 'imagem PNG';</li> "
-"<li>Um ícone a ser usado para exibir arquivos do tipo MIME dado, assim você "
-"pode identificar facilmente o tipo de arquivo em um gerenciador de arquivos "
-"ou diálogo de seleção de arquivos (pelo menos para os tipos que você usa com "
-"frequência);</li> <li>Uma lista de aplicativos que podem ser usados para "
-"abrir arquivos do tipo MIME dado -- se mais de um aplicativo pode ser usado "
-"então a lista é ordenada pela prioridade.</li></ul> Você pode se surpreender "
-"ao descobrir que alguns tipos MIME não têm padrões de nome de arquivo "
-"associados; nesses casos, o KDE é capaz de determinar o tipo MIME examinando "
-"diretamente o conteúdo do arquivo.</p>"
-
-#: filetypesview.cpp:73
+#: filetypesview.cpp:52
 #, kde-format
 msgid "Search for file type or filename pattern..."
 msgstr "Procurar por tipo ou padrão de nome de arquivo..."
 
-#: filetypesview.cpp:79
+#: filetypesview.cpp:58
 #, kde-format
 msgid ""
 "Enter a part of a filename pattern, and only file types with a matching file "
@@ -248,12 +208,12 @@ msgstr ""
 "Alternativamente, informe uma parte de um nome de tipo de arquivo como ele "
 "aparece na lista."
 
-#: filetypesview.cpp:87
+#: filetypesview.cpp:66
 #, kde-format
 msgid "Known Types"
 msgstr "Tipos conhecidos"
 
-#: filetypesview.cpp:93
+#: filetypesview.cpp:72
 #, kde-format
 msgid ""
 "Here you can see a hierarchical list of the file types which are known on "
@@ -267,32 +227,32 @@ msgstr ""
 "para arquivos HTML) para ver/editar as informações para este tipo de arquivo "
 "usando os controle à direita."
 
-#: filetypesview.cpp:107
+#: filetypesview.cpp:86
 #, kde-format
 msgid "Click here to add a new file type."
 msgstr "Clique aqui para adicionar um novo tipo de arquivo."
 
-#: filetypesview.cpp:109 filetypesview.cpp:375
+#: filetypesview.cpp:88 filetypesview.cpp:354
 #, kde-format
 msgid "&Remove"
 msgstr "&Remover"
 
-#: filetypesview.cpp:133
+#: filetypesview.cpp:112
 #, kde-format
 msgid "Select a file type by name or by extension"
 msgstr "Selecione um tipo de arquivo por nome ou extensão"
 
-#: filetypesview.cpp:368
+#: filetypesview.cpp:347
 #, kde-format
 msgid "&Revert"
 msgstr "&Reverter"
 
-#: filetypesview.cpp:369
+#: filetypesview.cpp:348
 #, kde-format
 msgid "Revert this file type to its initial system-wide definition"
 msgstr "Reverter este tipo de arquivo para a definição inicial do sistema"
 
-#: filetypesview.cpp:371
+#: filetypesview.cpp:350
 #, kde-format
 msgid ""
 "Click here to revert this file type to its initial system-wide definition, "
@@ -308,12 +268,12 @@ msgstr ""
 "minimizar as chances de estes serem usados (mas a determinação do tipo de "
 "arquivo a partir do seu conteúdo possa à mesma vir a usá-los)."
 
-#: filetypesview.cpp:376
+#: filetypesview.cpp:355
 #, kde-format
 msgid "Delete this file type definition completely"
 msgstr "Excluir completamente esta definição de tipo de arquivo"
 
-#: filetypesview.cpp:378
+#: filetypesview.cpp:357
 #, kde-format
 msgid ""
 "Click here to delete this file type definition completely. This is only "
@@ -554,3 +514,43 @@ msgstr ""
 "Digite o nome do tipo de arquivo. Por exemplo, se você selecionou 'image' "
 "como categoria e você digitar 'custom' aqui, o tipo de arquivo 'image/"
 "custom' será criado."
+
+#~ msgid ""
+#~ "<p><h1>File Associations</h1> This module allows you to choose which "
+#~ "applications are associated with a given type of file. File types are "
+#~ "also referred to as MIME types (MIME is an acronym which stands for "
+#~ "\"Multipurpose Internet Mail Extensions\").</p><p> A file association "
+#~ "consists of the following: <ul><li>Rules for determining the MIME-type of "
+#~ "a file, for example the filename pattern *.png, which means 'all files "
+#~ "with names that end in .png', is associated with the MIME type \"image/png"
+#~ "\";</li> <li>A short description of the MIME-type, for example the "
+#~ "description of the MIME type \"image/png\" is simply 'PNG image';</li> "
+#~ "<li>An icon to be used for displaying files of the given MIME-type, so "
+#~ "that you can easily identify the type of file in a file manager or file-"
+#~ "selection dialog (at least for the types you use often);</li> <li>A list "
+#~ "of the applications which can be used to open files of the given MIME-"
+#~ "type -- if more than one application can be used then the list is ordered "
+#~ "by priority.</li></ul> You may be surprised to find that some MIME types "
+#~ "have no associated filename patterns; in these cases, KDE is able to "
+#~ "determine the MIME-type by directly examining the contents of the file.</"
+#~ "p>"
+#~ msgstr ""
+#~ "<p><h1>Associações de arquivos</h1> Este módulo permite que você escolha "
+#~ "quais aplicativos serão associados a um determinado tipo de arquivo. "
+#~ "Tipos de arquivos também são conhecidos como tipos MIME (MIME é um "
+#~ "acrônimo para \"Multipurpose Internet Mail Extensions\".)</p><p> Uma "
+#~ "associação de arquivo consiste no seguinte: <ul><li>Regras para "
+#~ "determinação do tipo MIME de um arquivo, por exemplo o padrão de nome de "
+#~ "arquivo *.png, que significa 'todos os arquivos com nomes que terminam "
+#~ "em .png', está associado ao tipo MIME \"image/png\";</li> <li>Uma breve "
+#~ "descrição do tipo MIME, por exemplo a descrição do tipo MIME \"image/png"
+#~ "\" é simplesmente 'imagem PNG';</li> <li>Um ícone a ser usado para exibir "
+#~ "arquivos do tipo MIME dado, assim você pode identificar facilmente o tipo "
+#~ "de arquivo em um gerenciador de arquivos ou diálogo de seleção de "
+#~ "arquivos (pelo menos para os tipos que você usa com frequência);</li> "
+#~ "<li>Uma lista de aplicativos que podem ser usados para abrir arquivos do "
+#~ "tipo MIME dado -- se mais de um aplicativo pode ser usado então a lista é "
+#~ "ordenada pela prioridade.</li></ul> Você pode se surpreender ao descobrir "
+#~ "que alguns tipos MIME não têm padrões de nome de arquivo associados; "
+#~ "nesses casos, o KDE é capaz de determinar o tipo MIME examinando "
+#~ "diretamente o conteúdo do arquivo.</p>"

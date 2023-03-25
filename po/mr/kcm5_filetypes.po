@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: filetypes\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-03-05 03:09+0000\n"
+"POT-Creation-Date: 2023-03-25 02:10+0000\n"
 "PO-Revision-Date: 2014-10-28 15:31+0530\n"
 "Last-Translator: Chetan Khona <chetan@kompkin.com>\n"
 "Language-Team: Marathi <kde-i18n-doc@kde.org>\n"
@@ -89,7 +89,7 @@ msgstr ""
 "उदाहरणार्थ, *.txt रचना फाईल प्रकार 'text/plain'; सह निगडीत आहे; '.txt' अंतर्गत "
 "समाप्त होणारे फाईल पाठ्य फाईल नुरूप ओळखले जाते."
 
-#: filetypedetails.cpp:87 filetypesview.cpp:102 kservicelistwidget.cpp:110
+#: filetypedetails.cpp:87 filetypesview.cpp:81 kservicelistwidget.cpp:110
 #, kde-format
 msgid "Add..."
 msgstr "जोडा..."
@@ -180,49 +180,13 @@ msgstr "फाईल प्रकार %1"
 msgid "Use settings for '%1' group"
 msgstr "'%1' समूहाकरिता वापरकर्ता संयोजना"
 
-#: filetypesview.cpp:43
-#, kde-format
-msgid ""
-"<p><h1>File Associations</h1> This module allows you to choose which "
-"applications are associated with a given type of file. File types are also "
-"referred to as MIME types (MIME is an acronym which stands for "
-"\"Multipurpose Internet Mail Extensions\").</p><p> A file association "
-"consists of the following: <ul><li>Rules for determining the MIME-type of a "
-"file, for example the filename pattern *.png, which means 'all files with "
-"names that end in .png', is associated with the MIME type \"image/png\";</"
-"li> <li>A short description of the MIME-type, for example the description of "
-"the MIME type \"image/png\" is simply 'PNG image';</li> <li>An icon to be "
-"used for displaying files of the given MIME-type, so that you can easily "
-"identify the type of file in a file manager or file-selection dialog (at "
-"least for the types you use often);</li> <li>A list of the applications "
-"which can be used to open files of the given MIME-type -- if more than one "
-"application can be used then the list is ordered by priority.</li></ul> You "
-"may be surprised to find that some MIME types have no associated filename "
-"patterns; in these cases, KDE is able to determine the MIME-type by directly "
-"examining the contents of the file.</p>"
-msgstr ""
-"<p><h1>File Association</h1> हे मोड्युल देण्यात आलेल्या फाईल प्रकारा बरोबर संबंधित आहे "
-"त्यातून कोणते अप्लिकेशन निवडायचे याची मुभा देते.  फाईल प्रकार हे नेहमीच MIME प्रकाराप्रमाणे "
-"संदर्भित केले जातात.(MIME ही acronym आहे जीचा अर्थ \"Multipurpose internet Mail "
-"Extensions \"असा होतो.)  </p><p>संबंधित फाईलमध्ये खालील बाबी आहेत <ul><li>  MIME "
-"फाईल प्रकारासाठी नियम निश्चिती,जसे कि फ़ाइल नावाचा नमुना *.png,ज्याचा अर्थ अश्या सर्व "
-"फ़ाइल्स ज्यांचा .png' ने शेवट होतो त्या MIME प्रकार \"image/png\";</li><li>म्हणजे MIME "
-"प्रकाराचे थोडक्यात विवरण,उदाहरणार्थ MIME प्रकार \"image/png \" म्हणजे सरळ "
-"'PNGimage';</li><li> दिलेल्या MIMEप्रकारच्या फ़ाइल्स दाखवण्यासाठी एक आयकॉन वापरला "
-"जातो.ज्यामुळे तुम्ही सहजपणे फ़ाइल व्यवस्थापक किंवा फ़ाइल निवड चौकटीतून फ़ाइल प्रकार ओळखू "
-"शकता.(किमान जे प्रकार तुम्ही वारंवार वापरता ); </li><li> अँप्लिकेशनसची यादी जीचा "
-"वापर दिलेल्या MIME प्रकारची फ़ाइल उघडण्यासाठी होतो.--जर एका पेक्षा अधिक अँप्लिकेशन "
-"वापरायची असतील तर ही यादी प्राधान्यक्रमाने लावावी लागते.</li></ul>तुम्हाला आश्चर्य "
-"वाटेल कि काही  MIMEप्रकारांना कोणतेही संबंधित फ़ाइलनाव नमुना नाही ; या केस मध्ये,केडीई "
-"हा MIMEप्रकार सरळ फ़ाइल मधील कंटेंटस परीक्षण करून निश्चित करू शकतो.</p>"
-
-#: filetypesview.cpp:73
+#: filetypesview.cpp:52
 #, fuzzy, kde-format
 #| msgid "Find file type or filename pattern"
 msgid "Search for file type or filename pattern..."
 msgstr "फाईल प्रकार किंवा फाईलनाव रचना शोधा"
 
-#: filetypesview.cpp:79
+#: filetypesview.cpp:58
 #, kde-format
 msgid ""
 "Enter a part of a filename pattern, and only file types with a matching file "
@@ -232,12 +196,12 @@ msgstr ""
 "फ़ाइल नाव नमुन्याचा भाग एन्टर करा,व सूचीतील फक्त जुळणारे नमुनेच समोर येतील.पर्यायाने,फ़ाइल "
 "प्रकाराच्या नावाचा भाग  सुचीत जसे दिसते तसे एन्टर करा."
 
-#: filetypesview.cpp:87
+#: filetypesview.cpp:66
 #, kde-format
 msgid "Known Types"
 msgstr "परिचीत प्रकार"
 
-#: filetypesview.cpp:93
+#: filetypesview.cpp:72
 #, kde-format
 msgid ""
 "Here you can see a hierarchical list of the file types which are known on "
@@ -250,32 +214,32 @@ msgstr ""
 "उजवीकडील नियंत्रण वापरून निवडलेल्या फ़ाइल प्रकारात (जसे किHTML फ़ाइल्स करिता  text/"
 "html ) माहिती व्हू/एडीट करा."
 
-#: filetypesview.cpp:107
+#: filetypesview.cpp:86
 #, kde-format
 msgid "Click here to add a new file type."
 msgstr "नवीन फाईल प्रकार जोडण्याकरिता येथे क्लिक करा."
 
-#: filetypesview.cpp:109 filetypesview.cpp:375
+#: filetypesview.cpp:88 filetypesview.cpp:354
 #, kde-format
 msgid "&Remove"
 msgstr "काढून टाका (&R)"
 
-#: filetypesview.cpp:133
+#: filetypesview.cpp:112
 #, kde-format
 msgid "Select a file type by name or by extension"
 msgstr "नावाप्रमाणे किंवा विस्तारणाप्रमाणे फाईल प्रकार निवडा"
 
-#: filetypesview.cpp:368
+#: filetypesview.cpp:347
 #, kde-format
 msgid "&Revert"
 msgstr "पुन्हा आधीचे घ्या (&R)"
 
-#: filetypesview.cpp:369
+#: filetypesview.cpp:348
 #, kde-format
 msgid "Revert this file type to its initial system-wide definition"
 msgstr "हा फाईल प्रकार पुर्वीच्या प्रणाली व्याख्येप्रमाणे बदला"
 
-#: filetypesview.cpp:371
+#: filetypesview.cpp:350
 #, kde-format
 msgid ""
 "Click here to revert this file type to its initial system-wide definition, "
@@ -290,12 +254,12 @@ msgstr ""
 "जेणेकरून त्या फ़ाइल्स वापरण्याची शक्यता कमी करू शकता.(परंतु फ़ाइल कंटेंटस फ़ाइल प्रकार "
 "निश्चिती अजूनही त्याचा वापर करते) "
 
-#: filetypesview.cpp:376
+#: filetypesview.cpp:355
 #, kde-format
 msgid "Delete this file type definition completely"
 msgstr "ही फाईल प्रकार व्याख्या पुर्णपणे काढून टाका"
 
-#: filetypesview.cpp:378
+#: filetypesview.cpp:357
 #, kde-format
 msgid ""
 "Click here to delete this file type definition completely. This is only "
@@ -526,6 +490,42 @@ msgid ""
 msgstr ""
 " फ़ाइल प्रकाराचे नाव टाईप करा.जसे कि जर तुम्ही 'image' ही श्रेणीम्हणून निवडलीतव तुम्ही "
 "'custom'म्हणून इथे टाईप केलेत. तर 'image/custom'हा फ़ाइल प्रकार तयार होईल."
+
+#~ msgid ""
+#~ "<p><h1>File Associations</h1> This module allows you to choose which "
+#~ "applications are associated with a given type of file. File types are "
+#~ "also referred to as MIME types (MIME is an acronym which stands for "
+#~ "\"Multipurpose Internet Mail Extensions\").</p><p> A file association "
+#~ "consists of the following: <ul><li>Rules for determining the MIME-type of "
+#~ "a file, for example the filename pattern *.png, which means 'all files "
+#~ "with names that end in .png', is associated with the MIME type \"image/png"
+#~ "\";</li> <li>A short description of the MIME-type, for example the "
+#~ "description of the MIME type \"image/png\" is simply 'PNG image';</li> "
+#~ "<li>An icon to be used for displaying files of the given MIME-type, so "
+#~ "that you can easily identify the type of file in a file manager or file-"
+#~ "selection dialog (at least for the types you use often);</li> <li>A list "
+#~ "of the applications which can be used to open files of the given MIME-"
+#~ "type -- if more than one application can be used then the list is ordered "
+#~ "by priority.</li></ul> You may be surprised to find that some MIME types "
+#~ "have no associated filename patterns; in these cases, KDE is able to "
+#~ "determine the MIME-type by directly examining the contents of the file.</"
+#~ "p>"
+#~ msgstr ""
+#~ "<p><h1>File Association</h1> हे मोड्युल देण्यात आलेल्या फाईल प्रकारा बरोबर संबंधित "
+#~ "आहे त्यातून कोणते अप्लिकेशन निवडायचे याची मुभा देते.  फाईल प्रकार हे नेहमीच MIME "
+#~ "प्रकाराप्रमाणे संदर्भित केले जातात.(MIME ही acronym आहे जीचा अर्थ \"Multipurpose "
+#~ "internet Mail Extensions \"असा होतो.)  </p><p>संबंधित फाईलमध्ये खालील बाबी "
+#~ "आहेत <ul><li>  MIME फाईल प्रकारासाठी नियम निश्चिती,जसे कि फ़ाइल नावाचा नमुना *."
+#~ "png,ज्याचा अर्थ अश्या सर्व फ़ाइल्स ज्यांचा .png' ने शेवट होतो त्या MIME प्रकार "
+#~ "\"image/png\";</li><li>म्हणजे MIME प्रकाराचे थोडक्यात विवरण,उदाहरणार्थ MIME "
+#~ "प्रकार \"image/png \" म्हणजे सरळ 'PNGimage';</li><li> दिलेल्या MIMEप्रकारच्या "
+#~ "फ़ाइल्स दाखवण्यासाठी एक आयकॉन वापरला जातो.ज्यामुळे तुम्ही सहजपणे फ़ाइल व्यवस्थापक "
+#~ "किंवा फ़ाइल निवड चौकटीतून फ़ाइल प्रकार ओळखू शकता.(किमान जे प्रकार तुम्ही वारंवार "
+#~ "वापरता ); </li><li> अँप्लिकेशनसची यादी जीचा वापर दिलेल्या MIME प्रकारची फ़ाइल "
+#~ "उघडण्यासाठी होतो.--जर एका पेक्षा अधिक अँप्लिकेशन वापरायची असतील तर ही यादी "
+#~ "प्राधान्यक्रमाने लावावी लागते.</li></ul>तुम्हाला आश्चर्य वाटेल कि काही  "
+#~ "MIMEप्रकारांना कोणतेही संबंधित फ़ाइलनाव नमुना नाही ; या केस मध्ये,केडीई हा MIMEप्रकार "
+#~ "सरळ फ़ाइल मधील कंटेंटस परीक्षण करून निश्चित करू शकतो.</p>"
 
 #~ msgid "KEditFileType"
 #~ msgstr "के-एडिट-फाईल-टाइप"

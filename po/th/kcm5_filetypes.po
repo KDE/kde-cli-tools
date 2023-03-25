@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: filetypes\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-03-05 03:09+0000\n"
+"POT-Creation-Date: 2023-03-25 02:10+0000\n"
 "PO-Revision-Date: 2010-12-17 20:21+0700\n"
 "Last-Translator: Thanomsub Noppaburana <donga.nb@gmail.com>\n"
 "Language-Team: Thai <thai-l10n@googlegroups.com>\n"
@@ -84,7 +84,7 @@ msgstr ""
 "ตัวอย่างเช่น รูปแบบ *.txt ถูกกำหนดให้เป็นแฟ้มประเภท 'text/plain' ดังนั้นทุกแฟ้มที่ลงท้ายด้วย "
 "'.txt' จะถูกจัดการเช่นเดียวกันกับแฟ้มข้อความธรรมดาอื่น ๆ"
 
-#: filetypedetails.cpp:87 filetypesview.cpp:102 kservicelistwidget.cpp:110
+#: filetypedetails.cpp:87 filetypesview.cpp:81 kservicelistwidget.cpp:110
 #, kde-format
 msgid "Add..."
 msgstr "เพิ่ม..."
@@ -175,49 +175,13 @@ msgstr "ประเภทแฟ้ม %1"
 msgid "Use settings for '%1' group"
 msgstr "ใช้การตั้งค่านี้กับกลุ่ม '%1'"
 
-#: filetypesview.cpp:43
-#, kde-format
-msgid ""
-"<p><h1>File Associations</h1> This module allows you to choose which "
-"applications are associated with a given type of file. File types are also "
-"referred to as MIME types (MIME is an acronym which stands for "
-"\"Multipurpose Internet Mail Extensions\").</p><p> A file association "
-"consists of the following: <ul><li>Rules for determining the MIME-type of a "
-"file, for example the filename pattern *.png, which means 'all files with "
-"names that end in .png', is associated with the MIME type \"image/png\";</"
-"li> <li>A short description of the MIME-type, for example the description of "
-"the MIME type \"image/png\" is simply 'PNG image';</li> <li>An icon to be "
-"used for displaying files of the given MIME-type, so that you can easily "
-"identify the type of file in a file manager or file-selection dialog (at "
-"least for the types you use often);</li> <li>A list of the applications "
-"which can be used to open files of the given MIME-type -- if more than one "
-"application can be used then the list is ordered by priority.</li></ul> You "
-"may be surprised to find that some MIME types have no associated filename "
-"patterns; in these cases, KDE is able to determine the MIME-type by directly "
-"examining the contents of the file.</p>"
-msgstr ""
-"<p><h1>การกำกับการใช้แฟ้ม</h1> มอดูลนี้ อนุญาตให้คุณเลือกได้ว่า "
-"จะเรียกใช้โปรแกรมใดกับประเภทแฟ้มที่เลือกไว้ โดยประเภทของแฟ้มนั้น จะอ้างอิงกับประเภท MIME "
-"ของแฟ้ม (MIME เป็นคำย่อของ \"Multipurpose Internet Mail Extensions\")</p><p> "
-"การกำกับการใช้แฟ้มนี้ มีข้อพิจารณาคือ: <ul><li>กฏในการพิจารณาประเภท MIME ของแฟ้ม "
-"ตัวอย่างเช่น ชื่อแฟ้มที่มีรูปแบบ *.png หมายความว่า 'ทุกแฟ้มที่มีชื่อลงท้ายด้วย .png' "
-"ควรจะถูกกำกับให้เป็นประเภท MIME แบบ \"image/png\";</li> <li>รายละเอียดสั้น ๆ "
-"ของประเภท MIME ของแฟ้ม ตัวอย่างเช่น รายละเอียดของประเภท MIME แบบ \"image/png\" "
-"อย่างง่าย ๆ ก็คือ 'รูปภาพแบบ PNG' นั่นเอง</li><li>ไอคอนที่จะถูกใช้แสดงกับประเภท MIME "
-"แต่ละชนิด ซึ่งจะทำให้คุณทราบได้ง่ายว่า เป็นแฟ้มประเภทใด "
-"เมื่อแสดงในโปรแกรมจัดการแฟ้มหรือกล่องเลือกแฟ้ม (อย่างน้อยก็กับแฟ้มที่คุณใช้อยู่บ่อย ๆ ละน่า !)</"
-"li><li>รายการโปรแกรมที่สามารถใช้เปิดประเภท MIME ของแฟ้ม ถ้ามีในรายการมากกว่าหนึ่งตัว "
-"ก็จะถูกเรียงลำดับตามความสำคัญ</li></ul> คุณอาจจะประหลาดใจว่ามีประเภท MIME บางแบบ "
-"ที่ยังไม่ได้ถูกกำหนดรูปแบบแฟ้มไว้ ! ในกรณีนี้ KDE สามารถจะตัดสินใจให้ได้ว่า "
-"ควรจะจัดการแฟ้มให้เป็นประเภท MIME แบบใด ด้วยการอ่านเนื้อหาที่อยู่ภายในแฟ้มโดยตรง</p>"
-
-#: filetypesview.cpp:73
+#: filetypesview.cpp:52
 #, fuzzy, kde-format
 #| msgid "Find file type or filename pattern"
 msgid "Search for file type or filename pattern..."
 msgstr "ค้นหาประเภทแฟ้มหรือรูปแบบชื่อแฟ้ม"
 
-#: filetypesview.cpp:79
+#: filetypesview.cpp:58
 #, kde-format
 msgid ""
 "Enter a part of a filename pattern, and only file types with a matching file "
@@ -227,12 +191,12 @@ msgstr ""
 "ป้อนรูปแบบชื่อแฟ้มบางส่วน และเฉพาะประเภทแฟ้มที่เข้าคู่กับรูปแบบแฟ้มเท่านั้น ที่จะปรากฎบนรายการ "
 "ส่วนทางเลือกอื่นนั้น ให้ป้อนส่วนของประเภทแฟ้มที่ปรากฎอยู่ในรายการ"
 
-#: filetypesview.cpp:87
+#: filetypesview.cpp:66
 #, kde-format
 msgid "Known Types"
 msgstr "ประเภทที่รู้จัก"
 
-#: filetypesview.cpp:93
+#: filetypesview.cpp:72
 #, kde-format
 msgid ""
 "Here you can see a hierarchical list of the file types which are known on "
@@ -244,32 +208,32 @@ msgstr ""
 "'+' เพื่อขยายหัวข้อ หรือ '-' เพื่อยุบหัวข้อ เลือกประเภทแฟ้ม (เช่น text/html สำหรับแฟ้มแบบ "
 "HTML) เพื่อแสดงหรือแก้ไขข้อมูลของประเภทแฟ้มนั้น ๆ โดยใช้ส่วนควบคุมที่อยู่ทางด้านขวานี้"
 
-#: filetypesview.cpp:107
+#: filetypesview.cpp:86
 #, kde-format
 msgid "Click here to add a new file type."
 msgstr "คลิกเพื่อเพิ่มประเภทแฟ้มตัวใหม่"
 
-#: filetypesview.cpp:109 filetypesview.cpp:375
+#: filetypesview.cpp:88 filetypesview.cpp:354
 #, kde-format
 msgid "&Remove"
 msgstr "เ&อาออก"
 
-#: filetypesview.cpp:133
+#: filetypesview.cpp:112
 #, kde-format
 msgid "Select a file type by name or by extension"
 msgstr "เลือกประเภทแฟ้มด้วยชื่อหรือด้วยส่วนขยาย"
 
-#: filetypesview.cpp:368
+#: filetypesview.cpp:347
 #, kde-format
 msgid "&Revert"
 msgstr "&กลับคืน"
 
-#: filetypesview.cpp:369
+#: filetypesview.cpp:348
 #, kde-format
 msgid "Revert this file type to its initial system-wide definition"
 msgstr "กลับคืนค่าของประเภทแฟ้มนี้ให้เป็นค่ากำหนดเดิมของระบบ"
 
-#: filetypesview.cpp:371
+#: filetypesview.cpp:350
 #, kde-format
 msgid ""
 "Click here to revert this file type to its initial system-wide definition, "
@@ -284,12 +248,12 @@ msgstr ""
 "คุณก็สามารถจะล้างรายการรูปแบบของพวกมันได้ เพื่อลดโอกาสที่พวกมัน จะถูกใช้ให้เหลือน้อยที่สุด "
 "(แต่การตัดสินใจเลือกประเภทแฟ้ม โดยพิจารณาจากเนื้อหาของแฟ้มจะยังคงถูกใช้อยู่)"
 
-#: filetypesview.cpp:376
+#: filetypesview.cpp:355
 #, kde-format
 msgid "Delete this file type definition completely"
 msgstr "ลบการนิยามประเภทแฟ้มนี้ออกไปอย่างสมบูรณ์"
 
-#: filetypesview.cpp:378
+#: filetypesview.cpp:357
 #, kde-format
 msgid ""
 "Click here to delete this file type definition completely. This is only "
@@ -523,6 +487,42 @@ msgid ""
 msgstr ""
 "ป้อนชื่อของประเภทแฟ้ม หากคุณเลือกหมวด 'รูปภาพ' และป้อน 'กำหนดเอง' ไว้ที่นี่ ประเภทแฟ้ม "
 "'รูปภาพ/กำหนดเอง' จะถูกสร้างขึ้น"
+
+#~ msgid ""
+#~ "<p><h1>File Associations</h1> This module allows you to choose which "
+#~ "applications are associated with a given type of file. File types are "
+#~ "also referred to as MIME types (MIME is an acronym which stands for "
+#~ "\"Multipurpose Internet Mail Extensions\").</p><p> A file association "
+#~ "consists of the following: <ul><li>Rules for determining the MIME-type of "
+#~ "a file, for example the filename pattern *.png, which means 'all files "
+#~ "with names that end in .png', is associated with the MIME type \"image/png"
+#~ "\";</li> <li>A short description of the MIME-type, for example the "
+#~ "description of the MIME type \"image/png\" is simply 'PNG image';</li> "
+#~ "<li>An icon to be used for displaying files of the given MIME-type, so "
+#~ "that you can easily identify the type of file in a file manager or file-"
+#~ "selection dialog (at least for the types you use often);</li> <li>A list "
+#~ "of the applications which can be used to open files of the given MIME-"
+#~ "type -- if more than one application can be used then the list is ordered "
+#~ "by priority.</li></ul> You may be surprised to find that some MIME types "
+#~ "have no associated filename patterns; in these cases, KDE is able to "
+#~ "determine the MIME-type by directly examining the contents of the file.</"
+#~ "p>"
+#~ msgstr ""
+#~ "<p><h1>การกำกับการใช้แฟ้ม</h1> มอดูลนี้ อนุญาตให้คุณเลือกได้ว่า "
+#~ "จะเรียกใช้โปรแกรมใดกับประเภทแฟ้มที่เลือกไว้ โดยประเภทของแฟ้มนั้น จะอ้างอิงกับประเภท "
+#~ "MIME ของแฟ้ม (MIME เป็นคำย่อของ \"Multipurpose Internet Mail Extensions\")</"
+#~ "p><p> การกำกับการใช้แฟ้มนี้ มีข้อพิจารณาคือ: <ul><li>กฏในการพิจารณาประเภท MIME "
+#~ "ของแฟ้ม ตัวอย่างเช่น ชื่อแฟ้มที่มีรูปแบบ *.png หมายความว่า 'ทุกแฟ้มที่มีชื่อลงท้ายด้วย .png' "
+#~ "ควรจะถูกกำกับให้เป็นประเภท MIME แบบ \"image/png\";</li> <li>รายละเอียดสั้น ๆ "
+#~ "ของประเภท MIME ของแฟ้ม ตัวอย่างเช่น รายละเอียดของประเภท MIME แบบ \"image/png\" "
+#~ "อย่างง่าย ๆ ก็คือ 'รูปภาพแบบ PNG' นั่นเอง</li><li>ไอคอนที่จะถูกใช้แสดงกับประเภท MIME "
+#~ "แต่ละชนิด ซึ่งจะทำให้คุณทราบได้ง่ายว่า เป็นแฟ้มประเภทใด "
+#~ "เมื่อแสดงในโปรแกรมจัดการแฟ้มหรือกล่องเลือกแฟ้ม (อย่างน้อยก็กับแฟ้มที่คุณใช้อยู่บ่อย ๆ "
+#~ "ละน่า !)</li><li>รายการโปรแกรมที่สามารถใช้เปิดประเภท MIME ของแฟ้ม "
+#~ "ถ้ามีในรายการมากกว่าหนึ่งตัว ก็จะถูกเรียงลำดับตามความสำคัญ</li></ul> "
+#~ "คุณอาจจะประหลาดใจว่ามีประเภท MIME บางแบบ ที่ยังไม่ได้ถูกกำหนดรูปแบบแฟ้มไว้ ! ในกรณีนี้ "
+#~ "KDE สามารถจะตัดสินใจให้ได้ว่า ควรจะจัดการแฟ้มให้เป็นประเภท MIME แบบใด "
+#~ "ด้วยการอ่านเนื้อหาที่อยู่ภายในแฟ้มโดยตรง</p>"
 
 #~ msgid "KEditFileType"
 #~ msgstr "ประเภทแฟ้มของ KEdit"

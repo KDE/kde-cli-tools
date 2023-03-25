@@ -9,7 +9,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: filetypes\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-03-05 03:09+0000\n"
+"POT-Creation-Date: 2023-03-25 02:10+0000\n"
 "PO-Revision-Date: 2019-12-12 23:00+0000\n"
 "Last-Translator: Vivek KJ Pazhedath <vivekkj2004@gmail.com>\n"
 "Language-Team: Swathantra Malayalam Computing | സ്വതന്ത്ര മലയാളം കമ്പ്യൂട്ടിങ് "
@@ -86,7 +86,7 @@ msgstr ""
 "ലഭ്യമാകുന്നു. ഉദാഹരണത്തിനു്, *.txt എന്നത് 'text/plain' തരത്തിലുള്ള ഫയലാകുന്നു; '.txt' എന്ന് "
 "അവസാനിക്കുന്ന ഫയലുകള്‍ പ്ലെയിന്‍ ടെക്സ്റ്റ് ഫയലുകള്‍ ആകുന്നു."
 
-#: filetypedetails.cpp:87 filetypesview.cpp:102 kservicelistwidget.cpp:110
+#: filetypedetails.cpp:87 filetypesview.cpp:81 kservicelistwidget.cpp:110
 #, kde-format
 msgid "Add..."
 msgstr "ചേര്‍ക്കുക..."
@@ -179,47 +179,12 @@ msgstr "%1 എന്ന തരത്തിലുള്ള ഫയല്‍"
 msgid "Use settings for '%1' group"
 msgstr "'%1' ഗ്രൂപ്പിനുള്ള ക്രമികരണങ്ങള്‍ ഉപയോഗിക്കുക"
 
-#: filetypesview.cpp:43
-#, kde-format
-msgid ""
-"<p><h1>File Associations</h1> This module allows you to choose which "
-"applications are associated with a given type of file. File types are also "
-"referred to as MIME types (MIME is an acronym which stands for "
-"\"Multipurpose Internet Mail Extensions\").</p><p> A file association "
-"consists of the following: <ul><li>Rules for determining the MIME-type of a "
-"file, for example the filename pattern *.png, which means 'all files with "
-"names that end in .png', is associated with the MIME type \"image/png\";</"
-"li> <li>A short description of the MIME-type, for example the description of "
-"the MIME type \"image/png\" is simply 'PNG image';</li> <li>An icon to be "
-"used for displaying files of the given MIME-type, so that you can easily "
-"identify the type of file in a file manager or file-selection dialog (at "
-"least for the types you use often);</li> <li>A list of the applications "
-"which can be used to open files of the given MIME-type -- if more than one "
-"application can be used then the list is ordered by priority.</li></ul> You "
-"may be surprised to find that some MIME types have no associated filename "
-"patterns; in these cases, KDE is able to determine the MIME-type by directly "
-"examining the contents of the file.</p>"
-msgstr ""
-"<p><h1>ഫയല്‍ ബന്ധപ്പെടുത്തലുകള്‍</h1> ഒരു നിശ്ചിത ഫയല്‍ തരവുമായി ബന്ധപ്പെടുത്തേണ്ട പ്രയോഗങ്ങളെ "
-"തിരഞ്ഞെടുക്കുവാന്‍ ഈ ഘടകം അനുവദിക്കും. ഫയല്‍ തരങ്ങളെ മൈം തരങ്ങള്‍ എന്നും പറയാറുണ്ട്. "
-"(Multipurpose Internet Mail Extensions എന്നതിന്റെ ചുരുക്കമാണ് മൈം)</p><p>ഒരു ഫയല്‍ "
-"ബന്ധപ്പെടുത്തലില്‍ താഴെ പറയുന്നവ അടങ്ങിയിരിക്കുന്നു<ul><li>ഒരു ഫയലിന്റെ മൈം തരം നിശ്ചയിക്കുന്ന "
-"നിയമങ്ങള്‍. ഉദാഹരണത്തിന് *.png എന്ന ഫയല്‍ രിതി .png -ല്‍ അവസാനിക്കുന്ന എല്ലാ ഫയലിനെയും "
-"പ്രതിനിധികരിക്കുന്നു;</li> <li>മൈം തരത്തിനെ പറ്റുയുള്ള ചെറിയ വിവരണം. ഉദാഹരണത്തിന് മൈം "
-"തരം \"image/png\"യുടെ വിവരണം 'പി എന്‍ ജി ചിത്രം' എന്നായിരിക്കാം;</li> <li>ഫയലിന്റെ "
-"ചിഹ്നം. ഫയല്‍ മേല്‍നോട്ടക്കാരനിലോ, ഫയല്‍ തിരഞ്ഞെടുക്കുന്ന ജാലകത്തിലോ ഫയലിനെ എളുപ്പം കണ്ടു "
-"പിടിക്കാന്‍ ഉപയോഗിക്കുന്നു. കൂടുതലായി ഉപയോഗിക്കുന്ന ഫയല്‍ തരത്തിനെങ്കിലും ഇത് ഉണ്ടായിരികികുന്നത് "
-"നന്നായിരിക്കും;</li> <li>ഈ മൈം തരത്തിലുള്ള ഫയലിനെ കാണിക്കാനുള്ള പ്രയോഗങ്ങള്‍. കൂടുതല്‍ "
-"പ്രയോഗങ്ങള്‍ ഉണ്ടെങ്കില്‍ പട്ടികയെ മുന്‍ഗണനാ ക്രമത്തില്‍ അടുക്കുന്നു.</li></ul>ചില മൈം തരത്തിന് ഫയല്‍ "
-"നാമത്തിന്റെ രീതികള്‍ കാണില്ല. അങ്ങനെയുള്ള അവസ്ഥയില്‍ കെ ഡി ഇ ഫയലിലെ ഉള്ളടക്കം പരിശോധിച്ച് "
-"നേരിട്ട് മൈം തരങ്ങള്‍ കണ്ടെത്തും.</p>"
-
-#: filetypesview.cpp:73
+#: filetypesview.cpp:52
 #, fuzzy, kde-format
 msgid "Search for file type or filename pattern..."
 msgstr "ഈ തരത്തിലുള്ളതോ താഴെ പറയുന്ന രീതിയില്‍ പേരുള്ളതോ ആയ ഫയലുകള്‍ കണ്ടുപിടിയ്ക്കുക"
 
-#: filetypesview.cpp:79
+#: filetypesview.cpp:58
 #, kde-format
 msgid ""
 "Enter a part of a filename pattern, and only file types with a matching file "
@@ -229,12 +194,12 @@ msgstr ""
 "ഫയലിന്റെ പേരിന്റെ മാതൃകയുടെ ഒരു ഭാഗം നല്കുക, ചേരുന്ന ഫയലിന്റെ മാതൃകയുടെ പട്ടിക മാത്രമേ "
 "ദ്രശ്യമാക്കകയുള്ളു. അല്ലേങ്കില്‍, ദ്രശ്യമാകന്ന ഫയലിന്റെ പേരിന്റെ മാതൃകയുടെ ഒരു ഭാഗം നല്കുക."
 
-#: filetypesview.cpp:87
+#: filetypesview.cpp:66
 #, kde-format
 msgid "Known Types"
 msgstr "അറിയാവുന്ന തരത്തിലുള്ളവ"
 
-#: filetypesview.cpp:93
+#: filetypesview.cpp:72
 #, kde-format
 msgid ""
 "Here you can see a hierarchical list of the file types which are known on "
@@ -247,32 +212,32 @@ msgstr ""
 "വിവരം കാണുവാനോ തിരുത്തുവാനോ വലത് വശത്തെ നിയന്ത്രണ സംവിധാനങ്ങള്‍ ഉപയോഗിച്ച് ഒരു ഫയല്‍ തരം "
 "തിരഞ്ഞെടുക്കുക (ഉദാ. HTML ഫയലുകള്‍ക്കായി text/html തിരഞ്ഞെടുക്കുക)."
 
-#: filetypesview.cpp:107
+#: filetypesview.cpp:86
 #, kde-format
 msgid "Click here to add a new file type."
 msgstr "ഒരു പുതിയ തരത്തിലുള്ള ഫയല്‍ ചേര്‍ക്കുന്നതിനായി ഇവിടെ ക്ലിക്ക് ചെയ്യുക."
 
-#: filetypesview.cpp:109 filetypesview.cpp:375
+#: filetypesview.cpp:88 filetypesview.cpp:354
 #, kde-format
 msgid "&Remove"
 msgstr "&നീക്കം ചെയ്യുക"
 
-#: filetypesview.cpp:133
+#: filetypesview.cpp:112
 #, kde-format
 msgid "Select a file type by name or by extension"
 msgstr "പേര് അല്ലെങ്കില്‍ എക്സ്റ്റെന്‍ഷന്‍ ഉപയോഗിച്ച് ഒരു തരത്തിലുള്ള ഫയല്‍ തെരഞ്ഞെടുക്കുക"
 
-#: filetypesview.cpp:368
+#: filetypesview.cpp:347
 #, kde-format
 msgid "&Revert"
 msgstr "&പഴയ പടിയാക്കുക"
 
-#: filetypesview.cpp:369
+#: filetypesview.cpp:348
 #, kde-format
 msgid "Revert this file type to its initial system-wide definition"
 msgstr "ഈ തരത്തിലുള്ള ഫയലുകള്‍ക്കു് ആദ്യം സിസ്റ്റത്തിനു് മുഴുവനും ബാധകമായിരുന്ന പോലെ തിരിച്ചാക്കുക"
 
-#: filetypesview.cpp:371
+#: filetypesview.cpp:350
 #, kde-format
 msgid ""
 "Click here to revert this file type to its initial system-wide definition, "
@@ -286,12 +251,12 @@ msgstr ""
 "ഉപയോഗിക്കുന്നതിനുള്ള സാധ്യതകള്‍ ഒഴിവാക്കാന്‍ താങ്കള്‍ക്ക് അതിന്റെ മാതൃക പട്ടിക ശൂന്യമാക്കാം. എന്നാല്‍ "
 "ഫയലിലെ ഉള്ളടക്കം മനസിലാക്കി ഫയല്‍ ഇനം തിരിച്ചറിയുന്ന സംവിധാനത്തിന് അവയെ ഉപയോഗിക്കാന്‍ പറ്റും"
 
-#: filetypesview.cpp:376
+#: filetypesview.cpp:355
 #, kde-format
 msgid "Delete this file type definition completely"
 msgstr "ഈ തരത്തിലുള്ള ഫയലുകളുടെ നിര്‍വ്വചനം പൂര്‍ണമായി നീക്കം ചെയ്യുക"
 
-#: filetypesview.cpp:378
+#: filetypesview.cpp:357
 #, kde-format
 msgid ""
 "Click here to delete this file type definition completely. This is only "
@@ -525,6 +490,40 @@ msgstr ""
 "ഏത് തരത്തിലുള്ള ഫയല്‍ എന്നത് നല്‍കുക. ഉദാഹരണത്തിന്, നിങ്ങള്‍ 'image' എന്നത് വിഭാഗമായി "
 "തെരഞ്ഞെടുത്തു് ഇവിടെ 'custom' എന്ന് ടൈപ്പ് ചെയ്താല്‍, 'image/custom' എന്ന ഫയല്‍ രീതി "
 "ഉണ്ടാക്കപ്പെടുന്നു."
+
+#~ msgid ""
+#~ "<p><h1>File Associations</h1> This module allows you to choose which "
+#~ "applications are associated with a given type of file. File types are "
+#~ "also referred to as MIME types (MIME is an acronym which stands for "
+#~ "\"Multipurpose Internet Mail Extensions\").</p><p> A file association "
+#~ "consists of the following: <ul><li>Rules for determining the MIME-type of "
+#~ "a file, for example the filename pattern *.png, which means 'all files "
+#~ "with names that end in .png', is associated with the MIME type \"image/png"
+#~ "\";</li> <li>A short description of the MIME-type, for example the "
+#~ "description of the MIME type \"image/png\" is simply 'PNG image';</li> "
+#~ "<li>An icon to be used for displaying files of the given MIME-type, so "
+#~ "that you can easily identify the type of file in a file manager or file-"
+#~ "selection dialog (at least for the types you use often);</li> <li>A list "
+#~ "of the applications which can be used to open files of the given MIME-"
+#~ "type -- if more than one application can be used then the list is ordered "
+#~ "by priority.</li></ul> You may be surprised to find that some MIME types "
+#~ "have no associated filename patterns; in these cases, KDE is able to "
+#~ "determine the MIME-type by directly examining the contents of the file.</"
+#~ "p>"
+#~ msgstr ""
+#~ "<p><h1>ഫയല്‍ ബന്ധപ്പെടുത്തലുകള്‍</h1> ഒരു നിശ്ചിത ഫയല്‍ തരവുമായി ബന്ധപ്പെടുത്തേണ്ട പ്രയോഗങ്ങളെ "
+#~ "തിരഞ്ഞെടുക്കുവാന്‍ ഈ ഘടകം അനുവദിക്കും. ഫയല്‍ തരങ്ങളെ മൈം തരങ്ങള്‍ എന്നും പറയാറുണ്ട്. "
+#~ "(Multipurpose Internet Mail Extensions എന്നതിന്റെ ചുരുക്കമാണ് മൈം)</p><p>ഒരു ഫയല്‍ "
+#~ "ബന്ധപ്പെടുത്തലില്‍ താഴെ പറയുന്നവ അടങ്ങിയിരിക്കുന്നു<ul><li>ഒരു ഫയലിന്റെ മൈം തരം "
+#~ "നിശ്ചയിക്കുന്ന നിയമങ്ങള്‍. ഉദാഹരണത്തിന് *.png എന്ന ഫയല്‍ രിതി .png -ല്‍ അവസാനിക്കുന്ന എല്ലാ "
+#~ "ഫയലിനെയും പ്രതിനിധികരിക്കുന്നു;</li> <li>മൈം തരത്തിനെ പറ്റുയുള്ള ചെറിയ വിവരണം. "
+#~ "ഉദാഹരണത്തിന് മൈം തരം \"image/png\"യുടെ വിവരണം 'പി എന്‍ ജി ചിത്രം' എന്നായിരിക്കാം;"
+#~ "</li> <li>ഫയലിന്റെ ചിഹ്നം. ഫയല്‍ മേല്‍നോട്ടക്കാരനിലോ, ഫയല്‍ തിരഞ്ഞെടുക്കുന്ന ജാലകത്തിലോ "
+#~ "ഫയലിനെ എളുപ്പം കണ്ടു പിടിക്കാന്‍ ഉപയോഗിക്കുന്നു. കൂടുതലായി ഉപയോഗിക്കുന്ന ഫയല്‍ തരത്തിനെങ്കിലും "
+#~ "ഇത് ഉണ്ടായിരികികുന്നത് നന്നായിരിക്കും;</li> <li>ഈ മൈം തരത്തിലുള്ള ഫയലിനെ കാണിക്കാനുള്ള "
+#~ "പ്രയോഗങ്ങള്‍. കൂടുതല്‍ പ്രയോഗങ്ങള്‍ ഉണ്ടെങ്കില്‍ പട്ടികയെ മുന്‍ഗണനാ ക്രമത്തില്‍ അടുക്കുന്നു.</li></"
+#~ "ul>ചില മൈം തരത്തിന് ഫയല്‍ നാമത്തിന്റെ രീതികള്‍ കാണില്ല. അങ്ങനെയുള്ള അവസ്ഥയില്‍ കെ ഡി ഇ "
+#~ "ഫയലിലെ ഉള്ളടക്കം പരിശോധിച്ച് നേരിട്ട് മൈം തരങ്ങള്‍ കണ്ടെത്തും.</p>"
 
 #~ msgid "KEditFileType"
 #~ msgstr "KEditFileType"

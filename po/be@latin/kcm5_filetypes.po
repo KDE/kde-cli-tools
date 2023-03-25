@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: filetypes\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-03-05 03:09+0000\n"
+"POT-Creation-Date: 2023-03-25 02:10+0000\n"
 "PO-Revision-Date: 2008-09-08 21:43+0300\n"
 "Last-Translator: Ihar Hrachyshka <ihar.hrachyshka@gmail.com>\n"
 "Language-Team: Belarusian Latin <i18n@mova.org>\n"
@@ -91,7 +91,7 @@ msgstr ""
 "šablon „*.txt” paviazany z typam „text/plain”, tamu ŭsie fajły, u jakich "
 "nazvy skančajucca na „.txt”, raspaznajucca jak fajły čystaha tekstu."
 
-#: filetypedetails.cpp:87 filetypesview.cpp:102 kservicelistwidget.cpp:110
+#: filetypedetails.cpp:87 filetypesview.cpp:81 kservicelistwidget.cpp:110
 #, kde-format
 msgid "Add..."
 msgstr "Dadaj..."
@@ -194,52 +194,13 @@ msgstr "Typ fajłaŭ „%1”"
 msgid "Use settings for '%1' group"
 msgstr "Karystajsia naładami dla hrupy „%1”"
 
-#: filetypesview.cpp:43
-#, kde-format
-msgid ""
-"<p><h1>File Associations</h1> This module allows you to choose which "
-"applications are associated with a given type of file. File types are also "
-"referred to as MIME types (MIME is an acronym which stands for "
-"\"Multipurpose Internet Mail Extensions\").</p><p> A file association "
-"consists of the following: <ul><li>Rules for determining the MIME-type of a "
-"file, for example the filename pattern *.png, which means 'all files with "
-"names that end in .png', is associated with the MIME type \"image/png\";</"
-"li> <li>A short description of the MIME-type, for example the description of "
-"the MIME type \"image/png\" is simply 'PNG image';</li> <li>An icon to be "
-"used for displaying files of the given MIME-type, so that you can easily "
-"identify the type of file in a file manager or file-selection dialog (at "
-"least for the types you use often);</li> <li>A list of the applications "
-"which can be used to open files of the given MIME-type -- if more than one "
-"application can be used then the list is ordered by priority.</li></ul> You "
-"may be surprised to find that some MIME types have no associated filename "
-"patterns; in these cases, KDE is able to determine the MIME-type by directly "
-"examining the contents of the file.</p>"
-msgstr ""
-"<p><h1>Poviazi fajłaŭ</h1> Hety modul dazvalaje vybirać, jakija aplikacyi "
-"paviazanyja z peŭnym fajłavym typam. Fajłavyja typy jašče nazyvajuć typami "
-"„MIME” („MIME” jość akronimam, jaki aznačaje „Multipurpose Internet Mail "
-"Extensions”, paštovyja internetnyja pašyreńni dla raznastajnych zadač).</"
-"p><p> Poviaź fajłaŭ składajecca z nastupnaha: <ul><li>z praviłaŭ, jakija "
-"dapamahajuć raspaznać typ „MIME”, naprykład, z šablona nazvy fajłaŭ „*.png”, "
-"jaki aznačaje „ŭsie fajły, u jakich nazvy skančajucca na .png”, jaki "
-"adpaviadaje typu „image/png”;</li> <li>z karotkaha apisańnia typu „MIME”, "
-"naprykład, dla typu „image/png” adpaviadaje apisańnie „PNG image”;</li> "
-"<li>z ikony dla vyjaŭleńnia fajłaŭ hetaha typu, kab možna było praściej "
-"vyłučać ich z ahulnaha šerahu ŭ fajłavym kiraŭniku ci aknie vybaru fajła "
-"(prynamsi, dla fajłaŭ, jakimi ty časta karystajeśsia));</li> <li>ź śpisu "
-"aplikacyjaŭ, u jakich adčyniajucca fajły hetaha typu. Možna padać niekalki "
-"aplikacyjaŭ, vyznačyŭšy dla ich roznyja roŭni važnaści;</li></ul> Ciabie "
-"moža ździvić toje, što ź niekatorymi typami „MIME” nie paviazanyja anijakija "
-"šablony dla nazvaŭ fajłaŭ. Reč u tym što ŭ takich vypadkach KDE ŭmieje "
-"vyznačać peŭny typ pavodle źmieściva fajła.</p>"
-
-#: filetypesview.cpp:73
+#: filetypesview.cpp:52
 #, fuzzy, kde-format
 #| msgid "F&ind file type or filename pattern:"
 msgid "Search for file type or filename pattern..."
 msgstr "&Šukaj typ fajłaŭ ci šablon nazvaŭ:"
 
-#: filetypesview.cpp:79
+#: filetypesview.cpp:58
 #, kde-format
 msgid ""
 "Enter a part of a filename pattern, and only file types with a matching file "
@@ -250,12 +211,12 @@ msgstr ""
 "šablony, jakija adpaviadajuć upisanamu. Jašče možna ŭpisać častku nazvy "
 "fajłavaha typu."
 
-#: filetypesview.cpp:87
+#: filetypesview.cpp:66
 #, kde-format
 msgid "Known Types"
 msgstr "Viadomyja typy"
 
-#: filetypesview.cpp:93
+#: filetypesview.cpp:72
 #, kde-format
 msgid ""
 "Here you can see a hierarchical list of the file types which are known on "
@@ -268,33 +229,33 @@ msgstr ""
 "Kab prahladzieć ci źmianić źviestki dla peŭnaha fajłavaha typu, vybiery jaho "
 "ŭ śpisie (naprykład, „text/html” dla fajłaŭ HTML) i vykarystaj knopki sprava."
 
-#: filetypesview.cpp:107
+#: filetypesview.cpp:86
 #, kde-format
 msgid "Click here to add a new file type."
 msgstr "Klikni siudy, kab dadać novy typ fajłaŭ."
 
-#: filetypesview.cpp:109 filetypesview.cpp:375
+#: filetypesview.cpp:88 filetypesview.cpp:354
 #, kde-format
 msgid "&Remove"
 msgstr "&Vydali"
 
-#: filetypesview.cpp:133
+#: filetypesview.cpp:112
 #, kde-format
 msgid "Select a file type by name or by extension"
 msgstr "Vybiery typ fajłaŭ pavodle nazvy albo pašyreńnia"
 
-#: filetypesview.cpp:368
+#: filetypesview.cpp:347
 #, fuzzy, kde-format
 #| msgid "&Remove"
 msgid "&Revert"
 msgstr "&Vydali"
 
-#: filetypesview.cpp:369
+#: filetypesview.cpp:348
 #, kde-format
 msgid "Revert this file type to its initial system-wide definition"
 msgstr ""
 
-#: filetypesview.cpp:371
+#: filetypesview.cpp:350
 #, kde-format
 msgid ""
 "Click here to revert this file type to its initial system-wide definition, "
@@ -304,12 +265,12 @@ msgid ""
 "from file contents can still end up using them)."
 msgstr ""
 
-#: filetypesview.cpp:376
+#: filetypesview.cpp:355
 #, kde-format
 msgid "Delete this file type definition completely"
 msgstr ""
 
-#: filetypesview.cpp:378
+#: filetypesview.cpp:357
 #, kde-format
 msgid ""
 "Click here to delete this file type definition completely. This is only "
@@ -541,6 +502,45 @@ msgstr ""
 "Upišy nazvu fajłavaha typu. Naprykład, kali ty vybraŭ katehoryju "
 "„image” (vyjavy) i ŭpisaŭ siudy „custom” (asablivy), to budzie stvorany "
 "fajłavy typ „image/custom”."
+
+#~ msgid ""
+#~ "<p><h1>File Associations</h1> This module allows you to choose which "
+#~ "applications are associated with a given type of file. File types are "
+#~ "also referred to as MIME types (MIME is an acronym which stands for "
+#~ "\"Multipurpose Internet Mail Extensions\").</p><p> A file association "
+#~ "consists of the following: <ul><li>Rules for determining the MIME-type of "
+#~ "a file, for example the filename pattern *.png, which means 'all files "
+#~ "with names that end in .png', is associated with the MIME type \"image/png"
+#~ "\";</li> <li>A short description of the MIME-type, for example the "
+#~ "description of the MIME type \"image/png\" is simply 'PNG image';</li> "
+#~ "<li>An icon to be used for displaying files of the given MIME-type, so "
+#~ "that you can easily identify the type of file in a file manager or file-"
+#~ "selection dialog (at least for the types you use often);</li> <li>A list "
+#~ "of the applications which can be used to open files of the given MIME-"
+#~ "type -- if more than one application can be used then the list is ordered "
+#~ "by priority.</li></ul> You may be surprised to find that some MIME types "
+#~ "have no associated filename patterns; in these cases, KDE is able to "
+#~ "determine the MIME-type by directly examining the contents of the file.</"
+#~ "p>"
+#~ msgstr ""
+#~ "<p><h1>Poviazi fajłaŭ</h1> Hety modul dazvalaje vybirać, jakija aplikacyi "
+#~ "paviazanyja z peŭnym fajłavym typam. Fajłavyja typy jašče nazyvajuć "
+#~ "typami „MIME” („MIME” jość akronimam, jaki aznačaje „Multipurpose "
+#~ "Internet Mail Extensions”, paštovyja internetnyja pašyreńni dla "
+#~ "raznastajnych zadač).</p><p> Poviaź fajłaŭ składajecca z nastupnaha: "
+#~ "<ul><li>z praviłaŭ, jakija dapamahajuć raspaznać typ „MIME”, naprykład, z "
+#~ "šablona nazvy fajłaŭ „*.png”, jaki aznačaje „ŭsie fajły, u jakich nazvy "
+#~ "skančajucca na .png”, jaki adpaviadaje typu „image/png”;</li> <li>z "
+#~ "karotkaha apisańnia typu „MIME”, naprykład, dla typu „image/png” "
+#~ "adpaviadaje apisańnie „PNG image”;</li> <li>z ikony dla vyjaŭleńnia "
+#~ "fajłaŭ hetaha typu, kab možna było praściej vyłučać ich z ahulnaha šerahu "
+#~ "ŭ fajłavym kiraŭniku ci aknie vybaru fajła (prynamsi, dla fajłaŭ, jakimi "
+#~ "ty časta karystajeśsia));</li> <li>ź śpisu aplikacyjaŭ, u jakich "
+#~ "adčyniajucca fajły hetaha typu. Možna padać niekalki aplikacyjaŭ, "
+#~ "vyznačyŭšy dla ich roznyja roŭni važnaści;</li></ul> Ciabie moža ździvić "
+#~ "toje, što ź niekatorymi typami „MIME” nie paviazanyja anijakija šablony "
+#~ "dla nazvaŭ fajłaŭ. Reč u tym što ŭ takich vypadkach KDE ŭmieje vyznačać "
+#~ "peŭny typ pavodle źmieściva fajła.</p>"
 
 #~ msgid "KEditFileType"
 #~ msgstr "KEditFileType"

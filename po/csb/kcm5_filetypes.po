@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: filetypes\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-03-05 03:09+0000\n"
+"POT-Creation-Date: 2023-03-25 02:10+0000\n"
 "PO-Revision-Date: 2009-12-09 22:55+0100\n"
 "Last-Translator: Mark Kwidzińśczi <mark@linuxcsb.org>\n"
 "Language-Team: Kaszëbsczi <i18n-csb@linuxcsb.org>\n"
@@ -87,7 +87,7 @@ msgstr ""
 "\"text/plain\", wszëtczé lopczi kùńczącé sã na \".txt\" òstóną rozpòznóné "
 "jakno tekstowé lopczi."
 
-#: filetypedetails.cpp:87 filetypesview.cpp:102 kservicelistwidget.cpp:110
+#: filetypedetails.cpp:87 filetypesview.cpp:81 kservicelistwidget.cpp:110
 #, kde-format
 msgid "Add..."
 msgstr "Dodôj..."
@@ -182,50 +182,13 @@ msgstr "Ôrt lopka %1"
 msgid "Use settings for '%1' group"
 msgstr "Brëkùjë nastôwów dlô karna '%1'"
 
-#: filetypesview.cpp:43
-#, kde-format
-msgid ""
-"<p><h1>File Associations</h1> This module allows you to choose which "
-"applications are associated with a given type of file. File types are also "
-"referred to as MIME types (MIME is an acronym which stands for "
-"\"Multipurpose Internet Mail Extensions\").</p><p> A file association "
-"consists of the following: <ul><li>Rules for determining the MIME-type of a "
-"file, for example the filename pattern *.png, which means 'all files with "
-"names that end in .png', is associated with the MIME type \"image/png\";</"
-"li> <li>A short description of the MIME-type, for example the description of "
-"the MIME type \"image/png\" is simply 'PNG image';</li> <li>An icon to be "
-"used for displaying files of the given MIME-type, so that you can easily "
-"identify the type of file in a file manager or file-selection dialog (at "
-"least for the types you use often);</li> <li>A list of the applications "
-"which can be used to open files of the given MIME-type -- if more than one "
-"application can be used then the list is ordered by priority.</li></ul> You "
-"may be surprised to find that some MIME types have no associated filename "
-"patterns; in these cases, KDE is able to determine the MIME-type by directly "
-"examining the contents of the file.</p>"
-msgstr ""
-"<p><h1>Sparłączenié lopków</h1>Mòduł zezwôlô na wëbiérk tegò, jaczé programë "
-"są sparłączoné z gwësnym ôrtã lopków. Ôrtë lopków są téż òznaczoné jakno "
-"ôrtë MIME (MIME je angielską skrodzëną òd \"Ùniwersalnégò Rozszérzeniô "
-"Internetowi Elektroniczny Pòcztë\").</p><p> Sparłączenié lopka zëstôwioné je "
-"z: <ul><li>reglama determinëjącëch ôrt MIME lopka. Na przëmiôr mùster miona "
-"*.png, jaczi òznôczô wszëtczé lopczi z mionama z kùniuszkã .png je "
-"sparłącozny z ôrtã MIME \"image/png\".</li> <li>krótczim òpisã ôrtu MIME. Na "
-"przëmiôr òpis ôrtu MIME \"image/png\" to zwëczajno òbrôzk PNG. </li> "
-"<li>ikònama brëkòwónëma przë wëskrzëniwanim lopka ò gwësnym ôrce MIME, co "
-"zezwôlô na jich prosté rozpòznanié (przënômni dlô czãsto brëkòwónëch ôrtów!)."
-"</li> <li>lëstama programów brëkòwónëch do òtmëkaniô lopków gwësnegò ôrtu "
-"MIME. Jeżlë to dô wicy jak jedną taką programã, to ùsôdzanô je prioritetowô "
-"lësta.</li></ul>Niejedné ôrtë MIME nie mają (co mòże wëdôwac sã kąsk dzywné) "
-"sparłączonëch mùstrów mionów. W taczich przëtrôfkach KDE je w sztãdze "
-"rozpòznac ôrt lopka, badérejąc jegò zamkłosc.</p>"
-
-#: filetypesview.cpp:73
+#: filetypesview.cpp:52
 #, fuzzy, kde-format
 #| msgid "Find file type or filename pattern"
 msgid "Search for file type or filename pattern..."
 msgstr "Nalé&zë mùstrë mionów abò ôrtów lopków"
 
-#: filetypesview.cpp:79
+#: filetypesview.cpp:58
 #, kde-format
 msgid ""
 "Enter a part of a filename pattern, and only file types with a matching file "
@@ -236,12 +199,12 @@ msgstr ""
 "do niegò pasëją. Abò wpiszë le dzélk miona ôrtu lopka w miarã jak pòkazëjë "
 "sã na lëscë."
 
-#: filetypesview.cpp:87
+#: filetypesview.cpp:66
 #, kde-format
 msgid "Known Types"
 msgstr "Znóné ôrtë"
 
-#: filetypesview.cpp:93
+#: filetypesview.cpp:72
 #, kde-format
 msgid ""
 "Here you can see a hierarchical list of the file types which are known on "
@@ -254,32 +217,32 @@ msgstr ""
 "jã zamknąc. Zaznaczë ôrt lopka (np. text/html dlô lopków HTML) bë przezdrzec/"
 "zmienic wëdowiédzã ò nym ôrce lopka z pòmòcą kòntrolków z prawi starnë."
 
-#: filetypesview.cpp:107
+#: filetypesview.cpp:86
 #, kde-format
 msgid "Click here to add a new file type."
 msgstr "Klëkni tuwò, bë dodac nowi ôrt lopka."
 
-#: filetypesview.cpp:109 filetypesview.cpp:375
+#: filetypesview.cpp:88 filetypesview.cpp:354
 #, kde-format
 msgid "&Remove"
 msgstr "&Rëmôj"
 
-#: filetypesview.cpp:133
+#: filetypesview.cpp:112
 #, kde-format
 msgid "Select a file type by name or by extension"
 msgstr "Wëbierzë ôrt lopka wedle miona abò rozszérzenia"
 
-#: filetypesview.cpp:368
+#: filetypesview.cpp:347
 #, kde-format
 msgid "&Revert"
 msgstr "&Copni"
 
-#: filetypesview.cpp:369
+#: filetypesview.cpp:348
 #, kde-format
 msgid "Revert this file type to its initial system-wide definition"
 msgstr "Copni nen ôrt lopka do jegò szeroksystemòwi definicëji."
 
-#: filetypesview.cpp:371
+#: filetypesview.cpp:350
 #, kde-format
 msgid ""
 "Click here to revert this file type to its initial system-wide definition, "
@@ -295,12 +258,12 @@ msgstr ""
 "nen ôrt lopka bãdze brëkòwóny. Nimò tegò mòże dońc do tegò, że przez "
 "zamkłosc lopka bãdze òn ùżëwóny."
 
-#: filetypesview.cpp:376
+#: filetypesview.cpp:355
 #, kde-format
 msgid "Delete this file type definition completely"
 msgstr "Rëmôj całowno nã definicëjã ôrta lopka"
 
-#: filetypesview.cpp:378
+#: filetypesview.cpp:357
 #, kde-format
 msgid ""
 "Click here to delete this file type definition completely. This is only "
@@ -539,6 +502,43 @@ msgstr ""
 "Wpiszë miono ôrtu lopka. Na przëmiôr, jeżlë wëbierzesz 'image' jakno "
 "kategòrëjã a wpiszësz 'custom' tuwò, ôrt lopkù 'image/custom' òstanie "
 "ùsôdzony."
+
+#~ msgid ""
+#~ "<p><h1>File Associations</h1> This module allows you to choose which "
+#~ "applications are associated with a given type of file. File types are "
+#~ "also referred to as MIME types (MIME is an acronym which stands for "
+#~ "\"Multipurpose Internet Mail Extensions\").</p><p> A file association "
+#~ "consists of the following: <ul><li>Rules for determining the MIME-type of "
+#~ "a file, for example the filename pattern *.png, which means 'all files "
+#~ "with names that end in .png', is associated with the MIME type \"image/png"
+#~ "\";</li> <li>A short description of the MIME-type, for example the "
+#~ "description of the MIME type \"image/png\" is simply 'PNG image';</li> "
+#~ "<li>An icon to be used for displaying files of the given MIME-type, so "
+#~ "that you can easily identify the type of file in a file manager or file-"
+#~ "selection dialog (at least for the types you use often);</li> <li>A list "
+#~ "of the applications which can be used to open files of the given MIME-"
+#~ "type -- if more than one application can be used then the list is ordered "
+#~ "by priority.</li></ul> You may be surprised to find that some MIME types "
+#~ "have no associated filename patterns; in these cases, KDE is able to "
+#~ "determine the MIME-type by directly examining the contents of the file.</"
+#~ "p>"
+#~ msgstr ""
+#~ "<p><h1>Sparłączenié lopków</h1>Mòduł zezwôlô na wëbiérk tegò, jaczé "
+#~ "programë są sparłączoné z gwësnym ôrtã lopków. Ôrtë lopków są téż "
+#~ "òznaczoné jakno ôrtë MIME (MIME je angielską skrodzëną òd \"Ùniwersalnégò "
+#~ "Rozszérzeniô Internetowi Elektroniczny Pòcztë\").</p><p> Sparłączenié "
+#~ "lopka zëstôwioné je z: <ul><li>reglama determinëjącëch ôrt MIME lopka. Na "
+#~ "przëmiôr mùster miona *.png, jaczi òznôczô wszëtczé lopczi z mionama z "
+#~ "kùniuszkã .png je sparłącozny z ôrtã MIME \"image/png\".</li> "
+#~ "<li>krótczim òpisã ôrtu MIME. Na przëmiôr òpis ôrtu MIME \"image/png\" to "
+#~ "zwëczajno òbrôzk PNG. </li> <li>ikònama brëkòwónëma przë wëskrzëniwanim "
+#~ "lopka ò gwësnym ôrce MIME, co zezwôlô na jich prosté rozpòznanié "
+#~ "(przënômni dlô czãsto brëkòwónëch ôrtów!).</li> <li>lëstama programów "
+#~ "brëkòwónëch do òtmëkaniô lopków gwësnegò ôrtu MIME. Jeżlë to dô wicy jak "
+#~ "jedną taką programã, to ùsôdzanô je prioritetowô lësta.</li></ul>Niejedné "
+#~ "ôrtë MIME nie mają (co mòże wëdôwac sã kąsk dzywné) sparłączonëch mùstrów "
+#~ "mionów. W taczich przëtrôfkach KDE je w sztãdze rozpòznac ôrt lopka, "
+#~ "badérejąc jegò zamkłosc.</p>"
 
 #~ msgid "KEditFileType"
 #~ msgstr "KEditFileType"

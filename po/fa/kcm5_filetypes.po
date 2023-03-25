@@ -9,7 +9,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: filetypes\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-03-05 03:09+0000\n"
+"POT-Creation-Date: 2023-03-25 02:10+0000\n"
 "PO-Revision-Date: 2014-07-24 00:37+0430\n"
 "Last-Translator: Mohi Mirdamadi <mohi@ubuntu.ir>\n"
 "Language-Team: Farsi (Persian) <kde-i18n-fa@kde.org>\n"
@@ -87,7 +87,7 @@ msgstr ""
 "استفاده می‌شوند. برای مثال، الگوی txt.* مربوط به نوع پرونده »متن/ساده« است؛ "
 "همه پرونده‌های منتهی به »txt.« به عنوان پرونده‌های متنی ساده شناخته می‌شوند."
 
-#: filetypedetails.cpp:87 filetypesview.cpp:102 kservicelistwidget.cpp:110
+#: filetypedetails.cpp:87 filetypesview.cpp:81 kservicelistwidget.cpp:110
 #, kde-format
 msgid "Add..."
 msgstr "افزودن..."
@@ -180,50 +180,13 @@ msgstr "نوع پرونده %1"
 msgid "Use settings for '%1' group"
 msgstr "استفاده از تنظیمات برای گروه »%1«"
 
-#: filetypesview.cpp:43
-#, kde-format
-msgid ""
-"<p><h1>File Associations</h1> This module allows you to choose which "
-"applications are associated with a given type of file. File types are also "
-"referred to as MIME types (MIME is an acronym which stands for "
-"\"Multipurpose Internet Mail Extensions\").</p><p> A file association "
-"consists of the following: <ul><li>Rules for determining the MIME-type of a "
-"file, for example the filename pattern *.png, which means 'all files with "
-"names that end in .png', is associated with the MIME type \"image/png\";</"
-"li> <li>A short description of the MIME-type, for example the description of "
-"the MIME type \"image/png\" is simply 'PNG image';</li> <li>An icon to be "
-"used for displaying files of the given MIME-type, so that you can easily "
-"identify the type of file in a file manager or file-selection dialog (at "
-"least for the types you use often);</li> <li>A list of the applications "
-"which can be used to open files of the given MIME-type -- if more than one "
-"application can be used then the list is ordered by priority.</li></ul> You "
-"may be surprised to find that some MIME types have no associated filename "
-"patterns; in these cases, KDE is able to determine the MIME-type by directly "
-"examining the contents of the file.</p>"
-msgstr ""
-"<p><h1>تعاملات پرونده</h1> این پیمانه به شما اجازه می‌دهد کاربردهایی را "
-"انتخاب کنید، که با نوع پرونده داده‌شده در ارتباط باشند. همچنین، انواع پرونده "
-"را به انواع مایم ارجاع می‌کنند )مایم سرنامی برای »پسوند نامه‌های اینترنتی چند "
-"منظوره« می‌باشد.(</p><p> انجمن پرونده شامل موارد زیر می‌باشد: <ul><li>قوانینی "
-"برای تعیین نوع مایم پرونده، برای مثال، الگوی نام پرونده kwd.*، که به معنی "
-"»همه پرونده‌هایی است که نام آنها با.kwd پایان می‌پذیرد«، با نوع مایم »x-kword« "
-"در ارتباط است؛</li> <li>توصیف کوتاهی از نوع مایم، برای مثال، توصیف نوع مایم "
-"»x-kword« به طور ساده »سند kword« می‌باشد؛ </li> <li>شمایلی که برای نمایش "
-"پرونده‌های نوع مایم داده‌شده استفاده می‌شود، بنابراین، به ‌راحتی می‌توانید نوع "
-"پرونده را تشخیص دهید، مثلاً، نمای Konqueror )حداقل برای انواعی که اغلب "
-"استفاده می‌کنید(؛ فهرستی از کاربردهایی که می‌توانید برای باز کردن پرونده‌های "
-"داده‌شده نوع مایم استفاده کنید--اگر بیش از یک کاربرد استفاده شود، فهرست بر "
-"اساس اولویت مرتب می‌شود.</li></ul>ممکن است از یافتن چند نوع مایم که با الگوی "
-"نام پرونده ارتباطی ندارند تعجب کنید؛ در این موارد، Konqueror قادر به تعیین "
-"نوع مایم، با امتحان مستقیم محتوای پرونده می‌باشد.</p>"
-
-#: filetypesview.cpp:73
+#: filetypesview.cpp:52
 #, fuzzy, kde-format
 #| msgid "Find file type or filename pattern"
 msgid "Search for file type or filename pattern..."
 msgstr "&یافتن الگوی نوع با نام پرونده"
 
-#: filetypesview.cpp:79
+#: filetypesview.cpp:58
 #, kde-format
 msgid ""
 "Enter a part of a filename pattern, and only file types with a matching file "
@@ -234,12 +197,12 @@ msgstr ""
 "در فهرست ظاهر خواهند شد. به‌جز این، قسمتی از نوع پرونده را تایپ کنید تا نام "
 "آن در لیست پیدا شود."
 
-#: filetypesview.cpp:87
+#: filetypesview.cpp:66
 #, kde-format
 msgid "Known Types"
 msgstr "انواع شناخته‌شده"
 
-#: filetypesview.cpp:93
+#: filetypesview.cpp:72
 #, kde-format
 msgid ""
 "Here you can see a hierarchical list of the file types which are known on "
@@ -253,32 +216,32 @@ msgstr ""
 "زنگام( برای نمایش/ویرایش اطلاعات برای آن نوع پرونده، با استفاده از کنترلها "
 "در سمت راست انتخاب کنید."
 
-#: filetypesview.cpp:107
+#: filetypesview.cpp:86
 #, kde-format
 msgid "Click here to add a new file type."
 msgstr "اینجا را فشار دهید تا یک نوع پرونده جدید اضافه شود."
 
-#: filetypesview.cpp:109 filetypesview.cpp:375
+#: filetypesview.cpp:88 filetypesview.cpp:354
 #, kde-format
 msgid "&Remove"
 msgstr "&حذف‌"
 
-#: filetypesview.cpp:133
+#: filetypesview.cpp:112
 #, kde-format
 msgid "Select a file type by name or by extension"
 msgstr "برگزیدن یک نوع پرونده با نام یا با پسوند"
 
-#: filetypesview.cpp:368
+#: filetypesview.cpp:347
 #, kde-format
 msgid "&Revert"
 msgstr "&بازگشت"
 
-#: filetypesview.cpp:369
+#: filetypesview.cpp:348
 #, kde-format
 msgid "Revert this file type to its initial system-wide definition"
 msgstr "برگردان این نوع پرونده به تعریف اولیه سیستم"
 
-#: filetypesview.cpp:371
+#: filetypesview.cpp:350
 #, kde-format
 msgid ""
 "Click here to revert this file type to its initial system-wide definition, "
@@ -288,12 +251,12 @@ msgid ""
 "from file contents can still end up using them)."
 msgstr ""
 
-#: filetypesview.cpp:376
+#: filetypesview.cpp:355
 #, kde-format
 msgid "Delete this file type definition completely"
 msgstr "حذف کامل این تعریف از نوع پرونده"
 
-#: filetypesview.cpp:378
+#: filetypesview.cpp:357
 #, kde-format
 msgid ""
 "Click here to delete this file type definition completely. This is only "
@@ -526,6 +489,43 @@ msgstr ""
 "نامی برای این نوع فایل تایپ کنید. برای مثال، اگر شما «تصویر» را به عنوان "
 "دسته‌بندی انتخاب کنید و اینجا «سفارشی» را تایپ کنید، نوع پرونده‌ی «تصویر/"
 "سفارشی» ایجاد خواهد شد."
+
+#~ msgid ""
+#~ "<p><h1>File Associations</h1> This module allows you to choose which "
+#~ "applications are associated with a given type of file. File types are "
+#~ "also referred to as MIME types (MIME is an acronym which stands for "
+#~ "\"Multipurpose Internet Mail Extensions\").</p><p> A file association "
+#~ "consists of the following: <ul><li>Rules for determining the MIME-type of "
+#~ "a file, for example the filename pattern *.png, which means 'all files "
+#~ "with names that end in .png', is associated with the MIME type \"image/png"
+#~ "\";</li> <li>A short description of the MIME-type, for example the "
+#~ "description of the MIME type \"image/png\" is simply 'PNG image';</li> "
+#~ "<li>An icon to be used for displaying files of the given MIME-type, so "
+#~ "that you can easily identify the type of file in a file manager or file-"
+#~ "selection dialog (at least for the types you use often);</li> <li>A list "
+#~ "of the applications which can be used to open files of the given MIME-"
+#~ "type -- if more than one application can be used then the list is ordered "
+#~ "by priority.</li></ul> You may be surprised to find that some MIME types "
+#~ "have no associated filename patterns; in these cases, KDE is able to "
+#~ "determine the MIME-type by directly examining the contents of the file.</"
+#~ "p>"
+#~ msgstr ""
+#~ "<p><h1>تعاملات پرونده</h1> این پیمانه به شما اجازه می‌دهد کاربردهایی را "
+#~ "انتخاب کنید، که با نوع پرونده داده‌شده در ارتباط باشند. همچنین، انواع "
+#~ "پرونده را به انواع مایم ارجاع می‌کنند )مایم سرنامی برای »پسوند نامه‌های "
+#~ "اینترنتی چند منظوره« می‌باشد.(</p><p> انجمن پرونده شامل موارد زیر می‌باشد: "
+#~ "<ul><li>قوانینی برای تعیین نوع مایم پرونده، برای مثال، الگوی نام پرونده "
+#~ "kwd.*، که به معنی »همه پرونده‌هایی است که نام آنها با.kwd پایان می‌پذیرد«، "
+#~ "با نوع مایم »x-kword« در ارتباط است؛</li> <li>توصیف کوتاهی از نوع مایم، "
+#~ "برای مثال، توصیف نوع مایم »x-kword« به طور ساده »سند kword« می‌باشد؛ </li> "
+#~ "<li>شمایلی که برای نمایش پرونده‌های نوع مایم داده‌شده استفاده می‌شود، "
+#~ "بنابراین، به ‌راحتی می‌توانید نوع پرونده را تشخیص دهید، مثلاً، نمای "
+#~ "Konqueror )حداقل برای انواعی که اغلب استفاده می‌کنید(؛ فهرستی از "
+#~ "کاربردهایی که می‌توانید برای باز کردن پرونده‌های داده‌شده نوع مایم استفاده "
+#~ "کنید--اگر بیش از یک کاربرد استفاده شود، فهرست بر اساس اولویت مرتب می‌شود.</"
+#~ "li></ul>ممکن است از یافتن چند نوع مایم که با الگوی نام پرونده ارتباطی "
+#~ "ندارند تعجب کنید؛ در این موارد، Konqueror قادر به تعیین نوع مایم، با "
+#~ "امتحان مستقیم محتوای پرونده می‌باشد.</p>"
 
 #~ msgid "KEditFileType"
 #~ msgstr "نوع KEditFile"

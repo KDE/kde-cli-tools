@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: filetypes\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-03-05 03:09+0000\n"
+"POT-Creation-Date: 2023-03-25 02:10+0000\n"
 "PO-Revision-Date: 2019-12-07 14:12+0200\n"
 "Last-Translator: Maris Nartiss <maris.kde@gmail.com>\n"
 "Language-Team: Latvian <kde-i18n-doc@kde.org>\n"
@@ -87,7 +87,7 @@ msgstr ""
 "visas datnes, kas beidzas ar ’.txt’, tiek noteiktas kā vienkāršas teksta "
 "datnes."
 
-#: filetypedetails.cpp:87 filetypesview.cpp:102 kservicelistwidget.cpp:110
+#: filetypedetails.cpp:87 filetypesview.cpp:81 kservicelistwidget.cpp:110
 #, kde-format
 msgid "Add..."
 msgstr "Pievienot..."
@@ -179,50 +179,12 @@ msgstr "Datnes tips %1"
 msgid "Use settings for '%1' group"
 msgstr "Izmantot iestatījumus '%1' grupai"
 
-#: filetypesview.cpp:43
-#, kde-format
-msgid ""
-"<p><h1>File Associations</h1> This module allows you to choose which "
-"applications are associated with a given type of file. File types are also "
-"referred to as MIME types (MIME is an acronym which stands for "
-"\"Multipurpose Internet Mail Extensions\").</p><p> A file association "
-"consists of the following: <ul><li>Rules for determining the MIME-type of a "
-"file, for example the filename pattern *.png, which means 'all files with "
-"names that end in .png', is associated with the MIME type \"image/png\";</"
-"li> <li>A short description of the MIME-type, for example the description of "
-"the MIME type \"image/png\" is simply 'PNG image';</li> <li>An icon to be "
-"used for displaying files of the given MIME-type, so that you can easily "
-"identify the type of file in a file manager or file-selection dialog (at "
-"least for the types you use often);</li> <li>A list of the applications "
-"which can be used to open files of the given MIME-type -- if more than one "
-"application can be used then the list is ordered by priority.</li></ul> You "
-"may be surprised to find that some MIME types have no associated filename "
-"patterns; in these cases, KDE is able to determine the MIME-type by directly "
-"examining the contents of the file.</p>"
-msgstr ""
-"<p><h1>Datņu asociācijas</h1> Šis modulis ļauj jums izvēlēties kuras "
-"programmas ir piesaistītas dotajam datnes tipam. Datņu tipi ir arī "
-"attiecināti uz MIME tipiem (MIME ir saīsinājums kurš nozīmē \"Multipurpose "
-"Internet Mail Extensions\".)</p><p>Datnes asociācija sastāv no sekojošā: "
-"<ul><li>Noteikumiem  MIME-datnes tipa notiekšanai. Piemērām, datnes "
-"nosaukuma šablons *.png, kas nozīmē 'visas datnes, kuru nosaukumi beidzas "
-"ar .png', ir piesaistīti MIME tipam \"image/png\".</li> <li>Īsa MIME "
-"apraksta. Piemēram, MIME tipa \"image/png\" apraksts ir vienkārši 'PNG "
-"attēls';</li> <li>Ikona, kas tiek izmantota dotā MIME-tipa datņu "
-"parādīšanai, līdz ar to jūs viegli varat noteikt datnes tipu, redzot to "
-"datņu pārvaldniekā (vismaz biežāk izmantotos tipus)</li> <li>Programmu "
-"sarakstu, kuras var izmantot dotā MIME-tipa datņu atvēršanai. Ja vienu tipu "
-"var atvērt ar vairāk kā vienu programmu, tad saraksts ir sakārtots pēc "
-"prioritātes.</li></ul> Jūs varbūt būsiet pārsteigts atrodot, ka dažiem MIME-"
-"tipiem nav piesaistīti datņu nosaukuma šabloni. Šajos gadījumos, KDE ir "
-"spējīgs noteikt MIME tipu, izpētot datnes saturu.</p>"
-
-#: filetypesview.cpp:73
+#: filetypesview.cpp:52
 #, kde-format
 msgid "Search for file type or filename pattern..."
 msgstr "Meklēt datnes tipu vai nosaukuma šablonu..."
 
-#: filetypesview.cpp:79
+#: filetypesview.cpp:58
 #, kde-format
 msgid ""
 "Enter a part of a filename pattern, and only file types with a matching file "
@@ -233,12 +195,12 @@ msgstr ""
 "datņu šablonu parādīsies sarakstā. Varat ievadīt arī datnes tipa fragmentu "
 "kā tas ir redzams sarakstā."
 
-#: filetypesview.cpp:87
+#: filetypesview.cpp:66
 #, kde-format
 msgid "Known Types"
 msgstr "Zināmie tipi"
 
-#: filetypesview.cpp:93
+#: filetypesview.cpp:72
 #, kde-format
 msgid ""
 "Here you can see a hierarchical list of the file types which are known on "
@@ -252,32 +214,32 @@ msgstr ""
 "skatītu/rediģētu informāciju par datnes tipu izmantojot vadības rīkus labajā "
 "pusē."
 
-#: filetypesview.cpp:107
+#: filetypesview.cpp:86
 #, kde-format
 msgid "Click here to add a new file type."
 msgstr "Spiediet šeit, lai pievienotu jaunu datnes tipu."
 
-#: filetypesview.cpp:109 filetypesview.cpp:375
+#: filetypesview.cpp:88 filetypesview.cpp:354
 #, kde-format
 msgid "&Remove"
 msgstr "&Izņemt"
 
-#: filetypesview.cpp:133
+#: filetypesview.cpp:112
 #, kde-format
 msgid "Select a file type by name or by extension"
 msgstr "Izvēlieties datnes tipu pēc nosaukuma vai pēc paplašinājuma"
 
-#: filetypesview.cpp:368
+#: filetypesview.cpp:347
 #, kde-format
 msgid "&Revert"
 msgstr "&Atgriezt"
 
-#: filetypesview.cpp:369
+#: filetypesview.cpp:348
 #, kde-format
 msgid "Revert this file type to its initial system-wide definition"
 msgstr "Atgriezt šo datnes tipu tā sākotnējā, sistēmas definētajā stāvoklī"
 
-#: filetypesview.cpp:371
+#: filetypesview.cpp:350
 #, kde-format
 msgid ""
 "Click here to revert this file type to its initial system-wide definition, "
@@ -292,12 +254,12 @@ msgstr ""
 "iestatīt tukšu šablonu sarakstu, tādējādi minimizējot to lietojumu (tie "
 "tomēr tiks lietoti, nosakot balstoties uz datnes saturu)."
 
-#: filetypesview.cpp:376
+#: filetypesview.cpp:355
 #, kde-format
 msgid "Delete this file type definition completely"
 msgstr "Pilnībā izdzēst datnes tipa definīciju"
 
-#: filetypesview.cpp:378
+#: filetypesview.cpp:357
 #, kde-format
 msgid ""
 "Click here to delete this file type definition completely. This is only "
@@ -533,6 +495,44 @@ msgstr ""
 "Ievadiet datnes tipa nosaukumu. Piemēram, ja jūs izvēlaties 'attēls' kā "
 "kategoriju un šeit ievadiet 'pielāgots', tad tiks izveidots jauns tips "
 "'attēls/pielāgots'."
+
+#~ msgid ""
+#~ "<p><h1>File Associations</h1> This module allows you to choose which "
+#~ "applications are associated with a given type of file. File types are "
+#~ "also referred to as MIME types (MIME is an acronym which stands for "
+#~ "\"Multipurpose Internet Mail Extensions\").</p><p> A file association "
+#~ "consists of the following: <ul><li>Rules for determining the MIME-type of "
+#~ "a file, for example the filename pattern *.png, which means 'all files "
+#~ "with names that end in .png', is associated with the MIME type \"image/png"
+#~ "\";</li> <li>A short description of the MIME-type, for example the "
+#~ "description of the MIME type \"image/png\" is simply 'PNG image';</li> "
+#~ "<li>An icon to be used for displaying files of the given MIME-type, so "
+#~ "that you can easily identify the type of file in a file manager or file-"
+#~ "selection dialog (at least for the types you use often);</li> <li>A list "
+#~ "of the applications which can be used to open files of the given MIME-"
+#~ "type -- if more than one application can be used then the list is ordered "
+#~ "by priority.</li></ul> You may be surprised to find that some MIME types "
+#~ "have no associated filename patterns; in these cases, KDE is able to "
+#~ "determine the MIME-type by directly examining the contents of the file.</"
+#~ "p>"
+#~ msgstr ""
+#~ "<p><h1>Datņu asociācijas</h1> Šis modulis ļauj jums izvēlēties kuras "
+#~ "programmas ir piesaistītas dotajam datnes tipam. Datņu tipi ir arī "
+#~ "attiecināti uz MIME tipiem (MIME ir saīsinājums kurš nozīmē "
+#~ "\"Multipurpose Internet Mail Extensions\".)</p><p>Datnes asociācija "
+#~ "sastāv no sekojošā: <ul><li>Noteikumiem  MIME-datnes tipa notiekšanai. "
+#~ "Piemērām, datnes nosaukuma šablons *.png, kas nozīmē 'visas datnes, kuru "
+#~ "nosaukumi beidzas ar .png', ir piesaistīti MIME tipam \"image/png\".</li> "
+#~ "<li>Īsa MIME apraksta. Piemēram, MIME tipa \"image/png\" apraksts ir "
+#~ "vienkārši 'PNG attēls';</li> <li>Ikona, kas tiek izmantota dotā MIME-tipa "
+#~ "datņu parādīšanai, līdz ar to jūs viegli varat noteikt datnes tipu, "
+#~ "redzot to datņu pārvaldniekā (vismaz biežāk izmantotos tipus)</li> "
+#~ "<li>Programmu sarakstu, kuras var izmantot dotā MIME-tipa datņu "
+#~ "atvēršanai. Ja vienu tipu var atvērt ar vairāk kā vienu programmu, tad "
+#~ "saraksts ir sakārtots pēc prioritātes.</li></ul> Jūs varbūt būsiet "
+#~ "pārsteigts atrodot, ka dažiem MIME-tipiem nav piesaistīti datņu nosaukuma "
+#~ "šabloni. Šajos gadījumos, KDE ir spējīgs noteikt MIME tipu, izpētot "
+#~ "datnes saturu.</p>"
 
 #~ msgid "KEditFileType"
 #~ msgstr "KEditFileType"

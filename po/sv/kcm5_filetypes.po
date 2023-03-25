@@ -11,7 +11,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: filetypes\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-03-05 03:09+0000\n"
+"POT-Creation-Date: 2023-03-25 02:10+0000\n"
 "PO-Revision-Date: 2019-01-12 10:02+0100\n"
 "Last-Translator: Stefan Asserhäll <stefan.asserhall@bredband.net>\n"
 "Language-Team: Swedish <kde-i18n-doc@kde.org>\n"
@@ -89,7 +89,7 @@ msgstr ""
 "associerat med filtypen \"text/plain\"; alla filer som har ändelsen \".txt\" "
 "identifieras som rena textfiler."
 
-#: filetypedetails.cpp:87 filetypesview.cpp:102 kservicelistwidget.cpp:110
+#: filetypedetails.cpp:87 filetypesview.cpp:81 kservicelistwidget.cpp:110
 #, kde-format
 msgid "Add..."
 msgstr "Lägg till..."
@@ -182,50 +182,12 @@ msgstr "Filtyp %1"
 msgid "Use settings for '%1' group"
 msgstr "Använd inställningar för \"%1\"-grupp"
 
-#: filetypesview.cpp:43
-#, kde-format
-msgid ""
-"<p><h1>File Associations</h1> This module allows you to choose which "
-"applications are associated with a given type of file. File types are also "
-"referred to as MIME types (MIME is an acronym which stands for "
-"\"Multipurpose Internet Mail Extensions\").</p><p> A file association "
-"consists of the following: <ul><li>Rules for determining the MIME-type of a "
-"file, for example the filename pattern *.png, which means 'all files with "
-"names that end in .png', is associated with the MIME type \"image/png\";</"
-"li> <li>A short description of the MIME-type, for example the description of "
-"the MIME type \"image/png\" is simply 'PNG image';</li> <li>An icon to be "
-"used for displaying files of the given MIME-type, so that you can easily "
-"identify the type of file in a file manager or file-selection dialog (at "
-"least for the types you use often);</li> <li>A list of the applications "
-"which can be used to open files of the given MIME-type -- if more than one "
-"application can be used then the list is ordered by priority.</li></ul> You "
-"may be surprised to find that some MIME types have no associated filename "
-"patterns; in these cases, KDE is able to determine the MIME-type by directly "
-"examining the contents of the file.</p>"
-msgstr ""
-"<p><h1>Filbindningar</h1> Denna modul låter dig välja vilka program som är "
-"associerade med en angiven filtyp. Filtyper kallas också Mime-typer (Mime är "
-"en akronym vilken står för \"Multipurpose Internet Mail Extensions\".)</"
-"p><p>En filbindning består av följande: <ul><li>Regler för att avgöra filens "
-"Mime-typ. Till exempel, filmönstret *.png, vilket betyder att 'alla filer "
-"med namn som slutar med .png', är associerade med Mime-typen \"image/png\".</"
-"li> <li>En kort beskrivning av Mime-typen, till exempel är beskrivningen av "
-"Mime-typen \"image/png\" helt enkelt 'PNG-bild'.</li> <li>En ikon som "
-"används för att visa filer av den angivna Mime-typen, så att du enkelt kan "
-"identifiera filtypen, t ex i en filhanterare eller filvalsdialogruta "
-"(åtminstone för de typer du använder ofta.)</li> <li>En lista med de program "
-"som kan användas för att öppna filer av den angivna Mime-typen. Om mer än "
-"ett program kan användas ordnas listan efter prioritet.</li></ul> Du kan bli "
-"överraskad när du finner att vissa Mime-typer inte har några associerade "
-"filmönster. I dessa fall kan KDE direkt avgöra Mime-typen genom att "
-"undersöka filens innehåll.</p>"
-
-#: filetypesview.cpp:73
+#: filetypesview.cpp:52
 #, kde-format
 msgid "Search for file type or filename pattern..."
 msgstr "Sök efter filtyp eller filnamnsmönster..."
 
-#: filetypesview.cpp:79
+#: filetypesview.cpp:58
 #, kde-format
 msgid ""
 "Enter a part of a filename pattern, and only file types with a matching file "
@@ -236,12 +198,12 @@ msgstr ""
 "filmönster kommer att visas i listan. Som alternativ, ange en del av ett "
 "filtypnamn som det visas i listan."
 
-#: filetypesview.cpp:87
+#: filetypesview.cpp:66
 #, kde-format
 msgid "Known Types"
 msgstr "Kända typer"
 
-#: filetypesview.cpp:93
+#: filetypesview.cpp:72
 #, kde-format
 msgid ""
 "Here you can see a hierarchical list of the file types which are known on "
@@ -255,32 +217,32 @@ msgstr ""
 "HTML-filer) för visa/redigera informationen för den filtypen med hjälp av "
 "kontrollerna till höger."
 
-#: filetypesview.cpp:107
+#: filetypesview.cpp:86
 #, kde-format
 msgid "Click here to add a new file type."
 msgstr "Klicka här för att lägga till en ny filtyp."
 
-#: filetypesview.cpp:109 filetypesview.cpp:375
+#: filetypesview.cpp:88 filetypesview.cpp:354
 #, kde-format
 msgid "&Remove"
 msgstr "&Ta bort"
 
-#: filetypesview.cpp:133
+#: filetypesview.cpp:112
 #, kde-format
 msgid "Select a file type by name or by extension"
 msgstr "Välj en filtyp efter namn eller filändelse"
 
-#: filetypesview.cpp:368
+#: filetypesview.cpp:347
 #, kde-format
 msgid "&Revert"
 msgstr "Åte&rställ"
 
-#: filetypesview.cpp:369
+#: filetypesview.cpp:348
 #, kde-format
 msgid "Revert this file type to its initial system-wide definition"
 msgstr "Återställ filtypen till dess ursprungliga systemomfattande definition"
 
-#: filetypesview.cpp:371
+#: filetypesview.cpp:350
 #, kde-format
 msgid ""
 "Click here to revert this file type to its initial system-wide definition, "
@@ -295,12 +257,12 @@ msgstr ""
 "dock tömma deras mönsterlista, för att minimera chansen att de används (men "
 "bestämning av filtyp från filens innehåll kan sluta med att de används ändå)."
 
-#: filetypesview.cpp:376
+#: filetypesview.cpp:355
 #, kde-format
 msgid "Delete this file type definition completely"
 msgstr "Ta bort definitionen av filtypen helt och hållet"
 
-#: filetypesview.cpp:378
+#: filetypesview.cpp:357
 #, kde-format
 msgid ""
 "Click here to delete this file type definition completely. This is only "
@@ -538,6 +500,44 @@ msgid ""
 msgstr ""
 "Skriv in filtypens namn. Om du till exempel valde 'image' som kategori, och "
 "du skriver 'custom' här, skapas filtypen 'image/custom'."
+
+#~ msgid ""
+#~ "<p><h1>File Associations</h1> This module allows you to choose which "
+#~ "applications are associated with a given type of file. File types are "
+#~ "also referred to as MIME types (MIME is an acronym which stands for "
+#~ "\"Multipurpose Internet Mail Extensions\").</p><p> A file association "
+#~ "consists of the following: <ul><li>Rules for determining the MIME-type of "
+#~ "a file, for example the filename pattern *.png, which means 'all files "
+#~ "with names that end in .png', is associated with the MIME type \"image/png"
+#~ "\";</li> <li>A short description of the MIME-type, for example the "
+#~ "description of the MIME type \"image/png\" is simply 'PNG image';</li> "
+#~ "<li>An icon to be used for displaying files of the given MIME-type, so "
+#~ "that you can easily identify the type of file in a file manager or file-"
+#~ "selection dialog (at least for the types you use often);</li> <li>A list "
+#~ "of the applications which can be used to open files of the given MIME-"
+#~ "type -- if more than one application can be used then the list is ordered "
+#~ "by priority.</li></ul> You may be surprised to find that some MIME types "
+#~ "have no associated filename patterns; in these cases, KDE is able to "
+#~ "determine the MIME-type by directly examining the contents of the file.</"
+#~ "p>"
+#~ msgstr ""
+#~ "<p><h1>Filbindningar</h1> Denna modul låter dig välja vilka program som "
+#~ "är associerade med en angiven filtyp. Filtyper kallas också Mime-typer "
+#~ "(Mime är en akronym vilken står för \"Multipurpose Internet Mail "
+#~ "Extensions\".)</p><p>En filbindning består av följande: <ul><li>Regler "
+#~ "för att avgöra filens Mime-typ. Till exempel, filmönstret *.png, vilket "
+#~ "betyder att 'alla filer med namn som slutar med .png', är associerade med "
+#~ "Mime-typen \"image/png\".</li> <li>En kort beskrivning av Mime-typen, "
+#~ "till exempel är beskrivningen av Mime-typen \"image/png\" helt enkelt "
+#~ "'PNG-bild'.</li> <li>En ikon som används för att visa filer av den "
+#~ "angivna Mime-typen, så att du enkelt kan identifiera filtypen, t ex i en "
+#~ "filhanterare eller filvalsdialogruta (åtminstone för de typer du använder "
+#~ "ofta.)</li> <li>En lista med de program som kan användas för att öppna "
+#~ "filer av den angivna Mime-typen. Om mer än ett program kan användas "
+#~ "ordnas listan efter prioritet.</li></ul> Du kan bli överraskad när du "
+#~ "finner att vissa Mime-typer inte har några associerade filmönster. I "
+#~ "dessa fall kan KDE direkt avgöra Mime-typen genom att undersöka filens "
+#~ "innehåll.</p>"
 
 #~ msgid "KEditFileType"
 #~ msgstr "Redigera filtyp"

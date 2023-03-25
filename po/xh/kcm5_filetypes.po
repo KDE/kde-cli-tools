@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: filetypes\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-03-05 03:09+0000\n"
+"POT-Creation-Date: 2023-03-25 02:10+0000\n"
 "PO-Revision-Date: 2002-11-01 10:25SAST\n"
 "Last-Translator: Lwandle Mgidlana <lwandle@translate.org.za>\n"
 "Language-Team: Xhosa <xhosa@translate.org.za>\n"
@@ -92,7 +92,7 @@ msgstr ""
 "nohlobo lwefayile 'okubhaliweyo/okucacileyo' , zonke iifayile eziphelange '."
 "txt' zibonwa njengefayile ezi cacileyo zokubhaliweyo."
 
-#: filetypedetails.cpp:87 filetypesview.cpp:102 kservicelistwidget.cpp:110
+#: filetypedetails.cpp:87 filetypesview.cpp:81 kservicelistwidget.cpp:110
 #, kde-format
 msgid "Add..."
 msgstr "Yongeza..."
@@ -195,52 +195,12 @@ msgstr "Hlela Udidi Lwefayile %1"
 msgid "Use settings for '%1' group"
 msgstr "Sebenzisa izicwangciso zeqela le '%1'"
 
-#: filetypesview.cpp:43
-#, fuzzy, kde-format
-msgid ""
-"<p><h1>File Associations</h1> This module allows you to choose which "
-"applications are associated with a given type of file. File types are also "
-"referred to as MIME types (MIME is an acronym which stands for "
-"\"Multipurpose Internet Mail Extensions\").</p><p> A file association "
-"consists of the following: <ul><li>Rules for determining the MIME-type of a "
-"file, for example the filename pattern *.png, which means 'all files with "
-"names that end in .png', is associated with the MIME type \"image/png\";</"
-"li> <li>A short description of the MIME-type, for example the description of "
-"the MIME type \"image/png\" is simply 'PNG image';</li> <li>An icon to be "
-"used for displaying files of the given MIME-type, so that you can easily "
-"identify the type of file in a file manager or file-selection dialog (at "
-"least for the types you use often);</li> <li>A list of the applications "
-"which can be used to open files of the given MIME-type -- if more than one "
-"application can be used then the list is ordered by priority.</li></ul> You "
-"may be surprised to find that some MIME types have no associated filename "
-"patterns; in these cases, KDE is able to determine the MIME-type by directly "
-"examining the contents of the file.</p>"
-msgstr ""
-"<h1>Iindibaniso zefayile</h1> Lo mnqongo wokulinganisela ukuvumela ukuba "
-"ukhethe ukuba zeziphi izicelo ezidityaniswe nodidi lwefayile oyinikiweyo. "
-"Iindidi zefayile zikwa bhekiswa kwiindidi ze MIME (MIME sisishunqulelo "
-"esimele i \"Multipurpose Internet Mail Extensions\".)<p> Udityaniso "
-"lwefayile lunoku kulandelayo: <ul><li>imithetho yokumisela udidi lwefayile "
-"ye-MIME. U mzekelo, umlinganiselo wegama lefayile *.kwd, ethetha ukuba "
-"'zonke iifayile ezinamagama agqibela ngo .kwd', adityaniswa nodidi lwe MIME "
-"\"x-kword\".</li> <li>Inkcazelo emfutshane yodidi lwe-MIME. Umzekelo, "
-"inkcazelo yodidi lwe MIME \"x-kword\" ilula 'KWord document'.)</li> <li>I "
-"icon ezaku setyenziswa ukubonisa iifayile zodidi olunikiweyo lwe-MIME, ukuze "
-"ukuba ubenako ngokulula ukwazi ukubona udidi lwefayile, yitsho kwimboniselo "
-"ye Konqueror (noko ngokweendidi ozisebenzisa rhoqo!)</li> <li>Uluhlu "
-"lwezicelo ezizakusetyenziswa uku vula iifayile zodidi olunikiweyo lwe-MIME. "
-"Ukuba kungaphezu kwesicelo esinye esinokusetyenziswa, ngoko uluhlu lubekwa "
-"ngabaphambili.</li></ul> Unokothuka ukufumanisa ukuba ezinye iindidi ze MIME "
-"azinayo edityanisiweyoimilinganiselo yegama lefayile! Kulu mizekelo, "
-"Konqueror iyakwazi ukumisela udidi lwe-MIME ngokuphonononga ngqo imixholo "
-"yefayile."
-
-#: filetypesview.cpp:73
+#: filetypesview.cpp:52
 #, fuzzy, kde-format
 msgid "Search for file type or filename pattern..."
 msgstr "F&umana umlinganiselo wegama lefayile:"
 
-#: filetypesview.cpp:79
+#: filetypesview.cpp:58
 #, fuzzy, kde-format
 msgid ""
 "Enter a part of a filename pattern, and only file types with a matching file "
@@ -250,12 +210,12 @@ msgstr ""
 "Ngenisa inxenye yomlinganiselo wegama lefayile. Zintlobo zefayile kuphela "
 "ezinefayile ezithelekiseka nomlinganiselo ozakuvela kuluhlu."
 
-#: filetypesview.cpp:87
+#: filetypesview.cpp:66
 #, kde-format
 msgid "Known Types"
 msgstr "Iindidi Ezaziwayo"
 
-#: filetypesview.cpp:93
+#: filetypesview.cpp:72
 #, kde-format
 msgid ""
 "Here you can see a hierarchical list of the file types which are known on "
@@ -269,32 +229,32 @@ msgstr ""
 "HTML) ukubonisela/ukuhlela ulwazi lohlobo lwalo fayile olusebenzisa ulawulo "
 "olusekunene."
 
-#: filetypesview.cpp:107
+#: filetypesview.cpp:86
 #, kde-format
 msgid "Click here to add a new file type."
 msgstr "Nqakraza apha ukudibanisa uhlobo lwefayile olutsha."
 
-#: filetypesview.cpp:109 filetypesview.cpp:375
+#: filetypesview.cpp:88 filetypesview.cpp:354
 #, kde-format
 msgid "&Remove"
 msgstr ""
 
-#: filetypesview.cpp:133
+#: filetypesview.cpp:112
 #, kde-format
 msgid "Select a file type by name or by extension"
 msgstr "Khetha udidi lwefayile ngegama okanye ngolwandiso"
 
-#: filetypesview.cpp:368
+#: filetypesview.cpp:347
 #, kde-format
 msgid "&Revert"
 msgstr ""
 
-#: filetypesview.cpp:369
+#: filetypesview.cpp:348
 #, kde-format
 msgid "Revert this file type to its initial system-wide definition"
 msgstr ""
 
-#: filetypesview.cpp:371
+#: filetypesview.cpp:350
 #, kde-format
 msgid ""
 "Click here to revert this file type to its initial system-wide definition, "
@@ -304,12 +264,12 @@ msgid ""
 "from file contents can still end up using them)."
 msgstr ""
 
-#: filetypesview.cpp:376
+#: filetypesview.cpp:355
 #, kde-format
 msgid "Delete this file type definition completely"
 msgstr ""
 
-#: filetypesview.cpp:378
+#: filetypesview.cpp:357
 #, kde-format
 msgid ""
 "Click here to delete this file type definition completely. This is only "
@@ -549,6 +509,46 @@ msgid ""
 "category and you type 'custom' here, the file type 'image/custom' will be "
 "created."
 msgstr ""
+
+#, fuzzy
+#~ msgid ""
+#~ "<p><h1>File Associations</h1> This module allows you to choose which "
+#~ "applications are associated with a given type of file. File types are "
+#~ "also referred to as MIME types (MIME is an acronym which stands for "
+#~ "\"Multipurpose Internet Mail Extensions\").</p><p> A file association "
+#~ "consists of the following: <ul><li>Rules for determining the MIME-type of "
+#~ "a file, for example the filename pattern *.png, which means 'all files "
+#~ "with names that end in .png', is associated with the MIME type \"image/png"
+#~ "\";</li> <li>A short description of the MIME-type, for example the "
+#~ "description of the MIME type \"image/png\" is simply 'PNG image';</li> "
+#~ "<li>An icon to be used for displaying files of the given MIME-type, so "
+#~ "that you can easily identify the type of file in a file manager or file-"
+#~ "selection dialog (at least for the types you use often);</li> <li>A list "
+#~ "of the applications which can be used to open files of the given MIME-"
+#~ "type -- if more than one application can be used then the list is ordered "
+#~ "by priority.</li></ul> You may be surprised to find that some MIME types "
+#~ "have no associated filename patterns; in these cases, KDE is able to "
+#~ "determine the MIME-type by directly examining the contents of the file.</"
+#~ "p>"
+#~ msgstr ""
+#~ "<h1>Iindibaniso zefayile</h1> Lo mnqongo wokulinganisela ukuvumela ukuba "
+#~ "ukhethe ukuba zeziphi izicelo ezidityaniswe nodidi lwefayile oyinikiweyo. "
+#~ "Iindidi zefayile zikwa bhekiswa kwiindidi ze MIME (MIME sisishunqulelo "
+#~ "esimele i \"Multipurpose Internet Mail Extensions\".)<p> Udityaniso "
+#~ "lwefayile lunoku kulandelayo: <ul><li>imithetho yokumisela udidi "
+#~ "lwefayile ye-MIME. U mzekelo, umlinganiselo wegama lefayile *.kwd, "
+#~ "ethetha ukuba 'zonke iifayile ezinamagama agqibela ngo .kwd', adityaniswa "
+#~ "nodidi lwe MIME \"x-kword\".</li> <li>Inkcazelo emfutshane yodidi lwe-"
+#~ "MIME. Umzekelo, inkcazelo yodidi lwe MIME \"x-kword\" ilula 'KWord "
+#~ "document'.)</li> <li>I icon ezaku setyenziswa ukubonisa iifayile zodidi "
+#~ "olunikiweyo lwe-MIME, ukuze ukuba ubenako ngokulula ukwazi ukubona udidi "
+#~ "lwefayile, yitsho kwimboniselo ye Konqueror (noko ngokweendidi "
+#~ "ozisebenzisa rhoqo!)</li> <li>Uluhlu lwezicelo ezizakusetyenziswa uku "
+#~ "vula iifayile zodidi olunikiweyo lwe-MIME. Ukuba kungaphezu kwesicelo "
+#~ "esinye esinokusetyenziswa, ngoko uluhlu lubekwa ngabaphambili.</li></ul> "
+#~ "Unokothuka ukufumanisa ukuba ezinye iindidi ze MIME azinayo "
+#~ "edityanisiweyoimilinganiselo yegama lefayile! Kulu mizekelo, Konqueror "
+#~ "iyakwazi ukumisela udidi lwe-MIME ngokuphonononga ngqo imixholo yefayile."
 
 #~ msgid "KEditFileType"
 #~ msgstr "KEditFileType"

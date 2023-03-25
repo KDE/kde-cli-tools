@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: filetypes\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-03-05 03:09+0000\n"
+"POT-Creation-Date: 2023-03-25 02:10+0000\n"
 "PO-Revision-Date: 2009-12-19 18:22+0100\n"
 "Last-Translator: Berend Ytsma <berendy@gmail.com>\n"
 "Language-Team: Frysk <kde-i18n-fry@kde.org>\n"
@@ -85,7 +85,7 @@ msgstr ""
 "ferbûn mei it triemtype 'tekst/plain'; alle triemmen dy't einigje op '.txt' "
 "wurde lykas teksttriemmen werkend."
 
-#: filetypedetails.cpp:87 filetypesview.cpp:102 kservicelistwidget.cpp:110
+#: filetypedetails.cpp:87 filetypesview.cpp:81 kservicelistwidget.cpp:110
 #, kde-format
 msgid "Add..."
 msgstr "Taheakje..."
@@ -181,51 +181,13 @@ msgstr "Triemtype %1"
 msgid "Use settings for '%1' group"
 msgstr "Brûk ynstellings foar groep '%1'"
 
-#: filetypesview.cpp:43
-#, kde-format
-msgid ""
-"<p><h1>File Associations</h1> This module allows you to choose which "
-"applications are associated with a given type of file. File types are also "
-"referred to as MIME types (MIME is an acronym which stands for "
-"\"Multipurpose Internet Mail Extensions\").</p><p> A file association "
-"consists of the following: <ul><li>Rules for determining the MIME-type of a "
-"file, for example the filename pattern *.png, which means 'all files with "
-"names that end in .png', is associated with the MIME type \"image/png\";</"
-"li> <li>A short description of the MIME-type, for example the description of "
-"the MIME type \"image/png\" is simply 'PNG image';</li> <li>An icon to be "
-"used for displaying files of the given MIME-type, so that you can easily "
-"identify the type of file in a file manager or file-selection dialog (at "
-"least for the types you use often);</li> <li>A list of the applications "
-"which can be used to open files of the given MIME-type -- if more than one "
-"application can be used then the list is ordered by priority.</li></ul> You "
-"may be surprised to find that some MIME types have no associated filename "
-"patterns; in these cases, KDE is able to determine the MIME-type by directly "
-"examining the contents of the file.</p>"
-msgstr ""
-"<p><h1>Triemkeppelingen</h1> Yn dizze module kinne jo fêstlizze hokker "
-"tapassings keppele wurde oan in beskaat triemtype. Triemtypen wurde ek wol "
-"MIME-typen neamt (MIME is in letterwurd dat stiet foar \"Multipurpose "
-"Internet Mail Extensions\".)</p><p> In triemkeppeling bestiet út it "
-"neikommende: <ul> <li>Foarskriften foar it fêststellen fan it type triem, "
-"bygelyks it triemnammepatroan *.kwd, wat betsjut 'alle triemmen mei nammen "
-"dy't einigje op .kwd', wurdt keppele oan it MIME-type \"x-kword\";</li> "
-"<li>In koarte beskriuwing fan it triemtype. Bygelyks, de beskriuwing fan it "
-"triemtype \"x-kword\" is 'KWord-dokumint'.</li> <li>In byldkaike dat brûkt "
-"wurdt foar it werjaan fan triemmen fan in beskaat triemtype. Sa kinne jo yn "
-"bygelyks in Konqueror-finster, makliker werkenne hokfoar type in beskaat "
-"triem is.</li> <li>In list mei tapassings dy't brûkt wurde kinne om triemmen "
-"fan dit type te iepenjen. At jo mear dan ien tapassing brûke wolle kinne, "
-"dan kin de list iepen wurde nei prioriteit. </li> </ul>Guon triemtypen binne "
-"gjin triemnammepatroanen nedich. Yn dizze gefallen kin KDE it triemtype "
-"bepale troch nei de ynhâld fan it triem te sjen.</p>"
-
-#: filetypesview.cpp:73
+#: filetypesview.cpp:52
 #, fuzzy, kde-format
 #| msgid "Find file type or filename pattern"
 msgid "Search for file type or filename pattern..."
 msgstr "Tr&iemtypen of triemnammepatroan sykje"
 
-#: filetypesview.cpp:79
+#: filetypesview.cpp:58
 #, kde-format
 msgid ""
 "Enter a part of a filename pattern, and only file types with a matching file "
@@ -235,12 +197,12 @@ msgstr ""
 "Fier in diel fan in triemnammepatroan yn. Allinnich triemtypen dy't "
 "oerienkomme mei dit patroan ferskine dan yn de list."
 
-#: filetypesview.cpp:87
+#: filetypesview.cpp:66
 #, kde-format
 msgid "Known Types"
 msgstr "Bekende typen"
 
-#: filetypesview.cpp:93
+#: filetypesview.cpp:72
 #, kde-format
 msgid ""
 "Here you can see a hierarchical list of the file types which are known on "
@@ -253,32 +215,32 @@ msgstr ""
 "dizze wer op te tearen. Klik op de namme fan it triemtype (bgl. 'html' foar "
 "HTML-triemmen) om jo foarkar oangeande dat triemtype yn te stellen."
 
-#: filetypesview.cpp:107
+#: filetypesview.cpp:86
 #, kde-format
 msgid "Click here to add a new file type."
 msgstr "Klik hjirre om in nij triemtype ta te heakjen"
 
-#: filetypesview.cpp:109 filetypesview.cpp:375
+#: filetypesview.cpp:88 filetypesview.cpp:354
 #, kde-format
 msgid "&Remove"
 msgstr "&Fuortsmite"
 
-#: filetypesview.cpp:133
+#: filetypesview.cpp:112
 #, kde-format
 msgid "Select a file type by name or by extension"
 msgstr "Selektearje in triemtype by namme of taheaksel"
 
-#: filetypesview.cpp:368
+#: filetypesview.cpp:347
 #, kde-format
 msgid "&Revert"
 msgstr "&Weromdraaie"
 
-#: filetypesview.cpp:369
+#: filetypesview.cpp:348
 #, kde-format
 msgid "Revert this file type to its initial system-wide definition"
 msgstr "Dizze triemtype weromsette nei syn systeem-wide defenysje"
 
-#: filetypesview.cpp:371
+#: filetypesview.cpp:350
 #, kde-format
 msgid ""
 "Click here to revert this file type to its initial system-wide definition, "
@@ -293,12 +255,12 @@ msgstr ""
 "patroanlist leechje, om sa de kânsen fan it brûken te minimalisearjen(it kin "
 "noch stees barre dat triemtype ûntdekking fan triem ynhâld se dôchs brûke)."
 
-#: filetypesview.cpp:376
+#: filetypesview.cpp:355
 #, kde-format
 msgid "Delete this file type definition completely"
 msgstr "Dit triemtype definysje folslein wiskje"
 
-#: filetypesview.cpp:378
+#: filetypesview.cpp:357
 #, kde-format
 msgid ""
 "Click here to delete this file type definition completely. This is only "
@@ -540,6 +502,44 @@ msgstr ""
 "Fier de namme fan it triemtype yn. As foarbyld. as jo 'image' selektearje as "
 "kategory en jo type 'custum' yn, de triemtype 'image/custum'sil da n "
 "oanmakke wurde."
+
+#~ msgid ""
+#~ "<p><h1>File Associations</h1> This module allows you to choose which "
+#~ "applications are associated with a given type of file. File types are "
+#~ "also referred to as MIME types (MIME is an acronym which stands for "
+#~ "\"Multipurpose Internet Mail Extensions\").</p><p> A file association "
+#~ "consists of the following: <ul><li>Rules for determining the MIME-type of "
+#~ "a file, for example the filename pattern *.png, which means 'all files "
+#~ "with names that end in .png', is associated with the MIME type \"image/png"
+#~ "\";</li> <li>A short description of the MIME-type, for example the "
+#~ "description of the MIME type \"image/png\" is simply 'PNG image';</li> "
+#~ "<li>An icon to be used for displaying files of the given MIME-type, so "
+#~ "that you can easily identify the type of file in a file manager or file-"
+#~ "selection dialog (at least for the types you use often);</li> <li>A list "
+#~ "of the applications which can be used to open files of the given MIME-"
+#~ "type -- if more than one application can be used then the list is ordered "
+#~ "by priority.</li></ul> You may be surprised to find that some MIME types "
+#~ "have no associated filename patterns; in these cases, KDE is able to "
+#~ "determine the MIME-type by directly examining the contents of the file.</"
+#~ "p>"
+#~ msgstr ""
+#~ "<p><h1>Triemkeppelingen</h1> Yn dizze module kinne jo fêstlizze hokker "
+#~ "tapassings keppele wurde oan in beskaat triemtype. Triemtypen wurde ek "
+#~ "wol MIME-typen neamt (MIME is in letterwurd dat stiet foar \"Multipurpose "
+#~ "Internet Mail Extensions\".)</p><p> In triemkeppeling bestiet út it "
+#~ "neikommende: <ul> <li>Foarskriften foar it fêststellen fan it type triem, "
+#~ "bygelyks it triemnammepatroan *.kwd, wat betsjut 'alle triemmen mei "
+#~ "nammen dy't einigje op .kwd', wurdt keppele oan it MIME-type \"x-kword\";"
+#~ "</li> <li>In koarte beskriuwing fan it triemtype. Bygelyks, de "
+#~ "beskriuwing fan it triemtype \"x-kword\" is 'KWord-dokumint'.</li> <li>In "
+#~ "byldkaike dat brûkt wurdt foar it werjaan fan triemmen fan in beskaat "
+#~ "triemtype. Sa kinne jo yn bygelyks in Konqueror-finster, makliker "
+#~ "werkenne hokfoar type in beskaat triem is.</li> <li>In list mei "
+#~ "tapassings dy't brûkt wurde kinne om triemmen fan dit type te iepenjen. "
+#~ "At jo mear dan ien tapassing brûke wolle kinne, dan kin de list iepen "
+#~ "wurde nei prioriteit. </li> </ul>Guon triemtypen binne gjin "
+#~ "triemnammepatroanen nedich. Yn dizze gefallen kin KDE it triemtype bepale "
+#~ "troch nei de ynhâld fan it triem te sjen.</p>"
 
 #~ msgid "KEditFileType"
 #~ msgstr "KEditFileType"

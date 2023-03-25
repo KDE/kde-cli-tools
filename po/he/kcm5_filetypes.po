@@ -20,7 +20,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kcm5_filetypes\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-03-05 03:09+0000\n"
+"POT-Creation-Date: 2023-03-25 02:10+0000\n"
 "PO-Revision-Date: 2017-05-16 06:52-0400\n"
 "Last-Translator: Copied by Zanata <copied-by-zanata@zanata.org>\n"
 "Language-Team: Hebrew <kde-i18n-doc@kde.org>\n"
@@ -95,7 +95,7 @@ msgstr ""
 "לדוגמה, התבנית ‎*.txt משויכת לסוג הקובץ \"text/plain\". כל הקבצים שמסתיימים ב־"
 "\"txt.\" יזוהו בתור קבצי טקסט."
 
-#: filetypedetails.cpp:87 filetypesview.cpp:102 kservicelistwidget.cpp:110
+#: filetypedetails.cpp:87 filetypesview.cpp:81 kservicelistwidget.cpp:110
 #, kde-format
 msgid "Add..."
 msgstr "הוסף..."
@@ -186,49 +186,13 @@ msgstr "סוג הקובץ %1"
 msgid "Use settings for '%1' group"
 msgstr "השתמש בהגדרות לקבוצה \"%1\""
 
-#: filetypesview.cpp:43
-#, kde-format
-msgid ""
-"<p><h1>File Associations</h1> This module allows you to choose which "
-"applications are associated with a given type of file. File types are also "
-"referred to as MIME types (MIME is an acronym which stands for "
-"\"Multipurpose Internet Mail Extensions\").</p><p> A file association "
-"consists of the following: <ul><li>Rules for determining the MIME-type of a "
-"file, for example the filename pattern *.png, which means 'all files with "
-"names that end in .png', is associated with the MIME type \"image/png\";</"
-"li> <li>A short description of the MIME-type, for example the description of "
-"the MIME type \"image/png\" is simply 'PNG image';</li> <li>An icon to be "
-"used for displaying files of the given MIME-type, so that you can easily "
-"identify the type of file in a file manager or file-selection dialog (at "
-"least for the types you use often);</li> <li>A list of the applications "
-"which can be used to open files of the given MIME-type -- if more than one "
-"application can be used then the list is ordered by priority.</li></ul> You "
-"may be surprised to find that some MIME types have no associated filename "
-"patterns; in these cases, KDE is able to determine the MIME-type by directly "
-"examining the contents of the file.</p>"
-msgstr ""
-"<p><h1>שיוכי קבצים</h1> מודול זה מאפשר לך לבחור אילו יישומים ישויכו לסוג "
-"קובץ נתון. לסוגי קבצים מתייחסים גם בתור טיפוסי Mime) Mime הם ראשי תיבות "
-"באנגלית שפירושם \"הרחבת דואר אינטרנט רב־תכליתית\").</p> <p>  שיוך קבצים כולל "
-"את הפרטים הבאים: <ul><li> כללים לקביעת טיפוס ה־Mime של קובץ. לדוגמה, תבנית "
-"שמות הקבצים *.kwd, שמשמעותה \"כל הקבצים ששמותיהם מסתיימים ב־kwd.\", משויכת "
-"לטיפוס ה־Mime \"x-kword\".</li> <li> תיאור קצר של טיפוס ה־Mime. לדוגמה, "
-"התיאור של טיפוס ה־Mime x-kword הוא \"מסמך KWord\". </li> <li> סמל שייעשה בו "
-"שימוש להצגת קבצים מטיפוס ה־Mime הנתון, כך שניתן יהיה לזהות את סוג הקובץ "
-"בקלות, למשל בתצוגה של Konqueror (לפחות עם הסוגים שאתה משתמש בהם לעתים "
-"קרובות). </li> <li> רשימה של יישומים שיכולים לשמש לפתיחת קבצים מטיפוס ה־Mime "
-"הנתון. אם ניתן להשתמש ביותר מיישום אחד, הרשימה תסודר לפי סדר עדיפות. </li> </"
-"ul> אתה עשוי להיות מופתע לגלות טיפוסי Mime מסוימים שלא משויכות להם תבניות "
-"שמות קבצים. במקרים כגון אלה, Konqueror יכול לקבוע את טיפוס ה־Mime על ידי "
-"בחינה של תוכן הקובץ ישירות. </p>"
-
-#: filetypesview.cpp:73
+#: filetypesview.cpp:52
 #, fuzzy, kde-format
 #| msgid "Find file type or filename pattern"
 msgid "Search for file type or filename pattern..."
 msgstr "חפש תבנית סוג־קובץ או שם־קובץ"
 
-#: filetypesview.cpp:79
+#: filetypesview.cpp:58
 #, kde-format
 msgid ""
 "Enter a part of a filename pattern, and only file types with a matching file "
@@ -238,12 +202,12 @@ msgstr ""
 "הזן חלק של תבנית שמות קבצים. יופיעו ברשימה רק סוגי קבצים עם תבנית קובץ "
 "תואמת. במידה ולא, הזן חלק שם סוג הקובץ כמו שהוא מופיע ברשימה."
 
-#: filetypesview.cpp:87
+#: filetypesview.cpp:66
 #, kde-format
 msgid "Known Types"
 msgstr "סוגים מוכרים"
 
-#: filetypesview.cpp:93
+#: filetypesview.cpp:72
 #, kde-format
 msgid ""
 "Here you can see a hierarchical list of the file types which are known on "
@@ -255,32 +219,32 @@ msgstr ""
 "הסימן \"+\" כדי להרחיב קטגוריה, או על \"-\" כדי לצמצם אותה. בחר סוג קובץ  "
 "(לדוגמה text/html) כדי לצפות\\לערוך את המידע עליו באמצעות האפשרויות שמשמאל."
 
-#: filetypesview.cpp:107
+#: filetypesview.cpp:86
 #, kde-format
 msgid "Click here to add a new file type."
 msgstr "לחץ כאן כדי להוסיף סוג קובץ חדש."
 
-#: filetypesview.cpp:109 filetypesview.cpp:375
+#: filetypesview.cpp:88 filetypesview.cpp:354
 #, kde-format
 msgid "&Remove"
 msgstr "&הסר"
 
-#: filetypesview.cpp:133
+#: filetypesview.cpp:112
 #, kde-format
 msgid "Select a file type by name or by extension"
 msgstr "בחר סוג קובץ לפי שם או לפי סיומת"
 
-#: filetypesview.cpp:368
+#: filetypesview.cpp:347
 #, kde-format
 msgid "&Revert"
 msgstr "&החזר"
 
-#: filetypesview.cpp:369
+#: filetypesview.cpp:348
 #, kde-format
 msgid "Revert this file type to its initial system-wide definition"
 msgstr "שייך סוג קובץ זה בחזרה לשיוכו הראשוני"
 
-#: filetypesview.cpp:371
+#: filetypesview.cpp:350
 #, kde-format
 msgid ""
 "Click here to revert this file type to its initial system-wide definition, "
@@ -294,12 +258,12 @@ msgstr ""
 "אך ניתן לרוקן את תבניותיהם, כדי להקטין את הסיכוי של שימוש בהם (אך עדיין ניתן "
 "יהיה להשתמש בהם, באמצעות בחירת שיוך קובץ ממאפייני קובץ). "
 
-#: filetypesview.cpp:376
+#: filetypesview.cpp:355
 #, kde-format
 msgid "Delete this file type definition completely"
 msgstr "מחק תיאור סוג־קובץ זה לחלוטין"
 
-#: filetypesview.cpp:378
+#: filetypesview.cpp:357
 #, kde-format
 msgid ""
 "Click here to delete this file type definition completely. This is only "
@@ -530,3 +494,38 @@ msgid ""
 msgstr ""
 "הסוג של סוג הקובץ. למשל, אם בחרת \"תמונה\" בתור הקטגוריה ואתה מקליד \"מותאם "
 "אישית\" כאן, הסוג \"תמונה/מותאים אישי\" יווצר."
+
+#~ msgid ""
+#~ "<p><h1>File Associations</h1> This module allows you to choose which "
+#~ "applications are associated with a given type of file. File types are "
+#~ "also referred to as MIME types (MIME is an acronym which stands for "
+#~ "\"Multipurpose Internet Mail Extensions\").</p><p> A file association "
+#~ "consists of the following: <ul><li>Rules for determining the MIME-type of "
+#~ "a file, for example the filename pattern *.png, which means 'all files "
+#~ "with names that end in .png', is associated with the MIME type \"image/png"
+#~ "\";</li> <li>A short description of the MIME-type, for example the "
+#~ "description of the MIME type \"image/png\" is simply 'PNG image';</li> "
+#~ "<li>An icon to be used for displaying files of the given MIME-type, so "
+#~ "that you can easily identify the type of file in a file manager or file-"
+#~ "selection dialog (at least for the types you use often);</li> <li>A list "
+#~ "of the applications which can be used to open files of the given MIME-"
+#~ "type -- if more than one application can be used then the list is ordered "
+#~ "by priority.</li></ul> You may be surprised to find that some MIME types "
+#~ "have no associated filename patterns; in these cases, KDE is able to "
+#~ "determine the MIME-type by directly examining the contents of the file.</"
+#~ "p>"
+#~ msgstr ""
+#~ "<p><h1>שיוכי קבצים</h1> מודול זה מאפשר לך לבחור אילו יישומים ישויכו לסוג "
+#~ "קובץ נתון. לסוגי קבצים מתייחסים גם בתור טיפוסי Mime) Mime הם ראשי תיבות "
+#~ "באנגלית שפירושם \"הרחבת דואר אינטרנט רב־תכליתית\").</p> <p>  שיוך קבצים "
+#~ "כולל את הפרטים הבאים: <ul><li> כללים לקביעת טיפוס ה־Mime של קובץ. לדוגמה, "
+#~ "תבנית שמות הקבצים *.kwd, שמשמעותה \"כל הקבצים ששמותיהם מסתיימים ב־kwd.\", "
+#~ "משויכת לטיפוס ה־Mime \"x-kword\".</li> <li> תיאור קצר של טיפוס ה־Mime. "
+#~ "לדוגמה, התיאור של טיפוס ה־Mime x-kword הוא \"מסמך KWord\". </li> <li> סמל "
+#~ "שייעשה בו שימוש להצגת קבצים מטיפוס ה־Mime הנתון, כך שניתן יהיה לזהות את "
+#~ "סוג הקובץ בקלות, למשל בתצוגה של Konqueror (לפחות עם הסוגים שאתה משתמש בהם "
+#~ "לעתים קרובות). </li> <li> רשימה של יישומים שיכולים לשמש לפתיחת קבצים "
+#~ "מטיפוס ה־Mime הנתון. אם ניתן להשתמש ביותר מיישום אחד, הרשימה תסודר לפי "
+#~ "סדר עדיפות. </li> </ul> אתה עשוי להיות מופתע לגלות טיפוסי Mime מסוימים "
+#~ "שלא משויכות להם תבניות שמות קבצים. במקרים כגון אלה, Konqueror יכול לקבוע "
+#~ "את טיפוס ה־Mime על ידי בחינה של תוכן הקובץ ישירות. </p>"

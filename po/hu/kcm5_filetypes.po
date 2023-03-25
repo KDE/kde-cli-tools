@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: KDE 4.1\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-03-05 03:09+0000\n"
+"POT-Creation-Date: 2023-03-25 02:10+0000\n"
 "PO-Revision-Date: 2019-11-08 22:03+0100\n"
 "Last-Translator: Kristóf Kiszel <ulysses@kubuntu.org>\n"
 "Language-Team: Hungarian <kde-l10n-hu@kde.org>\n"
@@ -83,7 +83,7 @@ msgstr ""
 "a „text/plain” fájlokat azonosító minta a *.txt, így minden „.txt”-re "
 "végződő fájlt egyszerű szöveges fájlként ismer fel a rendszer."
 
-#: filetypedetails.cpp:87 filetypesview.cpp:102 kservicelistwidget.cpp:110
+#: filetypedetails.cpp:87 filetypesview.cpp:81 kservicelistwidget.cpp:110
 #, kde-format
 msgid "Add..."
 msgstr "Hozzáadás…"
@@ -177,49 +177,12 @@ msgstr "Fájltípus: %1"
 msgid "Use settings for '%1' group"
 msgstr "A(z) „%1” csoport beállításainak használata"
 
-#: filetypesview.cpp:43
-#, kde-format
-msgid ""
-"<p><h1>File Associations</h1> This module allows you to choose which "
-"applications are associated with a given type of file. File types are also "
-"referred to as MIME types (MIME is an acronym which stands for "
-"\"Multipurpose Internet Mail Extensions\").</p><p> A file association "
-"consists of the following: <ul><li>Rules for determining the MIME-type of a "
-"file, for example the filename pattern *.png, which means 'all files with "
-"names that end in .png', is associated with the MIME type \"image/png\";</"
-"li> <li>A short description of the MIME-type, for example the description of "
-"the MIME type \"image/png\" is simply 'PNG image';</li> <li>An icon to be "
-"used for displaying files of the given MIME-type, so that you can easily "
-"identify the type of file in a file manager or file-selection dialog (at "
-"least for the types you use often);</li> <li>A list of the applications "
-"which can be used to open files of the given MIME-type -- if more than one "
-"application can be used then the list is ordered by priority.</li></ul> You "
-"may be surprised to find that some MIME types have no associated filename "
-"patterns; in these cases, KDE is able to determine the MIME-type by directly "
-"examining the contents of the file.</p>"
-msgstr ""
-"<p><h1>Fájltársítások</h1> Ebben a modulban lehet beállítani, hogy az "
-"alkalmazások mely fájltípusokkal legyenek társítva. A fájltípust MIME-"
-"típusnak is nevezik (a MIME szó a „Multipurpose Internet Mail Extensions” "
-"angol kifejezés mozaikszava).</p><p> Egy fájltársítás a következőkből áll: "
-"<ul><li>Szabályok, amelyek alapján egy fájl MIME-típusa meghatározható. "
-"Például a *.kwd minta, amely azt jelenti: „minden .kwd-re végződő nevű "
-"fájl”, az „x-kword” MIME-típushoz van rendelve.</li> <li>Egy rövid leírás. "
-"Például az „x-kword” MIME-típus leírása egyszerűen „KWord-dokumentum”.</li> "
-"<li>Egy ikon, amelyet a MIME-típus reprezentálásához használhatnak a "
-"programok (például egy Konqueror-nézetben). </li> <li>Egy lista azokról a "
-"programokról, amelyek meg tudják nyitni az adott MIME-típusú fájlokat. Ha "
-"több ilyen alkalmazás is van, akkor a sorrend a prioritási sorrendet jelzi.</"
-"li></ul> Előfordulhat, hogy egy MIME-típushoz nincsen fájlnévminta rendelve. "
-"Ezekben az esetekben a Konqueror a MIME-típust a fájl tartalmának "
-"vizsgálatával határozza meg.</p>"
-
-#: filetypesview.cpp:73
+#: filetypesview.cpp:52
 #, kde-format
 msgid "Search for file type or filename pattern..."
 msgstr "Fájltípus- vagy fájlnévminta keresése…"
 
-#: filetypesview.cpp:79
+#: filetypesview.cpp:58
 #, kde-format
 msgid ""
 "Enter a part of a filename pattern, and only file types with a matching file "
@@ -230,12 +193,12 @@ msgstr ""
 "fognak megjelenni az alábbi listában. Hasonló módon a fájltípus egy részlete "
 "is megadható."
 
-#: filetypesview.cpp:87
+#: filetypesview.cpp:66
 #, kde-format
 msgid "Known Types"
 msgstr "Ismert típusok"
 
-#: filetypesview.cpp:93
+#: filetypesview.cpp:72
 #, kde-format
 msgid ""
 "Here you can see a hierarchical list of the file types which are known on "
@@ -248,34 +211,34 @@ msgstr ""
 "kiválaszt egy fájltípust (pl. text/html a HTML fájlokhoz), akkor a lista "
 "jobb oldalán levő ablakokban végezhet módosításokat rajta."
 
-#: filetypesview.cpp:107
+#: filetypesview.cpp:86
 #, kde-format
 msgid "Click here to add a new file type."
 msgstr "Kattintson ide egy új fájltípus hozzáadásához."
 
-#: filetypesview.cpp:109 filetypesview.cpp:375
+#: filetypesview.cpp:88 filetypesview.cpp:354
 #, kde-format
 msgid "&Remove"
 msgstr "&Eltávolítás"
 
-#: filetypesview.cpp:133
+#: filetypesview.cpp:112
 #, kde-format
 msgid "Select a file type by name or by extension"
 msgstr "Válasszon egy fájltípust a név vagy a kiterjesztés szerint"
 
-#: filetypesview.cpp:368
+#: filetypesview.cpp:347
 #, kde-format
 msgid "&Revert"
 msgstr "&Visszaállítás"
 
-#: filetypesview.cpp:369
+#: filetypesview.cpp:348
 #, kde-format
 msgid "Revert this file type to its initial system-wide definition"
 msgstr ""
 "Ennek a fájl típusnak a visszaállítása egy kezdeti, rendszer egészére "
 "vonatkozó definícióra"
 
-#: filetypesview.cpp:371
+#: filetypesview.cpp:350
 #, kde-format
 msgid ""
 "Click here to revert this file type to its initial system-wide definition, "
@@ -291,12 +254,12 @@ msgstr ""
 "használatuk esélyének minimalizálásához. (de a fájltípus meghatározás a fájl "
 "tartalomból még mindig megelőzheti a használatukat)."
 
-#: filetypesview.cpp:376
+#: filetypesview.cpp:355
 #, kde-format
 msgid "Delete this file type definition completely"
 msgstr "Ennek a fájl típus definíciónak a teljes törlése"
 
-#: filetypesview.cpp:378
+#: filetypesview.cpp:357
 #, kde-format
 msgid ""
 "Click here to delete this file type definition completely. This is only "
@@ -534,6 +497,42 @@ msgid ""
 msgstr ""
 "Írja be egy fájltípus nevét. Például az „image” kategóriában állva beírható "
 "a „custom” típus. Így az \"image/custom\" fájltípus fog létrejönni."
+
+#~ msgid ""
+#~ "<p><h1>File Associations</h1> This module allows you to choose which "
+#~ "applications are associated with a given type of file. File types are "
+#~ "also referred to as MIME types (MIME is an acronym which stands for "
+#~ "\"Multipurpose Internet Mail Extensions\").</p><p> A file association "
+#~ "consists of the following: <ul><li>Rules for determining the MIME-type of "
+#~ "a file, for example the filename pattern *.png, which means 'all files "
+#~ "with names that end in .png', is associated with the MIME type \"image/png"
+#~ "\";</li> <li>A short description of the MIME-type, for example the "
+#~ "description of the MIME type \"image/png\" is simply 'PNG image';</li> "
+#~ "<li>An icon to be used for displaying files of the given MIME-type, so "
+#~ "that you can easily identify the type of file in a file manager or file-"
+#~ "selection dialog (at least for the types you use often);</li> <li>A list "
+#~ "of the applications which can be used to open files of the given MIME-"
+#~ "type -- if more than one application can be used then the list is ordered "
+#~ "by priority.</li></ul> You may be surprised to find that some MIME types "
+#~ "have no associated filename patterns; in these cases, KDE is able to "
+#~ "determine the MIME-type by directly examining the contents of the file.</"
+#~ "p>"
+#~ msgstr ""
+#~ "<p><h1>Fájltársítások</h1> Ebben a modulban lehet beállítani, hogy az "
+#~ "alkalmazások mely fájltípusokkal legyenek társítva. A fájltípust MIME-"
+#~ "típusnak is nevezik (a MIME szó a „Multipurpose Internet Mail Extensions” "
+#~ "angol kifejezés mozaikszava).</p><p> Egy fájltársítás a következőkből "
+#~ "áll: <ul><li>Szabályok, amelyek alapján egy fájl MIME-típusa "
+#~ "meghatározható. Például a *.kwd minta, amely azt jelenti: „minden .kwd-re "
+#~ "végződő nevű fájl”, az „x-kword” MIME-típushoz van rendelve.</li> <li>Egy "
+#~ "rövid leírás. Például az „x-kword” MIME-típus leírása egyszerűen „KWord-"
+#~ "dokumentum”.</li> <li>Egy ikon, amelyet a MIME-típus reprezentálásához "
+#~ "használhatnak a programok (például egy Konqueror-nézetben). </li> <li>Egy "
+#~ "lista azokról a programokról, amelyek meg tudják nyitni az adott MIME-"
+#~ "típusú fájlokat. Ha több ilyen alkalmazás is van, akkor a sorrend a "
+#~ "prioritási sorrendet jelzi.</li></ul> Előfordulhat, hogy egy MIME-"
+#~ "típushoz nincsen fájlnévminta rendelve. Ezekben az esetekben a Konqueror "
+#~ "a MIME-típust a fájl tartalmának vizsgálatával határozza meg.</p>"
 
 #~ msgid "KEditFileType"
 #~ msgstr "KEditFileType"

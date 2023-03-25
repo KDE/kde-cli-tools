@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: filetypes\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-03-05 03:09+0000\n"
+"POT-Creation-Date: 2023-03-25 02:10+0000\n"
 "PO-Revision-Date: 2007-11-05 13:33+0545\n"
 "Last-Translator: Shyam Krishna Bal <shyamkrishna_bal@yahoo.com>\n"
 "Language-Team: Nepali <info@mpp.org.np>\n"
@@ -90,7 +90,7 @@ msgstr ""
 "गर्छ । उदाहरणका लागि, *.txt बाँन्की 'text/plain' फाइल प्रकारसँग सम्बन्धित छ; '. "
 "txt' मा अन्त्य हुने सबै फाइलहरू सादा पाठ फाइलको रुपमा परिचान गरिन्छ ।"
 
-#: filetypedetails.cpp:87 filetypesview.cpp:102 kservicelistwidget.cpp:110
+#: filetypedetails.cpp:87 filetypesview.cpp:81 kservicelistwidget.cpp:110
 #, kde-format
 msgid "Add..."
 msgstr "थप्नुहोस्..."
@@ -193,69 +193,13 @@ msgstr "फाइल प्रकार %1 सम्पादन गर्नु
 msgid "Use settings for '%1' group"
 msgstr "'%1' समूहका लागि सेटिङ प्रयोग गर्नुहोस्"
 
-#: filetypesview.cpp:43
-#, fuzzy, kde-format
-#| msgid ""
-#| "<p><h1>File Associations</h1> This module allows you to choose which "
-#| "applications are associated with a given type of file. File types are "
-#| "also referred to MIME types (MIME is an acronym which stands for "
-#| "\"Multipurpose Internet Mail Extensions\".)</p><p> A file association "
-#| "consists of the following: <ul><li>Rules for determining the MIME-type of "
-#| "a file, for example the filename pattern *.kwd, which means 'all files "
-#| "with names that end in .kwd', is associated with the MIME type \"x-kword"
-#| "\";</li> <li>A short description of the MIME-type, for example the "
-#| "description of the MIME type \"x-kword\" is simply 'KWord document';</li> "
-#| "<li>An icon to be used for displaying files of the given MIME-type, so "
-#| "that you can easily identify the type of file in, say, a Konqueror view "
-#| "(at least for the types you use often);</li> <li>A list of the "
-#| "applications which can be used to open files of the given MIME-type -- if "
-#| "more than one application can be used then the list is ordered by "
-#| "priority.</li></ul> You may be surprised to find that some MIME types "
-#| "have no associated filename patterns; in these cases, Konqueror is able "
-#| "to determine the MIME-type by directly examining the contents of the file."
-#| "</p>"
-msgid ""
-"<p><h1>File Associations</h1> This module allows you to choose which "
-"applications are associated with a given type of file. File types are also "
-"referred to as MIME types (MIME is an acronym which stands for "
-"\"Multipurpose Internet Mail Extensions\").</p><p> A file association "
-"consists of the following: <ul><li>Rules for determining the MIME-type of a "
-"file, for example the filename pattern *.png, which means 'all files with "
-"names that end in .png', is associated with the MIME type \"image/png\";</"
-"li> <li>A short description of the MIME-type, for example the description of "
-"the MIME type \"image/png\" is simply 'PNG image';</li> <li>An icon to be "
-"used for displaying files of the given MIME-type, so that you can easily "
-"identify the type of file in a file manager or file-selection dialog (at "
-"least for the types you use often);</li> <li>A list of the applications "
-"which can be used to open files of the given MIME-type -- if more than one "
-"application can be used then the list is ordered by priority.</li></ul> You "
-"may be surprised to find that some MIME types have no associated filename "
-"patterns; in these cases, KDE is able to determine the MIME-type by directly "
-"examining the contents of the file.</p>"
-msgstr ""
-"<p><h1>फाइल संघ</h1> तपाईँलाई यो मोड्युलले दिएका फाइल प्रकारसँग कुन अनुप्रयोग सम्बन्धित "
-"छ रोज्न अनुमति दिन्छ । फाइल प्रकारले माइम प्रकार पनि सन्दर्भ हुन्छ (माइम \"बहुविध "
-"इन्टरनेट पत्र विस्तार \" मा आधारित एक्रोनिम हो)</p><p> फाइल संघमा निम्न समाविष्ट "
-"हुन्छ: <ul><li>फाइलको माइम प्रकार निर्धारण गर्ने नियमहरू, उदाहरणका लागिफाइलनाम "
-"बाँन्की *.kwd, जसको अर्थ '.kwd' सँग अन्त्य हुने सबै फाइलनाम, माइम प्रकार \"x-kword\" "
-"सँग सम्बन्धित हुन्छन्;</li> <li>माइम प्रकारको एउटा छोटो वर्णन, उदाहरणका लागि माइम "
-"प्रकारको वर्णन \"x-kword\" सामान्य 'KWord कागजात';</li> <li>दिएको माइम प्रकारका "
-"फाइल प्रदर्शन गर्नका लागि प्रयोग हुने प्रतिमा, त्यसैले तपाईँले यसमा सजिलैसँग फाइलको प्रकार "
-"पहिचान गर्न सक्नुहुन्छ, भन्नुहोस्, एउटा कन्क्वेरर दृश्य (कम्तिमा तपाईँले प्राय: प्रयोग गर्ने "
-"प्रकारहरूका लागि);</li> <li>अनुप्रयोगहरूको एउटा सूची जसलाई दिएका माइम प्रकारको "
-"फाइलहरू खोल्नका लागि प्रयोग गर्न सकिन्छ -- यदि एक भन्दा बढी अनुप्रयोग प्रयोग गर्न "
-"सकिन्छ भने त्यसपछि सूची प्राथमिकता अनुरुप क्रमबद्ध गरिन्छ ।</li></ul> तपाईँ केही माइम "
-"प्रकार फाइलनाम बन्कीसँग सङ्लग्न नभएकोफेला पर्दा अचम्म पर्न सक्नुहुन्छ; त्यस्तो अवस्थामा, "
-"कन्क्वेरर फाइल सामाग्रीहरूको प्रत्यक्ष परीक्षणद्वारा माइम प्रकार निर्धारण गर्न सक्षम हुन्छ ।"
-"</p>"
-
-#: filetypesview.cpp:73
+#: filetypesview.cpp:52
 #, fuzzy, kde-format
 #| msgid "F&ind filename pattern:"
 msgid "Search for file type or filename pattern..."
 msgstr "फाइलनाम बाँन्की फेला पार्नुहोस्:"
 
-#: filetypesview.cpp:79
+#: filetypesview.cpp:58
 #, fuzzy, kde-format
 #| msgid ""
 #| "Enter a part of a filename pattern. Only file types with a matching file "
@@ -268,12 +212,12 @@ msgstr ""
 "फाइलनाम बाँन्कीको भाग प्रविष्ट गर्नुहोस् । सूचीमा फाइल प्रकारसँग मिल्ने फाइल बाँन्की देखा "
 "पर्नेछन् ।"
 
-#: filetypesview.cpp:87
+#: filetypesview.cpp:66
 #, kde-format
 msgid "Known Types"
 msgstr "ज्ञात प्रकार"
 
-#: filetypesview.cpp:93
+#: filetypesview.cpp:72
 #, kde-format
 msgid ""
 "Here you can see a hierarchical list of the file types which are known on "
@@ -286,33 +230,33 @@ msgstr ""
 "दायाँ तिर control प्रयोग गरेर फाइल प्रकार सूचना अवलोकन/सम्पादन गर्न फाइल प्रकार "
 "(जस्तै: HTML फाइलहरूका लागि text/html) चयन गर्नुहोस् ।"
 
-#: filetypesview.cpp:107
+#: filetypesview.cpp:86
 #, kde-format
 msgid "Click here to add a new file type."
 msgstr "नयाँ फाइल प्रकार थप्न यहाँ क्लिक गर्नुहोस् ।"
 
-#: filetypesview.cpp:109 filetypesview.cpp:375
+#: filetypesview.cpp:88 filetypesview.cpp:354
 #, kde-format
 msgid "&Remove"
 msgstr "हटाउनुहोस्"
 
-#: filetypesview.cpp:133
+#: filetypesview.cpp:112
 #, kde-format
 msgid "Select a file type by name or by extension"
 msgstr "नाम वा विस्तारद्वारा फाइल प्रकार चयन गर्नुहोस्"
 
-#: filetypesview.cpp:368
+#: filetypesview.cpp:347
 #, fuzzy, kde-format
 #| msgid "&Remove"
 msgid "&Revert"
 msgstr "हटाउनुहोस्"
 
-#: filetypesview.cpp:369
+#: filetypesview.cpp:348
 #, kde-format
 msgid "Revert this file type to its initial system-wide definition"
 msgstr ""
 
-#: filetypesview.cpp:371
+#: filetypesview.cpp:350
 #, kde-format
 msgid ""
 "Click here to revert this file type to its initial system-wide definition, "
@@ -322,12 +266,12 @@ msgid ""
 "from file contents can still end up using them)."
 msgstr ""
 
-#: filetypesview.cpp:376
+#: filetypesview.cpp:355
 #, kde-format
 msgid "Delete this file type definition completely"
 msgstr ""
 
-#: filetypesview.cpp:378
+#: filetypesview.cpp:357
 #, kde-format
 msgid ""
 "Click here to delete this file type definition completely. This is only "
@@ -564,6 +508,62 @@ msgid ""
 "category and you type 'custom' here, the file type 'image/custom' will be "
 "created."
 msgstr ""
+
+#, fuzzy
+#~| msgid ""
+#~| "<p><h1>File Associations</h1> This module allows you to choose which "
+#~| "applications are associated with a given type of file. File types are "
+#~| "also referred to MIME types (MIME is an acronym which stands for "
+#~| "\"Multipurpose Internet Mail Extensions\".)</p><p> A file association "
+#~| "consists of the following: <ul><li>Rules for determining the MIME-type "
+#~| "of a file, for example the filename pattern *.kwd, which means 'all "
+#~| "files with names that end in .kwd', is associated with the MIME type \"x-"
+#~| "kword\";</li> <li>A short description of the MIME-type, for example the "
+#~| "description of the MIME type \"x-kword\" is simply 'KWord document';</"
+#~| "li> <li>An icon to be used for displaying files of the given MIME-type, "
+#~| "so that you can easily identify the type of file in, say, a Konqueror "
+#~| "view (at least for the types you use often);</li> <li>A list of the "
+#~| "applications which can be used to open files of the given MIME-type -- "
+#~| "if more than one application can be used then the list is ordered by "
+#~| "priority.</li></ul> You may be surprised to find that some MIME types "
+#~| "have no associated filename patterns; in these cases, Konqueror is able "
+#~| "to determine the MIME-type by directly examining the contents of the "
+#~| "file.</p>"
+#~ msgid ""
+#~ "<p><h1>File Associations</h1> This module allows you to choose which "
+#~ "applications are associated with a given type of file. File types are "
+#~ "also referred to as MIME types (MIME is an acronym which stands for "
+#~ "\"Multipurpose Internet Mail Extensions\").</p><p> A file association "
+#~ "consists of the following: <ul><li>Rules for determining the MIME-type of "
+#~ "a file, for example the filename pattern *.png, which means 'all files "
+#~ "with names that end in .png', is associated with the MIME type \"image/png"
+#~ "\";</li> <li>A short description of the MIME-type, for example the "
+#~ "description of the MIME type \"image/png\" is simply 'PNG image';</li> "
+#~ "<li>An icon to be used for displaying files of the given MIME-type, so "
+#~ "that you can easily identify the type of file in a file manager or file-"
+#~ "selection dialog (at least for the types you use often);</li> <li>A list "
+#~ "of the applications which can be used to open files of the given MIME-"
+#~ "type -- if more than one application can be used then the list is ordered "
+#~ "by priority.</li></ul> You may be surprised to find that some MIME types "
+#~ "have no associated filename patterns; in these cases, KDE is able to "
+#~ "determine the MIME-type by directly examining the contents of the file.</"
+#~ "p>"
+#~ msgstr ""
+#~ "<p><h1>फाइल संघ</h1> तपाईँलाई यो मोड्युलले दिएका फाइल प्रकारसँग कुन अनुप्रयोग "
+#~ "सम्बन्धित छ रोज्न अनुमति दिन्छ । फाइल प्रकारले माइम प्रकार पनि सन्दर्भ हुन्छ (माइम "
+#~ "\"बहुविध इन्टरनेट पत्र विस्तार \" मा आधारित एक्रोनिम हो)</p><p> फाइल संघमा निम्न "
+#~ "समाविष्ट हुन्छ: <ul><li>फाइलको माइम प्रकार निर्धारण गर्ने नियमहरू, उदाहरणका "
+#~ "लागिफाइलनाम बाँन्की *.kwd, जसको अर्थ '.kwd' सँग अन्त्य हुने सबै फाइलनाम, माइम "
+#~ "प्रकार \"x-kword\" सँग सम्बन्धित हुन्छन्;</li> <li>माइम प्रकारको एउटा छोटो वर्णन, "
+#~ "उदाहरणका लागि माइम प्रकारको वर्णन \"x-kword\" सामान्य 'KWord कागजात';</li> "
+#~ "<li>दिएको माइम प्रकारका फाइल प्रदर्शन गर्नका लागि प्रयोग हुने प्रतिमा, त्यसैले तपाईँले "
+#~ "यसमा सजिलैसँग फाइलको प्रकार पहिचान गर्न सक्नुहुन्छ, भन्नुहोस्, एउटा कन्क्वेरर दृश्य "
+#~ "(कम्तिमा तपाईँले प्राय: प्रयोग गर्ने प्रकारहरूका लागि);</li> <li>अनुप्रयोगहरूको एउटा "
+#~ "सूची जसलाई दिएका माइम प्रकारको फाइलहरू खोल्नका लागि प्रयोग गर्न सकिन्छ -- यदि एक "
+#~ "भन्दा बढी अनुप्रयोग प्रयोग गर्न सकिन्छ भने त्यसपछि सूची प्राथमिकता अनुरुप क्रमबद्ध "
+#~ "गरिन्छ ।</li></ul> तपाईँ केही माइम प्रकार फाइलनाम बन्कीसँग सङ्लग्न नभएकोफेला पर्दा "
+#~ "अचम्म पर्न सक्नुहुन्छ; त्यस्तो अवस्थामा, कन्क्वेरर फाइल सामाग्रीहरूको प्रत्यक्ष "
+#~ "परीक्षणद्वारा माइम प्रकार निर्धारण गर्न सक्षम हुन्छ ।</p>"
 
 #~ msgid "KEditFileType"
 #~ msgstr "केडीई सम्पादन फाइल प्रकार"

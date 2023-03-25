@@ -9,7 +9,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: filetypes\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-03-05 03:09+0000\n"
+"POT-Creation-Date: 2023-03-25 02:10+0000\n"
 "PO-Revision-Date: 2008-12-30 20:48+0200\n"
 "Last-Translator: Omer Ensari <oensari@gmail.com>\n"
 "Language-Team: Kurdish <ku@li.org>\n"
@@ -92,7 +92,7 @@ msgstr ""
 "lîsteya qalibên ji bo minandinê hene. Mînak: ji bo deq/pexşan qalibê *.txt "
 "Hemû pelên bi niçika .txt dê wekî pelên deqî bên dîtin."
 
-#: filetypedetails.cpp:87 filetypesview.cpp:102 kservicelistwidget.cpp:110
+#: filetypedetails.cpp:87 filetypesview.cpp:81 kservicelistwidget.cpp:110
 #, kde-format
 msgid "Add..."
 msgstr "Têxe..."
@@ -194,50 +194,13 @@ msgstr "Cureyê Pelê %1 "
 msgid "Use settings for '%1' group"
 msgstr "Mîhengên ji bo koma '%1' bi kar bîne"
 
-#: filetypesview.cpp:43
-#, kde-format
-msgid ""
-"<p><h1>File Associations</h1> This module allows you to choose which "
-"applications are associated with a given type of file. File types are also "
-"referred to as MIME types (MIME is an acronym which stands for "
-"\"Multipurpose Internet Mail Extensions\").</p><p> A file association "
-"consists of the following: <ul><li>Rules for determining the MIME-type of a "
-"file, for example the filename pattern *.png, which means 'all files with "
-"names that end in .png', is associated with the MIME type \"image/png\";</"
-"li> <li>A short description of the MIME-type, for example the description of "
-"the MIME type \"image/png\" is simply 'PNG image';</li> <li>An icon to be "
-"used for displaying files of the given MIME-type, so that you can easily "
-"identify the type of file in a file manager or file-selection dialog (at "
-"least for the types you use often);</li> <li>A list of the applications "
-"which can be used to open files of the given MIME-type -- if more than one "
-"application can be used then the list is ordered by priority.</li></ul> You "
-"may be surprised to find that some MIME types have no associated filename "
-"patterns; in these cases, KDE is able to determine the MIME-type by directly "
-"examining the contents of the file.</p>"
-msgstr ""
-"<p><h1>Girêdanên Pelan</h1>Bi vê modulê dikarî diyar bikî ku bi kîjan "
-"cureyên pelan re kîjan sepan bên girêdan. Cureyên Pelan Cureyên MIME ye jî "
-"(Peyva MIME ji kurteya wê ya Îngilîzî \"Niçikên Nameyên Întenetê ên Pirarmanc"
-"\" tê)</p><p>Girêdaneke pelekî ji van hêmanan pêk tê: <ul><li>Zagonên di "
-"derbarê çêkirina cureyekî MIME de. Mînak: 'hemû pelên bi niçika *.png tê "
-"wateya 'hemû pelên bi navê .png ve xelas dibin', bi cureyê MIME \"wêne/png\" "
-"re tê girêdan;</li> <li>Di derbarê cureyê MIME de raveyekî kin. Mînak: "
-"Raveya cureyê MIME \"wêne/png\" hema 'wêneyê PNG' ye;</li> <li> Îkonek tê bê "
-"karandin ji bo nîşandana pelên ku cure yê MIME hatiye nas kirin, her wisa tu "
-"dikarî cure yê pelê di rêveberê pelan de bi hêsanî nas bikî (kin tir ji bo "
-"pelên tu pir bi kar tînî);</li> <li>Lîsteya sepanan yên ku dê vekirina pelên "
-"cureyê MIME de bê bi kar anîn -- heke yek sepanê zêdetir sepan di lîsteyê de "
-"hebe, lîste gorî pêşînî yê dê rêz bibe.</li></ul> Heke hûn bibînin ku hinek "
-"cure yên MIME bi tu qalibên pel ve girêdayî nîn e, KDE dikare cureyê-MIME "
-"bibîne bi lêkolîna naveroka vê re.</p>"
-
-#: filetypesview.cpp:73
+#: filetypesview.cpp:52
 #, fuzzy, kde-format
 #| msgid "F&ind file type or filename pattern:"
 msgid "Search for file type or filename pattern..."
 msgstr "Cureyê pelê an jî teşeyê navê pelê b&ibîne:"
 
-#: filetypesview.cpp:79
+#: filetypesview.cpp:58
 #, kde-format
 msgid ""
 "Enter a part of a filename pattern, and only file types with a matching file "
@@ -248,12 +211,12 @@ msgstr ""
 "navê pelê re hev digirin tê bên xuya kirin. An jî, parçeyek ji navê cure yê "
 "pelê têkevê wekî ku lîsteyê de xuya dike."
 
-#: filetypesview.cpp:87
+#: filetypesview.cpp:66
 #, kde-format
 msgid "Known Types"
 msgstr "Cureyên Nas"
 
-#: filetypesview.cpp:93
+#: filetypesview.cpp:72
 #, kde-format
 msgid ""
 "Here you can see a hierarchical list of the file types which are known on "
@@ -266,33 +229,33 @@ msgstr ""
 "kontrolên rastê cureyê pelê ku dixwazî lê binêrî/serast bikî (mînak: ji bo "
 "pelên HTML deq/html) hilbijêre."
 
-#: filetypesview.cpp:107
+#: filetypesview.cpp:86
 #, kde-format
 msgid "Click here to add a new file type."
 msgstr "Ji bo cureyekî nû ê pelan lê zêde bikîli ser virê bitikîne."
 
-#: filetypesview.cpp:109 filetypesview.cpp:375
+#: filetypesview.cpp:88 filetypesview.cpp:354
 #, kde-format
 msgid "&Remove"
 msgstr "&Rakirin"
 
-#: filetypesview.cpp:133
+#: filetypesview.cpp:112
 #, kde-format
 msgid "Select a file type by name or by extension"
 msgstr "Li gorî nav an jî niçikê cureyekî pelan hilbijêre"
 
-#: filetypesview.cpp:368
+#: filetypesview.cpp:347
 #, fuzzy, kde-format
 #| msgid "&Remove"
 msgid "&Revert"
 msgstr "&Rakirin"
 
-#: filetypesview.cpp:369
+#: filetypesview.cpp:348
 #, kde-format
 msgid "Revert this file type to its initial system-wide definition"
 msgstr ""
 
-#: filetypesview.cpp:371
+#: filetypesview.cpp:350
 #, kde-format
 msgid ""
 "Click here to revert this file type to its initial system-wide definition, "
@@ -302,12 +265,12 @@ msgid ""
 "from file contents can still end up using them)."
 msgstr ""
 
-#: filetypesview.cpp:376
+#: filetypesview.cpp:355
 #, kde-format
 msgid "Delete this file type definition completely"
 msgstr ""
 
-#: filetypesview.cpp:378
+#: filetypesview.cpp:357
 #, kde-format
 msgid ""
 "Click here to delete this file type definition completely. This is only "
@@ -540,6 +503,43 @@ msgstr ""
 "Navê cure yê pelê binivîse. Wekî mînak, heke te 'wêne' wekî kategorî "
 "hilbijartî ye û tu li vir 'taybet' binivîsî, cure yê pelê 'wêne/taybet' wê "
 "bê afirandin."
+
+#~ msgid ""
+#~ "<p><h1>File Associations</h1> This module allows you to choose which "
+#~ "applications are associated with a given type of file. File types are "
+#~ "also referred to as MIME types (MIME is an acronym which stands for "
+#~ "\"Multipurpose Internet Mail Extensions\").</p><p> A file association "
+#~ "consists of the following: <ul><li>Rules for determining the MIME-type of "
+#~ "a file, for example the filename pattern *.png, which means 'all files "
+#~ "with names that end in .png', is associated with the MIME type \"image/png"
+#~ "\";</li> <li>A short description of the MIME-type, for example the "
+#~ "description of the MIME type \"image/png\" is simply 'PNG image';</li> "
+#~ "<li>An icon to be used for displaying files of the given MIME-type, so "
+#~ "that you can easily identify the type of file in a file manager or file-"
+#~ "selection dialog (at least for the types you use often);</li> <li>A list "
+#~ "of the applications which can be used to open files of the given MIME-"
+#~ "type -- if more than one application can be used then the list is ordered "
+#~ "by priority.</li></ul> You may be surprised to find that some MIME types "
+#~ "have no associated filename patterns; in these cases, KDE is able to "
+#~ "determine the MIME-type by directly examining the contents of the file.</"
+#~ "p>"
+#~ msgstr ""
+#~ "<p><h1>Girêdanên Pelan</h1>Bi vê modulê dikarî diyar bikî ku bi kîjan "
+#~ "cureyên pelan re kîjan sepan bên girêdan. Cureyên Pelan Cureyên MIME ye "
+#~ "jî (Peyva MIME ji kurteya wê ya Îngilîzî \"Niçikên Nameyên Întenetê ên "
+#~ "Pirarmanc\" tê)</p><p>Girêdaneke pelekî ji van hêmanan pêk tê: "
+#~ "<ul><li>Zagonên di derbarê çêkirina cureyekî MIME de. Mînak: 'hemû pelên "
+#~ "bi niçika *.png tê wateya 'hemû pelên bi navê .png ve xelas dibin', bi "
+#~ "cureyê MIME \"wêne/png\" re tê girêdan;</li> <li>Di derbarê cureyê MIME "
+#~ "de raveyekî kin. Mînak: Raveya cureyê MIME \"wêne/png\" hema 'wêneyê PNG' "
+#~ "ye;</li> <li> Îkonek tê bê karandin ji bo nîşandana pelên ku cure yê MIME "
+#~ "hatiye nas kirin, her wisa tu dikarî cure yê pelê di rêveberê pelan de bi "
+#~ "hêsanî nas bikî (kin tir ji bo pelên tu pir bi kar tînî);</li> "
+#~ "<li>Lîsteya sepanan yên ku dê vekirina pelên cureyê MIME de bê bi kar "
+#~ "anîn -- heke yek sepanê zêdetir sepan di lîsteyê de hebe, lîste gorî "
+#~ "pêşînî yê dê rêz bibe.</li></ul> Heke hûn bibînin ku hinek cure yên MIME "
+#~ "bi tu qalibên pel ve girêdayî nîn e, KDE dikare cureyê-MIME bibîne bi "
+#~ "lêkolîna naveroka vê re.</p>"
 
 #~ msgid "KEditFileType"
 #~ msgstr "CureyêPelanKEdit"

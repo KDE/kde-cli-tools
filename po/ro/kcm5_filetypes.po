@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: filetypes\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-03-05 03:09+0000\n"
+"POT-Creation-Date: 2023-03-25 02:10+0000\n"
 "PO-Revision-Date: 2020-09-19 15:52+0100\n"
 "Last-Translator: Sergiu Bivol <sergiu@cip.md>\n"
 "Language-Team: Romanian\n"
@@ -88,7 +88,7 @@ msgstr ""
 "tipul de fișier „text/plain”. Astfel, toate fișierele terminate în „.txt” "
 "vor fi recunoscute ca fișiere de text simplu."
 
-#: filetypedetails.cpp:87 filetypesview.cpp:102 kservicelistwidget.cpp:110
+#: filetypedetails.cpp:87 filetypesview.cpp:81 kservicelistwidget.cpp:110
 #, kde-format
 msgid "Add..."
 msgstr "Adaugă..."
@@ -183,52 +183,12 @@ msgstr "Tip fișier %1"
 msgid "Use settings for '%1' group"
 msgstr "Folosește configurările grupului „%1”"
 
-#: filetypesview.cpp:43
-#, kde-format
-msgid ""
-"<p><h1>File Associations</h1> This module allows you to choose which "
-"applications are associated with a given type of file. File types are also "
-"referred to as MIME types (MIME is an acronym which stands for "
-"\"Multipurpose Internet Mail Extensions\").</p><p> A file association "
-"consists of the following: <ul><li>Rules for determining the MIME-type of a "
-"file, for example the filename pattern *.png, which means 'all files with "
-"names that end in .png', is associated with the MIME type \"image/png\";</"
-"li> <li>A short description of the MIME-type, for example the description of "
-"the MIME type \"image/png\" is simply 'PNG image';</li> <li>An icon to be "
-"used for displaying files of the given MIME-type, so that you can easily "
-"identify the type of file in a file manager or file-selection dialog (at "
-"least for the types you use often);</li> <li>A list of the applications "
-"which can be used to open files of the given MIME-type -- if more than one "
-"application can be used then the list is ordered by priority.</li></ul> You "
-"may be surprised to find that some MIME types have no associated filename "
-"patterns; in these cases, KDE is able to determine the MIME-type by directly "
-"examining the contents of the file.</p>"
-msgstr ""
-"<p><h1>Asociere fișiere</h1> Acest modul vă permite să alegeți ce aplicații "
-"sunt asociate cu un anumit tip de fișier. Tipurile de fișiere mai sunt "
-"numite și tipuri MIME (MIME este un acronim englezesc pentru „Extensii "
-"Internet Multifuncționale pentru E-Mail”).</p><p>O asociere de fișier constă "
-"din următoarele: <ul><li>Reguli pentru determinarea tipului MIME al "
-"fișierului. De exemplu, modelul de fișier *.kwd, care înseamnă „toate "
-"fișierele a căror denumire se termină în .kwd”, este asociat cu tipul MIME "
-"„x-kword”.</li> <li>O scurtă descriere a tipului MIME. De exemplu, "
-"descrierea tipului MIME pentru „x-kword” este pur și simplu „Document KWord”."
-"</li> <li>O pictogramă ce va fi folosită la afișarea fișierelor cu tipul "
-"MIME dat, astfel încât să puteți identifica ușor tipul de fișier, de exemplu "
-"într-o vizualizare din Konqueror (cel puțin tipurile pe care le utilizați "
-"cel mai frecvent);</li> <li>O listă de aplicații care pot fi utilizate la "
-"deschiderea fișierelor cu tipul MIME dat. Dacă se poate folosi mai mult de o "
-"aplicație, atunci lista este ordonată după prioritate.</li></ul> Veți fi "
-"surprins să constatați că anumite tipuri MIME nu au modele de fișier "
-"asociate. În aceste cazuri, KDE poate să determine tipul MIME examinând "
-"direct conținutul fișierului.</p>"
-
-#: filetypesview.cpp:73
+#: filetypesview.cpp:52
 #, kde-format
 msgid "Search for file type or filename pattern..."
 msgstr "Caută după tip de fișier sau model de denumire..."
 
-#: filetypesview.cpp:79
+#: filetypesview.cpp:58
 #, kde-format
 msgid ""
 "Enter a part of a filename pattern, and only file types with a matching file "
@@ -239,12 +199,12 @@ msgstr ""
 "tipurile de fișier care se potrivesc cu șablonul. Suplimentar, puteți "
 "introduce o parte din denumirea tipului de fișier așa cum apare în listă."
 
-#: filetypesview.cpp:87
+#: filetypesview.cpp:66
 #, kde-format
 msgid "Known Types"
 msgstr "Tipuri cunoscute"
 
-#: filetypesview.cpp:93
+#: filetypesview.cpp:72
 #, kde-format
 msgid ""
 "Here you can see a hierarchical list of the file types which are known on "
@@ -258,32 +218,32 @@ msgstr ""
 "exemplu \"text/html\" pentru fișiere HTML) pentru a-l edita utilizând "
 "controalele din partea dreaptă."
 
-#: filetypesview.cpp:107
+#: filetypesview.cpp:86
 #, kde-format
 msgid "Click here to add a new file type."
 msgstr "Apăsați aici pentru a adăuga un tip nou de fișier."
 
-#: filetypesview.cpp:109 filetypesview.cpp:375
+#: filetypesview.cpp:88 filetypesview.cpp:354
 #, kde-format
 msgid "&Remove"
 msgstr "&Elimină"
 
-#: filetypesview.cpp:133
+#: filetypesview.cpp:112
 #, kde-format
 msgid "Select a file type by name or by extension"
 msgstr "Alegeți un tip de fișier după denumire sau extensie"
 
-#: filetypesview.cpp:368
+#: filetypesview.cpp:347
 #, kde-format
 msgid "&Revert"
 msgstr "&Restabilește"
 
-#: filetypesview.cpp:369
+#: filetypesview.cpp:348
 #, kde-format
 msgid "Revert this file type to its initial system-wide definition"
 msgstr "Restabilește acest tip de fișier la definiția sa inițială din sistem"
 
-#: filetypesview.cpp:371
+#: filetypesview.cpp:350
 #, kde-format
 msgid ""
 "Click here to revert this file type to its initial system-wide definition, "
@@ -299,12 +259,12 @@ msgstr ""
 "șansa utilizării lor (totuși procedura de determinare a tipului fișierului "
 "bazată pe conținutul acestuia poate să ajungă să le folosească)."
 
-#: filetypesview.cpp:376
+#: filetypesview.cpp:355
 #, kde-format
 msgid "Delete this file type definition completely"
 msgstr "Șterge complet definiția acestui tip de fișier"
 
-#: filetypesview.cpp:378
+#: filetypesview.cpp:357
 #, kde-format
 msgid ""
 "Click here to delete this file type definition completely. This is only "
@@ -545,6 +505,46 @@ msgstr ""
 "Scrieți denumirea tipului de fișier. De exemplu, dacă ați ales „imagine” "
 "drept categorie și tastați aici „personalizat”, va fi creat tipul de fișier "
 "„imagine/personalizat”."
+
+#~ msgid ""
+#~ "<p><h1>File Associations</h1> This module allows you to choose which "
+#~ "applications are associated with a given type of file. File types are "
+#~ "also referred to as MIME types (MIME is an acronym which stands for "
+#~ "\"Multipurpose Internet Mail Extensions\").</p><p> A file association "
+#~ "consists of the following: <ul><li>Rules for determining the MIME-type of "
+#~ "a file, for example the filename pattern *.png, which means 'all files "
+#~ "with names that end in .png', is associated with the MIME type \"image/png"
+#~ "\";</li> <li>A short description of the MIME-type, for example the "
+#~ "description of the MIME type \"image/png\" is simply 'PNG image';</li> "
+#~ "<li>An icon to be used for displaying files of the given MIME-type, so "
+#~ "that you can easily identify the type of file in a file manager or file-"
+#~ "selection dialog (at least for the types you use often);</li> <li>A list "
+#~ "of the applications which can be used to open files of the given MIME-"
+#~ "type -- if more than one application can be used then the list is ordered "
+#~ "by priority.</li></ul> You may be surprised to find that some MIME types "
+#~ "have no associated filename patterns; in these cases, KDE is able to "
+#~ "determine the MIME-type by directly examining the contents of the file.</"
+#~ "p>"
+#~ msgstr ""
+#~ "<p><h1>Asociere fișiere</h1> Acest modul vă permite să alegeți ce "
+#~ "aplicații sunt asociate cu un anumit tip de fișier. Tipurile de fișiere "
+#~ "mai sunt numite și tipuri MIME (MIME este un acronim englezesc pentru "
+#~ "„Extensii Internet Multifuncționale pentru E-Mail”).</p><p>O asociere de "
+#~ "fișier constă din următoarele: <ul><li>Reguli pentru determinarea tipului "
+#~ "MIME al fișierului. De exemplu, modelul de fișier *.kwd, care înseamnă "
+#~ "„toate fișierele a căror denumire se termină în .kwd”, este asociat cu "
+#~ "tipul MIME „x-kword”.</li> <li>O scurtă descriere a tipului MIME. De "
+#~ "exemplu, descrierea tipului MIME pentru „x-kword” este pur și simplu "
+#~ "„Document KWord”.</li> <li>O pictogramă ce va fi folosită la afișarea "
+#~ "fișierelor cu tipul MIME dat, astfel încât să puteți identifica ușor "
+#~ "tipul de fișier, de exemplu într-o vizualizare din Konqueror (cel puțin "
+#~ "tipurile pe care le utilizați cel mai frecvent);</li> <li>O listă de "
+#~ "aplicații care pot fi utilizate la deschiderea fișierelor cu tipul MIME "
+#~ "dat. Dacă se poate folosi mai mult de o aplicație, atunci lista este "
+#~ "ordonată după prioritate.</li></ul> Veți fi surprins să constatați că "
+#~ "anumite tipuri MIME nu au modele de fișier asociate. În aceste cazuri, "
+#~ "KDE poate să determine tipul MIME examinând direct conținutul fișierului."
+#~ "</p>"
 
 #~ msgid "KEditFileType"
 #~ msgstr "Editor de tipuri de fișier pentru KDE"

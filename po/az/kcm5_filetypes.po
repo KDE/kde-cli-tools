@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kde-cli-tools\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-03-05 03:09+0000\n"
+"POT-Creation-Date: 2023-03-25 02:10+0000\n"
 "PO-Revision-Date: 2022-07-03 14:28+0400\n"
 "Last-Translator: Kheyyam <xxmn77@gmail.com>\n"
 "Language-Team: Azerbaijani <kde-i18n-doc@kde.org>\n"
@@ -84,7 +84,7 @@ msgstr ""
 "növünə bağlıdır. '.txt' sonluğu ilə bitən bütün fayllar düz mətn sənədləri "
 "kimi tanınır."
 
-#: filetypedetails.cpp:87 filetypesview.cpp:102 kservicelistwidget.cpp:110
+#: filetypedetails.cpp:87 filetypesview.cpp:81 kservicelistwidget.cpp:110
 #, kde-format
 msgid "Add..."
 msgstr "Əlavə edin..."
@@ -178,51 +178,12 @@ msgstr "Fayl növü %1"
 msgid "Use settings for '%1' group"
 msgstr "'%1' qrup üçün ayarları istifadə edin"
 
-#: filetypesview.cpp:43
-#, kde-format
-msgid ""
-"<p><h1>File Associations</h1> This module allows you to choose which "
-"applications are associated with a given type of file. File types are also "
-"referred to as MIME types (MIME is an acronym which stands for "
-"\"Multipurpose Internet Mail Extensions\").</p><p> A file association "
-"consists of the following: <ul><li>Rules for determining the MIME-type of a "
-"file, for example the filename pattern *.png, which means 'all files with "
-"names that end in .png', is associated with the MIME type \"image/png\";</"
-"li> <li>A short description of the MIME-type, for example the description of "
-"the MIME type \"image/png\" is simply 'PNG image';</li> <li>An icon to be "
-"used for displaying files of the given MIME-type, so that you can easily "
-"identify the type of file in a file manager or file-selection dialog (at "
-"least for the types you use often);</li> <li>A list of the applications "
-"which can be used to open files of the given MIME-type -- if more than one "
-"application can be used then the list is ordered by priority.</li></ul> You "
-"may be surprised to find that some MIME types have no associated filename "
-"patterns; in these cases, KDE is able to determine the MIME-type by directly "
-"examining the contents of the file.</p>"
-msgstr ""
-"<p><h1>Fayl birləşmələri</h1> Bu modul göstərilən faylın növü ilə bağlı "
-"tətbiqləri seçmənizə icazə verir. Fayl növləri həmçinin MİME növləri kimi "
-"adlandırılır (MİME \"Multipurpose Internet Mail Extensions\" (\"Çoxməqsədli "
-"İnternet Poçt Uzantıları\") adının qısaltmasıdır).</p><p> Fayl birləşmələri "
-"bunlardan ibarətdir: <ul><li>Bir faylın MIME tipini müəyyənləşdirmə "
-"qaydaları, məsələn, \".png ilə bitən adları olan bütün sənədlər\" mənasını "
-"verən \".png\" adı, MIME tipi \"image / png\" ilə əlaqələndirilir;</"
-"li><li>MIME tipinin qısa təsviri, məsələn MIME tipli \"image/png\" təsviri "
-"sadəcə \"PNG image\" olaraq bilinir;</li><li>Verilmiş MİME növü fayllarının "
-"görüntülənmək üçün istifadə olunacaq bir ikon; beləcə bir fayl meneceri və "
-"ya bir fayl seçimi dialoqundakı fayl növünü asanlıqla müəyyənləşdirə "
-"bilərsiniz (ən azından tez-tez istifadə etdiyiniz növlər üçün);</"
-"li><li>Müəyyən bir MİME növündəki faylları açmaq üçün istifadə olunan "
-"tətbiqlərin siyahısı - birdən çox tətbiq istifadə olunursa siyahı üstünlük "
-"dərəcəsinə görə sıralanır.</li></ul> Bəzi MİME növlərinə bağlı fayl adı "
-"nümunələrinin olmadığını aşkarlamaq sizi təəcübləndirə bilər; Bu halda KDE "
-"faylın tərkibini araşdıraraq növünü müəyyən etməyə qadirdir.</p>"
-
-#: filetypesview.cpp:73
+#: filetypesview.cpp:52
 #, kde-format
 msgid "Search for file type or filename pattern..."
 msgstr "Fayl növü və fayl adı nümunəsi üçün axtarış..."
 
-#: filetypesview.cpp:79
+#: filetypesview.cpp:58
 #, kde-format
 msgid ""
 "Enter a part of a filename pattern, and only file types with a matching file "
@@ -233,12 +194,12 @@ msgstr ""
 "nümunəsinə sahib fayl növləri görünür. Alternativ olaraq fayl növü adının "
 "bir hissəsini siyahıda göründüyü kimi daxil edin."
 
-#: filetypesview.cpp:87
+#: filetypesview.cpp:66
 #, kde-format
 msgid "Known Types"
 msgstr "Naməlum növlər"
 
-#: filetypesview.cpp:93
+#: filetypesview.cpp:72
 #, kde-format
 msgid ""
 "Here you can see a hierarchical list of the file types which are known on "
@@ -251,33 +212,33 @@ msgstr ""
 "yığır. Sağdakı idarəetməni istifadə edərək baxmaq/düzəliş etmək üçün fayl "
 "növünü (məs.,HTML faylları üçün, text/html) seçin."
 
-#: filetypesview.cpp:107
+#: filetypesview.cpp:86
 #, kde-format
 msgid "Click here to add a new file type."
 msgstr "Yeni fayl tipi əlavə etmək üçün buraya vurun."
 
-#: filetypesview.cpp:109 filetypesview.cpp:375
+#: filetypesview.cpp:88 filetypesview.cpp:354
 #, kde-format
 msgid "&Remove"
 msgstr "&silin"
 
-#: filetypesview.cpp:133
+#: filetypesview.cpp:112
 #, kde-format
 msgid "Select a file type by name or by extension"
 msgstr "Adına və genişlənməsinə görə fayl növlərini seçin"
 
-#: filetypesview.cpp:368
+#: filetypesview.cpp:347
 #, kde-format
 msgid "&Revert"
 msgstr "Əvvəlki halına qayta&rmaq"
 
-#: filetypesview.cpp:369
+#: filetypesview.cpp:348
 #, kde-format
 msgid "Revert this file type to its initial system-wide definition"
 msgstr ""
 "Bu fayl növünü sistem tərəfindən təyin edilən ilkin vəziyyətinə qaytarın"
 
-#: filetypesview.cpp:371
+#: filetypesview.cpp:350
 #, kde-format
 msgid ""
 "Click here to revert this file type to its initial system-wide definition, "
@@ -292,12 +253,12 @@ msgstr ""
 "nümunələr siyahısını boşalda bilərsiniz (lakin fayl tərkibindəki fayl "
 "növləri yenə istifadə oluna bilər)."
 
-#: filetypesview.cpp:376
+#: filetypesview.cpp:355
 #, kde-format
 msgid "Delete this file type definition completely"
 msgstr "Bu fayl növü açıqlamalarını tamamilə silin"
 
-#: filetypesview.cpp:378
+#: filetypesview.cpp:357
 #, kde-format
 msgid ""
 "Click here to delete this file type definition completely. This is only "
@@ -540,3 +501,42 @@ msgid ""
 msgstr ""
 "Fayl növü üçün ad yazın. Misal üçün, 'image' kateqoriyasını seçmisinizsə və "
 "burada 'custom' yazarsanız, 'image/custom' fayl növü yaradılacaqdır."
+
+#~ msgid ""
+#~ "<p><h1>File Associations</h1> This module allows you to choose which "
+#~ "applications are associated with a given type of file. File types are "
+#~ "also referred to as MIME types (MIME is an acronym which stands for "
+#~ "\"Multipurpose Internet Mail Extensions\").</p><p> A file association "
+#~ "consists of the following: <ul><li>Rules for determining the MIME-type of "
+#~ "a file, for example the filename pattern *.png, which means 'all files "
+#~ "with names that end in .png', is associated with the MIME type \"image/png"
+#~ "\";</li> <li>A short description of the MIME-type, for example the "
+#~ "description of the MIME type \"image/png\" is simply 'PNG image';</li> "
+#~ "<li>An icon to be used for displaying files of the given MIME-type, so "
+#~ "that you can easily identify the type of file in a file manager or file-"
+#~ "selection dialog (at least for the types you use often);</li> <li>A list "
+#~ "of the applications which can be used to open files of the given MIME-"
+#~ "type -- if more than one application can be used then the list is ordered "
+#~ "by priority.</li></ul> You may be surprised to find that some MIME types "
+#~ "have no associated filename patterns; in these cases, KDE is able to "
+#~ "determine the MIME-type by directly examining the contents of the file.</"
+#~ "p>"
+#~ msgstr ""
+#~ "<p><h1>Fayl birləşmələri</h1> Bu modul göstərilən faylın növü ilə bağlı "
+#~ "tətbiqləri seçmənizə icazə verir. Fayl növləri həmçinin MİME növləri kimi "
+#~ "adlandırılır (MİME \"Multipurpose Internet Mail Extensions"
+#~ "\" (\"Çoxməqsədli İnternet Poçt Uzantıları\") adının qısaltmasıdır).</"
+#~ "p><p> Fayl birləşmələri bunlardan ibarətdir: <ul><li>Bir faylın MIME "
+#~ "tipini müəyyənləşdirmə qaydaları, məsələn, \".png ilə bitən adları olan "
+#~ "bütün sənədlər\" mənasını verən \".png\" adı, MIME tipi \"image / png\" "
+#~ "ilə əlaqələndirilir;</li><li>MIME tipinin qısa təsviri, məsələn MIME "
+#~ "tipli \"image/png\" təsviri sadəcə \"PNG image\" olaraq bilinir;</"
+#~ "li><li>Verilmiş MİME növü fayllarının görüntülənmək üçün istifadə "
+#~ "olunacaq bir ikon; beləcə bir fayl meneceri və ya bir fayl seçimi "
+#~ "dialoqundakı fayl növünü asanlıqla müəyyənləşdirə bilərsiniz (ən azından "
+#~ "tez-tez istifadə etdiyiniz növlər üçün);</li><li>Müəyyən bir MİME "
+#~ "növündəki faylları açmaq üçün istifadə olunan tətbiqlərin siyahısı - "
+#~ "birdən çox tətbiq istifadə olunursa siyahı üstünlük dərəcəsinə görə "
+#~ "sıralanır.</li></ul> Bəzi MİME növlərinə bağlı fayl adı nümunələrinin "
+#~ "olmadığını aşkarlamaq sizi təəcübləndirə bilər; Bu halda KDE faylın "
+#~ "tərkibini araşdıraraq növünü müəyyən etməyə qadirdir.</p>"

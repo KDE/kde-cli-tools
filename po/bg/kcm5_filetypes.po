@@ -2,7 +2,7 @@
 # Bulgarian translation of KDE.
 # This file is licensed under the GPL.
 #
-# $Id: kcm5_filetypes.po 1646071 2023-03-05 03:28:26Z scripty $
+# $Id: kcm5_filetypes.po 1647873 2023-03-25 02:24:09Z scripty $
 #
 # Zlatko Popov <zlatkopopov@fsa-bg.org>, 2007, 2008.
 # Yasen Pramatarov <yasen@lidneas.com>, 2009, 2011.
@@ -12,7 +12,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: filetypes\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-03-05 03:09+0000\n"
+"POT-Creation-Date: 2023-03-25 02:10+0000\n"
 "PO-Revision-Date: 2022-05-20 19:01+0200\n"
 "Last-Translator: Mincho Kondarev <mkondarev@yahoo.de>\n"
 "Language-Team: Bulgarian <dict@fsa-bg.org>\n"
@@ -88,7 +88,7 @@ msgstr ""
 "свързано с вида \"text/plain\" (обикновен текст) и всички файлове, имащи "
 "разширение \"txt\" се разпознават като текстови."
 
-#: filetypedetails.cpp:87 filetypesview.cpp:102 kservicelistwidget.cpp:110
+#: filetypedetails.cpp:87 filetypesview.cpp:81 kservicelistwidget.cpp:110
 #, kde-format
 msgid "Add..."
 msgstr "Добавяне..."
@@ -180,48 +180,12 @@ msgstr "Вид файл: %1"
 msgid "Use settings for '%1' group"
 msgstr "Използване на настройките за \"%1\""
 
-#: filetypesview.cpp:43
-#, kde-format
-msgid ""
-"<p><h1>File Associations</h1> This module allows you to choose which "
-"applications are associated with a given type of file. File types are also "
-"referred to as MIME types (MIME is an acronym which stands for "
-"\"Multipurpose Internet Mail Extensions\").</p><p> A file association "
-"consists of the following: <ul><li>Rules for determining the MIME-type of a "
-"file, for example the filename pattern *.png, which means 'all files with "
-"names that end in .png', is associated with the MIME type \"image/png\";</"
-"li> <li>A short description of the MIME-type, for example the description of "
-"the MIME type \"image/png\" is simply 'PNG image';</li> <li>An icon to be "
-"used for displaying files of the given MIME-type, so that you can easily "
-"identify the type of file in a file manager or file-selection dialog (at "
-"least for the types you use often);</li> <li>A list of the applications "
-"which can be used to open files of the given MIME-type -- if more than one "
-"application can be used then the list is ordered by priority.</li></ul> You "
-"may be surprised to find that some MIME types have no associated filename "
-"patterns; in these cases, KDE is able to determine the MIME-type by directly "
-"examining the contents of the file.</p>"
-msgstr ""
-"<p><h1>Файлови асоциации</h1>От този модул може да изберете кои програми са "
-"асоциирани с даден вид файл. Видът на файл се обозначава също като вид по "
-"MIME (\"Multipurpose Internet Mail Extensions\"). Или преведено на български "
-"\"Многоцелеви разширения за електронна поща\".</p><p>Една файлова асоциация "
-"се състои от следните неща:<ul><li>Правила за определяне на вида по MIME на "
-"файла. Например, разширението \"*.txt\", което означава всички файлове "
-"завършващи с \".txt\" (имащи разширение \"txt\"), се асоциират с MIME-вид "
-"\"text/plain\", което означава обикновен текст.</li><li>Кратко описание на "
-"вида по MIME. Например, описанието на вида \"text/plain\" е \"обикновен текст"
-"\".</li><li>Икона за показване на файловете от дадения вид.</li><li>Списък "
-"от програми, които могат да се използват за отваряне на дадения вид файл.</"
-"li></ul> Ще бъдете изненадани ако научите, че някои видове по MIME нямат "
-"асоциирани файлови шаблони; в този случай Konqueror може да определи MIME-"
-"вида, като директно претърси съдържанието на файла.</p>"
-
-#: filetypesview.cpp:73
+#: filetypesview.cpp:52
 #, kde-format
 msgid "Search for file type or filename pattern..."
 msgstr "Търсене на вид файл или шаблон на име на файл..."
 
-#: filetypesview.cpp:79
+#: filetypesview.cpp:58
 #, kde-format
 msgid ""
 "Enter a part of a filename pattern, and only file types with a matching file "
@@ -231,12 +195,12 @@ msgstr ""
 "Въведете част от разширението на файл. Само видовете файлове, съвпадащи с "
 "въведеното разширение, ще бъдат показани в списъка."
 
-#: filetypesview.cpp:87
+#: filetypesview.cpp:66
 #, kde-format
 msgid "Known Types"
 msgstr "Познати видове"
 
-#: filetypesview.cpp:93
+#: filetypesview.cpp:72
 #, kde-format
 msgid ""
 "Here you can see a hierarchical list of the file types which are known on "
@@ -249,32 +213,32 @@ msgstr ""
 "на файл (например, \"text/html\" за HTML файлове), за да видите и/или "
 "редактирате данните за вида."
 
-#: filetypesview.cpp:107
+#: filetypesview.cpp:86
 #, kde-format
 msgid "Click here to add a new file type."
 msgstr "Добавяне на нов вид файл."
 
-#: filetypesview.cpp:109 filetypesview.cpp:375
+#: filetypesview.cpp:88 filetypesview.cpp:354
 #, kde-format
 msgid "&Remove"
 msgstr "П&ремахване"
 
-#: filetypesview.cpp:133
+#: filetypesview.cpp:112
 #, kde-format
 msgid "Select a file type by name or by extension"
 msgstr "Изберете вид файл по име или разширение"
 
-#: filetypesview.cpp:368
+#: filetypesview.cpp:347
 #, kde-format
 msgid "&Revert"
 msgstr "&Връщане"
 
-#: filetypesview.cpp:369
+#: filetypesview.cpp:348
 #, kde-format
 msgid "Revert this file type to its initial system-wide definition"
 msgstr "Връщане вида на файла към първоначално зададеното му в системата"
 
-#: filetypesview.cpp:371
+#: filetypesview.cpp:350
 #, kde-format
 msgid ""
 "Click here to revert this file type to its initial system-wide definition, "
@@ -290,12 +254,12 @@ msgstr ""
 "използвани (въпреки че определянето на вида файл по съдържанието може все "
 "пак да ги използва)."
 
-#: filetypesview.cpp:376
+#: filetypesview.cpp:355
 #, kde-format
 msgid "Delete this file type definition completely"
 msgstr "Изтриване напълно на тази дефиниция на вид файл"
 
-#: filetypesview.cpp:378
+#: filetypesview.cpp:357
 #, kde-format
 msgid ""
 "Click here to delete this file type definition completely. This is only "
@@ -531,3 +495,39 @@ msgstr ""
 "Напишете името на вида файл. Например, ако изберете категория \"изображение"
 "\" и напишете \"потребителско\" ще бъде създаден вид файл \"изображение/"
 "потребителско\"."
+
+#~ msgid ""
+#~ "<p><h1>File Associations</h1> This module allows you to choose which "
+#~ "applications are associated with a given type of file. File types are "
+#~ "also referred to as MIME types (MIME is an acronym which stands for "
+#~ "\"Multipurpose Internet Mail Extensions\").</p><p> A file association "
+#~ "consists of the following: <ul><li>Rules for determining the MIME-type of "
+#~ "a file, for example the filename pattern *.png, which means 'all files "
+#~ "with names that end in .png', is associated with the MIME type \"image/png"
+#~ "\";</li> <li>A short description of the MIME-type, for example the "
+#~ "description of the MIME type \"image/png\" is simply 'PNG image';</li> "
+#~ "<li>An icon to be used for displaying files of the given MIME-type, so "
+#~ "that you can easily identify the type of file in a file manager or file-"
+#~ "selection dialog (at least for the types you use often);</li> <li>A list "
+#~ "of the applications which can be used to open files of the given MIME-"
+#~ "type -- if more than one application can be used then the list is ordered "
+#~ "by priority.</li></ul> You may be surprised to find that some MIME types "
+#~ "have no associated filename patterns; in these cases, KDE is able to "
+#~ "determine the MIME-type by directly examining the contents of the file.</"
+#~ "p>"
+#~ msgstr ""
+#~ "<p><h1>Файлови асоциации</h1>От този модул може да изберете кои програми "
+#~ "са асоциирани с даден вид файл. Видът на файл се обозначава също като вид "
+#~ "по MIME (\"Multipurpose Internet Mail Extensions\"). Или преведено на "
+#~ "български \"Многоцелеви разширения за електронна поща\".</p><p>Една "
+#~ "файлова асоциация се състои от следните неща:<ul><li>Правила за "
+#~ "определяне на вида по MIME на файла. Например, разширението \"*.txt\", "
+#~ "което означава всички файлове завършващи с \".txt\" (имащи разширение "
+#~ "\"txt\"), се асоциират с MIME-вид \"text/plain\", което означава "
+#~ "обикновен текст.</li><li>Кратко описание на вида по MIME. Например, "
+#~ "описанието на вида \"text/plain\" е \"обикновен текст\".</li><li>Икона за "
+#~ "показване на файловете от дадения вид.</li><li>Списък от програми, които "
+#~ "могат да се използват за отваряне на дадения вид файл.</li></ul> Ще "
+#~ "бъдете изненадани ако научите, че някои видове по MIME нямат асоциирани "
+#~ "файлови шаблони; в този случай Konqueror може да определи MIME-вида, като "
+#~ "директно претърси съдържанието на файла.</p>"

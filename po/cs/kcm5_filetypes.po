@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: filetypes\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-03-05 03:09+0000\n"
+"POT-Creation-Date: 2023-03-25 02:10+0000\n"
 "PO-Revision-Date: 2023-02-17 16:21+0100\n"
 "Last-Translator: Vit Pelcak <vit@pelcak.org>\n"
 "Language-Team: Czech <kde-i18n-doc@kde.org>\n"
@@ -86,7 +86,7 @@ msgstr ""
 "plain'; všechny soubory končící příponou '.txt' jsou asociovány jako prosté "
 "textové soubory."
 
-#: filetypedetails.cpp:87 filetypesview.cpp:102 kservicelistwidget.cpp:110
+#: filetypedetails.cpp:87 filetypesview.cpp:81 kservicelistwidget.cpp:110
 #, kde-format
 msgid "Add..."
 msgstr "Přidat..."
@@ -182,49 +182,12 @@ msgstr "Typ souboru %1"
 msgid "Use settings for '%1' group"
 msgstr "Použít nastavení pro skupinu '%1'"
 
-#: filetypesview.cpp:43
-#, kde-format
-msgid ""
-"<p><h1>File Associations</h1> This module allows you to choose which "
-"applications are associated with a given type of file. File types are also "
-"referred to as MIME types (MIME is an acronym which stands for "
-"\"Multipurpose Internet Mail Extensions\").</p><p> A file association "
-"consists of the following: <ul><li>Rules for determining the MIME-type of a "
-"file, for example the filename pattern *.png, which means 'all files with "
-"names that end in .png', is associated with the MIME type \"image/png\";</"
-"li> <li>A short description of the MIME-type, for example the description of "
-"the MIME type \"image/png\" is simply 'PNG image';</li> <li>An icon to be "
-"used for displaying files of the given MIME-type, so that you can easily "
-"identify the type of file in a file manager or file-selection dialog (at "
-"least for the types you use often);</li> <li>A list of the applications "
-"which can be used to open files of the given MIME-type -- if more than one "
-"application can be used then the list is ordered by priority.</li></ul> You "
-"may be surprised to find that some MIME types have no associated filename "
-"patterns; in these cases, KDE is able to determine the MIME-type by directly "
-"examining the contents of the file.</p>"
-msgstr ""
-"<p><h1>Asociace souborů</h1> Tento modul umožňuje výběr aplikací, které jsou "
-"asociovány s daným typem souborů. Typy souborů jsou též označovány jako MIME "
-"typy (MIME je zkratka pro \"Multipurpose Internet Mail Extensions\").</p><p> "
-"Asociace souboru sestává z následujících položek:<ul><li> Pravidla určující "
-"MIME typ souboru. Například vzor souboru *.kwd, který znamená 'všechny "
-"soubory, jejichž název končí příponou .kwd', je asociován s MIME typem \"x-"
-"kword\".</li> <li>Krátkého popisu MIME typu. Například popis MIME typu "
-"\"kword\" je jednoduše 'Dokument KWordu'.</li> <li>Ikona používaná při "
-"zobrazování souborů daného MIME typu, která umožní snazší identifikaci typu "
-"souboru kupříkladu k pohledu Konqueroru (přinejmenším u typů, jež používáte "
-"často)</li> <li>Seznam aplikací, kterých je možno využít k otevírání souborů "
-"daného MIME typu. Je-li možné používat více aplikaci, pak je seznam seřazen "
-"podle priority.</li></ul> Může se stát, že některé typy MIME nemají "
-"asociován vzor souboru; v takovém případě je Konqueror schopen určit MIME "
-"typ přímo analýzou obsahu souboru.</p>"
-
-#: filetypesview.cpp:73
+#: filetypesview.cpp:52
 #, kde-format
 msgid "Search for file type or filename pattern..."
 msgstr "Hledat typ nebo vzor názvu souboru..."
 
-#: filetypesview.cpp:79
+#: filetypesview.cpp:58
 #, kde-format
 msgid ""
 "Enter a part of a filename pattern, and only file types with a matching file "
@@ -235,12 +198,12 @@ msgstr ""
 "které odpovídají tomuto vzoru. Alternativně můžete zadat část názvu typu "
 "souboru."
 
-#: filetypesview.cpp:87
+#: filetypesview.cpp:66
 #, kde-format
 msgid "Known Types"
 msgstr "Známé typy"
 
-#: filetypesview.cpp:93
+#: filetypesview.cpp:72
 #, kde-format
 msgid ""
 "Here you can see a hierarchical list of the file types which are known on "
@@ -254,32 +217,32 @@ msgstr ""
 "HTML soubory), jehož informace si přejete prohlédnout/upravit pomocí prvků "
 "na pravé straně."
 
-#: filetypesview.cpp:107
+#: filetypesview.cpp:86
 #, kde-format
 msgid "Click here to add a new file type."
 msgstr "Zde klikněte pro přidání nového typu souborů."
 
-#: filetypesview.cpp:109 filetypesview.cpp:375
+#: filetypesview.cpp:88 filetypesview.cpp:354
 #, kde-format
 msgid "&Remove"
 msgstr "Odst&ranit"
 
-#: filetypesview.cpp:133
+#: filetypesview.cpp:112
 #, kde-format
 msgid "Select a file type by name or by extension"
 msgstr "Zvolte typ souboru podle názvu nebo přípony"
 
-#: filetypesview.cpp:368
+#: filetypesview.cpp:347
 #, kde-format
 msgid "&Revert"
 msgstr "V&rátit"
 
-#: filetypesview.cpp:369
+#: filetypesview.cpp:348
 #, kde-format
 msgid "Revert this file type to its initial system-wide definition"
 msgstr "Vrátit tento typ souboru zpět na globální výchozí hodnoty"
 
-#: filetypesview.cpp:371
+#: filetypesview.cpp:350
 #, kde-format
 msgid ""
 "Click here to revert this file type to its initial system-wide definition, "
@@ -294,12 +257,12 @@ msgstr ""
 "jejich seznam vzorů, čímž zmenšíte pravděpodobnost jejich použití (ale "
 "určování typu souboru podle jeho obsahu je nakonec může použít)."
 
-#: filetypesview.cpp:376
+#: filetypesview.cpp:355
 #, kde-format
 msgid "Delete this file type definition completely"
 msgstr "Kompletně smazat tento popis typu souboru"
 
-#: filetypesview.cpp:378
+#: filetypesview.cpp:357
 #, kde-format
 msgid ""
 "Click here to delete this file type definition completely. This is only "
@@ -533,3 +496,40 @@ msgid ""
 msgstr ""
 "Zadejte název typu souboru. Například pokud jste vybrali 'image' jako "
 "kategorii a zde zadáte 'custom', bude vytvořen typ souboru 'image/custom'."
+
+#~ msgid ""
+#~ "<p><h1>File Associations</h1> This module allows you to choose which "
+#~ "applications are associated with a given type of file. File types are "
+#~ "also referred to as MIME types (MIME is an acronym which stands for "
+#~ "\"Multipurpose Internet Mail Extensions\").</p><p> A file association "
+#~ "consists of the following: <ul><li>Rules for determining the MIME-type of "
+#~ "a file, for example the filename pattern *.png, which means 'all files "
+#~ "with names that end in .png', is associated with the MIME type \"image/png"
+#~ "\";</li> <li>A short description of the MIME-type, for example the "
+#~ "description of the MIME type \"image/png\" is simply 'PNG image';</li> "
+#~ "<li>An icon to be used for displaying files of the given MIME-type, so "
+#~ "that you can easily identify the type of file in a file manager or file-"
+#~ "selection dialog (at least for the types you use often);</li> <li>A list "
+#~ "of the applications which can be used to open files of the given MIME-"
+#~ "type -- if more than one application can be used then the list is ordered "
+#~ "by priority.</li></ul> You may be surprised to find that some MIME types "
+#~ "have no associated filename patterns; in these cases, KDE is able to "
+#~ "determine the MIME-type by directly examining the contents of the file.</"
+#~ "p>"
+#~ msgstr ""
+#~ "<p><h1>Asociace souborů</h1> Tento modul umožňuje výběr aplikací, které "
+#~ "jsou asociovány s daným typem souborů. Typy souborů jsou též označovány "
+#~ "jako MIME typy (MIME je zkratka pro \"Multipurpose Internet Mail "
+#~ "Extensions\").</p><p> Asociace souboru sestává z následujících položek:"
+#~ "<ul><li> Pravidla určující MIME typ souboru. Například vzor souboru *."
+#~ "kwd, který znamená 'všechny soubory, jejichž název končí příponou .kwd', "
+#~ "je asociován s MIME typem \"x-kword\".</li> <li>Krátkého popisu MIME "
+#~ "typu. Například popis MIME typu \"kword\" je jednoduše 'Dokument KWordu'."
+#~ "</li> <li>Ikona používaná při zobrazování souborů daného MIME typu, která "
+#~ "umožní snazší identifikaci typu souboru kupříkladu k pohledu Konqueroru "
+#~ "(přinejmenším u typů, jež používáte často)</li> <li>Seznam aplikací, "
+#~ "kterých je možno využít k otevírání souborů daného MIME typu. Je-li možné "
+#~ "používat více aplikaci, pak je seznam seřazen podle priority.</li></ul> "
+#~ "Může se stát, že některé typy MIME nemají asociován vzor souboru; v "
+#~ "takovém případě je Konqueror schopen určit MIME typ přímo analýzou obsahu "
+#~ "souboru.</p>"

@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: filetypes\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-03-05 03:09+0000\n"
+"POT-Creation-Date: 2023-03-25 02:10+0000\n"
 "PO-Revision-Date: 2011-07-16 01:02+0800\n"
 "Last-Translator: Sharuzzaman Ahmat Raslan <sharuzzaman@gmail.com>\n"
 "Language-Team: Malay <kedidiemas@yahoogroups.com>\n"
@@ -86,7 +86,7 @@ msgstr ""
 "fail untuk jenis dipilih. Sebagai contoh, corak *.txt dikaitkan dengan jenis "
 "fail 'teks/plain'; semua fail denganakhiran '.txt' adalah fail teks plain."
 
-#: filetypedetails.cpp:87 filetypesview.cpp:102 kservicelistwidget.cpp:110
+#: filetypedetails.cpp:87 filetypesview.cpp:81 kservicelistwidget.cpp:110
 #, kde-format
 msgid "Add..."
 msgstr "Tambah..."
@@ -183,51 +183,13 @@ msgstr "Fail jenis %1"
 msgid "Use settings for '%1' group"
 msgstr "Gunakan tetapan '%1' untuk kumpulan"
 
-#: filetypesview.cpp:43
-#, kde-format
-msgid ""
-"<p><h1>File Associations</h1> This module allows you to choose which "
-"applications are associated with a given type of file. File types are also "
-"referred to as MIME types (MIME is an acronym which stands for "
-"\"Multipurpose Internet Mail Extensions\").</p><p> A file association "
-"consists of the following: <ul><li>Rules for determining the MIME-type of a "
-"file, for example the filename pattern *.png, which means 'all files with "
-"names that end in .png', is associated with the MIME type \"image/png\";</"
-"li> <li>A short description of the MIME-type, for example the description of "
-"the MIME type \"image/png\" is simply 'PNG image';</li> <li>An icon to be "
-"used for displaying files of the given MIME-type, so that you can easily "
-"identify the type of file in a file manager or file-selection dialog (at "
-"least for the types you use often);</li> <li>A list of the applications "
-"which can be used to open files of the given MIME-type -- if more than one "
-"application can be used then the list is ordered by priority.</li></ul> You "
-"may be surprised to find that some MIME types have no associated filename "
-"patterns; in these cases, KDE is able to determine the MIME-type by directly "
-"examining the contents of the file.</p>"
-msgstr ""
-"<p><h1>Perkaitan Fail</h1> Modul ini membenarkan anda untuk memilih aplikasi "
-"mana yang dikaitkan dengan jenis fail dipilih. Jenis fail juga merujuk "
-"kepada jenis MIME (MIME ialah kependekan kepada \"Multipurpose Internet Mail "
-"Extensions\".)</p><p> Perkaitan fail mengandungi: <ul><li>Peraturan untuk "
-"menentukan jenis MIME bagi fail, sebagai contoh corak nama fail *.png, "
-"bermakna 'semua fail yang berakhir dengan .png', dikaitkan dengan jenis MIME "
-"\"image/png\";</li> <li>Huraian ringkas bagi jenis MIME, contohnya "
-"penjelasan jenis MIME \"image/png\" ialah 'imej PNG';</li> <li>Ikon yang "
-"digunakan untuk memaparkan fail bagi jenis MIME diberi, supaya anda mudah "
-"mengenali jenis fail dalam pengurus fail atau dialog pemilihan-fail "
-"(sekurang-kurangnya jenis bagi yang biasa anda gunakan);</li> <li>Senarai "
-"aplikasi yang boleh digunakan untuk membuka fail bagi jenis MIME yang "
-"dipilih -- jika lebih daripada satu boleh digunakan, maka senarai disusun "
-"mengikut keutamaan.</li></ul> Anda mungkin terkejut mengetahui sebilangan "
-"jenis MIME tiada corak nama fail dikaitkan; untuk kes ini, KDE boleh "
-"mengenalpasti jenis MIME dengan mengesan terus kandungan fail.</p>"
-
-#: filetypesview.cpp:73
+#: filetypesview.cpp:52
 #, fuzzy, kde-format
 #| msgid "Find file type or filename pattern"
 msgid "Search for file type or filename pattern..."
 msgstr "Cari jenis fail atau corak namafail"
 
-#: filetypesview.cpp:79
+#: filetypesview.cpp:58
 #, kde-format
 msgid ""
 "Enter a part of a filename pattern, and only file types with a matching file "
@@ -238,12 +200,12 @@ msgstr ""
 "corak fail akan dipaparkan ke dalam senarai. Selain itu, masukkan sebahagian "
 "nama jenis fail seperti yang kelihatan dalam senarai."
 
-#: filetypesview.cpp:87
+#: filetypesview.cpp:66
 #, kde-format
 msgid "Known Types"
 msgstr "Jenis Diketahui"
 
-#: filetypesview.cpp:93
+#: filetypesview.cpp:72
 #, kde-format
 msgid ""
 "Here you can see a hierarchical list of the file types which are known on "
@@ -257,32 +219,32 @@ msgstr ""
 "untuk lihat/sunting maklumat untuk jenis fail tersebut menggunakan kawalan "
 "disebelah kanan."
 
-#: filetypesview.cpp:107
+#: filetypesview.cpp:86
 #, kde-format
 msgid "Click here to add a new file type."
 msgstr "Kilk sini untuk tambah jenis fail baru."
 
-#: filetypesview.cpp:109 filetypesview.cpp:375
+#: filetypesview.cpp:88 filetypesview.cpp:354
 #, kde-format
 msgid "&Remove"
 msgstr "&Buang"
 
-#: filetypesview.cpp:133
+#: filetypesview.cpp:112
 #, kde-format
 msgid "Select a file type by name or by extension"
 msgstr "Pilih jenis fail dengan nama atau dengan penghujungan"
 
-#: filetypesview.cpp:368
+#: filetypesview.cpp:347
 #, kde-format
 msgid "&Revert"
 msgstr "&Patah Balik"
 
-#: filetypesview.cpp:369
+#: filetypesview.cpp:348
 #, fuzzy, kde-format
 msgid "Revert this file type to its initial system-wide definition"
 msgstr "Balikan fail ke "
 
-#: filetypesview.cpp:371
+#: filetypesview.cpp:350
 #, fuzzy, kde-format
 msgid ""
 "Click here to revert this file type to its initial system-wide definition, "
@@ -292,12 +254,12 @@ msgid ""
 "from file contents can still end up using them)."
 msgstr "ke  fail ke  ke  fail Nota fail Anda corak ke  fail fail."
 
-#: filetypesview.cpp:376
+#: filetypesview.cpp:355
 #, kde-format
 msgid "Delete this file type definition completely"
 msgstr "Buang definisi jenis fail ini kesemuanya"
 
-#: filetypesview.cpp:378
+#: filetypesview.cpp:357
 #, fuzzy, kde-format
 msgid ""
 "Click here to delete this file type definition completely. This is only "
@@ -531,6 +493,44 @@ msgstr ""
 "Taip nama bagi jenis fail. Sebagai contoh, jika anda memilih 'imej' sebagai "
 "kategori dan anda menaip 'tersendiri' disini, jenis fail 'imej/tersendiri' "
 "akan dicipta."
+
+#~ msgid ""
+#~ "<p><h1>File Associations</h1> This module allows you to choose which "
+#~ "applications are associated with a given type of file. File types are "
+#~ "also referred to as MIME types (MIME is an acronym which stands for "
+#~ "\"Multipurpose Internet Mail Extensions\").</p><p> A file association "
+#~ "consists of the following: <ul><li>Rules for determining the MIME-type of "
+#~ "a file, for example the filename pattern *.png, which means 'all files "
+#~ "with names that end in .png', is associated with the MIME type \"image/png"
+#~ "\";</li> <li>A short description of the MIME-type, for example the "
+#~ "description of the MIME type \"image/png\" is simply 'PNG image';</li> "
+#~ "<li>An icon to be used for displaying files of the given MIME-type, so "
+#~ "that you can easily identify the type of file in a file manager or file-"
+#~ "selection dialog (at least for the types you use often);</li> <li>A list "
+#~ "of the applications which can be used to open files of the given MIME-"
+#~ "type -- if more than one application can be used then the list is ordered "
+#~ "by priority.</li></ul> You may be surprised to find that some MIME types "
+#~ "have no associated filename patterns; in these cases, KDE is able to "
+#~ "determine the MIME-type by directly examining the contents of the file.</"
+#~ "p>"
+#~ msgstr ""
+#~ "<p><h1>Perkaitan Fail</h1> Modul ini membenarkan anda untuk memilih "
+#~ "aplikasi mana yang dikaitkan dengan jenis fail dipilih. Jenis fail juga "
+#~ "merujuk kepada jenis MIME (MIME ialah kependekan kepada \"Multipurpose "
+#~ "Internet Mail Extensions\".)</p><p> Perkaitan fail mengandungi: "
+#~ "<ul><li>Peraturan untuk menentukan jenis MIME bagi fail, sebagai contoh "
+#~ "corak nama fail *.png, bermakna 'semua fail yang berakhir dengan .png', "
+#~ "dikaitkan dengan jenis MIME \"image/png\";</li> <li>Huraian ringkas bagi "
+#~ "jenis MIME, contohnya penjelasan jenis MIME \"image/png\" ialah 'imej "
+#~ "PNG';</li> <li>Ikon yang digunakan untuk memaparkan fail bagi jenis MIME "
+#~ "diberi, supaya anda mudah mengenali jenis fail dalam pengurus fail atau "
+#~ "dialog pemilihan-fail (sekurang-kurangnya jenis bagi yang biasa anda "
+#~ "gunakan);</li> <li>Senarai aplikasi yang boleh digunakan untuk membuka "
+#~ "fail bagi jenis MIME yang dipilih -- jika lebih daripada satu boleh "
+#~ "digunakan, maka senarai disusun mengikut keutamaan.</li></ul> Anda "
+#~ "mungkin terkejut mengetahui sebilangan jenis MIME tiada corak nama fail "
+#~ "dikaitkan; untuk kes ini, KDE boleh mengenalpasti jenis MIME dengan "
+#~ "mengesan terus kandungan fail.</p>"
 
 #~ msgid "KEditFileType"
 #~ msgstr "Jenis KEditFile"

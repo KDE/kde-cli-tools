@@ -9,7 +9,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: filetypes\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-03-05 03:09+0000\n"
+"POT-Creation-Date: 2023-03-25 02:10+0000\n"
 "PO-Revision-Date: 2022-05-05 12:27+0200\n"
 "Last-Translator: Phu Hung Nguyen <phu.nguyen@kdemail.net>\n"
 "Language-Team: Vietnamese <kde-l10n-vi@kde.org>\n"
@@ -86,7 +86,7 @@ msgstr ""
 "kiểu được chọn. Ví dụ, dạng mẫu *.txt được liên kết với kiểu tệp 'text/"
 "plain'; tất cả các tệp có đuôi '.txt' sẽ được nhận dạng là tệp văn bản thuần."
 
-#: filetypedetails.cpp:87 filetypesview.cpp:102 kservicelistwidget.cpp:110
+#: filetypedetails.cpp:87 filetypesview.cpp:81 kservicelistwidget.cpp:110
 #, kde-format
 msgid "Add..."
 msgstr "Thêm..."
@@ -179,50 +179,12 @@ msgstr "Kiểu tệp %1"
 msgid "Use settings for '%1' group"
 msgstr "Dùng thiết lập cho nhóm '%1'"
 
-#: filetypesview.cpp:43
-#, kde-format
-msgid ""
-"<p><h1>File Associations</h1> This module allows you to choose which "
-"applications are associated with a given type of file. File types are also "
-"referred to as MIME types (MIME is an acronym which stands for "
-"\"Multipurpose Internet Mail Extensions\").</p><p> A file association "
-"consists of the following: <ul><li>Rules for determining the MIME-type of a "
-"file, for example the filename pattern *.png, which means 'all files with "
-"names that end in .png', is associated with the MIME type \"image/png\";</"
-"li> <li>A short description of the MIME-type, for example the description of "
-"the MIME type \"image/png\" is simply 'PNG image';</li> <li>An icon to be "
-"used for displaying files of the given MIME-type, so that you can easily "
-"identify the type of file in a file manager or file-selection dialog (at "
-"least for the types you use often);</li> <li>A list of the applications "
-"which can be used to open files of the given MIME-type -- if more than one "
-"application can be used then the list is ordered by priority.</li></ul> You "
-"may be surprised to find that some MIME types have no associated filename "
-"patterns; in these cases, KDE is able to determine the MIME-type by directly "
-"examining the contents of the file.</p>"
-msgstr ""
-"<p><h1>Liên kết tệp</h1> Khối này cho phép bạn chọn các ứng dụng nào được "
-"liên kết với một kiểu tệp đã cho. Các kiểu tệp còn được gọi là các kiểu MIME "
-"(MIME là một từ rút gọn của \"Multipurpose Internet Mail Extensions\" - "
-"\"Giao thức mở rộng thư điện tử Liên Mạng đa mục đích\").</p><p> Một liên "
-"kết tệp bao gồm: <ul><li>Các quy tắc để xác định kiểu MIME của một tệp, ví "
-"dụ dạng mẫu tên tệp *.png, có nghĩa là 'tất cả các tệp có tên kết thúc bằng ."
-"png', được liên kết với kiểu MIME \"image/png\";</li> <li>Một mô tả ngắn về "
-"kiểu MIME, ví dụ mô tả của kiểu MIME \"image/png\" đơn giản là 'ảnh PNG';</"
-"li> <li>Một biểu tượng dùng để hiển thị các tệp thuộc kiểu MIME, để bạn có "
-"thể dễ dàng nhận diện kiểu tệp đó trong một trình quản lí tệp hay một hộp "
-"thoại chọn tệp (ít nhất là cho các kiểu mà bạn hay dùng);</li> <li>Một danh "
-"sách các ứng dụng có thể được dùng để mở các tệp thuộc kiểu MIME -- nếu "
-"nhiều hơn một ứng dụng có thể được dùng thì danh sách đó được sắp xếp theo "
-"độ ưu tiên.</li></ul> Bạn có thể sẽ ngạc nhiên khi biết rằng một số kiểu "
-"MIME không liên kết với dạng mẫu tên tệp nào; trong những trường hợp này, "
-"KDE có thể xác định kiểu MIME bằng cách trực tiếp kiểm tra nội dung tệp.</p>"
-
-#: filetypesview.cpp:73
+#: filetypesview.cpp:52
 #, kde-format
 msgid "Search for file type or filename pattern..."
 msgstr "Tìm kiểu tệp hoặc dạng mẫu tên tệp..."
 
-#: filetypesview.cpp:79
+#: filetypesview.cpp:58
 #, kde-format
 msgid ""
 "Enter a part of a filename pattern, and only file types with a matching file "
@@ -233,12 +195,12 @@ msgstr ""
 "với nó mới hiển thị trong danh sách. Một cách khác, nhập một phần của một "
 "tên kiểu tệp như nó xuất hiện trong danh sách."
 
-#: filetypesview.cpp:87
+#: filetypesview.cpp:66
 #, kde-format
 msgid "Known Types"
 msgstr "Các kiểu đã biết"
 
-#: filetypesview.cpp:93
+#: filetypesview.cpp:72
 #, kde-format
 msgid ""
 "Here you can see a hierarchical list of the file types which are known on "
@@ -251,32 +213,32 @@ msgstr ""
 "Chọn một kiểu tệp (vd. text/html cho tệp HTML) để xem/sửa thông tin cho kiểu "
 "tệp đó bằng các điều khiển ở bên phải."
 
-#: filetypesview.cpp:107
+#: filetypesview.cpp:86
 #, kde-format
 msgid "Click here to add a new file type."
 msgstr "Bấm vào đây để thêm một kiểu tệp mới."
 
-#: filetypesview.cpp:109 filetypesview.cpp:375
+#: filetypesview.cpp:88 filetypesview.cpp:354
 #, kde-format
 msgid "&Remove"
 msgstr "&Xoá"
 
-#: filetypesview.cpp:133
+#: filetypesview.cpp:112
 #, kde-format
 msgid "Select a file type by name or by extension"
 msgstr "Chọn kiểu tệp theo tên hoặc theo phần mở rộng"
 
-#: filetypesview.cpp:368
+#: filetypesview.cpp:347
 #, kde-format
 msgid "&Revert"
 msgstr "&Hoàn nguyên"
 
-#: filetypesview.cpp:369
+#: filetypesview.cpp:348
 #, kde-format
 msgid "Revert this file type to its initial system-wide definition"
 msgstr "Đưa kiểu tệp này về định nghĩa toàn hệ thống ban đầu của nó"
 
-#: filetypesview.cpp:371
+#: filetypesview.cpp:350
 #, kde-format
 msgid ""
 "Click here to revert this file type to its initial system-wide definition, "
@@ -292,12 +254,12 @@ msgstr ""
 "năng chúng được dùng (nhưng việc xác định kiểu tệp bằng nội dung tệp cuối "
 "cùng vẫn có thể sẽ sử dụng chúng)."
 
-#: filetypesview.cpp:376
+#: filetypesview.cpp:355
 #, kde-format
 msgid "Delete this file type definition completely"
 msgstr "Xoá hoàn toàn định nghĩa kiểu tệp này"
 
-#: filetypesview.cpp:378
+#: filetypesview.cpp:357
 #, kde-format
 msgid ""
 "Click here to delete this file type definition completely. This is only "
@@ -535,3 +497,41 @@ msgid ""
 msgstr ""
 "Gõ tên của kiểu tệp. Ví dụ, nếu bạn chọn nhóm là 'image' và gõ 'custom' vào "
 "đây, kiểu tệp 'image/custom' sẽ được tạo."
+
+#~ msgid ""
+#~ "<p><h1>File Associations</h1> This module allows you to choose which "
+#~ "applications are associated with a given type of file. File types are "
+#~ "also referred to as MIME types (MIME is an acronym which stands for "
+#~ "\"Multipurpose Internet Mail Extensions\").</p><p> A file association "
+#~ "consists of the following: <ul><li>Rules for determining the MIME-type of "
+#~ "a file, for example the filename pattern *.png, which means 'all files "
+#~ "with names that end in .png', is associated with the MIME type \"image/png"
+#~ "\";</li> <li>A short description of the MIME-type, for example the "
+#~ "description of the MIME type \"image/png\" is simply 'PNG image';</li> "
+#~ "<li>An icon to be used for displaying files of the given MIME-type, so "
+#~ "that you can easily identify the type of file in a file manager or file-"
+#~ "selection dialog (at least for the types you use often);</li> <li>A list "
+#~ "of the applications which can be used to open files of the given MIME-"
+#~ "type -- if more than one application can be used then the list is ordered "
+#~ "by priority.</li></ul> You may be surprised to find that some MIME types "
+#~ "have no associated filename patterns; in these cases, KDE is able to "
+#~ "determine the MIME-type by directly examining the contents of the file.</"
+#~ "p>"
+#~ msgstr ""
+#~ "<p><h1>Liên kết tệp</h1> Khối này cho phép bạn chọn các ứng dụng nào được "
+#~ "liên kết với một kiểu tệp đã cho. Các kiểu tệp còn được gọi là các kiểu "
+#~ "MIME (MIME là một từ rút gọn của \"Multipurpose Internet Mail Extensions"
+#~ "\" - \"Giao thức mở rộng thư điện tử Liên Mạng đa mục đích\").</p><p> Một "
+#~ "liên kết tệp bao gồm: <ul><li>Các quy tắc để xác định kiểu MIME của một "
+#~ "tệp, ví dụ dạng mẫu tên tệp *.png, có nghĩa là 'tất cả các tệp có tên kết "
+#~ "thúc bằng .png', được liên kết với kiểu MIME \"image/png\";</li> <li>Một "
+#~ "mô tả ngắn về kiểu MIME, ví dụ mô tả của kiểu MIME \"image/png\" đơn giản "
+#~ "là 'ảnh PNG';</li> <li>Một biểu tượng dùng để hiển thị các tệp thuộc kiểu "
+#~ "MIME, để bạn có thể dễ dàng nhận diện kiểu tệp đó trong một trình quản lí "
+#~ "tệp hay một hộp thoại chọn tệp (ít nhất là cho các kiểu mà bạn hay dùng);"
+#~ "</li> <li>Một danh sách các ứng dụng có thể được dùng để mở các tệp thuộc "
+#~ "kiểu MIME -- nếu nhiều hơn một ứng dụng có thể được dùng thì danh sách đó "
+#~ "được sắp xếp theo độ ưu tiên.</li></ul> Bạn có thể sẽ ngạc nhiên khi biết "
+#~ "rằng một số kiểu MIME không liên kết với dạng mẫu tên tệp nào; trong "
+#~ "những trường hợp này, KDE có thể xác định kiểu MIME bằng cách trực tiếp "
+#~ "kiểm tra nội dung tệp.</p>"

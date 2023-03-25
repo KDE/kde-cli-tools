@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: filetypes\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-03-05 03:09+0000\n"
+"POT-Creation-Date: 2023-03-25 02:10+0000\n"
 "PO-Revision-Date: 2022-04-16 22:49+0200\n"
 "Last-Translator: Shinjo Park <kde@peremen.name>\n"
 "Language-Team: Korean <kde-kr@kde.org>\n"
@@ -83,7 +83,7 @@ msgstr ""
 "를 들어 *.txt는 파일 형식 'text/plain'과 연관이 있으며 '.txt'로 끝나는 모든 "
 "파일 형식은 일반 텍스트 파일로 인식하게 됩니다."
 
-#: filetypedetails.cpp:87 filetypesview.cpp:102 kservicelistwidget.cpp:110
+#: filetypedetails.cpp:87 filetypesview.cpp:81 kservicelistwidget.cpp:110
 #, kde-format
 msgid "Add..."
 msgstr "추가..."
@@ -174,47 +174,12 @@ msgstr "파일 형식 %1"
 msgid "Use settings for '%1' group"
 msgstr "'%1' 그룹의 설정 사용하기"
 
-#: filetypesview.cpp:43
-#, kde-format
-msgid ""
-"<p><h1>File Associations</h1> This module allows you to choose which "
-"applications are associated with a given type of file. File types are also "
-"referred to as MIME types (MIME is an acronym which stands for "
-"\"Multipurpose Internet Mail Extensions\").</p><p> A file association "
-"consists of the following: <ul><li>Rules for determining the MIME-type of a "
-"file, for example the filename pattern *.png, which means 'all files with "
-"names that end in .png', is associated with the MIME type \"image/png\";</"
-"li> <li>A short description of the MIME-type, for example the description of "
-"the MIME type \"image/png\" is simply 'PNG image';</li> <li>An icon to be "
-"used for displaying files of the given MIME-type, so that you can easily "
-"identify the type of file in a file manager or file-selection dialog (at "
-"least for the types you use often);</li> <li>A list of the applications "
-"which can be used to open files of the given MIME-type -- if more than one "
-"application can be used then the list is ordered by priority.</li></ul> You "
-"may be surprised to find that some MIME types have no associated filename "
-"patterns; in these cases, KDE is able to determine the MIME-type by directly "
-"examining the contents of the file.</p>"
-msgstr ""
-"<p><h1>파일 연결</h1>이 모듈은 주어진 파일 형식과 관련된 프로그램을 선택할 "
-"수 있습니다. 파일 형식은 MIME 형식(MIME은 \"Multipurpose Internet Mail "
-"Extensions\"의 줄임말)과도 관련이 있습니다.</p><p>파일 연결은 다음 사항을 포"
-"합합니다: <ul><li>파일의 MIME-형식 결정 규칙. 예를 들어 파일 이름 형식이 '."
-"png'로 끝나는 모든 파일'이라는 의미를 가진 *.png라면 MIME 형식 \"image/png"
-"\"와 연결됩니다.</li><li>MIME-형식의 간단한 설명. 예를 들어 MIME 형식 "
-"\"image/png\"의 설명은 간단히 'PNG 그림'입니다.</li><li>주어진 MIME-형식의 파"
-"일을 나타낼 아이콘. 이러한 아이콘을 사용하여 파일 관리자나 파일 선택 대화 상"
-"자에서 간단히 파일 형식을 구분할 수 있습니다.</li><li>주어진 MIME-형식의 파일"
-"을 열고자 할 때 사용할 프로그램의 목록. 하나 이상의 프로그램을 사용한다면 목"
-"록은 우선 순위 순으로 정렬됩니다. </li></ul>몇몇 MIME 형식에는 파일 이름 형식"
-"이 없을 수도 있습니다. 이런 경우에는 KDE에서 파일의 내용을 파악하여 MIME-형식"
-"을 결정합니다.</p>"
-
-#: filetypesview.cpp:73
+#: filetypesview.cpp:52
 #, kde-format
 msgid "Search for file type or filename pattern..."
 msgstr "파일 형식이나 파일 이름 패턴 찾기..."
 
-#: filetypesview.cpp:79
+#: filetypesview.cpp:58
 #, kde-format
 msgid ""
 "Enter a part of a filename pattern, and only file types with a matching file "
@@ -224,12 +189,12 @@ msgstr ""
 "파일 이름 패턴의 일부를 입력하면 입력한 패턴과 일치하는 파일 형식을 보여줍니"
 "다. 또는 목록에 보이는 대로 파일 형식 이름을 입력해도 됩니다."
 
-#: filetypesview.cpp:87
+#: filetypesview.cpp:66
 #, kde-format
 msgid "Known Types"
 msgstr "알려진 형식"
 
-#: filetypesview.cpp:93
+#: filetypesview.cpp:72
 #, kde-format
 msgid ""
 "Here you can see a hierarchical list of the file types which are known on "
@@ -242,32 +207,32 @@ msgstr ""
 "형식을 선택하면 (예: HTML 파일의 경우 text/html) 오른쪽에 있는 도구를 사용해"
 "서 파일 형식의 정보를 보거나 편집할 수 있습니다."
 
-#: filetypesview.cpp:107
+#: filetypesview.cpp:86
 #, kde-format
 msgid "Click here to add a new file type."
 msgstr "새로운 파일 형식을 추가하려면 여기를 클릭하십시오."
 
-#: filetypesview.cpp:109 filetypesview.cpp:375
+#: filetypesview.cpp:88 filetypesview.cpp:354
 #, kde-format
 msgid "&Remove"
 msgstr "삭제(&R)"
 
-#: filetypesview.cpp:133
+#: filetypesview.cpp:112
 #, kde-format
 msgid "Select a file type by name or by extension"
 msgstr "확장자나 이름으로 파일 형식 선택"
 
-#: filetypesview.cpp:368
+#: filetypesview.cpp:347
 #, kde-format
 msgid "&Revert"
 msgstr "되돌리기(&R)"
 
-#: filetypesview.cpp:369
+#: filetypesview.cpp:348
 #, kde-format
 msgid "Revert this file type to its initial system-wide definition"
 msgstr "파일 형식을 초기 시스템 기본값으로 되돌립니다"
 
-#: filetypesview.cpp:371
+#: filetypesview.cpp:350
 #, kde-format
 msgid ""
 "Click here to revert this file type to its initial system-wide definition, "
@@ -281,12 +246,12 @@ msgstr ""
 "정하여 사용되는 정도를 줄일 수는 있습니다. 그렇다 하더라도 파일 형식에서 확장"
 "자를 추측할 때는 이 정보를 사용합니다."
 
-#: filetypesview.cpp:376
+#: filetypesview.cpp:355
 #, kde-format
 msgid "Delete this file type definition completely"
 msgstr "파일 형식 정의를 완전히 삭제합니다"
 
-#: filetypesview.cpp:378
+#: filetypesview.cpp:357
 #, kde-format
 msgid ""
 "Click here to delete this file type definition completely. This is only "
@@ -519,6 +484,40 @@ msgid ""
 msgstr ""
 "파일 형식의 이름을 입력하십시오. 예를 들어서 분류에서 'image'를 선택하고, 여"
 "기에 'custom'이라고 입력하면 파일 형식 'image/custom'이 만들어집니다."
+
+#~ msgid ""
+#~ "<p><h1>File Associations</h1> This module allows you to choose which "
+#~ "applications are associated with a given type of file. File types are "
+#~ "also referred to as MIME types (MIME is an acronym which stands for "
+#~ "\"Multipurpose Internet Mail Extensions\").</p><p> A file association "
+#~ "consists of the following: <ul><li>Rules for determining the MIME-type of "
+#~ "a file, for example the filename pattern *.png, which means 'all files "
+#~ "with names that end in .png', is associated with the MIME type \"image/png"
+#~ "\";</li> <li>A short description of the MIME-type, for example the "
+#~ "description of the MIME type \"image/png\" is simply 'PNG image';</li> "
+#~ "<li>An icon to be used for displaying files of the given MIME-type, so "
+#~ "that you can easily identify the type of file in a file manager or file-"
+#~ "selection dialog (at least for the types you use often);</li> <li>A list "
+#~ "of the applications which can be used to open files of the given MIME-"
+#~ "type -- if more than one application can be used then the list is ordered "
+#~ "by priority.</li></ul> You may be surprised to find that some MIME types "
+#~ "have no associated filename patterns; in these cases, KDE is able to "
+#~ "determine the MIME-type by directly examining the contents of the file.</"
+#~ "p>"
+#~ msgstr ""
+#~ "<p><h1>파일 연결</h1>이 모듈은 주어진 파일 형식과 관련된 프로그램을 선택"
+#~ "할 수 있습니다. 파일 형식은 MIME 형식(MIME은 \"Multipurpose Internet Mail "
+#~ "Extensions\"의 줄임말)과도 관련이 있습니다.</p><p>파일 연결은 다음 사항을 "
+#~ "포합합니다: <ul><li>파일의 MIME-형식 결정 규칙. 예를 들어 파일 이름 형식"
+#~ "이 '.png'로 끝나는 모든 파일'이라는 의미를 가진 *.png라면 MIME 형식 "
+#~ "\"image/png\"와 연결됩니다.</li><li>MIME-형식의 간단한 설명. 예를 들어 "
+#~ "MIME 형식 \"image/png\"의 설명은 간단히 'PNG 그림'입니다.</li><li>주어진 "
+#~ "MIME-형식의 파일을 나타낼 아이콘. 이러한 아이콘을 사용하여 파일 관리자나 "
+#~ "파일 선택 대화 상자에서 간단히 파일 형식을 구분할 수 있습니다.</li><li>주"
+#~ "어진 MIME-형식의 파일을 열고자 할 때 사용할 프로그램의 목록. 하나 이상의 "
+#~ "프로그램을 사용한다면 목록은 우선 순위 순으로 정렬됩니다. </li></ul>몇몇 "
+#~ "MIME 형식에는 파일 이름 형식이 없을 수도 있습니다. 이런 경우에는 KDE에서 "
+#~ "파일의 내용을 파악하여 MIME-형식을 결정합니다.</p>"
 
 #~ msgid "KEditFileType"
 #~ msgstr "KEditFileType"

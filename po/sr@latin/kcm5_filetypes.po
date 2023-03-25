@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kcm5_filetypes\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-03-05 03:09+0000\n"
+"POT-Creation-Date: 2023-03-25 02:10+0000\n"
 "PO-Revision-Date: 2017-09-28 17:58+0200\n"
 "Last-Translator: Chusslove Illich <caslav.ilic@gmx.net>\n"
 "Language-Team: Serbian <kde-i18n-sr@kde.org>\n"
@@ -89,7 +89,7 @@ msgstr ""
 "plain</tt>, pa će svi fajlovi koji se završavaju sa <tt>.txt</tt> biti "
 "prepoznati kao obični tekst.</qt>"
 
-#: filetypedetails.cpp:87 filetypesview.cpp:102 kservicelistwidget.cpp:110
+#: filetypedetails.cpp:87 filetypesview.cpp:81 kservicelistwidget.cpp:110
 #, kde-format
 msgid "Add..."
 msgstr "Dodaj..."
@@ -182,50 +182,13 @@ msgstr "Tip fajla „%1“"
 msgid "Use settings for '%1' group"
 msgstr "Koristi postavke grupe „%1“"
 
-#: filetypesview.cpp:43
-#, kde-format
-msgid ""
-"<p><h1>File Associations</h1> This module allows you to choose which "
-"applications are associated with a given type of file. File types are also "
-"referred to as MIME types (MIME is an acronym which stands for "
-"\"Multipurpose Internet Mail Extensions\").</p><p> A file association "
-"consists of the following: <ul><li>Rules for determining the MIME-type of a "
-"file, for example the filename pattern *.png, which means 'all files with "
-"names that end in .png', is associated with the MIME type \"image/png\";</"
-"li> <li>A short description of the MIME-type, for example the description of "
-"the MIME type \"image/png\" is simply 'PNG image';</li> <li>An icon to be "
-"used for displaying files of the given MIME-type, so that you can easily "
-"identify the type of file in a file manager or file-selection dialog (at "
-"least for the types you use often);</li> <li>A list of the applications "
-"which can be used to open files of the given MIME-type -- if more than one "
-"application can be used then the list is ordered by priority.</li></ul> You "
-"may be surprised to find that some MIME types have no associated filename "
-"patterns; in these cases, KDE is able to determine the MIME-type by directly "
-"examining the contents of the file.</p>"
-msgstr ""
-"<qt><h1>Pridruženja fajlovima</h1><p>U ovom modulu možete određivati koji će "
-"programi biti pridruženi sa kojim tipovima fajla. Tipovi fajla su takođe "
-"poznati kao MIME tipovi (eng. za „višenamenska internet poštanska "
-"proširenja“).</p><p>Pridruženje se sastoji iz:</p><ul><li>pravila za "
-"utvrđivanje MIME tipa fajla; na primer, obrazac imena <tt>*.png</tt> znači "
-"da će svi fajlovi sa nastavkom <tt>.png</tt> biti pridruženi MIME tipu "
-"<tt>image/png</tt>,</li><li>kratkog opisa MIME tipa; na primer, opis za tip "
-"<tt>image/png</tt> je jednostavno „PNG slika“,</li><li>ikonice za "
-"prikazivanje uz fajlove datog MIME tipa, kako bi se tip lako uočio pri "
-"pregledanju u menadžeru fajlova ili dijalogu za izbor fajla (korisno "
-"podesiti bar za tipove koje često koristite),</li><li>spiska programa kojim "
-"se fajlovi datog MIME tipa mogu otvoriti; ako je to više programa, redosled "
-"po spisku određuje prioritet.</li></ul><p>Može vas iznenaditi činjenica da "
-"neki MIME tipovi nemaju pridružene obrasce imena. U takvim slučajevima, KDE "
-"utvrđuje MIME tip ispitivanjem samog sadržaja fajla.</p></qt>"
-
-#: filetypesview.cpp:73
+#: filetypesview.cpp:52
 #, fuzzy, kde-format
 #| msgid "Find file type or filename pattern"
 msgid "Search for file type or filename pattern..."
 msgstr "Nađi tip fajla ili obrazac imena"
 
-#: filetypesview.cpp:79
+#: filetypesview.cpp:58
 #, kde-format
 msgid ""
 "Enter a part of a filename pattern, and only file types with a matching file "
@@ -236,12 +199,12 @@ msgstr ""
 "fajla koje uneti obrazac poklapa. Ili, unesite deo imena tipa fajla kao što "
 "je dato na spisku."
 
-#: filetypesview.cpp:87
+#: filetypesview.cpp:66
 #, kde-format
 msgid "Known Types"
 msgstr "Poznati tipovi"
 
-#: filetypesview.cpp:93
+#: filetypesview.cpp:72
 #, kde-format
 msgid ""
 "Here you can see a hierarchical list of the file types which are known on "
@@ -255,32 +218,32 @@ msgstr ""
 "biste mu pregledali ili uredili podatke, pomoću kontrola na desnoj strani.</"
 "qt>"
 
-#: filetypesview.cpp:107
+#: filetypesview.cpp:86
 #, kde-format
 msgid "Click here to add a new file type."
 msgstr "Kliknite ovde da dodate novi tip fajla."
 
-#: filetypesview.cpp:109 filetypesview.cpp:375
+#: filetypesview.cpp:88 filetypesview.cpp:354
 #, kde-format
 msgid "&Remove"
 msgstr "&Ukloni"
 
-#: filetypesview.cpp:133
+#: filetypesview.cpp:112
 #, kde-format
 msgid "Select a file type by name or by extension"
 msgstr "Izaberite tip fajla prema imenu ili nastavku"
 
-#: filetypesview.cpp:368
+#: filetypesview.cpp:347
 #, kde-format
 msgid "&Revert"
 msgstr "&Vrati"
 
-#: filetypesview.cpp:369
+#: filetypesview.cpp:348
 #, kde-format
 msgid "Revert this file type to its initial system-wide definition"
 msgstr "Vrati ovaj tip fajla na početnu, sistemsku definiciju"
 
-#: filetypesview.cpp:371
+#: filetypesview.cpp:350
 #, kde-format
 msgid ""
 "Click here to revert this file type to its initial system-wide definition, "
@@ -295,12 +258,12 @@ msgstr ""
 "kako biste minimizovali izglede da će biti upotrebljeni (do upotrebe može "
 "doći i na osnovu analize sadržaja fajla)."
 
-#: filetypesview.cpp:376
+#: filetypesview.cpp:355
 #, kde-format
 msgid "Delete this file type definition completely"
 msgstr "Potpuno obriši ovu definiciju tipa fajla"
 
-#: filetypesview.cpp:378
+#: filetypesview.cpp:357
 #, kde-format
 msgid ""
 "Click here to delete this file type definition completely. This is only "
@@ -536,3 +499,40 @@ msgid ""
 msgstr ""
 "Unesite ime za tip fajla. Na primer, ako ste izabrali kategoriju ‘image’ i "
 "ovde uneli ‘custom’, nastaće tip fajla ‘image/custom’."
+
+#~ msgid ""
+#~ "<p><h1>File Associations</h1> This module allows you to choose which "
+#~ "applications are associated with a given type of file. File types are "
+#~ "also referred to as MIME types (MIME is an acronym which stands for "
+#~ "\"Multipurpose Internet Mail Extensions\").</p><p> A file association "
+#~ "consists of the following: <ul><li>Rules for determining the MIME-type of "
+#~ "a file, for example the filename pattern *.png, which means 'all files "
+#~ "with names that end in .png', is associated with the MIME type \"image/png"
+#~ "\";</li> <li>A short description of the MIME-type, for example the "
+#~ "description of the MIME type \"image/png\" is simply 'PNG image';</li> "
+#~ "<li>An icon to be used for displaying files of the given MIME-type, so "
+#~ "that you can easily identify the type of file in a file manager or file-"
+#~ "selection dialog (at least for the types you use often);</li> <li>A list "
+#~ "of the applications which can be used to open files of the given MIME-"
+#~ "type -- if more than one application can be used then the list is ordered "
+#~ "by priority.</li></ul> You may be surprised to find that some MIME types "
+#~ "have no associated filename patterns; in these cases, KDE is able to "
+#~ "determine the MIME-type by directly examining the contents of the file.</"
+#~ "p>"
+#~ msgstr ""
+#~ "<qt><h1>Pridruženja fajlovima</h1><p>U ovom modulu možete određivati koji "
+#~ "će programi biti pridruženi sa kojim tipovima fajla. Tipovi fajla su "
+#~ "takođe poznati kao MIME tipovi (eng. za „višenamenska internet poštanska "
+#~ "proširenja“).</p><p>Pridruženje se sastoji iz:</p><ul><li>pravila za "
+#~ "utvrđivanje MIME tipa fajla; na primer, obrazac imena <tt>*.png</tt> "
+#~ "znači da će svi fajlovi sa nastavkom <tt>.png</tt> biti pridruženi MIME "
+#~ "tipu <tt>image/png</tt>,</li><li>kratkog opisa MIME tipa; na primer, opis "
+#~ "za tip <tt>image/png</tt> je jednostavno „PNG slika“,</li><li>ikonice za "
+#~ "prikazivanje uz fajlove datog MIME tipa, kako bi se tip lako uočio pri "
+#~ "pregledanju u menadžeru fajlova ili dijalogu za izbor fajla (korisno "
+#~ "podesiti bar za tipove koje često koristite),</li><li>spiska programa "
+#~ "kojim se fajlovi datog MIME tipa mogu otvoriti; ako je to više programa, "
+#~ "redosled po spisku određuje prioritet.</li></ul><p>Može vas iznenaditi "
+#~ "činjenica da neki MIME tipovi nemaju pridružene obrasce imena. U takvim "
+#~ "slučajevima, KDE utvrđuje MIME tip ispitivanjem samog sadržaja fajla.</"
+#~ "p></qt>"

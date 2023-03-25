@@ -9,7 +9,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: filetypes\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-03-05 03:09+0000\n"
+"POT-Creation-Date: 2023-03-25 02:10+0000\n"
 "PO-Revision-Date: 2007-08-22 09:26+0000\n"
 "Last-Translator: Darafei Praliaskouski <komzpa@licei2.com>\n"
 "Language-Team: Belarusian <i18n@mova.org>\n"
@@ -94,7 +94,7 @@ msgstr ""
 "Напрыклад, шаблон *.txt звязаны з тыпам файлаў'text/plain'; усе файлы, назвы "
 "якіх заканчваюцца на '.txt', распазнаюцца як звычайныя тэкставыя файлы."
 
-#: filetypedetails.cpp:87 filetypesview.cpp:102 kservicelistwidget.cpp:110
+#: filetypedetails.cpp:87 filetypesview.cpp:81 kservicelistwidget.cpp:110
 #, kde-format
 msgid "Add..."
 msgstr "Дадаць..."
@@ -198,68 +198,13 @@ msgstr "Змяніць тып файлаў %1"
 msgid "Use settings for '%1' group"
 msgstr "Выкарыстоўваць наладкі для групы '%1'"
 
-#: filetypesview.cpp:43
-#, fuzzy, kde-format
-#| msgid ""
-#| "<p><h1>File Associations</h1> This module allows you to choose which "
-#| "applications are associated with a given type of file. File types are "
-#| "also referred to MIME types (MIME is an acronym which stands for "
-#| "\"Multipurpose Internet Mail Extensions\".)</p><p> A file association "
-#| "consists of the following: <ul><li>Rules for determining the MIME-type of "
-#| "a file, for example the filename pattern *.kwd, which means 'all files "
-#| "with names that end in .kwd', is associated with the MIME type \"x-kword"
-#| "\";</li> <li>A short description of the MIME-type, for example the "
-#| "description of the MIME type \"x-kword\" is simply 'KWord document';</li> "
-#| "<li>An icon to be used for displaying files of the given MIME-type, so "
-#| "that you can easily identify the type of file in, say, a Konqueror view "
-#| "(at least for the types you use often);</li> <li>A list of the "
-#| "applications which can be used to open files of the given MIME-type -- if "
-#| "more than one application can be used then the list is ordered by "
-#| "priority.</li></ul> You may be surprised to find that some MIME types "
-#| "have no associated filename patterns; in these cases, Konqueror is able "
-#| "to determine the MIME-type by directly examining the contents of the file."
-#| "</p>"
-msgid ""
-"<p><h1>File Associations</h1> This module allows you to choose which "
-"applications are associated with a given type of file. File types are also "
-"referred to as MIME types (MIME is an acronym which stands for "
-"\"Multipurpose Internet Mail Extensions\").</p><p> A file association "
-"consists of the following: <ul><li>Rules for determining the MIME-type of a "
-"file, for example the filename pattern *.png, which means 'all files with "
-"names that end in .png', is associated with the MIME type \"image/png\";</"
-"li> <li>A short description of the MIME-type, for example the description of "
-"the MIME type \"image/png\" is simply 'PNG image';</li> <li>An icon to be "
-"used for displaying files of the given MIME-type, so that you can easily "
-"identify the type of file in a file manager or file-selection dialog (at "
-"least for the types you use often);</li> <li>A list of the applications "
-"which can be used to open files of the given MIME-type -- if more than one "
-"application can be used then the list is ordered by priority.</li></ul> You "
-"may be surprised to find that some MIME types have no associated filename "
-"patterns; in these cases, KDE is able to determine the MIME-type by directly "
-"examining the contents of the file.</p>"
-msgstr ""
-"<h1>Асацыяцыі файлаў</h1> Гэты модуль дазваляе выбіраць праграмы, звязаныя з "
-"тыпамі файлаў. Тыпы файлаў таксама называюць \"тыпамі MIME\" (MIME - "
-"абрэвіятура ад \"Multipurpose Internet Mail Extensions\".)<p> Асацыяцыя "
-"файлаў складаецца з: <ul><li>правілаў вызначэння тыпу MIME файла, напрыклад "
-"шаблон назвы файла *.kwd, што азначае 'усе файлы з назвамі, якія сканчваюцца "
-"на .kwd', асацыююцца з тыпам MIME \"x-kword\";</li> <li>кароткага апісання "
-"тыпу MIME, напрыклад, апісанне тыпу MIME \"x-kword\" - проста 'Дакумент "
-"KWord';</li> <li>Значка для паказвання файлаў гэтага тыпу MIME, па якой вы "
-"можаце хутка вызначыць тып файла ў Konqueror (хаця б тыя тыпы, якія вы часта "
-"выкарыстоўваеце);</li> <li>спіса праграмаў, якія здольны адкрываць файлы "
-"гэтага тыпу MIME -- калі некалькі праграмаў могуць адкрываць гэтыя файлы, "
-"выкарыстоўваецца прыярытэтызацыя.</li></ul> Вы можаце быць здзіўленымі тым, "
-"што некаторыя тыпы MIME не маюць вызначаных для іх шаблонаў назваў файлаў; у "
-"гэтым выпадку Konqueror спрабуе вызначыць тып MIME па змесце файла."
-
-#: filetypesview.cpp:73
+#: filetypesview.cpp:52
 #, fuzzy, kde-format
 #| msgid "F&ind filename pattern:"
 msgid "Search for file type or filename pattern..."
 msgstr "Ш&укаць шаблон назваў файлаў:"
 
-#: filetypesview.cpp:79
+#: filetypesview.cpp:58
 #, fuzzy, kde-format
 #| msgid ""
 #| "Enter a part of a filename pattern. Only file types with a matching file "
@@ -272,12 +217,12 @@ msgstr ""
 "Увядзіце частку шаблону назвы файла. У гэтым спісе будуць паказвацца толькі "
 "тыпы файлаў з такім жа шаблонам."
 
-#: filetypesview.cpp:87
+#: filetypesview.cpp:66
 #, kde-format
 msgid "Known Types"
 msgstr "Вядомыя тыпы"
 
-#: filetypesview.cpp:93
+#: filetypesview.cpp:72
 #, kde-format
 msgid ""
 "Here you can see a hierarchical list of the file types which are known on "
@@ -290,33 +235,33 @@ msgstr ""
 "згарнуць яе. Выберыце тып файлаў (напр. text/html для файлаў HTML), каб "
 "праглядзець інфармацыю ці змяніць тып файлаў."
 
-#: filetypesview.cpp:107
+#: filetypesview.cpp:86
 #, kde-format
 msgid "Click here to add a new file type."
 msgstr "Націсніце тут, каб дадаць новы тып файлаў."
 
-#: filetypesview.cpp:109 filetypesview.cpp:375
+#: filetypesview.cpp:88 filetypesview.cpp:354
 #, kde-format
 msgid "&Remove"
 msgstr "&Выдаліць"
 
-#: filetypesview.cpp:133
+#: filetypesview.cpp:112
 #, kde-format
 msgid "Select a file type by name or by extension"
 msgstr "Выберыце тып файлаў па назве ці па пашырэнні"
 
-#: filetypesview.cpp:368
+#: filetypesview.cpp:347
 #, fuzzy, kde-format
 #| msgid "&Remove"
 msgid "&Revert"
 msgstr "&Выдаліць"
 
-#: filetypesview.cpp:369
+#: filetypesview.cpp:348
 #, kde-format
 msgid "Revert this file type to its initial system-wide definition"
 msgstr ""
 
-#: filetypesview.cpp:371
+#: filetypesview.cpp:350
 #, kde-format
 msgid ""
 "Click here to revert this file type to its initial system-wide definition, "
@@ -326,12 +271,12 @@ msgid ""
 "from file contents can still end up using them)."
 msgstr ""
 
-#: filetypesview.cpp:376
+#: filetypesview.cpp:355
 #, kde-format
 msgid "Delete this file type definition completely"
 msgstr ""
 
-#: filetypesview.cpp:378
+#: filetypesview.cpp:357
 #, kde-format
 msgid ""
 "Click here to delete this file type definition completely. This is only "
@@ -569,6 +514,62 @@ msgid ""
 "category and you type 'custom' here, the file type 'image/custom' will be "
 "created."
 msgstr ""
+
+#, fuzzy
+#~| msgid ""
+#~| "<p><h1>File Associations</h1> This module allows you to choose which "
+#~| "applications are associated with a given type of file. File types are "
+#~| "also referred to MIME types (MIME is an acronym which stands for "
+#~| "\"Multipurpose Internet Mail Extensions\".)</p><p> A file association "
+#~| "consists of the following: <ul><li>Rules for determining the MIME-type "
+#~| "of a file, for example the filename pattern *.kwd, which means 'all "
+#~| "files with names that end in .kwd', is associated with the MIME type \"x-"
+#~| "kword\";</li> <li>A short description of the MIME-type, for example the "
+#~| "description of the MIME type \"x-kword\" is simply 'KWord document';</"
+#~| "li> <li>An icon to be used for displaying files of the given MIME-type, "
+#~| "so that you can easily identify the type of file in, say, a Konqueror "
+#~| "view (at least for the types you use often);</li> <li>A list of the "
+#~| "applications which can be used to open files of the given MIME-type -- "
+#~| "if more than one application can be used then the list is ordered by "
+#~| "priority.</li></ul> You may be surprised to find that some MIME types "
+#~| "have no associated filename patterns; in these cases, Konqueror is able "
+#~| "to determine the MIME-type by directly examining the contents of the "
+#~| "file.</p>"
+#~ msgid ""
+#~ "<p><h1>File Associations</h1> This module allows you to choose which "
+#~ "applications are associated with a given type of file. File types are "
+#~ "also referred to as MIME types (MIME is an acronym which stands for "
+#~ "\"Multipurpose Internet Mail Extensions\").</p><p> A file association "
+#~ "consists of the following: <ul><li>Rules for determining the MIME-type of "
+#~ "a file, for example the filename pattern *.png, which means 'all files "
+#~ "with names that end in .png', is associated with the MIME type \"image/png"
+#~ "\";</li> <li>A short description of the MIME-type, for example the "
+#~ "description of the MIME type \"image/png\" is simply 'PNG image';</li> "
+#~ "<li>An icon to be used for displaying files of the given MIME-type, so "
+#~ "that you can easily identify the type of file in a file manager or file-"
+#~ "selection dialog (at least for the types you use often);</li> <li>A list "
+#~ "of the applications which can be used to open files of the given MIME-"
+#~ "type -- if more than one application can be used then the list is ordered "
+#~ "by priority.</li></ul> You may be surprised to find that some MIME types "
+#~ "have no associated filename patterns; in these cases, KDE is able to "
+#~ "determine the MIME-type by directly examining the contents of the file.</"
+#~ "p>"
+#~ msgstr ""
+#~ "<h1>Асацыяцыі файлаў</h1> Гэты модуль дазваляе выбіраць праграмы, "
+#~ "звязаныя з тыпамі файлаў. Тыпы файлаў таксама называюць \"тыпамі MIME"
+#~ "\" (MIME - абрэвіятура ад \"Multipurpose Internet Mail Extensions\".)<p> "
+#~ "Асацыяцыя файлаў складаецца з: <ul><li>правілаў вызначэння тыпу MIME "
+#~ "файла, напрыклад шаблон назвы файла *.kwd, што азначае 'усе файлы з "
+#~ "назвамі, якія сканчваюцца на .kwd', асацыююцца з тыпам MIME \"x-kword\";</"
+#~ "li> <li>кароткага апісання тыпу MIME, напрыклад, апісанне тыпу MIME \"x-"
+#~ "kword\" - проста 'Дакумент KWord';</li> <li>Значка для паказвання файлаў "
+#~ "гэтага тыпу MIME, па якой вы можаце хутка вызначыць тып файла ў Konqueror "
+#~ "(хаця б тыя тыпы, якія вы часта выкарыстоўваеце);</li> <li>спіса "
+#~ "праграмаў, якія здольны адкрываць файлы гэтага тыпу MIME -- калі некалькі "
+#~ "праграмаў могуць адкрываць гэтыя файлы, выкарыстоўваецца прыярытэтызацыя."
+#~ "</li></ul> Вы можаце быць здзіўленымі тым, што некаторыя тыпы MIME не "
+#~ "маюць вызначаных для іх шаблонаў назваў файлаў; у гэтым выпадку Konqueror "
+#~ "спрабуе вызначыць тып MIME па змесце файла."
 
 #~ msgid "KEditFileType"
 #~ msgstr "Рэдактар тыпаў"

@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: filetypes\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-03-05 03:09+0000\n"
+"POT-Creation-Date: 2023-03-25 02:10+0000\n"
 "PO-Revision-Date: 2009-12-30 08:58+0530\n"
 "Last-Translator: Danishka Navin <danishka@gmail.com>\n"
 "Language-Team: Sinhala <danishka@gmail.com>\n"
@@ -87,7 +87,7 @@ msgstr ""
 "උදාහරණයක් ලෙස, *.txt රටාව 'text/plain' ගොනු වර්ගයට අදාල වේ; '.txt' ගෙන් අවසන් වන "
 "සියළු ගොනු සරල පෙළ ගොනු ලෙස හඳුනාගැනේ."
 
-#: filetypedetails.cpp:87 filetypesview.cpp:102 kservicelistwidget.cpp:110
+#: filetypedetails.cpp:87 filetypesview.cpp:81 kservicelistwidget.cpp:110
 #, kde-format
 msgid "Add..."
 msgstr "එක් කරන්න..."
@@ -187,48 +187,13 @@ msgstr "%1 ගොනු වර්‍ගය"
 msgid "Use settings for '%1' group"
 msgstr "'%1' කණඩායම සඳහා සැකසුම් භාවිත කරන්න"
 
-#: filetypesview.cpp:43
-#, kde-format
-msgid ""
-"<p><h1>File Associations</h1> This module allows you to choose which "
-"applications are associated with a given type of file. File types are also "
-"referred to as MIME types (MIME is an acronym which stands for "
-"\"Multipurpose Internet Mail Extensions\").</p><p> A file association "
-"consists of the following: <ul><li>Rules for determining the MIME-type of a "
-"file, for example the filename pattern *.png, which means 'all files with "
-"names that end in .png', is associated with the MIME type \"image/png\";</"
-"li> <li>A short description of the MIME-type, for example the description of "
-"the MIME type \"image/png\" is simply 'PNG image';</li> <li>An icon to be "
-"used for displaying files of the given MIME-type, so that you can easily "
-"identify the type of file in a file manager or file-selection dialog (at "
-"least for the types you use often);</li> <li>A list of the applications "
-"which can be used to open files of the given MIME-type -- if more than one "
-"application can be used then the list is ordered by priority.</li></ul> You "
-"may be surprised to find that some MIME types have no associated filename "
-"patterns; in these cases, KDE is able to determine the MIME-type by directly "
-"examining the contents of the file.</p>"
-msgstr ""
-"<p><h1>ගොනු සහයෝගීතාව</h1> මෙම මොඩියුලය ගෙනලද ගොනු වර්‍ගය කුමන යෙදුමක් සමඟ සහයෝගී "
-"වන්නේදැයි තෝරාගැනීමට ඉඩදේ ගොනු වර්‍ග MIME වර්‍ග ලෙසද හැඳින් වේ (MIME යනු \"බහුකාර්‍යය "
-"අන්තර්ජාල තැපැල් දිගු\" වේ).</p><p> ගොනු සහයෝගීතාවේ පහත දෑ අඩංගු වේ: <ul><li>ගොනුවේ "
-"MIME-වර්‍ගය හඳුනාගැනීම සඳහා නීති උදාහරණයක් ලෙස *.png ගොනු නාම රටාව, එනම් '.png දිගුවෙන් "
-"අවසන් වන සියළුම ගොනු වල MIME වර්‍ගය \"පින්තූර/png\" වේ;</li> <li>MIME-වර්‍ගයේ කෙටි "
-"හැඳින්වීමක්, උදාහරණයක් ලෙස \"පින්තූර/png\" MIME වර්‍ගයක විස්තරය  'PNG පින්තූරය' කි;</li> "
-"<li>දෙනලද MIME-වර්‍ගයේ ගොනු පෙන්වීම සඳහා භාවිත වන අයිකනය, එම නිසා ඔබට ගොනු කළමනාකරුගේදී "
-"හෝ  ගොනු තේරීම් සංවාද වලදී පහසුවෙන් ගොනු වර්‍ගය හඳුනා ගත හැක (අවම වශයෙන් ඔබ නිතර භාවිත "
-"කරන ගොනු වර්‍ග වත්);</li> <li>දෙනලද MIME-වර්‍ගයේ ගොනු විවෘත කිරීමට භාවිත කල හැකි යෙදුම් "
-"ලැයිස්තුව-- එක් යෙදුමකට වඩා එකවර තෝරාගත හැකි අතර එවිට ලැයිස්තුව ප්‍රමුඛතා පිළිවෙලට පෙළගැසේ."
-"</li></ul> ඇතැම් MIME වර්‍ග ගොනු නාම රටා සමඟ කිසිඳු සහයෝගයක් නොදක්වන බව ඔබ පුදුමයට "
-"පත්කරනු ඇත; එවන් සවස්ථා වලදී, KDE හට ගොනු අන්තර්‍ගතය පිරික්සා ඍජුව MIME-වර්‍ගය හඳුනාගත හැක.</"
-"p>"
-
-#: filetypesview.cpp:73
+#: filetypesview.cpp:52
 #, fuzzy, kde-format
 #| msgid "Find file type or filename pattern"
 msgid "Search for file type or filename pattern..."
 msgstr "ගොනු වර්‍ග හෝ ගොනු නාම රටා සොයන්න"
 
-#: filetypesview.cpp:79
+#: filetypesview.cpp:58
 #, kde-format
 msgid ""
 "Enter a part of a filename pattern, and only file types with a matching file "
@@ -238,12 +203,12 @@ msgstr ""
 "ගොනු නාම රටාවේ කොටසක් එක් කරන්න, ගොණු රටාවට ගැලපෙන ගොණු වර්‍ග පමණක් පහත ලැයිස්තුවේ "
 "දැක්වේ. ඊට අමතරව, ලැයිස්තුගත වන විට ගොණු වර්‍ගයේ නමේ කොටසක් ඇතුළත් කරන්න."
 
-#: filetypesview.cpp:87
+#: filetypesview.cpp:66
 #, kde-format
 msgid "Known Types"
 msgstr "දන්නා වර්‍ග"
 
-#: filetypesview.cpp:93
+#: filetypesview.cpp:72
 #, kde-format
 msgid ""
 "Here you can see a hierarchical list of the file types which are known on "
@@ -256,32 +221,32 @@ msgstr ""
 "ගොනු සඳහා පෙළ/html හෝ දසුන/සකසන්න එම ගොනු වර්‍ගයට අදාල තොරතුරු දකුණේ ඇති පාලක මගින් "
 "සකසන්න."
 
-#: filetypesview.cpp:107
+#: filetypesview.cpp:86
 #, kde-format
 msgid "Click here to add a new file type."
 msgstr "නව ගොනු වර්‍ගයක් එක් කිරීම සඳහා මෙහි ක්ලික් කරන්න"
 
-#: filetypesview.cpp:109 filetypesview.cpp:375
+#: filetypesview.cpp:88 filetypesview.cpp:354
 #, kde-format
 msgid "&Remove"
 msgstr "ඉවත් කරන්න (&R)"
 
-#: filetypesview.cpp:133
+#: filetypesview.cpp:112
 #, kde-format
 msgid "Select a file type by name or by extension"
 msgstr "නාමයෙන් හෝ දිගුවෙන් ගොණු වර්‍ගයක් තෝරන්න"
 
-#: filetypesview.cpp:368
+#: filetypesview.cpp:347
 #, kde-format
 msgid "&Revert"
 msgstr "ආපසු යන්න (&R)"
 
-#: filetypesview.cpp:369
+#: filetypesview.cpp:348
 #, kde-format
 msgid "Revert this file type to its initial system-wide definition"
 msgstr "මෙම ගොනු වර්‍ගය එහි තනි පද්ධති-ව්‍යාප්ත හැඳින්වීමට ආපසු ගෙනයන්න"
 
-#: filetypesview.cpp:371
+#: filetypesview.cpp:350
 #, kde-format
 msgid ""
 "Click here to revert this file type to its initial system-wide definition, "
@@ -295,12 +260,12 @@ msgstr ""
 "කෙසේවුවත් ඔබට ඒවා භාවිතය අවම කිරීම සඳහා ඒවායේ රටා ලැයිස්තුව හිස් කල හැක (එහෙත් ගොනු අන්තර්‍"
 "ගතය මගින් ගොනු වර්‍ගය හඳුනාගැනීම් තවමත් භාවිතයේ තිබිය හැක)."
 
-#: filetypesview.cpp:376
+#: filetypesview.cpp:355
 #, kde-format
 msgid "Delete this file type definition completely"
 msgstr "මෙම ගොනු වර්ග හැදින්වීම සම්පූර්ණයෙන් මකාදමන්න"
 
-#: filetypesview.cpp:378
+#: filetypesview.cpp:357
 #, kde-format
 msgid ""
 "Click here to delete this file type definition completely. This is only "
@@ -534,6 +499,40 @@ msgid ""
 msgstr ""
 "ගොනු වර්ගයේ නාමය ලියන්න, උදාහරණයක් ලෙස ඔබ 'පිලිඹිබු' යන්න ප්‍රවර්ගය ලෙස තෝරාගත්තේ නම් හා "
 "මෙහි 'රුචි' ලෙස ලියුවේනම්, නව ගොනු වර්ගය 'පිළිඹිබු/රුචි' ලෙස සෑදේ."
+
+#~ msgid ""
+#~ "<p><h1>File Associations</h1> This module allows you to choose which "
+#~ "applications are associated with a given type of file. File types are "
+#~ "also referred to as MIME types (MIME is an acronym which stands for "
+#~ "\"Multipurpose Internet Mail Extensions\").</p><p> A file association "
+#~ "consists of the following: <ul><li>Rules for determining the MIME-type of "
+#~ "a file, for example the filename pattern *.png, which means 'all files "
+#~ "with names that end in .png', is associated with the MIME type \"image/png"
+#~ "\";</li> <li>A short description of the MIME-type, for example the "
+#~ "description of the MIME type \"image/png\" is simply 'PNG image';</li> "
+#~ "<li>An icon to be used for displaying files of the given MIME-type, so "
+#~ "that you can easily identify the type of file in a file manager or file-"
+#~ "selection dialog (at least for the types you use often);</li> <li>A list "
+#~ "of the applications which can be used to open files of the given MIME-"
+#~ "type -- if more than one application can be used then the list is ordered "
+#~ "by priority.</li></ul> You may be surprised to find that some MIME types "
+#~ "have no associated filename patterns; in these cases, KDE is able to "
+#~ "determine the MIME-type by directly examining the contents of the file.</"
+#~ "p>"
+#~ msgstr ""
+#~ "<p><h1>ගොනු සහයෝගීතාව</h1> මෙම මොඩියුලය ගෙනලද ගොනු වර්‍ගය කුමන යෙදුමක් සමඟ සහයෝගී "
+#~ "වන්නේදැයි තෝරාගැනීමට ඉඩදේ ගොනු වර්‍ග MIME වර්‍ග ලෙසද හැඳින් වේ (MIME යනු \"බහුකාර්‍යය "
+#~ "අන්තර්ජාල තැපැල් දිගු\" වේ).</p><p> ගොනු සහයෝගීතාවේ පහත දෑ අඩංගු වේ: "
+#~ "<ul><li>ගොනුවේ MIME-වර්‍ගය හඳුනාගැනීම සඳහා නීති උදාහරණයක් ලෙස *.png ගොනු නාම රටාව, "
+#~ "එනම් '.png දිගුවෙන් අවසන් වන සියළුම ගොනු වල MIME වර්‍ගය \"පින්තූර/png\" වේ;</li> "
+#~ "<li>MIME-වර්‍ගයේ කෙටි හැඳින්වීමක්, උදාහරණයක් ලෙස \"පින්තූර/png\" MIME වර්‍ගයක විස්තරය  "
+#~ "'PNG පින්තූරය' කි;</li> <li>දෙනලද MIME-වර්‍ගයේ ගොනු පෙන්වීම සඳහා භාවිත වන අයිකනය, එම "
+#~ "නිසා ඔබට ගොනු කළමනාකරුගේදී හෝ  ගොනු තේරීම් සංවාද වලදී පහසුවෙන් ගොනු වර්‍ගය හඳුනා ගත හැක "
+#~ "(අවම වශයෙන් ඔබ නිතර භාවිත කරන ගොනු වර්‍ග වත්);</li> <li>දෙනලද MIME-වර්‍ගයේ ගොනු "
+#~ "විවෘත කිරීමට භාවිත කල හැකි යෙදුම් ලැයිස්තුව-- එක් යෙදුමකට වඩා එකවර තෝරාගත හැකි අතර එවිට "
+#~ "ලැයිස්තුව ප්‍රමුඛතා පිළිවෙලට පෙළගැසේ.</li></ul> ඇතැම් MIME වර්‍ග ගොනු නාම රටා සමඟ කිසිඳු "
+#~ "සහයෝගයක් නොදක්වන බව ඔබ පුදුමයට පත්කරනු ඇත; එවන් සවස්ථා වලදී, KDE හට ගොනු අන්තර්‍ගතය "
+#~ "පිරික්සා ඍජුව MIME-වර්‍ගය හඳුනාගත හැක.</p>"
 
 #~ msgid "KEditFileType"
 #~ msgstr "KEditFileType"

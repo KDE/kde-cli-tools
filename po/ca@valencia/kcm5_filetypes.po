@@ -12,7 +12,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kde-cli-tools\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-03-05 03:09+0000\n"
+"POT-Creation-Date: 2023-03-25 02:10+0000\n"
 "PO-Revision-Date: 2022-09-07 19:42+0200\n"
 "Last-Translator: Josep M. Ferrer <txemaq@gmail.com>\n"
 "Language-Team: Catalan <kde-i18n-ca@kde.org>\n"
@@ -92,7 +92,7 @@ msgstr ""
 "associat amb el tipus de fitxer «text/plain», de manera que tots els fitxers "
 "que s'acaben en «.txt» seran reconeguts com a fitxers de text net."
 
-#: filetypedetails.cpp:87 filetypesview.cpp:102 kservicelistwidget.cpp:110
+#: filetypedetails.cpp:87 filetypesview.cpp:81 kservicelistwidget.cpp:110
 #, kde-format
 msgid "Add..."
 msgstr "Afig..."
@@ -186,52 +186,12 @@ msgstr "Tipus de fitxer %1"
 msgid "Use settings for '%1' group"
 msgstr "Utilitza la configuració per al grup «%1»"
 
-#: filetypesview.cpp:43
-#, kde-format
-msgid ""
-"<p><h1>File Associations</h1> This module allows you to choose which "
-"applications are associated with a given type of file. File types are also "
-"referred to as MIME types (MIME is an acronym which stands for "
-"\"Multipurpose Internet Mail Extensions\").</p><p> A file association "
-"consists of the following: <ul><li>Rules for determining the MIME-type of a "
-"file, for example the filename pattern *.png, which means 'all files with "
-"names that end in .png', is associated with the MIME type \"image/png\";</"
-"li> <li>A short description of the MIME-type, for example the description of "
-"the MIME type \"image/png\" is simply 'PNG image';</li> <li>An icon to be "
-"used for displaying files of the given MIME-type, so that you can easily "
-"identify the type of file in a file manager or file-selection dialog (at "
-"least for the types you use often);</li> <li>A list of the applications "
-"which can be used to open files of the given MIME-type -- if more than one "
-"application can be used then the list is ordered by priority.</li></ul> You "
-"may be surprised to find that some MIME types have no associated filename "
-"patterns; in these cases, KDE is able to determine the MIME-type by directly "
-"examining the contents of the file.</p>"
-msgstr ""
-"<p><h1>Associacions de fitxer</h1> Este mòdul permet escollir quines "
-"aplicacions s'associen amb un determinat tipus de fitxer. Els tipus de "
-"fitxer també s'anomenen tipus MIME (MIME és un acrònim que significa "
-"«Multipurpose Internet Mail Extensions»).</p><p> Una associació de fitxer "
-"inclou el següent: <ul><li>Regles per a determinar el tipus MIME d'un "
-"fitxer. Per exemple, el patró de fitxer *.png, que significa: «tots els "
-"fitxers amb noms que acaben en .png» s'associen amb el tipus MIME «image/"
-"png»;</li> <li> Una descripció curta del tipus MIME. Per exemple, la "
-"descripció del tipus MIME «image/png» és senzillament «Imatge PNG»;</li> "
-"<li>Una icona que s'utilitzarà per a mostrar fitxers del tipus MIME, de "
-"manera que es puga identificar amb facilitat el tipus del fitxer en un "
-"gestor de fitxers o en un diàleg de selecció de fitxers (almenys per als "
-"tipus que utilitzeu sovint);</li> <li>Una llista de les aplicacions que "
-"poden utilitzar-se per a obrir fitxers del tipus MIME. Si es pot utilitzar "
-"més d'una aplicació, llavors la llista s'ordena per prioritat.</li></ul> "
-"Potser vos sorprendrà saber que alguns tipus MIME no tenen patrons de fitxer "
-"associats. En estos casos, KDE pot determinar el tipus MIME examinant "
-"directament el contingut del fitxer.</p>"
-
-#: filetypesview.cpp:73
+#: filetypesview.cpp:52
 #, kde-format
 msgid "Search for file type or filename pattern..."
 msgstr "Busca pel tipus de fitxer o pel patró del nom de fitxer..."
 
-#: filetypesview.cpp:79
+#: filetypesview.cpp:58
 #, kde-format
 msgid ""
 "Enter a part of a filename pattern, and only file types with a matching file "
@@ -243,12 +203,12 @@ msgstr ""
 "alternativa, introduïu una part del nom del tipus de fitxer tal com apareix "
 "en la llista."
 
-#: filetypesview.cpp:87
+#: filetypesview.cpp:66
 #, kde-format
 msgid "Known Types"
 msgstr "Tipus coneguts"
 
-#: filetypesview.cpp:93
+#: filetypesview.cpp:72
 #, kde-format
 msgid ""
 "Here you can see a hierarchical list of the file types which are known on "
@@ -262,33 +222,33 @@ msgstr ""
 "per a fitxers HTML) per a veure o editar la informació d'este tipus de "
 "fitxer utilitzant els controls de la dreta."
 
-#: filetypesview.cpp:107
+#: filetypesview.cpp:86
 #, kde-format
 msgid "Click here to add a new file type."
 msgstr "Feu clic ací per a afegir un tipus de fitxer nou."
 
-#: filetypesview.cpp:109 filetypesview.cpp:375
+#: filetypesview.cpp:88 filetypesview.cpp:354
 #, kde-format
 msgid "&Remove"
 msgstr "&Elimina"
 
-#: filetypesview.cpp:133
+#: filetypesview.cpp:112
 #, kde-format
 msgid "Select a file type by name or by extension"
 msgstr "Selecciona un tipus de fitxer per nom o per extensió"
 
-#: filetypesview.cpp:368
+#: filetypesview.cpp:347
 #, kde-format
 msgid "&Revert"
 msgstr "Re&vertix"
 
-#: filetypesview.cpp:369
+#: filetypesview.cpp:348
 #, kde-format
 msgid "Revert this file type to its initial system-wide definition"
 msgstr ""
 "Revertix este tipus de fitxer a la seua definició inicial global del sistema"
 
-#: filetypesview.cpp:371
+#: filetypesview.cpp:350
 #, kde-format
 msgid ""
 "Click here to revert this file type to its initial system-wide definition, "
@@ -305,12 +265,12 @@ msgstr ""
 "tipus de fitxer a partir del contingut del fitxer encara els pot acabar "
 "utilitzant)."
 
-#: filetypesview.cpp:376
+#: filetypesview.cpp:355
 #, kde-format
 msgid "Delete this file type definition completely"
 msgstr "Suprimix completament esta definició de tipus de fitxer"
 
-#: filetypesview.cpp:378
+#: filetypesview.cpp:357
 #, kde-format
 msgid ""
 "Click here to delete this file type definition completely. This is only "
@@ -551,3 +511,42 @@ msgstr ""
 "Teclegeu el nom del tipus de fitxer. Per exemple, si seleccioneu la "
 "categoria «image» i ací introduïu «custom», es crearà el tipus de fitxer "
 "«image/custom»."
+
+#~ msgid ""
+#~ "<p><h1>File Associations</h1> This module allows you to choose which "
+#~ "applications are associated with a given type of file. File types are "
+#~ "also referred to as MIME types (MIME is an acronym which stands for "
+#~ "\"Multipurpose Internet Mail Extensions\").</p><p> A file association "
+#~ "consists of the following: <ul><li>Rules for determining the MIME-type of "
+#~ "a file, for example the filename pattern *.png, which means 'all files "
+#~ "with names that end in .png', is associated with the MIME type \"image/png"
+#~ "\";</li> <li>A short description of the MIME-type, for example the "
+#~ "description of the MIME type \"image/png\" is simply 'PNG image';</li> "
+#~ "<li>An icon to be used for displaying files of the given MIME-type, so "
+#~ "that you can easily identify the type of file in a file manager or file-"
+#~ "selection dialog (at least for the types you use often);</li> <li>A list "
+#~ "of the applications which can be used to open files of the given MIME-"
+#~ "type -- if more than one application can be used then the list is ordered "
+#~ "by priority.</li></ul> You may be surprised to find that some MIME types "
+#~ "have no associated filename patterns; in these cases, KDE is able to "
+#~ "determine the MIME-type by directly examining the contents of the file.</"
+#~ "p>"
+#~ msgstr ""
+#~ "<p><h1>Associacions de fitxer</h1> Este mòdul permet escollir quines "
+#~ "aplicacions s'associen amb un determinat tipus de fitxer. Els tipus de "
+#~ "fitxer també s'anomenen tipus MIME (MIME és un acrònim que significa "
+#~ "«Multipurpose Internet Mail Extensions»).</p><p> Una associació de fitxer "
+#~ "inclou el següent: <ul><li>Regles per a determinar el tipus MIME d'un "
+#~ "fitxer. Per exemple, el patró de fitxer *.png, que significa: «tots els "
+#~ "fitxers amb noms que acaben en .png» s'associen amb el tipus MIME «image/"
+#~ "png»;</li> <li> Una descripció curta del tipus MIME. Per exemple, la "
+#~ "descripció del tipus MIME «image/png» és senzillament «Imatge PNG»;</li> "
+#~ "<li>Una icona que s'utilitzarà per a mostrar fitxers del tipus MIME, de "
+#~ "manera que es puga identificar amb facilitat el tipus del fitxer en un "
+#~ "gestor de fitxers o en un diàleg de selecció de fitxers (almenys per als "
+#~ "tipus que utilitzeu sovint);</li> <li>Una llista de les aplicacions que "
+#~ "poden utilitzar-se per a obrir fitxers del tipus MIME. Si es pot "
+#~ "utilitzar més d'una aplicació, llavors la llista s'ordena per prioritat.</"
+#~ "li></ul> Potser vos sorprendrà saber que alguns tipus MIME no tenen "
+#~ "patrons de fitxer associats. En estos casos, KDE pot determinar el tipus "
+#~ "MIME examinant directament el contingut del fitxer.</p>"
