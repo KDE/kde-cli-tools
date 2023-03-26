@@ -163,7 +163,7 @@ static int startApp(QCommandLineParser &p)
 {
     // Stop daemon and exit?
     if (p.isSet(QStringLiteral("s"))) {
-        KDEsuClient client;
+        KDESu::Client client;
         if (client.ping() == -1) {
             qCCritical(category) << "Daemon not running -- nothing to stop\n";
             p.showHelp(1);
@@ -268,7 +268,7 @@ static int startApp(QCommandLineParser &p)
     // Check for daemon and start if necessary
     bool just_started = false;
     bool have_daemon = true;
-    KDEsuClient client;
+    KDESu::Client client;
     if (client.ping() == -1) {
         if (client.startServer() == -1) {
             qCWarning(category) << "Could not start daemon, reduced functionality.\n";
