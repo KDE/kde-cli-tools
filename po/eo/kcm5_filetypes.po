@@ -1,6 +1,7 @@
 # translation of kcm5_filetypes.pot to esperanto
 # e-aj mesaĝoj de "kde-cli-tools"
 # Copyright (C) 1999, 2003, 2004, 2007 Free Software Foundation, Inc.
+# This file is distributed under the same license as the kde-cli-tools package.
 # Wolfram Diestel <wolfram@steloj.de>, 1999.
 # Heiko Evermann <heiko@evermann.de>, 2003.
 # Matthias Peick <matthias@peick.de>, 2004.
@@ -13,7 +14,7 @@ msgstr ""
 "Project-Id-Version: filetypes\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2023-03-25 02:10+0000\n"
-"PO-Revision-Date: 2023-01-07 01:00+0100\n"
+"PO-Revision-Date: 2023-03-26 11:37+0100\n"
 "Last-Translator: Oliver Kellogg <okellogg@users.sourceforge.net>\n"
 "Language-Team: esperanto <kde-i18n-eo@kde.org>\n"
 "Language: eo\n"
@@ -29,19 +30,19 @@ msgctxt "NAME OF TRANSLATORS"
 msgid "Your names"
 msgstr ""
 "Wolfram Diestel,Steffen Pietsch,Matthias Peick,Pierre-Marie Pédrot, Axel "
-"Rousseau"
+"Rousseau, Oliver Kellogg"
 
 #, kde-format
 msgctxt "EMAIL OF TRANSLATORS"
 msgid "Your emails"
 msgstr ""
 "wolfram@steloj.de,Steffen.Pietsch@BerlinOnline.de,matthias@peick.de,"
-"pedrotpmx@wanadoo.fr,axel@esperanto-jeunes.org"
+"pedrotpmx@wanadoo.fr,axel@esperanto-jeunes.org,okellogg@users.sourceforge.net"
 
 #: filegroupdetails.cpp:22
 #, kde-format
 msgid "Left Click Action (only for Konqueror file manager)"
-msgstr ""
+msgstr "Maldekstra Klak-Ago (nur por Konqueror-dosiermastrumilo)"
 
 #: filegroupdetails.cpp:26 filetypedetails.cpp:133
 #, kde-format
@@ -503,39 +504,3 @@ msgstr ""
 "Entajpu la nomon de la dosiertipo. Ekzemple, se vi elektas 'image' kiel "
 "kategorio kaj entajpas 'custom' ĉi-tie, la dosiertipo 'image/custom' estos "
 "kreita."
-
-#~ msgid ""
-#~ "<p><h1>File Associations</h1> This module allows you to choose which "
-#~ "applications are associated with a given type of file. File types are "
-#~ "also referred to as MIME types (MIME is an acronym which stands for "
-#~ "\"Multipurpose Internet Mail Extensions\").</p><p> A file association "
-#~ "consists of the following: <ul><li>Rules for determining the MIME-type of "
-#~ "a file, for example the filename pattern *.png, which means 'all files "
-#~ "with names that end in .png', is associated with the MIME type \"image/png"
-#~ "\";</li> <li>A short description of the MIME-type, for example the "
-#~ "description of the MIME type \"image/png\" is simply 'PNG image';</li> "
-#~ "<li>An icon to be used for displaying files of the given MIME-type, so "
-#~ "that you can easily identify the type of file in a file manager or file-"
-#~ "selection dialog (at least for the types you use often);</li> <li>A list "
-#~ "of the applications which can be used to open files of the given MIME-"
-#~ "type -- if more than one application can be used then the list is ordered "
-#~ "by priority.</li></ul> You may be surprised to find that some MIME types "
-#~ "have no associated filename patterns; in these cases, KDE is able to "
-#~ "determine the MIME-type by directly examining the contents of the file.</"
-#~ "p>"
-#~ msgstr ""
-#~ "<p><h1>Dosiertipregistro</h1> Tiu ĉi modulo permesas al vi registri "
-#~ "aplikaĵojn por dosiertipoj. Dosiertipoj ankaŭ estas ligitaj al MIME-tipoj "
-#~ "(MIME signifas \"Multipurpose Internet Mail Extensions\".)</p><p> "
-#~ "Registrero konsistas el la sekva: <ul><li>Reguloj por eltrovi la tipon de "
-#~ "dosiero. Ekzemple la ŝablono *.kwd, kiu signifas 'ĉiuj dosieroj, kies "
-#~ "nomo finiĝas je .kwd', apartenas al la tipo \"x-kword\".</li> "
-#~ "<li>Mallonga priskribo de la tipo. (Ekzemple 'KVorto-dokumento' por la "
-#~ "tipo \"x-kword\")</li> <li>Piktogramo uzata por prezenti dosierojn de tiu "
-#~ "tipo.Tiel vi facile povas vidi la tipon de dosiero ekz. en "
-#~ "dosierujorigardo de Konkeranto (minimume por la tipoj, kiuj vi uzas ofte)."
-#~ "</li> <li>Listo de aplikaĵoj per kiu vi povas malfermi dosieron de tiu "
-#~ "tipo. Se oni povas uzi pli multajn ol unu, la listo estas ordigata "
-#~ "prioritate.</li> </ul> Ne miru, ke kelkaj tipoj ne havas ŝablonon. "
-#~ "Tiukaze Konkeranto povas eltrovi la tipon per ekzameno de la dosierenhavo."
-#~ "</p>"

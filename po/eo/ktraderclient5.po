@@ -1,16 +1,17 @@
 # translation of ktraderclient.po to Esperanto
-# Copyright (C) YEAR This_file_is_part_of_KDE
-# This file is distributed under the same license as the PACKAGE package.
-#
+# Copyright (C) 2014 Free Software Foundation, Inc.
+# This file is distributed under the same license as the kde-cli-tools package.
 # Cindy McKee <cfmckee@gmail.com>, 2007.
 # Michael Moroni <michael.moroni@mailoo.org>, 2012.
+# Oliver Kellogg <okellogg@users.sourceforge.net>, 2023.
+#
 msgid ""
 msgstr ""
 "Project-Id-Version: ktraderclient\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2021-03-18 02:47+0100\n"
-"PO-Revision-Date: 2012-05-23 14:39+0200\n"
-"Last-Translator: Michael Moroni <michael.moroni@mailoo.org>\n"
+"PO-Revision-Date: 2023-03-26 11:37+0100\n"
+"Last-Translator: Oliver Kellogg <okellogg@users.sourceforge.net>\n"
 "Language-Team: Esperanto <kde-i18n-doc@kde.org>\n"
 "Language: eo\n"
 "MIME-Version: 1.0\n"
@@ -22,12 +23,12 @@ msgstr ""
 #, kde-format
 msgctxt "NAME OF TRANSLATORS"
 msgid "Your names"
-msgstr ""
+msgstr "Oliver Kellogg"
 
 #, kde-format
 msgctxt "EMAIL OF TRANSLATORS"
 msgid "Your emails"
-msgstr ""
+msgstr "okellogg@users.sourceforge.net"
 
 #: ktraderclient.cpp:22
 #, kde-format
@@ -37,7 +38,7 @@ msgstr "KTraderClient"
 #: ktraderclient.cpp:23
 #, kde-format
 msgid "David Faure"
-msgstr ""
+msgstr "David Faure"
 
 #: ktraderclient.cpp:25
 #, kde-format
@@ -47,7 +48,7 @@ msgstr "Komandlinia ilo por peti la sistemon de komercilo por KDE"
 #: ktraderclient.cpp:30
 #, kde-format
 msgid "A MIME type"
-msgstr ""
+msgstr "MIME-tipo"
 
 #: ktraderclient.cpp:32
 #, kde-format
@@ -62,7 +63,4 @@ msgstr "Limigo esprimita en la petolingvo de komercilo"
 #: ktraderclient.cpp:38
 #, kde-format
 msgid "Output only paths to desktop files"
-msgstr ""
-
-#~ msgid "A mimetype"
-#~ msgstr "MIME-tipo"
+msgstr "Eligi nur vojojn al labortablaj dosieroj"

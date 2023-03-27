@@ -13,7 +13,7 @@ msgstr ""
 "Project-Id-Version: kstart\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2023-03-11 02:40+0000\n"
-"PO-Revision-Date: 2023-01-07 01:00+0100\n"
+"PO-Revision-Date: 2023-03-26 11:37+0100\n"
 "Last-Translator: Oliver Kellogg <okellogg@users.sourceforge.net>\n"
 "Language-Team: Esperanto <kde-i18n-doc@kde.org>\n"
 "Language: eo\n"
@@ -42,7 +42,7 @@ msgstr "KStart"
 #: kstart.cpp:69
 #, kde-format
 msgid "Utility to launch applications"
-msgstr ""
+msgstr "Utilaĵo por lanĉi aplikaĵojn"
 
 #: kstart.cpp:71
 #, kde-format
@@ -83,99 +83,3 @@ msgstr "Opcia URL por transdoni <desktopfile>, kiam uzanta --service"
 #, kde-format
 msgid "No command specified"
 msgstr "Neniu specifita komando"
-
-#~ msgid ""
-#~ "Alternative to <command>: desktop file path to start. D-Bus service will "
-#~ "be printed to stdout. Deprecated: use --application"
-#~ msgstr ""
-#~ "Alternativo al <command>: startigenda labortabla dosierpado. Servo D-Bus "
-#~ "estos eligota al stdout. Evitinda: uzu --application"
-
-#~ msgid ""
-#~ "Utility to launch applications with special window properties \n"
-#~ "such as iconified, maximized, a certain virtual desktop, a special "
-#~ "decoration\n"
-#~ "and so on."
-#~ msgstr ""
-#~ "Utilaĵo por lanĉi aplikaĵojn kun apartaj ecoj de fenestro\n"
-#~ "kiel ekzemple piktogramigite, maksimumigite, sur kelka labortablo, kun "
-#~ "aparta ornamo\n"
-#~ "kaj tiel plu."
-
-#~ msgid "A regular expression matching the window title"
-#~ msgstr "Regula esprimo, kiu kongruas kun la titolo de la fenestro"
-
-#~ msgid ""
-#~ "A string matching the window class (WM_CLASS property)\n"
-#~ "The window class can be found out by running\n"
-#~ "'xprop | grep WM_CLASS' and clicking on a window\n"
-#~ "(use either both parts separated by a space or only the right part).\n"
-#~ "NOTE: If you specify neither window title nor window class,\n"
-#~ "then the very first window to appear will be taken;\n"
-#~ "omitting both options is NOT recommended."
-#~ msgstr ""
-#~ "Ĉeno kiu kongruas kun la klaso de la fenestro (eco WM_CLASS)\n"
-#~ "Oni povas eltrovi la klason de la fenestro per plenumado de\n"
-#~ "'xprop | grep WM_CLASS' kaj alklako sur fenestro\n"
-#~ "(uzu aŭ ambaŭ partojn apartigitajn per spaceto aŭ nur la dekstran "
-#~ "parton).\n"
-#~ "NOTO: Se vi donas nek la titolon de la fenestro, nek la klason de la "
-#~ "fenestro,\n"
-#~ "tiam la unua aperanta fenestro estos uzata;\n"
-#~ "Ellaso de ambaŭ opcioj NE estas rekomendita."
-
-#~ msgid "Desktop on which to make the window appear"
-#~ msgstr "Labortablo, sur kiu aperigi la fenestron"
-
-#~ msgid ""
-#~ "Make the window appear on the desktop that was active\n"
-#~ "when starting the application"
-#~ msgstr ""
-#~ "Aperigi la fenestron sur la labortablo, kiu estis aktiva\n"
-#~ "kiam startiganta la aplikaĵon"
-
-#~ msgid "Make the window appear on all desktops"
-#~ msgstr "Aperigi la fenestron sur ĉiuj labortabloj"
-
-#~ msgid "Iconify the window"
-#~ msgstr "Piktogramigi la fenestron"
-
-#~ msgid "Maximize the window"
-#~ msgstr "Maksimumigi la fenestron"
-
-#~ msgid "Maximize the window vertically"
-#~ msgstr "Vertikle maksimumigi la fenestron"
-
-#~ msgid "Maximize the window horizontally"
-#~ msgstr "Horizontale maksimumigi la fenestron"
-
-#~ msgid "Show window fullscreen"
-#~ msgstr "Tutekrane montri la fenestron"
-
-#~ msgid ""
-#~ "The window type: Normal, Desktop, Dock, Toolbar, \n"
-#~ "Menu, Dialog, TopMenu or Override"
-#~ msgstr ""
-#~ "La speco de fenestro: Normal (Normala), \n"
-#~ "Desktop (Labortablo), Dock (Doko), \n"
-#~ "Toolbar (Ilobreto), Menu (Menuo), Dialog (Dialogo), \n"
-#~ "TopMenu (SupraMenuo) aŭ Override (Neornamita)"
-
-#~ msgid ""
-#~ "Jump to the window even if it is started on a \n"
-#~ "different virtual desktop"
-#~ msgstr ""
-#~ "Salti al la fenestro ankaŭ se ĝi lanĉiĝis sur\n"
-#~ "alia labortablo"
-
-#~ msgid "Try to keep the window above other windows"
-#~ msgstr "Klopodi manteni la fenestron super ĉiuj aliaj fenestroj"
-
-#~ msgid "Try to keep the window below other windows"
-#~ msgstr "Klopodi manteni la fenestron sub ĉiuj aliaj fenestroj"
-
-#~ msgid "The window does not get an entry in the taskbar"
-#~ msgstr "La fenestro ne obtenas eron en la taskbreto"
-
-#~ msgid "The window does not get an entry on the pager"
-#~ msgstr "La fenestro ne obtenas eron en la paĝilo"
