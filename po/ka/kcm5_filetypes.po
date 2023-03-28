@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: kde-cli-tools\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2023-03-25 02:10+0000\n"
-"PO-Revision-Date: 2023-01-28 07:40+0100\n"
+"PO-Revision-Date: 2023-03-27 06:32+0200\n"
 "Last-Translator: Temuri Doghonadze <temuri.doghonadze@gmail.com>\n"
 "Language-Team: Georgian <kde-i18n-doc@kde.org>\n"
 "Language: ka\n"
@@ -52,6 +52,11 @@ msgid ""
 "setting for a specific file type in the 'Embedding' tab of the file type "
 "configuration. Dolphin  shows files always in a separate viewer"
 msgstr ""
+"აქ შეგიძლიათ მიუთითოთ, რას იზამს Konqueror, როცა დააწკაპუნებთ ფაილზე, "
+"რომელიც ამ ჯგუფს ეკუთვნის. Konqueror-ს შეუძლია ფაილი ჩაშენებულ ფანჯარაში "
+"გაჩვენოთ, ან ცალკე აპლიკაცია გაუშვას. ამ პარამეტრის შეცვლა კონკრეტული ფაილის "
+"ტიპისთვის ფაილის ტიპების მორგების ჩანართზე \"ჩაშენება\" შეგიძლიათ. Dolphin-ი "
+"ფაილებს ყოველთვის ცალკე პროგრამაში გაჩვენებთ"
 
 #: filetypedetails.cpp:61
 #, kde-format
@@ -59,6 +64,8 @@ msgid ""
 "This button displays the icon associated with the selected file type. Click "
 "on it to choose a different icon."
 msgstr ""
+"ეს ღილაკი მონიშნულ ფაილის ტიპთან ასოცირებულ ხატულას გაჩვენებთ. სხვა ხატულის "
+"ასარჩევად ზედ დააწკაპუნეთ."
 
 #: filetypedetails.cpp:67
 #, kde-format
@@ -73,6 +80,9 @@ msgid ""
 "file type 'text/plain'; all files ending in '.txt' are recognized as plain "
 "text files."
 msgstr ""
+"ეს ველო შეიცავს ნიმუშების სიებს, რომელიც მონიშნული ტიპის იდენტიფიცირებისტვის "
+"გამოიყენება. მაგალითად, *.txt ასოცირებულია ფაილის ტიპთან 'text/plain'. ყველა "
+"ფაილი, რომელიც '.txt'-ით მთავრდება უბრალო ტექსტურ ფაილად აღიქმება."
 
 #: filetypedetails.cpp:87 filetypesview.cpp:81 kservicelistwidget.cpp:110
 #, kde-format
@@ -106,6 +116,9 @@ msgid ""
 "'HTML Page'). This description will be used by applications like Konqueror "
 "to display directory content."
 msgstr ""
+"აქ შეგიძლიათ მონიშნული ფაილის ტიპის მქონე ფაილების მოკლე აღწერა შეიყვანოთ "
+"(მაგ: 'HTML გვერდი'). ეს აღწერა Konqueror-ის მსგავსი პროგრამების მიერ "
+"საქაღალდის შემცველობის საჩვენებლად გამოიყენება."
 
 #: filetypedetails.cpp:128
 #, kde-format
