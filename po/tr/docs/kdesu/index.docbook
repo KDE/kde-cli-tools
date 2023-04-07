@@ -97,7 +97,7 @@ does this really work?
 > komutunu kullanır.</para>
 
 <para
->&kdesu; programının bir ek özelliği vardır: Sizin için parolaları hatırlayabilir. Bu özelliği kullanıyorsanız her bir komut için parolanızı yalnızca bir kez girmeniz gerekir. Bunun ve bir güvenlik çözümlemesi üzerine daha fazla bilgi için <xref linkend="sec-password-keeping"/> bölümüne bakın.</para>
+>&kdesu; programının bir ek özelliği vardır: Sizin için parolaları anımsayabilir. Bu özelliği kullanıyorsanız her bir komut için parolanızı yalnızca bir kez girmeniz gerekir. Bunun ve bir güvenlik çözümlemesi üzerine daha fazla bilgi için <xref linkend="sec-password-keeping"/> bölümüne bakın.</para>
 
 <para
 >Bu program, komut satırından veya <filename
