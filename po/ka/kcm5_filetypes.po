@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: kde-cli-tools\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2023-03-25 02:10+0000\n"
-"PO-Revision-Date: 2023-03-27 06:32+0200\n"
+"PO-Revision-Date: 2023-04-09 08:31+0200\n"
 "Last-Translator: Temuri Doghonadze <temuri.doghonadze@gmail.com>\n"
 "Language-Team: Georgian <kde-i18n-doc@kde.org>\n"
 "Language: ka\n"
@@ -140,6 +140,12 @@ msgid ""
 "group G to which this type belongs; for instance, 'image' if the current "
 "file type is image/png. Dolphin always shows files in a separate viewer."
 msgstr ""
+"აქ შეგიძლიათ მიუთითოთ, რას იზამს Konqueror-ფაილების მმართველი, როცა ფაილის "
+"ამ ტიპზე დააწკაპუნებთ. Konqueror-ს შეუძლია ფაილი ჩაშენებულ გამხსნელში "
+"გაჩვენოთ, ან ცალკე აპლიკაციაში გახსნას. თუ დაყენებულია 'G-ჯგუფის "
+"პარამეტრების გამოყენება', ფაილის მმართველი G ჯგუფის პარამეტრების შესაბამისად "
+"მოიქცევა. მაგალითად, 'image', თუ მიმდინარე ფაილის ტიპი image/png-ა. Dolphin-"
+"ი ფაილებს ყოველთვის ცალკე პროგრამით გახსნის."
 
 #: filetypedetails.cpp:165
 #, kde-format
@@ -183,6 +189,9 @@ msgid ""
 "pattern will appear in the list. Alternatively, enter a part of a file type "
 "name as it appears in the list."
 msgstr ""
+"შეიყვანეთ ფაილის სახელის ნიმუშის ნაწილი და გამოჩნდება მხოლოდ ფაილის ტიპები, "
+"რომლებიც ამ სახელს ემთხვევა. ან შეგიძლიათ შეიყვანოთ ფაილის ტიპის სახელი, "
+"როგორც ის სიაში ჩანს."
 
 #: filetypesview.cpp:66
 #, kde-format
@@ -197,6 +206,10 @@ msgid ""
 "collapse it. Select a file type (e.g. text/html for HTML files) to view/edit "
 "the information for that file type using the controls on the right."
 msgstr ""
+"აქ თქვენი სისტემისთვის ცნობილი ფაილის ტიპების იერარქიულ სიას დაინახავთ. "
+"კატეგორიის გასაშლელად '+' ისარს დააწექით, ასაკეცად კი '-'.აირჩიეთ ფაილის "
+"ტიპი (მაგ: text/html HTML ფაილებსთვის), რომ მარჯვენა მხარეს ჩაასწოროთ/ნახოთ "
+"ინფორმაცია."
 
 #: filetypesview.cpp:86
 #, kde-format
@@ -279,7 +292,7 @@ msgstr "David Faure"
 #: keditfiletype.cpp:131
 #, kde-format
 msgid "Makes the dialog transient for the window specified by winid"
-msgstr ""
+msgstr "Winid-ით მითითებული ფანჯრის გარდამავლად გამოცხადება"
 
 #: keditfiletype.cpp:133
 #, kde-format
@@ -356,6 +369,8 @@ msgid ""
 "Assigns a higher priority to the selected\n"
 "service, moving it up in the list."
 msgstr ""
+"არჩეული სერვისისთვის უფრო მაღალი პრიორიტეტის მინიჭება.\n"
+"ეს მას სიაში მაღლა აწევს."
 
 #: kservicelistwidget.cpp:98
 #, kde-format
@@ -377,6 +392,8 @@ msgid ""
 "Assigns a lower priority to the selected\n"
 "service, moving it down in the list."
 msgstr ""
+"არჩეული სერვისისთვის უფრო დაბალი პრიორიტეტის მინიჭება.\n"
+"ეს მას სიაში დაბლა ჩამოწევს."
 
 #: kservicelistwidget.cpp:115
 #, kde-format
