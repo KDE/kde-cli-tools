@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: kde-cli-tools\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2023-03-25 02:10+0000\n"
-"PO-Revision-Date: 2023-04-09 08:31+0200\n"
+"PO-Revision-Date: 2023-04-11 04:58+0200\n"
 "Last-Translator: Temuri Doghonadze <temuri.doghonadze@gmail.com>\n"
 "Language-Team: Georgian <kde-i18n-doc@kde.org>\n"
 "Language: ka\n"
@@ -245,6 +245,12 @@ msgid ""
 "minimize the chances of them being used (but the file type determination "
 "from file contents can still end up using them)."
 msgstr ""
+"დააწკაპუნეთ აქ, რომ დააბრუნოთ ამ ფაილის ტიპი მისი საწყისი სისტემის მასშტაბით "
+"განმარტებაზე, რომელიც აუქმებს ფაილის ტიპში განხორციელებულ ნებისმიერ "
+"ცვლილებას. გაითვალისწინეთ, რომ ფაილის მასშტაბის წაშლა შეუძლებელია. თქვენ "
+"შეგიძლიათ ცარიელი მათი ნიმუში სია, რათა მინიმუმამდე მათი გამოყენების შანსი "
+"(მაგრამ ფაილის ტიპის განსაზღვრა ფაილის შინაარსიდან მაინც შეიძლება დასრულდეს "
+"მათი გამოყენებით)."
 
 #: filetypesview.cpp:355
 #, kde-format
@@ -260,6 +266,12 @@ msgid ""
 "of them being used (but the file type determination from file contents can "
 "still end up using them)."
 msgstr ""
+"დააჭირეთ აქ, რომ მთლიანად წაშალოთ ამ ფაილის ტიპის განმარტება. ეს "
+"შესაძლებელია მხოლოდ მომხმარებლის მიერ განსაზღვრული ფაილის ტიპებისთვის. "
+"სისტემის მასშტაბის ფაილის ტიპების წაშლა შეუძლებელია. თქვენ შეგიძლიათ ცარიელი "
+"მათი ნიმუში სია, რათა მინიმუმამდე მათი გამოყენების შანსი (მაგრამ ფაილის "
+"ტიპის განსაზღვრა ფაილის შინაარსიდან მაინც შეიძლება დასრულდეს მათი "
+"გამოყენებით)."
 
 #: keditfiletype.cpp:119
 #, kde-format
@@ -338,6 +350,11 @@ msgid ""
 "then the list is ordered by priority with the uppermost item taking "
 "precedence over the others."
 msgstr ""
+"ეს არის პროგრამების ჩამონათვალი, რომლებიც დაკავშირებულია შერჩეული ფაილის "
+"ტიპის ფაილებთან. ეს სია ნაჩვენებია Konqueror- ის კონტექსტურ მენიუში, როდესაც "
+"აირჩევთ \"Open With...\". თუ ამ ფაილის ტიპთან ერთზე მეტი განაცხადი "
+"ასოცირდება, მაშინ სია შეკვეთილია პრიორიტეტით, ხოლო ყველაზე მაღალი ელემენტი, "
+"რომელიც უპირატესობას ანიჭებს სხვებს."
 
 #: kservicelistwidget.cpp:73
 #, kde-format
@@ -348,6 +365,11 @@ msgid ""
 "type, then the list is ordered by priority with the uppermost item taking "
 "precedence over the others."
 msgstr ""
+"ეს არის არჩეული ფაილის ტიპის ფაილებთან დაკავშირებული სერვისების ჩამონათვალი. "
+"ეს სია ნაჩვენებია Konqueror- ის კონტექსტურ მენიუში, როდესაც აირჩევთ "
+"\"გადახედვას...\" ვარიანტი. თუ ამ ფაილის ტიპთან ერთზე მეტი სერვისი "
+"ასოცირდება, მაშინ სია შეკვეთილია პრიორიტეტით, ხოლო ყველაზე მაღალი ელემენტი, "
+"რომელიც უპირატესობას ანიჭებს სხვებს."
 
 #: kservicelistwidget.cpp:85
 #, kde-format
@@ -362,6 +384,10 @@ msgid ""
 "only affects the selected application if the file type is\n"
 "associated with more than one application."
 msgstr ""
+"არჩეულს უფრო მაღალი პრიორიტეტი ანიჭებს\n"
+"პროგრამა, მისი გადატანა სიაში. შენიშვნა: ეს\n"
+"მხოლოდ იმ შემთხვევაში მოქმედებს თუ არა ფაილის ტიპი\n"
+"დაკავშირებულია ერთზე მეტ აპლიკაციასთან."
 
 #: kservicelistwidget.cpp:95
 #, kde-format
@@ -385,6 +411,10 @@ msgid ""
 "only affects the selected application if the file type is\n"
 "associated with more than one application."
 msgstr ""
+"არჩეულს უფრო დაბალი პრიორიტეტი ანიჭებს\n"
+"პროგრამა, მისი გადატანა სიაში. შენიშვნა: ეს \n"
+"მხოლოდ იმ შემთხვევაში მოქმედებს თუ არა ფაილის ტიპი\n"
+"დაკავშირებულია ერთზე მეტ აპლიკაციასთან."
 
 #: kservicelistwidget.cpp:107
 #, kde-format
@@ -464,3 +494,6 @@ msgid ""
 "category and you type 'custom' here, the file type 'image/custom' will be "
 "created."
 msgstr ""
+"ჩაწერეთ ფაილის ტიპის სახელი. მაგალითად, თუ თქვენ აირჩიეთ \"სურათი\", როგორც "
+"კატეგორია და აქ აკრიფებთ \"საბაჟოს\", შეიქმნება ფაილის ტიპი \"სურათი / "
+"მორგებული\"."
