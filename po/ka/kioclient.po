@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: kde-cli-tools\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2022-08-22 00:47+0000\n"
-"PO-Revision-Date: 2022-12-28 06:14+0100\n"
+"PO-Revision-Date: 2023-04-12 06:12+0200\n"
 "Last-Translator: Temuri Doghonadze <temuri.doghonadze@gmail.com>\n"
 "Language-Team: Georgian <kde-i18n-doc@kde.org>\n"
 "Language: ka\n"
@@ -124,6 +124,11 @@ msgid ""
 "            #   The short version 'kioclient rm' is also available.\n"
 "\n"
 msgstr ""
+"  %1 'url'\n"
+"            # URL-ის წაშლა\n"
+"            #   'url' შეიძლება ბმულების სიაც იყოს.\n"
+"            #   ასევე ხელმისაწვდომია უფრო მოკლე ვარიანტი 'kioclient rm'.\n"
+"\n"
 
 #: kioclient.cpp:131
 #, kde-format
@@ -133,6 +138,9 @@ msgid ""
 "            # Shows all of the available information for 'url'\n"
 "\n"
 msgstr ""
+"  %1 'url'\n"
+"            # 'URL'-ისთვის ხელმისაწვდომი ინფორმაციის ჩვენება\n"
+"\n"
 
 #: kioclient.cpp:138
 #, kde-format
@@ -142,6 +150,9 @@ msgid ""
 "            # Opens a basic application launcher\n"
 "\n"
 msgstr ""
+"  %1\n"
+"            # ჩვეულებრივი აპლიკაციების გაშვების გახსნა\n"
+"\n"
 
 #: kioclient.cpp:144
 #, kde-format
@@ -156,6 +167,10 @@ msgid ""
 "             // with this MimeType\n"
 "\n"
 msgstr ""
+"  kioclient exec file:/home/weis/data/test.html\n"
+"             // ამ MIME ტიპთან ასოცირებული ნაგულისხმები\n"
+"             // აპლიკაციის გაშვება\n"
+"\n"
 
 #: kioclient.cpp:150
 #, kde-format
@@ -164,6 +179,9 @@ msgid ""
 "             // Opens URL with the default handler for ftp:// scheme\n"
 "\n"
 msgstr ""
+"  kioclient exec ftp://localhost/\n"
+"             // URL-ის ftp:// ნაგულისხმებ ბრაუზერში გახსნა\n"
+"\n"
 
 #: kioclient.cpp:154
 #, kde-format
@@ -172,6 +190,9 @@ msgid ""
 "             // Starts emacs\n"
 "\n"
 msgstr ""
+"  kioclient exec file:/root/Desktop/emacs.desktop\n"
+"             // emacs-ის გაშვება\n"
+"\n"
 
 #: kioclient.cpp:158
 #, kde-format
@@ -181,6 +202,10 @@ msgid ""
 "             // file manager. Very convenient.\n"
 "\n"
 msgstr ""
+"  kioclient exec .\n"
+"             // მიმდინარე საქაღალდის ნაგულისხმებ ფაილების მმართველში\n"
+"             // გახსნა. ძალიან მოსახერხებელია\n"
+"\n"
 
 #: kioclient.cpp:177
 #, kde-format
@@ -190,12 +215,12 @@ msgstr "KIO -ის კლიენტი"
 #: kioclient.cpp:178
 #, kde-format
 msgid "Command-line tool for network-transparent operations"
-msgstr ""
+msgstr "ბრძანების სტრიქონის პროგრამა ქსელის გამჭვირვალობის ოპერაციებისთვის"
 
 #: kioclient.cpp:185
 #, kde-format
 msgid "Use message boxes and other native notifications"
-msgstr ""
+msgstr "მომხმარებლის შეტყობინების ფანჯრები და სხვა ნადვილი შეტყობინებეი"
 
 #: kioclient.cpp:188
 #, kde-format
