@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: kde-cli-tools\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2022-08-22 00:47+0000\n"
-"PO-Revision-Date: 2023-04-12 06:12+0200\n"
+"PO-Revision-Date: 2023-04-19 05:48+0200\n"
 "Last-Translator: Temuri Doghonadze <temuri.doghonadze@gmail.com>\n"
 "Language-Team: Georgian <kde-i18n-doc@kde.org>\n"
 "Language: ka\n"
@@ -61,6 +61,14 @@ msgid ""
 "            # 'url' can be the URL of a document, a *.desktop file,\n"
 "            # or an executable.\n"
 msgstr ""
+"  %1 'url' ['mimetype']\n"
+"            # ცდილობს გახსნას დოკუმენტი, რომელზეც მითითებული ბმული "
+"მიუთითითებს, აპლიკაციით\n"
+"            # რომელიც მასზე KDE-შია ასოცირებული. შეგიძლიათ გამოტოვოთ "
+"'mimetype'.\n"
+"            # ამ შემთხვევაში დოკუმენტის mime ტიპი ავტომატურად დადგინდება.\n"
+"            # 'url' შეიძლება იყოს ბმული დოკუმენტზე, *.desktop ფაილზე\n"
+"            # ან გამშვებ ფაილზე.\n"
 
 #: kioclient.cpp:80
 #, kde-format
@@ -73,6 +81,13 @@ msgid ""
 "            #   The short version 'kioclient mv' is also available.\n"
 "\n"
 msgstr ""
+"  %1 'src' 'dest'\n"
+"            # გადააქვს URL 'src'-დან 'dest'-მდე.\n"
+"            #   'src' შეიძლება ბმულების სიას წარმოადგენდეს.\n"
+"            #   'dest' შეიძლება იყოს \"trash:/\", რაც ფაილებს ნაგავში "
+"გადაყრის.\n"
+"            #   ასევე ხელმისაწვდომია მოკლე ვერსიაც: 'kioclient mv'.\n"
+"\n"
 
 #: kioclient.cpp:90
 #, kde-format
@@ -84,6 +99,11 @@ msgid ""
 "            #   a URL will be requested.\n"
 "\n"
 msgstr ""
+"  %1 ['src']\n"
+"            #  ბმულს 'src' მომხმარებლის მიერ მითითებულ ადგილზე აკოპირებს.\n"
+"            #   'src' შეიძლება იყოს ბმულების სია. თუ მითითებული არაა,\n"
+"            #   URL-ს გკითხავთ.\n"
+"\n"
 
 #: kioclient.cpp:99
 #, kde-format
@@ -95,6 +115,11 @@ msgid ""
 "            #   The short version 'kioclient cp' is also available.\n"
 "\n"
 msgstr ""
+"  %1 'src' 'dest'\n"
+"            # ბმულს 'src'-დან 'dest'-მდე დააკოპირებს.\n"
+"            #   'src' შეიძლება ბმულების სიაც იყოს.\n"
+"            #   ასევე ხელმისაწვდომია მოკლე ვერსიაც: 'kioclient cp'..\n"
+"\n"
 
 #: kioclient.cpp:108
 #, kde-format
@@ -104,6 +129,10 @@ msgid ""
 "            # Prints the contents of the file 'url' to the standard output\n"
 "\n"
 msgstr ""
+"  %1 'url'\n"
+"            # ბმულთ მითითებული ფაილის შემცველობის სტანდარტულ გამოტანაზე "
+"დაბეჭდვა.\n"
+"\n"
 
 #: kioclient.cpp:115
 #, kde-format
@@ -113,6 +142,10 @@ msgid ""
 "            # Lists the contents of the directory 'url' to stdout\n"
 "\n"
 msgstr ""
+"  %1 'url'\n"
+"            # 'url'-ით მითითებული საქაღალდის შემცველობის სტანდარტულ "
+"გამოტანაზე დაბეჭდვა.\n"
+"\n"
 
 #: kioclient.cpp:122
 #, kde-format
@@ -228,6 +261,8 @@ msgid ""
 "Non-interactive use: no message boxes. If you don't want a graphical "
 "connection, use --platform offscreen"
 msgstr ""
+"არააქტიური გამოყენება: არ არის შეტყობინებების ფანჯრები. თუ არ გსურთ "
+"გრაფიკული კავშირი, გამოიყენეთ --platform offscreen"
 
 #: kioclient.cpp:192
 #, kde-format
