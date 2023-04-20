@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: kde-cli-tools\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2023-01-15 00:57+0000\n"
-"PO-Revision-Date: 2023-02-18 07:45+0100\n"
+"PO-Revision-Date: 2023-04-19 06:00+0200\n"
 "Last-Translator: Temuri Doghonadze <temuri.doghonadze@gmail.com>\n"
 "Language-Team: Georgian <kde-i18n-doc@kde.org>\n"
 "Language: ka\n"
@@ -52,6 +52,11 @@ msgid ""
 "setting for a specific file type in the 'Embedding' tab of the file type "
 "configuration. Dolphin  shows files always in a separate viewer"
 msgstr ""
+"აქ შეგიძლიათ მიუთითოთ, რას იზამს Konqueror, როცა დააწკაპუნებთ ფაილზე, "
+"რომელიც ამ ჯგუფს ეკუთვნის. Konqueror-ს შეუძლია ფაილი ჩაშენებულ ფანჯარაში "
+"გაჩვენოთ, ან ცალკე აპლიკაცია გაუშვას. ამ პარამეტრის შეცვლა კონკრეტული ფაილის "
+"ტიპისთვის ფაილის ტიპების მორგების ჩანართზე \"ჩაშენება\" შეგიძლიათ. Dolphin-ი "
+"ფაილებს ყოველთვის ცალკე პროგრამაში გაჩვენებთ"
 
 #: filetypedetails.cpp:61
 #, kde-format
@@ -59,6 +64,8 @@ msgid ""
 "This button displays the icon associated with the selected file type. Click "
 "on it to choose a different icon."
 msgstr ""
+"ეს ღილაკი მონიშნულ ფაილის ტიპთან ასოცირებულ ხატულას გაჩვენებთ. სხვა ხატულის "
+"ასარჩევად ზედ დააწკაპუნეთ."
 
 #: filetypedetails.cpp:67
 #, kde-format
@@ -73,6 +80,9 @@ msgid ""
 "file type 'text/plain'; all files ending in '.txt' are recognized as plain "
 "text files."
 msgstr ""
+"ეს ველო შეიცავს ნიმუშების სიებს, რომელიც მონიშნული ტიპის იდენტიფიცირებისტვის "
+"გამოიყენება. მაგალითად, *.txt ასოცირებულია ფაილის ტიპთან 'text/plain'. ყველა "
+"ფაილი, რომელიც '.txt'-ით მთავრდება უბრალო ტექსტურ ფაილად აღიქმება."
 
 #: filetypedetails.cpp:87 filetypesview.cpp:103 kservicelistwidget.cpp:110
 #, kde-format
@@ -106,6 +116,9 @@ msgid ""
 "'HTML Page'). This description will be used by applications like Konqueror "
 "to display directory content."
 msgstr ""
+"აქ შეგიძლიათ მონიშნული ფაილის ტიპის მქონე ფაილების მოკლე აღწერა შეიყვანოთ "
+"(მაგ: 'HTML გვერდი'). ეს აღწერა Konqueror-ის მსგავსი პროგრამების მიერ "
+"საქაღალდის შემცველობის საჩვენებლად გამოიყენება."
 
 #: filetypedetails.cpp:128
 #, kde-format
@@ -127,6 +140,12 @@ msgid ""
 "group G to which this type belongs; for instance, 'image' if the current "
 "file type is image/png. Dolphin always shows files in a separate viewer."
 msgstr ""
+"აქ შეგიძლიათ მიუთითოთ, რას იზამს Konqueror-ფაილების მმართველი, როცა ფაილის "
+"ამ ტიპზე დააწკაპუნებთ. Konqueror-ს შეუძლია ფაილი ჩაშენებულ გამხსნელში "
+"გაჩვენოთ, ან ცალკე აპლიკაციაში გახსნას. თუ დაყენებულია 'G-ჯგუფის "
+"პარამეტრების გამოყენება', ფაილის მმართველი G ჯგუფის პარამეტრების შესაბამისად "
+"მოიქცევა. მაგალითად, 'image', თუ მიმდინარე ფაილის ტიპი image/png-ა. Dolphin-"
+"ი ფაილებს ყოველთვის ცალკე პროგრამით გახსნის."
 
 #: filetypedetails.cpp:165
 #, kde-format
@@ -179,6 +198,23 @@ msgid ""
 "patterns; in these cases, KDE is able to determine the MIME-type by directly "
 "examining the contents of the file.</p>"
 msgstr ""
+"<p><h1>ფაილთა ასოციაციები</h1> ეს მოდული საშუალებას გაძლევთ აირჩიოთ რომელი "
+"პროგრამები ასოცირდება მოცემულ ტიპის ფაილთან. ფაილის ტიპებს ასევე "
+"მოიხსენიებენ როგორც MIME ტიპებს (MIME არის აბრევიატურა, რომელიც ნიშნავს "
+"\"მრავალფუნქციურ ინტერნეტ ფოსტის გაფართოებებს\").</p><p> ფაილთა ასოციაცია "
+"შედგება შემდეგის: <ul><li>ფაილის MIME ტიპის განსაზღვრის წესები, მაგალითად, "
+"ფაილის სახელის ნიმუში * .png, რაც ნიშნავს \"ყველა ფაილი სახელებით, რომლებიც "
+"მთავრდება .png\", ასოცირდება MIME ტიპის \"სურათი / png\";</li> <li>MIME "
+"ტიპის მოკლე აღწერა, მაგალითად, MIME ტიპის \"სურათი / png\" აღწერა უბრალოდ "
+"\"PNG სურათია\";</li> <li>ხატი, რომელიც გამოყენებული იქნება მოცემული MIME "
+"ტიპის ფაილების ჩვენებისთვის, ასე რომ თქვენ შეგიძლიათ მარტივად დაადგინოთ "
+"ფაილის ტიპი ფაილ მენეჯერში ან ფაილის შერჩევის დიალოგში (ყოველ შემთხვევაში, "
+"იმ ტიპებისთვის, რომლებსაც ხშირად იყენებთ);</li> <li>პროგრამების სია, "
+"რომლებიც შეიძლება გამოყენებულ იქნას მოცემული MIME ტიპის ფაილების გასახსნელად "
+"-- თუ ერთზე მეტი აპლიკაციის გამოყენება შესაძლებელია, მაშინ სია შეკვეთილია "
+"პრიორიტეტით.</li></ul> შეიძლება გაგიკვირდეთ, რომ ზოგიერთ MIME ტიპს არ აქვს "
+"დაკავშირებული ფაილის სახელის შაბლონები; ამ შემთხვევებში, KDE- ს შეუძლია "
+"განსაზღვროს MIME ტიპის ფაილის შინაარსის პირდაპირ შემოწმებით.</p>"
 
 #: filetypesview.cpp:74
 #, kde-format
@@ -192,6 +228,9 @@ msgid ""
 "pattern will appear in the list. Alternatively, enter a part of a file type "
 "name as it appears in the list."
 msgstr ""
+"შეიყვანეთ ფაილის სახელის ნიმუშის ნაწილი და გამოჩნდება მხოლოდ ფაილის ტიპები, "
+"რომლებიც ამ სახელს ემთხვევა. ან შეგიძლიათ შეიყვანოთ ფაილის ტიპის სახელი, "
+"როგორც ის სიაში ჩანს."
 
 #: filetypesview.cpp:88
 #, kde-format
@@ -206,6 +245,10 @@ msgid ""
 "collapse it. Select a file type (e.g. text/html for HTML files) to view/edit "
 "the information for that file type using the controls on the right."
 msgstr ""
+"აქ თქვენი სისტემისთვის ცნობილი ფაილის ტიპების იერარქიულ სიას დაინახავთ. "
+"კატეგორიის გასაშლელად '+' ისარს დააწექით, ასაკეცად კი '-'.აირჩიეთ ფაილის "
+"ტიპი (მაგ: text/html HTML ფაილებსთვის), რომ მარჯვენა მხარეს ჩაასწოროთ/ნახოთ "
+"ინფორმაცია."
 
 #: filetypesview.cpp:108
 #, kde-format
@@ -241,6 +284,12 @@ msgid ""
 "minimize the chances of them being used (but the file type determination "
 "from file contents can still end up using them)."
 msgstr ""
+"დააწკაპუნეთ აქ, რომ დააბრუნოთ ამ ფაილის ტიპი მისი საწყისი სისტემის მასშტაბით "
+"განმარტებაზე, რომელიც აუქმებს ფაილის ტიპში განხორციელებულ ნებისმიერ "
+"ცვლილებას. გაითვალისწინეთ, რომ ფაილის მასშტაბის წაშლა შეუძლებელია. თქვენ "
+"შეგიძლიათ ცარიელი მათი ნიმუში სია, რათა მინიმუმამდე მათი გამოყენების შანსი "
+"(მაგრამ ფაილის ტიპის განსაზღვრა ფაილის შინაარსიდან მაინც შეიძლება დასრულდეს "
+"მათი გამოყენებით)."
 
 #: filetypesview.cpp:377
 #, kde-format
@@ -256,6 +305,12 @@ msgid ""
 "of them being used (but the file type determination from file contents can "
 "still end up using them)."
 msgstr ""
+"დააჭირეთ აქ, რომ მთლიანად წაშალოთ ამ ფაილის ტიპის განმარტება. ეს "
+"შესაძლებელია მხოლოდ მომხმარებლის მიერ განსაზღვრული ფაილის ტიპებისთვის. "
+"სისტემის მასშტაბის ფაილის ტიპების წაშლა შეუძლებელია. თქვენ შეგიძლიათ ცარიელი "
+"მათი ნიმუში სია, რათა მინიმუმამდე მათი გამოყენების შანსი (მაგრამ ფაილის "
+"ტიპის განსაზღვრა ფაილის შინაარსიდან მაინც შეიძლება დასრულდეს მათი "
+"გამოყენებით)."
 
 #: keditfiletype.cpp:120
 #, kde-format
@@ -288,7 +343,7 @@ msgstr "David Faure"
 #: keditfiletype.cpp:132
 #, kde-format
 msgid "Makes the dialog transient for the window specified by winid"
-msgstr ""
+msgstr "Winid-ით მითითებული ფანჯრის გარდამავლად გამოცხადება"
 
 #: keditfiletype.cpp:134
 #, kde-format
@@ -334,6 +389,11 @@ msgid ""
 "then the list is ordered by priority with the uppermost item taking "
 "precedence over the others."
 msgstr ""
+"ეს არის პროგრამების ჩამონათვალი, რომლებიც დაკავშირებულია შერჩეული ფაილის "
+"ტიპის ფაილებთან. ეს სია ნაჩვენებია Konqueror- ის კონტექსტურ მენიუში, როდესაც "
+"აირჩევთ \"Open With...\". თუ ამ ფაილის ტიპთან ერთზე მეტი განაცხადი "
+"ასოცირდება, მაშინ სია შეკვეთილია პრიორიტეტით, ხოლო ყველაზე მაღალი ელემენტი, "
+"რომელიც უპირატესობას ანიჭებს სხვებს."
 
 #: kservicelistwidget.cpp:73
 #, kde-format
@@ -344,6 +404,11 @@ msgid ""
 "type, then the list is ordered by priority with the uppermost item taking "
 "precedence over the others."
 msgstr ""
+"ეს არის არჩეული ფაილის ტიპის ფაილებთან დაკავშირებული სერვისების ჩამონათვალი. "
+"ეს სია ნაჩვენებია Konqueror- ის კონტექსტურ მენიუში, როდესაც აირჩევთ "
+"\"გადახედვას...\" ვარიანტი. თუ ამ ფაილის ტიპთან ერთზე მეტი სერვისი "
+"ასოცირდება, მაშინ სია შეკვეთილია პრიორიტეტით, ხოლო ყველაზე მაღალი ელემენტი, "
+"რომელიც უპირატესობას ანიჭებს სხვებს."
 
 #: kservicelistwidget.cpp:85
 #, kde-format
@@ -358,6 +423,10 @@ msgid ""
 "only affects the selected application if the file type is\n"
 "associated with more than one application."
 msgstr ""
+"არჩეულს უფრო მაღალი პრიორიტეტი ანიჭებს\n"
+"პროგრამა, მისი გადატანა სიაში. შენიშვნა: ეს\n"
+"მხოლოდ იმ შემთხვევაში მოქმედებს თუ არა ფაილის ტიპი\n"
+"დაკავშირებულია ერთზე მეტ აპლიკაციასთან."
 
 #: kservicelistwidget.cpp:95
 #, kde-format
@@ -365,6 +434,8 @@ msgid ""
 "Assigns a higher priority to the selected\n"
 "service, moving it up in the list."
 msgstr ""
+"არჩეული სერვისისთვის უფრო მაღალი პრიორიტეტის მინიჭება.\n"
+"ეს მას სიაში მაღლა აწევს."
 
 #: kservicelistwidget.cpp:98
 #, kde-format
@@ -379,6 +450,10 @@ msgid ""
 "only affects the selected application if the file type is\n"
 "associated with more than one application."
 msgstr ""
+"არჩეულს უფრო დაბალი პრიორიტეტი ანიჭებს\n"
+"პროგრამა, მისი გადატანა სიაში. შენიშვნა: ეს \n"
+"მხოლოდ იმ შემთხვევაში მოქმედებს თუ არა ფაილის ტიპი\n"
+"დაკავშირებულია ერთზე მეტ აპლიკაციასთან."
 
 #: kservicelistwidget.cpp:107
 #, kde-format
@@ -386,6 +461,8 @@ msgid ""
 "Assigns a lower priority to the selected\n"
 "service, moving it down in the list."
 msgstr ""
+"არჩეული სერვისისთვის უფრო დაბალი პრიორიტეტის მინიჭება.\n"
+"ეს მას სიაში დაბლა ჩამოწევს."
 
 #: kservicelistwidget.cpp:115
 #, kde-format
@@ -456,3 +533,6 @@ msgid ""
 "category and you type 'custom' here, the file type 'image/custom' will be "
 "created."
 msgstr ""
+"ჩაწერეთ ფაილის ტიპის სახელი. მაგალითად, თუ თქვენ აირჩიეთ \"სურათი\", როგორც "
+"კატეგორია და აქ აკრიფებთ \"საბაჟოს\", შეიქმნება ფაილის ტიპი \"სურათი / "
+"მორგებული\"."

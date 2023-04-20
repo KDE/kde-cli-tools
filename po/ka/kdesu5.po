@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: kde-cli-tools\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2022-12-21 00:48+0000\n"
-"PO-Revision-Date: 2023-02-18 07:46+0100\n"
+"PO-Revision-Date: 2023-04-19 06:00+0200\n"
 "Last-Translator: Temuri Doghonadze <temuri.doghonadze@gmail.com>\n"
 "Language-Team: Georgian <kde-i18n-doc@kde.org>\n"
 "Language: ka\n"
@@ -36,7 +36,7 @@ msgstr "KDE su"
 #: kdesu.cpp:91
 #, kde-format
 msgid "Runs a program with elevated privileges."
-msgstr ""
+msgstr "პროგრამის აღმატებული პრივილეგიებით გაშვება."
 
 #: kdesu.cpp:93
 #, kde-format
@@ -66,22 +66,22 @@ msgstr "საწყისი ავტორი"
 #: kdesu.cpp:104
 #, kde-format
 msgid "Specifies the command to run as separate arguments"
-msgstr ""
+msgstr "გასაშვები ბრძანების ცალკე არგუმენტების სახით მითითება"
 
 #: kdesu.cpp:105
 #, kde-format
 msgid "Specifies the command to run as one string"
-msgstr ""
+msgstr "გასაშვები ბრძანების ერთ სტრიქონად მითითება"
 
 #: kdesu.cpp:106
 #, kde-format
 msgid "Run command under target uid if <file> is not writable"
-msgstr ""
+msgstr "თუ <file> ჩაწერადი არაა, სამიზნის UID-ით ბრძანების გაშვება"
 
 #: kdesu.cpp:107
 #, kde-format
 msgid "Specifies the target uid"
-msgstr ""
+msgstr "სამიზნე uid-ის მითითება"
 
 #: kdesu.cpp:108
 #, kde-format
@@ -91,22 +91,23 @@ msgstr "არ შეინახო პაროლი"
 #: kdesu.cpp:109
 #, kde-format
 msgid "Stop the daemon (forgets all passwords)"
-msgstr ""
+msgstr "დემონის გაჩერება (დაივიწყებს ყველა პაროლს)"
 
 #: kdesu.cpp:110
 #, kde-format
 msgid "Enable terminal output (no password keeping)"
-msgstr ""
+msgstr "ტერმინალზე გამოტანის ჩართვა (პაროლებს არ დავიმახსოვრებ)"
 
 #: kdesu.cpp:112
 #, kde-format
 msgid "Set priority value: 0 <= prio <= 100, 0 is lowest"
 msgstr ""
+"დააყენეთ პრიორიტეტის მნიშვნელობა 0 <= პრიორიტეტი <= 100, 0 ყველაზე დაბალია"
 
 #: kdesu.cpp:113
 #, kde-format
 msgid "Use realtime scheduling"
-msgstr ""
+msgstr "რეალურ დროში დაგეგმვის გამოყენება"
 
 #: kdesu.cpp:114
 #, kde-format
@@ -116,12 +117,12 @@ msgstr "იგნორის ღილაკის დამალვა"
 #: kdesu.cpp:115
 #, kde-format
 msgid "Specify icon to use in the password dialog"
-msgstr ""
+msgstr "მიუთითეთ ხატულა პაროლის ფანჯრისთვის"
 
 #: kdesu.cpp:116
 #, kde-format
 msgid "Do not show the command to be run in the dialog"
-msgstr ""
+msgstr "ფანჯარაში გასაშვები ბრძანება ნაჩვენები არ იქნება"
 
 #: kdesu.cpp:123
 #, kde-format
@@ -134,7 +135,7 @@ msgstr "ფანჯრის winid-ით მითითებულ X-ის 
 #: kdesu.cpp:125
 #, kde-format
 msgid "Embed into a window"
-msgstr ""
+msgstr "ფანჯარაში ჩაშენება"
 
 #: kdesu.cpp:152
 #, kde-format
@@ -193,6 +194,9 @@ msgid ""
 "<b>root's</b> password below or click Ignore to continue with your current "
 "privileges."
 msgstr ""
+"მოთხოვნილ ბრძანებას თქვენგან <b>root-ის პრივილეგიები</b> სჭირდება. შეიყვანეთ "
+"<b>root-ის</b> პაროლი ან დააწკაპუნეთ იგნორირებაზე და ბრძანება თქვენი "
+"მიმდინარე პრივილეგიებით გაეშვება."
 
 #: sudlg.cpp:42
 #, kde-format
@@ -200,6 +204,8 @@ msgid ""
 "The action you requested needs <b>root privileges</b>. Please enter "
 "<b>root's</b> password below."
 msgstr ""
+"მოთხოვნილ ბრძანებას თქვენგან <b>root-ის პრივილეგიები</b> სჭირდება. შეიყვანეთ "
+"<b>root-ის</b> პაროლი."
 
 #: sudlg.cpp:49
 #, kde-format
@@ -208,6 +214,9 @@ msgid ""
 "password for <b>%1</b> below or click Ignore to continue with your current "
 "privileges."
 msgstr ""
+"მოთხოვნილ ბრძანებას თქვენგან დამატებითი პრივილეგიები სჭირდება. შეიყვანეთ <b>"
+"%1</b>-ის პაროლი ან დააწკაპუნეთ იგნორირებაზე და ბრძანება თქვენი მიმდინარე "
+"პრივილეგიებით გაეშვება."
 
 #: sudlg.cpp:56
 #, kde-format
@@ -215,6 +224,8 @@ msgid ""
 "The action you requested needs additional privileges. Please enter the "
 "password for <b>%1</b> below."
 msgstr ""
+"მოთხოვნილ ბრძანებას თქვენგან დამატებითი პრივილეგიები სჭირდება. შეიყვანეთ <b>"
+"%1</b>-ის პაროლი."
 
 #: sudlg.cpp:79
 #, kde-format
@@ -225,7 +236,7 @@ msgstr "Su-სთან საუბრის შეცდომა."
 #, kde-format
 msgid ""
 "The program 'su' could not be found.<br />Ensure your PATH is set correctly."
-msgstr ""
+msgstr "პროგრამა 'su' ვერ ვიპოვე. <br />დარწმუნდით, რომ PATH სწორად აყენია."
 
 #: sudlg.cpp:97
 #, kde-format
@@ -234,8 +245,11 @@ msgid ""
 ">On some systems, you need to be in a special group (often: wheel) to use "
 "this program."
 msgstr ""
+"წვდომა აკრძალულია.<br />შესაძლოა, პაროლი არასწორია. თავიდან სცადეთ.<br /"
+">ზოგიერთ სისტემაზე ამ პროგრამის გამოსაყენებლად საჭიროა, სპეციალურ ჯგუფში "
+"(ყველაზე ხშირად: wheel) ბრძანდებოდეთ."
 
 #: sudlg.cpp:105
 #, kde-format
 msgid "Internal error: illegal return from SuProcess::checkInstall()"
-msgstr ""
+msgstr "შიდა შეცდომა: არასწორი დაბრუნება SuProcess::checkInstall()-დან"

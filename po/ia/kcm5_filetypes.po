@@ -412,7 +412,7 @@ msgid ""
 msgstr ""
 "Isto es un lista de servicios associate con files del typo selectionate. "
 "Iste lista es monstrate in menus de contexto de KDE quando tu selige un "
-"option \" Vista preliminari con...\". Si plus que un servicio es associate "
+"option \" Vista preliminar con...\". Si plus que un servicio es associate "
 "con iste typo de file, tunc le lista es ordinate per prioritate, con le "
 "termino plus alte con precedentia super le alteres."
 
