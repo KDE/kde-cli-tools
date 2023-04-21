@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: kde-cli-tools\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2021-03-18 02:47+0100\n"
-"PO-Revision-Date: 2022-08-23 12:58+0200\n"
+"PO-Revision-Date: 2023-04-20 08:14+0200\n"
 "Last-Translator: Temuri Doghonadze <temuri.doghonadze@gmail.com>\n"
 "Language-Team: Georgian <kde-i18n-doc@kde.org>\n"
 "Language: ka\n"
@@ -16,7 +16,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
-"X-Generator: Poedit 3.1.1\n"
+"X-Generator: Poedit 3.2.2\n"
 
 #, kde-format
 msgctxt "NAME OF TRANSLATORS"
@@ -42,6 +42,8 @@ msgstr "David Faure"
 #, kde-format
 msgid "A command-line tool for querying the KDE trader system"
 msgstr ""
+"ბრძანების სტრიქონის პროგრამა KDE-ის სავაჭრო სისტემისთვის მოთხოვნების "
+"გასაგზავნად"
 
 #: ktraderclient.cpp:30
 #, kde-format
@@ -52,13 +54,14 @@ msgstr "MIME ტიპი"
 #, kde-format
 msgid "A servicetype, like KParts/ReadOnlyPart or KMyApp/Plugin"
 msgstr ""
+"Servicetype, როგორიცაა, მაგალითად, KParts/ReadOnlyPart და KMyApp/Plugin"
 
 #: ktraderclient.cpp:35
 #, kde-format
 msgid "A constraint expressed in the trader query language"
-msgstr ""
+msgstr "ვაჭრობის მოთხოვნის ენაზე გამოხატული შეზღუდვა"
 
 #: ktraderclient.cpp:38
 #, kde-format
 msgid "Output only paths to desktop files"
-msgstr ""
+msgstr "მხოლოდ სამუშაო მაგიდის ფაილების გამოტანა"
