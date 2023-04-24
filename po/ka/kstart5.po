@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: kde-cli-tools\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2022-12-17 00:51+0000\n"
-"PO-Revision-Date: 2023-02-18 07:46+0100\n"
+"PO-Revision-Date: 2023-04-23 06:39+0200\n"
 "Last-Translator: Temuri Doghonadze <temuri.doghonadze@gmail.com>\n"
 "Language-Team: Georgian <kde-i18n-doc@kde.org>\n"
 "Language: ka\n"
@@ -41,6 +41,10 @@ msgid ""
 "decoration\n"
 "and so on."
 msgstr ""
+"პროგრამა სპეციალური ფანჯრის პარამეტრების მქონე აპლიკაციების გასაშვებად.\n"
+"ასეთებია ხატულაში ჩაკეცილი, მთელ ეკრანზე გაშლილი, მითითებული ვირტუალური "
+"სამუშაო მაგიდა, სპეციალური დეკორაცია\n"
+"და ა.შ."
 
 #: kstart.cpp:262
 #, kde-format
@@ -91,7 +95,7 @@ msgstr ""
 #: kstart.cpp:284
 #, kde-format
 msgid "A regular expression matching the window title"
-msgstr ""
+msgstr "რეგულარული გამოსახულება, რომელიც ფანჯრის სათაურის ემთხვევა"
 
 #: kstart.cpp:286
 #, kde-format
@@ -104,11 +108,20 @@ msgid ""
 "then the very first window to appear will be taken;\n"
 "omitting both options is NOT recommended."
 msgstr ""
+"სტრიქონი, რომელიც ფანჯრის კლასს (WM_CLASS თვისება)\n"
+"ემთხვევა. ფანჯრის კლასი შეგიძლიათ იპოვოთ\n"
+"'xprop | grep WM_CLASS'-ის გაშვებით და ფანჯარაზე დაწკაპუნებით გაიგოთ\n"
+"(გამოიყენეთ ან ორივე ნაწილი, რომელიც გამოტოვებითაა განცალკევებული, ან მხოლოდ "
+"მარჯვენა ნაწილი).\n"
+"გაფრთხილება: თუ არც ფანჯრის სათაური და არც ფანჯრის კლასი მითითებული არ "
+"იქნება,\n"
+"მაშინ აღებული იქნება პირველივე ფანჯარა, რომელიც გამოჩნდება.\n"
+"ორივე პარამეტრის გამოტოვება რეკომენდებული არაა."
 
 #: kstart.cpp:295
 #, kde-format
 msgid "Desktop on which to make the window appear"
-msgstr ""
+msgstr "სამუშაო მაგიდა, რომელსაც ფანჯარა გამოჩნდება"
 
 #: kstart.cpp:297
 #, kde-format
@@ -116,16 +129,18 @@ msgid ""
 "Make the window appear on the desktop that was active\n"
 "when starting the application"
 msgstr ""
+"ფანჯარა გამოჩნდება იმ სამუშაო მაგიდაზე, რომელიც\n"
+"მისი გაშვებისას იყო აქტიური"
 
 #: kstart.cpp:298
 #, kde-format
 msgid "Make the window appear on all desktops"
-msgstr ""
+msgstr "ფანჯარა ყველა სამუშაო მაგიდაზე გამოჩნდება"
 
 #: kstart.cpp:299
 #, kde-format
 msgid "Iconify the window"
-msgstr ""
+msgstr "ფანჯრის ხატულაში ჩაკეცვა"
 
 #: kstart.cpp:300
 #, kde-format
@@ -135,17 +150,17 @@ msgstr "ფანჯრის გადიდება"
 #: kstart.cpp:301
 #, kde-format
 msgid "Maximize the window vertically"
-msgstr ""
+msgstr "ფანჯრის ვერტიკალური გაშლა"
 
 #: kstart.cpp:302
 #, kde-format
 msgid "Maximize the window horizontally"
-msgstr ""
+msgstr "ფანჯრის ჰორიზონტალურად გაშლა"
 
 #: kstart.cpp:303
 #, kde-format
 msgid "Show window fullscreen"
-msgstr ""
+msgstr "ფანჯრის მთელ ეკრანზე ჩვენება"
 
 #: kstart.cpp:305
 #, kde-format
@@ -153,6 +168,8 @@ msgid ""
 "The window type: Normal, Desktop, Dock, Toolbar, \n"
 "Menu, Dialog, TopMenu or Override"
 msgstr ""
+"ფანჯრების ტიპია: ნორმალური, სამუშაო მაგიდა, დოკი, პროგრამების პანელი,\n"
+"მენიუ, ფანჯარა, ზედა მენიუ ან გადაფარვა"
 
 #: kstart.cpp:308
 #, kde-format
@@ -160,26 +177,28 @@ msgid ""
 "Jump to the window even if it is started on a \n"
 "different virtual desktop"
 msgstr ""
+"ფანჯარაზე გადასვლა მაშინაც კი, თუ ის\n"
+"სხვა ვირტუალური სამუშაო მაგიდაზეა გაშვებული"
 
 #: kstart.cpp:311
 #, kde-format
 msgid "Try to keep the window above other windows"
-msgstr ""
+msgstr "ამ ფანჯრის სხვა ფანჯრების ზემოთ ქონა"
 
 #: kstart.cpp:313
 #, kde-format
 msgid "Try to keep the window below other windows"
-msgstr ""
+msgstr "ამ ფანჯრის სხვა ფანჯრებზე ქვემოთ ქონა"
 
 #: kstart.cpp:314
 #, kde-format
 msgid "The window does not get an entry in the taskbar"
-msgstr ""
+msgstr "ეს ფანჯარა ამოცანების პანელზე არ გამოჩნდება"
 
 #: kstart.cpp:315
 #, kde-format
 msgid "The window does not get an entry on the pager"
-msgstr ""
+msgstr "ეს ფანჯარა პეიჯერში არ გამოჩნდება"
 
 #: kstart.cpp:329
 #, kde-format

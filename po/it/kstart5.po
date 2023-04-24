@@ -3,14 +3,14 @@
 # Andrea Rizzi <rizzi@sns.it>, 2007.
 # Nicola Ruggero <nicola@nxnt.org>, 2009.
 # Federico Zenith <federico.zenith@member.fsf.org>, 2010.
-# Paolo Zamponi <zapaolo@email.it>, 2020, 2023.
+# Paolo Zamponi <feus73@gmail.com>, 2020, 2023.
 msgid ""
 msgstr ""
 "Project-Id-Version: kstart\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2022-12-17 00:51+0000\n"
 "PO-Revision-Date: 2023-02-04 07:46+0100\n"
-"Last-Translator: Paolo Zamponi <zapaolo@email.it>\n"
+"Last-Translator: Paolo Zamponi <feus73@gmail.com>\n"
 "Language-Team: Italian <kde-i18n-it@kde.org>\n"
 "Language: it\n"
 "MIME-Version: 1.0\n"
@@ -27,7 +27,7 @@ msgstr "Paolo Zamponi,Nicola Ruggero, Federico Cozzi"
 #, kde-format
 msgctxt "EMAIL OF TRANSLATORS"
 msgid "Your emails"
-msgstr "zapaolo@email.it,,"
+msgstr "feus73@gmail.com,,"
 
 #: kstart.cpp:255
 #, kde-format

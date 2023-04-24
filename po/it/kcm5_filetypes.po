@@ -4,14 +4,14 @@
 # Dario Panico <Dareus_Persarumrex@fastwebnet.it>, 2008.
 # Luciano Montanaro <mikelima@cirulla.net>, 2008.
 # Federico Zenith <federico.zenith@member.fsf.org>, 2009, 2010, 2014.
-# Paolo Zamponi <zapaolo@email.it>, 2019.
+# Paolo Zamponi <feus73@gmail.com>, 2019.
 msgid ""
 msgstr ""
 "Project-Id-Version: filetypes\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2023-01-15 00:57+0000\n"
 "PO-Revision-Date: 2019-01-14 17:18+0100\n"
-"Last-Translator: Paolo Zamponi <zapaolo@email.it>\n"
+"Last-Translator: Paolo Zamponi <feus73@gmail.com>\n"
 "Language-Team: Italian <kde-i18n-it@kde.org>\n"
 "Language: it\n"
 "MIME-Version: 1.0\n"
@@ -28,7 +28,7 @@ msgstr "Paolo Zamponi,Federico Zenith,Dario Panico,Federico Cozzi,Andrea Rizzi"
 #, kde-format
 msgctxt "EMAIL OF TRANSLATORS"
 msgid "Your emails"
-msgstr "zapaolo@email.it,,,,"
+msgstr "feus73@gmail.com,,,,"
 
 #: filegroupdetails.cpp:22
 #, kde-format

@@ -4,7 +4,7 @@
 # Federico Zenith <federico.zenith@member.fsf.org>, 2007.
 # Federico Zenith <zenith@chemeng.ntnu.no>, 2008, 2015.
 # Luigi Toscano <luigi.toscano@tiscali.it>, 2016.
-# Paolo Zamponi <zapaolo@email.it>, 2017.
+# Paolo Zamponi <feus73@gmail.com>, 2017.
 #
 msgid ""
 msgstr ""
