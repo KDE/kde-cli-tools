@@ -97,6 +97,7 @@ add_subdirectory(kioclient)
 add_subdirectory(ksvgtopng)
 add_subdirectory(kdeinhibit)
 add_subdirectory(plasma-open-settings)
+add_subdirectory(kinfo)
 
 if(Qt5X11Extras_FOUND)
     add_subdirectory(kstart)
