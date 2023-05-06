@@ -40,8 +40,8 @@
 
 K_PLUGIN_CLASS_WITH_JSON(FileTypesView, "kcm_filetypes.json")
 
-FileTypesView::FileTypesView(QObject *parent, const KPluginMetaData &data, const QVariantList &args)
-    : KCModule(parent, data, args)
+FileTypesView::FileTypesView(QObject *parent, const KPluginMetaData &data)
+    : KCModule(parent, data)
 {
     m_fileTypesConfig = KSharedConfig::openConfig(QStringLiteral("filetypesrc"), KConfig::NoGlobals);
 
