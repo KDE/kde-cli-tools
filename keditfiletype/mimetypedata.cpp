@@ -395,15 +395,16 @@ void MimeTypeData::syncServices()
         saveRemovedServices(removedApps, m_appServices, oldAppServices);
     }
 
+    KSharedConfig::Ptr kpartsProfile = KSharedConfig::openConfig(QStringLiteral("kpartsrc"), KConfig::NoGlobals);
     const QStringList oldPartServices = getPartOffers();
     if (oldPartServices != m_embedParts) {
-        KConfigGroup addedParts(profile, "Added KDE Part Associations");
+        KConfigGroup addedParts(kpartsProfile, "Added KDE Part Associations");
         if (m_embedParts.isEmpty()) {
             addedParts.deleteEntry(name());
         } else {
             addedParts.writeXdgListEntry(name(), m_embedParts);
         }
-        KConfigGroup removedParts(profile, "Removed KDE Part Associations");
+        KConfigGroup removedParts(kpartsProfile, "Removed KDE Part Associations");
         saveRemovedServices(removedParts, m_embedParts, oldPartServices);
     }
 

@@ -47,6 +47,7 @@ private Q_SLOTS:
         QVERIFY(QDir().mkpath(QStandardPaths::writableLocation(QStandardPaths::GenericDataLocation) + QStringLiteral("/mime/packages")));
 
         QFile::remove(m_localConfig.filePath(QStringLiteral("mimeapps.list")));
+        QFile::remove(m_localConfig.filePath(QStringLiteral("kpartsrc")));
         QFile::remove(m_localConfig.filePath(QStringLiteral("filetypesrc")));
 
         // Create fake applications for some tests below.
@@ -150,9 +151,7 @@ private Q_SLOTS:
         QStringList newPatterns = db.mimeTypeForName(QStringLiteral("text/plain")).globPatterns();
         newPatterns.sort();
         QCOMPARE(newPatterns, patterns);
-        if (newPatterns == patterns) { // TODO Qt6: remove the if (keep the QVERIFY!)
-            QVERIFY(!data.isDirty());
-        }
+        QVERIFY(!data.isDirty());
 
         // And then removing the custom file by hand should revert to the initial state
         const QString packageFileName =
@@ -184,7 +183,7 @@ private Q_SLOTS:
         QVERIFY(!data.isDirty());
         // Check what's in ksycoca
         checkMimeTypeServices(mimeTypeName, appServices);
-        // Check what's in mimeapps.list
+        // Check what's in kpartsrc
         checkAddedAssociationsContains(mimeTypeName, fakeApplication);
 
         // Test reordering apps, i.e. move fakeApplication under oldPreferredApp
@@ -196,7 +195,7 @@ private Q_SLOTS:
         QVERIFY(!data.isDirty());
         // Check what's in ksycoca
         checkMimeTypeServices(mimeTypeName, appServices);
-        // Check what's in mimeapps.list
+        // Check what's in kpartsrc
         checkAddedAssociationsContains(mimeTypeName, fakeApplication);
 
         // Then we get the signal that kbuildsycoca changed
