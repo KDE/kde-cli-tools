@@ -7,7 +7,7 @@ msgstr ""
 "Project-Id-Version: kde-cli-tools\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2023-03-05 03:09+0000\n"
-"PO-Revision-Date: 2023-05-03 21:25+0200\n"
+"PO-Revision-Date: 2023-05-09 00:34+0200\n"
 "Last-Translator: Enol P. <enolp@softastur.org>\n"
 "Language-Team: \n"
 "Language: ast\n"
@@ -45,7 +45,7 @@ msgstr ""
 #: kdesu.cpp:95
 #, kde-format
 msgid "Geert Jansen"
-msgstr ""
+msgstr "Geert Jansen"
 
 #: kdesu.cpp:95
 #, kde-format
@@ -55,7 +55,7 @@ msgstr ""
 #: kdesu.cpp:96
 #, kde-format
 msgid "Pietro Iglio"
-msgstr ""
+msgstr "Pietro Iglio"
 
 #: kdesu.cpp:96
 #, kde-format
@@ -173,7 +173,7 @@ msgstr ""
 #: kdesu.cpp:395
 #, kde-format
 msgid "Priority:"
-msgstr ""
+msgstr "Prioridá:"
 
 #: sudlg.cpp:27
 #, kde-format
@@ -183,7 +183,7 @@ msgstr ""
 #: sudlg.cpp:31
 #, kde-format
 msgid "Please enter your password below."
-msgstr ""
+msgstr "Introduz la contraseña abaxo."
 
 #: sudlg.cpp:36
 #, kde-format
