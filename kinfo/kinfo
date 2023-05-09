@@ -3,4 +3,4 @@
 # SPDX-FileCopyrightText: 2023 Harald Sitter <sitter@kde.org>
 
 export QT_LOGGING_RULES="*=false"
-exec kcmshell6 kcm_about-distro --args dump --platform offscreen
+exec kcmshell5 kcm_about-distro --args dump --platform offscreen
