@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: filetypes\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-03-25 02:10+0000\n"
+"POT-Creation-Date: 2023-05-16 02:15+0000\n"
 "PO-Revision-Date: 2002-11-01 10:25SAST\n"
 "Last-Translator: Lwandle Mgidlana <lwandle@translate.org.za>\n"
 "Language-Team: Xhosa <xhosa@translate.org.za>\n"
@@ -34,12 +34,12 @@ msgstr "lwandle@translate.org.za"
 msgid "Left Click Action (only for Konqueror file manager)"
 msgstr ""
 
-#: filegroupdetails.cpp:26 filetypedetails.cpp:133
+#: filegroupdetails.cpp:26 filetypedetails.cpp:134
 #, kde-format
 msgid "Show file in embedded viewer"
 msgstr "Bonisa ifayile kumbonisi olungisiweyo"
 
-#: filegroupdetails.cpp:27 filetypedetails.cpp:134
+#: filegroupdetails.cpp:27 filetypedetails.cpp:135
 #, kde-format
 msgid "Show file in separate viewer"
 msgstr "Bonisa ifayile kumbonisi owahlukileyo"
@@ -92,7 +92,7 @@ msgstr ""
 "nohlobo lwefayile 'okubhaliweyo/okucacileyo' , zonke iifayile eziphelange '."
 "txt' zibonwa njengefayile ezi cacileyo zokubhaliweyo."
 
-#: filetypedetails.cpp:87 filetypesview.cpp:81 kservicelistwidget.cpp:110
+#: filetypedetails.cpp:87 filetypesview.cpp:87 kservicelistwidget.cpp:111
 #, kde-format
 msgid "Add..."
 msgstr "Yongeza..."
@@ -102,7 +102,7 @@ msgstr "Yongeza..."
 msgid "Add a new pattern for the selected file type."
 msgstr "Yongeza umlinganiselo omtsha wohlobo olukhethiweyo lwefayile."
 
-#: filetypedetails.cpp:94 kservicelistwidget.cpp:124
+#: filetypedetails.cpp:94 kservicelistwidget.cpp:125
 #, kde-format
 msgid "Remove"
 msgstr ""
@@ -129,18 +129,18 @@ msgstr ""
 "'Iphepha HTML'). Le nkcazelo izakusetyenziswa zizicelo ezinjenge Konqueror "
 "ukubonisa ulawulo lomxholo."
 
-#: filetypedetails.cpp:128
+#: filetypedetails.cpp:129
 #, fuzzy, kde-format
 #| msgid "Left Click Action"
 msgid "Left Click Action in Konqueror"
 msgstr "Intshukumo Yonqakrazo Lwasekohlo"
 
-#: filetypedetails.cpp:137
+#: filetypedetails.cpp:138
 #, kde-format
 msgid "Ask whether to save to disk instead (only for Konqueror browser)"
 msgstr ""
 
-#: filetypedetails.cpp:153
+#: filetypedetails.cpp:154
 #, fuzzy, kde-format
 #| msgid ""
 #| "Here you can configure what the Konqueror file manager will do when you "
@@ -164,43 +164,43 @@ msgstr ""
 "zeqela G olu hlobo loluka, umzekelo 'umfanekiso'ukuba uhlobo lwefayile "
 "yangoku lungu image/png."
 
-#: filetypedetails.cpp:165
+#: filetypedetails.cpp:167
 #, kde-format
 msgid "&General"
 msgstr "&Ngokubanzi"
 
-#: filetypedetails.cpp:166
+#: filetypedetails.cpp:168
 #, kde-format
 msgid "&Embedding"
 msgstr "&Iyalungisa"
 
-#: filetypedetails.cpp:207
+#: filetypedetails.cpp:209
 #, kde-format
 msgid "Add New Extension"
 msgstr "Yongeza Ulwandiso Olutsha"
 
-#: filetypedetails.cpp:207
+#: filetypedetails.cpp:209
 #, kde-format
 msgid "Extension:"
 msgstr "Ulwandiso:"
 
-#: filetypedetails.cpp:325
+#: filetypedetails.cpp:327
 #, fuzzy, kde-format
 #| msgid "Edit File Type %1"
 msgid "File type %1"
 msgstr "Hlela Udidi Lwefayile %1"
 
-#: filetypedetails.cpp:333
+#: filetypedetails.cpp:335
 #, kde-format
 msgid "Use settings for '%1' group"
 msgstr "Sebenzisa izicwangciso zeqela le '%1'"
 
-#: filetypesview.cpp:52
+#: filetypesview.cpp:58
 #, fuzzy, kde-format
 msgid "Search for file type or filename pattern..."
 msgstr "F&umana umlinganiselo wegama lefayile:"
 
-#: filetypesview.cpp:58
+#: filetypesview.cpp:64
 #, fuzzy, kde-format
 msgid ""
 "Enter a part of a filename pattern, and only file types with a matching file "
@@ -210,12 +210,12 @@ msgstr ""
 "Ngenisa inxenye yomlinganiselo wegama lefayile. Zintlobo zefayile kuphela "
 "ezinefayile ezithelekiseka nomlinganiselo ozakuvela kuluhlu."
 
-#: filetypesview.cpp:66
+#: filetypesview.cpp:72 multiapplydialog.cpp:27
 #, kde-format
 msgid "Known Types"
 msgstr "Iindidi Ezaziwayo"
 
-#: filetypesview.cpp:72
+#: filetypesview.cpp:78
 #, kde-format
 msgid ""
 "Here you can see a hierarchical list of the file types which are known on "
@@ -229,32 +229,32 @@ msgstr ""
 "HTML) ukubonisela/ukuhlela ulwazi lohlobo lwalo fayile olusebenzisa ulawulo "
 "olusekunene."
 
-#: filetypesview.cpp:86
+#: filetypesview.cpp:92
 #, kde-format
 msgid "Click here to add a new file type."
 msgstr "Nqakraza apha ukudibanisa uhlobo lwefayile olutsha."
 
-#: filetypesview.cpp:88 filetypesview.cpp:354
+#: filetypesview.cpp:94 filetypesview.cpp:390
 #, kde-format
 msgid "&Remove"
 msgstr ""
 
-#: filetypesview.cpp:112
+#: filetypesview.cpp:120
 #, kde-format
 msgid "Select a file type by name or by extension"
 msgstr "Khetha udidi lwefayile ngegama okanye ngolwandiso"
 
-#: filetypesview.cpp:347
+#: filetypesview.cpp:383
 #, kde-format
 msgid "&Revert"
 msgstr ""
 
-#: filetypesview.cpp:348
+#: filetypesview.cpp:384
 #, kde-format
 msgid "Revert this file type to its initial system-wide definition"
 msgstr ""
 
-#: filetypesview.cpp:350
+#: filetypesview.cpp:386
 #, kde-format
 msgid ""
 "Click here to revert this file type to its initial system-wide definition, "
@@ -264,12 +264,12 @@ msgid ""
 "from file contents can still end up using them)."
 msgstr ""
 
-#: filetypesview.cpp:355
+#: filetypesview.cpp:391
 #, kde-format
 msgid "Delete this file type definition completely"
 msgstr ""
 
-#: filetypesview.cpp:357
+#: filetypesview.cpp:393
 #, kde-format
 msgid ""
 "Click here to delete this file type definition completely. This is only "
@@ -348,7 +348,7 @@ msgstr "Indlela Yesicelo Esikhethwayo"
 msgid "Services Preference Order"
 msgstr "Indlela Yeenkonzo Ezikhethwayo"
 
-#: kservicelistwidget.cpp:68
+#: kservicelistwidget.cpp:69
 #, fuzzy, kde-format
 msgid ""
 "This is a list of applications associated with files of the selected file "
@@ -363,7 +363,7 @@ msgstr ""
 "lwefayile, ngoko uluhlu lubekwa ngabaphambili ngomba ophezulu kakhulu "
 "uthatha okuphambili ngapha kwabanye."
 
-#: kservicelistwidget.cpp:73
+#: kservicelistwidget.cpp:74
 #, fuzzy, kde-format
 #| msgid ""
 #| "This is a list of services associated with files of the selected file "
@@ -384,12 +384,12 @@ msgstr ""
 "sidityanisiwe nolu didi l wefayile, ngoko uluhlu lubekwa ngabaphambili "
 "ngomba ophezulu kakhulu othatha okuphambili ngapha kwabanye."
 
-#: kservicelistwidget.cpp:85
+#: kservicelistwidget.cpp:86
 #, kde-format
 msgid "Move &Up"
 msgstr "Nyukela &Ngasentla"
 
-#: kservicelistwidget.cpp:91
+#: kservicelistwidget.cpp:92
 #, kde-format
 msgid ""
 "Assigns a higher priority to the selected\n"
@@ -402,7 +402,7 @@ msgstr ""
 "kuchaphazela kuphela isicelo esikhethiweyo ukuba udidi lwefayile lu\n"
 "dityanisiwe nesicelo esingaphezulu kwesinye."
 
-#: kservicelistwidget.cpp:95
+#: kservicelistwidget.cpp:96
 #, kde-format
 msgid ""
 "Assigns a higher priority to the selected\n"
@@ -411,12 +411,12 @@ msgstr ""
 "Nikezela ngokusesikweni ubuphathi obuphezulu kwekhethiweyo\n"
 "inkonzo, uyise phezulu kuluhlu."
 
-#: kservicelistwidget.cpp:98
+#: kservicelistwidget.cpp:99
 #, kde-format
 msgid "Move &Down"
 msgstr "Nyukela &Ngezantsi"
 
-#: kservicelistwidget.cpp:103
+#: kservicelistwidget.cpp:104
 #, kde-format
 msgid ""
 "Assigns a lower priority to the selected\n"
@@ -429,7 +429,7 @@ msgstr ""
 "kuchaphazela kuphela isicelo esikhethiweyo ukuba udidi lwefayile\n"
 "ludityanisiwe nesicelo esingaphezulu kwesinye."
 
-#: kservicelistwidget.cpp:107
+#: kservicelistwidget.cpp:108
 #, kde-format
 msgid ""
 "Assigns a lower priority to the selected\n"
@@ -438,34 +438,44 @@ msgstr ""
 "Nikeza ngokusesikweni ubuphathi obusezantsi kwekhethiweyo\n"
 "inkonzo, uyise ezantsi kuluhlu."
 
-#: kservicelistwidget.cpp:115
+#: kservicelistwidget.cpp:116
 #, kde-format
 msgid "Add a new application for this file type."
 msgstr "Yongeza isicelo esitsha soluhlobo lwefayile."
 
-#: kservicelistwidget.cpp:117
+#: kservicelistwidget.cpp:118
 #, kde-format
 msgid "Edit..."
 msgstr "Hlela..."
 
-#: kservicelistwidget.cpp:122
+#: kservicelistwidget.cpp:123
 #, kde-format
 msgid "Edit command line of the selected application."
 msgstr "Susa umgca womyalelo wesicelo esikhethiweyo."
 
-#: kservicelistwidget.cpp:129
+#: kservicelistwidget.cpp:130
 #, kde-format
 msgid "Remove the selected application from the list."
 msgstr "Susa isicelo esikhethiweyo kuluhlu."
 
-#: kservicelistwidget.cpp:152
+#: kservicelistwidget.cpp:132 multiapplydialog.cpp:19
+#, kde-format
+msgid "Apply To..."
+msgstr ""
+
+#: kservicelistwidget.cpp:137
+#, kde-format
+msgid "Apply the current preference order to other file types."
+msgstr ""
+
+#: kservicelistwidget.cpp:160
 #, fuzzy, kde-format
 #| msgid "None"
 msgctxt "No applications associated with this file type"
 msgid "None"
 msgstr "Akukho nanye"
 
-#: kservicelistwidget.cpp:154
+#: kservicelistwidget.cpp:162
 #, fuzzy, kde-format
 #| msgid "None"
 msgctxt "No components associated with this file type"

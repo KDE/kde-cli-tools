@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: filetypes\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-03-25 02:10+0000\n"
+"POT-Creation-Date: 2023-05-16 02:15+0000\n"
 "PO-Revision-Date: 2021-06-29 20:35+0530\n"
 "Last-Translator: Raghavendra Kamath <raghu@raghukamath.com>\n"
 "Language-Team: kde-hindi\n"
@@ -34,12 +34,12 @@ msgstr "raviratlami@aol.in,"
 msgid "Left Click Action (only for Konqueror file manager)"
 msgstr "बायाँ क्लिक क्रिया (सिर्फ कन्करर फ़ाइल प्रबंधक हेतु)"
 
-#: filegroupdetails.cpp:26 filetypedetails.cpp:133
+#: filegroupdetails.cpp:26 filetypedetails.cpp:134
 #, kde-format
 msgid "Show file in embedded viewer"
 msgstr "सन्निहित प्रदर्शक में फ़ाइल दिखाएँ"
 
-#: filegroupdetails.cpp:27 filetypedetails.cpp:134
+#: filegroupdetails.cpp:27 filetypedetails.cpp:135
 #, kde-format
 msgid "Show file in separate viewer"
 msgstr "अलग प्रदर्शक में फ़ाइल दिखाएँ"
@@ -77,7 +77,7 @@ msgid ""
 "text files."
 msgstr ""
 
-#: filetypedetails.cpp:87 filetypesview.cpp:81 kservicelistwidget.cpp:110
+#: filetypedetails.cpp:87 filetypesview.cpp:87 kservicelistwidget.cpp:111
 #, kde-format
 msgid "Add..."
 msgstr "जोड़ें..."
@@ -87,7 +87,7 @@ msgstr "जोड़ें..."
 msgid "Add a new pattern for the selected file type."
 msgstr "चुने गए फ़ाइल क़िस्म के लिए एक नया पैटर्न जोड़ें."
 
-#: filetypedetails.cpp:94 kservicelistwidget.cpp:124
+#: filetypedetails.cpp:94 kservicelistwidget.cpp:125
 #, kde-format
 msgid "Remove"
 msgstr "हटाएँ"
@@ -110,17 +110,17 @@ msgid ""
 "to display directory content."
 msgstr ""
 
-#: filetypedetails.cpp:128
+#: filetypedetails.cpp:129
 #, kde-format
 msgid "Left Click Action in Konqueror"
 msgstr "बायाँ क्लिक क्रिया कॉन्करर में"
 
-#: filetypedetails.cpp:137
+#: filetypedetails.cpp:138
 #, kde-format
 msgid "Ask whether to save to disk instead (only for Konqueror browser)"
 msgstr "पूछें कि इसके बजाए में डिस्क में सहेज लें (केवल कॉन्करर ब्राउसर के लिए)"
 
-#: filetypedetails.cpp:153
+#: filetypedetails.cpp:154
 #, kde-format
 msgid ""
 "Here you can configure what the Konqueror file manager will do when you "
@@ -131,43 +131,43 @@ msgid ""
 "file type is image/png. Dolphin always shows files in a separate viewer."
 msgstr ""
 
-#: filetypedetails.cpp:165
+#: filetypedetails.cpp:167
 #, kde-format
 msgid "&General"
 msgstr "सामान्य (&G)"
 
-#: filetypedetails.cpp:166
+#: filetypedetails.cpp:168
 #, kde-format
 msgid "&Embedding"
 msgstr "एम्बेडिंग (&E)"
 
-#: filetypedetails.cpp:207
+#: filetypedetails.cpp:209
 #, kde-format
 msgid "Add New Extension"
 msgstr "नया एक्सटेंशन जोड़ें"
 
-#: filetypedetails.cpp:207
+#: filetypedetails.cpp:209
 #, kde-format
 msgid "Extension:"
 msgstr "एक्सटेंशनः"
 
-#: filetypedetails.cpp:325
+#: filetypedetails.cpp:327
 #, kde-format
 msgid "File type %1"
 msgstr "फ़ाइल की किस्म %1"
 
-#: filetypedetails.cpp:333
+#: filetypedetails.cpp:335
 #, kde-format
 msgid "Use settings for '%1' group"
 msgstr "समूह '%1' के लिए विन्यास इस्तेमाल करें"
 
-#: filetypesview.cpp:52
+#: filetypesview.cpp:58
 #, fuzzy, kde-format
 #| msgid "Find file type or filename pattern"
 msgid "Search for file type or filename pattern..."
 msgstr "फ़ाइल टाइप या फ़ाइलनाम पैटर्न ढूंढें"
 
-#: filetypesview.cpp:58
+#: filetypesview.cpp:64
 #, kde-format
 msgid ""
 "Enter a part of a filename pattern, and only file types with a matching file "
@@ -177,12 +177,12 @@ msgstr ""
 "फ़ाइलनाम पैटर्न का कोई हिस्सा भरें. सिर्फ फ़ाइल क़िस्म जो फ़ाइल पैटर्न से मेल खाएंगे वही सूची "
 "में प्रकट होंगे. वैकल्पिक रूप से, फ़ाइल क़िस्म नाम का भाग भरें जो सूची में प्रकट हो रहा है."
 
-#: filetypesview.cpp:66
+#: filetypesview.cpp:72 multiapplydialog.cpp:27
 #, kde-format
 msgid "Known Types"
 msgstr "ज्ञात क़िस्म"
 
-#: filetypesview.cpp:72
+#: filetypesview.cpp:78
 #, kde-format
 msgid ""
 "Here you can see a hierarchical list of the file types which are known on "
@@ -191,32 +191,32 @@ msgid ""
 "the information for that file type using the controls on the right."
 msgstr ""
 
-#: filetypesview.cpp:86
+#: filetypesview.cpp:92
 #, kde-format
 msgid "Click here to add a new file type."
 msgstr "नया फ़ाइल क़िस्म जोड़ने के लिए यहाँ क्लिक करें."
 
-#: filetypesview.cpp:88 filetypesview.cpp:354
+#: filetypesview.cpp:94 filetypesview.cpp:390
 #, kde-format
 msgid "&Remove"
 msgstr "मिटाएँ (&R)"
 
-#: filetypesview.cpp:112
+#: filetypesview.cpp:120
 #, kde-format
 msgid "Select a file type by name or by extension"
 msgstr "फ़ाइल क़िस्म नाम या एक्सटेंशन से चुनें"
 
-#: filetypesview.cpp:347
+#: filetypesview.cpp:383
 #, kde-format
 msgid "&Revert"
 msgstr "पूर्ववत करें (&R)"
 
-#: filetypesview.cpp:348
+#: filetypesview.cpp:384
 #, kde-format
 msgid "Revert this file type to its initial system-wide definition"
 msgstr "इस फ़ाइल किस्म को इसके मूल तंत्र -वाइड परिभाषा में बहाल करें"
 
-#: filetypesview.cpp:350
+#: filetypesview.cpp:386
 #, kde-format
 msgid ""
 "Click here to revert this file type to its initial system-wide definition, "
@@ -226,12 +226,12 @@ msgid ""
 "from file contents can still end up using them)."
 msgstr ""
 
-#: filetypesview.cpp:355
+#: filetypesview.cpp:391
 #, kde-format
 msgid "Delete this file type definition completely"
 msgstr "इस फ़ाइल क़िस्म परिभाषा को पूरी तरह मिटा दें"
 
-#: filetypesview.cpp:357
+#: filetypesview.cpp:393
 #, kde-format
 msgid ""
 "Click here to delete this file type definition completely. This is only "
@@ -308,7 +308,7 @@ msgstr "अनुप्रयोग प्राथमिकता अनुक�
 msgid "Services Preference Order"
 msgstr "सेवा प्राथमिकता अनुक्रम"
 
-#: kservicelistwidget.cpp:68
+#: kservicelistwidget.cpp:69
 #, kde-format
 msgid ""
 "This is a list of applications associated with files of the selected file "
@@ -318,7 +318,7 @@ msgid ""
 "precedence over the others."
 msgstr ""
 
-#: kservicelistwidget.cpp:73
+#: kservicelistwidget.cpp:74
 #, kde-format
 msgid ""
 "This is a list of services associated with files of the selected file type. "
@@ -328,12 +328,12 @@ msgid ""
 "precedence over the others."
 msgstr ""
 
-#: kservicelistwidget.cpp:85
+#: kservicelistwidget.cpp:86
 #, kde-format
 msgid "Move &Up"
 msgstr "ऊपर जाएं (&U)"
 
-#: kservicelistwidget.cpp:91
+#: kservicelistwidget.cpp:92
 #, kde-format
 msgid ""
 "Assigns a higher priority to the selected\n"
@@ -342,7 +342,7 @@ msgid ""
 "associated with more than one application."
 msgstr ""
 
-#: kservicelistwidget.cpp:95
+#: kservicelistwidget.cpp:96
 #, kde-format
 msgid ""
 "Assigns a higher priority to the selected\n"
@@ -351,12 +351,12 @@ msgstr ""
 "चुने गए सेवा को एक उच्च\n"
 "प्राथमिकता प्रदान करता है, सूची में ऊपर ले जाकर."
 
-#: kservicelistwidget.cpp:98
+#: kservicelistwidget.cpp:99
 #, kde-format
 msgid "Move &Down"
 msgstr "नीचे जाएं (&D)"
 
-#: kservicelistwidget.cpp:103
+#: kservicelistwidget.cpp:104
 #, kde-format
 msgid ""
 "Assigns a lower priority to the selected\n"
@@ -369,7 +369,7 @@ msgstr ""
 "केवल चयनित अनुप्रयोग को प्रभावित करता है यदि \n"
 " फ़ाइल प्रकारएक से अधिक आवेदन के साथ सम्बद्ध हो।"
 
-#: kservicelistwidget.cpp:107
+#: kservicelistwidget.cpp:108
 #, kde-format
 msgid ""
 "Assigns a lower priority to the selected\n"
@@ -378,33 +378,43 @@ msgstr ""
 "चुने गए सेवा को एक निम्न\n"
 "प्राथमिकता प्रदान करता है, सूची में नीचे लाकर."
 
-#: kservicelistwidget.cpp:115
+#: kservicelistwidget.cpp:116
 #, kde-format
 msgid "Add a new application for this file type."
 msgstr "इस फ़ाइल क़िस्म के लिए एक नया अनुप्रयोग जोड़ें."
 
-#: kservicelistwidget.cpp:117
+#: kservicelistwidget.cpp:118
 #, kde-format
 msgid "Edit..."
 msgstr "संपादन..."
 
-#: kservicelistwidget.cpp:122
+#: kservicelistwidget.cpp:123
 #, kde-format
 msgid "Edit command line of the selected application."
 msgstr "चुने गए अनुप्रयोग का कमांडलाइन का संपादन करें"
 
-#: kservicelistwidget.cpp:129
+#: kservicelistwidget.cpp:130
 #, kde-format
 msgid "Remove the selected application from the list."
 msgstr "चुने गए अनुप्रयोग को सूची में से बाहर करें"
 
-#: kservicelistwidget.cpp:152
+#: kservicelistwidget.cpp:132 multiapplydialog.cpp:19
+#, kde-format
+msgid "Apply To..."
+msgstr ""
+
+#: kservicelistwidget.cpp:137
+#, kde-format
+msgid "Apply the current preference order to other file types."
+msgstr ""
+
+#: kservicelistwidget.cpp:160
 #, kde-format
 msgctxt "No applications associated with this file type"
 msgid "None"
 msgstr "कुछ नहीं"
 
-#: kservicelistwidget.cpp:154
+#: kservicelistwidget.cpp:162
 #, kde-format
 msgctxt "No components associated with this file type"
 msgid "None"

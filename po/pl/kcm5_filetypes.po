@@ -1,6 +1,6 @@
 # translation of filetypes.po to Polish
 # translation of filetypes.po to
-# Version: $Revision: 1647873 $
+# Version: $Revision: 1651777 $
 # Translated by Artur Skura <artur@linux.com.pl>
 # minor updates by Jacek Stolarczyk <jacek@mer.chemia.polsl.gliwice.pl>
 # Latest translation by Daniel Koć <kocio@bigfoot.com>
@@ -13,7 +13,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: filetypes\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-03-25 02:10+0000\n"
+"POT-Creation-Date: 2023-05-16 02:15+0000\n"
 "PO-Revision-Date: 2021-05-02 07:35+0200\n"
 "Last-Translator: Łukasz Wojniłowicz <lukasz.wojnilowicz@gmail.com>\n"
 "Language-Team: Polish <kde-i18n-doc@kde.org>\n"
@@ -41,12 +41,12 @@ msgstr "mrudolf@kdewebdev.org, lukasz.wojnilowicz@gmail.com"
 msgid "Left Click Action (only for Konqueror file manager)"
 msgstr "Działanie lewego przycisku myszy (tylko w przeglądarce Konqueror)"
 
-#: filegroupdetails.cpp:26 filetypedetails.cpp:133
+#: filegroupdetails.cpp:26 filetypedetails.cpp:134
 #, kde-format
 msgid "Show file in embedded viewer"
 msgstr "Wyświetl plik we wbudowanej przeglądarce"
 
-#: filegroupdetails.cpp:27 filetypedetails.cpp:134
+#: filegroupdetails.cpp:27 filetypedetails.cpp:135
 #, kde-format
 msgid "Show file in separate viewer"
 msgstr "Wyświetl plik w osobnym oknie"
@@ -94,7 +94,7 @@ msgstr ""
 "\"text/plain\", wszystkie pliki kończące się na \".txt\" zostaną rozpoznane "
 "jako pliki tekstowe."
 
-#: filetypedetails.cpp:87 filetypesview.cpp:81 kservicelistwidget.cpp:110
+#: filetypedetails.cpp:87 filetypesview.cpp:87 kservicelistwidget.cpp:111
 #, kde-format
 msgid "Add..."
 msgstr "Dodaj..."
@@ -104,7 +104,7 @@ msgstr "Dodaj..."
 msgid "Add a new pattern for the selected file type."
 msgstr "Dodaj nowy wzorzec dla zaznaczonego rodzaju plików."
 
-#: filetypedetails.cpp:94 kservicelistwidget.cpp:124
+#: filetypedetails.cpp:94 kservicelistwidget.cpp:125
 #, kde-format
 msgid "Remove"
 msgstr "Usuń"
@@ -130,17 +130,17 @@ msgstr ""
 "HTML\"). Opis ten będzie wykorzystany w programach takich jak Konqueror do "
 "wyświetlenia zawartości katalogów."
 
-#: filetypedetails.cpp:128
+#: filetypedetails.cpp:129
 #, kde-format
 msgid "Left Click Action in Konqueror"
 msgstr "Działanie lewego przycisku myszy w Konqueror"
 
-#: filetypedetails.cpp:137
+#: filetypedetails.cpp:138
 #, kde-format
 msgid "Ask whether to save to disk instead (only for Konqueror browser)"
 msgstr "Pytaj, czy zapisać na dysk (tylko w przeglądarce Konqueror)"
 
-#: filetypedetails.cpp:153
+#: filetypedetails.cpp:154
 #, kde-format
 msgid ""
 "Here you can configure what the Konqueror file manager will do when you "
@@ -158,42 +158,42 @@ msgstr ""
 "rodzaj  pliku (np. grupy 'obraz' dla plików rodzaju image/png). Dolphin "
 "zawsze pokazuje pliki w oddzielnej przeglądarce."
 
-#: filetypedetails.cpp:165
+#: filetypedetails.cpp:167
 #, kde-format
 msgid "&General"
 msgstr "O&gólne"
 
-#: filetypedetails.cpp:166
+#: filetypedetails.cpp:168
 #, kde-format
 msgid "&Embedding"
 msgstr "O&sadzanie"
 
-#: filetypedetails.cpp:207
+#: filetypedetails.cpp:209
 #, kde-format
 msgid "Add New Extension"
 msgstr "Dodaj nowe rozszerzenie"
 
-#: filetypedetails.cpp:207
+#: filetypedetails.cpp:209
 #, kde-format
 msgid "Extension:"
 msgstr "Rozszerzenie:"
 
-#: filetypedetails.cpp:325
+#: filetypedetails.cpp:327
 #, kde-format
 msgid "File type %1"
 msgstr "Rodzaj pliku %1"
 
-#: filetypedetails.cpp:333
+#: filetypedetails.cpp:335
 #, kde-format
 msgid "Use settings for '%1' group"
 msgstr "Użyj ustawień dla grupy '%1'"
 
-#: filetypesview.cpp:52
+#: filetypesview.cpp:58
 #, kde-format
 msgid "Search for file type or filename pattern..."
 msgstr "Znajdź rodzaj pliku lub wzorzec nazwy pliku..."
 
-#: filetypesview.cpp:58
+#: filetypesview.cpp:64
 #, kde-format
 msgid ""
 "Enter a part of a filename pattern, and only file types with a matching file "
@@ -204,12 +204,12 @@ msgstr ""
 "plików, które do niego pasują. Można również wpisać nazwę rodzaju pliku, tak "
 "jak jest ona przedstawiona na liście."
 
-#: filetypesview.cpp:66
+#: filetypesview.cpp:72 multiapplydialog.cpp:27
 #, kde-format
 msgid "Known Types"
 msgstr "Znane rodzaje"
 
-#: filetypesview.cpp:72
+#: filetypesview.cpp:78
 #, kde-format
 msgid ""
 "Here you can see a hierarchical list of the file types which are known on "
@@ -223,32 +223,32 @@ msgstr ""
 "zmieniać informacje o tym rodzaju pliku za pomocą elementów sterujących po "
 "prawej stronie."
 
-#: filetypesview.cpp:86
+#: filetypesview.cpp:92
 #, kde-format
 msgid "Click here to add a new file type."
 msgstr "Naciśnij tutaj, aby dodać nowy rodzaj pliku."
 
-#: filetypesview.cpp:88 filetypesview.cpp:354
+#: filetypesview.cpp:94 filetypesview.cpp:390
 #, kde-format
 msgid "&Remove"
 msgstr "&Usuń"
 
-#: filetypesview.cpp:112
+#: filetypesview.cpp:120
 #, kde-format
 msgid "Select a file type by name or by extension"
 msgstr "Wybierz rodzaj pliku, podając nazwę lub rozszerzenie"
 
-#: filetypesview.cpp:347
+#: filetypesview.cpp:383
 #, kde-format
 msgid "&Revert"
 msgstr "P&rzywróć"
 
-#: filetypesview.cpp:348
+#: filetypesview.cpp:384
 #, kde-format
 msgid "Revert this file type to its initial system-wide definition"
 msgstr "Przywróć domyślne ustawienia systemowe dla tego rodzaju pliku"
 
-#: filetypesview.cpp:350
+#: filetypesview.cpp:386
 #, kde-format
 msgid ""
 "Click here to revert this file type to its initial system-wide definition, "
@@ -264,12 +264,12 @@ msgstr ""
 "(ale pliki rozpoznawane na podstawie zawartości nadal będą używać rodzajów "
 "systemowych)."
 
-#: filetypesview.cpp:355
+#: filetypesview.cpp:391
 #, kde-format
 msgid "Delete this file type definition completely"
 msgstr "Całkowicie usuń definicję tego rodzaju pliku"
 
-#: filetypesview.cpp:357
+#: filetypesview.cpp:393
 #, kde-format
 msgid ""
 "Click here to delete this file type definition completely. This is only "
@@ -354,7 +354,7 @@ msgstr "Pierwszeństwo obsługi"
 msgid "Services Preference Order"
 msgstr "Pierwszeństwo obsługi"
 
-#: kservicelistwidget.cpp:68
+#: kservicelistwidget.cpp:69
 #, kde-format
 msgid ""
 "This is a list of applications associated with files of the selected file "
@@ -369,7 +369,7 @@ msgstr ""
 "sortowana według pierwszeństwa, najwyżej znajduje się program o najwyższym "
 "priorytecie."
 
-#: kservicelistwidget.cpp:73
+#: kservicelistwidget.cpp:74
 #, kde-format
 msgid ""
 "This is a list of services associated with files of the selected file type. "
@@ -384,12 +384,12 @@ msgstr ""
 "sortowana według pierwszeństwa, najwyżej znajduje się element o najwyższym "
 "priorytecie."
 
-#: kservicelistwidget.cpp:85
+#: kservicelistwidget.cpp:86
 #, kde-format
 msgid "Move &Up"
 msgstr "Przesuń w &górę"
 
-#: kservicelistwidget.cpp:91
+#: kservicelistwidget.cpp:92
 #, kde-format
 msgid ""
 "Assigns a higher priority to the selected\n"
@@ -402,7 +402,7 @@ msgstr ""
 "jedynie zaznaczonego rodzajów plików, nawet jeśli\n"
 " ten sam program jest skojarzony także z innymi rodzajami plików."
 
-#: kservicelistwidget.cpp:95
+#: kservicelistwidget.cpp:96
 #, kde-format
 msgid ""
 "Assigns a higher priority to the selected\n"
@@ -411,12 +411,12 @@ msgstr ""
 "Przypisuje wyższy priorytet wybranej usłudze,\n"
 "przesuwając ją w górę listy."
 
-#: kservicelistwidget.cpp:98
+#: kservicelistwidget.cpp:99
 #, kde-format
 msgid "Move &Down"
 msgstr "Przesuń w &dół"
 
-#: kservicelistwidget.cpp:103
+#: kservicelistwidget.cpp:104
 #, kde-format
 msgid ""
 "Assigns a lower priority to the selected\n"
@@ -429,7 +429,7 @@ msgstr ""
 "zaznaczonego rodzaju plików, nawet jeśli ten sam program\n"
 "jest skojarzony także z innymi rodzajami plików."
 
-#: kservicelistwidget.cpp:107
+#: kservicelistwidget.cpp:108
 #, kde-format
 msgid ""
 "Assigns a lower priority to the selected\n"
@@ -438,33 +438,43 @@ msgstr ""
 "Przypisuje niższy priorytet wybranej usłudze,\n"
 "przesuwając ją w górę listy."
 
-#: kservicelistwidget.cpp:115
+#: kservicelistwidget.cpp:116
 #, kde-format
 msgid "Add a new application for this file type."
 msgstr "Skojarz nowy program z tym rodzajem plików."
 
-#: kservicelistwidget.cpp:117
+#: kservicelistwidget.cpp:118
 #, kde-format
 msgid "Edit..."
 msgstr "Zmień..."
 
-#: kservicelistwidget.cpp:122
+#: kservicelistwidget.cpp:123
 #, kde-format
 msgid "Edit command line of the selected application."
 msgstr "Zmień polecenie uruchamiające wybrany program."
 
-#: kservicelistwidget.cpp:129
+#: kservicelistwidget.cpp:130
 #, kde-format
 msgid "Remove the selected application from the list."
 msgstr "Usuń zaznaczony program z listy."
 
-#: kservicelistwidget.cpp:152
+#: kservicelistwidget.cpp:132 multiapplydialog.cpp:19
+#, kde-format
+msgid "Apply To..."
+msgstr ""
+
+#: kservicelistwidget.cpp:137
+#, kde-format
+msgid "Apply the current preference order to other file types."
+msgstr ""
+
+#: kservicelistwidget.cpp:160
 #, kde-format
 msgctxt "No applications associated with this file type"
 msgid "None"
 msgstr "Brak"
 
-#: kservicelistwidget.cpp:154
+#: kservicelistwidget.cpp:162
 #, kde-format
 msgctxt "No components associated with this file type"
 msgid "None"

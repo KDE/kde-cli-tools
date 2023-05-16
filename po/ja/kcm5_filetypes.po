@@ -11,7 +11,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: filetypes\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-03-25 02:10+0000\n"
+"POT-Creation-Date: 2023-05-16 02:15+0000\n"
 "PO-Revision-Date: 2014-12-06 16:37-0800\n"
 "Last-Translator: Fumiaki Okushi <fumiaki.okushi@gmail.com>\n"
 "Language-Team: Japanese <kde-jp@kde.org>\n"
@@ -41,12 +41,12 @@ msgstr ""
 msgid "Left Click Action (only for Konqueror file manager)"
 msgstr "左クリック時の動作 (Konqueror ファイルマネージャのみ)"
 
-#: filegroupdetails.cpp:26 filetypedetails.cpp:133
+#: filegroupdetails.cpp:26 filetypedetails.cpp:134
 #, kde-format
 msgid "Show file in embedded viewer"
 msgstr "組込みビューアでファイルを表示"
 
-#: filegroupdetails.cpp:27 filetypedetails.cpp:134
+#: filegroupdetails.cpp:27 filetypedetails.cpp:135
 #, kde-format
 msgid "Show file in separate viewer"
 msgstr "外部ビューアでファイルを表示"
@@ -93,7 +93,7 @@ msgstr ""
 "tt> というファイルタイプに関連付けられています。これによってファイル名が "
 "<tt>.txt</tt> で終るファイルはすべてプレーンテキストと判断されます。</qt>"
 
-#: filetypedetails.cpp:87 filetypesview.cpp:81 kservicelistwidget.cpp:110
+#: filetypedetails.cpp:87 filetypesview.cpp:87 kservicelistwidget.cpp:111
 #, kde-format
 msgid "Add..."
 msgstr "追加..."
@@ -103,7 +103,7 @@ msgstr "追加..."
 msgid "Add a new pattern for the selected file type."
 msgstr "選択したファイルタイプに新しいパターンを追加します。"
 
-#: filetypedetails.cpp:94 kservicelistwidget.cpp:124
+#: filetypedetails.cpp:94 kservicelistwidget.cpp:125
 #, kde-format
 msgid "Remove"
 msgstr "削除"
@@ -129,17 +129,17 @@ msgstr ""
 "ができます。これは Konqueror などのアプリケーションがフォルダの内容を表示する"
 "ときに使用します。"
 
-#: filetypedetails.cpp:128
+#: filetypedetails.cpp:129
 #, kde-format
 msgid "Left Click Action in Konqueror"
 msgstr "左クリック時の動作"
 
-#: filetypedetails.cpp:137
+#: filetypedetails.cpp:138
 #, kde-format
 msgid "Ask whether to save to disk instead (only for Konqueror browser)"
 msgstr "代わりにディスクに保存するかどうか尋ねる (Konqueror ブラウザのみ)"
 
-#: filetypedetails.cpp:153
+#: filetypedetails.cpp:154
 #, kde-format
 msgid ""
 "Here you can configure what the Konqueror file manager will do when you "
@@ -157,45 +157,45 @@ msgstr ""
 "プの設定に従います。Dolphin の場合は、ファイルは常に別のビューアに表示されま"
 "す。</qt>"
 
-#: filetypedetails.cpp:165
+#: filetypedetails.cpp:167
 #, kde-format
 msgid "&General"
 msgstr "全般(&G)"
 
 # ACCELERATOR changed by translator
-#: filetypedetails.cpp:166
+#: filetypedetails.cpp:168
 #, kde-format
 msgid "&Embedding"
 msgstr "組込み(&B)"
 
-#: filetypedetails.cpp:207
+#: filetypedetails.cpp:209
 #, kde-format
 msgid "Add New Extension"
 msgstr "新しい拡張子を追加"
 
-#: filetypedetails.cpp:207
+#: filetypedetails.cpp:209
 #, kde-format
 msgid "Extension:"
 msgstr "拡張子:"
 
-#: filetypedetails.cpp:325
+#: filetypedetails.cpp:327
 #, kde-format
 msgid "File type %1"
 msgstr "ファイルタイプ %1"
 
-#: filetypedetails.cpp:333
+#: filetypedetails.cpp:335
 #, kde-format
 msgid "Use settings for '%1' group"
 msgstr "%1 グループの設定を使う"
 
 # 検索フィールドに表示されるテキスト
-#: filetypesview.cpp:52
+#: filetypesview.cpp:58
 #, fuzzy, kde-format
 #| msgid "Find file type or filename pattern"
 msgid "Search for file type or filename pattern..."
 msgstr "ファイルタイプ/ファイル名パターンを検索"
 
-#: filetypesview.cpp:58
+#: filetypesview.cpp:64
 #, kde-format
 msgid ""
 "Enter a part of a filename pattern, and only file types with a matching file "
@@ -206,12 +206,12 @@ msgstr ""
 "プのみがリストに表示されます。リストに表示されるファイルタイプの名前の一部を"
 "入力してもかまいません。"
 
-#: filetypesview.cpp:66
+#: filetypesview.cpp:72 multiapplydialog.cpp:27
 #, kde-format
 msgid "Known Types"
 msgstr "既知のタイプ"
 
-#: filetypesview.cpp:72
+#: filetypesview.cpp:78
 #, kde-format
 msgid ""
 "Here you can see a hierarchical list of the file types which are known on "
@@ -224,32 +224,32 @@ msgstr ""
 "リックするとカテゴリが閉じます。ファイルタイプ (例えば HTML については "
 "<tt>text/html</tt>) を選択して、パネルの右側で参照/編集してください。</qt>"
 
-#: filetypesview.cpp:86
+#: filetypesview.cpp:92
 #, kde-format
 msgid "Click here to add a new file type."
 msgstr "ここをクリックして新しいファイルタイプを追加します。"
 
-#: filetypesview.cpp:88 filetypesview.cpp:354
+#: filetypesview.cpp:94 filetypesview.cpp:390
 #, kde-format
 msgid "&Remove"
 msgstr "削除(&R)"
 
-#: filetypesview.cpp:112
+#: filetypesview.cpp:120
 #, kde-format
 msgid "Select a file type by name or by extension"
 msgstr "ファイルタイプを名前または拡張子で選択"
 
-#: filetypesview.cpp:347
+#: filetypesview.cpp:383
 #, kde-format
 msgid "&Revert"
 msgstr "戻す(&R)"
 
-#: filetypesview.cpp:348
+#: filetypesview.cpp:384
 #, kde-format
 msgid "Revert this file type to its initial system-wide definition"
 msgstr "このファイルタイプの定義をシステム全体の初期値に戻します"
 
-#: filetypesview.cpp:350
+#: filetypesview.cpp:386
 #, kde-format
 msgid ""
 "Click here to revert this file type to its initial system-wide definition, "
@@ -264,12 +264,12 @@ msgstr ""
 "ることはできます。(しかしファイルの内容からファイルタイプが判別された場合、最"
 "終的にはそれらが使用されます)"
 
-#: filetypesview.cpp:355
+#: filetypesview.cpp:391
 #, kde-format
 msgid "Delete this file type definition completely"
 msgstr "このファイルタイプの定義を完全に削除します"
 
-#: filetypesview.cpp:357
+#: filetypesview.cpp:393
 #, kde-format
 msgid ""
 "Click here to delete this file type definition completely. This is only "
@@ -352,7 +352,7 @@ msgstr "アプリケーションの優先順位"
 msgid "Services Preference Order"
 msgstr "サービスの優先順位"
 
-#: kservicelistwidget.cpp:68
+#: kservicelistwidget.cpp:69
 #, kde-format
 msgid ""
 "This is a list of applications associated with files of the selected file "
@@ -366,7 +366,7 @@ msgstr ""
 "ときにも表示されます。関連付けられたアプリケーションが複数ある場合は、優先順"
 "位の高いものから順に表示します。</qt>"
 
-#: kservicelistwidget.cpp:73
+#: kservicelistwidget.cpp:74
 #, kde-format
 msgid ""
 "This is a list of services associated with files of the selected file type. "
@@ -380,12 +380,12 @@ msgstr ""
 "ときにも表示されます。関連付けられたサービスが複数ある場合は、優先順位の高い"
 "ものから順に表示します。"
 
-#: kservicelistwidget.cpp:85
+#: kservicelistwidget.cpp:86
 #, kde-format
 msgid "Move &Up"
 msgstr "上へ移動(&U)"
 
-#: kservicelistwidget.cpp:91
+#: kservicelistwidget.cpp:92
 #, kde-format
 msgid ""
 "Assigns a higher priority to the selected\n"
@@ -397,19 +397,19 @@ msgstr ""
 "これはファイルタイプに関連付けられたアプリケーションが複数ある場合のみ有効で"
 "す。"
 
-#: kservicelistwidget.cpp:95
+#: kservicelistwidget.cpp:96
 #, kde-format
 msgid ""
 "Assigns a higher priority to the selected\n"
 "service, moving it up in the list."
 msgstr "選択したサービスを上へ移動し、優先順位を上げます。"
 
-#: kservicelistwidget.cpp:98
+#: kservicelistwidget.cpp:99
 #, kde-format
 msgid "Move &Down"
 msgstr "下へ移動(&D)"
 
-#: kservicelistwidget.cpp:103
+#: kservicelistwidget.cpp:104
 #, kde-format
 msgid ""
 "Assigns a lower priority to the selected\n"
@@ -421,40 +421,50 @@ msgstr ""
 "これはファイルタイプに関連付けられたアプリケーションが複数ある場合のみ有効で"
 "す。"
 
-#: kservicelistwidget.cpp:107
+#: kservicelistwidget.cpp:108
 #, kde-format
 msgid ""
 "Assigns a lower priority to the selected\n"
 "service, moving it down in the list."
 msgstr "選択したサービスを下へ移動し、優先順位を下げます。"
 
-#: kservicelistwidget.cpp:115
+#: kservicelistwidget.cpp:116
 #, kde-format
 msgid "Add a new application for this file type."
 msgstr "このファイルタイプに他のアプリケーションを追加します。"
 
-#: kservicelistwidget.cpp:117
+#: kservicelistwidget.cpp:118
 #, kde-format
 msgid "Edit..."
 msgstr "編集..."
 
-#: kservicelistwidget.cpp:122
+#: kservicelistwidget.cpp:123
 #, kde-format
 msgid "Edit command line of the selected application."
 msgstr "選択したアプリケーションのコマンドライン設定を編集します。"
 
-#: kservicelistwidget.cpp:129
+#: kservicelistwidget.cpp:130
 #, kde-format
 msgid "Remove the selected application from the list."
 msgstr "選択したアプリケーションをリストから削除します。"
 
-#: kservicelistwidget.cpp:152
+#: kservicelistwidget.cpp:132 multiapplydialog.cpp:19
+#, kde-format
+msgid "Apply To..."
+msgstr ""
+
+#: kservicelistwidget.cpp:137
+#, kde-format
+msgid "Apply the current preference order to other file types."
+msgstr ""
+
+#: kservicelistwidget.cpp:160
 #, kde-format
 msgctxt "No applications associated with this file type"
 msgid "None"
 msgstr "(なし)"
 
-#: kservicelistwidget.cpp:154
+#: kservicelistwidget.cpp:162
 #, kde-format
 msgctxt "No components associated with this file type"
 msgid "None"

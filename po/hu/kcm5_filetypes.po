@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: KDE 4.1\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-03-25 02:10+0000\n"
+"POT-Creation-Date: 2023-05-16 02:15+0000\n"
 "PO-Revision-Date: 2019-11-08 22:03+0100\n"
 "Last-Translator: Kristóf Kiszel <ulysses@kubuntu.org>\n"
 "Language-Team: Hungarian <kde-l10n-hu@kde.org>\n"
@@ -32,12 +32,12 @@ msgstr "ulysses@kubuntu.org,miketkf@yahoo.com,tszanto@interware.hu"
 msgid "Left Click Action (only for Konqueror file manager)"
 msgstr "Bal kattintáshoz rendelt művelet (csak Konqueror fájlkezelőhöz)"
 
-#: filegroupdetails.cpp:26 filetypedetails.cpp:133
+#: filegroupdetails.cpp:26 filetypedetails.cpp:134
 #, kde-format
 msgid "Show file in embedded viewer"
 msgstr "a fájl megjelenítése a beágyazott nézegetővel"
 
-#: filegroupdetails.cpp:27 filetypedetails.cpp:134
+#: filegroupdetails.cpp:27 filetypedetails.cpp:135
 #, kde-format
 msgid "Show file in separate viewer"
 msgstr "a fájl megjelenítése külső nézegetővel"
@@ -83,7 +83,7 @@ msgstr ""
 "a „text/plain” fájlokat azonosító minta a *.txt, így minden „.txt”-re "
 "végződő fájlt egyszerű szöveges fájlként ismer fel a rendszer."
 
-#: filetypedetails.cpp:87 filetypesview.cpp:81 kservicelistwidget.cpp:110
+#: filetypedetails.cpp:87 filetypesview.cpp:87 kservicelistwidget.cpp:111
 #, kde-format
 msgid "Add..."
 msgstr "Hozzáadás…"
@@ -93,7 +93,7 @@ msgstr "Hozzáadás…"
 msgid "Add a new pattern for the selected file type."
 msgstr "Új minta hozzáadása a kijelölt fájltípushoz."
 
-#: filetypedetails.cpp:94 kservicelistwidget.cpp:124
+#: filetypedetails.cpp:94 kservicelistwidget.cpp:125
 #, kde-format
 msgid "Remove"
 msgstr "Eltávolítás"
@@ -119,17 +119,17 @@ msgstr ""
 "oldal”). Ezt a leírást használják az alkalmazások, például a Konqueror, "
 "amikor a könyvtártartalmat jelenítik meg."
 
-#: filetypedetails.cpp:128
+#: filetypedetails.cpp:129
 #, kde-format
 msgid "Left Click Action in Konqueror"
 msgstr "Bal kattintáshoz rendelt művelet a Konquerorban"
 
-#: filetypedetails.cpp:137
+#: filetypedetails.cpp:138
 #, kde-format
 msgid "Ask whether to save to disk instead (only for Konqueror browser)"
 msgstr "Rákérdezés a lemezre mentésre (kizárólag Konqueror böngészőre)"
 
-#: filetypedetails.cpp:153
+#: filetypedetails.cpp:154
 #, kde-format
 msgid ""
 "Here you can configure what the Konqueror file manager will do when you "
@@ -147,42 +147,42 @@ msgstr ""
 "például az „image” csoportnak megfelelően, ha a típus image/png. A Dolphin "
 "mindig egy külön nézegetőben jeleníti meg a fájlokat."
 
-#: filetypedetails.cpp:165
+#: filetypedetails.cpp:167
 #, kde-format
 msgid "&General"
 msgstr "Általáno&s"
 
-#: filetypedetails.cpp:166
+#: filetypedetails.cpp:168
 #, kde-format
 msgid "&Embedding"
 msgstr "&Beágyazás"
 
-#: filetypedetails.cpp:207
+#: filetypedetails.cpp:209
 #, kde-format
 msgid "Add New Extension"
 msgstr "Új kiterjesztés hozzáadása"
 
-#: filetypedetails.cpp:207
+#: filetypedetails.cpp:209
 #, kde-format
 msgid "Extension:"
 msgstr "Kiterjesztés:"
 
-#: filetypedetails.cpp:325
+#: filetypedetails.cpp:327
 #, kde-format
 msgid "File type %1"
 msgstr "Fájltípus: %1"
 
-#: filetypedetails.cpp:333
+#: filetypedetails.cpp:335
 #, kde-format
 msgid "Use settings for '%1' group"
 msgstr "A(z) „%1” csoport beállításainak használata"
 
-#: filetypesview.cpp:52
+#: filetypesview.cpp:58
 #, kde-format
 msgid "Search for file type or filename pattern..."
 msgstr "Fájltípus- vagy fájlnévminta keresése…"
 
-#: filetypesview.cpp:58
+#: filetypesview.cpp:64
 #, kde-format
 msgid ""
 "Enter a part of a filename pattern, and only file types with a matching file "
@@ -193,12 +193,12 @@ msgstr ""
 "fognak megjelenni az alábbi listában. Hasonló módon a fájltípus egy részlete "
 "is megadható."
 
-#: filetypesview.cpp:66
+#: filetypesview.cpp:72 multiapplydialog.cpp:27
 #, kde-format
 msgid "Known Types"
 msgstr "Ismert típusok"
 
-#: filetypesview.cpp:72
+#: filetypesview.cpp:78
 #, kde-format
 msgid ""
 "Here you can see a hierarchical list of the file types which are known on "
@@ -211,34 +211,34 @@ msgstr ""
 "kiválaszt egy fájltípust (pl. text/html a HTML fájlokhoz), akkor a lista "
 "jobb oldalán levő ablakokban végezhet módosításokat rajta."
 
-#: filetypesview.cpp:86
+#: filetypesview.cpp:92
 #, kde-format
 msgid "Click here to add a new file type."
 msgstr "Kattintson ide egy új fájltípus hozzáadásához."
 
-#: filetypesview.cpp:88 filetypesview.cpp:354
+#: filetypesview.cpp:94 filetypesview.cpp:390
 #, kde-format
 msgid "&Remove"
 msgstr "&Eltávolítás"
 
-#: filetypesview.cpp:112
+#: filetypesview.cpp:120
 #, kde-format
 msgid "Select a file type by name or by extension"
 msgstr "Válasszon egy fájltípust a név vagy a kiterjesztés szerint"
 
-#: filetypesview.cpp:347
+#: filetypesview.cpp:383
 #, kde-format
 msgid "&Revert"
 msgstr "&Visszaállítás"
 
-#: filetypesview.cpp:348
+#: filetypesview.cpp:384
 #, kde-format
 msgid "Revert this file type to its initial system-wide definition"
 msgstr ""
 "Ennek a fájl típusnak a visszaállítása egy kezdeti, rendszer egészére "
 "vonatkozó definícióra"
 
-#: filetypesview.cpp:350
+#: filetypesview.cpp:386
 #, kde-format
 msgid ""
 "Click here to revert this file type to its initial system-wide definition, "
@@ -254,12 +254,12 @@ msgstr ""
 "használatuk esélyének minimalizálásához. (de a fájltípus meghatározás a fájl "
 "tartalomból még mindig megelőzheti a használatukat)."
 
-#: filetypesview.cpp:355
+#: filetypesview.cpp:391
 #, kde-format
 msgid "Delete this file type definition completely"
 msgstr "Ennek a fájl típus definíciónak a teljes törlése"
 
-#: filetypesview.cpp:357
+#: filetypesview.cpp:393
 #, kde-format
 msgid ""
 "Click here to delete this file type definition completely. This is only "
@@ -342,7 +342,7 @@ msgstr "Használt alkalmazássorrend"
 msgid "Services Preference Order"
 msgstr "Az alkalmazások kívánt sorrendje"
 
-#: kservicelistwidget.cpp:68
+#: kservicelistwidget.cpp:69
 #, kde-format
 msgid ""
 "This is a list of applications associated with files of the selected file "
@@ -357,7 +357,7 @@ msgstr ""
 "van a fájltípus, akkor a lista egyben a prioritási sorrendet is "
 "meghatározza: a legfelső megelőzi a többit."
 
-#: kservicelistwidget.cpp:73
+#: kservicelistwidget.cpp:74
 #, kde-format
 msgid ""
 "This is a list of services associated with files of the selected file type. "
@@ -372,12 +372,12 @@ msgstr ""
 "van a fájltípus, akkor a lista egyben a prioritási sorrendet is "
 "meghatározza, a legfelső megelőzi a többit."
 
-#: kservicelistwidget.cpp:85
+#: kservicelistwidget.cpp:86
 #, kde-format
 msgid "Move &Up"
 msgstr "&Fel"
 
-#: kservicelistwidget.cpp:91
+#: kservicelistwidget.cpp:92
 #, kde-format
 msgid ""
 "Assigns a higher priority to the selected\n"
@@ -390,7 +390,7 @@ msgstr ""
 "más fájltípusok is tartoznak, akkor ez a beállítás csak \n"
 "a kijelölt fájltípust érinti."
 
-#: kservicelistwidget.cpp:95
+#: kservicelistwidget.cpp:96
 #, kde-format
 msgid ""
 "Assigns a higher priority to the selected\n"
@@ -399,12 +399,12 @@ msgstr ""
 "Magasabb prioritást rendelhet a kiválasztott\n"
 "szolgáltatáshoz a listában feljebb mozgatással."
 
-#: kservicelistwidget.cpp:98
+#: kservicelistwidget.cpp:99
 #, kde-format
 msgid "Move &Down"
 msgstr "&Le"
 
-#: kservicelistwidget.cpp:103
+#: kservicelistwidget.cpp:104
 #, kde-format
 msgid ""
 "Assigns a lower priority to the selected\n"
@@ -417,7 +417,7 @@ msgstr ""
 "fájltípusok is tartoznak, akkor ez a beállítás csak a\n"
 "kijelölt fájltípust érinti."
 
-#: kservicelistwidget.cpp:107
+#: kservicelistwidget.cpp:108
 #, kde-format
 msgid ""
 "Assigns a lower priority to the selected\n"
@@ -426,33 +426,43 @@ msgstr ""
 "Alacsonyabb prioritást rendelhet a kiválasztott\n"
 "szolgáltatáshoz a listában lejjebb mozgatással."
 
-#: kservicelistwidget.cpp:115
+#: kservicelistwidget.cpp:116
 #, kde-format
 msgid "Add a new application for this file type."
 msgstr "Új alkalmazás hozzárendelése ehhez a fájltípushoz."
 
-#: kservicelistwidget.cpp:117
+#: kservicelistwidget.cpp:118
 #, kde-format
 msgid "Edit..."
 msgstr "Szerkesztés…"
 
-#: kservicelistwidget.cpp:122
+#: kservicelistwidget.cpp:123
 #, kde-format
 msgid "Edit command line of the selected application."
 msgstr "A kijelölt alkalmazás parancssorának szerkesztése."
 
-#: kservicelistwidget.cpp:129
+#: kservicelistwidget.cpp:130
 #, kde-format
 msgid "Remove the selected application from the list."
 msgstr "A kijelölt alkalmazás eltávolítása a listából."
 
-#: kservicelistwidget.cpp:152
+#: kservicelistwidget.cpp:132 multiapplydialog.cpp:19
+#, kde-format
+msgid "Apply To..."
+msgstr ""
+
+#: kservicelistwidget.cpp:137
+#, kde-format
+msgid "Apply the current preference order to other file types."
+msgstr ""
+
+#: kservicelistwidget.cpp:160
 #, kde-format
 msgctxt "No applications associated with this file type"
 msgid "None"
 msgstr "Nincs"
 
-#: kservicelistwidget.cpp:154
+#: kservicelistwidget.cpp:162
 #, kde-format
 msgctxt "No components associated with this file type"
 msgid "None"

@@ -9,7 +9,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: filetypes\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-03-25 02:10+0000\n"
+"POT-Creation-Date: 2023-05-16 02:15+0000\n"
 "PO-Revision-Date: 2022-05-05 12:27+0200\n"
 "Last-Translator: Phu Hung Nguyen <phu.nguyen@kdemail.net>\n"
 "Language-Team: Vietnamese <kde-l10n-vi@kde.org>\n"
@@ -35,12 +35,12 @@ msgstr "phu.nguyen@kdemail.net,herophuong93@gmail.com"
 msgid "Left Click Action (only for Konqueror file manager)"
 msgstr "Hành động bấm trái (chỉ cho trình quản lí tệp Konqueror)"
 
-#: filegroupdetails.cpp:26 filetypedetails.cpp:133
+#: filegroupdetails.cpp:26 filetypedetails.cpp:134
 #, kde-format
 msgid "Show file in embedded viewer"
 msgstr "Hiện tệp trong trình xem nhúng"
 
-#: filegroupdetails.cpp:27 filetypedetails.cpp:134
+#: filegroupdetails.cpp:27 filetypedetails.cpp:135
 #, kde-format
 msgid "Show file in separate viewer"
 msgstr "Hiện tệp trong trình xem riêng"
@@ -86,7 +86,7 @@ msgstr ""
 "kiểu được chọn. Ví dụ, dạng mẫu *.txt được liên kết với kiểu tệp 'text/"
 "plain'; tất cả các tệp có đuôi '.txt' sẽ được nhận dạng là tệp văn bản thuần."
 
-#: filetypedetails.cpp:87 filetypesview.cpp:81 kservicelistwidget.cpp:110
+#: filetypedetails.cpp:87 filetypesview.cpp:87 kservicelistwidget.cpp:111
 #, kde-format
 msgid "Add..."
 msgstr "Thêm..."
@@ -96,7 +96,7 @@ msgstr "Thêm..."
 msgid "Add a new pattern for the selected file type."
 msgstr "Thêm một dạng mẫu mới cho kiểu tệp được chọn."
 
-#: filetypedetails.cpp:94 kservicelistwidget.cpp:124
+#: filetypedetails.cpp:94 kservicelistwidget.cpp:125
 #, kde-format
 msgid "Remove"
 msgstr "Xoá"
@@ -122,17 +122,17 @@ msgstr ""
 "'trang HTML'). Mô tả này sẽ được dùng bởi các ứng dụng như Konqueror để hiển "
 "thị nội dung thư mục."
 
-#: filetypedetails.cpp:128
+#: filetypedetails.cpp:129
 #, kde-format
 msgid "Left Click Action in Konqueror"
 msgstr "Hành động bấm trái trong Konqueror"
 
-#: filetypedetails.cpp:137
+#: filetypedetails.cpp:138
 #, kde-format
 msgid "Ask whether to save to disk instead (only for Konqueror browser)"
 msgstr "Hỏi có lưu vào đĩa để thay thế không (chỉ cho trình duyệt Konqueror)"
 
-#: filetypedetails.cpp:153
+#: filetypedetails.cpp:154
 #, kde-format
 msgid ""
 "Here you can configure what the Konqueror file manager will do when you "
@@ -149,42 +149,42 @@ msgstr ""
 "mà kiểu này thuộc về; ví dụ, nó sẽ là 'image' nếu kiểu tệp hiện tại là image/"
 "png. Dolphin luôn hiển thị tệp trong một trình xem riêng."
 
-#: filetypedetails.cpp:165
+#: filetypedetails.cpp:167
 #, kde-format
 msgid "&General"
 msgstr "Chun&g"
 
-#: filetypedetails.cpp:166
+#: filetypedetails.cpp:168
 #, kde-format
 msgid "&Embedding"
 msgstr "&Nhúng"
 
-#: filetypedetails.cpp:207
+#: filetypedetails.cpp:209
 #, kde-format
 msgid "Add New Extension"
 msgstr "Thêm phần mở rộng mới"
 
-#: filetypedetails.cpp:207
+#: filetypedetails.cpp:209
 #, kde-format
 msgid "Extension:"
 msgstr "Phần mở rộng:"
 
-#: filetypedetails.cpp:325
+#: filetypedetails.cpp:327
 #, kde-format
 msgid "File type %1"
 msgstr "Kiểu tệp %1"
 
-#: filetypedetails.cpp:333
+#: filetypedetails.cpp:335
 #, kde-format
 msgid "Use settings for '%1' group"
 msgstr "Dùng thiết lập cho nhóm '%1'"
 
-#: filetypesview.cpp:52
+#: filetypesview.cpp:58
 #, kde-format
 msgid "Search for file type or filename pattern..."
 msgstr "Tìm kiểu tệp hoặc dạng mẫu tên tệp..."
 
-#: filetypesview.cpp:58
+#: filetypesview.cpp:64
 #, kde-format
 msgid ""
 "Enter a part of a filename pattern, and only file types with a matching file "
@@ -195,12 +195,12 @@ msgstr ""
 "với nó mới hiển thị trong danh sách. Một cách khác, nhập một phần của một "
 "tên kiểu tệp như nó xuất hiện trong danh sách."
 
-#: filetypesview.cpp:66
+#: filetypesview.cpp:72 multiapplydialog.cpp:27
 #, kde-format
 msgid "Known Types"
 msgstr "Các kiểu đã biết"
 
-#: filetypesview.cpp:72
+#: filetypesview.cpp:78
 #, kde-format
 msgid ""
 "Here you can see a hierarchical list of the file types which are known on "
@@ -213,32 +213,32 @@ msgstr ""
 "Chọn một kiểu tệp (vd. text/html cho tệp HTML) để xem/sửa thông tin cho kiểu "
 "tệp đó bằng các điều khiển ở bên phải."
 
-#: filetypesview.cpp:86
+#: filetypesview.cpp:92
 #, kde-format
 msgid "Click here to add a new file type."
 msgstr "Bấm vào đây để thêm một kiểu tệp mới."
 
-#: filetypesview.cpp:88 filetypesview.cpp:354
+#: filetypesview.cpp:94 filetypesview.cpp:390
 #, kde-format
 msgid "&Remove"
 msgstr "&Xoá"
 
-#: filetypesview.cpp:112
+#: filetypesview.cpp:120
 #, kde-format
 msgid "Select a file type by name or by extension"
 msgstr "Chọn kiểu tệp theo tên hoặc theo phần mở rộng"
 
-#: filetypesview.cpp:347
+#: filetypesview.cpp:383
 #, kde-format
 msgid "&Revert"
 msgstr "&Hoàn nguyên"
 
-#: filetypesview.cpp:348
+#: filetypesview.cpp:384
 #, kde-format
 msgid "Revert this file type to its initial system-wide definition"
 msgstr "Đưa kiểu tệp này về định nghĩa toàn hệ thống ban đầu của nó"
 
-#: filetypesview.cpp:350
+#: filetypesview.cpp:386
 #, kde-format
 msgid ""
 "Click here to revert this file type to its initial system-wide definition, "
@@ -254,12 +254,12 @@ msgstr ""
 "năng chúng được dùng (nhưng việc xác định kiểu tệp bằng nội dung tệp cuối "
 "cùng vẫn có thể sẽ sử dụng chúng)."
 
-#: filetypesview.cpp:355
+#: filetypesview.cpp:391
 #, kde-format
 msgid "Delete this file type definition completely"
 msgstr "Xoá hoàn toàn định nghĩa kiểu tệp này"
 
-#: filetypesview.cpp:357
+#: filetypesview.cpp:393
 #, kde-format
 msgid ""
 "Click here to delete this file type definition completely. This is only "
@@ -342,7 +342,7 @@ msgstr "Thứ tự ưu tiên ứng dụng"
 msgid "Services Preference Order"
 msgstr "Thứ tự ưu tiên dịch vụ"
 
-#: kservicelistwidget.cpp:68
+#: kservicelistwidget.cpp:69
 #, kde-format
 msgid ""
 "This is a list of applications associated with files of the selected file "
@@ -357,7 +357,7 @@ msgstr ""
 "thì danh sách sẽ được sắp xếp theo độ ưu tiên với mục đầu tiên được ưu tiên "
 "hơn các mục còn lại."
 
-#: kservicelistwidget.cpp:73
+#: kservicelistwidget.cpp:74
 #, kde-format
 msgid ""
 "This is a list of services associated with files of the selected file type. "
@@ -372,12 +372,12 @@ msgstr ""
 "kiểu tệp này thì danh sách sẽ được sắp xếp theo độ ưu tiên với mục đầu tiên "
 "được ưu tiên hơn các mục còn lại."
 
-#: kservicelistwidget.cpp:85
+#: kservicelistwidget.cpp:86
 #, kde-format
 msgid "Move &Up"
 msgstr "Chu&yển lên"
 
-#: kservicelistwidget.cpp:91
+#: kservicelistwidget.cpp:92
 #, kde-format
 msgid ""
 "Assigns a higher priority to the selected\n"
@@ -390,7 +390,7 @@ msgstr ""
 "sẽ chỉ ảnh hưởng đến ứng dụng được chọn nếu kiểu\n"
 "tệp đó được liên kết với nhiều hơn một ứng dụng."
 
-#: kservicelistwidget.cpp:95
+#: kservicelistwidget.cpp:96
 #, kde-format
 msgid ""
 "Assigns a higher priority to the selected\n"
@@ -399,12 +399,12 @@ msgstr ""
 "Gán độ ưu tiên cao hơn cho dịch vụ được chọn,\n"
 "chuyển nó lên trên trong danh sách."
 
-#: kservicelistwidget.cpp:98
+#: kservicelistwidget.cpp:99
 #, kde-format
 msgid "Move &Down"
 msgstr "Chuyển xuốn&g"
 
-#: kservicelistwidget.cpp:103
+#: kservicelistwidget.cpp:104
 #, kde-format
 msgid ""
 "Assigns a lower priority to the selected\n"
@@ -417,7 +417,7 @@ msgstr ""
 "này sẽ chỉ ảnh hưởng đến ứng dụng được chọn nếu\n"
 "kiểu tệp đó được liên kết với nhiều hơn một ứng dụng."
 
-#: kservicelistwidget.cpp:107
+#: kservicelistwidget.cpp:108
 #, kde-format
 msgid ""
 "Assigns a lower priority to the selected\n"
@@ -426,33 +426,43 @@ msgstr ""
 "Gán độ ưu tiên thấp hơn cho dịch vụ được chọn,\n"
 "chuyển nó xuống dưới trong danh sách."
 
-#: kservicelistwidget.cpp:115
+#: kservicelistwidget.cpp:116
 #, kde-format
 msgid "Add a new application for this file type."
 msgstr "Thêm một ứng dụng mới cho kiểu tệp này."
 
-#: kservicelistwidget.cpp:117
+#: kservicelistwidget.cpp:118
 #, kde-format
 msgid "Edit..."
 msgstr "Sửa..."
 
-#: kservicelistwidget.cpp:122
+#: kservicelistwidget.cpp:123
 #, kde-format
 msgid "Edit command line of the selected application."
 msgstr "Sửa dòng lệnh của ứng dụng được chọn."
 
-#: kservicelistwidget.cpp:129
+#: kservicelistwidget.cpp:130
 #, kde-format
 msgid "Remove the selected application from the list."
 msgstr "Xoá ứng dụng được chọn khỏi danh sách."
 
-#: kservicelistwidget.cpp:152
+#: kservicelistwidget.cpp:132 multiapplydialog.cpp:19
+#, kde-format
+msgid "Apply To..."
+msgstr ""
+
+#: kservicelistwidget.cpp:137
+#, kde-format
+msgid "Apply the current preference order to other file types."
+msgstr ""
+
+#: kservicelistwidget.cpp:160
 #, kde-format
 msgctxt "No applications associated with this file type"
 msgid "None"
 msgstr "Không"
 
-#: kservicelistwidget.cpp:154
+#: kservicelistwidget.cpp:162
 #, kde-format
 msgctxt "No components associated with this file type"
 msgid "None"

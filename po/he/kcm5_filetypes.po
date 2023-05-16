@@ -20,7 +20,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kcm5_filetypes\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-03-25 02:10+0000\n"
+"POT-Creation-Date: 2023-05-16 02:15+0000\n"
 "PO-Revision-Date: 2017-05-16 06:52-0400\n"
 "Last-Translator: Copied by Zanata <copied-by-zanata@zanata.org>\n"
 "Language-Team: Hebrew <kde-i18n-doc@kde.org>\n"
@@ -46,12 +46,12 @@ msgstr "spatz@012.net.il, lielft@gmail.com"
 msgid "Left Click Action (only for Konqueror file manager)"
 msgstr "פעולה בעת לחיצה על הכפתור השמאלי (רק במנהל הקבצים Konqueror)"
 
-#: filegroupdetails.cpp:26 filetypedetails.cpp:133
+#: filegroupdetails.cpp:26 filetypedetails.cpp:134
 #, kde-format
 msgid "Show file in embedded viewer"
 msgstr "הצג את הקובץ במציג מוטבע"
 
-#: filegroupdetails.cpp:27 filetypedetails.cpp:134
+#: filegroupdetails.cpp:27 filetypedetails.cpp:135
 #, kde-format
 msgid "Show file in separate viewer"
 msgstr "הצג את הקובץ במציג נפרד"
@@ -95,7 +95,7 @@ msgstr ""
 "לדוגמה, התבנית ‎*.txt משויכת לסוג הקובץ \"text/plain\". כל הקבצים שמסתיימים ב־"
 "\"txt.\" יזוהו בתור קבצי טקסט."
 
-#: filetypedetails.cpp:87 filetypesview.cpp:81 kservicelistwidget.cpp:110
+#: filetypedetails.cpp:87 filetypesview.cpp:87 kservicelistwidget.cpp:111
 #, kde-format
 msgid "Add..."
 msgstr "הוסף..."
@@ -105,7 +105,7 @@ msgstr "הוסף..."
 msgid "Add a new pattern for the selected file type."
 msgstr "הוספת תבנית חדשה עבור סוג הקובץ הנבחר."
 
-#: filetypedetails.cpp:94 kservicelistwidget.cpp:124
+#: filetypedetails.cpp:94 kservicelistwidget.cpp:125
 #, kde-format
 msgid "Remove"
 msgstr "הסר"
@@ -130,17 +130,17 @@ msgstr ""
 "כאן באפשרותך להזין תיאור קצר על קבצים מסוג הקובץ הנבחר (לדוגמה \"דף HTML\"). "
 "בתיאור זה יעשו שימוש יישומים כגון Konqueror להצגת תוכן ספריות."
 
-#: filetypedetails.cpp:128
+#: filetypedetails.cpp:129
 #, kde-format
 msgid "Left Click Action in Konqueror"
 msgstr "פעולת לחצן שמאלי של Konqueror"
 
-#: filetypedetails.cpp:137
+#: filetypedetails.cpp:138
 #, kde-format
 msgid "Ask whether to save to disk instead (only for Konqueror browser)"
 msgstr "שאל האם לשמור לכונן במקום (רק לדפדפן Konqueror)"
 
-#: filetypedetails.cpp:153
+#: filetypedetails.cpp:154
 #, kde-format
 msgid ""
 "Here you can configure what the Konqueror file manager will do when you "
@@ -156,43 +156,43 @@ msgstr ""
 "קבוצה G אליה שייך סוג זה. למשל 'image' אם סוג הקובץ הנוכחי הוא image/png. "
 "Dolphin תמיד מציג קבצים בתצוגה נפרדת."
 
-#: filetypedetails.cpp:165
+#: filetypedetails.cpp:167
 #, kde-format
 msgid "&General"
 msgstr "&כללי"
 
-#: filetypedetails.cpp:166
+#: filetypedetails.cpp:168
 #, kde-format
 msgid "&Embedding"
 msgstr "ה&טבעה"
 
-#: filetypedetails.cpp:207
+#: filetypedetails.cpp:209
 #, kde-format
 msgid "Add New Extension"
 msgstr "הוספת סיומת חדשה"
 
-#: filetypedetails.cpp:207
+#: filetypedetails.cpp:209
 #, kde-format
 msgid "Extension:"
 msgstr "סיומת:"
 
-#: filetypedetails.cpp:325
+#: filetypedetails.cpp:327
 #, kde-format
 msgid "File type %1"
 msgstr "סוג הקובץ %1"
 
-#: filetypedetails.cpp:333
+#: filetypedetails.cpp:335
 #, kde-format
 msgid "Use settings for '%1' group"
 msgstr "השתמש בהגדרות לקבוצה \"%1\""
 
-#: filetypesview.cpp:52
+#: filetypesview.cpp:58
 #, fuzzy, kde-format
 #| msgid "Find file type or filename pattern"
 msgid "Search for file type or filename pattern..."
 msgstr "חפש תבנית סוג־קובץ או שם־קובץ"
 
-#: filetypesview.cpp:58
+#: filetypesview.cpp:64
 #, kde-format
 msgid ""
 "Enter a part of a filename pattern, and only file types with a matching file "
@@ -202,12 +202,12 @@ msgstr ""
 "הזן חלק של תבנית שמות קבצים. יופיעו ברשימה רק סוגי קבצים עם תבנית קובץ "
 "תואמת. במידה ולא, הזן חלק שם סוג הקובץ כמו שהוא מופיע ברשימה."
 
-#: filetypesview.cpp:66
+#: filetypesview.cpp:72 multiapplydialog.cpp:27
 #, kde-format
 msgid "Known Types"
 msgstr "סוגים מוכרים"
 
-#: filetypesview.cpp:72
+#: filetypesview.cpp:78
 #, kde-format
 msgid ""
 "Here you can see a hierarchical list of the file types which are known on "
@@ -219,32 +219,32 @@ msgstr ""
 "הסימן \"+\" כדי להרחיב קטגוריה, או על \"-\" כדי לצמצם אותה. בחר סוג קובץ  "
 "(לדוגמה text/html) כדי לצפות\\לערוך את המידע עליו באמצעות האפשרויות שמשמאל."
 
-#: filetypesview.cpp:86
+#: filetypesview.cpp:92
 #, kde-format
 msgid "Click here to add a new file type."
 msgstr "לחץ כאן כדי להוסיף סוג קובץ חדש."
 
-#: filetypesview.cpp:88 filetypesview.cpp:354
+#: filetypesview.cpp:94 filetypesview.cpp:390
 #, kde-format
 msgid "&Remove"
 msgstr "&הסר"
 
-#: filetypesview.cpp:112
+#: filetypesview.cpp:120
 #, kde-format
 msgid "Select a file type by name or by extension"
 msgstr "בחר סוג קובץ לפי שם או לפי סיומת"
 
-#: filetypesview.cpp:347
+#: filetypesview.cpp:383
 #, kde-format
 msgid "&Revert"
 msgstr "&החזר"
 
-#: filetypesview.cpp:348
+#: filetypesview.cpp:384
 #, kde-format
 msgid "Revert this file type to its initial system-wide definition"
 msgstr "שייך סוג קובץ זה בחזרה לשיוכו הראשוני"
 
-#: filetypesview.cpp:350
+#: filetypesview.cpp:386
 #, kde-format
 msgid ""
 "Click here to revert this file type to its initial system-wide definition, "
@@ -258,12 +258,12 @@ msgstr ""
 "אך ניתן לרוקן את תבניותיהם, כדי להקטין את הסיכוי של שימוש בהם (אך עדיין ניתן "
 "יהיה להשתמש בהם, באמצעות בחירת שיוך קובץ ממאפייני קובץ). "
 
-#: filetypesview.cpp:355
+#: filetypesview.cpp:391
 #, kde-format
 msgid "Delete this file type definition completely"
 msgstr "מחק תיאור סוג־קובץ זה לחלוטין"
 
-#: filetypesview.cpp:357
+#: filetypesview.cpp:393
 #, kde-format
 msgid ""
 "Click here to delete this file type definition completely. This is only "
@@ -343,7 +343,7 @@ msgstr "סדר עדיפות יישומים"
 msgid "Services Preference Order"
 msgstr "סדר עדיפות שירותים"
 
-#: kservicelistwidget.cpp:68
+#: kservicelistwidget.cpp:69
 #, kde-format
 msgid ""
 "This is a list of applications associated with files of the selected file "
@@ -357,7 +357,7 @@ msgstr ""
 "משויך לסוג הקובץ הזה, אז הרשימה תסודר לפי עדיפות כאשר לפריט העליון ביותר "
 "ישנה עדיפות על פני האחרים."
 
-#: kservicelistwidget.cpp:73
+#: kservicelistwidget.cpp:74
 #, kde-format
 msgid ""
 "This is a list of services associated with files of the selected file type. "
@@ -371,12 +371,12 @@ msgstr ""
 "יותר משירות אחד משויך לסוג קובץ זה, אז הרשימה תסודר לפי עדיפות כאשר לפריט "
 "העליון ביותר ישנה קדימות על פני האחרים."
 
-#: kservicelistwidget.cpp:85
+#: kservicelistwidget.cpp:86
 #, kde-format
 msgid "Move &Up"
 msgstr "הזז מ&עלה"
 
-#: kservicelistwidget.cpp:91
+#: kservicelistwidget.cpp:92
 #, kde-format
 msgid ""
 "Assigns a higher priority to the selected\n"
@@ -387,7 +387,7 @@ msgstr ""
 "מתן עדיפות גבוהה יותר ליישום הנבחר, והעלאתו למעלה ברשימה. שים לב: דבר זה "
 "משפיע על היישום הנבחר רק אם סוג הקובץ משויך ליותר מיישום אחד."
 
-#: kservicelistwidget.cpp:95
+#: kservicelistwidget.cpp:96
 #, kde-format
 msgid ""
 "Assigns a higher priority to the selected\n"
@@ -396,12 +396,12 @@ msgstr ""
 "מתן עדיפות גבוהה יותר לשירות הנבחר,\n"
 "תוך העלאתו למעלה ברשימה."
 
-#: kservicelistwidget.cpp:98
+#: kservicelistwidget.cpp:99
 #, kde-format
 msgid "Move &Down"
 msgstr "הור&ד"
 
-#: kservicelistwidget.cpp:103
+#: kservicelistwidget.cpp:104
 #, kde-format
 msgid ""
 "Assigns a lower priority to the selected\n"
@@ -414,7 +414,7 @@ msgstr ""
 "על היישום הנבחר רק אם סוג הקובץ משויך\n"
 "ליותר מיישום אחד."
 
-#: kservicelistwidget.cpp:107
+#: kservicelistwidget.cpp:108
 #, kde-format
 msgid ""
 "Assigns a lower priority to the selected\n"
@@ -423,33 +423,43 @@ msgstr ""
 "מתן עדיפות נמוכה יותר לשירות הנבחר,\n"
 "תוך הורדתו למטה ברשימה."
 
-#: kservicelistwidget.cpp:115
+#: kservicelistwidget.cpp:116
 #, kde-format
 msgid "Add a new application for this file type."
 msgstr "הוספת יישום חדש לסוג קובץ זה."
 
-#: kservicelistwidget.cpp:117
+#: kservicelistwidget.cpp:118
 #, kde-format
 msgid "Edit..."
 msgstr "עריכה..."
 
-#: kservicelistwidget.cpp:122
+#: kservicelistwidget.cpp:123
 #, kde-format
 msgid "Edit command line of the selected application."
 msgstr "עריכת שורת הפקודה של היישום הנבחר."
 
-#: kservicelistwidget.cpp:129
+#: kservicelistwidget.cpp:130
 #, kde-format
 msgid "Remove the selected application from the list."
 msgstr "הסרת היישום הנבחר מהרשימה."
 
-#: kservicelistwidget.cpp:152
+#: kservicelistwidget.cpp:132 multiapplydialog.cpp:19
+#, kde-format
+msgid "Apply To..."
+msgstr ""
+
+#: kservicelistwidget.cpp:137
+#, kde-format
+msgid "Apply the current preference order to other file types."
+msgstr ""
+
+#: kservicelistwidget.cpp:160
 #, kde-format
 msgctxt "No applications associated with this file type"
 msgid "None"
 msgstr "ללא"
 
-#: kservicelistwidget.cpp:154
+#: kservicelistwidget.cpp:162
 #, kde-format
 msgctxt "No components associated with this file type"
 msgid "None"

@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: filetypes\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-03-25 02:10+0000\n"
+"POT-Creation-Date: 2023-05-16 02:15+0000\n"
 "PO-Revision-Date: 2022-04-16 22:49+0200\n"
 "Last-Translator: Shinjo Park <kde@peremen.name>\n"
 "Language-Team: Korean <kde-kr@kde.org>\n"
@@ -33,12 +33,12 @@ msgstr "kde@peremen.name"
 msgid "Left Click Action (only for Konqueror file manager)"
 msgstr "왼쪽 클릭 동작 (Konqueror 파일 관리자만)"
 
-#: filegroupdetails.cpp:26 filetypedetails.cpp:133
+#: filegroupdetails.cpp:26 filetypedetails.cpp:134
 #, kde-format
 msgid "Show file in embedded viewer"
 msgstr "내장된 뷰어로 파일 보기"
 
-#: filegroupdetails.cpp:27 filetypedetails.cpp:134
+#: filegroupdetails.cpp:27 filetypedetails.cpp:135
 #, kde-format
 msgid "Show file in separate viewer"
 msgstr "별도의 뷰어로 파일 보기"
@@ -83,7 +83,7 @@ msgstr ""
 "를 들어 *.txt는 파일 형식 'text/plain'과 연관이 있으며 '.txt'로 끝나는 모든 "
 "파일 형식은 일반 텍스트 파일로 인식하게 됩니다."
 
-#: filetypedetails.cpp:87 filetypesview.cpp:81 kservicelistwidget.cpp:110
+#: filetypedetails.cpp:87 filetypesview.cpp:87 kservicelistwidget.cpp:111
 #, kde-format
 msgid "Add..."
 msgstr "추가..."
@@ -93,7 +93,7 @@ msgstr "추가..."
 msgid "Add a new pattern for the selected file type."
 msgstr "선택한 파일 종류에 대한 새 이름 형식을 추가합니다."
 
-#: filetypedetails.cpp:94 kservicelistwidget.cpp:124
+#: filetypedetails.cpp:94 kservicelistwidget.cpp:125
 #, kde-format
 msgid "Remove"
 msgstr "삭제"
@@ -118,17 +118,17 @@ msgstr ""
 "선택한 파일 형식의 짧은 설명을 입력할 수 있습니다.(예. 'HTML 페이지')이 설명"
 "은 Konqueror와 같은 프로그램에서 폴더 내용을 표시할 때 이용됩니다."
 
-#: filetypedetails.cpp:128
+#: filetypedetails.cpp:129
 #, kde-format
 msgid "Left Click Action in Konqueror"
 msgstr "Konqueror의 왼쪽 클릭 동작"
 
-#: filetypedetails.cpp:137
+#: filetypedetails.cpp:138
 #, kde-format
 msgid "Ask whether to save to disk instead (only for Konqueror browser)"
 msgstr "디스크에 저장할 것인지 물어보기 (Konqueror 브라우저 모드에서만)"
 
-#: filetypedetails.cpp:153
+#: filetypedetails.cpp:154
 #, kde-format
 msgid ""
 "Here you can configure what the Konqueror file manager will do when you "
@@ -144,42 +144,42 @@ msgstr ""
 "의 설정을 따릅니다. 예를 들어 현재 파일 형식이 image/png 라면 'image' 그룹의 "
 "동작을 실행합니다. Dolphin은 항상 별도의 뷰어를 사용합니다."
 
-#: filetypedetails.cpp:165
+#: filetypedetails.cpp:167
 #, kde-format
 msgid "&General"
 msgstr "일반 설정(&G)"
 
-#: filetypedetails.cpp:166
+#: filetypedetails.cpp:168
 #, kde-format
 msgid "&Embedding"
 msgstr "임베드(&E)"
 
-#: filetypedetails.cpp:207
+#: filetypedetails.cpp:209
 #, kde-format
 msgid "Add New Extension"
 msgstr "새로운 확장자 추가"
 
-#: filetypedetails.cpp:207
+#: filetypedetails.cpp:209
 #, kde-format
 msgid "Extension:"
 msgstr "확장자:"
 
-#: filetypedetails.cpp:325
+#: filetypedetails.cpp:327
 #, kde-format
 msgid "File type %1"
 msgstr "파일 형식 %1"
 
-#: filetypedetails.cpp:333
+#: filetypedetails.cpp:335
 #, kde-format
 msgid "Use settings for '%1' group"
 msgstr "'%1' 그룹의 설정 사용하기"
 
-#: filetypesview.cpp:52
+#: filetypesview.cpp:58
 #, kde-format
 msgid "Search for file type or filename pattern..."
 msgstr "파일 형식이나 파일 이름 패턴 찾기..."
 
-#: filetypesview.cpp:58
+#: filetypesview.cpp:64
 #, kde-format
 msgid ""
 "Enter a part of a filename pattern, and only file types with a matching file "
@@ -189,12 +189,12 @@ msgstr ""
 "파일 이름 패턴의 일부를 입력하면 입력한 패턴과 일치하는 파일 형식을 보여줍니"
 "다. 또는 목록에 보이는 대로 파일 형식 이름을 입력해도 됩니다."
 
-#: filetypesview.cpp:66
+#: filetypesview.cpp:72 multiapplydialog.cpp:27
 #, kde-format
 msgid "Known Types"
 msgstr "알려진 형식"
 
-#: filetypesview.cpp:72
+#: filetypesview.cpp:78
 #, kde-format
 msgid ""
 "Here you can see a hierarchical list of the file types which are known on "
@@ -207,32 +207,32 @@ msgstr ""
 "형식을 선택하면 (예: HTML 파일의 경우 text/html) 오른쪽에 있는 도구를 사용해"
 "서 파일 형식의 정보를 보거나 편집할 수 있습니다."
 
-#: filetypesview.cpp:86
+#: filetypesview.cpp:92
 #, kde-format
 msgid "Click here to add a new file type."
 msgstr "새로운 파일 형식을 추가하려면 여기를 클릭하십시오."
 
-#: filetypesview.cpp:88 filetypesview.cpp:354
+#: filetypesview.cpp:94 filetypesview.cpp:390
 #, kde-format
 msgid "&Remove"
 msgstr "삭제(&R)"
 
-#: filetypesview.cpp:112
+#: filetypesview.cpp:120
 #, kde-format
 msgid "Select a file type by name or by extension"
 msgstr "확장자나 이름으로 파일 형식 선택"
 
-#: filetypesview.cpp:347
+#: filetypesview.cpp:383
 #, kde-format
 msgid "&Revert"
 msgstr "되돌리기(&R)"
 
-#: filetypesview.cpp:348
+#: filetypesview.cpp:384
 #, kde-format
 msgid "Revert this file type to its initial system-wide definition"
 msgstr "파일 형식을 초기 시스템 기본값으로 되돌립니다"
 
-#: filetypesview.cpp:350
+#: filetypesview.cpp:386
 #, kde-format
 msgid ""
 "Click here to revert this file type to its initial system-wide definition, "
@@ -246,12 +246,12 @@ msgstr ""
 "정하여 사용되는 정도를 줄일 수는 있습니다. 그렇다 하더라도 파일 형식에서 확장"
 "자를 추측할 때는 이 정보를 사용합니다."
 
-#: filetypesview.cpp:355
+#: filetypesview.cpp:391
 #, kde-format
 msgid "Delete this file type definition completely"
 msgstr "파일 형식 정의를 완전히 삭제합니다"
 
-#: filetypesview.cpp:357
+#: filetypesview.cpp:393
 #, kde-format
 msgid ""
 "Click here to delete this file type definition completely. This is only "
@@ -331,7 +331,7 @@ msgstr "프로그램 우선 순위"
 msgid "Services Preference Order"
 msgstr "서비스 우선 순위"
 
-#: kservicelistwidget.cpp:68
+#: kservicelistwidget.cpp:69
 #, kde-format
 msgid ""
 "This is a list of applications associated with files of the selected file "
@@ -345,7 +345,7 @@ msgstr ""
 "프로그램이 이 파일에 연결되어 있다면 이 목록의 위쪽에 있는 항목이 더 높은 우"
 "선 순위를 가집니다."
 
-#: kservicelistwidget.cpp:73
+#: kservicelistwidget.cpp:74
 #, kde-format
 msgid ""
 "This is a list of services associated with files of the selected file type. "
@@ -359,12 +359,12 @@ msgstr ""
 "상의 서비스가 이 파일에 연결되어 있다면 이 목록의 위쪽에 있는 항목이 더 높은 "
 "우선 순위를 가집니다."
 
-#: kservicelistwidget.cpp:85
+#: kservicelistwidget.cpp:86
 #, kde-format
 msgid "Move &Up"
 msgstr "위로 이동(&U)"
 
-#: kservicelistwidget.cpp:91
+#: kservicelistwidget.cpp:92
 #, kde-format
 msgid ""
 "Assigns a higher priority to the selected\n"
@@ -377,7 +377,7 @@ msgstr ""
 "파일 형식과 연결된 프로그램이 하나 이상일 때 \n"
 "선택된 프로그램에만 영향을 줍니다."
 
-#: kservicelistwidget.cpp:95
+#: kservicelistwidget.cpp:96
 #, kde-format
 msgid ""
 "Assigns a higher priority to the selected\n"
@@ -386,12 +386,12 @@ msgstr ""
 "목록에서 위로 이동하면 선택된 서비스에 \n"
 "더 높은 우선 순위가 부여됩니다."
 
-#: kservicelistwidget.cpp:98
+#: kservicelistwidget.cpp:99
 #, kde-format
 msgid "Move &Down"
 msgstr "아래로 이동(&D)"
 
-#: kservicelistwidget.cpp:103
+#: kservicelistwidget.cpp:104
 #, kde-format
 msgid ""
 "Assigns a lower priority to the selected\n"
@@ -404,7 +404,7 @@ msgstr ""
 "파일 형식과 연결된 프로그램이 하나 이상일 때 \n"
 "선택된 프로그램에만 영향을 줍니다."
 
-#: kservicelistwidget.cpp:107
+#: kservicelistwidget.cpp:108
 #, kde-format
 msgid ""
 "Assigns a lower priority to the selected\n"
@@ -413,33 +413,43 @@ msgstr ""
 "목록에서 아래로 이동하면 선택된 서비스에\n"
 "더 낮은 우선 순위가 부여됩니다."
 
-#: kservicelistwidget.cpp:115
+#: kservicelistwidget.cpp:116
 #, kde-format
 msgid "Add a new application for this file type."
 msgstr "이 파일 형식에 대한 새로운 프로그램을 추가합니다."
 
-#: kservicelistwidget.cpp:117
+#: kservicelistwidget.cpp:118
 #, kde-format
 msgid "Edit..."
 msgstr "편집..."
 
-#: kservicelistwidget.cpp:122
+#: kservicelistwidget.cpp:123
 #, kde-format
 msgid "Edit command line of the selected application."
 msgstr "선택한 프로그램의 명령을 편집합니다."
 
-#: kservicelistwidget.cpp:129
+#: kservicelistwidget.cpp:130
 #, kde-format
 msgid "Remove the selected application from the list."
 msgstr "목록에서 선택된 프로그램을 삭제합니다."
 
-#: kservicelistwidget.cpp:152
+#: kservicelistwidget.cpp:132 multiapplydialog.cpp:19
+#, kde-format
+msgid "Apply To..."
+msgstr ""
+
+#: kservicelistwidget.cpp:137
+#, kde-format
+msgid "Apply the current preference order to other file types."
+msgstr ""
+
+#: kservicelistwidget.cpp:160
 #, kde-format
 msgctxt "No applications associated with this file type"
 msgid "None"
 msgstr "없음"
 
-#: kservicelistwidget.cpp:154
+#: kservicelistwidget.cpp:162
 #, kde-format
 msgctxt "No components associated with this file type"
 msgid "None"

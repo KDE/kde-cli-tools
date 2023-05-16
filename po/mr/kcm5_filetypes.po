@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: filetypes\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-03-25 02:10+0000\n"
+"POT-Creation-Date: 2023-05-16 02:15+0000\n"
 "PO-Revision-Date: 2014-10-28 15:31+0530\n"
 "Last-Translator: Chetan Khona <chetan@kompkin.com>\n"
 "Language-Team: Marathi <kde-i18n-doc@kde.org>\n"
@@ -38,12 +38,12 @@ msgstr ""
 msgid "Left Click Action (only for Konqueror file manager)"
 msgstr "डावी क्लिक क्रिया (फक्त कॉन्करर फाईल व्यवस्थापकासाठी)"
 
-#: filegroupdetails.cpp:26 filetypedetails.cpp:133
+#: filegroupdetails.cpp:26 filetypedetails.cpp:134
 #, kde-format
 msgid "Show file in embedded viewer"
 msgstr "अंतर्भूतीत प्रदर्शकात फाईल दर्शवा"
 
-#: filegroupdetails.cpp:27 filetypedetails.cpp:134
+#: filegroupdetails.cpp:27 filetypedetails.cpp:135
 #, kde-format
 msgid "Show file in separate viewer"
 msgstr "फाईल वेगळ्या प्रर्दशकात दर्शवा"
@@ -89,7 +89,7 @@ msgstr ""
 "उदाहरणार्थ, *.txt रचना फाईल प्रकार 'text/plain'; सह निगडीत आहे; '.txt' अंतर्गत "
 "समाप्त होणारे फाईल पाठ्य फाईल नुरूप ओळखले जाते."
 
-#: filetypedetails.cpp:87 filetypesview.cpp:81 kservicelistwidget.cpp:110
+#: filetypedetails.cpp:87 filetypesview.cpp:87 kservicelistwidget.cpp:111
 #, kde-format
 msgid "Add..."
 msgstr "जोडा..."
@@ -99,7 +99,7 @@ msgstr "जोडा..."
 msgid "Add a new pattern for the selected file type."
 msgstr "निवडलेल्या फाईल प्रकार करिता नवीन रचना जोडा."
 
-#: filetypedetails.cpp:94 kservicelistwidget.cpp:124
+#: filetypedetails.cpp:94 kservicelistwidget.cpp:125
 #, kde-format
 msgid "Remove"
 msgstr "काढून टाका"
@@ -124,17 +124,17 @@ msgstr ""
 "निवडलेले फाईल प्रकार करिता लहानसे वर्णन दाखल केले जाऊ शकते (उ.दा. 'HTML पान'). हे "
 "वर्णन कॉन्करर सारखे अनुप्रयोग द्वारे संचयीका अनुक्रम दर्शविण्याकरिता वापरले जाऊ शकते."
 
-#: filetypedetails.cpp:128
+#: filetypedetails.cpp:129
 #, kde-format
 msgid "Left Click Action in Konqueror"
 msgstr "कॉन्करर मधील डावी क्लिक क्रिया"
 
-#: filetypedetails.cpp:137
+#: filetypedetails.cpp:138
 #, kde-format
 msgid "Ask whether to save to disk instead (only for Konqueror browser)"
 msgstr "डिस्कवर साठवायचे का ते विचारा (फक्त कॉन्करर ब्राऊजर करिता)"
 
-#: filetypedetails.cpp:153
+#: filetypedetails.cpp:154
 #, kde-format
 msgid ""
 "Here you can configure what the Konqueror file manager will do when you "
@@ -150,43 +150,43 @@ msgstr ""
 "व्यवस्थापक ग्रुप जी सेटिंगप्रमाणे वागतो ज्या टाईपचा तो असतो.  जसे कि 'image' जर चालू "
 "फ़ाइल टाईप image /png असेल. डॉल्फिन नेहमीच वेगळ्या व्हुअर मध्ये फ़ाइल दाखवतो."
 
-#: filetypedetails.cpp:165
+#: filetypedetails.cpp:167
 #, kde-format
 msgid "&General"
 msgstr "सामान्य (&G)"
 
-#: filetypedetails.cpp:166
+#: filetypedetails.cpp:168
 #, kde-format
 msgid "&Embedding"
 msgstr "अंतर्भूत करत आहे (&E)"
 
-#: filetypedetails.cpp:207
+#: filetypedetails.cpp:209
 #, kde-format
 msgid "Add New Extension"
 msgstr "नवीन विस्तारण जोडा"
 
-#: filetypedetails.cpp:207
+#: filetypedetails.cpp:209
 #, kde-format
 msgid "Extension:"
 msgstr "विस्तारण:"
 
-#: filetypedetails.cpp:325
+#: filetypedetails.cpp:327
 #, kde-format
 msgid "File type %1"
 msgstr "फाईल प्रकार %1"
 
-#: filetypedetails.cpp:333
+#: filetypedetails.cpp:335
 #, kde-format
 msgid "Use settings for '%1' group"
 msgstr "'%1' समूहाकरिता वापरकर्ता संयोजना"
 
-#: filetypesview.cpp:52
+#: filetypesview.cpp:58
 #, fuzzy, kde-format
 #| msgid "Find file type or filename pattern"
 msgid "Search for file type or filename pattern..."
 msgstr "फाईल प्रकार किंवा फाईलनाव रचना शोधा"
 
-#: filetypesview.cpp:58
+#: filetypesview.cpp:64
 #, kde-format
 msgid ""
 "Enter a part of a filename pattern, and only file types with a matching file "
@@ -196,12 +196,12 @@ msgstr ""
 "फ़ाइल नाव नमुन्याचा भाग एन्टर करा,व सूचीतील फक्त जुळणारे नमुनेच समोर येतील.पर्यायाने,फ़ाइल "
 "प्रकाराच्या नावाचा भाग  सुचीत जसे दिसते तसे एन्टर करा."
 
-#: filetypesview.cpp:66
+#: filetypesview.cpp:72 multiapplydialog.cpp:27
 #, kde-format
 msgid "Known Types"
 msgstr "परिचीत प्रकार"
 
-#: filetypesview.cpp:72
+#: filetypesview.cpp:78
 #, kde-format
 msgid ""
 "Here you can see a hierarchical list of the file types which are known on "
@@ -214,32 +214,32 @@ msgstr ""
 "उजवीकडील नियंत्रण वापरून निवडलेल्या फ़ाइल प्रकारात (जसे किHTML फ़ाइल्स करिता  text/"
 "html ) माहिती व्हू/एडीट करा."
 
-#: filetypesview.cpp:86
+#: filetypesview.cpp:92
 #, kde-format
 msgid "Click here to add a new file type."
 msgstr "नवीन फाईल प्रकार जोडण्याकरिता येथे क्लिक करा."
 
-#: filetypesview.cpp:88 filetypesview.cpp:354
+#: filetypesview.cpp:94 filetypesview.cpp:390
 #, kde-format
 msgid "&Remove"
 msgstr "काढून टाका (&R)"
 
-#: filetypesview.cpp:112
+#: filetypesview.cpp:120
 #, kde-format
 msgid "Select a file type by name or by extension"
 msgstr "नावाप्रमाणे किंवा विस्तारणाप्रमाणे फाईल प्रकार निवडा"
 
-#: filetypesview.cpp:347
+#: filetypesview.cpp:383
 #, kde-format
 msgid "&Revert"
 msgstr "पुन्हा आधीचे घ्या (&R)"
 
-#: filetypesview.cpp:348
+#: filetypesview.cpp:384
 #, kde-format
 msgid "Revert this file type to its initial system-wide definition"
 msgstr "हा फाईल प्रकार पुर्वीच्या प्रणाली व्याख्येप्रमाणे बदला"
 
-#: filetypesview.cpp:350
+#: filetypesview.cpp:386
 #, kde-format
 msgid ""
 "Click here to revert this file type to its initial system-wide definition, "
@@ -254,12 +254,12 @@ msgstr ""
 "जेणेकरून त्या फ़ाइल्स वापरण्याची शक्यता कमी करू शकता.(परंतु फ़ाइल कंटेंटस फ़ाइल प्रकार "
 "निश्चिती अजूनही त्याचा वापर करते) "
 
-#: filetypesview.cpp:355
+#: filetypesview.cpp:391
 #, kde-format
 msgid "Delete this file type definition completely"
 msgstr "ही फाईल प्रकार व्याख्या पुर्णपणे काढून टाका"
 
-#: filetypesview.cpp:357
+#: filetypesview.cpp:393
 #, kde-format
 msgid ""
 "Click here to delete this file type definition completely. This is only "
@@ -339,7 +339,7 @@ msgstr "अनुप्रयोग प्राधान्यता क्र�
 msgid "Services Preference Order"
 msgstr "सेवा प्राधान्यता क्रमवारी"
 
-#: kservicelistwidget.cpp:68
+#: kservicelistwidget.cpp:69
 #, kde-format
 msgid ""
 "This is a list of applications associated with files of the selected file "
@@ -353,7 +353,7 @@ msgstr ""
 "फ़ाइल प्रकाराशी संबंधित असतील, तर सूची प्राधान्यक्रमाने लावली जाते अतिमहत्त्वाचा प्रकार "
 "इतर प्रकारावर ठेवला जातो.  "
 
-#: kservicelistwidget.cpp:73
+#: kservicelistwidget.cpp:74
 #, kde-format
 msgid ""
 "This is a list of services associated with files of the selected file type. "
@@ -367,12 +367,12 @@ msgstr ""
 "फ़ाइल प्रकाराशी संबंधित असतील, तर सूची प्राधान्यक्रमाने लावली जाते अतिमहत्त्वाचा प्रकार "
 "इतर प्रकारावर ठेवला जातो."
 
-#: kservicelistwidget.cpp:85
+#: kservicelistwidget.cpp:86
 #, kde-format
 msgid "Move &Up"
 msgstr "वर हलवा (&U)"
 
-#: kservicelistwidget.cpp:91
+#: kservicelistwidget.cpp:92
 #, kde-format
 msgid ""
 "Assigns a higher priority to the selected\n"
@@ -384,7 +384,7 @@ msgstr ""
 "सूचना: ही फक्त निवडलेल्या अप्लिकेशनवरच परिणाम दाखवते. \n"
 "जर फ़ाइल प्रकार हा एकापेक्षा अधिक अप्लिकेशन्स शी संबंधित असतो."
 
-#: kservicelistwidget.cpp:95
+#: kservicelistwidget.cpp:96
 #, kde-format
 msgid ""
 "Assigns a higher priority to the selected\n"
@@ -393,12 +393,12 @@ msgstr ""
 "निवडलेल्या सेवा करिता जास्त प्राधान्यता देतो,\n"
 "यादीत वर हलवीत आहे."
 
-#: kservicelistwidget.cpp:98
+#: kservicelistwidget.cpp:99
 #, kde-format
 msgid "Move &Down"
 msgstr "खाली हलवा (&D)"
 
-#: kservicelistwidget.cpp:103
+#: kservicelistwidget.cpp:104
 #, kde-format
 msgid ""
 "Assigns a lower priority to the selected\n"
@@ -410,7 +410,7 @@ msgstr ""
 "सूचना: ही फक्त निवडलेल्या अप्लिकेशनवरच परिणाम दाखवते.\n"
 "जर फ़ाइल प्रकार हा एकापेक्षा अधिक अप्लिकेशन्स शी संबंधित असतो."
 
-#: kservicelistwidget.cpp:107
+#: kservicelistwidget.cpp:108
 #, kde-format
 msgid ""
 "Assigns a lower priority to the selected\n"
@@ -419,33 +419,43 @@ msgstr ""
 "निवडलेल्या सेवा करिता कमी प्राधान्यता देतो,\n"
 "यादीत खाली हलवीत आहे."
 
-#: kservicelistwidget.cpp:115
+#: kservicelistwidget.cpp:116
 #, kde-format
 msgid "Add a new application for this file type."
 msgstr "या फाईल प्रकार करिता नवीन अनुप्रयोग जोडा."
 
-#: kservicelistwidget.cpp:117
+#: kservicelistwidget.cpp:118
 #, kde-format
 msgid "Edit..."
 msgstr "संपादित करा..."
 
-#: kservicelistwidget.cpp:122
+#: kservicelistwidget.cpp:123
 #, kde-format
 msgid "Edit command line of the selected application."
 msgstr "निवडलेल्या अनुप्रयोगाचे आदेश ओळ संपादित करा."
 
-#: kservicelistwidget.cpp:129
+#: kservicelistwidget.cpp:130
 #, kde-format
 msgid "Remove the selected application from the list."
 msgstr "निवडलेले अनुप्रयोग यादीतून काढून टाका."
 
-#: kservicelistwidget.cpp:152
+#: kservicelistwidget.cpp:132 multiapplydialog.cpp:19
+#, kde-format
+msgid "Apply To..."
+msgstr ""
+
+#: kservicelistwidget.cpp:137
+#, kde-format
+msgid "Apply the current preference order to other file types."
+msgstr ""
+
+#: kservicelistwidget.cpp:160
 #, kde-format
 msgctxt "No applications associated with this file type"
 msgid "None"
 msgstr "काही नाही"
 
-#: kservicelistwidget.cpp:154
+#: kservicelistwidget.cpp:162
 #, kde-format
 msgctxt "No components associated with this file type"
 msgid "None"

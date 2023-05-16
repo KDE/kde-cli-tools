@@ -11,7 +11,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: filetypes\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-03-25 02:10+0000\n"
+"POT-Creation-Date: 2023-05-16 02:15+0000\n"
 "PO-Revision-Date: 2004-06-30 11:37+0100\n"
 "Last-Translator: KD at KGyfieithu <kyfieithu@dotmon.com>\n"
 "Language-Team: Cymraeg <cy@li.org>\n"
@@ -38,12 +38,12 @@ msgstr ",kyfieithu@dotmon.com,"
 msgid "Left Click Action (only for Konqueror file manager)"
 msgstr ""
 
-#: filegroupdetails.cpp:26 filetypedetails.cpp:133
+#: filegroupdetails.cpp:26 filetypedetails.cpp:134
 #, kde-format
 msgid "Show file in embedded viewer"
 msgstr "Dangos ffeil mewn gwelydd mewnadeiladedig"
 
-#: filegroupdetails.cpp:27 filetypedetails.cpp:134
+#: filegroupdetails.cpp:27 filetypedetails.cpp:135
 #, kde-format
 msgid "Show file in separate viewer"
 msgstr "Dangos ffeil mewn gwelydd arwahanol"
@@ -96,7 +96,7 @@ msgstr ""
 "gysylltu â'r math ffeil 'text/plain'; adnabyddir pob ffeil â'r terfyniad '."
 "txt' fel ffeiliau testun plaen."
 
-#: filetypedetails.cpp:87 filetypesview.cpp:81 kservicelistwidget.cpp:110
+#: filetypedetails.cpp:87 filetypesview.cpp:87 kservicelistwidget.cpp:111
 #, kde-format
 msgid "Add..."
 msgstr "Ychwanegu..."
@@ -106,7 +106,7 @@ msgstr "Ychwanegu..."
 msgid "Add a new pattern for the selected file type."
 msgstr "Ychwanegu patrwm newydd ar gyfer y math ffeil dewisiedig."
 
-#: filetypedetails.cpp:94 kservicelistwidget.cpp:124
+#: filetypedetails.cpp:94 kservicelistwidget.cpp:125
 #, kde-format
 msgid "Remove"
 msgstr ""
@@ -133,19 +133,19 @@ msgstr ""
 "(e.e. 'Tudalen HTML'). Fe ddefnyddir y disgrifiad yma gan gymhwysiadau fel "
 "Konqueror i ddangos cynnwys cyfeiriaduron."
 
-#: filetypedetails.cpp:128
+#: filetypedetails.cpp:129
 #, fuzzy, kde-format
 #| msgid "Left Click Action"
 msgid "Left Click Action in Konqueror"
 msgstr "Gweithred Glic Chwith"
 
-#: filetypedetails.cpp:137
+#: filetypedetails.cpp:138
 #, fuzzy, kde-format
 #| msgid "Ask whether to save to disk instead"
 msgid "Ask whether to save to disk instead (only for Konqueror browser)"
 msgstr "Gofyn a ddylid cadw i'r disg yn lle"
 
-#: filetypedetails.cpp:153
+#: filetypedetails.cpp:154
 #, fuzzy, kde-format
 #| msgid ""
 #| "Here you can configure what the Konqueror file manager will do when you "
@@ -169,43 +169,43 @@ msgstr ""
 "gosodiadau'r grŵp G y perthyna'r math yma iddo, 'image' (delwedd) er "
 "enghraifft os taw image/png yw'r math ffeil cyfredol."
 
-#: filetypedetails.cpp:165
+#: filetypedetails.cpp:167
 #, kde-format
 msgid "&General"
 msgstr "&Cyffredinol"
 
-#: filetypedetails.cpp:166
+#: filetypedetails.cpp:168
 #, kde-format
 msgid "&Embedding"
 msgstr "&Mewnadeiladu"
 
-#: filetypedetails.cpp:207
+#: filetypedetails.cpp:209
 #, kde-format
 msgid "Add New Extension"
 msgstr "Ychwanegu Estyniad Newydd"
 
-#: filetypedetails.cpp:207
+#: filetypedetails.cpp:209
 #, kde-format
 msgid "Extension:"
 msgstr "Estyniad:"
 
-#: filetypedetails.cpp:325
+#: filetypedetails.cpp:327
 #, fuzzy, kde-format
 #| msgid "Edit File Type %1"
 msgid "File type %1"
 msgstr "Golygu Math Ffeil %1"
 
-#: filetypedetails.cpp:333
+#: filetypedetails.cpp:335
 #, kde-format
 msgid "Use settings for '%1' group"
 msgstr "Defnyddio gosodiadau ar gyfer grŵp '%1'"
 
-#: filetypesview.cpp:52
+#: filetypesview.cpp:58
 #, fuzzy, kde-format
 msgid "Search for file type or filename pattern..."
 msgstr "C&anfod patrwm enw ffeil:"
 
-#: filetypesview.cpp:58
+#: filetypesview.cpp:64
 #, fuzzy, kde-format
 msgid ""
 "Enter a part of a filename pattern, and only file types with a matching file "
@@ -215,12 +215,12 @@ msgstr ""
 "Rhowch ran o batrwm enw ffeil. Dim ond mathau ffeil â phatrwm cyfatebol a "
 "ymddengys yn y rhestr."
 
-#: filetypesview.cpp:66
+#: filetypesview.cpp:72 multiapplydialog.cpp:27
 #, kde-format
 msgid "Known Types"
 msgstr "Mathau Hysbys"
 
-#: filetypesview.cpp:72
+#: filetypesview.cpp:78
 #, kde-format
 msgid ""
 "Here you can see a hierarchical list of the file types which are known on "
@@ -234,32 +234,32 @@ msgstr ""
 "olygu'r wybodaeth ar gyfer y math ffeil yna drwy ddefnyddio'r rheolyddion ar "
 "y dde."
 
-#: filetypesview.cpp:86
+#: filetypesview.cpp:92
 #, kde-format
 msgid "Click here to add a new file type."
 msgstr "Cliciwch yma i ychwanegu math ffeil newydd."
 
-#: filetypesview.cpp:88 filetypesview.cpp:354
+#: filetypesview.cpp:94 filetypesview.cpp:390
 #, kde-format
 msgid "&Remove"
 msgstr ""
 
-#: filetypesview.cpp:112
+#: filetypesview.cpp:120
 #, kde-format
 msgid "Select a file type by name or by extension"
 msgstr "Dewiswch math ffeil yn ôl enw neu yn ôl estyniad."
 
-#: filetypesview.cpp:347
+#: filetypesview.cpp:383
 #, kde-format
 msgid "&Revert"
 msgstr ""
 
-#: filetypesview.cpp:348
+#: filetypesview.cpp:384
 #, kde-format
 msgid "Revert this file type to its initial system-wide definition"
 msgstr ""
 
-#: filetypesview.cpp:350
+#: filetypesview.cpp:386
 #, kde-format
 msgid ""
 "Click here to revert this file type to its initial system-wide definition, "
@@ -269,12 +269,12 @@ msgid ""
 "from file contents can still end up using them)."
 msgstr ""
 
-#: filetypesview.cpp:355
+#: filetypesview.cpp:391
 #, kde-format
 msgid "Delete this file type definition completely"
 msgstr ""
 
-#: filetypesview.cpp:357
+#: filetypesview.cpp:393
 #, kde-format
 msgid ""
 "Click here to delete this file type definition completely. This is only "
@@ -353,7 +353,7 @@ msgstr "Trefn Hoffiant Cymhwysiadau"
 msgid "Services Preference Order"
 msgstr "Trefn Hoffiant Gwasanaethau"
 
-#: kservicelistwidget.cpp:68
+#: kservicelistwidget.cpp:69
 #, kde-format
 msgid ""
 "This is a list of applications associated with files of the selected file "
@@ -368,7 +368,7 @@ msgstr ""
 "math ffeil yma, yna trefnir y rhestr yn ôl blaenoriaeth, â'r eitem uchaf yn "
 "cymryd blaenoriaeth dros y lleill."
 
-#: kservicelistwidget.cpp:73
+#: kservicelistwidget.cpp:74
 #, fuzzy, kde-format
 #| msgid ""
 #| "This is a list of services associated with files of the selected file "
@@ -389,12 +389,12 @@ msgstr ""
 "gysylltiedig â'r math ffeil yma, yna trefnir y rhestr yn ôl blaenoriaeth â'r "
 "eitem uchaf yn cymeryd blaenoriaeth dros y lleill."
 
-#: kservicelistwidget.cpp:85
+#: kservicelistwidget.cpp:86
 #, kde-format
 msgid "Move &Up"
 msgstr "Symud i &Fyny"
 
-#: kservicelistwidget.cpp:91
+#: kservicelistwidget.cpp:92
 #, kde-format
 msgid ""
 "Assigns a higher priority to the selected\n"
@@ -407,7 +407,7 @@ msgstr ""
 "Effeithai hyn ar y cymhwysiad dewisiedig os yw'r math ffeil yn\n"
 "gysylltiedig â mwy nag un cymhwysiad yn unig."
 
-#: kservicelistwidget.cpp:95
+#: kservicelistwidget.cpp:96
 #, kde-format
 msgid ""
 "Assigns a higher priority to the selected\n"
@@ -416,12 +416,12 @@ msgstr ""
 "Neilltua flaenoriaeth uwch i'r cymhwysiad\n"
 " dewisiedig, gan ei symud i fyny yn y rhestr."
 
-#: kservicelistwidget.cpp:98
+#: kservicelistwidget.cpp:99
 #, kde-format
 msgid "Move &Down"
 msgstr "Symud i &Lawr"
 
-#: kservicelistwidget.cpp:103
+#: kservicelistwidget.cpp:104
 #, kde-format
 msgid ""
 "Assigns a lower priority to the selected\n"
@@ -434,7 +434,7 @@ msgstr ""
 "Effeithai hyn ar y cymhwysiad dewisiedig os yw'r math ffeil yn\n"
 " gysylltiedig â mwy nag un cymhwysiad yn unig."
 
-#: kservicelistwidget.cpp:107
+#: kservicelistwidget.cpp:108
 #, kde-format
 msgid ""
 "Assigns a lower priority to the selected\n"
@@ -443,34 +443,44 @@ msgstr ""
 "Neilltua flaenoriaeth is i'r wasanaeth\n"
 "ddewisiedig, gan ei symud i lawr yn y rhestr."
 
-#: kservicelistwidget.cpp:115
+#: kservicelistwidget.cpp:116
 #, kde-format
 msgid "Add a new application for this file type."
 msgstr "Ychwanegu cymhwysiad newydd ar gyfer y math ffeil yma."
 
-#: kservicelistwidget.cpp:117
+#: kservicelistwidget.cpp:118
 #, kde-format
 msgid "Edit..."
 msgstr "Golygu..."
 
-#: kservicelistwidget.cpp:122
+#: kservicelistwidget.cpp:123
 #, kde-format
 msgid "Edit command line of the selected application."
 msgstr "Golygu llinell orchymyn y cymhwysiad dewisiedig."
 
-#: kservicelistwidget.cpp:129
+#: kservicelistwidget.cpp:130
 #, kde-format
 msgid "Remove the selected application from the list."
 msgstr "Gwaredu'r cymhwysiad dewisiedig o'r rhestr."
 
-#: kservicelistwidget.cpp:152
+#: kservicelistwidget.cpp:132 multiapplydialog.cpp:19
+#, kde-format
+msgid "Apply To..."
+msgstr ""
+
+#: kservicelistwidget.cpp:137
+#, kde-format
+msgid "Apply the current preference order to other file types."
+msgstr ""
+
+#: kservicelistwidget.cpp:160
 #, fuzzy, kde-format
 #| msgid "None"
 msgctxt "No applications associated with this file type"
 msgid "None"
 msgstr "Dim"
 
-#: kservicelistwidget.cpp:154
+#: kservicelistwidget.cpp:162
 #, fuzzy, kde-format
 #| msgid "None"
 msgctxt "No components associated with this file type"
