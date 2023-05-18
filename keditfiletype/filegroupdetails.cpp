@@ -30,7 +30,7 @@ FileGroupDetails::FileGroupDetails(QWidget *parent)
     autoEmbedBoxLayout->addWidget(r2);
     m_autoEmbed->addButton(r1, 0);
     m_autoEmbed->addButton(r2, 1);
-    connect(m_autoEmbed, SIGNAL(buttonClicked(int)), SLOT(slotAutoEmbedClicked(int)));
+    connect(m_autoEmbed, &QButtonGroup::idClicked, this, &FileGroupDetails::slotAutoEmbedClicked);
 
     autoEmbedBox->setWhatsThis(
         i18n("Here you can configure what the Konqueror file manager"

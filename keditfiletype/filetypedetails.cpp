@@ -142,7 +142,7 @@ FileTypeDetails::FileTypeDetails(QWidget *parent)
     m_autoEmbedGroup->addButton(embViewerRadio, 0);
     m_autoEmbedGroup->addButton(sepViewerRadio, 1);
     m_autoEmbedGroup->addButton(m_rbGroupSettings, 2);
-    connect(m_autoEmbedGroup, SIGNAL(buttonClicked(int)), SLOT(slotAutoEmbedClicked(int)));
+    connect(m_autoEmbedGroup, &QButtonGroup::idClicked, this, &FileTypeDetails::slotAutoEmbedClicked);
 
     vbox = new QVBoxLayout(m_autoEmbedBox);
     vbox->addWidget(embViewerRadio);
