@@ -7,20 +7,21 @@
 # Ambalam <tamilpc@ambalam.com>, 2004.
 # root <root@localhost.localdomain>, 2004.
 # ஆமாச்சு <amachu@ubuntu.com>, 2008.
+# Kishore G <kishore96@gmail.com>, 2023.
 msgid ""
 msgstr ""
 "Project-Id-Version: filetypes\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2023-05-16 02:15+0000\n"
-"PO-Revision-Date: 2008-12-09 02:15+0530\n"
-"Last-Translator: ஆமாச்சு <amachu@ubuntu.com>\n"
-"Language-Team: en_US <kde-i18n-doc@lists.kde.org>\n"
+"PO-Revision-Date: 2023-05-21 14:23+0530\n"
+"Last-Translator: Kishore G <kishore96@gmail.com>\n"
+"Language-Team: Tamil <kde-i18n-doc@kde.org>\n"
 "Language: ta\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Generator: KAider 0.1\n"
+"X-Generator: Lokalize 23.04.1\n"
 
 #, kde-format
 msgctxt "NAME OF TRANSLATORS"
@@ -35,17 +36,17 @@ msgstr "ubuntu-l10n-tam@lists.ubuntu.com"
 #: filegroupdetails.cpp:22
 #, kde-format
 msgid "Left Click Action (only for Konqueror file manager)"
-msgstr ""
+msgstr "இடது கிளிக் செயல் (கான்கொரர் கோப்பு உலாவிக்கு மட்டும்)"
 
 #: filegroupdetails.cpp:26 filetypedetails.cpp:134
 #, kde-format
 msgid "Show file in embedded viewer"
-msgstr "கோப்பை உட்பொதிந்த சாளரத்தில் திரையிடுக"
+msgstr "கோப்பை உட்பொதிந்த காட்டியில் காட்டு"
 
 #: filegroupdetails.cpp:27 filetypedetails.cpp:135
 #, kde-format
 msgid "Show file in separate viewer"
-msgstr "கோப்பை மற்றொரு சாளரத்தில் திரையிடுக"
+msgstr "கோப்பை தனிப்பட்ட சாளரத்தில் காட்டு"
 
 #: filegroupdetails.cpp:36
 #, fuzzy, kde-format
@@ -73,13 +74,13 @@ msgid ""
 "This button displays the icon associated with the selected file type. Click "
 "on it to choose a different icon."
 msgstr ""
-"இப்பொத்தான் தெரியப்பட்ட கோப்புவகையுடன் இணைந்த குறும்படத்தைக் காட்டும். வேறொரு குறும்படத்தைத் "
-"தெரிவுசெய்ய அதில் க்ளிக் செய்யவும். "
+"இவ்வகையான கோப்புகளுக்கான சின்னத்தை இப்பட்டன் காட்டும். சின்னத்தை மாற்ற, அதில் கிளிக் "
+"செய்யவும்."
 
 #: filetypedetails.cpp:67
 #, kde-format
 msgid "Filename Patterns"
-msgstr "கோப்புப்பெயர் உருக்கள்"
+msgstr "கோப்புப்பெயர் பாங்குகள்"
 
 #: filetypedetails.cpp:79
 #, kde-format
@@ -89,35 +90,34 @@ msgid ""
 "file type 'text/plain'; all files ending in '.txt' are recognized as plain "
 "text files."
 msgstr ""
-"தெரியப்பட்ட வகையைச் சார்ந்த கோப்புக்களைக் கண்டறிய வல்ல சில உருக்கள் இப்பட்டியிலுள்ளன. "
-"உதாரணமாக, *.txt எனும் உரு 'text/plain' எனும் கோப்புவகைக்குரியது; .txt என முடியும் "
-"எல்லாக் கோப்புக்களும், சாதாரண உரைக் கோப்புக்களாக உணரப்படும்."
+"இவ்வகையான கோப்புகளை அடையாளப்படுத்தும் கோப்புப்பெயர் உருவகைகளை இப்பெட்டி கொண்டிருக்கும். "
+"உதாரணமாக, *.txt எனும் உருவகை 'text/plain' எனும் கோப்புவகைக்குரியது; .txt என "
+"முடியும் எல்லாக் கோப்புகளும், சாதாரண உரைக் கோப்புகளாக கருதப்படும்."
 
 #: filetypedetails.cpp:87 filetypesview.cpp:87 kservicelistwidget.cpp:111
 #, kde-format
 msgid "Add..."
-msgstr "சேர்க்க..."
+msgstr "சேர்..."
 
 #: filetypedetails.cpp:92
 #, kde-format
 msgid "Add a new pattern for the selected file type."
-msgstr "தெரிந்த கோப்பு வகைக்குரிய ஒரு புதிய உருவைச் சேர்."
+msgstr "தேர்ந்தெடுத்துள்ள கோப்புவகைக்கு புதிய பாங்கை சேர்க்கும்."
 
 #: filetypedetails.cpp:94 kservicelistwidget.cpp:125
 #, kde-format
 msgid "Remove"
-msgstr "அகற்றுக"
+msgstr "நீக்கு"
 
 #: filetypedetails.cpp:99
 #, kde-format
 msgid "Remove the selected filename pattern."
-msgstr "தெரிந்த கோப்புவகை உருவை நீக்கு."
+msgstr "தேர்ந்தெடுத்துள்ள கோப்புவகை பாங்கை நீக்கும்."
 
 #: filetypedetails.cpp:110
-#, fuzzy, kde-format
-#| msgid "Description"
+#, kde-format
 msgid "Description:"
-msgstr "விபரம்"
+msgstr "விவரணம்:"
 
 #: filetypedetails.cpp:115
 #, kde-format
@@ -126,21 +126,19 @@ msgid ""
 "'HTML Page'). This description will be used by applications like Konqueror "
 "to display directory content."
 msgstr ""
-"தெரிந்த கோப்புவகைக்குரிய சிறுவிளக்கமொன்றை நீங்கள் இங்கு இடலாம். (உ+ம் 'HTML பக்கம்'). "
-"கான்கொரர் போன்ற பயன்பாடுகள், அடைவுகளின் உள்ளடக்கத்தைக் காட்ட இச்சிறு விளக்கங்களைப் "
+"தேர்ந்தெடுத்துள்ள கோப்புவகைக்குரிய சிறுவிளக்கமொன்றை நீங்கள் இங்கு இடலாம். (எ.கா. 'HTML "
+"பக்கம்'). கான்கொரர் போன்ற செயலிகள், அடைவுகளின் உள்ளடக்கத்தைக் காட்டும்போது இந்த விளக்கங்களைப் "
 "பயன்படுத்தும்."
 
 #: filetypedetails.cpp:129
-#, fuzzy, kde-format
-#| msgid "Left Click Action"
+#, kde-format
 msgid "Left Click Action in Konqueror"
-msgstr "இடம் சொடுக்கிடின் செய்ய வேண்டியது"
+msgstr "இடது கிளிக் செயல் (கான்கொரரில்)"
 
 #: filetypedetails.cpp:138
-#, fuzzy, kde-format
-#| msgid "Ask whether to save to disk instead"
+#, kde-format
 msgid "Ask whether to save to disk instead (only for Konqueror browser)"
-msgstr "வட்டில் சேமிக்க வேண்டுமா எண்று கேள்"
+msgstr "பதிலாக வட்டில் சேமிக்க வேண்டுமா என்று கேள் (கான்கொரர் உலாவிக்கு மட்டும்)"
 
 #: filetypedetails.cpp:154
 #, fuzzy, kde-format
@@ -168,22 +166,22 @@ msgstr ""
 #: filetypedetails.cpp:167
 #, kde-format
 msgid "&General"
-msgstr "பொது"
+msgstr "&பொதுவானவை"
 
 #: filetypedetails.cpp:168
 #, kde-format
 msgid "&Embedding"
-msgstr "உட்பொதித்தல்"
+msgstr "&உட்பொதித்தல்"
 
 #: filetypedetails.cpp:209
 #, kde-format
 msgid "Add New Extension"
-msgstr "புதிய விகுதியைச் சேர்"
+msgstr "புதிய வகைப்பெயரை சேர்"
 
 #: filetypedetails.cpp:209
 #, kde-format
 msgid "Extension:"
-msgstr "விகுதி:"
+msgstr "வகைப்பெயர்:"
 
 #: filetypedetails.cpp:327
 #, kde-format
@@ -193,13 +191,12 @@ msgstr "கோப்புவகை %1 "
 #: filetypedetails.cpp:335
 #, kde-format
 msgid "Use settings for '%1' group"
-msgstr "%1 எனும் குழுவுக்குரிய அமைப்புக்களைப் பாவி"
+msgstr "%1 எனும் குழுவுக்குரிய அமைப்புக்களைப் பயன்படுத்து"
 
 #: filetypesview.cpp:58
-#, fuzzy, kde-format
-#| msgid "F&ind file type or filename pattern:"
+#, kde-format
 msgid "Search for file type or filename pattern..."
-msgstr "கோப்பின் பெயரையோ கோப்பு முறையையோ &தேடுக:"
+msgstr "கோப்புவகையையோ கோப்புப்பெயர் பாங்கையோ தேடலாம்..."
 
 #: filetypesview.cpp:64
 #, kde-format

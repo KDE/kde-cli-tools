@@ -5,14 +5,14 @@
 # Youssef Chahibi <chahibi@gmail.com>, 2007.
 # محمد الحرقان <imksa@hotmail.com>, 2008.
 # Anas Husseini <linux.anas@gmail.com>, 2008.
-# zayed <zayed.alsaidi@gmail.com>, 2008, 2022.
+# zayed <zayed.alsaidi@gmail.com>, 2008, 2022, 2023.
 # Abdalrahim Fakhouri <abdilra7eem@yahoo.com>, 2012.
 msgid ""
 msgstr ""
 "Project-Id-Version: filetypes\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2023-05-16 02:15+0000\n"
-"PO-Revision-Date: 2022-10-27 11:29+0400\n"
+"PO-Revision-Date: 2023-05-21 09:54+0400\n"
 "Last-Translator: Zayed Al-Saidi <zayed.alsaidi@gmail.com>\n"
 "Language-Team: ar\n"
 "Language: ar\n"
@@ -21,7 +21,7 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=6; plural=n==0 ? 0 : n==1 ? 1 : n==2 ? 2 : n%100>=3 "
 "&& n%100<=10 ? 3 : n%100>=11 && n%100<=99 ? 4 : 5;\n"
-"X-Generator: Lokalize 21.12.3\n"
+"X-Generator: Lokalize 22.12.3\n"
 
 #, kde-format
 msgctxt "NAME OF TRANSLATORS"
@@ -441,12 +441,12 @@ msgstr "أزل التطبيق المختار من القائمة."
 #: kservicelistwidget.cpp:132 multiapplydialog.cpp:19
 #, kde-format
 msgid "Apply To..."
-msgstr ""
+msgstr "طبّق على..."
 
 #: kservicelistwidget.cpp:137
 #, kde-format
 msgid "Apply the current preference order to other file types."
-msgstr ""
+msgstr "طبّق ترتيب التفضيل الحالي على أنواع الملفات الأخرى."
 
 #: kservicelistwidget.cpp:160
 #, kde-format
