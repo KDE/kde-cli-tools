@@ -11,7 +11,7 @@ msgstr ""
 "Project-Id-Version: ktraderclient\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2021-03-18 02:47+0100\n"
-"PO-Revision-Date: 2023-01-18 22:31+0300\n"
+"PO-Revision-Date: 2023-05-24 01:29+0300\n"
 "Last-Translator: Emir SARI <emir_sari@icloud.com>\n"
 "Language-Team: Turkish <kde-l10n-tr@kde.org>\n"
 "Language: tr\n"
@@ -19,7 +19,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n > 1);\n"
-"X-Generator: Lokalize 22.12.1\n"
+"X-Generator: Lokalize 23.07.70\n"
 
 #, kde-format
 msgctxt "NAME OF TRANSLATORS"
@@ -54,7 +54,7 @@ msgstr "Bir MIME türü"
 #: ktraderclient.cpp:32
 #, kde-format
 msgid "A servicetype, like KParts/ReadOnlyPart or KMyApp/Plugin"
-msgstr "Bir servis türü, KParts/ReadOnlyPart ya da KMyApp/Plugin gibi"
+msgstr "Bir hizmet türü, KParts/ReadOnlyPart ya da KMyApp/Plugin gibi"
 
 #: ktraderclient.cpp:35
 #, kde-format
