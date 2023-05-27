@@ -4,13 +4,13 @@
 # Dario Panico <Dareus_Persarumrex@fastwebnet.it>, 2008.
 # Luciano Montanaro <mikelima@cirulla.net>, 2008.
 # Federico Zenith <federico.zenith@member.fsf.org>, 2009, 2010, 2014.
-# Paolo Zamponi <feus73@gmail.com>, 2019.
+# Paolo Zamponi <feus73@gmail.com>, 2019, 2023.
 msgid ""
 msgstr ""
 "Project-Id-Version: filetypes\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2023-05-16 02:15+0000\n"
-"PO-Revision-Date: 2019-01-14 17:18+0100\n"
+"PO-Revision-Date: 2023-05-19 17:25+0200\n"
 "Last-Translator: Paolo Zamponi <feus73@gmail.com>\n"
 "Language-Team: Italian <kde-i18n-it@kde.org>\n"
 "Language: it\n"
@@ -18,7 +18,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
-"X-Generator: Lokalize 18.12.0\n"
+"X-Generator: Lokalize 23.04.1\n"
 
 #, kde-format
 msgctxt "NAME OF TRANSLATORS"
@@ -456,12 +456,12 @@ msgstr "Rimuove l'applicazione selezionata dalla lista."
 #: kservicelistwidget.cpp:132 multiapplydialog.cpp:19
 #, kde-format
 msgid "Apply To..."
-msgstr ""
+msgstr "Applica a..."
 
 #: kservicelistwidget.cpp:137
 #, kde-format
 msgid "Apply the current preference order to other file types."
-msgstr ""
+msgstr "Applica l'ordine di preferenza corrente agli altri tipi di file."
 
 #: kservicelistwidget.cpp:160
 #, kde-format
