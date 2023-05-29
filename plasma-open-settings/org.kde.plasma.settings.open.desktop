@@ -39,6 +39,7 @@ Name[uk]=Відкрити «Системні параметри»
 Name[vi]=Mở Thiết lập hệ thống
 Name[x-test]=xxOpen System Settingsxx
 Name[zh_CN]=打开系统设置
+Name[zh_TW]=開啟系統設定
 MimeType=x-scheme-handler/systemsettings
 Exec=plasma-open-settings %u
 Icon=systemsettings

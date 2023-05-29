@@ -35,6 +35,7 @@
         "Description[vi]": "Cấu hình liên kết tệp",
         "Description[x-test]": "xxConfigure file associationsxx",
         "Description[zh_CN]": "配置文件关联",
+        "Description[zh_TW]": "設定檔案關聯",
         "Icon": "preferences-desktop-filetype-association",
         "Name": "File Associations",
         "Name[af]": "Lêer Assosiasies",
