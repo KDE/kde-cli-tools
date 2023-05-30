@@ -5,7 +5,7 @@
 # Sébastien Renard <renard@kde.org>, 2010, 2011, 2014, 2015.
 # xavier <ktranslator31@yahoo.fr>, 2013.
 # Vincent Pinon <vpinon@kde.org>, 2016, 2017.
-# Xavier BESNARD <xavier.besnard]neuf.fr>, 2023.
+# Xavier BESNARD <xavier.besnard@neuf.fr>, 2023.
 msgid ""
 msgstr ""
 "Project-Id-Version: kcmshell\n"

@@ -12,8 +12,8 @@
 # aminesay <aminesay@yahoo.fr>, 2007.
 # Sébastien Renard <Sebastien.Renard@digitalfox.org>, 2008.
 # Xavier Besnard <xavier.besnard@neuf.fr>, 2020.
+# Xavier BESNARD <xavier.besnard@neuf.fr>, 2023.
 #
-# Xavier BESNARD <xavier.besnard]neuf.fr>, 2023.
 msgid ""
 msgstr ""
 "Project-Id-Version: kstart\n"
