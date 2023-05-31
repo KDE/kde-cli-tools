@@ -2,25 +2,25 @@
 # Bulgarian translation of KDE.
 # This file is licensed under the GPL.
 #
-# $Id: kcm5_filetypes.po 1651777 2023-05-16 02:29:30Z scripty $
+# $Id: kcm5_filetypes.po 1652864 2023-05-30 21:23:07Z mkkdr $
 #
 # Zlatko Popov <zlatkopopov@fsa-bg.org>, 2007, 2008.
 # Yasen Pramatarov <yasen@lidneas.com>, 2009, 2011.
 # Dimitar Popov <insane@fmi.uni-sofia.bg>, 2011.
-# Mincho Kondarev <mkondarev@yahoo.de>, 2022.
+# Mincho Kondarev <mkondarev@yahoo.de>, 2022, 2023.
 msgid ""
 msgstr ""
 "Project-Id-Version: filetypes\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2023-05-16 02:15+0000\n"
-"PO-Revision-Date: 2022-05-20 19:01+0200\n"
+"PO-Revision-Date: 2023-05-16 23:17+0200\n"
 "Last-Translator: Mincho Kondarev <mkondarev@yahoo.de>\n"
-"Language-Team: Bulgarian <dict@fsa-bg.org>\n"
+"Language-Team: Bulgarian <kde-i18n-doc@kde.org>\n"
 "Language: bg\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Generator: Lokalize 22.04.0\n"
+"X-Generator: Lokalize 23.04.1\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
 
 #, kde-format
@@ -446,12 +446,13 @@ msgstr "Изтриване на избраната програма от спи�
 #: kservicelistwidget.cpp:132 multiapplydialog.cpp:19
 #, kde-format
 msgid "Apply To..."
-msgstr ""
+msgstr "Прилагане за ..."
 
 #: kservicelistwidget.cpp:137
 #, kde-format
 msgid "Apply the current preference order to other file types."
 msgstr ""
+"Прилагане на текущите предпочитания за подреждане и за други типове файлове."
 
 #: kservicelistwidget.cpp:160
 #, kde-format
