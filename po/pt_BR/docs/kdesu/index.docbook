@@ -47,7 +47,7 @@
 <date
 >21/09/2010</date>
 <releaseinfo
->&kde; 4.5</releaseinfo>
+>KDE 4.5</releaseinfo>
 
 
 <abstract
@@ -78,8 +78,8 @@
 kdesu is a libexec program, so does not normally reside in your PATH.
 Use something like:
 <command
->$(kde4-config - -path libexec)kdesu - - program_to_run
-  
+>$(kf5-config - -path libexec)kdesu - - program_to_run
+
 https://bugs.kde.org/show_bug.cgi?id=194267
 "one needs to create a
 ~/.kde/share/config/kdesurc file to tell KDE to use sudo instead of su."
@@ -110,13 +110,13 @@ does this really work?
 >Uma vez que o <command
 >kdesu</command
 > não é mais instalado em <userinput
-> $(kde4-config --prefix)</userinput
+> $(kf5-config --prefix)</userinput
 >/bin mas em <userinput
->kde4-config --path libexec</userinput
+>kf5-config --path libexec</userinput
 > e por isso não está no seu <envar
 >Path</envar
 >, você deve usar <userinput
->$(kde4-config --path libexec)<command
+>$(kf5-config --path libexec)<command
 >kdesu</command
 ></userinput
 > para iniciar o <command
@@ -218,7 +218,7 @@ does this really work?
 <listitem
 ><para
 >Isto especifica o comando a ser executado como 'root'. Tem que ser passado um argumento. Assim se, por exemplo, quiser iniciar um novo gerenciador de arquivos, você deve inserir na linha de comando algo como: <userinput
->$(kde4-config --path libexec)<command
+>$(kf5-config --path libexec)<command
 >kdesu<option
 >-c <replaceable
 >&dolphin;</replaceable
@@ -278,7 +278,7 @@ does this really work?
 >Por exemplo, para executar o &konqueror; como gerenciador de arquivos e mostrar o ícone do &konqueror; na janela da senha:</para>
 <screen
 ><userinput
->$(kde4-config --path libexec)<command
+>$(kf5-config --path libexec)<command
 >kdesu</command
 >  <option
 >-i konqueror</option
@@ -503,8 +503,7 @@ does this really work?
 >Tradução por Marcus Gama <email
 >marcus.gama@gmail.com</email
 ></para
-> 
-&underFDL; &underArtisticLicense; </chapter>
+> &underFDL; &underArtisticLicense; </chapter>
 
 </book>
 <!--

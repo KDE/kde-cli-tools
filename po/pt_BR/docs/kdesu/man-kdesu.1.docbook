@@ -102,9 +102,9 @@
 ><command
 >kdesu</command
 > <arg choice="opt"
->opções genéricas do KDE</arg
+>opções genéricas do &kde;</arg
 > <arg choice="opt"
->opções genéricas do Qt</arg
+>opções genéricas do &Qt;</arg
 > </cmdsynopsis>
 </refsynopsisdiv>
 
@@ -130,13 +130,13 @@
 >Uma vez que o <command
 >kdesu</command
 > não é mais instalado em <userinput
-> $(kde4-config --prefix)</userinput
+> $(kf5-config --prefix)</userinput
 >/bin mas em <userinput
->kde4-config --path libexec</userinput
+>kf5-config --path libexec</userinput
 > e por essa razão não em seu <envar
 >Path</envar
 >, você deve usar <userinput
->$(kde4-config --path libexec)<command
+>$(kf5-config --path libexec)<command
 >kdesu</command
 ></userinput
 > para iniciar o <command
@@ -159,7 +159,7 @@
 <listitem
 ><para
 >Isto especifica o comando a ser executado como 'root'. Tem que ser passado um argumento. Assim se, por exemplo, quiser iniciar um novo gerenciador de arquivos, você deve inserir na linha de comando algo como: <userinput
->$(kde4-config --path libexec)<command
+>$(kf5-config --path libexec)<command
 >kdesu<option
 >-c <replaceable
 >&dolphin;</replaceable
@@ -327,9 +327,7 @@
 <para
 >Está disponível um documentação de usuário mais detalhada em <ulink url="help:/kdesu"
 >help:/kdesu</ulink
-> (insira esta <acronym
->URL</acronym
-> no &konqueror; ou execute <userinput
+> (insira esta &URL; no &konqueror; ou execute <userinput
 ><command
 >khelpcenter</command
 > <parameter
@@ -350,7 +348,7 @@
 > e mostrar o ícone do &konqueror; na janela de senhas:</para>
 <screen
 ><userinput
->$(kde4-config --path libexec)<command
+>$(kf5-config --path libexec)<command
 >kdesu</command
 > <option
 >-u jose</option
@@ -367,15 +365,7 @@
 <title
 >Autores</title>
 <para
->O &kdesu; foi criado por <personname
-><firstname
->Geert</firstname
-><surname
->Jansen</surname
-></personname
-> <email
->jansen@kde.org</email
-> e <personname
+>O &kdesu; foi criado por &Geert.Jansen; &Geert.Jansen.mail; e <personname
 ><firstname
 >Pietro</firstname
 ><surname
