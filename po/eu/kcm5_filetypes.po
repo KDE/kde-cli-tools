@@ -1,26 +1,25 @@
-# Translation of kcm5_filetypes.po to Euskara/Basque (eu)
-# Copyright (C) 2016, Free Software Foundation, Inc.
-# Copyright (C) 2019, This file is copyright:
+# Translation for kcm5_filetypes.po to Euskara/Basque (eu)
+# Copyright (C) 2016-2023 This file is copyright:
 # This file is distributed under the same license as the kde-cli-tools package.
-# KDE euskaratzeko proiektuaren ardurduna <xalba@euskalnet.net>.
+# KDE euskaratzeko proiektuaren ardurduna <xalba@ni.eus>.
 #
 # Translators:
 # Marcos  <marcos@euskalgnu.org>, 2002, 2003, 2004, 2006, 2007, 2008.
-# Iñigo Salvador Azurmendi <xalba@euskalnet.net>, 2009, 2010, 2014, 2016, 2019.
+# Iñigo Salvador Azurmendi <xalba@ni.eus>, 2009, 2010, 2014, 2016, 2019, 2023.
 # Hizkuntza Politikarako Sailburuordetza <hizpol@ej-gv.es>, 2013.
 msgid ""
 msgstr ""
 "Project-Id-Version: kde-cli-tools\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2023-05-16 02:15+0000\n"
-"PO-Revision-Date: 2019-06-01 08:48+0100\n"
-"Last-Translator: Iñigo Salvador Azurmendi <xalba@euskalnet.net>\n"
+"PO-Revision-Date: 2023-06-02 21:19+0200\n"
+"Last-Translator: Iñigo Salvador Azurmendi <xalba@ni.eus>\n"
 "Language-Team: Basque <kde-i18n-eu@kde.org>\n"
 "Language: eu\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Generator: Lokalize 2.0\n"
+"X-Generator: Lokalize 23.04.1\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
 
 #, kde-format
@@ -465,12 +464,12 @@ msgstr "Kendu hautatutako aplikazioa zerrendatik."
 #: kservicelistwidget.cpp:132 multiapplydialog.cpp:19
 #, kde-format
 msgid "Apply To..."
-msgstr ""
+msgstr "Ezarri honi..."
 
 #: kservicelistwidget.cpp:137
 #, kde-format
 msgid "Apply the current preference order to other file types."
-msgstr ""
+msgstr "Erabili uneko hobespen hurrenkera beste fitxategi-motekin."
 
 #: kservicelistwidget.cpp:160
 #, kde-format
