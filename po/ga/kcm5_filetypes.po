@@ -5,7 +5,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kdebase/filetypes.po\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-05-16 02:15+0000\n"
+"POT-Creation-Date: 2023-06-05 01:59+0000\n"
 "PO-Revision-Date: 2004-12-03 14:52-0500\n"
 "Last-Translator: Kevin Scannell <kscanne@gmail.com>\n"
 "Language-Team: Irish <gaeilge-gnulinux@lists.sourceforge.net>\n"
@@ -278,13 +278,13 @@ msgstr ""
 "an seans go mbainfear úsáid as (cé go bhfuil seans fós go mbainfear úsáid as "
 "trí anailís a dhéanamh ar inneachar comhaid)."
 
-#: keditfiletype.cpp:119
+#: keditfiletype.cpp:116
 #, fuzzy, kde-format
 #| msgid "File type %1"
 msgid "File Type Editor"
 msgstr "Cineál comhaid %1"
 
-#: keditfiletype.cpp:121
+#: keditfiletype.cpp:118
 #, kde-format
 msgid ""
 "KDE file type editor - simplified version for editing a single file type"
@@ -292,42 +292,42 @@ msgstr ""
 "Eagarthóir cineálacha comhaid KDE - leagan simplithe a phléann le cineál "
 "amháin san am"
 
-#: keditfiletype.cpp:123
+#: keditfiletype.cpp:120
 #, kde-format
 msgid "(c) 2000, KDE developers"
 msgstr "© 2000, Forbróirí KDE"
 
-#: keditfiletype.cpp:124
+#: keditfiletype.cpp:121
 #, kde-format
 msgid "Preston Brown"
 msgstr "Preston Brown"
 
-#: keditfiletype.cpp:125
+#: keditfiletype.cpp:122
 #, kde-format
 msgid "David Faure"
 msgstr "David Faure"
 
-#: keditfiletype.cpp:131
+#: keditfiletype.cpp:128
 #, kde-format
 msgid "Makes the dialog transient for the window specified by winid"
 msgstr "Déan an dialóg neamhbhuan don fhuinneog a shainíonn winid"
 
-#: keditfiletype.cpp:133
+#: keditfiletype.cpp:130
 #, kde-format
 msgid "File type to edit (e.g. text/html)"
 msgstr "Cineál comhaid le cur in eagar (m.sh. text/html)"
 
-#: keditfiletype.cpp:164
+#: keditfiletype.cpp:161
 #, kde-format
 msgid "%1 File"
 msgstr "Comhad %1"
 
-#: keditfiletype.cpp:191
+#: keditfiletype.cpp:188
 #, kde-format
 msgid "Edit File Type %1"
 msgstr "Cuir Cineál Comhaid %1 in Eagar"
 
-#: keditfiletype.cpp:193
+#: keditfiletype.cpp:190
 #, kde-format
 msgid "Create New File Type %1"
 msgstr "Cruthaigh Cineál Nua Comhaid %1"

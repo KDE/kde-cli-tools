@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: filetypes\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-05-16 02:15+0000\n"
+"POT-Creation-Date: 2023-06-05 01:59+0000\n"
 "PO-Revision-Date: 2011-07-16 01:02+0800\n"
 "Last-Translator: Sharuzzaman Ahmat Raslan <sharuzzaman@gmail.com>\n"
 "Language-Team: Malay <kedidiemas@yahoogroups.com>\n"
@@ -269,55 +269,55 @@ msgid ""
 "still end up using them)."
 msgstr "ke  fail fail Sistem fail Anda corak ke  fail fail."
 
-#: keditfiletype.cpp:119
+#: keditfiletype.cpp:116
 #, fuzzy, kde-format
 #| msgid "File type %1"
 msgid "File Type Editor"
 msgstr "Fail jenis %1"
 
-#: keditfiletype.cpp:121
+#: keditfiletype.cpp:118
 #, kde-format
 msgid ""
 "KDE file type editor - simplified version for editing a single file type"
 msgstr ""
 "Editor jenis fail KDE     versi ringkas untuk suntingan jenis fail tunggal"
 
-#: keditfiletype.cpp:123
+#: keditfiletype.cpp:120
 #, kde-format
 msgid "(c) 2000, KDE developers"
 msgstr "(c) 2000, Pemaju KDE"
 
-#: keditfiletype.cpp:124
+#: keditfiletype.cpp:121
 #, kde-format
 msgid "Preston Brown"
 msgstr "Preston Brown"
 
-#: keditfiletype.cpp:125
+#: keditfiletype.cpp:122
 #, kde-format
 msgid "David Faure"
 msgstr "David Faure"
 
-#: keditfiletype.cpp:131
+#: keditfiletype.cpp:128
 #, kde-format
 msgid "Makes the dialog transient for the window specified by winid"
 msgstr "Jadikan dialog transient untuk tetingkap yang dinyatakan oleh winid"
 
-#: keditfiletype.cpp:133
+#: keditfiletype.cpp:130
 #, kde-format
 msgid "File type to edit (e.g. text/html)"
 msgstr "Jenis fail untuk diedit (cth. teks/html)"
 
-#: keditfiletype.cpp:164
+#: keditfiletype.cpp:161
 #, kde-format
 msgid "%1 File"
 msgstr "Fail %1"
 
-#: keditfiletype.cpp:191
+#: keditfiletype.cpp:188
 #, kde-format
 msgid "Edit File Type %1"
 msgstr "Edit Fail Jenis %1"
 
-#: keditfiletype.cpp:193
+#: keditfiletype.cpp:190
 #, kde-format
 msgid "Create New File Type %1"
 msgstr "Cipta Fail Baru Jenis %1"

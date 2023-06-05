@@ -12,7 +12,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: filetypes\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-05-16 02:15+0000\n"
+"POT-Creation-Date: 2023-06-05 01:59+0000\n"
 "PO-Revision-Date: 2023-05-21 14:23+0530\n"
 "Last-Translator: Kishore G <kishore96@gmail.com>\n"
 "Language-Team: Tamil <kde-i18n-doc@kde.org>\n"
@@ -277,54 +277,54 @@ msgid ""
 "still end up using them)."
 msgstr ""
 
-#: keditfiletype.cpp:119
+#: keditfiletype.cpp:116
 #, fuzzy, kde-format
 #| msgid "File type %1"
 msgid "File Type Editor"
 msgstr "கோப்புவகை %1 "
 
-#: keditfiletype.cpp:121
+#: keditfiletype.cpp:118
 #, kde-format
 msgid ""
 "KDE file type editor - simplified version for editing a single file type"
 msgstr "KDE கோப்பு வகைத் தொகுப்பி - தனியொரு கோப்புவகையைத் தொகுக்க வல்ல எளிய பதிப்பு"
 
-#: keditfiletype.cpp:123
+#: keditfiletype.cpp:120
 #, kde-format
 msgid "(c) 2000, KDE developers"
 msgstr "காப்புரிமை (c) 2000, KDE ஆக்கியோர்"
 
-#: keditfiletype.cpp:124
+#: keditfiletype.cpp:121
 #, kde-format
 msgid "Preston Brown"
 msgstr "பிரெஸ்டவுன் பிரவுன்"
 
-#: keditfiletype.cpp:125
+#: keditfiletype.cpp:122
 #, kde-format
 msgid "David Faure"
 msgstr "டேவிட் பவுர்"
 
-#: keditfiletype.cpp:131
+#: keditfiletype.cpp:128
 #, kde-format
 msgid "Makes the dialog transient for the window specified by winid"
 msgstr "கணத்தில் மாறுகின்ற உரையாடல் சாளரம் குறிக்கும் வினிட்"
 
-#: keditfiletype.cpp:133
+#: keditfiletype.cpp:130
 #, kde-format
 msgid "File type to edit (e.g. text/html)"
 msgstr "தொகுக்க வேண்டிய கோப்புவகை (உ+ம். text/html)"
 
-#: keditfiletype.cpp:164
+#: keditfiletype.cpp:161
 #, kde-format
 msgid "%1 File"
 msgstr "%1 கோப்பு"
 
-#: keditfiletype.cpp:191
+#: keditfiletype.cpp:188
 #, kde-format
 msgid "Edit File Type %1"
 msgstr "%1 எனும் கோப்புவகையைத் தொகு"
 
-#: keditfiletype.cpp:193
+#: keditfiletype.cpp:190
 #, kde-format
 msgid "Create New File Type %1"
 msgstr "%1 வகையைச் சார்ந்த புதிய கோப்பினை உருவாக்குக"

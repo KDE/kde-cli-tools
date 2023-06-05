@@ -11,7 +11,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: filetypes\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-05-16 02:15+0000\n"
+"POT-Creation-Date: 2023-06-05 01:59+0000\n"
 "PO-Revision-Date: 2014-12-06 16:37-0800\n"
 "Last-Translator: Fumiaki Okushi <fumiaki.okushi@gmail.com>\n"
 "Language-Team: Japanese <kde-jp@kde.org>\n"
@@ -284,12 +284,12 @@ msgstr ""
 "ことはできます。(しかしファイルの内容からファイルタイプが判別された場合、最終"
 "的にはそれらが使用されます)"
 
-#: keditfiletype.cpp:119
+#: keditfiletype.cpp:116
 #, kde-format
 msgid "File Type Editor"
 msgstr "ファイルタイプエディタ"
 
-#: keditfiletype.cpp:121
+#: keditfiletype.cpp:118
 #, kde-format
 msgid ""
 "KDE file type editor - simplified version for editing a single file type"
@@ -297,42 +297,42 @@ msgstr ""
 "KDE ファイルタイプエディタ - 単一のファイルタイプを編集するための簡略版のファ"
 "イルタイプエディタ"
 
-#: keditfiletype.cpp:123
+#: keditfiletype.cpp:120
 #, kde-format
 msgid "(c) 2000, KDE developers"
 msgstr "(c) 2000, KDE 開発チーム"
 
-#: keditfiletype.cpp:124
+#: keditfiletype.cpp:121
 #, kde-format
 msgid "Preston Brown"
 msgstr "Preston Brown"
 
-#: keditfiletype.cpp:125
+#: keditfiletype.cpp:122
 #, kde-format
 msgid "David Faure"
 msgstr "David Faure"
 
-#: keditfiletype.cpp:131
+#: keditfiletype.cpp:128
 #, kde-format
 msgid "Makes the dialog transient for the window specified by winid"
 msgstr "winid で指定されたウィンドウのダイアログをトランジェントにする"
 
-#: keditfiletype.cpp:133
+#: keditfiletype.cpp:130
 #, kde-format
 msgid "File type to edit (e.g. text/html)"
 msgstr "編集するファイルタイプ (例: text/html)"
 
-#: keditfiletype.cpp:164
+#: keditfiletype.cpp:161
 #, kde-format
 msgid "%1 File"
 msgstr "%1 ファイル"
 
-#: keditfiletype.cpp:191
+#: keditfiletype.cpp:188
 #, kde-format
 msgid "Edit File Type %1"
 msgstr "ファイルタイプ %1 を編集"
 
-#: keditfiletype.cpp:193
+#: keditfiletype.cpp:190
 #, kde-format
 msgid "Create New File Type %1"
 msgstr "新しいファイルタイプ %1 を作成"

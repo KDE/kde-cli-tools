@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: filetypes\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-05-16 02:15+0000\n"
+"POT-Creation-Date: 2023-06-05 01:59+0000\n"
 "PO-Revision-Date: 2013-09-08 07:04+0900\n"
 "Last-Translator: Gheyret Kenji <gheyret@gmail.com>\n"
 "Language-Team: Uyghur Computer Science Association <UKIJ@yahoogroups.com>\n"
@@ -274,13 +274,13 @@ msgstr ""
 "قالدۇرسىمۇ بولىدۇ(ئەگەر ھۆججەت مەزمۇنىغا ئاساسەن ھۆججەتنىڭ تىپىنى "
 "بەلگىلىيەلىسە شۇنى ئىشلىتىدۇ)"
 
-#: keditfiletype.cpp:119
+#: keditfiletype.cpp:116
 #, fuzzy, kde-format
 #| msgid "File type %1"
 msgid "File Type Editor"
 msgstr "ھۆججەت تىپى %1"
 
-#: keditfiletype.cpp:121
+#: keditfiletype.cpp:118
 #, kde-format
 msgid ""
 "KDE file type editor - simplified version for editing a single file type"
@@ -288,42 +288,42 @@ msgstr ""
 "ك د ئې(KDE) ھۆججەت تىپى تەھرىرلىگۈچىسى - بىرلا ھۆججەت تىپىنى تەھرىرلەيدىغان "
 "ئاددىيلاشتۇرۇلغان نەشرى"
 
-#: keditfiletype.cpp:123
+#: keditfiletype.cpp:120
 #, kde-format
 msgid "(c) 2000, KDE developers"
 msgstr "(c) 2000، KDE ئىجادىيەتچىلىرى"
 
-#: keditfiletype.cpp:124
+#: keditfiletype.cpp:121
 #, kde-format
 msgid "Preston Brown"
 msgstr "Preston Brown"
 
-#: keditfiletype.cpp:125
+#: keditfiletype.cpp:122
 #, kde-format
 msgid "David Faure"
 msgstr "David Faure"
 
-#: keditfiletype.cpp:131
+#: keditfiletype.cpp:128
 #, kde-format
 msgid "Makes the dialog transient for the window specified by winid"
 msgstr "winid دا بەلگىلەنگەن كۆزنەكنىڭ سۆزلەشكۈسىنى سۈزۈك قىلىدۇ."
 
-#: keditfiletype.cpp:133
+#: keditfiletype.cpp:130
 #, kde-format
 msgid "File type to edit (e.g. text/html)"
 msgstr "تەھرىرلەيدىغان ھۆججەت تىپى(مەسىلەن  text/html)"
 
-#: keditfiletype.cpp:164
+#: keditfiletype.cpp:161
 #, kde-format
 msgid "%1 File"
 msgstr "%1 ھۆججەت"
 
-#: keditfiletype.cpp:191
+#: keditfiletype.cpp:188
 #, kde-format
 msgid "Edit File Type %1"
 msgstr "ھۆججەت تىپى %1 نى تەھرىرلەش"
 
-#: keditfiletype.cpp:193
+#: keditfiletype.cpp:190
 #, kde-format
 msgid "Create New File Type %1"
 msgstr "يېڭى ھۆججەت تىپى %1 نى قۇرۇش"

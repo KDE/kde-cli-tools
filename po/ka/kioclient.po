@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kde-cli-tools\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2022-08-22 00:47+0000\n"
+"POT-Creation-Date: 2023-06-05 01:59+0000\n"
 "PO-Revision-Date: 2023-04-19 05:48+0200\n"
 "Last-Translator: Temuri Doghonadze <temuri.doghonadze@gmail.com>\n"
 "Language-Team: Georgian <kde-i18n-doc@kde.org>\n"
@@ -28,7 +28,7 @@ msgctxt "EMAIL OF TRANSLATORS"
 msgid "Your emails"
 msgstr "Temuri.doghonadze@gmail.com"
 
-#: kioclient.cpp:60
+#: kioclient.cpp:55
 #, kde-format
 msgid ""
 "\n"
@@ -37,7 +37,7 @@ msgstr ""
 "\n"
 "სინტაქსი:\n"
 
-#: kioclient.cpp:62
+#: kioclient.cpp:57
 #, kde-format
 msgctxt "The argument is the command \"kioclient openProperties\""
 msgid ""
@@ -49,7 +49,7 @@ msgstr ""
 "            # 'url'-ის თვისებების ფანჯრის გახსნა\n"
 "\n"
 
-#: kioclient.cpp:69
+#: kioclient.cpp:64
 #, kde-format
 msgctxt "The argument is the command \"kioclient exec\""
 msgid ""
@@ -70,7 +70,7 @@ msgstr ""
 "            # 'url' შეიძლება იყოს ბმული დოკუმენტზე, *.desktop ფაილზე\n"
 "            # ან გამშვებ ფაილზე.\n"
 
-#: kioclient.cpp:80
+#: kioclient.cpp:75
 #, kde-format
 msgctxt "The argument is the command \"kioclient move\""
 msgid ""
@@ -89,7 +89,7 @@ msgstr ""
 "            #   ასევე ხელმისაწვდომია მოკლე ვერსიაც: 'kioclient mv'.\n"
 "\n"
 
-#: kioclient.cpp:90
+#: kioclient.cpp:85
 #, kde-format
 msgctxt "The argument is the command \"kioclient download\""
 msgid ""
@@ -105,7 +105,7 @@ msgstr ""
 "            #   URL-ს გკითხავთ.\n"
 "\n"
 
-#: kioclient.cpp:99
+#: kioclient.cpp:94
 #, kde-format
 msgctxt "The argument is the command \"kioclient copy\""
 msgid ""
@@ -121,7 +121,7 @@ msgstr ""
 "            #   ასევე ხელმისაწვდომია მოკლე ვერსიაც: 'kioclient cp'..\n"
 "\n"
 
-#: kioclient.cpp:108
+#: kioclient.cpp:103
 #, kde-format
 msgctxt "The argument is the command \"kioclient cat\""
 msgid ""
@@ -134,7 +134,7 @@ msgstr ""
 "დაბეჭდვა.\n"
 "\n"
 
-#: kioclient.cpp:115
+#: kioclient.cpp:110
 #, kde-format
 msgctxt "The argument is the command \"kioclient ls\""
 msgid ""
@@ -147,7 +147,7 @@ msgstr ""
 "გამოტანაზე დაბეჭდვა.\n"
 "\n"
 
-#: kioclient.cpp:122
+#: kioclient.cpp:117
 #, kde-format
 msgctxt "The argument is the command \"kioclient remove\""
 msgid ""
@@ -163,7 +163,7 @@ msgstr ""
 "            #   ასევე ხელმისაწვდომია უფრო მოკლე ვარიანტი 'kioclient rm'.\n"
 "\n"
 
-#: kioclient.cpp:131
+#: kioclient.cpp:126
 #, kde-format
 msgctxt "The argument is the command \"kioclient stat\""
 msgid ""
@@ -175,7 +175,7 @@ msgstr ""
 "            # 'URL'-ისთვის ხელმისაწვდომი ინფორმაციის ჩვენება\n"
 "\n"
 
-#: kioclient.cpp:138
+#: kioclient.cpp:133
 #, kde-format
 msgctxt "The argument is the command \"kioclient appmenu\""
 msgid ""
@@ -187,12 +187,12 @@ msgstr ""
 "            # ჩვეულებრივი აპლიკაციების გაშვების გახსნა\n"
 "\n"
 
-#: kioclient.cpp:144
+#: kioclient.cpp:139
 #, kde-format
 msgid "*** Examples:\n"
 msgstr "*** მაგალითები:\n"
 
-#: kioclient.cpp:145
+#: kioclient.cpp:140
 #, kde-format
 msgid ""
 "  kioclient exec file:/home/weis/data/test.html\n"
@@ -205,7 +205,7 @@ msgstr ""
 "             // აპლიკაციის გაშვება\n"
 "\n"
 
-#: kioclient.cpp:150
+#: kioclient.cpp:145
 #, kde-format
 msgid ""
 "  kioclient exec ftp://localhost/\n"
@@ -216,7 +216,7 @@ msgstr ""
 "             // URL-ის ftp:// ნაგულისხმებ ბრაუზერში გახსნა\n"
 "\n"
 
-#: kioclient.cpp:154
+#: kioclient.cpp:149
 #, kde-format
 msgid ""
 "  kioclient exec file:/root/Desktop/emacs.desktop\n"
@@ -227,7 +227,7 @@ msgstr ""
 "             // emacs-ის გაშვება\n"
 "\n"
 
-#: kioclient.cpp:158
+#: kioclient.cpp:153
 #, kde-format
 msgid ""
 "  kioclient exec .\n"
@@ -240,22 +240,22 @@ msgstr ""
 "             // გახსნა. ძალიან მოსახერხებელია\n"
 "\n"
 
-#: kioclient.cpp:177
+#: kioclient.cpp:172
 #, kde-format
 msgid "KIO Client"
 msgstr "KIO -ის კლიენტი"
 
-#: kioclient.cpp:178
+#: kioclient.cpp:173
 #, kde-format
 msgid "Command-line tool for network-transparent operations"
 msgstr "ბრძანების სტრიქონის პროგრამა ქსელის გამჭვირვალობის ოპერაციებისთვის"
 
-#: kioclient.cpp:185
+#: kioclient.cpp:180
 #, kde-format
 msgid "Use message boxes and other native notifications"
 msgstr "მომხმარებლის შეტყობინების ფანჯრები და სხვა ნადვილი შეტყობინებეი"
 
-#: kioclient.cpp:188
+#: kioclient.cpp:183
 #, kde-format
 msgid ""
 "Non-interactive use: no message boxes. If you don't want a graphical "
@@ -264,80 +264,80 @@ msgstr ""
 "არააქტიური გამოყენება: არ არის შეტყობინებების ფანჯრები. თუ არ გსურთ "
 "გრაფიკული კავშირი, გამოიყენეთ --platform offscreen"
 
-#: kioclient.cpp:192
+#: kioclient.cpp:187
 #, kde-format
 msgid "Overwrite destination if it exists (for copy and move)"
 msgstr "სამიზნის თავზე გადაწერა, თუ ის არსებობს (კოპირებისა და გადატანისთვის)"
 
-#: kioclient.cpp:196
+#: kioclient.cpp:191
 #, kde-format
 msgid "file or URL"
 msgstr "ფაილი ან URL-ი"
 
-#: kioclient.cpp:196 kioclient.cpp:198 kioclient.cpp:201 kioclient.cpp:206
+#: kioclient.cpp:191 kioclient.cpp:193 kioclient.cpp:196 kioclient.cpp:201
 #, kde-format
 msgid "urls..."
 msgstr "url-ები..."
 
-#: kioclient.cpp:198 kioclient.cpp:201
+#: kioclient.cpp:193 kioclient.cpp:196
 #, kde-format
 msgid "Source URL or URLs"
 msgstr "წყაროს URL -(ებ)-ი"
 
-#: kioclient.cpp:199 kioclient.cpp:202
+#: kioclient.cpp:194 kioclient.cpp:197
 #, kde-format
 msgid "Destination URL"
 msgstr "სამიზნე URL-ი"
 
-#: kioclient.cpp:199 kioclient.cpp:202
+#: kioclient.cpp:194 kioclient.cpp:197
 #, kde-format
 msgid "url"
 msgstr "url"
 
-#: kioclient.cpp:204
+#: kioclient.cpp:199
 #, kde-format
 msgid "Show available commands"
 msgstr "ხელმისაწვდომი ბრძანებების ჩვენება"
 
-#: kioclient.cpp:205
+#: kioclient.cpp:200
 #, kde-format
 msgid "Command (see --commands)"
 msgstr "ბრძანება (იხ. --commands)"
 
-#: kioclient.cpp:205
+#: kioclient.cpp:200
 #, kde-format
 msgid "command"
 msgstr "ბრძანება"
 
-#: kioclient.cpp:206
+#: kioclient.cpp:201
 #, kde-format
 msgid "Arguments for command"
 msgstr "ბრძანების არგუმენტები"
 
-#: kioclient.cpp:230
+#: kioclient.cpp:225
 #, kde-format
 msgctxt "@info:shell"
 msgid "%1: Syntax error, not enough arguments\n"
 msgstr "%1: სინტაქსის შეცდომა. არგუმენტები საკმარისი არაა\n"
 
-#: kioclient.cpp:234
+#: kioclient.cpp:229
 #, kde-format
 msgctxt "@info:shell"
 msgid "%1: Syntax error, too many arguments\n"
 msgstr "%1: სინტაქსის შეცდომა. მითითებულია მეტისმეტად ბევრი არგუმენტი\n"
 
-#: kioclient.cpp:447
+#: kioclient.cpp:434
 #, kde-format
 msgid "Destination where to download the files"
 msgstr "სამიზნე საქაღალდე, სადაც გადმოწერილი ფაილები ჩაიწერება"
 
-#: kioclient.cpp:489
+#: kioclient.cpp:476
 #, kde-format
 msgctxt "@info:shell"
 msgid "%1: Syntax error, unknown command '%2'\n"
 msgstr "%1: სინტაქსის შეცდომა. უცნობი ბრძანება '%2'\n"
 
-#: kioclient.cpp:505
+#: kioclient.cpp:492
 #, kde-format
 msgctxt "@info:shell"
 msgid "%1: %2\n"
