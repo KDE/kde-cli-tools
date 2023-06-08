@@ -387,7 +387,7 @@ msgstr ""
 #: kservicelistwidget.cpp:86
 #, kde-format
 msgid "Move &Up"
-msgstr "Mou am&unt"
+msgstr "Mou cap am&unt"
 
 #: kservicelistwidget.cpp:92
 #, kde-format
@@ -414,7 +414,7 @@ msgstr ""
 #: kservicelistwidget.cpp:99
 #, kde-format
 msgid "Move &Down"
-msgstr "Mou a&vall"
+msgstr "Mou cap a&vall"
 
 #: kservicelistwidget.cpp:104
 #, kde-format
