@@ -11,6 +11,9 @@
 #include "mimetypewriter.h"
 
 // Qt
+#include <QDBusConnection>
+#include <QDBusMessage>
+#include <QDebug>
 #include <QHBoxLayout>
 #include <QLabel>
 #include <QMimeDatabase>
@@ -18,17 +21,13 @@
 #include <QStackedWidget>
 #include <QStandardPaths>
 #include <QVBoxLayout>
-#include <qdbusconnection.h>
-#include <qdbusmessage.h>
-#include <qdebug.h>
 
 // KDE
-#include <kbuildsycocaprogressdialog.h>
-#include <klineedit.h>
-#include <klocalizedstring.h>
-#include <kpluginfactory.h>
-
-#include <ksycoca.h>
+#include <KBuildSycocaProgressDialog>
+#include <KLineEdit>
+#include <KLocalizedString>
+#include <KPluginFactory>
+#include <KSycoca>
 
 // Local
 #include "filegroupdetails.h"

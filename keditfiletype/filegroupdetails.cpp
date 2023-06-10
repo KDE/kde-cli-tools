@@ -12,7 +12,7 @@
 #include <QRadioButton>
 #include <QVBoxLayout>
 
-#include <klocalizedstring.h>
+#include <KLocalizedString>
 
 FileGroupDetails::FileGroupDetails(QWidget *parent)
     : QWidget(parent)

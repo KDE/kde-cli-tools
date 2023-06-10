@@ -4,11 +4,11 @@
    SPDX-License-Identifier: GPL-2.0-only OR GPL-3.0-only OR LicenseRef-KDE-Accepted-GPL
 */
 
-#include <kservice.h>
+#include <KService>
 
-#include <kconfiggroup.h>
-#include <kdesktopfile.h>
-#include <ksycoca.h>
+#include <KConfigGroup>
+#include <KDesktopFile>
+#include <KSycoca>
 
 // Qt
 #include <QDir>

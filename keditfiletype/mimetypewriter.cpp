@@ -12,7 +12,7 @@
 #include <QStandardPaths>
 #include <QXmlStreamWriter>
 
-#include <kprocess.h>
+#include <KProcess>
 
 class MimeTypeWriterPrivate
 {

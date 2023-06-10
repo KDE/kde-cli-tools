@@ -21,13 +21,11 @@
 #include <QVBoxLayout>
 
 // KDE
-#include <kaboutdata.h>
-#include <kbuildsycocaprogressdialog.h>
-#include <klocalizedstring.h>
-
-#include <ksycoca.h>
-
-#include <kwindowsystem.h>
+#include <KAboutData>
+#include <KBuildSycocaProgressDialog>
+#include <KLocalizedString>
+#include <KSycoca>
+#include <KWindowSystem>
 
 // Local
 #include "filetypedetails.h"

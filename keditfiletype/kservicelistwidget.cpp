@@ -16,10 +16,10 @@
 #include <QVBoxLayout>
 
 // KDE
-#include <klocalizedstring.h>
-#include <kmessagebox.h>
-#include <kopenwithdialog.h>
-#include <kpropertiesdialog.h>
+#include <KLocalizedString>
+#include <KMessageBox>
+#include <KOpenWithDialog>
+#include <KPropertiesDialog>
 
 // Local
 #include "kserviceselectdlg.h"

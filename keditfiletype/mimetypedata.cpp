@@ -8,16 +8,16 @@
 #include "mimetypedata.h"
 #include "mimetypewriter.h"
 #include <KApplicationTrader>
+#include <KConfigGroup>
 #include <KParts/PartLoader>
+#include <KProtocolManager>
+#include <KService>
+#include <KSharedConfig>
+#include <QDebug>
 #include <QFileInfo>
 #include <QMimeDatabase>
 #include <QStandardPaths>
 #include <QXmlStreamReader>
-#include <kconfiggroup.h>
-#include <kprotocolmanager.h>
-#include <kservice.h>
-#include <ksharedconfig.h>
-#include <qdebug.h>
 
 MimeTypeData::MimeTypeData(const QString &major)
     : m_askSave(AskSaveDefault)

@@ -19,13 +19,13 @@
 #include <QVBoxLayout>
 
 // KDE
-#include <kconfig.h>
-#include <kconfiggroup.h>
-#include <kiconbutton.h>
-#include <kicondialog.h>
-#include <klineedit.h>
-#include <klocalizedstring.h>
-#include <ksharedconfig.h>
+#include <KConfig>
+#include <KConfigGroup>
+#include <KIconButton>
+#include <KIconDialog>
+#include <KLineEdit>
+#include <KLocalizedString>
+#include <KSharedConfig>
 
 // Local
 #include "kservicelistwidget.h"

@@ -15,8 +15,8 @@
 #include <QLabel>
 
 // KDE
-#include <klineedit.h>
-#include <klocalizedstring.h>
+#include <KLineEdit>
+#include <KLocalizedString>
 
 NewTypeDialog::NewTypeDialog(const QStringList &groups, QWidget *parent)
     : QDialog(parent)
