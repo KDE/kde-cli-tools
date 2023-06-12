@@ -15,7 +15,7 @@
 
 QVector<KPluginMetaData> allParts()
 {
-    return KPluginMetaData::findPlugins(QStringLiteral("kf" QT_STRINGIFY(QT_VERSION_MAJOR) "/parts"));
+    return KPluginMetaData::findPlugins(QStringLiteral("kf6/parts"));
 }
 
 KPartSelectDlg::KPartSelectDlg(QWidget *parent)

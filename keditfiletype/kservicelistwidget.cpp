@@ -34,8 +34,7 @@ KServiceListItem::KServiceListItem(const KService::Ptr &pService)
     setIcon(QIcon::fromTheme(pService->icon()));
 
     if (!pService->isApplication()) {
-        localPath = QStandardPaths::writableLocation(QStandardPaths::GenericDataLocation) + QStringLiteral("/kservices" QT_STRINGIFY(QT_VERSION_MAJOR))
-            + QLatin1Char('/') + desktopPath;
+        localPath = QStandardPaths::writableLocation(QStandardPaths::GenericDataLocation) + QStringLiteral("/kservices6/") + desktopPath;
     } else {
         localPath = pService->locateLocal();
     }
@@ -170,7 +169,7 @@ void KServiceListWidget::setMimeTypeData(MimeTypeData *mimeTypeData)
             } else {
                 servicesLB->setEnabled(true);
                 for (const QString &partId : parts) {
-                    if (KPluginMetaData data(QStringLiteral("kf" QT_STRINGIFY(QT_VERSION_MAJOR) "/parts/") + partId); data.isValid()) {
+                    if (KPluginMetaData data(QStringLiteral("kf6/parts/") + partId); data.isValid()) {
                         servicesLB->addItem(new PluginListItem(data));
                     }
                 }
