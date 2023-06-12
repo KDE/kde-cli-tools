@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: filetypes stable\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-06-05 01:59+0000\n"
+"POT-Creation-Date: 2023-06-12 02:34+0000\n"
 "PO-Revision-Date: 2005-11-22 11:27+0200\n"
 "Last-Translator: Frikkie Thirion <frikkie.thirion@deneloptronics.co.za>\n"
 "Language-Team: AFRIKAANS <AF@lia.org.za>\n"
@@ -89,7 +89,7 @@ msgstr ""
 "geassosieer met die lêer tipe 'teks/eenvoudig'; alle lêers wat eindig in '."
 "txt' word herken as eenvoudig teks lêers."
 
-#: filetypedetails.cpp:87 filetypesview.cpp:87 kservicelistwidget.cpp:111
+#: filetypedetails.cpp:87 filetypesview.cpp:86 kservicelistwidget.cpp:107
 #, kde-format
 msgid "Add..."
 msgstr "Voeg by..."
@@ -99,7 +99,7 @@ msgstr "Voeg by..."
 msgid "Add a new pattern for the selected file type."
 msgstr "Voeg by 'n nuwe patroon vir die gekose lêer tipe."
 
-#: filetypedetails.cpp:94 kservicelistwidget.cpp:125
+#: filetypedetails.cpp:94 kservicelistwidget.cpp:121
 #, kde-format
 msgid "Remove"
 msgstr ""
@@ -193,13 +193,13 @@ msgstr "Redigeer Lêer Tipe: %1"
 msgid "Use settings for '%1' group"
 msgstr "Gebruik instellings vir '%1' groep"
 
-#: filetypesview.cpp:58
+#: filetypesview.cpp:57
 #, fuzzy, kde-format
 #| msgid "F&ind filename pattern:"
 msgid "Search for file type or filename pattern..."
 msgstr "Soek lêernaam patroon:"
 
-#: filetypesview.cpp:64
+#: filetypesview.cpp:63
 #, fuzzy, kde-format
 #| msgid ""
 #| "Enter a part of a filename pattern. Only file types with a matching file "
@@ -212,12 +212,12 @@ msgstr ""
 "Invoer 'n deel van 'n lêernaam patroon in. Slegs lêer tipes met 'n "
 "ooreenstemmende lêer patroon sal in die lys verskyn."
 
-#: filetypesview.cpp:72 multiapplydialog.cpp:27
+#: filetypesview.cpp:71 multiapplydialog.cpp:27
 #, kde-format
 msgid "Known Types"
 msgstr "Bekend Tipes"
 
-#: filetypesview.cpp:78
+#: filetypesview.cpp:77
 #, kde-format
 msgid ""
 "Here you can see a hierarchical list of the file types which are known on "
@@ -231,32 +231,32 @@ msgstr ""
 "besigtig/redigeer die informasie vir wat lêer tipe te gebruik die kontroles "
 "op die regterkant."
 
-#: filetypesview.cpp:92
+#: filetypesview.cpp:91
 #, kde-format
 msgid "Click here to add a new file type."
 msgstr "Kliek hier na voeg by 'n nuwe lêer tipe."
 
-#: filetypesview.cpp:94 filetypesview.cpp:390
+#: filetypesview.cpp:93 filetypesview.cpp:389
 #, kde-format
 msgid "&Remove"
 msgstr ""
 
-#: filetypesview.cpp:120
+#: filetypesview.cpp:119
 #, kde-format
 msgid "Select a file type by name or by extension"
 msgstr "Kies 'n lêer tipe deur naam of deur uitbreiding"
 
-#: filetypesview.cpp:383
+#: filetypesview.cpp:382
 #, kde-format
 msgid "&Revert"
 msgstr ""
 
-#: filetypesview.cpp:384
+#: filetypesview.cpp:383
 #, kde-format
 msgid "Revert this file type to its initial system-wide definition"
 msgstr ""
 
-#: filetypesview.cpp:386
+#: filetypesview.cpp:385
 #, kde-format
 msgid ""
 "Click here to revert this file type to its initial system-wide definition, "
@@ -266,12 +266,12 @@ msgid ""
 "from file contents can still end up using them)."
 msgstr ""
 
-#: filetypesview.cpp:391
+#: filetypesview.cpp:390
 #, kde-format
 msgid "Delete this file type definition completely"
 msgstr ""
 
-#: filetypesview.cpp:393
+#: filetypesview.cpp:392
 #, kde-format
 msgid ""
 "Click here to delete this file type definition completely. This is only "
@@ -281,13 +281,13 @@ msgid ""
 "still end up using them)."
 msgstr ""
 
-#: keditfiletype.cpp:116
+#: keditfiletype.cpp:114
 #, fuzzy, kde-format
 #| msgid "Edit File Type %1"
 msgid "File Type Editor"
 msgstr "Redigeer Lêer Tipe: %1"
 
-#: keditfiletype.cpp:118
+#: keditfiletype.cpp:116
 #, kde-format
 msgid ""
 "KDE file type editor - simplified version for editing a single file type"
@@ -295,62 +295,62 @@ msgstr ""
 "KDE lêer tipe redigeerder - vereenvoudigde weergawe om 'n enkel lêer tipe te "
 "redigeer"
 
-#: keditfiletype.cpp:120
+#: keditfiletype.cpp:118
 #, kde-format
 msgid "(c) 2000, KDE developers"
 msgstr "(c) 2000, KDE ontwikkelaars"
 
-#: keditfiletype.cpp:121
+#: keditfiletype.cpp:119
 #, kde-format
 msgid "Preston Brown"
 msgstr ""
 
-#: keditfiletype.cpp:122
+#: keditfiletype.cpp:120
 #, kde-format
 msgid "David Faure"
 msgstr ""
 
-#: keditfiletype.cpp:128
+#: keditfiletype.cpp:126
 #, kde-format
 msgid "Makes the dialog transient for the window specified by winid"
 msgstr "Maak dit 'n oorgang dialoog vir die venster gespesifiseer deur WinID"
 
-#: keditfiletype.cpp:130
+#: keditfiletype.cpp:128
 #, kde-format
 msgid "File type to edit (e.g. text/html)"
 msgstr "Lêer tipe om te redigeer (bv. teks/html)"
 
-#: keditfiletype.cpp:161
+#: keditfiletype.cpp:159
 #, kde-format
 msgid "%1 File"
 msgstr "%1 Lêer"
 
-#: keditfiletype.cpp:188
+#: keditfiletype.cpp:186
 #, kde-format
 msgid "Edit File Type %1"
 msgstr "Redigeer Lêer Tipe: %1"
 
-#: keditfiletype.cpp:190
+#: keditfiletype.cpp:188
 #, kde-format
 msgid "Create New File Type %1"
 msgstr "Skep Nuwe Lêer Tipe: %1"
 
-#: kservicelistwidget.cpp:36 kservicelistwidget.cpp:52
+#: kservicelistwidget.cpp:48
 #, kde-format
 msgid "%1 (%2)"
 msgstr "%1 (%2)"
 
-#: kservicelistwidget.cpp:57
+#: kservicelistwidget.cpp:53
 #, kde-format
 msgid "Application Preference Order"
 msgstr "Aansoek Voorkeur Volgorde"
 
-#: kservicelistwidget.cpp:57
+#: kservicelistwidget.cpp:53
 #, kde-format
 msgid "Services Preference Order"
 msgstr "Dienste Voorkeur Volgorde"
 
-#: kservicelistwidget.cpp:69
+#: kservicelistwidget.cpp:65
 #, kde-format
 msgid ""
 "This is a list of applications associated with files of the selected file "
@@ -365,7 +365,7 @@ msgstr ""
 "lêer tipe geassosieer is, sal die programme se prioriteit van bo na onder in "
 "die lys bepaal word."
 
-#: kservicelistwidget.cpp:74
+#: kservicelistwidget.cpp:70
 #, fuzzy, kde-format
 #| msgid ""
 #| "This is a list of services associated with files of the selected file "
@@ -386,12 +386,12 @@ msgstr ""
 "lêer tipe geassosieer is, sal die programme se prioriteit van bo na onder in "
 "die lys bepaal word."
 
-#: kservicelistwidget.cpp:86
+#: kservicelistwidget.cpp:82
 #, kde-format
 msgid "Move &Up"
 msgstr "Beweeg Begin"
 
-#: kservicelistwidget.cpp:92
+#: kservicelistwidget.cpp:88
 #, kde-format
 msgid ""
 "Assigns a higher priority to the selected\n"
@@ -404,7 +404,7 @@ msgstr ""
 "slegs affekteer die gekose aansoek as die lêer tipe is\n"
 "geassosieer met meer as een aansoek."
 
-#: kservicelistwidget.cpp:96
+#: kservicelistwidget.cpp:92
 #, kde-format
 msgid ""
 "Assigns a higher priority to the selected\n"
@@ -413,12 +413,12 @@ msgstr ""
 "Ken toe 'n hoër prioriteit na die gekose\n"
 "diens, beweeg dit begin in die lys."
 
-#: kservicelistwidget.cpp:99
+#: kservicelistwidget.cpp:95
 #, kde-format
 msgid "Move &Down"
 msgstr "Beweeg Ondertoe"
 
-#: kservicelistwidget.cpp:104
+#: kservicelistwidget.cpp:100
 #, kde-format
 msgid ""
 "Assigns a lower priority to the selected\n"
@@ -431,7 +431,7 @@ msgstr ""
 "slegs affekteer die gekose aansoek as die lêer tipe is\n"
 "geassosieer met meer as een aansoek."
 
-#: kservicelistwidget.cpp:108
+#: kservicelistwidget.cpp:104
 #, kde-format
 msgid ""
 "Assigns a lower priority to the selected\n"
@@ -440,44 +440,44 @@ msgstr ""
 "Ken toe 'n sagter prioriteit na die gekose\n"
 "diens, beweeg dit ondertoe in die lys."
 
-#: kservicelistwidget.cpp:116
+#: kservicelistwidget.cpp:112
 #, kde-format
 msgid "Add a new application for this file type."
 msgstr "Voeg by 'n nuwe aansoek vir hierdie lêer tipe."
 
-#: kservicelistwidget.cpp:118
+#: kservicelistwidget.cpp:114
 #, kde-format
 msgid "Edit..."
 msgstr "Redigeer..."
 
-#: kservicelistwidget.cpp:123
+#: kservicelistwidget.cpp:119
 #, kde-format
 msgid "Edit command line of the selected application."
 msgstr "Redigeer opdrag lyn van die gekose aansoek."
 
-#: kservicelistwidget.cpp:130
+#: kservicelistwidget.cpp:126
 #, kde-format
 msgid "Remove the selected application from the list."
 msgstr "Verwyder die gekose aansoek van die lys."
 
-#: kservicelistwidget.cpp:132 multiapplydialog.cpp:19
+#: kservicelistwidget.cpp:128 multiapplydialog.cpp:19
 #, kde-format
 msgid "Apply To..."
 msgstr ""
 
-#: kservicelistwidget.cpp:137
+#: kservicelistwidget.cpp:133
 #, kde-format
 msgid "Apply the current preference order to other file types."
 msgstr ""
 
-#: kservicelistwidget.cpp:160
+#: kservicelistwidget.cpp:156
 #, fuzzy, kde-format
 #| msgid "None"
 msgctxt "No applications associated with this file type"
 msgid "None"
 msgstr "Geen"
 
-#: kservicelistwidget.cpp:162
+#: kservicelistwidget.cpp:169
 #, fuzzy, kde-format
 #| msgid "None"
 msgctxt "No components associated with this file type"

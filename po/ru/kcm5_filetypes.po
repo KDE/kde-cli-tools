@@ -18,7 +18,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: filetypes\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-06-05 01:59+0000\n"
+"POT-Creation-Date: 2023-06-12 02:34+0000\n"
 "PO-Revision-Date: 2019-01-17 21:47+0300\n"
 "Last-Translator: Alexander Yavorsky <kekcuha@gmail.com>\n"
 "Language-Team: Russian <kde-russian@lists.kde.ru>\n"
@@ -101,7 +101,7 @@ msgstr ""
 "Например, маска *.txt соответствует типу «text/plain»; все файлы с "
 "расширением «.txt» считаются простыми текстовыми файлами."
 
-#: filetypedetails.cpp:87 filetypesview.cpp:87 kservicelistwidget.cpp:111
+#: filetypedetails.cpp:87 filetypesview.cpp:86 kservicelistwidget.cpp:107
 #, kde-format
 msgid "Add..."
 msgstr "Добавить..."
@@ -111,7 +111,7 @@ msgstr "Добавить..."
 msgid "Add a new pattern for the selected file type."
 msgstr "Добавить новую маску для выбранного типа файлов."
 
-#: filetypedetails.cpp:94 kservicelistwidget.cpp:125
+#: filetypedetails.cpp:94 kservicelistwidget.cpp:121
 #, kde-format
 msgid "Remove"
 msgstr "Удалить"
@@ -195,12 +195,12 @@ msgstr "Тип файла %1"
 msgid "Use settings for '%1' group"
 msgstr "Использовать настройку для группы «%1»"
 
-#: filetypesview.cpp:58
+#: filetypesview.cpp:57
 #, kde-format
 msgid "Search for file type or filename pattern..."
 msgstr "Введите тип файла или расширение файла..."
 
-#: filetypesview.cpp:64
+#: filetypesview.cpp:63
 #, kde-format
 msgid ""
 "Enter a part of a filename pattern, and only file types with a matching file "
@@ -211,12 +211,12 @@ msgstr ""
 "совпадающие файлы. Либо введите часть имени файла, как оно появляется в "
 "списке."
 
-#: filetypesview.cpp:72 multiapplydialog.cpp:27
+#: filetypesview.cpp:71 multiapplydialog.cpp:27
 #, kde-format
 msgid "Known Types"
 msgstr "Известные типы"
 
-#: filetypesview.cpp:78
+#: filetypesview.cpp:77
 #, kde-format
 msgid ""
 "Here you can see a hierarchical list of the file types which are known on "
@@ -229,32 +229,32 @@ msgstr ""
 "для HTML-файлов) для просмотра или редактирования описания этого типа "
 "файлов, используя элементы управления справа."
 
-#: filetypesview.cpp:92
+#: filetypesview.cpp:91
 #, kde-format
 msgid "Click here to add a new file type."
 msgstr "Нажмите для добавления нового типа файлов."
 
-#: filetypesview.cpp:94 filetypesview.cpp:390
+#: filetypesview.cpp:93 filetypesview.cpp:389
 #, kde-format
 msgid "&Remove"
 msgstr "&Удалить"
 
-#: filetypesview.cpp:120
+#: filetypesview.cpp:119
 #, kde-format
 msgid "Select a file type by name or by extension"
 msgstr "Выберите тип файлов по имени или расширению"
 
-#: filetypesview.cpp:383
+#: filetypesview.cpp:382
 #, kde-format
 msgid "&Revert"
 msgstr "&Восстановить"
 
-#: filetypesview.cpp:384
+#: filetypesview.cpp:383
 #, kde-format
 msgid "Revert this file type to its initial system-wide definition"
 msgstr "Восстановить системные параметры типа файла"
 
-#: filetypesview.cpp:386
+#: filetypesview.cpp:385
 #, kde-format
 msgid ""
 "Click here to revert this file type to its initial system-wide definition, "
@@ -264,12 +264,12 @@ msgid ""
 "from file contents can still end up using them)."
 msgstr "Нажмите эту кнопку для восстановления системных параметров типа файла."
 
-#: filetypesview.cpp:391
+#: filetypesview.cpp:390
 #, kde-format
 msgid "Delete this file type definition completely"
 msgstr "Удалить параметры типа файла"
 
-#: filetypesview.cpp:393
+#: filetypesview.cpp:392
 #, kde-format
 msgid ""
 "Click here to delete this file type definition completely. This is only "
@@ -281,12 +281,12 @@ msgstr ""
 "Нажмите эту кнопку для удаления параметров типа файла. Это возможно только "
 "для параметров, установленных пользователем."
 
-#: keditfiletype.cpp:116
+#: keditfiletype.cpp:114
 #, kde-format
 msgid "File Type Editor"
 msgstr "Редактор типов файлов"
 
-#: keditfiletype.cpp:118
+#: keditfiletype.cpp:116
 #, kde-format
 msgid ""
 "KDE file type editor - simplified version for editing a single file type"
@@ -294,62 +294,62 @@ msgstr ""
 "Программа KDE для редактирования типов файлов — упрощённая версия для "
 "редактирования одного типа файлов"
 
-#: keditfiletype.cpp:120
+#: keditfiletype.cpp:118
 #, kde-format
 msgid "(c) 2000, KDE developers"
 msgstr "© Разработчики KDE, 2000"
 
-#: keditfiletype.cpp:121
+#: keditfiletype.cpp:119
 #, kde-format
 msgid "Preston Brown"
 msgstr "Preston Brown"
 
-#: keditfiletype.cpp:122
+#: keditfiletype.cpp:120
 #, kde-format
 msgid "David Faure"
 msgstr "David Faure"
 
-#: keditfiletype.cpp:128
+#: keditfiletype.cpp:126
 #, kde-format
 msgid "Makes the dialog transient for the window specified by winid"
 msgstr "Привязать диалог к приложению, указанному по winid"
 
-#: keditfiletype.cpp:130
+#: keditfiletype.cpp:128
 #, kde-format
 msgid "File type to edit (e.g. text/html)"
 msgstr "Тип для редактирования (напр. text/html)"
 
-#: keditfiletype.cpp:161
+#: keditfiletype.cpp:159
 #, kde-format
 msgid "%1 File"
 msgstr "Файл %1"
 
-#: keditfiletype.cpp:188
+#: keditfiletype.cpp:186
 #, kde-format
 msgid "Edit File Type %1"
 msgstr "Редактирование типа файла %1"
 
-#: keditfiletype.cpp:190
+#: keditfiletype.cpp:188
 #, kde-format
 msgid "Create New File Type %1"
 msgstr "Создать новый тип файла %1"
 
-#: kservicelistwidget.cpp:36 kservicelistwidget.cpp:52
+#: kservicelistwidget.cpp:48
 #, kde-format
 msgid "%1 (%2)"
 msgstr "%1 (%2)"
 
-#: kservicelistwidget.cpp:57
+#: kservicelistwidget.cpp:53
 #, kde-format
 msgid "Application Preference Order"
 msgstr "Приоритет приложений"
 
-#: kservicelistwidget.cpp:57
+#: kservicelistwidget.cpp:53
 #, kde-format
 msgid "Services Preference Order"
 msgstr "Приоритет компонентов"
 
-#: kservicelistwidget.cpp:69
+#: kservicelistwidget.cpp:65
 #, kde-format
 msgid ""
 "This is a list of applications associated with files of the selected file "
@@ -364,7 +364,7 @@ msgstr ""
 "список сортируется по приоритетам. Чем выше программа в списке, тем больший "
 "приоритет она имеет."
 
-#: kservicelistwidget.cpp:74
+#: kservicelistwidget.cpp:70
 #, kde-format
 msgid ""
 "This is a list of services associated with files of the selected file type. "
@@ -379,12 +379,12 @@ msgstr ""
 "предоставляющего встроенный просмотр, то список сортируется по приоритетам. "
 "Чем выше приложение в списке, тем больший приоритет оно имеет."
 
-#: kservicelistwidget.cpp:86
+#: kservicelistwidget.cpp:82
 #, kde-format
 msgid "Move &Up"
 msgstr "&Вверх"
 
-#: kservicelistwidget.cpp:92
+#: kservicelistwidget.cpp:88
 #, kde-format
 msgid ""
 "Assigns a higher priority to the selected\n"
@@ -397,7 +397,7 @@ msgstr ""
 "Это влияет на выбранное приложение только в том случае, если к данному типу "
 "файлов привязано более одного приложения."
 
-#: kservicelistwidget.cpp:96
+#: kservicelistwidget.cpp:92
 #, kde-format
 msgid ""
 "Assigns a higher priority to the selected\n"
@@ -406,12 +406,12 @@ msgstr ""
 "Присваивает более высокий приоритет выбранному компоненту, перемещая его "
 "вверх по списку."
 
-#: kservicelistwidget.cpp:99
+#: kservicelistwidget.cpp:95
 #, kde-format
 msgid "Move &Down"
 msgstr "В&низ"
 
-#: kservicelistwidget.cpp:104
+#: kservicelistwidget.cpp:100
 #, kde-format
 msgid ""
 "Assigns a lower priority to the selected\n"
@@ -424,7 +424,7 @@ msgstr ""
 "Это влияет на выбранное приложение только в том случае, если к данному типу "
 "файлов привязано более одного приложения."
 
-#: kservicelistwidget.cpp:108
+#: kservicelistwidget.cpp:104
 #, kde-format
 msgid ""
 "Assigns a lower priority to the selected\n"
@@ -433,43 +433,43 @@ msgstr ""
 "Присваивает более низкий приоритет выбранному компоненту, перемещая его вниз "
 "по списку."
 
-#: kservicelistwidget.cpp:116
+#: kservicelistwidget.cpp:112
 #, kde-format
 msgid "Add a new application for this file type."
 msgstr "Добавить приложение для данного типа."
 
-#: kservicelistwidget.cpp:118
+#: kservicelistwidget.cpp:114
 #, kde-format
 msgid "Edit..."
 msgstr "Правка..."
 
-#: kservicelistwidget.cpp:123
+#: kservicelistwidget.cpp:119
 #, kde-format
 msgid "Edit command line of the selected application."
 msgstr "Правка командной строки выбранного приложения"
 
-#: kservicelistwidget.cpp:130
+#: kservicelistwidget.cpp:126
 #, kde-format
 msgid "Remove the selected application from the list."
 msgstr "Удалить выбранное приложение из списка."
 
-#: kservicelistwidget.cpp:132 multiapplydialog.cpp:19
+#: kservicelistwidget.cpp:128 multiapplydialog.cpp:19
 #, kde-format
 msgid "Apply To..."
 msgstr ""
 
-#: kservicelistwidget.cpp:137
+#: kservicelistwidget.cpp:133
 #, kde-format
 msgid "Apply the current preference order to other file types."
 msgstr ""
 
-#: kservicelistwidget.cpp:160
+#: kservicelistwidget.cpp:156
 #, kde-format
 msgctxt "No applications associated with this file type"
 msgid "None"
 msgstr "Нет"
 
-#: kservicelistwidget.cpp:162
+#: kservicelistwidget.cpp:169
 #, kde-format
 msgctxt "No components associated with this file type"
 msgid "None"
