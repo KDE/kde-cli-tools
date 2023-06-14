@@ -61,8 +61,8 @@ int main(int argc, char **argv)
         job->setDesktopName(QStringLiteral("org.kde.systemsettings"));
     } else if (!QStandardPaths::findExecutable("plasma-settings").isEmpty()) {
         job = openPlasmaSettings(moduleName);
-    } else if (!QStandardPaths::findExecutable("kcmshell5").isEmpty()) {
-        job = new KIO::CommandLauncherJob(QStringLiteral("kcmshell5"), {moduleName, QStringLiteral("--args"), args});
+    } else if (!QStandardPaths::findExecutable("kcmshell6").isEmpty()) {
+        job = new KIO::CommandLauncherJob(QStringLiteral("kcmshell6"), {moduleName, QStringLiteral("--args"), args});
     } else if (!QStandardPaths::findExecutable("kdialog").isEmpty()) {
         job = new KIO::CommandLauncherJob(QStringLiteral("kdialog"), {"--error", i18n("Could not open: %1", moduleName)});
         ret = 1;
