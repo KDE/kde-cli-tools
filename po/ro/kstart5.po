@@ -5,22 +5,23 @@
 # Copyright (C) 2003, 2004, 2005, 2008 Free Software Foundation, Inc.
 # Claudiu Costin <claudiuc@kde.org>, 2003, 2004, 2005.
 # Sergiu Bivol <sergiu@cip.md>, 2008.
-# Sergiu Bivol <sergiu@cip.md>, 2008, 2009.
+# Sergiu Bivol <sergiu@cip.md>, 2008, 2009, 2023.
 #
 msgid ""
 msgstr ""
 "Project-Id-Version: kstart\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2022-12-17 00:51+0000\n"
-"PO-Revision-Date: 2009-04-25 17:57+0300\n"
+"PO-Revision-Date: 2023-06-18 18:29+0100\n"
 "Last-Translator: Sergiu Bivol <sergiu@cip.md>\n"
-"Language-Team: Romanian <kde-i18n-ro@lists.kde.org>\n"
+"Language-Team: Romanian <kde-i18n-ro@kde.org>\n"
 "Language: ro\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=3; plural=n==1 ? 0 : (n==0 || (n%100 > 0 && n%100 < "
 "20)) ? 1 : 2;\n"
+"X-Generator: Lokalize 21.12.3\n"
 
 #, kde-format
 msgctxt "NAME OF TRANSLATORS"
@@ -75,26 +76,18 @@ msgid "Command to execute"
 msgstr "Comanda de executat"
 
 #: kstart.cpp:275
-#, fuzzy, kde-format
-#| msgid ""
-#| "Alternative to <command>: desktop file to start. D-Bus service will be "
-#| "printed to stdout"
+#, kde-format
 msgid ""
 "Alternative to <command>: desktop file path to start. D-Bus service will be "
 "printed to stdout. Deprecated: use --application"
 msgstr ""
-"Alternativă la <command>: fișier desktop de pornit. Serviciul D-Bus va fi "
-"tipărit pe ieșirea standard"
+"Alternativă la <command>: calea spre fișier desktop de pornit. Serviciul D-"
+"Bus va fi tipărit pe ieșirea standard. Învechit: folosiți --application"
 
 #: kstart.cpp:278
-#, fuzzy, kde-format
-#| msgid ""
-#| "Alternative to <command>: desktop file to start. D-Bus service will be "
-#| "printed to stdout"
+#, kde-format
 msgid "Alternative to <command>: desktop file to start."
-msgstr ""
-"Alternativă la <command>: fișier desktop de pornit. Serviciul D-Bus va fi "
-"tipărit pe ieșirea standard"
+msgstr "Alternativă la <command>: fișier desktop de pornit."
 
 #: kstart.cpp:281
 #, kde-format

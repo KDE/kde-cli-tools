@@ -4,7 +4,7 @@
 # Copyright (C) 2003, 2004, 2005, 2008 Free Software Foundation, Inc.
 # Claudiu Costin <claudiuc@kde.org>, 2003, 2004, 2005.
 # Sergiu Bivol <sergiu@cip.md>, 2008.
-# Sergiu Bivol <sergiu@cip.md>, 2008, 2009.
+# Sergiu Bivol <sergiu@cip.md>, 2008, 2009, 2023.
 # Cristian Oneț <onet.cristian@gmail.com>, 2011.
 #
 msgid ""
@@ -12,15 +12,16 @@ msgstr ""
 "Project-Id-Version: kdesu\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2022-12-21 00:48+0000\n"
-"PO-Revision-Date: 2011-01-06 23:20+0200\n"
-"Last-Translator: Cristian Oneț <onet.cristian@gmail.com>\n"
-"Language-Team: Romanian <kde-i18n-ro@lists.kde.org>\n"
+"PO-Revision-Date: 2023-06-18 18:29+0100\n"
+"Last-Translator: Sergiu Bivol <sergiu@cip.md>\n"
+"Language-Team: Romanian <kde-i18n-ro@kde.org>\n"
 "Language: ro\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=3; plural=n==1 ? 0 : (n==0 || (n%100 > 0 && n%100 < "
 "20)) ? 1 : 2;\n"
+"X-Generator: Lokalize 21.12.3\n"
 
 #, kde-format
 msgctxt "NAME OF TRANSLATORS"
@@ -139,7 +140,7 @@ msgstr ""
 #: kdesu.cpp:125
 #, kde-format
 msgid "Embed into a window"
-msgstr ""
+msgstr "Încorporează într-o fereastră"
 
 #: kdesu.cpp:152
 #, kde-format
@@ -147,10 +148,9 @@ msgid "Cannot execute command '%1'."
 msgstr "Nu s-a putut executa comanda '%1'."
 
 #: kdesu.cpp:155
-#, fuzzy, kde-format
-#| msgid "Cannot execute command '%1'."
+#, kde-format
 msgid "Cannot execute command '%1'. It contains invalid characters."
-msgstr "Nu s-a putut executa comanda '%1'."
+msgstr "Nu s-a putut executa comanda „%1”. Aceasta conține caractere nevalide."
 
 #: kdesu.cpp:229
 #, kde-format

@@ -3,33 +3,33 @@
 # Copyright (C) 2008 This_file_is_part_of_KDE
 # This file is distributed under the same license as the ktraderclient package.
 # Laurenţiu Buzdugan <lbuz@rolix.org>, 2008".
-# Sergiu Bivol <sergiu@cip.md>, 2008.
-# Sergiu Bivol <sergiu@cip.md>, 2008.
+# Sergiu Bivol <sergiu@cip.md>, 2008, 2023.
 #
 msgid ""
 msgstr ""
 "Project-Id-Version: ktraderclient\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2021-03-18 02:47+0100\n"
-"PO-Revision-Date: 2008-12-13 19:15+0200\n"
-"Last-Translator: Sergiu Bivol <sergiu@ase.md>\n"
-"Language-Team: Romanian <kde-i18n-ro@lists.kde.org>\n"
+"PO-Revision-Date: 2023-06-18 18:24+0100\n"
+"Last-Translator: Sergiu Bivol <sergiu@cip.md>\n"
+"Language-Team: Romanian <kde-i18n-ro@kde.org>\n"
 "Language: ro\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=3; plural=n==1 ? 0 : (n==0 || (n%100 > 0 && n%100 < "
 "20)) ? 1 : 2;\n"
+"X-Generator: Lokalize 21.12.3\n"
 
 #, kde-format
 msgctxt "NAME OF TRANSLATORS"
 msgid "Your names"
-msgstr ""
+msgstr "Sergiu Bivol"
 
 #, kde-format
 msgctxt "EMAIL OF TRANSLATORS"
 msgid "Your emails"
-msgstr ""
+msgstr "sergiu@cip.md"
 
 #: ktraderclient.cpp:22
 #, kde-format
@@ -39,7 +39,7 @@ msgstr "KTraderClient"
 #: ktraderclient.cpp:23
 #, kde-format
 msgid "David Faure"
-msgstr ""
+msgstr "David Faure"
 
 #: ktraderclient.cpp:25
 #, kde-format
@@ -50,7 +50,7 @@ msgstr ""
 #: ktraderclient.cpp:30
 #, kde-format
 msgid "A MIME type"
-msgstr ""
+msgstr "Un tip MIME"
 
 #: ktraderclient.cpp:32
 #, kde-format
@@ -65,7 +65,7 @@ msgstr "O constantă exprimată în limba de interogare a schimbului"
 #: ktraderclient.cpp:38
 #, kde-format
 msgid "Output only paths to desktop files"
-msgstr ""
+msgstr "Întoarce numai căi spre fișiere .desktop"
 
 #~ msgid "A mimetype"
 #~ msgstr "Un tip MIME"
