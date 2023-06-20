@@ -46,12 +46,12 @@ msgstr "Acción co botón esquerdo (só para o xestor de ficheiros Konqueror)"
 #: filegroupdetails.cpp:26 filetypedetails.cpp:134
 #, kde-format
 msgid "Show file in embedded viewer"
-msgstr "Mostrar o ficheiro nun visor incluído"
+msgstr "Amosar o ficheiro nun visor incluído"
 
 #: filegroupdetails.cpp:27 filetypedetails.cpp:135
 #, kde-format
 msgid "Show file in separate viewer"
-msgstr "Mostrar o ficheiro nun visor separado"
+msgstr "Amosar o ficheiro nun visor separado"
 
 #: filegroupdetails.cpp:36
 #, kde-format
@@ -63,7 +63,7 @@ msgid ""
 "configuration. Dolphin  shows files always in a separate viewer"
 msgstr ""
 "Aquí pode configurar o que fará o xestor de ficheiros Konqueror cando se "
-"faga clic nun ficheiro deste grupo. Konqueror pode mostrar o ficheiro nun "
+"faga clic nun ficheiro deste grupo. Konqueror pode amosar o ficheiro nun "
 "visor incluído ou iniciar unha aplicación aparte. Pode cambiar esta "
 "configuración para un tipo de ficheiro específico no separador «Inclusión» "
 "da configuración do tipo de ficheiro. Dolphin sempre mostra os ficheiros nun "
@@ -91,10 +91,10 @@ msgid ""
 "file type 'text/plain'; all files ending in '.txt' are recognized as plain "
 "text files."
 msgstr ""
-"Esta caixa contén unha lista de padróns que poden empregarse para "
-"identificar ficheiros do tipo escollido. Por exemplo, o padrón *.txt está "
-"asociado co tipo de ficheiro «text/plain», e todos os ficheiros rematados en "
-"«.txt» recoñeceranse como documentos de texto simple."
+"Esta caixa contén unha lista de padróns que poden usarse para identificar "
+"ficheiros do tipo escollido. Por exemplo, o padrón *.txt está asociado co "
+"tipo de ficheiro «text/plain», e todos os ficheiros rematados en «.txt» "
+"recoñeceranse como documentos de texto simple."
 
 #: filetypedetails.cpp:87 filetypesview.cpp:86 kservicelistwidget.cpp:106
 #, kde-format
@@ -130,7 +130,7 @@ msgid ""
 msgstr ""
 "Pode inserir unha descrición curta para ficheiros do tipo escollido (p.ex. "
 "«Páxina HTML»). Esta descrición usarana aplicacións como Konqueror para "
-"mostrar o contido do directorio."
+"amosar o contido do directorio."
 
 #: filetypedetails.cpp:129
 #, kde-format
@@ -153,12 +153,12 @@ msgid ""
 "file type is image/png. Dolphin always shows files in a separate viewer."
 msgstr ""
 "Aquí pode configurar o que fará o xestor de ficheiros Konqueror cando se "
-"faga clic nun ficheiro deste tipo. Konqueror pode mostrar o ficheiro nun "
-"visor incluído ou iniciar unha aplicación  para tal tarefa. Se escolle "
-"«Empregar configuracións para grupo G», o xestor de ficheiros comportarase "
-"segundo a configuración para o grupo G ao que pertenza o tipo, por exemplo "
-"«imaxe» se o tipo de ficheiro actual é imaxe/png. Dolphin sempre mostra os "
-"ficheiros nun visor á parte."
+"faga clic nun ficheiro deste tipo. Konqueror pode amosar o ficheiro nun "
+"visor incluído ou iniciar unha aplicación  para tal tarefa. Se escolle «Usar "
+"configuracións para grupo G», o xestor de ficheiros comportarase segundo a "
+"configuración para o grupo G ao que pertenza o tipo, por exemplo «imaxe» se "
+"o tipo de ficheiro actual é imaxe/png. Dolphin sempre mostra os ficheiros "
+"nun visor á parte."
 
 #: filetypedetails.cpp:167
 #, kde-format
@@ -188,7 +188,7 @@ msgstr "Tipo de ficheiro %1"
 #: filetypedetails.cpp:335
 #, kde-format
 msgid "Use settings for '%1' group"
-msgstr "Empregar a configuración do grupo «%1»"
+msgstr "Usar a configuración do grupo «%1»"
 
 #: filetypesview.cpp:57
 #, kde-format
@@ -222,8 +222,8 @@ msgstr ""
 "Aquí pode ver unha lista xerárquica dos tipos de ficheiro coñecidos neste "
 "sistema. Prema o signo «+» para expandir unha categoría, ou no signo «-» "
 "para pregala. Escolla un tipo de ficheiro (p.ex. text/html para os ficheiros "
-"HTML) para ver/editar a información dese tipo de ficheiro empregando os "
-"controis da dereita."
+"HTML) para ver/editar a información dese tipo de ficheiro usando os controis "
+"da dereita."
 
 #: filetypesview.cpp:91
 #, kde-format
@@ -265,7 +265,7 @@ msgstr ""
 "Teña en conta que non se poden eliminar os tipos de ficheiro do sistema, "
 "porén pode baleirar a súa lista de padróns, co que se minimizan as "
 "posibilidades de empregárense (pero a determinación do tipo de ficheiro a "
-"partir do contido deste pode facer que se empregue)."
+"partir do contido deste pode facer que se use)."
 
 #: filetypesview.cpp:390
 #, kde-format
@@ -284,8 +284,8 @@ msgstr ""
 "Prema aquí para eliminar completamente esta definición de tipo de ficheiro. "
 "Isto só é posíbel cos tipos definidos polo usuario. O tipos de ficheiro do "
 "sistema non poden eliminarse. Porén, pode baleirar a lista de padróns, para "
-"minimizar as posibilidades de empregalos (pero a determinación do tipo de "
-"ficheiro a partir do contido deste pode facer que se empregue)."
+"minimizar as posibilidades de usalos (pero a determinación do tipo de "
+"ficheiro a partir do contido deste pode facer que se use)."
 
 #: keditfiletype.cpp:114
 #, kde-format
@@ -366,7 +366,7 @@ msgid ""
 "precedence over the others."
 msgstr ""
 "Esta é unha lista de aplicacións asociadas con ficheiros do tipo escollido. "
-"Esta lista móstrase nos menús de contexto de Konqueror cando se escolle "
+"Esta lista amósase nos menús de contexto de Konqueror cando se escolle "
 "«Abrir con…». Se hai máis dunha aplicación asociada con este tipo de "
 "ficheiro, entón a lista ordénase pola prioridade, tendo preferencia o "
 "elemento de arriba."
@@ -381,7 +381,7 @@ msgid ""
 "precedence over the others."
 msgstr ""
 "Esta é unha lista de servizos asociados cos ficheiros do tipo de ficheiro "
-"escollido. Esta lista móstrase nos menús de contexto de Konqueror cando se "
+"escollido. Esta lista amósase nos menús de contexto de Konqueror cando se "
 "escolle «Previsualizar con…». Se hai máis dun programa asociado con este "
 "tipo de ficheiro, a lista ordénase por preferencia co elemento prioritario "
 "na cabeza."

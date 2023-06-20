@@ -113,7 +113,7 @@ msgstr "Activar a saída no terminal (non lembra os contrasinais)"
 #: kdesu.cpp:113
 #, kde-format
 msgid "Set priority value: 0 <= prio <= 100, 0 is lowest"
-msgstr "Estabelecer o valor de prioridade: 0 ≤ prioridade ≤ 100, 0 é a menor"
+msgstr "Definir o valor de prioridade: 0 ≤ prioridade ≤ 100, 0 é a menor"
 
 #: kdesu.cpp:114
 #, kde-format
@@ -123,7 +123,7 @@ msgstr "Usar planificación de tempo-real"
 #: kdesu.cpp:115
 #, kde-format
 msgid "Do not display ignore button"
-msgstr "Non mostrar o botón de ignorar"
+msgstr "Non amosar o botón de ignorar"
 
 #: kdesu.cpp:116
 #, kde-format
@@ -133,7 +133,7 @@ msgstr "Especifica a icona para usar no diálogo de contrasinal"
 #: kdesu.cpp:117
 #, kde-format
 msgid "Do not show the command to be run in the dialog"
-msgstr "Non mostrar no diálogo a orde a executar"
+msgstr "Non amosar no diálogo a orde a executar"
 
 #: kdesu.cpp:124
 #, kde-format

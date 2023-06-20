@@ -299,7 +299,7 @@ msgstr "url"
 #: kioclient.cpp:199
 #, kde-format
 msgid "Show available commands"
-msgstr "Mostrar as ordes dispoñíbeis"
+msgstr "Amosar as ordes dispoñíbeis"
 
 #: kioclient.cpp:200
 #, kde-format

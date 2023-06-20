@@ -85,7 +85,7 @@ msgstr "Alternativa a <command>: o ficheiro de escritorio para iniciar."
 #: kstart.cpp:85
 #, kde-format
 msgid "Optional URL to pass <desktopfile>, when using --service"
-msgstr "Un URL opcional a pasar a <desktopfile> cando se emprega con --service"
+msgstr "Un URL opcional a pasar a <desktopfile> cando se usa con --service"
 
 #: kstart.cpp:96
 #, kde-format
