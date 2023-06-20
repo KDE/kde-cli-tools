@@ -45,7 +45,7 @@ msgstr "Indica o tipo MIME dun ficheiro."
 #: kmimetypefinder.cpp:33
 #, kde-format
 msgid "Use only the file content for determining the MIME type."
-msgstr "Empregar só o contido do ficheiro para determinar o tipo MIME."
+msgstr "Usar só o contido do ficheiro para determinar o tipo MIME."
 
 #: kmimetypefinder.cpp:35
 #, kde-format
@@ -53,10 +53,10 @@ msgid ""
 "Whether use the file name only for determining the MIME type. Not used if -c "
 "is specified."
 msgstr ""
-"Indica se debe empregar só o nome do ficheiro para determinar o tipo MIME. "
-"Non se emprega de especificarse -c."
+"Indica se debe usar só o nome do ficheiro para determinar o tipo MIME. Non "
+"se usa de especificarse -c."
 
 #: kmimetypefinder.cpp:36
 #, kde-format
 msgid "The filename to test. '-' to read from stdin."
-msgstr "O nome do ficheiro que se vai probar. Empregue «-» para ler de stdin."
+msgstr "O nome do ficheiro que se vai probar. Use «-» para ler de stdin."

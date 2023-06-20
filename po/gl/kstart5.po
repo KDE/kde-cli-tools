@@ -101,7 +101,7 @@ msgstr "Alternativa a <command>: o ficheiro de escritorio para iniciar."
 #: kstart.cpp:281
 #, kde-format
 msgid "Optional URL to pass <desktopfile>, when using --service"
-msgstr "Un URL opcional a pasar a <desktopfile> cando se emprega con --service"
+msgstr "Un URL opcional a pasar a <desktopfile> cando se usa con --service"
 
 #: kstart.cpp:284
 #, kde-format
@@ -170,7 +170,7 @@ msgstr "Maximizar a xanela horizontalmente"
 #: kstart.cpp:303
 #, kde-format
 msgid "Show window fullscreen"
-msgstr "Mostrar a xanela a pantalla completa"
+msgstr "Amosar a xanela a pantalla completa"
 
 #: kstart.cpp:305
 #, kde-format
