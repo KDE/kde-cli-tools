@@ -369,12 +369,12 @@ does this really work?
 
 <sect1 id="x-authentication">
 <title
->X yetkilendirmesi</title>
+>X kimlik doğrulaması</title>
 
 <para
 >Yürüttüğünüz program yönetici kimliği altında çalışır ve genelde X ekranınıza ulaşmak için yetkisi yoktur. &kdesu;, geçici bir <filename
 >.Xauthority</filename
-> dosyasına bir yetkilendirme çerezi ekleyerek bunun etrafından dolaşır. Komut çıktığında dosya kaldırılır. </para>
+> dosyasına bir kimlik doğrulama çerezi ekleyerek bunun tarafından dolaşır. Komut çıktığında dosya kaldırılır. </para>
 
 <para
 >X çerezleri kullanmıyorsanız kendi başınızasınız. &kdesu; bunu algılar ve bir tanımlama bilgisi eklemez; ancak yöneticinin ekranınıza erişmesine izin verildiğinden emin olmanız gerekir.</para>
@@ -423,7 +423,7 @@ does this really work?
 >su</command
 > ile yürütmek yerine, &kdesu; <application
 >kdesu_stub</application
-> denen ufak bir yalancı program yürütür. Bu program (hedef kullanıcı olarak çalışır), &kdesu;'dan pty/tty kanalı üzerine bilgi ister (programcığın stdin'i ve stdout'u) ve sonrasında kullanıcının programını yürütür. Diğer yana geçirilen bilgi X ekranı, bir X yetkilendirme çerezi (varsa), <envar
+> denen ufak bir yalancı program yürütür. Bu program (hedef kullanıcı olarak çalışır), &kdesu;'dan pty/tty kanalı üzerine bilgi ister (programcığın stdin'i ve stdout'u) ve sonrasında kullanıcının programını yürütür. Diğer yana geçirilen bilgi X ekranı, bir X kimlik doğrulama çerezi (varsa), <envar
 >PATH</envar
 > ve çalıştırılacak komuttur. Yalancı bir programın kullanılma nedeni, X çerezinin gizli bilgi olması ve komut satırında geçirilememesidir.</para>
 
