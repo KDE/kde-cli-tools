@@ -65,13 +65,8 @@ public:
             /**
              * set right cursor position
              */
-#if QT_VERSION < QT_VERSION_CHECK(6, 0, 0)
-            line = match.capturedRef(1).toUInt();
-            column = match.capturedRef(2).toUInt();
-#else
             line = match.capturedView(1).toUInt();
             column = match.capturedView(2).toUInt();
-#endif
         }
 
         /**
