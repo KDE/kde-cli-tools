@@ -14,7 +14,7 @@ msgstr ""
 "Project-Id-Version: kioclient\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2023-06-05 01:59+0000\n"
-"PO-Revision-Date: 2023-06-06 05:31+0300\n"
+"PO-Revision-Date: 2023-07-04 00:58+0300\n"
 "Last-Translator: Emir SARI <emir_sari@icloud.com>\n"
 "Language-Team: Turkish <kde-l10n-tr@kde.org>\n"
 "Language: tr\n"
@@ -262,13 +262,13 @@ msgid ""
 "Non-interactive use: no message boxes. If you don't want a graphical "
 "connection, use --platform offscreen"
 msgstr ""
-"Etkileşimli olmayan kullanım: mesaj diyalogları yok. Eğer grafik bağlantısı "
-"istemiyorsanız, --platform offscreen kullanın"
+"Etkileşimli olmayan kullanım: İleti kutusu yok. Eğer grafiksel bir  bağlantı "
+"istemiyorsanız --platform offscreen kullanın"
 
 #: kioclient.cpp:187
 #, kde-format
 msgid "Overwrite destination if it exists (for copy and move)"
-msgstr "Hedef mevcutsa üzerine yaz (kopyala ve taşı işlemi için)"
+msgstr "Hedef varsa üzerine yaz (kopyala ve taşı işlemi için)"
 
 #: kioclient.cpp:191
 #, kde-format
@@ -325,7 +325,7 @@ msgstr "%1: Sözdizim hatası, yeterli argüman yok\n"
 #, kde-format
 msgctxt "@info:shell"
 msgid "%1: Syntax error, too many arguments\n"
-msgstr "%1: Sözdizim hatası, çok fazla argüman\n"
+msgstr "%1: Sözdizim hatası, pek çok argüman\n"
 
 #: kioclient.cpp:434
 #, kde-format
