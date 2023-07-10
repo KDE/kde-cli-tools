@@ -492,3 +492,5 @@ void FileTypesView::defaults()
 }
 
 #include "filetypesview.moc"
+
+#include "moc_filetypesview.cpp"

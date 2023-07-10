@@ -368,3 +368,5 @@ void FileTypeDetails::allowMultiApply(bool allow)
     serviceListWidget->allowMultiApply(allow);
     embedServiceListWidget->allowMultiApply(allow);
 }
+
+#include "moc_filetypedetails.cpp"

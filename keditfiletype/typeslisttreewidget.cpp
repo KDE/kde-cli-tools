@@ -61,3 +61,5 @@ void TypesListTreeWidget::keyPressEvent(QKeyEvent *event)
         QTreeWidget::keyPressEvent(event);
     }
 }
+
+#include "moc_typeslisttreewidget.cpp"

@@ -138,3 +138,5 @@ void MultiApplyDialog::load(const TypesListItem *source, const QList<TypesListIt
         m_itemList.append(item);
     }
 }
+
+#include "moc_multiapplydialog.cpp"

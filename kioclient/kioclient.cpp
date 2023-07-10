@@ -592,3 +592,5 @@ ClientApp::ClientApp()
     : QObject()
 {
 }
+
+#include "moc_kioclient.cpp"

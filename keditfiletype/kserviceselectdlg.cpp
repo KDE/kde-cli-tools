@@ -57,3 +57,5 @@ KPluginMetaData KPartSelectDlg::chosenPart()
     auto selItem = static_cast<PluginListItem *>(m_listbox->item(selIndex));
     return selItem->metaData;
 }
+
+#include "moc_kserviceselectdlg.cpp"

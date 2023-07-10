@@ -57,3 +57,5 @@ void FileGroupDetails::slotAutoEmbedClicked(int button)
     m_mimeTypeData->setAutoEmbed((MimeTypeData::AutoEmbed)button);
     Q_EMIT changed(true);
 }
+
+#include "moc_filegroupdetails.cpp"
