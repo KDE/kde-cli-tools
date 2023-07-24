@@ -48,7 +48,7 @@ msgstr "(c) 2016 Kai Uwe Broulik"
 #, kde-format
 msgid ""
 "Name of the application that should be associated with this notification"
-msgstr "이 알림과 연결할 프로그램의 이름"
+msgstr "이 알림과 연결할 앱의 이름"
 
 #: main.cpp:36
 #, kde-format

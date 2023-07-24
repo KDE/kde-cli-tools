@@ -37,7 +37,7 @@ msgstr "KStart"
 #: kstart.cpp:69
 #, kde-format
 msgid "Utility to launch applications"
-msgstr "프로그램을 실행하는 유틸리티"
+msgstr "앱을 실행하는 유틸리티"
 
 #: kstart.cpp:71
 #, kde-format
