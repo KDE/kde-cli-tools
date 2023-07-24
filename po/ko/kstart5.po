@@ -9,7 +9,7 @@ msgstr ""
 "Project-Id-Version: kstart\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2022-12-17 00:51+0000\n"
-"PO-Revision-Date: 2020-07-01 00:56+0200\n"
+"PO-Revision-Date: 2023-03-01 01:23+0100\n"
 "Last-Translator: Shinjo Park <kde@peremen.name>\n"
 "Language-Team: Korean <kde-kr@kde.org>\n"
 "Language: ko\n"
@@ -43,7 +43,7 @@ msgid ""
 "and so on."
 msgstr ""
 "아이콘화, 최대화, 특정 가상 바탕 화면, 특정 창 장식 등 특별한 창\n"
-"속성을 가지고 프로그램을 시작하도록 합니다."
+"속성을 가지고 앱을 시작하도록 합니다."
 
 #: kstart.cpp:262
 #, kde-format
@@ -123,7 +123,7 @@ msgid ""
 "Make the window appear on the desktop that was active\n"
 "when starting the application"
 msgstr ""
-"프로그램을 시작할 때 특정한 바탕 화면에서 활성화되도록\n"
+"앱을 시작할 때 특정한 바탕 화면에서 활성화되도록\n"
 "설정합니다"
 
 #: kstart.cpp:298

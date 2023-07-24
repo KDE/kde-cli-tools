@@ -1,6 +1,6 @@
 # Korean messages for filetypes.
 # Copyright (C) 2001, 2002, 2007 Free Software Foundation, Inc.
-# Shinjo Park <kde@peremen.name>, 2007, 2008, 2009, 2010, 2014, 2018, 2019, 2020, 2022.
+# Shinjo Park <kde@peremen.name>, 2007, 2008, 2009, 2010, 2014, 2018, 2019, 2020, 2022, 2023.
 #
 # Yu-Chan Park, 2001.
 msgid ""
@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: filetypes\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2023-01-15 00:57+0000\n"
-"PO-Revision-Date: 2022-04-16 22:49+0200\n"
+"PO-Revision-Date: 2023-07-23 23:28+0200\n"
 "Last-Translator: Shinjo Park <kde@peremen.name>\n"
 "Language-Team: Korean <kde-kr@kde.org>\n"
 "Language: ko\n"
@@ -16,7 +16,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=1; plural=0;\n"
-"X-Generator: Lokalize 21.08.1\n"
+"X-Generator: Lokalize 22.12.3\n"
 
 #, kde-format
 msgctxt "NAME OF TRANSLATORS"
@@ -53,9 +53,9 @@ msgid ""
 "configuration. Dolphin  shows files always in a separate viewer"
 msgstr ""
 "이 그룹에 속한 파일을 클릭할 때 Konqueror 파일 관리자가 어떤 동작을 할 지 설"
-"정할 수 있습니다. Konqueror는 내장된 뷰어로 파일을 표시하거나 다른 별도의 프"
-"로그램을 실행합니다. 파일 형식 설정의 '임베드' 탭에서 지정한 파일 형식의 설정"
-"을 변경할 수 있습니다. Dolphin은 항상 별도의 뷰어를 사용합니다."
+"정할 수 있습니다. Konqueror는 내장된 뷰어로 파일을 표시하거나 다른 별도의 앱"
+"을 실행합니다. 파일 형식 설정의 '임베드' 탭에서 지정한 파일 형식의 설정을 변"
+"경할 수 있습니다. Dolphin은 항상 별도의 뷰어를 사용합니다."
 
 #: filetypedetails.cpp:61
 #, kde-format
@@ -116,7 +116,7 @@ msgid ""
 "to display directory content."
 msgstr ""
 "선택한 파일 형식의 짧은 설명을 입력할 수 있습니다.(예. 'HTML 페이지')이 설명"
-"은 Konqueror와 같은 프로그램에서 폴더 내용을 표시할 때 이용됩니다."
+"은 Konqueror와 같은 앱에서 폴더 내용을 표시할 때 이용됩니다."
 
 #: filetypedetails.cpp:128
 #, kde-format
@@ -139,10 +139,10 @@ msgid ""
 "file type is image/png. Dolphin always shows files in a separate viewer."
 msgstr ""
 "이와 같은 형식의 파일을 클릭했을 때 Konqueror 파일 관리자에서 할 동작을 설정"
-"합니다. Konqueror는 내장된 뷰어에서 파일을 표시하거나 다른 프로그램을 실행합"
-"니다. 만약 '그룹 설정 사용'을 선택했다면 Konqueror는 이 형식이 들어 있는 그룹"
-"의 설정을 따릅니다. 예를 들어 현재 파일 형식이 image/png 라면 'image' 그룹의 "
-"동작을 실행합니다. Dolphin은 항상 별도의 뷰어를 사용합니다."
+"합니다. Konqueror는 내장된 뷰어에서 파일을 표시하거나 다른 앱을 실행합니다. "
+"만약 '그룹 설정 사용'을 선택했다면 Konqueror는 이 형식이 들어 있는 그룹의 설"
+"정을 따릅니다. 예를 들어 현재 파일 형식이 image/png 라면 'image' 그룹의 동작"
+"을 실행합니다. Dolphin은 항상 별도의 뷰어를 사용합니다."
 
 #: filetypedetails.cpp:165
 #, kde-format
@@ -195,19 +195,18 @@ msgid ""
 "patterns; in these cases, KDE is able to determine the MIME-type by directly "
 "examining the contents of the file.</p>"
 msgstr ""
-"<p><h1>파일 연결</h1>이 모듈은 주어진 파일 형식과 관련된 프로그램을 선택할 "
-"수 있습니다. 파일 형식은 MIME 형식(MIME은 \"Multipurpose Internet Mail "
-"Extensions\"의 줄임말)과도 관련이 있습니다.</p><p>파일 연결은 다음 사항을 포"
-"합합니다: <ul><li>파일의 MIME-형식 결정 규칙. 예를 들어 파일 이름 형식이 '."
-"png'로 끝나는 모든 파일'이라는 의미를 가진 *.png라면 MIME 형식 \"image/png"
-"\"와 연결됩니다.</li><li>MIME-형식의 간단한 설명. 예를 들어 MIME 형식 "
-"\"image/png\"의 설명은 간단히 'PNG 그림'입니다.</li><li>주어진 MIME-형식의 파"
-"일을 나타낼 아이콘. 이러한 아이콘을 사용하여 파일 관리자나 파일 선택 대화 상"
-"자에서 간단히 파일 형식을 구분할 수 있습니다.</li><li>주어진 MIME-형식의 파일"
-"을 열고자 할 때 사용할 프로그램의 목록. 하나 이상의 프로그램을 사용한다면 목"
-"록은 우선 순위 순으로 정렬됩니다. </li></ul>몇몇 MIME 형식에는 파일 이름 형식"
-"이 없을 수도 있습니다. 이런 경우에는 KDE에서 파일의 내용을 파악하여 MIME-형식"
-"을 결정합니다.</p>"
+"<p><h1>파일 연결</h1>이 모듈은 주어진 파일 형식과 관련된 앱을 선택할 수 있습"
+"니다. 파일 형식은 MIME 형식(MIME은 \"Multipurpose Internet Mail Extensions"
+"\"의 줄임말)과도 관련이 있습니다.</p><p>파일 연결은 다음 사항을 포함합니다. "
+"<ul><li>파일의 MIME 형식 결정 규칙. 예를 들어 파일 이름 형식이 '.png'로 끝나"
+"는 모든 파일'이라는 의미를 가진 *.png라면 MIME 형식 \"image/png\"와 연결됩니"
+"다.</li><li>MIME 형식의 간단한 설명. 예를 들어 MIME 형식 \"image/png\"의 설명"
+"은 간단히 'PNG 그림'입니다.</li><li>주어진 MIME 형식의 파일을 나타낼 아이콘. "
+"이러한 아이콘을 사용하여 파일 관리자나 파일 선택 대화 상자에서 간단히 파일 형"
+"식을 구분할 수 있습니다.</li><li>주어진 MIME 형식의 파일을 열고자 할 때 사용"
+"할 앱의 목록. 하나 이상의 앱을 사용한다면 목록은 우선 순위 순으로 정렬됩니"
+"다. </li></ul>몇몇 MIME 형식에는 파일 이름 형식이 없을 수도 있습니다. 이런 경"
+"우에는 KDE에서 파일의 내용을 파악하여 MIME 형식을 결정합니다.</p>"
 
 #: filetypesview.cpp:74
 #, kde-format
@@ -359,7 +358,7 @@ msgstr "%1(%2)"
 #: kservicelistwidget.cpp:57
 #, kde-format
 msgid "Application Preference Order"
-msgstr "프로그램 우선 순위"
+msgstr "앱 우선 순위"
 
 #: kservicelistwidget.cpp:57
 #, kde-format
@@ -375,10 +374,10 @@ msgid ""
 "then the list is ordered by priority with the uppermost item taking "
 "precedence over the others."
 msgstr ""
-"이 목록은 선택한 파일 형식과 연결된 프로그램의 목록입니다. Konqueror의 콘텍스"
-"트 메뉴의 \"다음으로 열기...\" 항목에 나타나는 메뉴입니다. 만약 하나 이상의 "
-"프로그램이 이 파일에 연결되어 있다면 이 목록의 위쪽에 있는 항목이 더 높은 우"
-"선 순위를 가집니다."
+"이 목록은 선택한 파일 형식과 연결된 앱의 목록입니다. Konqueror의 콘텍스트 메"
+"뉴의 \"다음으로 열기...\" 항목에 나타나는 메뉴입니다. 만약 하나 이상의 앱이 "
+"이 파일에 연결되어 있다면 이 목록의 위쪽에 있는 항목이 더 높은 우선 순위를 가"
+"집니다."
 
 #: kservicelistwidget.cpp:73
 #, kde-format
@@ -407,10 +406,10 @@ msgid ""
 "only affects the selected application if the file type is\n"
 "associated with more than one application."
 msgstr ""
-"목록에서 위로 이동하면 선택된 프로그램에 \n"
+"목록에서 위로 이동하면 선택된 앱에 \n"
 "더 높은 우선 순위가 부여됩니다. 주의: 이 우선 순위는 \n"
-"파일 형식과 연결된 프로그램이 하나 이상일 때 \n"
-"선택된 프로그램에만 영향을 줍니다."
+"파일 형식과 연결된 앱이 하나 이상일 때 \n"
+"선택된 앱에만 영향을 줍니다."
 
 #: kservicelistwidget.cpp:95
 #, kde-format
@@ -434,10 +433,10 @@ msgid ""
 "only affects the selected application if the file type is\n"
 "associated with more than one application."
 msgstr ""
-"목록에서 아래로 이동하면 선택된 프로그램에 \n"
+"목록에서 아래로 이동하면 선택된 앱에 \n"
 "더 낮은 우선 순위가 부여됩니다. 주의: 이 우선 순위는 \n"
-"파일 형식과 연결된 프로그램이 하나 이상일 때 \n"
-"선택된 프로그램에만 영향을 줍니다."
+"파일 형식과 연결된 앱이 하나 이상일 때 \n"
+"선택된 앱에만 영향을 줍니다."
 
 #: kservicelistwidget.cpp:107
 #, kde-format
@@ -451,7 +450,7 @@ msgstr ""
 #: kservicelistwidget.cpp:115
 #, kde-format
 msgid "Add a new application for this file type."
-msgstr "이 파일 형식에 대한 새로운 프로그램을 추가합니다."
+msgstr "이 파일 형식에 대한 새로운 앱을 추가합니다."
 
 #: kservicelistwidget.cpp:117
 #, kde-format
@@ -461,12 +460,12 @@ msgstr "편집..."
 #: kservicelistwidget.cpp:122
 #, kde-format
 msgid "Edit command line of the selected application."
-msgstr "선택한 프로그램의 명령을 편집합니다."
+msgstr "선택한 앱의 명령을 편집합니다."
 
 #: kservicelistwidget.cpp:129
 #, kde-format
 msgid "Remove the selected application from the list."
-msgstr "목록에서 선택된 프로그램을 삭제합니다."
+msgstr "목록에서 선택된 앱을 삭제합니다."
 
 #: kservicelistwidget.cpp:152
 #, kde-format
