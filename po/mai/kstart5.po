@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kstart\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-03-11 02:40+0000\n"
+"POT-Creation-Date: 2023-08-06 02:03+0000\n"
 "PO-Revision-Date: 2009-01-17 23:03+0530\n"
 "Last-Translator: Sangeeta Kumari <sangeeta09@gmail.com>\n"
 "Language-Team: Maithili <maithili.sf.net>\n"
@@ -30,52 +30,52 @@ msgctxt "EMAIL OF TRANSLATORS"
 msgid "Your emails"
 msgstr "sangeeta09@gmail.com"
 
-#: kstart.cpp:67
+#: kstart.cpp:75
 #, kde-format
 msgid "KStart"
 msgstr "के-स्टार्ट"
 
-#: kstart.cpp:69
+#: kstart.cpp:77
 #, kde-format
 msgid "Utility to launch applications"
 msgstr ""
 
-#: kstart.cpp:71
+#: kstart.cpp:79
 #, kde-format
 msgid "(C) 1997-2000 Matthias Ettrich (ettrich@kde.org)"
 msgstr "(C) 1997-2000 मैथियास एट्रिच (ettrich@kde.org)"
 
-#: kstart.cpp:73
+#: kstart.cpp:81
 #, kde-format
 msgid "Matthias Ettrich"
 msgstr "मेथियास एट्रिच"
 
-#: kstart.cpp:74
+#: kstart.cpp:82
 #, kde-format
 msgid "David Faure"
 msgstr "डेविड फाउरे"
 
-#: kstart.cpp:75
+#: kstart.cpp:83
 #, kde-format
 msgid "Richard J. Moore"
 msgstr "रिचर्ड जे मूर"
 
-#: kstart.cpp:80
+#: kstart.cpp:88
 #, kde-format
 msgid "Command to execute"
 msgstr "चलाबए लेल कमांड"
 
-#: kstart.cpp:82
+#: kstart.cpp:90
 #, kde-format
 msgid "Alternative to <command>: desktop file to start."
 msgstr ""
 
-#: kstart.cpp:85
+#: kstart.cpp:93
 #, kde-format
 msgid "Optional URL to pass <desktopfile>, when using --service"
 msgstr ""
 
-#: kstart.cpp:96
+#: kstart.cpp:104
 #, kde-format
 msgid "No command specified"
 msgstr "कोनो कमांड निर्दिष्ट नहि अछि"

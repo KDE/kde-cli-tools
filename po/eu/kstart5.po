@@ -12,7 +12,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kde-cli-tools\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-03-11 02:40+0000\n"
+"POT-Creation-Date: 2023-08-06 02:03+0000\n"
 "PO-Revision-Date: 2023-02-04 08:09+0100\n"
 "Last-Translator: Iñigo Salvador Azurmendi <xalba@ni.eus>\n"
 "Language-Team: Basque <kde-i18n-eu@kde.org>\n"
@@ -37,53 +37,53 @@ msgstr ""
 "marcos@euskalgnu.org,juanirigoien@irakasle.net,xalba@euskalnet.net,hizpol@ej-"
 "gv.es"
 
-#: kstart.cpp:67
+#: kstart.cpp:75
 #, kde-format
 msgid "KStart"
 msgstr "KStart"
 
-#: kstart.cpp:69
+#: kstart.cpp:77
 #, kde-format
 msgid "Utility to launch applications"
 msgstr "Aplikazioak abiarazteko baliagarritasuna"
 
-#: kstart.cpp:71
+#: kstart.cpp:79
 #, kde-format
 msgid "(C) 1997-2000 Matthias Ettrich (ettrich@kde.org)"
 msgstr "(C) 1997-2000 Matthias Ettrich (ettrich@kde.org)"
 
-#: kstart.cpp:73
+#: kstart.cpp:81
 #, kde-format
 msgid "Matthias Ettrich"
 msgstr "Matthias Ettrich"
 
-#: kstart.cpp:74
+#: kstart.cpp:82
 #, kde-format
 msgid "David Faure"
 msgstr "David Faure"
 
-#: kstart.cpp:75
+#: kstart.cpp:83
 #, kde-format
 msgid "Richard J. Moore"
 msgstr "Richard J. Moore"
 
-#: kstart.cpp:80
+#: kstart.cpp:88
 #, kde-format
 msgid "Command to execute"
 msgstr "Exekutatu beharreko komandoa"
 
-#: kstart.cpp:82
+#: kstart.cpp:90
 #, kde-format
 msgid "Alternative to <command>: desktop file to start."
 msgstr "<command>-(r)en ordezkoa: abiarazi beharreko mahaigaineko fitxategia."
 
-#: kstart.cpp:85
+#: kstart.cpp:93
 #, kde-format
 msgid "Optional URL to pass <desktopfile>, when using --service"
 msgstr ""
 "'--service' erabiltzean <desktopfile>-(e)ra pasatu beharreko aukerako URLa"
 
-#: kstart.cpp:96
+#: kstart.cpp:104
 #, kde-format
 msgid "No command specified"
 msgstr "Ez da komandorik zehaztu"

@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kdebase\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-03-11 02:40+0000\n"
+"POT-Creation-Date: 2023-08-06 02:03+0000\n"
 "PO-Revision-Date: 2019-12-12 22:53+0000\n"
 "Last-Translator: Vivek KJ Pazhedath <vivekkj2004@gmail.com>\n"
 "Language-Team: Swathanthra|സ്വതന്ത്ര Malayalam|മലയാളം Computing|കമ്പ്യൂട്ടിങ്ങ് <smc-"
@@ -29,52 +29,52 @@ msgctxt "EMAIL OF TRANSLATORS"
 msgid "Your emails"
 msgstr "shijualexonline@gmail.com,snalledam@dataone.in,vivekkj2004@gmail.com"
 
-#: kstart.cpp:67
+#: kstart.cpp:75
 #, kde-format
 msgid "KStart"
 msgstr "കെസ്റ്റാര്‍ട്ട്"
 
-#: kstart.cpp:69
+#: kstart.cpp:77
 #, kde-format
 msgid "Utility to launch applications"
 msgstr ""
 
-#: kstart.cpp:71
+#: kstart.cpp:79
 #, kde-format
 msgid "(C) 1997-2000 Matthias Ettrich (ettrich@kde.org)"
 msgstr "(C) 1997-2000 മത്തിയാസ് എട്ട്റിച്ച് (ettrich@kde.org))"
 
-#: kstart.cpp:73
+#: kstart.cpp:81
 #, kde-format
 msgid "Matthias Ettrich"
 msgstr "മത്തിയാസ് എട്ട്റിച്ച്"
 
-#: kstart.cpp:74
+#: kstart.cpp:82
 #, kde-format
 msgid "David Faure"
 msgstr "ഡേവിഡ് ഫൗറ്"
 
-#: kstart.cpp:75
+#: kstart.cpp:83
 #, kde-format
 msgid "Richard J. Moore"
 msgstr "റിച്ചാര്‍ഡ് ജെ മൂര്‍"
 
-#: kstart.cpp:80
+#: kstart.cpp:88
 #, kde-format
 msgid "Command to execute"
 msgstr "നടത്തുവാനുള്ള ആജ്ഞ"
 
-#: kstart.cpp:82
+#: kstart.cpp:90
 #, kde-format
 msgid "Alternative to <command>: desktop file to start."
 msgstr ""
 
-#: kstart.cpp:85
+#: kstart.cpp:93
 #, kde-format
 msgid "Optional URL to pass <desktopfile>, when using --service"
 msgstr ""
 
-#: kstart.cpp:96
+#: kstart.cpp:104
 #, kde-format
 msgid "No command specified"
 msgstr "ഒരു ആജ്ഞയും വ്യക്തമാക്കിയിട്ടില്ല"

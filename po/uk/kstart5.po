@@ -12,7 +12,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kstart5\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-03-11 02:40+0000\n"
+"POT-Creation-Date: 2023-08-06 02:03+0000\n"
 "PO-Revision-Date: 2023-02-03 08:32+0200\n"
 "Last-Translator: Yuri Chornoivan <yurchor@ukr.net>\n"
 "Language-Team: Ukrainian <kde-i18n-uk@kde.org>\n"
@@ -34,54 +34,54 @@ msgctxt "EMAIL OF TRANSLATORS"
 msgid "Your emails"
 msgstr "yurchor@ukr.net"
 
-#: kstart.cpp:67
+#: kstart.cpp:75
 #, kde-format
 msgid "KStart"
 msgstr "KStart"
 
-#: kstart.cpp:69
+#: kstart.cpp:77
 #, kde-format
 msgid "Utility to launch applications"
 msgstr "Допоміжна програма для запуску програм"
 
-#: kstart.cpp:71
+#: kstart.cpp:79
 #, kde-format
 msgid "(C) 1997-2000 Matthias Ettrich (ettrich@kde.org)"
 msgstr "© Matthias Ettrich (ettrich@kde.org), 1997–2000"
 
-#: kstart.cpp:73
+#: kstart.cpp:81
 #, kde-format
 msgid "Matthias Ettrich"
 msgstr "Matthias Ettrich"
 
-#: kstart.cpp:74
+#: kstart.cpp:82
 #, kde-format
 msgid "David Faure"
 msgstr "David Faure"
 
-#: kstart.cpp:75
+#: kstart.cpp:83
 #, kde-format
 msgid "Richard J. Moore"
 msgstr "Richard J. Moore"
 
-#: kstart.cpp:80
+#: kstart.cpp:88
 #, kde-format
 msgid "Command to execute"
 msgstr "Виконати команду"
 
-#: kstart.cpp:82
+#: kstart.cpp:90
 #, kde-format
 msgid "Alternative to <command>: desktop file to start."
 msgstr "Альтернатива <command>: файл .desktop, який слід виконати."
 
-#: kstart.cpp:85
+#: kstart.cpp:93
 #, kde-format
 msgid "Optional URL to pass <desktopfile>, when using --service"
 msgstr ""
 "Додатковий URL, який слід передати <desktopfile> у разі використання "
 "параметра --service"
 
-#: kstart.cpp:96
+#: kstart.cpp:104
 #, kde-format
 msgid "No command specified"
 msgstr "Команду не вказано"

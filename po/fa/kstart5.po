@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kstart\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-03-11 02:40+0000\n"
+"POT-Creation-Date: 2023-08-06 02:03+0000\n"
 "PO-Revision-Date: 2011-10-04 01:16+0330\n"
 "Last-Translator: Mohamad Reza Mirdamadi <mohi@linuxshop.ir>\n"
 "Language-Team: Farsi (Persian) <>\n"
@@ -29,42 +29,42 @@ msgctxt "EMAIL OF TRANSLATORS"
 msgid "Your emails"
 msgstr "mohi@linuxshop.ir , kazemi@itland.ir"
 
-#: kstart.cpp:67
+#: kstart.cpp:75
 #, kde-format
 msgid "KStart"
 msgstr "KStart"
 
-#: kstart.cpp:69
+#: kstart.cpp:77
 #, kde-format
 msgid "Utility to launch applications"
 msgstr ""
 
-#: kstart.cpp:71
+#: kstart.cpp:79
 #, kde-format
 msgid "(C) 1997-2000 Matthias Ettrich (ettrich@kde.org)"
 msgstr "(ح) ۲۰۰۰-۱۹۹۹ (Matthias Ettrich (ettrich@kde.org"
 
-#: kstart.cpp:73
+#: kstart.cpp:81
 #, kde-format
 msgid "Matthias Ettrich"
 msgstr "Matthias Ettrich"
 
-#: kstart.cpp:74
+#: kstart.cpp:82
 #, kde-format
 msgid "David Faure"
 msgstr "David Faure"
 
-#: kstart.cpp:75
+#: kstart.cpp:83
 #, kde-format
 msgid "Richard J. Moore"
 msgstr "Richard J. Moore"
 
-#: kstart.cpp:80
+#: kstart.cpp:88
 #, kde-format
 msgid "Command to execute"
 msgstr "فرمان برای اجرا"
 
-#: kstart.cpp:82
+#: kstart.cpp:90
 #, fuzzy, kde-format
 #| msgid ""
 #| "Alternative to <command>: desktop file to start. D-Bus service will be "
@@ -72,12 +72,12 @@ msgstr "فرمان برای اجرا"
 msgid "Alternative to <command>: desktop file to start."
 msgstr "جایگزین <command>: رومیزی برای آغاز. خدمت D-Bus در stdout چاپ خواهد شد"
 
-#: kstart.cpp:85
+#: kstart.cpp:93
 #, kde-format
 msgid "Optional URL to pass <desktopfile>, when using --service"
 msgstr "نشانی اختیاری برای رد شدن از <desktopfile>، هنگام استفاده از --service"
 
-#: kstart.cpp:96
+#: kstart.cpp:104
 #, kde-format
 msgid "No command specified"
 msgstr "فرمانی مشخص نشد"

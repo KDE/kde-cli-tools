@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kstart\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-03-11 02:40+0000\n"
+"POT-Creation-Date: 2023-08-06 02:03+0000\n"
 "PO-Revision-Date: 2009-12-13 06:18+0530\n"
 "Last-Translator: Danishka Navin <danishka@gmail.com>\n"
 "Language-Team: Sinhala <danishka@gmail.com>\n"
@@ -27,42 +27,42 @@ msgctxt "EMAIL OF TRANSLATORS"
 msgid "Your emails"
 msgstr "danishka@gmail.com"
 
-#: kstart.cpp:67
+#: kstart.cpp:75
 #, kde-format
 msgid "KStart"
 msgstr "KStart"
 
-#: kstart.cpp:69
+#: kstart.cpp:77
 #, kde-format
 msgid "Utility to launch applications"
 msgstr ""
 
-#: kstart.cpp:71
+#: kstart.cpp:79
 #, kde-format
 msgid "(C) 1997-2000 Matthias Ettrich (ettrich@kde.org)"
 msgstr "(C) 1997-2000 Matthias Ettrich (ettrich@kde.org)"
 
-#: kstart.cpp:73
+#: kstart.cpp:81
 #, kde-format
 msgid "Matthias Ettrich"
 msgstr "Matthias Ettrich"
 
-#: kstart.cpp:74
+#: kstart.cpp:82
 #, kde-format
 msgid "David Faure"
 msgstr "David Faure"
 
-#: kstart.cpp:75
+#: kstart.cpp:83
 #, kde-format
 msgid "Richard J. Moore"
 msgstr "Richard J. Moore"
 
-#: kstart.cpp:80
+#: kstart.cpp:88
 #, kde-format
 msgid "Command to execute"
 msgstr "ක්‍රියාත්මක වීමට විධානය"
 
-#: kstart.cpp:82
+#: kstart.cpp:90
 #, fuzzy, kde-format
 #| msgid ""
 #| "Alternative to <command>: desktop file to start. D-Bus service will be "
@@ -70,12 +70,12 @@ msgstr "ක්‍රියාත්මක වීමට විධානය"
 msgid "Alternative to <command>: desktop file to start."
 msgstr "<command>ට විකල්පයක්: ආරම්භයට වැඩතල ගොනුව. D-Bus සේවාව stdout වෙත මුද්‍රණය වේ"
 
-#: kstart.cpp:85
+#: kstart.cpp:93
 #, fuzzy, kde-format
 msgid "Optional URL to pass <desktopfile>, when using --service"
 msgstr "සේවාව (--s) භාවිත කරන විට, ගමන්කරන විකල්ප  URL ලිපිනය <desktopfile>"
 
-#: kstart.cpp:96
+#: kstart.cpp:104
 #, kde-format
 msgid "No command specified"
 msgstr "විධානයක් සපයා නොමැත"
