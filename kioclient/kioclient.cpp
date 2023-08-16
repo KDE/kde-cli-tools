@@ -333,10 +333,10 @@ bool ClientApp::doRemove(const QStringList &urls)
 
 bool ClientApp::doStat(const QStringList &urls)
 {
-    KIO::Job *job = KIO::statDetails(makeURL(urls.first()),
-                                     KIO::StatJob::SourceSide,
-                                     (KIO::StatBasic | KIO::StatUser | KIO::StatTime | KIO::StatInode | KIO::StatMimeType | KIO::StatAcl),
-                                     s_jobFlags);
+    KIO::Job *job = KIO::stat(makeURL(urls.first()),
+                              KIO::StatJob::SourceSide,
+                              (KIO::StatBasic | KIO::StatUser | KIO::StatTime | KIO::StatInode | KIO::StatMimeType | KIO::StatAcl),
+                              s_jobFlags);
     if (!s_interactive) {
         job->setUiDelegate(nullptr);
         job->setUiDelegateExtension(nullptr);
