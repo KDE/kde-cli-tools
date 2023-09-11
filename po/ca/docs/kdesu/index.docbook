@@ -450,7 +450,7 @@ does this really work?
 >root</systemitem
 > en el sòcol i el dimoni executarà l'ordre emprant <command
 >su</command
->, tal com s'ha descrit anteriorment. Després d'aquesta operació l'ordre i la contrasenya no es descarten. Es registren durant un cert temps. Aquest temps és el valor temps d'expiració que apareix en el mòdul de control. Si li arriba un altre sol·licitud per a la mateixa ordre durant aquest període de temps, el client no haurà de tornar a introduir la contrasenya. Per a evitar que possibles intrusos al vostre compte robin aquesta contrasenya des del dimoni (per exemple, afegint-li un depurador), el dimoni s'instal·la com a set-group-id nogroup. Això hauria de prevenir l'obtenció de contrasenyes des del procés <application
+>, tal com s'ha descrit anteriorment. Després d'aquesta operació l'ordre i la contrasenya no es descarten. Es registren durant un cert temps. Aquest temps és el valor temps d'expiració que apareix en el mòdul de control. Si li arriba una altra sol·licitud per a la mateixa ordre durant aquest període de temps, el client no haurà de tornar a introduir la contrasenya. Per a evitar que possibles intrusos al vostre compte robin aquesta contrasenya des del dimoni (per exemple, afegint-li un depurador), el dimoni s'instal·la com a set-group-id nogroup. Això hauria de prevenir l'obtenció de contrasenyes des del procés <application
 >kdesud</application
 > per a tots els usuaris normals (vosaltres inclosos). A més a més, el dimoni també estableix la variable d'entorn <envar
 >DISPLAY</envar
