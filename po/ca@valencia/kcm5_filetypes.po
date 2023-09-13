@@ -125,7 +125,7 @@ msgid ""
 "to display directory content."
 msgstr ""
 "Ací podeu introduir una descripció curta per als fitxers del tipus "
-"seleccionat (p. ex. «Pàgina HTML»). Esta descripció l'utilitzaran "
+"seleccionat (p. ex., «Pàgina HTML»). Esta descripció l'utilitzaran "
 "aplicacions com ara Konqueror, per a mostrar el contingut del directori."
 
 #: filetypedetails.cpp:128
@@ -258,7 +258,7 @@ msgid ""
 msgstr ""
 "Ací podeu veure una llista jeràrquica dels tipus de fitxers coneguts al "
 "vostre sistema. Cliqueu en el signe «+» per a expandir una categoria, o al "
-"signe «-» per a plegar-la. Seleccioneu un tipus de fitxer (p. ex. text/html "
+"signe «-» per a plegar-la. Seleccioneu un tipus de fitxer (p. ex., text/html "
 "per a fitxers HTML) per a veure o editar la informació d'este tipus de "
 "fitxer utilitzant els controls de la dreta."
 
@@ -362,7 +362,7 @@ msgstr "Fes transitori el diàleg per a la finestra especificada per «winid»"
 #: keditfiletype.cpp:134
 #, kde-format
 msgid "File type to edit (e.g. text/html)"
-msgstr "Tipus de fitxer que s'ha d'editar (p. ex. text/html)"
+msgstr "Tipus de fitxer que s'ha d'editar (p. ex., text/html)"
 
 #: keditfiletype.cpp:165
 #, kde-format
