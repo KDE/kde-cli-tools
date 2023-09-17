@@ -87,7 +87,7 @@ int main(int argc, char *argv[])
     aboutData.setupCommandLine(&parser);
     parser.addPositionalArgument(QStringLiteral("command"), i18n("Command to execute"));
     parser.addOption(QCommandLineOption(QStringList() << QLatin1String("application"),
-                                        i18n("Alternative to <command>: desktop file to start."),
+                                        i18n("Alternative to <command>: desktop file name to start, e.g. org.kde.kate"),
                                         QLatin1String("desktopfile")));
     parser.addOption(
         QCommandLineOption(QStringList() << QLatin1String("url"), i18n("Optional URL to pass <desktopfile>, when using --service"), QLatin1String("url")));
