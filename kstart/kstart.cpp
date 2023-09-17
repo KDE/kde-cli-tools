@@ -85,7 +85,7 @@ int main(int argc, char *argv[])
 
     QCommandLineParser parser;
     aboutData.setupCommandLine(&parser);
-    parser.addOption(QCommandLineOption(QStringList() << QLatin1String("!+command"), i18n("Command to execute")));
+    parser.addPositionalArgument(QStringLiteral("command"), i18n("Command to execute"));
     parser.addOption(QCommandLineOption(QStringList() << QLatin1String("application"),
                                         i18n("Alternative to <command>: desktop file to start."),
                                         QLatin1String("desktopfile")));
