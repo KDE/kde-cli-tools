@@ -226,7 +226,7 @@ msgid ""
 "\n"
 msgstr ""
 "  kioclient exec file:/root/Desktop/emacs.desktop\n"
-"             // Inicia l'Emacs\n"
+"             // Inicia Emacs\n"
 "\n"
 
 #: kioclient.cpp:158
