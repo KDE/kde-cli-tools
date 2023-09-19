@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kstart\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-08-06 02:03+0000\n"
+"POT-Creation-Date: 2023-09-19 01:56+0000\n"
 "PO-Revision-Date: 2009-12-13 06:18+0530\n"
 "Last-Translator: Danishka Navin <danishka@gmail.com>\n"
 "Language-Team: Sinhala <danishka@gmail.com>\n"
@@ -67,15 +67,15 @@ msgstr "ක්‍රියාත්මක වීමට විධානය"
 #| msgid ""
 #| "Alternative to <command>: desktop file to start. D-Bus service will be "
 #| "printed to stdout"
-msgid "Alternative to <command>: desktop file to start."
+msgid "Alternative to <command>: desktop file name to start, e.g. org.kde.kate"
 msgstr "<command>ට විකල්පයක්: ආරම්භයට වැඩතල ගොනුව. D-Bus සේවාව stdout වෙත මුද්‍රණය වේ"
 
 #: kstart.cpp:93
 #, fuzzy, kde-format
-msgid "Optional URL to pass <desktopfile>, when using --service"
+msgid "Optional URL to pass to the application when using --application"
 msgstr "සේවාව (--s) භාවිත කරන විට, ගමන්කරන විකල්ප  URL ලිපිනය <desktopfile>"
 
-#: kstart.cpp:104
+#: kstart.cpp:105
 #, kde-format
 msgid "No command specified"
 msgstr "විධානයක් සපයා නොමැත"

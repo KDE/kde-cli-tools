@@ -1,6 +1,6 @@
 # translation of kstart.po to Polish
 # translation of kstart.po to
-# Version: $Revision: 1657630 $
+# Version: $Revision: 1660491 $
 # Piotr Roszatycki <dexter@debian.org>, 1999-2000.
 # Michał Rudolf <mrudolf@kdewebdev.org>, 2002.
 # Michal Rudolf <mrudolf@kdewebdev.org>, 2003, 2004, 2005, 2009.
@@ -11,7 +11,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kstart\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-08-06 02:03+0000\n"
+"POT-Creation-Date: 2023-09-19 01:56+0000\n"
 "PO-Revision-Date: 2023-02-04 08:42+0100\n"
 "Last-Translator: Łukasz Wojniłowicz <lukasz.wojnilowicz@gmail.com>\n"
 "Language-Team: Polish <kde-i18n-doc@kde.org>\n"
@@ -69,16 +69,18 @@ msgid "Command to execute"
 msgstr "Polecenie do wykonania"
 
 #: kstart.cpp:90
-#, kde-format
-msgid "Alternative to <command>: desktop file to start."
+#, fuzzy, kde-format
+#| msgid "Alternative to <command>: desktop file to start."
+msgid "Alternative to <command>: desktop file name to start, e.g. org.kde.kate"
 msgstr "Zamiennie dla <polecenie>: plik pulpitu do uruchomienia."
 
 #: kstart.cpp:93
-#, kde-format
-msgid "Optional URL to pass <desktopfile>, when using --service"
+#, fuzzy, kde-format
+#| msgid "Optional URL to pass <desktopfile>, when using --service"
+msgid "Optional URL to pass to the application when using --application"
 msgstr "Opcjonalny adres URL dla <desktopfile> użytego z parametrem --service"
 
-#: kstart.cpp:104
+#: kstart.cpp:105
 #, kde-format
 msgid "No command specified"
 msgstr "Nie określono polecenia"

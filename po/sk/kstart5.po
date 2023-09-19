@@ -9,7 +9,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kstart\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-08-06 02:03+0000\n"
+"POT-Creation-Date: 2023-09-19 01:56+0000\n"
 "PO-Revision-Date: 2023-03-11 15:14+0100\n"
 "Last-Translator: Roman Paholik <wizzardsk@gmail.com>\n"
 "Language-Team: Slovak <kde-sk@linux.sk>\n"
@@ -66,16 +66,18 @@ msgid "Command to execute"
 msgstr "Príkaz, ktorý sa má spustiť"
 
 #: kstart.cpp:90
-#, kde-format
-msgid "Alternative to <command>: desktop file to start."
+#, fuzzy, kde-format
+#| msgid "Alternative to <command>: desktop file to start."
+msgid "Alternative to <command>: desktop file name to start, e.g. org.kde.kate"
 msgstr "Alternatíva k <command>: súbor desktop, ktorý sa má spustiť."
 
 #: kstart.cpp:93
-#, kde-format
-msgid "Optional URL to pass <desktopfile>, when using --service"
+#, fuzzy, kde-format
+#| msgid "Optional URL to pass <desktopfile>, when using --service"
+msgid "Optional URL to pass to the application when using --application"
 msgstr "Volitelná URL pre <desktopfile>, pri použití parametra --service"
 
-#: kstart.cpp:104
+#: kstart.cpp:105
 #, kde-format
 msgid "No command specified"
 msgstr "Neuvedený žiadny príkaz"

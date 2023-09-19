@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kstart\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-08-06 02:03+0000\n"
+"POT-Creation-Date: 2023-09-19 01:56+0000\n"
 "PO-Revision-Date: 2023-03-07 21:49+0100\n"
 "Last-Translator: Karl Ove Hufthammer <karl@huftis.org>\n"
 "Language-Team: Norwegian Nynorsk <l10n-no@lister.huftis.org>\n"
@@ -68,16 +68,18 @@ msgstr "Kommando som skal køyrast"
 
 # skip-rule: mellomrom-før
 #: kstart.cpp:90
-#, kde-format
-msgid "Alternative to <command>: desktop file to start."
+#, fuzzy, kde-format
+#| msgid "Alternative to <command>: desktop file to start."
+msgid "Alternative to <command>: desktop file name to start, e.g. org.kde.kate"
 msgstr "Alternativ til <command>: Skrivebordsfila som skal startast."
 
 #: kstart.cpp:93
-#, kde-format
-msgid "Optional URL to pass <desktopfile>, when using --service"
+#, fuzzy, kde-format
+#| msgid "Optional URL to pass <desktopfile>, when using --service"
+msgid "Optional URL to pass to the application when using --application"
 msgstr "Valfri adresse for å oppgje <desktopfile> når --service vert brukt"
 
-#: kstart.cpp:104
+#: kstart.cpp:105
 #, kde-format
 msgid "No command specified"
 msgstr "Ingen kommando oppgjeven"

@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kstart5\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-08-06 02:03+0000\n"
+"POT-Creation-Date: 2023-09-19 01:56+0000\n"
 "PO-Revision-Date: 2017-09-28 17:58+0200\n"
 "Last-Translator: Chusslove Illich <caslav.ilic@gmx.net>\n"
 "Language-Team: Serbian <kde-i18n-sr@kde.org>\n"
@@ -71,17 +71,18 @@ msgstr "Наредба за извршавање"
 #| msgid ""
 #| "Alternative to <command>: desktop file to start. D-Bus service will be "
 #| "printed to stdout"
-msgid "Alternative to <command>: desktop file to start."
+msgid "Alternative to <command>: desktop file name to start, e.g. org.kde.kate"
 msgstr ""
 "Алтернатива наредби: .десктоп фајл за покретање. Д‑бус сервис ће бити "
 "исписан на стдиз."
 
 #: kstart.cpp:93
-#, kde-format
-msgid "Optional URL to pass <desktopfile>, when using --service"
+#, fuzzy, kde-format
+#| msgid "Optional URL to pass <desktopfile>, when using --service"
+msgid "Optional URL to pass to the application when using --application"
 msgstr "Опциони УРЛ за прослеђивање .десктоп фајла, уз --service"
 
-#: kstart.cpp:104
+#: kstart.cpp:105
 #, kde-format
 msgid "No command specified"
 msgstr "Нема ниједне наредбе"

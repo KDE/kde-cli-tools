@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kstart\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-08-06 02:03+0000\n"
+"POT-Creation-Date: 2023-09-19 01:56+0000\n"
 "PO-Revision-Date: 2010-02-11 20:34+0700\n"
 "Last-Translator: Thanomsub Noppaburana <donga.nb@gmail.com>\n"
 "Language-Team: Thai <thai-l10n@googlegroups.com>\n"
@@ -69,17 +69,18 @@ msgstr "คำสั่งที่จะประมวลผล"
 #| msgid ""
 #| "Alternative to <command>: desktop file to start. D-Bus service will be "
 #| "printed to stdout"
-msgid "Alternative to <command>: desktop file to start."
+msgid "Alternative to <command>: desktop file name to start, e.g. org.kde.kate"
 msgstr ""
 "ทางเลือกอื่นของ <command>: แฟ้มพื้นที่ทำงานที่จะเริ่มการทำงานบริการ D-Bus "
 "จะทำการพิมพ์ผลส่งออกไปทาง stdout"
 
 #: kstart.cpp:93
-#, kde-format
-msgid "Optional URL to pass <desktopfile>, when using --service"
+#, fuzzy, kde-format
+#| msgid "Optional URL to pass <desktopfile>, when using --service"
+msgid "Optional URL to pass to the application when using --application"
 msgstr "ตัวเลือกเพิ่มเติมที่อยู่ URL ที่จะส่งไปให้กับ <desktopfile> เมื่อมีการใช้ --service"
 
-#: kstart.cpp:104
+#: kstart.cpp:105
 #, kde-format
 msgid "No command specified"
 msgstr "ยังไม่ได้ระบุคำสั่ง"

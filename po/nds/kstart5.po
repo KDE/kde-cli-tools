@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kstart\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-08-06 02:03+0000\n"
+"POT-Creation-Date: 2023-09-19 01:56+0000\n"
 "PO-Revision-Date: 2010-10-07 16:31+0200\n"
 "Last-Translator: Manfred Wiese <m.j.wiese@web.de>\n"
 "Language-Team: Low Saxon <kde-i18n-nds@kde.org>\n"
@@ -69,19 +69,20 @@ msgstr "Befehl, den Du opropen wullt"
 #| msgid ""
 #| "Alternative to <command>: desktop file to start. D-Bus service will be "
 #| "printed to stdout"
-msgid "Alternative to <command>: desktop file to start."
+msgid "Alternative to <command>: desktop file name to start, e.g. org.kde.kate"
 msgstr ""
 "Ansteed vun <command>: Schriefdischdatei, de Du opropen wullt. De D-Bus-"
 "Deenst warrt na de Standardutgaav utgeven"
 
 #: kstart.cpp:93
-#, kde-format
-msgid "Optional URL to pass <desktopfile>, when using --service"
+#, fuzzy, kde-format
+#| msgid "Optional URL to pass <desktopfile>, when using --service"
+msgid "Optional URL to pass to the application when using --application"
 msgstr ""
 "Köörfree: URL, de na <desktopfile> wiedergeven warrt, wenn Du \"--service\" "
 "bruukst"
 
-#: kstart.cpp:104
+#: kstart.cpp:105
 #, kde-format
 msgid "No command specified"
 msgstr "Keen Befehl angeven"
