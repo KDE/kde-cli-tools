@@ -1,13 +1,13 @@
 # Copyright (C) YEAR This_file_is_part_of_KDE
 # This file is distributed under the same license as the PACKAGE package.
 #
-# Freek de Kruijf <freekdekruijf@kde.nl>, 2014, 2017, 2020, 2023.
+# SPDX-FileCopyrightText: 2014, 2017, 2020, 2023 Freek de Kruijf <freekdekruijf@kde.nl>
 msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2023-09-19 01:56+0000\n"
-"PO-Revision-Date: 2023-02-03 11:56+0100\n"
+"PO-Revision-Date: 2023-09-19 09:53+0200\n"
 "Last-Translator: Freek de Kruijf <freekdekruijf@kde.nl>\n"
 "Language-Team: \n"
 "Language: nl\n"
@@ -15,7 +15,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Generator: Lokalize 22.12.1\n"
+"X-Generator: Lokalize 23.08.1\n"
 
 #, kde-format
 msgctxt "NAME OF TRANSLATORS"
@@ -63,18 +63,18 @@ msgid "Command to execute"
 msgstr "Uit te voeren commando"
 
 #: kstart.cpp:90
-#, fuzzy, kde-format
-#| msgid "Alternative to <command>: desktop file to start."
+#, kde-format
 msgid "Alternative to <command>: desktop file name to start, e.g. org.kde.kate"
-msgstr "Alternatief voor <command>: te starten desktop-bestand."
+msgstr ""
+"Alternatief voor <command>: te starten desktop-bestandsnaam, bijv. org.kde."
+"kate"
 
 #: kstart.cpp:93
-#, fuzzy, kde-format
-#| msgid "Optional URL to pass <desktopfile>, when using --service"
+#, kde-format
 msgid "Optional URL to pass to the application when using --application"
 msgstr ""
-"Optioneel URL -adres om door te geven <desktopfile>, bij gebruik van --"
-"service"
+"Optionele URL om door te geven aan de toepassing bij gebruik van --"
+"application"
 
 #: kstart.cpp:105
 #, kde-format

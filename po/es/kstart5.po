@@ -9,13 +9,13 @@
 # Pablo de Vicente <p.devicente@wanadoo.es>, 2004.
 # Santiago Fernandez Sancho <santi@kde-es.org>, 2005.
 # Enrique Matias Sanchez (aka Quique) <cronopios@gmail.com>, 2007.
-# Eloy Cuadra <ecuadra@eloihr.net>, 2010, 2014, 2020, 2023.
+# SPDX-FileCopyrightText: 2010, 2014, 2020, 2023 Eloy Cuadra <ecuadra@eloihr.net>
 msgid ""
 msgstr ""
 "Project-Id-Version: kstart\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2023-09-19 01:56+0000\n"
-"PO-Revision-Date: 2023-02-03 12:32+0100\n"
+"PO-Revision-Date: 2023-09-20 00:43+0200\n"
 "Last-Translator: Eloy Cuadra <ecuadra@eloihr.net>\n"
 "Language-Team: Spanish <kde-l10n-es@kde.org>\n"
 "Language: es\n"
@@ -23,7 +23,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "First-Translator: Jorge Valencia Alvarez <jorgev@est.unileon.es>\n"
-"X-Generator: Lokalize 22.12.1\n"
+"X-Generator: Lokalize 23.08.1\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
 
 #, kde-format
@@ -72,16 +72,16 @@ msgid "Command to execute"
 msgstr "Orden a ejecutar"
 
 #: kstart.cpp:90
-#, fuzzy, kde-format
-#| msgid "Alternative to <command>: desktop file to start."
+#, kde-format
 msgid "Alternative to <command>: desktop file name to start, e.g. org.kde.kate"
-msgstr "Alternativa a <command>: archivo de escritorio a iniciar."
+msgstr ""
+"Alternativa a <command>: nombre de archivo de escritorio a iniciar (por "
+"ejemplo, org.kde.kate)"
 
 #: kstart.cpp:93
-#, fuzzy, kde-format
-#| msgid "Optional URL to pass <desktopfile>, when using --service"
+#, kde-format
 msgid "Optional URL to pass to the application when using --application"
-msgstr "URL opcional a pasar a <desktopfile> cuando se usa «--service»"
+msgstr "URL opcional a pasar a la aplicación cuando se usa «--application»"
 
 #: kstart.cpp:105
 #, kde-format

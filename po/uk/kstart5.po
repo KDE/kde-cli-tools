@@ -13,7 +13,7 @@ msgstr ""
 "Project-Id-Version: kstart5\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2023-09-19 01:56+0000\n"
-"PO-Revision-Date: 2023-02-03 08:32+0200\n"
+"PO-Revision-Date: 2023-09-19 09:05+0300\n"
 "Last-Translator: Yuri Chornoivan <yurchor@ukr.net>\n"
 "Language-Team: Ukrainian <kde-i18n-uk@kde.org>\n"
 "Language: uk\n"
@@ -70,18 +70,17 @@ msgid "Command to execute"
 msgstr "Виконати команду"
 
 #: kstart.cpp:90
-#, fuzzy, kde-format
-#| msgid "Alternative to <command>: desktop file to start."
+#, kde-format
 msgid "Alternative to <command>: desktop file name to start, e.g. org.kde.kate"
-msgstr "Альтернатива <command>: файл .desktop, який слід виконати."
+msgstr ""
+"Альтернатива <command>: файл .desktop, який слід виконати, приклад: org.kde."
+"kate"
 
 #: kstart.cpp:93
-#, fuzzy, kde-format
-#| msgid "Optional URL to pass <desktopfile>, when using --service"
+#, kde-format
 msgid "Optional URL to pass to the application when using --application"
 msgstr ""
-"Додатковий URL, який слід передати <desktopfile> у разі використання "
-"параметра --service"
+"Додаткова адреса, яку слід передати програмі при використанні --application"
 
 #: kstart.cpp:105
 #, kde-format

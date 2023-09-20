@@ -70,110 +70,17 @@ msgid "Command to execute"
 msgstr "Yürütülecek komut"
 
 #: kstart.cpp:90
-#, fuzzy, kde-format
-#| msgid "Alternative to <command>: desktop file to start."
+#, kde-format
 msgid "Alternative to <command>: desktop file name to start, e.g. org.kde.kate"
-msgstr "<komut> komutuna alternatif: Başlatılacak masaüstü dosyası."
+msgstr ""
+"<komut>'a alternatif: Başlatılacak masaüstü dosyası; örn., org.kde.kate"
 
 #: kstart.cpp:93
-#, fuzzy, kde-format
-#| msgid "Optional URL to pass <desktopfile>, when using --service"
+#, kde-format
 msgid "Optional URL to pass to the application when using --application"
-msgstr ""
-"--service kullanırken <masaüstüdosyası>'na geçirilecek isteğe bağlı URL"
+msgstr "--application kullanırken uygulamaya geçirilecek isteğe bağlı URL"
 
 #: kstart.cpp:105
 #, kde-format
 msgid "No command specified"
 msgstr "Belirtilen komut yok"
-
-#~ msgid ""
-#~ "Alternative to <command>: desktop file path to start. D-Bus service will "
-#~ "be printed to stdout. Deprecated: use --application"
-#~ msgstr ""
-#~ "<komut> komutuna alternatif: Başlatılacak masaüstü dosyası. D-Bus hizmeti "
-#~ "stdout çıktısına yazdırılır. Artık kullanılmıyor: --application kullanın"
-
-#~ msgid ""
-#~ "Utility to launch applications with special window properties \n"
-#~ "such as iconified, maximized, a certain virtual desktop, a special "
-#~ "decoration\n"
-#~ "and so on."
-#~ msgstr ""
-#~ "Uygulamaları özel KDE pencere özellikleriyle, mesela simge halinde, \n"
-#~ "ekranı kaplar biçimde, belli bir sanal masaüstünde, özel bir "
-#~ "dekorasyonla\n"
-#~ "ya da yapışkan olarak başlatmak için yardımcı bir program."
-
-#~ msgid "A regular expression matching the window title"
-#~ msgstr "Pencere başlığı ile eşleşen bir düzenli ifade"
-
-#~ msgid ""
-#~ "A string matching the window class (WM_CLASS property)\n"
-#~ "The window class can be found out by running\n"
-#~ "'xprop | grep WM_CLASS' and clicking on a window\n"
-#~ "(use either both parts separated by a space or only the right part).\n"
-#~ "NOTE: If you specify neither window title nor window class,\n"
-#~ "then the very first window to appear will be taken;\n"
-#~ "omitting both options is NOT recommended."
-#~ msgstr ""
-#~ "(WM_CLASS property) Pencere sınıfıyla eşleşen dizi\n"
-#~ "Pencere sınıfı 'xprop | grep WM_CLASS' komutu çalıştırılıp\n"
-#~ "pencere üzerine tıklandığında bulunabilir.\n"
-#~ "NOT: Pencere sınıfı veya pencere başlığı belirtmezseniz\n"
-#~ "ilk görünen pencere alınacaktır;\n"
-#~ "her iki seçeneği de boş bırakmak tavsiye edilmez."
-
-#~ msgid "Desktop on which to make the window appear"
-#~ msgstr "Pencerenin açılacağı masaüstü"
-
-#~ msgid ""
-#~ "Make the window appear on the desktop that was active\n"
-#~ "when starting the application"
-#~ msgstr ""
-#~ "Uygulama başlatılırken pencerenin gösterileceği masaüstünü\n"
-#~ "aktifleştir"
-
-#~ msgid "Make the window appear on all desktops"
-#~ msgstr "Pencereyi tüm masaüstlerinde görünür yapar"
-
-#~ msgid "Iconify the window"
-#~ msgstr "Pencereyi simgeleştirir"
-
-#~ msgid "Maximize the window"
-#~ msgstr "Pencereye ekranı kaplatır"
-
-#~ msgid "Maximize the window vertically"
-#~ msgstr "Pencereye dikey olarak ekranı kaplatır"
-
-#~ msgid "Maximize the window horizontally"
-#~ msgstr "Pencereye yatay olarak ekranı kaplatır"
-
-#~ msgid "Show window fullscreen"
-#~ msgstr "Pencereyi tam ekran olarak göster"
-
-#~ msgid ""
-#~ "The window type: Normal, Desktop, Dock, Toolbar, \n"
-#~ "Menu, Dialog, TopMenu or Override"
-#~ msgstr ""
-#~ "Pencere türü: Normal, Masaüstü, Gömülü, Araç Çubuğu, \n"
-#~ "Menü, Pencere, Üst Menü ya da Üzerinde Tut"
-
-#~ msgid ""
-#~ "Jump to the window even if it is started on a \n"
-#~ "different virtual desktop"
-#~ msgstr ""
-#~ "Başka bir sanal masaüstünde başlamış olsa bile, \n"
-#~ "pencereye atlar"
-
-#~ msgid "Try to keep the window above other windows"
-#~ msgstr "Pencereyi her zaman diğer pencerelerin üzerinde tut"
-
-#~ msgid "Try to keep the window below other windows"
-#~ msgstr "Pencereyi her zaman diğer pencerelerin altında tutar"
-
-#~ msgid "The window does not get an entry in the taskbar"
-#~ msgstr "Pencere görev çubuğunda görünmesin"
-
-#~ msgid "The window does not get an entry on the pager"
-#~ msgstr "Pencere sayfalayıcı üzerinde görünmesin"

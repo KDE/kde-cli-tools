@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: kde-cli-tools\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2023-09-19 01:56+0000\n"
-"PO-Revision-Date: 2023-02-03 06:27+0100\n"
+"PO-Revision-Date: 2023-09-20 02:45+0200\n"
 "Last-Translator: Temuri Doghonadze <temuri.doghonadze@gmail.com>\n"
 "Language-Team: Georgian <kde-i18n-doc@kde.org>\n"
 "Language: ka\n"
@@ -16,7 +16,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
-"X-Generator: Poedit 3.2.2\n"
+"X-Generator: Poedit 3.3.2\n"
 
 #, kde-format
 msgctxt "NAME OF TRANSLATORS"
@@ -64,18 +64,16 @@ msgid "Command to execute"
 msgstr "შესასრულებელი ბრძანება"
 
 #: kstart.cpp:90
-#, fuzzy, kde-format
-#| msgid "Alternative to <command>: desktop file to start."
+#, kde-format
 msgid "Alternative to <command>: desktop file name to start, e.g. org.kde.kate"
-msgstr "<ბრძანების> ალტერნატივა: გასაშვები .desktop ფაილი."
+msgstr "<ბრძანების> ალტერნატივა: გასაშვები .desktop ფაილი, მაგ: org.kde.kate"
 
 #: kstart.cpp:93
-#, fuzzy, kde-format
-#| msgid "Optional URL to pass <desktopfile>, when using --service"
+#, kde-format
 msgid "Optional URL to pass to the application when using --application"
 msgstr ""
-"<desktopfile>-სთვის არასავალდებულო URL-ის გადაცემა --service -ის "
-"გამოყენებისას"
+"პარამეტრის --application გამოყენებისას აპლიკაციისთვის არასავალდებულო "
+"გასადაცემი ბმული"
 
 #: kstart.cpp:105
 #, kde-format
