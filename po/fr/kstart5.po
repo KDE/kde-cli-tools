@@ -11,7 +11,7 @@
 # Yann Verley <yann.verley@free.fr>, 2004.
 # aminesay <aminesay@yahoo.fr>, 2007.
 # Sébastien Renard <Sebastien.Renard@digitalfox.org>, 2008.
-# Xavier Besnard <xavier.besnard@neuf.fr>, 2020.
+# SPDX-FileCopyrightText: 2020, 2023 Xavier Besnard <xavier.besnard@neuf.fr>
 # Xavier BESNARD <xavier.besnard@neuf.fr>, 2023.
 #
 msgid ""
@@ -19,8 +19,8 @@ msgstr ""
 "Project-Id-Version: kstart\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2023-09-19 01:56+0000\n"
-"PO-Revision-Date: 2023-02-03 19:28+0100\n"
-"Last-Translator: Xavier BESNARD <xavier.besnard]neuf.fr>\n"
+"PO-Revision-Date: 2023-09-20 17:36+0200\n"
+"Last-Translator: Xavier BESNARD <xavier.besnard@neuf.fr>\n"
 "Language-Team: fr\n"
 "Language: fr\n"
 "MIME-Version: 1.0\n"
@@ -30,7 +30,7 @@ msgstr ""
 "X-Environment: kde\n"
 "X-Accelerator-Marker: &\n"
 "X-Text-Markup: kde4\n"
-"X-Generator: Lokalize 22.12.1\n"
+"X-Generator: Lokalize 23.08.1\n"
 
 #, kde-format
 msgctxt "NAME OF TRANSLATORS"
@@ -79,17 +79,17 @@ msgid "Command to execute"
 msgstr "Commande à exécuter"
 
 #: kstart.cpp:90
-#, fuzzy, kde-format
-#| msgid "Alternative to <command>: desktop file to start."
+#, kde-format
 msgid "Alternative to <command>: desktop file name to start, e.g. org.kde.kate"
-msgstr "Alternative à la <command> : fichier de bureau à démarrer."
+msgstr ""
+"Alternative à la <command> : nom du fichier de bureau à démarrer, par "
+"exemple, « org.kde.kate »"
 
 #: kstart.cpp:93
-#, fuzzy, kde-format
-#| msgid "Optional URL to pass <desktopfile>, when using --service"
+#, kde-format
 msgid "Optional URL to pass to the application when using --application"
 msgstr ""
-"URL facultative pour passer le <desktopfile>, lors de l'utilisation de « --"
+"URL facultative à passer à l'application, lors de l'utilisation de « --"
 "service »"
 
 #: kstart.cpp:105
