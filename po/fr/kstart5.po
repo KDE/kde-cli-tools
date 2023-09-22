@@ -11,7 +11,7 @@
 # Yann Verley <yann.verley@free.fr>, 2004.
 # aminesay <aminesay@yahoo.fr>, 2007.
 # Sébastien Renard <Sebastien.Renard@digitalfox.org>, 2008.
-# Xavier Besnard <xavier.besnard@neuf.fr>, 2020.
+# SPDX-FileCopyrightText: 2020, 2023 Xavier Besnard <xavier.besnard@neuf.fr>
 # Xavier BESNARD <xavier.besnard@neuf.fr>, 2023.
 #
 msgid ""
@@ -30,7 +30,7 @@ msgstr ""
 "X-Environment: kde\n"
 "X-Accelerator-Marker: &\n"
 "X-Text-Markup: kde4\n"
-"X-Generator: Lokalize 22.12.1\n"
+"X-Generator: Lokalize 23.08.1\n"
 
 #, kde-format
 msgctxt "NAME OF TRANSLATORS"
