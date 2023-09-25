@@ -7,7 +7,7 @@
 # mvillarino <mvillarino@users.sourceforge.net>, 2007, 2009.
 # marce villarino <mvillarino@users.sourceforge.net>, 2009.
 # Marce Villarino <mvillarino@gmail.com>, 2009, 2011.
-# Adrián Chaves (Gallaecio) <adrian@chaves.io>, 2017, 2019, 2023.
+# SPDX-FileCopyrightText: 2023 Adrián Chaves (Gallaecio)
 #
 # Proxecto Trasno - Adaptación do software libre á lingua galega:  Se desexas
 # colaborar connosco, podes atopar máis información en http://trasno.gpul.org
@@ -19,7 +19,7 @@ msgstr ""
 "Project-Id-Version: kstart\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2022-12-17 00:51+0000\n"
-"PO-Revision-Date: 2023-05-02 20:05+0200\n"
+"PO-Revision-Date: 2023-09-24 14:36+0200\n"
 "Last-Translator: Adrián Chaves (Gallaecio) <adrian@chaves.io>\n"
 "Language-Team: Galician <proxecto@trasno.gal>\n"
 "Language: gl\n"
@@ -27,7 +27,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Generator: Lokalize 23.04.0\n"
+"X-Generator: Lokalize 23.08.1\n"
 
 #, kde-format
 msgctxt "NAME OF TRANSLATORS"
@@ -124,7 +124,7 @@ msgstr ""
 "«xprop | grep WM_CLASS» e premendo nunha xanela\n"
 "(use tanto ambas as dúas partes separadas por un espazo ou\n"
 "só a parte da dereita).\n"
-"NOTA: Se non especifica nin un título para a xanela nin unha\n"
+"NOTA: Se non indica nin un título para a xanela nin unha\n"
 "clase de xanela, entón tomarase a primeira xanela en aparecer;\n"
 "non se recomenda omitir ambas as opcións."
 
@@ -179,7 +179,7 @@ msgid ""
 "Menu, Dialog, TopMenu or Override"
 msgstr ""
 "O tipo de xanela: normal, de escritorio, de doca, de barra de ferramentas,\n"
-"de menú, de diálogo, de menú superior ou de superposición."
+"de menú, de diálogo, de menú superior ou de sobredefinición."
 
 #: kstart.cpp:308
 #, kde-format
