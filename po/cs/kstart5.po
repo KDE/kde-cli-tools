@@ -65,16 +65,14 @@ msgid "Command to execute"
 msgstr "Příkaz ke spuštění"
 
 #: kstart.cpp:90
-#, fuzzy, kde-format
-#| msgid "Alternative to <command>: desktop file to start."
+#, kde-format
 msgid "Alternative to <command>: desktop file name to start, e.g. org.kde.kate"
-msgstr "Alternativa k <příkaz>: soubor plochy ke spuštění."
+msgstr ""
 
 #: kstart.cpp:93
-#, fuzzy, kde-format
-#| msgid "Optional URL to pass <desktopfile>, when using --service"
+#, kde-format
 msgid "Optional URL to pass to the application when using --application"
-msgstr "Volitelná URL, která se předá <desktopfile> při použití --service"
+msgstr ""
 
 #: kstart.cpp:105
 #, kde-format
