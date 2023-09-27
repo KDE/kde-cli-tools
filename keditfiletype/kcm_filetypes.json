@@ -199,6 +199,6 @@
     "X-KDE-Keywords[zh_CN]": "Filetypes,File Associations,Mime Types,File Patterns,Files,Pattern,文件类型,文件关联,后缀名,文件",
     "X-KDE-Keywords[zh_TW]": "Filetypes,File Associations,Mime Types,File Patterns,Files,Pattern",
     "X-KDE-ParentApp": "kcontrol",
-    "X-KDE-System-Settings-Parent-Category": "applications",
-    "X-KDE-Weight": 50
+    "X-KDE-System-Settings-Parent-Category": "applications-defaults",
+    "X-KDE-Weight": 20
 }
