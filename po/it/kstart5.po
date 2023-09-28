@@ -1,15 +1,15 @@
 # translation of kstart.po to Italian
+# SPDX-FileCopyrightText: 2020, 2023 Paolo Zamponi <feus73@gmail.com>
 # Andrea Rizzi <rizzi@kde.org>, 2003, 2004, 2005.
 # Andrea Rizzi <rizzi@sns.it>, 2007.
 # Nicola Ruggero <nicola@nxnt.org>, 2009.
 # Federico Zenith <federico.zenith@member.fsf.org>, 2010.
-# Paolo Zamponi <feus73@gmail.com>, 2020, 2023.
 msgid ""
 msgstr ""
 "Project-Id-Version: kstart\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2023-09-19 01:56+0000\n"
-"PO-Revision-Date: 2023-02-04 07:46+0100\n"
+"PO-Revision-Date: 2023-09-23 23:07+0200\n"
 "Last-Translator: Paolo Zamponi <feus73@gmail.com>\n"
 "Language-Team: Italian <kde-i18n-it@kde.org>\n"
 "Language: it\n"
@@ -17,7 +17,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
-"X-Generator: Lokalize 22.12.1\n"
+"X-Generator: Lokalize 23.08.1\n"
 
 #, kde-format
 msgctxt "NAME OF TRANSLATORS"
@@ -65,16 +65,17 @@ msgid "Command to execute"
 msgstr "Comando da eseguire"
 
 #: kstart.cpp:90
-#, fuzzy, kde-format
-#| msgid "Alternative to <command>: desktop file to start."
+#, kde-format
 msgid "Alternative to <command>: desktop file name to start, e.g. org.kde.kate"
-msgstr "Alternativa a <command>: file desktop da avviare."
+msgstr ""
+"Alternativa a <command>: nome di file desktop da avviare, ad esempio org.kde."
+"kate"
 
 #: kstart.cpp:93
-#, fuzzy, kde-format
-#| msgid "Optional URL to pass <desktopfile>, when using --service"
+#, kde-format
 msgid "Optional URL to pass to the application when using --application"
-msgstr "URL facoltativo da passare a <desktopfile>, usando --service"
+msgstr ""
+"URL facoltativo da passare all'applicazione quando si usa --application"
 
 #: kstart.cpp:105
 #, kde-format
