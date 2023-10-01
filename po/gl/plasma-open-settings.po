@@ -45,4 +45,4 @@ msgstr "© 2021 Persoas desenvolvedoras de KDE"
 #: main.cpp:67
 #, kde-format
 msgid "Could not open: %1"
-msgstr "Non se puido abrir: %1"
+msgstr "Non foi posíbel abrir: %1"

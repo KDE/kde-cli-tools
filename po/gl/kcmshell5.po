@@ -145,7 +145,7 @@ msgid ""
 "Could not find module '%1'. See kcmshell5 --list for the full list of "
 "modules."
 msgstr ""
-"Non se puido atopar o módulo «%1». Consulte «kcmshell5 --list» para ver a "
+"Non foi posíbel atopar o módulo «%1». Consulte «kcmshell5 --list» para ver a "
 "lista completa dos módulos."
 
 #~ msgid "KDE Control Module"
