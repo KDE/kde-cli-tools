@@ -151,12 +151,12 @@ msgstr "Incorporar nunha xanela"
 #: kdesu.cpp:153
 #, kde-format
 msgid "Cannot execute command '%1'."
-msgstr "Non se pode executar a orde «%1»."
+msgstr "Non é posíbel executar a orde «%1»."
 
 #: kdesu.cpp:156
 #, kde-format
 msgid "Cannot execute command '%1'. It contains invalid characters."
-msgstr "Non se pode executar a orde «%1». Contén caracteres incorrectos."
+msgstr "Non é posíbel executar a orde «%1». Contén caracteres incorrectos."
 
 #: kdesu.cpp:230
 #, kde-format
@@ -249,8 +249,8 @@ msgstr "A conversa con su fallou."
 msgid ""
 "The program 'su' could not be found.<br />Ensure your PATH is set correctly."
 msgstr ""
-"Non se puido atopar o programa «su»<br />Verifique que a súa variábel PATH é "
-"correcta."
+"Non foi posíbel atopar o programa «su»<br />Verifique que a súa variábel "
+"PATH é correcta."
 
 #: sudlg.cpp:97
 #, kde-format
@@ -261,7 +261,7 @@ msgid ""
 msgstr ""
 "Denegouse o permiso.<br />Quizais fose incorrecto o contrasinal, inténteo de "
 "novo.<br />Nalgúns sistemas debe pertencer a un grupo especial (xeralmente "
-"«wheel») para poder utilizar este programa."
+"«wheel») para poder usar este programa."
 
 # skip-rule: trasno-check
 #: sudlg.cpp:105
