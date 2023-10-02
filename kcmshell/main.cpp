@@ -334,8 +334,14 @@ int main(int _argc, char *_argv[])
     }
 
     const QStringList moduleArgs = parser.value(QStringLiteral("args")).split(QRegularExpression(QStringLiteral(" +")));
-    for (const KPluginMetaData &m : std::as_const(metaDataList)) {
-        dlg->addModule(m, moduleArgs);
+    if (metaDataList.size() == 1) {
+        KPageWidgetItem *item = dlg->addModule(*metaDataList.cbegin(), moduleArgs);
+        // This makes sure the content area is focused by default
+        item->widget()->setFocus(Qt::MouseFocusReason);
+    } else {
+        for (const KPluginMetaData &m : std::as_const(metaDataList)) {
+            dlg->addModule(m, moduleArgs);
+        }
     }
 
     if (parser.isSet(QStringLiteral("icon"))) {
