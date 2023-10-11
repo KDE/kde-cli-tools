@@ -3,7 +3,7 @@ msgstr ""
 "Project-Id-Version: kdeorg\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2023-09-19 01:56+0000\n"
-"PO-Revision-Date: 2023-09-16 10:06\n"
+"PO-Revision-Date: 2023-10-10 14:24\n"
 "Last-Translator: \n"
 "Language-Team: Chinese Simplified\n"
 "Language: zh_CN\n"
@@ -35,7 +35,7 @@ msgstr "KStart"
 #: kstart.cpp:77
 #, kde-format
 msgid "Utility to launch applications"
-msgstr ""
+msgstr "启动应用程序的工具"
 
 #: kstart.cpp:79
 #, kde-format
@@ -63,17 +63,14 @@ msgid "Command to execute"
 msgstr "要执行的命令"
 
 #: kstart.cpp:90
-#, fuzzy, kde-format
-#| msgid "Alternative to <command>: desktop file to start."
+#, kde-format
 msgid "Alternative to <command>: desktop file name to start, e.g. org.kde.kate"
-msgstr "指定<command>参数的替换项：要启动的 desktop 文件。"
+msgstr ""
 
 #: kstart.cpp:93
-#, fuzzy, kde-format
-#| msgid "Optional URL to pass <desktopfile>, when using --service"
+#, kde-format
 msgid "Optional URL to pass to the application when using --application"
 msgstr ""
-"当使用 --service 选项时，传递给<desktop 文件>参数的 URL 地址，这是可选项"
 
 #: kstart.cpp:105
 #, kde-format
