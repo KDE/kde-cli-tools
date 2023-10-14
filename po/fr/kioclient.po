@@ -7,7 +7,7 @@
 # Amine Say <aminesay@yahoo.fr>, 2008.
 # Guillaume Pujol <guill.p@gmail.com>, 2010.
 # Sébastien Renard <renard@kde.org>, 2012.
-# xavier <xavier.besnard@neuf.fr>, 2012, 2013, 2020, 2021, 2022.
+# SPDX-FileCopyrightText: 2012, 2013, 2020, 2021, 2022, 2023 xavier <xavier.besnard@neuf.fr>
 # Vincent Pinon <vpinon@kde.org>, 2016.
 # Simon Depiets <sdepiets@gmail.com>, 2019.
 #
@@ -17,15 +17,15 @@ msgstr ""
 "Project-Id-Version: kioclient\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2023-06-05 01:59+0000\n"
-"PO-Revision-Date: 2022-04-08 22:30+0200\n"
-"Last-Translator: Xavier Besnard <xavier.besnard@neuf.fr>\n"
-"Language-Team: French <kde-francophone@kde.org>\n"
+"PO-Revision-Date: 2023-10-12 11:19+0200\n"
+"Last-Translator: Xavier BESNARD <xavier.besnard@neuf.fr>\n"
+"Language-Team: fr\n"
 "Language: fr\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n > 1);\n"
-"X-Generator: Lokalize 21.12.3\n"
+"X-Generator: Lokalize 23.08.1\n"
 "X-Environment: kde\n"
 "X-Accelerator-Marker: &\n"
 "X-Text-Markup: kde4\n"
@@ -114,11 +114,11 @@ msgid ""
 "            #   a URL will be requested.\n"
 "\n"
 msgstr ""
-"  %1 [« src »]\n"
+"  %1 [ « src » ]\n"
 "            # Copie l'URL « src » vers un emplacement spécifié par "
 "l'utilisateur.\n"
-"            #   « src »  peut être une liste d'URL. Si elle n'est pas "
-"fournie alors\n"
+"            #   Le paramètre « src »  peut être une liste d'URL. Si ce "
+"paramètre n'est pas fourni alors\n"
 "            #   une URL sera demandée.\n"
 "\n"
 
@@ -146,8 +146,9 @@ msgid ""
 "            # Prints the contents of the file 'url' to the standard output\n"
 "\n"
 msgstr ""
-"  %1« URL »\n"
-"            # Imprime les contenus de l'URL sur le périphérique de sortie\n"
+"  %1 « URL »\n"
+"            # Imprime les contenus du fichier « URL » sur le périphérique "
+"standard de sortie\n"
 "\n"
 
 #: kioclient.cpp:110
@@ -282,7 +283,7 @@ msgid ""
 "connection, use --platform offscreen"
 msgstr ""
 "Utilisation non interactive : aucune boîte de dialogue. Si vous ne voulez "
-"aucune connexion graphique, utilisez « --platform offscreen »"
+"aucune connexion graphique, utilisez l'option « --platform offscreen »"
 
 #: kioclient.cpp:187
 #, kde-format
