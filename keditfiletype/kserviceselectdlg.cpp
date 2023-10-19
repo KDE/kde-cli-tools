@@ -13,7 +13,7 @@
 
 #include <KLocalizedString>
 
-QVector<KPluginMetaData> allParts()
+QList<KPluginMetaData> allParts()
 {
     return KPluginMetaData::findPlugins(QStringLiteral("kf6/parts"));
 }
