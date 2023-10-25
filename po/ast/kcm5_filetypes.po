@@ -1,13 +1,13 @@
-# Copyright (C) YEAR This file is copyright:
+# Copyright (C) 2023 This file is copyright:
 # This file is distributed under the same license as the kde-cli-tools package.
 #
-# Enol P. <enolp@softastur.org>, 2023.
+# SPDX-FileCopyrightText: 2023 Enol P. <enolp@softastur.org>
 msgid ""
 msgstr ""
 "Project-Id-Version: kde-cli-tools\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2023-06-13 02:10+0000\n"
-"PO-Revision-Date: 2023-05-09 00:35+0200\n"
+"PO-Revision-Date: 2023-10-25 00:15+0200\n"
 "Last-Translator: Enol P. <enolp@softastur.org>\n"
 "Language-Team: \n"
 "Language: ast\n"
@@ -15,7 +15,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Generator: Lokalize 23.04.0\n"
+"X-Generator: Lokalize 23.08.2\n"
 
 #, kde-format
 msgctxt "NAME OF TRANSLATORS"
@@ -72,11 +72,15 @@ msgid ""
 "file type 'text/plain'; all files ending in '.txt' are recognized as plain "
 "text files."
 msgstr ""
+"Esti cuadru contién una llista de patrones que se puen usar pa identificar "
+"ficheros del tipu seleicionáu. Por exemplu, el patrón *.txt asóciase col "
+"tipu de ficheru «text/plain», de mou que tolos nomes de ficheru qu'acaben en "
+"«.txt» van reconócense como ficheros de testu ensin formatu."
 
 #: filetypedetails.cpp:87 filetypesview.cpp:86 kservicelistwidget.cpp:106
 #, kde-format
 msgid "Add..."
-msgstr ""
+msgstr "Amestar..."
 
 #: filetypedetails.cpp:92
 #, kde-format
@@ -86,7 +90,7 @@ msgstr ""
 #: filetypedetails.cpp:94 kservicelistwidget.cpp:120
 #, kde-format
 msgid "Remove"
-msgstr ""
+msgstr "Quitar"
 
 #: filetypedetails.cpp:99
 #, kde-format
@@ -96,7 +100,7 @@ msgstr ""
 #: filetypedetails.cpp:110
 #, kde-format
 msgid "Description:"
-msgstr ""
+msgstr "Descripción:"
 
 #: filetypedetails.cpp:115
 #, kde-format
@@ -130,7 +134,7 @@ msgstr ""
 #: filetypedetails.cpp:167
 #, kde-format
 msgid "&General"
-msgstr ""
+msgstr "&Xeneral"
 
 #: filetypedetails.cpp:168
 #, kde-format
@@ -145,7 +149,7 @@ msgstr ""
 #: filetypedetails.cpp:209
 #, kde-format
 msgid "Extension:"
-msgstr ""
+msgstr "Estensión:"
 
 #: filetypedetails.cpp:327
 #, kde-format
