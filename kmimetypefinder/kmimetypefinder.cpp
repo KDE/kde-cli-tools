@@ -21,7 +21,7 @@ int main(int argc, char *argv[])
 {
     QCoreApplication app(argc, argv);
 
-    KLocalizedString::setApplicationDomain("kmimetypefinder5");
+    KLocalizedString::setApplicationDomain(QByteArrayLiteral("kmimetypefinder5"));
 
     KAboutData aboutData(QLatin1String("kmimetypefinder"), i18n("MIME Type Finder"), QLatin1String(PROJECT_VERSION));
     aboutData.setShortDescription(i18n("Gives the MIME type for a given file"));

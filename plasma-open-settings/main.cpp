@@ -24,7 +24,7 @@ KIO::CommandLauncherJob *openPlasmaSettings(QString &moduleName)
 int main(int argc, char **argv)
 {
     QGuiApplication app(argc, argv);
-    KLocalizedString::setApplicationDomain("plasma-open-settings");
+    KLocalizedString::setApplicationDomain(QByteArrayLiteral("plasma-open-settings"));
 
     KAboutData aboutData(QStringLiteral("plasma-open-settings"), //
                          i18n("App to open Settings app"),

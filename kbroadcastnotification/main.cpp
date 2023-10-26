@@ -16,7 +16,7 @@
 int main(int argc, char *argv[])
 {
     QCoreApplication app(argc, argv);
-    KLocalizedString::setApplicationDomain("kbroadcastnotification");
+    KLocalizedString::setApplicationDomain(QByteArrayLiteral("kbroadcastnotification"));
 
     KAboutData aboutData(QStringLiteral("kbroadcastnotification"),
                          i18n("Broadcast Notifications"),

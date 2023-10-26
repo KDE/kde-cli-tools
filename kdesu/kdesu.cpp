@@ -84,7 +84,7 @@ int main(int argc, char *argv[])
         duser = "root";
     }
 
-    KLocalizedString::setApplicationDomain("kdesu5");
+    KLocalizedString::setApplicationDomain(QByteArrayLiteral("kdesu5"));
 
     KAboutData aboutData(QStringLiteral("kdesu"),
                          i18n("KDE su"),
