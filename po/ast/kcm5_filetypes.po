@@ -7,7 +7,7 @@ msgstr ""
 "Project-Id-Version: kde-cli-tools\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2023-06-13 02:10+0000\n"
-"PO-Revision-Date: 2023-10-25 00:15+0200\n"
+"PO-Revision-Date: 2023-10-26 00:46+0200\n"
 "Last-Translator: Enol P. <enolp@softastur.org>\n"
 "Language-Team: \n"
 "Language: ast\n"
@@ -80,7 +80,7 @@ msgstr ""
 #: filetypedetails.cpp:87 filetypesview.cpp:86 kservicelistwidget.cpp:106
 #, kde-format
 msgid "Add..."
-msgstr "Amestar..."
+msgstr "Amestar…"
 
 #: filetypedetails.cpp:92
 #, kde-format
