@@ -74,9 +74,7 @@
 >Les podeu canviar o afegir-ne de noves emprant aquest mòdul.</para>
 
 <para
->Cada associació de fitxer es registra com a un tipus &MIME;. &MIME; vol dir <quote
->Multipurpose Internet Mail Extensions</quote
->. Permet que un ordinador determini el tipus de fitxer sense obrir-lo ni analitzar el format de tots i cadascun dels fitxers.</para>
+>Cada associació de fitxer es registra com a un tipus &MIME;. &MIME; vol dir «Multipurpose Internet Mail Extensions». Permet que un ordinador determini el tipus de fitxer sense obrir-lo ni analitzar el format de tots i cadascun dels fitxers.</para>
 
 </sect2>
 
@@ -299,9 +297,7 @@
 <para
 >L'asterisc (<literal
 >*</literal
->) és un caràcter de comodí que s'utilitzarà amb gairebé totes les màscares de tipus &MIME;. Una xerrada completa resta més enllà de l'objectiu d'aquest manual, però és important entendre que l'asterisc (en aquest context), <quote
->concorda</quote
-> amb qualsevol nombre de caràcters. Per exemple, <userinput
+>) és un caràcter de comodí que s'utilitzarà amb gairebé totes les màscares de tipus &MIME;. Una xerrada completa resta més enllà de l'objectiu d'aquest manual, però és important entendre que l'asterisc (en aquest context), «concorda» amb qualsevol nombre de caràcters. Per exemple, <userinput
 >*.pdf</userinput
 > concorda amb <filename
 >Fitxerdades.pdf</filename

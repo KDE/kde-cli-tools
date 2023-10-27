@@ -430,9 +430,7 @@ does this really work?
 >Conserva la contrasenya</title>
 
 <para
->Per al vostre confort, el &kdesu; implementa una característica per a <quote
->conservar la contrasenya</quote
->. Si esteu interessat en la seguretat, hauríeu de llegir aquest paràgraf.</para>
+>Per al vostre confort, el &kdesu; implementa una característica per a «conservar la contrasenya». Si esteu interessat en la seguretat, hauríeu de llegir aquest paràgraf.</para>
 
 <para
 >Si permeteu que el &kdesu; conservi les contrasenyes, estareu obrint un (petit) forat de seguretat en el vostre sistema. Òbviament, el &kdesu; no permet més que a l'identificador del vostre usuari utilitzar les seves contrasenyes, però si es fa sense precaució, s'estaria rebaixant el nivell de seguretat de <systemitem class="username"
