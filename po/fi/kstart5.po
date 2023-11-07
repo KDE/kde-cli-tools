@@ -14,7 +14,7 @@ msgstr ""
 "Project-Id-Version: kstart\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2023-09-19 01:56+0000\n"
-"PO-Revision-Date: 2023-03-05 17:31+0200\n"
+"PO-Revision-Date: 2023-09-26 10:39+0300\n"
 "Last-Translator: Tommi Nieminen <translator@legisign.org>\n"
 "Language-Team: Finnish <kde-i18n-doc@kde.org>\n"
 "Language: fi\n"
@@ -71,18 +71,18 @@ msgid "Command to execute"
 msgstr "Suoritettava komento"
 
 #: kstart.cpp:90
-#, fuzzy, kde-format
-#| msgid "Alternative to <command>: desktop file to start."
+#, kde-format
 msgid "Alternative to <command>: desktop file name to start, e.g. org.kde.kate"
-msgstr "Vaihtoehto valinnalle <command>: käynnistettävä työpöytätiedosto."
+msgstr ""
+"Vaihtoehto valinnalle <command>: käynnistettävä työpöytätiedosto, esim. org."
+"kde.kate"
 
 #: kstart.cpp:93
-#, fuzzy, kde-format
-#| msgid "Optional URL to pass <desktopfile>, when using --service"
+#, kde-format
 msgid "Optional URL to pass to the application when using --application"
 msgstr ""
-"Valinnainen välitettävä osoite <desktopfile> käytettäessä valitsinta --"
-"service"
+"Sovellukselle välitettävä valinnainen verkko-osoite käytettäessä valitsinta "
+"--application"
 
 #: kstart.cpp:105
 #, kde-format
