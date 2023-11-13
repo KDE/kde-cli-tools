@@ -64,7 +64,7 @@
 >. Bu dosya ilişkilendirmeleri, &kde;'nin işlevselliği için elzemdir.</para>
 
 <para
->&kde; kurulduğunda, yaygın olarak kullanılan veri türleri için yüzlerce ilişkilendirmeyi otomatik olarak oluşturur. Bu ilişkilendirmeler, sık kullanılan uygulamalar ve kullanıcı tercihleri temel alınarak oluşturulmuştur.</para>
+>&kde; kurulduğunda, yaygın olarak kullanılan veri türleri için yüzlerce ilişkilendirmeyi kendiliğinden oluşturur. Bu ilişkilendirmeler, sık kullanılan uygulamalar ve kullanıcı tercihleri temel alınarak oluşturulmuştur.</para>
 
 <para
 >&kde;, ne yazık ki şunları yapamaz:</para>
@@ -381,7 +381,7 @@
 <para
 ><literal
 >pdf</literal
-> &MIME; türü için bu dosya türüyle ilişkilendirilmiş iki adet uygulama vardır. İlkinin adı &okular;. Sisteminizde &okular; kurulu değilse &kde; otomatik olarak ikinci uygulama olan &krita; uygulamasını başlatır. Gördüğünüz gibi, bu, &kde;'nin arka planda siz uygulamaları kurup kaldırsanız bile pürüzsüz bir deneyim yaşatmasını sağlar.</para
+> &MIME; türü için bu dosya türüyle ilişkilendirilmiş iki adet uygulama vardır. İlkinin adı &okular;. Sisteminizde &okular; kurulu değilse &kde; kendiliğinden ikinci uygulama olan &krita; uygulamasını başlatır. Gördüğünüz gibi, bu, &kde;'nin arka planda siz uygulamaları kurup kaldırsanız bile pürüzsüz bir deneyim yaşatmasını sağlar.</para
 ></note>
 
 <para
