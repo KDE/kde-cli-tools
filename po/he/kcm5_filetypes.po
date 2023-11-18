@@ -22,7 +22,7 @@ msgstr ""
 "Project-Id-Version: kcm5_filetypes\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2023-06-13 02:10+0000\n"
-"PO-Revision-Date: 2023-11-16 14:11+0200\n"
+"PO-Revision-Date: 2023-11-16 21:39+0200\n"
 "Last-Translator: Yaron Shahrabani <sh.yaron@gmail.com>\n"
 "Language-Team: צוות התרגום של KDE ישראל\n"
 "Language: he\n"
@@ -195,14 +195,14 @@ msgid "Search for file type or filename pattern..."
 msgstr "חיפוש אחר סוג קובץ או תבנית שם קובץ…"
 
 #: filetypesview.cpp:63
-#, fuzzy, kde-format
+#, kde-format
 msgid ""
 "Enter a part of a filename pattern, and only file types with a matching file "
 "pattern will appear in the list. Alternatively, enter a part of a file type "
 "name as it appears in the list."
 msgstr ""
-"הזן חלק של תבנית שמות קבצים. יופיעו ברשימה רק סוגי קבצים עם תבנית קובץ "
-"תואמת. במידה ולא, הזן חלק שם סוג הקובץ כמו שהוא מופיע ברשימה."
+"אפשר להקליד חלק מתבנית שם הקובץ ורק סוגי הקבצים שתבנית הקובץ שלהם תואמת "
+"יופיעו ברשימה. לחלופין, אפשר להקליד חלק משם סוג הקובץ והוא יופיע ברשימה."
 
 #: filetypesview.cpp:71 multiapplydialog.cpp:27
 #, kde-format
@@ -210,36 +210,37 @@ msgid "Known Types"
 msgstr "סוגים מוכרים"
 
 #: filetypesview.cpp:77
-#, fuzzy, kde-format
+#, kde-format
 msgid ""
 "Here you can see a hierarchical list of the file types which are known on "
 "your system. Click on the '+' sign to expand a category, or the '-' sign to "
 "collapse it. Select a file type (e.g. text/html for HTML files) to view/edit "
 "the information for that file type using the controls on the right."
 msgstr ""
-"כאן באפשרותך לראות רשימה היררכית של סוגי הקבצים המוכרים במערכת שלך. לחץ על "
-"הסימן \"+\" כדי להרחיב קטגוריה, או על \"-\" כדי לצמצם אותה. בחר סוג קובץ  "
-"(לדוגמה text/html) כדי לצפות\\לערוך את המידע עליו באמצעות האפשרויות שמשמאל."
+"כאן אפשר לצפות ברשימה היררכית של סוגי הקבצים שהמערכת שלך מכירה. לחיצה על "
+"הסמל ‚+’ כדי להרחיב את הקטגוריה או על הסמל ‚-’ כדי לצמצם אותה. יש לבחור סוג "
+"קובץ (למשל: text/html לקובצי HTML) כדי לצפות/לערוך את המידע לסוג קובץ זה "
+"באמצעות הפקדים שמשמאל."
 
 #: filetypesview.cpp:91
-#, fuzzy, kde-format
+#, kde-format
 msgid "Click here to add a new file type."
-msgstr "לחץ כאן כדי להוסיף סוג קובץ חדש."
+msgstr "יש ללחוץ כאן כדי להוסיף סוג קובץ חדש."
 
 #: filetypesview.cpp:93 filetypesview.cpp:389
-#, fuzzy, kde-format
+#, kde-format
 msgid "&Remove"
-msgstr "&הסר"
+msgstr "ה&סרה"
 
 #: filetypesview.cpp:119
-#, fuzzy, kde-format
+#, kde-format
 msgid "Select a file type by name or by extension"
-msgstr "בחר סוג קובץ לפי שם או לפי סיומת"
+msgstr "נא לבחור סוג קובץ לפי שם או לפי סיומת"
 
 #: filetypesview.cpp:382
-#, fuzzy, kde-format
+#, kde-format
 msgid "&Revert"
-msgstr "&החזר"
+msgstr "ה&חזרה"
 
 #: filetypesview.cpp:383
 #, kde-format
@@ -346,7 +347,7 @@ msgid "Services Preference Order"
 msgstr "סדר עדיפות שירותים"
 
 #: kservicelistwidget.cpp:64
-#, fuzzy, kde-format
+#, kde-format
 msgid ""
 "This is a list of applications associated with files of the selected file "
 "type. This list is shown in Konqueror's context menus when you select \"Open "
@@ -354,13 +355,12 @@ msgid ""
 "then the list is ordered by priority with the uppermost item taking "
 "precedence over the others."
 msgstr ""
-"זוהי רשימה של יישומים המשויכים לקבצים מסוג הקובץ הנבחר. רשימה זו מוצגת "
-"בתפריטים של Konqueror כשאתה בוחר ב\"פתיחה באמצעות...\". אם יותר מיישום אחד "
-"משויך לסוג הקובץ הזה, אז הרשימה תסודר לפי עדיפות כאשר לפריט העליון ביותר "
-"ישנה עדיפות על פני האחרים."
+"זו רשימה של יישומים שמשויכים לקבצים מסוג הקובץ הנבחר. רשימה זו מופיע בתפריטי "
+"ההקשר של Konqueror בבחירת „פתיחה עם…”. אם יותר מיישום אחד משויך לסוג קובץ אז "
+"הרשימה מסודרת לפי עדיפות כך שהפריט העליון הוא העדיף ביותר."
 
 #: kservicelistwidget.cpp:69
-#, fuzzy, kde-format
+#, kde-format
 msgid ""
 "This is a list of services associated with files of the selected file type. "
 "This list is shown in Konqueror's context menus when you select a \"Preview "
@@ -368,26 +368,27 @@ msgid ""
 "type, then the list is ordered by priority with the uppermost item taking "
 "precedence over the others."
 msgstr ""
-"זוהי רשימה של השירותים המשויכים לקבצים מסוג הקובץ הנבחר. רשימה זו מוצגת "
-"בתפריטים של Konqueror כאשר נבחרת האפשרות \"תצוגה מקדימה באמצעות...\". אם "
-"יותר משירות אחד משויך לסוג קובץ זה, אז הרשימה תסודר לפי עדיפות כאשר לפריט "
-"העליון ביותר ישנה קדימות על פני האחרים."
+"זו רשימה של שירותים שמשויכת לקבצים מסוג הקובץ הנבחר. רשימה זו מופיעה בתפריטי "
+"ההקשר של Konquerer בבחירה באפשרות „תצוגה מקדימה עם…”. אם יותר משירות אחד "
+"משויך לסוג קובץ אז הרשימה מסודרת לפי עדיפות כך שהפריט העליון הוא העדיף ביותר."
 
 #: kservicelistwidget.cpp:81
-#, fuzzy, kde-format
+#, kde-format
 msgid "Move &Up"
-msgstr "הזז מ&עלה"
+msgstr "ה&רמה"
 
 #: kservicelistwidget.cpp:87
-#, fuzzy, kde-format
+#, kde-format
 msgid ""
 "Assigns a higher priority to the selected\n"
 "application, moving it up in the list. Note:  This\n"
 "only affects the selected application if the file type is\n"
 "associated with more than one application."
 msgstr ""
-"מתן עדיפות גבוהה יותר ליישום הנבחר, והעלאתו למעלה ברשימה. שים לב: דבר זה "
-"משפיע על היישום הנבחר רק אם סוג הקובץ משויך ליותר מיישום אחד."
+"מקצה עדיפות גבוהה יותר ליישום הנבחר,\n"
+"ומעלה אותו ברשימה. לתשומת ליבך: משפיע\n"
+"רק על היישום הנבחר אם סוג הקובץ משויך\n"
+"ליותר מיישום אחד."
 
 #: kservicelistwidget.cpp:91
 #, kde-format
@@ -399,21 +400,21 @@ msgstr ""
 "תוך העלאתו למעלה ברשימה."
 
 #: kservicelistwidget.cpp:94
-#, fuzzy, kde-format
+#, kde-format
 msgid "Move &Down"
-msgstr "הור&ד"
+msgstr "הור&דה"
 
 #: kservicelistwidget.cpp:99
-#, fuzzy, kde-format
+#, kde-format
 msgid ""
 "Assigns a lower priority to the selected\n"
 "application, moving it down in the list. Note: This \n"
 "only affects the selected application if the file type is\n"
 "associated with more than one application."
 msgstr ""
-"מתן עדיפות נמוכה יותר ליישום הנבחר,\n"
-"והורדתו למטה ברשימה. שים לב: דבר זה משפיע\n"
-"על היישום הנבחר רק אם סוג הקובץ משויך\n"
+"מקצה עדיפות נמוכה יותר ליישום הנבחר,\n"
+"ומוריד אותו ברשימה. לתשומת ליבך: משפיע\n"
+"רק על היישום הנבחר אם סוג הקובץ משויך\n"
 "ליותר מיישום אחד."
 
 #: kservicelistwidget.cpp:103
@@ -488,9 +489,9 @@ msgid "Group:"
 msgstr "קבוצה:"
 
 #: newtypedlg.cpp:39
-#, fuzzy, kde-format
+#, kde-format
 msgid "Select the category under which the new file type should be added."
-msgstr "בחר את הקטגוריה תחתיה יש להוסיף את סוג הקובץ החדש."
+msgstr "נא לבחור את הקטגוריה אליה יתווספו סוגי קבצים חדשים."
 
 #: newtypedlg.cpp:44
 #, kde-format
@@ -498,14 +499,14 @@ msgid "Type name:"
 msgstr "שם הסוג:"
 
 #: newtypedlg.cpp:50
-#, fuzzy, kde-format
+#, kde-format
 msgid ""
 "Type the name of the file type. For instance, if you selected 'image' as "
 "category and you type 'custom' here, the file type 'image/custom' will be "
 "created."
 msgstr ""
-"הסוג של סוג הקובץ. למשל, אם בחרת \"תמונה\" בתור הקטגוריה ואתה מקליד \"מותאם "
-"אישית\" כאן, הסוג \"תמונה/מותאים אישי\" יווצר."
+"נא להקליד את שם סוג הקובץ. למשל, בחירה ב־‚image’ כקטגוריה והקלדת ‚custom’ "
+"כאן, ייווצר סוג הקובץ ‚image/custom’."
 
 #~ msgid ""
 #~ "<p><h1>File Associations</h1> This module allows you to choose which "
