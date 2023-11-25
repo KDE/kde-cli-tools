@@ -23,7 +23,7 @@ Dependencies:
     'frameworks/kwindowsystem': '@latest'
     'frameworks/solid': '@latest'
     'frameworks/kparts': '@latest'
-    'plasma/kactivities': '@latest' # Different branch scheme as former Framework
+    'plasma/plasma-activities': '@latest' # Different branch scheme as former Framework
     'plasma/plasma-workspace': '@same'
 
 Options:
