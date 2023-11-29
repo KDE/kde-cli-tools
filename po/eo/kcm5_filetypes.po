@@ -1,6 +1,7 @@
 # translation of kcm5_filetypes.pot to esperanto
 # e-aj mesaĝoj de "kde-cli-tools"
 # Copyright (C) 1999, 2003, 2004, 2007 Free Software Foundation, Inc.
+# This file is distributed under the same license as the kde-cli-tools package.
 # Wolfram Diestel <wolfram@steloj.de>, 1999.
 # Heiko Evermann <heiko@evermann.de>, 2003.
 # Matthias Peick <matthias@peick.de>, 2004.
@@ -13,7 +14,7 @@ msgstr ""
 "Project-Id-Version: filetypes\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2023-01-15 00:57+0000\n"
-"PO-Revision-Date: 2023-01-07 01:00+0100\n"
+"PO-Revision-Date: 2023-05-17 07:19+0100\n"
 "Last-Translator: Oliver Kellogg <okellogg@users.sourceforge.net>\n"
 "Language-Team: esperanto <kde-i18n-eo@kde.org>\n"
 "Language: eo\n"
@@ -29,19 +30,19 @@ msgctxt "NAME OF TRANSLATORS"
 msgid "Your names"
 msgstr ""
 "Wolfram Diestel,Steffen Pietsch,Matthias Peick,Pierre-Marie Pédrot, Axel "
-"Rousseau"
+"Rousseau, Oliver Kellogg"
 
 #, kde-format
 msgctxt "EMAIL OF TRANSLATORS"
 msgid "Your emails"
 msgstr ""
 "wolfram@steloj.de,Steffen.Pietsch@BerlinOnline.de,matthias@peick.de,"
-"pedrotpmx@wanadoo.fr,axel@esperanto-jeunes.org"
+"pedrotpmx@wanadoo.fr,axel@esperanto-jeunes.org,okellogg@users.sourceforge.net"
 
 #: filegroupdetails.cpp:22
 #, kde-format
 msgid "Left Click Action (only for Konqueror file manager)"
-msgstr ""
+msgstr "Maldekstra Klak-Ago (nur por Konqueror-dosiermastrumilo)"
 
 #: filegroupdetails.cpp:26 filetypedetails.cpp:133
 #, kde-format
@@ -398,7 +399,7 @@ msgid ""
 msgstr ""
 "Tio estas listo de aplikaĵoj registritaj por dosieroj de la elektita tipo. "
 "Tiu listo estas montrata en la ĉelokaj menuoj de Konkeranto se vi elektas "
-"\"Malfermu per...\". Se pli ol unu aplikaĵo estas registrita por tiu tipo, "
+"\"Malfermi per...\". Se pli ol unu aplikaĵo estas registrita por tiu tipo, "
 "la listo estas ordigita laŭ prioritato kun la plej supra ero kiel plej grava."
 
 #: kservicelistwidget.cpp:73
@@ -412,7 +413,7 @@ msgid ""
 msgstr ""
 "Jen listo de aplikaĵoj registritaj por dosieroj de la elektita tipo. Tiu "
 "listo estas montrata en la ĉelokaj menuoj de Konkeranto se vi elektas "
-"\"Antaŭrigardu per...\". Se pli ol unu aplikaĵo estas registrita por tiu "
+"\"Antaŭrigardi per...\". Se pli ol unu aplikaĵo estas registrita por tiu "
 "tipo, la listo estas ordigita laŭ prioritato kun la plej supra ero kiel plej "
 "grava."
 
