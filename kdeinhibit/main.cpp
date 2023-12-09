@@ -20,6 +20,7 @@ int main(int argc, char **argv)
 {
     QCoreApplication app(argc, argv);
     QCoreApplication::setApplicationName(QStringLiteral("kdeinhibit"));
+    KLocalizedString::setApplicationDomain(QByteArrayLiteral("kdeinhibit"));
     QCommandLineParser parser;
     parser.setOptionsAfterPositionalArgumentsMode(QCommandLineParser::ParseAsPositionalArguments);
     parser.setApplicationDescription(i18n("Inhibit various desktop functions whilst a command runs"));
