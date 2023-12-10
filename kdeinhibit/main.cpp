@@ -37,7 +37,7 @@ int main(int argc, char **argv)
     QCommandLineOption notificationsOption(QStringLiteral("notifications"), i18n("Inhibit notifications (Do not disturb)"));
     parser.addOption(notificationsOption);
 
-    parser.addPositionalArgument(QStringLiteral("command..."), i18n("Command to run"));
+    parser.addPositionalArgument(QStringLiteral("command"), i18n("Command with arguments to run"), QStringLiteral("command [args...]"));
 
     parser.addHelpOption();
 
