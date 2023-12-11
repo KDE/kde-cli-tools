@@ -19,8 +19,8 @@ SPDX-License-Identifier: GPL-2.0-or-later
 int main(int argc, char **argv)
 {
     QCoreApplication app(argc, argv);
-    QCoreApplication::setApplicationName(QStringLiteral("kdeinhibit"));
-    KLocalizedString::setApplicationDomain(QByteArrayLiteral("kdeinhibit"));
+    QCoreApplication::setApplicationName(QStringLiteral("kde-inhibit"));
+    KLocalizedString::setApplicationDomain(QByteArrayLiteral("kde-inhibit"));
     QCommandLineParser parser;
     parser.setOptionsAfterPositionalArgumentsMode(QCommandLineParser::ParseAsPositionalArguments);
     parser.setApplicationDescription(i18n("Inhibit various desktop functions whilst a command runs"));
