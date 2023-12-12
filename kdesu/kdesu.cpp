@@ -115,7 +115,7 @@ int main(int argc, char *argv[])
     parser.addOption(QCommandLineOption(QStringLiteral("noignorebutton"), i18n("Do not display ignore button")));
     parser.addOption(QCommandLineOption(QStringLiteral("i"), i18n("Specify icon to use in the password dialog"), QStringLiteral("icon name")));
     parser.addOption(QCommandLineOption(QStringLiteral("d"), i18n("Do not show the command to be run in the dialog")));
-#ifdef HAVE_X11
+#if WITH_X11
     /* KDialog originally used --embed for attaching the dialog box.  However this is misleading and so we changed to --attach.
      * For consistancy, we silently map --embed to --attach */
     parser.addOption(QCommandLineOption(QStringLiteral("attach"),
@@ -138,7 +138,7 @@ int main(int argc, char *argv[])
     }
 
     {
-#ifdef HAVE_X11
+#if WITH_X11
         KStartupInfoId id;
         id.initId();
         id.setupStartupEnv(); // make DESKTOP_STARTUP_ID env. var. available again
@@ -370,7 +370,7 @@ static int startApp(QCommandLineParser &p)
     // Start the dialog
     QString password;
     if (needpw) {
-#ifdef HAVE_X11
+#if WITH_X11
         KStartupInfoId id;
         id.initId();
         KStartupInfoData data;
@@ -397,7 +397,7 @@ static int startApp(QCommandLineParser &p)
         }
 
         // Attach dialog
-#ifdef HAVE_X11
+#if WITH_X11
         if (attach) {
             dlg.setAttribute(Qt::WA_NativeWindow, true);
             KWindowSystem::setMainWindow(dlg.windowHandle(), WId(winid));
@@ -405,7 +405,7 @@ static int startApp(QCommandLineParser &p)
 #endif
         int ret = dlg.exec();
         if (ret == KDEsuDialog::Rejected) {
-#ifdef HAVE_X11
+#if WITH_X11
             KStartupInfo::sendFinish(id);
 #endif
             p.showHelp(1);
@@ -415,7 +415,7 @@ static int startApp(QCommandLineParser &p)
         }
         password = dlg.password();
         keep = dlg.keepPassword();
-#ifdef HAVE_X11
+#if WITH_X11
         data.setSilent(KStartupInfoData::No);
         KStartupInfo::sendChange(id, data);
 #endif

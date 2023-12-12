@@ -63,11 +63,7 @@ find_package(KF6 ${KF6_MIN_VERSION} REQUIRED COMPONENTS
 # Disables automatic conversions from QString (or char *) to QUrl.
 add_definitions(-DQT_NO_URL_CAST_FROM_STRING)
 
-find_package(X11)
-find_package(XCB COMPONENTS XCB)
-if(X11_FOUND AND XCB_XCB_FOUND)
-  set(HAVE_X11 1)
-endif()
+option(WITH_X11 "Build kdesu and kstart with X11 support." ON)
 
 ecm_set_disabled_deprecation_versions(QT 5.15.2)
 

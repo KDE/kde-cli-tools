@@ -39,7 +39,7 @@ static QString url;
 KStart::KStart()
     : QObject()
 {
-#ifdef HAVE_X11
+#if WITH_X11
     if (QX11Info::isPlatformX11()) {
         // propagate the startup identification to the started process
         qputenv("DESKTOP_STARTUP_ID", QX11Info::nextStartupId());

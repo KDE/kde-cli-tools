@@ -4,4 +4,4 @@
 #cmakedefine01 HAVE_PR_SET_DUMPABLE
 #cmakedefine01 HAVE_SYS_PROCCTL_H
 #cmakedefine01 HAVE_PROC_TRACE_CTL
-#define HAVE_X11 ${X11_FOUND}
+#cmakedefine01 WITH_X11
