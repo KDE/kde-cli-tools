@@ -6,7 +6,7 @@
 # Richard Fric <Richard.Fric@kdemail.net>, 2006, 2009.
 # Miroslav David <mirodav@gmail.com>, 2009.
 # Michal Sulek <misurel@gmail.com>, 2009, 2010, 2011.
-# Roman Paholík <wizzardsk@gmail.com>, 2014.
+# SPDX-FileCopyrightText: 2014, 2023 Roman Paholík <wizzardsk@gmail.com>
 # Mthw <jari_45@hotmail.com>, 2019.
 # Matej Mrenica <matejm98mthw@gmail.com>, 2019.
 msgid ""
@@ -14,14 +14,14 @@ msgstr ""
 "Project-Id-Version: filetypes\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2023-06-13 02:10+0000\n"
-"PO-Revision-Date: 2019-11-18 10:22+0100\n"
-"Last-Translator: Matej Mrenica <matejm98mthw@gmail.com>\n"
-"Language-Team: Slovak <kde-i18n-doc@kde.org>\n"
+"PO-Revision-Date: 2023-12-12 19:13+0100\n"
+"Last-Translator: Roman Paholik <wizzardsk@gmail.com>\n"
+"Language-Team: Slovak <kde-sk@linux.sk>\n"
 "Language: sk\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Generator: Lokalize 19.11.80\n"
+"X-Generator: Lokalize 23.08.3\n"
 "Plural-Forms: nplurals=3; plural=(n==1) ? 0 : (n>=2 && n<=4) ? 1 : 2;\n"
 
 #, kde-format
@@ -452,12 +452,12 @@ msgstr "Odstrániť zvolenú aplikáciu zo zoznamu."
 #: kservicelistwidget.cpp:127 multiapplydialog.cpp:19
 #, kde-format
 msgid "Apply To..."
-msgstr ""
+msgstr "Použiť na..."
 
 #: kservicelistwidget.cpp:132
 #, kde-format
 msgid "Apply the current preference order to other file types."
-msgstr ""
+msgstr "Použiť aktuálne poradie predvolieb na iné typy súborov."
 
 #: kservicelistwidget.cpp:155
 #, kde-format

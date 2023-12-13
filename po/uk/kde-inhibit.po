@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kde-cli-tools\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-12-11 01:36+0000\n"
+"POT-Creation-Date: 2023-12-12 01:38+0000\n"
 "PO-Revision-Date: 2023-12-11 23:47+0200\n"
 "Last-Translator: Yuri Chornoivan <yurchor@ukr.net>\n"
 "Language-Team: Ukrainian <kde-i18n-uk@kde.org>\n"
@@ -46,8 +46,9 @@ msgid "Inhibit notifications (Do not disturb)"
 msgstr "Заборонити сповіщення (не турбувати)"
 
 #: main.cpp:40
-#, kde-format
-msgid "Command to run"
+#, fuzzy, kde-format
+#| msgid "Command to run"
+msgid "Command with arguments to run"
 msgstr "Команда, яку слід виконати"
 
 #: main.cpp:63 main.cpp:72 main.cpp:88
