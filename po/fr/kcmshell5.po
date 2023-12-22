@@ -1,6 +1,6 @@
 # translation of kcmshell.po to Français
 #
-# SPDX-FileCopyrightText: 2023 Xavier BESNARD <xavier.besnard@neuf.fr>
+# SPDX-FileCopyrightText: 2023 Xavier Besnard <xavier.besnard@kde.org>
 # Nicolas Ternisien <nicolas.ternisien@gmail.com>, 2004, 2005.
 # Sébastien Renard <Sebastien.Renard@digitalfox.org>, 2007.
 # Sébastien Renard <renard@kde.org>, 2010, 2011, 2014, 2015.
