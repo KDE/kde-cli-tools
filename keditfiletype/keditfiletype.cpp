@@ -175,12 +175,8 @@ int main(int argc, char **argv)
 
     FileTypeDialog dlg(mimeTypeData);
     if (parser.isSet(QStringLiteral("parent"))) {
-        bool ok;
-        long id = parser.value(QStringLiteral("parent")).toLong(&ok);
-        if (ok) {
-            dlg.setAttribute(Qt::WA_NativeWindow, true);
-            KWindowSystem::setMainWindow(dlg.windowHandle(), WId(id));
-        }
+        dlg.setAttribute(Qt::WA_NativeWindow, true);
+        KWindowSystem::setMainWindow(dlg.windowHandle(), parser.value(QStringLiteral("parent")));
     }
     if (!createType) {
         dlg.setWindowTitle(i18n("Edit File Type %1", mimeTypeData->name()));
