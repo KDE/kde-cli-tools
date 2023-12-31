@@ -1,54 +1,51 @@
 msgid ""
 msgstr ""
-"Project-Id-Version: kdeorg\n"
+"Project-Id-Version: kde-cli-tools\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2023-12-12 01:38+0000\n"
-"PO-Revision-Date: 2023-12-30 13:38\n"
-"Last-Translator: \n"
-"Language-Team: Chinese Simplified\n"
-"Language: zh_CN\n"
+"PO-Revision-Date: 2023-12-12 20:05-0800\n"
+"Last-Translator: Japanese KDE translation team <kde-jp@kde.org>\n"
+"Language-Team: Japanese <kde-jp@kde.org>\n"
+"Language: ja\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Plural-Forms: nplurals=1; plural=0;\n"
-"X-Crowdin-Project: kdeorg\n"
-"X-Crowdin-Project-ID: 269464\n"
-"X-Crowdin-Language: zh-CN\n"
-"X-Crowdin-File: /kf6-trunk/messages/kde-cli-tools/kde-inhibit.pot\n"
-"X-Crowdin-File-ID: 48786\n"
+"Plural-Forms: nplurals=2; plural=n != 1;\n"
+"X-Accelerator-Marker: &\n"
+"X-Text-Markup: kde4\n"
 
 #: main.cpp:26
 #, kde-format
 msgid "Inhibit various desktop functions whilst a command runs"
-msgstr "在命令运行时禁止各种桌面功能"
+msgstr ""
 
 #: main.cpp:28
 #, kde-format
 msgid "Inhibit power management"
-msgstr "禁止电源管理"
+msgstr ""
 
 #: main.cpp:31
 #, kde-format
 msgid "Inhibit screensaver"
-msgstr "禁止屏幕保护"
+msgstr ""
 
 #: main.cpp:34
 #, kde-format
 msgid "Inhibit colour correction (night mode)"
-msgstr "禁止颜色校正 (夜间模式)"
+msgstr ""
 
 #: main.cpp:37
 #, kde-format
 msgid "Inhibit notifications (Do not disturb)"
-msgstr "禁止通知 (勿扰模式)"
+msgstr ""
 
 #: main.cpp:40
 #, kde-format
 msgid "Command with arguments to run"
-msgstr "要运行的命令 (带参数)"
+msgstr ""
 
 #: main.cpp:63 main.cpp:72 main.cpp:88
 #, kde-format
 msgctxt "Script as in shell script"
 msgid "Running Script"
-msgstr "运行脚本"
+msgstr ""
