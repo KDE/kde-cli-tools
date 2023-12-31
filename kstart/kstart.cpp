@@ -69,7 +69,7 @@ KStart::KStart()
 int main(int argc, char *argv[])
 {
     QGuiApplication app(argc, argv);
-    KLocalizedString::setApplicationDomain(QByteArrayLiteral("kstart5"));
+    KLocalizedString::setApplicationDomain(QByteArrayLiteral("kstart"));
 
     KAboutData aboutData(QStringLiteral("kstart"),
                          i18n("KStart"),
