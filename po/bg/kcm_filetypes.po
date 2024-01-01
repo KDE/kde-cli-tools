@@ -2,7 +2,7 @@
 # Bulgarian translation of KDE.
 # This file is licensed under the GPL.
 #
-# $Id: kcm5_filetypes.po 1653753 2023-06-13 02:24:27Z scripty $
+# $Id: kcm_filetypes.po 1668684 2023-12-31 18:24:24Z ltoscano $
 #
 # Zlatko Popov <zlatkopopov@fsa-bg.org>, 2007, 2008.
 # Yasen Pramatarov <yasen@lidneas.com>, 2009, 2011.

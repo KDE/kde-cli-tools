@@ -1,6 +1,6 @@
 # translation of kstart.po to Polish
 # translation of kstart.po to
-# Version: $Revision: 1660889 $
+# Version: $Revision: 1668684 $
 # Piotr Roszatycki <dexter@debian.org>, 1999-2000.
 # Michał Rudolf <mrudolf@kdewebdev.org>, 2002.
 # Michal Rudolf <mrudolf@kdewebdev.org>, 2003, 2004, 2005, 2009.

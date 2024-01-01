@@ -1,6 +1,6 @@
 # translation of filetypes.po to Polish
 # translation of filetypes.po to
-# Version: $Revision: 1653753 $
+# Version: $Revision: 1668684 $
 # Translated by Artur Skura <artur@linux.com.pl>
 # minor updates by Jacek Stolarczyk <jacek@mer.chemia.polsl.gliwice.pl>
 # Latest translation by Daniel Koć <kocio@bigfoot.com>
