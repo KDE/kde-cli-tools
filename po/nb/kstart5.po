@@ -1,4 +1,4 @@
-# Translation of kstart5 to Norwegian Bokmål
+# Translation of kstart to Norwegian Bokmål
 #
 # Hans Petter Bieker <bieker@kde.org>, 1998, 1999, 2000.
 # Knut Erik Hollund <khollund@responze.net>, 2003.

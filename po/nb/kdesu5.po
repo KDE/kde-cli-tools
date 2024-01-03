@@ -1,4 +1,4 @@
-# Translation of kdesu5 to Norwegian Bokmål
+# Translation of kdesu to Norwegian Bokmål
 #
 # Hans Petter Bieker <bieker@kde.org>, 2000.
 # Eskild Hustvedt <zerodogg@skolelinux.no>, 2005.

@@ -1,4 +1,4 @@
-# Translation of kdesu5 to Northern Sami
+# Translation of kdesu to Northern Sami
 #
 # Børre Gaup <boerre@skolelinux.no>, 2003, 2004, 2005.
 msgid ""

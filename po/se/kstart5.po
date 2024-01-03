@@ -1,4 +1,4 @@
-# Translation of kstart5 to Northern Sami
+# Translation of kstart to Northern Sami
 #
 # Børre Gaup <boerre@skolelinux.no>, 2003, 2004, 2005.
 msgid ""
