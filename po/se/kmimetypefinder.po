@@ -1,4 +1,4 @@
-# Translation of kmimetypefinder5 to Northern Sami
+# Translation of kmimetypefinder to Northern Sami
 #
 msgid ""
 msgstr ""

@@ -1,4 +1,4 @@
-# Translation of kcm5_filetypes to Norwegian Bokmål
+# Translation of kcm_filetypes to Norwegian Bokmål
 #
 # Hans Petter Bieker <bieker@kde.org>, 2000.
 # Knut Erik Hollund <khollund@responze.net>, 2003.

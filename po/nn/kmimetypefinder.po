@@ -1,4 +1,4 @@
-# Translation of kmimetypefinder5 to Norwegian Nynorsk
+# Translation of kmimetypefinder to Norwegian Nynorsk
 #
 # Karl Ove Hufthammer <karl@huftis.org>, 2007, 2008, 2015, 2018.
 # Eirik U. Birkeland <eirbir@gmail.com>, 2008, 2009.
