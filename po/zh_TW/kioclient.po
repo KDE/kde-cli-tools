@@ -31,7 +31,7 @@ msgstr "Franklin Weng, Jeff Huang"
 #, kde-format
 msgctxt "EMAIL OF TRANSLATORS"
 msgid "Your emails"
-msgstr "franklin@nospam.goodhorse.idv.tw, Jeff Huang"
+msgstr "franklin@nospam.goodhorse.idv.tw, s8321414@gmail.com"
 
 #: kioclient.cpp:60
 #, kde-format
