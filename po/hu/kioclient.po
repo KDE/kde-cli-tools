@@ -5,20 +5,21 @@
 # Kristóf Kiszel <ulysses@kubuntu.org>, 2011, 2014, 2019.
 # Balázs Úr <urbalazs@gmail.com>, 2012, 2013.
 # Kiszel Kristóf <kiszel.kristof@gmail.com>, 2017, 2021.
+# SPDX-FileCopyrightText: 2024 Kristof Kiszel <ulysses@fsf.hu>
 msgid ""
 msgstr ""
 "Project-Id-Version: KDE 4.1\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2023-06-05 01:59+0000\n"
-"PO-Revision-Date: 2021-11-04 13:57+0100\n"
-"Last-Translator: Kristof Kiszel <kiszel.kristof@gmail.com>\n"
+"PO-Revision-Date: 2024-01-15 21:30+0100\n"
+"Last-Translator: Kristof Kiszel <ulysses@fsf.hu>\n"
 "Language-Team: Hungarian <kde-l10n-hu@kde.org>\n"
 "Language: hu\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
-"X-Generator: Lokalize 21.08.3\n"
+"X-Generator: Lokalize 23.08.4\n"
 
 #, kde-format
 msgctxt "NAME OF TRANSLATORS"
@@ -28,7 +29,7 @@ msgstr "Kiszel Kristóf"
 #, kde-format
 msgctxt "EMAIL OF TRANSLATORS"
 msgid "Your emails"
-msgstr "kiszel.kristof@gmail.com"
+msgstr "ulysses@fsf.hu"
 
 #: kioclient.cpp:55
 #, kde-format
@@ -40,32 +41,19 @@ msgstr ""
 "Szintaktika:\n"
 
 #: kioclient.cpp:57
-#, fuzzy, kde-format
-#| msgid ""
-#| "  kioclient5 openProperties 'url'\n"
-#| "            # Opens a properties menu\n"
-#| "\n"
+#, kde-format
 msgctxt "The argument is the command \"kioclient openProperties\""
 msgid ""
 "  %1 'url'\n"
 "            # Opens a properties dialog of 'url'\n"
 "\n"
 msgstr ""
-"  kioclient5 openProperties 'url'\n"
-"            # Megnyit egy tulajdonságmenüt\n"
+"  %1 „url”\n"
+"            # Megnyitja az „url” tulajdonságok ablakát\n"
 "\n"
 
 #: kioclient.cpp:64
-#, fuzzy, kde-format
-#| msgid ""
-#| "  kioclient5 exec 'url' ['mimetype']\n"
-#| "            # Tries to open the document pointed to by 'url', in the "
-#| "application\n"
-#| "            #   associated with it in KDE. You may omit 'mimetype'.\n"
-#| "            #   In this case the mimetype is determined\n"
-#| "            #   automatically. Of course URL may be the URL of a\n"
-#| "            #   document, or it may be a *.desktop file.\n"
-#| "            #   'url' can be an executable, too.\n"
+#, kde-format
 msgctxt "The argument is the command \"kioclient exec\""
 msgid ""
 "  %1 'url' ['mimetype']\n"
@@ -76,7 +64,7 @@ msgid ""
 "            # 'url' can be the URL of a document, a *.desktop file,\n"
 "            # or an executable.\n"
 msgstr ""
-"  kioclient5 exec „url” [„MIME-típus”]\n"
+"  %1 „url” [„MIME-típus”]\n"
 "            # Megpróbálja megnyitni az „url” című dokumentumot\n"
 "            #   a dokumentummal társított alkalmazással. A „MIME-típus” "
 "elhagyható,\n"
@@ -96,15 +84,15 @@ msgid ""
 "            #   The short version 'kioclient mv' is also available.\n"
 "\n"
 msgstr ""
+"  %1 „forrás” „cél”\n"
+"            # Áthelyezi a „forrás” URL-t a „cél” URL-re.\n"
+"            #   A „forrás” lehet URL-címek listája is.\n"
+"            #   A „cél” lehet a „trash:/” is a fájlok Kukába helyezéséhez.\n"
+"            #   A rövid „kioclient mv” verzió is elérhető.\n"
+"\n"
 
 #: kioclient.cpp:85
-#, fuzzy, kde-format
-#| msgid ""
-#| "  kioclient5 download ['src']\n"
-#| "            # Copies the URL 'src' to a user-specified location'.\n"
-#| "            #   'src' may be a list of URLs, if not present then\n"
-#| "            #   a URL will be requested.\n"
-#| "\n"
+#, kde-format
 msgctxt "The argument is the command \"kioclient download\""
 msgid ""
 "  %1 ['src']\n"
@@ -113,19 +101,15 @@ msgid ""
 "            #   a URL will be requested.\n"
 "\n"
 msgstr ""
-"  kioclient5 download ['forrás']\n"
-"            # A forrás-URL-t (\"forrás\") letölti a beállított könyvtárba.\n"
+"  %1 [„forrás”]\n"
+"            # A forrás-URL-t („forrás”) letölti a beállított helyre.\n"
 "            # A forrás-URL több URL-t is tartalmazhat, ha egy URL sincs "
 "megadva,\n"
 "            #   a program bekéri.\n"
 "\n"
 
 #: kioclient.cpp:94
-#, fuzzy, kde-format
-#| msgid ""
-#| "  kioclient5 copy 'src' 'dest'\n"
-#| "            # Copies the URL 'src' to 'dest'.\n"
-#| "            #   'src' may be a list of URLs.\n"
+#, kde-format
 msgctxt "The argument is the command \"kioclient copy\""
 msgid ""
 "  %1 'src' 'dest'\n"
@@ -134,48 +118,38 @@ msgid ""
 "            #   The short version 'kioclient cp' is also available.\n"
 "\n"
 msgstr ""
-"  kioclient5 copy „forrás” „cél”\n"
+"  %1 „forrás” „cél”\n"
 "            # A „forrás” URL-t a „cél” URL-be másolja.\n"
 "            # A „forrás” lehet URL-lista is.\n"
+"            # A rövid „kioclient cp” verzió is elérhető.\n"
+"\n"
 
 #: kioclient.cpp:103
-#, fuzzy, kde-format
-#| msgid ""
-#| "  kioclient5 ls 'url'\n"
-#| "            # Lists the contents of the directory 'url' to stdout\n"
-#| "\n"
+#, kde-format
 msgctxt "The argument is the command \"kioclient cat\""
 msgid ""
 "  %1 'url'\n"
 "            # Prints the contents of the file 'url' to the standard output\n"
 "\n"
 msgstr ""
-"  kioclient5 ls 'url'\n"
-"            # Kilistázza az 'url' könyvtár tartalmát a standard kimenetre\n"
+"  %1 „url”\n"
+"            # Kilistázza az „url” fájl tartalmát a standard kimenetre\n"
 "\n"
 
 #: kioclient.cpp:110
-#, fuzzy, kde-format
-#| msgid ""
-#| "  kioclient5 ls 'url'\n"
-#| "            # Lists the contents of the directory 'url' to stdout\n"
-#| "\n"
+#, kde-format
 msgctxt "The argument is the command \"kioclient ls\""
 msgid ""
 "  %1 'url'\n"
 "            # Lists the contents of the directory 'url' to stdout\n"
 "\n"
 msgstr ""
-"  kioclient5 ls 'url'\n"
-"            # Kilistázza az 'url' könyvtár tartalmát a standard kimenetre\n"
+"  %1 „url”\n"
+"            # Kilistázza az „url” mappa tartalmát a standard kimenetre\n"
 "\n"
 
 #: kioclient.cpp:117
-#, fuzzy, kde-format
-#| msgid ""
-#| "  kioclient5 remove 'url'\n"
-#| "            # Removes the URL\n"
-#| "            #   'url' may be a list of URLs.\n"
+#, kde-format
 msgctxt "The argument is the command \"kioclient remove\""
 msgid ""
 "  %1 'url'\n"
@@ -184,39 +158,33 @@ msgid ""
 "            #   The short version 'kioclient rm' is also available.\n"
 "\n"
 msgstr ""
-"  kioclient5 remove „url”\n"
+"  %1 „url”\n"
 "            # Törli az URL-t\n"
 "            #   „url” lehet URL-lista is.\n"
+"            # A rövid „kioclient rm” verzió is elérhető.\n"
+"\n"
 
 #: kioclient.cpp:126
-#, fuzzy, kde-format
-#| msgid ""
-#| "  kioclient5 stat 'url'\n"
-#| "            # Shows all of the available information for 'url'\n"
-#| "\n"
+#, kde-format
 msgctxt "The argument is the command \"kioclient stat\""
 msgid ""
 "  %1 'url'\n"
 "            # Shows all of the available information for 'url'\n"
 "\n"
 msgstr ""
-"  kioclient5 stat 'url'\n"
+"  %1 „url”\n"
 "            # Megjeleníti az „url” összes elérhető adatát\n"
 "\n"
 
 #: kioclient.cpp:133
-#, fuzzy, kde-format
-#| msgid ""
-#| "  kioclient5 appmenu\n"
-#| "            # Opens a basic application launcher.\n"
-#| "\n"
+#, kde-format
 msgctxt "The argument is the command \"kioclient appmenu\""
 msgid ""
 "  %1\n"
 "            # Opens a basic application launcher\n"
 "\n"
 msgstr ""
-"  kioclient5 appmenu'\n"
+"  %1\n"
 "            # Megnyit egy egyszerű alkalmazásindítót.\n"
 "\n"
 
@@ -226,11 +194,7 @@ msgid "*** Examples:\n"
 msgstr "*** Példák:\n"
 
 #: kioclient.cpp:140
-#, fuzzy, kde-format
-#| msgid ""
-#| "  kioclient5 exec file:/home/weis/data/test.html\n"
-#| "             // Opens the file with default binding\n"
-#| "\n"
+#, kde-format
 msgid ""
 "  kioclient exec file:/home/weis/data/test.html\n"
 "             // Opens the file with the default application associated\n"
@@ -238,45 +202,35 @@ msgid ""
 "\n"
 msgstr ""
 "  kioclient5 exec file:/home/weis/data/test.html\n"
-"             // Megnyit egy fájlt a hozzárendelt alkalmazással\n"
+"             // Megnyitja a fájlt a MIME-típushoz hozzárendelt\n"
+"             // alapértelmezett alkalmazással\n"
 "\n"
 
 #: kioclient.cpp:145
-#, fuzzy, kde-format
-#| msgid ""
-#| "  kioclient5 exec ftp://localhost/\n"
-#| "             // Opens new window with URL\n"
-#| "\n"
+#, kde-format
 msgid ""
 "  kioclient exec ftp://localhost/\n"
 "             // Opens URL with the default handler for ftp:// scheme\n"
 "\n"
 msgstr ""
 "  kioclient5 exec ftp://localhost/\n"
-"             // Megnyit egy új ablakot az adott URL-lel\n"
+"             // Megnyitja az URL-t az ftp:// séma alapértelmezett "
+"kezelőjével\n"
 "\n"
 
 #: kioclient.cpp:149
-#, fuzzy, kde-format
-#| msgid ""
-#| "  kioclient5 exec file:/root/Desktop/emacs.desktop\n"
-#| "             // Starts emacs\n"
-#| "\n"
+#, kde-format
 msgid ""
 "  kioclient exec file:/root/Desktop/emacs.desktop\n"
 "             // Starts emacs\n"
 "\n"
 msgstr ""
-"  kioclient5 exec file:/root/Desktop/emacs.desktop\n"
+"  kioclient exec file:/root/Desktop/emacs.desktop\n"
 "             // Elindítja az Emacs-ot\n"
 "\n"
 
 #: kioclient.cpp:153
-#, fuzzy, kde-format
-#| msgid ""
-#| "  kioclient5 exec .\n"
-#| "             // Opens the current directory. Very convenient.\n"
-#| "\n"
+#, kde-format
 msgid ""
 "  kioclient exec .\n"
 "             // Opens the current directory in the default\n"
@@ -284,7 +238,8 @@ msgid ""
 "\n"
 msgstr ""
 "  kioclient5 exec .\n"
-"             // Megnyitja az aktuális könyvtárat.\n"
+"             // Megnyitja az aktuális mappát az alapértelmezett\n"
+"             // fájlkezelőben. Nagyon kényelmes.\n"
 "\n"
 
 #: kioclient.cpp:172
