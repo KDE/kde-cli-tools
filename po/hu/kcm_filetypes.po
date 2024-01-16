@@ -2,30 +2,31 @@
 # Marcell Lengyel <miketkf@yahoo.com>, 1999.
 # Laszlo Papp <djszapi@archlinux.us>, 2010.
 # Kristóf Kiszel <ulysses@kubuntu.org>, 2010, 2014, 2019.
+# SPDX-FileCopyrightText: 2024 Kristof Kiszel <ulysses@fsf.hu>
 msgid ""
 msgstr ""
 "Project-Id-Version: KDE 4.1\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2023-06-13 02:10+0000\n"
-"PO-Revision-Date: 2019-11-08 22:03+0100\n"
-"Last-Translator: Kristóf Kiszel <ulysses@kubuntu.org>\n"
+"PO-Revision-Date: 2024-01-15 21:16+0100\n"
+"Last-Translator: Kristof Kiszel <ulysses@fsf.hu>\n"
 "Language-Team: Hungarian <kde-l10n-hu@kde.org>\n"
 "Language: hu\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
-"X-Generator: Lokalize 19.11.70\n"
+"X-Generator: Lokalize 23.08.4\n"
 
 #, kde-format
 msgctxt "NAME OF TRANSLATORS"
 msgid "Your names"
-msgstr "Kiszel Kristóf,Lengyel Marcell,Szántó Tamás"
+msgstr "Kiszel Kristóf"
 
 #, kde-format
 msgctxt "EMAIL OF TRANSLATORS"
 msgid "Your emails"
-msgstr "ulysses@kubuntu.org,miketkf@yahoo.com,tszanto@interware.hu"
+msgstr "ulysses@fsf.hu"
 
 #: filegroupdetails.cpp:22
 #, kde-format
@@ -449,12 +450,12 @@ msgstr "A kijelölt alkalmazás eltávolítása a listából."
 #: kservicelistwidget.cpp:127 multiapplydialog.cpp:19
 #, kde-format
 msgid "Apply To..."
-msgstr ""
+msgstr "Alkalmazás erre…"
 
 #: kservicelistwidget.cpp:132
 #, kde-format
 msgid "Apply the current preference order to other file types."
-msgstr ""
+msgstr "A jelenlegi preferenciasorrend alkalmazása más fájltípusokra."
 
 #: kservicelistwidget.cpp:155
 #, kde-format
