@@ -78,7 +78,7 @@ does this really work?
 <para
 >Us donem la benvinguda al &kdesu;! El &kdesu; és un frontal gràfic de l'entorn d'escriptori K per a l'ordre <command
 >su</command
-> de &UNIX;. Us permetrà executar un programa com a un usuari diferent indicant la contrasenya per a aquest usuari. El &kdesu; és un programa sense privilegis que empra el sistema de <command
+> d'&UNIX;. Us permetrà executar un programa com a un usuari diferent indicant la contrasenya per a aquest usuari. El &kdesu; és un programa sense privilegis que empra el sistema de <command
 >su</command
 >.</para>
 
