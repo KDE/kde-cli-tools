@@ -3,4 +3,11 @@
 # SPDX-FileCopyrightText: 2023 Harald Sitter <sitter@kde.org>
 
 export QT_LOGGING_RULES="*=false"
-exec kcmshell6 kcm_about-distro --args dump --platform offscreen
+
+if [ "$XDG_SESSION_TYPE" = "wayland" ]; then
+  exec kcmshell6 kcm_about-distro --args dump --platform wayland
+elif [ -n "${DISPLAY+x}" ]; then
+  exec kcmshell6 kcm_about-distro --args dump --platform xcb
+else
+  exec kcmshell6 kcm_about-distro --args dump --platform offscreen
+fi
