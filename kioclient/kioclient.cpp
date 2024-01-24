@@ -232,8 +232,16 @@ static void checkArgumentCount(int count, int min, int max)
 }
 
 #ifndef KIOCORE_ONLY
-bool ClientApp::kde_open(const QString &url, const QString &mimeType, bool allowExec)
+bool ClientApp::kde_open(const QString &_url, const QString &mimeType, bool allowExec)
 {
+    QString url = _url;
+    if (url.startsWith(QLatin1String("thunderlink://"))) {
+        // thunderlink:// -> thunderlink:/// so QUrl doesn't break the payload's
+        // case sensitivity which would otherwise be at the hostname section
+        const QLatin1Char slash('/');
+        url.insert(url.indexOf(slash), slash);
+    }
+
     UrlInfo info(url);
 
     if (!info.atStart()) {
