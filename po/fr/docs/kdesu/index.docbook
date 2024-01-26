@@ -49,7 +49,7 @@
 <keyword
 >su</keyword>
 <keyword
->password</keyword>
+>mot de passe</keyword>
 <keyword
 >superutilisateur</keyword>
 </keywordset>
@@ -221,7 +221,7 @@ does this really work?
 ></term>
 <listitem
 ><para
->Affiche les informations de déboguage.</para
+>Affiche les informations de débogage.</para
 ></listitem>
 </varlistentry>
 <varlistentry>
@@ -268,7 +268,7 @@ does this really work?
 >-i konqueror</option
 > 
 <option
->-c "konqueror --profile filemanagement"</option
+>-c "konqueror --profile gestionnaire-fichiers"</option
 ></userinput
 ></screen>
 </listitem>
@@ -398,7 +398,7 @@ does this really work?
 > au shell de l'utilisateur, et le shell exécute le programme. Exemple de commande <command
 >su<option
 > root -c <replaceable
->le_programme</replaceable
+>le-programme</replaceable
 ></option
 ></command
 >.</para>
@@ -408,7 +408,7 @@ does this really work?
 >su</command
 >, &kdesu; exécute un petit morceau de programme nommé <application
 >kdesu_stub</application
->. Exécuté pour le compte de l'utilisateur cible, il demande quelques informations à &kdesu; à travers le canal pty / tty (qui correspond à son stdin et à son stdout) et exécute le programme de l'utilisateur. L'information qui est transmise comprend : l'affichage X, le cookie d'authentification X (le cas échéant), le <envar
+>. Exécuté pour le compte de l'utilisateur cible, il demande quelques informations à &kdesu; à travers le canal pty / tty (qui correspond à ses sorties standards « stdin » et « stdout ») et exécute le programme de l'utilisateur. L'information qui est transmise comprend : l'affichage X, le cookie d'authentification X (le cas échéant), le <envar
 >PATH</envar
 > et la commande à lancer. La raison pour laquelle un petit programme intermédiaire est utilisé, c'est que le cookie X est une information privée et que, pour cette raison, il ne peut pas être passé sur la ligne de commande.</para>
 
@@ -442,7 +442,7 @@ does this really work?
 >. &kdesu; essaye d'éviter cela. La technique qu'il utilise pour cela est, au moins de mon point de vue, raisonnablement sûre et elle est exposée ci-dessous.</para>
 
 <para
->&kdesu; utilise un daemon, nommé <application
+>&kdesu; utilise un démon, nommé <application
 >kdesud</application
 >. Ce daemon attend des commandes dans un socket &UNIX; placé dans <filename
 >/tmp</filename
