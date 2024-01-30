@@ -9,7 +9,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: filetypes\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-06-13 02:10+0000\n"
+"POT-Creation-Date: 2024-01-30 00:38+0000\n"
 "PO-Revision-Date: 2019-12-12 23:00+0000\n"
 "Last-Translator: Vivek KJ Pazhedath <vivekkj2004@gmail.com>\n"
 "Language-Team: Swathantra Malayalam Computing | സ്വതന്ത്ര മലയാളം കമ്പ്യൂട്ടിങ് "
@@ -313,12 +313,12 @@ msgstr "മാറ്റം വരുത്തുന്നിനുള്ള ഫ�
 msgid "%1 File"
 msgstr "%1 ഫയല്‍"
 
-#: keditfiletype.cpp:186
+#: keditfiletype.cpp:182
 #, kde-format
 msgid "Edit File Type %1"
 msgstr "%1 എന്ന തരത്തിലുള്ള ഫയലില്‍ മാറ്റം വരുത്തുക"
 
-#: keditfiletype.cpp:188
+#: keditfiletype.cpp:184
 #, kde-format
 msgid "Create New File Type %1"
 msgstr "%1 എന്ന തരത്തിലുള്ള പുതിയ ഫയല്‍ ഉണ്ടാക്കുക"

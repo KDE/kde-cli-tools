@@ -18,7 +18,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: filetypes\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-06-13 02:10+0000\n"
+"POT-Creation-Date: 2024-01-30 00:38+0000\n"
 "PO-Revision-Date: 2023-05-29 21:11+0300\n"
 "Last-Translator: Tommi Nieminen <translator@legisign.org>\n"
 "Language-Team: Finnish <kde-i18n-doc@kde.org>\n"
@@ -334,12 +334,12 @@ msgstr "Muokattava tiedostotyyppi (esim. text/html)"
 msgid "%1 File"
 msgstr "%1-tiedosto"
 
-#: keditfiletype.cpp:186
+#: keditfiletype.cpp:182
 #, kde-format
 msgid "Edit File Type %1"
 msgstr "Muokkaa tiedostotyyppiä %1"
 
-#: keditfiletype.cpp:188
+#: keditfiletype.cpp:184
 #, kde-format
 msgid "Create New File Type %1"
 msgstr "Luo uusi tiedostotyyppi %1"

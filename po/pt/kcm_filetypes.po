@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: filetypes\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-06-13 02:10+0000\n"
+"POT-Creation-Date: 2024-01-30 00:38+0000\n"
 "PO-Revision-Date: 2019-01-12 16:55+0000\n"
 "Last-Translator: Pedro Morais <morais@kde.org>\n"
 "Language-Team: pt <kde-i18n-pt@kde.org>\n"
@@ -322,12 +322,12 @@ msgstr "Tipo do ficheiro a editar (p.ex. 'text/html')"
 msgid "%1 File"
 msgstr "Ficheiro %1"
 
-#: keditfiletype.cpp:186
+#: keditfiletype.cpp:182
 #, kde-format
 msgid "Edit File Type %1"
 msgstr "Editar o Tipo de Ficheiro %1"
 
-#: keditfiletype.cpp:188
+#: keditfiletype.cpp:184
 #, kde-format
 msgid "Create New File Type %1"
 msgstr "Criar um Novo Tipo de Ficheiro %1"

@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: filetypes\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-06-13 02:10+0000\n"
+"POT-Creation-Date: 2024-01-30 00:38+0000\n"
 "PO-Revision-Date: 2019-05-07 12:53+0100\n"
 "Last-Translator: Martin Schlander <mschlander@opensuse.org>\n"
 "Language-Team: Danish <kde-i18n-doc@kde.org>\n"
@@ -317,12 +317,12 @@ msgstr "Filtype at redigere (f.eks. tekst/html)"
 msgid "%1 File"
 msgstr "%1-fil"
 
-#: keditfiletype.cpp:186
+#: keditfiletype.cpp:182
 #, kde-format
 msgid "Edit File Type %1"
 msgstr "Redigér filtype %1"
 
-#: keditfiletype.cpp:188
+#: keditfiletype.cpp:184
 #, kde-format
 msgid "Create New File Type %1"
 msgstr "Opret ny filtype %1"

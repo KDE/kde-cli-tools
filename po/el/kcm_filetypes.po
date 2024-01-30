@@ -17,7 +17,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: filetypes\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-06-13 02:10+0000\n"
+"POT-Creation-Date: 2024-01-30 00:38+0000\n"
 "PO-Revision-Date: 2023-08-15 00:59+0300\n"
 "Last-Translator: George Stefanakis <george.stefanakis@gmail.com>\n"
 "Language-Team: Greek <kde-i18n-doc@kde.org>\n"
@@ -335,12 +335,12 @@ msgstr "Τύπος αρχείου για επεξεργασία (π.χ. text/htm
 msgid "%1 File"
 msgstr "%1 Αρχείο"
 
-#: keditfiletype.cpp:186
+#: keditfiletype.cpp:182
 #, kde-format
 msgid "Edit File Type %1"
 msgstr "Επεξεργασία τύπου αρχείου %1"
 
-#: keditfiletype.cpp:188
+#: keditfiletype.cpp:184
 #, kde-format
 msgid "Create New File Type %1"
 msgstr "Δημιουργία νέου τύπου αρχείου %1"

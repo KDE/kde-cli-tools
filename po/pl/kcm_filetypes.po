@@ -1,6 +1,6 @@
 # translation of filetypes.po to Polish
 # translation of filetypes.po to
-# Version: $Revision: 1668684 $
+# Version: $Revision: 1671596 $
 # Translated by Artur Skura <artur@linux.com.pl>
 # minor updates by Jacek Stolarczyk <jacek@mer.chemia.polsl.gliwice.pl>
 # Latest translation by Daniel Koć <kocio@bigfoot.com>
@@ -13,7 +13,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: filetypes\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-06-13 02:10+0000\n"
+"POT-Creation-Date: 2024-01-30 00:38+0000\n"
 "PO-Revision-Date: 2023-05-20 08:13+0200\n"
 "Last-Translator: Łukasz Wojniłowicz <lukasz.wojnilowicz@gmail.com>\n"
 "Language-Team: Polish <kde-i18n-doc@kde.org>\n"
@@ -329,12 +329,12 @@ msgstr "Rodzaj pliku do zmiany (np. text/html)"
 msgid "%1 File"
 msgstr "Plik %1"
 
-#: keditfiletype.cpp:186
+#: keditfiletype.cpp:182
 #, kde-format
 msgid "Edit File Type %1"
 msgstr "Zmień rodzaj pliku %1"
 
-#: keditfiletype.cpp:188
+#: keditfiletype.cpp:184
 #, kde-format
 msgid "Create New File Type %1"
 msgstr "Utwórz nowy rodzaj pliku %1"
