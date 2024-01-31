@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: kioclient\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2023-06-05 01:59+0000\n"
-"PO-Revision-Date: 2024-01-03 14:00-0600\n"
+"PO-Revision-Date: 2024-01-29 22:58-0600\n"
 "Last-Translator: A S Alam <aalam@punlinux.org>\n"
 "Language-Team: Punjabi <kde-i18n-doc@kde.org>\n"
 "Language: pa\n"
@@ -21,12 +21,12 @@ msgstr ""
 #, kde-format
 msgctxt "NAME OF TRANSLATORS"
 msgid "Your names"
-msgstr ""
+msgstr "ਅਮਨਪਰੀਤ ਸਿੰਘ ਆਲਮ (A S Alam)"
 
 #, kde-format
 msgctxt "EMAIL OF TRANSLATORS"
 msgid "Your emails"
-msgstr ""
+msgstr "aalam@punlinux.org"
 
 #: kioclient.cpp:55
 #, kde-format
@@ -38,19 +38,15 @@ msgstr ""
 "ਸੰਟੈਕਸ:\n"
 
 #: kioclient.cpp:57
-#, fuzzy, kde-format
-#| msgid ""
-#| "  kioclient openProperties 'url'\n"
-#| "            # Opens a properties menu\n"
-#| "\n"
+#, kde-format
 msgctxt "The argument is the command \"kioclient openProperties\""
 msgid ""
 "  %1 'url'\n"
 "            # Opens a properties dialog of 'url'\n"
 "\n"
 msgstr ""
-"  kioclient openProperties 'url'\n"
-"            # Opens a properties menu\n"
+"  %1 'url'\n"
+"            # Opens a properties dialog of 'url'\n"
 "\n"
 
 #: kioclient.cpp:64
@@ -220,7 +216,7 @@ msgstr ""
 #: kioclient.cpp:139
 #, kde-format
 msgid "*** Examples:\n"
-msgstr ""
+msgstr "*** ਮਿਸਾਲਾਂ:\n"
 
 #: kioclient.cpp:140
 #, fuzzy, kde-format
@@ -287,12 +283,12 @@ msgstr ""
 #: kioclient.cpp:172
 #, kde-format
 msgid "KIO Client"
-msgstr "KIO ਕਲਾਇਟ"
+msgstr "KIO ਕਲਾਂਇਟ"
 
 #: kioclient.cpp:173
 #, kde-format
 msgid "Command-line tool for network-transparent operations"
-msgstr "ਨੈੱਟਵਰਕ-ਟਰਾਂਸਪੇਰੱਟ ਓਪਰੇਸ਼ਨਾਂ ਲਈ ਕਮਾਂਡ ਲਾਇਨ ਟੂਲ"
+msgstr "ਨੈੱਟਵਰਕ-ਟਰਾਂਸਪੇਰੈਟ ਓਪਰੇਸ਼ਨਾਂ ਲਈ ਕਮਾਂਡ ਲਾਇਨ ਟੂਲ"
 
 #: kioclient.cpp:180
 #, kde-format
@@ -319,7 +315,7 @@ msgstr "ਫਾਇਲ ਜਾਂ URL"
 #: kioclient.cpp:191 kioclient.cpp:193 kioclient.cpp:196 kioclient.cpp:201
 #, kde-format
 msgid "urls..."
-msgstr ""
+msgstr "urls..."
 
 #: kioclient.cpp:193 kioclient.cpp:196
 #, kde-format
@@ -334,7 +330,7 @@ msgstr "ਟਿਕਾਣਾ URL"
 #: kioclient.cpp:194 kioclient.cpp:197
 #, kde-format
 msgid "url"
-msgstr ""
+msgstr "url"
 
 #: kioclient.cpp:199
 #, kde-format
@@ -344,49 +340,46 @@ msgstr "ਉਪਲੱਬਧ ਕਮਾਂਡ ਵੇਖਾਓ"
 #: kioclient.cpp:200
 #, kde-format
 msgid "Command (see --commands)"
-msgstr "ਕਮਾਂਡ(--commands ਵੇਖੋ)"
+msgstr "ਕਮਾਂਡ (--commands ਵੇਖੋ)"
 
 #: kioclient.cpp:200
 #, kde-format
 msgid "command"
-msgstr ""
+msgstr "ਕਮਾਂਡ"
 
 #: kioclient.cpp:201
 #, kde-format
 msgid "Arguments for command"
-msgstr "ਕਮਾਂਡ ਲਈ ਆਰਗੂਮਿੰਟ"
+msgstr "ਕਮਾਂਡ ਲਈ ਆਰਗੂਮੈਂਟ"
 
 #: kioclient.cpp:225
-#, fuzzy, kde-format
-#| msgid "Syntax Error: Not enough arguments\n"
+#, kde-format
 msgctxt "@info:shell"
 msgid "%1: Syntax error, not enough arguments\n"
-msgstr "ਸੰਟੈਕਸ ਗਲਤੀ: ਲੋੜੀਦੇ ਆਰਗੂਮਿੰਟ ਨਹੀਂ\n"
+msgstr "%1: ਸੰਟੈਕਸ ਗਲਤੀ, ਲੋੜੀਦੇ ਆਰਗੂਮੈਂਟ ਨਹੀਂ\n"
 
 #: kioclient.cpp:229
-#, fuzzy, kde-format
-#| msgid "Syntax Error: Too many arguments\n"
+#, kde-format
 msgctxt "@info:shell"
 msgid "%1: Syntax error, too many arguments\n"
-msgstr "ਸੰਟੈਕਸ ਗਲਤੀ: ਕੋਈ ਆਰਗੂਮਿੰਟ\n"
+msgstr "%1: ਸੰਟੈਕਸ ਗਲਤੀ, ਬਹੁਤ ਜ਼ਿਆਦਾ ਆਰਗੂਮੈਂਟ ਹਨ\n"
 
 #: kioclient.cpp:434
 #, kde-format
 msgid "Destination where to download the files"
-msgstr ""
+msgstr "ਟਿਕਾਣਾ, ਜਿੱਥੇ ਫਾਇਲਾਂ ਡਾਊਨਲੋਡ ਕਰਨੀਆਂ ਹਨ"
 
 #: kioclient.cpp:476
-#, fuzzy, kde-format
-#| msgid "Syntax Error: Unknown command '%1'\n"
+#, kde-format
 msgctxt "@info:shell"
 msgid "%1: Syntax error, unknown command '%2'\n"
-msgstr "ਸੰਟੈਕਸ ਗਲਤੀ: ਅਣਜਾਣ ਕਮਾਂਡ '%1'\n"
+msgstr "%1: ਸੰਟੈਕਸ ਗਲਤੀ, ਅਣਜਾਣ ਕਮਾਂਡ '%2'\n"
 
 #: kioclient.cpp:492
 #, kde-format
 msgctxt "@info:shell"
 msgid "%1: %2\n"
-msgstr ""
+msgstr "%1: %2\n"
 
 #, fuzzy
 #~| msgid ""
