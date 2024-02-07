@@ -31,8 +31,9 @@ int main(int argc, char **argv)
     QCommandLineOption screenSaverOption(QStringLiteral("screenSaver"), i18n("Inhibit screensaver"));
     parser.addOption(screenSaverOption);
 
-    QCommandLineOption colorCorrectOption(QStringLiteral("colorCorrect"), i18n("Inhibit colour correction (night mode)"));
-    parser.addOption(colorCorrectOption);
+    // TODO: Change the translated string to "Inhibit night light (blue light filter)", can't do atm because of a string freeze
+    QCommandLineOption nightLightOption({QStringLiteral("nightLight"), QStringLiteral("colorCorrect")}, i18n("Inhibit colour correction (night mode)"));
+    parser.addOption(nightLightOption);
 
     QCommandLineOption notificationsOption(QStringLiteral("notifications"), i18n("Inhibit notifications (Do not disturb)"));
     parser.addOption(notificationsOption);
@@ -72,10 +73,10 @@ int main(int argc, char **argv)
         inhibitCall.setArguments({i18nc("Script as in shell script", "Running Script"), command.first()});
         warnOnError(QDBusConnection::sessionBus().call(inhibitCall));
     }
-    if (parser.isSet(colorCorrectOption)) {
-        QDBusMessage inhibitCall = QDBusMessage::createMethodCall(QStringLiteral("org.kde.KWin"),
-                                                                  QStringLiteral("/ColorCorrect"),
-                                                                  QStringLiteral("org.kde.kwin.ColorCorrect"),
+    if (parser.isSet(nightLightOption)) {
+        QDBusMessage inhibitCall = QDBusMessage::createMethodCall(QStringLiteral("org.kde.KWin.NightLight"),
+                                                                  QStringLiteral("/org/kde/KWin/NightLight"),
+                                                                  QStringLiteral("org.kde.KWin.NightLight"),
                                                                   QStringLiteral("inhibit"));
         // no arguments needed
         warnOnError(QDBusConnection::sessionBus().call(inhibitCall));
