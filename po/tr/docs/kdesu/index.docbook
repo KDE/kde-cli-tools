@@ -310,7 +310,7 @@ does this really work?
 ></term>
 <listitem>
 <para
->Öncelik değerini ayarlayın. Öncelik, 1-100 arasında herhangi bir numaradır; 100 en yüksek önceliği ve 0 ise en düşük önceliği belirtir. Öntanımlı değer 50'dir.</para>
+>Öncelik değerini ayarlayın. Öncelik, 1-100 arasında herhangi bir numaradır; 100 en yüksek önceliği ve 0 ise en düşük önceliği belirtir. Öntanımlı değer 50’dir.</para>
 </listitem>
 </varlistentry>
 <varlistentry>
@@ -397,9 +397,9 @@ does this really work?
 >su</command
 > uygulamaları (örn. &RedHat;), parolaları <literal
 >stdin</literal
->'den okumak istemez; &kdesu; bir pty/tty çifti oluşturur ve <command
+>’den okumak istemez; &kdesu; bir pty/tty çifti oluşturur ve <command
 >su</command
-> komutunu kendi dosya tanımlayıcıları tty'ye iliştirilmiş bir biçimde yürütür.</para>
+> komutunu kendi dosya tanımlayıcıları tty’ye iliştirilmiş bir biçimde yürütür.</para>
 
 <para
 >Etkileşimli bir kabuk yerine kullanıcının seçtiği komutu yürütmek için &kdesu;, <command
@@ -423,7 +423,7 @@ does this really work?
 >su</command
 > ile yürütmek yerine, &kdesu; <application
 >kdesu_stub</application
-> denen ufak bir yalancı program yürütür. Bu program (hedef kullanıcı olarak çalışır), &kdesu;'dan pty/tty kanalı üzerine bilgi ister (programcığın stdin'i ve stdout'u) ve sonrasında kullanıcının programını yürütür. Diğer yana geçirilen bilgi X ekranı, bir X kimlik doğrulama çerezi (varsa), <envar
+> denen ufak bir yalancı program yürütür. Bu program (hedef kullanıcı olarak çalışır), &kdesu;’dan pty/tty kanalı üzerine bilgi ister (programcığın stdin’i ve stdout’u) ve sonrasında kullanıcının programını yürütür. Diğer yana geçirilen bilgi X ekranı, bir X kimlik doğrulama çerezi (varsa), <envar
 >PATH</envar
 > ve çalıştırılacak komuttur. Yalancı bir programın kullanılma nedeni, X çerezinin gizli bilgi olması ve komut satırında geçirilememesidir.</para>
 
@@ -461,9 +461,9 @@ does this really work?
 >kdesud</application
 > denen bir ardalan süreci kullanır. Süreç, komutlar için <filename
 >/tmp</filename
-> içindeki bir &UNIX; yuvasını dinler. Yuvanın kipi 0600'dır; böylece yalnızca sizin kullanıcı kimliğiniz ona bağlanabilir. Parolayı tutma etkinleştirilmişse &kdesu; komutları bu ardalan süreci üzerinden yürütür. Komutu ve <systemitem class="username"
+> içindeki bir &UNIX; yuvasını dinler. Yuvanın kipi 0600’dır; böylece yalnızca sizin kullanıcı kimliğiniz ona bağlanabilir. Parolayı tutma etkinleştirilmişse &kdesu; komutları bu ardalan süreci üzerinden yürütür. Komutu ve <systemitem class="username"
 >yönetici</systemitem
->'nin parolasını yuvaya yazar ve ardalan komutu daha önce açıklandığı üzere <command
+>’nin parolasını yuvaya yazar ve ardalan komutu daha önce açıklandığı üzere <command
 >su</command
 > ile yürütür. Sonrasında komut ve parola atılmaz. Bunun yerine belirli bir süre tutulurlar. Bu, denetim modülündeki zaman aşımı değeridir. Bu süre içinde aynı komut için bir istek gelirse istemcinin parolayı sağlamasına gerek kalmaz. Deşicilerin ardalan sürecinden parolaları çıkarmasına engel olmak için (örneğin bir hata ayıklayıcı iliştirerek) ardalan süreci set-group-id nogroup olarak kurulmuştur. Bu, tüm normal kullanıcıların (sen de dahil olmak üzere) parolaları <application
 >kdesud</application
@@ -493,7 +493,7 @@ does this really work?
 >Telif hakkı 2000 &Geert.Jansen;</para>
 
 <para
->&kdesu;, &Geert.Jansen; tarafından yazılmıştır. Pietro Iglio'nun &kdesu; 0.3 sürümü temellidir. Pietro ve ben, bu programın bakımını bundan sonra benim yapacağım konusunda anlaştık.</para>
+>&kdesu;, &Geert.Jansen; tarafından yazılmıştır. Pietro Iglio’nun &kdesu; 0.3 sürümü temellidir. Pietro ve ben, bu programın bakımını bundan sonra benim yapacağım konusunda anlaştık.</para>
 
 <para
 >Yazara &Geert.Jansen.mail; üzerinden ulaşabilirsiniz. Bulduğunuz tüm hataları bana bildirin ki onları düzeltebileyim. Sorunuz varsa sormaktan çekinmeyin.</para>

@@ -239,7 +239,7 @@
 ></term>
 <listitem>
 <para
->Öncelik değerini ayarlayın. Öncelik, 1-100 arasında herhangi bir numaradır; 100 en yüksek önceliği ve 0 ise en düşük önceliği belirtir. Öntanımlı değer 50'dir.</para>
+>Öncelik değerini ayarlayın. Öncelik, 1-100 arasında herhangi bir numaradır; 100 en yüksek önceliği ve 0 ise en düşük önceliği belirtir. Öntanımlı değer 50’dir.</para>
 </listitem>
 </varlistentry>
 <varlistentry>
