@@ -389,12 +389,19 @@ void KServiceListWidget::updatePreferredServices()
     QStringList sl;
     unsigned int count = servicesLB->count();
     for (unsigned int i = 0; i < count; i++) {
-        Q_ASSERT(servicesLB->item(i)->type() != -1);
+        const auto &item = servicesLB->item(i);
+        Q_ASSERT(item->type() != -1);
         if (m_kind == SERVICELIST_APPLICATIONS) {
-            auto sli = (KServiceListItem *)servicesLB->item(i);
+            auto sli = dynamic_cast<KServiceListItem *>(item);
+            if (!sli) { // Is a textual item like the default 'None' entry
+                continue;
+            }
             sl.append(sli->storageId);
         } else {
-            auto pluginItem = (PluginListItem *)servicesLB->item(i);
+            auto pluginItem = dynamic_cast<PluginListItem *>(item);
+            if (!pluginItem) { // Is a textual item like the default 'None' entry
+                continue;
+            }
             sl.append(pluginItem->metaData.pluginId());
         }
     }
