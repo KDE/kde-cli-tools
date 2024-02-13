@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kde-cli-tools\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-12-12 01:38+0000\n"
+"POT-Creation-Date: 2024-02-13 00:39+0000\n"
 "PO-Revision-Date: 2023-12-13 16:45+0200\n"
 "Last-Translator: Yuri Chornoivan <yurchor@ukr.net>\n"
 "Language-Team: Ukrainian <kde-i18n-uk@kde.org>\n"
@@ -35,22 +35,22 @@ msgstr "Заборонити керування живленням"
 msgid "Inhibit screensaver"
 msgstr "Заборона зберігача екрана"
 
-#: main.cpp:34
+#: main.cpp:35
 #, kde-format
 msgid "Inhibit colour correction (night mode)"
 msgstr "Заборонити виправлення кольорів (нічні кольори)"
 
-#: main.cpp:37
+#: main.cpp:38
 #, kde-format
 msgid "Inhibit notifications (Do not disturb)"
 msgstr "Заборонити сповіщення (не турбувати)"
 
-#: main.cpp:40
+#: main.cpp:41
 #, kde-format
 msgid "Command with arguments to run"
 msgstr "Команда, яку слід виконати, з аргументами"
 
-#: main.cpp:63 main.cpp:72 main.cpp:88
+#: main.cpp:64 main.cpp:73 main.cpp:89
 #, kde-format
 msgctxt "Script as in shell script"
 msgid "Running Script"

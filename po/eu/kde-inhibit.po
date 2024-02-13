@@ -9,7 +9,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kde-cli-tools\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-12-12 01:38+0000\n"
+"POT-Creation-Date: 2024-02-13 00:39+0000\n"
 "PO-Revision-Date: 2023-12-13 22:23+0100\n"
 "Last-Translator: Iñigo Salvador Azurmendi <xalba@ni.eus>\n"
 "Language-Team: Basque <kde-i18n-eu@kde.org>\n"
@@ -36,22 +36,22 @@ msgstr "Inhibitu energia kudeaketa"
 msgid "Inhibit screensaver"
 msgstr "Inhibitu pantaila-babeslea"
 
-#: main.cpp:34
+#: main.cpp:35
 #, kde-format
 msgid "Inhibit colour correction (night mode)"
 msgstr "Inhibitu kolore-zuzenketa (gaueko modua)"
 
-#: main.cpp:37
+#: main.cpp:38
 #, kde-format
 msgid "Inhibit notifications (Do not disturb)"
 msgstr "Inhibitu jakinarazpenak (Zaratarik ez)"
 
-#: main.cpp:40
+#: main.cpp:41
 #, kde-format
 msgid "Command with arguments to run"
 msgstr "Exekutatu beharreko komandoa argumentuekin"
 
-#: main.cpp:63 main.cpp:72 main.cpp:88
+#: main.cpp:64 main.cpp:73 main.cpp:89
 #, kde-format
 msgctxt "Script as in shell script"
 msgid "Running Script"

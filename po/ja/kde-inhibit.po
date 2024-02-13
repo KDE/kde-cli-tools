@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kde-cli-tools\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-12-12 01:38+0000\n"
+"POT-Creation-Date: 2024-02-13 00:39+0000\n"
 "PO-Revision-Date: 2023-12-12 20:05-0800\n"
 "Last-Translator: Japanese KDE translation team <kde-jp@kde.org>\n"
 "Language-Team: Japanese <kde-jp@kde.org>\n"
@@ -29,22 +29,22 @@ msgstr ""
 msgid "Inhibit screensaver"
 msgstr ""
 
-#: main.cpp:34
+#: main.cpp:35
 #, kde-format
 msgid "Inhibit colour correction (night mode)"
 msgstr ""
 
-#: main.cpp:37
+#: main.cpp:38
 #, kde-format
 msgid "Inhibit notifications (Do not disturb)"
 msgstr ""
 
-#: main.cpp:40
+#: main.cpp:41
 #, kde-format
 msgid "Command with arguments to run"
 msgstr ""
 
-#: main.cpp:63 main.cpp:72 main.cpp:88
+#: main.cpp:64 main.cpp:73 main.cpp:89
 #, kde-format
 msgctxt "Script as in shell script"
 msgid "Running Script"

@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kde-cli-tools\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-12-12 01:38+0000\n"
+"POT-Creation-Date: 2024-02-13 00:39+0000\n"
 "PO-Revision-Date: 2024-02-07 10:49+0300\n"
 "Last-Translator: Alexander Yavorsky <kekcuha@gmail.com>\n"
 "Language-Team: Russian <kde-russian@lists.kde.ru>\n"
@@ -33,22 +33,22 @@ msgstr "Запретить управление параметрами энер�
 msgid "Inhibit screensaver"
 msgstr "Запретить запуск хранителя экрана"
 
-#: main.cpp:34
+#: main.cpp:35
 #, kde-format
 msgid "Inhibit colour correction (night mode)"
 msgstr "Запретить изменение цвета (ночной режим)"
 
-#: main.cpp:37
+#: main.cpp:38
 #, kde-format
 msgid "Inhibit notifications (Do not disturb)"
 msgstr "Запретить уведомления (режим «Не беспокоить»)"
 
-#: main.cpp:40
+#: main.cpp:41
 #, kde-format
 msgid "Command with arguments to run"
 msgstr "Команда запуска и передаваемые ей аргументы"
 
-#: main.cpp:63 main.cpp:72 main.cpp:88
+#: main.cpp:64 main.cpp:73 main.cpp:89
 #, kde-format
 msgctxt "Script as in shell script"
 msgid "Running Script"
