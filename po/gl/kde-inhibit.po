@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kde-cli-tools\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-12-12 01:38+0000\n"
+"POT-Creation-Date: 2024-02-13 02:29+0000\n"
 "PO-Revision-Date: 2024-01-27 10:52+0100\n"
 "Last-Translator: Adrián Chaves (Gallaecio) <adrian@chaves.io>\n"
 "Language-Team: Proxecto Trasno (proxecto@trasno.gal)\n"
@@ -32,22 +32,22 @@ msgstr "Desactivar a xestión de enerxía."
 msgid "Inhibit screensaver"
 msgstr "Desactivar o salvapantallas."
 
-#: main.cpp:34
+#: main.cpp:35
 #, kde-format
 msgid "Inhibit colour correction (night mode)"
 msgstr "Desactivar a corrección de cor (modo nocturno)."
 
-#: main.cpp:37
+#: main.cpp:38
 #, kde-format
 msgid "Inhibit notifications (Do not disturb)"
 msgstr "Desactivar as notificacións (non molestar)."
 
-#: main.cpp:40
+#: main.cpp:41
 #, kde-format
 msgid "Command with arguments to run"
 msgstr "Orde con argumentos para executar."
 
-#: main.cpp:63 main.cpp:72 main.cpp:88
+#: main.cpp:64 main.cpp:73 main.cpp:89
 #, kde-format
 msgctxt "Script as in shell script"
 msgid "Running Script"
