@@ -2,19 +2,21 @@
 # Copyright (C) 2004 Free Software Foundation, Inc.
 # Vasee Vaseeharan <vasee@ieee.org>, 2004.
 #
+# SPDX-FileCopyrightText: 2024 Kishore G <kishore96@gmail.com>
 msgid ""
 msgstr ""
 "Project-Id-Version: kdesu\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2023-03-05 03:09+0000\n"
-"PO-Revision-Date: 2010-06-20 19:19+0530\n"
-"Last-Translator: Tamil PC <tamilpc@ambalam.com>\n"
-"Language-Team: Tamil <ta@i18n.kde.org>\n"
+"PO-Revision-Date: 2024-02-18 18:49+0530\n"
+"Last-Translator: Kishore G <kishore96@gmail.com>\n"
+"Language-Team: Tamil <kde-i18n-doc@kde.org>\n"
 "Language: ta\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
+"X-Generator: Lokalize 23.08.5\n"
 
 #, kde-format
 msgctxt "NAME OF TRANSLATORS"
@@ -64,16 +66,14 @@ msgid "Original author"
 msgstr "முதன்மை ஆசிரியர்"
 
 #: kdesu.cpp:105
-#, fuzzy, kde-format
-#| msgid "Specifies the command to run"
+#, kde-format
 msgid "Specifies the command to run as separate arguments"
-msgstr "இயக்கவேண்டிய கட்டளையைக் குறிப்பிடுகிறது"
+msgstr "இயக்கவேண்டிய கட்டளையையும் அதன் தருமதிப்புகளையும் தனித்தனியாக தரவிடும்"
 
 #: kdesu.cpp:106
-#, fuzzy, kde-format
-#| msgid "Specifies the command to run"
+#, kde-format
 msgid "Specifies the command to run as one string"
-msgstr "இயக்கவேண்டிய கட்டளையைக் குறிப்பிடுகிறது"
+msgstr "இயக்கவேண்டிய கட்டளையை ஒரே சரமாக தரவிடும்"
 
 #: kdesu.cpp:107
 #, kde-format
@@ -113,7 +113,7 @@ msgstr "நிகழ்நேர காலமுறைப்படுத்த�
 #: kdesu.cpp:115
 #, kde-format
 msgid "Do not display ignore button"
-msgstr ""
+msgstr "'பொருட்படுத்தாதே' பட்டனைக் காட்டாதே"
 
 #: kdesu.cpp:116
 #, kde-format

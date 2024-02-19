@@ -1,19 +1,14 @@
-# Traducerea kioclient.po în Română
-# translation of kioclient to Romanian
-# Copyright (C) 2008 This_file_is_part_of_KDE
-# This file is distributed under the same license as the kioclient package.
-# Laurenţiu Buzdugan <lbuz@rolix.org>, 2008".
-# Sergiu Bivol <sergiu@cip.md>, 2008.
-# Sergiu Bivol <sergiu@cip.md>, 2009, 2010, 2011.
-# Sergiu Bivol <sergiu@cip.md>, 2009, 2010, 2012, 2013.
+# Copyright (C) YEAR This file is copyright:
+# This file is distributed under the same license as the kde-cli-tools package.
+# Sergiu Bivol <sergiu@cip.md>, 2023.
 #
 msgid ""
 msgstr ""
-"Project-Id-Version: kioclient\n"
+"Project-Id-Version: kde-cli-tools\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2023-06-05 01:59+0000\n"
-"PO-Revision-Date: 2013-11-23 19:31+0200\n"
-"Last-Translator: Sergiu Bivol <sergiu@ase.md>\n"
+"PO-Revision-Date: 2023-06-18 18:32+0100\n"
+"Last-Translator: Sergiu Bivol <sergiu@cip.md>\n"
 "Language-Team: Romanian <kde-i18n-ro@kde.org>\n"
 "Language: ro\n"
 "MIME-Version: 1.0\n"
@@ -21,16 +16,17 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=3; plural=n==1 ? 0 : (n==0 || (n%100 > 0 && n%100 < "
 "20)) ? 1 : 2;\n"
+"X-Generator: Lokalize 21.12.3\n"
 
 #, kde-format
 msgctxt "NAME OF TRANSLATORS"
 msgid "Your names"
-msgstr ""
+msgstr "Sergiu Bivol"
 
 #, kde-format
 msgctxt "EMAIL OF TRANSLATORS"
 msgid "Your emails"
-msgstr ""
+msgstr "sergiu@cip.md"
 
 #: kioclient.cpp:55
 #, kde-format
@@ -42,19 +38,15 @@ msgstr ""
 "Sintaxă:\n"
 
 #: kioclient.cpp:57
-#, fuzzy, kde-format
-#| msgid ""
-#| "  kioclient openProperties 'url'\n"
-#| "            # Opens a properties menu\n"
-#| "\n"
+#, kde-format
 msgctxt "The argument is the command \"kioclient openProperties\""
 msgid ""
 "  %1 'url'\n"
 "            # Opens a properties dialog of 'url'\n"
 "\n"
 msgstr ""
-"  kioclient openProperties 'url'\n"
-"            # Deschide un meniu cu proprietăți\n"
+"  %1 'url'\n"
+"            # Deschide un dialog cu proprietăți pentru „url”\n"
 "\n"
 
 #: kioclient.cpp:64
@@ -206,19 +198,15 @@ msgstr ""
 "\n"
 
 #: kioclient.cpp:133
-#, fuzzy, kde-format
-#| msgid ""
-#| "  kioclient openProperties 'url'\n"
-#| "            # Opens a properties menu\n"
-#| "\n"
+#, kde-format
 msgctxt "The argument is the command \"kioclient appmenu\""
 msgid ""
 "  %1\n"
 "            # Opens a basic application launcher\n"
 "\n"
 msgstr ""
-"  kioclient openProperties 'url'\n"
-"            # Deschide un meniu cu proprietăți\n"
+"  %1\n"
+"            # Deschide un lansator de aplicații simplu\n"
 "\n"
 
 #: kioclient.cpp:139
@@ -258,11 +246,7 @@ msgstr ""
 "\n"
 
 #: kioclient.cpp:149
-#, fuzzy, kde-format
-#| msgid ""
-#| "  kioclient exec file:/root/Desktop/emacs.desktop\n"
-#| "             // Starts emacs\n"
-#| "\n"
+#, kde-format
 msgid ""
 "  kioclient exec file:/root/Desktop/emacs.desktop\n"
 "             // Starts emacs\n"
@@ -324,7 +308,7 @@ msgstr "fișier sau URL"
 #: kioclient.cpp:191 kioclient.cpp:193 kioclient.cpp:196 kioclient.cpp:201
 #, kde-format
 msgid "urls..."
-msgstr ""
+msgstr "url-uri…"
 
 #: kioclient.cpp:193 kioclient.cpp:196
 #, kde-format
@@ -339,7 +323,7 @@ msgstr "URL-ul destinație"
 #: kioclient.cpp:194 kioclient.cpp:197
 #, kde-format
 msgid "url"
-msgstr ""
+msgstr "url"
 
 #: kioclient.cpp:199
 #, kde-format
@@ -354,7 +338,7 @@ msgstr "Comandă (vezi --commands)"
 #: kioclient.cpp:200
 #, kde-format
 msgid "command"
-msgstr ""
+msgstr "comandă"
 
 #: kioclient.cpp:201
 #, kde-format
@@ -388,7 +372,7 @@ msgstr "%1: eroare de sintaxă: comandă „%2” necunoscută\n"
 #, kde-format
 msgctxt "@info:shell"
 msgid "%1: %2\n"
-msgstr ""
+msgstr "%1: %2\n"
 
 #, fuzzy
 #~| msgid ""
