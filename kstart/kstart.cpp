@@ -15,7 +15,9 @@
 #include <iostream>
 #include <stdlib.h>
 
+#if WITH_X11
 #include "private/qtx11extras_p.h"
+#endif
 #include <QCommandLineOption>
 #include <QCommandLineParser>
 #include <QDebug>
