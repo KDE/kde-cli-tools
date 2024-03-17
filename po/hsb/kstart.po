@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kstart\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-09-19 01:56+0000\n"
+"POT-Creation-Date: 2024-03-17 00:38+0000\n"
 "PO-Revision-Date: 2003-12-22 21:53+0100\n"
 "Last-Translator: Prof. Dr. Eduard Werner <e.werner@rz.uni-leipzig.de>\n"
 "Language-Team: Upper Sorbian\n"
@@ -27,52 +27,52 @@ msgctxt "EMAIL OF TRANSLATORS"
 msgid "Your emails"
 msgstr "e.werner@rz.uni-leipzig.de"
 
-#: kstart.cpp:75
+#: kstart.cpp:77
 #, kde-format
 msgid "KStart"
 msgstr "KStart"
 
-#: kstart.cpp:77
+#: kstart.cpp:79
 #, kde-format
 msgid "Utility to launch applications"
 msgstr ""
 
-#: kstart.cpp:79
+#: kstart.cpp:81
 #, kde-format
 msgid "(C) 1997-2000 Matthias Ettrich (ettrich@kde.org)"
 msgstr ""
 
-#: kstart.cpp:81
+#: kstart.cpp:83
 #, kde-format
 msgid "Matthias Ettrich"
 msgstr ""
 
-#: kstart.cpp:82
+#: kstart.cpp:84
 #, kde-format
 msgid "David Faure"
 msgstr ""
 
-#: kstart.cpp:83
+#: kstart.cpp:85
 #, kde-format
 msgid "Richard J. Moore"
 msgstr ""
 
-#: kstart.cpp:88
+#: kstart.cpp:90
 #, fuzzy, kde-format
 msgid "Command to execute"
 msgstr "Přikaz, kiž ma so wuwjesć."
 
-#: kstart.cpp:90
+#: kstart.cpp:92
 #, kde-format
 msgid "Alternative to <command>: desktop file name to start, e.g. org.kde.kate"
 msgstr ""
 
-#: kstart.cpp:93
+#: kstart.cpp:95
 #, kde-format
 msgid "Optional URL to pass to the application when using --application"
 msgstr ""
 
-#: kstart.cpp:105
+#: kstart.cpp:107
 #, kde-format
 msgid "No command specified"
 msgstr "Žadyn přikaz zapodaty"

@@ -10,7 +10,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kstart\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-09-19 01:56+0000\n"
+"POT-Creation-Date: 2024-03-17 00:38+0000\n"
 "PO-Revision-Date: 2023-02-14 21:51+0530\n"
 "Last-Translator: Kishore G <kishore96@gmail.com>\n"
 "Language-Team: Tamil <kde-i18n-doc@kde.org>\n"
@@ -33,52 +33,52 @@ msgstr ""
 "sshanmu@yahoo.com,gomathiss@hotmail.com,t_vasee@yahoo.com, "
 "prabu_anand2000@yahoo.com"
 
-#: kstart.cpp:75
+#: kstart.cpp:77
 #, kde-format
 msgid "KStart"
 msgstr "Kதொடங்கல்"
 
-#: kstart.cpp:77
+#: kstart.cpp:79
 #, kde-format
 msgid "Utility to launch applications"
 msgstr "செயலிகளை ஏவ‍ உதவும் நிரல்"
 
-#: kstart.cpp:79
+#: kstart.cpp:81
 #, kde-format
 msgid "(C) 1997-2000 Matthias Ettrich (ettrich@kde.org)"
 msgstr ""
 
-#: kstart.cpp:81
+#: kstart.cpp:83
 #, kde-format
 msgid "Matthias Ettrich"
 msgstr "மத்தையாஸ் எட்ரிச்"
 
-#: kstart.cpp:82
+#: kstart.cpp:84
 #, kde-format
 msgid "David Faure"
 msgstr "டேவிட் ஃபவுர்"
 
-#: kstart.cpp:83
+#: kstart.cpp:85
 #, kde-format
 msgid "Richard J. Moore"
 msgstr "ரிச்சர்ட் ஜே. மூர்"
 
-#: kstart.cpp:88
+#: kstart.cpp:90
 #, kde-format
 msgid "Command to execute"
 msgstr "செயல்படுத்த வேண்டிய கட்டளை"
 
-#: kstart.cpp:90
+#: kstart.cpp:92
 #, kde-format
 msgid "Alternative to <command>: desktop file name to start, e.g. org.kde.kate"
 msgstr ""
 
-#: kstart.cpp:93
+#: kstart.cpp:95
 #, kde-format
 msgid "Optional URL to pass to the application when using --application"
 msgstr ""
 
-#: kstart.cpp:105
+#: kstart.cpp:107
 #, kde-format
 msgid "No command specified"
 msgstr "கட்டளை எதுவும் குறிப்பிடப்படவில்லை"

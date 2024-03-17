@@ -18,7 +18,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kstart\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-09-19 01:56+0000\n"
+"POT-Creation-Date: 2024-03-17 00:38+0000\n"
 "PO-Revision-Date: 2023-12-20 09:35+0100\n"
 "Last-Translator: Xavier Besnard <xavier.besnard@kde.org>\n"
 "Language-Team: French <kde-francophone@kde.org>\n"
@@ -43,56 +43,56 @@ msgid "Your emails"
 msgstr ""
 "duranceau@kde.org, cousin@kde.org, aminesay@yahoo.fr, xavier.besnard@kde.org"
 
-#: kstart.cpp:75
+#: kstart.cpp:77
 #, kde-format
 msgid "KStart"
 msgstr "KStart"
 
-#: kstart.cpp:77
+#: kstart.cpp:79
 #, kde-format
 msgid "Utility to launch applications"
 msgstr "Utilitaire pour le lancement d'applications"
 
-#: kstart.cpp:79
+#: kstart.cpp:81
 #, kde-format
 msgid "(C) 1997-2000 Matthias Ettrich (ettrich@kde.org)"
 msgstr "(C) 1997-2000 Matthias Ettrich (ettrich@kde.org)"
 
-#: kstart.cpp:81
+#: kstart.cpp:83
 #, kde-format
 msgid "Matthias Ettrich"
 msgstr "Matthias Ettrich"
 
-#: kstart.cpp:82
+#: kstart.cpp:84
 #, kde-format
 msgid "David Faure"
 msgstr "David Faure"
 
-#: kstart.cpp:83
+#: kstart.cpp:85
 #, kde-format
 msgid "Richard J. Moore"
 msgstr "Richard J. Moore"
 
-#: kstart.cpp:88
+#: kstart.cpp:90
 #, kde-format
 msgid "Command to execute"
 msgstr "Commande à exécuter"
 
-#: kstart.cpp:90
+#: kstart.cpp:92
 #, kde-format
 msgid "Alternative to <command>: desktop file name to start, e.g. org.kde.kate"
 msgstr ""
 "Alternative à la <command> : nom du fichier de bureau à démarrer, par "
 "exemple, « org.kde.kate »"
 
-#: kstart.cpp:93
+#: kstart.cpp:95
 #, kde-format
 msgid "Optional URL to pass to the application when using --application"
 msgstr ""
 "URL facultative à passer à l'application, lors de l'utilisation de « --"
 "service »"
 
-#: kstart.cpp:105
+#: kstart.cpp:107
 #, kde-format
 msgid "No command specified"
 msgstr "Aucune commande fournie"

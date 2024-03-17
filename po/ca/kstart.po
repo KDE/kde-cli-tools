@@ -13,7 +13,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kde-cli-tools\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-09-19 01:56+0000\n"
+"POT-Creation-Date: 2024-03-17 00:38+0000\n"
 "PO-Revision-Date: 2023-09-19 13:31+0200\n"
 "Last-Translator: Josep M. Ferrer <txemaq@gmail.com>\n"
 "Language-Team: Catalan <kde-i18n-ca@kde.org>\n"
@@ -35,52 +35,52 @@ msgctxt "EMAIL OF TRANSLATORS"
 msgid "Your emails"
 msgstr "sps@sastia.com"
 
-#: kstart.cpp:75
+#: kstart.cpp:77
 #, kde-format
 msgid "KStart"
 msgstr "KStart"
 
-#: kstart.cpp:77
+#: kstart.cpp:79
 #, kde-format
 msgid "Utility to launch applications"
 msgstr "Utilitat per a llançar aplicacions"
 
-#: kstart.cpp:79
+#: kstart.cpp:81
 #, kde-format
 msgid "(C) 1997-2000 Matthias Ettrich (ettrich@kde.org)"
 msgstr "(C) 1997-2000 Matthias Ettrich (ettrich@kde.org)"
 
-#: kstart.cpp:81
+#: kstart.cpp:83
 #, kde-format
 msgid "Matthias Ettrich"
 msgstr "Matthias Ettrich"
 
-#: kstart.cpp:82
+#: kstart.cpp:84
 #, kde-format
 msgid "David Faure"
 msgstr "David Faure"
 
-#: kstart.cpp:83
+#: kstart.cpp:85
 #, kde-format
 msgid "Richard J. Moore"
 msgstr "Richard J. Moore"
 
-#: kstart.cpp:88
+#: kstart.cpp:90
 #, kde-format
 msgid "Command to execute"
 msgstr "Ordre a executar"
 
-#: kstart.cpp:90
+#: kstart.cpp:92
 #, kde-format
 msgid "Alternative to <command>: desktop file name to start, e.g. org.kde.kate"
 msgstr "Alternativa a <ordre>: fitxer «desktop» a iniciar, p. ex. org.kde.kate"
 
-#: kstart.cpp:93
+#: kstart.cpp:95
 #, kde-format
 msgid "Optional URL to pass to the application when using --application"
 msgstr "URL opcional a passar a l'aplicació quan s'utilitza --application"
 
-#: kstart.cpp:105
+#: kstart.cpp:107
 #, kde-format
 msgid "No command specified"
 msgstr "No s'ha especificat cap ordre"

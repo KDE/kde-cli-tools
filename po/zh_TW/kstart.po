@@ -14,7 +14,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kstart\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-09-19 01:56+0000\n"
+"POT-Creation-Date: 2024-03-17 00:38+0000\n"
 "PO-Revision-Date: 2023-10-21 17:26+0900\n"
 "Last-Translator: Kisaragi Hiu <mail@kisaragi-hiu.com>\n"
 "Language-Team: Traditional Chinese <zh-l10n@lists.slat.org>\n"
@@ -35,52 +35,52 @@ msgctxt "EMAIL OF TRANSLATORS"
 msgid "Your emails"
 msgstr "shyue@sonoma.com.tw, ycheng@slat.org"
 
-#: kstart.cpp:75
+#: kstart.cpp:77
 #, kde-format
 msgid "KStart"
 msgstr "KStart"
 
-#: kstart.cpp:77
+#: kstart.cpp:79
 #, kde-format
 msgid "Utility to launch applications"
 msgstr "啟動應用程式的工具"
 
-#: kstart.cpp:79
+#: kstart.cpp:81
 #, kde-format
 msgid "(C) 1997-2000 Matthias Ettrich (ettrich@kde.org)"
 msgstr "(C) 1997-2000 Matthias Ettrich (ettrich@kde.org)"
 
-#: kstart.cpp:81
+#: kstart.cpp:83
 #, kde-format
 msgid "Matthias Ettrich"
 msgstr "Matthias Ettrich"
 
-#: kstart.cpp:82
+#: kstart.cpp:84
 #, kde-format
 msgid "David Faure"
 msgstr "David Faure"
 
-#: kstart.cpp:83
+#: kstart.cpp:85
 #, kde-format
 msgid "Richard J. Moore"
 msgstr "Richard J. Moore"
 
-#: kstart.cpp:88
+#: kstart.cpp:90
 #, kde-format
 msgid "Command to execute"
 msgstr "要執行的指令"
 
-#: kstart.cpp:90
+#: kstart.cpp:92
 #, kde-format
 msgid "Alternative to <command>: desktop file name to start, e.g. org.kde.kate"
 msgstr "<command> 的替代：要啟動的桌面檔名稱，例如 org.kde.kate"
 
-#: kstart.cpp:93
+#: kstart.cpp:95
 #, kde-format
 msgid "Optional URL to pass to the application when using --application"
 msgstr "使用 --application 選項時，要傳遞給應用程式的 URL，選擇性的"
 
-#: kstart.cpp:105
+#: kstart.cpp:107
 #, kde-format
 msgid "No command specified"
 msgstr "沒有指定指令"
