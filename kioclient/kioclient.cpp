@@ -235,7 +235,7 @@ static void checkArgumentCount(int count, int min, int max)
 bool ClientApp::kde_open(const QString &_url, const QString &mimeType, bool allowExec)
 {
     QString url = _url;
-    if (url.startsWith(QLatin1String("thunderlink://"))) {
+    if (url.startsWith(QLatin1String("thunderlink://")) || url.startsWith(QLatin1String("slack://")) || url.startsWith(QLatin1String("zoommtg://"))) {
         // thunderlink:// -> thunderlink:/// so QUrl doesn't break the payload's
         // case sensitivity which would otherwise be at the hostname section
         const QLatin1Char slash('/');
