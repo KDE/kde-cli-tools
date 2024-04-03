@@ -38,6 +38,11 @@ public:
             return;
         }
 
+        if (auto inputUrl = QUrl::fromUserInput(pathOrUrl); inputUrl.isLocalFile() && QFile::exists(inputUrl.toLocalFile())) {
+            url = inputUrl;
+            return;
+        }
+
         /**
          * if the path starts with http:// or any other scheme, except file://
          * we also don't want to do anything with URL
