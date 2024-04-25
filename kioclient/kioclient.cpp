@@ -260,6 +260,7 @@ bool ClientApp::kde_open(const QString &url, const QString &mimeType, bool allow
     QObject::connect(job, &KJob::result, this, [&](KJob *job) {
         if (job->error()) {
             job_had_error = true;
+            qWarning().noquote() << job->errorString();
         }
     });
     job->start();
