@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kioclient\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-06-05 01:59+0000\n"
+"POT-Creation-Date: 2024-04-26 00:39+0000\n"
 "PO-Revision-Date: 2008-09-28 21:33+0200\n"
 "Last-Translator: Umesh Rudrapatna <umeshrs@gmail.com>\n"
 "Language-Team: American English <kde-l10n-kn@kde.org>\n"
@@ -371,19 +371,19 @@ msgctxt "@info:shell"
 msgid "%1: Syntax error, too many arguments\n"
 msgstr "ವಾಕ್ಯರಚನಾ ದೋಷ: ಅಗತ್ಯಕ್ಕಿಂತಲೂ ಹೆಚ್ಚು   ಚರಪರಿಮಾಣಗಳು (ಆರ್ಗ್ಯೂಮೆಂಟ್)\n"
 
-#: kioclient.cpp:434
+#: kioclient.cpp:435
 #, kde-format
 msgid "Destination where to download the files"
 msgstr ""
 
-#: kioclient.cpp:476
+#: kioclient.cpp:477
 #, fuzzy, kde-format
 #| msgid "Syntax Error: Unknown command '%1'\n"
 msgctxt "@info:shell"
 msgid "%1: Syntax error, unknown command '%2'\n"
 msgstr "ವಾಕ್ಯರಚನಾ ದೋಷ:ಅಜ್ಞಾತ ಆದೇಶ  '%1'\n"
 
-#: kioclient.cpp:492
+#: kioclient.cpp:493
 #, kde-format
 msgctxt "@info:shell"
 msgid "%1: %2\n"

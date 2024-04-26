@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kioclient\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-06-05 01:59+0000\n"
+"POT-Creation-Date: 2024-04-26 00:39+0000\n"
 "PO-Revision-Date: 2007-08-21 11:55+0545\n"
 "Last-Translator: Nabin Gautam <nabin@mpp.org.np>\n"
 "Language-Team: Nepali <info@mpp.org.np>\n"
@@ -372,19 +372,19 @@ msgctxt "@info:shell"
 msgid "%1: Syntax error, too many arguments\n"
 msgstr "वाक्य संरचना त्रुटि: अति धेरै तर्क\n"
 
-#: kioclient.cpp:434
+#: kioclient.cpp:435
 #, kde-format
 msgid "Destination where to download the files"
 msgstr ""
 
-#: kioclient.cpp:476
+#: kioclient.cpp:477
 #, fuzzy, kde-format
 #| msgid "Syntax Error: Unknown command '%1'\n"
 msgctxt "@info:shell"
 msgid "%1: Syntax error, unknown command '%2'\n"
 msgstr "वाक्य संरचना त्रुटि: अज्ञात आदेश '%1'\n"
 
-#: kioclient.cpp:492
+#: kioclient.cpp:493
 #, kde-format
 msgctxt "@info:shell"
 msgid "%1: %2\n"

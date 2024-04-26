@@ -4,7 +4,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kioclient5\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-06-05 01:59+0000\n"
+"POT-Creation-Date: 2024-04-26 00:39+0000\n"
 "PO-Revision-Date: 2023-11-16 20:44+0200\n"
 "Last-Translator: Yaron Shahrabani <sh.yaron@gmail.com>\n"
 "Language-Team: צוות התרגום של KDE ישראל\n"
@@ -319,18 +319,18 @@ msgctxt "@info:shell"
 msgid "%1: Syntax error, too many arguments\n"
 msgstr "%1: שגיאת תחביר, יותר מדי ארגומנטים\n"
 
-#: kioclient.cpp:434
+#: kioclient.cpp:435
 #, kde-format
 msgid "Destination where to download the files"
 msgstr "יעד להורדת הקבצים"
 
-#: kioclient.cpp:476
+#: kioclient.cpp:477
 #, kde-format
 msgctxt "@info:shell"
 msgid "%1: Syntax error, unknown command '%2'\n"
 msgstr "%1: שגיאת תחביר, הפקודה ‚%2’ אינה ידועה\n"
 
-#: kioclient.cpp:492
+#: kioclient.cpp:493
 #, kde-format
 msgctxt "@info:shell"
 msgid "%1: %2\n"

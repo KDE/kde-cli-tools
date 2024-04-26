@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kioclient\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-06-05 01:59+0000\n"
+"POT-Creation-Date: 2024-04-26 00:39+0000\n"
 "PO-Revision-Date: 2024-01-29 22:58-0600\n"
 "Last-Translator: A S Alam <aalam@punlinux.org>\n"
 "Language-Team: Punjabi <kde-i18n-doc@kde.org>\n"
@@ -364,18 +364,18 @@ msgctxt "@info:shell"
 msgid "%1: Syntax error, too many arguments\n"
 msgstr "%1: ਸੰਟੈਕਸ ਗਲਤੀ, ਬਹੁਤ ਜ਼ਿਆਦਾ ਆਰਗੂਮੈਂਟ ਹਨ\n"
 
-#: kioclient.cpp:434
+#: kioclient.cpp:435
 #, kde-format
 msgid "Destination where to download the files"
 msgstr "ਟਿਕਾਣਾ, ਜਿੱਥੇ ਫਾਇਲਾਂ ਡਾਊਨਲੋਡ ਕਰਨੀਆਂ ਹਨ"
 
-#: kioclient.cpp:476
+#: kioclient.cpp:477
 #, kde-format
 msgctxt "@info:shell"
 msgid "%1: Syntax error, unknown command '%2'\n"
 msgstr "%1: ਸੰਟੈਕਸ ਗਲਤੀ, ਅਣਜਾਣ ਕਮਾਂਡ '%2'\n"
 
-#: kioclient.cpp:492
+#: kioclient.cpp:493
 #, kde-format
 msgctxt "@info:shell"
 msgid "%1: %2\n"
