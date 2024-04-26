@@ -9,7 +9,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: KDE 4.1\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2022-08-22 00:47+0000\n"
+"POT-Creation-Date: 2024-04-26 03:04+0000\n"
 "PO-Revision-Date: 2021-11-04 13:57+0100\n"
 "Last-Translator: Kristof Kiszel <kiszel.kristof@gmail.com>\n"
 "Language-Team: Hungarian <kde-l10n-hu@kde.org>\n"
@@ -373,18 +373,18 @@ msgctxt "@info:shell"
 msgid "%1: Syntax error, too many arguments\n"
 msgstr "%1: Szintaktikai hiba, túl sok argumentum\n"
 
-#: kioclient.cpp:447
+#: kioclient.cpp:448
 #, kde-format
 msgid "Destination where to download the files"
 msgstr "A fájlok letöltési helye"
 
-#: kioclient.cpp:489
+#: kioclient.cpp:490
 #, kde-format
 msgctxt "@info:shell"
 msgid "%1: Syntax error, unknown command '%2'\n"
 msgstr "%1: Szintaktikai hiba, ismeretlen parancs - „%2”\n"
 
-#: kioclient.cpp:505
+#: kioclient.cpp:506
 #, kde-format
 msgctxt "@info:shell"
 msgid "%1: %2\n"

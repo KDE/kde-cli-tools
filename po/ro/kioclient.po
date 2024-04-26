@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kde-cli-tools\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2022-08-22 00:47+0000\n"
+"POT-Creation-Date: 2024-04-26 03:04+0000\n"
 "PO-Revision-Date: 2023-06-18 18:32+0100\n"
 "Last-Translator: Sergiu Bivol <sergiu@cip.md>\n"
 "Language-Team: Romanian <kde-i18n-ro@kde.org>\n"
@@ -357,18 +357,18 @@ msgctxt "@info:shell"
 msgid "%1: Syntax error, too many arguments\n"
 msgstr "%1: eroare de sintaxă: prea multe argumente\n"
 
-#: kioclient.cpp:447
+#: kioclient.cpp:448
 #, kde-format
 msgid "Destination where to download the files"
 msgstr ""
 
-#: kioclient.cpp:489
+#: kioclient.cpp:490
 #, kde-format
 msgctxt "@info:shell"
 msgid "%1: Syntax error, unknown command '%2'\n"
 msgstr "%1: eroare de sintaxă: comandă „%2” necunoscută\n"
 
-#: kioclient.cpp:505
+#: kioclient.cpp:506
 #, kde-format
 msgctxt "@info:shell"
 msgid "%1: %2\n"

@@ -11,7 +11,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kioclient\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2022-08-22 00:47+0000\n"
+"POT-Creation-Date: 2024-04-26 03:04+0000\n"
 "PO-Revision-Date: 2023-05-02 20:07+0200\n"
 "Last-Translator: Adrián Chaves (Gallaecio) <adrian@chaves.io>\n"
 "Language-Team: Galician <proxecto@trasno.gal>\n"
@@ -328,18 +328,18 @@ msgctxt "@info:shell"
 msgid "%1: Syntax error, too many arguments\n"
 msgstr "%1: Erro de sintaxe, hai demasiados argumentos\n"
 
-#: kioclient.cpp:447
+#: kioclient.cpp:448
 #, kde-format
 msgid "Destination where to download the files"
 msgstr "O destino onde descargar os ficheiros"
 
-#: kioclient.cpp:489
+#: kioclient.cpp:490
 #, kde-format
 msgctxt "@info:shell"
 msgid "%1: Syntax error, unknown command '%2'\n"
 msgstr "%1: Erro de sintaxe, non se coñece a orde «%2»\n"
 
-#: kioclient.cpp:505
+#: kioclient.cpp:506
 #, kde-format
 msgctxt "@info:shell"
 msgid "%1: %2\n"
