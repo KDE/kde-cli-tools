@@ -51,7 +51,7 @@
 <keyword
 >mot de passe</keyword>
 <keyword
->superutilisateur</keyword>
+>administrateur</keyword>
 </keywordset>
 
 </bookinfo>
@@ -89,7 +89,7 @@ does this really work?
 >Ce programme est prévu pour être lancé depuis la ligne de commande ou depuis un fichier <filename
 >.desktop</filename
 >. Bien qu'il demande le mot de passe <systemitem class="username"
->superutilisateur</systemitem
+>administrateur</systemitem
 > à travers une boîte de dialogue graphique, je le considère plus comme une ligne de commande connectée à une interface graphique que comme un véritable programme graphique.</para>
 
 <para
@@ -100,7 +100,7 @@ does this really work?
 >/bin mais dans <userinput
 >kde5-config --path libexec</userinput
 > et par conséquent pas dans votre variable <envar
->Path</envar
+>PATH</envar
 >, vous devez utiliser <userinput
 >$(kde5-config --path libexec)<command
 >kdesu</command
@@ -203,7 +203,7 @@ does this really work?
 ></term>
 <listitem
 ><para
->Ce paramètre spécifie la commande à lancer en tant que superutilisateur. Il doit être passé comme un seul argument. Ainsi, par exemple, si vous voulez lancer un nouveau gestionnaire de fichiers, vous saisirez la commande : <userinput
+>Ce paramètre spécifie la commande à lancer en tant que administrateur. Il doit être passé comme un seul argument. Ainsi, par exemple, si vous voulez lancer un nouveau gestionnaire de fichiers, vous saisirez la commande : <userinput
 >$(kde5-config --path libexec)<command
 >kdesu <option
 >-c <replaceable
@@ -239,7 +239,7 @@ does this really work?
 >fichier</parameter
 >. Si ce fichier est accessible en écriture par l'utilisateur courant, &kdesu; exécutera la commande pour le compte de l'utilisateur courant. Si ce n'est pas le cas, la commande sera exécutée pour le compte de l'utilisateur <parameter
 >user</parameter
-> (par défaut le superutilisateur).</para>
+> (par défaut l'administrateur).</para>
 <para
 ><parameter
 >fichier</parameter
@@ -340,7 +340,7 @@ does this really work?
 ></term>
 <listitem
 ><para
->Alors que l'utilisation la plus courante de &kdesu; est d'exécuter une commande en superutilisateur, vous pouvez indiquer n'importe quel nom d'utilisateur et le mot de passe approprié.</para>
+>Alors que l'utilisation la plus courante de &kdesu; est d'exécuter une commande en mode administrateur, vous pouvez indiquer n'importe quel nom d'utilisateur et le mot de passe approprié.</para>
 </listitem>
 </varlistentry>
 
@@ -357,12 +357,12 @@ does this really work?
 >Authentification X</title>
 
 <para
->Le programme que vous exécutez va fonctionner sous l'identité du superutilisateur et n'aura généralement pas accès à votre affichage Xwindow. &kdesu; contourne ce problème en ajoutant un cookie d'authentification pour votre affichage dans un fichier temporaire nommé <filename
+>Le programme que vous exécutez va fonctionner sous l'identité d'administrateur et n'aura généralement pas accès à votre affichage Xwindow. &kdesu; contourne ce problème en ajoutant un cookie d'authentification pour votre affichage dans un fichier temporaire nommé <filename
 >.Xauthority</filename
 >. Après la fin de la commande, ce fichier sera supprimé. </para>
 
 <para
->Si vous ne voulez pas utiliser de cookies X, vous devrez vous débrouiller par vos propres moyens. &kdesu; le détectera et n'ajoutera pas de cookie, mais il vous faudra vous assurer que le superutilisateur est autorisé à accéder à votre affichage Xwindow.</para>
+>Si vous ne voulez pas utiliser de cookies X, vous devrez vous débrouiller par vos propres moyens. &kdesu; le détectera et n'ajoutera aucun cookie, mais il vous faudra vous assurer que l'administrateur est autorisé à accéder à votre affichage Xwindow.</para>
 
 </sect1>
 
@@ -435,22 +435,22 @@ does this really work?
 >. Si vous vous intéressez aux questions de sécurité, vous devriez lire ce paragraphe.</para>
 
 <para
->Le fait de permettre à &kdesu; de se souvenir des mots de passe ouvre une (petite) brèche de sécurité dans votre système. Évidemment, &kdesu; n'autorise personne d'autre que vous-même (votre user id) à utiliser ces mots de passe, mais, si on n'y prend pas garde, ceci descend le niveau de sécurité du <systemitem class="username"
->superutilisateur</systemitem
-> à celui d'un utilisateur normal (vous). Un hacker qui prendrait possession de votre compte pourrait ainsi obtenir l'accès <systemitem class="username"
->superutilisateur</systemitem
+>Le fait de permettre à &kdesu; de se souvenir des mots de passe ouvre une (petite) brèche de sécurité dans votre système. Évidemment, &kdesu; n'autorise personne d'autre que vous-même (votre identifiant utilisateur) à utiliser ces mots de passe, mais, si on n'y prend pas garde, ceci descend le niveau de sécurité <systemitem class="username"
+>administrateur</systemitem
+> à celui d'un utilisateur normal (vous). Un pirate qui prendrait possession de votre compte pourrait ainsi obtenir l'accès <systemitem class="username"
+>administrateur</systemitem
 >. &kdesu; essaye d'éviter cela. La technique qu'il utilise pour cela est, au moins de mon point de vue, raisonnablement sûre et elle est exposée ci-dessous.</para>
 
 <para
 >&kdesu; utilise un démon, nommé <application
 >kdesud</application
->. Ce daemon attend des commandes dans un socket &UNIX; placé dans <filename
+>. Ce démon attend des commandes dans un socket &UNIX; placé dans <filename
 >/tmp</filename
->. Le mode de ce socket est 0600, ainsi seul votre utilisateur peut s'y connecter. Si la conservation des mots de passe est activée, &kdesu; exécute les commandes par l'intermédiaire de ce daemon. Il écrit la commande et le mot de passe <systemitem class="username"
->superutilisateur</systemitem
-> dans ce socket, puis le daemon exécute la commande <command
+>. Le mode de ce socket est 0600, ainsi seul votre utilisateur peut s'y connecter. Si la conservation des mots de passe est activée, &kdesu; exécute les commandes par l'intermédiaire de ce démon. Il écrit la commande et le mot de passe <systemitem class="username"
+>administrateur</systemitem
+> dans ce socket, puis le démon exécute la commande <command
 >su</command
-> comme décrit précédemment. Ensuite, la commande et le mot de passe ne sont pas détruits. Au lieu de cela, ils sont conservés pour une durée déterminée. Il s'agit de la durée spécifiée dans le module de configuration. Si une autre requête pour la même commande intervient pendant cette période, le client ne vous demandera pas de fournir de nouveau le mot de passe. Pour empêcher les hackers qui prendraient le contrôle de votre compte de voler les mots de passe au daemon (par exemple en lui attachant un débogueur), le daemon est installé set-group-id nogroup. Ceci devrait interdire à tous les utilisateurs normaux (y compris vous) d'obtenir les mots de passe dans le processus <application
+> comme décrit précédemment. Ensuite, la commande et le mot de passe ne sont pas détruits. Au lieu de cela, ils sont conservés pour une durée déterminée. Il s'agit de la durée spécifiée dans le module de configuration. Si une autre requête pour la même commande intervient pendant cette période, le client ne vous demandera pas de fournir de nouveau le mot de passe. Pour empêcher les pirates qui prendraient le contrôle de votre compte de voler les mots de passe au daemon (Par exemple en lui attachant un débogueur), le démon est installé set-group-id nogroup. Ceci devrait interdire à tous les utilisateurs normaux (y compris vous) d'obtenir les mots de passe dans le processus <application
 >kdesud</application
 >. Par ailleurs, le daemon fixe la variable d'environnement <envar
 >DISPLAY</envar

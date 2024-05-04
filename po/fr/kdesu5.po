@@ -12,7 +12,7 @@
 # Sébastien Renard <Sebastien.Renard@digitalfox.org>, 2007, 2008.
 # Sebastien Renard <Sebastien.Renard@Solucom.fr>, 2009.
 # Sébastien Renard <renard@kde.org>, 2010, 2011, 2014.
-# Xavier Besnard <xavier.besnard@kde.org>, 2013.
+# SPDX-FileCopyrightText: 2013, 2024 Xavier Besnard <xavier.besnard@kde.org>
 # Vincent Pinon <vpinon@kde.org>, 2016.
 # Xavier Besnard <xavier.besnard@kde.org>, 2021.
 #
@@ -21,15 +21,15 @@ msgstr ""
 "Project-Id-Version: kdesu\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2022-12-21 00:48+0000\n"
-"PO-Revision-Date: 2021-01-11 13:02+0100\n"
-"Last-Translator: Xavier Besnard <xavier.besnard@neuf.fr>\n"
-"Language-Team: French <kde-francophone@kde.org>\n"
+"PO-Revision-Date: 2024-04-25 14:31+0200\n"
+"Last-Translator: Xavier Besnard <xavier.besnard@kde.org>\n"
+"Language-Team: French <French <kde-francophone@kde.org>>\n"
 "Language: fr\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n > 1);\n"
-"X-Generator: Lokalize 20.12.0\n"
+"X-Generator: Lokalize 23.08.5\n"
 "X-Environment: kde\n"
 "X-Accelerator-Marker: &\n"
 "X-Text-Markup: kde4\n"
@@ -218,8 +218,8 @@ msgid ""
 "<b>root's</b> password below or click Ignore to continue with your current "
 "privileges."
 msgstr ""
-"L'action requise nécessite <b>les droits du superutilisateur</b>. Veuillez "
-"saisir ci-dessous le mot de passe du <b>superutilisateur</b> ou cliquez sur "
+"L'action requise nécessite <b>les droits d'administrateur</b>. Veuillez "
+"saisir ci-dessous le mot de passe <b>administrateur</b> ou cliquez sur "
 "« Ignorer » pour continuer avec vos droits actuels."
 
 #: sudlg.cpp:42
@@ -228,8 +228,8 @@ msgid ""
 "The action you requested needs <b>root privileges</b>. Please enter "
 "<b>root's</b> password below."
 msgstr ""
-"L'action requise nécessite <b>les droits du superutilisateur</b>. Veuillez "
-"saisir ci-dessous le mot de passe du <b>superutilisateur</b>."
+"L'action requise nécessite <b>les droits d'administrateur</b>. Veuillez "
+"saisir ci-dessous le mot de passe <b>administrateur</b>."
 
 #: sudlg.cpp:49
 #, kde-format
