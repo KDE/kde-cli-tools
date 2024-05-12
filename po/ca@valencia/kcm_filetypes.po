@@ -95,7 +95,7 @@ msgstr ""
 #: filetypedetails.cpp:87 filetypesview.cpp:86 kservicelistwidget.cpp:106
 #, kde-format
 msgid "Add..."
-msgstr "Afig..."
+msgstr "Afig…"
 
 #: filetypedetails.cpp:92
 #, kde-format
@@ -189,7 +189,7 @@ msgstr "Utilitza la configuració per al grup «%1»"
 #: filetypesview.cpp:57
 #, kde-format
 msgid "Search for file type or filename pattern..."
-msgstr "Busca pel tipus de fitxer o pel patró del nom de fitxer..."
+msgstr "Busca pel tipus de fitxer o pel patró del nom de fitxer…"
 
 #: filetypesview.cpp:63
 #, kde-format
@@ -365,7 +365,7 @@ msgid ""
 msgstr ""
 "Açò és una llista d'aplicacions associades amb fitxers del tipus de fitxer "
 "seleccionat. Esta llista es mostra als menús contextuals de Konqueror quan "
-"trieu «Obri amb...». Si s'associa més d'una aplicació amb este tipus de "
+"trieu «Obri amb…». Si s'associa més d'una aplicació amb este tipus de "
 "fitxer, llavors la llista s'ordena per prioritat, on l'element de més amunt "
 "té la preferència davant dels altres."
 
@@ -380,7 +380,7 @@ msgid ""
 msgstr ""
 "Açò és una llista de serveis associats amb fitxers del tipus de fitxer "
 "seleccionat. Esta llista es mostra als menús contextuals de Konqueror quan "
-"trieu l'opció «Vista prèvia amb...». Si s'associa més d'un servei amb este "
+"trieu l'opció «Vista prèvia amb…». Si s'associa més d'un servei amb este "
 "tipus de fitxer, llavors la llista s'ordena per prioritat, on l'element de "
 "més amunt té la preferència per damunt dels altres."
 
@@ -446,7 +446,7 @@ msgstr "Afig una aplicació nova per a este tipus de fitxer."
 #: kservicelistwidget.cpp:113
 #, kde-format
 msgid "Edit..."
-msgstr "Edita..."
+msgstr "Edita…"
 
 #: kservicelistwidget.cpp:118
 #, kde-format
@@ -461,7 +461,7 @@ msgstr "Elimina l'aplicació seleccionada de la llista."
 #: kservicelistwidget.cpp:127 multiapplydialog.cpp:19
 #, kde-format
 msgid "Apply To..."
-msgstr "Aplica a..."
+msgstr "Aplica a…"
 
 #: kservicelistwidget.cpp:132
 #, kde-format
