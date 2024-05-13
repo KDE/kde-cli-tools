@@ -279,7 +279,7 @@ msgstr "fitxer o URL"
 #: kioclient.cpp:196 kioclient.cpp:198 kioclient.cpp:201 kioclient.cpp:206
 #, kde-format
 msgid "urls..."
-msgstr "URL..."
+msgstr "URL…"
 
 #: kioclient.cpp:198 kioclient.cpp:201
 #, kde-format
