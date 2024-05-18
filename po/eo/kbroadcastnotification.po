@@ -1,15 +1,15 @@
 # translation of kbroadcastnotification.pot to esperanto
 # Copyright (C) 2017 Free Software Foundation, Inc.
 # This file is distributed under the same license as the kde-cli-tools package.
-# Oliver Kellogg <okellogg@users.sourceforge.net>, 2023.
+# Oliver Kellogg <olivermkellogg@gmail.com>, 2023.
 #
 msgid ""
 msgstr ""
 "Project-Id-Version: kde-cli-tools\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2022-09-28 00:51+0000\n"
-"PO-Revision-Date: 2023-03-26 11:37+0100\n"
-"Last-Translator: Oliver Kellogg <okellogg@users.sourceforge.net>\n"
+"PO-Revision-Date: 2024-05-10 11:33+0100\n"
+"Last-Translator: Oliver Kellogg <olivermkellogg@gmail.com>\n"
 "Language-Team: esperanto <kde-i18n-eo@kde.org>\n"
 "Language: eo\n"
 "MIME-Version: 1.0\n"
@@ -26,7 +26,7 @@ msgstr "Oliver Kellogg"
 #, kde-format
 msgctxt "EMAIL OF TRANSLATORS"
 msgid "Your emails"
-msgstr "okellogg@users.sourceforge.net"
+msgstr "olivermkellogg@gmail.com"
 
 #: main.cpp:22
 #, kde-format
@@ -60,7 +60,7 @@ msgstr "Mallonga unulinia resumo de la sciigo"
 #: main.cpp:38
 #, kde-format
 msgid "Icon for the notification"
-msgstr "Ikono por la sciigo"
+msgstr "Piktogramo por la sciigo"
 
 #: main.cpp:42
 #, kde-format
