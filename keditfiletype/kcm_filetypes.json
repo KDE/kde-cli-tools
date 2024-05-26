@@ -131,10 +131,7 @@
         "Name[x-test]": "xxFile Associationsxx",
         "Name[xh]": "Uyelemaniso Lwefayile",
         "Name[zh_CN]": "文件关联",
-        "Name[zh_TW]": "檔案關聯",
-        "ServiceTypes": [
-            "KCModule"
-        ]
+        "Name[zh_TW]": "檔案關聯"
     },
     "X-DocPath": "kcontrol6/filetypes/index.html",
     "X-KDE-Keywords": "Filetypes,File Associations,Mime Types,File Patterns,Files,Pattern",
