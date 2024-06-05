@@ -20,7 +20,6 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=6; plural=n==0 ? 0 : n==1 ? 1 : n==2 ? 2 : n%100>=3 "
 "&& n%100<=10 ? 3 : n%100>=11 && n%100<=99 ? 4 : 5;\n"
-"X-Generator: Lokalize 21.12.3\n"
 
 #, kde-format
 msgctxt "NAME OF TRANSLATORS"
@@ -39,7 +38,7 @@ msgid ""
 "Syntax:\n"
 msgstr ""
 "\n"
-"الصياغة:\n"
+"الجملة:\n"
 
 #: kioclient.cpp:57
 #, kde-format
@@ -242,7 +241,7 @@ msgstr ""
 #: kioclient.cpp:172
 #, kde-format
 msgid "KIO Client"
-msgstr "عميل كايو"
+msgstr "عميل KIO"
 
 #: kioclient.cpp:173
 #, kde-format
@@ -281,12 +280,12 @@ msgstr "عناوين…"
 #: kioclient.cpp:193 kioclient.cpp:196
 #, kde-format
 msgid "Source URL or URLs"
-msgstr "عنوان أو عناوين المصدر"
+msgstr "مصدر العنوان أو العناوين"
 
 #: kioclient.cpp:194 kioclient.cpp:197
 #, kde-format
 msgid "Destination URL"
-msgstr "عنوان المقصد"
+msgstr "وجهة العنوان"
 
 #: kioclient.cpp:194 kioclient.cpp:197
 #, kde-format
@@ -301,7 +300,7 @@ msgstr "أظهر الأوامر المتوفرة"
 #: kioclient.cpp:200
 #, kde-format
 msgid "Command (see --commands)"
-msgstr "الأمر (انظر --commands)"
+msgstr "الأمر (انظر --الأوامر)"
 
 #: kioclient.cpp:200
 #, kde-format
