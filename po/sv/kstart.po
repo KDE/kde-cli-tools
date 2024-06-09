@@ -3,21 +3,21 @@
 #
 # Anders Widell <d95-awi@nada.kth.se>, 1998.
 # Mattias Newzella <newzella@swipnet.se>, 2000,2001,2002.
-# Stefan Asserhäll <stefan.asserhall@bredband.net>, 2004, 2007, 2009, 2020.
+# SPDX-FileCopyrightText: 2004, 2007, 2009, 2020, 2024 Stefan Asserhäll <stefan.asserhall@bredband.net>
 # Mattias Newzella <newzella@linux.nu>, 2004.
 msgid ""
 msgstr ""
 "Project-Id-Version: kstart\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2024-03-17 00:38+0000\n"
-"PO-Revision-Date: 2020-06-06 10:38+0200\n"
+"PO-Revision-Date: 2024-06-08 15:16+0200\n"
 "Last-Translator: Stefan Asserhäll <stefan.asserhall@bredband.net>\n"
 "Language-Team: Swedish <kde-i18n-doc@kde.org>\n"
 "Language: sv\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Generator: Lokalize 19.04.3\n"
+"X-Generator: Lokalize 23.08.5\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
 
 #, kde-format
@@ -38,7 +38,7 @@ msgstr "Kstart"
 #: kstart.cpp:79
 #, kde-format
 msgid "Utility to launch applications"
-msgstr ""
+msgstr "Verktyg för att starta program"
 
 #: kstart.cpp:81
 #, kde-format
@@ -66,16 +66,16 @@ msgid "Command to execute"
 msgstr "Kommando att köra"
 
 #: kstart.cpp:92
-#, fuzzy, kde-format
-#| msgid "Alternative to <command>: desktop file to start."
+#, kde-format
 msgid "Alternative to <command>: desktop file name to start, e.g. org.kde.kate"
-msgstr "Alternativ till <command>: skrivbordsfil att starta."
+msgstr ""
+"Alternativ till <command>: namn på skrivbordsfil att starta, t.ex. org.kde."
+"kate"
 
 #: kstart.cpp:95
-#, fuzzy, kde-format
-#| msgid "Optional URL to pass <desktopfile>, when using --service"
+#, kde-format
 msgid "Optional URL to pass to the application when using --application"
-msgstr "Valfri webbadress för att ange <desktopfile>, när --service används"
+msgstr "Valfri webbadress att skicka till programmet när --application används"
 
 #: kstart.cpp:107
 #, kde-format

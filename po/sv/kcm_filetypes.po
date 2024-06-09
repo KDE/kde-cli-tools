@@ -4,7 +4,7 @@
 #
 # Anders Widell <d95-awi@nada.kth.se>, 1999.
 # Mattias Newzella <newzella@linux.nu>, 2000, 2001, 2002,2003, 2004.
-# Stefan Asserhäll <stefan.asserhall@telia.com>, 2002.
+# SPDX-FileCopyrightText: 2002, 2024 Stefan Asserhäll <stefan.asserhall@telia.com>
 # Stefan Asserhäll <stefan.asserhall@bredband.net>, 2004, 2005, 2007, 2008, 2009.
 # Stefan Asserhall <stefan.asserhall@bredband.net>, 2010, 2014, 2019.
 msgid ""
@@ -12,14 +12,14 @@ msgstr ""
 "Project-Id-Version: filetypes\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2024-01-30 00:38+0000\n"
-"PO-Revision-Date: 2019-01-12 10:02+0100\n"
+"PO-Revision-Date: 2024-06-08 22:06+0200\n"
 "Last-Translator: Stefan Asserhäll <stefan.asserhall@bredband.net>\n"
 "Language-Team: Swedish <kde-i18n-doc@kde.org>\n"
 "Language: sv\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Generator: Lokalize 2.0\n"
+"X-Generator: Lokalize 23.08.5\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
 
 #, kde-format
@@ -452,12 +452,12 @@ msgstr "Ta bort det valda programmet från listan."
 #: kservicelistwidget.cpp:127 multiapplydialog.cpp:19
 #, kde-format
 msgid "Apply To..."
-msgstr ""
+msgstr "Verkställ för..."
 
 #: kservicelistwidget.cpp:132
 #, kde-format
 msgid "Apply the current preference order to other file types."
-msgstr ""
+msgstr "Verkställ nuvarande preferensordning för andra filtyper."
 
 #: kservicelistwidget.cpp:155
 #, kde-format
