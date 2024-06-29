@@ -3,19 +3,20 @@
 # This file is distributed under the same license as the PACKAGE package.
 #
 # Sveinn í Felli <sveinki@nett.is>, 2008, 2009.
+# SPDX-FileCopyrightText: 2024 Gummi <gudmundure@gmail.com>
 msgid ""
 msgstr ""
 "Project-Id-Version: kmimetypefinder\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2021-03-18 02:47+0100\n"
-"PO-Revision-Date: 2009-05-22 08:55+0000\n"
-"Last-Translator: Sveinn í Felli <sveinki@nett.is>\n"
-"Language-Team: icelandic <kde-isl@molar.is>\n"
+"PO-Revision-Date: 2024-06-27 15:58+0000\n"
+"Last-Translator: Gummi <gudmundure@gmail.com>\n"
+"Language-Team: Icelandic <kde-i18n-doc@kde.org>\n"
 "Language: is\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Generator: KBabel 1.11.4\n"
+"X-Generator: Lokalize 23.08.5\n"
 "Plural-Forms: Plural-Forms: nplurals=2; plural=n != 1;\n"
 "\n"
 "\n"
@@ -23,44 +24,38 @@ msgstr ""
 #, kde-format
 msgctxt "NAME OF TRANSLATORS"
 msgid "Your names"
-msgstr ""
+msgstr "Guðmundur Erlingsson"
 
 #, kde-format
 msgctxt "EMAIL OF TRANSLATORS"
 msgid "Your emails"
-msgstr ""
+msgstr "gudmundure@gmail.com"
 
 #: kmimetypefinder.cpp:26
-#, fuzzy, kde-format
-#| msgid "MimeType Finder"
+#, kde-format
 msgid "MIME Type Finder"
-msgstr "MIME-gerðar leitari"
+msgstr "MIME-gerðarleitari"
 
 #: kmimetypefinder.cpp:27
-#, fuzzy, kde-format
-#| msgid "Gives the mimetype for a given file"
+#, kde-format
 msgid "Gives the MIME type for a given file"
-msgstr "Finnur MIME-gerð fyrir viðkomandi skrá"
+msgstr "Finnur MIME-gerð fyrir tilgreinda skrá"
 
 #: kmimetypefinder.cpp:33
-#, fuzzy, kde-format
-#| msgid "Use only the file content for determining the mimetype."
+#, kde-format
 msgid "Use only the file content for determining the MIME type."
-msgstr "Einungis nota innihald skráar til að ákvarða skráartegund."
+msgstr "Nota einungis efni skráar til að ákvarða MIME-gerð."
 
 #: kmimetypefinder.cpp:35
-#, fuzzy, kde-format
-#| msgid ""
-#| "Whether use the file name only for determining the mimetype. Not used if -"
-#| "c is specified."
+#, kde-format
 msgid ""
 "Whether use the file name only for determining the MIME type. Not used if -c "
 "is specified."
 msgstr ""
-"Hvort einungis eigi að nota heiti skráar til að ákvarða skráartegund. Er "
-"ekki notað ef -c er tilgreint."
+"Hvort einungis eigi að nota skrárheiti til að ákvarða MIME-gerðina. Ekki "
+"notað ef -c er tilgreint."
 
 #: kmimetypefinder.cpp:36
 #, kde-format
 msgid "The filename to test. '-' to read from stdin."
-msgstr "Nafn skráar til að prófa. '-' til að lesa úr stdin."
+msgstr "Skrárheiti til að prófa. '-' til að lesa úr stdin."

@@ -5,19 +5,20 @@
 # Logi Ragnarsson <logir@logi.org>, 2000.
 # Arnar Leosson <leosson@frisurf.no>, 2005.
 # Sveinn í Felli <sveinki@nett.is>, 2008, 2009, 2011, 2015, 2024.
+# SPDX-FileCopyrightText: 2024 Gummi <gudmundure@gmail.com>
 msgid ""
 msgstr ""
 "Project-Id-Version: filetypes\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2024-01-30 00:38+0000\n"
-"PO-Revision-Date: 2024-04-16 14:03+0000\n"
-"Last-Translator: Sveinn í Felli <sv1@fellsnet.is>\n"
-"Language-Team: Icelandic\n"
+"PO-Revision-Date: 2024-06-27 15:32+0000\n"
+"Last-Translator: Gummi <gudmundure@gmail.com>\n"
+"Language-Team: Icelandic <kde-i18n-doc@kde.org>\n"
 "Language: is\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Generator: Lokalize 22.04.3\n"
+"X-Generator: Lokalize 23.08.5\n"
 "Plural-Forms: Plural-Forms: nplurals=2; plural=n != 1;\n"
 "\n"
 "\n"
@@ -26,12 +27,12 @@ msgstr ""
 #, kde-format
 msgctxt "NAME OF TRANSLATORS"
 msgid "Your names"
-msgstr "Richard Allen, Smári P. McCarthy"
+msgstr "Richard Allen, Smári P. McCarthy, Guðmundur Erlingsson"
 
 #, kde-format
 msgctxt "EMAIL OF TRANSLATORS"
 msgid "Your emails"
-msgstr "ra@ra.is, spm@vlug.eyjar.is"
+msgstr "ra@ra.is, spm@vlug.eyjar.is, gudmundure@gmail.com"
 
 #: filegroupdetails.cpp:22
 #, kde-format
@@ -41,12 +42,12 @@ msgstr "Aðgerð við vinstrismell (aðeins fyrir Konqueror skráastjórann)"
 #: filegroupdetails.cpp:26 filetypedetails.cpp:134
 #, kde-format
 msgid "Show file in embedded viewer"
-msgstr "Birta skrána í þessu forriti"
+msgstr "Birta skrá í innbyggðum skoðara"
 
 #: filegroupdetails.cpp:27 filetypedetails.cpp:135
 #, kde-format
 msgid "Show file in separate viewer"
-msgstr "Birta skrána í öðru forriti"
+msgstr "Birta skrá í öðru forriti"
 
 #: filegroupdetails.cpp:36
 #, kde-format
@@ -58,10 +59,10 @@ msgid ""
 "configuration. Dolphin  shows files always in a separate viewer"
 msgstr ""
 "Hér getur þú stillt hvað Konqueror skráastjórinn gerir þegar þú smellir á "
-"skrá sem tilheyrir þessum hóp. Konqueror getur birt skrána með innbyggðu "
-"forriti eða ræst upp annað forrit til þess að meðhöndla skrána. Þú getur "
-"breytt þessum stillingum fyrir sérstakar skráartegundir í 'Íforrit' "
-"flipanum. Dolphin sýnir þessar skrár alltaf í sérskoðara."
+"skrá sem tilheyrir þessum hópi. Konqueror getur birt skrána í innbyggðum "
+"skoðara eða opnað hana í öðru forriti. Þú getur breytt þessum stillingum "
+"fyrir tilteknar skrárgerðir í flipanum 'Innfelling' í grunnstillingum fyrir "
+"skrárgerðir. Dolphin opnar skrár alltaf í aðskildu forriti."
 
 #: filetypedetails.cpp:61
 #, kde-format
@@ -69,8 +70,8 @@ msgid ""
 "This button displays the icon associated with the selected file type. Click "
 "on it to choose a different icon."
 msgstr ""
-"Þessi takki sýnir táknmyndina sem er tengd þessari skráartegund. Smelltu á "
-"hann til að velja aðra táknmynd."
+"Þessi hnappur sýnir táknið sem er tengt þessari skrárgerð. Smelltu á hann "
+"til að velja annað tákn."
 
 #: filetypedetails.cpp:67
 #, kde-format
@@ -85,9 +86,9 @@ msgid ""
 "file type 'text/plain'; all files ending in '.txt' are recognized as plain "
 "text files."
 msgstr ""
-"Hér eru skráðar síur sem greina skrár af þessari tegund. Til dæmis er sían *."
-"txt tengd skráategundinni 'text/plain'. Það merkir að allar skrár sem enda á "
-"'.txt' eru taldar vera venjulegar textaskrár."
+"Í þessum reit er listi yfir síur sem hægt er að nota til að merkja skrár af "
+"tiltekinni gerð. Sían *.txt er t.d. tengd skrárgerðinni 'text/plain' og "
+"allar skrár sem enda á '.txt' teljast vera hreinar textaskrár."
 
 #: filetypedetails.cpp:87 filetypesview.cpp:86 kservicelistwidget.cpp:106
 #, kde-format
@@ -97,7 +98,7 @@ msgstr "Bæta við..."
 #: filetypedetails.cpp:92
 #, kde-format
 msgid "Add a new pattern for the selected file type."
-msgstr "Skilgreina nýja síu fyrir þessa skráategund."
+msgstr "Skilgreina nýja síu fyrir þessa skrárgerð."
 
 #: filetypedetails.cpp:94 kservicelistwidget.cpp:120
 #, kde-format
@@ -121,7 +122,7 @@ msgid ""
 "'HTML Page'). This description will be used by applications like Konqueror "
 "to display directory content."
 msgstr ""
-"Hér getur þú gefið stutta lýsingu á skráartegundinni. (dæmi: 'HTML skjal'). "
+"Hér getur þú gefið stutta lýsingu á skrárgerðinni. (dæmi: 'HTML-skjal'). "
 "Forrit eins og Konqueror nota þessa lýsingu til að merkja skrár."
 
 #: filetypedetails.cpp:129
@@ -133,7 +134,7 @@ msgstr "Aðgerð við vinstrismell í Konqueror"
 #, kde-format
 msgid "Ask whether to save to disk instead (only for Konqueror browser)"
 msgstr ""
-"Spyrja hvort vista skuli á disk í staðinn (aðeins fyrir Konqueror skoðarann)"
+"Spyrja hvort vista eigi á diski í staðinn (aðeins fyrir Konqueror skoðarann)"
 
 #: filetypedetails.cpp:154
 #, kde-format
@@ -146,11 +147,11 @@ msgid ""
 "file type is image/png. Dolphin always shows files in a separate viewer."
 msgstr ""
 "Hér getur þú stillt hvað Konqueror skráastjórinn gerir þegar þú smellir á "
-"skrá af þessari tegund. Konqueror getur birt skrána í innbyggðum birti eða "
-"ræst upp annað forrit til þess. Ef þú stillir á 'Nota stillingar hóps' mun "
-"Konqueror hegða sér eftir því sem stillingar þess hóps segja. T.d. 'image' "
-"ef núverandi skrá er af gerðinni image/png. Dolphin sýnir skrár alltaf í "
-"sérskoðara."
+"skrá af þessari gerð. Konqueror getur birt skrána í innbyggðum skoðara eða "
+"opnað hana í öðru forriti. Ef þetta er stillt á 'Nota stillingar hóps' mun "
+"Konqueror hegða sér í samræmi við stillingar þess hóps. T.d. 'image' ef "
+"núverandi skrá er af gerðinni image/png. Dolphin opnarskrár alltaf í "
+"aðskildu forriti."
 
 #: filetypedetails.cpp:167
 #, kde-format
@@ -170,12 +171,12 @@ msgstr "Ný skráarending"
 #: filetypedetails.cpp:209
 #, kde-format
 msgid "Extension:"
-msgstr "Ending:"
+msgstr "Skráarending:"
 
 #: filetypedetails.cpp:327
 #, kde-format
 msgid "File type %1"
-msgstr "Skráartegund %1"
+msgstr "Skrárgerð %1"
 
 #: filetypedetails.cpp:335
 #, kde-format
@@ -185,7 +186,7 @@ msgstr "Nota stillingar fyrir hóp '%1'"
 #: filetypesview.cpp:57
 #, kde-format
 msgid "Search for file type or filename pattern..."
-msgstr "Leita að skrárgerð eða skráarheitismynstri..."
+msgstr "Leita að skrárgerð eða skráarheitissíu..."
 
 #: filetypesview.cpp:63
 #, kde-format
@@ -194,14 +195,14 @@ msgid ""
 "pattern will appear in the list. Alternatively, enter a part of a file type "
 "name as it appears in the list."
 msgstr ""
-"Sláðu inn hluta skráarheitamynsturs, og einungis skráategundir sem passa "
-"verða sýndar í listanum. Eins er hægt að setja inn gerð skráa með svipuðum "
-"hætti."
+"Sláðu inn hluta skrárheitissíu og einungis þær skrárgerðir sem eiga við "
+"birtast í listanum. Þú getur líka slegið inn hluta af heiti skrárgerðar eins "
+"og hún birtist í listanum."
 
 #: filetypesview.cpp:71 multiapplydialog.cpp:27
 #, kde-format
 msgid "Known Types"
-msgstr "Þekkt skráarform"
+msgstr "Þekktar skrárgerðir"
 
 #: filetypesview.cpp:77
 #, kde-format
@@ -211,15 +212,15 @@ msgid ""
 "collapse it. Select a file type (e.g. text/html for HTML files) to view/edit "
 "the information for that file type using the controls on the right."
 msgstr ""
-"Hér er skráartegundunum sem kerfið þekkir raðað í tré. Smelltu á '+' til að "
-"sjá innihald flokks og '-' til að fella hann saman. Veldu skráartegund (s.s. "
-"text/html fyrir HTML skjöl) til að sjá og ef til vill breyta stillingum "
-"fyrir þá skráartegund hér til hægri."
+"Hér sérðu stigveldislista yfir skrárgerðir sem kerfið þekkir. Smelltu á '+' "
+"til að sjá innihald flokks og '-' til að fella hann saman. Veldu skrárgerð "
+"(t.d. text/html fyrir HTML-skjöl) til að skoða og ef til vill breyta "
+"upplýsingum um þá skrárgerð með því að nota stýringarnar til hægri."
 
 #: filetypesview.cpp:91
 #, kde-format
 msgid "Click here to add a new file type."
-msgstr "Smelltu hér til að skilgreina nýja tegund skráa."
+msgstr "Smelltu hér til að skilgreina nýja gerð skráa."
 
 #: filetypesview.cpp:93 filetypesview.cpp:389
 #, kde-format
@@ -229,7 +230,7 @@ msgstr "&Fjarlægja"
 #: filetypesview.cpp:119
 #, kde-format
 msgid "Select a file type by name or by extension"
-msgstr "Veldu skráartegund eftir heiti eða endingu"
+msgstr "Veldu skrárgerð eftir heiti eða endingu"
 
 #: filetypesview.cpp:382
 #, kde-format
@@ -240,7 +241,7 @@ msgstr "Aftu&rkalla"
 #, kde-format
 msgid "Revert this file type to its initial system-wide definition"
 msgstr ""
-"Breyta þessari skráartegund aftur til sinnar upphaflegu kerfislægu "
+"Breyta þessari skrárgerð aftur til sinnar upphaflegu kerfislægu "
 "skilgreiningar"
 
 #: filetypesview.cpp:385
@@ -252,9 +253,9 @@ msgid ""
 "minimize the chances of them being used (but the file type determination "
 "from file contents can still end up using them)."
 msgstr ""
-"Smelltu hér til að breyta þessari skráartegund aftur til sinnar upphaflegu "
-"kerfislægu skilgreiningar, sem afturkallar þar með allar breytingar sem hafa "
-"verið gerðar. Athugaðu að kerfislægum skráategundum er ekki hægt að eyða. "
+"Smelltu hér til að breyta þessari skrárgerð aftur til sinnar upphaflegu "
+"kerfislægu skilgreiningar sem afturkallar þar með allar breytingar sem hafa "
+"verið gerðar. Athugaðu að kerfislægum skrárgerðum er ekki hægt að eyða. "
 "Hinsvegar er hægt að breyta hvaða mynstri þær fylgja, gera þær þannig minna "
 "líklegar til að vera notaðar (en skilgreining sem falin er í innihaldi "
 "þeirra getur eftir sem áður gert það að verkum að þær verði notaðar sem "
@@ -263,7 +264,7 @@ msgstr ""
 #: filetypesview.cpp:390
 #, kde-format
 msgid "Delete this file type definition completely"
-msgstr "Eyða endanlega skilgreiningu fyrir þessa skráategund"
+msgstr "Eyða endanlega skilgreiningu fyrir þessa skrárgerð"
 
 #: filetypesview.cpp:392
 #, kde-format
@@ -274,24 +275,24 @@ msgid ""
 "of them being used (but the file type determination from file contents can "
 "still end up using them)."
 msgstr ""
-"Smelltu hér til að eyða skilgreiningu þessarar skráartegundar endanlega. "
-"Þetta er aðeins hægt fyrir skilgreiningar sem notandi hefur búið til. "
-"Athugaðu að kerfislægum skráategundum er ekki hægt að eyða. Hinsvegar er "
-"hægt að breyta hvaða mynstri þær fylgja, gera þær þannig minna líklegar til "
-"að vera notaðar (en skilgreining sem falin er í innihaldi þeirra getur eftir "
-"sem áður gert það að verkum að þær verði notaðar sem slíkar)."
+"Smelltu hér til að eyða skilgreiningu þessarar skrárgerðar endanlega. Þetta "
+"er aðeins hægt fyrir skilgreiningar sem notandi hefur búið til. Athugaðu að "
+"kerfislægum skrárgerðum er ekki hægt að eyða. Hinsvegar er hægt að breyta "
+"hvaða mynstri þær fylgja, gera þær þannig minna líklegar til að vera notaðar "
+"(en skilgreining sem falin er í innihaldi þeirra getur eftir sem áður gert "
+"það að verkum að þær verði notaðar sem slíkar)."
 
 #: keditfiletype.cpp:114
 #, kde-format
 msgid "File Type Editor"
-msgstr "Ritill fyrir skráategundir"
+msgstr "Ritill fyrir skrárgerðir"
 
 #: keditfiletype.cpp:116
 #, kde-format
 msgid ""
 "KDE file type editor - simplified version for editing a single file type"
 msgstr ""
-"KDE Skráartegundarbreytir - einfölduð útgáfa til að sýsla með skráartegundir"
+"KDE skrárgerðarbreytir - einfölduð útgáfa til að breyta stökum skrárgerðum"
 
 #: keditfiletype.cpp:118
 #, kde-format
@@ -311,12 +312,12 @@ msgstr "David Faure"
 #: keditfiletype.cpp:126
 #, kde-format
 msgid "Makes the dialog transient for the window specified by winid"
-msgstr "Gerir gluggann gegnsæan fyrir gluggann sem winid skilgreinir"
+msgstr "Gerir gluggann gegnsæjan fyrir gluggann sem winid skilgreinir"
 
 #: keditfiletype.cpp:128
 #, kde-format
 msgid "File type to edit (e.g. text/html)"
-msgstr "Skráartegund sem á að breyta (t.d. text/html)"
+msgstr "Skrárgerð sem á að breyta (t.d. text/html)"
 
 #: keditfiletype.cpp:159
 #, kde-format
@@ -326,12 +327,12 @@ msgstr "%1 skrá"
 #: keditfiletype.cpp:182
 #, kde-format
 msgid "Edit File Type %1"
-msgstr "Breyta skráartegund: %1"
+msgstr "Breyta skrárgerð: %1"
 
 #: keditfiletype.cpp:184
 #, kde-format
 msgid "Create New File Type %1"
-msgstr "Búa til nýja skráartegund %1"
+msgstr "Búa til nýja skrárgerð %1"
 
 #: kservicelistwidget.cpp:47
 #, kde-format
@@ -357,10 +358,10 @@ msgid ""
 "then the list is ordered by priority with the uppermost item taking "
 "precedence over the others."
 msgstr ""
-"Hér er listi af forritum sem eru tengd skrám af þessari tegund. Þessi listi "
-"birtist í valmyndunum í Konqueror þegar þú velur \"Opna með...\".Ef fleiri "
-"en eitt forrit er tengt þessari skráargerð er listinn forgangsraðaður þannig "
-"að það efsta hefur forgang yfir hin."
+"Hér er listi yfir forrit sem eru tengd skrám af völdu skrárgerðinni. Þessi "
+"listi birtist í samhengisvalmyndum í Konqueror þegar þú velur \"Opna með..."
+"\".Ef fleiri en eitt forrit er tengt þessari skrárgerð er listinn "
+"forgangsraðaður þannig að það efsta hefur forgang yfir hin."
 
 #: kservicelistwidget.cpp:69
 #, kde-format
@@ -371,11 +372,10 @@ msgid ""
 "type, then the list is ordered by priority with the uppermost item taking "
 "precedence over the others."
 msgstr ""
-"Hér eru þjónusturnar sem eru tengdar skrám af þessari tegund. Forrit eins og "
-"Konqueror leyfa notandanum að velja forrit úr þessum lista þegar t.d. valið "
-"er \"Forskoða með...\" í samhengisupplýsingum. Þegar fleiri en eitt forrit "
-"er tengt aðgerðum með viðkomandi skráargerð, þá er listinn er "
-"forgangsraðaður þannig að efsta færslan er tekin fram yfir aðrar."
+"Hér er listi yfir þjónustur sem eru tengdar skrám af völdu skrárgerðinni. "
+"Þessi listi birtist í samhengisvalmyndum í Konqueror þegar þú velur \"Opna "
+"með...\".Ef fleiri en ein þjónusta er tengd þessari skrárgerð er listinn "
+"forgangsraðaður þannig að sú efsta hefur forgang yfir hinar."
 
 #: kservicelistwidget.cpp:81
 #, kde-format
@@ -390,9 +390,10 @@ msgid ""
 "only affects the selected application if the file type is\n"
 "associated with more than one application."
 msgstr ""
-"Hækkar forgang þessa forrits, sem jafngildir því að færa það ofar á \n"
-"listann. Þetta hefur einungis áhrif á forgang forritsins með tilliti \n"
-"til þessarar skráategundar."
+"Hækkar forgang forritsins sem er valið\n"
+"sem færir það ofar á listann. Ath.: Þetta hefur\n"
+"einungis áhrif á forgang valda forritsins ef skrárgerðin\n"
+"er tengd við fleiri en eitt forrit."
 
 #: kservicelistwidget.cpp:91
 #, kde-format
@@ -416,9 +417,10 @@ msgid ""
 "only affects the selected application if the file type is\n"
 "associated with more than one application."
 msgstr ""
-"Lækkar forgang þessa forrits, sem jafngildir því að færa það neðar á \n"
-"listann. Þetta hefur einungis áhrif á forgang forritsins með tilliti \n"
-"til þessarar skráategundar."
+"Lækkar forgang forritsins sem er valið\n"
+"sem færir það neðar á listann. Ath.: Þetta hefur\n"
+"einungis áhrif á forgang valda forritsins ef skrárgerðin\n"
+"er tengd við fleiri en eitt forrit."
 
 #: kservicelistwidget.cpp:103
 #, kde-format
@@ -426,13 +428,13 @@ msgid ""
 "Assigns a lower priority to the selected\n"
 "service, moving it down in the list."
 msgstr ""
-"Lækkar forgang þessa forrits, sem jafngildir því að \n"
-"færa það neðar á listann."
+"Lækkar forgang þjónustunnar og færir\n"
+"hana neðar á listann."
 
 #: kservicelistwidget.cpp:111
 #, kde-format
 msgid "Add a new application for this file type."
-msgstr "Tengir nýtt forrit við þessa skráartegund."
+msgstr "Tengir nýtt forrit við þessa skrárgerð."
 
 #: kservicelistwidget.cpp:113
 #, kde-format
@@ -442,34 +444,34 @@ msgstr "Breyta..."
 #: kservicelistwidget.cpp:118
 #, kde-format
 msgid "Edit command line of the selected application."
-msgstr "Breyta skipanalínu forritsins."
+msgstr "Breyta skipanalínu forritsins sem er valið."
 
 #: kservicelistwidget.cpp:125
 #, kde-format
 msgid "Remove the selected application from the list."
-msgstr "Fjarlægir forritið úr listanum."
+msgstr "Fjarlægir valda forritið af listanum."
 
 #: kservicelistwidget.cpp:127 multiapplydialog.cpp:19
 #, kde-format
 msgid "Apply To..."
-msgstr "Beita á..."
+msgstr "Nota á..."
 
 #: kservicelistwidget.cpp:132
 #, kde-format
 msgid "Apply the current preference order to other file types."
-msgstr ""
+msgstr "Nota núverandi forgangsröðun á aðrar skrárgerðir."
 
 #: kservicelistwidget.cpp:155
 #, kde-format
 msgctxt "No applications associated with this file type"
 msgid "None"
-msgstr "Engin"
+msgstr "Ekkert"
 
 #: kservicelistwidget.cpp:168
 #, kde-format
 msgctxt "No components associated with this file type"
 msgid "None"
-msgstr "Ekkert"
+msgstr "Enginn"
 
 #: kserviceselectdlg.cpp:26
 #, kde-format
@@ -484,7 +486,7 @@ msgstr "Veldu þjónustu:"
 #: newtypedlg.cpp:25
 #, kde-format
 msgid "Create New File Type"
-msgstr "Smelltu hér til að skilgreina nýja tegund skráa"
+msgstr "Búa til nýja skrárgerð "
 
 #: newtypedlg.cpp:30
 #, kde-format
@@ -494,12 +496,12 @@ msgstr "Hópur:"
 #: newtypedlg.cpp:39
 #, kde-format
 msgid "Select the category under which the new file type should be added."
-msgstr "Veldu flokkin sem þú vilt setja þessa skráategund í."
+msgstr "Veldu flokkinn sem þú vilt að þessi skrárgerð tilheyri."
 
 #: newtypedlg.cpp:44
 #, kde-format
 msgid "Type name:"
-msgstr "Heiti tegundar:"
+msgstr "Heiti gerðar:"
 
 #: newtypedlg.cpp:50
 #, kde-format
@@ -508,9 +510,8 @@ msgid ""
 "category and you type 'custom' here, the file type 'image/custom' will be "
 "created."
 msgstr ""
-"Sláðu inn nafn á skráargerð. Til dæmis, ef þú valdir 'myndir' sem flokk og "
-"þú skrifar síðan 'sérstakar' hér, þá verður gerðin 'myndir/sérstakar' búin "
-"til."
+"Sláðu inn heitið á skrárgerðinni. Ef þú valdir t.d. 'mynd' sem flokk og "
+"skrifar síðan 'sérsnið' hér verður gerðin 'mynd/sérsnið' búin til."
 
 #~ msgid ""
 #~ "<p><h1>File Associations</h1> This module allows you to choose which "
