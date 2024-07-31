@@ -1,6 +1,5 @@
 # Translation of kde-inhibit to Norwegian Nynorsk
 #
-#
 msgid ""
 msgstr ""
 "Project-Id-Version: kde-cli-tools\n"
