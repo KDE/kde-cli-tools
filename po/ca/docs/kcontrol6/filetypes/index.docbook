@@ -188,7 +188,7 @@
 <para
 >Si desitgeu eliminar un tipus &MIME;, simplement seleccioneu-lo fent clic una sola vegada a sobre del nom del tipus &MIME;. Després feu clic a sobre del botó <guibutton
 >Elimina</guibutton
->. El tipus &MIME; serà esborrat immediatament.</para>
+>. El tipus &MIME; se suprimirà immediatament.</para>
 <para
 >Només podreu eliminar els vostres propis tipus &MIME;.</para>
 
@@ -452,7 +452,7 @@
 >Mou amunt</guibutton
 > i <guibutton
 >Mou avall</guibutton
-> per a ajustar l'aplicació no desitjada cap a posicions de la llista de menys prioritat, en comptes d'eliminar-la per complet de la llista. Una vegada eliminada l'aplicació, si la vostra aplicació preferida es veiés compromesa, no n'hi hauria cap altra per a visualitzar les dades del document.</para
+> per a ajustar l'aplicació no desitjada cap a posicions de la llista amb menys prioritat, en comptes de suprimir-la per complet de la llista. Una vegada suprimida l'aplicació, si la vostra aplicació preferida es veiés compromesa, no n'hi hauria cap altra per a visualitzar les dades del document.</para
 ></tip>
 
 </sect3>
