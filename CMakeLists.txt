@@ -65,7 +65,7 @@ add_definitions(-DQT_NO_URL_CAST_FROM_STRING)
 
 option(WITH_X11 "Build kdesu and kstart with X11 support." ON)
 
-ecm_set_disabled_deprecation_versions(QT 5.15.2)
+ecm_set_disabled_deprecation_versions(QT 6.7.0 KF 6.4.0)
 
 include_directories(${CMAKE_CURRENT_BINARY_DIR})
 
