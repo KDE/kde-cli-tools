@@ -15,7 +15,7 @@ public:
     TypesListItemBase(QTreeWidget *parent = nullptr);
     TypesListItemBase(QTreeWidgetItem *parent = nullptr);
 
-    virtual ~TypesListItemBase() override = default;
+    ~TypesListItemBase() override = default;
 
     virtual void loadIcon(bool forceReload = false) = 0;
 };

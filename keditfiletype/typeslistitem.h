@@ -51,7 +51,7 @@ public:
         return m_mimetypeData;
     }
 
-    virtual void loadIcon(bool forceReload = false) override;
+    void loadIcon(bool forceReload = false) override;
 
 private:
     MimeTypeData m_mimetypeData;

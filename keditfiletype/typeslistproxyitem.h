@@ -17,9 +17,9 @@ class TypesListProxyItem : public TypesListItemBase
 public:
     explicit TypesListProxyItem(TypesListItem *inner, QTreeWidget *parent = nullptr);
     explicit TypesListProxyItem(TypesListItem *inner, QTreeWidgetItem *parent = nullptr);
-    virtual ~TypesListProxyItem() override = default;
+    ~TypesListProxyItem() override = default;
 
-    virtual void loadIcon(bool forceReload) override;
+    void loadIcon(bool forceReload) override;
 
     TypesListItem *inner();
 
