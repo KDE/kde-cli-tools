@@ -74,7 +74,6 @@ msgstr ""
 
 #: kstart.cpp:95
 #, fuzzy, kde-format
-#| msgid "Optional URL to pass <desktopfile>, when using --service"
 msgid "Optional URL to pass to the application when using --application"
 msgstr "Valgfri URL som skal sendes til <desktopfile> når --service brukes"
 
