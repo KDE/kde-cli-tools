@@ -57,6 +57,7 @@ find_package(KF6 ${KF6_MIN_VERSION} REQUIRED COMPONENTS
     CoreAddons
     OPTIONAL_COMPONENTS
     Su
+    WidgetsAddons
     QUIET
 )
 
@@ -87,7 +88,7 @@ add_subdirectory(plasma-open-settings)
 add_subdirectory(kinfo)
 add_subdirectory(kstart)
 
-if(KF6Su_FOUND)
+if(KF6Su_FOUND AND KF6WidgetsAddons_FOUND)
     add_subdirectory(kdesu)
 endif()
 
