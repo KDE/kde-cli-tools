@@ -7,7 +7,7 @@
 # Automatically generated, 2021.
 msgid ""
 msgstr ""
-"Project-Id-Version: kde-cli-tools\n"
+"Project-Id-Version: plasma-open-settings\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2022-10-21 00:48+0000\n"
 "PO-Revision-Date: 2022-04-14 18:23+0200\n"
