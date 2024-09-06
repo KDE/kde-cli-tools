@@ -4,7 +4,7 @@
 # Burkhard Lück <lueck@hube-lueck.de>, 2017.
 msgid ""
 msgstr ""
-"Project-Id-Version: \n"
+"Project-Id-Version: kbroadcastnotification\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2022-09-28 00:51+0000\n"
 "PO-Revision-Date: 2017-12-06 19:11+0100\n"

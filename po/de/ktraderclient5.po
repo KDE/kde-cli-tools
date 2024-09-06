@@ -3,7 +3,7 @@
 # Frederik Schwarzer <schwarzer@kde.org>, 2016.
 msgid ""
 msgstr ""
-"Project-Id-Version: ktraderclient\n"
+"Project-Id-Version: ktraderclient5\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2021-03-18 02:47+0100\n"
 "PO-Revision-Date: 2017-05-09 13:13+0100\n"
