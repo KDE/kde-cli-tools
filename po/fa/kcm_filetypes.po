@@ -10,7 +10,7 @@ msgstr ""
 "Project-Id-Version: filetypes\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2024-01-30 00:38+0000\n"
-"PO-Revision-Date: 2024-08-14 00:32+0330\n"
+"PO-Revision-Date: 2024-09-06 22:32+0330\n"
 "Last-Translator: Mohi Mirdamadi <mohi.pub@gmail.com>\n"
 "Language-Team: fa\n"
 "Language: fa\n"
@@ -210,7 +210,7 @@ msgid ""
 "collapse it. Select a file type (e.g. text/html for HTML files) to view/edit "
 "the information for that file type using the controls on the right."
 msgstr ""
-"در اینجا می‌توانید فهرست سلسله مراتبی از انواع پرونده که در سیستم شما "
+"در اینجا می‌توانید فهرست سلسله مراتبی از انواع پرونده که در سامانه شما "
 "شناخته‌شده را ببینید. برای بسط دسته روی علامت »+« فشار دهید، یا علامت »-« را "
 "برای جمع آن فشار دهید. نوع پرونده را )مثلاً text/html برای پرونده‌های "
 "زنگام( برای نمایش/ویرایش اطلاعات برای آن نوع پرونده، با استفاده از کنترلها "
@@ -239,7 +239,7 @@ msgstr "&بازگشت"
 #: filetypesview.cpp:383
 #, kde-format
 msgid "Revert this file type to its initial system-wide definition"
-msgstr "برگردان این نوع پرونده به تعریف اولیه سیستم"
+msgstr "برگردان این نوع پرونده به تعریف اولیه سامانه"
 
 #: filetypesview.cpp:385
 #, kde-format
