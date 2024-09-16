@@ -16,7 +16,7 @@ msgstr ""
 "Project-Id-Version: filetypes\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2024-01-30 00:38+0000\n"
-"PO-Revision-Date: 2024-02-09 17:45+0300\n"
+"PO-Revision-Date: 2024-09-15 21:40+0300\n"
 "Last-Translator: Emir SARI <emir_sari@icloud.com>\n"
 "Language-Team: Turkish <kde-l10n-tr@kde.org>\n"
 "Language: tr\n"
@@ -24,7 +24,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n > 1);\n"
-"X-Generator: Lokalize 24.01.95\n"
+"X-Generator: Lokalize 24.11.70\n"
 
 #, kde-format
 msgctxt "NAME OF TRANSLATORS"
@@ -64,7 +64,7 @@ msgstr ""
 "tıkladığınızda ne yapacağını belirleyebilirsiniz. Konqueror dosyayı yerleşik "
 "bir görüntüleyicide gösterebilir veya ayrı bir uygulama başlatabilir. "
 "Belirli bir dosya türü için bu yapılandırmayı dosya türü yapılandırmasında "
-"'Gömülüm' bölümünden değiştirebilirsiniz. Dolphin her zaman dosyaları ayrı "
+"“Gömülüm” bölümünden değiştirebilirsiniz. Dolphin her zaman dosyaları ayrı "
 "bir görüntüleyicide gösterir"
 
 #: filetypedetails.cpp:61
@@ -97,7 +97,7 @@ msgstr ""
 #: filetypedetails.cpp:87 filetypesview.cpp:86 kservicelistwidget.cpp:106
 #, kde-format
 msgid "Add..."
-msgstr "Ekle..."
+msgstr "Ekle…"
 
 #: filetypedetails.cpp:92
 #, kde-format
@@ -127,7 +127,7 @@ msgid ""
 "to display directory content."
 msgstr ""
 "Buraya, seçili dosya türündeki dosyalar için kısa bir açıklama "
-"girebilirsiniz (ör. 'HTML Sayfası'). Bu açıklama Konqueror gibi uygulamalar "
+"girebilirsiniz (örn. “HTML Sayfası”). Bu açıklama Konqueror gibi uygulamalar "
 "tarafından dizin içeriğinin gösterilmesinde kullanılacaktır."
 
 #: filetypedetails.cpp:129
@@ -152,9 +152,9 @@ msgid ""
 msgstr ""
 "Buradan Konqueror dosya yöneticisinin bu tür bir dosyaya tıkladığınızda ne "
 "yapacağını belirleyebilirsiniz. Konqueror dosyayı yerleşik bir "
-"görüntüleyicide gösterebilir veya ayrı bir uygulama başlatabilir. Eğer 'Grup "
-"ayarlarını kullan' seçilmiş ise Konqueror bu grup için belirlenmiş ayarlara "
-"göre hareket edecektir; örnek olarak image/png dosya türü için 'image' "
+"görüntüleyicide gösterebilir veya ayrı bir uygulama başlatabilir. Eğer “Grup "
+"ayarlarını kullan” seçilmişse Konqueror, bu grup için belirlenmiş ayarlara "
+"göre hareket edecektir; örnek olarak image/png dosya türü için “image” "
 "grubunun ayarları kullanılır. Dolphin her zaman dosyaları ayrı bir "
 "görüntüleyicide gösterir."
 
@@ -186,12 +186,12 @@ msgstr "Dosya türü %1"
 #: filetypedetails.cpp:335
 #, kde-format
 msgid "Use settings for '%1' group"
-msgstr "'%1' grubu için ayarları kullan"
+msgstr "“%1” grubu için ayarları kullan"
 
 #: filetypesview.cpp:57
 #, kde-format
 msgid "Search for file type or filename pattern..."
-msgstr "Dosya türü veya dosya adı dizgisi ara..."
+msgstr "Dosya türü veya dosya adı dizgisi ara…"
 
 #: filetypesview.cpp:63
 #, kde-format
@@ -218,9 +218,9 @@ msgid ""
 "the information for that file type using the controls on the right."
 msgstr ""
 "Buradan sisteminizdeki bilinen dosya türlerinin hiyerarşik bir listesini "
-"görebilirsiniz. Bir kategorinin altında yeralanları görmek için '+', "
-"gizlemek için '-' işaretine tıklayın. Sağdaki denetimleri kullanarak bakmak/"
-"düzenlemek istediğiniz bir dosya türü (ör. HTML dosyaları için metin/html) "
+"görebilirsiniz. Bir kategorinin altında yeralanları görmek için “+”, "
+"gizlemek için “−” işaretine tıklayın. Sağdaki denetimleri kullanarak bakmak/"
+"düzenlemek istediğiniz bir dosya türü (örn. HTML dosyaları için text/html) "
 "seçin."
 
 #: filetypesview.cpp:91
@@ -236,7 +236,7 @@ msgstr "&Kaldır"
 #: filetypesview.cpp:119
 #, kde-format
 msgid "Select a file type by name or by extension"
-msgstr "Addan ya da uzantıdan bir dosya türü seç"
+msgstr "Ad ile veya uzantı ile bir dosya türü seçin"
 
 #: filetypesview.cpp:382
 #, kde-format
@@ -293,13 +293,13 @@ msgstr "Dosya Türü Düzenleyicisi"
 msgid ""
 "KDE file type editor - simplified version for editing a single file type"
 msgstr ""
-"KDE dosya türü düzenleyici - tek bir dosya türü eklemek için "
+"KDE dosya türü düzenleyicisi — tek bir dosya türü eklemek için "
 "basitleştirilmiş sürüm"
 
 #: keditfiletype.cpp:118
 #, kde-format
 msgid "(c) 2000, KDE developers"
-msgstr "(c) 2000, KDE geliştiricileri"
+msgstr "© 2000, KDE geliştiricileri"
 
 #: keditfiletype.cpp:119
 #, kde-format
@@ -361,10 +361,10 @@ msgid ""
 "precedence over the others."
 msgstr ""
 "Bu, seçili dosya türündeki dosyalarla ilişkilendirilmiş uygulamaların bir "
-"listesidir. Bu liste, Konqueror’un bağlam menülerinde \"Birlikte aç...\"ı "
-"seçtiğinizde gösterilir. Bu dosya tipiyle birden fazla uygulama "
-"ilişkilendirildiği takdirde, bu liste, en üstteki uygulama diğerlerine "
-"öncelikli olacak şekilde önceliğe göre sıralanır."
+"listesidir. Bu liste, Konqueror’un bağlam menülerinde “Birlikte Aç…”ı "
+"seçtiğinizde gösterilir. Bu dosya türüyle birden fazla uygulama "
+"ilişkilendirilmişse bu liste, en üstteki uygulama diğerlerine öncelikli "
+"olacak şekilde önceliğe göre sıralanır."
 
 #: kservicelistwidget.cpp:69
 #, kde-format
@@ -376,10 +376,10 @@ msgid ""
 "precedence over the others."
 msgstr ""
 "Bu, seçili dosya türündeki dosyalarla ilişkilendirilmiş uygulamaların bir "
-"listesidir. Bu liste, Konqueror’un sağ tıklama menülerinde \"Bununla "
-"önizle...\"  seçeneğini seçtiğinizde gösterilir. Bu dosya tipiyle birden "
-"fazla uygulama ilişkilendirilmişse, bu liste, en üstteki uygulama "
-"diğerlerinden daha öncelikli olacak şekilde sıralanır."
+"listesidir. Bu liste, Konqueror’un sağ tıklama menülerinde “Şununla "
+"Önizle…”  seçeneğini seçtiğinizde gösterilir. Bu dosya türüyle birden fazla "
+"uygulama ilişkilendirilmişse bu liste, en üstteki uygulama diğerlerinden "
+"daha öncelikli olacak şekilde sıralanır."
 
 #: kservicelistwidget.cpp:81
 #, kde-format
@@ -443,7 +443,7 @@ msgstr "Bu dosya türü için yeni bir uygulama ekle."
 #: kservicelistwidget.cpp:113
 #, kde-format
 msgid "Edit..."
-msgstr "Düzenle..."
+msgstr "Düzenle…"
 
 #: kservicelistwidget.cpp:118
 #, kde-format
@@ -458,7 +458,7 @@ msgstr "Seçili uygulamayı listeden çıkar."
 #: kservicelistwidget.cpp:127 multiapplydialog.cpp:19
 #, kde-format
 msgid "Apply To..."
-msgstr "Şuna Uygula..."
+msgstr "Şuna Uygula…"
 
 #: kservicelistwidget.cpp:132
 #, kde-format
@@ -514,8 +514,8 @@ msgid ""
 "category and you type 'custom' here, the file type 'image/custom' will be "
 "created."
 msgstr ""
-"Bir dosya türü adını yazın. Örneğin, eğer kategori olarak 'image' ögesini "
-"seçip 'custom' seçeneğini belirtirseniz dosya türü 'image/custom' dosya türü "
+"Bir dosya türü adı yazın. Örneğin, eğer kategori olarak “image” ögesini "
+"seçip “custom” seçeneğini belirtirseniz dosya türü “image/custom” dosya türü "
 "olarak oluşturulacaktır."
 
 #~ msgid ""

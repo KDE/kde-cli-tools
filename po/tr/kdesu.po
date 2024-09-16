@@ -11,7 +11,7 @@ msgstr ""
 "Project-Id-Version: kdesu\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2023-03-05 03:09+0000\n"
-"PO-Revision-Date: 2024-02-09 17:45+0300\n"
+"PO-Revision-Date: 2024-09-15 21:42+0300\n"
 "Last-Translator: Emir SARI <emir_sari@icloud.com>\n"
 "Language-Team: Turkish <kde-l10n-tr@kde.org>\n"
 "Language: tr\n"
@@ -19,7 +19,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n > 1);\n"
-"X-Generator: Lokalize 24.01.95\n"
+"X-Generator: Lokalize 24.11.70\n"
 
 #, kde-format
 msgctxt "NAME OF TRANSLATORS"
@@ -44,7 +44,7 @@ msgstr "Bir programı, yükseltilmiş ayrıcalıklarla çalıştırır"
 #: kdesu.cpp:94
 #, kde-format
 msgid "Copyright (c) 1998-2000 Geert Jansen, Pietro Iglio"
-msgstr "Copyright (c) 1998-2000 Geert Jansen, Pietro Iglio"
+msgstr "© 1998–2000 Geert Jansen, Pietro Iglio"
 
 #: kdesu.cpp:95
 #, kde-format
@@ -54,7 +54,7 @@ msgstr "Geert Jansen"
 #: kdesu.cpp:95
 #, kde-format
 msgid "Maintainer"
-msgstr "Projeyi Yürüten"
+msgstr "Bakımcı"
 
 #: kdesu.cpp:96
 #, kde-format
@@ -64,7 +64,7 @@ msgstr "Pietro Iglio"
 #: kdesu.cpp:96
 #, kde-format
 msgid "Original author"
-msgstr "Asıl yazar"
+msgstr "Özgün yazar"
 
 #: kdesu.cpp:105
 #, kde-format
@@ -85,7 +85,7 @@ msgstr ""
 #: kdesu.cpp:108
 #, kde-format
 msgid "Specifies the target uid"
-msgstr "Hedef uid’i belirtir"
+msgstr "Hedef uid’sini belirtir"
 
 #: kdesu.cpp:109
 #, kde-format
@@ -105,7 +105,7 @@ msgstr "Uçbirim çıktısını etkinleştir (parola kaydedilmez)"
 #: kdesu.cpp:113
 #, kde-format
 msgid "Set priority value: 0 <= prio <= 100, 0 is lowest"
-msgstr "Öncelik değeri belirle: 0 <= öncelik 100, 0 en küçük"
+msgstr "Öncelik değeri belirle: 0 ≤ öncelik 100, 0 en küçük"
 
 #: kdesu.cpp:114
 #, kde-format
@@ -144,12 +144,12 @@ msgstr "Bir pencereye katıştır"
 #: kdesu.cpp:153
 #, kde-format
 msgid "Cannot execute command '%1'."
-msgstr "'%1' komutu yürütülemedi."
+msgstr "“%1” komutu yürütülemiyor."
 
 #: kdesu.cpp:156
 #, kde-format
 msgid "Cannot execute command '%1'. It contains invalid characters."
-msgstr "'%1' komutu yürütülemedi. Geçersiz karakterler içeriyor."
+msgstr "“%1” komutu yürütülemiyor. İçinde geçersiz karakterler var."
 
 #: kdesu.cpp:230
 #, kde-format
@@ -241,7 +241,7 @@ msgstr "su ile çevirim başarısız."
 msgid ""
 "The program 'su' could not be found.<br />Ensure your PATH is set correctly."
 msgstr ""
-"'su' uygulaması bulunamadı.<br/>PATH değişkeninizin doğru ayarlandığından "
+"“su” uygulaması bulunamadı.<br/>PATH değişkeninizin doğru ayarlandığından "
 "emin olun."
 
 #: sudlg.cpp:97

@@ -14,7 +14,7 @@ msgstr ""
 "Project-Id-Version: kioclient\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2024-04-26 00:39+0000\n"
-"PO-Revision-Date: 2024-02-09 17:45+0300\n"
+"PO-Revision-Date: 2024-09-15 21:48+0300\n"
 "Last-Translator: Emir SARI <emir_sari@icloud.com>\n"
 "Language-Team: Turkish <kde-l10n-tr@kde.org>\n"
 "Language: tr\n"
@@ -22,7 +22,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n > 1);\n"
-"X-Generator: Lokalize 24.01.95\n"
+"X-Generator: Lokalize 24.11.70\n"
 
 #, kde-format
 msgctxt "NAME OF TRANSLATORS"
@@ -41,7 +41,7 @@ msgid ""
 "Syntax:\n"
 msgstr ""
 "\n"
-"Söz Dizimi:\n"
+"Sözdizim:\n"
 
 #: kioclient.cpp:57
 #, kde-format
@@ -51,8 +51,8 @@ msgid ""
 "            # Opens a properties dialog of 'url'\n"
 "\n"
 msgstr ""
-"  %1 ’URL’\n"
-"            # ’url’nin bir özellikler penceresini açar’\n"
+"  %1 “URL”\n"
+"            # “URL”nin bir özellikler penceresini açar’\n"
 "\n"
 
 #: kioclient.cpp:64
@@ -67,11 +67,11 @@ msgid ""
 "            # 'url' can be the URL of a document, a *.desktop file,\n"
 "            # or an executable.\n"
 msgstr ""
-"  %1 ’URL’ [’mimetürü’]\n"
-"            # ’url’ tarafından gösterilen belgeyi KDE’de "
-"ilişkilendirilen             #   uygulamada açmayı dener. ’mimetürü’nü yok\n"
-"            #   sayabilirsiniz. Bu durumda, mime türü kendiliğinden\n"
-"            #   algılanır. ’url’, bir belge, *.desktop dosyası veya bir\n"
+"  %1 “URL” [“MIME türü”]\n"
+"            # “URL” tarafından gösterilen belgeyi KDE’de "
+"ilişkilendirilen             #   uygulamada açmayı dener. “MIME türü”nü yok\n"
+"            #   sayabilirsiniz. Bu durumda, MIME türü kendiliğinden\n"
+"            #   algılanır. “URL”, bir belge, *.desktop dosyası veya bir\n"
 "            #   yürütülebilir olabilir.\n"
 
 #: kioclient.cpp:75
@@ -85,12 +85,12 @@ msgid ""
 "            #   The short version 'kioclient mv' is also available.\n"
 "\n"
 msgstr ""
-"  %1 ’kaynak’ ’hedef’\n"
-"            # ’kaynak’ URL’yi ’hedef’e taşır.\n"
-"            #   ’kaynak’, bir URL listesi olabilir.\n"
-"            #   ’hedef’, dosyaları çöp kutusuna taşımak için \"trash:/\" "
-"olabilir.\n"
-"            #   Kısa sürüm ’kioclient mv’ de ayrıca kullanılabilir.\n"
+"  %1 “kaynak” “hedef”\n"
+"            # “kaynak” URL’yi “hedef”e taşır.\n"
+"            #   “kaynak”, bir URL listesi olabilir.\n"
+"            #   “hedef”, dosyaları çöp kutusuna taşımak için/"
+"n                   “trash:/” olabilir.\n"
+"            #   Kısa sürüm “kioclient mv” de ayrıca kullanılabilir.\n"
 "\n"
 
 #: kioclient.cpp:85
@@ -103,9 +103,9 @@ msgid ""
 "            #   a URL will be requested.\n"
 "\n"
 msgstr ""
-"  %1 [’kaynak’]\n"
-"            # ’kaynak’ URL’sini kullanıcının belirlediği\n"
-"            #   konuma kopyalanır. ’kaynak’ bir URL’ler\n"
+"  %1 [“kaynak”]\n"
+"            # “kaynak” URL’sini kullanıcının belirlediği\n"
+"            #   konuma kopyalanır. “kaynak” bir URL’ler\n"
 "            #   listesi olabilir. Eğer yoksa bir URL istenir.\n"
 "\n"
 
@@ -119,9 +119,9 @@ msgid ""
 "            #   The short version 'kioclient cp' is also available.\n"
 "\n"
 msgstr ""
-"  %1 ’kaynak’ ’hedef’\n"
-"            # ’kaynak’ URL’sini ’hedef’e kopyalar.\n"
-"            #   ’kaynak’, bir URL listesi olabilir.\n"
+"  %1 “kaynak” “hedef”\n"
+"            # “kaynak” URL’sini “hedef”e kopyalar.\n"
+"            #   “kaynak”, bir URL listesi olabilir.\n"
 "            #   Kısa sürüm ’kioclient cp’ ayrıca vardır.\n"
 "\n"
 
@@ -133,8 +133,8 @@ msgid ""
 "            # Prints the contents of the file 'url' to the standard output\n"
 "\n"
 msgstr ""
-"  %1 ’URL’\n"
-"            # ’url’de bulunan dizin içeriğini standart çıktıya yazdırır\n"
+"  %1 “URL”\n"
+"            # “URL” dosyasının içeriğini standart çıktıya yazdırır\n"
 "\n"
 
 #: kioclient.cpp:110
@@ -145,8 +145,8 @@ msgid ""
 "            # Lists the contents of the directory 'url' to stdout\n"
 "\n"
 msgstr ""
-"  %1 ’URL’\n"
-"            # ’url’de bulunan dizin içeriğini standart çıktıya listeler\n"
+"  %1 “URL”\n"
+"            # “URL”de bulunan dizin içeriğini standart çıktıya listeler\n"
 "\n"
 
 #: kioclient.cpp:117
@@ -159,9 +159,9 @@ msgid ""
 "            #   The short version 'kioclient rm' is also available.\n"
 "\n"
 msgstr ""
-"  %1 ’URL’\n"
+"  %1 “URL”\n"
 "            # URL’yi kaldırır\n"
-"            #   ’URL’ bir URL’ler listesi olabilir.\n"
+"            #   “URL” bir URL’ler listesi olabilir.\n"
 "            #   Kısa sürüm ’kioclient rm’ ayrıca vardır.\n"
 
 #: kioclient.cpp:126
@@ -172,8 +172,8 @@ msgid ""
 "            # Shows all of the available information for 'url'\n"
 "\n"
 msgstr ""
-"  %1 'URL'\n"
-"            # 'url' için tüm kullanılabilir bilgiyi gösterir\n"
+"  %1 “URL”\n"
+"            # “URL” için tüm kullanılabilir bilgiyi gösterir\n"
 "\n"
 
 #: kioclient.cpp:133
@@ -202,7 +202,7 @@ msgid ""
 "\n"
 msgstr ""
 "  kioclient exec file:/home/weis/data/test.html\n"
-"             // Dosyayı, bu mime türü ile ilişkilendirilmiş öntanımlı\n"
+"             // Dosyayı, bu MIME türü ile ilişkilendirilmiş öntanımlı\n"
 "             // uygulama ile açar\n"
 "\n"
 
@@ -262,8 +262,8 @@ msgid ""
 "Non-interactive use: no message boxes. If you don't want a graphical "
 "connection, use --platform offscreen"
 msgstr ""
-"Etkileşimli olmayan kullanım: İleti kutusu yok. Eğer grafiksel bir  bağlantı "
-"istemiyorsanız --platform offscreen kullanın"
+"Etkileşimli olmayan kullanım: İleti kutusu yok. Eğer grafiksel bir bağlantı "
+"istemiyorsanız “--platform offscreen” kullanın"
 
 #: kioclient.cpp:187
 #, kde-format
@@ -278,7 +278,7 @@ msgstr "dosya veya URL"
 #: kioclient.cpp:191 kioclient.cpp:193 kioclient.cpp:196 kioclient.cpp:201
 #, kde-format
 msgid "urls..."
-msgstr "URL’ler..."
+msgstr "URL’ler…"
 
 #: kioclient.cpp:193 kioclient.cpp:196
 #, kde-format
@@ -303,7 +303,7 @@ msgstr "Kullanılabilir komutları göster"
 #: kioclient.cpp:200
 #, kde-format
 msgid "Command (see --commands)"
-msgstr "Komut (bakınız --commands)"
+msgstr "Komut (bkz. --commands)"
 
 #: kioclient.cpp:200
 #, kde-format
@@ -336,7 +336,7 @@ msgstr "Dosyaların indirileceği hedef"
 #, kde-format
 msgctxt "@info:shell"
 msgid "%1: Syntax error, unknown command '%2'\n"
-msgstr "%1: Sözdizim hatası, bilinmeyen komut '%2'\n"
+msgstr "%1: Sözdizim hatası, bilinmeyen komut “%2”\n"
 
 #: kioclient.cpp:493
 #, kde-format
