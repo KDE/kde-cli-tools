@@ -40,7 +40,9 @@
 #include <klocalizedstring.h>
 #include <kmessagebox.h>
 #include <kshell.h>
+#if WITH_X11
 #include <kstartupinfo.h>
+#endif
 #include <kuser.h>
 #include <kwindowsystem.h>
 
