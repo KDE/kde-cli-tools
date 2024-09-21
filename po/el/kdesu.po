@@ -15,7 +15,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kdesu\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-03-05 03:09+0000\n"
+"POT-Creation-Date: 2024-09-21 00:41+0000\n"
 "PO-Revision-Date: 2016-09-16 14:23+0200\n"
 "Last-Translator: Dimitris Kardarakos <dimkard@gmail.com>\n"
 "Language-Team: Greek <kde-i18n-el@kde.org>\n"
@@ -36,105 +36,105 @@ msgctxt "EMAIL OF TRANSLATORS"
 msgid "Your emails"
 msgstr "sngeorgaras@otenet.gr, manolis@koppermind.homelinux.org"
 
-#: kdesu.cpp:90
+#: kdesu.cpp:92
 #, kde-format
 msgid "KDE su"
 msgstr "KDE su"
 
-#: kdesu.cpp:92
+#: kdesu.cpp:94
 #, kde-format
 msgid "Runs a program with elevated privileges."
 msgstr "Εκτελεί ένα πρόγραμμα με περισσότερα προνόμια."
 
-#: kdesu.cpp:94
+#: kdesu.cpp:96
 #, kde-format
 msgid "Copyright (c) 1998-2000 Geert Jansen, Pietro Iglio"
 msgstr "Πνευματικά δικαιώματα (c) 1998-2000 Geert Jansen, Pietro Iglio"
 
-#: kdesu.cpp:95
+#: kdesu.cpp:97
 #, kde-format
 msgid "Geert Jansen"
 msgstr "Geert Jansen"
 
-#: kdesu.cpp:95
+#: kdesu.cpp:97
 #, kde-format
 msgid "Maintainer"
 msgstr "Συντηρητής"
 
-#: kdesu.cpp:96
+#: kdesu.cpp:98
 #, kde-format
 msgid "Pietro Iglio"
 msgstr "Pietro Iglio"
 
-#: kdesu.cpp:96
+#: kdesu.cpp:98
 #, kde-format
 msgid "Original author"
 msgstr "Αρχικός συγγραφέας"
 
-#: kdesu.cpp:105
+#: kdesu.cpp:107
 #, kde-format
 msgid "Specifies the command to run as separate arguments"
 msgstr "Καθορίζει την εντολή που θα εκτελεστεί ως ξεχωριστά ορίσματα"
 
-#: kdesu.cpp:106
+#: kdesu.cpp:108
 #, kde-format
 msgid "Specifies the command to run as one string"
 msgstr "Καθορίζει την εντολή που θα εκτελεστεί ως μια συμβολοσειρά"
 
-#: kdesu.cpp:107
+#: kdesu.cpp:109
 #, kde-format
 msgid "Run command under target uid if <file> is not writable"
 msgstr ""
 "Εκτέλεση εντολής κάτω από το uid-στόχο αν το <file> δεν είναι εγγράψιμο"
 
-#: kdesu.cpp:108
+#: kdesu.cpp:110
 #, kde-format
 msgid "Specifies the target uid"
 msgstr "Καθορίζει το uid στόχο"
 
-#: kdesu.cpp:109
+#: kdesu.cpp:111
 #, kde-format
 msgid "Do not keep password"
 msgstr "Μη διατήρηση του κωδικού πρόσβασης"
 
-#: kdesu.cpp:110
+#: kdesu.cpp:112
 #, kde-format
 msgid "Stop the daemon (forgets all passwords)"
 msgstr "Τερματισμός του δαίμονα (ξεχνιούνται όλοι οι κωδικοί πρόσβασης)"
 
-#: kdesu.cpp:111
+#: kdesu.cpp:113
 #, kde-format
 msgid "Enable terminal output (no password keeping)"
 msgstr "Ενεργοποίηση εξόδου τερματικού (δε διατηρούνται κωδικοί πρόσβασης)"
 
-#: kdesu.cpp:113
+#: kdesu.cpp:115
 #, kde-format
 msgid "Set priority value: 0 <= prio <= 100, 0 is lowest"
 msgstr ""
 "Καθορισμός τιμής προτεραιότητας: 0 <= προτ. <= 100, 0 είναι η πιο χαμηλή"
 
-#: kdesu.cpp:114
+#: kdesu.cpp:116
 #, kde-format
 msgid "Use realtime scheduling"
 msgstr "Χρήση προγραμματισμού πραγματικού χρόνου"
 
-#: kdesu.cpp:115
+#: kdesu.cpp:117
 #, kde-format
 msgid "Do not display ignore button"
 msgstr "Να μην εμφανιστεί το κουμπί παράβλεψης"
 
-#: kdesu.cpp:116
+#: kdesu.cpp:118
 #, kde-format
 msgid "Specify icon to use in the password dialog"
 msgstr ""
 "Όρισε εικονίδιο που θα χρησιμοποιηθεί στο διάλογο εισαγωγής κωδικού πρόσβασης"
 
-#: kdesu.cpp:117
+#: kdesu.cpp:119
 #, kde-format
 msgid "Do not show the command to be run in the dialog"
 msgstr "Να μην εμφανιστεί η εντολή που θα εκτελεστεί στο διάλογο"
 
-#: kdesu.cpp:124
+#: kdesu.cpp:126
 #, kde-format
 msgctxt ""
 "Transient means that the kdesu app will be attached to the app specified by "
@@ -144,47 +144,47 @@ msgstr ""
 "Το παράθυρο διαλόγου γίνεται μεταβατικό για μια εφαρμογή Χ ορισμένη από το "
 "winid"
 
-#: kdesu.cpp:126
+#: kdesu.cpp:128
 #, kde-format
 msgid "Embed into a window"
 msgstr "Ενσωματωμένο σε ένα παράθυρο"
 
-#: kdesu.cpp:153
+#: kdesu.cpp:155
 #, kde-format
 msgid "Cannot execute command '%1'."
 msgstr "Αδύνατη η εκτέλεση της εντολής «%1»"
 
-#: kdesu.cpp:156
+#: kdesu.cpp:158
 #, kde-format
 msgid "Cannot execute command '%1'. It contains invalid characters."
 msgstr "Αδυναμία εκτέλεσης της εντολής «%1». Περιέχει μη-έγκυρους χαρακτήρες."
 
-#: kdesu.cpp:230
+#: kdesu.cpp:232
 #, kde-format
 msgid "Illegal priority: %1"
 msgstr "Παράνομη προτεραιότητα: %1"
 
-#: kdesu.cpp:251
+#: kdesu.cpp:253
 #, kde-format
 msgid "No command specified."
 msgstr "Δεν καθορίστηκε καμία εντολή."
 
-#: kdesu.cpp:354
+#: kdesu.cpp:356
 #, kde-format
 msgid "Su returned with an error.\n"
 msgstr "Το su επέστρεψε με ένα σφάλμα.\n"
 
-#: kdesu.cpp:382
+#: kdesu.cpp:384
 #, kde-format
 msgid "Command:"
 msgstr "Εντολή:"
 
-#: kdesu.cpp:391
+#: kdesu.cpp:393
 #, kde-format
 msgid "realtime: "
 msgstr "πραγματικός χρόνος: "
 
-#: kdesu.cpp:395
+#: kdesu.cpp:397
 #, kde-format
 msgid "Priority:"
 msgstr "Προτεραιότητα:"
