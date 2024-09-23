@@ -1,21 +1,22 @@
-# Copyright (C) YEAR This file is copyright:
+# Copyright (C) 2024 This file is copyright:
 # This file is distributed under the same license as the kde-cli-tools package.
 #
 # Stelios <sstavra@gmail.com>, 2020.
+# SPDX-FileCopyrightText: 2024 Antonis Geralis <capoiosct@gmail.com>
 msgid ""
 msgstr ""
 "Project-Id-Version: kde-cli-tools\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2022-09-28 00:51+0000\n"
-"PO-Revision-Date: 2020-09-05 17:11+0300\n"
-"Last-Translator: Stelios <sstavra@gmail.com>\n"
+"PO-Revision-Date: 2024-09-22 14:27+0300\n"
+"Last-Translator: Antonis Geralis <capoiosct@gmail.com>\n"
 "Language-Team: Greek <kde-i18n-el@kde.org>\n"
 "Language: el\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Generator: Lokalize 20.04.2\n"
+"X-Generator: Lokalize 24.08.1\n"
 
 #, kde-format
 msgctxt "NAME OF TRANSLATORS"
@@ -39,7 +40,7 @@ msgid ""
 "DBus"
 msgstr ""
 "Ένα εργαλείο που εκπέμπει μια ειδοποίηση για όλους τους χρήστες "
-"αποστέλλοντάς τη στο DBus του συστήματος"
+"αποστέλλοντας τη στο DBus του συστήματος"
 
 #: main.cpp:26
 #, kde-format
@@ -70,7 +71,7 @@ msgid ""
 "omitted, the notification will be sent to all users."
 msgstr ""
 "Μια λίστα των ID των χρηστών με διαχωριστικό το κόμμα στους οποίους θα "
-"σταλεί η ειδοποίηση. Αν παραλειφθεί, η ειδοποίηση θα σταλεί σε όλους τπυς "
+"σταλεί η ειδοποίηση. Αν παραλειφθεί, η ειδοποίηση θα σταλεί σε όλους τους "
 "χρήστες."
 
 #: main.cpp:45
