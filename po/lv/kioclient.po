@@ -6,31 +6,32 @@
 # Viesturs Zarins <viesturs.zarins@mii.lu.lv>, 2008, 2009.
 # Viesturs Zariņš <viesturs.zarins@mii.lu.lv>, 2009.
 # Maris Nartiss <maris.kde@gmail.com>, 2011.
+# SPDX-FileCopyrightText: 2024 Toms Trasūns <toms.trasuns@posteo.net>
 msgid ""
 msgstr ""
 "Project-Id-Version: kioclient\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2024-04-26 00:39+0000\n"
-"PO-Revision-Date: 2011-12-02 08:08+0200\n"
-"Last-Translator: Maris Nartiss <maris.kde@gmail.com>\n"
-"Language-Team: Latvian\n"
+"PO-Revision-Date: 2024-10-01 18:50+0300\n"
+"Last-Translator: Toms Trasūns <toms.trasuns@posteo.net>\n"
+"Language-Team: Latvian <kde-i18n-doc@kde.org>\n"
 "Language: lv\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Generator: KBabel 1.11.4\n"
+"X-Generator: Lokalize 24.08.0\n"
 "Plural-Forms: nplurals=3; plural=(n%10==1 && n%100!=11 ? 0 : n != 0 ? 1 : "
 "2);\n"
 
 #, kde-format
 msgctxt "NAME OF TRANSLATORS"
 msgid "Your names"
-msgstr ""
+msgstr "Toms Trasūns"
 
 #, kde-format
 msgctxt "EMAIL OF TRANSLATORS"
 msgid "Your emails"
-msgstr ""
+msgstr "toms.trasuns@posteo.net"
 
 #: kioclient.cpp:55
 #, kde-format
@@ -42,32 +43,19 @@ msgstr ""
 "Sintakse:\n"
 
 #: kioclient.cpp:57
-#, fuzzy, kde-format
-#| msgid ""
-#| "  kioclient openProperties 'url'\n"
-#| "            # Opens a properties menu\n"
-#| "\n"
+#, kde-format
 msgctxt "The argument is the command \"kioclient openProperties\""
 msgid ""
 "  %1 'url'\n"
 "            # Opens a properties dialog of 'url'\n"
 "\n"
 msgstr ""
-"  kioclient openProperties 'url'\n"
-"            # Atvērt parametru izvēlni\n"
+"  %1 'url'\n"
+"            # Atver „url“ īpašību lodziņu\n"
 "\n"
 
 #: kioclient.cpp:64
-#, fuzzy, kde-format
-#| msgid ""
-#| "  kioclient exec 'url' ['mimetype']\n"
-#| "            # Tries to open the document pointed to by 'url', in the "
-#| "application\n"
-#| "            #   associated with it in KDE. You may omit 'mimetype'.\n"
-#| "            #   In this case the mimetype is determined\n"
-#| "            #   automatically. Of course URL may be the URL of a\n"
-#| "            #   document, or it may be a *.desktop file.\n"
-#| "            #   'url' can be an executable, too.\n"
+#, kde-format
 msgctxt "The argument is the command \"kioclient exec\""
 msgid ""
 "  %1 'url' ['mimetype']\n"
@@ -78,15 +66,12 @@ msgid ""
 "            # 'url' can be the URL of a document, a *.desktop file,\n"
 "            # or an executable.\n"
 msgstr ""
-"  kioclient exec 'url' ['mimetype']\n"
-"            #  Mēģina atvērt dokumentu uz, kuru norāda 'url', tajā "
-"programmā, kurai\n"
-"            #   KDE definēta asociācija šim mime-tipam. Jūs varat izlaist "
-"'mimetype'.\n"
-"            #   Tādā gadījumā mime-tips tiek noteikts automātiski\n"
-"            #   Protams, URL var būt gan dokumenta URL,\n"
-"            #   gan arī tas var būt *.desktop fails.\n"
-"            #   'url' var būt arī izpildāms fails.\n"
+"  %1 'url' ['mimetype']\n"
+"            # Mēģina atvērt dokumentu, uz kuru norāda ar „url“, programmā,\n"
+"            # kas KDE ir ar to saistīta. Varat arī izlaist „mimetype“.\n"
+"            # Tādā gadījumā MIME tipu noteiks automātiski.\n"
+"            # „url“ var būt dokumenta URL, „*.desktop“ datne,\n"
+"            # vai izpilddatne.\n"
 
 #: kioclient.cpp:75
 #, kde-format
@@ -99,15 +84,16 @@ msgid ""
 "            #   The short version 'kioclient mv' is also available.\n"
 "\n"
 msgstr ""
+"  %1 'src' 'dest'\n"
+"            # Pārvieto URL „src“ uz „dest“.\n"
+"            #   „src“ var būt URL saraksts.\n"
+"            #   „dest“ var būt „trash:/“, lai datnes pārvietotu uz "
+"atkritni.\n"
+"            #   Pieejama ir arī īsā versija „kioclient mv“.\n"
+"\n"
 
 #: kioclient.cpp:85
-#, fuzzy, kde-format
-#| msgid ""
-#| "  kioclient download ['src']\n"
-#| "            # Copies the URL 'src' to a user-specified location'.\n"
-#| "            #   'src' may be a list of URLs, if not present then\n"
-#| "            #   a URL will be requested.\n"
-#| "\n"
+#, kde-format
 msgctxt "The argument is the command \"kioclient download\""
 msgid ""
 "  %1 ['src']\n"
@@ -116,18 +102,14 @@ msgid ""
 "            #   a URL will be requested.\n"
 "\n"
 msgstr ""
-"  kioclient download ['src']\n"
-"            # Nokopē URL 'src' uz lietotāja norādītu vietu.\n"
-"            #   'src' var būt URL saraksts, ja nav padots, tad\n"
-"            #   parāda pieprasījumu URL ievadei.\n"
+"  %1 ['src']\n"
+"            # Kopē URL „src“ uz lietotāja norādītu vietu.\n"
+"            #   „src“ var būt URL saraksts, ja tā nav, tad\n"
+"            #   pieprasīs norādīt URL.\n"
 "\n"
 
 #: kioclient.cpp:94
-#, fuzzy, kde-format
-#| msgid ""
-#| "  kioclient copy 'src' 'dest'\n"
-#| "            # Copies the URL 'src' to 'dest'.\n"
-#| "            #   'src' may be a list of URLs.\n"
+#, kde-format
 msgctxt "The argument is the command \"kioclient copy\""
 msgid ""
 "  %1 'src' 'dest'\n"
@@ -136,48 +118,38 @@ msgid ""
 "            #   The short version 'kioclient cp' is also available.\n"
 "\n"
 msgstr ""
-"  kioclient copy 'src' 'dest'\n"
-"            # Kopē 'src' URL uz 'dest'.\n"
-"            #   'src' var būt URL saraksts.\n"
+"  %1 'src' 'dest'\n"
+"            # Kopē URL „src“ uz „dest“.\n"
+"            #   „src“ var būt URL saraksts.\n"
+"            #   Tāpat ir pieejama arī īsā versija „kioclient cp“.\n"
+"\n"
 
 #: kioclient.cpp:103
-#, fuzzy, kde-format
-#| msgid ""
-#| "  kioclient cat 'url'\n"
-#| "            # Writes out the contents of 'url' to stdout\n"
-#| "\n"
+#, kde-format
 msgctxt "The argument is the command \"kioclient cat\""
 msgid ""
 "  %1 'url'\n"
 "            # Prints the contents of the file 'url' to the standard output\n"
 "\n"
 msgstr ""
-"  kioclient cat 'url'\n"
-"            # Izvada url saturu uz stdout\n"
+"  %1 'url'\n"
+"            # Standarta izvadē izdrukā datnes „url“ saturu\n"
 "\n"
 
 #: kioclient.cpp:110
-#, fuzzy, kde-format
-#| msgid ""
-#| "  kioclient cat 'url'\n"
-#| "            # Writes out the contents of 'url' to stdout\n"
-#| "\n"
+#, kde-format
 msgctxt "The argument is the command \"kioclient ls\""
 msgid ""
 "  %1 'url'\n"
 "            # Lists the contents of the directory 'url' to stdout\n"
 "\n"
 msgstr ""
-"  kioclient cat 'url'\n"
-"            # Izvada url saturu uz stdout\n"
+"  %1 'url'\n"
+"            # Uzskaita „url“ direktorija saturu uz „stdout“\n"
 "\n"
 
 #: kioclient.cpp:117
-#, fuzzy, kde-format
-#| msgid ""
-#| "  kioclient remove 'url'\n"
-#| "            # Removes the URL\n"
-#| "            #   'url' may be a list of URLs.\n"
+#, kde-format
 msgctxt "The argument is the command \"kioclient remove\""
 msgid ""
 "  %1 'url'\n"
@@ -186,99 +158,78 @@ msgid ""
 "            #   The short version 'kioclient rm' is also available.\n"
 "\n"
 msgstr ""
-"  kioclient remove 'src' 'dest'\n"
-"            # Izdzēš 'src' URL.\n"
-"            #   'src' var būt saraksts ar URL.\n"
+"  %1 'url'\n"
+"            # Noņem URL\n"
+"            #   „url“ var būt saraksts ar URL.\n"
+"            #   Tāpat ir pieejama īsā versija „kioclient rm“.\n"
+"\n"
 
 #: kioclient.cpp:126
-#, fuzzy, kde-format
-#| msgid ""
-#| "  kioclient cat 'url'\n"
-#| "            # Writes out the contents of 'url' to stdout\n"
-#| "\n"
+#, kde-format
 msgctxt "The argument is the command \"kioclient stat\""
 msgid ""
 "  %1 'url'\n"
 "            # Shows all of the available information for 'url'\n"
 "\n"
 msgstr ""
-"  kioclient cat 'url'\n"
-"            # Izvada url saturu uz stdout\n"
+"  %1 'url'\n"
+"            # Parāda visu pieejamo informāciju par „url“\n"
 "\n"
 
 #: kioclient.cpp:133
-#, fuzzy, kde-format
-#| msgid ""
-#| "  kioclient openProperties 'url'\n"
-#| "            # Opens a properties menu\n"
-#| "\n"
+#, kde-format
 msgctxt "The argument is the command \"kioclient appmenu\""
 msgid ""
 "  %1\n"
 "            # Opens a basic application launcher\n"
 "\n"
 msgstr ""
-"  kioclient openProperties 'url'\n"
-"            # Atvērt parametru izvēlni\n"
+"  %1\n"
+"            # Atver pamata programmu palaidēju\n"
 "\n"
 
 #: kioclient.cpp:139
 #, kde-format
 msgid "*** Examples:\n"
-msgstr ""
+msgstr "*** Piemēri:\n"
 
 #: kioclient.cpp:140
-#, fuzzy, kde-format
-#| msgid ""
-#| "  kioclient exec file:/home/weis/data/test.html\n"
-#| "             // Opens the file with default binding\n"
-#| "\n"
+#, kde-format
 msgid ""
 "  kioclient exec file:/home/weis/data/test.html\n"
 "             // Opens the file with the default application associated\n"
 "             // with this MimeType\n"
 "\n"
 msgstr ""
-"  kioclient exec file:['/path/to/file']\n"
-"             // Atver failu /path/to/file ar noklusēto programmu\n"
+"  kioclient exec file:/home/weis/data/test.html\n"
+"             // Atver datni ar noklusējuma programmu, kas ir sasaistīta\n"
+"             // ar šo MIME tipu\n"
 "\n"
 
 #: kioclient.cpp:145
-#, fuzzy, kde-format
-#| msgid ""
-#| "  kioclient exec ftp://localhost/\n"
-#| "             // Opens new window with URL\n"
-#| "\n"
+#, kde-format
 msgid ""
 "  kioclient exec ftp://localhost/\n"
 "             // Opens URL with the default handler for ftp:// scheme\n"
 "\n"
 msgstr ""
 "  kioclient exec ftp://localhost/\n"
-"             // Atvērt URL jaunā logā\n"
+"             // Atver URL ar noklusējuma „ftp://“ shēmas apstrādātāju\n"
 "\n"
 
 #: kioclient.cpp:149
-#, fuzzy, kde-format
-#| msgid ""
-#| "  kioclient exec file:/root/Desktop/emacs.desktop\n"
-#| "             // Starts emacs\n"
-#| "\n"
+#, kde-format
 msgid ""
 "  kioclient exec file:/root/Desktop/emacs.desktop\n"
 "             // Starts emacs\n"
 "\n"
 msgstr ""
 "  kioclient exec file:/root/Desktop/emacs.desktop\n"
-"             // Palaist emacs\n"
+"             // Palaiž „emacs“\n"
 "\n"
 
 #: kioclient.cpp:153
-#, fuzzy, kde-format
-#| msgid ""
-#| "  kioclient exec .\n"
-#| "             // Opens the current directory. Very convenient.\n"
-#| "\n"
+#, kde-format
 msgid ""
 "  kioclient exec .\n"
 "             // Opens the current directory in the default\n"
@@ -286,7 +237,8 @@ msgid ""
 "\n"
 msgstr ""
 "  kioclient exec .\n"
-"             // Atver pašreizējo mapi. Ļoti ērti!\n"
+"             // Atver pašreizējo direktoriju noklusējuma\n"
+"             // datņu pārvaldniekā. Ļoti ērti.\n"
 "\n"
 
 #: kioclient.cpp:172
@@ -298,13 +250,14 @@ msgstr "KIO klients"
 #, kde-format
 msgid "Command-line tool for network-transparent operations"
 msgstr ""
-"Komandrindas rīks caurspīdīgām (bez nepieciešamības zināt kā darbojas) "
+"Komandrindas rīks caurspīdīgām (bez nepieciešamības zināt, kā darbojas) "
 "operācijām tīklā"
 
 #: kioclient.cpp:180
 #, kde-format
 msgid "Use message boxes and other native notifications"
 msgstr ""
+"Izmanto ziņojumu laukus un cita veida darbvirsmas standarta paziņojumus"
 
 #: kioclient.cpp:183
 #, kde-format
@@ -312,27 +265,28 @@ msgid ""
 "Non-interactive use: no message boxes. If you don't want a graphical "
 "connection, use --platform offscreen"
 msgstr ""
+"Neinteraktīvs lietojums: bez ziņojumu laukiem. Ja nevēlaties grafisku "
+"sasrkarni, izmantojiet „--platform offscreen“"
 
 #: kioclient.cpp:187
 #, kde-format
 msgid "Overwrite destination if it exists (for copy and move)"
-msgstr "Pārrakstīt mērķi, ja tas eksistē (kopējot un pārvietojot)"
+msgstr "Pārrakstīt galamērķi, ja tas pastāv (kopējot un pārvietojot)"
 
 #: kioclient.cpp:191
-#, fuzzy, kde-format
-#| msgid "URL or URLs"
+#, kde-format
 msgid "file or URL"
-msgstr "URL vai URLi"
+msgstr "datne vai URL"
 
 #: kioclient.cpp:191 kioclient.cpp:193 kioclient.cpp:196 kioclient.cpp:201
 #, kde-format
 msgid "urls..."
-msgstr ""
+msgstr "url adreses..."
 
 #: kioclient.cpp:193 kioclient.cpp:196
 #, kde-format
 msgid "Source URL or URLs"
-msgstr "Avota URL vai URLi"
+msgstr "Viens vai vairāki avota URL"
 
 #: kioclient.cpp:194 kioclient.cpp:197
 #, kde-format
@@ -342,7 +296,7 @@ msgstr "Mērķa URL"
 #: kioclient.cpp:194 kioclient.cpp:197
 #, kde-format
 msgid "url"
-msgstr ""
+msgstr "url"
 
 #: kioclient.cpp:199
 #, kde-format
@@ -352,12 +306,12 @@ msgstr "Rādīt pieejamās komandas"
 #: kioclient.cpp:200
 #, kde-format
 msgid "Command (see --commands)"
-msgstr "Komanda (skatīt --commands)"
+msgstr "Komanda (skatīt „--commands“)"
 
 #: kioclient.cpp:200
 #, kde-format
 msgid "command"
-msgstr ""
+msgstr "komanda"
 
 #: kioclient.cpp:201
 #, kde-format
@@ -365,36 +319,33 @@ msgid "Arguments for command"
 msgstr "Komandas argumenti"
 
 #: kioclient.cpp:225
-#, fuzzy, kde-format
-#| msgid "Syntax Error: Not enough arguments\n"
+#, kde-format
 msgctxt "@info:shell"
 msgid "%1: Syntax error, not enough arguments\n"
-msgstr "Sintakses kļūda: Nepietiek argumentu\n"
+msgstr "%1: sintakses kļūda, nepietiek parametru\n"
 
 #: kioclient.cpp:229
-#, fuzzy, kde-format
-#| msgid "Syntax Error: Too many arguments\n"
+#, kde-format
 msgctxt "@info:shell"
 msgid "%1: Syntax error, too many arguments\n"
-msgstr "Sintakses kļūda: Par daudz argumentu\n"
+msgstr "%1: sintakses kļūda, par daudz parametru\n"
 
 #: kioclient.cpp:435
 #, kde-format
 msgid "Destination where to download the files"
-msgstr ""
+msgstr "Datņu lejupielādes galamērķa vieta"
 
 #: kioclient.cpp:477
-#, fuzzy, kde-format
-#| msgid "Syntax Error: Unknown command '%1'\n"
+#, kde-format
 msgctxt "@info:shell"
 msgid "%1: Syntax error, unknown command '%2'\n"
-msgstr "Sintakses kļūda: Nezināma komanda '%1'\n"
+msgstr "%1: sintakses kļūda, nezināma komanda „%2“\n"
 
 #: kioclient.cpp:493
 #, kde-format
 msgctxt "@info:shell"
 msgid "%1: %2\n"
-msgstr ""
+msgstr "%1: %2\n"
 
 #, fuzzy
 #~| msgid ""

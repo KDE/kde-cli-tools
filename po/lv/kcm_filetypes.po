@@ -4,36 +4,39 @@
 # Maris Nartiss <maris.kde@gmail.com>, 2007, 2008, 2011, 2019.
 # Viesturs Zarins <viesturs.zarins@mii.lu.lv>, 2007, 2008.
 # Viesturs Zariņš <viesturs.zarins@mii.lu.lv>, 2009.
+# SPDX-FileCopyrightText: 2024 Toms Trasūns <toms.trasuns@posteo.net>
 msgid ""
 msgstr ""
 "Project-Id-Version: filetypes\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2024-01-30 00:38+0000\n"
-"PO-Revision-Date: 2019-12-07 14:12+0200\n"
-"Last-Translator: Maris Nartiss <maris.kde@gmail.com>\n"
+"PO-Revision-Date: 2024-10-01 16:44+0300\n"
+"Last-Translator: Toms Trasūns <toms.trasuns@posteo.net>\n"
 "Language-Team: Latvian <kde-i18n-doc@kde.org>\n"
 "Language: lv\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Generator: Lokalize 19.08.3\n"
+"X-Generator: Lokalize 24.08.0\n"
 "Plural-Forms: nplurals=3; plural=(n%10==1 && n%100!=11 ? 0 : n != 0 ? 1 : "
 "2);\n"
 
 #, kde-format
 msgctxt "NAME OF TRANSLATORS"
 msgid "Your names"
-msgstr "Andris Maziks, Māris Nartišs, Viesturs Zariņš"
+msgstr "Andris Maziks, Māris Nartišs, Viesturs Zariņš, Toms Trasūns"
 
 #, kde-format
 msgctxt "EMAIL OF TRANSLATORS"
 msgid "Your emails"
-msgstr "andris.m@delfi.lv, maris.kde@gmail.com, viesturs.zarins@mii.lu.lv"
+msgstr ""
+"andris.m@delfi.lv, maris.kde@gmail.com, viesturs.zarins@mii.lu.lv, toms."
+"trasuns@posteo.net"
 
 #: filegroupdetails.cpp:22
 #, kde-format
 msgid "Left Click Action (only for Konqueror file manager)"
-msgstr "Kreisā klišķa darbība (tikai Konqueror datņu pārlūkam)"
+msgstr "Kreisā klikšķa darbība (tikai „Konqueror“ datņu pārlūkam)"
 
 #: filegroupdetails.cpp:26 filetypedetails.cpp:134
 #, kde-format
@@ -54,11 +57,11 @@ msgid ""
 "setting for a specific file type in the 'Embedding' tab of the file type "
 "configuration. Dolphin  shows files always in a separate viewer"
 msgstr ""
-"Šeit jūs varat konfigurēt, ko darīs Konqueror datņu pārvaldnieks, kad jūs "
-"noklikšķiniet uz datnes, kas pieder šai grupai. Konqueror var parādīt datni "
-"iegultajā skatītājā vai palaist atsevišķu programmu. Jūs varat mainīt šos "
-"iestatījumus konkrētam datnes tipam ’Iegulšanas’ cilnē datnes tipa "
-"konfigurācijā. Dolphin vienmēr rāda datni atsevišķā skatītājā."
+"Šeit varat konfigurēt „Konqueror“ datņu pārvaldnieka darbību, kad jūs "
+"noklikšķiniet uz datnes, kas pieder šai grupai. „Konqueror“ var parādīt "
+"datni iegultajā skatītājā vai to atvērt atsevišķā programma. Varat mainīt "
+"šos iestatījumus konkrētam datnes tipam „Iegulšanas“ cilnē datnes tipa "
+"konfigurācijā. „Dolphin“ vienmēr rāda datni atsevišķā skatītājā."
 
 #: filetypedetails.cpp:61
 #, kde-format
@@ -66,7 +69,7 @@ msgid ""
 "This button displays the icon associated with the selected file type. Click "
 "on it to choose a different icon."
 msgstr ""
-"Šī poga rāda izvēlētās datnes tipa ikonu. Klikšķiniet uz tās, lai to "
+"Šī poga rāda atlasītās datnes tipa ikonu. Klikšķiniet uz tās, lai to "
 "nomainītu pret citu ikonu."
 
 #: filetypedetails.cpp:67
@@ -82,10 +85,9 @@ msgid ""
 "file type 'text/plain'; all files ending in '.txt' are recognized as plain "
 "text files."
 msgstr ""
-"Šablonu saraksts, kas var tikt izmantoti, lai identificētu izvēlētā tipa "
-"datnes. Piemērām , šablons '*.txt' ir piesaistīts datņu tipam ’text/plain’; "
-"visas datnes, kas beidzas ar ’.txt’, tiek noteiktas kā vienkāršas teksta "
-"datnes."
+"Šablonu saraksts, lai identificētu izvēlētā tipa datnes. Piemēram, šablons "
+"„*.txt“ ir piesaistīts datņu tipam „text/plain“, tāpēc visas datnes, kas "
+"beidzas ar „.txt“, sistēma atpazīt kā vienkāršas teksta datnes."
 
 #: filetypedetails.cpp:87 filetypesview.cpp:86 kservicelistwidget.cpp:106
 #, kde-format
@@ -105,7 +107,7 @@ msgstr "Izņemt"
 #: filetypedetails.cpp:99
 #, kde-format
 msgid "Remove the selected filename pattern."
-msgstr "Aizvākt izvēlēto datņu nosaukuma šablonu."
+msgstr "Izņemt izvēlēto datņu nosaukuma šablonu."
 
 #: filetypedetails.cpp:110
 #, kde-format
@@ -119,18 +121,19 @@ msgid ""
 "'HTML Page'). This description will be used by applications like Konqueror "
 "to display directory content."
 msgstr ""
-"Jūs varat ievadīt īsu aprakstu izvēlētā tipa datnei (piem. 'HTML Lapa'). Šo "
-"aprakstu izmantos Konqueror līdzīgas programmas, lai parādītu mapes saturu."
+"Varat ievadīt īsu aprakstu izvēlētā tipa datnei (piemēram, „HTML Lapa“). Šo "
+"aprakstu izmantos „Konqueror“ un citas līdzīgas programmas, lai parādītu "
+"mapes saturu."
 
 #: filetypedetails.cpp:129
 #, kde-format
 msgid "Left Click Action in Konqueror"
-msgstr "Kreisā klikšķa darbība iekš Konqueror"
+msgstr "Kreisā klikšķa darbība „Konqueror“ pārlūkā"
 
 #: filetypedetails.cpp:138
 #, kde-format
 msgid "Ask whether to save to disk instead (only for Konqueror browser)"
-msgstr "Pajautāt vai tā vietā saglabāt uz diska (tikai Konqueror pārlūkam)"
+msgstr "Jautāt vai tā vietā saglabāt uz diska (tikai „Konqueror“ pārlūkam)"
 
 #: filetypedetails.cpp:154
 #, kde-format
@@ -142,12 +145,12 @@ msgid ""
 "group G to which this type belongs; for instance, 'image' if the current "
 "file type is image/png. Dolphin always shows files in a separate viewer."
 msgstr ""
-"Šeit jūs varat konfigurēt, ko darīs Konqueror datņu pārvaldnieks, kad jūs "
-"noklikšķiniet uz šī tipa datnes. Konqueror datņu pārlūks var parādīt datni "
-"iegultajā skatītājā vai palaist atsevišķu programmu. Ja iestatīts 'Izmantot "
-"G grupas iestatījumus', datņu pārlūks uzvedīsies atbilstoši grupas G "
-"iestatījumiem, kam šis tips pieder, piem. ierakstam 'attēls', ja pašreizējās "
-"datnes tips ir image/png. Dolphin vienmēr rāda datnes atsevišķā skatītājā."
+"Šeit varat konfigurēt „Konqueror“ datņu pārvaldnieka darbību, noklikšķinot "
+"uz šī tipa datnes. „Konqueror“ datņu pārlūks var parādīt datni iegultajā "
+"skatītājā vai to atvērt atsevišķā programma. Ja iestatīts „Izmantot G grupas "
+"iestatījumus“, datņu pārlūks uzvedīsies atbilstoši G grupas iestatījumiem, "
+"kam šis tips pieder, piemēram, ierakstam „attēls“, ja pašreizējās datnes "
+"tips ir „image/png“. „Dolphin“ vienmēr rāda datnes atsevišķā skatītājā."
 
 #: filetypedetails.cpp:167
 #, kde-format
@@ -177,7 +180,7 @@ msgstr "Datnes tips %1"
 #: filetypedetails.cpp:335
 #, kde-format
 msgid "Use settings for '%1' group"
-msgstr "Izmantot iestatījumus '%1' grupai"
+msgstr "Izmantot iestatījumus „%1“ grupai"
 
 #: filetypesview.cpp:57
 #, kde-format
@@ -191,8 +194,8 @@ msgid ""
 "pattern will appear in the list. Alternatively, enter a part of a file type "
 "name as it appears in the list."
 msgstr ""
-"Ievadiet datnes nosaukuma šablona fragmentu. Tikai datņu tipi ar atbilstošu "
-"datņu šablonu parādīsies sarakstā. Varat ievadīt arī datnes tipa fragmentu "
+"Ievadiet datnes nosaukuma šablona fragmentu. Sarakstā parādīsies tikai datņu "
+"tipi ar atbilstošu datņu šablonu. Varat ievadīt arī datnes tipa fragmentu, "
 "kā tas ir redzams sarakstā."
 
 #: filetypesview.cpp:71 multiapplydialog.cpp:27
@@ -208,9 +211,9 @@ msgid ""
 "collapse it. Select a file type (e.g. text/html for HTML files) to view/edit "
 "the information for that file type using the controls on the right."
 msgstr ""
-"Šeit jūs varat redzēt hierarhisku datņu tipu sarakstu, kuri ir zināmi jūsu "
-"sistēmai. Nospiediet uz '+' zīmes, lai izvērstu kategoriju vai uz '-' zīmes "
-"lai sakļautu to. Izvēlieties datnes tipu (piem. text/html HTML datnēm), lai "
+"Šeit varat redzēt hierarhisku šai sistēmai zināmo datņu tipu sarakstu. "
+"Nospiediet uz + zīmes, lai izvērstu kategoriju vai uz − zīmes lai to "
+"sakļautu. Izvēlieties datnes tipu (piemēram, „text/html“ HTML datnēm), lai "
 "skatītu/rediģētu informāciju par datnes tipu izmantojot vadības rīkus labajā "
 "pusē."
 
@@ -237,7 +240,7 @@ msgstr "&Atgriezt"
 #: filetypesview.cpp:383
 #, kde-format
 msgid "Revert this file type to its initial system-wide definition"
-msgstr "Atgriezt šo datnes tipu tā sākotnējā, sistēmas definētajā stāvoklī"
+msgstr "Atgriezt šo datnes tipu tā sākotnējā, sistēmas definētajā, stāvoklī"
 
 #: filetypesview.cpp:385
 #, kde-format
@@ -249,10 +252,10 @@ msgid ""
 "from file contents can still end up using them)."
 msgstr ""
 "Spiediet šeit, lai šo datnes tipu atgrieztu tā sākotnējā, sistēmas "
-"definētajā stāvoklī. Tas atceļ visas ar šo tipu veiktās izmaiņas. Ņemiet "
-"vērā,ka sistēmas definētos datņu tipus nevar izdzēst. Bet iespējams tiem "
-"iestatīt tukšu šablonu sarakstu, tādējādi minimizējot to lietojumu (tie "
-"tomēr tiks lietoti, nosakot balstoties uz datnes saturu)."
+"definētajā, stāvoklī. Tas atceļ visas ar šo tipu veiktās izmaiņas. Ņemiet "
+"vērā,ka sistēmas definētos datņu tipus nevar izdzēst. Bet ir iespējams tiem "
+"iestatīt tukšu šablonu sarakstu, tādējādi samazinot to lietojumu (šīs datņu "
+"tipu definīcijas sistēma tik un tā lietos, tās atpazīstot pēc datņu satura)."
 
 #: filetypesview.cpp:390
 #, kde-format
@@ -269,9 +272,10 @@ msgid ""
 "still end up using them)."
 msgstr ""
 "Spiediet šeit, lai izdzēstu datnes tipa definīciju. Tas pieejams tikai "
-"lietotāja definētiem datņu tipiem. Sistēmas datņu tipus nevar izdzēst. Bet "
-"iespējams tiem iestatīt tukšu šablonu sarakstu, tādējādi minimizējot to "
-"lietojumu (tie tomēr tiks lietoti, nosakot balstoties uz datnes saturu)."
+"lietotāja definētiem datņu tipiem. Sistēmas datņu tipus izdzēst nevar. Tomēr "
+"ir iespējams tiem iestatīt tukšu šablonu sarakstu, tādējādi samazinot to "
+"lietojumu (datnes tipa definīciju sistēma tomēr lietos, tos atpazīstot pēc "
+"datnes satura)."
 
 #: keditfiletype.cpp:114
 #, kde-format
@@ -283,7 +287,7 @@ msgstr "Datņu tipu redaktors"
 msgid ""
 "KDE file type editor - simplified version for editing a single file type"
 msgstr ""
-"KDE datņu tipa redaktors - vienkāršota versija vienas datnes tipa labošana"
+"KDE datņu tipa redaktors — vienkāršota versija vienas datnes tipa labošana"
 
 #: keditfiletype.cpp:118
 #, kde-format
@@ -303,12 +307,12 @@ msgstr "David Faure"
 #: keditfiletype.cpp:126
 #, kde-format
 msgid "Makes the dialog transient for the window specified by winid"
-msgstr "Padara dialogu īslaicīgu winid norādītajam logam"
+msgstr "Padara lodziņu īslaicīgu ar „winid“ norādītajam logam"
 
 #: keditfiletype.cpp:128
 #, kde-format
 msgid "File type to edit (e.g. text/html)"
-msgstr "Labojamais datnes tips (piem. text/html)"
+msgstr "Rediģējamais datnes tips (piemēram, „text/html“)"
 
 #: keditfiletype.cpp:159
 #, kde-format
@@ -349,10 +353,10 @@ msgid ""
 "then the list is ordered by priority with the uppermost item taking "
 "precedence over the others."
 msgstr ""
-"Šis ir programmu saraksts, kas piešķirtas izvēlētā tipa datnēm. Šis saraksts "
-"parādās Konqueror konteksta izvēlnē, kad jūs izvēlieties \"Atvērt ar...\" "
-"iespēju. Ja datnes tipam ir piešķirtas vairākas programmas, tad saraksts "
-"tiek sakārtots pēc prioritātēm, kur augšējam ierakstam ir augstākā "
+"Šis ir programmu saraksts, kas ir sasaistītas ar izvēlētā tipa datnēm. Šis "
+"saraksts parādās „Konqueror“ konteksta izvēlnē, kad jūs izvēlieties „Atvērt "
+"ar...“ opciju. Ja datnes tipam ir piešķirtas vairākas programmas, tad "
+"saraksts izkārtojas pēc prioritātēm, kur augšējam ierakstam ir augstākā "
 "prioritāte."
 
 #: kservicelistwidget.cpp:69
@@ -364,15 +368,16 @@ msgid ""
 "type, then the list is ordered by priority with the uppermost item taking "
 "precedence over the others."
 msgstr ""
-"Šis ir servisu saraksts, ka piešķirti izvēlētā tipa datnēm. Šis saraksts "
-"parādās Konqueror konteksta izvēlnē, kad jūs izvēlieties \"Priekšskatīt ar..."
-"\" opciju. Ja datnes tipam ir piešķirti vairāki servisi, tad saraksts tiek "
-"sakārtots pēc prioritātēm, kur augšējam ierakstam ir augstākā prioritāte."
+"Šis ir servisu saraksts, ka ir sasaistīti ar izvēlētā tipa datnēm. Šis "
+"saraksts parādās „Konqueror“ konteksta izvēlnē, kad jūs izvēlieties "
+"„Priekšskatīt ar...“ opciju. Ja datnes tipam ir piešķirti vairāki servisi, "
+"tad saraksts izkārtojas pēc prioritātēm, kur augšējam ierakstam ir augstākā "
+"prioritāte."
 
 #: kservicelistwidget.cpp:81
 #, kde-format
 msgid "Move &Up"
-msgstr "Pārvietot &uz augšu"
+msgstr "Pārvietot &augšup"
 
 #: kservicelistwidget.cpp:87
 #, kde-format
@@ -382,9 +387,9 @@ msgid ""
 "only affects the selected application if the file type is\n"
 "associated with more than one application."
 msgstr ""
-"Piešķir augstāku prioritāti izvēlētajai\n"
-"programmai, pārvietojot to sarakstā uz augšu.  Piezīme:  Tas \n"
-"ietekmē izvēlēto programmu tikai, ja datnes tipam ir\n"
+"Piešķir augstāku prioritāti atlasītajai\n"
+"programmai, pārvietojot to sarakstā augšup. Piezīme: tas \n"
+"ietekmē izvēlēto programmu tikai tad, ja datnes tipam ir\n"
 "piešķirta vairāk kā viena programma."
 
 #: kservicelistwidget.cpp:91
@@ -394,12 +399,12 @@ msgid ""
 "service, moving it up in the list."
 msgstr ""
 "Piešķir augstāku prioritāti izvēlētajam\n"
-"servisam, pārvietojot to sarakstā uz augšu."
+"servisam, pārvietojot to sarakstā augšup."
 
 #: kservicelistwidget.cpp:94
 #, kde-format
 msgid "Move &Down"
-msgstr "Pārvietot uz &leju"
+msgstr "Pārvietot &lejup"
 
 #: kservicelistwidget.cpp:99
 #, kde-format
@@ -410,7 +415,7 @@ msgid ""
 "associated with more than one application."
 msgstr ""
 "Piešķir zemāku prioritāti izvēlētajai\n"
-"programmai, pārvietojot to sarakstā uz leju. Piezīme: Tas \n"
+"programmai, pārvietojot to sarakstā lejup. Piezīme: tas \n"
 "ietekmē izvēlēto programmu tikai, ja datnes tipam ir\n"
 "piešķirta vairāk kā viena programma."
 
@@ -421,7 +426,7 @@ msgid ""
 "service, moving it down in the list."
 msgstr ""
 "Piešķir zemāku prioritāti izvēlētajam\n"
-"servisam, pārvietojot to sarakstā uz leju."
+"servisam, pārvietojot to sarakstā lejup."
 
 #: kservicelistwidget.cpp:111
 #, kde-format
@@ -436,22 +441,22 @@ msgstr "Rediģēt..."
 #: kservicelistwidget.cpp:118
 #, kde-format
 msgid "Edit command line of the selected application."
-msgstr "Rediģēt izvēlētās programmas komandas rindu."
+msgstr "Rediģēt atlasītās programmas komandrindu."
 
 #: kservicelistwidget.cpp:125
 #, kde-format
 msgid "Remove the selected application from the list."
-msgstr "Izņem izvēlēto programmu no saraksta."
+msgstr "No saraksta izņem atlasīto programmu."
 
 #: kservicelistwidget.cpp:127 multiapplydialog.cpp:19
 #, kde-format
 msgid "Apply To..."
-msgstr ""
+msgstr "Pielietot uz..."
 
 #: kservicelistwidget.cpp:132
 #, kde-format
 msgid "Apply the current preference order to other file types."
-msgstr ""
+msgstr "Pielietot pašreizējo prioritāšu secību citiem datņu tipiem."
 
 #: kservicelistwidget.cpp:155
 #, kde-format
@@ -473,12 +478,12 @@ msgstr "Pievienot servisu"
 #: kserviceselectdlg.cpp:30
 #, kde-format
 msgid "Select service:"
-msgstr "Izvēlēties servisu:"
+msgstr "Atlasiet servisu:"
 
 #: newtypedlg.cpp:25
 #, kde-format
 msgid "Create New File Type"
-msgstr "Veidot jaunu datņu tipu"
+msgstr "Izveidot jaunu datņu tipu"
 
 #: newtypedlg.cpp:30
 #, kde-format
@@ -488,7 +493,7 @@ msgstr "Grupa:"
 #: newtypedlg.cpp:39
 #, kde-format
 msgid "Select the category under which the new file type should be added."
-msgstr "Izvēlieties kategoriju zem kuras pievienot jauno datņu tipu."
+msgstr "Atlasiet kategoriju, zem kuras pievienot jauno datņu tipu."
 
 #: newtypedlg.cpp:44
 #, kde-format
@@ -502,9 +507,9 @@ msgid ""
 "category and you type 'custom' here, the file type 'image/custom' will be "
 "created."
 msgstr ""
-"Ievadiet datnes tipa nosaukumu. Piemēram, ja jūs izvēlaties 'attēls' kā "
-"kategoriju un šeit ievadiet 'pielāgots', tad tiks izveidots jauns tips "
-"'attēls/pielāgots'."
+"Ievadiet datnes tipa nosaukumu. Piemēram, ja izvēlaties „attēls“ kā "
+"kategoriju, bet šeit ievadāt „pielāgots“, tad sistēma izveidos jaunu tipu "
+"„attēls/pielāgots“."
 
 #~ msgid ""
 #~ "<p><h1>File Associations</h1> This module allows you to choose which "

@@ -5,63 +5,58 @@
 # Maris Nartiss <maris.kde@gmail.com>, 2007.
 # Viesturs Zarins <viesturs.zarins@mii.lu.lv>, 2008.
 # Viesturs Zariņš <viesturs.zarins@mii.lu.lv>, 2009.
+# SPDX-FileCopyrightText: 2024 Toms Trasūns <toms.trasuns@posteo.net>
 msgid ""
 msgstr ""
 "Project-Id-Version: kmimetypefinder\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2021-03-18 02:47+0100\n"
-"PO-Revision-Date: 2009-05-20 21:01+0300\n"
-"Last-Translator: Viesturs Zariņš <viesturs.zarins@mii.lu.lv>\n"
-"Language-Team: Latvian <locale@laka.lv>\n"
+"PO-Revision-Date: 2024-10-01 18:52+0300\n"
+"Last-Translator: Toms Trasūns <toms.trasuns@posteo.net>\n"
+"Language-Team: Latvian <kde-i18n-doc@kde.org>\n"
 "Language: lv\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Generator: Lokalize 0.3\n"
+"X-Generator: Lokalize 24.08.0\n"
 "Plural-Forms: nplurals=3; plural=(n%10==1 && n%100!=11 ? 0 : n != 0 ? 1 : "
 "2);\n"
 
 #, kde-format
 msgctxt "NAME OF TRANSLATORS"
 msgid "Your names"
-msgstr ""
+msgstr "Toms Trasūns"
 
 #, kde-format
 msgctxt "EMAIL OF TRANSLATORS"
 msgid "Your emails"
-msgstr ""
+msgstr "toms.trasuns@posteo.net"
 
 #: kmimetypefinder.cpp:26
-#, fuzzy, kde-format
-#| msgid "MimeType Finder"
+#, kde-format
 msgid "MIME Type Finder"
 msgstr "MIME tipa meklētājs"
 
 #: kmimetypefinder.cpp:27
-#, fuzzy, kde-format
-#| msgid "Gives the mimetype for a given file"
+#, kde-format
 msgid "Gives the MIME type for a given file"
-msgstr "Sniedz norādītā faila MIME tipu"
+msgstr "Sniedz norādītās datnes MIME tipu"
 
 #: kmimetypefinder.cpp:33
-#, fuzzy, kde-format
-#| msgid "Use only the file content for determining the mimetype."
+#, kde-format
 msgid "Use only the file content for determining the MIME type."
-msgstr "Lietot itkai faila saturu MIME tipa noteikšanai."
+msgstr "MIME tipa noteikšanai izmanto tikai datnes saturu."
 
 #: kmimetypefinder.cpp:35
-#, fuzzy, kde-format
-#| msgid ""
-#| "Whether use the file name only for determining the mimetype. Not used if -"
-#| "c is specified."
+#, kde-format
 msgid ""
 "Whether use the file name only for determining the MIME type. Not used if -c "
 "is specified."
 msgstr ""
-"Vai lietot faila nosaukumu MIME tipa noteikšanai. Netiek lietots, ja "
-"norādīts -c."
+"Vai lietot datnes nosaukumu MIME tipa noteikšanai. Neizmanto, ja ir norādīts "
+"„-c“."
 
 #: kmimetypefinder.cpp:36
 #, kde-format
 msgid "The filename to test. '-' to read from stdin."
-msgstr "Pārbaudāmā faila nosaukums. '-' lai lasītu no stdin."
+msgstr "Pārbaudāmās datnes nosaukums. „-“ (defise) lai lasītu no „stdin“."

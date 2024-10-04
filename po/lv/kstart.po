@@ -4,31 +4,32 @@
 # Maris Nartiss <maris.kde@gmail.com>, 2007, 2008.
 # Viesturs Zarins <viesturs.zarins@mii.lu.lv>, 2008.
 # Viesturs Zariņš <viesturs.zarins@mii.lu.lv>, 2009.
+# SPDX-FileCopyrightText: 2024 Toms Trasuns <toms.trasuns@posteo.net>
 msgid ""
 msgstr ""
 "Project-Id-Version: kstart\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2024-03-17 00:38+0000\n"
-"PO-Revision-Date: 2009-05-21 19:35+0300\n"
-"Last-Translator: Viesturs Zariņš <viesturs.zarins@mii.lu.lv>\n"
-"Language-Team: Latvian <locale@laka.lv>\n"
+"PO-Revision-Date: 2024-10-01 18:56+0300\n"
+"Last-Translator: Toms Trasūns <toms.trasuns@posteo.net>\n"
+"Language-Team: Latvian <kde-i18n-doc@kde.org>\n"
 "Language: lv\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Generator: Lokalize 0.3\n"
+"X-Generator: Lokalize 24.08.0\n"
 "Plural-Forms: nplurals=3; plural=(n%10==1 && n%100!=11 ? 0 : n != 0 ? 1 : "
 "2);\n"
 
 #, kde-format
 msgctxt "NAME OF TRANSLATORS"
 msgid "Your names"
-msgstr "Andris Maziks, Māris Nartišs"
+msgstr "Andris Maziks, Māris Nartišs, Toms Trasūns"
 
 #, kde-format
 msgctxt "EMAIL OF TRANSLATORS"
 msgid "Your emails"
-msgstr "andris.m@delfi.lv, maris.kde@gmail.com"
+msgstr "andris.m@delfi.lv, maris.kde@gmail.com, toms.trasuns@posteo.net"
 
 #: kstart.cpp:77
 #, kde-format
@@ -38,12 +39,12 @@ msgstr "KStart"
 #: kstart.cpp:79
 #, kde-format
 msgid "Utility to launch applications"
-msgstr ""
+msgstr "Utilītprogramma programmu palaišanai"
 
 #: kstart.cpp:81
 #, kde-format
 msgid "(C) 1997-2000 Matthias Ettrich (ettrich@kde.org)"
-msgstr "(C) 1997-2000 Matthias Ettrich (ettrich@kde.org)"
+msgstr "(C) 1997—2000 Matthias Ettrich (ettrich@kde.org)"
 
 #: kstart.cpp:83
 #, kde-format
@@ -66,20 +67,15 @@ msgid "Command to execute"
 msgstr "Izpildāmā komanda"
 
 #: kstart.cpp:92
-#, fuzzy, kde-format
-#| msgid ""
-#| "Alternative to <command>: desktop file to start. D-Bus service will be "
-#| "printed to stdout"
+#, kde-format
 msgid "Alternative to <command>: desktop file name to start, e.g. org.kde.kate"
 msgstr ""
-"Alternatīva <command>: palaižamais desktop fails. Tiks izdrukāts D-bus "
-"serviss uz stdout"
+"<komandas> alternatīva: palaižamā darbvirsmas datne, piemēram, „org.kde.kate“"
 
 #: kstart.cpp:95
-#, fuzzy, kde-format
-#| msgid "Optional URL to pass <desktopfile>, when using --service"
+#, kde-format
 msgid "Optional URL to pass to the application when using --application"
-msgstr "Papildus URL, ko padot <desktopfile>, lietojot --service"
+msgstr "Pēc izvēles URL, ko padot programmai, izmantojot „--application“"
 
 #: kstart.cpp:107
 #, kde-format
