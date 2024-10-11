@@ -195,6 +195,7 @@
     "X-KDE-Keywords[vi]": "Kiểu tệp,Tệp tương ứng,Kiểu MIME,Mẫu tệp,Tệp, Mẫu,Filetypes,File Associations,Mime Types,File Patterns,Files,Pattern",
     "X-KDE-Keywords[wa]": "Sôres di fitchîs,assoçnaedjes des fitchîs,assoçnaedjes di fitchîs,sôres mime,patrons di fitchîs,patron d' fitchîs,modeles di fitchîs,fitchîs,patron,modele",
     "X-KDE-Keywords[x-test]": "xxFiletypesxx,xxFile Associationsxx,xxMime Typesxx,xxFile Patternsxx,xxFilesxx,xxPatternxx",
+    "X-KDE-Keywords[zh_CN]": "Filetypes,File Associations,Mime Types,File Patterns,Files,Pattern,文件类型,文件关联,后缀名,文件",
     "X-KDE-Keywords[zh_TW]": "Filetypes,File Associations,Mime Types,File Patterns,Files,Pattern",
     "X-KDE-ParentApp": "kcontrol",
     "X-KDE-System-Settings-Parent-Category": "applications-defaults",
