@@ -13,7 +13,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kioclient\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-04-26 00:39+0000\n"
+"POT-Creation-Date: 2024-10-31 00:41+0000\n"
 "PO-Revision-Date: 2024-09-22 14:28+0300\n"
 "Last-Translator: Antonis Geralis <capoiosct@gmail.com>\n"
 "Language-Team: Greek <kde-i18n-el@kde.org>\n"
@@ -330,18 +330,18 @@ msgctxt "@info:shell"
 msgid "%1: Syntax error, too many arguments\n"
 msgstr "%1: Συντακτικό σφάλμα, πάρα πολλά ορίσματα\n"
 
-#: kioclient.cpp:435
+#: kioclient.cpp:443
 #, kde-format
 msgid "Destination where to download the files"
 msgstr "Προορισμός για τη λήψη των αρχείων"
 
-#: kioclient.cpp:477
+#: kioclient.cpp:485
 #, kde-format
 msgctxt "@info:shell"
 msgid "%1: Syntax error, unknown command '%2'\n"
 msgstr "%1: Συντακτικό σφάλμα, άγνωστη εντολή '%2'\n"
 
-#: kioclient.cpp:493
+#: kioclient.cpp:501
 #, kde-format
 msgctxt "@info:shell"
 msgid "%1: %2\n"

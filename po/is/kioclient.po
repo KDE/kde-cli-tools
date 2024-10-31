@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kioclient\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-04-26 00:39+0000\n"
+"POT-Creation-Date: 2024-10-31 00:41+0000\n"
 "PO-Revision-Date: 2024-06-30 16:02+0000\n"
 "Last-Translator: Gummi <gudmundure@gmail.com>\n"
 "Language-Team: Icelandic <kde-i18n-doc@kde.org>\n"
@@ -326,18 +326,18 @@ msgctxt "@info:shell"
 msgid "%1: Syntax error, too many arguments\n"
 msgstr "%1: Málskipanarvilla, of mörg viðföng\n"
 
-#: kioclient.cpp:435
+#: kioclient.cpp:443
 #, kde-format
 msgid "Destination where to download the files"
 msgstr "Viðtökustaður fyrir skrár sem eru sóttar"
 
-#: kioclient.cpp:477
+#: kioclient.cpp:485
 #, kde-format
 msgctxt "@info:shell"
 msgid "%1: Syntax error, unknown command '%2'\n"
 msgstr "%1: Málskipunarvilla, óþekkt skipun '%2'\n"
 
-#: kioclient.cpp:493
+#: kioclient.cpp:501
 #, kde-format
 msgctxt "@info:shell"
 msgid "%1: %2\n"

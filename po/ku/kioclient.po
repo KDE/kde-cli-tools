@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kioclient\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-04-26 00:39+0000\n"
+"POT-Creation-Date: 2024-10-31 00:41+0000\n"
 "PO-Revision-Date: 2009-01-08 20:36+0200\n"
 "Last-Translator: Omer Ensari <oensari@gmail.com>\n"
 "Language-Team: Kurdish <ku@li.org>\n"
@@ -371,19 +371,19 @@ msgctxt "@info:shell"
 msgid "%1: Syntax error, too many arguments\n"
 msgstr "Çewtiya Hevoksazî yê: Argûman pir gelek in\n"
 
-#: kioclient.cpp:435
+#: kioclient.cpp:443
 #, kde-format
 msgid "Destination where to download the files"
 msgstr ""
 
-#: kioclient.cpp:477
+#: kioclient.cpp:485
 #, fuzzy, kde-format
 #| msgid "Syntax Error: Unknown command '%1'\n"
 msgctxt "@info:shell"
 msgid "%1: Syntax error, unknown command '%2'\n"
 msgstr "Çewtiya Hevoksazî yê: Fermana '%1' nenas e\n"
 
-#: kioclient.cpp:493
+#: kioclient.cpp:501
 #, kde-format
 msgctxt "@info:shell"
 msgid "%1: %2\n"
