@@ -2,7 +2,7 @@
 # Bulgarian translation of KDE.
 # This file is licensed under the GPL.
 #
-# $Id: kcm_filetypes.po 1694647 2024-11-09 20:06:53Z mkkdr $
+# $Id: kcm_filetypes.po 1694749 2024-11-11 01:16:22Z scripty $
 #
 # Zlatko Popov <zlatkopopov@fsa-bg.org>, 2007, 2008.
 # Yasen Pramatarov <yasen@lidneas.com>, 2009, 2011.
@@ -13,14 +13,14 @@ msgstr ""
 "Project-Id-Version: filetypes\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2024-01-30 00:38+0000\n"
-"PO-Revision-Date: 2024-11-09 20:04+0100\n"
+"PO-Revision-Date: 2024-11-10 14:27+0100\n"
 "Last-Translator: Mincho Kondarev <mkondarev@yahoo.de>\n"
 "Language-Team: Bulgarian <kde-i18n-doc@kde.org>\n"
 "Language: bg\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Generator: Lokalize 24.08.2\n"
+"X-Generator: Lokalize 24.11.70\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
 
 #, kde-format
@@ -208,9 +208,9 @@ msgid ""
 "collapse it. Select a file type (e.g. text/html for HTML files) to view/edit "
 "the information for that file type using the controls on the right."
 msgstr ""
-"Списък на регистрираните видове файле в система. Щракнете върху \"+\", ако "
-"искате да разширите категорията. За свиване използвайте \"-\". Изберете вид "
-"на файл (например, \"text/html\" за HTML файлове), за да видите и/или "
+"Списък на регистрираните видове файлове в системата. Щракнете върху \"+\", "
+"ако искате да разширите категорията. За свиване използвайте \"-\". Изберете "
+"вид на файл (например, \"text/html\" за HTML файлове), за да видите и/или "
 "редактирате данните за вида."
 
 #: filetypesview.cpp:91
