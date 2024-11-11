@@ -2,7 +2,7 @@
 # Bulgarian translation of KDE.
 # This file is licensed under the GPL.
 #
-# $Id: kcm_filetypes.po 1694442 2024-11-06 23:01:28Z mkkdr $
+# $Id: kcm_filetypes.po 1694763 2024-11-11 03:10:08Z scripty $
 #
 # Zlatko Popov <zlatkopopov@fsa-bg.org>, 2007, 2008.
 # Yasen Pramatarov <yasen@lidneas.com>, 2009, 2011.
@@ -13,7 +13,7 @@ msgstr ""
 "Project-Id-Version: filetypes\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2024-01-30 00:38+0000\n"
-"PO-Revision-Date: 2024-11-06 23:58+0100\n"
+"PO-Revision-Date: 2024-11-10 14:27+0100\n"
 "Last-Translator: Mincho Kondarev <mkondarev@yahoo.de>\n"
 "Language-Team: Bulgarian <kde-i18n-doc@kde.org>\n"
 "Language: bg\n"
@@ -208,9 +208,9 @@ msgid ""
 "collapse it. Select a file type (e.g. text/html for HTML files) to view/edit "
 "the information for that file type using the controls on the right."
 msgstr ""
-"Списък на регистрираните видове файле в система. Щракнете върху \"+\", ако "
-"искате да разширите категорията. За свиване използвайте \"-\". Изберете вид "
-"на файл (например, \"text/html\" за HTML файлове), за да видите и/или "
+"Списък на регистрираните видове файлове в системата. Щракнете върху \"+\", "
+"ако искате да разширите категорията. За свиване използвайте \"-\". Изберете "
+"вид на файл (например, \"text/html\" за HTML файлове), за да видите и/или "
 "редактирате данните за вида."
 
 #: filetypesview.cpp:91
