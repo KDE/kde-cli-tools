@@ -40,7 +40,7 @@ kcoreaddons_add_plugin(kcm_filetypes SOURCES ${kcm_filetypes_SRCS} INSTALL_NAMES
 
 kcmutils_generate_desktop_file(kcm_filetypes)
 target_link_libraries(kcm_filetypes
-    KF6::ConfigWidgets
+    KF6::ConfigCore
     KF6::IconThemes
     KF6::IconWidgets
     KF6::I18n
