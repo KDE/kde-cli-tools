@@ -17,7 +17,6 @@
 
 // KDE
 #include <KLocalizedString>
-#include <KMessageBox>
 #include <KOpenWithDialog>
 #include <KPropertiesDialog>
 
