@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-01-30 00:38+0000\n"
+"POT-Creation-Date: 2024-11-26 00:41+0000\n"
 "PO-Revision-Date: 2023-05-17 13:31+0200\n"
 "Last-Translator: Eloy Cuadra <ecuadra@eloihr.net>\n"
 "Language-Team: Spanish <kde-l10n-es@kde.org>\n"
@@ -85,7 +85,7 @@ msgstr ""
 "se asocia con el tipo de archivo «text/plain»; todos los archivos que "
 "terminen en «.txt» se reconocen como archivos de texto sin formato."
 
-#: filetypedetails.cpp:87 filetypesview.cpp:86 kservicelistwidget.cpp:106
+#: filetypedetails.cpp:87 filetypesview.cpp:86 kservicelistwidget.cpp:105
 #, kde-format
 msgid "Add..."
 msgstr "Añadir..."
@@ -95,7 +95,7 @@ msgstr "Añadir..."
 msgid "Add a new pattern for the selected file type."
 msgstr "Añadir un nuevo patrón para el tipo de archivo seleccionado."
 
-#: filetypedetails.cpp:94 kservicelistwidget.cpp:120
+#: filetypedetails.cpp:94 kservicelistwidget.cpp:119
 #, kde-format
 msgid "Remove"
 msgstr "Eliminar"
@@ -333,22 +333,22 @@ msgstr "Editar tipo de archivo %1"
 msgid "Create New File Type %1"
 msgstr "Crear nuevo tipo de archivo %1"
 
-#: kservicelistwidget.cpp:47
+#: kservicelistwidget.cpp:46
 #, kde-format
 msgid "%1 (%2)"
 msgstr "%1 (%2)"
 
-#: kservicelistwidget.cpp:52
+#: kservicelistwidget.cpp:51
 #, kde-format
 msgid "Application Preference Order"
 msgstr "Orden de preferencia de aplicaciones"
 
-#: kservicelistwidget.cpp:52
+#: kservicelistwidget.cpp:51
 #, kde-format
 msgid "Services Preference Order"
 msgstr "Orden de preferencia de servicios"
 
-#: kservicelistwidget.cpp:64
+#: kservicelistwidget.cpp:63
 #, kde-format
 msgid ""
 "This is a list of applications associated with files of the selected file "
@@ -363,7 +363,7 @@ msgstr ""
 "este tipo de archivo, la lista estará ordenada por prioridades, teniendo "
 "preferencia sobre las demás la que esté situada más arriba."
 
-#: kservicelistwidget.cpp:69
+#: kservicelistwidget.cpp:68
 #, kde-format
 msgid ""
 "This is a list of services associated with files of the selected file type. "
@@ -378,12 +378,12 @@ msgstr ""
 "con este tipo de archivo, la lista estará ordenada por prioridades, teniendo "
 "preferencia sobre los demás el que esté situado más arriba."
 
-#: kservicelistwidget.cpp:81
+#: kservicelistwidget.cpp:80
 #, kde-format
 msgid "Move &Up"
 msgstr "S&ubir"
 
-#: kservicelistwidget.cpp:87
+#: kservicelistwidget.cpp:86
 #, kde-format
 msgid ""
 "Assigns a higher priority to the selected\n"
@@ -396,7 +396,7 @@ msgstr ""
 "afecta solo a la aplicación seleccionada si el tipo\n"
 "de archivo está asociado con más de una aplicación."
 
-#: kservicelistwidget.cpp:91
+#: kservicelistwidget.cpp:90
 #, kde-format
 msgid ""
 "Assigns a higher priority to the selected\n"
@@ -405,12 +405,12 @@ msgstr ""
 "Asigna una prioridad más alta al servicio\n"
 "seleccionado, subiéndolo en la lista."
 
-#: kservicelistwidget.cpp:94
+#: kservicelistwidget.cpp:93
 #, kde-format
 msgid "Move &Down"
 msgstr "&Bajar"
 
-#: kservicelistwidget.cpp:99
+#: kservicelistwidget.cpp:98
 #, kde-format
 msgid ""
 "Assigns a lower priority to the selected\n"
@@ -423,7 +423,7 @@ msgstr ""
 "afecta solo a la aplicación seleccionada si el tipo\n"
 "de archivo está asociado con más de una aplicación."
 
-#: kservicelistwidget.cpp:103
+#: kservicelistwidget.cpp:102
 #, kde-format
 msgid ""
 "Assigns a lower priority to the selected\n"
@@ -432,43 +432,43 @@ msgstr ""
 "Asigna una prioridad más baja al servicio\n"
 "seleccionado, bajándolo en la lista."
 
-#: kservicelistwidget.cpp:111
+#: kservicelistwidget.cpp:110
 #, kde-format
 msgid "Add a new application for this file type."
 msgstr "Añadir una nueva aplicación para este tipo de archivo."
 
-#: kservicelistwidget.cpp:113
+#: kservicelistwidget.cpp:112
 #, kde-format
 msgid "Edit..."
 msgstr "Editar..."
 
-#: kservicelistwidget.cpp:118
+#: kservicelistwidget.cpp:117
 #, kde-format
 msgid "Edit command line of the selected application."
 msgstr "Editar la línea de órdenes de la aplicación seleccionada."
 
-#: kservicelistwidget.cpp:125
+#: kservicelistwidget.cpp:124
 #, kde-format
 msgid "Remove the selected application from the list."
 msgstr "Eliminar la aplicación seleccionada de la lista."
 
-#: kservicelistwidget.cpp:127 multiapplydialog.cpp:19
+#: kservicelistwidget.cpp:126 multiapplydialog.cpp:19
 #, kde-format
 msgid "Apply To..."
 msgstr "Aplicar a..."
 
-#: kservicelistwidget.cpp:132
+#: kservicelistwidget.cpp:131
 #, kde-format
 msgid "Apply the current preference order to other file types."
 msgstr "Aplicar el orden de preferencia actual a otros tipos de archivos."
 
-#: kservicelistwidget.cpp:155
+#: kservicelistwidget.cpp:154
 #, kde-format
 msgctxt "No applications associated with this file type"
 msgid "None"
 msgstr "Ninguna"
 
-#: kservicelistwidget.cpp:168
+#: kservicelistwidget.cpp:167
 #, kde-format
 msgctxt "No components associated with this file type"
 msgid "None"
