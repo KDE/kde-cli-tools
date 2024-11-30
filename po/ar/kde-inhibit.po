@@ -1,0 +1,55 @@
+# Copyright (C) 2024 This file is copyright:
+# This file is distributed under the same license as the kde-cli-tools package.
+# SPDX-FileCopyrightText: 2024 Zayed Al-Saidi <zayed.alsaidi@gmail.com>
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: kde-cli-tools\n"
+"Report-Msgid-Bugs-To: https://bugs.kde.org\n"
+"POT-Creation-Date: 2024-02-13 00:39+0000\n"
+"PO-Revision-Date: 2024-11-29 06:20+0400\n"
+"Last-Translator: Zayed Al-Saidi <zayed.alsaidi@gmail.com>\n"
+"Language-Team: ar\n"
+"Language: ar\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=6; plural=n==0 ? 0 : n==1 ? 1 : n==2 ? 2 : n%100>=3 "
+"&& n%100<=10 ? 3 : n%100>=11 && n%100<=99 ? 4 : 5;\n"
+"X-Generator: Lokalize 23.08.5\n"
+
+#: main.cpp:26
+#, kde-format
+msgid "Inhibit various desktop functions whilst a command runs"
+msgstr "امنع وظائف سطح المكتب المختلفة أثناء تشغيل أمر ما"
+
+#: main.cpp:28
+#, kde-format
+msgid "Inhibit power management"
+msgstr "امنع إدارة الطاقة"
+
+#: main.cpp:31
+#, kde-format
+msgid "Inhibit screensaver"
+msgstr "امنع شاشة التوقف"
+
+#: main.cpp:35
+#, kde-format
+msgid "Inhibit colour correction (night mode)"
+msgstr "امنع تصحيح الألوان (الوضع الليلي)"
+
+#: main.cpp:38
+#, kde-format
+msgid "Inhibit notifications (Do not disturb)"
+msgstr "امنع الإخطارات (عدم الإزعاج)"
+
+#: main.cpp:41
+#, kde-format
+msgid "Command with arguments to run"
+msgstr "أمر مع معاملاته لتشغيله"
+
+#: main.cpp:64 main.cpp:73 main.cpp:89
+#, kde-format
+msgctxt "Script as in shell script"
+msgid "Running Script"
+msgstr "تشغيل البرنامج النصي"
