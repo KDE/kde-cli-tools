@@ -1,0 +1,78 @@
+# Sanskrit translations for kde-cli-tools package.
+# Copyright (C) 2024 This file is copyright:
+# This file is distributed under the same license as the kde-cli-tools package.
+# Kali <EMAIL@ADDRESS>, 2024.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: kde-cli-tools\n"
+"Report-Msgid-Bugs-To: https://bugs.kde.org\n"
+"POT-Creation-Date: 2024-03-17 00:38+0000\n"
+"PO-Revision-Date: 2024-12-13 19:10+0530\n"
+"Last-Translator: Kali <EMAIL@ADDRESS>\n"
+"Language-Team: Sanskrit\n"
+"Language: sa\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#, kde-format
+msgctxt "NAME OF TRANSLATORS"
+msgid "Your names"
+msgstr ""
+
+#, kde-format
+msgctxt "EMAIL OF TRANSLATORS"
+msgid "Your emails"
+msgstr ""
+
+#: kstart.cpp:77
+#, kde-format
+msgid "KStart"
+msgstr "KStart इति"
+
+#: kstart.cpp:79
+#, kde-format
+msgid "Utility to launch applications"
+msgstr "अनुप्रयोगानाम् आरम्भार्थं उपयोगिता"
+
+#: kstart.cpp:81
+#, kde-format
+msgid "(C) 1997-2000 Matthias Ettrich (ettrich@kde.org)"
+msgstr "(C) 1997-2000 मथियस एट्रिच (ettrich@kde.org)"
+
+#: kstart.cpp:83
+#, kde-format
+msgid "Matthias Ettrich"
+msgstr "मथियस एट्रिच्"
+
+#: kstart.cpp:84
+#, kde-format
+msgid "David Faure"
+msgstr "डेविड फौरे"
+
+#: kstart.cpp:85
+#, kde-format
+msgid "Richard J. Moore"
+msgstr "रिचर्ड जे मूर"
+
+#: kstart.cpp:90
+#, kde-format
+msgid "Command to execute"
+msgstr "निष्पादयितुं आदेशः"
+
+#: kstart.cpp:92
+#, kde-format
+msgid "Alternative to <command>: desktop file name to start, e.g. org.kde.kate"
+msgstr ""
+"<command> इत्यस्य विकल्पः: आरम्भार्थं डेस्कटॉप् सञ्चिकानाम, उदा. org.kde.kate इति"
+
+#: kstart.cpp:95
+#, kde-format
+msgid "Optional URL to pass to the application when using --application"
+msgstr "--application इत्यस्य उपयोगं कुर्वन् अनुप्रयोगाय पारयितुं वैकल्पिकं URL"
+
+#: kstart.cpp:107
+#, kde-format
+msgid "No command specified"
+msgstr "न आदेशः निर्दिष्टः"

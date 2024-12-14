@@ -1,0 +1,84 @@
+# Sanskrit translations for kde-cli-tools package.
+# Copyright (C) 2024 This file is copyright:
+# This file is distributed under the same license as the kde-cli-tools package.
+# Kali <EMAIL@ADDRESS>, 2024.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: kde-cli-tools\n"
+"Report-Msgid-Bugs-To: https://bugs.kde.org\n"
+"POT-Creation-Date: 2022-09-28 00:51+0000\n"
+"PO-Revision-Date: 2024-12-13 19:10+0530\n"
+"Last-Translator: Kali <EMAIL@ADDRESS>\n"
+"Language-Team: Sanskrit\n"
+"Language: sa\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#, kde-format
+msgctxt "NAME OF TRANSLATORS"
+msgid "Your names"
+msgstr ""
+
+#, kde-format
+msgctxt "EMAIL OF TRANSLATORS"
+msgid "Your emails"
+msgstr ""
+
+#: main.cpp:22
+#, kde-format
+msgid "Broadcast Notifications"
+msgstr "प्रसारण सूचनाएँ"
+
+#: main.cpp:24
+#, kde-format
+msgid ""
+"A tool that emits a notification for all users by sending it on the system "
+"DBus"
+msgstr "एकं साधनं यत् सिस्टम् DBus इत्यत्र प्रेषयित्वा सर्वेषां उपयोक्तृणां कृते सूचनां उत्सर्जयति"
+
+#: main.cpp:26
+#, kde-format
+msgid "(c) 2016 Kai Uwe Broulik"
+msgstr "(ग) 2016 कै उवे ब्रौलिक"
+
+#: main.cpp:33
+#, kde-format
+msgid ""
+"Name of the application that should be associated with this notification"
+msgstr "अस्याः सूचनायाः सह सम्बद्धस्य अनुप्रयोगस्य नाम"
+
+#: main.cpp:36
+#, kde-format
+msgid "A brief one-line summary of the notification"
+msgstr "सूचनायाः संक्षिप्तः एकपङ्क्तिसारांशः"
+
+#: main.cpp:38
+#, kde-format
+msgid "Icon for the notification"
+msgstr "सूचनायाः कृते चिह्नम्"
+
+#: main.cpp:42
+#, kde-format
+msgid ""
+"A comma-separated list of user IDs this notification should be sent to. If "
+"omitted, the notification will be sent to all users."
+msgstr ""
+"अल्पविरामेन पृथक्कृता उपयोक्तृ-ID-सूची यस्मै एषा सूचना प्रेषणीया । यदि लोप्यते तर्हि सूचना "
+"सर्वेभ्यः उपयोक्तृभ्यः प्रेषिता भविष्यति ।"
+
+#: main.cpp:45
+#, kde-format
+msgid "Timeout for the notification"
+msgstr "सूचनायाः समयसमाप्तिः"
+
+#: main.cpp:47
+#, kde-format
+msgid "Keep the notification in the history until the user closes it"
+msgstr "यावत् उपयोक्ता न पिधाति तावत् सूचनां इतिहासे स्थापयन्तु"
+
+#: main.cpp:50
+#, kde-format
+msgid "The actual notification body text"
+msgstr "वास्तविकः सूचनाशरीरपाठः"

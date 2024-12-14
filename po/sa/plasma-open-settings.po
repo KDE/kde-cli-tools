@@ -1,0 +1,47 @@
+# Sanskrit translations for kde-cli-tools package.
+# Copyright (C) 2024 This file is copyright:
+# This file is distributed under the same license as the kde-cli-tools package.
+# Kali <EMAIL@ADDRESS>, 2024.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: kde-cli-tools\n"
+"Report-Msgid-Bugs-To: https://bugs.kde.org\n"
+"POT-Creation-Date: 2022-10-21 00:48+0000\n"
+"PO-Revision-Date: 2024-12-13 19:10+0530\n"
+"Last-Translator: Kali <EMAIL@ADDRESS>\n"
+"Language-Team: Sanskrit\n"
+"Language: sa\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#, kde-format
+msgctxt "NAME OF TRANSLATORS"
+msgid "Your names"
+msgstr ""
+
+#, kde-format
+msgctxt "EMAIL OF TRANSLATORS"
+msgid "Your emails"
+msgstr ""
+
+#: main.cpp:30
+#, kde-format
+msgid "App to open Settings app"
+msgstr "सेटिंग्स् एप् उद्घाटयितुं एप्"
+
+#: main.cpp:32
+#, kde-format
+msgid "A tool to start system settings"
+msgstr "सिस्टम् सेटिंग्स् आरभ्यतुं एकं साधनम्"
+
+#: main.cpp:34
+#, kde-format
+msgid "(c) 2021, The KDE Developers"
+msgstr "(ग) २०२१, द केडीई डेवलपर्स"
+
+#: main.cpp:67
+#, kde-format
+msgid "Could not open: %1"
+msgstr "उद्घाटयितुं न शक्यते: %1"
