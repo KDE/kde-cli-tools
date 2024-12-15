@@ -19,12 +19,12 @@ msgstr ""
 #, kde-format
 msgctxt "NAME OF TRANSLATORS"
 msgid "Your names"
-msgstr ""
+msgstr "भवतः नामानि"
 
 #, kde-format
 msgctxt "EMAIL OF TRANSLATORS"
 msgid "Your emails"
-msgstr ""
+msgstr "भवतः ईमेलपत्राणि"
 
 #: kioclient.cpp:55
 #, kde-format
@@ -43,6 +43,9 @@ msgid ""
 "            # Opens a properties dialog of 'url'\n"
 "\n"
 msgstr ""
+"  %1 'url'.\n"
+"            # 'url' इत्यस्य गुणसंवादं उद्घाटयति ।\n"
+"\n"
 
 #: kioclient.cpp:64
 #, kde-format
@@ -56,6 +59,13 @@ msgid ""
 "            # 'url' can be the URL of a document, a *.desktop file,\n"
 "            # or an executable.\n"
 msgstr ""
+"  %1 'url' ['mimetype'] ।\n"
+"            # 'url' द्वारा सूचितं दस्तावेजं उद्घाटयितुं प्रयतते, अनुप्रयोगे\n"
+"            # KDE मध्ये तया सह सम्बद्धम् । भवन्तः 'mimetype' इति परित्यक्तुं शक्नुवन्ति "
+"।\n"
+"            # तस्मिन् सति अनुकरणप्रकारः स्वयमेव निर्धारितः भवति ।\n"
+"            # 'url' दस्तावेजस्य URL, *.desktop सञ्चिका, .\n"
+"            # अथवा कार्यान्वयनीयः ।\n"
 
 #: kioclient.cpp:75
 #, kde-format
@@ -68,6 +78,12 @@ msgid ""
 "            #   The short version 'kioclient mv' is also available.\n"
 "\n"
 msgstr ""
+"  %1 'src' 'dest'.\n"
+"            # URL 'src' 'dest' मध्ये स्थानान्तरयति ।\n"
+"            # 'src' URL-सूची भवितुम् अर्हति ।\n"
+"            # 'dest' सञ्चिकाः कचरे स्थानान्तरयितुं \"trash:/\" भवितुम् अर्हति ।\n"
+"            # 'kioclient mv' इति लघुसंस्करणम् अपि उपलभ्यते ।\n"
+"\n"
 
 #: kioclient.cpp:85
 #, kde-format
@@ -79,6 +95,11 @@ msgid ""
 "            #   a URL will be requested.\n"
 "\n"
 msgstr ""
+"  %1 ['src'] ।\n"
+"            # URL 'src' इत्यस्य प्रतिलिपिं उपयोक्तृनिर्दिष्टस्थाने करोति ।\n"
+"            # 'src' URL-सूची भवितुम् अर्हति, यदि तदा उपस्थिता नास्ति\n"
+"            # एकं URL अनुरोधितं भविष्यति।\n"
+"\n"
 
 #: kioclient.cpp:94
 #, kde-format
@@ -90,6 +111,11 @@ msgid ""
 "            #   The short version 'kioclient cp' is also available.\n"
 "\n"
 msgstr ""
+"  %1 'src' 'dest'.\n"
+"            # URL 'src' 'dest' इति प्रतिलिपिं करोति ।\n"
+"            # 'src' URL-सूची भवितुम् अर्हति ।\n"
+"            # 'kioclient cp' इति लघुसंस्करणम् अपि उपलभ्यते ।\n"
+"\n"
 
 #: kioclient.cpp:103
 #, kde-format
@@ -99,6 +125,9 @@ msgid ""
 "            # Prints the contents of the file 'url' to the standard output\n"
 "\n"
 msgstr ""
+"  %1 'url'.\n"
+"            # 'url' सञ्चिकायाः सामग्रीं मानकनिर्गमं प्रति मुद्रयति\n"
+"\n"
 
 #: kioclient.cpp:110
 #, kde-format
@@ -108,6 +137,9 @@ msgid ""
 "            # Lists the contents of the directory 'url' to stdout\n"
 "\n"
 msgstr ""
+"  %1 'url'.\n"
+"            # 'url' इति निर्देशिकायाः सामग्रीं stdout मध्ये सूचीबद्धं करोति\n"
+"\n"
 
 #: kioclient.cpp:117
 #, kde-format
@@ -119,6 +151,11 @@ msgid ""
 "            #   The short version 'kioclient rm' is also available.\n"
 "\n"
 msgstr ""
+"  %1 'url'.\n"
+"            # URL निष्कासयति\n"
+"            # 'url' URL-सूची भवितुम् अर्हति ।\n"
+"            # 'kioclient rm' इति लघुसंस्करणम् अपि उपलभ्यते ।\n"
+"\n"
 
 #: kioclient.cpp:126
 #, kde-format
@@ -128,6 +165,9 @@ msgid ""
 "            # Shows all of the available information for 'url'\n"
 "\n"
 msgstr ""
+"  %1 'url'.\n"
+"            # 'url' कृते उपलब्धानि सर्वाणि सूचनानि दर्शयति।\n"
+"\n"
 
 #: kioclient.cpp:133
 #, kde-format
@@ -137,6 +177,9 @@ msgid ""
 "            # Opens a basic application launcher\n"
 "\n"
 msgstr ""
+"  %1\n"
+"            # एकं मूलभूतं अनुप्रयोगप्रक्षेपकं उद्घाटयति\n"
+"\n"
 
 #: kioclient.cpp:139
 #, kde-format
@@ -269,13 +312,13 @@ msgstr "आज्ञार्थं तर्काः"
 #, kde-format
 msgctxt "@info:shell"
 msgid "%1: Syntax error, not enough arguments\n"
-msgstr ""
+msgstr "%1: वाक्यविन्यासदोषः, पर्याप्ताः तर्काः नास्ति\n"
 
 #: kioclient.cpp:229
 #, kde-format
 msgctxt "@info:shell"
 msgid "%1: Syntax error, too many arguments\n"
-msgstr ""
+msgstr "%1: वाक्यविन्यासदोषः, अत्यधिकाः तर्काः\n"
 
 #: kioclient.cpp:443
 #, kde-format
@@ -286,10 +329,10 @@ msgstr "गन्तव्यं यत्र सञ्चिकाः अवत
 #, kde-format
 msgctxt "@info:shell"
 msgid "%1: Syntax error, unknown command '%2'\n"
-msgstr ""
+msgstr "%1: वाक्यविन्यासदोषः, अज्ञातः आदेशः '%2' ।\n"
 
 #: kioclient.cpp:501
 #, kde-format
 msgctxt "@info:shell"
 msgid "%1: %2\n"
-msgstr ""
+msgstr "%1: %2\n"

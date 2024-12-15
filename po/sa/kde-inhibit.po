@@ -50,4 +50,4 @@ msgstr "चालयितुं तर्कैः सह आदेशः"
 #, kde-format
 msgctxt "Script as in shell script"
 msgid "Running Script"
-msgstr ""
+msgstr "स्क्रिप्ट् चालयति"
