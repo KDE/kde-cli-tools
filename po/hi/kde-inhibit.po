@@ -1,4 +1,4 @@
-# Sanskrit translations for kde-cli-tools package.
+# Hindi translations for kde-cli-tools package.
 # Copyright (C) 2024 This file is copyright:
 # This file is distributed under the same license as the kde-cli-tools package.
 # Kali <EMAIL@ADDRESS>, 2024.
@@ -8,47 +8,46 @@ msgstr ""
 "Project-Id-Version: kde-cli-tools\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2024-02-13 00:39+0000\n"
-"PO-Revision-Date: 2024-12-13 19:10+0530\n"
+"PO-Revision-Date: 2024-12-15 15:58+0530\n"
 "Last-Translator: Kali <EMAIL@ADDRESS>\n"
-"Language-Team: Sanskrit\n"
-"Language: sa\n"
+"Language-Team: Hindi <fedora-trans-hi@redhat.com>\n"
+"Language: hi\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Plural-Forms: nplurals=2; plural=(n>2);\n"
 
 #: main.cpp:26
 #, kde-format
 msgid "Inhibit various desktop functions whilst a command runs"
-msgstr "आदेशस्य चालनकाले विविधानि डेस्कटॉप् कार्याणि निवारयन्तु"
+msgstr ""
 
 #: main.cpp:28
 #, kde-format
 msgid "Inhibit power management"
-msgstr "शक्तिप्रबन्धनं निवारयन्तु"
+msgstr ""
 
 #: main.cpp:31
 #, kde-format
 msgid "Inhibit screensaver"
-msgstr "स्क्रीनसेवरं निवारयन्तु"
+msgstr ""
 
 #: main.cpp:35
 #, kde-format
 msgid "Inhibit colour correction (night mode)"
-msgstr "वर्णशुद्धिं निवारयन्तु (रात्रिविधा) २."
+msgstr ""
 
 #: main.cpp:38
 #, kde-format
 msgid "Inhibit notifications (Do not disturb)"
-msgstr "सूचनानि निवारयन्तु (मा बाधयन्तु) ."
+msgstr ""
 
 #: main.cpp:41
 #, kde-format
 msgid "Command with arguments to run"
-msgstr "चालयितुं तर्कैः सह आदेशः"
+msgstr ""
 
 #: main.cpp:64 main.cpp:73 main.cpp:89
 #, kde-format
 msgctxt "Script as in shell script"
 msgid "Running Script"
-msgstr "स्क्रिप्ट् चालयति"
+msgstr ""
