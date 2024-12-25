@@ -10,6 +10,8 @@ set(KDE_COMPILERSETTINGS_LEVEL "5.82")
 set(CMAKE_CXX_STANDARD 20)
 set(CMAKE_CXX_STANDARD_REQUIRED ON)
 
+option(BUILD_DOC "Whether to build the documentation" ON)
+
 find_package(ECM ${KF6_MIN_VERSION} REQUIRED NO_MODULE)
 set(CMAKE_MODULE_PATH ${ECM_MODULE_PATH})
 
@@ -46,7 +48,6 @@ endif()
 
 find_package(KF6 ${KF6_MIN_VERSION} REQUIRED COMPONENTS
     Config
-    DocTools
     IconThemes
     I18n
     KCMUtils
@@ -70,8 +71,15 @@ ecm_set_disabled_deprecation_versions(QT 6.7.0 KF 6.4.0)
 
 include_directories(${CMAKE_CURRENT_BINARY_DIR})
 
-add_subdirectory(doc)
-kdoctools_install(po)
+if(BUILD_DOC)
+    find_package(KF6DocTools ${KF6_MIN_VERSION})
+    set_package_properties(KF6DocTools PROPERTIES
+        DESCRIPTION "Tools to generate documentation"
+        TYPE REQUIRED
+    )
+    add_subdirectory(doc)
+    kdoctools_install(po)
+endif()
 
 function(install_compat_symlink executable_target)
     add_custom_command(TARGET ${executable_target} POST_BUILD
