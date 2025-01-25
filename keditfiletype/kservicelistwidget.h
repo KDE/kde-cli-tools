@@ -69,6 +69,7 @@ protected Q_SLOTS:
     void removeService();
     void applyTo();
     void enableMoveButtons();
+    void onRowsMoved();
 
 protected:
     void updatePreferredServices();

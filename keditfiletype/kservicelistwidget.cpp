@@ -56,6 +56,8 @@ KServiceListWidget::KServiceListWidget(Kind kind, QWidget *parent)
     QHBoxLayout *lay = new QHBoxLayout(this);
 
     servicesLB = new QListWidget(this);
+    servicesLB->setDragDropMode(QAbstractItemView::InternalMove);
+    connect(servicesLB->model(), &QAbstractItemModel::rowsMoved, this, &KServiceListWidget::onRowsMoved);
     connect(servicesLB, &QListWidget::itemSelectionChanged, this, &KServiceListWidget::enableMoveButtons);
     lay->addWidget(servicesLB);
     connect(servicesLB, &QListWidget::itemDoubleClicked, this, &KServiceListWidget::editService);
@@ -441,6 +443,13 @@ void KServiceListWidget::enableMoveButtons()
     if (servEditButton) {
         servEditButton->setEnabled(m_kind == SERVICELIST_APPLICATIONS);
     }
+}
+
+void KServiceListWidget::onRowsMoved()
+{
+    updatePreferredServices();
+    Q_EMIT changed(true);
+    enableMoveButtons();
 }
 
 #include "moc_kservicelistwidget.cpp"
