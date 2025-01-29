@@ -46,6 +46,10 @@ if (NOT Qt6Test_FOUND)
     set(BUILD_TESTING OFF CACHE BOOL "Build the testing tree.")
 endif()
 
+if (Qt6Gui_VERSION VERSION_GREATER_EQUAL "6.10.0")
+    find_package(Qt6GuiPrivate ${REQUIRED_QT_VERSION} REQUIRED NO_MODULE)
+endif()
+
 find_package(KF6 ${KF6_MIN_VERSION} REQUIRED COMPONENTS
     Config
     IconThemes
