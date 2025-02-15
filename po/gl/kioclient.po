@@ -30,7 +30,7 @@ msgstr "Marce Villarino, Adrian Chaves (Gallaecio)"
 #, kde-format
 msgctxt "EMAIL OF TRANSLATORS"
 msgid "Your emails"
-msgstr "mvillarino@kde-espana.org, adrian@chaves.io"
+msgstr "mvillarino@kde-espana.org, adrian@chaves.gal"
 
 #: kioclient.cpp:55
 #, kde-format
