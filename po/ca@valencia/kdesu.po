@@ -256,7 +256,7 @@ msgid ""
 "this program."
 msgstr ""
 "S'ha denegat el permís.<br />Possiblement la contrasenya és incorrecta, "
-"torneu-ho a intentar.<br />En alguns sistemes, cal estar assignat a un grup "
+"torneu-ho a provar.<br />En alguns sistemes, cal estar assignat a un grup "
 "especial (normalment: wheel) per a utilitzar este programa."
 
 #: sudlg.cpp:105
