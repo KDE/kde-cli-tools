@@ -9,7 +9,7 @@
 # Cedric Pasteur <cedric.pasteur@free.fr>, 2004.
 # Nicolas Ternisien <nicolas.ternisien@gmail.com>, 2005, 2007, 2008, 2010.
 # Sébastien Renard <Sebastien.Renard@digitalfox.org>, 2008.
-# SPDX-FileCopyrightText: 2013, 2024 Xavier Besnard <xavier.besnard@kde.org>
+# SPDX-FileCopyrightText: 2013, 2024, 2025 Xavier Besnard <xavier.besnard@kde.org>
 # Vincent Pinon <vpinon@kde.org>, 2016.
 # Simon Depiets <sdepiets@gmail.com>, 2019.
 # Xavier Besnard <xavier.besnard@kde.orf>, 2023.
@@ -19,7 +19,7 @@ msgstr ""
 "Project-Id-Version: filetypes\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2023-01-15 00:57+0000\n"
-"PO-Revision-Date: 2024-04-26 15:43+0200\n"
+"PO-Revision-Date: 2025-04-02 20:47+0200\n"
 "Last-Translator: Xavier Besnard <xavier.besnard@kde.org>\n"
 "Language-Team: French <French <kde-francophone@kde.org>>\n"
 "Language: fr\n"
@@ -27,7 +27,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n > 1);\n"
-"X-Generator: Lokalize 23.08.5\n"
+"X-Generator: Lokalize 24.12.3\n"
 "X-Environment: kde\n"
 "X-Accelerator-Marker: &\n"
 "X-Text-Markup: kde4\n"
@@ -101,9 +101,9 @@ msgid ""
 "text files."
 msgstr ""
 "Cette boîte de dialogue contient la liste des motifs pouvant être utilisés "
-"pour identifier les fichiers du type sélectionné Par exemple, le motif « *."
+"pour identifier les fichiers du type sélectionné. Par exemple, le motif « *."
 "txt » est associé au type de fichier « text / plain ». Tous les fichiers se "
-"terminant par « .txt » seront alors reconnus comme des fichiers texte."
+"terminant par « .txt » seront alors reconnus comme des fichiers de texte."
 
 #: filetypedetails.cpp:87 filetypesview.cpp:103 kservicelistwidget.cpp:110
 #, kde-format
@@ -273,11 +273,11 @@ msgid ""
 "the information for that file type using the controls on the right."
 msgstr ""
 "Vous pouvez voir ici une liste hiérarchique des types de fichiers installés "
-"sur votre système. Cliquez sur le signe « + » pour développer le contenu "
-"d'une catégorie ou sur le signe « - » pour la refermer. Sélectionnez un type "
-"de fichier (par exemple « text / html » pour les fichiers HTML) pour "
-"afficher ou modifier les informations sur ce type de fichier en utilisant "
-"les boutons situés à droite."
+"sur votre système. Veuillez cliquer sur le signe « + » pour développer le "
+"contenu d'une catégorie ou sur le signe « - » pour la réduire. Veuillez "
+"sélectionner un type de fichier (Par exemple, « text / html » pour les "
+"fichiers « HTML ») pour afficher ou modifier les informations sur ce type de "
+"fichier en utilisant les boutons situés à droite."
 
 #: filetypesview.cpp:108
 #, kde-format
@@ -380,7 +380,7 @@ msgstr ""
 #: keditfiletype.cpp:134
 #, kde-format
 msgid "File type to edit (e.g. text/html)"
-msgstr "Type de fichier à modifier (par exemple, « text / html »)"
+msgstr "Type de fichier à modifier (Par exemple, « text / html »)"
 
 #: keditfiletype.cpp:165
 #, kde-format
