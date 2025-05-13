@@ -1,13 +1,14 @@
-# Copyright (C) YEAR This_file_is_part_of_KDE
-# This file is distributed under the same license as the PACKAGE package.
+# Spanish translations for kcm_filetypes.po package.
+# Copyright (C) 2014-2025 This file is copyright:
+# This file is distributed under the same license as the kde-cli-tools package.
 #
-# Eloy Cuadra <ecuadra@eloihr.net>, 2014, 2019, 2023.
+# SPDX-FileCopyrightText: 2014, 2019, 2023, 2025 Eloy Cuadra <ecuadra@eloihr.net>
 msgid ""
 msgstr ""
-"Project-Id-Version: \n"
+"Project-Id-Version: kcm_filetypes\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2024-11-26 00:41+0000\n"
-"PO-Revision-Date: 2023-05-17 13:31+0200\n"
+"PO-Revision-Date: 2025-05-12 13:48+0100\n"
 "Last-Translator: Eloy Cuadra <ecuadra@eloihr.net>\n"
 "Language-Team: Spanish <kde-l10n-es@kde.org>\n"
 "Language: es\n"
@@ -88,7 +89,7 @@ msgstr ""
 #: filetypedetails.cpp:87 filetypesview.cpp:86 kservicelistwidget.cpp:105
 #, kde-format
 msgid "Add..."
-msgstr "Añadir..."
+msgstr "Añadir…"
 
 #: filetypedetails.cpp:92
 #, kde-format
@@ -184,7 +185,7 @@ msgstr "Usar las preferencias del grupo «%1»"
 #: filetypesview.cpp:57
 #, kde-format
 msgid "Search for file type or filename pattern..."
-msgstr "Buscar tipo de archivo o patrón de nombre de archivo..."
+msgstr "Buscar tipo de archivo o patrón de nombre de archivo…"
 
 #: filetypesview.cpp:63
 #, kde-format
@@ -359,7 +360,7 @@ msgid ""
 msgstr ""
 "Esta lista contiene las aplicaciones asociadas con los archivos del tipo "
 "seleccionado. Esta lista se mostrará en los menús contextuales de Konqueror "
-"cuando seleccione «Abrir con...». Si hay más de una aplicación asociada con "
+"cuando seleccione «Abrir con…». Si hay más de una aplicación asociada con "
 "este tipo de archivo, la lista estará ordenada por prioridades, teniendo "
 "preferencia sobre las demás la que esté situada más arriba."
 
@@ -374,7 +375,7 @@ msgid ""
 msgstr ""
 "Esta lista contiene los servicios asociados con los archivos del tipo "
 "seleccionado Esta lista se mostrará en los menús contextuales de Konqueror "
-"cuando seleccione «Previsualizar en...». Si hay más de un servicio asociado "
+"cuando seleccione «Previsualizar en…». Si hay más de un servicio asociado "
 "con este tipo de archivo, la lista estará ordenada por prioridades, teniendo "
 "preferencia sobre los demás el que esté situado más arriba."
 
@@ -440,7 +441,7 @@ msgstr "Añadir una nueva aplicación para este tipo de archivo."
 #: kservicelistwidget.cpp:112
 #, kde-format
 msgid "Edit..."
-msgstr "Editar..."
+msgstr "Editar…"
 
 #: kservicelistwidget.cpp:117
 #, kde-format
@@ -455,7 +456,7 @@ msgstr "Eliminar la aplicación seleccionada de la lista."
 #: kservicelistwidget.cpp:126 multiapplydialog.cpp:19
 #, kde-format
 msgid "Apply To..."
-msgstr "Aplicar a..."
+msgstr "Aplicar a…"
 
 #: kservicelistwidget.cpp:131
 #, kde-format
@@ -515,57 +516,3 @@ msgstr ""
 "Escriba el nombre del tipo de archivo. Por ejemplo, si ha seleccionado "
 "«image» como categoría y escribe aquí «custom», se creará el tipo de archivo "
 "«image/custom»."
-
-#~ msgid ""
-#~ "<p><h1>File Associations</h1> This module allows you to choose which "
-#~ "applications are associated with a given type of file. File types are "
-#~ "also referred to as MIME types (MIME is an acronym which stands for "
-#~ "\"Multipurpose Internet Mail Extensions\").</p><p> A file association "
-#~ "consists of the following: <ul><li>Rules for determining the MIME-type of "
-#~ "a file, for example the filename pattern *.png, which means 'all files "
-#~ "with names that end in .png', is associated with the MIME type \"image/png"
-#~ "\";</li> <li>A short description of the MIME-type, for example the "
-#~ "description of the MIME type \"image/png\" is simply 'PNG image';</li> "
-#~ "<li>An icon to be used for displaying files of the given MIME-type, so "
-#~ "that you can easily identify the type of file in a file manager or file-"
-#~ "selection dialog (at least for the types you use often);</li> <li>A list "
-#~ "of the applications which can be used to open files of the given MIME-"
-#~ "type -- if more than one application can be used then the list is ordered "
-#~ "by priority.</li></ul> You may be surprised to find that some MIME types "
-#~ "have no associated filename patterns; in these cases, KDE is able to "
-#~ "determine the MIME-type by directly examining the contents of the file.</"
-#~ "p>"
-#~ msgstr ""
-#~ "<p><h1>Asociaciones de archivos</h1> Este módulo le permite escoger las "
-#~ "aplicaciones que estarán asociadas con un determinado tipo de archivo. "
-#~ "Los tipos de archivos también se denominan tipos MIME (MIME es un "
-#~ "acrónimo que significa «Extensiones de correo Internet multipropósito»).</"
-#~ "p><p>Una asociación de archivo consiste en lo siguiente: <ul><li>Reglas "
-#~ "para determinar el tipo MIME de un archivo; por ejemplo, el patrón de "
-#~ "nombre de archivo «*.png» (que significa «todos los archivos que terminen "
-#~ "en .png») está asociado con el tipo MIME «image/png».</li> <li>Una "
-#~ "descripción corta del tipo MIME; por ejemplo, la descripción del tipo "
-#~ "MIME «image/png» es simplemente «Imagen PNG».</li> <li>Un icono a usar "
-#~ "cuando se muestran archivos del tipo MIME indicado, de modo que le "
-#~ "resulte fácil identificar el tipo de archivo en un gestor de archivos o "
-#~ "en un diálogo de selección de archivos (al menos de los archivos que use "
-#~ "más frecuentemente).</li> <li>Una lista de aplicaciones que puede usar "
-#~ "para abrir archivos del tipo MIME indicado (si hay varias aplicaciones, "
-#~ "la superior tendrá mayor prioridad).</li></ul> Es posible que le "
-#~ "sorprenda comprobar que algunos tipos MIME carecen de patrones de nombres "
-#~ "de archivo; en estos casos, KDE es capaz de determinar el tipo MIME "
-#~ "examinando directamente el contenido de los archivos.</p>"
-
-#~ msgid "KEditFileType"
-#~ msgstr "KEditFileType"
-
-#~ msgid ""
-#~ "This is the icon associated with the selected file type. Choosing a "
-#~ "different icon requires shared-mime-info to be at least version 0.40."
-#~ msgstr ""
-#~ "Este es el icono asociado con el tipo de archivo seleccionado. Para "
-#~ "escoger un icono diferente necesita al menos la versión 0.40 de «shared-"
-#~ "mime-info»."
-
-#~ msgid "You are not authorized to remove this service."
-#~ msgstr "No tiene autorización para eliminar este servicio."

@@ -1,15 +1,15 @@
 # Spanish translations for plasma-open-settings.po package.
-# Copyright (C) 2021 This file is copyright:
+# Copyright (C) 2021-2025 This file is copyright:
 # This file is distributed under the same license as the kde-cli-tools package.
-#
 # Automatically generated, 2021.
-# Eloy Cuadra <ecuadra@eloihr.net>, 2021.
+#
+# SPDX-FileCopyrightText: 2021, 2025 Eloy Cuadra <ecuadra@eloihr.net>
 msgid ""
 msgstr ""
 "Project-Id-Version: plasma-open-settings\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2022-10-21 00:48+0000\n"
-"PO-Revision-Date: 2021-07-22 11:55+0200\n"
+"PO-Revision-Date: 2025-05-12 13:53+0100\n"
 "Last-Translator: Eloy Cuadra <ecuadra@eloihr.net>\n"
 "Language-Team: Spanish <kde-l10n-es@kde.org>\n"
 "Language: es\n"

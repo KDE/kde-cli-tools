@@ -1,21 +1,19 @@
-# Translation of kstart to Spanish
-# traducción de kstart.po a Español
-# translation of kstart.po to Spanish
-# Translation to spanish
-# Copyright (C) 2000-2002
+# Spanish translations for kstart.po package.
+# Copyright (C) 2000-2025 This file is copyright:
+# This file is distributed under the same license as the kde-cli-tools package.
 #
-# Pablo de Vicente <vicente@oan.es>, 2000-2002.
-# Jaime Robles <jaime@kde.org>, 2003, 2004, 2005, 2008.
-# Pablo de Vicente <p.devicente@wanadoo.es>, 2004.
-# Santiago Fernandez Sancho <santi@kde-es.org>, 2005.
-# Enrique Matias Sanchez (aka Quique) <cronopios@gmail.com>, 2007.
-# SPDX-FileCopyrightText: 2010, 2014, 2020, 2023 Eloy Cuadra <ecuadra@eloihr.net>
+# SPDX-FileCopyrightText: 2000-2002 Pablo de Vicente <vicente@oan.es>
+# SPDX-FileCopyrightText: 2003, 2004, 2005, 2008 Jaime Robles <jaime@kde.org>
+# SPDX-FileCopyrightText: 2004 Pablo de Vicente <p.devicente@wanadoo.es>
+# SPDX-FileCopyrightText: 2005 Santiago Fernandez Sancho <santi@kde-es.org>
+# SPDX-FileCopyrightText: 2007 Enrique Matias Sanchez (aka Quique) <cronopios@gmail.com>
+# SPDX-FileCopyrightText: 2010, 2014, 2020, 2023, 2025 Eloy Cuadra <ecuadra@eloihr.net>
 msgid ""
 msgstr ""
 "Project-Id-Version: kstart\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2024-03-17 00:38+0000\n"
-"PO-Revision-Date: 2023-09-20 00:43+0200\n"
+"PO-Revision-Date: 2025-05-12 13:52+0100\n"
 "Last-Translator: Eloy Cuadra <ecuadra@eloihr.net>\n"
 "Language-Team: Spanish <kde-l10n-es@kde.org>\n"
 "Language: es\n"
@@ -87,97 +85,3 @@ msgstr "URL opcional a pasar a la aplicación cuando se usa «--application»"
 #, kde-format
 msgid "No command specified"
 msgstr "No se especificó ninguna orden"
-
-#~ msgid ""
-#~ "Alternative to <command>: desktop file path to start. D-Bus service will "
-#~ "be printed to stdout. Deprecated: use --application"
-#~ msgstr ""
-#~ "Alternativa a <command>: ruta del archivo de escritorio a iniciar. La "
-#~ "salida del servicio D-Bus se mostrará en la salida estándar. "
-#~ "Discontinuado: use --application."
-
-#~ msgid ""
-#~ "Utility to launch applications with special window properties \n"
-#~ "such as iconified, maximized, a certain virtual desktop, a special "
-#~ "decoration\n"
-#~ "and so on."
-#~ msgstr ""
-#~ "Utilidad para ejecutar aplicaciones con propiedades especiales de las\n"
-#~ "ventanas, tales como iconizada, maximizada, un escritorio virtual "
-#~ "concreto, un estilo especial\n"
-#~ "y similares."
-
-#~ msgid "A regular expression matching the window title"
-#~ msgstr "Una expresión regular que coincida con el título de la ventana"
-
-#~ msgid ""
-#~ "A string matching the window class (WM_CLASS property)\n"
-#~ "The window class can be found out by running\n"
-#~ "'xprop | grep WM_CLASS' and clicking on a window\n"
-#~ "(use either both parts separated by a space or only the right part).\n"
-#~ "NOTE: If you specify neither window title nor window class,\n"
-#~ "then the very first window to appear will be taken;\n"
-#~ "omitting both options is NOT recommended."
-#~ msgstr ""
-#~ "Una cadena coincidente con la clase de ventana (atributo WM_CLASS).\n"
-#~ "La clase de ventana puede conocerse ejecutando\n"
-#~ " «xprop | grep WM_CLASS» y pulsando en una ventana.\n"
-#~ "(use ambas partes separadas por un espacio o solo la parte derecha).\n"
-#~ "NOTA: Si no especifica ningún título o clase de ventana,\n"
-#~ "entonces se usará la primera ventana que aparezca;\n"
-#~ "NO se recomienda omitir ambas opciones."
-
-#~ msgid "Desktop on which to make the window appear"
-#~ msgstr "Escritorio en el que se hace aparecer a la ventana"
-
-#~ msgid ""
-#~ "Make the window appear on the desktop that was active\n"
-#~ "when starting the application"
-#~ msgstr ""
-#~ "Hacer aparecer la ventana en el escritorio que estaba activo\n"
-#~ "cuando se inicie la aplicación"
-
-#~ msgid "Make the window appear on all desktops"
-#~ msgstr "Hace aparecer a la ventana en todos los escritorios"
-
-#~ msgid "Iconify the window"
-#~ msgstr "Iconiza la ventana"
-
-#~ msgid "Maximize the window"
-#~ msgstr "Maximiza la ventana"
-
-#~ msgid "Maximize the window vertically"
-#~ msgstr "Maximiza la ventana verticalmente"
-
-#~ msgid "Maximize the window horizontally"
-#~ msgstr "Maximiza la ventana horizontalmente"
-
-#~ msgid "Show window fullscreen"
-#~ msgstr "Mostrar a pantalla completa"
-
-#~ msgid ""
-#~ "The window type: Normal, Desktop, Dock, Toolbar, \n"
-#~ "Menu, Dialog, TopMenu or Override"
-#~ msgstr ""
-#~ "El tipo de ventana: «Normal», «Desktop» (escritorio), «Dock» (anclada),\n"
-#~ "«Toolbar» (barra de herramientas), «Menu» (menú), «Dialog» (diálogo) , "
-#~ "«TopMenu» (menú superior) u «Override» (superpuesta)"
-
-#~ msgid ""
-#~ "Jump to the window even if it is started on a \n"
-#~ "different virtual desktop"
-#~ msgstr ""
-#~ "Salta a la ventana incluso si se inicia en un\n"
-#~ "escritorio virtual diferente"
-
-#~ msgid "Try to keep the window above other windows"
-#~ msgstr "Intenta mantener la ventana encima del resto"
-
-#~ msgid "Try to keep the window below other windows"
-#~ msgstr "Intenta mantener la ventana debajo de cualquier otra"
-
-#~ msgid "The window does not get an entry in the taskbar"
-#~ msgstr "La ventana no obtiene una entrada en la barra de tareas"
-
-#~ msgid "The window does not get an entry on the pager"
-#~ msgstr "La ventana no obtiene una entrada en el paginador"
