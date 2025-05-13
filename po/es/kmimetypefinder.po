@@ -1,17 +1,16 @@
-# translation of kmimetypefinder.po to Spanish
-# Translation of kmimetypefinder to Spanish
-# Copyright (C) YEAR This_file_is_part_of_KDE
-# This file is distributed under the same license as the PACKAGE package.
+# Spanish translations for kmimetypefinder.po package.
+# Copyright (C) 2007-2025 This file is copyright:
+# This file is distributed under the same license as the kde-cli-tools package.
 #
-# Enrique Matias Sanchez (aka Quique) <cronopios@gmail.com>, 2007.
-# Jaime Robles <jaime@kde.org>, 2008.
-# Eloy Cuadra <ecuadra@eloihr.net>, 2009, 2015, 2017.
+# SPDX-FileCopyrightText: 2007 Enrique Matias Sanchez (aka Quique) <cronopios@gmail.com>
+# SPDX-FileCopyrightText: 2008 Jaime Robles <jaime@kde.org>
+# SPDX-FileCopyrightText: 2009, 2015, 2017, 2025 Eloy Cuadra <ecuadra@eloihr.net>
 msgid ""
 msgstr ""
 "Project-Id-Version: kmimetypefinder\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2021-03-18 02:47+0100\n"
-"PO-Revision-Date: 2017-05-01 19:08+0200\n"
+"PO-Revision-Date: 2025-05-12 13:57+0100\n"
 "Last-Translator: Eloy Cuadra <ecuadra@eloihr.net>\n"
 "Language-Team: Spanish <kde-l10n-es@kde.org>\n"
 "Language: es\n"
