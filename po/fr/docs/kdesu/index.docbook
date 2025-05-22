@@ -446,20 +446,20 @@ does this really work?
 >kdesud</application
 >. Ce démon attend des commandes dans un socket &UNIX; placé dans <filename
 >/tmp</filename
->. Le mode de ce socket est 0600, ainsi seul votre utilisateur peut s'y connecter. Si la conservation des mots de passe est activée, &kdesu; exécute les commandes par l'intermédiaire de ce démon. Il écrit la commande et le mot de passe <systemitem class="username"
+>. Le mode de ce socket est « 0600 ». Ainsi, seul votre identifiant utilisateur permet de s'y connecter. Si la conservation des mots de passe est activée, &kdesu; exécute les commandes par l'intermédiaire de ce démon. Il écrit la commande et le mot de passe <systemitem class="username"
 >administrateur</systemitem
 > dans ce socket, puis le démon exécute la commande <command
 >su</command
-> comme décrit précédemment. Ensuite, la commande et le mot de passe ne sont pas détruits. Au lieu de cela, ils sont conservés pour une durée déterminée. Il s'agit de la durée spécifiée dans le module de configuration. Si une autre requête pour la même commande intervient pendant cette période, le client ne vous demandera pas de fournir de nouveau le mot de passe. Pour empêcher les pirates qui prendraient le contrôle de votre compte de voler les mots de passe au daemon (Par exemple en lui attachant un débogueur), le démon est installé set-group-id nogroup. Ceci devrait interdire à tous les utilisateurs normaux (y compris vous) d'obtenir les mots de passe dans le processus <application
+> comme décrit précédemment. Ensuite, la commande et le mot de passe ne sont pas détruits. Au lieu de cela, ils sont conservés pour une durée déterminée. Il s'agit de la durée spécifiée dans le module de configuration. Si une autre requête pour la même commande intervient pendant cette période, le client ne vous demandera pas de fournir de nouveau le mot de passe. Pour empêcher les pirates qui prendraient le contrôle de votre compte de voler les mots de passe au daemon (Par exemple en lui attachant un débogueur), le démon est installé en « set-group-id nogroup ». Ceci devrait interdire à tous les utilisateurs normaux (y compris vous) d'obtenir les mots de passe dans le processus <application
 >kdesud</application
 >. Par ailleurs, le daemon fixe la variable d'environnement <envar
 >DISPLAY</envar
 > à la valeur qu'elle avait quand il a été lancé. Ainsi, la seule chose que puisse faire un hacker est d'exécuter une application sur votre écran.</para>
 
 <para
->Un point faible dans ce schéma est que le programme que vous exécutez n'a peut être pas été écrit avec un grand souci de sécurité (comme c'est le cas pour les programmes setuid <systemitem class="username"
+>Un point faible dans ce schéma est que le programme que vous exécutez n'a peut être pas été écrit avec un grand souci de sécurité (Comme c'est le cas pour les programmes setuid <systemitem class="username"
 >root</systemitem
->). Ceci signifie que ce programme pourrait avoir des débordements de tampons (« buffer overruns ») ou d'autres faiblesses qu'un hacker pourrait utiliser.</para>
+>). Ceci signifie que ce programme pourrait avoir des débordements de tampons (« buffer overruns ») ou d'autres faiblesses qu'un pirate pourrait utiliser.</para>
 
 <para
 >La conservation des mots de passe est donc le fruit d'un compromis entre confort et sécurité. Je vous incite à y réfléchir et à décider par vous-même si vous souhaitez vous en servir ou pas.</para>
