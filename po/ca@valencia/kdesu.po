@@ -203,7 +203,7 @@ msgid ""
 "privileges."
 msgstr ""
 "En l'acció que heu demanat calen <b>privilegis de root</b>. Introduïu la "
-"contrasenya de <b>root</b> o cliqueu Ignora per a continuar amb els "
+"contrasenya de <b>root</b> o cliqueu damunt «Ignora» per a continuar amb els "
 "privilegis actuals."
 
 #: sudlg.cpp:42
@@ -223,8 +223,8 @@ msgid ""
 "privileges."
 msgstr ""
 "En l'acció que heu demanat calen privilegis addicionals. Introduïu la "
-"contrasenya de <b>%1</b> o cliqueu Ignora per a continuar amb els privilegis "
-"actuals."
+"contrasenya de <b>%1</b> o cliqueu damunt «Ignora» per a continuar amb els "
+"privilegis actuals."
 
 #: sudlg.cpp:56
 #, kde-format
