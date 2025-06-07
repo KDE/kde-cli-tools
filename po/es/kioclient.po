@@ -1,20 +1,19 @@
-# translation of kioclient.po to Spanish
-# Translation of kioclient to Spanish
-# Copyright (C) YEAR This_file_is_part_of_KDE
-# This file is distributed under the same license as the PACKAGE package.
+# Spanish translations for kioclient.po package.
+# Copyright (C) 2007-2025 This file is copyright:
+# This file is distributed under the same license as the kde-cli-tools package.
 #
-# Enrique Matias Sanchez (aka Quique) <cronopios@gmail.com>, 2007.
-# Jaime Robles <jaime@kde.org>, 2008.
-# Cristina Yenyxe González García <the.blue.valkyrie@gmail.com>, 2010, 2011.
-# Raul Gonzalez <raulgf83@gmail.com>, 2012.
-# Eloy Cuadra <ecuadra@eloihr.net>, 2012, 2013, 2014, 2016, 2018, 2020, 2021, 2022.
-# Rocío Gallego <traducciones@rociogallego.com>, 2013.
+# SPDX-FileCopyrightText: 2007 Enrique Matias Sanchez (aka Quique) <cronopios@gmail.com>
+# SPDX-FileCopyrightText: 2008 Jaime Robles <jaime@kde.org>
+# SPDX-FileCopyrightText: 2010, 2011 Cristina Yenyxe González García <the.blue.valkyrie@gmail.com>
+# SPDX-FileCopyrightText: 2012 Raul Gonzalez <raulgf83@gmail.com>
+# SPDX-FileCopyrightText: 2012, 2013, 2014, 2016, 2018, 2020, 2021, 2022, 2025 Eloy Cuadra <ecuadra@eloihr.net>
+# SPDX-FileCopyrightText: 2013 Rocío Gallego <traducciones@rociogallego.com>
 msgid ""
 msgstr ""
 "Project-Id-Version: kioclient\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2024-04-26 03:04+0000\n"
-"PO-Revision-Date: 2022-04-06 19:07+0200\n"
+"PO-Revision-Date: 2025-06-06 19:46+0100\n"
 "Last-Translator: Eloy Cuadra <ecuadra@eloihr.net>\n"
 "Language-Team: Spanish <kde-l10n-es@kde.org>\n"
 "Language: es\n"
@@ -282,7 +281,7 @@ msgstr "archivo o URL"
 #: kioclient.cpp:196 kioclient.cpp:198 kioclient.cpp:201 kioclient.cpp:206
 #, kde-format
 msgid "urls..."
-msgstr "url..."
+msgstr "url…"
 
 #: kioclient.cpp:198 kioclient.cpp:201
 #, kde-format
@@ -347,90 +346,3 @@ msgstr "%1: Error de sintaxis; orden «%2» desconocida\n"
 msgctxt "@info:shell"
 msgid "%1: %2\n"
 msgstr "%1: %2\n"
-
-#~ msgid ""
-#~ "  kioclient move 'src' 'dest'\n"
-#~ "            # Moves the URL 'src' to 'dest'.\n"
-#~ "            #   'src' may be a list of URLs.\n"
-#~ msgstr ""
-#~ "  kioclient move «origen» «destino»\n"
-#~ "            # Mueve el URL «origen» a «destino».\n"
-#~ "            #   «origen» puede ser una lista de URL.\n"
-
-#~ msgid ""
-#~ "            #   'dest' may be \"trash:/\" to move the files\n"
-#~ "            #   to the trash.\n"
-#~ msgstr ""
-#~ "            #   «destino» debe ser «trash:/» para mover archivos\n"
-#~ "            #   a la papelera.\n"
-
-#~ msgid ""
-#~ "            #   the short version kioclient mv\n"
-#~ "            #   is also available.\n"
-#~ "\n"
-#~ msgstr ""
-#~ "            #   la versión corta kioclient mv\n"
-#~ "            #   también está disponible.\n"
-#~ "\n"
-
-#~ msgid ""
-#~ "            #   the short version kioclient cp\n"
-#~ "            #   is also available.\n"
-#~ "\n"
-#~ msgstr ""
-#~ "            #   la versión corta kioclient cp\n"
-#~ "            #   también está disponible.\n"
-#~ "\n"
-
-#~ msgid ""
-#~ "  kioclient cat 'url'\n"
-#~ "            # Writes out the contents of 'url' to stdout\n"
-#~ "\n"
-#~ msgstr ""
-#~ "  kioclient cat «url»\n"
-#~ "            # Escribe el contenido de «url» a la salida estándar\n"
-#~ "\n"
-
-#~ msgid ""
-#~ "            #   the short version kioclient rm\n"
-#~ "            #   is also available.\n"
-#~ "\n"
-#~ msgstr ""
-#~ "            #   la versión corta kioclient rm\n"
-#~ "            #   también está disponible.\n"
-#~ "\n"
-
-#~ msgid ""
-#~ "*** Examples:\n"
-#~ "  kioclient exec file:/root/Desktop/cdrom.desktop \"Mount default\"\n"
-#~ "             // Mounts the CDROM\n"
-#~ "\n"
-#~ msgstr ""
-#~ "*** Ejemplos:\n"
-#~ "  kioclient exec file:/root/Desktop/cdrom.desktop «Mount default»\n"
-#~ "             // Monta el CD-ROM\n"
-#~ "\n"
-
-#~ msgid ""
-#~ "  kioclient exec file:/home/weis/data/test.html Netscape\n"
-#~ "             // Opens the file with netscape\n"
-#~ "\n"
-#~ msgstr ""
-#~ "  kioclient exec file:/home/weis/data/test.html Netscape\n"
-#~ "             // Abre el archivo con Netscape\n"
-#~ "\n"
-
-#~ msgid ""
-#~ "  kioclient exec file:/root/Desktop/cdrom.desktop\n"
-#~ "             // Opens the CDROM's mount directory\n"
-#~ "\n"
-#~ msgstr ""
-#~ "  kioclient exec file:/root/Desktop/cdrom.desktop\n"
-#~ "             // Abre el directorio de montaje del CD-ROM\n"
-#~ "\n"
-
-#~ msgid "Non-interactive use: no message boxes"
-#~ msgstr "Uso no interactivo: sin cajas de mensaje"
-
-#~ msgid "Unable to download from an invalid URL."
-#~ msgstr "No es posible descargar de un URL no válido."

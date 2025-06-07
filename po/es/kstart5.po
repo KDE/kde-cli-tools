@@ -1,21 +1,19 @@
-# Translation of kstart to Spanish
-# traducción de kstart.po a Español
-# translation of kstart.po to Spanish
-# Translation to spanish
-# Copyright (C) 2000-2002
+# Spanish translations for kstart5.po package.
+# Copyright (C) 2000-2025 This file is copyright:
+# This file is distributed under the same license as the kde-cli-tools package.
 #
-# Pablo de Vicente <vicente@oan.es>, 2000-2002.
-# Jaime Robles <jaime@kde.org>, 2003, 2004, 2005, 2008.
-# Pablo de Vicente <p.devicente@wanadoo.es>, 2004.
-# Santiago Fernandez Sancho <santi@kde-es.org>, 2005.
-# Enrique Matias Sanchez (aka Quique) <cronopios@gmail.com>, 2007.
-# Eloy Cuadra <ecuadra@eloihr.net>, 2010, 2014, 2020.
+# SPDX-FileCopyrightText: 2000-2002 Pablo de Vicente <vicente@oan.es>
+# SPDX-FileCopyrightText: 2003, 2004, 2005, 2008 Jaime Robles <jaime@kde.org>
+# SPDX-FileCopyrightText: 2004 Pablo de Vicente <p.devicente@wanadoo.es>
+# SPDX-FileCopyrightText: 2005 Santiago Fernandez Sancho <santi@kde-es.org>
+# SPDX-FileCopyrightText: 2007 Enrique Matias Sanchez (aka Quique) <cronopios@gmail.com>
+# SPDX-FileCopyrightText: 2010, 2014, 2020, 2025 Eloy Cuadra <ecuadra@eloihr.net>
 msgid ""
 msgstr ""
-"Project-Id-Version: kstart\n"
+"Project-Id-Version: kstart5\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2022-12-17 00:51+0000\n"
-"PO-Revision-Date: 2020-06-08 18:30+0200\n"
+"PO-Revision-Date: 2025-06-06 19:47+0100\n"
 "Last-Translator: Eloy Cuadra <ecuadra@eloihr.net>\n"
 "Language-Team: Spanish <kde-l10n-es@kde.org>\n"
 "Language: es\n"

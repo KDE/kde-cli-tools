@@ -1,17 +1,16 @@
-# translation of ktraderclient.po to Spanish
-# Translation of ktraderclient to Spanish
-# Copyright (C) 2007 This_file_is_part_of_KDE
-# This file is distributed under the same license as the PACKAGE package.
+# Spanish translations for ktraderclient5.po package.
+# Copyright (C) 2007-2025 This file is copyright:
+# This file is distributed under the same license as the kde-cli-tools package.
 #
-# Enrique Matias Sanchez (aka Quique) <cronopios@gmail.com>, 2007.
-# Jaime Robles <jaime@kde.org>, 2008.
-# Eloy Cuadra <ecuadra@eloihr.net>, 2015, 2016, 2017.
+# SPDX-FileCopyrightText: 2007 Enrique Matias Sanchez (aka Quique) <cronopios@gmail.com>
+# SPDX-FileCopyrightText: 2008 Jaime Robles <jaime@kde.org>
+# SPDX-FileCopyrightText: 2015, 2016, 2017, 2025 Eloy Cuadra <ecuadra@eloihr.net>
 msgid ""
 msgstr ""
-"Project-Id-Version: ktraderclient\n"
+"Project-Id-Version: ktraderclient5\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2021-03-18 02:47+0100\n"
-"PO-Revision-Date: 2017-05-01 19:08+0200\n"
+"PO-Revision-Date: 2025-06-06 19:47+0100\n"
 "Last-Translator: Eloy Cuadra <ecuadra@eloihr.net>\n"
 "Language-Team: Spanish <kde-l10n-es@kde.org>\n"
 "Language: es\n"
@@ -67,9 +66,3 @@ msgstr "Una restricción expresada en el lenguaje de consulta de servicios"
 #, kde-format
 msgid "Output only paths to desktop files"
 msgstr "Escribir solo rutas en archivos de escritorio"
-
-#~ msgid "A mimetype"
-#~ msgstr "Un tipo MIME"
-
-#~ msgid "Output all properties"
-#~ msgstr "Mostrar todas las propiedades"

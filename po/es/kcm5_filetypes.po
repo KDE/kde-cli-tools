@@ -1,13 +1,14 @@
-# Copyright (C) YEAR This_file_is_part_of_KDE
-# This file is distributed under the same license as the PACKAGE package.
+# Spanish translations for kcm5_filetypes.po package.
+# Copyright (C) 2014-2025 This file is copyright:
+# This file is distributed under the same license as the kde-cli-tools package.
 #
-# Eloy Cuadra <ecuadra@eloihr.net>, 2014, 2019.
+# SPDX-FileCopyrightText: 2014, 2019, 2025 Eloy Cuadra <ecuadra@eloihr.net>
 msgid ""
 msgstr ""
-"Project-Id-Version: \n"
+"Project-Id-Version: kcm5_filetypes\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2023-01-15 00:57+0000\n"
-"PO-Revision-Date: 2019-01-12 22:25+0100\n"
+"PO-Revision-Date: 2025-06-06 19:45+0100\n"
 "Last-Translator: Eloy Cuadra <ecuadra@eloihr.net>\n"
 "Language-Team: Spanish <kde-l10n-es@kde.org>\n"
 "Language: es\n"
@@ -88,7 +89,7 @@ msgstr ""
 #: filetypedetails.cpp:87 filetypesview.cpp:103 kservicelistwidget.cpp:110
 #, kde-format
 msgid "Add..."
-msgstr "Añadir..."
+msgstr "Añadir…"
 
 #: filetypedetails.cpp:92
 #, kde-format
@@ -225,7 +226,7 @@ msgstr ""
 #: filetypesview.cpp:74
 #, kde-format
 msgid "Search for file type or filename pattern..."
-msgstr "Buscar tipo de archivo o patrón de nombre de archivo..."
+msgstr "Buscar tipo de archivo o patrón de nombre de archivo…"
 
 #: filetypesview.cpp:80
 #, kde-format
@@ -400,7 +401,7 @@ msgid ""
 msgstr ""
 "Esta lista contiene las aplicaciones asociadas con los archivos del tipo "
 "seleccionado. Esta lista se mostrará en los menús contextuales de Konqueror "
-"cuando seleccione «Abrir con...». Si hay más de una aplicación asociada con "
+"cuando seleccione «Abrir con…». Si hay más de una aplicación asociada con "
 "este tipo de archivo, la lista estará ordenada por prioridades, teniendo "
 "preferencia sobre las demás la que esté situada más arriba."
 
@@ -415,7 +416,7 @@ msgid ""
 msgstr ""
 "Esta lista contiene los servicios asociados con los archivos del tipo "
 "seleccionado Esta lista se mostrará en los menús contextuales de Konqueror "
-"cuando seleccione «Previsualizar en...». Si hay más de un servicio asociado "
+"cuando seleccione «Previsualizar en…». Si hay más de un servicio asociado "
 "con este tipo de archivo, la lista estará ordenada por prioridades, teniendo "
 "preferencia sobre los demás el que esté situado más arriba."
 
@@ -481,7 +482,7 @@ msgstr "Añadir una nueva aplicación para este tipo de archivo."
 #: kservicelistwidget.cpp:117
 #, kde-format
 msgid "Edit..."
-msgstr "Editar..."
+msgstr "Editar…"
 
 #: kservicelistwidget.cpp:122
 #, kde-format
@@ -546,17 +547,3 @@ msgstr ""
 "Escriba el nombre del tipo de archivo. Por ejemplo, si ha seleccionado "
 "«image» como categoría y escribe aquí «custom», se creará el tipo de archivo "
 "«image/custom»."
-
-#~ msgid "KEditFileType"
-#~ msgstr "KEditFileType"
-
-#~ msgid ""
-#~ "This is the icon associated with the selected file type. Choosing a "
-#~ "different icon requires shared-mime-info to be at least version 0.40."
-#~ msgstr ""
-#~ "Este es el icono asociado con el tipo de archivo seleccionado. Para "
-#~ "escoger un icono diferente necesita al menos la versión 0.40 de «shared-"
-#~ "mime-info»."
-
-#~ msgid "You are not authorized to remove this service."
-#~ msgstr "No tiene autorización para eliminar este servicio."

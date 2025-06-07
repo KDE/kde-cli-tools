@@ -1,13 +1,14 @@
-# Copyright (C) YEAR This_file_is_part_of_KDE
-# This file is distributed under the same license as the PACKAGE package.
+# Spanish translations for kcmshell5.po package.
+# Copyright (C) 2014-2025 This file is copyright:
+# This file is distributed under the same license as the kde-cli-tools package.
 #
-# Eloy Cuadra <ecuadra@eloihr.net>, 2014, 2015, 2016.
+# SPDX-FileCopyrightText: 2014, 2015, 2016, 2025 Eloy Cuadra <ecuadra@eloihr.net>
 msgid ""
 msgstr ""
-"Project-Id-Version: \n"
+"Project-Id-Version: kcmshell5\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2022-06-29 00:46+0000\n"
-"PO-Revision-Date: 2016-03-16 22:53+0100\n"
+"PO-Revision-Date: 2025-06-06 19:46+0100\n"
 "Last-Translator: Eloy Cuadra <ecuadra@eloihr.net>\n"
 "Language-Team: Spanish <kde-l10n-es@kde.org>\n"
 "Language: es\n"
@@ -139,6 +140,3 @@ msgid ""
 msgstr ""
 "No se ha encontrado el módulo «%1». Ejecute kcmshell5 --list para obtener la "
 "lista completa de módulos."
-
-#~ msgid "KDE Control Module"
-#~ msgstr "Módulo de control de KDE"
