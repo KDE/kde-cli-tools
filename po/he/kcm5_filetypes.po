@@ -16,45 +16,46 @@
 # tahmar1900 <tahmar1900@gmail.com>, 2008, 2009.
 # Elkana Bardugo <ttv200@gmail.com>, 2016.
 # Elkana Bardugo <ttv200@gmail.com>, 2017. #zanata
+# SPDX-FileCopyrightText: 2025 Yaron Shahrabani <sh.yaron@gmail.com>
 msgid ""
 msgstr ""
 "Project-Id-Version: kcm5_filetypes\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2023-01-15 00:57+0000\n"
-"PO-Revision-Date: 2017-05-16 06:52-0400\n"
-"Last-Translator: Copied by Zanata <copied-by-zanata@zanata.org>\n"
-"Language-Team: Hebrew <kde-i18n-doc@kde.org>\n"
+"PO-Revision-Date: 2025-06-19 12:57+0300\n"
+"Last-Translator: Yaron Shahrabani <sh.yaron@gmail.com>\n"
+"Language-Team: צוות התרגום של KDE ישראל\n"
 "Language: he\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Generator: Zanata 3.9.6\n"
+"X-Generator: Lokalize 25.04.2\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
 
 #, kde-format
 msgctxt "NAME OF TRANSLATORS"
 msgid "Your names"
-msgstr "דרור לוין, ליאל פרידמן"
+msgstr "דרור לוין, ליאל פרידמן,צוות התרגום של KDE ישראל"
 
 #, kde-format
 msgctxt "EMAIL OF TRANSLATORS"
 msgid "Your emails"
-msgstr "spatz@012.net.il, lielft@gmail.com"
+msgstr "spatz@012.net.il, lielft@gmail.com,kde-l10n-he@kde.org"
 
 #: filegroupdetails.cpp:22
 #, kde-format
 msgid "Left Click Action (only for Konqueror file manager)"
-msgstr "פעולה בעת לחיצה על הכפתור השמאלי (רק במנהל הקבצים Konqueror)"
+msgstr "פעולת לחיצה על הכפתור השמאלי (רק במנהל הקבצים Konqueror)"
 
 #: filegroupdetails.cpp:26 filetypedetails.cpp:133
 #, kde-format
 msgid "Show file in embedded viewer"
-msgstr "הצג את הקובץ במציג מוטבע"
+msgstr "הצגת הקובץ במציג מוטמע"
 
 #: filegroupdetails.cpp:27 filetypedetails.cpp:134
 #, kde-format
 msgid "Show file in separate viewer"
-msgstr "הצג את הקובץ במציג נפרד"
+msgstr "הצגת הקובץ במציג נפרד"
 
 #: filegroupdetails.cpp:36
 #, kde-format
@@ -65,10 +66,10 @@ msgid ""
 "setting for a specific file type in the 'Embedding' tab of the file type "
 "configuration. Dolphin  shows files always in a separate viewer"
 msgstr ""
-"כאן באפשרותך להגדיר מה יעשה מנהל הקבצים של Konqueror כשתלחץ על קובץ השייך "
-"לקבוצה זו. באפשרות Konqueror להציג את הקובץ במציג מוטבע, או להפעיל יישום "
-"נפרד. באפשרותך לשנות הגדרה זו לסוג קובץ ייחודי בלשונית 'הטבעה' של הגדרות "
-"סוגי הקבצים. Dolphin תמיד מציג קבצים בתצוגה נפרדת"
+"כאן אפשר להגדיר מה יעשה מנהל הקבצים של Konqueror בלחיצה על קובץ ששייך לקבוצה "
+"זו. באפשרות Konqueror להציג את הקובץ במציג מוטבע, או להפעיל יישום נפרד. ניתן "
+"לשנות הגדרה זו לסוג מסוים של קובץ בלשונית ‚הטמעה’ בהגדרות סוגי הקבצים. "
+"Dolphin תמיד מציג קבצים בתצוגה נפרדת"
 
 #: filetypedetails.cpp:61
 #, kde-format
@@ -76,7 +77,8 @@ msgid ""
 "This button displays the icon associated with the selected file type. Click "
 "on it to choose a different icon."
 msgstr ""
-"כפתור זה מציג את הסמל שמשויך לסוג הקובץ הנבחר. לחץ עליו כדי לבחור סמל אחר."
+"כפתור זה מציג את הסמל שמשויך לסוג הקובץ הנבחר. אפשר ללחוץ עליו כדי לבחור סמל "
+"אחר."
 
 #: filetypedetails.cpp:67
 #, kde-format
@@ -92,13 +94,13 @@ msgid ""
 "text files."
 msgstr ""
 "תיבה זו מכילה רשימה של תבניות שנעשה בהן שימוש כדי לזהות קבצים מהסוג הנבחר. "
-"לדוגמה, התבנית ‎*.txt משויכת לסוג הקובץ \"text/plain\". כל הקבצים שמסתיימים ב־"
-"\"txt.\" יזוהו בתור קבצי טקסט."
+"לדוגמה, התבנית ‎*.txt משויכת לסוג הקובץ „text/plain”. כל הקבצים שמסתיימים ב־"
+"„txt.” יזוהו בתור קובצי טקסט."
 
 #: filetypedetails.cpp:87 filetypesview.cpp:103 kservicelistwidget.cpp:110
 #, kde-format
 msgid "Add..."
-msgstr "הוסף..."
+msgstr "הוספה…"
 
 #: filetypedetails.cpp:92
 #, kde-format
@@ -108,7 +110,7 @@ msgstr "הוספת תבנית חדשה עבור סוג הקובץ הנבחר."
 #: filetypedetails.cpp:94 kservicelistwidget.cpp:124
 #, kde-format
 msgid "Remove"
-msgstr "הסר"
+msgstr "הסרה"
 
 #: filetypedetails.cpp:99
 #, kde-format
@@ -127,8 +129,8 @@ msgid ""
 "'HTML Page'). This description will be used by applications like Konqueror "
 "to display directory content."
 msgstr ""
-"כאן באפשרותך להזין תיאור קצר על קבצים מסוג הקובץ הנבחר (לדוגמה \"דף HTML\"). "
-"בתיאור זה יעשו שימוש יישומים כגון Konqueror להצגת תוכן ספריות."
+"כאן אפשר למלא תיאור קצר על קבצים מסוג הקובץ הנבחר (לדוגמה „דף HTML”). בתיאור "
+"זה ישתמשו יישומים כגון Konqueror להצגת תוכן תיקיות."
 
 #: filetypedetails.cpp:128
 #, kde-format
@@ -138,7 +140,7 @@ msgstr "פעולת לחצן שמאלי של Konqueror"
 #: filetypedetails.cpp:137
 #, kde-format
 msgid "Ask whether to save to disk instead (only for Konqueror browser)"
-msgstr "שאל האם לשמור לכונן במקום (רק לדפדפן Konqueror)"
+msgstr "לשאול האם לשמור לכונן במקום (רק לדפדפן Konqueror)"
 
 #: filetypedetails.cpp:153
 #, kde-format
@@ -150,11 +152,11 @@ msgid ""
 "group G to which this type belongs; for instance, 'image' if the current "
 "file type is image/png. Dolphin always shows files in a separate viewer."
 msgstr ""
-"כאן באפשרותך להגדיר מה יעשה מנהל הקבצים של Konqueror כשתלחץ על קובץ מסוג זה. "
-"באפשרות Konqueror להציג את הקובץ בתוך מציג מוטבע, או להפעיל יישום נפרד. אם "
-"נבחרה האפשרות 'השתמש בהגדרות לקבוצה G' נבחרת, Konqueror יפעל לפי הגדרות "
-"קבוצה G אליה שייך סוג זה. למשל 'image' אם סוג הקובץ הנוכחי הוא image/png. "
-"Dolphin תמיד מציג קבצים בתצוגה נפרדת."
+"כאן אפשר להגדיר מה יעשה מנהל הקבצים של Konqueror בלחיצה על קובץ מסוג זה. "
+"באפשרות Konqueror להציג את הקובץ בתוך מציג מוטמע, או להפעיל יישום נפרד. אם "
+"נבחרה האפשרות ‚להשתמש בהגדרות לקבוצה G’‏ Konqueror יפעל לפי הגדרות קבוצה G "
+"אליה שייך סוג זה. למשל ‚image’ אם סוג הקובץ הנוכחי הוא image/png. Dolphin "
+"תמיד מציג קבצים בתצוגה נפרדת."
 
 #: filetypedetails.cpp:165
 #, kde-format
@@ -164,7 +166,7 @@ msgstr "&כללי"
 #: filetypedetails.cpp:166
 #, kde-format
 msgid "&Embedding"
-msgstr "ה&טבעה"
+msgstr "ה&טמעה"
 
 #: filetypedetails.cpp:207
 #, kde-format
@@ -184,10 +186,10 @@ msgstr "סוג הקובץ %1"
 #: filetypedetails.cpp:333
 #, kde-format
 msgid "Use settings for '%1' group"
-msgstr "השתמש בהגדרות לקבוצה \"%1\""
+msgstr "להשתמש בהגדרות לקבוצה ‚%1’"
 
 #: filetypesview.cpp:44
-#, kde-format
+#, fuzzy, kde-format
 msgid ""
 "<p><h1>File Associations</h1> This module allows you to choose which "
 "applications are associated with a given type of file. File types are also "
@@ -223,10 +225,9 @@ msgstr ""
 "בחינה של תוכן הקובץ ישירות. </p>"
 
 #: filetypesview.cpp:74
-#, fuzzy, kde-format
-#| msgid "Find file type or filename pattern"
+#, kde-format
 msgid "Search for file type or filename pattern..."
-msgstr "חפש תבנית סוג־קובץ או שם־קובץ"
+msgstr "חיפוש תבנית סוג קובץ או שם קובץ…"
 
 #: filetypesview.cpp:80
 #, kde-format
@@ -235,8 +236,8 @@ msgid ""
 "pattern will appear in the list. Alternatively, enter a part of a file type "
 "name as it appears in the list."
 msgstr ""
-"הזן חלק של תבנית שמות קבצים. יופיעו ברשימה רק סוגי קבצים עם תבנית קובץ "
-"תואמת. במידה ולא, הזן חלק שם סוג הקובץ כמו שהוא מופיע ברשימה."
+"אפשר להקליד חלק מתבנית שם הקובץ ורק סוגי הקבצים שתבנית הקובץ שלהם תואמת "
+"יופיעו ברשימה. לחלופין, אפשר להקליד חלק משם סוג הקובץ והוא יופיע ברשימה."
 
 #: filetypesview.cpp:88
 #, kde-format
@@ -251,37 +252,38 @@ msgid ""
 "collapse it. Select a file type (e.g. text/html for HTML files) to view/edit "
 "the information for that file type using the controls on the right."
 msgstr ""
-"כאן באפשרותך לראות רשימה היררכית של סוגי הקבצים המוכרים במערכת שלך. לחץ על "
-"הסימן \"+\" כדי להרחיב קטגוריה, או על \"-\" כדי לצמצם אותה. בחר סוג קובץ  "
-"(לדוגמה text/html) כדי לצפות\\לערוך את המידע עליו באמצעות האפשרויות שמשמאל."
+"כאן אפשר לצפות ברשימה היררכית של סוגי הקבצים שהמערכת שלך מכירה. לחיצה על "
+"הסמל ‚+’ כדי להרחיב את הקטגוריה או על הסמל ‚-’ כדי לצמצם אותה. יש לבחור סוג "
+"קובץ (למשל: text/html לקובצי HTML) כדי לצפות/לערוך את המידע לסוג קובץ זה "
+"באמצעות הפקדים שמשמאל."
 
 #: filetypesview.cpp:108
 #, kde-format
 msgid "Click here to add a new file type."
-msgstr "לחץ כאן כדי להוסיף סוג קובץ חדש."
+msgstr "יש ללחוץ כאן כדי להוסיף סוג קובץ חדש."
 
 #: filetypesview.cpp:110 filetypesview.cpp:376
 #, kde-format
 msgid "&Remove"
-msgstr "&הסר"
+msgstr "ה&סרה"
 
 #: filetypesview.cpp:134
 #, kde-format
 msgid "Select a file type by name or by extension"
-msgstr "בחר סוג קובץ לפי שם או לפי סיומת"
+msgstr "נא לבחור סוג קובץ לפי שם או לפי סיומת"
 
 #: filetypesview.cpp:369
 #, kde-format
 msgid "&Revert"
-msgstr "&החזר"
+msgstr "לה&חזיר"
 
 #: filetypesview.cpp:370
 #, kde-format
 msgid "Revert this file type to its initial system-wide definition"
-msgstr "שייך סוג קובץ זה בחזרה לשיוכו הראשוני"
+msgstr "שיוך סוג קובץ זה בחזרה לשיוכו הראשוני הכלל־מערכתי"
 
 #: filetypesview.cpp:372
-#, kde-format
+#, fuzzy, kde-format
 msgid ""
 "Click here to revert this file type to its initial system-wide definition, "
 "which undoes any changes made to the file type. Note that system-wide file "
@@ -297,10 +299,10 @@ msgstr ""
 #: filetypesview.cpp:377
 #, kde-format
 msgid "Delete this file type definition completely"
-msgstr "מחק תיאור סוג־קובץ זה לחלוטין"
+msgstr "למחוק הגדרת סוג קובץ זה לחלוטין"
 
 #: filetypesview.cpp:379
-#, kde-format
+#, fuzzy, kde-format
 msgid ""
 "Click here to delete this file type definition completely. This is only "
 "possible for user-defined file types. System-wide file types cannot be "
@@ -327,27 +329,27 @@ msgstr "עורך סוגי הקבצים של KDE - גרסה פשוטה לעריכ
 #: keditfiletype.cpp:124
 #, kde-format
 msgid "(c) 2000, KDE developers"
-msgstr "(c)‏  2000‎, המפתחים של KDE"
+msgstr "(c) 2000, מפתחי KDE"
 
 #: keditfiletype.cpp:125
 #, kde-format
 msgid "Preston Brown"
-msgstr "Preston Brown"
+msgstr "פרסטון בראון"
 
 #: keditfiletype.cpp:126
 #, kde-format
 msgid "David Faure"
-msgstr "David Faure"
+msgstr "דוד פור"
 
 #: keditfiletype.cpp:132
 #, kde-format
 msgid "Makes the dialog transient for the window specified by winid"
-msgstr "גורם לחלון להיות זמני עבור החלון הנתון על ידי מזהה החלון"
+msgstr "גורם לחלון להיות זמני עבור החלון שצוין על ידי מזהה החלון (winid)"
 
 #: keditfiletype.cpp:134
 #, kde-format
 msgid "File type to edit (e.g. text/html)"
-msgstr "(text/html סוג הקובץ לעריכה (לדוגמה"
+msgstr "סוג הקובץ לעריכה (למשל: text/html)"
 
 #: keditfiletype.cpp:165
 #, kde-format
@@ -388,10 +390,9 @@ msgid ""
 "then the list is ordered by priority with the uppermost item taking "
 "precedence over the others."
 msgstr ""
-"זוהי רשימה של יישומים המשויכים לקבצים מסוג הקובץ הנבחר. רשימה זו מוצגת "
-"בתפריטים של Konqueror כשאתה בוחר ב\"פתיחה באמצעות...\". אם יותר מיישום אחד "
-"משויך לסוג הקובץ הזה, אז הרשימה תסודר לפי עדיפות כאשר לפריט העליון ביותר "
-"ישנה עדיפות על פני האחרים."
+"זו רשימה של יישומים שמשויכים לקבצים מסוג הקובץ הנבחר. רשימה זו מופיע בתפריטי "
+"ההקשר של Konqueror בבחירת „פתיחה עם…”. אם יותר מיישום אחד משויך לסוג קובץ אז "
+"הרשימה מסודרת לפי עדיפות כך שהפריט העליון הוא העדיף ביותר."
 
 #: kservicelistwidget.cpp:73
 #, kde-format
@@ -402,15 +403,14 @@ msgid ""
 "type, then the list is ordered by priority with the uppermost item taking "
 "precedence over the others."
 msgstr ""
-"זוהי רשימה של השירותים המשויכים לקבצים מסוג הקובץ הנבחר. רשימה זו מוצגת "
-"בתפריטים של Konqueror כאשר נבחרת האפשרות \"תצוגה מקדימה באמצעות...\". אם "
-"יותר משירות אחד משויך לסוג קובץ זה, אז הרשימה תסודר לפי עדיפות כאשר לפריט "
-"העליון ביותר ישנה קדימות על פני האחרים."
+"זו רשימה של שירותים שמשויכת לקבצים מסוג הקובץ הנבחר. רשימה זו מופיעה בתפריטי "
+"ההקשר של Konquerer בבחירה באפשרות „תצוגה מקדימה עם…”. אם יותר משירות אחד "
+"משויך לסוג קובץ אז הרשימה מסודרת לפי עדיפות כך שהפריט העליון הוא העדיף ביותר."
 
 #: kservicelistwidget.cpp:85
 #, kde-format
 msgid "Move &Up"
-msgstr "הזז מ&עלה"
+msgstr "העלאה למ&עלה"
 
 #: kservicelistwidget.cpp:91
 #, kde-format
@@ -420,8 +420,10 @@ msgid ""
 "only affects the selected application if the file type is\n"
 "associated with more than one application."
 msgstr ""
-"מתן עדיפות גבוהה יותר ליישום הנבחר, והעלאתו למעלה ברשימה. שים לב: דבר זה "
-"משפיע על היישום הנבחר רק אם סוג הקובץ משויך ליותר מיישום אחד."
+"מקצה עדיפות גבוהה יותר ליישום הנבחר,\n"
+"ומעלה אותו ברשימה. לתשומת ליבך: משפיע\n"
+"רק על היישום הנבחר אם סוג הקובץ משויך\n"
+"ליותר מיישום אחד."
 
 #: kservicelistwidget.cpp:95
 #, kde-format
@@ -435,7 +437,7 @@ msgstr ""
 #: kservicelistwidget.cpp:98
 #, kde-format
 msgid "Move &Down"
-msgstr "הור&ד"
+msgstr "הורדה למ&טה"
 
 #: kservicelistwidget.cpp:103
 #, kde-format
@@ -445,9 +447,9 @@ msgid ""
 "only affects the selected application if the file type is\n"
 "associated with more than one application."
 msgstr ""
-"מתן עדיפות נמוכה יותר ליישום הנבחר,\n"
-"והורדתו למטה ברשימה. שים לב: דבר זה משפיע\n"
-"על היישום הנבחר רק אם סוג הקובץ משויך\n"
+"מקצה עדיפות נמוכה יותר ליישום הנבחר,\n"
+"ומוריד אותו ברשימה. לתשומת ליבך: משפיע\n"
+"רק על היישום הנבחר אם סוג הקובץ משויך\n"
 "ליותר מיישום אחד."
 
 #: kservicelistwidget.cpp:107
@@ -467,7 +469,7 @@ msgstr "הוספת יישום חדש לסוג קובץ זה."
 #: kservicelistwidget.cpp:117
 #, kde-format
 msgid "Edit..."
-msgstr "עריכה..."
+msgstr "עריכה…"
 
 #: kservicelistwidget.cpp:122
 #, kde-format
@@ -504,7 +506,7 @@ msgstr "נא לבחור שירות"
 #: newtypedlg.cpp:25
 #, kde-format
 msgid "Create New File Type"
-msgstr "צור סוג קובץ חדש"
+msgstr "יצירת סוג קובץ חדש"
 
 #: newtypedlg.cpp:30
 #, kde-format
@@ -514,7 +516,7 @@ msgstr "קבוצה:"
 #: newtypedlg.cpp:39
 #, kde-format
 msgid "Select the category under which the new file type should be added."
-msgstr "בחר את הקטגוריה תחתיה יש להוסיף את סוג הקובץ החדש."
+msgstr "נא לבחור את הקטגוריה אליה יתווספו סוגי קבצים חדשים."
 
 #: newtypedlg.cpp:44
 #, kde-format
@@ -528,5 +530,5 @@ msgid ""
 "category and you type 'custom' here, the file type 'image/custom' will be "
 "created."
 msgstr ""
-"הסוג של סוג הקובץ. למשל, אם בחרת \"תמונה\" בתור הקטגוריה ואתה מקליד \"מותאם "
-"אישית\" כאן, הסוג \"תמונה/מותאים אישי\" יווצר."
+"נא להקליד את שם סוג הקובץ. למשל, בחירה ב־‚image’ כקטגוריה והקלדת ‚custom’ "
+"כאן, ייווצר סוג הקובץ ‚image/custom’."
