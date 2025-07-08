@@ -10,6 +10,7 @@
 
 #include <KIO/CopyJob>
 #include <KIO/DeleteJob>
+#include <KIO/MkdirJob>
 #include <kio/listjob.h>
 #include <kio/transferjob.h>
 #ifndef KIOCORE_ONLY
@@ -119,6 +120,13 @@ static void usage()
                "            #   'url' may be a list of URLs.\n"
                "            #   The short version 'kioclient rm' is also available.\n\n",
                "kioclient remove")
+             .toLocal8Bit()
+             .constData());
+
+    puts(i18nc("The argument is the command \"kioclient mkdir\"",
+               "  %1 'url'\n"
+               "            # Creates a directory at 'url'\n",
+               "kioclient mkdir")
              .toLocal8Bit()
              .constData());
 
@@ -340,6 +348,20 @@ bool ClientApp::doRemove(const QStringList &urls)
     return m_ok;
 }
 
+bool ClientApp::doMkdir(const QStringList &urls)
+{
+    KIO::Job *job = KIO::mkdir(makeURL(urls.first()), s_jobFlags);
+    if (!s_interactive) {
+        job->setUiDelegate(nullptr);
+        job->setUiDelegateExtension(nullptr);
+    }
+
+    connect(job, &KJob::result, this, &ClientApp::slotResult);
+
+    qApp->exec();
+    return m_ok;
+}
+
 bool ClientApp::doStat(const QStringList &urls)
 {
     KIO::Job *job = KIO::stat(makeURL(urls.first()),
@@ -481,6 +503,11 @@ bool ClientApp::doIt(const QCommandLineParser &parser)
         QStringList args = parser.positionalArguments();
         args.removeFirst();
         return doStat(args);
+    } else if (command == QLatin1String("mkdir")) {
+        checkArgumentCount(argc, 2, 2); // mkdir <url>
+        QStringList args = parser.positionalArguments();
+        args.removeFirst();
+        return doMkdir(args);
     } else {
         fputs(i18nc("@info:shell", "%1: Syntax error, unknown command '%2'\n", qAppName(), command).toLocal8Bit().data(), stderr);
         return false;

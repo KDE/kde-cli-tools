@@ -40,6 +40,7 @@ private:
     bool doList(const QStringList &urls);
     bool doRemove(const QStringList &urls);
     bool doStat(const QStringList &urls);
+    bool doMkdir(const QStringList &urls);
 
     static bool m_ok;
 };
