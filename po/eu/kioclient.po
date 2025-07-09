@@ -12,7 +12,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kde-cli-tools\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-10-31 00:41+0000\n"
+"POT-Creation-Date: 2025-07-09 00:44+0000\n"
 "PO-Revision-Date: 2022-08-01 14:20+0200\n"
 "Last-Translator: Iñigo Salvador Azurmendi <xalba@ni.eus>\n"
 "Language-Team: Basque <kde-i18n-eu@kde.org>\n"
@@ -33,7 +33,7 @@ msgctxt "EMAIL OF TRANSLATORS"
 msgid "Your emails"
 msgstr "xalba@ni.eus,hizpol@ej-gv.es"
 
-#: kioclient.cpp:55
+#: kioclient.cpp:56
 #, kde-format
 msgid ""
 "\n"
@@ -42,7 +42,7 @@ msgstr ""
 "\n"
 "Sintaxia:\n"
 
-#: kioclient.cpp:57
+#: kioclient.cpp:58
 #, kde-format
 msgctxt "The argument is the command \"kioclient openProperties\""
 msgid ""
@@ -54,7 +54,7 @@ msgstr ""
 "            # «url»aren propietateen elkarrizketa koadro bat irtekitzen du\n"
 "\n"
 
-#: kioclient.cpp:64
+#: kioclient.cpp:65
 #, kde-format
 msgctxt "The argument is the command \"kioclient exec\""
 msgid ""
@@ -74,7 +74,7 @@ msgstr ""
 "            # zehazten da. 'url' dokumentu baten URLa izan daiteke,\n"
 "            # *.desktop fitxategi bat edo exekutagarri bat.\n"
 
-#: kioclient.cpp:75
+#: kioclient.cpp:76
 #, kde-format
 msgctxt "The argument is the command \"kioclient move\""
 msgid ""
@@ -93,7 +93,7 @@ msgstr ""
 "            #   'kioclient mv' bertsio laburra ere erabilgarri dago.\n"
 "\n"
 
-#: kioclient.cpp:85
+#: kioclient.cpp:86
 #, kde-format
 msgctxt "The argument is the command \"kioclient download\""
 msgid ""
@@ -110,7 +110,7 @@ msgstr ""
 "            #   URL bat eskatuko da.\n"
 "\n"
 
-#: kioclient.cpp:94
+#: kioclient.cpp:95
 #, kde-format
 msgctxt "The argument is the command \"kioclient copy\""
 msgid ""
@@ -125,7 +125,7 @@ msgstr ""
 "            #   'sorburua' URL zerrenda bat izan daiteke.\n"
 "            #   'kioclient cp' bertsio laburtua ere erabilgarri dago.\n"
 
-#: kioclient.cpp:103
+#: kioclient.cpp:104
 #, kde-format
 msgctxt "The argument is the command \"kioclient cat\""
 msgid ""
@@ -137,7 +137,7 @@ msgstr ""
 "            # 'url'-aren edukia «stdout»ean inprimatzen du\n"
 "\n"
 
-#: kioclient.cpp:110
+#: kioclient.cpp:111
 #, kde-format
 msgctxt "The argument is the command \"kioclient ls\""
 msgid ""
@@ -149,7 +149,7 @@ msgstr ""
 "            # 'url' direktorioaren edukia «stdout»ean zerrendatzen ditu\n"
 "\n"
 
-#: kioclient.cpp:117
+#: kioclient.cpp:118
 #, kde-format
 msgctxt "The argument is the command \"kioclient remove\""
 msgid ""
@@ -164,7 +164,23 @@ msgstr ""
 "            #   'url' URL zerrenda bat izan daiteke.\n"
 "            #   'kioclient rm' bertsio laburra ere erabilgarri dago.\n"
 
-#: kioclient.cpp:126
+#: kioclient.cpp:127
+#, fuzzy, kde-format
+#| msgctxt "The argument is the command \"kioclient openProperties\""
+#| msgid ""
+#| "  %1 'url'\n"
+#| "            # Opens a properties dialog of 'url'\n"
+#| "\n"
+msgctxt "The argument is the command \"kioclient mkdir\""
+msgid ""
+"  %1 'url'\n"
+"            # Creates a directory at 'url'\n"
+msgstr ""
+"  %1 'url'\n"
+"            # «url»aren propietateen elkarrizketa koadro bat irtekitzen du\n"
+"\n"
+
+#: kioclient.cpp:134
 #, kde-format
 msgctxt "The argument is the command \"kioclient stat\""
 msgid ""
@@ -177,7 +193,7 @@ msgstr ""
 "du\n"
 "\n"
 
-#: kioclient.cpp:133
+#: kioclient.cpp:141
 #, kde-format
 msgctxt "The argument is the command \"kioclient appmenu\""
 msgid ""
@@ -189,12 +205,12 @@ msgstr ""
 "            # Oinarrizko aplikazio-abiarazle bat irekitzen du.\n"
 "\n"
 
-#: kioclient.cpp:139
+#: kioclient.cpp:147
 #, kde-format
 msgid "*** Examples:\n"
 msgstr "*** Adibideak:\n"
 
-#: kioclient.cpp:140
+#: kioclient.cpp:148
 #, kde-format
 msgid ""
 "  kioclient exec file:/home/weis/data/test.html\n"
@@ -207,7 +223,7 @@ msgstr ""
 "             // aplikazio lehenetsiarekin\n"
 "\n"
 
-#: kioclient.cpp:145
+#: kioclient.cpp:153
 #, kde-format
 msgid ""
 "  kioclient exec ftp://localhost/\n"
@@ -219,7 +235,7 @@ msgstr ""
 "lehenetsiarekin\n"
 "\n"
 
-#: kioclient.cpp:149
+#: kioclient.cpp:157
 #, kde-format
 msgid ""
 "  kioclient exec file:/root/Desktop/emacs.desktop\n"
@@ -230,7 +246,7 @@ msgstr ""
 "             // Emacs abiarazten du\n"
 "\n"
 
-#: kioclient.cpp:153
+#: kioclient.cpp:161
 #, kde-format
 msgid ""
 "  kioclient exec .\n"
@@ -243,22 +259,22 @@ msgstr ""
 "             // kudeatzailean irekitzen du. Oso erabilgarria.\n"
 "\n"
 
-#: kioclient.cpp:172
+#: kioclient.cpp:180
 #, kde-format
 msgid "KIO Client"
 msgstr "KIO bezeroa"
 
-#: kioclient.cpp:173
+#: kioclient.cpp:181
 #, kde-format
 msgid "Command-line tool for network-transparent operations"
 msgstr "Sareko eragiketa gardenetarako komando-lerroko tresna"
 
-#: kioclient.cpp:180
+#: kioclient.cpp:188
 #, kde-format
 msgid "Use message boxes and other native notifications"
 msgstr "Erabili mezu-koadroak eta beste berezko jakinarazpen batzuk"
 
-#: kioclient.cpp:183
+#: kioclient.cpp:191
 #, kde-format
 msgid ""
 "Non-interactive use: no message boxes. If you don't want a graphical "
@@ -267,81 +283,81 @@ msgstr ""
 "Erabilera ez-elkarreragilea: mezu-koadrorik ez. Konexio grafikorik ez baduzu "
 "nahi, erabili --platform offscreen"
 
-#: kioclient.cpp:187
+#: kioclient.cpp:195
 #, kde-format
 msgid "Overwrite destination if it exists (for copy and move)"
 msgstr ""
 "Gainidatzi helburua, lehendik baldin badago (kopiatzeko eta lekuz aldatzeko)"
 
-#: kioclient.cpp:191
+#: kioclient.cpp:199
 #, kde-format
 msgid "file or URL"
 msgstr "fitxategi edo URL"
 
-#: kioclient.cpp:191 kioclient.cpp:193 kioclient.cpp:196 kioclient.cpp:201
+#: kioclient.cpp:199 kioclient.cpp:201 kioclient.cpp:204 kioclient.cpp:209
 #, kde-format
 msgid "urls..."
 msgstr "url-ak..."
 
-#: kioclient.cpp:193 kioclient.cpp:196
+#: kioclient.cpp:201 kioclient.cpp:204
 #, kde-format
 msgid "Source URL or URLs"
 msgstr "Jatorriko URLa edo URLak"
 
-#: kioclient.cpp:194 kioclient.cpp:197
+#: kioclient.cpp:202 kioclient.cpp:205
 #, kde-format
 msgid "Destination URL"
 msgstr "Helburuko URLa"
 
-#: kioclient.cpp:194 kioclient.cpp:197
+#: kioclient.cpp:202 kioclient.cpp:205
 #, kde-format
 msgid "url"
 msgstr "url"
 
-#: kioclient.cpp:199
+#: kioclient.cpp:207
 #, kde-format
 msgid "Show available commands"
 msgstr "Erakutsi komando erabilgarriak"
 
-#: kioclient.cpp:200
+#: kioclient.cpp:208
 #, kde-format
 msgid "Command (see --commands)"
 msgstr "Komandoa (ikusi --commands)"
 
-#: kioclient.cpp:200
+#: kioclient.cpp:208
 #, kde-format
 msgid "command"
 msgstr "komandoa"
 
-#: kioclient.cpp:201
+#: kioclient.cpp:209
 #, kde-format
 msgid "Arguments for command"
 msgstr "Komandoaren argumentuak"
 
-#: kioclient.cpp:225
+#: kioclient.cpp:233
 #, kde-format
 msgctxt "@info:shell"
 msgid "%1: Syntax error, not enough arguments\n"
 msgstr "%1: Sintaxi errorea, ez dago behar adina argumentu\n"
 
-#: kioclient.cpp:229
+#: kioclient.cpp:237
 #, kde-format
 msgctxt "@info:shell"
 msgid "%1: Syntax error, too many arguments\n"
 msgstr "%1: Sintaxi errorea, argumentu gehiegi\n"
 
-#: kioclient.cpp:443
+#: kioclient.cpp:465
 #, kde-format
 msgid "Destination where to download the files"
 msgstr "Fitxategiak jaisteko jomuga"
 
-#: kioclient.cpp:485
+#: kioclient.cpp:512
 #, kde-format
 msgctxt "@info:shell"
 msgid "%1: Syntax error, unknown command '%2'\n"
 msgstr "%1: Sintaxi errorea, '%2' komando ezezaguna\n"
 
-#: kioclient.cpp:501
+#: kioclient.cpp:528
 #, kde-format
 msgctxt "@info:shell"
 msgid "%1: %2\n"

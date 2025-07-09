@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: desktop_kdebase\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-10-31 00:41+0000\n"
+"POT-Creation-Date: 2025-07-09 00:44+0000\n"
 "PO-Revision-Date: 2008-11-13 23:28+0100\n"
 "Last-Translator: Eduard Werner <edi.werner@gmx.de>\n"
 "Language-Team: en_US <kde-i18n-doc@lists.kde.org>\n"
@@ -27,7 +27,7 @@ msgctxt "EMAIL OF TRANSLATORS"
 msgid "Your emails"
 msgstr ""
 
-#: kioclient.cpp:55
+#: kioclient.cpp:56
 #, kde-format
 msgid ""
 "\n"
@@ -36,7 +36,7 @@ msgstr ""
 "\n"
 "Syntaksa:\n"
 
-#: kioclient.cpp:57
+#: kioclient.cpp:58
 #, fuzzy, kde-format
 #| msgid ""
 #| "  kioclient openProperties 'url'\n"
@@ -52,7 +52,7 @@ msgstr ""
 "            # wočini meni ze swójstwami\n"
 "\n"
 
-#: kioclient.cpp:64
+#: kioclient.cpp:65
 #, fuzzy, kde-format
 #| msgid ""
 #| "  kioclient exec 'url' ['mimetype']\n"
@@ -80,7 +80,7 @@ msgstr ""
 "            #   URL móže być URL dokumenta\n"
 "            #   abo *.desktop-dataja.\n"
 
-#: kioclient.cpp:75
+#: kioclient.cpp:76
 #, kde-format
 msgctxt "The argument is the command \"kioclient move\""
 msgid ""
@@ -92,7 +92,7 @@ msgid ""
 "\n"
 msgstr ""
 
-#: kioclient.cpp:85
+#: kioclient.cpp:86
 #, fuzzy, kde-format
 #| msgid ""
 #| "  kioclient download ['src']\n"
@@ -114,7 +114,7 @@ msgstr ""
 "            #   so za URLom dopraša.\n"
 "\n"
 
-#: kioclient.cpp:94
+#: kioclient.cpp:95
 #, fuzzy, kde-format
 #| msgid ""
 #| "  kioclient copy 'src' 'dest'\n"
@@ -134,7 +134,7 @@ msgstr ""
 "            #   'src' móže być lisćina URLow.\n"
 "\n"
 
-#: kioclient.cpp:103
+#: kioclient.cpp:104
 #, fuzzy, kde-format
 #| msgid ""
 #| "  kioclient cat 'url'\n"
@@ -150,7 +150,7 @@ msgstr ""
 "            # Pisa wobsah 'url' na stdout\n"
 "\n"
 
-#: kioclient.cpp:110
+#: kioclient.cpp:111
 #, fuzzy, kde-format
 #| msgid ""
 #| "  kioclient cat 'url'\n"
@@ -166,7 +166,7 @@ msgstr ""
 "            # Pisa wobsah 'url' na stdout\n"
 "\n"
 
-#: kioclient.cpp:117
+#: kioclient.cpp:118
 #, fuzzy, kde-format
 #| msgid ""
 #| "  kioclient move 'src' 'dest'\n"
@@ -184,7 +184,22 @@ msgstr ""
 "            # Přesunje URL 'src' na 'dest'.\n"
 "            #   'src' móže być lisćina URLow.\n"
 
-#: kioclient.cpp:126
+#: kioclient.cpp:127
+#, fuzzy, kde-format
+#| msgid ""
+#| "  kioclient openProperties 'url'\n"
+#| "            # Opens a properties menu\n"
+#| "\n"
+msgctxt "The argument is the command \"kioclient mkdir\""
+msgid ""
+"  %1 'url'\n"
+"            # Creates a directory at 'url'\n"
+msgstr ""
+"  kioclient openProperties 'url'\n"
+"            # wočini meni ze swójstwami\n"
+"\n"
+
+#: kioclient.cpp:134
 #, fuzzy, kde-format
 #| msgid ""
 #| "  kioclient cat 'url'\n"
@@ -200,7 +215,7 @@ msgstr ""
 "            # Pisa wobsah 'url' na stdout\n"
 "\n"
 
-#: kioclient.cpp:133
+#: kioclient.cpp:141
 #, fuzzy, kde-format
 #| msgid ""
 #| "  kioclient openProperties 'url'\n"
@@ -216,12 +231,12 @@ msgstr ""
 "            # wočini meni ze swójstwami\n"
 "\n"
 
-#: kioclient.cpp:139
+#: kioclient.cpp:147
 #, kde-format
 msgid "*** Examples:\n"
 msgstr ""
 
-#: kioclient.cpp:140
+#: kioclient.cpp:148
 #, fuzzy, kde-format
 #| msgid ""
 #| "  kioclient exec file:/home/weis/data/test.html\n"
@@ -237,7 +252,7 @@ msgstr ""
 "             // Wočini dataju ze standardnej komponentu\n"
 "\n"
 
-#: kioclient.cpp:145
+#: kioclient.cpp:153
 #, fuzzy, kde-format
 #| msgid ""
 #| "  kioclient exec ftp://localhost/\n"
@@ -252,7 +267,7 @@ msgstr ""
 "             // Wočini nowe wokno z URL\n"
 "\n"
 
-#: kioclient.cpp:149
+#: kioclient.cpp:157
 #, fuzzy, kde-format
 #| msgid ""
 #| "  kioclient exec file:/root/Desktop/emacs.desktop\n"
@@ -267,7 +282,7 @@ msgstr ""
 "             // Startuje emacs\n"
 "\n"
 
-#: kioclient.cpp:153
+#: kioclient.cpp:161
 #, fuzzy, kde-format
 #| msgid ""
 #| "  kioclient exec .\n"
@@ -283,108 +298,108 @@ msgstr ""
 "             // Wočini aktualny zapisk. Jara přihódnje.\n"
 "\n"
 
-#: kioclient.cpp:172
+#: kioclient.cpp:180
 #, kde-format
 msgid "KIO Client"
 msgstr "KIO Client"
 
-#: kioclient.cpp:173
+#: kioclient.cpp:181
 #, kde-format
 msgid "Command-line tool for network-transparent operations"
 msgstr ""
 "Na přikazowej lince bazowacy program za operacije, kiž su přez syć "
 "transparentne"
 
-#: kioclient.cpp:180
+#: kioclient.cpp:188
 #, kde-format
 msgid "Use message boxes and other native notifications"
 msgstr ""
 
-#: kioclient.cpp:183
+#: kioclient.cpp:191
 #, kde-format
 msgid ""
 "Non-interactive use: no message boxes. If you don't want a graphical "
 "connection, use --platform offscreen"
 msgstr ""
 
-#: kioclient.cpp:187
+#: kioclient.cpp:195
 #, kde-format
 msgid "Overwrite destination if it exists (for copy and move)"
 msgstr ""
 
-#: kioclient.cpp:191
+#: kioclient.cpp:199
 #, fuzzy, kde-format
 #| msgid "URL or URLs"
 msgid "file or URL"
 msgstr "URL abo wjacore"
 
-#: kioclient.cpp:191 kioclient.cpp:193 kioclient.cpp:196 kioclient.cpp:201
+#: kioclient.cpp:199 kioclient.cpp:201 kioclient.cpp:204 kioclient.cpp:209
 #, kde-format
 msgid "urls..."
 msgstr ""
 
-#: kioclient.cpp:193 kioclient.cpp:196
+#: kioclient.cpp:201 kioclient.cpp:204
 #, kde-format
 msgid "Source URL or URLs"
 msgstr "Žórłowe URLe"
 
-#: kioclient.cpp:194 kioclient.cpp:197
+#: kioclient.cpp:202 kioclient.cpp:205
 #, kde-format
 msgid "Destination URL"
 msgstr "Cilowy URL"
 
-#: kioclient.cpp:194 kioclient.cpp:197
+#: kioclient.cpp:202 kioclient.cpp:205
 #, kde-format
 msgid "url"
 msgstr ""
 
-#: kioclient.cpp:199
+#: kioclient.cpp:207
 #, kde-format
 msgid "Show available commands"
 msgstr "Móžne přikazy pokazować"
 
-#: kioclient.cpp:200
+#: kioclient.cpp:208
 #, kde-format
 msgid "Command (see --commands)"
 msgstr "Přikaz (hl. --commands)"
 
-#: kioclient.cpp:200
+#: kioclient.cpp:208
 #, kde-format
 msgid "command"
 msgstr ""
 
-#: kioclient.cpp:201
+#: kioclient.cpp:209
 #, kde-format
 msgid "Arguments for command"
 msgstr "Argumenty za přikaz"
 
-#: kioclient.cpp:225
+#: kioclient.cpp:233
 #, fuzzy, kde-format
 #| msgid "Syntax Error: Not enough arguments\n"
 msgctxt "@info:shell"
 msgid "%1: Syntax error, not enough arguments\n"
 msgstr "Syntaktiski zmylk: přemało argumentow.\n"
 
-#: kioclient.cpp:229
+#: kioclient.cpp:237
 #, fuzzy, kde-format
 #| msgid "Syntax Error: Too many arguments\n"
 msgctxt "@info:shell"
 msgid "%1: Syntax error, too many arguments\n"
 msgstr "Syntaktiski zmylk: přewjele argumentow.\n"
 
-#: kioclient.cpp:443
+#: kioclient.cpp:465
 #, kde-format
 msgid "Destination where to download the files"
 msgstr ""
 
-#: kioclient.cpp:485
+#: kioclient.cpp:512
 #, fuzzy, kde-format
 #| msgid "Syntax Error: Unknown command '%1'\n"
 msgctxt "@info:shell"
 msgid "%1: Syntax error, unknown command '%2'\n"
 msgstr "Syntaktiski zmylk: Njeznaty přikaz '%1'\n"
 
-#: kioclient.cpp:501
+#: kioclient.cpp:528
 #, kde-format
 msgctxt "@info:shell"
 msgid "%1: %2\n"

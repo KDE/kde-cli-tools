@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kde-cli-tools\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-10-31 00:41+0000\n"
+"POT-Creation-Date: 2025-07-09 00:44+0000\n"
 "PO-Revision-Date: 2024-12-24 20:39+0530\n"
 "Last-Translator: kali <shreekantkalwar@gmail.com>\n"
 "Language-Team: Sanskrit <kde-i18n-doc@kde.org>\n"
@@ -29,7 +29,7 @@ msgctxt "EMAIL OF TRANSLATORS"
 msgid "Your emails"
 msgstr "skkalwar999@gmail.com"
 
-#: kioclient.cpp:55
+#: kioclient.cpp:56
 #, kde-format
 msgid ""
 "\n"
@@ -38,7 +38,7 @@ msgstr ""
 "\n"
 "वाक्य रचना : १.\n"
 
-#: kioclient.cpp:57
+#: kioclient.cpp:58
 #, kde-format
 msgctxt "The argument is the command \"kioclient openProperties\""
 msgid ""
@@ -50,7 +50,7 @@ msgstr ""
 "            # 'url' इत्यस्य गुणसंवादं उद्घाटयति ।\n"
 "\n"
 
-#: kioclient.cpp:64
+#: kioclient.cpp:65
 #, kde-format
 msgctxt "The argument is the command \"kioclient exec\""
 msgid ""
@@ -70,7 +70,7 @@ msgstr ""
 "            # 'url' दस्तावेजस्य URL, *.desktop सञ्चिका, .\n"
 "            # अथवा कार्यान्वयनीयः ।\n"
 
-#: kioclient.cpp:75
+#: kioclient.cpp:76
 #, kde-format
 msgctxt "The argument is the command \"kioclient move\""
 msgid ""
@@ -88,7 +88,7 @@ msgstr ""
 "            # 'kioclient mv' इति लघुसंस्करणम् अपि उपलभ्यते ।\n"
 "\n"
 
-#: kioclient.cpp:85
+#: kioclient.cpp:86
 #, kde-format
 msgctxt "The argument is the command \"kioclient download\""
 msgid ""
@@ -104,7 +104,7 @@ msgstr ""
 "            # एकं URL अनुरोधितं भविष्यति।\n"
 "\n"
 
-#: kioclient.cpp:94
+#: kioclient.cpp:95
 #, kde-format
 msgctxt "The argument is the command \"kioclient copy\""
 msgid ""
@@ -120,7 +120,7 @@ msgstr ""
 "            # 'kioclient cp' इति लघुसंस्करणम् अपि उपलभ्यते ।\n"
 "\n"
 
-#: kioclient.cpp:103
+#: kioclient.cpp:104
 #, kde-format
 msgctxt "The argument is the command \"kioclient cat\""
 msgid ""
@@ -132,7 +132,7 @@ msgstr ""
 "            # 'url' सञ्चिकायाः सामग्रीं मानकनिर्गमं प्रति मुद्रयति\n"
 "\n"
 
-#: kioclient.cpp:110
+#: kioclient.cpp:111
 #, kde-format
 msgctxt "The argument is the command \"kioclient ls\""
 msgid ""
@@ -144,7 +144,7 @@ msgstr ""
 "            # 'url' इति निर्देशिकायाः सामग्रीं stdout मध्ये सूचीबद्धं करोति\n"
 "\n"
 
-#: kioclient.cpp:117
+#: kioclient.cpp:118
 #, kde-format
 msgctxt "The argument is the command \"kioclient remove\""
 msgid ""
@@ -160,7 +160,23 @@ msgstr ""
 "            # 'kioclient rm' इति लघुसंस्करणम् अपि उपलभ्यते ।\n"
 "\n"
 
-#: kioclient.cpp:126
+#: kioclient.cpp:127
+#, fuzzy, kde-format
+#| msgctxt "The argument is the command \"kioclient openProperties\""
+#| msgid ""
+#| "  %1 'url'\n"
+#| "            # Opens a properties dialog of 'url'\n"
+#| "\n"
+msgctxt "The argument is the command \"kioclient mkdir\""
+msgid ""
+"  %1 'url'\n"
+"            # Creates a directory at 'url'\n"
+msgstr ""
+"  %1 'url'.\n"
+"            # 'url' इत्यस्य गुणसंवादं उद्घाटयति ।\n"
+"\n"
+
+#: kioclient.cpp:134
 #, kde-format
 msgctxt "The argument is the command \"kioclient stat\""
 msgid ""
@@ -172,7 +188,7 @@ msgstr ""
 "            # 'url' कृते उपलब्धानि सर्वाणि सूचनानि दर्शयति।\n"
 "\n"
 
-#: kioclient.cpp:133
+#: kioclient.cpp:141
 #, kde-format
 msgctxt "The argument is the command \"kioclient appmenu\""
 msgid ""
@@ -184,12 +200,12 @@ msgstr ""
 "            # एकं मूलभूतं अनुप्रयोगप्रक्षेपकं उद्घाटयति\n"
 "\n"
 
-#: kioclient.cpp:139
+#: kioclient.cpp:147
 #, kde-format
 msgid "*** Examples:\n"
 msgstr "*** उदाहरणानि : १.\n"
 
-#: kioclient.cpp:140
+#: kioclient.cpp:148
 #, kde-format
 msgid ""
 "  kioclient exec file:/home/weis/data/test.html\n"
@@ -202,7 +218,7 @@ msgstr ""
 "             // अस्मिन् MimeType इत्यनेन सह\n"
 "\n"
 
-#: kioclient.cpp:145
+#: kioclient.cpp:153
 #, kde-format
 msgid ""
 "  kioclient exec ftp://localhost/\n"
@@ -213,7 +229,7 @@ msgstr ""
 "             // ftp:// योजनायाः पूर्वनिर्धारित-हन्डलर-सहितं URL उद्घाटयति\n"
 "\n"
 
-#: kioclient.cpp:149
+#: kioclient.cpp:157
 #, kde-format
 msgid ""
 "  kioclient exec file:/root/Desktop/emacs.desktop\n"
@@ -224,7 +240,7 @@ msgstr ""
 "             // emacs आरभते\n"
 "\n"
 
-#: kioclient.cpp:153
+#: kioclient.cpp:161
 #, kde-format
 msgid ""
 "  kioclient exec .\n"
@@ -237,22 +253,22 @@ msgstr ""
 "             // सञ्चिकाप्रबन्धकः। अतीव सुविधाजनकम्।\n"
 "\n"
 
-#: kioclient.cpp:172
+#: kioclient.cpp:180
 #, kde-format
 msgid "KIO Client"
 msgstr "KIO Client"
 
-#: kioclient.cpp:173
+#: kioclient.cpp:181
 #, kde-format
 msgid "Command-line tool for network-transparent operations"
 msgstr "जाल-पारदर्शक-सञ्चालनानां कृते आदेश-पङ्क्ति-उपकरणम्"
 
-#: kioclient.cpp:180
+#: kioclient.cpp:188
 #, kde-format
 msgid "Use message boxes and other native notifications"
 msgstr "सन्देशपेटिकाः अन्ये च देशीसूचनाः उपयुज्यताम्"
 
-#: kioclient.cpp:183
+#: kioclient.cpp:191
 #, kde-format
 msgid ""
 "Non-interactive use: no message boxes. If you don't want a graphical "
@@ -261,80 +277,80 @@ msgstr ""
 "अ-अन्तरक्रियाशीलः उपयोगः : सन्देशपेटिकाः नास्ति । यदि भवान् चित्रात्मकं संयोजनं न इच्छति "
 "तर्हि --platform offscreen इत्यस्य उपयोगं कुर्वन्तु"
 
-#: kioclient.cpp:187
+#: kioclient.cpp:195
 #, kde-format
 msgid "Overwrite destination if it exists (for copy and move)"
 msgstr "गन्तव्यं यदि अस्ति तर्हि अधिलेखयन्तु (प्रतिलिपिं चालयितुं च)"
 
-#: kioclient.cpp:191
+#: kioclient.cpp:199
 #, kde-format
 msgid "file or URL"
 msgstr "सञ्चिका अथवा URL"
 
-#: kioclient.cpp:191 kioclient.cpp:193 kioclient.cpp:196 kioclient.cpp:201
+#: kioclient.cpp:199 kioclient.cpp:201 kioclient.cpp:204 kioclient.cpp:209
 #, kde-format
 msgid "urls..."
 msgstr "urls..."
 
-#: kioclient.cpp:193 kioclient.cpp:196
+#: kioclient.cpp:201 kioclient.cpp:204
 #, kde-format
 msgid "Source URL or URLs"
 msgstr "स्रोतः URL अथवा URLs"
 
-#: kioclient.cpp:194 kioclient.cpp:197
+#: kioclient.cpp:202 kioclient.cpp:205
 #, kde-format
 msgid "Destination URL"
 msgstr "गन्तव्यस्थानस्य URL"
 
-#: kioclient.cpp:194 kioclient.cpp:197
+#: kioclient.cpp:202 kioclient.cpp:205
 #, kde-format
 msgid "url"
 msgstr "url"
 
-#: kioclient.cpp:199
+#: kioclient.cpp:207
 #, kde-format
 msgid "Show available commands"
 msgstr "उपलब्धानि आदेशानि दर्शयन्तु"
 
-#: kioclient.cpp:200
+#: kioclient.cpp:208
 #, kde-format
 msgid "Command (see --commands)"
 msgstr "आदेशः (द्रष्टव्यम् --आदेशाः)"
 
-#: kioclient.cpp:200
+#: kioclient.cpp:208
 #, kde-format
 msgid "command"
 msgstr "आदेश"
 
-#: kioclient.cpp:201
+#: kioclient.cpp:209
 #, kde-format
 msgid "Arguments for command"
 msgstr "आज्ञार्थं तर्काः"
 
-#: kioclient.cpp:225
+#: kioclient.cpp:233
 #, kde-format
 msgctxt "@info:shell"
 msgid "%1: Syntax error, not enough arguments\n"
 msgstr "%1: वाक्यविन्यासदोषः, पर्याप्ताः तर्काः नास्ति\n"
 
-#: kioclient.cpp:229
+#: kioclient.cpp:237
 #, kde-format
 msgctxt "@info:shell"
 msgid "%1: Syntax error, too many arguments\n"
 msgstr "%1: वाक्यविन्यासदोषः, अत्यधिकाः तर्काः\n"
 
-#: kioclient.cpp:443
+#: kioclient.cpp:465
 #, kde-format
 msgid "Destination where to download the files"
 msgstr "गन्तव्यं यत्र सञ्चिकाः अवतरणं कर्तव्यम्"
 
-#: kioclient.cpp:485
+#: kioclient.cpp:512
 #, kde-format
 msgctxt "@info:shell"
 msgid "%1: Syntax error, unknown command '%2'\n"
 msgstr "%1: वाक्यविन्यासदोषः, अज्ञातः आदेशः '%2' ।\n"
 
-#: kioclient.cpp:501
+#: kioclient.cpp:528
 #, kde-format
 msgctxt "@info:shell"
 msgid "%1: %2\n"

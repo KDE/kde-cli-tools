@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kioclient\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-10-31 00:41+0000\n"
+"POT-Creation-Date: 2025-07-09 00:44+0000\n"
 "PO-Revision-Date: 2016-07-10 19:45+0200\n"
 "Last-Translator: Chusslove Illich <caslav.ilic@gmx.net>\n"
 "Language-Team: Serbian <kde-i18n-sr@kde.org>\n"
@@ -30,7 +30,7 @@ msgctxt "EMAIL OF TRANSLATORS"
 msgid "Your emails"
 msgstr "caslav.ilic@gmx.net"
 
-#: kioclient.cpp:55
+#: kioclient.cpp:56
 #, kde-format
 msgid ""
 "\n"
@@ -40,7 +40,7 @@ msgstr ""
 "Sintaksa:\n"
 
 # literal-segment: 'url'
-#: kioclient.cpp:57
+#: kioclient.cpp:58
 #, fuzzy, kde-format
 #| msgid ""
 #| "  kioclient openProperties 'url'\n"
@@ -56,7 +56,7 @@ msgstr ""
 "            # otvara meni svojstava\n"
 "\n"
 
-#: kioclient.cpp:64
+#: kioclient.cpp:65
 #, fuzzy, kde-format
 #| msgid ""
 #| "  kioclient exec 'url' ['mimetype']\n"
@@ -84,7 +84,7 @@ msgstr ""
 "            #   može biti URL dokumenta, ili *.desktop fajla.\n"
 "            #   URL može biti i izvršni fajl.\n"
 
-#: kioclient.cpp:75
+#: kioclient.cpp:76
 #, kde-format
 msgctxt "The argument is the command \"kioclient move\""
 msgid ""
@@ -96,7 +96,7 @@ msgid ""
 "\n"
 msgstr ""
 
-#: kioclient.cpp:85
+#: kioclient.cpp:86
 #, fuzzy, kde-format
 #| msgid ""
 #| "  kioclient download ['src']\n"
@@ -118,7 +118,7 @@ msgstr ""
 "            #   URL će biti zatražen.\n"
 "\n"
 
-#: kioclient.cpp:94
+#: kioclient.cpp:95
 #, fuzzy, kde-format
 #| msgid ""
 #| "  kioclient copy 'src' 'dest'\n"
@@ -136,7 +136,7 @@ msgstr ""
 "            # Kopira URL izvora na odredište.\n"
 "            #   Izvor može biti i spisak URL‑ova.\n"
 
-#: kioclient.cpp:103
+#: kioclient.cpp:104
 #, fuzzy, kde-format
 #| msgid ""
 #| "  kioclient ls 'url'\n"
@@ -152,7 +152,7 @@ msgstr ""
 "            # Ispisuje sadržaj fascikle URL‑a na stdiz\n"
 "\n"
 
-#: kioclient.cpp:110
+#: kioclient.cpp:111
 #, fuzzy, kde-format
 #| msgid ""
 #| "  kioclient ls 'url'\n"
@@ -168,7 +168,7 @@ msgstr ""
 "            # Ispisuje sadržaj fascikle URL‑a na stdiz\n"
 "\n"
 
-#: kioclient.cpp:117
+#: kioclient.cpp:118
 #, fuzzy, kde-format
 #| msgid ""
 #| "  kioclient remove 'url'\n"
@@ -186,7 +186,23 @@ msgstr ""
 "            # Uklanja URL\n"
 "            # (može se navesti i spisak URL‑ova).\n"
 
-#: kioclient.cpp:126
+# literal-segment: 'url'
+#: kioclient.cpp:127
+#, fuzzy, kde-format
+#| msgid ""
+#| "  kioclient openProperties 'url'\n"
+#| "            # Opens a properties menu\n"
+#| "\n"
+msgctxt "The argument is the command \"kioclient mkdir\""
+msgid ""
+"  %1 'url'\n"
+"            # Creates a directory at 'url'\n"
+msgstr ""
+"  kioclient openProperties 'url'\n"
+"            # otvara meni svojstava\n"
+"\n"
+
+#: kioclient.cpp:134
 #, kde-format
 msgctxt "The argument is the command \"kioclient stat\""
 msgid ""
@@ -195,7 +211,7 @@ msgid ""
 "\n"
 msgstr ""
 
-#: kioclient.cpp:133
+#: kioclient.cpp:141
 #, kde-format
 msgctxt "The argument is the command \"kioclient appmenu\""
 msgid ""
@@ -204,12 +220,12 @@ msgid ""
 "\n"
 msgstr ""
 
-#: kioclient.cpp:139
+#: kioclient.cpp:147
 #, kde-format
 msgid "*** Examples:\n"
 msgstr "*** Primeri:\n"
 
-#: kioclient.cpp:140
+#: kioclient.cpp:148
 #, fuzzy, kde-format
 #| msgid ""
 #| "  kioclient exec file:/home/weis/data/test.html\n"
@@ -225,7 +241,7 @@ msgstr ""
 "             # otvara fajl podrazumevanim programom\n"
 "\n"
 
-#: kioclient.cpp:145
+#: kioclient.cpp:153
 #, fuzzy, kde-format
 #| msgid ""
 #| "  kioclient exec ftp://localhost/\n"
@@ -241,7 +257,7 @@ msgstr ""
 "\n"
 
 # literal-segment: kioclient exec file:/root/Desktop/emacs.desktop
-#: kioclient.cpp:149
+#: kioclient.cpp:157
 #, fuzzy, kde-format
 #| msgid ""
 #| "  kioclient exec file:/root/Desktop/emacs.desktop\n"
@@ -256,7 +272,7 @@ msgstr ""
 "             # pokreće Emacs\n"
 "\n"
 
-#: kioclient.cpp:153
+#: kioclient.cpp:161
 #, fuzzy, kde-format
 #| msgid ""
 #| "  kioclient exec .\n"
@@ -272,22 +288,22 @@ msgstr ""
 "             # otvara tekuću fasciklu — vrlo zgodno.\n"
 "\n"
 
-#: kioclient.cpp:172
+#: kioclient.cpp:180
 #, kde-format
 msgid "KIO Client"
 msgstr "K‑U/I klijent"
 
-#: kioclient.cpp:173
+#: kioclient.cpp:181
 #, kde-format
 msgid "Command-line tool for network-transparent operations"
 msgstr "Alatka komandne linije za mrežnoprozirne postupke"
 
-#: kioclient.cpp:180
+#: kioclient.cpp:188
 #, kde-format
 msgid "Use message boxes and other native notifications"
 msgstr ""
 
-#: kioclient.cpp:183
+#: kioclient.cpp:191
 #, kde-format
 msgid ""
 "Non-interactive use: no message boxes. If you don't want a graphical "
@@ -296,80 +312,80 @@ msgstr ""
 "Neinteraktivna upotreba: bez prozora sa porukama. Ako ne želite grafičku "
 "vezu, upotrebite --platform offscreen."
 
-#: kioclient.cpp:187
+#: kioclient.cpp:195
 #, kde-format
 msgid "Overwrite destination if it exists (for copy and move)"
 msgstr "Prebriši odredište ako postoji (za kopiranje i premeštanje)"
 
-#: kioclient.cpp:191
+#: kioclient.cpp:199
 #, kde-format
 msgid "file or URL"
 msgstr "Fajl ili URL"
 
-#: kioclient.cpp:191 kioclient.cpp:193 kioclient.cpp:196 kioclient.cpp:201
+#: kioclient.cpp:199 kioclient.cpp:201 kioclient.cpp:204 kioclient.cpp:209
 #, kde-format
 msgid "urls..."
 msgstr "URL‑ovi..."
 
-#: kioclient.cpp:193 kioclient.cpp:196
+#: kioclient.cpp:201 kioclient.cpp:204
 #, kde-format
 msgid "Source URL or URLs"
 msgstr "Izvorni URL ili URL‑ovi"
 
-#: kioclient.cpp:194 kioclient.cpp:197
+#: kioclient.cpp:202 kioclient.cpp:205
 #, kde-format
 msgid "Destination URL"
 msgstr "Odredišni URL"
 
-#: kioclient.cpp:194 kioclient.cpp:197
+#: kioclient.cpp:202 kioclient.cpp:205
 #, kde-format
 msgid "url"
 msgstr "URL"
 
-#: kioclient.cpp:199
+#: kioclient.cpp:207
 #, kde-format
 msgid "Show available commands"
 msgstr "Prikaži raspoložive naredbe"
 
-#: kioclient.cpp:200
+#: kioclient.cpp:208
 #, kde-format
 msgid "Command (see --commands)"
 msgstr "Naredba (vidi --commands)"
 
-#: kioclient.cpp:200
+#: kioclient.cpp:208
 #, kde-format
 msgid "command"
 msgstr "naredba"
 
-#: kioclient.cpp:201
+#: kioclient.cpp:209
 #, kde-format
 msgid "Arguments for command"
 msgstr "Argumenti uz naredbu"
 
-#: kioclient.cpp:225
+#: kioclient.cpp:233
 #, kde-format
 msgctxt "@info:shell"
 msgid "%1: Syntax error, not enough arguments\n"
 msgstr "%1: Sintaksna greška, nedovoljno argumenata.\n"
 
-#: kioclient.cpp:229
+#: kioclient.cpp:237
 #, kde-format
 msgctxt "@info:shell"
 msgid "%1: Syntax error, too many arguments\n"
 msgstr "%1: Sintaksna greška, previše argumenata.\n"
 
-#: kioclient.cpp:443
+#: kioclient.cpp:465
 #, kde-format
 msgid "Destination where to download the files"
 msgstr "Odredište gde treba preuzeti fajlove."
 
-#: kioclient.cpp:485
+#: kioclient.cpp:512
 #, kde-format
 msgctxt "@info:shell"
 msgid "%1: Syntax error, unknown command '%2'\n"
 msgstr "%1: Sintaksna greška, nepoznata naredba „%2“.\n"
 
-#: kioclient.cpp:501
+#: kioclient.cpp:528
 #, kde-format
 msgctxt "@info:shell"
 msgid "%1: %2\n"
