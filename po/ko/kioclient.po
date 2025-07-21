@@ -1,14 +1,14 @@
 # Translation of kioclient to Korean.
 # Copyright (C) 2007 This_file_is_part_of_KDE
 # This file is distributed under the same license as the kdebase package.
-# Shinjo Park <kde@peremen.name>, 2007, 2009, 2010, 2011, 2012, 2013, 2014, 2016, 2019, 2020, 2021, 2022.
+# SPDX-FileCopyrightText: 2007, 2009, 2010, 2011, 2012, 2013, 2014, 2016, 2019, 2020, 2021, 2022, 2025 Shinjo Park <kde@peremen.name>
 #
 msgid ""
 msgstr ""
 "Project-Id-Version: kioclient\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2025-07-09 00:44+0000\n"
-"PO-Revision-Date: 2022-04-15 23:15+0200\n"
+"PO-Revision-Date: 2025-07-21 00:58+0200\n"
 "Last-Translator: Shinjo Park <kde@peremen.name>\n"
 "Language-Team: Korean <kde-kr@kde.org>\n"
 "Language: ko\n"
@@ -16,7 +16,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=1; plural=0;\n"
-"X-Generator: Lokalize 21.08.1\n"
+"X-Generator: Lokalize 24.12.3\n"
 
 #, kde-format
 msgctxt "NAME OF TRANSLATORS"
@@ -158,20 +158,14 @@ msgstr ""
 "\n"
 
 #: kioclient.cpp:127
-#, fuzzy, kde-format
-#| msgctxt "The argument is the command \"kioclient openProperties\""
-#| msgid ""
-#| "  %1 'url'\n"
-#| "            # Opens a properties dialog of 'url'\n"
-#| "\n"
+#, kde-format
 msgctxt "The argument is the command \"kioclient mkdir\""
 msgid ""
 "  %1 'url'\n"
 "            # Creates a directory at 'url'\n"
 msgstr ""
 "  %1 'url'\n"
-"            # 속성 메뉴를 엽니다\n"
-"\n"
+"            # 'url'에 디렉터리를 생성합니다\n"
 
 #: kioclient.cpp:134
 #, kde-format
