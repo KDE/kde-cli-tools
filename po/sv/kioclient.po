@@ -2,20 +2,20 @@
 # Copyright (C) YEAR This_file_is_part_of_KDE
 # This file is distributed under the same license as the PACKAGE package.
 #
-# Stefan Asserhäll <stefan.asserhall@gmail.com>, 2007, 2008, 2009, 2010, 2011, 2012, 2013, 2014, 2016, 2018, 2020, 2021, 2022.
+# SPDX-FileCopyrightText: 2007, 2008, 2009, 2010, 2011, 2012, 2013, 2014, 2016, 2018, 2020, 2021, 2022, 2025 Stefan Asserhäll <stefan.asserhall@gmail.com>
 msgid ""
 msgstr ""
 "Project-Id-Version: kioclient\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2025-07-09 00:44+0000\n"
-"PO-Revision-Date: 2022-04-06 19:26+0200\n"
+"PO-Revision-Date: 2025-07-28 16:50+0200\n"
 "Last-Translator: Stefan Asserhäll <stefan.asserhall@gmail.com>\n"
 "Language-Team: Swedish <kde-i18n-doc@kde.org>\n"
 "Language: sv\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Generator: Lokalize 20.08.1\n"
+"X-Generator: Lokalize 25.04.2\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
 
 #, kde-format
@@ -162,19 +162,14 @@ msgstr ""
 "\n"
 
 #: kioclient.cpp:127
-#, fuzzy, kde-format
-#| msgctxt "The argument is the command \"kioclient openProperties\""
-#| msgid ""
-#| "  %1 'url'\n"
-#| "            # Opens a properties dialog of 'url'\n"
-#| "\n"
+#, kde-format
 msgctxt "The argument is the command \"kioclient mkdir\""
 msgid ""
 "  %1 'url'\n"
 "            # Creates a directory at 'url'\n"
 msgstr ""
 "  %1 'webbadress'\n"
-"            # Öppnar en egenskapsdialogruta för 'webbadress'\n"
+"            # Öppnar katalogen 'webbadress'\n"
 "\n"
 
 #: kioclient.cpp:134
