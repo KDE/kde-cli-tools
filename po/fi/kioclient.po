@@ -11,7 +11,7 @@ msgstr ""
 "Project-Id-Version: kioclient\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2025-07-09 00:44+0000\n"
-"PO-Revision-Date: 2025-05-29 15:09+0300\n"
+"PO-Revision-Date: 2025-07-17 18:24+0300\n"
 "Last-Translator: Tommi Nieminen <translator@legisign.org>\n"
 "Language-Team: Finnish <kde-i18n-doc@kde.org>\n"
 "Language: fi\n"
@@ -164,19 +164,14 @@ msgstr ""
 "\n"
 
 #: kioclient.cpp:127
-#, fuzzy, kde-format
-#| msgctxt "The argument is the command \"kioclient openProperties\""
-#| msgid ""
-#| "  %1 'url'\n"
-#| "            # Opens a properties dialog of 'url'\n"
-#| "\n"
+#, kde-format
 msgctxt "The argument is the command \"kioclient mkdir\""
 msgid ""
 "  %1 'url'\n"
 "            # Creates a directory at 'url'\n"
 msgstr ""
 "  %1 ”osoite”\n"
-"            # Avaa verkkoö-osoitteen ”osoite” ominaisuusikkunan\n"
+"            # Luo kansion ”osoitteeseen”\n"
 "\n"
 
 #: kioclient.cpp:134
