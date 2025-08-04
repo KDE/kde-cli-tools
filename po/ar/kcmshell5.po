@@ -97,7 +97,7 @@ msgstr "حدّد لغة معينة"
 #: main.cpp:203
 #, kde-format
 msgid "Do not display main window"
-msgstr "لا تعرض النافذة الرئيسية"
+msgstr "لا تعرض النافذة الرئيسة"
 
 #: main.cpp:204
 #, kde-format
