@@ -30,14 +30,14 @@ msgstr "zayed.alsaidi@gmail.com"
 #: main.cpp:22
 #, kde-format
 msgid "Broadcast Notifications"
-msgstr "بث الإخطارات"
+msgstr "بث الإشعارات"
 
 #: main.cpp:24
 #, kde-format
 msgid ""
 "A tool that emits a notification for all users by sending it on the system "
 "DBus"
-msgstr "أداة تبث الإخطارات لكل المستخدمين عن طريق إرسالها في باص النظام"
+msgstr "أداة تبث الإشعارات لكل المستخدمين عن طريق إرسالها في باص النظام"
 
 #: main.cpp:26
 #, kde-format

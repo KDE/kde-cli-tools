@@ -41,7 +41,7 @@ msgstr "امنع تصحيح الألوان (الوضع الليلي)"
 #: main.cpp:38
 #, kde-format
 msgid "Inhibit notifications (Do not disturb)"
-msgstr "امنع الإخطارات (عدم الإزعاج)"
+msgstr "امنع الإشعارات (عدم الإزعاج)"
 
 #: main.cpp:41
 #, kde-format
