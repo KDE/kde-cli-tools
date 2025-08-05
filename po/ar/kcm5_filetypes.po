@@ -269,7 +269,7 @@ msgstr "ا&سترجع"
 #: filetypesview.cpp:370
 #, kde-format
 msgid "Revert this file type to its initial system-wide definition"
-msgstr "استرجع نوع الملف هذا إلى تعريفه الافتراضي"
+msgstr "استرجع نوع الملف هذا إلى تعريفه المبدئي"
 
 #: filetypesview.cpp:372
 #, kde-format
@@ -280,7 +280,7 @@ msgid ""
 "minimize the chances of them being used (but the file type determination "
 "from file contents can still end up using them)."
 msgstr ""
-"انقر هنا لاسترجاع حالة هذا النوع إلى تعريفه الافتراضي system-wide و إلغاء أي "
+"انقر هنا لاسترجاع حالة هذا النوع إلى تعريفه المبدئي system-wide و إلغاء أي "
 "تعديل عليه. لاحظ أن نوع ملف system-wide لا يمكن إزالته ، ولكن يمكن تفريغ "
 "قائمة أنماطه لتقلل من احتمالية استخدمها (لكن تحديد نوع الملف من محتويات ملف "
 "يمكن أن ينتهي باستخدامها على كل حال)."

@@ -7,13 +7,13 @@
 # محمد سعد  Mohamed SAAD <metehyi@free.fr>, 2006.
 # AbdulAziz AlSharif <a.a-a.s@hotmail.com>, 2007.
 # Youssef Chahibi <chahibi@gmail.com>, 2007.
-# SPDX-FileCopyrightText: 2008, 2022, 2023, 2024 zayed <zayed.alsaidi@gmail.com>
+# SPDX-FileCopyrightText: 2008, 2022, 2023, 2024, 2025 zayed <zayed.alsaidi@gmail.com>
 msgid ""
 msgstr ""
 "Project-Id-Version: kstart\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2022-12-17 00:51+0000\n"
-"PO-Revision-Date: 2022-10-27 11:54+0400\n"
+"PO-Revision-Date: 2025-08-04 21:12+0400\n"
 "Last-Translator: Zayed Al-Saidi <zayed.alsaidi@gmail.com>\n"
 "Language-Team: ar\n"
 "Language: ar\n"
@@ -22,6 +22,7 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=6; plural=n==0 ? 0 : n==1 ? 1 : n==2 ? 2 : n%100>=3 "
 "&& n%100<=10 ? 3 : n%100>=11 ? 4 : 5;\n"
+"X-Generator: Lokalize 23.08.5\n"
 
 #, kde-format
 msgctxt "NAME OF TRANSLATORS"
@@ -49,7 +50,7 @@ msgstr ""
 "هذا البرنامج النفعي يعطيك القدرة على تحديد  خصائص النافذة أثناء تنفيذ "
 "التطبيقات \n"
 "وظهورها أمام المستخدم، كشكل الأيقونة وحجم النافذة ومقرها  بين سطوح المكتب "
-"الوهمية\n"
+"الافتراضية\n"
 "وغيرها من زخرفات النوافذ."
 
 #: kstart.cpp:262
@@ -180,7 +181,7 @@ msgid ""
 "different virtual desktop"
 msgstr ""
 "أقفز إلى النافذة حتى لو تم بدء تشغيلها على \n"
-"سطح مكتب وهمي مختلف"
+"سطح مكتب افتراضي مختلف"
 
 #: kstart.cpp:311
 #, kde-format
