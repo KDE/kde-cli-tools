@@ -1,13 +1,13 @@
-# Copyright (C) YEAR This file is copyright:
+# Copyright (C) 2025 This file is copyright:
 # This file is distributed under the same license as the kde-cli-tools package.
+# SPDX-FileCopyrightText: 2022, 2025 Zayed Al-Saidi <zayed.alsaidi@gmail.com>
 #
-# Zayed Al-Saidi <zayed.alsaidi@gmail.com>, 2022.
 msgid ""
 msgstr ""
 "Project-Id-Version: kde-cli-tools\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2022-09-28 00:51+0000\n"
-"PO-Revision-Date: 2022-10-27 11:49+0400\n"
+"PO-Revision-Date: 2025-08-05 12:52+0400\n"
 "Last-Translator: Zayed Al-Saidi <zayed.alsaidi@gmail.com>\n"
 "Language-Team: ar\n"
 "Language: ar\n"
@@ -16,6 +16,7 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=6; plural=n==0 ? 0 : n==1 ? 1 : n==2 ? 2 : n%100>=3 "
 "&& n%100<=10 ? 3 : n%100>=11 ? 4 : 5;\n"
+"X-Generator: Lokalize 23.08.5\n"
 
 #, kde-format
 msgctxt "NAME OF TRANSLATORS"
@@ -53,12 +54,12 @@ msgstr "اسم التطبيق المراد ربطه بهذا الإشعار"
 #: main.cpp:36
 #, kde-format
 msgid "A brief one-line summary of the notification"
-msgstr "ملخص من سطر واحد لهذا الإخطار"
+msgstr "ملخص من سطر واحد لهذا الإشعار"
 
 #: main.cpp:38
 #, kde-format
 msgid "Icon for the notification"
-msgstr "أيقونة الإخطار"
+msgstr "أيقونة الإشعار"
 
 #: main.cpp:42
 #, kde-format
@@ -66,20 +67,20 @@ msgid ""
 "A comma-separated list of user IDs this notification should be sent to. If "
 "omitted, the notification will be sent to all users."
 msgstr ""
-"قائمة بمعرفات المستخدمين مفصولة بفاصلة الذين سيستلموا هذا الإخطار. إذا لم "
+"قائمة بمعرفات المستخدمين مفصولة بفاصلة الذين سيستلموا هذا الإشعار. إذا لم "
 "تحدد سيرسل إلى جميع المستخدمين."
 
 #: main.cpp:45
 #, kde-format
 msgid "Timeout for the notification"
-msgstr "مهلة الإخطار"
+msgstr "مهلة الإشعار"
 
 #: main.cpp:47
 #, kde-format
 msgid "Keep the notification in the history until the user closes it"
-msgstr "أبقِ الإخطار في التاريخ حتى يغلقه المستخدم"
+msgstr "أبقِ الإشعار في التاريخ حتى يغلقه المستخدم"
 
 #: main.cpp:50
 #, kde-format
 msgid "The actual notification body text"
-msgstr "نص محتوى الفعلي للإخطار"
+msgstr "نص محتوى الفعلي للإشعار"
