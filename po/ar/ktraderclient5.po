@@ -53,7 +53,7 @@ msgstr "نوع تنسيق الملف"
 #: ktraderclient.cpp:32
 #, kde-format
 msgid "A servicetype, like KParts/ReadOnlyPart or KMyApp/Plugin"
-msgstr "نوع servicetype ، مثل KParts/ReadOnlyPart أو KMyApp/Plugin"
+msgstr "نوع servicetype، مثل KParts/ReadOnlyPart أو KMyApp/Plugin"
 
 #: ktraderclient.cpp:35
 #, kde-format
