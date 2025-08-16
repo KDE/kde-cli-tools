@@ -158,7 +158,7 @@
 ></term>
 <listitem
 ><para
->Especifica l'ordre a executar com a root. Aquesta se li ha d'especificar com a un únic argument. De manera que, per exemple, si voleu executar un nou gestor de fitxers, haureu d'introduir a l'indicatiu: <userinput
+>Especifica l'ordre a executar com a root. Aquesta se li ha d'especificar com a un únic argument. De manera que, per exemple, si voleu executar un nou gestor de fitxers, haureu d'introduir a l'indicador: <userinput
 >$(kf5-config --path libexec) <command
 >kdesu <option
 >-c <replaceable
