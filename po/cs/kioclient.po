@@ -159,20 +159,12 @@ msgstr ""
 "\n"
 
 #: kioclient.cpp:127
-#, fuzzy, kde-format
-#| msgctxt "The argument is the command \"kioclient openProperties\""
-#| msgid ""
-#| "  %1 'url'\n"
-#| "            # Opens a properties dialog of 'url'\n"
-#| "\n"
+#, kde-format
 msgctxt "The argument is the command \"kioclient mkdir\""
 msgid ""
 "  %1 'url'\n"
 "            # Creates a directory at 'url'\n"
 msgstr ""
-"  %1 'url'\n"
-"            # Otevře volby nastavení 'url'\n"
-"\n"
 
 #: kioclient.cpp:134
 #, kde-format
