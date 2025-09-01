@@ -218,8 +218,8 @@ msgid ""
 msgstr ""
 "Ací podeu veure una llista jeràrquica dels tipus de fitxers coneguts al "
 "vostre sistema. Cliqueu damunt del signe «+» per a expandir una categoria, o "
-"al signe «-» per a plegar-la. Seleccioneu un tipus de fitxer (p. ex., text/"
-"html per a fitxers HTML) per a veure o editar la informació d'este tipus de "
+"al signe «-» per a plegar-la. Trieu un tipus de fitxer (p. ex., text/html "
+"per a fitxers HTML) per a veure o editar la informació d'este tipus de "
 "fitxer utilitzant els controls de la dreta."
 
 #: filetypesview.cpp:91
@@ -235,7 +235,7 @@ msgstr "&Elimina"
 #: filetypesview.cpp:119
 #, kde-format
 msgid "Select a file type by name or by extension"
-msgstr "Selecciona un tipus de fitxer per nom o per extensió"
+msgstr "Tria un tipus de fitxer per nom o per extensió"
 
 #: filetypesview.cpp:382
 #, kde-format
@@ -504,7 +504,7 @@ msgstr "Grup:"
 #, kde-format
 msgid "Select the category under which the new file type should be added."
 msgstr ""
-"Seleccioneu la categoria davall la qual s'ha d'afegir el nou tipus de fitxer."
+"Trieu la categoria davall la qual s'ha d'afegir el nou tipus de fitxer."
 
 #: newtypedlg.cpp:44
 #, kde-format
@@ -518,6 +518,6 @@ msgid ""
 "category and you type 'custom' here, the file type 'image/custom' will be "
 "created."
 msgstr ""
-"Teclegeu el nom del tipus de fitxer. Per exemple, si seleccioneu la "
-"categoria «image» i ací introduïu «custom», es crearà el tipus de fitxer "
-"«image/custom»."
+"Teclegeu el nom del tipus de fitxer. Per exemple, si trieu la categoria "
+"«image» i ací introduïu «custom», es crearà el tipus de fitxer «image/"
+"custom»."
