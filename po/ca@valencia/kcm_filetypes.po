@@ -504,7 +504,7 @@ msgstr "Grup:"
 #, kde-format
 msgid "Select the category under which the new file type should be added."
 msgstr ""
-"Trieu la categoria davall la qual s'ha d'afegir el nou tipus de fitxer."
+"Trieu la categoria davall la qual s'ha d'afegir el tipus nou de fitxer."
 
 #: newtypedlg.cpp:44
 #, kde-format
