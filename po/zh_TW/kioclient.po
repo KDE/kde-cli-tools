@@ -8,19 +8,20 @@
 # Franklin Weng <franklin@goodhorse.idv.tw>, 2011, 2012, 2013, 2014.
 # Jeff Huang <s8321414@gmail.com>, 2016.
 # pan93412 <pan93412@gmail.com>, 2018, 2020.
+# SPDX-FileCopyrightText: 2025 Kisaragi Hiu <mail@kisaragi-hiu.com>
 msgid ""
 msgstr ""
 "Project-Id-Version: kioclient\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2024-04-26 03:04+0000\n"
-"PO-Revision-Date: 2020-04-03 00:54+0800\n"
-"Last-Translator: Yi-Jyun Pan <pan93412@gmail.com>\n"
-"Language-Team: Chinese <zh-l10n@lists.linux.org.tw>\n"
+"PO-Revision-Date: 2025-09-22 06:37+0900\n"
+"Last-Translator: Kisaragi Hiu <mail@kisaragi-hiu.com>\n"
+"Language-Team: Traditional Chinese <zh-l10n@lists.slat.org>\n"
 "Language: zh_TW\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Generator: Lokalize 19.12.3\n"
+"X-Generator: Lokalize 25.07.70\n"
 "Plural-Forms: nplurals=1; plural=0;\n"
 
 #, kde-format
@@ -43,32 +44,19 @@ msgstr ""
 "語法：\n"
 
 #: kioclient.cpp:62
-#, fuzzy, kde-format
-#| msgid ""
-#| "  kioclient5 openProperties 'url'\n"
-#| "            # Opens a properties menu\n"
-#| "\n"
+#, kde-format
 msgctxt "The argument is the command \"kioclient openProperties\""
 msgid ""
 "  %1 'url'\n"
 "            # Opens a properties dialog of 'url'\n"
 "\n"
 msgstr ""
-"  kioclient5 openProperties 'url'\n"
-"            # 開啟內容選單\n"
+"  %1 'url'\n"
+"            # 開啟 'url' 的內容對話框\n"
 "\n"
 
 #: kioclient.cpp:69
-#, fuzzy, kde-format
-#| msgid ""
-#| "  kioclient5 exec 'url' ['mimetype']\n"
-#| "            # Tries to open the document pointed to by 'url', in the "
-#| "application\n"
-#| "            #   associated with it in KDE. You may omit 'mimetype'.\n"
-#| "            #   In this case the mimetype is determined\n"
-#| "            #   automatically. Of course URL may be the URL of a\n"
-#| "            #   document, or it may be a *.desktop file.\n"
-#| "            #   'url' can be an executable, too.\n"
+#, kde-format
 msgctxt "The argument is the command \"kioclient exec\""
 msgid ""
 "  %1 'url' ['mimetype']\n"
@@ -79,10 +67,10 @@ msgid ""
 "            # 'url' can be the URL of a document, a *.desktop file,\n"
 "            # or an executable.\n"
 msgstr ""
-"  kioclient5 exec 'url' ['mimetype']\n"
-"            # 依 KDE 指定的應用程式來嘗試開啟 url 所指定的文件。\n"
-"            #   如果 MIME 型態可以自動指定，您可以省略 mimetype 參數。\n"
-"            #   URL 可以是文件檔名，或是一個 .desktop 檔或執行檔。\n"
+"  %1 'url' ['mimetype']\n"
+"            # 依 KDE 指定的應用程式來嘗試開啟 'url' 所指定的文件。\n"
+"            # 您可以省略 mimetype 參數，而它將被自動偵測。\n"
+"            # 'url' 可以是一個文件、.desktop 檔或執行檔的 URL。\n"
 
 #: kioclient.cpp:80
 #, kde-format
@@ -95,15 +83,15 @@ msgid ""
 "            #   The short version 'kioclient mv' is also available.\n"
 "\n"
 msgstr ""
+"  %1 'src' 'dest'\n"
+"            # 將 src 移動到 dest。\n"
+"            #   'src' 可以是許多檔案或網址的清單。\n"
+"            #   'dest' 可以是 \"trash:/\"，代表移動檔案到垃圾桶。\n"
+"            #   也可以使用簡短版本 'kioclient mv'。\n"
+"\n"
 
 #: kioclient.cpp:90
-#, fuzzy, kde-format
-#| msgid ""
-#| "  kioclient5 download ['src']\n"
-#| "            # Copies the URL 'src' to a user-specified location'.\n"
-#| "            #   'src' may be a list of URLs, if not present then\n"
-#| "            #   a URL will be requested.\n"
-#| "\n"
+#, kde-format
 msgctxt "The argument is the command \"kioclient download\""
 msgid ""
 "  %1 ['src']\n"
@@ -112,17 +100,13 @@ msgid ""
 "            #   a URL will be requested.\n"
 "\n"
 msgstr ""
-"  kioclient5 download ['src']\n"
+"  %1 ['src']\n"
 "            # 將 src 複製到使用者指定的位置。\n"
-"            #   'src' 可以是許多檔案或網址，但至少要一個。\n"
+"            #   'src' 可以是許多檔案或網址的清單，未提供時將會詢問。\n"
 "\n"
 
 #: kioclient.cpp:99
-#, fuzzy, kde-format
-#| msgid ""
-#| "  kioclient5 copy 'src' 'dest'\n"
-#| "            # Copies the URL 'src' to 'dest'.\n"
-#| "            #   'src' may be a list of URLs.\n"
+#, kde-format
 msgctxt "The argument is the command \"kioclient copy\""
 msgid ""
 "  %1 'src' 'dest'\n"
@@ -131,48 +115,38 @@ msgid ""
 "            #   The short version 'kioclient cp' is also available.\n"
 "\n"
 msgstr ""
-"  kioclient5 copy 'src' 'dest'\n"
+"  %1 'src' 'dest'\n"
 "            # 將 src 複製到 dest。\n"
 "            #   'src' 可以是許多檔案或網址的清單。\n"
+"            #   也可以使用簡短版本 'kioclient cp'。\n"
+"\n"
 
 #: kioclient.cpp:108
-#, fuzzy, kde-format
-#| msgid ""
-#| "  kioclient5 ls 'url'\n"
-#| "            # Lists the contents of the directory 'url' to stdout\n"
-#| "\n"
+#, kde-format
 msgctxt "The argument is the command \"kioclient cat\""
 msgid ""
 "  %1 'url'\n"
 "            # Prints the contents of the file 'url' to the standard output\n"
 "\n"
 msgstr ""
-"  kioclient5 ls 'url'\n"
-"            # 將目錄 url 的內容寫到標準輸出\n"
+"  %1 'url'\n"
+"            # 將 'url' 指向的檔案的內容寫到標準輸出\n"
 "\n"
 
 #: kioclient.cpp:115
-#, fuzzy, kde-format
-#| msgid ""
-#| "  kioclient5 ls 'url'\n"
-#| "            # Lists the contents of the directory 'url' to stdout\n"
-#| "\n"
+#, kde-format
 msgctxt "The argument is the command \"kioclient ls\""
 msgid ""
 "  %1 'url'\n"
 "            # Lists the contents of the directory 'url' to stdout\n"
 "\n"
 msgstr ""
-"  kioclient5 ls 'url'\n"
-"            # 將目錄 url 的內容寫到標準輸出\n"
+"  %1 'url'\n"
+"            # 將 'url' 指向的目錄的內容寫到標準輸出\n"
 "\n"
 
 #: kioclient.cpp:122
-#, fuzzy, kde-format
-#| msgid ""
-#| "  kioclient5 remove 'url'\n"
-#| "            # Removes the URL\n"
-#| "            #   'url' may be a list of URLs.\n"
+#, kde-format
 msgctxt "The argument is the command \"kioclient remove\""
 msgid ""
 "  %1 'url'\n"
@@ -181,40 +155,34 @@ msgid ""
 "            #   The short version 'kioclient rm' is also available.\n"
 "\n"
 msgstr ""
-"  kioclient5 remove 'url'\n"
-"            # 將網址移除。\n"
-"            #   'url' 可以是網址的清單。\n"
+"  %1 'url'\n"
+"            # 移除 'url'。\n"
+"            #   'url' 可以是許多檔案或網址的清單。\n"
+"            #   也可以使用簡短版本 'kioclient rm'。\n"
+"\n"
 
 #: kioclient.cpp:131
-#, fuzzy, kde-format
-#| msgid ""
-#| "  kioclient5 cat 'url'\n"
-#| "            # Writes out the contents of 'url' to stdout\n"
-#| "\n"
+#, kde-format
 msgctxt "The argument is the command \"kioclient stat\""
 msgid ""
 "  %1 'url'\n"
 "            # Shows all of the available information for 'url'\n"
 "\n"
 msgstr ""
-"  kioclient5 cat 'url'\n"
-"            # 將 url 網址的內容寫到標準輸出\n"
+"  %1 'url'\n"
+"            # 顯示關於 'url' 所有可用的資訊\n"
 "\n"
 
 #: kioclient.cpp:138
-#, fuzzy, kde-format
-#| msgid ""
-#| "  kioclient5 openProperties 'url'\n"
-#| "            # Opens a properties menu\n"
-#| "\n"
+#, kde-format
 msgctxt "The argument is the command \"kioclient appmenu\""
 msgid ""
 "  %1\n"
 "            # Opens a basic application launcher\n"
 "\n"
 msgstr ""
-"  kioclient5 openProperties 'url'\n"
-"            # 開啟內容選單\n"
+"  %1\n"
+"            # 開啟一個簡易的應用程式啟動器\n"
 "\n"
 
 #: kioclient.cpp:144
@@ -223,65 +191,49 @@ msgid "*** Examples:\n"
 msgstr "*** 範例：\n"
 
 #: kioclient.cpp:145
-#, fuzzy, kde-format
-#| msgid ""
-#| "  kioclient5 exec file:/home/weis/data/test.html\n"
-#| "             // Opens the file with default binding\n"
-#| "\n"
+#, kde-format
 msgid ""
 "  kioclient exec file:/home/weis/data/test.html\n"
 "             // Opens the file with the default application associated\n"
 "             // with this MimeType\n"
 "\n"
 msgstr ""
-"  kioclient5 exec file:/home/weis/data/test.html\n"
-"             // 以預設應用程式開啟該檔\n"
+"  kioclient exec file:/home/weis/data/test.html\n"
+"             // 使用預設應用程式開啟該檔案\n"
 "\n"
 
 #: kioclient.cpp:150
-#, fuzzy, kde-format
-#| msgid ""
-#| "  kioclient5 exec ftp://localhost/\n"
-#| "             // Opens new window with URL\n"
-#| "\n"
+#, kde-format
 msgid ""
 "  kioclient exec ftp://localhost/\n"
 "             // Opens URL with the default handler for ftp:// scheme\n"
 "\n"
 msgstr ""
-"  kioclient5 exec ftp://localhost/\n"
-"             // 在新視窗開啟開網址\n"
+"  kioclient exec ftp://localhost/\n"
+"             // 使用 ftp:// 的預設處理器開啟該 URL\n"
 "\n"
 
 #: kioclient.cpp:154
-#, fuzzy, kde-format
-#| msgid ""
-#| "  kioclient5 exec file:/root/Desktop/emacs.desktop\n"
-#| "             // Starts emacs\n"
-#| "\n"
+#, kde-format
 msgid ""
 "  kioclient exec file:/root/Desktop/emacs.desktop\n"
 "             // Starts emacs\n"
 "\n"
 msgstr ""
-"  kioclient5 exec file:/root/Desktop/emacs.desktop\n"
-"             // 開始執行 emacs\n"
+"  kioclient exec file:/root/Desktop/emacs.desktop\n"
+"             // 開啟 emacs\n"
 "\n"
 
 #: kioclient.cpp:158
-#, fuzzy, kde-format
-#| msgid ""
-#| "  kioclient5 exec .\n"
-#| "             // Opens the current directory. Very convenient.\n"
-#| "\n"
+#, kde-format
 msgid ""
 "  kioclient exec .\n"
 "             // Opens the current directory in the default\n"
 "             // file manager. Very convenient.\n"
 "\n"
 msgstr ""
-"  kioclient5 exec .\n"
-"             // 開啟目前的目錄。非常方便的用法。\n"
+"  kioclient exec .\n"
+"             // 在預設檔案管理員開啟目前的目錄。非常方便。\n"
 "\n"
 
 #: kioclient.cpp:177
@@ -385,7 +337,7 @@ msgstr "%1：語法錯誤，未知的指令 '%2'\n"
 #, kde-format
 msgctxt "@info:shell"
 msgid "%1: %2\n"
-msgstr ""
+msgstr "%1: %2\n"
 
 #, fuzzy
 #~| msgid ""
