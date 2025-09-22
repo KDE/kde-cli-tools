@@ -194,7 +194,7 @@
 <tip
 ><para
 >También puede buscar un tipo &MIME; en particular utilizando el cuadro de búsqueda. El cuadro de búsqueda está etiquetado como <guilabel
->Buscar tipo o patrón de nombre de archivo...</guilabel
+>Buscar tipo o patrón de nombre de archivo…</guilabel
 > y está encima de la lista de categorías.</para>
 
 <para
@@ -210,7 +210,7 @@
 
 <para
 >Si desea añadir un nuevo tipo &MIME; a sus asociaciones de archivos, puede presionar el botón <guibutton
->Añadir...</guibutton
+>Añadir…</guibutton
 > y aparecerá un pequeño cuadro de diálogo. Seleccione la categoría de la lista desplegable <guilabel
 >Grupo</guilabel
 >, e introduzca el nombre &MIME; en el espacio en blanco <guilabel
@@ -383,9 +383,9 @@
 >, <guibutton
 >Mover abajo</guibutton
 >, <guibutton
->Añadir...</guibutton
+>Añadir…</guibutton
 >, <guibutton
->Editar...</guibutton
+>Editar…</guibutton
 > y <guibutton
 >Eliminar</guibutton
 >) y una lista (que lista las aplicaciones) que se usan para configurar las aplicaciones.</para>
@@ -417,14 +417,14 @@
 
 <para
 >Puede añadir nuevas aplicaciones a la lista pulsando el botón etiquetado <guibutton
->Añadir...</guibutton
+>Añadir…</guibutton
 >. Aparecerá un cuadro de diálogo. Usando el cuadro de diálogo puede seleccionar la aplicación que desea usar para este tipo &MIME;. Pulse <guibutton
 >Aceptar</guibutton
 > cuando haya finalizado, y la aplicación se añadirá a la lista actual.</para>
 
 <para
 >Para cambiar las opciones de una aplicación para un tipo &MIME; concreto, selecciónelo en la lista y luego pulse el botón <guibutton
->Edit...</guibutton
+>Edit…</guibutton
 >. Esto abre un nuevo diálogo con las pestañas <guilabel
 >General</guilabel
 >, <guilabel
@@ -557,7 +557,7 @@
 >Cuando esté usando un administrador de archivos como &dolphin; o &konqueror;, puede hacer clic <mousebutton
 >derecho</mousebutton
 > y aparecerá un menú con una entrada <guimenuitem
->Abrir con...</guimenuitem
+>Abrir con…</guimenuitem
 >. En esta lista se muestran las aplicaciones que aparecerán, con su orden de aparición, bajo este menú.</para>
 
 <para
