@@ -22,14 +22,14 @@ msgstr ""
 "Project-Id-Version: kcm5_filetypes\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2023-01-15 00:57+0000\n"
-"PO-Revision-Date: 2025-06-19 12:57+0300\n"
+"PO-Revision-Date: 2025-10-08 10:57+0300\n"
 "Last-Translator: Yaron Shahrabani <sh.yaron@gmail.com>\n"
 "Language-Team: צוות התרגום של KDE ישראל\n"
 "Language: he\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Generator: Lokalize 25.04.2\n"
+"X-Generator: Lokalize 25.08.1\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
 
 #, kde-format
@@ -283,7 +283,7 @@ msgid "Revert this file type to its initial system-wide definition"
 msgstr "שיוך סוג קובץ זה בחזרה לשיוכו הראשוני הכלל־מערכתי"
 
 #: filetypesview.cpp:372
-#, fuzzy, kde-format
+#, kde-format
 msgid ""
 "Click here to revert this file type to its initial system-wide definition, "
 "which undoes any changes made to the file type. Note that system-wide file "
@@ -291,10 +291,10 @@ msgid ""
 "minimize the chances of them being used (but the file type determination "
 "from file contents can still end up using them)."
 msgstr ""
-"לחץ כאן כדי לשייך בחזרה סוג קובץ זה להגדרתו הראשונית, דבר שמבטל כל שינוי "
-"שנעשה לסוג קובץ זה. שים לה שההגדרות הראשוניות של המערכת אינם יכולות להמחק, "
-"אך ניתן לרוקן את תבניותיהם, כדי להקטין את הסיכוי של שימוש בהם (אך עדיין ניתן "
-"יהיה להשתמש בהם, באמצעות בחירת שיוך קובץ ממאפייני קובץ). "
+"יש ללחוץ כאן כדי להחזיר את סוג הקובץ הזה להגדרה הכלל מערכת הראשונית שלו, מה "
+"שמבטל את השינויים שנערכו לסוג הקובץ. נא לשים לב שלא ניתן למחוק סוגי קבצים "
+"כלל מערכתיים. אפשר לרוקן את רשימת התבניות שלהם, כדי למזער את הסיכויים להשתמש "
+"בהם (אבל הסקת סוג הקובץ מתוך הקובץ עדיין יכול להוביל לשימוש בהם)."
 
 #: filetypesview.cpp:377
 #, kde-format
@@ -302,7 +302,7 @@ msgid "Delete this file type definition completely"
 msgstr "למחוק הגדרת סוג קובץ זה לחלוטין"
 
 #: filetypesview.cpp:379
-#, fuzzy, kde-format
+#, kde-format
 msgid ""
 "Click here to delete this file type definition completely. This is only "
 "possible for user-defined file types. System-wide file types cannot be "
@@ -310,10 +310,10 @@ msgid ""
 "of them being used (but the file type determination from file contents can "
 "still end up using them)."
 msgstr ""
-"לחץ כאן כדי למחוק סוג קובץ זה לחלוטין. דבר זה אפשרי רק לסוגי קבצים התלויים "
-"בבחירת משתמש. סוגי קבצים בשימוש מערכת אינם יכולים להמחק, אך ניתן לרוקן את "
-"רשימת התבניות שלהם, כדי למזער את הסיכוי שיעשה בהם שימוש (אך ניתן עדיין "
-"להשתמש בהם באמצעות קביעה במאפייני קובץ)."
+"לחיצה כאן תמחק את סוג הקובץ הזה לחלוטין. אפשרי רק לסוגי קבצים שהוגדרו על ידי "
+"המשתמשים. אי אפשר למחוק סוגי קבצים בשימוש המערכת, אך ניתן לרוקן את רשימת "
+"התבניות שלהם, כדי למזער את הסיכוי שייעשה בהם שימוש (אך ניתן עדיין להשתמש בהם "
+"באמצעות קביעה במאפייני קובץ)."
 
 #: keditfiletype.cpp:120
 #, kde-format
