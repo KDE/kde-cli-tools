@@ -2,9 +2,7 @@
 # German translation for kde-cli-tools.
 # Copyright (C) 2021 This file is copyright:
 # This file is distributed under the same license as the kde-cli-tools package.
-# Frederik Schwarzer <schwarzer@kde.org>, 2021, 2022.
-#
-# Automatically generated, 2021.
+# SPDX-FileCopyrightText: 2021, 2022 Frederik Schwarzer <schwarzer@kde.org>
 msgid ""
 msgstr ""
 "Project-Id-Version: plasma-open-settings\n"
