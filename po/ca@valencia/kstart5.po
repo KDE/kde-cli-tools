@@ -3,12 +3,12 @@
 # This file is distributed under the license LGPL version 2.1 or
 # version 3 or later versions approved by the membership of KDE e.V.
 #
-# Sebastià Pla i Sanz <sps@sastia.com>, 1999, 2000, 2001, 2002, 2004, 2005.
-# Ivan Lloro Boada <antispam@wanadoo.es>, 2004.
-# Albert Astals Cid <aacid@kde.org>, 2005.
-# Josep M. Ferrer <txemaq@gmail.com>, 2007, 2009, 2010, 2011, 2014, 2017, 2020, 2021, 2022, 2024.
-# Antoni Bella Pérez <antonibella5@yahoo.com>, 2014, 2015, 2020.
-# Alfredo Vicente <alviboi@gmail.com>, 2019.
+# SPDX-FileCopyrightText: 1999, 2000, 2001, 2002, 2004, 2005 Sebastià Pla i Sanz <sps@sastia.com>
+# SPDX-FileCopyrightText: 2004 Ivan Lloro Boada <antispam@wanadoo.es>
+# SPDX-FileCopyrightText: 2005 Albert Astals Cid <aacid@kde.org>
+# SPDX-FileCopyrightText: 2007, 2009, 2010, 2011, 2014, 2017, 2020, 2021, 2022, 2024 Josep M. Ferrer <txemaq@gmail.com>
+# SPDX-FileCopyrightText: 2014, 2015, 2020 Antoni Bella Pérez <antonibella5@yahoo.com>
+# SPDX-FileCopyrightText: 2019 Alfredo Vicente <alviboi@gmail.com>
 msgid ""
 msgstr ""
 "Project-Id-Version: kde-cli-tools\n"
@@ -28,7 +28,7 @@ msgstr ""
 #, kde-format
 msgctxt "NAME OF TRANSLATORS"
 msgid "Your names"
-msgstr "Alfredo Vicente,Sebastià Pla i Sanz"
+msgstr "SPDX-FileCopyrightText: 2019 Alfredo Vicente,Sebastià Pla i Sanz"
 
 #, kde-format
 msgctxt "EMAIL OF TRANSLATORS"
@@ -115,7 +115,7 @@ msgid ""
 msgstr ""
 "Un text coincident amb la classe de finestra (propietat WM_CLASS)\n"
 "La classe de finestra es pot obtindre executant\n"
-"«xprop | grep WM_CLASS» i clicant en una finestra.\n"
+"«xprop | grep WM_CLASS» i clicant damunt d'una finestra.\n"
 "(utilitzeu bé les dues parts separades per un espai o bé només la part "
 "dreta).\n"
 "NOTA: Si no especifiqueu ni títol de la finestra ni classe de finestra,\n"
