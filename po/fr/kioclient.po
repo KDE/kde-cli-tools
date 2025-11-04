@@ -59,7 +59,7 @@ msgid ""
 "\n"
 msgstr ""
 "  %1 « URL »\n"
-"            # Ouvre une boîte de dialogue de propriétés pour l'URL.\n"
+"            # Ouvre une boite de dialogue de propriétés pour l'URL.\n"
 "\n"
 
 #: kioclient.cpp:65
@@ -286,7 +286,7 @@ msgstr ""
 #: kioclient.cpp:188
 #, kde-format
 msgid "Use message boxes and other native notifications"
-msgstr "Utiliser les boîtes de dialogue et autres notifications natives"
+msgstr "Utiliser les boites de dialogue et autres notifications natives"
 
 #: kioclient.cpp:191
 #, kde-format
@@ -294,7 +294,7 @@ msgid ""
 "Non-interactive use: no message boxes. If you don't want a graphical "
 "connection, use --platform offscreen"
 msgstr ""
-"Utilisation non interactive : aucune boîte de dialogue. Si vous ne voulez "
+"Utilisation non interactive : aucune boite de dialogue. Si vous ne voulez "
 "aucune connexion graphique, utilisez l'option « --platform offscreen »"
 
 #: kioclient.cpp:195
