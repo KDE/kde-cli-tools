@@ -124,20 +124,20 @@ msgid ""
 "then the very first window to appear will be taken;\n"
 "omitting both options is NOT recommended."
 msgstr ""
-"Une chaîne correspondant à la classe de la fenêtre (propriété "
+"Une chaine correspondant à la classe de la fenêtre (propriété "
 "« WM_CLASS »). \n"
 "La classe d'une fenêtre peut être trouvée en exécutant la commande « xprop | "
 "grep WM_CLASS » et en cliquant sur la fenêtre\n"
 "(utilisez soit les deux parties séparées par une espace, soit la partie de "
 "droite).\n"
 "Remarque : si vous ne spécifiez ni le titre de la fenêtre ni la classe de la "
-"fenêtre, alors, la toute première fenêtre qui apparaîtra sera prise en "
+"fenêtre, alors, la toute première fenêtre qui apparaitra sera prise en "
 "compte, ce qui n'est PAS recommandé."
 
 #: kstart.cpp:295
 #, kde-format
 msgid "Desktop on which to make the window appear"
-msgstr "Bureau sur lequel faire apparaître la fenêtre"
+msgstr "Bureau sur lequel faire apparaitre la fenêtre"
 
 #: kstart.cpp:297
 #, kde-format
@@ -145,13 +145,13 @@ msgid ""
 "Make the window appear on the desktop that was active\n"
 "when starting the application"
 msgstr ""
-"Forcer la fenêtre à apparaître sur le bureau qui était actif lorsque "
+"Forcer la fenêtre à apparaitre sur le bureau qui était actif lorsque "
 "l'application a été lancée"
 
 #: kstart.cpp:298
 #, kde-format
 msgid "Make the window appear on all desktops"
-msgstr "Faire apparaître la fenêtre sur tous les bureaux"
+msgstr "Faire apparaitre la fenêtre sur tous les bureaux"
 
 #: kstart.cpp:299
 #, kde-format
@@ -210,12 +210,12 @@ msgstr "Essayer de maintenir la fenêtre en dessous des autres"
 #: kstart.cpp:314
 #, kde-format
 msgid "The window does not get an entry in the taskbar"
-msgstr "La fenêtre n'apparaît pas dans la barre de tâches"
+msgstr "La fenêtre n'apparait pas dans la barre de tâches"
 
 #: kstart.cpp:315
 #, kde-format
 msgid "The window does not get an entry on the pager"
-msgstr "La fenêtre n'apparaît pas dans le gestionnaire de bureaux"
+msgstr "La fenêtre n'apparait pas dans le gestionnaire de bureaux"
 
 #: kstart.cpp:329
 #, kde-format

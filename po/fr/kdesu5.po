@@ -88,7 +88,7 @@ msgstr "Spécifie la commande à exécuter comme des arguments distincts"
 #: kdesu.cpp:105
 #, kde-format
 msgid "Specifies the command to run as one string"
-msgstr "Spécifie la commande à exécuter en une seule chaîne de caractères"
+msgstr "Spécifie la commande à exécuter en une seule chaine de caractères"
 
 #: kdesu.cpp:106
 #, kde-format
@@ -137,12 +137,12 @@ msgstr "Ne pas afficher le bouton « Ignorer »"
 #, kde-format
 msgid "Specify icon to use in the password dialog"
 msgstr ""
-"Spécifier l'icône à utiliser dans la boîte de dialogue pour le mot de passe"
+"Spécifier l'icône à utiliser dans la boite de dialogue pour le mot de passe"
 
 #: kdesu.cpp:116
 #, kde-format
 msgid "Do not show the command to be run in the dialog"
-msgstr "Ne pas afficher la commande à exécuter dans la boîte de dialogue"
+msgstr "Ne pas afficher la commande à exécuter dans la boite de dialogue"
 
 #: kdesu.cpp:123
 #, kde-format
@@ -151,7 +151,7 @@ msgctxt ""
 "the winid so that it is like a dialog box rather than some separate program"
 msgid "Makes the dialog transient for an X app specified by winid"
 msgstr ""
-"Rend temporaire la boîte de dialogue pour l'application X désignée par "
+"Rend temporaire la boite de dialogue pour l'application X désignée par "
 "« winid »"
 
 #: kdesu.cpp:125

@@ -100,7 +100,7 @@ msgid ""
 "file type 'text/plain'; all files ending in '.txt' are recognized as plain "
 "text files."
 msgstr ""
-"Cette boîte de dialogue contient la liste des motifs pouvant être utilisés "
+"Cette boite de dialogue contient la liste des motifs pouvant être utilisés "
 "pour identifier les fichiers du type sélectionné. Par exemple, le motif « *."
 "txt » est associé au type de fichier « text / plain ». Tous les fichiers se "
 "terminant par « .txt » seront alors reconnus comme des fichiers de texte."
@@ -256,8 +256,8 @@ msgid ""
 "name as it appears in the list."
 msgstr ""
 "Saisissez une partie d'un motif de fichier et seuls les types de fichiers "
-"dont le motif correspond apparaîtront dans la liste. Vous pouvez également "
-"saisir une partie du nom du type de fichier tel qu'il apparaît dans la liste."
+"dont le motif correspond apparaitront dans la liste. Vous pouvez également "
+"saisir une partie du nom du type de fichier tel qu'il apparait dans la liste."
 
 #: filetypesview.cpp:88
 #, kde-format
@@ -374,7 +374,7 @@ msgstr "David Faure"
 #, kde-format
 msgid "Makes the dialog transient for the window specified by winid"
 msgstr ""
-"Rend la boîte de dialogue temporaire pour la fenêtre spécifiée par son "
+"Rend la boite de dialogue temporaire pour la fenêtre spécifiée par son "
 "identifiant « winid »"
 
 #: keditfiletype.cpp:134
