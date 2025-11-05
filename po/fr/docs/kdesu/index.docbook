@@ -90,7 +90,7 @@ does this really work?
 >.desktop</filename
 >. Bien qu'il demande le mot de passe <systemitem class="username"
 >administrateur</systemitem
-> à travers une boîte de dialogue graphique, je le considère plus comme une ligne de commande connectée à une interface graphique que comme un véritable programme graphique.</para>
+> à travers une boite de dialogue graphique, je le considère plus comme une ligne de commande connectée à une interface graphique que comme un véritable programme graphique.</para>
 
 <para
 >Comme <command
@@ -257,9 +257,9 @@ does this really work?
 ></term>
 <listitem
 ><para
->Spécifie l'icône à utiliser dans la boîte de dialogue de mot de passe. Spécifiez juste le nom, sans l'extension.</para>
+>Spécifie l'icône à utiliser dans la boite de dialogue de mot de passe. Spécifiez juste le nom, sans l'extension.</para>
 <para
->Par exemple, pour exécuter &konqueror; en mode gestionnaire de fichiers et afficher l'icône de &konqueror; dans la boîte de dialogue du mot de passe :</para>
+>Par exemple, pour exécuter &konqueror; en mode gestionnaire de fichiers et afficher l'icône de &konqueror; dans la boite de dialogue du mot de passe :</para>
 <screen
 ><userinput
 >$(kde5-config --path libexec)<command
@@ -283,7 +283,7 @@ does this really work?
 ><para
 >Ne conserve pas le mot de passe. Ceci désactive la case à cocher <guilabel
 >conserver le mot de passe</guilabel
-> dans la boîte de dialogue correspondante.</para
+> dans la boite de dialogue correspondante.</para
 ></listitem>
 </varlistentry>
 <varlistentry>
