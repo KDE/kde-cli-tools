@@ -214,7 +214,7 @@
 ></term>
 <listitem
 ><para
->Spécifie l'icône à utiliser dans la boîte de dialogue du mot de passe. Vous pouvez spécifier uniquement le nom, sans extensions.</para>
+>Spécifie l'icône à utiliser dans la boite de dialogue du mot de passe. Vous pouvez spécifier uniquement le nom, sans extensions.</para>
 </listitem>
 </varlistentry>
 
@@ -227,7 +227,7 @@
 ><para
 >Ne pas mémoriser le mot de passe. Ceci désactive la case à cocher <guilabel
 >mémoriser le mot de passe</guilabel
-> dans la boîte de dialogue du mot de passe.</para
+> dans la boite de dialogue du mot de passe.</para
 ></listitem>
 </varlistentry>
 <varlistentry>
@@ -347,7 +347,7 @@
 >kfmclient</command
 > en tant qu'utilisateur <systemitem class="username"
 >jean</systemitem
-> et affiche l'icône de &konqueror; dans la boîte de dialogue du mot de passe :</para>
+> et affiche l'icône de &konqueror; dans la boite de dialogue du mot de passe :</para>
 <screen
 ><userinput
 >$(kde5-config --path libexec)<command

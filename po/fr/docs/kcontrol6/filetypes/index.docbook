@@ -142,7 +142,7 @@
 ></note>
 
 <para
->Les différentes catégories sont listées dans la boîte intitulée <guilabel
+>Les différentes catégories sont listées dans la boite intitulée <guilabel
 >Types connus</guilabel
 >.</para>
 
@@ -151,7 +151,7 @@
 
 <tip
 ><para
->Vous pouvez aussi rechercher un type &MIME; particulier, en utilisant la boîte de recherche. Celle-ci est intitulée <guilabel
+>Vous pouvez aussi rechercher un type &MIME; particulier, en utilisant la boite de recherche. Celle-ci est intitulée <guilabel
 >Chercher un type de fichier ou un profil de nom de fichier</guilabel
 >. Elle se situe au-dessus de la liste des catégories.</para>
 
@@ -169,7 +169,7 @@
 <para
 >Si vous voulez ajouter un nouveau type « &MIME; » à vos associations de fichiers, vous pouvez cliquer sur le bouton <guibutton
 >Ajouter...</guibutton
->. Une petite boîte de dialogue s'affichera dans laquelle vous sélectionnerez la catégorie dans une liste déroulante intitulée <guilabel
+>. Une petite boite de dialogue s'affichera dans laquelle vous sélectionnerez la catégorie dans une liste déroulante intitulée <guilabel
 >Groupe :</guilabel
 >. Ensuite, saisissez le nom du type « &MIME; » dans le champ vide nommé <guilabel
 >Nom du type :</guilabel
@@ -202,7 +202,7 @@
 >Tout d'abord, il vous faudra identifier le type &MIME; à éditer. Naviguez dans l'arborescence des catégories jusqu'à ce que vous trouviez le type &MIME; voulu, puis cliquez dessus.</para>
 
 <para
->Dès que vous l'aurez sélectionné, les caractéristiques du type &MIME; apparaîtront dans la partie droite de la fenêtre du module.</para>
+>Dès que vous l'aurez sélectionné, les caractéristiques du type &MIME; apparaitront dans la partie droite de la fenêtre du module.</para>
 
 <para
 >Vous remarquerez que les valeurs actuelles sont divisées en deux onglets : <guilabel
@@ -269,7 +269,7 @@
 >Changement d'icône</title>
 
 <para
->Pour changer une icône, cliquez simplement sur le bouton représentant l'icône. Une boîte de dialogue apparaîtra vous montrant toutes les icônes disponibles. Cliquez sur celle de votre choix avec le pointeur de la souris, puis sur <guibutton
+>Pour changer une icône, cliquez simplement sur le bouton représentant l'icône. Une boite de dialogue apparaitra vous montrant toutes les icônes disponibles. Cliquez sur celle de votre choix avec le pointeur de la souris, puis sur <guibutton
 >Ok</guibutton
 >.</para>
 
@@ -280,7 +280,7 @@
 >Modification des motifs de type « MIME »</title>
 
 <para
->La boîte intitulée <guilabel
+>La boite intitulée <guilabel
 >Motifs de noms de fichiers</guilabel
 > détermine quels fichiers seront inclus dans le type &MIME;.</para>
 
@@ -348,7 +348,7 @@
 >Modifier...</guibutton
 > et <guibutton
 >Supprimer</guibutton
->) et d'une boîte à liste déroulante (listant les applications).</para>
+>) et d'une boite à liste déroulante (listant les applications).</para>
 
 <para
 >La liste détaille l'ensemble des applications associées à un type &MIME; particulier. Elle est ordonnée de manière délibérée. En haut de la liste, nous trouvons l'application qui sera essayée en premier, l'application juste en dessous viendra en second, &etc;</para>
@@ -378,14 +378,14 @@
 <para
 >Vous pouvez ajouter des applications à la liste en cliquant sur le bouton <guibutton
 >Ajouter...</guibutton
->. Une boîte de dialogue apparaîtra dans laquelle vous pouvez sélectionner l'application que vous voulez utiliser avec ce type « &MIME; ». Une fois effectué, veuillez cliquez sur le bouton <guibutton
+>. Une boite de dialogue apparaitra dans laquelle vous pouvez sélectionner l'application que vous voulez utiliser avec ce type « &MIME; ». Une fois effectué, veuillez cliquez sur le bouton <guibutton
 >Ok</guibutton
 > pour que l'application fasse partie de la liste courante.</para>
 
 <para
 >Pour modifier les options d'une application associée à un type « &MIME; » spécifique, sélectionnez-la dans la liste et appuyez sur le bouton <guibutton
 >Modifier...</guibutton
->. Cela ouvrira une nouvelle boîte de dialogue avec les onglets <guilabel
+>. Cela ouvrira une nouvelle boite de dialogue avec les onglets <guilabel
 >Général</guilabel
 >, <guilabel
 >Droits d'accès</guilabel
@@ -518,7 +518,7 @@
 >droit</mousebutton
 > de la souris. Un menu s'ouvrira avec une entrée marquée <guimenu
 >Ouvrir avec...</guimenu
->. Cette boîte de dialogue affichera la liste des applications présentes sous ce menu dans leurs ordres d'apparitions.</para>
+>. Cette boite de dialogue affichera la liste des applications présentes sous ce menu dans leurs ordres d'apparitions.</para>
 
 <para
 >Vous pouvez modifier cet ordre grâce aux boutons <guibutton
