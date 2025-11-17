@@ -2,7 +2,7 @@
 # Translation of kdesu.po to Slovenian
 # SLOVENIAN TRANSLATION OF KDESU.
 # Copyright (C) 2001, 2003, 2004, 2006 Free Software Foundation, Inc.
-# $Id: kdesu.po 1690989 2024-09-21 01:15:19Z scripty $
+# $Id: kdesu.po 1723120 2025-11-17 15:24:07Z scripty $
 # $Source$
 #
 # Roman Maurer <roman.maurer@hermes.si>, 2000.
@@ -15,7 +15,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kdesu\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-09-21 00:41+0000\n"
+"POT-Creation-Date: 2025-11-17 14:41+0000\n"
 "PO-Revision-Date: 2016-09-16 17:30+0200\n"
 "Last-Translator: Andrej Mernik <andrejm@ubuntu.si>\n"
 "Language-Team: Slovenian <lugos-slo@lugos.si>\n"
