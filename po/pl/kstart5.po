@@ -1,6 +1,6 @@
 # translation of kstart.po to Polish
 # translation of kstart.po to
-# Version: $Revision: 1681059 $
+# Version: $Revision: 1723123 $
 # Piotr Roszatycki <dexter@debian.org>, 1999-2000.
 # Michał Rudolf <mrudolf@kdewebdev.org>, 2002.
 # Michal Rudolf <mrudolf@kdewebdev.org>, 2003, 2004, 2005, 2009.
@@ -11,7 +11,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kstart\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2022-12-17 00:51+0000\n"
+"POT-Creation-Date: 2025-11-17 16:18+0000\n"
 "PO-Revision-Date: 2020-12-27 09:34+0100\n"
 "Last-Translator: Łukasz Wojniłowicz <lukasz.wojnilowicz@gmail.com>\n"
 "Language-Team: Polish <kde-i18n-doc@kde.org>\n"

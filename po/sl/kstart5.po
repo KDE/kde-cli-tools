@@ -2,7 +2,7 @@
 # Translation of kstart.po to Slovenian
 # KDEBASE translation to Slovenian language.
 # Copyright (C) 2000, 2003, 2004, 2005, 2007 Free Software Foundation, Inc.
-# $Id: kstart5.po 1640122 2022-12-17 01:42:20Z scripty $
+# $Id: kstart5.po 1723123 2025-11-17 16:34:17Z scripty $
 # $Source$
 #
 # Roman Maurer <roman.maurer@hermes.si>, 2000.
@@ -16,7 +16,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kstart\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2022-12-17 00:51+0000\n"
+"POT-Creation-Date: 2025-11-17 16:18+0000\n"
 "PO-Revision-Date: 2021-07-23 07:21+0200\n"
 "Last-Translator: Matjaž Jeran <matjaz.jeran@amis.net>\n"
 "Language-Team: Slovenian <lugos-slo@lugos.si>\n"
