@@ -4,16 +4,16 @@
 #
 # Logi Ragnarsson <logir@logi.org>, 2000.
 # Arnar Leosson <leosson@frisurf.no>, 2005.
-# Sveinn í Felli <sveinki@nett.is>, 2008, 2009, 2011, 2015, 2024.
+# SPDX-FileCopyrightText: 2008, 2009, 2011, 2015, 2024, 2025 Sveinn í Felli <sveinki@nett.is>
 # SPDX-FileCopyrightText: 2024 Gummi <gudmundure@gmail.com>
 msgid ""
 msgstr ""
 "Project-Id-Version: filetypes\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2025-11-17 11:53+0000\n"
-"PO-Revision-Date: 2024-06-30 15:56+0000\n"
-"Last-Translator: Gummi <gudmundure@gmail.com>\n"
-"Language-Team: Icelandic <kde-i18n-doc@kde.org>\n"
+"PO-Revision-Date: 2025-12-02 10:24+0000\n"
+"Last-Translator: Sveinn í Felli <sv1@fellsnet.is>\n"
+"Language-Team: Icelandic\n"
 "Language: is\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -186,7 +186,7 @@ msgstr "Nota stillingar fyrir hóp '%1'"
 #: filetypesview.cpp:57
 #, kde-format
 msgid "Search for file type or filename pattern..."
-msgstr "Leita að skrárgerð eða skráarheitismynstri..."
+msgstr "Leita að skráartegund eða skráarheitismynstri..."
 
 #: filetypesview.cpp:63
 #, kde-format
@@ -195,14 +195,14 @@ msgid ""
 "pattern will appear in the list. Alternatively, enter a part of a file type "
 "name as it appears in the list."
 msgstr ""
-"Sláðu inn hluta skráarheitamynsturs, og einungis skráategundir sem passa "
+"Settu inn hluta skráarheitamynsturs, og einungis skráategundir sem passa "
 "verða sýndar í listanum. Eins er hægt að setja inn gerð skráa með svipuðum "
 "hætti."
 
 #: filetypesview.cpp:71 multiapplydialog.cpp:27
 #, kde-format
 msgid "Known Types"
-msgstr "Þekkt skráarform"
+msgstr "Þekktar tegundir skráa"
 
 #: filetypesview.cpp:77
 #, kde-format
@@ -292,7 +292,7 @@ msgstr "Ritill fyrir skráategundir"
 msgid ""
 "KDE file type editor - simplified version for editing a single file type"
 msgstr ""
-"KDE Skráartegundarbreytir - einfölduð útgáfa til að sýsla með skráartegundir"
+"KDE Skráategundarbreytir - einfölduð útgáfa til að sýsla með skráartegundir"
 
 #: keditfiletype.cpp:118
 #, kde-format
@@ -458,7 +458,7 @@ msgstr "Beita á..."
 #: kservicelistwidget.cpp:131
 #, kde-format
 msgid "Apply the current preference order to other file types."
-msgstr "Nota núverandi forgangsröðun á aðrar skrárgerðir."
+msgstr "Nota núverandi forgangsröðun á aðrar skráategundir."
 
 #: kservicelistwidget.cpp:154
 #, kde-format
@@ -509,7 +509,7 @@ msgid ""
 "category and you type 'custom' here, the file type 'image/custom' will be "
 "created."
 msgstr ""
-"Sláðu inn nafn á skráargerð. Til dæmis, ef þú valdir 'myndir' sem flokk og "
+"Settu inn nafn á skráargerð. Til dæmis, ef þú valdir 'myndir' sem flokk og "
 "þú skrifar síðan 'sérstakar' hér, þá verður gerðin 'myndir/sérstakar' búin "
 "til."
 
