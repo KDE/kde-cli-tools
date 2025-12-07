@@ -1,0 +1,54 @@
+# Copyright (C) 2025 This file is copyright:
+# This file is distributed under the same license as the kde-cli-tools package.
+#
+# SPDX-FileCopyrightText: 2025 Sveinn í Felli <sv1@fellsnet.is>
+msgid ""
+msgstr ""
+"Project-Id-Version: kde-cli-tools\n"
+"Report-Msgid-Bugs-To: https://bugs.kde.org\n"
+"POT-Creation-Date: 2025-11-17 14:41+0000\n"
+"PO-Revision-Date: 2025-12-06 10:54+0000\n"
+"Last-Translator: Sveinn í Felli <sv1@fellsnet.is>\n"
+"Language-Team: Icelandic\n"
+"Language: is\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=n != 1;\n"
+"X-Generator: Lokalize 23.08.5\n"
+
+#: main.cpp:26
+#, kde-format
+msgid "Inhibit various desktop functions whilst a command runs"
+msgstr "Hindra ýmsa eiginleika skjáborðsins á meðan skipun er keyrð"
+
+#: main.cpp:28
+#, kde-format
+msgid "Inhibit power management"
+msgstr "Hindra gangstýringu"
+
+#: main.cpp:31
+#, kde-format
+msgid "Inhibit screensaver"
+msgstr "Hindra skjáhvílu"
+
+#: main.cpp:35
+#, kde-format
+msgid "Inhibit colour correction (night mode)"
+msgstr "Hindra litaleiðréttingu (næturhamur)"
+
+#: main.cpp:38
+#, kde-format
+msgid "Inhibit notifications (Do not disturb)"
+msgstr "Hindra tilkynningar (Ekki ónáða)"
+
+#: main.cpp:41
+#, kde-format
+msgid "Command with arguments to run"
+msgstr "Skipun með viðföngum sem á að keyra"
+
+#: main.cpp:64 main.cpp:73 main.cpp:89
+#, kde-format
+msgctxt "Script as in shell script"
+msgid "Running Script"
+msgstr "Keyri skriftu"
