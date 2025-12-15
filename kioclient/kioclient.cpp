@@ -176,11 +176,10 @@ int main(int argc, char **argv)
 
     KLocalizedString::setApplicationDomain(QByteArrayLiteral("kioclient"));
 
-    QString appName = QStringLiteral("kioclient");
     QString programName = i18n("KIO Client");
     QString description = i18n("Command-line tool for network-transparent operations");
     QString version = QLatin1String(PROJECT_VERSION);
-    KAboutData data(appName, programName, version, description, KAboutLicense::LGPL_V2);
+    KAboutData data(QString(), programName, version, description, KAboutLicense::LGPL_V2);
     KAboutData::setApplicationData(data);
 
     QCommandLineParser parser;
