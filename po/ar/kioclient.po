@@ -10,7 +10,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kioclient\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-11-17 11:53+0000\n"
+"POT-Creation-Date: 2025-12-20 00:43+0000\n"
 "PO-Revision-Date: 2025-08-09 14:09+0400\n"
 "Last-Translator: Zayed Al-Saidi <zayed.alsaidi@gmail.com>\n"
 "Language-Team: ar\n"
@@ -249,22 +249,22 @@ msgstr ""
 "  الملفات المبدئي. مريحة جدا.\n"
 "\n"
 
-#: kioclient.cpp:180
+#: kioclient.cpp:179
 #, kde-format
 msgid "KIO Client"
 msgstr "عميل KIO"
 
-#: kioclient.cpp:181
+#: kioclient.cpp:180
 #, kde-format
 msgid "Command-line tool for network-transparent operations"
 msgstr "أداة سطر أوامر لعمليات العابرة للشبكة."
 
-#: kioclient.cpp:188
+#: kioclient.cpp:187
 #, kde-format
 msgid "Use message boxes and other native notifications"
 msgstr "استعمل صناديق الرسائل وغيرها من الإشعارات الأصلية"
 
-#: kioclient.cpp:191
+#: kioclient.cpp:190
 #, kde-format
 msgid ""
 "Non-interactive use: no message boxes. If you don't want a graphical "
@@ -273,80 +273,80 @@ msgstr ""
 "استخدام غير تفاعلي: لا حواريات. إذا لم ترغب في اتصال مرئي، استخدم --platform "
 "offscreen"
 
-#: kioclient.cpp:195
+#: kioclient.cpp:194
 #, kde-format
 msgid "Overwrite destination if it exists (for copy and move)"
 msgstr "استبدال الهدف إذا كان موجوداً (لأوامر النسخ والنقل)"
 
-#: kioclient.cpp:199
+#: kioclient.cpp:198
 #, kde-format
 msgid "file or URL"
 msgstr "ملف أو عنوان"
 
-#: kioclient.cpp:199 kioclient.cpp:201 kioclient.cpp:204 kioclient.cpp:209
+#: kioclient.cpp:198 kioclient.cpp:200 kioclient.cpp:203 kioclient.cpp:208
 #, kde-format
 msgid "urls..."
 msgstr "عناوين…"
 
-#: kioclient.cpp:201 kioclient.cpp:204
+#: kioclient.cpp:200 kioclient.cpp:203
 #, kde-format
 msgid "Source URL or URLs"
 msgstr "مصدر العنوان أو العناوين"
 
-#: kioclient.cpp:202 kioclient.cpp:205
+#: kioclient.cpp:201 kioclient.cpp:204
 #, kde-format
 msgid "Destination URL"
 msgstr "وجهة العنوان"
 
-#: kioclient.cpp:202 kioclient.cpp:205
+#: kioclient.cpp:201 kioclient.cpp:204
 #, kde-format
 msgid "url"
 msgstr "رابط"
 
-#: kioclient.cpp:207
+#: kioclient.cpp:206
 #, kde-format
 msgid "Show available commands"
 msgstr "أظهر الأوامر المتوفرة"
 
-#: kioclient.cpp:208
+#: kioclient.cpp:207
 #, kde-format
 msgid "Command (see --commands)"
 msgstr "الأمر (انظر --الأوامر)"
 
-#: kioclient.cpp:208
+#: kioclient.cpp:207
 #, kde-format
 msgid "command"
 msgstr "أمر"
 
-#: kioclient.cpp:209
+#: kioclient.cpp:208
 #, kde-format
 msgid "Arguments for command"
 msgstr "معطيات الأمر"
 
-#: kioclient.cpp:233
+#: kioclient.cpp:232
 #, kde-format
 msgctxt "@info:shell"
 msgid "%1: Syntax error, not enough arguments\n"
 msgstr "%1: خطأ في الصياغة: المتحولات ليست كافية\n"
 
-#: kioclient.cpp:237
+#: kioclient.cpp:236
 #, kde-format
 msgctxt "@info:shell"
 msgid "%1: Syntax error, too many arguments\n"
 msgstr "%1: خطأ في الصياغة: معطيات كثيرة\n"
 
-#: kioclient.cpp:465
+#: kioclient.cpp:464
 #, kde-format
 msgid "Destination where to download the files"
 msgstr "المقصد حيث ستُنزّل الملفات"
 
-#: kioclient.cpp:512
+#: kioclient.cpp:511
 #, kde-format
 msgctxt "@info:shell"
 msgid "%1: Syntax error, unknown command '%2'\n"
 msgstr "%1: صيغة خاطئة: الأمر غير معروف '%2'\n"
 
-#: kioclient.cpp:528
+#: kioclient.cpp:527
 #, kde-format
 msgctxt "@info:shell"
 msgid "%1: %2\n"

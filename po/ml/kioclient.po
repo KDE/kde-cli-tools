@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kioclient\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-11-17 11:53+0000\n"
+"POT-Creation-Date: 2025-12-20 00:43+0000\n"
 "PO-Revision-Date: 2019-12-12 22:23+0000\n"
 "Last-Translator: Vivek KJ Pazhedath <vivekkj2004@gmail.com>\n"
 "Language-Team: Swathanthra|സ്വതന്ത്ര Malayalam|മലയാളം Computing|കമ്പ്യൂട്ടിങ്ങ് <smc-"
@@ -267,102 +267,102 @@ msgstr ""
 "             //  നിലവിലുള്ള തട്ടു് തുറക്കുക. വളരെ സൌകര്യമുള്ളതാകുന്നു.\n"
 "\n"
 
-#: kioclient.cpp:180
+#: kioclient.cpp:179
 #, kde-format
 msgid "KIO Client"
 msgstr "KIO ക്ലയന്റ്"
 
-#: kioclient.cpp:181
+#: kioclient.cpp:180
 #, kde-format
 msgid "Command-line tool for network-transparent operations"
 msgstr ""
 
-#: kioclient.cpp:188
+#: kioclient.cpp:187
 #, kde-format
 msgid "Use message boxes and other native notifications"
 msgstr ""
 
-#: kioclient.cpp:191
+#: kioclient.cpp:190
 #, kde-format
 msgid ""
 "Non-interactive use: no message boxes. If you don't want a graphical "
 "connection, use --platform offscreen"
 msgstr ""
 
-#: kioclient.cpp:195
+#: kioclient.cpp:194
 #, kde-format
 msgid "Overwrite destination if it exists (for copy and move)"
 msgstr ""
 
-#: kioclient.cpp:199
+#: kioclient.cpp:198
 #, fuzzy, kde-format
 msgid "file or URL"
 msgstr "യുആര്‍എല്‍ അല്ലെങ്കില്‍ യുആര്‍എല്ലുകള്‍"
 
-#: kioclient.cpp:199 kioclient.cpp:201 kioclient.cpp:204 kioclient.cpp:209
+#: kioclient.cpp:198 kioclient.cpp:200 kioclient.cpp:203 kioclient.cpp:208
 #, kde-format
 msgid "urls..."
 msgstr ""
 
-#: kioclient.cpp:201 kioclient.cpp:204
+#: kioclient.cpp:200 kioclient.cpp:203
 #, kde-format
 msgid "Source URL or URLs"
 msgstr "സ്രോതസ്സായ യുആര്‍എല്‍ അല്ലെങ്കില്‍ യുആര്‍എല്ലുകള്‍"
 
-#: kioclient.cpp:202 kioclient.cpp:205
+#: kioclient.cpp:201 kioclient.cpp:204
 #, kde-format
 msgid "Destination URL"
 msgstr "ലക്ഷ്യസ്ഥാനത്തിനുള്ള യുആര്‍എല്‍"
 
-#: kioclient.cpp:202 kioclient.cpp:205
+#: kioclient.cpp:201 kioclient.cpp:204
 #, kde-format
 msgid "url"
 msgstr ""
 
-#: kioclient.cpp:207
+#: kioclient.cpp:206
 #, kde-format
 msgid "Show available commands"
 msgstr "ലഭ്യമായ ആജ്ഞകള്‍ കാണിക്കുക"
 
-#: kioclient.cpp:208
+#: kioclient.cpp:207
 #, kde-format
 msgid "Command (see --commands)"
 msgstr "ആജ്ഞ (--commands കാണുക)"
 
-#: kioclient.cpp:208
+#: kioclient.cpp:207
 #, kde-format
 msgid "command"
 msgstr ""
 
-#: kioclient.cpp:209
+#: kioclient.cpp:208
 #, kde-format
 msgid "Arguments for command"
 msgstr "ആജ്ഞയ്ക്കുള്ള ആര്‍ഗ്യുമെന്റുകള്‍"
 
-#: kioclient.cpp:233
+#: kioclient.cpp:232
 #, fuzzy, kde-format
 msgctxt "@info:shell"
 msgid "%1: Syntax error, not enough arguments\n"
 msgstr "സിന്റാക്സ് പിശകു്: ആവശ്യത്തിനുള്ള ആര്‍ഗ്യുമെന്റുകളില്ല\n"
 
-#: kioclient.cpp:237
+#: kioclient.cpp:236
 #, fuzzy, kde-format
 msgctxt "@info:shell"
 msgid "%1: Syntax error, too many arguments\n"
 msgstr "സിന്റാക്സ് പിശകു്: ഒരുപാടു് ആര്‍ഗ്യുമെന്റുകള്‍\n"
 
-#: kioclient.cpp:465
+#: kioclient.cpp:464
 #, kde-format
 msgid "Destination where to download the files"
 msgstr ""
 
-#: kioclient.cpp:512
+#: kioclient.cpp:511
 #, fuzzy, kde-format
 msgctxt "@info:shell"
 msgid "%1: Syntax error, unknown command '%2'\n"
 msgstr "സിന്റാക്സില്‍ പിശകു്: അപരിചിതമായ ആജ്ഞ '%1'\n"
 
-#: kioclient.cpp:528
+#: kioclient.cpp:527
 #, kde-format
 msgctxt "@info:shell"
 msgid "%1: %2\n"
