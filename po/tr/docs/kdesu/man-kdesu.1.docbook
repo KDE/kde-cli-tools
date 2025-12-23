@@ -10,7 +10,7 @@
 <author
 >&Lauri.Watts; &Lauri.Watts.mail;</author>
 <date
->2010-09-18</date>
+>2010‒09‒18</date>
 <productname
 >K Masaüstü Ortamı</productname>
 </refentryinfo>
@@ -135,7 +135,7 @@
 >kf5-config --path libexec</userinput
 > konumunda kurulu olduğundan ve dolayısıyla <envar
 >PATH</envar
->'inizde olmadığından, <command
+>’inizde olmadığından, <command
 >kdesu</command
 > komutunu başlatmak için <userinput
 >$(kf5-config --path libexec)<command
@@ -188,9 +188,9 @@
 ></term>
 <listitem
 ><para
->Bu seçenek, &kdesu;'nun <filename
+>Bu seçenek, &kdesu;’nun <filename
 >.desktop</filename
-> dosyalarında etkili kullanımını sağlar. &kdesu;'ya <parameter
+> dosyalarında etkili kullanımını sağlar. &kdesu;’ya <parameter
 >dosya</parameter
 > parametresiyle verilen dosyayı incelemesini söyler. Dosyaya geçerli kullanıcı tarafından yazılabiliyorsa &kdesu; komutu geçerli kullanıcı olarak yürütür. Aksi durumda, komut <parameter
 >kullanıcı</parameter
@@ -239,7 +239,7 @@
 ></term>
 <listitem>
 <para
->Öncelik değerini ayarlayın. Öncelik, 1-100 arasında herhangi bir numaradır; 100 en yüksek önceliği ve 0 ise en düşük önceliği belirtir. Öntanımlı değer 50’dir.</para>
+>Öncelik değerini ayarlayın. Öncelik, 1–100 arasında herhangi bir numaradır; 100 en yüksek önceliği ve 0 ise en düşük önceliği belirtir. Öntanımlı değer 50’dir.</para>
 </listitem>
 </varlistentry>
 <varlistentry>
@@ -260,7 +260,7 @@
 ></term>
 <listitem
 ><para
->kdesu ardalan sürecini durdurun. Bu, başarılı parolaları arka planda önbellekleyen ardalan sürecidir. Bu özellik aynı zamanda &kdesu;'nun ilk başlatılmasında <option
+>kdesu ardalan sürecini durdurun. Bu, başarılı parolaları arka planda önbellekleyen ardalan sürecidir. Bu özellik aynı zamanda &kdesu;’nun ilk başlatılmasında <option
 >-n</option
 > ile de devre dışı bırakılabilir.</para
 ></listitem>
@@ -286,7 +286,7 @@
 ></term>
 <listitem
 ><para
->&kdesu;'nun en yaygın kullanımı bir komutu yönetici kullanıcı olarak çalıştırmak olsa da, herhangi bir kullanıcı adını ve parolayı da verebilirsiniz.</para>
+>&kdesu;’nun en yaygın kullanımı bir komutu yönetici kullanıcı olarak çalıştırmak olsa da, herhangi bir kullanıcı adını ve parolayı da verebilirsiniz.</para>
 </listitem>
 </varlistentry>
 
@@ -327,7 +327,7 @@
 <para
 >Daha ayrıntılı kullanıcı belgelendirmesi <ulink url="help:/kdesu"
 >help:/kdesu</ulink
-> (ya bu &URL;'yi &konqueror;'a girin ya da <userinput
+> (ya bu &URL;’yi &konqueror;’a girin ya da <userinput
 ><command
 >khelpcenter</command
 > <parameter

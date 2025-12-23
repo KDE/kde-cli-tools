@@ -32,7 +32,7 @@
 </authorgroup>
 
 <date
->2016-11-11</date>
+>2016‒11‒11</date>
 <releaseinfo
 >Plasma 5.8</releaseinfo>
 
@@ -56,12 +56,12 @@
 >Giriş</title>
 
 <para
->&kde;'nin en kullanışlı özelliklerinden bir tanesi de, bir veri dosyasını uygulaması ile eşleştirebilmesidir. Bir örnek olarak, sıkça kullandığınız bir &calligrawords; belgesine tıkladığınızda, &kde;, &calligrawords; yazılımını kendiliğinden başlatır ve o dosyayı hemen üzerinde çalışmaya başlayabilmeniz için &calligrawords;'e yükler.</para>
+>&kde;’nin en kullanışlı özelliklerinden bir tanesi de, bir veri dosyasını uygulaması ile eşleştirebilmesidir. Bir örnek olarak, sıkça kullandığınız bir &calligrawords; belgesine tıkladığınızda, &kde;, &calligrawords; yazılımını kendiliğinden başlatır ve o dosyayı hemen üzerinde çalışmaya başlayabilmeniz için &calligrawords;’e yükler.</para>
 
 <para
 >Yukarıdaki örnekte, &calligrawords; veri dosyası &calligrawords; (uygulama) ile <emphasis
 >ilişkilendirilmiştir</emphasis
->. Bu dosya ilişkilendirmeleri, &kde;'nin işlevselliği için elzemdir.</para>
+>. Bu dosya ilişkilendirmeleri, &kde;’nin işlevselliği için elzemdir.</para>
 
 <para
 >&kde; kurulduğunda, yaygın olarak kullanılan veri türleri için yüzlerce ilişkilendirmeyi kendiliğinden oluşturur. Bu ilişkilendirmeler, sık kullanılan uygulamalar ve kullanıcı tercihleri temel alınarak oluşturulmuştur.</para>
@@ -107,7 +107,7 @@
 > <guimenuitem
 >Dosya İlişkilendirmeleri</guimenuitem
 ></menuchoice
->'ni seçebilirsiniz. Alternatif olarak, uçbirimden veya &krunner; uygulamacığından <command
+>’ni seçebilirsiniz. Alternatif olarak, uçbirimden veya &krunner; uygulamacığından <command
 >kcmshell5 filetypes</command
 > yazarak da çalıştırılabilir.</para>
 
@@ -168,7 +168,7 @@
 <tip
 ><para
 >Ayrıca arama kutusunu kullanarak belirli bir &MIME; türünü de arayabilirsiniz. Arama kutusu, <guilabel
->Dosya türü veya dosya adı dizgisi ara...</guilabel
+>Dosya türü veya dosya adı dizgisi ara…</guilabel
 > ile etiketlidir ve kategori listesinin üzerinde bulunur.</para>
 
 <para
@@ -184,16 +184,16 @@
 
 <para
 >Dosya ilişkilendirmelerinize yeni bir &MIME; türü eklemek istiyorsanız <guibutton
->Ekle...</guibutton
+>Ekle…</guibutton
 > düğmesine tıklayabilirsiniz. Küçük bir iletişim kutusu açılacaktır. <guilabel
 >Grup:</guilabel
 > ile etiketli açılır menüden kategoriyi seçin ve &MIME; adını <guilabel
 >Tür adı:</guilabel
 > yazan boş kutuya girin. Yeni &MIME; türünü eklemeyi bitirmek için <guibutton
 >Tamam</guibutton
->'a, veya &MIME; türü eklemeyi iptal etmek için <guibutton
+>’a, veya &MIME; türü eklemeyi iptal etmek için <guibutton
 >İptal</guibutton
->'e tıklayın.</para>
+>’e tıklayın.</para>
 
 </sect3>
 
@@ -248,7 +248,7 @@
 ><para
 ><guilabel
 >Dosya Adı Dizgileri</guilabel
->, &kde;'nin &MIME; türünü belirlemek için kullanacağı bir arama dizgisidir.</para
+>, &kde;’nin &MIME; türünü belirlemek için kullanacağı bir arama dizgisidir.</para
 ></listitem>
 <listitem
 ><para
@@ -333,7 +333,7 @@
 
 <tip
 ><para
->Birden çok maskeye sahip olmak yararlıdır; biri BÜYÜK biri de küçük harfler için. Bu, &kde;'nin dosya türünü daha kesin belirlemesine yardımcı olur.</para
+>Birden çok maskeye sahip olmak yararlıdır; biri BÜYÜK biri de küçük harfler için. Bu, &kde;’nin dosya türünü daha kesin belirlemesine yardımcı olur.</para
 ></tip>
 
 </sect3>
@@ -359,9 +359,9 @@
 >, <guibutton
 >Aşağı Taşı</guibutton
 >, <guibutton
->Ekle...</guibutton
+>Ekle…</guibutton
 >, <guibutton
->Düzenle...</guibutton
+>Düzenle…</guibutton
 > ve <guibutton
 >Kaldır</guibutton
 >) ve bir liste kutusu (uygulamaları listeleyen) bulunur.</para>
@@ -374,14 +374,14 @@
 >&MIME; türü başına neden birden çok uygulama var? Buna niye gerek var?</para>
 
 <para
->&kde;'nin yüzlerce dosya ilişkilendirmesi ile önceden yapılandırılmış olduğunu söyleyerek başlamıştık. Gerçekte, &kde;'nin kurulu olduğu her sistemde farklı bir uygulama seçkisi vardır. &MIME; türü başına birden çok ilişkilendirmeye izin vererek, &kde;, belirli bir uygulama sistemde kurulu değilse çalışmayı sürdürebilir.</para>
+>&kde;’nin yüzlerce dosya ilişkilendirmesi ile önceden yapılandırılmış olduğunu söyleyerek başlamıştık. Gerçekte, &kde;’nin kurulu olduğu her sistemde farklı bir uygulama seçkisi vardır. &MIME; türü başına birden çok ilişkilendirmeye izin vererek, &kde;, belirli bir uygulama sistemde kurulu değilse çalışmayı sürdürebilir.</para>
 
 <para
 >Örneğin:</para>
 <para
 ><literal
 >pdf</literal
-> &MIME; türü için bu dosya türüyle ilişkilendirilmiş iki adet uygulama vardır. İlkinin adı &okular;. Sisteminizde &okular; kurulu değilse &kde; kendiliğinden ikinci uygulama olan &krita; uygulamasını başlatır. Gördüğünüz gibi, bu, &kde;'nin arka planda siz uygulamaları kurup kaldırsanız bile pürüzsüz bir deneyim yaşatmasını sağlar.</para
+> &MIME; türü için bu dosya türüyle ilişkilendirilmiş iki adet uygulama vardır. İlkinin adı &okular;. Sisteminizde &okular; kurulu değilse &kde; kendiliğinden ikinci uygulama olan &krita; uygulamasını başlatır. Gördüğünüz gibi, bu, &kde;’nin arka planda siz uygulamaları kurup kaldırsanız bile pürüzsüz bir deneyim yaşatmasını sağlar.</para
 ></note>
 
 <para
@@ -393,14 +393,14 @@
 
 <para
 ><guibutton
->Ekle...</guibutton
+>Ekle…</guibutton
 > ile etiketli düğmeye tıklayarak listeye yeni uygulamalar ekleyebilirsiniz. Bir iletişim kutusu açılır. Bu kutuyu kullanarak, bu &MIME; türü için kullanmak istediğiniz uygulamayı seçebilirsiniz. İşiniz bittiğinde <guibutton
 >Tamam</guibutton
 > düğmesine tıklayın ve uygulama geçerli listeye eklenir.</para>
 
 <para
 >Belirli bir &MIME; türü için uygulama seçeneklerini değiştirmek için onu listede seçin ve <guibutton
->Düzenle...</guibutton
+>Düzenle…</guibutton
 > düğmesine tıklayın. Bu, içinde <guilabel
 >Genel</guilabel
 >, <guilabel
@@ -423,39 +423,39 @@
 <itemizedlist>
 <listitem
 ><para
->%f - tek bir dosya adı</para
+>%f — tek bir dosya adı</para
 ></listitem>
 <listitem
 ><para
->%F - bir dosyalar listesi; birden çok dosyayı aynı anda açabilen uygulamalarda kullanın</para
+>%F — bir dosyalar listesi; birden çok dosyayı aynı anda açabilen uygulamalarda kullanın</para
 ></listitem>
 <listitem
 ><para
->%u - tek bir &URL;</para
+>%u — tek bir &URL;</para
 ></listitem>
 <listitem
 ><para
->%U - bir &URL;'ler listesi</para
+>%U — bir &URL;’ler listesi</para
 ></listitem>
 <listitem
 ><para
->%d - açılacak dosyanın bulunduğu klasör</para
+>%d — açılacak dosyanın bulunduğu klasör</para
 ></listitem>
 <listitem
 ><para
->%D - bir klasörler listesi</para
+>%D — bir klasörler listesi</para
 ></listitem>
 <listitem
 ><para
->%i - simge</para
+>%i — simge</para
 ></listitem>
 <listitem
 ><para
->%m - ufak simge</para
+>%m — ufak simge</para
 ></listitem>
 <listitem
 ><para
->%c - başlık</para
+>%c — başlık</para
 ></listitem>
 </itemizedlist>
 
@@ -508,7 +508,7 @@
 ></varlistentry>
 <varlistentry
 ><term
->'application' grubu için ayarları kullan</term>
+>“application” grubu için ayarları kullan</term>
 <listitem
 ><para
 >Bu, &MIME; türünün, &MIME; türü için olan ayarları kullanmasını sağlar. (Eğer bir ses &MIME; türünü düzenliyorsanız ses (audio) grubu için olan ayarlar kullanılır).</para
@@ -533,7 +533,7 @@
 >&dolphin; veya &konqueror; gibi bir dosya yöneticisi kullanıyorsanız <mousebutton
 >sağ</mousebutton
 > tıklamanızda <guimenuitem
->Birlikte Aç...</guimenuitem
+>Birlikte Aç…</guimenuitem
 > menü ögesi bulunur. Bu kutu, görünecek uygulamaları listeler ve görünecekleri sıra bu liste kutusundakiyle aynıdır.</para>
 
 <para

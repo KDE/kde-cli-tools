@@ -45,7 +45,7 @@
 >&FDLNotice;</legalnotice>
 
 <date
->2010-09-21</date>
+>2010‒09‒21</date>
 <releaseinfo
 >KDE 4.5</releaseinfo>
 
@@ -90,7 +90,7 @@ does this really work?
 -->
 
 <para
->&kdesu;'ya hoş geldiniz! &kdesu;, &UNIX; <command
+>&kdesu;’ya hoş geldiniz! &kdesu;, &UNIX; <command
 >su</command
 > komutunun K Masaüstü Ortamı için hazırlanmış bir grafiksel ön yüzüdür. Bir programı, başka bir kullanıcının parolasını sağlayarak o kullanıcıymış gibi çalıştırmaya izin verir. &kdesu; ayrıcalıksız bir programdır, sistemin <command
 >su</command
@@ -115,7 +115,7 @@ does this really work?
 >kf5-config --path libexec</userinput
 > konumunda kurulu olduğundan ve dolayısıyla <envar
 >PATH</envar
->'inizde olmadığından, <command
+>’inizde olmadığından, <command
 >kdesu</command
 > komutunu başlatmak için <userinput
 >$(kf5-config --path libexec)<command
@@ -247,9 +247,9 @@ does this really work?
 ></term>
 <listitem
 ><para
->Bu seçenek, &kdesu;'nun <filename
+>Bu seçenek, &kdesu;’nun <filename
 >.desktop</filename
-> dosyalarında etkili kullanımını sağlar. &kdesu;'ya <parameter
+> dosyalarında etkili kullanımını sağlar. &kdesu;’ya <parameter
 >dosya</parameter
 > parametresiyle verilen dosyayı incelemesini söyler. Dosyaya geçerli kullanıcı tarafından yazılabiliyorsa &kdesu; komutu geçerli kullanıcı olarak yürütür. Aksi durumda, komut <parameter
 >kullanıcı</parameter
@@ -310,7 +310,7 @@ does this really work?
 ></term>
 <listitem>
 <para
->Öncelik değerini ayarlayın. Öncelik, 1-100 arasında herhangi bir numaradır; 100 en yüksek önceliği ve 0 ise en düşük önceliği belirtir. Öntanımlı değer 50’dir.</para>
+>Öncelik değerini ayarlayın. Öncelik, 1–100 arasında herhangi bir numaradır; 100 en yüksek önceliği ve 0 ise en düşük önceliği belirtir. Öntanımlı değer 50’dir.</para>
 </listitem>
 </varlistentry>
 <varlistentry>
@@ -355,7 +355,7 @@ does this really work?
 ></term>
 <listitem
 ><para
->&kdesu;'nun en yaygın kullanımı bir komutu yönetici kullanıcı olarak çalıştırmak olsa da, herhangi bir kullanıcı adını ve parolayı da verebilirsiniz.</para>
+>&kdesu;’nun en yaygın kullanımı bir komutu yönetici kullanıcı olarak çalıştırmak olsa da, herhangi bir kullanıcı adını ve parolayı da verebilirsiniz.</para>
 </listitem>
 </varlistentry>
 
@@ -390,7 +390,7 @@ does this really work?
 <para
 >&kdesu;, yetki almak için sistemin <command
 >su</command
-> komutunu kullanır. Bu bölümde, &kdesu;'nun bunu nice yaptığı anlatılır. </para>
+> komutunu kullanır. Bu bölümde, &kdesu;’nun bunu nice yaptığı anlatılır. </para>
 
 <para
 >Bazı <command
@@ -450,9 +450,9 @@ does this really work?
 > özelliği içerir. Güvenlik konusunda ilgiliyseniz bu paragrafı okumalısınız.</para>
 
 <para
->&kdesu;'nun parolaları anımsamasına izin vermek sisteminizde (ufak) bir güvenlik açığı doğurur. Tabii ki &kdesu; sizin kullanıcı kimliğiniz dışındaki kimsenin parolanızı kullanmasına izin vermez; ancak dikkatli kullanılmazsa bu <systemitem class="username"
+>&kdesu;’nun parolaları anımsamasına izin vermek sisteminizde (ufak) bir güvenlik açığı doğurur. Tabii ki &kdesu; sizin kullanıcı kimliğiniz dışındaki kimsenin parolanızı kullanmasına izin vermez; ancak dikkatli kullanılmazsa bu <systemitem class="username"
 >yönetici</systemitem
->'nin güvenlik düzeyini normal bir kullanıcının düzeyine (sen) düşürür. Hesabınızı kıran bir deşici, <systemitem class="username"
+>’nin güvenlik düzeyini normal bir kullanıcının düzeyine (sen) düşürür. Hesabınızı kıran bir deşici, <systemitem class="username"
 >yönetici</systemitem
 > erişimi alabilir. &kdesu; bunu engellemeye çalışır. Kullandığı güvenlik şeması görece güvenlidir ve burada açıklanmıştır.</para>
 
