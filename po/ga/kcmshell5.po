@@ -1,21 +1,23 @@
 # Translation of kcmshell.po to Irish
 # Copyright (C) 1999,2003,2004, 2005 Free Software Foundation, Inc.
-# Séamus Ó Ciardhuáin <seoc at iolfree dot ie>, 2003,2004,2005
 # Kevin Scannell <kscanne@gmail.com>, 2004, 2005, 2009
+# SPDX-FileCopyrightText: 2025 Charlotte <altronic25@protonmail.com>
+# Séamus Ó Ciardhuáin <seoc at iolfree dot ie>, 2003,2004,2005
 msgid ""
 msgstr ""
 "Project-Id-Version: kcmshell\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2025-11-17 16:18+0000\n"
-"PO-Revision-Date: 2005-01-16 00:43+0000\n"
-"Last-Translator: Kevin Scannell <kscanne@gmail.com>\n"
-"Language-Team: Irish <gaeilge-gnulinux@lists.sourceforge.net>\n"
+"PO-Revision-Date: 2025-12-24 05:32+0000\n"
+"Last-Translator: Charlotte <altronic25@protonmail.com>\n"
+"Language-Team: Irish\n"
 "Language: ga\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=5; plural=n==1 ? 0 : n==2 ? 1 : n<7 ? 2 : n < 11 ? "
 "3 : 4\n"
+"X-Generator: Lokalize 25.12.0\n"
 
 #, kde-format
 msgctxt "NAME OF TRANSLATORS"
@@ -39,10 +41,9 @@ msgid "A tool to start single system settings modules"
 msgstr "Uirlis chun modúl rialaithe singil de chuid KDE a thosú"
 
 #: main.cpp:187
-#, fuzzy, kde-format
-#| msgid "(c) 1999-2004, The KDE Developers"
+#, kde-format
 msgid "(c) 1999-2016, The KDE Developers"
-msgstr "© 1999-2004, Forbróirí KDE"
+msgstr "© 1999-2016, Forbróirí KDE"
 
 #: main.cpp:189
 #, kde-format
@@ -118,7 +119,7 @@ msgstr ""
 #, kde-format
 msgid ""
 "--lang is deprecated. Please set the LANGUAGE environment variable instead"
-msgstr ""
+msgstr "Is --lang cáinte. Cuir an athróg thimpeallacht LANGUAGE"
 
 #: main.cpp:219
 #, kde-format
@@ -131,15 +132,12 @@ msgid "No description available"
 msgstr "Níl cur síos ar fáil"
 
 #: main.cpp:303
-#, fuzzy, kde-format
-#| msgid ""
-#| "Could not find module '%1'. See kcmshell4 --list for the full list of "
-#| "modules."
+#, kde-format
 msgid ""
 "Could not find module '%1'. See kcmshell5 --list for the full list of "
 "modules."
 msgstr ""
-"Níorbh fhéidir modúl '%1' a aimsiú. Féach ar kcmshell4 --list chun an liosta "
+"Níorbh fhéidir modúl '%1' a aimsiú. Féach ar kcmshell5 --list chun an liosta "
 "iomlán a fháil."
 
 #~ msgid "KDE Control Module"
