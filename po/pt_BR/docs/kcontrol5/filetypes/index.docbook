@@ -1,9 +1,6 @@
 <?xml version="1.0" ?>
 <!DOCTYPE article PUBLIC "-//KDE//DTD DocBook XML V4.5-Based Variant V1.1//EN"
 "dtd/kdedbx45.dtd" [
-<!ENTITY calligrawords "<application
->Calligra Words</application
->">
 <!ENTITY % addindex "IGNORE">
 <!ENTITY % Brazilian-Portuguese "INCLUDE"
 > <!-- change language only here -->
@@ -35,9 +32,9 @@
 </authorgroup>
 
 <date
->09/04/2015</date>
+>11/11/2016</date>
 <releaseinfo
->Plasma 5.3</releaseinfo>
+>Plasma 5.8</releaseinfo>
 
 <keywordset>
 <keyword
@@ -91,9 +88,9 @@
 >Você pode modificar suas associações de arquivo atuais ou adicionar novas associações usando este módulo.</para>
 
 <para
->Cada associação de arquivo é gravada como um tipo MIME (<quote
+>Cada associação de arquivo é gravada como um tipo &MIME;. &MIME; vêm de <quote
 >Multipurpose Internet Mail Extensions</quote
-> ou Extensões de E-mail de Múltiplo Propósito). Ele permite que um computador determine o tipo do arquivo sem precisar abri-lo e analisar o formato de cada um.</para>
+> ou Extensões de E-mail de Múltiplo Propósito. Ele permite que um computador determine o tipo do arquivo sem precisar abri-lo e analisar o formato de cada um.</para>
 
 </sect2>
 
@@ -166,19 +163,19 @@
 >.</para>
 
 <para
->Você pode explorar cada uma destas categorias e ver as associações de arquivos, contidas em cada uma; basta clicar duas vezes no nome da categoria. Após o clique, será apresentada uma lista do tipos MIME associados naquela categoria.</para>
+>Você pode explorar cada uma destas categorias e ver as associações de arquivos, contidas em cada uma; basta clicar duas vezes no nome da categoria. Após o clique, será apresentada uma lista do tipos &MIME; associados naquela categoria.</para>
 
 <tip
 ><para
 >Você também pode procurar por um tipo &MIME; em particular usando a caixa de busca, chamada <guilabel
->Procurar tipo ou padrão de nome de arquivo</guilabel
+>Pesquisar pelo tipo ou padrão de nome de arquivo</guilabel
 >, localizada acima da lista de categorias.</para>
 
 <para
->Basta digitar a primeira letra do tipo &MIME; em que está interessado. As categorias são automaticamente expandidas e somente os tipos que incluem aquela letra serão exibidos.</para>
+>Basta digitar a primeira letra do tipo &MIME; em que está interessado. As categorias são automaticamente expandidas e somente os tipos &MIME; que incluem aquela letra serão exibidos.</para>
 
 <para
->Você pode digitar um segundo caractere e os tipos MIME serão limitados aos tipos que contém os dois caracteres.</para
+>Você pode digitar um segundo caractere e os tipos &MIME; serão limitados aos tipos &MIME; que contém os dois caracteres.</para
 ></tip>
 
 <sect3 id="file-assoc-use-add">
@@ -189,14 +186,14 @@
 >Se você deseja adicionar um tipo &MIME; à sua associação de arquivos, você pode clicar no botão <guibutton
 >Adicionar...</guibutton
 >. Uma pequena caixa de diálogo surgirá. Você seleciona a categoria a partir da caixa de seleção <guilabel
->Grupo</guilabel
+>Grupo:</guilabel
 >, e digita o nome do &MIME; na caixa chamada <guilabel
->Nome do tipo</guilabel
+>Nome do tipo:</guilabel
 >. Clique em <guibutton
 >OK</guibutton
-> para adicionar o novo tipo, ou clique em <guibutton
+> para adicionar o novo tipo &MIME;, ou clique em <guibutton
 >Cancelar</guibutton
-> para não adicionar.</para>
+> para não adicionar nenhum tipo &MIME; novo.</para>
 
 </sect3>
 
@@ -208,6 +205,8 @@
 >Se você deseja remover um tipo &MIME;, basta selecionar o tipo &MIME; que deseja remover clicando uma vez com o mouse sobre o nome do tipo. Em seguida, clique no botão denominado <guibutton
 >Remover</guibutton
 >, e o tipo &MIME; será removido imediatamente.</para>
+<para
+>Você pode remover apenas seus tipos &MIME; próprios.</para>
 
 </sect3>
 
@@ -254,7 +253,7 @@
 <listitem
 ><para
 ><guilabel
->Descrição</guilabel
+>Descrição:</guilabel
 > é uma pequena descrição do tipo do arquivo. Isto é somente para o seu benefício.</para
 ></listitem>
 <listitem
@@ -299,7 +298,7 @@
 <para
 >A caixa chamada <guilabel
 >Padrões de nome do arquivo</guilabel
-> determina quais os arquivos serão incluídos dentro deste tipo MIME.</para>
+> determina quais os arquivos serão incluídos dentro deste tipo &MIME;.</para>
 
 <para
 >Geralmente os arquivos são selecionados baseados em seu sufixo (exemplos: arquivos com final <literal role="extension"
@@ -314,7 +313,7 @@
 <para
 >O asterisco (<literal
 >*</literal
->) é um caractere curinga, que será usado em quase toda máscara de tipo MIME. Uma discussão completa sobre curingas está fora do escopo deste manual, mas é importante entender que o asterisco (neste contexto), <quote
+>) é um caractere curinga, que será usado em quase toda máscara de tipo &MIME;. Uma discussão completa sobre curingas está fora do escopo deste manual, mas é importante entender que o asterisco (neste contexto), <quote
 >combina</quote
 > com qualquer número de caracteres. Como exemplo: <userinput
 >*.pdf</userinput
@@ -341,11 +340,11 @@
 
 <sect3 id="file-assoc-use-desc">
 <title
->Editando a descrição dos tipos MIME.</title>
+>Editando a descrição dos tipos MIME</title>
 
 <para
 >Você pode digitar uma pequena descrição do tipo &MIME; na caixa de texto chamada <guilabel
->Descrição</guilabel
+>Descrição:</guilabel
 >. Isto irá ajudá-lo, e não irá afetar a função do tipo &MIME;.</para>
 
 </sect3>
@@ -360,9 +359,9 @@
 >, <guibutton
 >Mover para baixo</guibutton
 >, <guibutton
->Adicionar</guibutton
+>Adicionar...</guibutton
 >, <guibutton
->Editar</guibutton
+>Editar...</guibutton
 > e <guibutton
 >Remover</guibutton
 >) e uma caixa de listagem (que lista os aplicativos) que são usados para configurar os aplicativos.</para>
@@ -394,8 +393,8 @@
 
 <para
 >Você pode adicionar novos aplicativos à lista clicando no botão <guibutton
->Adicionar</guibutton
->. Uma caixa de diálogo irá aparecer e, usando esta caixa, você poderá selecionar o aplicativo que deseja usar para este tipo MIME. Clique em <guibutton
+>Adicionar...</guibutton
+>. Uma caixa de diálogo irá aparecer e, usando esta caixa, você poderá selecionar o aplicativo que deseja usar para este tipo &MIME;. Clique em <guibutton
 >OK</guibutton
 > quando tudo estiver feito, e o aplicativo será adicionado à lista atual.</para>
 
@@ -409,17 +408,17 @@
 >, <guilabel
 >Aplicativo</guilabel
 > e <guilabel
->Visualização</guilabel
+>Detalhes</guilabel
 >. Na página <guilabel
 >Aplicativo</guilabel
 > você pode editar o <guilabel
->Nome</guilabel
+>Nome:</guilabel
 >, <guilabel
->Descrição</guilabel
+>Descrição:</guilabel
 > e <guilabel
->Comentário</guilabel
+>Comentário:</guilabel
 >. No campo <guilabel
->Comando</guilabel
+>Comando:</guilabel
 > você pode ter diversos curingas após o comando, que serão substituídos com os valores reais quando o programa for executado:</para>
 <itemizedlist>
 <listitem
@@ -432,11 +431,11 @@
 ></listitem>
 <listitem
 ><para
->%u - uma única URL</para
+>%u - uma única &URL;</para
 ></listitem>
 <listitem
 ><para
->%U - uma lista de URLs</para
+>%U - uma lista de &URL;s</para
 ></listitem>
 <listitem
 ><para
@@ -485,7 +484,7 @@
 >Ao clicar na aba <guilabel
 >Embutir</guilabel
 >, serão apresentados quatro botões de opção dentro da seção chamada <guilabel
->Ações do botão esquerdo do mouse</guilabel
+>Ações do botão esquerdo do mouse no Konqueror</guilabel
 >. Isto determina como o gerenciador de arquivos visualiza o tipo &MIME; selecionado:</para>
 
 <variablelist>
@@ -504,7 +503,7 @@
 >Mostrar o arquivo em um visualizador separado</term>
 <listitem
 ><para
->Isto fará com que uma janela separada seja criada, para mostrar este tipo MIME.</para
+>Isto fará com que uma janela separada seja criada, para mostrar este tipo &MIME;.</para
 ></listitem
 ></varlistentry>
 <varlistentry
@@ -512,7 +511,7 @@
 >Usar as configurações do grupo 'application'</term>
 <listitem
 ><para
->Isto fará com que o tipo MIME use as configurações para o grupo do tipo MIME (se você estiver editando um tipo MIME de áudio, então as configurações do grupo de áudio serão usadas).</para
+>Isto fará com que o tipo &MIME; use as configurações para o grupo do tipo &MIME; (se você estiver editando um tipo &MIME; de áudio, então as configurações do grupo de áudio serão usadas).</para
 ></listitem
 ></varlistentry>
 <varlistentry
@@ -533,8 +532,8 @@
 <para
 >Quando usar um gerenciador de arquivos, como o &konqueror; ou o &dolphin;, você poderá clicar com o botão <mousebutton
 >direito</mousebutton
-> para fazer aparecer um menu com um item chamado <guimenu
->Abrir com...</guimenu
+> para fazer aparecer um menu com um item chamado <guimenuitem
+>Abrir com...</guimenuitem
 >. Esta listagem exibe os aplicativos que aparecerão, na ordem indicada, neste menu.</para>
 
 <para
@@ -551,7 +550,7 @@
 >Tornando as mudanças permanentes</title>
 
 <para
->Quando você estiver fazendo qualquer mudança nos tipos MIME, clique no botão <guibutton
+>Quando você estiver fazendo qualquer mudança nos tipos &MIME;, clique no botão <guibutton
 >Aplicar</guibutton
 > para tornar as mudanças permanentes, mas continue no módulo.</para>
 
