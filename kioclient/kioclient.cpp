@@ -180,6 +180,7 @@ int main(int argc, char **argv)
     QString description = i18n("Command-line tool for network-transparent operations");
     QString version = QLatin1String(PROJECT_VERSION);
     KAboutData data(QString(), programName, version, description, KAboutLicense::LGPL_V2);
+    data.setDesktopFileName(QString());
     KAboutData::setApplicationData(data);
 
     QCommandLineParser parser;
