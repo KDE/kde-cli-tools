@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kioclient\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-12-20 00:43+0000\n"
+"POT-Creation-Date: 2026-01-24 00:44+0000\n"
 "PO-Revision-Date: 2025-10-23 07:50+0000\n"
 "Last-Translator: Sveinn í Felli <sv1@fellsnet.is>\n"
 "Language-Team: Icelandic\n"
@@ -260,12 +260,12 @@ msgstr "KIO biðlari"
 msgid "Command-line tool for network-transparent operations"
 msgstr "Skipanalínuverkfæri fyrir gegnsæjar netvinnsluaðgerðir"
 
-#: kioclient.cpp:187
+#: kioclient.cpp:188
 #, kde-format
 msgid "Use message boxes and other native notifications"
 msgstr "Nota skilaboðaglugga og aðrar innbyggðar tilkynningar"
 
-#: kioclient.cpp:190
+#: kioclient.cpp:191
 #, kde-format
 msgid ""
 "Non-interactive use: no message boxes. If you don't want a graphical "
@@ -274,80 +274,80 @@ msgstr ""
 "Ógagnvirk notkun: engir skilaboðagluggar. Ef þú vilt ekki nota tengingu við "
 "myndviðmót skaltu nota --platform utan skjás"
 
-#: kioclient.cpp:194
+#: kioclient.cpp:195
 #, kde-format
 msgid "Overwrite destination if it exists (for copy and move)"
 msgstr "Skrifa yfir ýttak ef það fyrirfinnst (við afritun eða flutning)"
 
-#: kioclient.cpp:198
+#: kioclient.cpp:199
 #, kde-format
 msgid "file or URL"
 msgstr "skrá eða slóð"
 
-#: kioclient.cpp:198 kioclient.cpp:200 kioclient.cpp:203 kioclient.cpp:208
+#: kioclient.cpp:199 kioclient.cpp:201 kioclient.cpp:204 kioclient.cpp:209
 #, kde-format
 msgid "urls..."
 msgstr "slóðir..."
 
-#: kioclient.cpp:200 kioclient.cpp:203
+#: kioclient.cpp:201 kioclient.cpp:204
 #, kde-format
 msgid "Source URL or URLs"
 msgstr "Upprunaslóð eða slóðir"
 
-#: kioclient.cpp:201 kioclient.cpp:204
+#: kioclient.cpp:202 kioclient.cpp:205
 #, kde-format
 msgid "Destination URL"
 msgstr "Úttaksnetfang (URL):"
 
-#: kioclient.cpp:201 kioclient.cpp:204
+#: kioclient.cpp:202 kioclient.cpp:205
 #, kde-format
 msgid "url"
 msgstr "slóð"
 
-#: kioclient.cpp:206
+#: kioclient.cpp:207
 #, kde-format
 msgid "Show available commands"
 msgstr "Sýna tiltækar skipanir"
 
-#: kioclient.cpp:207
+#: kioclient.cpp:208
 #, kde-format
 msgid "Command (see --commands)"
 msgstr "Skipun (sjá --commands)"
 
-#: kioclient.cpp:207
+#: kioclient.cpp:208
 #, kde-format
 msgid "command"
 msgstr "skipun"
 
-#: kioclient.cpp:208
+#: kioclient.cpp:209
 #, kde-format
 msgid "Arguments for command"
 msgstr "Viðföng fyrir skipun"
 
-#: kioclient.cpp:232
+#: kioclient.cpp:233
 #, kde-format
 msgctxt "@info:shell"
 msgid "%1: Syntax error, not enough arguments\n"
 msgstr "%1: Málskipanarvilla, of fá viðföng\n"
 
-#: kioclient.cpp:236
+#: kioclient.cpp:237
 #, kde-format
 msgctxt "@info:shell"
 msgid "%1: Syntax error, too many arguments\n"
 msgstr "%1: Málskipanarvilla, of mörg viðföng\n"
 
-#: kioclient.cpp:464
+#: kioclient.cpp:465
 #, kde-format
 msgid "Destination where to download the files"
 msgstr "Viðtökustaður fyrir skrár sem eru sóttar"
 
-#: kioclient.cpp:511
+#: kioclient.cpp:512
 #, kde-format
 msgctxt "@info:shell"
 msgid "%1: Syntax error, unknown command '%2'\n"
 msgstr "%1: Málskipunarvilla, óþekkt skipun '%2'\n"
 
-#: kioclient.cpp:527
+#: kioclient.cpp:528
 #, kde-format
 msgctxt "@info:shell"
 msgid "%1: %2\n"
