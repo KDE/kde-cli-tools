@@ -18,55 +18,47 @@ set(libfiletypes_SRCS
  multiapplydialog.cpp
  newtypedlg.cpp
  kserviceselectdlg.cpp
- filetypedetails.h
- filegroupdetails.h
- kservicelistwidget.h
- typeslistitem.h
- typeslistitembase.h
- typeslistproxyitem.h
- typeslisttreewidget.h
- mimetypedata.h
- mimetypewriter.h
- multiapplydialog.h
- newtypedlg.h
- kserviceselectdlg.h
 )
 
-########### next target ###############
+########### library ###############
 
-set(kcm_filetypes_SRCS filetypesview.cpp filetypesview.h ${libfiletypes_SRCS})
+add_library(libfiletypes STATIC ${libfiletypes_SRCS})
+# Needed for KDE Invent CI
+set_target_properties(libfiletypes PROPERTIES POSITION_INDEPENDENT_CODE TRUE)
+target_link_libraries(libfiletypes
+  PUBLIC
+    KF6::I18n
+    KF6::KIOWidgets # KOpenWithDialog, KBuildSycocaProgressDialog
+  PRIVATE
+    KF6::ConfigCore
+    KF6::IconThemes
+    KF6::IconWidgets
+    KF6::Parts
+    Qt::DBus
+)
+
+########### KCM ###############
+
+set(kcm_filetypes_SRCS filetypesview.cpp filetypesview.h)
 
 kcoreaddons_add_plugin(kcm_filetypes SOURCES ${kcm_filetypes_SRCS} INSTALL_NAMESPACE "plasma/kcms/systemsettings_qwidgets")
 
 kcmutils_generate_desktop_file(kcm_filetypes)
 target_link_libraries(kcm_filetypes
-    KF6::ConfigCore
-    KF6::IconThemes
-    KF6::IconWidgets
-    KF6::I18n
+    libfiletypes
     KF6::KCMUtils
-    KF6::KIOWidgets # KOpenWithDialog, KBuildSycocaProgressDialog
-    KF6::Parts
-    Qt::DBus
 )
 
-########### next target ###############
+########### command line utility ###############
 
-set(keditfiletype_SRCS keditfiletype.cpp keditfiletype.h ${libfiletypes_SRCS})
+set(keditfiletype_SRCS keditfiletype.cpp keditfiletype.h)
 
 add_executable(keditfiletype ${keditfiletype_SRCS})
 target_compile_definitions(keditfiletype PRIVATE -DPROJECT_VERSION="${PROJECT_VERSION}")
 
 target_link_libraries(keditfiletype
-    KF6::ConfigCore
-    KF6::IconThemes
-    KF6::IconWidgets
-    KF6::KIOWidgets # KOpenWithDialog, KBuildSycocaProgressDialog
+    libfiletypes
     KF6::WindowSystem
-    KF6::I18n
-    KF6::Service
-    KF6::Parts
-    Qt::DBus
 )
 
 install_compat_symlink(keditfiletype)
