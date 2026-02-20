@@ -143,10 +143,9 @@ msgid "Cannot execute command '%1'."
 msgstr "Ní féidir ordú '%1' a rith."
 
 #: kdesu.cpp:158
-#, fuzzy, kde-format
-#| msgid "Cannot execute command '%1'."
+#, kde-format
 msgid "Cannot execute command '%1'. It contains invalid characters."
-msgstr "Ní féidir ordú '%1' a rith."
+msgstr ""
 
 #: kdesu.cpp:232
 #, kde-format
@@ -258,18 +257,3 @@ msgstr ""
 msgid "Internal error: illegal return from SuProcess::checkInstall()"
 msgstr ""
 "Earráid inmheánach: filleadh neamhcheadaithe ó SuProcess::checkInstall()"
-
-#~ msgid "Ignore"
-#~ msgstr "Déan neamhaird de"
-
-#~ msgid "&Ignore"
-#~ msgstr "Déan neamha&ird de"
-
-#~ msgid "Command '%1' not found."
-#~ msgstr "Ní bhfuarthas ordú '%1'."
-
-#~ msgid "Incorrect password, please try again."
-#~ msgstr "Focal faire mícheart, bain triail eile as."
-
-#~ msgid "Let command use existing dcopserver"
-#~ msgstr "Lig don ordú freastalaí dcop atá ann a úsáid"

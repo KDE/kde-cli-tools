@@ -28,35 +28,26 @@ msgid "Your emails"
 msgstr ""
 
 #: kmimetypefinder.cpp:26
-#, fuzzy, kde-format
-#| msgid "MimeType Finder"
+#, kde-format
 msgid "MIME Type Finder"
-msgstr "Aimsitheoir Cineáil MIME"
+msgstr ""
 
 #: kmimetypefinder.cpp:27
-#, fuzzy, kde-format
-#| msgid "Gives the mimetype for a given file"
+#, kde-format
 msgid "Gives the MIME type for a given file"
-msgstr "Aimsigh an cineál MIME do rogha comhad"
+msgstr ""
 
 #: kmimetypefinder.cpp:33
-#, fuzzy, kde-format
-#| msgid "Use only the file content for determining the mimetype."
+#, kde-format
 msgid "Use only the file content for determining the MIME type."
 msgstr ""
-"Ná húsáid ach inneachar an chomhaid chun a chineál MIME a dhéanamh amach."
 
 #: kmimetypefinder.cpp:35
-#, fuzzy, kde-format
-#| msgid ""
-#| "Whether use the file name only for determining the mimetype. Not used if -"
-#| "c is specified."
+#, kde-format
 msgid ""
 "Whether use the file name only for determining the MIME type. Not used if -c "
 "is specified."
 msgstr ""
-"Roghnaigh é seo más mian leat ainm an chomhaid amháin a úsáid chun a chineál "
-"MIME a dhéanamh amach.  Ní úsáidfear é seo má tá -c roghnaithe."
 
 #: kmimetypefinder.cpp:36
 #, kde-format
