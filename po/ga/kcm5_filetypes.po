@@ -217,10 +217,9 @@ msgstr ""
 "MIME a dhéanamh amach go díreach trí inneachar an chomhaid a iniúchadh.</p>"
 
 #: filetypesview.cpp:74
-#, fuzzy, kde-format
-#| msgid "Find file type or filename pattern"
+#, kde-format
 msgid "Search for file type or filename pattern..."
-msgstr "Aimsigh cineál comhaid nó patrún comhadainm"
+msgstr ""
 
 #: filetypesview.cpp:80
 #, kde-format
@@ -317,10 +316,9 @@ msgstr ""
 "trí anailís a dhéanamh ar inneachar comhaid)."
 
 #: keditfiletype.cpp:120
-#, fuzzy, kde-format
-#| msgid "File type %1"
+#, kde-format
 msgid "File Type Editor"
-msgstr "Cineál comhaid %1"
+msgstr ""
 
 #: keditfiletype.cpp:122
 #, kde-format
@@ -543,42 +541,3 @@ msgstr ""
 "Iontráil ainm an chineáil comhaid.  Mar shampla, má roghnaíonn tú 'image' "
 "mar chatagóir agus iontrálann tú 'custom' anseo, cruthófar an cineál 'image/"
 "custom'."
-
-#~ msgid "KEditFileType"
-#~ msgstr "KEditFileType"
-
-#~ msgid ""
-#~ "This is the icon associated with the selected file type. Choosing a "
-#~ "different icon requires shared-mime-info to be at least version 0.40."
-#~ msgstr ""
-#~ "Seo é an deilbhín a bhaineann leis an gcineál comhaid a roghnaigh tú. Tá "
-#~ "shared-mime-info leagan 0.40 nó níos déanaí de dhíth chun deilbhín eile a "
-#~ "roghnú."
-
-#~ msgid "You are not authorized to remove this service."
-#~ msgstr "Níl cead agat an tseirbhís seo a bhaint."
-
-#~ msgid "Click here to remove the selected file type."
-#~ msgstr "Cliceáil anseo chun an cineál roghnaithe comhaid a bhaint."
-
-#~ msgid "None"
-#~ msgstr "Neamhní"
-
-#~ msgid "The service <b>%1</b> can not be removed."
-#~ msgstr "Ní féidir an tseirbhís <b>%1</b> a bhaint."
-
-#~ msgid ""
-#~ "The service is listed here because it has been associated with the <b>%1</"
-#~ "b> (%2) file type and files of type <b>%3</b> (%4) are per definition "
-#~ "also of type <b>%5</b>."
-#~ msgstr ""
-#~ "Taispeántar an tseirbhís anseo toisc gur ceanglaíodh é le cineál comhaid "
-#~ "<b>%1</b> (%2), agus tá comhaid den chineál <b>%3</b> (%4) den chineál <b>"
-#~ "%5</b> freisin, de réir sainmhínithe."
-
-#~ msgid ""
-#~ "Either select the <b>%1</b> file type to remove the service from there or "
-#~ "move the service down to deprecate it."
-#~ msgstr ""
-#~ "Roghnaigh an cineál comhaid <b>%1</b> chun an tseirbhís a bhaint uaidh, "
-#~ "nó bog an tseirbhís síos go tosaíocht níos ísle."

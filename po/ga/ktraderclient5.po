@@ -62,6 +62,3 @@ msgstr "Iallach, luaite sa teanga iarratais trádálaí"
 #, kde-format
 msgid "Output only paths to desktop files"
 msgstr ""
-
-#~ msgid "A mimetype"
-#~ msgstr "Cineál MIME"

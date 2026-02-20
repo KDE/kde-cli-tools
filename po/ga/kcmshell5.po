@@ -34,10 +34,9 @@ msgid "System Settings Module"
 msgstr ""
 
 #: main.cpp:185
-#, fuzzy, kde-format
-#| msgid "A tool to start single KDE control modules"
+#, kde-format
 msgid "A tool to start single system settings modules"
-msgstr "Uirlis chun modúl rialaithe singil de chuid KDE a thosú"
+msgstr ""
 
 #: main.cpp:187
 #, kde-format
@@ -138,15 +137,3 @@ msgid ""
 msgstr ""
 "Níorbh fhéidir modúl '%1' a aimsiú. Féach ar kcmshell5 --list chun an liosta "
 "iomlán a fháil."
-
-#~ msgid "KDE Control Module"
-#~ msgstr "Modúl Rialaithe KDE"
-
-#~ msgid "Embeds the module with buttons in window with id <id>"
-#~ msgstr "Leabaigh an modúl le cnaipí i bhfuinneog leis an aitheantas <id>"
-
-#~ msgid "Embeds the module without buttons in window with id <id>"
-#~ msgstr "Leabaigh an modúl gan chnaipí i bhfuinneog leis an aitheantas <id>"
-
-#~ msgid "Configure - %1"
-#~ msgstr "Cumraíocht - %1"

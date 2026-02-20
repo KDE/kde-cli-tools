@@ -71,26 +71,16 @@ msgid "Command to execute"
 msgstr "Ordú le rith"
 
 #: kstart.cpp:275
-#, fuzzy, kde-format
-#| msgid ""
-#| "Alternative to <command>: desktop file to start. D-Bus service will be "
-#| "printed to stdout"
+#, kde-format
 msgid ""
 "Alternative to <command>: desktop file path to start. D-Bus service will be "
 "printed to stdout. Deprecated: use --application"
 msgstr ""
-"Mar mhalairt ar <command>: comhad deisce le tosú. Priontálfar seirbhís D-Bus "
-"ar an ngnáth-aschur"
 
 #: kstart.cpp:278
-#, fuzzy, kde-format
-#| msgid ""
-#| "Alternative to <command>: desktop file to start. D-Bus service will be "
-#| "printed to stdout"
+#, kde-format
 msgid "Alternative to <command>: desktop file to start."
 msgstr ""
-"Mar mhalairt ar <command>: comhad deisce le tosú. Priontálfar seirbhís D-Bus "
-"ar an ngnáth-aschur"
 
 #: kstart.cpp:281
 #, kde-format
@@ -207,6 +197,3 @@ msgstr "Ní fhaigheann an fhuinneog iontráil ar an mbrabhsálaí leathanach"
 #, kde-format
 msgid "No command specified"
 msgstr "Níor tugadh ordú"
-
-#~ msgid "The window is sent to the system tray in Kicker"
-#~ msgstr "Seoltar an fhuinneog chuig tráidire an chórais i Kicker"
