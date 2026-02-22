@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: kstart\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2025-11-17 11:53+0000\n"
-"PO-Revision-Date: 2019-07-30 22:14+0300\n"
+"PO-Revision-Date: 2026-02-22 02:33+0200\n"
 "Last-Translator: Moo\n"
 "Language-Team: Lithuanian <kde-i18n-lt@kde.org>\n"
 "Language: lt\n"
@@ -17,7 +17,7 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=4; plural=(n==1 ? 0 : n%10>=2 && (n%100<10 || n"
 "%100>=20) ? 1 : n%10==0 || (n%100>10 && n%100<20) ? 2 : 3);\n"
-"X-Generator: Poedit 2.0.6\n"
+"X-Generator: Poedit 3.8\n"
 
 #, kde-format
 msgctxt "NAME OF TRANSLATORS"
@@ -37,12 +37,12 @@ msgstr "KStart"
 #: kstart.cpp:79
 #, kde-format
 msgid "Utility to launch applications"
-msgstr ""
+msgstr "Paslaugų programa, skirta paleisti programas"
 
 #: kstart.cpp:81
 #, kde-format
 msgid "(C) 1997-2000 Matthias Ettrich (ettrich@kde.org)"
-msgstr "(C) 1997-2000 Matthias Ettrich (ettrich@kde.org)"
+msgstr "(C) 1997–2000 Matthias Ettrich (ettrich@kde.org)"
 
 #: kstart.cpp:83
 #, kde-format
@@ -65,20 +65,16 @@ msgid "Command to execute"
 msgstr "Komanda, kurią vykdyti"
 
 #: kstart.cpp:92
-#, fuzzy, kde-format
-#| msgid ""
-#| "Alternative to <command>: desktop file to start. D-Bus service will be "
-#| "printed to stdout"
+#, kde-format
 msgid "Alternative to <command>: desktop file name to start, e.g. org.kde.kate"
 msgstr ""
-"Alternatyva <command> komandai: darbalaukio failas, kurį paleisti. D-Bus "
-"tarnybos pranešimai bus nukreipiami į stdout"
+"Alternatyva <command> komandai: darbalaukio failas, kurį paleisti, pvz., org."
+"kde.kate"
 
 #: kstart.cpp:95
-#, fuzzy, kde-format
-#| msgid "Optional URL to pass <desktopfile>, when using --service"
+#, kde-format
 msgid "Optional URL to pass to the application when using --application"
-msgstr "Nebūtinas URL, skirtas perduoti <desktopfile>, naudojant --service"
+msgstr "Nebūtinas URL, kurį perduoti programai, kai naudojamas --application"
 
 #: kstart.cpp:107
 #, kde-format
