@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: kde-cli-tools\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2025-11-17 11:53+0000\n"
-"PO-Revision-Date: 2022-10-21 00:48+0000\n"
+"PO-Revision-Date: 2026-02-22 02:37+0200\n"
 "Last-Translator: Automatically generated\n"
 "Language-Team: none\n"
 "Language: lt\n"
@@ -17,33 +17,34 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=4; plural=(n==1 ? 0 : n%10>=2 && (n%100<10 || n"
 "%100>=20) ? 1 : n%10==0 || (n%100>10 && n%100<20) ? 2 : 3);\n"
+"X-Generator: Poedit 3.8\n"
 
 #, kde-format
 msgctxt "NAME OF TRANSLATORS"
 msgid "Your names"
-msgstr ""
+msgstr "Moo"
 
 #, kde-format
 msgctxt "EMAIL OF TRANSLATORS"
 msgid "Your emails"
-msgstr ""
+msgstr "<>"
 
 #: main.cpp:30
 #, kde-format
 msgid "App to open Settings app"
-msgstr ""
+msgstr "Programa, skirta atverti nuostatų programą"
 
 #: main.cpp:32
 #, kde-format
 msgid "A tool to start system settings"
-msgstr ""
+msgstr "Įrankis, skirtas paleisti sistemos nuostatas"
 
 #: main.cpp:34
 #, kde-format
 msgid "(c) 2021, The KDE Developers"
-msgstr ""
+msgstr "(c) 2021, KDE plėtotojai"
 
 #: main.cpp:67
 #, kde-format
 msgid "Could not open: %1"
-msgstr ""
+msgstr "Nepavyko atverti: %1"
