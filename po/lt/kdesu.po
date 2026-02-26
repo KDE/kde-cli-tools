@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: kdesu\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2025-11-17 11:53+0000\n"
-"PO-Revision-Date: 2019-11-04 19:59+0200\n"
+"PO-Revision-Date: 2026-02-26 02:20+0200\n"
 "Last-Translator: Moo\n"
 "Language-Team: Lithuanian <kde-i18n-lt@kde.org>\n"
 "Language: lt\n"
@@ -17,7 +17,7 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=4; plural=(n==1 ? 0 : n%10>=2 && (n%100<10 || n"
 "%100>=20) ? 1 : n%10==0 || (n%100>10 && n%100<20) ? 2 : 3);\n"
-"X-Generator: Poedit 2.0.6\n"
+"X-Generator: Poedit 3.8\n"
 
 #, kde-format
 msgctxt "NAME OF TRANSLATORS"
@@ -42,7 +42,7 @@ msgstr "Paleidžia programą su padidintomis privilegijomis."
 #: kdesu.cpp:96
 #, kde-format
 msgid "Copyright (c) 1998-2000 Geert Jansen, Pietro Iglio"
-msgstr "Copyright (c) 1998-2000 Geert Jansen, Pietro Iglio"
+msgstr "Copyright (c) 1998–2000 Geert Jansen, Pietro Iglio"
 
 #: kdesu.cpp:97
 #, kde-format
@@ -113,7 +113,7 @@ msgstr "Naudoti tikralaikį planavimą"
 #: kdesu.cpp:117
 #, kde-format
 msgid "Do not display ignore button"
-msgstr "Nerodyti nepaisymo mygtuką"
+msgstr "Nerodyti nepaisymo mygtuko"
 
 #: kdesu.cpp:118
 #, kde-format
@@ -131,7 +131,7 @@ msgctxt ""
 "Transient means that the kdesu app will be attached to the app specified by "
 "the winid so that it is like a dialog box rather than some separate program"
 msgid "Makes the dialog transient for an X app specified by winid"
-msgstr "Padaro dialogą priklausomą nuo X programos, kurią nurodė winid"
+msgstr "Padaro dialogą priklausomą nuo X programos, kurią nurodė „winid“"
 
 #: kdesu.cpp:128
 #, kde-format
