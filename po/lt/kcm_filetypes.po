@@ -9,7 +9,7 @@ msgstr ""
 "Project-Id-Version: filetypes\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2025-11-17 11:53+0000\n"
-"PO-Revision-Date: 2019-12-16 16:50+0200\n"
+"PO-Revision-Date: 2026-02-26 02:18+0200\n"
 "Last-Translator: Moo\n"
 "Language-Team: Lithuanian <kde-i18n-lt@kde.org>\n"
 "Language: lt\n"
@@ -18,7 +18,7 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=4; plural=(n==1 ? 0 : n%10>=2 && (n%100<10 || n"
 "%100>=20) ? 1 : n%10==0 || (n%100>10 && n%100<20) ? 2 : 3);\n"
-"X-Generator: Poedit 2.2.4\n"
+"X-Generator: Poedit 3.8\n"
 
 #, kde-format
 msgctxt "NAME OF TRANSLATORS"
@@ -58,9 +58,9 @@ msgid ""
 msgstr ""
 "Čia galite konfigūruoti kaip Konqueror failų tvarkytuvė elgsis, kai "
 "spustelėsite ant šiai grupei priklausančio failo. Konqueror gali parodyti "
-"failą su įtaisytoje žiūryklėje arba paleisti atskirą programą. Specifiniam "
-"failo tipui galite pakeisti šią nuostatą failo tipo konfigūracijos „Įdėjimų“ "
-"kortelėje. Dolphin failus visada rodo atskiroje žiūryklėje"
+"failą įtaisytoje žiūryklėje arba paleisti atskirą programą. Specifiniam "
+"failo tipui galite pakeisti šią nuostatą failo tipo konfigūracijos "
+"„Įterpimų“ kortelėje. Dolphin visada rodo failus atskiroje žiūryklėje"
 
 #: filetypedetails.cpp:61
 #, kde-format
@@ -68,8 +68,8 @@ msgid ""
 "This button displays the icon associated with the selected file type. Click "
 "on it to choose a different icon."
 msgstr ""
-"Šis mygtukas parodys piktogramą, susietą su nurodyto tipo failais. "
-"Spustelėkite ant jo, norėdami pasirinkti kitokią piktogramą."
+"Šis mygtukas atvaizduoja piktogramą, susietą su pasirinktu failo tipu. "
+"Spustelėkite ant jo norėdami pasirinkti kitokią piktogramą."
 
 #: filetypedetails.cpp:67
 #, kde-format
@@ -84,8 +84,8 @@ msgid ""
 "file type 'text/plain'; all files ending in '.txt' are recognized as plain "
 "text files."
 msgstr ""
-"Šiame lange yra šablonų, naudojamų identifikuoti nurodyto tipo failus, "
-"sąrašas. Pavyzdžiui, šablonas *.txt yra susietas su 'text/plain' failų tipu. "
+"Šiame lange yra šablonų, naudojamų identifikuoti pasirinkto tipo failus, "
+"sąrašas. Pavyzdžiui, šablonas *.txt yra susietas su „text/plain“ failo tipu. "
 "Visi failai, pasibaigiantys „.txt“, yra atpažįstami kaip grynojo teksto "
 "failai."
 
@@ -121,9 +121,9 @@ msgid ""
 "'HTML Page'). This description will be used by applications like Konqueror "
 "to display directory content."
 msgstr ""
-"Galite įvesti trumpą pasirinkto failų tipo failų aprašą (pvz,. „HTML "
-"puslapis“). Aprašą, katalogo turinio rodymui, naudos tokios programos kaip "
-"Konqueror."
+"Galite įvesti trumpą pasirinkto failо tipo failų aprašą (pvz., „HTML "
+"puslapis“). Aprašą, skirtą katalogo turinio rodymui, naudos tokios programos "
+"kaip Konqueror."
 
 #: filetypedetails.cpp:129
 #, kde-format
@@ -145,8 +145,8 @@ msgid ""
 "group G to which this type belongs; for instance, 'image' if the current "
 "file type is image/png. Dolphin always shows files in a separate viewer."
 msgstr ""
-"Čia galite konfigūruoti kaip Konqueror failų tvarkytuvė elgsis kai "
-"spustelėsite ant šio failų tipo failo. Konqueror gali parodyti failą "
+"Čia galite konfigūruoti kaip Konqueror failų tvarkytuvė elgsis, kai "
+"spustelėsite ant šio failо tipo failo. Konqueror gali parodyti failą "
 "įtaisytoje žiūryklėje arba paleisti atskirą programą. Jei nustatysite "
 "„Naudoti nuostatas G grupei“, failų tvarkytuvė elgsis pagal G grupės, kuriai "
 "priklauso šis tipas, nuostatas, pavyzdžiui, „paveikslas“, jeigu dabartinis "
@@ -160,17 +160,17 @@ msgstr "&Bendros"
 #: filetypedetails.cpp:168
 #, kde-format
 msgid "&Embedding"
-msgstr "Į&dėjimai"
+msgstr "Į&terpimai"
 
 #: filetypedetails.cpp:209
 #, kde-format
 msgid "Add New Extension"
-msgstr "Pridėti naują plėtinį"
+msgstr "Pridėti naują prievardį"
 
 #: filetypedetails.cpp:209
 #, kde-format
 msgid "Extension:"
-msgstr "Plėtinys:"
+msgstr "Prievardis:"
 
 #: filetypedetails.cpp:327
 #, kde-format
@@ -180,7 +180,7 @@ msgstr "Failo tipas %1"
 #: filetypedetails.cpp:335
 #, kde-format
 msgid "Use settings for '%1' group"
-msgstr "Naudoti nuostatas \"%1\" grupei"
+msgstr "Naudoti nuostatas „%1“ grupei"
 
 #: filetypesview.cpp:57
 #, kde-format
@@ -211,7 +211,7 @@ msgid ""
 "collapse it. Select a file type (e.g. text/html for HTML files) to view/edit "
 "the information for that file type using the controls on the right."
 msgstr ""
-"Čia galite matyti sistemai žinomų failų tipų hierarchinį sąrašą. Norėdami "
+"Čia galite matyti sistemai žinomų failo tipų hierarchinį sąrašą. Norėdami "
 "išplėsti kategorijos sąrašą, spustelėkite ant „+“ ženklo, o norėdami jį "
 "suskleisti, ant „-“ ženklo. Norėdami pasižiūrėti arba taisyti failo tipo "
 "informaciją, pažymėkite failo tipą (pvz., HTML failams, text/html) ir "
@@ -220,7 +220,7 @@ msgstr ""
 #: filetypesview.cpp:91
 #, kde-format
 msgid "Click here to add a new file type."
-msgstr "Norėdami pridėti naują failo tipą, spustelėkite čia."
+msgstr "Spustelėkite čia norėdami pridėti naują failo tipą."
 
 #: filetypesview.cpp:93 filetypesview.cpp:389
 #, kde-format
@@ -230,7 +230,7 @@ msgstr "Ša&linti"
 #: filetypesview.cpp:119
 #, kde-format
 msgid "Select a file type by name or by extension"
-msgstr "Pasirinkite failo tipą pagal pavadinimą arba plėtinį"
+msgstr "Pasirinkite failo tipą pagal pavadinimą arba prievardį"
 
 #: filetypesview.cpp:382
 #, kde-format
@@ -253,7 +253,7 @@ msgid ""
 msgstr ""
 "Spustelėkite čia, norėdami sugrąžinti pradinį šio failo tipo sisteminio "
 "masto apibrėžimą. Tai atšauks visus failo tipui atliktus pakeitimus. "
-"Turėkite omenyje, kad sisteminio masto failų tipai negali būti ištrinti. Vis "
+"Turėkite omenyje, kad sisteminio masto failo tipai negali būti ištrinti. Vis "
 "dėlto, galite išvalyti jų šablonų sąrašą, taip sumažindami tikimybę, kad tie "
 "tipai bus naudojami (tačiau failo tipo nustatymas pagal failo turinį visgi "
 "gali juos panaudoti)."
@@ -273,28 +273,28 @@ msgid ""
 "still end up using them)."
 msgstr ""
 "Spustelėkite čia, norėdami galutinai ištrinti failo tipo apibrėžimą. Tai "
-"galima padaryti tik su naudotojo apibrėžtais failų tipais. Sisteminio masto "
-"failų tipų negalima ištrinti. Vis dėlto, galite išvalyti jų šablonų sąrašą, "
+"galima padaryti tik naudotojo apibrėžtiems failo tipams. Sisteminio masto "
+"failo tipų negalima ištrinti. Vis dėlto, galite išvalyti jų šablonų sąrašą, "
 "taip sumažindami tikimybę, kad tie tipai bus naudojami (tačiau failo tipo "
 "nustatymas pagal failo turinį visgi gali juos panaudoti)."
 
 #: keditfiletype.cpp:114
 #, kde-format
 msgid "File Type Editor"
-msgstr "Failų tipų redaktorius"
+msgstr "Failo tipų redaktorius"
 
 #: keditfiletype.cpp:116
 #, kde-format
 msgid ""
 "KDE file type editor - simplified version for editing a single file type"
 msgstr ""
-"KDE failų tipų redaktorius - supaprastinta vieno failo tipo redagavimo "
-"versija"
+"KDE failų tipų redaktorius – supaprastinta versija, skirta vieno failo tipo "
+"taisymui"
 
 #: keditfiletype.cpp:118
 #, kde-format
 msgid "(c) 2000, KDE developers"
-msgstr "(c) 2000, KDE programuotojai"
+msgstr "(c) 2000, KDE plėtotojai"
 
 #: keditfiletype.cpp:119
 #, kde-format
@@ -309,12 +309,12 @@ msgstr "David Faure"
 #: keditfiletype.cpp:126
 #, kde-format
 msgid "Makes the dialog transient for the window specified by winid"
-msgstr "Padaro dialogą pereinamąjį langui, nurodytam pagal „winid“"
+msgstr "Padaro dialogą priklausomą nuo lango, kurį nurodė „winid“"
 
 #: keditfiletype.cpp:128
 #, kde-format
 msgid "File type to edit (e.g. text/html)"
-msgstr "Failo tipas, kurį redaguoti (pvz., text/html)"
+msgstr "Failo tipas, kurį taisyti (pvz., text/html)"
 
 #: keditfiletype.cpp:159
 #, kde-format
@@ -358,7 +358,7 @@ msgstr ""
 "Tai programų, susietų su pasirinkto failo tipo failais, sąrašas. Šis sąrašas "
 "yra rodomas Konqueror kontekstiniame meniu, kai pasirenkate „Atverti "
 "naudojant...“ parinktį. Jeigu su šiuo failo tipu yra susieta daugiau nei "
-"viena programa, tuomet sąrašas bus surikiuotas pagal pirmenybę taip, kad "
+"viena programa, tada sąrašas bus surikiuotas pagal pirmenybę taip, kad "
 "aukščiausias elementas turėtų pirmenybę prieš kitus."
 
 #: kservicelistwidget.cpp:68
@@ -373,7 +373,7 @@ msgstr ""
 "Tai tarnybų, susietų su pasirinkto failo tipo failais, sąrašas. Šis sąrašas "
 "yra rodomas Konqueror kontekstiniame meniu, kai pasirenkate „Peržiūrėti "
 "naudojant...“ parinktį. Jeigu su šiuo failo tipu yra susieta daugiau nei "
-"viena tarnyba, tuomet sąrašas bus surikiuotas pagal pirmenybę taip, kad "
+"viena tarnyba, tada sąrašas bus surikiuotas pagal pirmenybę taip, kad "
 "aukščiausias elementas turėtų pirmenybę prieš kitus."
 
 #: kservicelistwidget.cpp:80
@@ -391,7 +391,7 @@ msgid ""
 msgstr ""
 "Priskiria pasirinktai programai didesnę pirmenybę,\n"
 "pakeliant ją sąraše aukštyn. Turėkite omenyje:\n"
-"Tai įtakos pasirinktą programą tik tuo atveju,\n"
+"Tai darys įtaką pasirinktai programai tik tuo atveju,\n"
 "jei failo tipas susietas su daugiau nei viena programa."
 
 #: kservicelistwidget.cpp:90
@@ -418,7 +418,7 @@ msgid ""
 msgstr ""
 "Priskiria pasirinktai programai mažesnę pirmenybę,\n"
 "nuleidžiant ją sąraše žemyn. Turėkite omenyje:\n"
-"Tai įtakos pasirinktą programą tik tuo atveju,\n"
+"Tai darys įtaką pasirinktai programai tik tuo atveju,\n"
 "jei failo tipas susietas su daugiau nei viena programa."
 
 #: kservicelistwidget.cpp:102
@@ -453,12 +453,12 @@ msgstr "Pašalinti pasirinktą programą iš sąrašo."
 #: kservicelistwidget.cpp:126 multiapplydialog.cpp:19
 #, kde-format
 msgid "Apply To..."
-msgstr ""
+msgstr "Taikyti..."
 
 #: kservicelistwidget.cpp:131
 #, kde-format
 msgid "Apply the current preference order to other file types."
-msgstr ""
+msgstr "Taikyti dabartinę pirmenybės tvarką kitiems failo tipams."
 
 #: kservicelistwidget.cpp:154
 #, kde-format
