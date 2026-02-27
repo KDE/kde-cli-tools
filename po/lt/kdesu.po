@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: kdesu\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2025-11-17 11:53+0000\n"
-"PO-Revision-Date: 2026-02-26 02:20+0200\n"
+"PO-Revision-Date: 2026-02-26 20:44+0200\n"
 "Last-Translator: Moo\n"
 "Language-Team: Lithuanian <kde-i18n-lt@kde.org>\n"
 "Language: lt\n"
@@ -37,7 +37,7 @@ msgstr "KDE su"
 #: kdesu.cpp:94
 #, kde-format
 msgid "Runs a program with elevated privileges."
-msgstr "Paleidžia programą su padidintomis privilegijomis."
+msgstr "Paleidžia programą naudojant didesnes teises."
 
 #: kdesu.cpp:96
 #, kde-format
@@ -78,12 +78,12 @@ msgstr "Nurodo komandą, kurią paleisti kaip vieną eilutę"
 #, kde-format
 msgid "Run command under target uid if <file> is not writable"
 msgstr ""
-"Paleisti komandą naudojant nurodytą uid, jei <failas> nėra skirtas rašymui"
+"Paleisti komandą naudojant paskirties uid, jei <failas> nėra skirtas rašymui"
 
 #: kdesu.cpp:110
 #, kde-format
 msgid "Specifies the target uid"
-msgstr "Nurodo norimą naudoti uid"
+msgstr "Nurodo paskirties uid"
 
 #: kdesu.cpp:111
 #, kde-format
@@ -141,7 +141,7 @@ msgstr "Įtaisyti į langą"
 #: kdesu.cpp:155
 #, kde-format
 msgid "Cannot execute command '%1'."
-msgstr "Nepavyksta įvykdyti komandos '%1'."
+msgstr "Nepavyksta įvykdyti komandos „%1“."
 
 #: kdesu.cpp:158
 #, kde-format
@@ -186,7 +186,7 @@ msgstr "Paleisti kaip %1"
 #: sudlg.cpp:31
 #, kde-format
 msgid "Please enter your password below."
-msgstr "Prašome įrašyti savo slaptažodį žemiau."
+msgstr "Įveskite žemiau slaptažodį."
 
 #: sudlg.cpp:36
 #, kde-format
@@ -195,9 +195,9 @@ msgid ""
 "<b>root's</b> password below or click Ignore to continue with your current "
 "privileges."
 msgstr ""
-"Jūsų užklaustam veiksmui įvykdyti reikia <b>pagrindinio naudotojo (root) "
+"Jūsų prašomam veiksmui įvykdyti reikia <b>pagrindinio naudotojo (root) "
 "teisių</b>. Įveskite žemiau <b>pagrindinio naudotojo</b> slaptažodį arba "
-"spustelėkite \"Nepaisyti\" norėdami tęsti su esamomis teisėmis."
+"spustelėkite „Nepaisyti“ norėdami tęsti naudojant esamas teises."
 
 #: sudlg.cpp:42
 #, kde-format
@@ -205,7 +205,7 @@ msgid ""
 "The action you requested needs <b>root privileges</b>. Please enter "
 "<b>root's</b> password below."
 msgstr ""
-"Jūsų užklaustam veiksmui įvykdyti reikia <b>pagrindinio naudotojo (root) "
+"Jūsų prašomam veiksmui įvykdyti reikia <b>pagrindinio naudotojo (root) "
 "teisių</b>. Įveskite žemiau <b>pagrindinio naudotojo</b> slaptažodį."
 
 #: sudlg.cpp:49
@@ -215,9 +215,9 @@ msgid ""
 "password for <b>%1</b> below or click Ignore to continue with your current "
 "privileges."
 msgstr ""
-"Jūsų užklaustam veiksmui įvykdyti reikia papildomų teisių. Įveskite žemiau "
-"naudotojo <b>%1</b> slaptažodį arba spustelėkite \"Nepaisyti\" norėdami "
-"tęsti su esamomis teisėmis."
+"Jūsų prašomam veiksmui įvykdyti reikia papildomų teisių. Įveskite žemiau "
+"naudotojo <b>%1</b> slaptažodį arba spustelėkite „Nepaisyti“ norėdami tęsti "
+"naudojant esamas teises."
 
 #: sudlg.cpp:56
 #, kde-format
@@ -225,7 +225,7 @@ msgid ""
 "The action you requested needs additional privileges. Please enter the "
 "password for <b>%1</b> below."
 msgstr ""
-"Jūsų užklaustam veiksmui įvykdyti reikia papildomų teisių. Įveskite žemiau "
+"Jūsų prašomam veiksmui įvykdyti reikia papildomų teisių. Įveskite žemiau "
 "naudotojo <b>%1</b> slaptažodį."
 
 #: sudlg.cpp:79
