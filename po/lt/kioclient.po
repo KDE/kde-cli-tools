@@ -11,7 +11,7 @@ msgstr ""
 "Project-Id-Version: kioclient\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2026-01-24 02:39+0000\n"
-"PO-Revision-Date: 2020-04-01 22:05+0300\n"
+"PO-Revision-Date: 2026-02-26 21:14+0200\n"
 "Last-Translator: Moo\n"
 "Language-Team: lt <kde-i18n-lt@kde.org>\n"
 "Language: lt\n"
@@ -20,7 +20,7 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=4; plural=(n==1 ? 0 : n%10>=2 && (n%100<10 || n"
 "%100>=20) ? 1 : n%10==0 || (n%100>10 && n%100<20) ? 2 : 3);\n"
-"X-Generator: Poedit 2.0.6\n"
+"X-Generator: Poedit 3.8\n"
 
 #, kde-format
 msgctxt "NAME OF TRANSLATORS"
@@ -42,32 +42,19 @@ msgstr ""
 "Sintaksė:\n"
 
 #: kioclient.cpp:58
-#, fuzzy, kde-format
-#| msgid ""
-#| "  kioclient5 openProperties 'url'\n"
-#| "            # Opens a properties menu\n"
-#| "\n"
+#, kde-format
 msgctxt "The argument is the command \"kioclient openProperties\""
 msgid ""
 "  %1 'url'\n"
 "            # Opens a properties dialog of 'url'\n"
 "\n"
 msgstr ""
-"  kioclient5 openProperties 'url'\n"
-"            # Atveria savybių meniu\n"
+"  %1 'url'\n"
+"            # Atveria 'url' savybių katalogą\n"
 "\n"
 
 #: kioclient.cpp:65
-#, fuzzy, kde-format
-#| msgid ""
-#| "  kioclient5 exec 'url' ['mimetype']\n"
-#| "            # Tries to open the document pointed to by 'url', in the "
-#| "application\n"
-#| "            #   associated with it in KDE. You may omit 'mimetype'.\n"
-#| "            #   In this case the mimetype is determined\n"
-#| "            #   automatically. Of course URL may be the URL of a\n"
-#| "            #   document, or it may be a *.desktop file.\n"
-#| "            #   'url' can be an executable, too.\n"
+#, kde-format
 msgctxt "The argument is the command \"kioclient exec\""
 msgid ""
 "  %1 'url' ['mimetype']\n"
@@ -78,13 +65,13 @@ msgid ""
 "            # 'url' can be the URL of a document, a *.desktop file,\n"
 "            # or an executable.\n"
 msgstr ""
-"  kioclient5 exec 'url' ['mimetype']\n"
-"            # Bando atverti „url“ nurodytą dokumentą programoje,\n"
-"            #   susieta su KDE. Galite praleisti \"mimetype\".\n"
-"            #   Šiuo atveju mimetype bus nustatytas\n"
-"            #   automatiškai. Žinoma, URL gali būti dokumento URL\n"
-"            #   arba gali būti *.desktop failas.\n"
-"            #   \"url\" gali būti ir vykdomasis failas.\n"
+"  %1 'url' ['mimetype']\n"
+"            # Bando atverti dokumentą, į kurį nurodo 'url', programoje,\n"
+"            # kuri susieta su juo KDE aplinkoje. Galite praleisti "
+"'mimetype'.\n"
+"            # Tokiu atveju MIME tipas bus nustatytas automatiškai.\n"
+"            # 'url' gali būti dokumento URL adresas, *.desktop failas,\n"
+"            # arba vykdomasis failas.\n"
 
 #: kioclient.cpp:76
 #, kde-format
@@ -97,15 +84,16 @@ msgid ""
 "            #   The short version 'kioclient mv' is also available.\n"
 "\n"
 msgstr ""
+"  %1 'šaltinis' 'paskirtis'\n"
+"            # Perkelia URL 'šaltinį' į 'paskirtį'.\n"
+"            #   'šaltinis' gali būti URL adresų sąrašas.\n"
+"            #   'paskirtis' gali būti „trash:/“, jei norima perkelti failus "
+"į šiukšlinę.\n"
+"            #   Taip pat yra prieinama trumpa 'kioclient mv' versija.\n"
+"\n"
 
 #: kioclient.cpp:86
-#, fuzzy, kde-format
-#| msgid ""
-#| "  kioclient5 download ['src']\n"
-#| "            # Copies the URL 'src' to a user-specified location'.\n"
-#| "            #   'src' may be a list of URLs, if not present then\n"
-#| "            #   a URL will be requested.\n"
-#| "\n"
+#, kde-format
 msgctxt "The argument is the command \"kioclient download\""
 msgid ""
 "  %1 ['src']\n"
@@ -114,18 +102,15 @@ msgid ""
 "            #   a URL will be requested.\n"
 "\n"
 msgstr ""
-"  kioclient5 download ['src']\n"
-"            # Kopijuoja URL \"src\" į naudotojo nurodytą vietą.\n"
-"            #   \"src\" gali būti keleto URL sąrašas; jo nenurodžius,\n"
-"            #   URL bus užklaustas.\n"
+"  %1 ['šaltinis']\n"
+"            # Kopijuoja URL 'šaltinį' į naudotojo nurodytą vietą.\n"
+"            #   'šaltinis' gali būti URL adresų sąrašas, o jei jo nėra, "
+"tada\n"
+"            #   bus paprašyta pateikti URL.\n"
 "\n"
 
 #: kioclient.cpp:95
-#, fuzzy, kde-format
-#| msgid ""
-#| "  kioclient5 copy 'src' 'dest'\n"
-#| "            # Copies the URL 'src' to 'dest'.\n"
-#| "            #   'src' may be a list of URLs.\n"
+#, kde-format
 msgctxt "The argument is the command \"kioclient copy\""
 msgid ""
 "  %1 'src' 'dest'\n"
@@ -134,48 +119,38 @@ msgid ""
 "            #   The short version 'kioclient cp' is also available.\n"
 "\n"
 msgstr ""
-"  kioclient5 copy 'src' 'dest'\n"
-"            # Kopijuoja URL \"src\" į \"dest\".\n"
-"            #   \"src\" gali būti keleto URL sąrašas..\n"
+"  %1 'šaltinis' 'paskirtis'\n"
+"            # Kopijuoja URL 'šaltinį' į 'paskirtį'.\n"
+"            #   'šaltinis' gali būti URL adresų sąrašas.\n"
+"            #   Taip pat yra prieinama trumpa 'kioclient cp' versija.\n"
+"\n"
 
 #: kioclient.cpp:104
-#, fuzzy, kde-format
-#| msgid ""
-#| "  kioclient5 ls 'url'\n"
-#| "            # Lists the contents of the directory 'url' to stdout\n"
-#| "\n"
+#, kde-format
 msgctxt "The argument is the command \"kioclient cat\""
 msgid ""
 "  %1 'url'\n"
 "            # Prints the contents of the file 'url' to the standard output\n"
 "\n"
 msgstr ""
-"  kioclient5 ls 'url'\n"
-"            # Išvardija \"url\" katalogo turinį į stdout\n"
+"  %1 'url'\n"
+"            # Išspausdina 'url' failo turinį į standartinę išvestį\n"
 "\n"
 
 #: kioclient.cpp:111
-#, fuzzy, kde-format
-#| msgid ""
-#| "  kioclient5 ls 'url'\n"
-#| "            # Lists the contents of the directory 'url' to stdout\n"
-#| "\n"
+#, kde-format
 msgctxt "The argument is the command \"kioclient ls\""
 msgid ""
 "  %1 'url'\n"
 "            # Lists the contents of the directory 'url' to stdout\n"
 "\n"
 msgstr ""
-"  kioclient5 ls 'url'\n"
-"            # Išvardija \"url\" katalogo turinį į stdout\n"
+"  %1 'url'\n"
+"            # Išvardija 'url' katalogo turinį į stdout\n"
 "\n"
 
 #: kioclient.cpp:118
-#, fuzzy, kde-format
-#| msgid ""
-#| "  kioclient5 remove 'url'\n"
-#| "            # Removes the URL\n"
-#| "            #   'url' may be a list of URLs.\n"
+#, kde-format
 msgctxt "The argument is the command \"kioclient remove\""
 msgid ""
 "  %1 'url'\n"
@@ -184,55 +159,44 @@ msgid ""
 "            #   The short version 'kioclient rm' is also available.\n"
 "\n"
 msgstr ""
-"  kioclient5 remove 'url'\n"
+"  %1 'url'\n"
 "            # Pašalina URL\n"
-"            #   \"url\" gali būti keleto URL sąrašas.\n"
+"            #   'url' gali būti URL adresų sąrašas.\n"
+"            #   Taip pat yra prieinama trumpa 'kioclient rm' versija.\n"
+"\n"
 
 #: kioclient.cpp:127
-#, fuzzy, kde-format
-#| msgid ""
-#| "  kioclient5 openProperties 'url'\n"
-#| "            # Opens a properties menu\n"
-#| "\n"
+#, kde-format
 msgctxt "The argument is the command \"kioclient mkdir\""
 msgid ""
 "  %1 'url'\n"
 "            # Creates a directory at 'url'\n"
 msgstr ""
-"  kioclient5 openProperties 'url'\n"
-"            # Atveria savybių meniu\n"
-"\n"
+"  %1 'url'\n"
+"            # Sukuria katalogą ties 'url'\n"
 
 #: kioclient.cpp:134
-#, fuzzy, kde-format
-#| msgid ""
-#| "  kioclient5 cat 'url'\n"
-#| "            # Writes out the contents of 'url' to stdout\n"
-#| "\n"
+#, kde-format
 msgctxt "The argument is the command \"kioclient stat\""
 msgid ""
 "  %1 'url'\n"
 "            # Shows all of the available information for 'url'\n"
 "\n"
 msgstr ""
-"  kioclient5 cat 'url'\n"
-"            # Įrašo \"url\" turinį į stdout\n"
+"  %1 'url'\n"
+"            # Rodo visą prieinamą informaciją apie 'url'\n"
 "\n"
 
 #: kioclient.cpp:141
-#, fuzzy, kde-format
-#| msgid ""
-#| "  kioclient5 openProperties 'url'\n"
-#| "            # Opens a properties menu\n"
-#| "\n"
+#, kde-format
 msgctxt "The argument is the command \"kioclient appmenu\""
 msgid ""
 "  %1\n"
 "            # Opens a basic application launcher\n"
 "\n"
 msgstr ""
-"  kioclient5 openProperties 'url'\n"
-"            # Atveria savybių meniu\n"
+"  %1\n"
+"            # Atveria pagrindinę programų paleidyklę\n"
 "\n"
 
 #: kioclient.cpp:147
@@ -241,65 +205,52 @@ msgid "*** Examples:\n"
 msgstr "*** Pavyzdžiai:\n"
 
 #: kioclient.cpp:148
-#, fuzzy, kde-format
-#| msgid ""
-#| "  kioclient5 exec file:/home/weis/data/test.html\n"
-#| "             // Opens the file with default binding\n"
-#| "\n"
+#, kde-format
 msgid ""
 "  kioclient exec file:/home/weis/data/test.html\n"
 "             // Opens the file with the default application associated\n"
 "             // with this MimeType\n"
 "\n"
 msgstr ""
-"  kioclient5 exec file:/home/weis/data/test.html\n"
-"             // Atveria failą su numatytuoju susiejimu\n"
+"  kioclient exec file:/home/weis/data/test.html\n"
+"             // Atveria failą naudodamas numatytąją programą, susietą\n"
+"             // su šiuo MIME tipu\n"
 "\n"
 
 #: kioclient.cpp:153
-#, fuzzy, kde-format
-#| msgid ""
-#| "  kioclient5 exec ftp://localhost/\n"
-#| "             // Opens new window with URL\n"
-#| "\n"
+#, kde-format
 msgid ""
 "  kioclient exec ftp://localhost/\n"
 "             // Opens URL with the default handler for ftp:// scheme\n"
 "\n"
 msgstr ""
-"  kioclient5 exec ftp://localhost/\n"
-"             // Atveria naują langa su URL\n"
+"  kioclient exec ftp://localhost/\n"
+"             // Atveria URL naudodamas numatytąją doroklę, skirtą ftp:// "
+"schemai\n"
 "\n"
 
 #: kioclient.cpp:157
-#, fuzzy, kde-format
-#| msgid ""
-#| "  kioclient5 exec file:/root/Desktop/emacs.desktop\n"
-#| "             // Starts emacs\n"
-#| "\n"
+#, kde-format
 msgid ""
 "  kioclient exec file:/root/Desktop/emacs.desktop\n"
 "             // Starts emacs\n"
 "\n"
 msgstr ""
-"  kioclient5 exec file:/root/Desktop/emacs.desktop\n"
+"  kioclient exec file:/root/Desktop/emacs.desktop\n"
 "             // Paleidžia emacs\n"
 "\n"
 
 #: kioclient.cpp:161
-#, fuzzy, kde-format
-#| msgid ""
-#| "  kioclient5 exec .\n"
-#| "             // Opens the current directory. Very convenient.\n"
-#| "\n"
+#, kde-format
 msgid ""
 "  kioclient exec .\n"
 "             // Opens the current directory in the default\n"
 "             // file manager. Very convenient.\n"
 "\n"
 msgstr ""
-"  kioclient5 exec .\n"
-"             // Atveria esamą katalogą. Labai patogu.\n"
+"  kioclient exec .\n"
+"             // Atveria esamą katalogą numatytojoje\n"
+"             // failų tvarkytuvėje. Labai patogu.\n"
 "\n"
 
 #: kioclient.cpp:179
@@ -310,7 +261,7 @@ msgstr "KIO kliento programa"
 #: kioclient.cpp:180
 #, kde-format
 msgid "Command-line tool for network-transparent operations"
-msgstr "Komandinų eilutės įrankis, skirtas skaidrioms tinklo operacijoms"
+msgstr "Komandų eilutės įrankis, skirtas skaidrioms tinklo operacijoms"
 
 #: kioclient.cpp:188
 #, kde-format
@@ -392,7 +343,7 @@ msgstr "%1: Sintaksės klaida: per daug argumentų\n"
 #: kioclient.cpp:465
 #, kde-format
 msgid "Destination where to download the files"
-msgstr "Paskirtis kur atsisiųsti failus"
+msgstr "Paskirtis, į kurią atsisiųsti failus"
 
 #: kioclient.cpp:512
 #, kde-format
@@ -404,7 +355,7 @@ msgstr "%1: Sintaksės klaida: nežinoma komanda „%2“\n"
 #, kde-format
 msgctxt "@info:shell"
 msgid "%1: %2\n"
-msgstr ""
+msgstr "%1: %2\n"
 
 #, fuzzy
 #~| msgid ""
