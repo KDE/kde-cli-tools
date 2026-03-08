@@ -77,7 +77,7 @@ msgid ""
 "text files."
 msgstr ""
 "这个菜单中包含可以确定文件类型的模式列表。例如，模式 *.txt 和文件类型“text/"
-"plain”相关联；所有“.txt”结尾的文件会被当作普通文本文件。"
+"plain”相关联；所有“.txt”结尾的文件会被当作纯文本文件。"
 
 #: filetypedetails.cpp:87 filetypesview.cpp:86 kservicelistwidget.cpp:105
 #, kde-format
