@@ -7,20 +7,20 @@
 # Richard Allen <ra@ra.is>, 2000.
 # Pjetur G. Hjaltason <pjetur@pjetur.net>, 2003.
 # Arnar Leosson <leosson@frisurf.no>, 2005.
-# Sveinn í Felli <sveinki@nett.is>, 2009, 2011, 2022.
+# SPDX-FileCopyrightText: 2009, 2011, 2022, 2026 Sveinn í Felli <sveinki@nett.is>
 msgid ""
 msgstr ""
 "Project-Id-Version: kdesu\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2025-11-17 11:53+0000\n"
-"PO-Revision-Date: 2022-09-21 12:09+0000\n"
+"PO-Revision-Date: 2026-03-25 12:03+0000\n"
 "Last-Translator: Sveinn í Felli <sv1@fellsnet.is>\n"
 "Language-Team: Icelandic\n"
 "Language: is\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Generator: Lokalize 21.12.3\n"
+"X-Generator: Lokalize 23.08.5\n"
 "Plural-Forms: Plural-Forms: nplurals=2; plural=n != 1;\n"
 "\n"
 "\n"
@@ -192,7 +192,7 @@ msgstr "Keyra sem %1"
 #: sudlg.cpp:31
 #, kde-format
 msgid "Please enter your password below."
-msgstr "Vinsamlega sláðu inn lykilorðið þitt."
+msgstr "Settu lykilorðið þitt inn hér fyrir neðan."
 
 #: sudlg.cpp:36
 #, kde-format
@@ -201,7 +201,7 @@ msgid ""
 "<b>root's</b> password below or click Ignore to continue with your current "
 "privileges."
 msgstr ""
-"Aðgerðin sem þú baðst um krefst <b>kerfisstjóraaðgangs</b>. Sláðu inn "
+"Aðgerðin sem þú baðst um krefst <b>kerfisstjóraaðgangs</b>. Settu inn "
 "kerfisstjóralykilorðið hér að neðan eða ýttu á \"Hunsa\" til að halda áfram "
 "með óbreyttar heimildir."
 
@@ -211,7 +211,7 @@ msgid ""
 "The action you requested needs <b>root privileges</b>. Please enter "
 "<b>root's</b> password below."
 msgstr ""
-"Aðgerðin sem þú baðst um krefst <b>kerfisstjóraaðgangs</b>. Sláðu inn "
+"Aðgerðin sem þú baðst um krefst <b>kerfisstjóraaðgangs</b>. Settu inn "
 "kerfisstjóralykilorðið hér að neðan."
 
 #: sudlg.cpp:49
@@ -221,7 +221,7 @@ msgid ""
 "password for <b>%1</b> below or click Ignore to continue with your current "
 "privileges."
 msgstr ""
-"Aðgerðin sem þú baðst um krefst frekari heimilda. Sláðu inn lykilorð "
+"Aðgerðin sem þú baðst um krefst frekari heimilda. Settu inn lykilorð "
 "notandans <b>%1</b> hér að neðan eða ýttu á \"Hunsa\" til að halda áfram með "
 "óbreyttar heimildir."
 
@@ -231,7 +231,7 @@ msgid ""
 "The action you requested needs additional privileges. Please enter the "
 "password for <b>%1</b> below."
 msgstr ""
-"Aðgerðin sem þú baðst um krefst frekari heimilda. Sláðu inn lykilorð "
+"Aðgerðin sem þú baðst um krefst frekari heimilda. Settu inn lykilorð "
 "notandans <b>%1</b> hér að neðan."
 
 #: sudlg.cpp:79
