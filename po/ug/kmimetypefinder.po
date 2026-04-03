@@ -8,54 +8,49 @@ msgstr ""
 "Project-Id-Version: kmimetypefinder\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2025-11-17 11:53+0000\n"
-"PO-Revision-Date: 2013-09-08 07:05+0900\n"
-"Last-Translator: Gheyret Kenji <gheyret@gmail.com>\n"
+"PO-Revision-Date: 2026-04-01 08:52-0400\n"
+"Last-Translator: Abduqadir Abliz <sahranbay@gmail.com>\n"
 "Language-Team: Uyghur Computer Science Association <UKIJ@yahoogroups.com>\n"
 "Language: ug\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=1; plural=0;\n"
+"X-Generator: Poedit 3.8\n"
 
 #, kde-format
 msgctxt "NAME OF TRANSLATORS"
 msgid "Your names"
-msgstr ""
+msgstr "ئابدۇقادىر ئابلىز، غەيرەت كەنجى"
 
 #, kde-format
 msgctxt "EMAIL OF TRANSLATORS"
 msgid "Your emails"
-msgstr ""
+msgstr "sahranbay@gmail.com, gheyret@gmail.com"
 
 #: kmimetypefinder.cpp:26
-#, fuzzy, kde-format
-#| msgid "MimeType Finder"
+#, kde-format
 msgid "MIME Type Finder"
-msgstr "Mime تىپى ئىزدىگۈچ"
+msgstr "MIME تۈرىنى ئىزدىگۈچ"
 
 #: kmimetypefinder.cpp:27
-#, fuzzy, kde-format
-#| msgid "Gives the mimetype for a given file"
+#, kde-format
 msgid "Gives the MIME type for a given file"
-msgstr "بېرىلگەن ھۆججەتنىڭ MIME تىپىنى بېرىش"
+msgstr "بەلگىلەنگەن ھۆججەتكە MIME تۈرىنى كۆرسىتىدۇ"
 
 #: kmimetypefinder.cpp:33
-#, fuzzy, kde-format
-#| msgid "Use only the file content for determining the mimetype."
+#, kde-format
 msgid "Use only the file content for determining the MIME type."
-msgstr "ھۆججەت مەزمۇنىغىلا ئاساسەن Mime تىپىنى بەلگىلەش."
+msgstr "پەقەت ھۆججەت مەزمۇنى ئارقىلىق MIME تۈرىنى جەزملەيدۇ."
 
 #: kmimetypefinder.cpp:35
-#, fuzzy, kde-format
-#| msgid ""
-#| "Whether use the file name only for determining the mimetype. Not used if -"
-#| "c is specified."
+#, kde-format
 msgid ""
 "Whether use the file name only for determining the MIME type. Not used if -c "
 "is specified."
 msgstr ""
-"ھۆججەت ئاتىغىلا ئاساسەن Mime تىپىنى بەلگىلەمدۇ. -c كۆرسىتىلگەن بولسا "
-"ئىشلىتىلمەيدۇ."
+"ھۆججەت ئاتى ئارقىلىق MIME تۈرىنى جەزملەمدۇ يوق. ئەگەر ‪«-c»‬ بەلگىلەنگەن بولسا "
+"ياق."
 
 #: kmimetypefinder.cpp:36
 #, kde-format
