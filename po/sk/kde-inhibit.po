@@ -12,18 +12,18 @@ msgstr ""
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Generator: Lokalize 23.08.3\n"
 "Plural-Forms: nplurals=3; plural=(n==1) ? 0 : (n>=2 && n<=4) ? 1 : 2;\n"
+"X-Generator: Lokalize 23.08.3\n"
 
 #: main.cpp:26
 #, kde-format
 msgid "Inhibit various desktop functions whilst a command runs"
-msgstr ""
+msgstr "Potlačiť rôzne funkcie pracovnej plochy počas behu príkazu"
 
 #: main.cpp:28
 #, kde-format
 msgid "Inhibit power management"
-msgstr ""
+msgstr "Potlačiť správu napájania"
 
 #: main.cpp:31
 #, kde-format
@@ -33,17 +33,17 @@ msgstr "Zabrániť šetrič obrazovky"
 #: main.cpp:35
 #, kde-format
 msgid "Inhibit colour correction (night mode)"
-msgstr ""
+msgstr "Potlačiť korekciu farieb (nočný režim)"
 
 #: main.cpp:38
 #, kde-format
 msgid "Inhibit notifications (Do not disturb)"
-msgstr ""
+msgstr "Potlačiť oznámenia (Nerušiť)"
 
 #: main.cpp:41
 #, kde-format
 msgid "Command with arguments to run"
-msgstr ""
+msgstr "Príkaz s argumentmi na spustenie"
 
 #: main.cpp:64 main.cpp:73 main.cpp:89
 #, kde-format
