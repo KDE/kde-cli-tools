@@ -357,12 +357,12 @@ does this really work?
 >Authentification X</title>
 
 <para
->Le programme que vous exécutez va fonctionner sous l'identité d'administrateur et n'aura généralement pas accès à votre affichage Xwindow. &kdesu; contourne ce problème en ajoutant un cookie d'authentification pour votre affichage dans un fichier temporaire nommé <filename
+>Le programme que vous exécutez va fonctionner sous l'identité d'administrateur et n'aura généralement pas accès à votre affichage sous XWindow. &kdesu; contourne ce problème en ajoutant un cookie d'authentification pour votre affichage dans un fichier temporaire nommé <filename
 >.Xauthority</filename
 >. Après la fin de la commande, ce fichier sera supprimé. </para>
 
 <para
->Si vous ne voulez pas utiliser de cookies X, vous devrez vous débrouiller par vos propres moyens. &kdesu; le détectera et n'ajoutera aucun cookie, mais il vous faudra vous assurer que l'administrateur est autorisé à accéder à votre affichage Xwindow.</para>
+>Si vous n'utilisez pas cookies X, vous devrez vous débrouiller par vos propres moyens. &kdesu; le détectera et n'ajoutera aucun cookie. Cependant, il vous faudra vous assurer que l'administrateur est autorisé à accéder à votre affichage.</para>
 
 </sect1>
 
