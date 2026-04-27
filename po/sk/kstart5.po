@@ -89,7 +89,7 @@ msgstr "Alternatíva k <command>: súbor desktop, ktorý sa má spustiť."
 #: kstart.cpp:281
 #, kde-format
 msgid "Optional URL to pass <desktopfile>, when using --service"
-msgstr "Volitelná URL pre <desktopfile>, pri použití parametra --service"
+msgstr "Voliteľná URL pre <desktopfile>, pri použití parametra --service"
 
 #: kstart.cpp:284
 #, kde-format
