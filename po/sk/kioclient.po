@@ -67,11 +67,9 @@ msgstr ""
 "aplikácii,\n"
 "            #   ktorá je s ním asociovaná v KDE. Môžete vynechať "
 "'mimetype'.\n"
-"            #   V takom prípade bude mimetype nastavený\n"
-"            #   automaticky. Samozrejme URL môže byť URL\n"
-"            #   dokumentu alebo to môže byť súbor *.desktop.\n"
-"            #   document, or it may be a *.desktop file.\n"
-"            #   'url' môže byť aj spustiteľné.\n"
+"            #   V takom prípade bude mimetype nastavený automaticky.\n"
+"            #   'url' môže byť URL dokumentu, súbor *.desktop,\n"
+"            #   alebo spustiteľný súbor.\n"
 
 #: kioclient.cpp:76
 #, kde-format
