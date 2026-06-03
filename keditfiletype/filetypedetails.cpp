@@ -8,24 +8,17 @@
 #include "filetypedetails.h"
 
 // Qt
-#include <QButtonGroup>
-#include <QCheckBox>
 #include <QInputDialog>
 #include <QLabel>
 #include <QListWidget>
-#include <QMimeDatabase>
 #include <QPushButton>
-#include <QRadioButton>
 #include <QVBoxLayout>
 
 // KDE
-#include <KConfig>
-#include <KConfigGroup>
 #include <KIconButton>
 #include <KIconDialog>
 #include <KLineEdit>
 #include <KLocalizedString>
-#include <KSharedConfig>
 
 // Local
 #include "kservicelistwidget.h"
@@ -43,13 +36,10 @@ FileTypeDetails::FileTypeDetails(QWidget *parent)
     m_mimeTypeLabel->setTextInteractionFlags(Qt::TextSelectableByMouse);
     topLayout->addWidget(m_mimeTypeLabel, 0, Qt::AlignCenter);
 
-    m_tabWidget = new QTabWidget(this);
-    topLayout->addWidget(m_tabWidget);
-
     QString wtstr;
-    // First tab - General
-    QWidget *firstWidget = new QWidget(m_tabWidget);
+    QWidget *firstWidget = new QWidget(this);
     QVBoxLayout *firstLayout = new QVBoxLayout(firstWidget);
+    topLayout->addWidget(firstWidget);
 
     QHBoxLayout *hBox = new QHBoxLayout();
     firstLayout->addLayout(hBox);
@@ -121,51 +111,6 @@ FileTypeDetails::FileTypeDetails(QWidget *parent)
     connect(serviceListWidget, &KServiceListWidget::changed, this, &FileTypeDetails::changed);
     connect(serviceListWidget, &KServiceListWidget::multiApply, this, &FileTypeDetails::multiApply);
     firstLayout->addWidget(serviceListWidget, 5);
-
-    // Second tab - Embedding
-    QWidget *secondWidget = new QWidget(m_tabWidget);
-    QVBoxLayout *secondLayout = new QVBoxLayout(secondWidget);
-
-    m_autoEmbedBox = new QGroupBox(i18n("Left Click Action in Konqueror"), secondWidget);
-    secondLayout->addWidget(m_autoEmbedBox);
-
-    m_autoEmbedBox->setSizePolicy(QSizePolicy::Preferred, QSizePolicy::Fixed);
-
-    QRadioButton *embViewerRadio = new QRadioButton(i18n("Show file in embedded viewer"));
-    QRadioButton *sepViewerRadio = new QRadioButton(i18n("Show file in separate viewer"));
-    m_rbGroupSettings = new QRadioButton(QStringLiteral("Use settings for '%1' group"));
-
-    m_chkAskSave = new QCheckBox(i18n("Ask whether to save to disk instead (only for Konqueror browser)"));
-    connect(m_chkAskSave, &QAbstractButton::toggled, this, &FileTypeDetails::slotAskSaveToggled);
-
-    m_autoEmbedGroup = new QButtonGroup(m_autoEmbedBox);
-    m_autoEmbedGroup->addButton(embViewerRadio, 0);
-    m_autoEmbedGroup->addButton(sepViewerRadio, 1);
-    m_autoEmbedGroup->addButton(m_rbGroupSettings, 2);
-    connect(m_autoEmbedGroup, &QButtonGroup::idClicked, this, &FileTypeDetails::slotAutoEmbedClicked);
-
-    vbox = new QVBoxLayout(m_autoEmbedBox);
-    vbox->addWidget(embViewerRadio);
-    vbox->addWidget(sepViewerRadio);
-    vbox->addWidget(m_rbGroupSettings);
-    vbox->addWidget(m_chkAskSave);
-
-    m_autoEmbedBox->setWhatsThis(
-        i18n("Here you can configure what the Konqueror file manager"
-             " will do when you click on a file of this type. Konqueror can either display the file in"
-             " an embedded viewer, or start up a separate application. If set to 'Use settings for G group',"
-             " the file manager will behave according to the settings of the group G to which this type belongs;"
-             " for instance, 'image' if the current file type is image/png. Dolphin"
-             " always shows files in a separate viewer."));
-
-    embedServiceListWidget = new KServiceListWidget(KServiceListWidget::SERVICELIST_SERVICES, secondWidget);
-    //  embedServiceListWidget->setMinimumHeight( serviceListWidget->sizeHint().height() );
-    connect(embedServiceListWidget, &KServiceListWidget::changed, this, &FileTypeDetails::changed);
-    connect(embedServiceListWidget, &KServiceListWidget::multiApply, this, &FileTypeDetails::multiApply);
-    secondLayout->addWidget(embedServiceListWidget);
-
-    m_tabWidget->addTab(firstWidget, i18n("&General"));
-    m_tabWidget->addTab(secondWidget, i18n("&Embedding"));
 }
 
 void FileTypeDetails::updateRemoveButton()
@@ -233,92 +178,6 @@ void FileTypeDetails::removeExtension()
     Q_EMIT changed(true);
 }
 
-void FileTypeDetails::slotAutoEmbedClicked(int button)
-{
-    if (!m_mimeTypeData || (button > 2)) {
-        return;
-    }
-
-    m_mimeTypeData->setAutoEmbed((MimeTypeData::AutoEmbed)button);
-
-    updateAskSave();
-
-    Q_EMIT changed(true);
-}
-
-void FileTypeDetails::updateAskSave()
-{
-    if (!m_mimeTypeData) {
-        return;
-    }
-    QMimeDatabase db;
-
-    MimeTypeData::AutoEmbed autoEmbed = m_mimeTypeData->autoEmbed();
-    if (m_mimeTypeData->isMeta() && autoEmbed == MimeTypeData::UseGroupSetting) {
-        // Resolve by looking at group (we could cache groups somewhere to avoid the re-parsing?)
-        autoEmbed = MimeTypeData(m_mimeTypeData->majorType()).autoEmbed();
-    }
-
-    const QString mimeType = m_mimeTypeData->name();
-
-    QString dontAskAgainName;
-    if (autoEmbed == MimeTypeData::Yes) { // Embedded
-        dontAskAgainName = QStringLiteral("askEmbedOrSave") + mimeType;
-    } else {
-        dontAskAgainName = QStringLiteral("askSave") + mimeType;
-    }
-
-    KSharedConfig::Ptr config = KSharedConfig::openConfig(QStringLiteral("filetypesrc"), KConfig::NoGlobals);
-    // default value
-    bool ask = config->group("Notification Messages").readEntry(dontAskAgainName, QString()).isEmpty();
-    // per-mimetype override if there's one
-    m_mimeTypeData->getAskSave(ask);
-
-    bool neverAsk = false;
-
-    if (autoEmbed == MimeTypeData::Yes) {
-        const QMimeType mime = db.mimeTypeForName(mimeType);
-        if (mime.isValid()) {
-            // SYNC SYNC SYNC SYNC SYNC SYNC SYNC SYNC SYNC SYNC SYNC SYNC SYNC SYNC
-            // NOTE: Keep this function in sync with
-            // kparts/src/browseropenorsavequestion.cpp BrowserOpenOrSaveQuestionPrivate::autoEmbedMimeType
-
-            // Don't ask for:
-            // - html (even new tabs would ask, due to about:blank!)
-            // - dirs obviously (though not common over HTTP :),
-            // - images (reasoning: no need to save, most of the time, because fast to see)
-            // e.g. postscript is different, because takes longer to read, so
-            // it's more likely that the user might want to save it.
-            // - multipart/* ("server push", see kmultipart)
-            // clang-format off
-            if (mime.inherits(QStringLiteral("text/html"))
-                || mime.inherits(QStringLiteral("application/xml"))
-                || mime.inherits(QStringLiteral("inode/directory"))
-                || mimeType.startsWith(QLatin1String("image"))
-                || mime.inherits(QStringLiteral("multipart/x-mixed-replace"))
-                || mime.inherits(QStringLiteral("multipart/replace"))) {
-                neverAsk = true;
-            }
-            // clang-format on
-        }
-    }
-
-    m_chkAskSave->blockSignals(true);
-    m_chkAskSave->setChecked(ask && !neverAsk);
-    m_chkAskSave->setEnabled(!neverAsk);
-    m_chkAskSave->blockSignals(false);
-}
-
-void FileTypeDetails::slotAskSaveToggled(bool askSave)
-{
-    if (!m_mimeTypeData) {
-        return;
-    }
-
-    m_mimeTypeData->setAskSave(askSave);
-    Q_EMIT changed(true);
-}
-
 void FileTypeDetails::setMimeTypeData(MimeTypeData *mimeTypeData, TypesListItem *item)
 {
     m_mimeTypeData = mimeTypeData;
@@ -332,19 +191,13 @@ void FileTypeDetails::setMimeTypeData(MimeTypeData *mimeTypeData, TypesListItem 
         iconLabel->setPixmap(QIcon::fromTheme(mimeTypeData->icon()).pixmap(KIconLoader::SizeLarge));
     }
     description->setText(mimeTypeData->comment());
-    m_rbGroupSettings->setText(i18n("Use settings for '%1' group", mimeTypeData->majorType()));
     extensionLB->clear();
     addExtButton->setEnabled(true);
     removeExtButton->setEnabled(false);
 
     serviceListWidget->setMimeTypeData(mimeTypeData);
-    embedServiceListWidget->setMimeTypeData(mimeTypeData);
-    m_autoEmbedGroup->button(mimeTypeData->autoEmbed())->setChecked(true);
-    m_rbGroupSettings->setEnabled(mimeTypeData->canUseGroupSetting());
 
     extensionLB->addItems(mimeTypeData->patterns());
-
-    updateAskSave();
 }
 
 void FileTypeDetails::enableExtButtons()
@@ -366,7 +219,6 @@ void FileTypeDetails::refresh()
 void FileTypeDetails::allowMultiApply(bool allow)
 {
     serviceListWidget->allowMultiApply(allow);
-    embedServiceListWidget->allowMultiApply(allow);
 }
 
 #include "moc_filetypedetails.cpp"

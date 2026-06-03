@@ -7,17 +7,13 @@
 #ifndef FILETYPEDETAILS_H
 #define FILETYPEDETAILS_H
 
-#include <QTabWidget>
+#include <QWidget>
 
 class KIconButton;
 class MimeTypeData;
 class TypesListItem;
 class QLabel;
 class QListWidget;
-class QGroupBox;
-class QButtonGroup;
-class QCheckBox;
-class QRadioButton;
 class KLineEdit;
 class QPushButton;
 class KServiceListWidget;
@@ -49,10 +45,8 @@ public:
 
 protected:
     void updateRemoveButton();
-    void updateAskSave();
 
 Q_SIGNALS:
-    void embedMajor(const QString &major, bool &embed); // To adjust whether major type is being embedded
     void changed(bool);
     void multiApply(int kind);
 
@@ -62,8 +56,6 @@ protected Q_SLOTS:
     void addExtension();
     void removeExtension();
     void enableExtButtons();
-    void slotAutoEmbedClicked(int button);
-    void slotAskSaveToggled(bool);
 
 private:
     MimeTypeData *m_mimeTypeData;
@@ -71,9 +63,6 @@ private:
 
     QLabel *m_mimeTypeLabel;
 
-    QTabWidget *m_tabWidget;
-
-    // First tab - General
     KIconButton *iconButton;
     QLabel *iconLabel; // if icon cannot be changed
 
@@ -81,14 +70,6 @@ private:
     QPushButton *addExtButton, *removeExtButton;
     KLineEdit *description;
     KServiceListWidget *serviceListWidget;
-
-    // Second tab - Embedding
-    QGroupBox *m_autoEmbedBox;
-    QButtonGroup *m_autoEmbedGroup;
-    KServiceListWidget *embedServiceListWidget;
-    QRadioButton *m_rbOpenSeparate;
-    QCheckBox *m_chkAskSave;
-    QRadioButton *m_rbGroupSettings;
 };
 
 #endif

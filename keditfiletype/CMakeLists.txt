@@ -7,7 +7,6 @@ add_definitions(-DTRANSLATION_DOMAIN=\"kcm_filetypes\")
 
 set(libfiletypes_SRCS
  filetypedetails.cpp
- filegroupdetails.cpp
  kservicelistwidget.cpp
  typeslistitem.cpp
  typeslistitembase.cpp
