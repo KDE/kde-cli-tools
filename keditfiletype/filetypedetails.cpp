@@ -208,7 +208,8 @@ void FileTypeDetails::addExtension()
     bool ok;
     QString ext = QInputDialog::getText(this, i18n("Add New Extension"), i18n("Extension:"), QLineEdit::Normal, QStringLiteral("*."), &ok);
     if (ok) {
-        extensionLB->addItem(ext);
+        // Unicode chars that mark the entire string as LtR, to prevent "*.foo" turning into "foo.*" in RtL languages
+        extensionLB->addItem(QChar(0x2066) + ext + QChar(0x2069));
         QStringList patt = m_mimeTypeData->patterns();
         patt += ext;
         m_mimeTypeData->setPatterns(patt);
@@ -226,7 +227,7 @@ void FileTypeDetails::removeExtension()
         return;
     }
     QStringList patt = m_mimeTypeData->patterns();
-    patt.removeAll(extensionLB->currentItem()->text());
+    patt.removeAll(extensionLB->currentItem()->text().mid(1).chopped(1));
     m_mimeTypeData->setPatterns(patt);
     delete extensionLB->takeItem(extensionLB->currentRow());
     updateRemoveButton();
@@ -342,7 +343,10 @@ void FileTypeDetails::setMimeTypeData(MimeTypeData *mimeTypeData, TypesListItem 
     m_autoEmbedGroup->button(mimeTypeData->autoEmbed())->setChecked(true);
     m_rbGroupSettings->setEnabled(mimeTypeData->canUseGroupSetting());
 
-    extensionLB->addItems(mimeTypeData->patterns());
+    for (const auto &pattern : mimeTypeData->patterns()) {
+        // Unicode chars that mark the entire string as LtR, to prevent "*.foo" turning into "foo.*" in RtL languages
+        extensionLB->addItem(QChar(0x2066) + pattern + QChar(0x2069));
+    }
 
     updateAskSave();
 }
