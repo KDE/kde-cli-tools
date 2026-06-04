@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: filetypes\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-11-17 11:53+0000\n"
+"POT-Creation-Date: 2026-06-04 00:46+0000\n"
 "PO-Revision-Date: 2006-01-04 13:20-0600\n"
 "Last-Translator: Deepayan Sarkar <deepayan@bengalinux.org>\n"
 "Language-Team: Bengali <kde-translation@bengalinux.org>\n"
@@ -173,12 +173,12 @@ msgstr "নতুন এক্সটেনশন যোগ করো"
 msgid "Extension:"
 msgstr "এক্সটেনশন:"
 
-#: filetypedetails.cpp:327
+#: filetypedetails.cpp:328
 #, fuzzy, kde-format
 msgid "File type %1"
 msgstr "ফাইল টাইপ %1 সম্পাদনা করো"
 
-#: filetypedetails.cpp:335
+#: filetypedetails.cpp:336
 #, kde-format
 msgid "Use settings for '%1' group"
 msgstr "'%1' গ্রুপ-এর সেটিংস ব্যবহার করো"
