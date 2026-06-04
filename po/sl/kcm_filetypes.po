@@ -15,7 +15,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: filetypes\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-11-17 11:53+0000\n"
+"POT-Creation-Date: 2026-06-04 02:57+0000\n"
 "PO-Revision-Date: 2023-05-16 07:52+0200\n"
 "Last-Translator: Matjaž Jeran <matjaz.jeran@amis.net>\n"
 "Language-Team: Slovenian <lugos-slo@lugos.si>\n"
@@ -184,12 +184,12 @@ msgstr "Dodaj novo pripono"
 msgid "Extension:"
 msgstr "Pripona:"
 
-#: filetypedetails.cpp:327
+#: filetypedetails.cpp:328
 #, kde-format
 msgid "File type %1"
 msgstr "Vrsta datotek: %1"
 
-#: filetypedetails.cpp:335
+#: filetypedetails.cpp:336
 #, kde-format
 msgid "Use settings for '%1' group"
 msgstr "Uporabi nastavitve za skupino '%1'"

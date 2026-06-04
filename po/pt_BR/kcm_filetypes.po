@@ -15,7 +15,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kcm5_filetypes\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-11-17 11:53+0000\n"
+"POT-Creation-Date: 2026-06-04 02:57+0000\n"
 "PO-Revision-Date: 2023-05-31 14:55-0300\n"
 "Last-Translator: Luiz Fernando Ranghetti <elchevive@opensuse.org>\n"
 "Language-Team: Brazilian Portuguese <kde-i18n-pt_BR@kde.org>\n"
@@ -181,12 +181,12 @@ msgstr "Adicionar nova extensão"
 msgid "Extension:"
 msgstr "Extensão:"
 
-#: filetypedetails.cpp:327
+#: filetypedetails.cpp:328
 #, kde-format
 msgid "File type %1"
 msgstr "Tipo de arquivo %1"
 
-#: filetypedetails.cpp:335
+#: filetypedetails.cpp:336
 #, kde-format
 msgid "Use settings for '%1' group"
 msgstr "Usar as configurações do grupo '%1'"

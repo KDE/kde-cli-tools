@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: filetypes\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-11-17 11:53+0000\n"
+"POT-Creation-Date: 2026-06-04 02:57+0000\n"
 "PO-Revision-Date: 2002-11-01 10:25SAST\n"
 "Last-Translator: Lwandle Mgidlana <lwandle@translate.org.za>\n"
 "Language-Team: Xhosa <xhosa@translate.org.za>\n"
@@ -184,13 +184,13 @@ msgstr "Yongeza Ulwandiso Olutsha"
 msgid "Extension:"
 msgstr "Ulwandiso:"
 
-#: filetypedetails.cpp:327
+#: filetypedetails.cpp:328
 #, fuzzy, kde-format
 #| msgid "Edit File Type %1"
 msgid "File type %1"
 msgstr "Hlela Udidi Lwefayile %1"
 
-#: filetypedetails.cpp:335
+#: filetypedetails.cpp:336
 #, kde-format
 msgid "Use settings for '%1' group"
 msgstr "Sebenzisa izicwangciso zeqela le '%1'"

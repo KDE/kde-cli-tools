@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: filetypes\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-11-17 11:53+0000\n"
+"POT-Creation-Date: 2026-06-04 02:57+0000\n"
 "PO-Revision-Date: 2014-10-28 15:31+0530\n"
 "Last-Translator: Chetan Khona <chetan@kompkin.com>\n"
 "Language-Team: Marathi <kde-i18n-doc@kde.org>\n"
@@ -170,12 +170,12 @@ msgstr "नवीन विस्तारण जोडा"
 msgid "Extension:"
 msgstr "विस्तारण:"
 
-#: filetypedetails.cpp:327
+#: filetypedetails.cpp:328
 #, kde-format
 msgid "File type %1"
 msgstr "फाईल प्रकार %1"
 
-#: filetypedetails.cpp:335
+#: filetypedetails.cpp:336
 #, kde-format
 msgid "Use settings for '%1' group"
 msgstr "'%1' समूहाकरिता वापरकर्ता संयोजना"

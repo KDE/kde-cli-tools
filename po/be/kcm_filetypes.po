@@ -9,7 +9,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: filetypes\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-11-17 11:53+0000\n"
+"POT-Creation-Date: 2026-06-04 02:57+0000\n"
 "PO-Revision-Date: 2007-08-22 09:26+0000\n"
 "Last-Translator: Darafei Praliaskouski <komzpa@licei2.com>\n"
 "Language-Team: Belarusian <i18n@mova.org>\n"
@@ -187,13 +187,13 @@ msgstr "Дадаць новае пашырэнне"
 msgid "Extension:"
 msgstr "Пашырэнне:"
 
-#: filetypedetails.cpp:327
+#: filetypedetails.cpp:328
 #, fuzzy, kde-format
 #| msgid "Edit File Type %1"
 msgid "File type %1"
 msgstr "Змяніць тып файлаў %1"
 
-#: filetypedetails.cpp:335
+#: filetypedetails.cpp:336
 #, kde-format
 msgid "Use settings for '%1' group"
 msgstr "Выкарыстоўваць наладкі для групы '%1'"

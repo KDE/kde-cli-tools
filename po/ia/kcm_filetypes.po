@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-11-17 11:53+0000\n"
+"POT-Creation-Date: 2026-06-04 02:57+0000\n"
 "PO-Revision-Date: 2023-05-16 22:15+0200\n"
 "Last-Translator: giovanni <g.sora@tiscali.it>\n"
 "Language-Team: Interlingua <kde-i18n-doc@kde.org>\n"
@@ -170,12 +170,12 @@ msgstr "Adde nove extension"
 msgid "Extension:"
 msgstr "Extension:"
 
-#: filetypedetails.cpp:327
+#: filetypedetails.cpp:328
 #, kde-format
 msgid "File type %1"
 msgstr "Typo de file %1"
 
-#: filetypedetails.cpp:335
+#: filetypedetails.cpp:336
 #, kde-format
 msgid "Use settings for '%1' group"
 msgstr "Usa preferentias pro gruppo '%1'"

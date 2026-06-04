@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kde-cli-tools\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-11-17 11:53+0000\n"
+"POT-Creation-Date: 2026-06-04 02:57+0000\n"
 "PO-Revision-Date: 2022-07-03 14:28+0400\n"
 "Last-Translator: Kheyyam <xxmn77@gmail.com>\n"
 "Language-Team: Azerbaijani <kde-i18n-doc@kde.org>\n"
@@ -168,12 +168,12 @@ msgstr "Yeni uzantı əlavə etmək"
 msgid "Extension:"
 msgstr "Uzantı:"
 
-#: filetypedetails.cpp:327
+#: filetypedetails.cpp:328
 #, kde-format
 msgid "File type %1"
 msgstr "Fayl növü %1"
 
-#: filetypedetails.cpp:335
+#: filetypedetails.cpp:336
 #, kde-format
 msgid "Use settings for '%1' group"
 msgstr "'%1' qrup üçün ayarları istifadə edin"
