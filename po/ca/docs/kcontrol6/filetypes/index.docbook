@@ -10,7 +10,7 @@
 <articleinfo>
 
 <title
->Associacions de fitxer</title>
+>Configura les associacions de fitxers</title>
 <authorgroup>
 <author
 >&Mike.McBride; &Mike.McBride.mail;</author>
@@ -35,7 +35,7 @@
 </articleinfo>
 <sect1 id="file-assoc">
 <title
->Associacions de fitxer</title>
+>Configura les associacions de fitxers</title>
 
 <sect2 id="file-assoc-intro">
 <title
