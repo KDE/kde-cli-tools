@@ -80,6 +80,8 @@ int main(int argc, char *argv[])
                          KAboutLicense::GPL,
                          i18n("(C) 1997-2000 Matthias Ettrich (ettrich@kde.org)"));
 
+    aboutData.setDesktopFileName(QString());
+
     aboutData.addAuthor(i18n("Matthias Ettrich"), QString(), QStringLiteral("ettrich@kde.org"));
     aboutData.addAuthor(i18n("David Faure"), QString(), QStringLiteral("faure@kde.org"));
     aboutData.addAuthor(i18n("Richard J. Moore"), QString(), QStringLiteral("rich@kde.org"));
