@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kdeorg\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-11-17 11:53+0000\n"
+"POT-Creation-Date: 2026-06-26 02:42+0000\n"
 "PO-Revision-Date: 2024-04-22 15:58\n"
 "Last-Translator: \n"
 "Language-Team: Chinese Simplified\n"
@@ -42,37 +42,37 @@ msgstr "启动应用程序的工具"
 msgid "(C) 1997-2000 Matthias Ettrich (ettrich@kde.org)"
 msgstr "(C) 1997-2000 Matthias Ettrich (ettrich@kde.org)"
 
-#: kstart.cpp:83
+#: kstart.cpp:85
 #, kde-format
 msgid "Matthias Ettrich"
 msgstr "Matthias Ettrich"
 
-#: kstart.cpp:84
+#: kstart.cpp:86
 #, kde-format
 msgid "David Faure"
 msgstr "David Faure"
 
-#: kstart.cpp:85
+#: kstart.cpp:87
 #, kde-format
 msgid "Richard J. Moore"
 msgstr "Richard J. Moore"
 
-#: kstart.cpp:90
+#: kstart.cpp:92
 #, kde-format
 msgid "Command to execute"
 msgstr "要执行的命令"
 
-#: kstart.cpp:92
+#: kstart.cpp:94
 #, kde-format
 msgid "Alternative to <command>: desktop file name to start, e.g. org.kde.kate"
 msgstr "指定<command>参数的替换项：要启动的 desktop 文件名，如 org.kde.kate"
 
-#: kstart.cpp:95
+#: kstart.cpp:97
 #, kde-format
 msgid "Optional URL to pass to the application when using --application"
 msgstr "当使用 --application 选项时，传递给应用程序的可选 URL 地址 "
 
-#: kstart.cpp:107
+#: kstart.cpp:109
 #, kde-format
 msgid "No command specified"
 msgstr "没有指定命令"
