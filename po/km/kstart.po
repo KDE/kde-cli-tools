@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kstart\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-11-17 11:53+0000\n"
+"POT-Creation-Date: 2026-06-26 00:47+0000\n"
 "PO-Revision-Date: 2009-04-09 15:39+0700\n"
 "Last-Translator: Khoem Sokhem <khoemsokhem@khmeros.info>\n"
 "Language-Team: Khmer <support@khmeros.info>\n"
@@ -43,27 +43,27 @@ msgstr ""
 msgid "(C) 1997-2000 Matthias Ettrich (ettrich@kde.org)"
 msgstr "រក្សា​សិទ្ធិ​ឆ្នាំ ១៩៩៧-២០០០ ដោយ​លោក Matthias Ettrich (ettrich@kde.org)"
 
-#: kstart.cpp:83
+#: kstart.cpp:85
 #, kde-format
 msgid "Matthias Ettrich"
 msgstr "Matthias Ettrich"
 
-#: kstart.cpp:84
+#: kstart.cpp:86
 #, kde-format
 msgid "David Faure"
 msgstr "David Faure"
 
-#: kstart.cpp:85
+#: kstart.cpp:87
 #, kde-format
 msgid "Richard J. Moore"
 msgstr "Richard J. Moore"
 
-#: kstart.cpp:90
+#: kstart.cpp:92
 #, kde-format
 msgid "Command to execute"
 msgstr "ពាក្យ​បញ្ជា​ត្រូវ​ប្រតិបត្តិ"
 
-#: kstart.cpp:92
+#: kstart.cpp:94
 #, fuzzy, kde-format
 #| msgid ""
 #| "Alternative to <command>: desktop file to start. D-Bus service will be "
@@ -73,13 +73,13 @@ msgstr ""
 "ជម្រើស​ទៅ <command> ៖ ឯកសារ​ផ្ទៃតុ​ត្រូវ​ចាប់ផ្ដើម ។ សេវា D-Bus នឹង​ត្រូ​វបានបោះពុម្ព​ទៅ​កាន់ "
 "stdout"
 
-#: kstart.cpp:95
+#: kstart.cpp:97
 #, fuzzy, kde-format
 #| msgid "Optional URL to pass <desktopfile>, when using --service"
 msgid "Optional URL to pass to the application when using --application"
 msgstr "URL ជា​ជម្រើស​ត្រូ​វចម្លង​ <desktopfile> នៅពេល​ប្រើ --service"
 
-#: kstart.cpp:107
+#: kstart.cpp:109
 #, kde-format
 msgid "No command specified"
 msgstr "មិន​បាន​បញ្ជាក់​ពាក្យ​បញ្ជា"

@@ -1,6 +1,6 @@
 # translation of kstart.po to Polish
 # translation of kstart.po to
-# Version: $Revision: 1723076 $
+# Version: $Revision: 1739911 $
 # Piotr Roszatycki <dexter@debian.org>, 1999-2000.
 # Michał Rudolf <mrudolf@kdewebdev.org>, 2002.
 # Michal Rudolf <mrudolf@kdewebdev.org>, 2003, 2004, 2005, 2009.
@@ -11,7 +11,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kstart\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-11-17 11:53+0000\n"
+"POT-Creation-Date: 2026-06-26 00:47+0000\n"
 "PO-Revision-Date: 2023-09-24 08:03+0200\n"
 "Last-Translator: Łukasz Wojniłowicz <lukasz.wojnilowicz@gmail.com>\n"
 "Language-Team: Polish <kde-i18n-doc@kde.org>\n"
@@ -47,39 +47,39 @@ msgstr "Narzędzie do uruchamiania aplikacji"
 msgid "(C) 1997-2000 Matthias Ettrich (ettrich@kde.org)"
 msgstr "(C) 1997-2000 Matthias Ettrich (ettrich@kde.org)"
 
-#: kstart.cpp:83
+#: kstart.cpp:85
 #, kde-format
 msgid "Matthias Ettrich"
 msgstr "Matthias Ettrich"
 
-#: kstart.cpp:84
+#: kstart.cpp:86
 #, kde-format
 msgid "David Faure"
 msgstr "David Faure"
 
-#: kstart.cpp:85
+#: kstart.cpp:87
 #, kde-format
 msgid "Richard J. Moore"
 msgstr "Richard J. Moore"
 
-#: kstart.cpp:90
+#: kstart.cpp:92
 #, kde-format
 msgid "Command to execute"
 msgstr "Polecenie do wykonania"
 
-#: kstart.cpp:92
+#: kstart.cpp:94
 #, kde-format
 msgid "Alternative to <command>: desktop file name to start, e.g. org.kde.kate"
 msgstr ""
 "Zamiennie dla <polecenie>: plik pulpitu do uruchomienia, np. org.kde.kate"
 
-#: kstart.cpp:95
+#: kstart.cpp:97
 #, kde-format
 msgid "Optional URL to pass to the application when using --application"
 msgstr ""
 "Opcjonalny adres URL do przekazania aplikacji przy użyciu --application"
 
-#: kstart.cpp:107
+#: kstart.cpp:109
 #, kde-format
 msgid "No command specified"
 msgstr "Nie określono polecenia"
