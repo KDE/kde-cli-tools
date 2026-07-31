@@ -119,7 +119,7 @@
 >.</para>
 
 <para
->&kdesu; bietet eine zusätzliche Funktionalität: Es kann sich Passwörter merken. Wenn Sie diese Funktion benutzen, müssen Sie für jeden Befehl das Passwort nur einmal eingeben.</para>
+>&kdesu; bietet eine zusätzliche Funktionalität: Es kann sich Passwörter merken. Wenn Sie diese Funktion verwenden, müssen Sie für jeden Befehl das Passwort nur einmal eingeben.</para>
 
 <para
 >Dieses Programm ist für den Start aus der Befehlszeile oder über <filename
@@ -158,7 +158,7 @@
 ></term>
 <listitem
 ><para
->Dies gibt den Befehl an, der als Benutzer root ausgeführt werden soll. Er muss als Parameter übergeben werden. Wenn Sie beispielsweise eine neue Dateiverwaltung starten wollen, geben Sie auf der Befehlszeile Folgendes ein: <userinput
+>Dies gibt den Befehl an, der als Benutzer root ausgeführt werden soll. Er muss als Parameter übergeben werden. Wenn Sie beispielsweise eine neue Dateiverwaltung starten möchten, geben Sie auf der Befehlszeile Folgendes ein: <userinput
 >$(kf5-config --path libexec)<command
 >kdesu <option
 >-c <replaceable
@@ -272,7 +272,7 @@
 ></term>
 <listitem
 ><para
->Terminal-Ausgabe aktivieren. Hierdurch wird das Beibehalten der Passwörter ausgeschaltet. Dies dient hauptsächlich dem Debuggen. Wenn Sie eine Anwendung für die Konsole ausführen wollen, benutzen Sie stattdessen den Befehl <command
+>Terminal-Ausgabe aktivieren. Hierdurch wird das Beibehalten der Passwörter ausgeschaltet. Dies dient hauptsächlich dem Debuggen. Wenn Sie eine Anwendung für die Konsole ausführen möchten, verwenden Sie stattdessen den Befehl <command
 >su</command
 >.</para
 > </listitem>

@@ -122,8 +122,8 @@ msgid ""
 "to display directory content."
 msgstr ""
 "Hier können Sie eine kurze Beschreibung für Dateien des gewählten Typs "
-"eingeben (z. B. „HTML-Seite“). Einige Programme wie z. B. Konqueror benutzen "
-"sie, um den Inhalt von Ordnern anzuzeigen."
+"eingeben (z. B. „HTML-Seite“). Einige Programme wie z. B. Konqueror "
+"verwenden sie, um den Inhalt von Ordnern anzuzeigen."
 
 #: filetypedetails.cpp:129
 #, kde-format
@@ -151,8 +151,8 @@ msgstr ""
 "Anklicken einer Datei dieses Typs einstellen. Konqueror kann die Datei in "
 "einer eingebetteten Vorschau anzeigen oder ein eigenes Programm dafür "
 "starten. Wenn „Einstellungen der Gruppe verwenden“ aktiviert ist, verhält "
-"sich die Dateiverwaltung entsprechend den Einstellungen für die Gruppe, z. "
-"B. gemäß den Einstellungen für „image“, wenn der aktuelle Dateityp auf "
+"sich die Dateiverwaltung entsprechend den Einstellungen für die Gruppe, "
+"z. B. gemäß den Einstellungen für „image“, wenn der aktuelle Dateityp auf "
 "„image/png“ eingestellt ist. Dolphin zeigt Dateien immer in einem separaten "
 "Prozess an."
 
@@ -217,9 +217,9 @@ msgid ""
 msgstr ""
 "Hier sehen Sie eine hierarchische Liste der Dateitypen auf Ihrem System. "
 "Klicken Sie auf das Pluszeichen (+), um eine Gruppe zu öffnen bzw. auf das "
-"Minuszeichen (-), um sie wieder zu schließen. Wählen Sie einen Dateityp (z. "
-"B. text/html für HTML-Dateien), um die Informationen dazu auf der rechten "
-"Seite anzuzeigen oder zu bearbeiten."
+"Minuszeichen (-), um sie wieder zu schließen. Wählen Sie einen Dateityp "
+"(z. B. text/html für HTML-Dateien), um die Informationen dazu auf der "
+"rechten Seite anzuzeigen oder zu bearbeiten."
 
 #: filetypesview.cpp:91
 #, kde-format
@@ -320,7 +320,7 @@ msgstr "Macht den Dialog temporär für das durch winid angegebene Fenster"
 #: keditfiletype.cpp:128
 #, kde-format
 msgid "File type to edit (e.g. text/html)"
-msgstr "Zu bearbeitender Dateityp (z. B. text/html)"
+msgstr "Zu bearbeitender Dateityp (z. B. text/html)"
 
 #: keditfiletype.cpp:159
 #, kde-format
