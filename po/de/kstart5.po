@@ -44,7 +44,7 @@ msgid ""
 msgstr ""
 "Dienstprogramm, um Programme mit bestimmten KDE-Fenstereigenschaften zu "
 "starten\n"
-"wie z. B. als Symbol, maximiert, auf einer bestimmten Arbeitsfläche, mit "
+"wie z. B. als Symbol, maximiert, auf einer bestimmten Arbeitsfläche, mit "
 "einer bestimmten Dekoration\n"
 "und so weiter."
 
@@ -80,7 +80,7 @@ msgid ""
 "printed to stdout. Deprecated: use --application"
 msgstr ""
 "Alternative zu <command>: zu startende .desktop-Datei. Der D-Bus-Dienst wird "
-"an die Standardausgabe ausgegeben. Veraltet, benutzen Sie statt dessen -"
+"an die Standardausgabe ausgegeben. Veraltet, verwenden Sie statt dessen -"
 "application"
 
 #: kstart.cpp:278

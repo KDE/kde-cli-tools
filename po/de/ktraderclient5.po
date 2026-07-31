@@ -48,7 +48,7 @@ msgstr "Ein MIME-Typ"
 #: ktraderclient.cpp:32
 #, kde-format
 msgid "A servicetype, like KParts/ReadOnlyPart or KMyApp/Plugin"
-msgstr "Ein Diensttyp wie z. B. KParts/ReadOnlyPart oder KMyApp/Plugin"
+msgstr "Ein Diensttyp wie z. B. KParts/ReadOnlyPart oder KMyApp/Plugin"
 
 #: ktraderclient.cpp:35
 #, kde-format

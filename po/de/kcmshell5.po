@@ -118,7 +118,7 @@ msgstr "Einen speziellen Titel für das Fenster verwenden"
 msgid ""
 "--lang is deprecated. Please set the LANGUAGE environment variable instead"
 msgstr ""
-"--lang ist veraltet, bitte benutzen Sie statt dessen die Umgebungsvariable "
+"--lang ist veraltet, bitte verwenden Sie statt dessen die Umgebungsvariable "
 "LANGUAGE"
 
 #: main.cpp:219

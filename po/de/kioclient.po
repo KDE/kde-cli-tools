@@ -260,7 +260,7 @@ msgid ""
 "connection, use --platform offscreen"
 msgstr ""
 "Nicht interaktive Anwendung: keine Meldungsfenster. Möchten Sie eine "
-"grafische Verbindung, benutzen Sie „--platform offscreen“"
+"grafische Verbindung, verwenden Sie „--platform offscreen“"
 
 #: kioclient.cpp:192
 #, kde-format

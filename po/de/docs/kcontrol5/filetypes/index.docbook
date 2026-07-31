@@ -169,7 +169,7 @@
 ><para
 >Sie können nach einem bestimmten &MIME;-Typ suchen, indem Sie in das Textfeld <guilabel
 >Dateityp oder Dateinamen-Muster suchen</guilabel
-> oberhalb der Liste benutzen.</para>
+> oberhalb der Liste verwenden.</para>
 
 <para
 >Sobald die ersten Buchstaben in das Textfeld eingegeben sind, werden die &MIME;-Typen angezeigt, die diesen Buchstaben enthalten.</para>
@@ -419,7 +419,7 @@
 >Kommentar</guilabel
 > eingegeben werden. Im Eingabefeld <guilabel
 >Befehl</guilabel
-> können diverse Platzhalter benutzt werden, die durch folgende Werte ersetzt werden, sobald das Programm tatsächlich läuft:</para>
+> können diverse Platzhalter verwendet werden, die durch folgende Werte ersetzt werden, sobald das Programm tatsächlich läuft:</para>
 <itemizedlist>
 <listitem
 ><para
@@ -427,7 +427,7 @@
 ></listitem>
 <listitem
 ><para
->%F - eine Liste von Dateien. Benutzen Sie dies bei Anwendungen, die mehrere lokale Dateien gleichzeitig öffnen können</para
+>%F - eine Liste von Dateien. Verwenden Sie dies bei Anwendungen, die mehrere lokale Dateien gleichzeitig öffnen können</para
 ></listitem>
 <listitem
 ><para
@@ -479,7 +479,7 @@
 <title
 >Einbetten</title>
 <para
->Diese Einstellungen werden nur von &konqueror; als Dateiverwaltung benutzt, &dolphin; kann keine eingebetteten Ansichten anzeigen und öffnet eine Datei immer mit der zugehörigen Anwendung.</para>
+>Diese Einstellungen werden nur von &konqueror; als Dateiverwaltung verwendet, &dolphin; kann keine eingebetteten Ansichten anzeigen und öffnet eine Datei immer mit der zugehörigen Anwendung.</para>
 <para
 >Auf der Karteikarte <guilabel
 >Einbetten</guilabel
@@ -519,7 +519,7 @@
 >Nachfragen, ob stattdessen auf Festplatte gespeichert werden soll</term>
 <listitem
 ><para
->Diese Einstellung wird nur von &konqueror; im Browser-Modus benutzt und bestimmt, ob eine Datei in einer eingebetteten Ansichten anzeigt wird oder nachgefragt wird, stattdessen auf Festplatte zu speichern.</para
+>Diese Einstellung wird nur von &konqueror; im Browser-Modus verwendet und bestimmt, ob eine Datei in einer eingebetteten Ansichten anzeigt wird oder nachgefragt wird, stattdessen auf Festplatte zu speichern.</para
 ></listitem
 ></varlistentry>
 </variablelist>

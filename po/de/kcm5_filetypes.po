@@ -122,8 +122,8 @@ msgid ""
 "to display directory content."
 msgstr ""
 "Hier können Sie eine kurze Beschreibung für Dateien des gewählten Typs "
-"eingeben (z. B. „HTML-Seite“). Einige Programme wie z. B. Konqueror benutzen "
-"sie, um den Inhalt von Ordnern anzuzeigen."
+"eingeben (z. B. „HTML-Seite“). Einige Programme wie z. B. Konqueror "
+"verwenden sie, um den Inhalt von Ordnern anzuzeigen."
 
 #: filetypedetails.cpp:128
 #, kde-format
@@ -151,8 +151,8 @@ msgstr ""
 "Anklicken einer Datei dieses Typs einstellen. Konqueror kann die Datei in "
 "einer eingebetteten Vorschau anzeigen oder ein eigenes Programm dafür "
 "starten. Wenn „Einstellungen der Gruppe verwenden“ aktiviert ist, verhält "
-"sich die Dateiverwaltung entsprechend den Einstellungen für die Gruppe, z. "
-"B. gemäß den Einstellungen für „image“, wenn der aktuelle Dateityp auf "
+"sich die Dateiverwaltung entsprechend den Einstellungen für die Gruppe, "
+"z. B. gemäß den Einstellungen für „image“, wenn der aktuelle Dateityp auf "
 "„image/png“ eingestellt ist. Dolphin zeigt Dateien immer in einem separaten "
 "Prozess an."
 
@@ -213,16 +213,16 @@ msgstr ""
 "p><p>Eine Dateizuordnung besteht aus folgenden Elementen:<ul><li>Regeln für "
 "die Feststellung des MIME-Typs einer Datei. Zum Beispiel ist das Dateimuster "
 "*.png (also „alle Dateien mit der Erweiterung .png“) dem MIME-Typ „image/"
-"png“ zugeordnet.</li><li>Einer kurzen Beschreibung des MIME-Typs. So ist z. "
-"B. die Beschreibung des MIME-Typs „image/png“ einfach „PNG-Bild“.</"
+"png“ zugeordnet.</li><li>Einer kurzen Beschreibung des MIME-Typs. So ist "
+"z. B. die Beschreibung des MIME-Typs „image/png“ einfach „PNG-Bild“.</"
 "li><li>Einem Symbol, das für die Darstellung von Dateien eines bestimmten "
-"MIME-Typs benutzt wird, sodass Sie eben diesen Typ leicht erkennen können – "
-"z. B. in einer Dateiverwaltung oder einem Dateiauswahl-Dialog</li><li>Einer "
-"Liste der Programme, die zur Öffnung des MIME-Typs benutzt werden können. "
-"Stehen mehrere Programme zur Verfügung, ist die Liste nach der Priorität "
-"sortiert</li></ul> Es wird Sie vielleicht überraschen, dass einigen MIME-"
-"Typen keine Dateinamenmuster zugewiesen sind; in diesen Fällen ist KDE in "
-"der Lage, den MIME-Typ anhand des Inhalts der Datei erkennen.</p>"
+"MIME-Typs verwendet wird, sodass Sie eben diesen Typ leicht erkennen können "
+"– z. B. in einer Dateiverwaltung oder einem Dateiauswahl-Dialog</"
+"li><li>Einer Liste der Programme, die zur Öffnung des MIME-Typs verwendet "
+"werden können. Stehen mehrere Programme zur Verfügung, ist die Liste nach "
+"der Priorität sortiert</li></ul> Es wird Sie vielleicht überraschen, dass "
+"einigen MIME-Typen keine Dateinamenmuster zugewiesen sind; in diesen Fällen "
+"ist KDE in der Lage, den MIME-Typ anhand des Inhalts der Datei erkennen.</p>"
 
 #: filetypesview.cpp:74
 #, kde-format
@@ -255,9 +255,9 @@ msgid ""
 msgstr ""
 "Hier sehen Sie eine hierarchische Liste der Dateitypen auf Ihrem System. "
 "Klicken Sie auf das Pluszeichen (+), um eine Gruppe zu öffnen bzw. auf das "
-"Minuszeichen (-), um sie wieder zu schließen. Wählen Sie einen Dateityp (z. "
-"B. text/html für HTML-Dateien), um die Informationen dazu auf der rechten "
-"Seite anzuzeigen oder zu bearbeiten."
+"Minuszeichen (-), um sie wieder zu schließen. Wählen Sie einen Dateityp "
+"(z. B. text/html für HTML-Dateien), um die Informationen dazu auf der "
+"rechten Seite anzuzeigen oder zu bearbeiten."
 
 #: filetypesview.cpp:108
 #, kde-format
@@ -358,7 +358,7 @@ msgstr "Macht den Dialog temporär für das durch winid angegebene Fenster"
 #: keditfiletype.cpp:134
 #, kde-format
 msgid "File type to edit (e.g. text/html)"
-msgstr "Zu bearbeitender Dateityp (z. B. text/html)"
+msgstr "Zu bearbeitender Dateityp (z. B. text/html)"
 
 #: keditfiletype.cpp:165
 #, kde-format
