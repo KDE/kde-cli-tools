@@ -67,7 +67,7 @@ msgstr "Auszuführender Befehl"
 #: kstart.cpp:94
 #, kde-format
 msgid "Alternative to <command>: desktop file name to start, e.g. org.kde.kate"
-msgstr "Alternative zu <command>: zu startende Datei (z. B. org.kde.kate)."
+msgstr "Alternative zu <command>: zu startende Datei (z. B. org.kde.kate)."
 
 #: kstart.cpp:97
 #, kde-format

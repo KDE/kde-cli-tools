@@ -92,12 +92,12 @@ does this really work?
 <para
 >Willkommen bei &kdesu;! &kdesu; ist eine grafische Oberfläche für den &UNIX;-Befehl <command
 >su</command
-> in KDE. Es ermöglicht Ihnen, ein Programm mit einer anderen Benutzerkennung auszuführen, indem Sie das Passwort dieses Benutzers angeben. &kdesu; hat keine speziellen Systemrechte; es benutzt den Befehl <command
+> in KDE. Es ermöglicht Ihnen, ein Programm mit einer anderen Benutzerkennung auszuführen, indem Sie das Passwort dieses Benutzers angeben. &kdesu; hat keine speziellen Systemrechte; es verwendet den Befehl <command
 >su</command
 >. </para>
 
 <para
->&kdesu; hat eine zusätzliche Funktion: Es kann Passwörter speichern. Wenn Sie diese Funktion benutzen, müssen Sie das Passwort für jeden Befehl nur einmal eingeben. Weitere Informationen und eine Sicherheitsanalyse finden Sie unter <xref linkend="sec-password-keeping"/>.</para>
+>&kdesu; hat eine zusätzliche Funktion: Es kann Passwörter speichern. Wenn Sie diese Funktion verwenden, müssen Sie das Passwort für jeden Befehl nur einmal eingeben. Weitere Informationen und eine Sicherheitsanalyse finden Sie unter <xref linkend="sec-password-keeping"/>.</para>
 
 <para
 >Dieses Programm sollte von der Befehlszeile oder durch <filename
@@ -126,7 +126,7 @@ does this really work?
 
 <chapter id="using-kdesu">
 <title
->&kdesu; benutzen</title>
+>&kdesu; verwenden</title>
 
 <para
 >Die Benutzung von &kdesu; ist einfach. Der Syntax ist folgendermaßen:</para>
@@ -217,7 +217,7 @@ does this really work?
 ></term>
 <listitem
 ><para
->Dies gibt den Befehl an, der als Benutzer root ausgeführt werden soll. Er muss als Parameter übergeben werden. Wenn Sie beispielsweise eine neue Dateiverwaltung starten wollen, geben Sie auf der Befehlszeile Folgendes ein: <userinput
+>Dies gibt den Befehl an, der als Benutzer root ausgeführt werden soll. Er muss als Parameter übergeben werden. Wenn Sie beispielsweise eine neue Dateiverwaltung starten möchten, geben Sie auf der Befehlszeile Folgendes ein: <userinput
 >$(kf5-config --path libexec)<command
 >kdesu <option
 >-c <replaceable
@@ -344,7 +344,7 @@ does this really work?
 ></term>
 <listitem
 ><para
->Terminal-Ausgabe einschalten. Dieser Parameter schaltet das Speichern von Passwörtern aus. Dies ist hauptsächlich für Debugging-Zwecke interessant. Wenn Sie eine Anwendung benutzen wollen, die im Konsolen-Modus läuft, sollten Sie stattdessen den Standardbefehl <command
+>Terminal-Ausgabe einschalten. Dieser Parameter schaltet das Speichern von Passwörtern aus. Dies ist hauptsächlich für Debugging-Zwecke interessant. Wenn Sie eine Anwendung verwenden möchten, die im Konsolen-Modus läuft, sollten Sie stattdessen den Standardbefehl <command
 >su</command
 > verwenden.</para
 > </listitem>
@@ -380,7 +380,7 @@ does this really work?
 >-Datei angelegt. Nach Beendigung des Befehls wird die Datei wieder gelöscht. </para>
 
 <para
->Wenn Sie keine X-Cookies benutzen, sind Sie auf sich alleine gestellt. &kdesu; wird dies erkennen und kein Cookie hinzufügen. Sie müssen sich vergewissern, dass der Systemverwalter berechtigt ist, auf die Anzeige zuzugreifen.</para>
+>Wenn Sie keine X-Cookies verwenden, sind Sie auf sich alleine gestellt. &kdesu; wird dies erkennen und kein Cookie hinzufügen. Sie müssen sich vergewissern, dass der Systemverwalter berechtigt ist, auf die Anzeige zuzugreifen.</para>
 
 </sect1>
 
@@ -391,7 +391,7 @@ does this really work?
 ></title>
 
 <para
->&kdesu; benutzt den Systembefehl <command
+>&kdesu; verwendet den Systembefehl <command
 >su</command
 >, um Rechte zu erhalten. In diesem Abschnitt wird erklärt, wie &kdesu; dabei vorgeht. </para>
 
@@ -405,7 +405,7 @@ does this really work?
 > so aus, dass die Standard-Dateideskriptoren mit dem tty verbunden sind.</para>
 
 <para
->Um anstelle einer interaktiven Shell einen vom Benutzer angegebenen Befehl auszuführen, benutzt &kdesu; den Befehl <command
+>Um anstelle einer interaktiven Shell einen vom Benutzer angegebenen Befehl auszuführen, verwendet &kdesu; den Befehl <command
 >su</command
 > mit dem Parameter <option
 >-c</option
@@ -457,10 +457,10 @@ does this really work?
 >root</systemitem
 >) auf die eines normalen Benutzers (Ihre Benutzer-ID) herabgesetzt werden. Ein Hacker, der versucht, in Ihren Zugang einzubrechen, würde dann Zugang zu den Funktionen von <systemitem class="username"
 >root</systemitem
-> erhalten. &kdesu; versucht dies zu verhindern. Das Sicherheitskonzept, das benutzt wird, ist angemessen sicher, zumindest nach bestem Wissen des Autors. Das Konzept wird hier weiter erklärt.</para>
+> erhalten. &kdesu; versucht dies zu verhindern. Das Sicherheitskonzept, das verwendet wird, ist angemessen sicher, zumindest nach bestem Wissen des Autors. Das Konzept wird hier weiter erklärt.</para>
 
 <para
->&kdesu; benutzt den Dämon <application
+>&kdesu; verwendet den Dämon <application
 >kdesud</application
 >. Der Dämon nimmt auf einem &UNIX;-Socket in <filename
 >/tmp</filename
@@ -482,7 +482,7 @@ does this really work?
 > Programme). Dies bedeutet, dass in diesen Programme Puffer-Überläufe oder andere Probleme auftreten könnten, die ein Hacker ausnutzen könnte.</para>
 
 <para
->Die Benutzung der Funktion zum Speichern der Passwörter ist ein Kompromiss zwischen Sicherheitsansprüchen und Komfort. Überdenken Sie dies bitte und entscheiden Sie selbst ob Sie diese Funktion benutzen wollen oder nicht.</para>
+>Die Benutzung der Funktion zum Speichern der Passwörter ist ein Kompromiss zwischen Sicherheitsansprüchen und Komfort. Überdenken Sie dies bitte und entscheiden Sie selbst ob Sie diese Funktion verwenden möchten oder nicht.</para>
 
 </sect1>
 </chapter>
