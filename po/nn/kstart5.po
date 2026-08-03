@@ -1,6 +1,7 @@
 # Translation of kstart to Norwegian Nynorsk
 #
 # Gaute Hvoslef Kvalnes <gaute@verdsveven.com>, 1999, 2000, 2002, 2003, 2004, 2005.
+# Karl Ove Hufthammer <karl@huftis.org>, 2007, 2008, 2020, 2023, 2024.
 # Eirik U. Birkeland <eirbir@gmail.com>, 2009, 2010.
 msgid ""
 msgstr ""
