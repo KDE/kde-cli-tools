@@ -271,11 +271,7 @@ msgstr ""
 "\n"
 
 #: kioclient.cpp:157
-#, fuzzy, kde-format
-#| msgid ""
-#| "  kioclient exec file:/root/Desktop/emacs.desktop\n"
-#| "             // Starts emacs\n"
-#| "\n"
+#, kde-format
 msgid ""
 "  kioclient exec file:/root/Desktop/emacs.desktop\n"
 "             // Starts emacs\n"
