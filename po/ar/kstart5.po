@@ -153,12 +153,12 @@ msgstr "كبّر النافذة"
 #: kstart.cpp:301
 #, kde-format
 msgid "Maximize the window vertically"
-msgstr "كبّر النافذة عمودياً"
+msgstr "كبّر النافذة عموديًا"
 
 #: kstart.cpp:302
 #, kde-format
 msgid "Maximize the window horizontally"
-msgstr "كبّر النافذة أفقياً"
+msgstr "كبّر النافذة أفقيًا"
 
 #: kstart.cpp:303
 #, kde-format

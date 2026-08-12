@@ -71,7 +71,7 @@ msgstr ""
 "            #   في هذه الحالة سيُتعرف على mimetype\n"
 "            #   آليًّا. بطبيعة الحال العنوان قد يكون عنوان مسند\n"
 "            #   أو قد يكون *.desktop file.\n"
-"            #   يمكن أن يكون المسار 'عنوان' تنفيذيًّا أيضاً.\n"
+"            #   يمكن أن يكون المسار 'عنوان' تنفيذيًّا أيضًا.\n"
 
 #: kioclient.cpp:80
 #, kde-format
@@ -266,7 +266,7 @@ msgstr ""
 #: kioclient.cpp:192
 #, kde-format
 msgid "Overwrite destination if it exists (for copy and move)"
-msgstr "استبدال الهدف إذا كان موجوداً (لأوامر النسخ والنقل)"
+msgstr "استبدال الهدف إذا كان موجودًا (لأوامر النسخ والنقل)"
 
 #: kioclient.cpp:196
 #, kde-format
