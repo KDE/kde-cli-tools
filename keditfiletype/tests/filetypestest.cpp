@@ -68,56 +68,6 @@ private Q_SLOTS:
         QVERIFY(fakeApplicationService);
     }
 
-    void testMimeTypeGroupAutoEmbed()
-    {
-        MimeTypeData data(QStringLiteral("text"));
-        QCOMPARE(data.majorType(), QStringLiteral("text"));
-        QCOMPARE(data.name(), QStringLiteral("text"));
-        QVERIFY(data.isMeta());
-        QCOMPARE(data.autoEmbed(), MimeTypeData::No); // text doesn't autoembed by default
-        QVERIFY(!data.isDirty());
-        data.setAutoEmbed(MimeTypeData::Yes);
-        QCOMPARE(data.autoEmbed(), MimeTypeData::Yes);
-        QVERIFY(data.isDirty());
-        QVERIFY(!data.sync()); // save to disk. Should succeed, but return false (no need to run update-mime-database)
-        QVERIFY(!data.isDirty());
-        // Check what's on disk by creating another MimeTypeData instance
-        MimeTypeData data2(QStringLiteral("text"));
-        QCOMPARE(data2.autoEmbed(), MimeTypeData::Yes);
-        QVERIFY(!data2.isDirty());
-        data2.setAutoEmbed(MimeTypeData::No); // revert to default, for next time
-        QVERIFY(data2.isDirty());
-        QVERIFY(!data2.sync());
-        QVERIFY(!data2.isDirty());
-
-        // TODO test askSave after cleaning up the code
-    }
-
-    void testMimeTypeAutoEmbed()
-    {
-        QMimeDatabase db;
-        MimeTypeData data(db.mimeTypeForName(QStringLiteral("text/plain")));
-        QCOMPARE(data.majorType(), QStringLiteral("text"));
-        QCOMPARE(data.minorType(), QStringLiteral("plain"));
-        QCOMPARE(data.name(), QStringLiteral("text/plain"));
-        QVERIFY(!data.isMeta());
-        QCOMPARE(data.autoEmbed(), MimeTypeData::UseGroupSetting);
-        QVERIFY(!data.isDirty());
-        data.setAutoEmbed(MimeTypeData::Yes);
-        QCOMPARE(data.autoEmbed(), MimeTypeData::Yes);
-        QVERIFY(data.isDirty());
-        QVERIFY(!data.sync()); // save to disk. Should succeed, but return false (no need to run update-mime-database)
-        QVERIFY(!data.isDirty());
-        // Check what's on disk by creating another MimeTypeData instance
-        MimeTypeData data2(db.mimeTypeForName(QStringLiteral("text/plain")));
-        QCOMPARE(data2.autoEmbed(), MimeTypeData::Yes);
-        QVERIFY(!data2.isDirty());
-        data2.setAutoEmbed(MimeTypeData::UseGroupSetting); // revert to default, for next time
-        QVERIFY(data2.isDirty());
-        QVERIFY(!data2.sync());
-        QVERIFY(!data2.isDirty());
-    }
-
     void testMimeTypePatterns()
     {
         // Given the text/plain mimetype

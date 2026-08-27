@@ -23,7 +23,6 @@ class QTreeWidgetItem;
 class QPushButton;
 class KLineEdit;
 class FileTypeDetails;
-class FileGroupDetails;
 
 class FileTypesView : public KCModule
 {
@@ -45,7 +44,6 @@ protected Q_SLOTS:
     void setDirty(bool state);
 
     void slotDatabaseChanged();
-    void slotEmbedMajor(const QString &major, bool &embed);
     void multiApply(int type);
 
 private:
@@ -58,7 +56,6 @@ private:
 
     QStackedWidget *m_widgetStack;
     FileTypeDetails *m_details;
-    FileGroupDetails *m_groupDetails;
     QLabel *m_emptyWidget;
 
     KLineEdit *patternFilterLE;

@@ -49,10 +49,8 @@ public:
 
 protected:
     void updateRemoveButton();
-    void updateAskSave();
 
 Q_SIGNALS:
-    void embedMajor(const QString &major, bool &embed); // To adjust whether major type is being embedded
     void changed(bool);
     void multiApply(int kind);
 
@@ -62,8 +60,6 @@ protected Q_SLOTS:
     void addExtension();
     void removeExtension();
     void enableExtButtons();
-    void slotAutoEmbedClicked(int button);
-    void slotAskSaveToggled(bool);
 
 private:
     MimeTypeData *m_mimeTypeData;
@@ -83,12 +79,7 @@ private:
     KServiceListWidget *serviceListWidget;
 
     // Second tab - Embedding
-    QGroupBox *m_autoEmbedBox;
-    QButtonGroup *m_autoEmbedGroup;
     KServiceListWidget *embedServiceListWidget;
-    QRadioButton *m_rbOpenSeparate;
-    QCheckBox *m_chkAskSave;
-    QRadioButton *m_rbGroupSettings;
 };
 
 #endif

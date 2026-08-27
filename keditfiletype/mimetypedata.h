@@ -82,21 +82,6 @@ public:
     QStringList embedParts() const;
     void setEmbedParts(const QStringList &dsl);
 
-    enum AutoEmbed {
-        Yes = 0,
-        No = 1,
-        UseGroupSetting = 2,
-    };
-    AutoEmbed autoEmbed() const
-    {
-        return m_autoEmbed;
-    }
-
-    void setAutoEmbed(AutoEmbed a)
-    {
-        m_autoEmbed = a;
-    }
-
     const QMimeType &mimeType() const
     {
         return m_mimetype;
@@ -143,8 +128,6 @@ public:
 
 private:
     void initFromQMimeType();
-    AutoEmbed readAutoEmbed() const;
-    void writeAutoEmbed();
     bool isMimeTypeDirty() const; // whether the mimetype definition file needs saving
     QStringList getAppOffers() const;
     QStringList getPartOffers() const;
@@ -155,13 +138,6 @@ private:
     void saveRemovedServices(KConfigGroup &config, const QStringList &services, const QStringList &oldServices);
 
     QMimeType m_mimetype;
-    enum AskSave {
-        AskSaveYes = 0,
-        AskSaveNo = 1,
-        AskSaveDefault = 2,
-    };
-    AskSave m_askSave : 3;
-    AutoEmbed m_autoEmbed : 3;
     bool m_bNewItem : 1;
     mutable bool m_bFullInit : 1; // lazy init of m_appServices and m_embedServices
     bool m_isGroup : 1;

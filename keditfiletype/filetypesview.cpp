@@ -14,7 +14,6 @@
 #include <QDBusConnection>
 #include <QDBusMessage>
 #include <QDebug>
-#include <QHBoxLayout>
 #include <QLabel>
 #include <QMimeDatabase>
 #include <QPushButton>
@@ -30,7 +29,6 @@
 #include <KSycoca>
 
 // Local
-#include "filegroupdetails.h"
 #include "filetypedetails.h"
 #include "kservicelistwidget.h"
 #include "multiapplydialog.h"
@@ -106,14 +104,8 @@ FileTypesView::FileTypesView(QObject *parent, const KPluginMetaData &data)
     m_details = new FileTypeDetails(m_widgetStack);
     m_details->allowMultiApply(true);
     connect(m_details, &FileTypeDetails::changed, this, &FileTypesView::setDirty);
-    connect(m_details, &FileTypeDetails::embedMajor, this, &FileTypesView::slotEmbedMajor);
     connect(m_details, &FileTypeDetails::multiApply, this, &FileTypesView::multiApply);
     m_widgetStack->insertWidget(1, m_details /*id*/);
-
-    // File Group Details
-    m_groupDetails = new FileGroupDetails(m_widgetStack);
-    connect(m_groupDetails, &FileGroupDetails::changed, this, &FileTypesView::setDirty);
-    m_widgetStack->insertWidget(2, m_groupDetails /*id*/);
 
     // Widget shown on startup
     m_emptyWidget = new QLabel(i18n("Select a file type by name or by extension"), m_widgetStack);
@@ -168,16 +160,6 @@ void FileTypesView::readFileTypes()
         m_itemList.append(item);
     }
     updateDisplay(nullptr);
-}
-
-void FileTypesView::slotEmbedMajor(const QString &major, bool &embed)
-{
-    TypesListItem *groupItem = m_majorMap.value(major);
-    if (!groupItem) {
-        return;
-    }
-
-    embed = (groupItem->mimeTypeData().autoEmbed() == MimeTypeData::Yes);
 }
 
 void FileTypesView::multiApply(int type)
@@ -331,10 +313,7 @@ void FileTypesView::updateDisplay(QTreeWidgetItem *item)
 
     MimeTypeData &mimeTypeData = tlitem->mimeTypeData();
 
-    if (mimeTypeData.isMeta()) { // is a group
-        m_widgetStack->setCurrentWidget(m_groupDetails);
-        m_groupDetails->setMimeTypeData(&mimeTypeData);
-    } else {
+    if (!mimeTypeData.isMeta()) { // is not a group
         m_widgetStack->setCurrentWidget(m_details);
         m_details->setMimeTypeData(&mimeTypeData);
     }
@@ -448,7 +427,7 @@ void FileTypesView::save()
         KBuildSycocaProgressDialog::rebuildKSycoca(widget());
     }
 
-    if (didIt) { // TODO make more specific: only if autoEmbed changed? Well, maybe this is useful for icon and glob changes too...
+    if (didIt) {
         // Trigger reparseConfiguration of filetypesrc in konqueror
         // TODO: the same for dolphin. Or we should probably define a global signal for this.
         // Or a KGlobalSettings thing.

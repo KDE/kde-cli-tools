@@ -20,8 +20,7 @@
 #include <QXmlStreamReader>
 
 MimeTypeData::MimeTypeData(const QString &major)
-    : m_askSave(AskSaveDefault)
-    , m_bNewItem(false)
+    : m_bNewItem(false)
     , m_bFullInit(true)
     , m_isGroup(true)
     , m_appServicesModified(false)
@@ -29,12 +28,10 @@ MimeTypeData::MimeTypeData(const QString &major)
     , m_userSpecifiedIconModified(false)
     , m_major(major)
 {
-    m_autoEmbed = readAutoEmbed();
 }
 
 MimeTypeData::MimeTypeData(const QMimeType &mime)
     : m_mimetype(mime)
-    , m_askSave(AskSaveDefault)
     , // TODO: the code for initializing this is missing. FileTypeDetails initializes the checkbox instead...
     m_bNewItem(false)
     , m_bFullInit(false)
@@ -56,8 +53,7 @@ MimeTypeData::MimeTypeData(const QMimeType &mime)
 }
 
 MimeTypeData::MimeTypeData(const QString &mimeName, bool)
-    : m_askSave(AskSaveDefault)
-    , m_bNewItem(true)
+    : m_bNewItem(true)
     , m_bFullInit(false)
     , m_isGroup(false)
     , m_appServicesModified(false)
@@ -71,7 +67,6 @@ MimeTypeData::MimeTypeData(const QString &mimeName, bool)
     } else {
         m_major = mimeName;
     }
-    m_autoEmbed = UseGroupSetting;
     // all the rest is empty by default
 }
 
@@ -79,7 +74,6 @@ void MimeTypeData::initFromQMimeType()
 {
     m_comment = m_mimetype.comment();
     setPatterns(m_mimetype.globPatterns());
-    m_autoEmbed = readAutoEmbed();
 
     // Parse XML file to find out if the user specified a custom icon name
     QString file = name().toLower() + QLatin1String(".xml");
@@ -124,45 +118,6 @@ void MimeTypeData::initFromQMimeType()
                 }
                 xml.skipCurrentElement();
             }
-        }
-    }
-}
-
-MimeTypeData::AutoEmbed MimeTypeData::readAutoEmbed() const
-{
-    const KSharedConfig::Ptr config = KSharedConfig::openConfig(QStringLiteral("filetypesrc"), KConfig::NoGlobals);
-    const QString key = QStringLiteral("embed-") + name();
-    const KConfigGroup group(config, "EmbedSettings");
-    if (m_isGroup) {
-        // embedding is false by default except for image/*, multipart/* and inode/* (hardcoded in konq)
-        const bool defaultValue = (m_major == QLatin1String("image") || m_major == QLatin1String("multipart") || m_major == QLatin1String("inode"));
-        return group.readEntry(key, defaultValue) ? Yes : No;
-    } else {
-        if (group.hasKey(key)) {
-            return group.readEntry(key, false) ? Yes : No;
-        }
-        // TODO if ( !mimetype.property( "X-KDE-LocalProtocol" ).toString().isEmpty() )
-        // TODO    return MimeTypeData::Yes; // embed by default for zip, tar etc.
-        return MimeTypeData::UseGroupSetting;
-    }
-}
-
-void MimeTypeData::writeAutoEmbed()
-{
-    KSharedConfig::Ptr config = KSharedConfig::openConfig(QStringLiteral("filetypesrc"), KConfig::NoGlobals);
-    if (!config->isConfigWritable(true)) {
-        return;
-    }
-
-    const QString key = QStringLiteral("embed-") + name();
-    KConfigGroup group(config, "EmbedSettings");
-    if (m_isGroup) {
-        group.writeEntry(key, m_autoEmbed == Yes);
-    } else {
-        if (m_autoEmbed == UseGroupSetting) {
-            group.deleteEntry(key);
-        } else {
-            group.writeEntry(key, m_autoEmbed == Yes);
         }
     }
 }
@@ -282,9 +237,6 @@ bool MimeTypeData::isMimeTypeDirty() const
         return true;
     }
 
-    if (readAutoEmbed() != m_autoEmbed) {
-        return true;
-    }
     return false;
 }
 
@@ -307,14 +259,6 @@ bool MimeTypeData::isDirty() const
         if (isMimeTypeDirty()) {
             return true;
         }
-    } else { // is a group
-        if (readAutoEmbed() != m_autoEmbed) {
-            return true;
-        }
-    }
-
-    if (m_askSave != AskSaveDefault) {
-        return true;
     }
 
     // nothing seems to have changed, it's not dirty.
@@ -324,28 +268,8 @@ bool MimeTypeData::isDirty() const
 bool MimeTypeData::sync()
 {
     if (m_isGroup) {
-        writeAutoEmbed();
         return false;
     }
-
-    if (m_askSave != AskSaveDefault) {
-        KSharedConfig::Ptr config = KSharedConfig::openConfig(QStringLiteral("filetypesrc"), KConfig::NoGlobals);
-        if (!config->isConfigWritable(true)) {
-            return false;
-        }
-        KConfigGroup cg = config->group("Notification Messages");
-        if (m_askSave == AskSaveYes) {
-            // Ask
-            cg.deleteEntry(QStringLiteral("askSave") + name());
-            cg.deleteEntry(QStringLiteral("askEmbedOrSave") + name());
-        } else {
-            // Do not ask, open
-            cg.writeEntry(QStringLiteral("askSave") + name(), QStringLiteral("no"));
-            cg.writeEntry(QStringLiteral("askEmbedOrSave") + name(), QStringLiteral("no"));
-        }
-    }
-
-    writeAutoEmbed();
 
     bool needUpdateMimeDb = false;
     if (isMimeTypeDirty()) {
@@ -509,21 +433,6 @@ void MimeTypeData::refresh()
             m_bFullInit = false; // refresh services too
         }
     }
-}
-
-void MimeTypeData::getAskSave(bool &_askSave)
-{
-    if (m_askSave == AskSaveYes) {
-        _askSave = true;
-    }
-    if (m_askSave == AskSaveNo) {
-        _askSave = false;
-    }
-}
-
-void MimeTypeData::setAskSave(bool _askSave)
-{
-    m_askSave = _askSave ? AskSaveYes : AskSaveNo;
 }
 
 bool MimeTypeData::canUseGroupSetting() const
