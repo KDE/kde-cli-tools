@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: filetypes\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2026-06-04 00:46+0000\n"
+"POT-Creation-Date: 2026-08-28 00:47+0000\n"
 "PO-Revision-Date: 2023-06-05 11:08+0200\n"
 "Last-Translator: Vit Pelcak <vit@pelcak.org>\n"
 "Language-Team: Czech <kde-i18n-doc@kde.org>\n"
@@ -29,37 +29,7 @@ msgctxt "EMAIL OF TRANSLATORS"
 msgid "Your emails"
 msgstr "flidr@kky.zcu.cz,jfriedl@suse.cz"
 
-#: filegroupdetails.cpp:22
-#, kde-format
-msgid "Left Click Action (only for Konqueror file manager)"
-msgstr "Činnost levého kliknutí (pouze pro správce souborů Konqueror)"
-
-#: filegroupdetails.cpp:26 filetypedetails.cpp:134
-#, kde-format
-msgid "Show file in embedded viewer"
-msgstr "Zobrazit soubor v zabudovaném prohlížeči"
-
-#: filegroupdetails.cpp:27 filetypedetails.cpp:135
-#, kde-format
-msgid "Show file in separate viewer"
-msgstr "Zobrazit soubor v odděleném prohlížeči"
-
-#: filegroupdetails.cpp:36
-#, kde-format
-msgid ""
-"Here you can configure what the Konqueror file manager will do when you "
-"click on a file belonging to this group. Konqueror can display the file in "
-"an embedded viewer or start up a separate application. You can change this "
-"setting for a specific file type in the 'Embedding' tab of the file type "
-"configuration. Dolphin  shows files always in a separate viewer"
-msgstr ""
-"Zde je možné nastavit, jakou činnost bude provádět správce souborů "
-"Konqueror, kliknete-li na soubor patřící do této skupiny. Konqueror může "
-"zobrazit soubor vestavěným prohlížečem nebo spustit jinou aplikaci. "
-"Nastavení pro určitý typ souborů je možné změnit v nastaveních souborového "
-"typu v kartě 'Vsazení'. Dolphin otevře soubor v odděleném prohlížeči vždy."
-
-#: filetypedetails.cpp:61
+#: filetypedetails.cpp:54
 #, kde-format
 msgid ""
 "This button displays the icon associated with the selected file type. Click "
@@ -68,12 +38,12 @@ msgstr ""
 "Toto tlačítko zobrazuje ikonu asociovanou s vybraným typem souborů. Klikněte "
 "na ni ke zvolení nové ikony."
 
-#: filetypedetails.cpp:67
+#: filetypedetails.cpp:60
 #, kde-format
 msgid "Filename Patterns"
 msgstr "Vzory souborů"
 
-#: filetypedetails.cpp:79
+#: filetypedetails.cpp:72
 #, kde-format
 msgid ""
 "This box contains a list of patterns that can be used to identify files of "
@@ -86,32 +56,32 @@ msgstr ""
 "plain'; všechny soubory končící příponou '.txt' jsou asociovány jako prosté "
 "textové soubory."
 
-#: filetypedetails.cpp:87 filetypesview.cpp:86 kservicelistwidget.cpp:105
+#: filetypedetails.cpp:80 filetypesview.cpp:84 kservicelistwidget.cpp:105
 #, kde-format
 msgid "Add..."
 msgstr "Přidat..."
 
-#: filetypedetails.cpp:92
+#: filetypedetails.cpp:85
 #, kde-format
 msgid "Add a new pattern for the selected file type."
 msgstr "Přidat nový vzor pro vybraný typ souborů."
 
-#: filetypedetails.cpp:94 kservicelistwidget.cpp:119
+#: filetypedetails.cpp:87 kservicelistwidget.cpp:119
 #, kde-format
 msgid "Remove"
 msgstr "Odstranit"
 
-#: filetypedetails.cpp:99
+#: filetypedetails.cpp:92
 #, kde-format
 msgid "Remove the selected filename pattern."
 msgstr "Odstranit vybraný vzor souborů."
 
-#: filetypedetails.cpp:110
+#: filetypedetails.cpp:103
 #, kde-format
 msgid "Description:"
 msgstr "Popis:"
 
-#: filetypedetails.cpp:115
+#: filetypedetails.cpp:108
 #, kde-format
 msgid ""
 "You can enter a short description for files of the selected file type (e.g. "
@@ -122,72 +92,37 @@ msgstr ""
 "stránka'). Tento popis bude použit aplikacemi jako Konqueror při zobrazování "
 "obsahu adresáře."
 
-#: filetypedetails.cpp:129
-#, kde-format
-msgid "Left Click Action in Konqueror"
-msgstr "Činnost levého tlačítka v Konqueroru"
-
-#: filetypedetails.cpp:138
-#, kde-format
-msgid "Ask whether to save to disk instead (only for Konqueror browser)"
-msgstr ""
-"Dotázat se na uložení namísto toho na disk (pouze pro správce souborů "
-"Konqueror)"
-
-#: filetypedetails.cpp:154
-#, kde-format
-msgid ""
-"Here you can configure what the Konqueror file manager will do when you "
-"click on a file of this type. Konqueror can either display the file in an "
-"embedded viewer, or start up a separate application. If set to 'Use settings "
-"for G group', the file manager will behave according to the settings of the "
-"group G to which this type belongs; for instance, 'image' if the current "
-"file type is image/png. Dolphin always shows files in a separate viewer."
-msgstr ""
-"Zde je možné nastavit, jakou činnost bude provádět správce souborů "
-"Konqueror, kliknete-li na soubor tohoto typu. Konqueror buďto může zobrazit "
-"soubor vestavěným prohlížečem nebo spustit jinou aplikaci. Je-li nastaveno "
-"'Použít nastavení skupiny', bude se Konqueror chovat dle nastavení skupiny, "
-"do které patří tento typ. Např. v případě, že současný typ je image/png, pak "
-"se použije nastavení skupiny 'image'. Dolphin otevře soubor v odděleném "
-"prohlížeči vždy."
-
-#: filetypedetails.cpp:167
+#: filetypedetails.cpp:128
 #, kde-format
 msgid "&General"
 msgstr "&Obecné"
 
-#: filetypedetails.cpp:168
+#: filetypedetails.cpp:129
 #, kde-format
 msgid "&Embedding"
 msgstr "Vsa&zení"
 
-#: filetypedetails.cpp:209
+#: filetypedetails.cpp:170
 #, kde-format
 msgid "Add New Extension"
 msgstr "Přidat novou příponu"
 
-#: filetypedetails.cpp:209
+#: filetypedetails.cpp:170
 #, kde-format
 msgid "Extension:"
 msgstr "Přípona:"
 
-#: filetypedetails.cpp:328
+#: filetypedetails.cpp:203
 #, kde-format
 msgid "File type %1"
 msgstr "Typ souboru %1"
 
-#: filetypedetails.cpp:336
-#, kde-format
-msgid "Use settings for '%1' group"
-msgstr "Použít nastavení pro skupinu '%1'"
-
-#: filetypesview.cpp:57
+#: filetypesview.cpp:55
 #, kde-format
 msgid "Search for file type or filename pattern..."
 msgstr "Hledat typ nebo vzor názvu souboru..."
 
-#: filetypesview.cpp:63
+#: filetypesview.cpp:61
 #, kde-format
 msgid ""
 "Enter a part of a filename pattern, and only file types with a matching file "
@@ -198,12 +133,12 @@ msgstr ""
 "které odpovídají tomuto vzoru. Alternativně můžete zadat část názvu typu "
 "souboru."
 
-#: filetypesview.cpp:71 multiapplydialog.cpp:27
+#: filetypesview.cpp:69 multiapplydialog.cpp:27
 #, kde-format
 msgid "Known Types"
 msgstr "Známé typy"
 
-#: filetypesview.cpp:77
+#: filetypesview.cpp:75
 #, kde-format
 msgid ""
 "Here you can see a hierarchical list of the file types which are known on "
@@ -217,32 +152,32 @@ msgstr ""
 "HTML soubory), jehož informace si přejete prohlédnout/upravit pomocí prvků "
 "na pravé straně."
 
-#: filetypesview.cpp:91
+#: filetypesview.cpp:89
 #, kde-format
 msgid "Click here to add a new file type."
 msgstr "Zde klikněte pro přidání nového typu souborů."
 
-#: filetypesview.cpp:93 filetypesview.cpp:389
+#: filetypesview.cpp:91 filetypesview.cpp:368
 #, kde-format
 msgid "&Remove"
 msgstr "Odst&ranit"
 
-#: filetypesview.cpp:119
+#: filetypesview.cpp:111
 #, kde-format
 msgid "Select a file type by name or by extension"
 msgstr "Zvolte typ souboru podle názvu nebo přípony"
 
-#: filetypesview.cpp:382
+#: filetypesview.cpp:361
 #, kde-format
 msgid "&Revert"
 msgstr "V&rátit"
 
-#: filetypesview.cpp:383
+#: filetypesview.cpp:362
 #, kde-format
 msgid "Revert this file type to its initial system-wide definition"
 msgstr "Vrátit tento typ souboru zpět na globální výchozí hodnoty"
 
-#: filetypesview.cpp:385
+#: filetypesview.cpp:364
 #, kde-format
 msgid ""
 "Click here to revert this file type to its initial system-wide definition, "
@@ -257,12 +192,12 @@ msgstr ""
 "jejich seznam vzorů, čímž zmenšíte pravděpodobnost jejich použití (ale "
 "určování typu souboru podle jeho obsahu je nakonec může použít)."
 
-#: filetypesview.cpp:390
+#: filetypesview.cpp:369
 #, kde-format
 msgid "Delete this file type definition completely"
 msgstr "Kompletně smazat tento popis typu souboru"
 
-#: filetypesview.cpp:392
+#: filetypesview.cpp:371
 #, kde-format
 msgid ""
 "Click here to delete this file type definition completely. This is only "
@@ -506,3 +441,54 @@ msgid ""
 msgstr ""
 "Zadejte název typu souboru. Například pokud jste vybrali 'image' jako "
 "kategorii a zde zadáte 'custom', bude vytvořen typ souboru 'image/custom'."
+
+#~ msgid "Left Click Action (only for Konqueror file manager)"
+#~ msgstr "Činnost levého kliknutí (pouze pro správce souborů Konqueror)"
+
+#~ msgid "Show file in embedded viewer"
+#~ msgstr "Zobrazit soubor v zabudovaném prohlížeči"
+
+#~ msgid "Show file in separate viewer"
+#~ msgstr "Zobrazit soubor v odděleném prohlížeči"
+
+#~ msgid ""
+#~ "Here you can configure what the Konqueror file manager will do when you "
+#~ "click on a file belonging to this group. Konqueror can display the file "
+#~ "in an embedded viewer or start up a separate application. You can change "
+#~ "this setting for a specific file type in the 'Embedding' tab of the file "
+#~ "type configuration. Dolphin  shows files always in a separate viewer"
+#~ msgstr ""
+#~ "Zde je možné nastavit, jakou činnost bude provádět správce souborů "
+#~ "Konqueror, kliknete-li na soubor patřící do této skupiny. Konqueror může "
+#~ "zobrazit soubor vestavěným prohlížečem nebo spustit jinou aplikaci. "
+#~ "Nastavení pro určitý typ souborů je možné změnit v nastaveních "
+#~ "souborového typu v kartě 'Vsazení'. Dolphin otevře soubor v odděleném "
+#~ "prohlížeči vždy."
+
+#~ msgid "Left Click Action in Konqueror"
+#~ msgstr "Činnost levého tlačítka v Konqueroru"
+
+#~ msgid "Ask whether to save to disk instead (only for Konqueror browser)"
+#~ msgstr ""
+#~ "Dotázat se na uložení namísto toho na disk (pouze pro správce souborů "
+#~ "Konqueror)"
+
+#~ msgid ""
+#~ "Here you can configure what the Konqueror file manager will do when you "
+#~ "click on a file of this type. Konqueror can either display the file in an "
+#~ "embedded viewer, or start up a separate application. If set to 'Use "
+#~ "settings for G group', the file manager will behave according to the "
+#~ "settings of the group G to which this type belongs; for instance, 'image' "
+#~ "if the current file type is image/png. Dolphin always shows files in a "
+#~ "separate viewer."
+#~ msgstr ""
+#~ "Zde je možné nastavit, jakou činnost bude provádět správce souborů "
+#~ "Konqueror, kliknete-li na soubor tohoto typu. Konqueror buďto může "
+#~ "zobrazit soubor vestavěným prohlížečem nebo spustit jinou aplikaci. Je-li "
+#~ "nastaveno 'Použít nastavení skupiny', bude se Konqueror chovat dle "
+#~ "nastavení skupiny, do které patří tento typ. Např. v případě, že současný "
+#~ "typ je image/png, pak se použije nastavení skupiny 'image'. Dolphin "
+#~ "otevře soubor v odděleném prohlížeči vždy."
+
+#~ msgid "Use settings for '%1' group"
+#~ msgstr "Použít nastavení pro skupinu '%1'"

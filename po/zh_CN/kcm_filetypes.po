@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kdeorg\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2026-06-04 00:46+0000\n"
+"POT-Creation-Date: 2026-08-28 00:47+0000\n"
 "PO-Revision-Date: 2024-04-22 15:58\n"
 "Last-Translator: \n"
 "Language-Team: Chinese Simplified\n"
@@ -27,48 +27,19 @@ msgctxt "EMAIL OF TRANSLATORS"
 msgid "Your emails"
 msgstr "kde-china@kde.org"
 
-#: filegroupdetails.cpp:22
-#, kde-format
-msgid "Left Click Action (only for Konqueror file manager)"
-msgstr "鼠标左键操作 (仅适用于 Konqueror 文件管理器)"
-
-#: filegroupdetails.cpp:26 filetypedetails.cpp:134
-#, kde-format
-msgid "Show file in embedded viewer"
-msgstr "在嵌入的查看器中显示文件"
-
-#: filegroupdetails.cpp:27 filetypedetails.cpp:135
-#, kde-format
-msgid "Show file in separate viewer"
-msgstr "在新开的查看器中显示文件"
-
-#: filegroupdetails.cpp:36
-#, kde-format
-msgid ""
-"Here you can configure what the Konqueror file manager will do when you "
-"click on a file belonging to this group. Konqueror can display the file in "
-"an embedded viewer or start up a separate application. You can change this "
-"setting for a specific file type in the 'Embedding' tab of the file type "
-"configuration. Dolphin  shows files always in a separate viewer"
-msgstr ""
-"您在这里可以配置在单击这个组中的文件时 Konqueror 文件管理器的操作。Konqueror "
-"可以在一个嵌入的查看器中显示文件的内容，也可以运行一个单独的程序来显示文件。"
-"您可以在文件类型配置的“嵌入”选项中为特定的文件类型修改此设置。而 Dolphin 总是"
-"会在一个单独的查看器中显示文件。"
-
-#: filetypedetails.cpp:61
+#: filetypedetails.cpp:54
 #, kde-format
 msgid ""
 "This button displays the icon associated with the selected file type. Click "
 "on it to choose a different icon."
 msgstr "此按钮显示选中文件类型所关联的图标。单击它以选择一个新的图标。"
 
-#: filetypedetails.cpp:67
+#: filetypedetails.cpp:60
 #, kde-format
 msgid "Filename Patterns"
 msgstr "文件名模式"
 
-#: filetypedetails.cpp:79
+#: filetypedetails.cpp:72
 #, kde-format
 msgid ""
 "This box contains a list of patterns that can be used to identify files of "
@@ -79,32 +50,32 @@ msgstr ""
 "这个菜单中包含可以确定文件类型的模式列表。例如，模式 *.txt 和文件类型“text/"
 "plain”相关联；所有“.txt”结尾的文件会被当作纯文本文件。"
 
-#: filetypedetails.cpp:87 filetypesview.cpp:86 kservicelistwidget.cpp:105
+#: filetypedetails.cpp:80 filetypesview.cpp:84 kservicelistwidget.cpp:105
 #, kde-format
 msgid "Add..."
 msgstr "添加..."
 
-#: filetypedetails.cpp:92
+#: filetypedetails.cpp:85
 #, kde-format
 msgid "Add a new pattern for the selected file type."
 msgstr "为选中的文件类型添加一个新的模式。"
 
-#: filetypedetails.cpp:94 kservicelistwidget.cpp:119
+#: filetypedetails.cpp:87 kservicelistwidget.cpp:119
 #, kde-format
 msgid "Remove"
 msgstr "删除"
 
-#: filetypedetails.cpp:99
+#: filetypedetails.cpp:92
 #, kde-format
 msgid "Remove the selected filename pattern."
 msgstr "删除选中的文件名模式。"
 
-#: filetypedetails.cpp:110
+#: filetypedetails.cpp:103
 #, kde-format
 msgid "Description:"
 msgstr "描述："
 
-#: filetypedetails.cpp:115
+#: filetypedetails.cpp:108
 #, kde-format
 msgid ""
 "You can enter a short description for files of the selected file type (e.g. "
@@ -114,67 +85,37 @@ msgstr ""
 "在这里输入选中的文件类型的简要描述(例如“HTML 页面”)。Konqueror 等程序会用这些"
 "描述显示目录的内容。"
 
-#: filetypedetails.cpp:129
-#, kde-format
-msgid "Left Click Action in Konqueror"
-msgstr "Konqueror 中的左键操作"
-
-#: filetypedetails.cpp:138
-#, kde-format
-msgid "Ask whether to save to disk instead (only for Konqueror browser)"
-msgstr "询问是否保存到磁盘(仅针对 Konqueror 浏览器)"
-
-#: filetypedetails.cpp:154
-#, kde-format
-msgid ""
-"Here you can configure what the Konqueror file manager will do when you "
-"click on a file of this type. Konqueror can either display the file in an "
-"embedded viewer, or start up a separate application. If set to 'Use settings "
-"for G group', the file manager will behave according to the settings of the "
-"group G to which this type belongs; for instance, 'image' if the current "
-"file type is image/png. Dolphin always shows files in a separate viewer."
-msgstr ""
-"配置单击这种类型的文件时 Konqueror 文件管理器的操作。Konqueror 可以在嵌入的查"
-"看器内查看或启动另外的程序来查看。如果设为“使用 G 组的设置”，Konqueror 将按照"
-"这个类型所属的组 G 的设置来处理，例如，当前文件类型是 image/png 时，采"
-"用“image”设置。而 Dolphin 总是会在一个单独的查看器中显示文件。"
-
-#: filetypedetails.cpp:167
+#: filetypedetails.cpp:128
 #, kde-format
 msgid "&General"
 msgstr "常规(&G)"
 
-#: filetypedetails.cpp:168
+#: filetypedetails.cpp:129
 #, kde-format
 msgid "&Embedding"
 msgstr "嵌入(&E)"
 
-#: filetypedetails.cpp:209
+#: filetypedetails.cpp:170
 #, kde-format
 msgid "Add New Extension"
 msgstr "添加新的扩展名"
 
-#: filetypedetails.cpp:209
+#: filetypedetails.cpp:170
 #, kde-format
 msgid "Extension:"
 msgstr "扩展名："
 
-#: filetypedetails.cpp:328
+#: filetypedetails.cpp:203
 #, kde-format
 msgid "File type %1"
 msgstr "文件类型 %1"
 
-#: filetypedetails.cpp:336
-#, kde-format
-msgid "Use settings for '%1' group"
-msgstr "使用“%1”组的设置"
-
-#: filetypesview.cpp:57
+#: filetypesview.cpp:55
 #, kde-format
 msgid "Search for file type or filename pattern..."
 msgstr "搜索文件类型或文件名模式..."
 
-#: filetypesview.cpp:63
+#: filetypesview.cpp:61
 #, kde-format
 msgid ""
 "Enter a part of a filename pattern, and only file types with a matching file "
@@ -184,12 +125,12 @@ msgstr ""
 "输入文件名模式的一部分。只有匹配此文件名模式的文件类型才会显示在列表中。作为"
 "备选做法，您也可以输入列表中有的文件类型名称来筛选。"
 
-#: filetypesview.cpp:71 multiapplydialog.cpp:27
+#: filetypesview.cpp:69 multiapplydialog.cpp:27
 #, kde-format
 msgid "Known Types"
 msgstr "已知类型"
 
-#: filetypesview.cpp:77
+#: filetypesview.cpp:75
 #, kde-format
 msgid ""
 "Here you can see a hierarchical list of the file types which are known on "
@@ -201,32 +142,32 @@ msgstr ""
 "或者在“-”上单击来折叠它。选择一个文件类型(例如 text/html 表示的 HTML 文件)，"
 "用右侧的控制按钮来查看和编辑这种文件类型的信息。"
 
-#: filetypesview.cpp:91
+#: filetypesview.cpp:89
 #, kde-format
 msgid "Click here to add a new file type."
 msgstr "单击此处可以添加新的文件类型。"
 
-#: filetypesview.cpp:93 filetypesview.cpp:389
+#: filetypesview.cpp:91 filetypesview.cpp:368
 #, kde-format
 msgid "&Remove"
 msgstr "删除(&R)"
 
-#: filetypesview.cpp:119
+#: filetypesview.cpp:111
 #, kde-format
 msgid "Select a file type by name or by extension"
 msgstr "按名字或扩展名来选择文件类型"
 
-#: filetypesview.cpp:382
+#: filetypesview.cpp:361
 #, kde-format
 msgid "&Revert"
 msgstr "还原(&R)"
 
-#: filetypesview.cpp:383
+#: filetypesview.cpp:362
 #, kde-format
 msgid "Revert this file type to its initial system-wide definition"
 msgstr "将此文件类型的定义还原为系统全局的初始值"
 
-#: filetypesview.cpp:385
+#: filetypesview.cpp:364
 #, kde-format
 msgid ""
 "Click here to revert this file type to its initial system-wide definition, "
@@ -240,12 +181,12 @@ msgstr ""
 "式列表以将其涉及的用途最小化(但当根据文件内容确定文件类型时，还会应用此类定"
 "义)。"
 
-#: filetypesview.cpp:390
+#: filetypesview.cpp:369
 #, kde-format
 msgid "Delete this file type definition completely"
 msgstr "完全删除此文件类型定义"
 
-#: filetypesview.cpp:392
+#: filetypesview.cpp:371
 #, kde-format
 msgid ""
 "Click here to delete this file type definition completely. This is only "
@@ -483,3 +424,48 @@ msgid ""
 msgstr ""
 "输入文件类型的名称。例如，如果您在组中选择“image”，并在此输入“custom”，将创建"
 "一个“image/custom”文件类型。"
+
+#~ msgid "Left Click Action (only for Konqueror file manager)"
+#~ msgstr "鼠标左键操作 (仅适用于 Konqueror 文件管理器)"
+
+#~ msgid "Show file in embedded viewer"
+#~ msgstr "在嵌入的查看器中显示文件"
+
+#~ msgid "Show file in separate viewer"
+#~ msgstr "在新开的查看器中显示文件"
+
+#~ msgid ""
+#~ "Here you can configure what the Konqueror file manager will do when you "
+#~ "click on a file belonging to this group. Konqueror can display the file "
+#~ "in an embedded viewer or start up a separate application. You can change "
+#~ "this setting for a specific file type in the 'Embedding' tab of the file "
+#~ "type configuration. Dolphin  shows files always in a separate viewer"
+#~ msgstr ""
+#~ "您在这里可以配置在单击这个组中的文件时 Konqueror 文件管理器的操作。"
+#~ "Konqueror 可以在一个嵌入的查看器中显示文件的内容，也可以运行一个单独的程序"
+#~ "来显示文件。您可以在文件类型配置的“嵌入”选项中为特定的文件类型修改此设置。"
+#~ "而 Dolphin 总是会在一个单独的查看器中显示文件。"
+
+#~ msgid "Left Click Action in Konqueror"
+#~ msgstr "Konqueror 中的左键操作"
+
+#~ msgid "Ask whether to save to disk instead (only for Konqueror browser)"
+#~ msgstr "询问是否保存到磁盘(仅针对 Konqueror 浏览器)"
+
+#~ msgid ""
+#~ "Here you can configure what the Konqueror file manager will do when you "
+#~ "click on a file of this type. Konqueror can either display the file in an "
+#~ "embedded viewer, or start up a separate application. If set to 'Use "
+#~ "settings for G group', the file manager will behave according to the "
+#~ "settings of the group G to which this type belongs; for instance, 'image' "
+#~ "if the current file type is image/png. Dolphin always shows files in a "
+#~ "separate viewer."
+#~ msgstr ""
+#~ "配置单击这种类型的文件时 Konqueror 文件管理器的操作。Konqueror 可以在嵌入"
+#~ "的查看器内查看或启动另外的程序来查看。如果设为“使用 G 组的设置”，"
+#~ "Konqueror 将按照这个类型所属的组 G 的设置来处理，例如，当前文件类型是 "
+#~ "image/png 时，采用“image”设置。而 Dolphin 总是会在一个单独的查看器中显示文"
+#~ "件。"
+
+#~ msgid "Use settings for '%1' group"
+#~ msgstr "使用“%1”组的设置"

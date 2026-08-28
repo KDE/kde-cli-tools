@@ -9,7 +9,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: filetypes\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2026-06-04 00:46+0000\n"
+"POT-Creation-Date: 2026-08-28 00:47+0000\n"
 "PO-Revision-Date: 2014-07-24 00:37+0430\n"
 "Last-Translator: Mohi Mirdamadi <mohi@ubuntu.ir>\n"
 "Language-Team: Farsi (Persian) <kde-i18n-fa@kde.org>\n"
@@ -30,38 +30,7 @@ msgctxt "EMAIL OF TRANSLATORS"
 msgid "Your emails"
 msgstr "mohi@ubuntu.ir"
 
-#: filegroupdetails.cpp:22
-#, kde-format
-msgid "Left Click Action (only for Konqueror file manager)"
-msgstr "عملکرد کلیک چپ (فقط برای مدیر پرونده کانکرر)"
-
-#: filegroupdetails.cpp:26 filetypedetails.cpp:134
-#, kde-format
-msgid "Show file in embedded viewer"
-msgstr "نمایش پرونده در مشاهده‌گر نهفته"
-
-#: filegroupdetails.cpp:27 filetypedetails.cpp:135
-#, kde-format
-msgid "Show file in separate viewer"
-msgstr "نمایش پرونده در مشاهده‌گر مجزا"
-
-#: filegroupdetails.cpp:36
-#, kde-format
-msgid ""
-"Here you can configure what the Konqueror file manager will do when you "
-"click on a file belonging to this group. Konqueror can display the file in "
-"an embedded viewer or start up a separate application. You can change this "
-"setting for a specific file type in the 'Embedding' tab of the file type "
-"configuration. Dolphin  shows files always in a separate viewer"
-msgstr ""
-"در اینجا، هنگامی که روی پرونده‌ای متعلق به این گروه فشار می‌دهید، می‌توانید "
-"آنچه را که مدیر پرونده Konqueror انجام می‌دهد، پیکربندی کنید. Konqueror "
-"می‌تواند پرونده را در مشاهده‌گر توکار نمایش دهد، یا برنامه‌ی مجزا را راه‌اندازی "
-"کند. این تنظیمات را می‌توان برای نوع پرونده ویژه در برگه‌ی «توکار» در قسمت "
-"پیکربندی نوع پرونده، تغییر داد. دلفین همیشه پرونده‌ها را در نمایشگر جداگانه "
-"نمایش میدهد"
-
-#: filetypedetails.cpp:61
+#: filetypedetails.cpp:54
 #, kde-format
 msgid ""
 "This button displays the icon associated with the selected file type. Click "
@@ -70,12 +39,12 @@ msgstr ""
 "این دکمه، شمایل مربوط به نوع پرونده برگزیده را نشان می‌دهد. برای انتخاب "
 "شمایلی متفاوت، آن را فشار دهید."
 
-#: filetypedetails.cpp:67
+#: filetypedetails.cpp:60
 #, kde-format
 msgid "Filename Patterns"
 msgstr "الگوهای نام پرونده"
 
-#: filetypedetails.cpp:79
+#: filetypedetails.cpp:72
 #, kde-format
 msgid ""
 "This box contains a list of patterns that can be used to identify files of "
@@ -87,32 +56,32 @@ msgstr ""
 "استفاده می‌شوند. برای مثال، الگوی txt.* مربوط به نوع پرونده »متن/ساده« است؛ "
 "همه پرونده‌های منتهی به »txt.« به عنوان پرونده‌های متنی ساده شناخته می‌شوند."
 
-#: filetypedetails.cpp:87 filetypesview.cpp:86 kservicelistwidget.cpp:105
+#: filetypedetails.cpp:80 filetypesview.cpp:84 kservicelistwidget.cpp:105
 #, kde-format
 msgid "Add..."
 msgstr "افزودن..."
 
-#: filetypedetails.cpp:92
+#: filetypedetails.cpp:85
 #, kde-format
 msgid "Add a new pattern for the selected file type."
 msgstr "افزودن الگوی جدید برای نوع پرونده برگزیده."
 
-#: filetypedetails.cpp:94 kservicelistwidget.cpp:119
+#: filetypedetails.cpp:87 kservicelistwidget.cpp:119
 #, kde-format
 msgid "Remove"
 msgstr "حذف"
 
-#: filetypedetails.cpp:99
+#: filetypedetails.cpp:92
 #, kde-format
 msgid "Remove the selected filename pattern."
 msgstr "حذف الگوی نام پرونده برگزیده."
 
-#: filetypedetails.cpp:110
+#: filetypedetails.cpp:103
 #, kde-format
 msgid "Description:"
 msgstr "توصیف:"
 
-#: filetypedetails.cpp:115
+#: filetypedetails.cpp:108
 #, kde-format
 msgid ""
 "You can enter a short description for files of the selected file type (e.g. "
@@ -123,70 +92,38 @@ msgstr ""
 "وارد کنید. این توصیف توسط کاربردهایی مانند Konqueror، برای نمایش محتوای "
 "فهرست راهنما استفاده می‌شود."
 
-#: filetypedetails.cpp:129
-#, kde-format
-msgid "Left Click Action in Konqueror"
-msgstr "عملکرد کلیک چپ در کانکرر"
-
-#: filetypedetails.cpp:138
-#, kde-format
-msgid "Ask whether to save to disk instead (only for Konqueror browser)"
-msgstr ""
-"سؤال در مورد اینکه آیا به جای این، در دیسک ذخیره شود (فقط برای مرورگر کانکرر)"
-
-#: filetypedetails.cpp:154
-#, kde-format
-msgid ""
-"Here you can configure what the Konqueror file manager will do when you "
-"click on a file of this type. Konqueror can either display the file in an "
-"embedded viewer, or start up a separate application. If set to 'Use settings "
-"for G group', the file manager will behave according to the settings of the "
-"group G to which this type belongs; for instance, 'image' if the current "
-"file type is image/png. Dolphin always shows files in a separate viewer."
-msgstr ""
-"در اینجا می‌توانید آنچه مدیر پرونده Konqueror، هنگام فشار بر روی پرونده از "
-"این نوع انجام می‌دهد را پیکربندی کنید. Konqueror می‌تواند پرونده را در "
-"مشاهده‌گر نهفته نمایش داده، یا کاربرد مجزا را راه‌اندازی کند. اگر با «استفاده "
-"از تنظیمات برای گروه G» تنظیم شود، Konqueror، طبق تنظیمات گروه G متعلق به "
-"این نوع رفتار می‌کند؛ برای نمونه، اگر نوع پرونده جاری تصویر/png باشد،«تصویر»."
-
-#: filetypedetails.cpp:167
+#: filetypedetails.cpp:128
 #, kde-format
 msgid "&General"
 msgstr "&عمومی‌"
 
-#: filetypedetails.cpp:168
+#: filetypedetails.cpp:129
 #, kde-format
 msgid "&Embedding"
 msgstr "&نهفته‌"
 
-#: filetypedetails.cpp:209
+#: filetypedetails.cpp:170
 #, kde-format
 msgid "Add New Extension"
 msgstr "افزودن پسوند جدید"
 
-#: filetypedetails.cpp:209
+#: filetypedetails.cpp:170
 #, kde-format
 msgid "Extension:"
 msgstr "پسوند:"
 
-#: filetypedetails.cpp:328
+#: filetypedetails.cpp:203
 #, kde-format
 msgid "File type %1"
 msgstr "نوع پرونده %1"
 
-#: filetypedetails.cpp:336
-#, kde-format
-msgid "Use settings for '%1' group"
-msgstr "استفاده از تنظیمات برای گروه »%1«"
-
-#: filetypesview.cpp:57
+#: filetypesview.cpp:55
 #, fuzzy, kde-format
 #| msgid "Find file type or filename pattern"
 msgid "Search for file type or filename pattern..."
 msgstr "&یافتن الگوی نوع با نام پرونده"
 
-#: filetypesview.cpp:63
+#: filetypesview.cpp:61
 #, kde-format
 msgid ""
 "Enter a part of a filename pattern, and only file types with a matching file "
@@ -197,12 +134,12 @@ msgstr ""
 "در فهرست ظاهر خواهند شد. به‌جز این، قسمتی از نوع پرونده را تایپ کنید تا نام "
 "آن در لیست پیدا شود."
 
-#: filetypesview.cpp:71 multiapplydialog.cpp:27
+#: filetypesview.cpp:69 multiapplydialog.cpp:27
 #, kde-format
 msgid "Known Types"
 msgstr "انواع شناخته‌شده"
 
-#: filetypesview.cpp:77
+#: filetypesview.cpp:75
 #, kde-format
 msgid ""
 "Here you can see a hierarchical list of the file types which are known on "
@@ -216,32 +153,32 @@ msgstr ""
 "زنگام( برای نمایش/ویرایش اطلاعات برای آن نوع پرونده، با استفاده از کنترلها "
 "در سمت راست انتخاب کنید."
 
-#: filetypesview.cpp:91
+#: filetypesview.cpp:89
 #, kde-format
 msgid "Click here to add a new file type."
 msgstr "اینجا را فشار دهید تا یک نوع پرونده جدید اضافه شود."
 
-#: filetypesview.cpp:93 filetypesview.cpp:389
+#: filetypesview.cpp:91 filetypesview.cpp:368
 #, kde-format
 msgid "&Remove"
 msgstr "&حذف‌"
 
-#: filetypesview.cpp:119
+#: filetypesview.cpp:111
 #, kde-format
 msgid "Select a file type by name or by extension"
 msgstr "برگزیدن یک نوع پرونده با نام یا با پسوند"
 
-#: filetypesview.cpp:382
+#: filetypesview.cpp:361
 #, kde-format
 msgid "&Revert"
 msgstr "&بازگشت"
 
-#: filetypesview.cpp:383
+#: filetypesview.cpp:362
 #, kde-format
 msgid "Revert this file type to its initial system-wide definition"
 msgstr "برگردان این نوع پرونده به تعریف اولیه سیستم"
 
-#: filetypesview.cpp:385
+#: filetypesview.cpp:364
 #, kde-format
 msgid ""
 "Click here to revert this file type to its initial system-wide definition, "
@@ -251,12 +188,12 @@ msgid ""
 "from file contents can still end up using them)."
 msgstr ""
 
-#: filetypesview.cpp:390
+#: filetypesview.cpp:369
 #, kde-format
 msgid "Delete this file type definition completely"
 msgstr "حذف کامل این تعریف از نوع پرونده"
 
-#: filetypesview.cpp:392
+#: filetypesview.cpp:371
 #, kde-format
 msgid ""
 "Click here to delete this file type definition completely. This is only "
@@ -499,6 +436,56 @@ msgstr ""
 "نامی برای این نوع فایل تایپ کنید. برای مثال، اگر شما «تصویر» را به عنوان "
 "دسته‌بندی انتخاب کنید و اینجا «سفارشی» را تایپ کنید، نوع پرونده‌ی «تصویر/"
 "سفارشی» ایجاد خواهد شد."
+
+#~ msgid "Left Click Action (only for Konqueror file manager)"
+#~ msgstr "عملکرد کلیک چپ (فقط برای مدیر پرونده کانکرر)"
+
+#~ msgid "Show file in embedded viewer"
+#~ msgstr "نمایش پرونده در مشاهده‌گر نهفته"
+
+#~ msgid "Show file in separate viewer"
+#~ msgstr "نمایش پرونده در مشاهده‌گر مجزا"
+
+#~ msgid ""
+#~ "Here you can configure what the Konqueror file manager will do when you "
+#~ "click on a file belonging to this group. Konqueror can display the file "
+#~ "in an embedded viewer or start up a separate application. You can change "
+#~ "this setting for a specific file type in the 'Embedding' tab of the file "
+#~ "type configuration. Dolphin  shows files always in a separate viewer"
+#~ msgstr ""
+#~ "در اینجا، هنگامی که روی پرونده‌ای متعلق به این گروه فشار می‌دهید، می‌توانید "
+#~ "آنچه را که مدیر پرونده Konqueror انجام می‌دهد، پیکربندی کنید. Konqueror "
+#~ "می‌تواند پرونده را در مشاهده‌گر توکار نمایش دهد، یا برنامه‌ی مجزا را "
+#~ "راه‌اندازی کند. این تنظیمات را می‌توان برای نوع پرونده ویژه در برگه‌ی "
+#~ "«توکار» در قسمت پیکربندی نوع پرونده، تغییر داد. دلفین همیشه پرونده‌ها را "
+#~ "در نمایشگر جداگانه نمایش میدهد"
+
+#~ msgid "Left Click Action in Konqueror"
+#~ msgstr "عملکرد کلیک چپ در کانکرر"
+
+#~ msgid "Ask whether to save to disk instead (only for Konqueror browser)"
+#~ msgstr ""
+#~ "سؤال در مورد اینکه آیا به جای این، در دیسک ذخیره شود (فقط برای مرورگر "
+#~ "کانکرر)"
+
+#~ msgid ""
+#~ "Here you can configure what the Konqueror file manager will do when you "
+#~ "click on a file of this type. Konqueror can either display the file in an "
+#~ "embedded viewer, or start up a separate application. If set to 'Use "
+#~ "settings for G group', the file manager will behave according to the "
+#~ "settings of the group G to which this type belongs; for instance, 'image' "
+#~ "if the current file type is image/png. Dolphin always shows files in a "
+#~ "separate viewer."
+#~ msgstr ""
+#~ "در اینجا می‌توانید آنچه مدیر پرونده Konqueror، هنگام فشار بر روی پرونده از "
+#~ "این نوع انجام می‌دهد را پیکربندی کنید. Konqueror می‌تواند پرونده را در "
+#~ "مشاهده‌گر نهفته نمایش داده، یا کاربرد مجزا را راه‌اندازی کند. اگر با "
+#~ "«استفاده از تنظیمات برای گروه G» تنظیم شود، Konqueror، طبق تنظیمات گروه G "
+#~ "متعلق به این نوع رفتار می‌کند؛ برای نمونه، اگر نوع پرونده جاری تصویر/png "
+#~ "باشد،«تصویر»."
+
+#~ msgid "Use settings for '%1' group"
+#~ msgstr "استفاده از تنظیمات برای گروه »%1«"
 
 #~ msgid ""
 #~ "<p><h1>File Associations</h1> This module allows you to choose which "

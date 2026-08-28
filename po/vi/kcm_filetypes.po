@@ -9,7 +9,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: filetypes\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2026-06-04 00:46+0000\n"
+"POT-Creation-Date: 2026-08-28 00:47+0000\n"
 "PO-Revision-Date: 2022-05-05 12:27+0200\n"
 "Last-Translator: Phu Hung Nguyen <phu.nguyen@kdemail.net>\n"
 "Language-Team: Vietnamese <kde-l10n-vi@kde.org>\n"
@@ -30,37 +30,7 @@ msgctxt "EMAIL OF TRANSLATORS"
 msgid "Your emails"
 msgstr "phu.nguyen@kdemail.net,herophuong93@gmail.com"
 
-#: filegroupdetails.cpp:22
-#, kde-format
-msgid "Left Click Action (only for Konqueror file manager)"
-msgstr "Hành động bấm trái (chỉ cho trình quản lí tệp Konqueror)"
-
-#: filegroupdetails.cpp:26 filetypedetails.cpp:134
-#, kde-format
-msgid "Show file in embedded viewer"
-msgstr "Hiện tệp trong trình xem nhúng"
-
-#: filegroupdetails.cpp:27 filetypedetails.cpp:135
-#, kde-format
-msgid "Show file in separate viewer"
-msgstr "Hiện tệp trong trình xem riêng"
-
-#: filegroupdetails.cpp:36
-#, kde-format
-msgid ""
-"Here you can configure what the Konqueror file manager will do when you "
-"click on a file belonging to this group. Konqueror can display the file in "
-"an embedded viewer or start up a separate application. You can change this "
-"setting for a specific file type in the 'Embedding' tab of the file type "
-"configuration. Dolphin  shows files always in a separate viewer"
-msgstr ""
-"Tại đây bạn có thể cấu hình hành động của trình quản lí tệp Konqueror khi "
-"bạn bấm vào một tệp thuộc nhóm này. Konqueror có thể hiển thị tệp trong một "
-"trình xem nhúng hoặc khởi động một ứng dụng riêng. Bạn có thể thay đổi thiết "
-"lập này cho một kiểu tệp cụ thể trong thẻ 'Nhúng' của cấu hình kiểu tệp đó. "
-"Dolphin luôn hiển thị tệp trong một trình xem riêng."
-
-#: filetypedetails.cpp:61
+#: filetypedetails.cpp:54
 #, kde-format
 msgid ""
 "This button displays the icon associated with the selected file type. Click "
@@ -69,12 +39,12 @@ msgstr ""
 "Nút này hiển thị biểu tượng liên kết với kiểu tệp được chọn. Bấm vào nó để "
 "chọn một biểu tượng khác."
 
-#: filetypedetails.cpp:67
+#: filetypedetails.cpp:60
 #, kde-format
 msgid "Filename Patterns"
 msgstr "Dạng mẫu tên tệp"
 
-#: filetypedetails.cpp:79
+#: filetypedetails.cpp:72
 #, kde-format
 msgid ""
 "This box contains a list of patterns that can be used to identify files of "
@@ -86,32 +56,32 @@ msgstr ""
 "kiểu được chọn. Ví dụ, dạng mẫu *.txt được liên kết với kiểu tệp 'text/"
 "plain'; tất cả các tệp có đuôi '.txt' sẽ được nhận dạng là tệp văn bản thuần."
 
-#: filetypedetails.cpp:87 filetypesview.cpp:86 kservicelistwidget.cpp:105
+#: filetypedetails.cpp:80 filetypesview.cpp:84 kservicelistwidget.cpp:105
 #, kde-format
 msgid "Add..."
 msgstr "Thêm..."
 
-#: filetypedetails.cpp:92
+#: filetypedetails.cpp:85
 #, kde-format
 msgid "Add a new pattern for the selected file type."
 msgstr "Thêm một dạng mẫu mới cho kiểu tệp được chọn."
 
-#: filetypedetails.cpp:94 kservicelistwidget.cpp:119
+#: filetypedetails.cpp:87 kservicelistwidget.cpp:119
 #, kde-format
 msgid "Remove"
 msgstr "Xoá"
 
-#: filetypedetails.cpp:99
+#: filetypedetails.cpp:92
 #, kde-format
 msgid "Remove the selected filename pattern."
 msgstr "Xoá dạng mẫu tên tệp được chọn."
 
-#: filetypedetails.cpp:110
+#: filetypedetails.cpp:103
 #, kde-format
 msgid "Description:"
 msgstr "Mô tả:"
 
-#: filetypedetails.cpp:115
+#: filetypedetails.cpp:108
 #, kde-format
 msgid ""
 "You can enter a short description for files of the selected file type (e.g. "
@@ -122,69 +92,37 @@ msgstr ""
 "'trang HTML'). Mô tả này sẽ được dùng bởi các ứng dụng như Konqueror để hiển "
 "thị nội dung thư mục."
 
-#: filetypedetails.cpp:129
-#, kde-format
-msgid "Left Click Action in Konqueror"
-msgstr "Hành động bấm trái trong Konqueror"
-
-#: filetypedetails.cpp:138
-#, kde-format
-msgid "Ask whether to save to disk instead (only for Konqueror browser)"
-msgstr "Hỏi có lưu vào đĩa để thay thế không (chỉ cho trình duyệt Konqueror)"
-
-#: filetypedetails.cpp:154
-#, kde-format
-msgid ""
-"Here you can configure what the Konqueror file manager will do when you "
-"click on a file of this type. Konqueror can either display the file in an "
-"embedded viewer, or start up a separate application. If set to 'Use settings "
-"for G group', the file manager will behave according to the settings of the "
-"group G to which this type belongs; for instance, 'image' if the current "
-"file type is image/png. Dolphin always shows files in a separate viewer."
-msgstr ""
-"Tại đây bạn có thể cấu hình hành động của trình quản lí tệp Konqueror khi "
-"bạn bấm vào một tệp thuộc kiểu này. Konqueror có thể hiển thị tệp trong một "
-"trình xem nhúng hoặc khởi động một ứng dụng riêng. Nếu được đặt là 'Dùng "
-"thiết lập cho nhóm G', trình quản lí tệp sẽ ứng xử theo thiết lập của nhóm G "
-"mà kiểu này thuộc về; ví dụ, nó sẽ là 'image' nếu kiểu tệp hiện tại là image/"
-"png. Dolphin luôn hiển thị tệp trong một trình xem riêng."
-
-#: filetypedetails.cpp:167
+#: filetypedetails.cpp:128
 #, kde-format
 msgid "&General"
 msgstr "Chun&g"
 
-#: filetypedetails.cpp:168
+#: filetypedetails.cpp:129
 #, kde-format
 msgid "&Embedding"
 msgstr "&Nhúng"
 
-#: filetypedetails.cpp:209
+#: filetypedetails.cpp:170
 #, kde-format
 msgid "Add New Extension"
 msgstr "Thêm phần mở rộng mới"
 
-#: filetypedetails.cpp:209
+#: filetypedetails.cpp:170
 #, kde-format
 msgid "Extension:"
 msgstr "Phần mở rộng:"
 
-#: filetypedetails.cpp:328
+#: filetypedetails.cpp:203
 #, kde-format
 msgid "File type %1"
 msgstr "Kiểu tệp %1"
 
-#: filetypedetails.cpp:336
-#, kde-format
-msgid "Use settings for '%1' group"
-msgstr "Dùng thiết lập cho nhóm '%1'"
-
-#: filetypesview.cpp:57
+#: filetypesview.cpp:55
 #, kde-format
 msgid "Search for file type or filename pattern..."
 msgstr "Tìm kiểu tệp hoặc dạng mẫu tên tệp..."
 
-#: filetypesview.cpp:63
+#: filetypesview.cpp:61
 #, kde-format
 msgid ""
 "Enter a part of a filename pattern, and only file types with a matching file "
@@ -195,12 +133,12 @@ msgstr ""
 "với nó mới hiển thị trong danh sách. Một cách khác, nhập một phần của một "
 "tên kiểu tệp như nó xuất hiện trong danh sách."
 
-#: filetypesview.cpp:71 multiapplydialog.cpp:27
+#: filetypesview.cpp:69 multiapplydialog.cpp:27
 #, kde-format
 msgid "Known Types"
 msgstr "Các kiểu đã biết"
 
-#: filetypesview.cpp:77
+#: filetypesview.cpp:75
 #, kde-format
 msgid ""
 "Here you can see a hierarchical list of the file types which are known on "
@@ -213,32 +151,32 @@ msgstr ""
 "Chọn một kiểu tệp (vd. text/html cho tệp HTML) để xem/sửa thông tin cho kiểu "
 "tệp đó bằng các điều khiển ở bên phải."
 
-#: filetypesview.cpp:91
+#: filetypesview.cpp:89
 #, kde-format
 msgid "Click here to add a new file type."
 msgstr "Bấm vào đây để thêm một kiểu tệp mới."
 
-#: filetypesview.cpp:93 filetypesview.cpp:389
+#: filetypesview.cpp:91 filetypesview.cpp:368
 #, kde-format
 msgid "&Remove"
 msgstr "&Xoá"
 
-#: filetypesview.cpp:119
+#: filetypesview.cpp:111
 #, kde-format
 msgid "Select a file type by name or by extension"
 msgstr "Chọn kiểu tệp theo tên hoặc theo phần mở rộng"
 
-#: filetypesview.cpp:382
+#: filetypesview.cpp:361
 #, kde-format
 msgid "&Revert"
 msgstr "&Hoàn nguyên"
 
-#: filetypesview.cpp:383
+#: filetypesview.cpp:362
 #, kde-format
 msgid "Revert this file type to its initial system-wide definition"
 msgstr "Đưa kiểu tệp này về định nghĩa toàn hệ thống ban đầu của nó"
 
-#: filetypesview.cpp:385
+#: filetypesview.cpp:364
 #, kde-format
 msgid ""
 "Click here to revert this file type to its initial system-wide definition, "
@@ -254,12 +192,12 @@ msgstr ""
 "năng chúng được dùng (nhưng việc xác định kiểu tệp bằng nội dung tệp cuối "
 "cùng vẫn có thể sẽ sử dụng chúng)."
 
-#: filetypesview.cpp:390
+#: filetypesview.cpp:369
 #, kde-format
 msgid "Delete this file type definition completely"
 msgstr "Xoá hoàn toàn định nghĩa kiểu tệp này"
 
-#: filetypesview.cpp:392
+#: filetypesview.cpp:371
 #, kde-format
 msgid ""
 "Click here to delete this file type definition completely. This is only "
@@ -507,6 +445,55 @@ msgid ""
 msgstr ""
 "Gõ tên của kiểu tệp. Ví dụ, nếu bạn chọn nhóm là 'image' và gõ 'custom' vào "
 "đây, kiểu tệp 'image/custom' sẽ được tạo."
+
+#~ msgid "Left Click Action (only for Konqueror file manager)"
+#~ msgstr "Hành động bấm trái (chỉ cho trình quản lí tệp Konqueror)"
+
+#~ msgid "Show file in embedded viewer"
+#~ msgstr "Hiện tệp trong trình xem nhúng"
+
+#~ msgid "Show file in separate viewer"
+#~ msgstr "Hiện tệp trong trình xem riêng"
+
+#~ msgid ""
+#~ "Here you can configure what the Konqueror file manager will do when you "
+#~ "click on a file belonging to this group. Konqueror can display the file "
+#~ "in an embedded viewer or start up a separate application. You can change "
+#~ "this setting for a specific file type in the 'Embedding' tab of the file "
+#~ "type configuration. Dolphin  shows files always in a separate viewer"
+#~ msgstr ""
+#~ "Tại đây bạn có thể cấu hình hành động của trình quản lí tệp Konqueror khi "
+#~ "bạn bấm vào một tệp thuộc nhóm này. Konqueror có thể hiển thị tệp trong "
+#~ "một trình xem nhúng hoặc khởi động một ứng dụng riêng. Bạn có thể thay "
+#~ "đổi thiết lập này cho một kiểu tệp cụ thể trong thẻ 'Nhúng' của cấu hình "
+#~ "kiểu tệp đó. Dolphin luôn hiển thị tệp trong một trình xem riêng."
+
+#~ msgid "Left Click Action in Konqueror"
+#~ msgstr "Hành động bấm trái trong Konqueror"
+
+#~ msgid "Ask whether to save to disk instead (only for Konqueror browser)"
+#~ msgstr ""
+#~ "Hỏi có lưu vào đĩa để thay thế không (chỉ cho trình duyệt Konqueror)"
+
+#~ msgid ""
+#~ "Here you can configure what the Konqueror file manager will do when you "
+#~ "click on a file of this type. Konqueror can either display the file in an "
+#~ "embedded viewer, or start up a separate application. If set to 'Use "
+#~ "settings for G group', the file manager will behave according to the "
+#~ "settings of the group G to which this type belongs; for instance, 'image' "
+#~ "if the current file type is image/png. Dolphin always shows files in a "
+#~ "separate viewer."
+#~ msgstr ""
+#~ "Tại đây bạn có thể cấu hình hành động của trình quản lí tệp Konqueror khi "
+#~ "bạn bấm vào một tệp thuộc kiểu này. Konqueror có thể hiển thị tệp trong "
+#~ "một trình xem nhúng hoặc khởi động một ứng dụng riêng. Nếu được đặt là "
+#~ "'Dùng thiết lập cho nhóm G', trình quản lí tệp sẽ ứng xử theo thiết lập "
+#~ "của nhóm G mà kiểu này thuộc về; ví dụ, nó sẽ là 'image' nếu kiểu tệp "
+#~ "hiện tại là image/png. Dolphin luôn hiển thị tệp trong một trình xem "
+#~ "riêng."
+
+#~ msgid "Use settings for '%1' group"
+#~ msgstr "Dùng thiết lập cho nhóm '%1'"
 
 #~ msgid ""
 #~ "<p><h1>File Associations</h1> This module allows you to choose which "

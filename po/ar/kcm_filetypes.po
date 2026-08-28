@@ -11,7 +11,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: filetypes\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2026-06-04 00:46+0000\n"
+"POT-Creation-Date: 2026-08-28 00:47+0000\n"
 "PO-Revision-Date: 2025-08-03 12:03+0400\n"
 "Last-Translator: Zayed Al-Saidi <zayed.alsaidi@gmail.com>\n"
 "Language-Team: ar\n"
@@ -33,36 +33,7 @@ msgctxt "EMAIL OF TRANSLATORS"
 msgid "Your emails"
 msgstr "chahibi@gmail.com, linux.anas@gmail.com,zayed.alsaidi@gmail.com"
 
-#: filegroupdetails.cpp:22
-#, kde-format
-msgid "Left Click Action (only for Konqueror file manager)"
-msgstr "حدث النقر بالزرّ الأيسر للفأرة (فقط لمدير الملفات)"
-
-#: filegroupdetails.cpp:26 filetypedetails.cpp:134
-#, kde-format
-msgid "Show file in embedded viewer"
-msgstr "أظهر الملف في عارض مضمن"
-
-#: filegroupdetails.cpp:27 filetypedetails.cpp:135
-#, kde-format
-msgid "Show file in separate viewer"
-msgstr "أظهر الملف في عارض منفصل"
-
-#: filegroupdetails.cpp:36
-#, kde-format
-msgid ""
-"Here you can configure what the Konqueror file manager will do when you "
-"click on a file belonging to this group. Konqueror can display the file in "
-"an embedded viewer or start up a separate application. You can change this "
-"setting for a specific file type in the 'Embedding' tab of the file type "
-"configuration. Dolphin  shows files always in a separate viewer"
-msgstr ""
-"هنا يمكنك ضبط ما الذي يجب على مدير الملفات كونكيورر فعله عند النقر على ملف "
-"يخص هذه المجموعة. كونكيورر يستطيع عرض الملف في عارض مضمّن أو بدء تشغيل تطبيق "
-"منفصل. يمكنك تغيير هذه الإعدادات لنوع ملف محدّد في لسان 'مضمن'  من تشكيل نوع "
-"الملفات. يعرض دولفين الملفات في عارض منفصل دائما."
-
-#: filetypedetails.cpp:61
+#: filetypedetails.cpp:54
 #, kde-format
 msgid ""
 "This button displays the icon associated with the selected file type. Click "
@@ -71,12 +42,12 @@ msgstr ""
 "هذا الزر يعرض الأيقونة المرتبطة بنوع الملف الذي اخترته. اضغط عليه لاختيار "
 "أيقونة مختلفة."
 
-#: filetypedetails.cpp:67
+#: filetypedetails.cpp:60
 #, kde-format
 msgid "Filename Patterns"
 msgstr "أنماط أسماء الملفات"
 
-#: filetypedetails.cpp:79
+#: filetypedetails.cpp:72
 #, kde-format
 msgid ""
 "This box contains a list of patterns that can be used to identify files of "
@@ -88,32 +59,32 @@ msgstr ""
 "مثلا، النموذج *.txt مرتبط بنوع الملفات النصية؛ تعتبر كل الملفات المنتهية بـ "
 "'.txt' بأنها ملفات نصية."
 
-#: filetypedetails.cpp:87 filetypesview.cpp:86 kservicelistwidget.cpp:105
+#: filetypedetails.cpp:80 filetypesview.cpp:84 kservicelistwidget.cpp:105
 #, kde-format
 msgid "Add..."
 msgstr "أضف..."
 
-#: filetypedetails.cpp:92
+#: filetypedetails.cpp:85
 #, kde-format
 msgid "Add a new pattern for the selected file type."
 msgstr "أضف نمط جديد لنوع الملف المختار."
 
-#: filetypedetails.cpp:94 kservicelistwidget.cpp:119
+#: filetypedetails.cpp:87 kservicelistwidget.cpp:119
 #, kde-format
 msgid "Remove"
 msgstr "أزل"
 
-#: filetypedetails.cpp:99
+#: filetypedetails.cpp:92
 #, kde-format
 msgid "Remove the selected filename pattern."
 msgstr "أزل نمط اسم الملف المختار"
 
-#: filetypedetails.cpp:110
+#: filetypedetails.cpp:103
 #, kde-format
 msgid "Description:"
 msgstr "الوصف:"
 
-#: filetypedetails.cpp:115
+#: filetypedetails.cpp:108
 #, kde-format
 msgid ""
 "You can enter a short description for files of the selected file type (e.g. "
@@ -123,68 +94,37 @@ msgstr ""
 "يمكنك إدخال وصف قصير للملفات لنوع الملف المختار (مثلًا 'HTML صفحة'). هذا "
 "الوصف سوف يستخدم عن طريق تطبيقات مثل كونكيورر لعرض محتوى الدليل."
 
-#: filetypedetails.cpp:129
-#, kde-format
-msgid "Left Click Action in Konqueror"
-msgstr "حدث النقر بزر الفأرة الأيسر في مدير الملفات"
-
-#: filetypedetails.cpp:138
-#, kde-format
-msgid "Ask whether to save to disk instead (only for Konqueror browser)"
-msgstr "اسأل عن إمكانية الحفظ إلى القرص بدلًا من ذلك (لمدير الملفات فقط)"
-
-#: filetypedetails.cpp:154
-#, kde-format
-msgid ""
-"Here you can configure what the Konqueror file manager will do when you "
-"click on a file of this type. Konqueror can either display the file in an "
-"embedded viewer, or start up a separate application. If set to 'Use settings "
-"for G group', the file manager will behave according to the settings of the "
-"group G to which this type belongs; for instance, 'image' if the current "
-"file type is image/png. Dolphin always shows files in a separate viewer."
-msgstr ""
-"هنا يمكنك إعداد ماذا سيفعل مدير الملفات كونكيرور عندما تنقر على ملف من هذا "
-"النوع. يمكن لكونكيرور أن يعرض الملف في عارض مضمّن أو يبدأه في تطبيق مستقل. إن "
-"أعددته على 'استخدم إعدادات المجموعة G'، فسيتصرف كونكيرور وفقًا لإعدادات "
-"المجموعة G التي ينتمي هذا النوع إليها. كمثال، ستكون المجموعة هي 'صورة' إن "
-"كان نوع الملف الحالي هو صورة/png. يعرض دولفين الملفات في عارض منفصل دائما."
-
-#: filetypedetails.cpp:167
+#: filetypedetails.cpp:128
 #, kde-format
 msgid "&General"
 msgstr "&عام"
 
-#: filetypedetails.cpp:168
+#: filetypedetails.cpp:129
 #, kde-format
 msgid "&Embedding"
 msgstr "&تضمين"
 
-#: filetypedetails.cpp:209
+#: filetypedetails.cpp:170
 #, kde-format
 msgid "Add New Extension"
 msgstr "أضف امتداد جديد"
 
-#: filetypedetails.cpp:209
+#: filetypedetails.cpp:170
 #, kde-format
 msgid "Extension:"
 msgstr "الامتداد:"
 
-#: filetypedetails.cpp:328
+#: filetypedetails.cpp:203
 #, kde-format
 msgid "File type %1"
 msgstr "نوع الملف %1"
 
-#: filetypedetails.cpp:336
-#, kde-format
-msgid "Use settings for '%1' group"
-msgstr "استخدم الإعدادات للمجموعة '%1'"
-
-#: filetypesview.cpp:57
+#: filetypesview.cpp:55
 #, kde-format
 msgid "Search for file type or filename pattern..."
 msgstr "ابحث عن نوع الملف أو نمط اسم الملف..."
 
-#: filetypesview.cpp:63
+#: filetypesview.cpp:61
 #, kde-format
 msgid ""
 "Enter a part of a filename pattern, and only file types with a matching file "
@@ -194,12 +134,12 @@ msgstr ""
 "أدخل جزء من نمط اسم الملف، وستظهر أنواع الملفات المطابقة لنمط الملف فقط في "
 "القائمة؛ أو أدخل جزء من اسم نوع الملف كما يظهر في القائمة."
 
-#: filetypesview.cpp:71 multiapplydialog.cpp:27
+#: filetypesview.cpp:69 multiapplydialog.cpp:27
 #, kde-format
 msgid "Known Types"
 msgstr "الأنواع المعروفة"
 
-#: filetypesview.cpp:77
+#: filetypesview.cpp:75
 #, kde-format
 msgid ""
 "Here you can see a hierarchical list of the file types which are known on "
@@ -212,32 +152,32 @@ msgstr ""
 "لملفات HTML) لرؤية/تعديل معلومات نوع الملف هذا باستخدام أزرار التحكم على "
 "اليمين."
 
-#: filetypesview.cpp:91
+#: filetypesview.cpp:89
 #, kde-format
 msgid "Click here to add a new file type."
 msgstr "انقر هنا لإضافة نوع ملف جديد."
 
-#: filetypesview.cpp:93 filetypesview.cpp:389
+#: filetypesview.cpp:91 filetypesview.cpp:368
 #, kde-format
 msgid "&Remove"
 msgstr "أ&زل"
 
-#: filetypesview.cpp:119
+#: filetypesview.cpp:111
 #, kde-format
 msgid "Select a file type by name or by extension"
 msgstr "اختر نوع الملف حسب الاسم أو الامتداد"
 
-#: filetypesview.cpp:382
+#: filetypesview.cpp:361
 #, kde-format
 msgid "&Revert"
 msgstr "ا&سترجع"
 
-#: filetypesview.cpp:383
+#: filetypesview.cpp:362
 #, kde-format
 msgid "Revert this file type to its initial system-wide definition"
 msgstr "استرجع نوع الملف هذا إلى تعريفه المبدئي"
 
-#: filetypesview.cpp:385
+#: filetypesview.cpp:364
 #, kde-format
 msgid ""
 "Click here to revert this file type to its initial system-wide definition, "
@@ -251,12 +191,12 @@ msgstr ""
 "قائمة أنماطه لتقلل من احتمالية استخدمها (لكن تحديد نوع الملف من محتويات ملف "
 "يمكن أن ينتهي باستخدامها على كل حال)."
 
-#: filetypesview.cpp:390
+#: filetypesview.cpp:369
 #, kde-format
 msgid "Delete this file type definition completely"
 msgstr "احذف نوع ملف هذا بالكامل"
 
-#: filetypesview.cpp:392
+#: filetypesview.cpp:371
 #, kde-format
 msgid ""
 "Click here to delete this file type definition completely. This is only "
@@ -499,6 +439,52 @@ msgid ""
 msgstr ""
 "أكتب اسم نوع الملف. فعلى سبيل المثال، إذا كنت قد اخترت صورة 'كفئة وكتبت "
 "'خاص' هنا سينشئ نوع الملف وسيكون 'صوره/خاص."
+
+#~ msgid "Left Click Action (only for Konqueror file manager)"
+#~ msgstr "حدث النقر بالزرّ الأيسر للفأرة (فقط لمدير الملفات)"
+
+#~ msgid "Show file in embedded viewer"
+#~ msgstr "أظهر الملف في عارض مضمن"
+
+#~ msgid "Show file in separate viewer"
+#~ msgstr "أظهر الملف في عارض منفصل"
+
+#~ msgid ""
+#~ "Here you can configure what the Konqueror file manager will do when you "
+#~ "click on a file belonging to this group. Konqueror can display the file "
+#~ "in an embedded viewer or start up a separate application. You can change "
+#~ "this setting for a specific file type in the 'Embedding' tab of the file "
+#~ "type configuration. Dolphin  shows files always in a separate viewer"
+#~ msgstr ""
+#~ "هنا يمكنك ضبط ما الذي يجب على مدير الملفات كونكيورر فعله عند النقر على "
+#~ "ملف يخص هذه المجموعة. كونكيورر يستطيع عرض الملف في عارض مضمّن أو بدء تشغيل "
+#~ "تطبيق منفصل. يمكنك تغيير هذه الإعدادات لنوع ملف محدّد في لسان 'مضمن'  من "
+#~ "تشكيل نوع الملفات. يعرض دولفين الملفات في عارض منفصل دائما."
+
+#~ msgid "Left Click Action in Konqueror"
+#~ msgstr "حدث النقر بزر الفأرة الأيسر في مدير الملفات"
+
+#~ msgid "Ask whether to save to disk instead (only for Konqueror browser)"
+#~ msgstr "اسأل عن إمكانية الحفظ إلى القرص بدلًا من ذلك (لمدير الملفات فقط)"
+
+#~ msgid ""
+#~ "Here you can configure what the Konqueror file manager will do when you "
+#~ "click on a file of this type. Konqueror can either display the file in an "
+#~ "embedded viewer, or start up a separate application. If set to 'Use "
+#~ "settings for G group', the file manager will behave according to the "
+#~ "settings of the group G to which this type belongs; for instance, 'image' "
+#~ "if the current file type is image/png. Dolphin always shows files in a "
+#~ "separate viewer."
+#~ msgstr ""
+#~ "هنا يمكنك إعداد ماذا سيفعل مدير الملفات كونكيرور عندما تنقر على ملف من "
+#~ "هذا النوع. يمكن لكونكيرور أن يعرض الملف في عارض مضمّن أو يبدأه في تطبيق "
+#~ "مستقل. إن أعددته على 'استخدم إعدادات المجموعة G'، فسيتصرف كونكيرور وفقًا "
+#~ "لإعدادات المجموعة G التي ينتمي هذا النوع إليها. كمثال، ستكون المجموعة هي "
+#~ "'صورة' إن كان نوع الملف الحالي هو صورة/png. يعرض دولفين الملفات في عارض "
+#~ "منفصل دائما."
+
+#~ msgid "Use settings for '%1' group"
+#~ msgstr "استخدم الإعدادات للمجموعة '%1'"
 
 #~ msgid ""
 #~ "<p><h1>File Associations</h1> This module allows you to choose which "

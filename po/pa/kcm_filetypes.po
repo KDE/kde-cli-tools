@@ -9,7 +9,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: filetypes\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2026-06-04 00:46+0000\n"
+"POT-Creation-Date: 2026-08-28 00:47+0000\n"
 "PO-Revision-Date: 2024-01-28 15:14-0600\n"
 "Last-Translator: A S Alam <aalam@punlinux.org>\n"
 "Language-Team: Punjabi <kde-i18n-doc@kde.org>\n"
@@ -31,36 +31,7 @@ msgctxt "EMAIL OF TRANSLATORS"
 msgid "Your emails"
 msgstr "aalam@punlinux.org"
 
-#: filegroupdetails.cpp:22
-#, kde-format
-msgid "Left Click Action (only for Konqueror file manager)"
-msgstr "ਸੱਜਾ ਕਲਿੱਕ ਕਾਰਵਾਈ (ਕੇਵਲ ਕੋਨਕਿਉਰੋਰ ਫਾਇਲ ਮੈਨੇਜਰ ਲਈ)"
-
-#: filegroupdetails.cpp:26 filetypedetails.cpp:134
-#, kde-format
-msgid "Show file in embedded viewer"
-msgstr "ਸ਼ਾਮਿਲ ਦਰਸ਼ਕ ਵਿੱਚ ਫਾਇਲ ਵੇਖੋ"
-
-#: filegroupdetails.cpp:27 filetypedetails.cpp:135
-#, kde-format
-msgid "Show file in separate viewer"
-msgstr "ਵੱਖਰੇ ਦਰਸ਼ਕ ਵਿੱਚ ਫਾਇਲ ਵੇਖੋ"
-
-#: filegroupdetails.cpp:36
-#, kde-format
-msgid ""
-"Here you can configure what the Konqueror file manager will do when you "
-"click on a file belonging to this group. Konqueror can display the file in "
-"an embedded viewer or start up a separate application. You can change this "
-"setting for a specific file type in the 'Embedding' tab of the file type "
-"configuration. Dolphin  shows files always in a separate viewer"
-msgstr ""
-"ਇਥੇ ਤੁਸੀਂ ਇਹ ਸੈੱਟ ਕਰ ਸਕਦੇ ਹੋ ਕਿ ਇਸ ਗਰੁੱਪ ਨਾਲ ਸਬੰਧਤ ਫਾਇਲ ਪ੍ਰਾਪਤ ਹੋਣ ਤੇ ਕੋਨਕਿਉਰੋਰ ਫਾਇਲ ਮੈਨੇਜਰ "
-"ਕੀ ਕਰੇ। ਕੋਨਕਿਉਰੋਰ ਫਾਇਲ ਨੂੰ ਸ਼ਾਮਿਲ ਦਰਸ਼ਕ ਰਾਹੀਂ ਵੇਖਾ ਸਕਦਾ ਹੈ ਜਾਂ ਵੱਖਰਾ ਕਾਰਜ ਵੀ ਆਰੰਭ ਕਰ ਸਕਦਾ "
-"ਹੈ। ਤੁਸੀਂ ਇਹ ਖਾਸ ਸੈੱਟਿੰਗ ਫਾਇਲ ਕਿਸਮ ਦੀ 'ਸ਼ਾਮਿਲ' ਟੈਬ ਵਿੱਚ ਖਾਸ ਫਾਇਲ ਕਿਸਮ ਸੈਟਿੰਗ ਲਈ ਤਬਦੀਲ "
-"ਕਰ ਸਕਦੇ ਹੋ। ਡਾਲਫਿਨ ਹਮੇਸ਼ਾ ਵੱਖ ਦਰਸ਼ਕ ਵਿੱਚ ਫਾਇਲਾਂ ਵੇਖਾਉਦਾ ਹੈ।"
-
-#: filetypedetails.cpp:61
+#: filetypedetails.cpp:54
 #, kde-format
 msgid ""
 "This button displays the icon associated with the selected file type. Click "
@@ -68,12 +39,12 @@ msgid ""
 msgstr ""
 "ਇਹ ਬਟਨ ਚੁਣੀ ਫਾਇਲ ਕਿਸਮ ਨਾਲ ਸਬੰਧਤ ਆਈਕਾਨ ਵੇਖਾਉਦਾ ਹੈ, ਵੱਖਰਾ ਆਈਕਾਨ ਚੁਣਨ ਲਈ ਇਸ ਨੂੰ ਦਬਾਓ।"
 
-#: filetypedetails.cpp:67
+#: filetypedetails.cpp:60
 #, kde-format
 msgid "Filename Patterns"
 msgstr "ਫਾਇਲ-ਨਾਂ ਪੈਟਰਨ"
 
-#: filetypedetails.cpp:79
+#: filetypedetails.cpp:72
 #, kde-format
 msgid ""
 "This box contains a list of patterns that can be used to identify files of "
@@ -85,32 +56,32 @@ msgstr ""
 "ਹੈ। ਉਦਾਹਰਨ ਲਈ ਪੈਟਰਨ *.txt ਫਾਇਲ ਕਿਸਮ 'text/plain' ਨਾਲ ਸੰਬੰਧਿਤ ਹੈ, ਸਾਰੀਆਂ ਫਾਇਲ ਜੋ ਕਿ "
 "*.txt' ਨਾਲ ਖਤਮ ਹੋਣਗੀਆਂ ਨੂੰ ਸਰਲ ਲਿਖਤ ਫਾਇਲਾਂ ਮੰਨਿਆ ਜਾਵੇਗਾ।"
 
-#: filetypedetails.cpp:87 filetypesview.cpp:86 kservicelistwidget.cpp:105
+#: filetypedetails.cpp:80 filetypesview.cpp:84 kservicelistwidget.cpp:105
 #, kde-format
 msgid "Add..."
 msgstr "ਸ਼ਾਮਿਲ..."
 
-#: filetypedetails.cpp:92
+#: filetypedetails.cpp:85
 #, kde-format
 msgid "Add a new pattern for the selected file type."
 msgstr "ਚੁਣੀਆਂ ਫਾਇਲ ਕਿਸਮ ਲਈ ਇੱਕ ਨਵਾਂ ਪੈਟਰਨ ਸ਼ਾਮਿਲ ਕਰੋ।"
 
-#: filetypedetails.cpp:94 kservicelistwidget.cpp:119
+#: filetypedetails.cpp:87 kservicelistwidget.cpp:119
 #, kde-format
 msgid "Remove"
 msgstr "ਹਟਾਓ"
 
-#: filetypedetails.cpp:99
+#: filetypedetails.cpp:92
 #, kde-format
 msgid "Remove the selected filename pattern."
 msgstr "ਚੁਣਿਆ ਫਾਇਲ-ਨਾਂ ਪੈਟਰਨ ਨੂੰ ਹਟਾਓ।"
 
-#: filetypedetails.cpp:110
+#: filetypedetails.cpp:103
 #, kde-format
 msgid "Description:"
 msgstr "ਵਰਣਨ:"
 
-#: filetypedetails.cpp:115
+#: filetypedetails.cpp:108
 #, kde-format
 msgid ""
 "You can enter a short description for files of the selected file type (e.g. "
@@ -120,69 +91,37 @@ msgstr ""
 "ਤੁਸੀਂ ਚੁਣੀਆਂ ਫਾਇਲ ਕਿਸਮ (ਜਿਵੇਂ ਕਿ 'HTML ਸਫ਼ੇ') ਦਾ ਥੋੜਾ ਵੇਰਵਾ ਦੇ ਸਕਦੇ ਹੋ। ਇਹ ਵੇਰਵਾ ਐਪਲੀਕੇਸ਼ਨਾਂ "
 "ਜਿਵੇਂ ਕਿ ਕੋਨਕਿਉਰੋਰ ਵਿੱਚ ਡਾਇਰੈਕਟਰੀ ਭਾਗ ਵੇਖਾਓ ਦੇ ਕੰਮ ਆਉਦਾ ਹੈ।"
 
-#: filetypedetails.cpp:129
-#, kde-format
-msgid "Left Click Action in Konqueror"
-msgstr "ਕੋਨਕਿਊਰੋਰ ਵਿੱਚ ਖੱਬਾ ਕਲਿੱਕ ਐਕਸ਼ਨ"
-
-#: filetypedetails.cpp:138
-#, kde-format
-msgid "Ask whether to save to disk instead (only for Konqueror browser)"
-msgstr "ਪੁੱਛੋ ਕਿ ਬਦਲਵੇਂ ਰੂਪ ਵਿੱਚ ਡਿਸਕ ਤੇ ਸੰਭਾਲਣਾ ਹੈ (ਕੇਵਲ ਕੋਨਕਿਉਰੋਰ ਬਰਾਊਜ਼ਰ ਲਈ)"
-
-#: filetypedetails.cpp:154
-#, kde-format
-msgid ""
-"Here you can configure what the Konqueror file manager will do when you "
-"click on a file of this type. Konqueror can either display the file in an "
-"embedded viewer, or start up a separate application. If set to 'Use settings "
-"for G group', the file manager will behave according to the settings of the "
-"group G to which this type belongs; for instance, 'image' if the current "
-"file type is image/png. Dolphin always shows files in a separate viewer."
-msgstr ""
-"ਇਥੇ ਤੁਸੀਂ ਇਹ ਸੈੱਟ ਕਰ ਸਕਦੇ ਹੋ ਕਿ ਇਸ ਗਰੁੱਪ ਨਾਲ ਸੰਬੰਧਿਤ ਫਾਇਲ ਪ੍ਰਾਪਤ ਹੋਣ ਤੇ ਕੋਨਕਿਉਰੋਰ ਫਾਇਲ ਮੈਨੇਜਰ "
-"ਕੀ ਕਰੇ। ਕੋਨਕਿਉਰੋਰ ਫਾਇਲ ਨੂੰ ਸ਼ਾਮਿਲ ਦਰਸ਼ਕ ਰਾਹੀਂ ਵੇਖਾ ਸਕਦਾ ਹੈ ਜਾਂ ਵੱਖਰੀ ਐਪਲੀਕੇਸ਼ਨ ਵੀ ਸ਼ੁਰੂ ਕਰ "
-"ਸਕਦਾ ਹੈ। ਤੁਸੀਂ ਇਹ ਖਾਸ ਦਿੱਤੀ ਫਾਇਲ ਕਿਸਮ ਦੀ 'ਸ਼ਾਮਿਲ' ਟੈਬ ਵਿੱਚ ਖਾਸ ਫਾਇਲ ਕਿਸਮ ਸਥਾਪਨ ਲਈ "
-"ਤਬਦੀਲ ਕਰ ਸਕਦੇ ਹੋ। ਜੇਕਰ 'ਗਰੁੱਪ ਲਈ ਸੈਟਿੰਗਾਂ ਨੂੰ ਵਰਤੋਂ' ਦਿੱਤੀ ਹੋਈ ਤਾਂ, ਫਾਇਲ ਸਿਸਟਮ ਨੂੰ ਉਸ ਗਰੁੱਪ ਦੀ "
-"ਸੈਟਿੰਗ ਅਨੁਸਾਰ ਰਵੱਈਆ ਵਰਤਿਆ ਜਾਵੇਗਾ, 'ਚਿੱਤਰ/png' ਫਾਇਲ਼ ਕਿਸਮ ਲਈ 'ਚਿੱਤਰ' ਹੋਵੇਗਾ। ਡਾਲਫਿਨ "
-"ਹਮੇਸ਼ਾ ਫਾਇਲਾਂ ਨੰ ਵੱਖਰੇ ਦਰਸ਼ਕ ਵੇਖਾਉਂਦਾ ਹੈ।"
-
-#: filetypedetails.cpp:167
+#: filetypedetails.cpp:128
 #, kde-format
 msgid "&General"
 msgstr "ਸਧਾਰਨ(&G)"
 
-#: filetypedetails.cpp:168
+#: filetypedetails.cpp:129
 #, kde-format
 msgid "&Embedding"
 msgstr "ਸ਼ਾਮਿਲ(&E)"
 
-#: filetypedetails.cpp:209
+#: filetypedetails.cpp:170
 #, kde-format
 msgid "Add New Extension"
 msgstr "ਨਵੀਂ ਇਕਸਟੈਨਸ਼ਨ ਸ਼ਾਮਿਲ"
 
-#: filetypedetails.cpp:209
+#: filetypedetails.cpp:170
 #, kde-format
 msgid "Extension:"
 msgstr "ਇਕਸਟੈਨਸ਼ਨ:"
 
-#: filetypedetails.cpp:328
+#: filetypedetails.cpp:203
 #, kde-format
 msgid "File type %1"
 msgstr "ਫਾਇਲ ਟਾਈਪ %1"
 
-#: filetypedetails.cpp:336
-#, kde-format
-msgid "Use settings for '%1' group"
-msgstr "ਗਰੁੱਪ '%1' ਲਈ ਸੈਟਿੰਗਾਂ ਨੂੰ ਵਰਤੋਂ"
-
-#: filetypesview.cpp:57
+#: filetypesview.cpp:55
 #, kde-format
 msgid "Search for file type or filename pattern..."
 msgstr "ਫਾਇਲ ਕਿਸਮ ਜਾਂ ਫਾਇਲ-ਨਾਂ ਪੈਟਰਨ ਖੋਜ..."
 
-#: filetypesview.cpp:63
+#: filetypesview.cpp:61
 #, kde-format
 msgid ""
 "Enter a part of a filename pattern, and only file types with a matching file "
@@ -191,12 +130,12 @@ msgid ""
 msgstr ""
 "ਫਾਇਲ ਨਾਂ ਪੈਟਰਨ ਲਈ ਹਿੱਸਾ ਭਰੋ। ਸਿਰਫ ਪੈਟਰਨ ਨਾਲ ਮੇਲ ਖਾਂਦੀਆਂ ਫਾਇਲ ਕਿਸਮਾਂ ਹੀ ਉਪਲੱਬਧ ਹੋ ਸਕਣਗੀਆਂ।"
 
-#: filetypesview.cpp:71 multiapplydialog.cpp:27
+#: filetypesview.cpp:69 multiapplydialog.cpp:27
 #, kde-format
 msgid "Known Types"
 msgstr "ਜਾਣੀਆਂ ਟਾਈਪਾਂ"
 
-#: filetypesview.cpp:77
+#: filetypesview.cpp:75
 #, kde-format
 msgid ""
 "Here you can see a hierarchical list of the file types which are known on "
@@ -209,32 +148,32 @@ msgstr ""
 "ਕਰਨਾ ਚਾਹੁੰਦੇ ਹੋ। ਸੱਜਾ ਬਟਨ ਵਰਤ ਕੇ ਜਾਣਕਾਰੀ ਵੇਖਣ/ਸੋਧਣ ਲਈ ਫਾਇਲ ਕਿਸਮ ਚੁਣੋ (ਜਿਵੇਂ ਕਿ HTML "
 "ਫਾਇਲਾਂ ਲਈ ਪਾਠ/html )।"
 
-#: filetypesview.cpp:91
+#: filetypesview.cpp:89
 #, kde-format
 msgid "Click here to add a new file type."
 msgstr "ਨਵੀਂ ਫਾਇਲ ਦੀ ਕਿਸਮ ਸ਼ਾਮਿਲ ਕਰਨ ਲਈ ਇਥੇ ਦਬਾਓ।"
 
-#: filetypesview.cpp:93 filetypesview.cpp:389
+#: filetypesview.cpp:91 filetypesview.cpp:368
 #, kde-format
 msgid "&Remove"
 msgstr "ਹਟਾਓ(&R)"
 
-#: filetypesview.cpp:119
+#: filetypesview.cpp:111
 #, kde-format
 msgid "Select a file type by name or by extension"
 msgstr "ਫਾਇਲ ਦੀ ਕਿਸਮ ਨੂੰ ਨਾਂ ਜਾਂ ਇਕਸਟੈਨਸ਼ਨ ਅਨੁਸਾਰ ਚੁਣੋ"
 
-#: filetypesview.cpp:382
+#: filetypesview.cpp:361
 #, kde-format
 msgid "&Revert"
 msgstr "ਵਾਪਸ ਲਵੋ(&R)"
 
-#: filetypesview.cpp:383
+#: filetypesview.cpp:362
 #, kde-format
 msgid "Revert this file type to its initial system-wide definition"
 msgstr "ਇਸ ਫਾਇਲ ਕਿਸਮ ਨੂੰ ਇਸ ਦੀ ਸ਼ੁਰੂਆਤੀ ਸਿਸਟਮ ਲਈ ਦਿੱਤੀ ਪ੍ਰੀਭਾਸ਼ਾ ਲਈ ਵਾਪਸ ਪਰਤਾਉ"
 
-#: filetypesview.cpp:385
+#: filetypesview.cpp:364
 #, kde-format
 msgid ""
 "Click here to revert this file type to its initial system-wide definition, "
@@ -244,12 +183,12 @@ msgid ""
 "from file contents can still end up using them)."
 msgstr ""
 
-#: filetypesview.cpp:390
+#: filetypesview.cpp:369
 #, kde-format
 msgid "Delete this file type definition completely"
 msgstr "ਇਸ ਫਾਇਲ ਕਿਸਮ ਦੀ ਪ੍ਰੀਭਾਸ਼ਾ ਨੂੰ ਪੂਰੀ ਤਰ੍ਹਾਂ ਹਟਾਓ"
 
-#: filetypesview.cpp:392
+#: filetypesview.cpp:371
 #, kde-format
 msgid ""
 "Click here to delete this file type definition completely. This is only "
@@ -480,6 +419,52 @@ msgid ""
 msgstr ""
 "ਫਾਇਲ ਕਿਸਮ ਦੇ ਨਾਂ ਦੀ ਕਿਸਮ ਹੈ। ਜਿਵੇਂ ਕਿ, ਜੇ ਤੁਸੀਂ 'image' ਨੂੰ ਵਰਗ ਵਜੋਂ ਚੁਣਦੇ ਹੋ ਤਾਂ ਤੁਸੀਂ ਇੱਥੇ "
 "'custom' ਲਿਖ ਸਕਦੇ ਹੋ ਤਾਂ ਫਾਇਲ ਕਿਸਮ 'image/custom' ਨੂੰ ਬਣਾਇਆ ਜਾਵੇਗਾ।"
+
+#~ msgid "Left Click Action (only for Konqueror file manager)"
+#~ msgstr "ਸੱਜਾ ਕਲਿੱਕ ਕਾਰਵਾਈ (ਕੇਵਲ ਕੋਨਕਿਉਰੋਰ ਫਾਇਲ ਮੈਨੇਜਰ ਲਈ)"
+
+#~ msgid "Show file in embedded viewer"
+#~ msgstr "ਸ਼ਾਮਿਲ ਦਰਸ਼ਕ ਵਿੱਚ ਫਾਇਲ ਵੇਖੋ"
+
+#~ msgid "Show file in separate viewer"
+#~ msgstr "ਵੱਖਰੇ ਦਰਸ਼ਕ ਵਿੱਚ ਫਾਇਲ ਵੇਖੋ"
+
+#~ msgid ""
+#~ "Here you can configure what the Konqueror file manager will do when you "
+#~ "click on a file belonging to this group. Konqueror can display the file "
+#~ "in an embedded viewer or start up a separate application. You can change "
+#~ "this setting for a specific file type in the 'Embedding' tab of the file "
+#~ "type configuration. Dolphin  shows files always in a separate viewer"
+#~ msgstr ""
+#~ "ਇਥੇ ਤੁਸੀਂ ਇਹ ਸੈੱਟ ਕਰ ਸਕਦੇ ਹੋ ਕਿ ਇਸ ਗਰੁੱਪ ਨਾਲ ਸਬੰਧਤ ਫਾਇਲ ਪ੍ਰਾਪਤ ਹੋਣ ਤੇ ਕੋਨਕਿਉਰੋਰ ਫਾਇਲ "
+#~ "ਮੈਨੇਜਰ ਕੀ ਕਰੇ। ਕੋਨਕਿਉਰੋਰ ਫਾਇਲ ਨੂੰ ਸ਼ਾਮਿਲ ਦਰਸ਼ਕ ਰਾਹੀਂ ਵੇਖਾ ਸਕਦਾ ਹੈ ਜਾਂ ਵੱਖਰਾ ਕਾਰਜ ਵੀ ਆਰੰਭ "
+#~ "ਕਰ ਸਕਦਾ ਹੈ। ਤੁਸੀਂ ਇਹ ਖਾਸ ਸੈੱਟਿੰਗ ਫਾਇਲ ਕਿਸਮ ਦੀ 'ਸ਼ਾਮਿਲ' ਟੈਬ ਵਿੱਚ ਖਾਸ ਫਾਇਲ ਕਿਸਮ ਸੈਟਿੰਗ "
+#~ "ਲਈ ਤਬਦੀਲ ਕਰ ਸਕਦੇ ਹੋ। ਡਾਲਫਿਨ ਹਮੇਸ਼ਾ ਵੱਖ ਦਰਸ਼ਕ ਵਿੱਚ ਫਾਇਲਾਂ ਵੇਖਾਉਦਾ ਹੈ।"
+
+#~ msgid "Left Click Action in Konqueror"
+#~ msgstr "ਕੋਨਕਿਊਰੋਰ ਵਿੱਚ ਖੱਬਾ ਕਲਿੱਕ ਐਕਸ਼ਨ"
+
+#~ msgid "Ask whether to save to disk instead (only for Konqueror browser)"
+#~ msgstr "ਪੁੱਛੋ ਕਿ ਬਦਲਵੇਂ ਰੂਪ ਵਿੱਚ ਡਿਸਕ ਤੇ ਸੰਭਾਲਣਾ ਹੈ (ਕੇਵਲ ਕੋਨਕਿਉਰੋਰ ਬਰਾਊਜ਼ਰ ਲਈ)"
+
+#~ msgid ""
+#~ "Here you can configure what the Konqueror file manager will do when you "
+#~ "click on a file of this type. Konqueror can either display the file in an "
+#~ "embedded viewer, or start up a separate application. If set to 'Use "
+#~ "settings for G group', the file manager will behave according to the "
+#~ "settings of the group G to which this type belongs; for instance, 'image' "
+#~ "if the current file type is image/png. Dolphin always shows files in a "
+#~ "separate viewer."
+#~ msgstr ""
+#~ "ਇਥੇ ਤੁਸੀਂ ਇਹ ਸੈੱਟ ਕਰ ਸਕਦੇ ਹੋ ਕਿ ਇਸ ਗਰੁੱਪ ਨਾਲ ਸੰਬੰਧਿਤ ਫਾਇਲ ਪ੍ਰਾਪਤ ਹੋਣ ਤੇ ਕੋਨਕਿਉਰੋਰ ਫਾਇਲ "
+#~ "ਮੈਨੇਜਰ ਕੀ ਕਰੇ। ਕੋਨਕਿਉਰੋਰ ਫਾਇਲ ਨੂੰ ਸ਼ਾਮਿਲ ਦਰਸ਼ਕ ਰਾਹੀਂ ਵੇਖਾ ਸਕਦਾ ਹੈ ਜਾਂ ਵੱਖਰੀ ਐਪਲੀਕੇਸ਼ਨ ਵੀ "
+#~ "ਸ਼ੁਰੂ ਕਰ ਸਕਦਾ ਹੈ। ਤੁਸੀਂ ਇਹ ਖਾਸ ਦਿੱਤੀ ਫਾਇਲ ਕਿਸਮ ਦੀ 'ਸ਼ਾਮਿਲ' ਟੈਬ ਵਿੱਚ ਖਾਸ ਫਾਇਲ ਕਿਸਮ "
+#~ "ਸਥਾਪਨ ਲਈ ਤਬਦੀਲ ਕਰ ਸਕਦੇ ਹੋ। ਜੇਕਰ 'ਗਰੁੱਪ ਲਈ ਸੈਟਿੰਗਾਂ ਨੂੰ ਵਰਤੋਂ' ਦਿੱਤੀ ਹੋਈ ਤਾਂ, ਫਾਇਲ ਸਿਸਟਮ "
+#~ "ਨੂੰ ਉਸ ਗਰੁੱਪ ਦੀ ਸੈਟਿੰਗ ਅਨੁਸਾਰ ਰਵੱਈਆ ਵਰਤਿਆ ਜਾਵੇਗਾ, 'ਚਿੱਤਰ/png' ਫਾਇਲ਼ ਕਿਸਮ ਲਈ 'ਚਿੱਤਰ' "
+#~ "ਹੋਵੇਗਾ। ਡਾਲਫਿਨ ਹਮੇਸ਼ਾ ਫਾਇਲਾਂ ਨੰ ਵੱਖਰੇ ਦਰਸ਼ਕ ਵੇਖਾਉਂਦਾ ਹੈ।"
+
+#~ msgid "Use settings for '%1' group"
+#~ msgstr "ਗਰੁੱਪ '%1' ਲਈ ਸੈਟਿੰਗਾਂ ਨੂੰ ਵਰਤੋਂ"
 
 #~ msgid ""
 #~ "<p><h1>File Associations</h1> This module allows you to choose which "

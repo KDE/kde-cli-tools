@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: filetypes\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2026-06-04 00:46+0000\n"
+"POT-Creation-Date: 2026-08-28 00:47+0000\n"
 "PO-Revision-Date: 2026-05-30 17:14-0400\n"
 "Last-Translator: Abduqadir Abliz <sahranbay@gmail.com>\n"
 "Language-Team: Uyghur Computer Science Association <UKIJ@yahoogroups.com>\n"
@@ -28,38 +28,7 @@ msgctxt "EMAIL OF TRANSLATORS"
 msgid "Your emails"
 msgstr "sahranbay@gmail.com, gheyret@gmail.com"
 
-#: filegroupdetails.cpp:22
-#, kde-format
-msgid "Left Click Action (only for Konqueror file manager)"
-msgstr "سول چېكىش مەشغۇلاتى(پەقەتلا Konqueror ھۆججەت باشقۇرغۇچىسى ئۈچۈن)"
-
-#: filegroupdetails.cpp:26 filetypedetails.cpp:134
-#, kde-format
-msgid "Show file in embedded viewer"
-msgstr "ھۆججەتلەرنى سىڭدۈرمە كۆرگۈدە كۆرسەت"
-
-#: filegroupdetails.cpp:27 filetypedetails.cpp:135
-#, kde-format
-msgid "Show file in separate viewer"
-msgstr "ھۆججەتلەرنى ئايرىم كۆرگۈدە كۆرسەت"
-
-#: filegroupdetails.cpp:36
-#, kde-format
-msgid ""
-"Here you can configure what the Konqueror file manager will do when you "
-"click on a file belonging to this group. Konqueror can display the file in "
-"an embedded viewer or start up a separate application. You can change this "
-"setting for a specific file type in the 'Embedding' tab of the file type "
-"configuration. Dolphin  shows files always in a separate viewer"
-msgstr ""
-"بۇ يەردە مەزكۇر گۇرۇپپىغا تەۋە بىرەر ھۆججەتنى چەككەندە Konqueror ھۆججەت "
-"باشقۇرغۇ قانداق ئىش قىلىدۇ بەلگىلەيسىز. Konqueror ھۆججەتنى سىڭدۈرمە كۆرگۈ "
-"ئىچىدە كۆرسىتەلەيدۇ ياكى ئۇنى ئايرىم ئىجرا قىلالايدۇ. بۇ خىل بىرەر "
-"كۆرسىتىلگەن ھۆججەت تۈرىغا مۇناسىۋەتلىك مەشغۇلاتنى ھۆججەت تۈرى سەپلىمىسىنىڭ "
-"‹سىڭدۈرۈش›  بەتكۈچىدە تەوشىيەلەيسىز. Dolphin ھۆججەتلەرنى ھەمىشە ئايرىم "
-"كۆرگۈدە كۆرسىتىدۇ"
-
-#: filetypedetails.cpp:61
+#: filetypedetails.cpp:54
 #, kde-format
 msgid ""
 "This button displays the icon associated with the selected file type. Click "
@@ -68,12 +37,12 @@ msgstr ""
 "بۇ توپچە تاللانغان ھۆججەتكە ماسلاشتۇرۇلغان سىنبەلگىنى كۆرسىتىدۇ. باشقىنى "
 "تاللاش ئۈچۈن ئۇنى چېكىڭ."
 
-#: filetypedetails.cpp:67
+#: filetypedetails.cpp:60
 #, kde-format
 msgid "Filename Patterns"
 msgstr "ھۆججەت ئاتى ئەندىزىسى"
 
-#: filetypedetails.cpp:79
+#: filetypedetails.cpp:72
 #, kde-format
 msgid ""
 "This box contains a list of patterns that can be used to identify files of "
@@ -86,32 +55,32 @@ msgstr ""
 "بولغان ھۆججەتلەرنى كۆرسىتىدۇ؛ ھۆججەت ئاتى ‹.txt› بولغان بارلىق ھۆججەتلەر "
 "ئادەتتە تېكىست ھۆججەتلىرى دەپ قارىلىدۇ."
 
-#: filetypedetails.cpp:87 filetypesview.cpp:86 kservicelistwidget.cpp:105
+#: filetypedetails.cpp:80 filetypesview.cpp:84 kservicelistwidget.cpp:105
 #, kde-format
 msgid "Add..."
 msgstr "قوش…"
 
-#: filetypedetails.cpp:92
+#: filetypedetails.cpp:85
 #, kde-format
 msgid "Add a new pattern for the selected file type."
 msgstr "تاللانغان بۇ تىپتىكى ھۆججەتكە يېڭى ئەندىزە قوشىدۇ."
 
-#: filetypedetails.cpp:94 kservicelistwidget.cpp:119
+#: filetypedetails.cpp:87 kservicelistwidget.cpp:119
 #, kde-format
 msgid "Remove"
 msgstr "چىقىرىۋەت"
 
-#: filetypedetails.cpp:99
+#: filetypedetails.cpp:92
 #, kde-format
 msgid "Remove the selected filename pattern."
 msgstr "تاللانغان ھۆججەت ئاتى ئەندىزىسىنى چىقىرىۋېتىدۇ."
 
-#: filetypedetails.cpp:110
+#: filetypedetails.cpp:103
 #, kde-format
 msgid "Description:"
 msgstr "چۈشەندۈرۈش:"
 
-#: filetypedetails.cpp:115
+#: filetypedetails.cpp:108
 #, kde-format
 msgid ""
 "You can enter a short description for files of the selected file type (e.g. "
@@ -122,70 +91,37 @@ msgstr ""
 "چۈسەندۈرۈشى Konqueror دەك پىروگراممىلار مۇندەرىجە مەزمۇنىنى كۆرسەتكەندە "
 "ئىشلىتىلىدۇ."
 
-#: filetypedetails.cpp:129
-#, kde-format
-msgid "Left Click Action in Konqueror"
-msgstr "Konqueror دىكى سول چېكىش مەشغۇلاتى"
-
-#: filetypedetails.cpp:138
-#, kde-format
-msgid "Ask whether to save to disk instead (only for Konqueror browser)"
-msgstr "دىسكىغا ساقلامدۇ يوق (Konqueror توركۆرگۈسى ئۈچۈنلا)"
-
-#: filetypedetails.cpp:154
-#, kde-format
-msgid ""
-"Here you can configure what the Konqueror file manager will do when you "
-"click on a file of this type. Konqueror can either display the file in an "
-"embedded viewer, or start up a separate application. If set to 'Use settings "
-"for G group', the file manager will behave according to the settings of the "
-"group G to which this type belongs; for instance, 'image' if the current "
-"file type is image/png. Dolphin always shows files in a separate viewer."
-msgstr ""
-"بۇ يەردە مەزكۇر گۇرۇپپىغا تەۋە بىرەر ھۆججەتنى چەككەندە Konqueror ھۆججەت "
-"باشقۇرغۇ قانداق ئىش قىلىدۇ بەلگىلەيسىز. Konqueror ھۆججەتنى سىڭدۈرمە كۆرگۈ "
-"ئىچىدە كۆرسىتەلەيدۇ ياكى ئۇنى ئايرىم ئىجرا قىلالايدۇ. ئەگەر ‹گۇرۇپپا G ئۈچۈن "
-"تەڭشەكنى ئىشلىتىش› بەلگىلەنسە،  ھۆججەت باشقۇرغۇ گۇرۇپپا G غا تەۋە بولغان "
-"ھۆججەتنىڭ تەڭشىكىگە ئاساسەن مەشغۇلات ئېلىپ بارىدۇ. مەسىلەن : نۆۋەتتىكى "
-"ھۆججەت تۈرى image/png بولسا، ‹سۈرەت› دەپ بىر تەرەپ قىلىدۇ. Dolphin "
-"ھۆججەتلەرنى ھەمىشە ئايرىم كۆرگۈدە كۆرسىتىدۇ."
-
-#: filetypedetails.cpp:167
+#: filetypedetails.cpp:128
 #, kde-format
 msgid "&General"
 msgstr "ئادەتتىكى(&G)"
 
-#: filetypedetails.cpp:168
+#: filetypedetails.cpp:129
 #, kde-format
 msgid "&Embedding"
 msgstr "سىڭدۈرۈش(&E)"
 
-#: filetypedetails.cpp:209
+#: filetypedetails.cpp:170
 #, kde-format
 msgid "Add New Extension"
 msgstr "يېڭى كېڭەيتىلمە قوش"
 
-#: filetypedetails.cpp:209
+#: filetypedetails.cpp:170
 #, kde-format
 msgid "Extension:"
 msgstr "كېڭەيتىلمە:"
 
-#: filetypedetails.cpp:328
+#: filetypedetails.cpp:203
 #, kde-format
 msgid "File type %1"
 msgstr "ھۆججەت تۈرى %1"
 
-#: filetypedetails.cpp:336
-#, kde-format
-msgid "Use settings for '%1' group"
-msgstr "تەڭشەكلەرنى «%1» گۇرۇپپىسىغا ئىشلەت"
-
-#: filetypesview.cpp:57
+#: filetypesview.cpp:55
 #, kde-format
 msgid "Search for file type or filename pattern..."
 msgstr "ھۆججەت تۈرى ۋە ھۆججەت ئاتىنىڭ ئەندىزىسىنى ئىزدە…"
 
-#: filetypesview.cpp:63
+#: filetypesview.cpp:61
 #, kde-format
 msgid ""
 "Enter a part of a filename pattern, and only file types with a matching file "
@@ -196,12 +132,12 @@ msgstr ""
 "كېلىدىغان ھۆججەتلەرلا تىزىمدا كۆرسىتىلىدۇ. يەنە ھۆججەت تۈرىنىڭ بىر بۆلىكىنى "
 "كىرگۈزسىمۇ بولۇۋېرىدۇ."
 
-#: filetypesview.cpp:71 multiapplydialog.cpp:27
+#: filetypesview.cpp:69 multiapplydialog.cpp:27
 #, kde-format
 msgid "Known Types"
 msgstr "مەلۇملۇق تىپلار"
 
-#: filetypesview.cpp:77
+#: filetypesview.cpp:75
 #, kde-format
 msgid ""
 "Here you can see a hierarchical list of the file types which are known on "
@@ -215,32 +151,32 @@ msgstr ""
 "html)  تاللاپ ، ئوڭ تەرەپتىكى تاختىدىكى كۆرۈش/تەھرىرلەشنى بېسىپ مەشغۇلات "
 "قىلسىڭىزمۇ بولىدۇ."
 
-#: filetypesview.cpp:91
+#: filetypesview.cpp:89
 #, kde-format
 msgid "Click here to add a new file type."
 msgstr "يېڭى ھۆججەت تۈرى قوشۇش ئۈچۈن بۇ جاي چېكىلىدۇ."
 
-#: filetypesview.cpp:93 filetypesview.cpp:389
+#: filetypesview.cpp:91 filetypesview.cpp:368
 #, kde-format
 msgid "&Remove"
 msgstr "چىقىرىۋەت(&R)"
 
-#: filetypesview.cpp:119
+#: filetypesview.cpp:111
 #, kde-format
 msgid "Select a file type by name or by extension"
 msgstr "ھۆججەت ئاتى ياكى ھۆججەت كېڭەيتىلمە ئاتى ھۆججەت تۈرىنى تاللايدۇ"
 
-#: filetypesview.cpp:382
+#: filetypesview.cpp:361
 #, kde-format
 msgid "&Revert"
 msgstr "ئەسلىگە قايتۇر(&R)"
 
-#: filetypesview.cpp:383
+#: filetypesview.cpp:362
 #, kde-format
 msgid "Revert this file type to its initial system-wide definition"
 msgstr "ھۆججەت تۈرىنى ئۇنىڭ دەسلەپكى سىستېما مىقياسىدىكى قىممىتىگە قايتۇرىدۇ"
 
-#: filetypesview.cpp:385
+#: filetypesview.cpp:364
 #, kde-format
 msgid ""
 "Click here to revert this file type to its initial system-wide definition, "
@@ -254,12 +190,12 @@ msgstr ""
 "ئېنىقلىمىسىنى ئۆچۈرۈشكە بولمايدۇ. ئۇنى قۇرۇق قالدۇرسىمۇ بولىدۇ(ئەگەر ھۆججەت "
 "مەزمۇنىغا ئاساسەن ھۆججەتنىڭ تىپىنى بەلگىلىيەلىسە شۇنى ئىشلىتىدۇ)"
 
-#: filetypesview.cpp:390
+#: filetypesview.cpp:369
 #, kde-format
 msgid "Delete this file type definition completely"
 msgstr "بۇ ھۆججەت تۈرىنى تەلتۆكۈس ئۆچۈر"
 
-#: filetypesview.cpp:392
+#: filetypesview.cpp:371
 #, kde-format
 msgid ""
 "Click here to delete this file type definition completely. This is only "
@@ -505,6 +441,55 @@ msgid ""
 msgstr ""
 "ھۆججەت تۈرىنىڭ ئاتىنى كىرگۈزۈڭ. مەسىلەن: ‹image› دېگەن تۈرنى تاللاپ، "
 "‹custom› نى كىرگۈزسىڭىز ‹image/custom› قۇرۇلىدۇ."
+
+#~ msgid "Left Click Action (only for Konqueror file manager)"
+#~ msgstr "سول چېكىش مەشغۇلاتى(پەقەتلا Konqueror ھۆججەت باشقۇرغۇچىسى ئۈچۈن)"
+
+#~ msgid "Show file in embedded viewer"
+#~ msgstr "ھۆججەتلەرنى سىڭدۈرمە كۆرگۈدە كۆرسەت"
+
+#~ msgid "Show file in separate viewer"
+#~ msgstr "ھۆججەتلەرنى ئايرىم كۆرگۈدە كۆرسەت"
+
+#~ msgid ""
+#~ "Here you can configure what the Konqueror file manager will do when you "
+#~ "click on a file belonging to this group. Konqueror can display the file "
+#~ "in an embedded viewer or start up a separate application. You can change "
+#~ "this setting for a specific file type in the 'Embedding' tab of the file "
+#~ "type configuration. Dolphin  shows files always in a separate viewer"
+#~ msgstr ""
+#~ "بۇ يەردە مەزكۇر گۇرۇپپىغا تەۋە بىرەر ھۆججەتنى چەككەندە Konqueror ھۆججەت "
+#~ "باشقۇرغۇ قانداق ئىش قىلىدۇ بەلگىلەيسىز. Konqueror ھۆججەتنى سىڭدۈرمە كۆرگۈ "
+#~ "ئىچىدە كۆرسىتەلەيدۇ ياكى ئۇنى ئايرىم ئىجرا قىلالايدۇ. بۇ خىل بىرەر "
+#~ "كۆرسىتىلگەن ھۆججەت تۈرىغا مۇناسىۋەتلىك مەشغۇلاتنى ھۆججەت تۈرى "
+#~ "سەپلىمىسىنىڭ ‹سىڭدۈرۈش›  بەتكۈچىدە تەوشىيەلەيسىز. Dolphin ھۆججەتلەرنى "
+#~ "ھەمىشە ئايرىم كۆرگۈدە كۆرسىتىدۇ"
+
+#~ msgid "Left Click Action in Konqueror"
+#~ msgstr "Konqueror دىكى سول چېكىش مەشغۇلاتى"
+
+#~ msgid "Ask whether to save to disk instead (only for Konqueror browser)"
+#~ msgstr "دىسكىغا ساقلامدۇ يوق (Konqueror توركۆرگۈسى ئۈچۈنلا)"
+
+#~ msgid ""
+#~ "Here you can configure what the Konqueror file manager will do when you "
+#~ "click on a file of this type. Konqueror can either display the file in an "
+#~ "embedded viewer, or start up a separate application. If set to 'Use "
+#~ "settings for G group', the file manager will behave according to the "
+#~ "settings of the group G to which this type belongs; for instance, 'image' "
+#~ "if the current file type is image/png. Dolphin always shows files in a "
+#~ "separate viewer."
+#~ msgstr ""
+#~ "بۇ يەردە مەزكۇر گۇرۇپپىغا تەۋە بىرەر ھۆججەتنى چەككەندە Konqueror ھۆججەت "
+#~ "باشقۇرغۇ قانداق ئىش قىلىدۇ بەلگىلەيسىز. Konqueror ھۆججەتنى سىڭدۈرمە كۆرگۈ "
+#~ "ئىچىدە كۆرسىتەلەيدۇ ياكى ئۇنى ئايرىم ئىجرا قىلالايدۇ. ئەگەر ‹گۇرۇپپا G "
+#~ "ئۈچۈن تەڭشەكنى ئىشلىتىش› بەلگىلەنسە،  ھۆججەت باشقۇرغۇ گۇرۇپپا G غا تەۋە "
+#~ "بولغان ھۆججەتنىڭ تەڭشىكىگە ئاساسەن مەشغۇلات ئېلىپ بارىدۇ. مەسىلەن : "
+#~ "نۆۋەتتىكى ھۆججەت تۈرى image/png بولسا، ‹سۈرەت› دەپ بىر تەرەپ قىلىدۇ. "
+#~ "Dolphin ھۆججەتلەرنى ھەمىشە ئايرىم كۆرگۈدە كۆرسىتىدۇ."
+
+#~ msgid "Use settings for '%1' group"
+#~ msgstr "تەڭشەكلەرنى «%1» گۇرۇپپىسىغا ئىشلەت"
 
 #~ msgid "KEditFileType"
 #~ msgstr "KEdit ھۆججەت تىپى"

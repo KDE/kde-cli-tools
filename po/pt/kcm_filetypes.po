@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: filetypes\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2026-06-04 00:46+0000\n"
+"POT-Creation-Date: 2026-08-28 00:47+0000\n"
 "PO-Revision-Date: 2019-01-12 16:55+0000\n"
 "Last-Translator: Pedro Morais <morais@kde.org>\n"
 "Language-Team: pt <kde-i18n-pt@kde.org>\n"
@@ -26,40 +26,7 @@ msgctxt "EMAIL OF TRANSLATORS"
 msgid "Your emails"
 msgstr "zepires@gmail.com"
 
-#: filegroupdetails.cpp:22
-#, kde-format
-msgid "Left Click Action (only for Konqueror file manager)"
-msgstr ""
-"Acção do Botão Esquerdo do Rato (apenas para o gestor de ficheiros do "
-"Konqueror)"
-
-#: filegroupdetails.cpp:26 filetypedetails.cpp:134
-#, kde-format
-msgid "Show file in embedded viewer"
-msgstr "Mostrar o ficheiro num visualizador incorporado"
-
-#: filegroupdetails.cpp:27 filetypedetails.cpp:135
-#, kde-format
-msgid "Show file in separate viewer"
-msgstr "Mostrar o ficheiro num visualizador separado"
-
-#: filegroupdetails.cpp:36
-#, kde-format
-msgid ""
-"Here you can configure what the Konqueror file manager will do when you "
-"click on a file belonging to this group. Konqueror can display the file in "
-"an embedded viewer or start up a separate application. You can change this "
-"setting for a specific file type in the 'Embedding' tab of the file type "
-"configuration. Dolphin  shows files always in a separate viewer"
-msgstr ""
-"Aqui pode configurar o que o gestor de ficheiros do Konqueror deve fazer "
-"quando você carregar num ficheiro pertencente a este grupo. O Konqueror pode "
-"mostrar o ficheiro numa aplicação de visualização incorporada ou começar uma "
-"aplicação em separado. Pode mudar esta configuração para um tipo de ficheiro "
-"específico, na secção 'Embeber' da configuração do tipo de ficheiro. O "
-"Dolphin mostra os ficheiros sempre num visualizador em separado"
-
-#: filetypedetails.cpp:61
+#: filetypedetails.cpp:54
 #, kde-format
 msgid ""
 "This button displays the icon associated with the selected file type. Click "
@@ -68,12 +35,12 @@ msgstr ""
 "Este botão mostra o ícone associado ao tipo de ficheiro seleccionado. "
 "Carregue nele para escolher outro ícone."
 
-#: filetypedetails.cpp:67
+#: filetypedetails.cpp:60
 #, kde-format
 msgid "Filename Patterns"
 msgstr "Padrões de Ficheiros"
 
-#: filetypedetails.cpp:79
+#: filetypedetails.cpp:72
 #, kde-format
 msgid ""
 "This box contains a list of patterns that can be used to identify files of "
@@ -86,32 +53,32 @@ msgstr ""
 "está associado com o tipo de ficheiro 'text/plain'; todos os ficheiros que "
 "acabem em '.txt' são reconhecidos como ficheiros de texto."
 
-#: filetypedetails.cpp:87 filetypesview.cpp:86 kservicelistwidget.cpp:105
+#: filetypedetails.cpp:80 filetypesview.cpp:84 kservicelistwidget.cpp:105
 #, kde-format
 msgid "Add..."
 msgstr "Adicionar..."
 
-#: filetypedetails.cpp:92
+#: filetypedetails.cpp:85
 #, kde-format
 msgid "Add a new pattern for the selected file type."
 msgstr "Adiciona um novo padrão para o tipo de ficheiro seleccionado."
 
-#: filetypedetails.cpp:94 kservicelistwidget.cpp:119
+#: filetypedetails.cpp:87 kservicelistwidget.cpp:119
 #, kde-format
 msgid "Remove"
 msgstr "Remover"
 
-#: filetypedetails.cpp:99
+#: filetypedetails.cpp:92
 #, kde-format
 msgid "Remove the selected filename pattern."
 msgstr "Remove o padrão de nomes de ficheiros seleccionado."
 
-#: filetypedetails.cpp:110
+#: filetypedetails.cpp:103
 #, kde-format
 msgid "Description:"
 msgstr "Descrição:"
 
-#: filetypedetails.cpp:115
+#: filetypedetails.cpp:108
 #, kde-format
 msgid ""
 "You can enter a short description for files of the selected file type (e.g. "
@@ -122,73 +89,37 @@ msgstr ""
 "seleccionado (por exemplo, 'Página HTML'). Esta descrição será utilizada "
 "pelas aplicações, como o Konqueror, para mostrar o conteúdo das pastas."
 
-#: filetypedetails.cpp:129
-#, kde-format
-msgid "Left Click Action in Konqueror"
-msgstr "Acção do Botão Esquerdo do Rato no Konqueror"
-
-#: filetypedetails.cpp:138
-#, kde-format
-msgid "Ask whether to save to disk instead (only for Konqueror browser)"
-msgstr ""
-"Perguntar se deseja gravar para o disco (apenas para o navegador do "
-"Konqueror)"
-
-#: filetypedetails.cpp:154
-#, kde-format
-msgid ""
-"Here you can configure what the Konqueror file manager will do when you "
-"click on a file of this type. Konqueror can either display the file in an "
-"embedded viewer, or start up a separate application. If set to 'Use settings "
-"for G group', the file manager will behave according to the settings of the "
-"group G to which this type belongs; for instance, 'image' if the current "
-"file type is image/png. Dolphin always shows files in a separate viewer."
-msgstr ""
-"Aqui poderá configurar o que o gestor de ficheiros do Konqueror irá fazer "
-"quando carregar num ficheiro deste tipo. O Konqueror poderá mostrar o "
-"ficheiro numa aplicação de visualização incorporada ou iniciar uma aplicação "
-"separada. Se for configurado para 'Usar as configurações do grupo G', o "
-"Konqueror comportar-se-á de acordo com as configurações do grupo G a que "
-"este tipo pertence, por exemplo 'image', se o tipo de ficheiro actual é "
-"'image/png'. O Dolphin mostra os ficheiros sempre num visualizador em "
-"separado."
-
-#: filetypedetails.cpp:167
+#: filetypedetails.cpp:128
 #, kde-format
 msgid "&General"
 msgstr "&Geral"
 
-#: filetypedetails.cpp:168
+#: filetypedetails.cpp:129
 #, kde-format
 msgid "&Embedding"
 msgstr "&Incorporar"
 
-#: filetypedetails.cpp:209
+#: filetypedetails.cpp:170
 #, kde-format
 msgid "Add New Extension"
 msgstr "Adicionar uma Extensão"
 
-#: filetypedetails.cpp:209
+#: filetypedetails.cpp:170
 #, kde-format
 msgid "Extension:"
 msgstr "Extensão:"
 
-#: filetypedetails.cpp:328
+#: filetypedetails.cpp:203
 #, kde-format
 msgid "File type %1"
 msgstr "Tipo de ficheiro %1"
 
-#: filetypedetails.cpp:336
-#, kde-format
-msgid "Use settings for '%1' group"
-msgstr "Usar a configuração do grupo '%1'"
-
-#: filetypesview.cpp:57
+#: filetypesview.cpp:55
 #, kde-format
 msgid "Search for file type or filename pattern..."
 msgstr "Procurar pelo tipo ou padrão de ficheiros..."
 
-#: filetypesview.cpp:63
+#: filetypesview.cpp:61
 #, kde-format
 msgid ""
 "Enter a part of a filename pattern, and only file types with a matching file "
@@ -199,12 +130,12 @@ msgstr ""
 "com padrões correspondentes irão aparecer na lista. Em alternativa, indique "
 "uma parte de um nome de tipo de ficheiro, tal como aparece na lista."
 
-#: filetypesview.cpp:71 multiapplydialog.cpp:27
+#: filetypesview.cpp:69 multiapplydialog.cpp:27
 #, kde-format
 msgid "Known Types"
 msgstr "Tipos Conhecidos"
 
-#: filetypesview.cpp:77
+#: filetypesview.cpp:75
 #, kde-format
 msgid ""
 "Here you can see a hierarchical list of the file types which are known on "
@@ -217,32 +148,32 @@ msgstr ""
 "a esconder. Seleccione um tipo de ficheiro (por exemplo, 'text/html', para "
 "os ficheiros HTML) para o editar, utilizando as opções à direita."
 
-#: filetypesview.cpp:91
+#: filetypesview.cpp:89
 #, kde-format
 msgid "Click here to add a new file type."
 msgstr "Carregue aqui para adicionar um novo tipo de ficheiro."
 
-#: filetypesview.cpp:93 filetypesview.cpp:389
+#: filetypesview.cpp:91 filetypesview.cpp:368
 #, kde-format
 msgid "&Remove"
 msgstr "&Remover"
 
-#: filetypesview.cpp:119
+#: filetypesview.cpp:111
 #, kde-format
 msgid "Select a file type by name or by extension"
 msgstr "Seleccione um tipo de ficheiro pelo nome ou pela extensão"
 
-#: filetypesview.cpp:382
+#: filetypesview.cpp:361
 #, kde-format
 msgid "&Revert"
 msgstr "&Reverter"
 
-#: filetypesview.cpp:383
+#: filetypesview.cpp:362
 #, kde-format
 msgid "Revert this file type to its initial system-wide definition"
 msgstr "Reverter este tipo de ficheiro à sua definição inicial do sistema"
 
-#: filetypesview.cpp:385
+#: filetypesview.cpp:364
 #, kde-format
 msgid ""
 "Click here to revert this file type to its initial system-wide definition, "
@@ -258,12 +189,12 @@ msgstr ""
 "as hipóteses de estes serem usados (se bem que a determinação do tipo de "
 "ficheiros a partir do seu conteúdo possa à mesma vir a usá-los)."
 
-#: filetypesview.cpp:390
+#: filetypesview.cpp:369
 #, kde-format
 msgid "Delete this file type definition completely"
 msgstr "Apagar esta definição de tipo de ficheiro por completo"
 
-#: filetypesview.cpp:392
+#: filetypesview.cpp:371
 #, kde-format
 msgid ""
 "Click here to delete this file type definition completely. This is only "
@@ -514,6 +445,61 @@ msgstr ""
 "Escreva o nome do tipo de ficheiro. Por exemplo, se seleccionou a 'image' "
 "como categoria e se escrever 'personalizada' aqui, será criado o tipo de "
 "ficheiro 'image/personalizada'."
+
+#~ msgid "Left Click Action (only for Konqueror file manager)"
+#~ msgstr ""
+#~ "Acção do Botão Esquerdo do Rato (apenas para o gestor de ficheiros do "
+#~ "Konqueror)"
+
+#~ msgid "Show file in embedded viewer"
+#~ msgstr "Mostrar o ficheiro num visualizador incorporado"
+
+#~ msgid "Show file in separate viewer"
+#~ msgstr "Mostrar o ficheiro num visualizador separado"
+
+#~ msgid ""
+#~ "Here you can configure what the Konqueror file manager will do when you "
+#~ "click on a file belonging to this group. Konqueror can display the file "
+#~ "in an embedded viewer or start up a separate application. You can change "
+#~ "this setting for a specific file type in the 'Embedding' tab of the file "
+#~ "type configuration. Dolphin  shows files always in a separate viewer"
+#~ msgstr ""
+#~ "Aqui pode configurar o que o gestor de ficheiros do Konqueror deve fazer "
+#~ "quando você carregar num ficheiro pertencente a este grupo. O Konqueror "
+#~ "pode mostrar o ficheiro numa aplicação de visualização incorporada ou "
+#~ "começar uma aplicação em separado. Pode mudar esta configuração para um "
+#~ "tipo de ficheiro específico, na secção 'Embeber' da configuração do tipo "
+#~ "de ficheiro. O Dolphin mostra os ficheiros sempre num visualizador em "
+#~ "separado"
+
+#~ msgid "Left Click Action in Konqueror"
+#~ msgstr "Acção do Botão Esquerdo do Rato no Konqueror"
+
+#~ msgid "Ask whether to save to disk instead (only for Konqueror browser)"
+#~ msgstr ""
+#~ "Perguntar se deseja gravar para o disco (apenas para o navegador do "
+#~ "Konqueror)"
+
+#~ msgid ""
+#~ "Here you can configure what the Konqueror file manager will do when you "
+#~ "click on a file of this type. Konqueror can either display the file in an "
+#~ "embedded viewer, or start up a separate application. If set to 'Use "
+#~ "settings for G group', the file manager will behave according to the "
+#~ "settings of the group G to which this type belongs; for instance, 'image' "
+#~ "if the current file type is image/png. Dolphin always shows files in a "
+#~ "separate viewer."
+#~ msgstr ""
+#~ "Aqui poderá configurar o que o gestor de ficheiros do Konqueror irá fazer "
+#~ "quando carregar num ficheiro deste tipo. O Konqueror poderá mostrar o "
+#~ "ficheiro numa aplicação de visualização incorporada ou iniciar uma "
+#~ "aplicação separada. Se for configurado para 'Usar as configurações do "
+#~ "grupo G', o Konqueror comportar-se-á de acordo com as configurações do "
+#~ "grupo G a que este tipo pertence, por exemplo 'image', se o tipo de "
+#~ "ficheiro actual é 'image/png'. O Dolphin mostra os ficheiros sempre num "
+#~ "visualizador em separado."
+
+#~ msgid "Use settings for '%1' group"
+#~ msgstr "Usar a configuração do grupo '%1'"
 
 #~ msgid ""
 #~ "<p><h1>File Associations</h1> This module allows you to choose which "

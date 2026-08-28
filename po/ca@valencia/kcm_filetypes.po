@@ -12,7 +12,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kde-cli-tools\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2026-06-04 00:46+0000\n"
+"POT-Creation-Date: 2026-08-28 00:47+0000\n"
 "PO-Revision-Date: 2023-05-16 11:33+0200\n"
 "Last-Translator: Josep M. Ferrer <txemaq@gmail.com>\n"
 "Language-Team: Catalan <kde-i18n-ca@kde.org>\n"
@@ -34,38 +34,7 @@ msgctxt "EMAIL OF TRANSLATORS"
 msgid "Your emails"
 msgstr "alviboi@gmail.com,sps@sastia.com"
 
-#: filegroupdetails.cpp:22
-#, kde-format
-msgid "Left Click Action (only for Konqueror file manager)"
-msgstr "Acció per al clic esquerre (només per al gestor de fitxers Konqueror)"
-
-#: filegroupdetails.cpp:26 filetypedetails.cpp:134
-#, kde-format
-msgid "Show file in embedded viewer"
-msgstr "Mostra el fitxer en el visor incrustat"
-
-#: filegroupdetails.cpp:27 filetypedetails.cpp:135
-#, kde-format
-msgid "Show file in separate viewer"
-msgstr "Mostra el fitxer en un visor separat"
-
-#: filegroupdetails.cpp:36
-#, kde-format
-msgid ""
-"Here you can configure what the Konqueror file manager will do when you "
-"click on a file belonging to this group. Konqueror can display the file in "
-"an embedded viewer or start up a separate application. You can change this "
-"setting for a specific file type in the 'Embedding' tab of the file type "
-"configuration. Dolphin  shows files always in a separate viewer"
-msgstr ""
-"Ací podreu configurar el que farà el gestor de fitxers Konqueror quan "
-"cliqueu damunt d'un fitxer pertanyent a este grup. Konqueror pot mostrar-vos "
-"el fitxer en un visor incrustat o iniciar una aplicació separada. Podeu "
-"canviar esta configuració per a un tipus de fitxer específic en la pestanya "
-"«Incrustat» de la configuració del tipus de fitxer. Dolphin sempre mostrarà "
-"els fitxers en un visor separat"
-
-#: filetypedetails.cpp:61
+#: filetypedetails.cpp:54
 #, kde-format
 msgid ""
 "This button displays the icon associated with the selected file type. Click "
@@ -74,12 +43,12 @@ msgstr ""
 "Este botó mostra la icona associada amb el tipus de fitxer seleccionat. "
 "Cliqueu-hi per a triar una icona nova."
 
-#: filetypedetails.cpp:67
+#: filetypedetails.cpp:60
 #, kde-format
 msgid "Filename Patterns"
 msgstr "Patrons de fitxer"
 
-#: filetypedetails.cpp:79
+#: filetypedetails.cpp:72
 #, kde-format
 msgid ""
 "This box contains a list of patterns that can be used to identify files of "
@@ -92,32 +61,32 @@ msgstr ""
 "associat amb el tipus de fitxer «text/plain», de manera que tots els fitxers "
 "que s'acaben en «.txt» seran reconeguts com a fitxers de text net."
 
-#: filetypedetails.cpp:87 filetypesview.cpp:86 kservicelistwidget.cpp:105
+#: filetypedetails.cpp:80 filetypesview.cpp:84 kservicelistwidget.cpp:105
 #, kde-format
 msgid "Add..."
 msgstr "Afig…"
 
-#: filetypedetails.cpp:92
+#: filetypedetails.cpp:85
 #, kde-format
 msgid "Add a new pattern for the selected file type."
 msgstr "Afig un patró nou per al tipus de fitxer seleccionat."
 
-#: filetypedetails.cpp:94 kservicelistwidget.cpp:119
+#: filetypedetails.cpp:87 kservicelistwidget.cpp:119
 #, kde-format
 msgid "Remove"
 msgstr "Elimina"
 
-#: filetypedetails.cpp:99
+#: filetypedetails.cpp:92
 #, kde-format
 msgid "Remove the selected filename pattern."
 msgstr "Elimina el patró de fitxer seleccionat."
 
-#: filetypedetails.cpp:110
+#: filetypedetails.cpp:103
 #, kde-format
 msgid "Description:"
 msgstr "Descripció:"
 
-#: filetypedetails.cpp:115
+#: filetypedetails.cpp:108
 #, kde-format
 msgid ""
 "You can enter a short description for files of the selected file type (e.g. "
@@ -128,70 +97,37 @@ msgstr ""
 "seleccionat (p. ex., «Pàgina HTML»). Esta descripció l'utilitzaran "
 "aplicacions com ara Konqueror, per a mostrar el contingut del directori."
 
-#: filetypedetails.cpp:129
-#, kde-format
-msgid "Left Click Action in Konqueror"
-msgstr "Acció de clic esquerre damunt Konqueror"
-
-#: filetypedetails.cpp:138
-#, kde-format
-msgid "Ask whether to save to disk instead (only for Konqueror browser)"
-msgstr "Pregunta si es guarda al disc (només per al navegador Konqueror)"
-
-#: filetypedetails.cpp:154
-#, kde-format
-msgid ""
-"Here you can configure what the Konqueror file manager will do when you "
-"click on a file of this type. Konqueror can either display the file in an "
-"embedded viewer, or start up a separate application. If set to 'Use settings "
-"for G group', the file manager will behave according to the settings of the "
-"group G to which this type belongs; for instance, 'image' if the current "
-"file type is image/png. Dolphin always shows files in a separate viewer."
-msgstr ""
-"Ací podeu configurar què farà el gestor de fitxers Konqueror quan cliqueu "
-"damunt d'un fitxer d'este tipus. Konqueror pot mostrar el fitxer en un visor "
-"incrustat, o iniciar una aplicació separada. Si s'establix a «Utilitza la "
-"configuració per al grup G», el gestor de fitxers es comportarà d'acord amb "
-"la configuració del grup G al qual pertany este tipus. Per exemple «image», "
-"si el tipus de fitxer actual és image/png. Dolphin sempre mostrarà els "
-"fitxers en un visor separat."
-
-#: filetypedetails.cpp:167
+#: filetypedetails.cpp:128
 #, kde-format
 msgid "&General"
 msgstr "&General"
 
-#: filetypedetails.cpp:168
+#: filetypedetails.cpp:129
 #, kde-format
 msgid "&Embedding"
 msgstr "&Incrustat"
 
-#: filetypedetails.cpp:209
+#: filetypedetails.cpp:170
 #, kde-format
 msgid "Add New Extension"
 msgstr "Afig una extensió nova"
 
-#: filetypedetails.cpp:209
+#: filetypedetails.cpp:170
 #, kde-format
 msgid "Extension:"
 msgstr "Extensió:"
 
-#: filetypedetails.cpp:328
+#: filetypedetails.cpp:203
 #, kde-format
 msgid "File type %1"
 msgstr "Tipus de fitxer %1"
 
-#: filetypedetails.cpp:336
-#, kde-format
-msgid "Use settings for '%1' group"
-msgstr "Utilitza la configuració per al grup «%1»"
-
-#: filetypesview.cpp:57
+#: filetypesview.cpp:55
 #, kde-format
 msgid "Search for file type or filename pattern..."
 msgstr "Busca pel tipus de fitxer o pel patró del nom de fitxer…"
 
-#: filetypesview.cpp:63
+#: filetypesview.cpp:61
 #, kde-format
 msgid ""
 "Enter a part of a filename pattern, and only file types with a matching file "
@@ -203,12 +139,12 @@ msgstr ""
 "alternativa, introduïu una part del nom del tipus de fitxer tal com apareix "
 "en la llista."
 
-#: filetypesview.cpp:71 multiapplydialog.cpp:27
+#: filetypesview.cpp:69 multiapplydialog.cpp:27
 #, kde-format
 msgid "Known Types"
 msgstr "Tipus coneguts"
 
-#: filetypesview.cpp:77
+#: filetypesview.cpp:75
 #, kde-format
 msgid ""
 "Here you can see a hierarchical list of the file types which are known on "
@@ -222,33 +158,33 @@ msgstr ""
 "per a fitxers HTML) per a veure o editar la informació d'este tipus de "
 "fitxer utilitzant els controls de la dreta."
 
-#: filetypesview.cpp:91
+#: filetypesview.cpp:89
 #, kde-format
 msgid "Click here to add a new file type."
 msgstr "Cliqueu ací per a afegir un tipus de fitxer nou."
 
-#: filetypesview.cpp:93 filetypesview.cpp:389
+#: filetypesview.cpp:91 filetypesview.cpp:368
 #, kde-format
 msgid "&Remove"
 msgstr "&Elimina"
 
-#: filetypesview.cpp:119
+#: filetypesview.cpp:111
 #, kde-format
 msgid "Select a file type by name or by extension"
 msgstr "Tria un tipus de fitxer per nom o per extensió"
 
-#: filetypesview.cpp:382
+#: filetypesview.cpp:361
 #, kde-format
 msgid "&Revert"
 msgstr "Re&vertix"
 
-#: filetypesview.cpp:383
+#: filetypesview.cpp:362
 #, kde-format
 msgid "Revert this file type to its initial system-wide definition"
 msgstr ""
 "Revertix este tipus de fitxer a la seua definició inicial global del sistema"
 
-#: filetypesview.cpp:385
+#: filetypesview.cpp:364
 #, kde-format
 msgid ""
 "Click here to revert this file type to its initial system-wide definition, "
@@ -265,12 +201,12 @@ msgstr ""
 "tipus de fitxer a partir del contingut del fitxer encara els pot acabar "
 "utilitzant)."
 
-#: filetypesview.cpp:390
+#: filetypesview.cpp:369
 #, kde-format
 msgid "Delete this file type definition completely"
 msgstr "Suprimix completament esta definició de tipus de fitxer"
 
-#: filetypesview.cpp:392
+#: filetypesview.cpp:371
 #, kde-format
 msgid ""
 "Click here to delete this file type definition completely. This is only "
@@ -521,3 +457,53 @@ msgstr ""
 "Teclegeu el nom del tipus de fitxer. Per exemple, si trieu la categoria "
 "«image» i ací introduïu «custom», es crearà el tipus de fitxer «image/"
 "custom»."
+
+#~ msgid "Left Click Action (only for Konqueror file manager)"
+#~ msgstr ""
+#~ "Acció per al clic esquerre (només per al gestor de fitxers Konqueror)"
+
+#~ msgid "Show file in embedded viewer"
+#~ msgstr "Mostra el fitxer en el visor incrustat"
+
+#~ msgid "Show file in separate viewer"
+#~ msgstr "Mostra el fitxer en un visor separat"
+
+#~ msgid ""
+#~ "Here you can configure what the Konqueror file manager will do when you "
+#~ "click on a file belonging to this group. Konqueror can display the file "
+#~ "in an embedded viewer or start up a separate application. You can change "
+#~ "this setting for a specific file type in the 'Embedding' tab of the file "
+#~ "type configuration. Dolphin  shows files always in a separate viewer"
+#~ msgstr ""
+#~ "Ací podreu configurar el que farà el gestor de fitxers Konqueror quan "
+#~ "cliqueu damunt d'un fitxer pertanyent a este grup. Konqueror pot mostrar-"
+#~ "vos el fitxer en un visor incrustat o iniciar una aplicació separada. "
+#~ "Podeu canviar esta configuració per a un tipus de fitxer específic en la "
+#~ "pestanya «Incrustat» de la configuració del tipus de fitxer. Dolphin "
+#~ "sempre mostrarà els fitxers en un visor separat"
+
+#~ msgid "Left Click Action in Konqueror"
+#~ msgstr "Acció de clic esquerre damunt Konqueror"
+
+#~ msgid "Ask whether to save to disk instead (only for Konqueror browser)"
+#~ msgstr "Pregunta si es guarda al disc (només per al navegador Konqueror)"
+
+#~ msgid ""
+#~ "Here you can configure what the Konqueror file manager will do when you "
+#~ "click on a file of this type. Konqueror can either display the file in an "
+#~ "embedded viewer, or start up a separate application. If set to 'Use "
+#~ "settings for G group', the file manager will behave according to the "
+#~ "settings of the group G to which this type belongs; for instance, 'image' "
+#~ "if the current file type is image/png. Dolphin always shows files in a "
+#~ "separate viewer."
+#~ msgstr ""
+#~ "Ací podeu configurar què farà el gestor de fitxers Konqueror quan cliqueu "
+#~ "damunt d'un fitxer d'este tipus. Konqueror pot mostrar el fitxer en un "
+#~ "visor incrustat, o iniciar una aplicació separada. Si s'establix a "
+#~ "«Utilitza la configuració per al grup G», el gestor de fitxers es "
+#~ "comportarà d'acord amb la configuració del grup G al qual pertany este "
+#~ "tipus. Per exemple «image», si el tipus de fitxer actual és image/png. "
+#~ "Dolphin sempre mostrarà els fitxers en un visor separat."
+
+#~ msgid "Use settings for '%1' group"
+#~ msgstr "Utilitza la configuració per al grup «%1»"

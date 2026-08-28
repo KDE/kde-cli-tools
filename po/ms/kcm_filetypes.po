@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: filetypes\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2026-06-04 00:46+0000\n"
+"POT-Creation-Date: 2026-08-28 00:47+0000\n"
 "PO-Revision-Date: 2011-07-16 01:02+0800\n"
 "Last-Translator: Sharuzzaman Ahmat Raslan <sharuzzaman@gmail.com>\n"
 "Language-Team: Malay <kedidiemas@yahoogroups.com>\n"
@@ -29,38 +29,7 @@ msgctxt "EMAIL OF TRANSLATORS"
 msgid "Your emails"
 msgstr "md_najmi@yahoo.com, sharuzzaman@myrealbox.com"
 
-#: filegroupdetails.cpp:22
-#, kde-format
-msgid "Left Click Action (only for Konqueror file manager)"
-msgstr "Tindakan Klik Kiri (hanya untuk pengurus fail Konquoror)"
-
-#: filegroupdetails.cpp:26 filetypedetails.cpp:134
-#, kde-format
-msgid "Show file in embedded viewer"
-msgstr "Papar fail di dalam pelihat terbenam"
-
-#: filegroupdetails.cpp:27 filetypedetails.cpp:135
-#, kde-format
-msgid "Show file in separate viewer"
-msgstr "Papar fail dalam pelihat berasingan"
-
-#: filegroupdetails.cpp:36
-#, kde-format
-msgid ""
-"Here you can configure what the Konqueror file manager will do when you "
-"click on a file belonging to this group. Konqueror can display the file in "
-"an embedded viewer or start up a separate application. You can change this "
-"setting for a specific file type in the 'Embedding' tab of the file type "
-"configuration. Dolphin  shows files always in a separate viewer"
-msgstr ""
-"Di sini anda boleh menetapkan apa yang pengurus fail Konqueror akan lakukan "
-"apabila anda klik pada fail yang dipunyai oleh kumpulan ini. Konqueror akan "
-"memaparkan fail di dalam pelihat terselit atau memulakan aplikasi "
-"berasingan. Anda boleh mengubah tetapan ini untuk fail jenis tertentu dalam "
-"tab 'Selit' untuk penyelarasan jenis fail. Dolphin sentiasa memaparkan fail "
-"didalam pelihat berlainan."
-
-#: filetypedetails.cpp:61
+#: filetypedetails.cpp:54
 #, kde-format
 msgid ""
 "This button displays the icon associated with the selected file type. Click "
@@ -69,12 +38,12 @@ msgstr ""
 "Butang ini memaparkan ikon dikaitkan dengan jenis fail dipilih. Klik untuk "
 "memilih ikon lain."
 
-#: filetypedetails.cpp:67
+#: filetypedetails.cpp:60
 #, kde-format
 msgid "Filename Patterns"
 msgstr "Corak Namafail"
 
-#: filetypedetails.cpp:79
+#: filetypedetails.cpp:72
 #, kde-format
 msgid ""
 "This box contains a list of patterns that can be used to identify files of "
@@ -86,32 +55,32 @@ msgstr ""
 "fail untuk jenis dipilih. Sebagai contoh, corak *.txt dikaitkan dengan jenis "
 "fail 'teks/plain'; semua fail denganakhiran '.txt' adalah fail teks plain."
 
-#: filetypedetails.cpp:87 filetypesview.cpp:86 kservicelistwidget.cpp:105
+#: filetypedetails.cpp:80 filetypesview.cpp:84 kservicelistwidget.cpp:105
 #, kde-format
 msgid "Add..."
 msgstr "Tambah..."
 
-#: filetypedetails.cpp:92
+#: filetypedetails.cpp:85
 #, kde-format
 msgid "Add a new pattern for the selected file type."
 msgstr "Tambah corak baru untuk jenis fail dipilih."
 
-#: filetypedetails.cpp:94 kservicelistwidget.cpp:119
+#: filetypedetails.cpp:87 kservicelistwidget.cpp:119
 #, kde-format
 msgid "Remove"
 msgstr "Buang"
 
-#: filetypedetails.cpp:99
+#: filetypedetails.cpp:92
 #, kde-format
 msgid "Remove the selected filename pattern."
 msgstr "Buang corak namafail dipilih."
 
-#: filetypedetails.cpp:110
+#: filetypedetails.cpp:103
 #, kde-format
 msgid "Description:"
 msgstr "Huraian:"
 
-#: filetypedetails.cpp:115
+#: filetypedetails.cpp:108
 #, kde-format
 msgid ""
 "You can enter a short description for files of the selected file type (e.g. "
@@ -122,74 +91,38 @@ msgstr ""
 "(cth: 'Laman HTML'). Penjelasan ini akan digunakan oleh aplikasi seperti "
 "Konqueror untuk memaparkan kandungan direktori."
 
-#: filetypedetails.cpp:129
-#, kde-format
-msgid "Left Click Action in Konqueror"
-msgstr "Tindakan Klik Kiri dalam Konqueror"
-
-#: filetypedetails.cpp:138
-#, kde-format
-msgid "Ask whether to save to disk instead (only for Konqueror browser)"
-msgstr ""
-"Tanya sama ada hendak menyimpan ke fail (hanya untuk pelayar Konquorer)"
-
-#: filetypedetails.cpp:154
-#, fuzzy, kde-format
-#| msgid ""
-#| "Here you can configure what the Konqueror file manager will do when you "
-#| "click on a file of this type. Konqueror can display the file in an "
-#| "embedded viewer or start up a separate application. If set to 'Use "
-#| "settings for G group', Konqueror will behave according to the settings of "
-#| "the group G this type belongs to, for instance 'image' if the current "
-#| "file type is image/png."
-msgid ""
-"Here you can configure what the Konqueror file manager will do when you "
-"click on a file of this type. Konqueror can either display the file in an "
-"embedded viewer, or start up a separate application. If set to 'Use settings "
-"for G group', the file manager will behave according to the settings of the "
-"group G to which this type belongs; for instance, 'image' if the current "
-"file type is image/png. Dolphin always shows files in a separate viewer."
-msgstr ""
-"Konqueror fail buka a fail Konqueror fail dalam  atau a ke  Guna G fail ke  "
-"G ke  fail Dolphin dalam  a."
-
-#: filetypedetails.cpp:167
+#: filetypedetails.cpp:128
 #, kde-format
 msgid "&General"
 msgstr "U&mum"
 
-#: filetypedetails.cpp:168
+#: filetypedetails.cpp:129
 #, kde-format
 msgid "&Embedding"
 msgstr "S&elit"
 
-#: filetypedetails.cpp:209
+#: filetypedetails.cpp:170
 #, kde-format
 msgid "Add New Extension"
 msgstr "Tambah Penghujungan Baru"
 
-#: filetypedetails.cpp:209
+#: filetypedetails.cpp:170
 #, kde-format
 msgid "Extension:"
 msgstr "Penghujungan:"
 
-#: filetypedetails.cpp:328
+#: filetypedetails.cpp:203
 #, kde-format
 msgid "File type %1"
 msgstr "Fail jenis %1"
 
-#: filetypedetails.cpp:336
-#, kde-format
-msgid "Use settings for '%1' group"
-msgstr "Gunakan tetapan '%1' untuk kumpulan"
-
-#: filetypesview.cpp:57
+#: filetypesview.cpp:55
 #, fuzzy, kde-format
 #| msgid "Find file type or filename pattern"
 msgid "Search for file type or filename pattern..."
 msgstr "Cari jenis fail atau corak namafail"
 
-#: filetypesview.cpp:63
+#: filetypesview.cpp:61
 #, kde-format
 msgid ""
 "Enter a part of a filename pattern, and only file types with a matching file "
@@ -200,12 +133,12 @@ msgstr ""
 "corak fail akan dipaparkan ke dalam senarai. Selain itu, masukkan sebahagian "
 "nama jenis fail seperti yang kelihatan dalam senarai."
 
-#: filetypesview.cpp:71 multiapplydialog.cpp:27
+#: filetypesview.cpp:69 multiapplydialog.cpp:27
 #, kde-format
 msgid "Known Types"
 msgstr "Jenis Diketahui"
 
-#: filetypesview.cpp:77
+#: filetypesview.cpp:75
 #, kde-format
 msgid ""
 "Here you can see a hierarchical list of the file types which are known on "
@@ -219,32 +152,32 @@ msgstr ""
 "untuk lihat/sunting maklumat untuk jenis fail tersebut menggunakan kawalan "
 "disebelah kanan."
 
-#: filetypesview.cpp:91
+#: filetypesview.cpp:89
 #, kde-format
 msgid "Click here to add a new file type."
 msgstr "Kilk sini untuk tambah jenis fail baru."
 
-#: filetypesview.cpp:93 filetypesview.cpp:389
+#: filetypesview.cpp:91 filetypesview.cpp:368
 #, kde-format
 msgid "&Remove"
 msgstr "&Buang"
 
-#: filetypesview.cpp:119
+#: filetypesview.cpp:111
 #, kde-format
 msgid "Select a file type by name or by extension"
 msgstr "Pilih jenis fail dengan nama atau dengan penghujungan"
 
-#: filetypesview.cpp:382
+#: filetypesview.cpp:361
 #, kde-format
 msgid "&Revert"
 msgstr "&Patah Balik"
 
-#: filetypesview.cpp:383
+#: filetypesview.cpp:362
 #, fuzzy, kde-format
 msgid "Revert this file type to its initial system-wide definition"
 msgstr "Balikan fail ke "
 
-#: filetypesview.cpp:385
+#: filetypesview.cpp:364
 #, fuzzy, kde-format
 msgid ""
 "Click here to revert this file type to its initial system-wide definition, "
@@ -254,12 +187,12 @@ msgid ""
 "from file contents can still end up using them)."
 msgstr "ke  fail ke  ke  fail Nota fail Anda corak ke  fail fail."
 
-#: filetypesview.cpp:390
+#: filetypesview.cpp:369
 #, kde-format
 msgid "Delete this file type definition completely"
 msgstr "Buang definisi jenis fail ini kesemuanya"
 
-#: filetypesview.cpp:392
+#: filetypesview.cpp:371
 #, fuzzy, kde-format
 msgid ""
 "Click here to delete this file type definition completely. This is only "
@@ -503,6 +436,59 @@ msgstr ""
 "Taip nama bagi jenis fail. Sebagai contoh, jika anda memilih 'imej' sebagai "
 "kategori dan anda menaip 'tersendiri' disini, jenis fail 'imej/tersendiri' "
 "akan dicipta."
+
+#~ msgid "Left Click Action (only for Konqueror file manager)"
+#~ msgstr "Tindakan Klik Kiri (hanya untuk pengurus fail Konquoror)"
+
+#~ msgid "Show file in embedded viewer"
+#~ msgstr "Papar fail di dalam pelihat terbenam"
+
+#~ msgid "Show file in separate viewer"
+#~ msgstr "Papar fail dalam pelihat berasingan"
+
+#~ msgid ""
+#~ "Here you can configure what the Konqueror file manager will do when you "
+#~ "click on a file belonging to this group. Konqueror can display the file "
+#~ "in an embedded viewer or start up a separate application. You can change "
+#~ "this setting for a specific file type in the 'Embedding' tab of the file "
+#~ "type configuration. Dolphin  shows files always in a separate viewer"
+#~ msgstr ""
+#~ "Di sini anda boleh menetapkan apa yang pengurus fail Konqueror akan "
+#~ "lakukan apabila anda klik pada fail yang dipunyai oleh kumpulan ini. "
+#~ "Konqueror akan memaparkan fail di dalam pelihat terselit atau memulakan "
+#~ "aplikasi berasingan. Anda boleh mengubah tetapan ini untuk fail jenis "
+#~ "tertentu dalam tab 'Selit' untuk penyelarasan jenis fail. Dolphin "
+#~ "sentiasa memaparkan fail didalam pelihat berlainan."
+
+#~ msgid "Left Click Action in Konqueror"
+#~ msgstr "Tindakan Klik Kiri dalam Konqueror"
+
+#~ msgid "Ask whether to save to disk instead (only for Konqueror browser)"
+#~ msgstr ""
+#~ "Tanya sama ada hendak menyimpan ke fail (hanya untuk pelayar Konquorer)"
+
+#, fuzzy
+#~| msgid ""
+#~| "Here you can configure what the Konqueror file manager will do when you "
+#~| "click on a file of this type. Konqueror can display the file in an "
+#~| "embedded viewer or start up a separate application. If set to 'Use "
+#~| "settings for G group', Konqueror will behave according to the settings "
+#~| "of the group G this type belongs to, for instance 'image' if the current "
+#~| "file type is image/png."
+#~ msgid ""
+#~ "Here you can configure what the Konqueror file manager will do when you "
+#~ "click on a file of this type. Konqueror can either display the file in an "
+#~ "embedded viewer, or start up a separate application. If set to 'Use "
+#~ "settings for G group', the file manager will behave according to the "
+#~ "settings of the group G to which this type belongs; for instance, 'image' "
+#~ "if the current file type is image/png. Dolphin always shows files in a "
+#~ "separate viewer."
+#~ msgstr ""
+#~ "Konqueror fail buka a fail Konqueror fail dalam  atau a ke  Guna G fail "
+#~ "ke  G ke  fail Dolphin dalam  a."
+
+#~ msgid "Use settings for '%1' group"
+#~ msgstr "Gunakan tetapan '%1' untuk kumpulan"
 
 #~ msgid ""
 #~ "<p><h1>File Associations</h1> This module allows you to choose which "

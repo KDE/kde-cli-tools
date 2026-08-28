@@ -5,7 +5,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kdebase/filetypes.po\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2026-06-04 00:46+0000\n"
+"POT-Creation-Date: 2026-08-28 00:47+0000\n"
 "PO-Revision-Date: 2004-12-03 14:52-0500\n"
 "Last-Translator: Kevin Scannell <kscanne@gmail.com>\n"
 "Language-Team: Irish <gaeilge-gnulinux@lists.sourceforge.net>\n"
@@ -26,38 +26,7 @@ msgctxt "EMAIL OF TRANSLATORS"
 msgid "Your emails"
 msgstr "seoc@iolfree.ie,kscanne@gmail.com"
 
-#: filegroupdetails.cpp:22
-#, kde-format
-msgid "Left Click Action (only for Konqueror file manager)"
-msgstr "Gníomh Cléchliceála (i mbainisteoir comhad Konqueror amháin)"
-
-#: filegroupdetails.cpp:26 filetypedetails.cpp:134
-#, kde-format
-msgid "Show file in embedded viewer"
-msgstr "Taispeáin an comhad in amharcán leabaithe"
-
-#: filegroupdetails.cpp:27 filetypedetails.cpp:135
-#, kde-format
-msgid "Show file in separate viewer"
-msgstr "Taispeáin an comhad in amharcán faoi leith"
-
-#: filegroupdetails.cpp:36
-#, kde-format
-msgid ""
-"Here you can configure what the Konqueror file manager will do when you "
-"click on a file belonging to this group. Konqueror can display the file in "
-"an embedded viewer or start up a separate application. You can change this "
-"setting for a specific file type in the 'Embedding' tab of the file type "
-"configuration. Dolphin  shows files always in a separate viewer"
-msgstr ""
-"Anseo is féidir gníomh a roghnú a chuirfear i bhfeidhm nuair a chliceálann "
-"tú comhad den ghrúpa seo. Is féidir le Konqueror an comhad a thaispeáint in "
-"amharcán leabaithe nó feidhmchlár ar leith a thosú. Is féidir leat an rogha "
-"seo a athrú do chineál ar leith sa chluaisín 'Leabú' i gcumraíocht na "
-"gcineálacha comhaid. Taispeánann Dolphin comhaid in amharcán ar leith i "
-"gcónaí"
-
-#: filetypedetails.cpp:61
+#: filetypedetails.cpp:54
 #, kde-format
 msgid ""
 "This button displays the icon associated with the selected file type. Click "
@@ -66,12 +35,12 @@ msgstr ""
 "Taispeánann an cnaipe seo an deilbhín a bhaineann leis an gcineál comhaid a "
 "roghnaigh tú. Cliceáil é chun deilbhín eile a roghnú."
 
-#: filetypedetails.cpp:67
+#: filetypedetails.cpp:60
 #, kde-format
 msgid "Filename Patterns"
 msgstr "Patrúin Chomhadainm"
 
-#: filetypedetails.cpp:79
+#: filetypedetails.cpp:72
 #, kde-format
 msgid ""
 "This box contains a list of patterns that can be used to identify files of "
@@ -84,32 +53,32 @@ msgstr ""
 "'text/plain' agus sa chaoi sin aithnítear gach comhad le hiarmhír '.txt' mar "
 "chomhad gnáth-théacs."
 
-#: filetypedetails.cpp:87 filetypesview.cpp:86 kservicelistwidget.cpp:105
+#: filetypedetails.cpp:80 filetypesview.cpp:84 kservicelistwidget.cpp:105
 #, kde-format
 msgid "Add..."
 msgstr "Cuir Leis..."
 
-#: filetypedetails.cpp:92
+#: filetypedetails.cpp:85
 #, kde-format
 msgid "Add a new pattern for the selected file type."
 msgstr "Cuir patrún nua leis an chineál roghnaithe chomhaid."
 
-#: filetypedetails.cpp:94 kservicelistwidget.cpp:119
+#: filetypedetails.cpp:87 kservicelistwidget.cpp:119
 #, kde-format
 msgid "Remove"
 msgstr "Bain"
 
-#: filetypedetails.cpp:99
+#: filetypedetails.cpp:92
 #, kde-format
 msgid "Remove the selected filename pattern."
 msgstr "Bain an patrún roghnaithe comhadainm."
 
-#: filetypedetails.cpp:110
+#: filetypedetails.cpp:103
 #, kde-format
 msgid "Description:"
 msgstr "Cur Síos:"
 
-#: filetypedetails.cpp:115
+#: filetypedetails.cpp:108
 #, kde-format
 msgid ""
 "You can enter a short description for files of the selected file type (e.g. "
@@ -120,69 +89,37 @@ msgstr ""
 "HTML'). Bainfidh feidhmchlár cosúil le Konqueror úsáid as an gcur síos seo "
 "nuair a thaispeánann sé inneachar comhadlainne."
 
-#: filetypedetails.cpp:129
-#, kde-format
-msgid "Left Click Action in Konqueror"
-msgstr "Gníomh ar Chléchliceáil in Konqueror"
-
-#: filetypedetails.cpp:138
-#, kde-format
-msgid "Ask whether to save to disk instead (only for Konqueror browser)"
-msgstr "Fiafraigh díom ar mhaith liom sábháil ar dhiosca (Konqueror amháin)"
-
-#: filetypedetails.cpp:154
-#, kde-format
-msgid ""
-"Here you can configure what the Konqueror file manager will do when you "
-"click on a file of this type. Konqueror can either display the file in an "
-"embedded viewer, or start up a separate application. If set to 'Use settings "
-"for G group', the file manager will behave according to the settings of the "
-"group G to which this type belongs; for instance, 'image' if the current "
-"file type is image/png. Dolphin always shows files in a separate viewer."
-msgstr ""
-"Anseo is féidir gníomh a roghnú a chuirfear i bhfeidhm nuair a chliceálann "
-"tú comhad den chineál seo. Is féidir le Konqueror an comhad a thaispeáint in "
-"amharcán leabaithe nó feidhmchlár ar leith a thosú. Má roghnaíonn tú 'Bain "
-"úsáid as socruithe don ghrúpa G', cuirfear an gníomh a bhaineann le grúpa G "
-"i bhfeidhm, mar shampla 'image' má tá an comhad reatha den chineál 'image/"
-"png'.  Taispeánann Dolphin comhaid in amharcán ar leith i gcónaí."
-
-#: filetypedetails.cpp:167
+#: filetypedetails.cpp:128
 #, kde-format
 msgid "&General"
 msgstr "&Ginearálta"
 
-#: filetypedetails.cpp:168
+#: filetypedetails.cpp:129
 #, kde-format
 msgid "&Embedding"
 msgstr "&Leabú"
 
-#: filetypedetails.cpp:209
+#: filetypedetails.cpp:170
 #, kde-format
 msgid "Add New Extension"
 msgstr "Cuir Iarmhír Nua Leis"
 
-#: filetypedetails.cpp:209
+#: filetypedetails.cpp:170
 #, kde-format
 msgid "Extension:"
 msgstr "Iarmhír:"
 
-#: filetypedetails.cpp:328
+#: filetypedetails.cpp:203
 #, kde-format
 msgid "File type %1"
 msgstr "Cineál comhaid %1"
 
-#: filetypedetails.cpp:336
-#, kde-format
-msgid "Use settings for '%1' group"
-msgstr "Bain úsáid as socruithe do ghrúpa '%1'"
-
-#: filetypesview.cpp:57
+#: filetypesview.cpp:55
 #, kde-format
 msgid "Search for file type or filename pattern..."
 msgstr ""
 
-#: filetypesview.cpp:63
+#: filetypesview.cpp:61
 #, kde-format
 msgid ""
 "Enter a part of a filename pattern, and only file types with a matching file "
@@ -193,12 +130,12 @@ msgstr ""
 "cineálacha comhaid atá comhoiriúnach don phatrún.  Is é sin, nó cuir isteach "
 "cuid de chineál comhaid go díreach mar atá sa liosta."
 
-#: filetypesview.cpp:71 multiapplydialog.cpp:27
+#: filetypesview.cpp:69 multiapplydialog.cpp:27
 #, kde-format
 msgid "Known Types"
 msgstr "Cineálacha Aitheanta"
 
-#: filetypesview.cpp:77
+#: filetypesview.cpp:75
 #, kde-format
 msgid ""
 "Here you can see a hierarchical list of the file types which are known on "
@@ -212,34 +149,34 @@ msgstr ""
 "haghaidh comhad HTML) chun faisnéis an chineáil sin a iniúchadh nó a chur in "
 "eagar leis na rialtáin ar dheis."
 
-#: filetypesview.cpp:91
+#: filetypesview.cpp:89
 #, kde-format
 msgid "Click here to add a new file type."
 msgstr "Cliceáil anseo chun cineál nua comhaid a chur leis."
 
-#: filetypesview.cpp:93 filetypesview.cpp:389
+#: filetypesview.cpp:91 filetypesview.cpp:368
 #, kde-format
 msgid "&Remove"
 msgstr "&Bain"
 
-#: filetypesview.cpp:119
+#: filetypesview.cpp:111
 #, kde-format
 msgid "Select a file type by name or by extension"
 msgstr "Roghnaigh cineál comhaid de réir ainm nó iarmhíre"
 
-#: filetypesview.cpp:382
+#: filetypesview.cpp:361
 #, kde-format
 msgid "&Revert"
 msgstr "&Réamhshocrú"
 
-#: filetypesview.cpp:383
+#: filetypesview.cpp:362
 #, kde-format
 msgid "Revert this file type to its initial system-wide definition"
 msgstr ""
 "Fill ar shainmhíniú réamhshocraithe ar an gcineál comhaid seo ar fud an "
 "chórais"
 
-#: filetypesview.cpp:385
+#: filetypesview.cpp:364
 #, kde-format
 msgid ""
 "Click here to revert this file type to its initial system-wide definition, "
@@ -255,12 +192,12 @@ msgstr ""
 "ghlanadh amach sa chaoi gur lú an seans go mbainfear úsáid as (cé go bhfuil "
 "seans fós go mbainfear úsáid as trí anailís a dhéanamh ar inneachar comhaid)."
 
-#: filetypesview.cpp:390
+#: filetypesview.cpp:369
 #, kde-format
 msgid "Delete this file type definition completely"
 msgstr "Scrios an sainmhíniú seo ar chineál comhaid go hiomlán"
 
-#: filetypesview.cpp:392
+#: filetypesview.cpp:371
 #, kde-format
 msgid ""
 "Click here to delete this file type definition completely. This is only "
@@ -512,3 +449,52 @@ msgstr ""
 "Iontráil ainm an chineáil comhaid.  Mar shampla, má roghnaíonn tú 'image' "
 "mar chatagóir agus iontrálann tú 'custom' anseo, cruthófar an cineál 'image/"
 "custom'."
+
+#~ msgid "Left Click Action (only for Konqueror file manager)"
+#~ msgstr "Gníomh Cléchliceála (i mbainisteoir comhad Konqueror amháin)"
+
+#~ msgid "Show file in embedded viewer"
+#~ msgstr "Taispeáin an comhad in amharcán leabaithe"
+
+#~ msgid "Show file in separate viewer"
+#~ msgstr "Taispeáin an comhad in amharcán faoi leith"
+
+#~ msgid ""
+#~ "Here you can configure what the Konqueror file manager will do when you "
+#~ "click on a file belonging to this group. Konqueror can display the file "
+#~ "in an embedded viewer or start up a separate application. You can change "
+#~ "this setting for a specific file type in the 'Embedding' tab of the file "
+#~ "type configuration. Dolphin  shows files always in a separate viewer"
+#~ msgstr ""
+#~ "Anseo is féidir gníomh a roghnú a chuirfear i bhfeidhm nuair a "
+#~ "chliceálann tú comhad den ghrúpa seo. Is féidir le Konqueror an comhad a "
+#~ "thaispeáint in amharcán leabaithe nó feidhmchlár ar leith a thosú. Is "
+#~ "féidir leat an rogha seo a athrú do chineál ar leith sa chluaisín 'Leabú' "
+#~ "i gcumraíocht na gcineálacha comhaid. Taispeánann Dolphin comhaid in "
+#~ "amharcán ar leith i gcónaí"
+
+#~ msgid "Left Click Action in Konqueror"
+#~ msgstr "Gníomh ar Chléchliceáil in Konqueror"
+
+#~ msgid "Ask whether to save to disk instead (only for Konqueror browser)"
+#~ msgstr "Fiafraigh díom ar mhaith liom sábháil ar dhiosca (Konqueror amháin)"
+
+#~ msgid ""
+#~ "Here you can configure what the Konqueror file manager will do when you "
+#~ "click on a file of this type. Konqueror can either display the file in an "
+#~ "embedded viewer, or start up a separate application. If set to 'Use "
+#~ "settings for G group', the file manager will behave according to the "
+#~ "settings of the group G to which this type belongs; for instance, 'image' "
+#~ "if the current file type is image/png. Dolphin always shows files in a "
+#~ "separate viewer."
+#~ msgstr ""
+#~ "Anseo is féidir gníomh a roghnú a chuirfear i bhfeidhm nuair a "
+#~ "chliceálann tú comhad den chineál seo. Is féidir le Konqueror an comhad a "
+#~ "thaispeáint in amharcán leabaithe nó feidhmchlár ar leith a thosú. Má "
+#~ "roghnaíonn tú 'Bain úsáid as socruithe don ghrúpa G', cuirfear an gníomh "
+#~ "a bhaineann le grúpa G i bhfeidhm, mar shampla 'image' má tá an comhad "
+#~ "reatha den chineál 'image/png'.  Taispeánann Dolphin comhaid in amharcán "
+#~ "ar leith i gcónaí."
+
+#~ msgid "Use settings for '%1' group"
+#~ msgstr "Bain úsáid as socruithe do ghrúpa '%1'"

@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: filetypes\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2026-06-04 00:46+0000\n"
+"POT-Creation-Date: 2026-08-28 00:47+0000\n"
 "PO-Revision-Date: 2023-07-23 23:28+0200\n"
 "Last-Translator: Shinjo Park <kde@peremen.name>\n"
 "Language-Team: Korean <kde-kr@kde.org>\n"
@@ -28,36 +28,7 @@ msgctxt "EMAIL OF TRANSLATORS"
 msgid "Your emails"
 msgstr "kde@peremen.name"
 
-#: filegroupdetails.cpp:22
-#, kde-format
-msgid "Left Click Action (only for Konqueror file manager)"
-msgstr "왼쪽 클릭 동작 (Konqueror 파일 관리자만)"
-
-#: filegroupdetails.cpp:26 filetypedetails.cpp:134
-#, kde-format
-msgid "Show file in embedded viewer"
-msgstr "내장된 뷰어로 파일 보기"
-
-#: filegroupdetails.cpp:27 filetypedetails.cpp:135
-#, kde-format
-msgid "Show file in separate viewer"
-msgstr "별도의 뷰어로 파일 보기"
-
-#: filegroupdetails.cpp:36
-#, kde-format
-msgid ""
-"Here you can configure what the Konqueror file manager will do when you "
-"click on a file belonging to this group. Konqueror can display the file in "
-"an embedded viewer or start up a separate application. You can change this "
-"setting for a specific file type in the 'Embedding' tab of the file type "
-"configuration. Dolphin  shows files always in a separate viewer"
-msgstr ""
-"이 그룹에 속한 파일을 클릭할 때 Konqueror 파일 관리자가 어떤 동작을 할 지 설"
-"정할 수 있습니다. Konqueror는 내장된 뷰어로 파일을 표시하거나 다른 별도의 앱"
-"을 실행합니다. 파일 형식 설정의 '임베드' 탭에서 지정한 파일 형식의 설정을 변"
-"경할 수 있습니다. Dolphin은 항상 별도의 뷰어를 사용합니다."
-
-#: filetypedetails.cpp:61
+#: filetypedetails.cpp:54
 #, kde-format
 msgid ""
 "This button displays the icon associated with the selected file type. Click "
@@ -66,12 +37,12 @@ msgstr ""
 "이 단추는 선택한 파일 형식의 아이콘을 표시합니다. 다른 아이콘을 선택하고 싶으"
 "면 이 단추를 클릭하십시오."
 
-#: filetypedetails.cpp:67
+#: filetypedetails.cpp:60
 #, kde-format
 msgid "Filename Patterns"
 msgstr "파일 이름 형식"
 
-#: filetypedetails.cpp:79
+#: filetypedetails.cpp:72
 #, kde-format
 msgid ""
 "This box contains a list of patterns that can be used to identify files of "
@@ -83,32 +54,32 @@ msgstr ""
 "를 들어 *.txt는 파일 형식 'text/plain'과 연관이 있으며 '.txt'로 끝나는 모든 "
 "파일 형식은 일반 텍스트 파일로 인식하게 됩니다."
 
-#: filetypedetails.cpp:87 filetypesview.cpp:86 kservicelistwidget.cpp:105
+#: filetypedetails.cpp:80 filetypesview.cpp:84 kservicelistwidget.cpp:105
 #, kde-format
 msgid "Add..."
 msgstr "추가..."
 
-#: filetypedetails.cpp:92
+#: filetypedetails.cpp:85
 #, kde-format
 msgid "Add a new pattern for the selected file type."
 msgstr "선택한 파일 종류에 대한 새 이름 형식을 추가합니다."
 
-#: filetypedetails.cpp:94 kservicelistwidget.cpp:119
+#: filetypedetails.cpp:87 kservicelistwidget.cpp:119
 #, kde-format
 msgid "Remove"
 msgstr "삭제"
 
-#: filetypedetails.cpp:99
+#: filetypedetails.cpp:92
 #, kde-format
 msgid "Remove the selected filename pattern."
 msgstr "선택한 파일 이름 형식을 삭제합니다."
 
-#: filetypedetails.cpp:110
+#: filetypedetails.cpp:103
 #, kde-format
 msgid "Description:"
 msgstr "설명:"
 
-#: filetypedetails.cpp:115
+#: filetypedetails.cpp:108
 #, kde-format
 msgid ""
 "You can enter a short description for files of the selected file type (e.g. "
@@ -118,68 +89,37 @@ msgstr ""
 "선택한 파일 형식의 짧은 설명을 입력할 수 있습니다.(예. 'HTML 페이지')이 설명"
 "은 Konqueror와 같은 앱에서 폴더 내용을 표시할 때 이용됩니다."
 
-#: filetypedetails.cpp:129
-#, kde-format
-msgid "Left Click Action in Konqueror"
-msgstr "Konqueror의 왼쪽 클릭 동작"
-
-#: filetypedetails.cpp:138
-#, kde-format
-msgid "Ask whether to save to disk instead (only for Konqueror browser)"
-msgstr "디스크에 저장할 것인지 물어보기 (Konqueror 브라우저 모드에서만)"
-
-#: filetypedetails.cpp:154
-#, kde-format
-msgid ""
-"Here you can configure what the Konqueror file manager will do when you "
-"click on a file of this type. Konqueror can either display the file in an "
-"embedded viewer, or start up a separate application. If set to 'Use settings "
-"for G group', the file manager will behave according to the settings of the "
-"group G to which this type belongs; for instance, 'image' if the current "
-"file type is image/png. Dolphin always shows files in a separate viewer."
-msgstr ""
-"이와 같은 형식의 파일을 클릭했을 때 Konqueror 파일 관리자에서 할 동작을 설정"
-"합니다. Konqueror는 내장된 뷰어에서 파일을 표시하거나 다른 앱을 실행합니다. "
-"만약 '그룹 설정 사용'을 선택했다면 Konqueror는 이 형식이 들어 있는 그룹의 설"
-"정을 따릅니다. 예를 들어 현재 파일 형식이 image/png 라면 'image' 그룹의 동작"
-"을 실행합니다. Dolphin은 항상 별도의 뷰어를 사용합니다."
-
-#: filetypedetails.cpp:167
+#: filetypedetails.cpp:128
 #, kde-format
 msgid "&General"
 msgstr "일반 설정(&G)"
 
-#: filetypedetails.cpp:168
+#: filetypedetails.cpp:129
 #, kde-format
 msgid "&Embedding"
 msgstr "임베드(&E)"
 
-#: filetypedetails.cpp:209
+#: filetypedetails.cpp:170
 #, kde-format
 msgid "Add New Extension"
 msgstr "새로운 확장자 추가"
 
-#: filetypedetails.cpp:209
+#: filetypedetails.cpp:170
 #, kde-format
 msgid "Extension:"
 msgstr "확장자:"
 
-#: filetypedetails.cpp:328
+#: filetypedetails.cpp:203
 #, kde-format
 msgid "File type %1"
 msgstr "파일 형식 %1"
 
-#: filetypedetails.cpp:336
-#, kde-format
-msgid "Use settings for '%1' group"
-msgstr "'%1' 그룹의 설정 사용하기"
-
-#: filetypesview.cpp:57
+#: filetypesview.cpp:55
 #, kde-format
 msgid "Search for file type or filename pattern..."
 msgstr "파일 형식이나 파일 이름 패턴 찾기..."
 
-#: filetypesview.cpp:63
+#: filetypesview.cpp:61
 #, kde-format
 msgid ""
 "Enter a part of a filename pattern, and only file types with a matching file "
@@ -189,12 +129,12 @@ msgstr ""
 "파일 이름 패턴의 일부를 입력하면 입력한 패턴과 일치하는 파일 형식을 보여줍니"
 "다. 또는 목록에 보이는 대로 파일 형식 이름을 입력해도 됩니다."
 
-#: filetypesview.cpp:71 multiapplydialog.cpp:27
+#: filetypesview.cpp:69 multiapplydialog.cpp:27
 #, kde-format
 msgid "Known Types"
 msgstr "알려진 형식"
 
-#: filetypesview.cpp:77
+#: filetypesview.cpp:75
 #, kde-format
 msgid ""
 "Here you can see a hierarchical list of the file types which are known on "
@@ -207,32 +147,32 @@ msgstr ""
 "형식을 선택하면 (예: HTML 파일의 경우 text/html) 오른쪽에 있는 도구를 사용해"
 "서 파일 형식의 정보를 보거나 편집할 수 있습니다."
 
-#: filetypesview.cpp:91
+#: filetypesview.cpp:89
 #, kde-format
 msgid "Click here to add a new file type."
 msgstr "새로운 파일 형식을 추가하려면 여기를 클릭하십시오."
 
-#: filetypesview.cpp:93 filetypesview.cpp:389
+#: filetypesview.cpp:91 filetypesview.cpp:368
 #, kde-format
 msgid "&Remove"
 msgstr "삭제(&R)"
 
-#: filetypesview.cpp:119
+#: filetypesview.cpp:111
 #, kde-format
 msgid "Select a file type by name or by extension"
 msgstr "확장자나 이름으로 파일 형식 선택"
 
-#: filetypesview.cpp:382
+#: filetypesview.cpp:361
 #, kde-format
 msgid "&Revert"
 msgstr "되돌리기(&R)"
 
-#: filetypesview.cpp:383
+#: filetypesview.cpp:362
 #, kde-format
 msgid "Revert this file type to its initial system-wide definition"
 msgstr "파일 형식을 초기 시스템 기본값으로 되돌립니다"
 
-#: filetypesview.cpp:385
+#: filetypesview.cpp:364
 #, kde-format
 msgid ""
 "Click here to revert this file type to its initial system-wide definition, "
@@ -246,12 +186,12 @@ msgstr ""
 "정하여 사용되는 정도를 줄일 수는 있습니다. 그렇다 하더라도 파일 형식에서 확장"
 "자를 추측할 때는 이 정보를 사용합니다."
 
-#: filetypesview.cpp:390
+#: filetypesview.cpp:369
 #, kde-format
 msgid "Delete this file type definition completely"
 msgstr "파일 형식 정의를 완전히 삭제합니다"
 
-#: filetypesview.cpp:392
+#: filetypesview.cpp:371
 #, kde-format
 msgid ""
 "Click here to delete this file type definition completely. This is only "
@@ -494,6 +434,51 @@ msgid ""
 msgstr ""
 "파일 형식의 이름을 입력하십시오. 예를 들어서 분류에서 'image'를 선택하고, 여"
 "기에 'custom'이라고 입력하면 파일 형식 'image/custom'이 만들어집니다."
+
+#~ msgid "Left Click Action (only for Konqueror file manager)"
+#~ msgstr "왼쪽 클릭 동작 (Konqueror 파일 관리자만)"
+
+#~ msgid "Show file in embedded viewer"
+#~ msgstr "내장된 뷰어로 파일 보기"
+
+#~ msgid "Show file in separate viewer"
+#~ msgstr "별도의 뷰어로 파일 보기"
+
+#~ msgid ""
+#~ "Here you can configure what the Konqueror file manager will do when you "
+#~ "click on a file belonging to this group. Konqueror can display the file "
+#~ "in an embedded viewer or start up a separate application. You can change "
+#~ "this setting for a specific file type in the 'Embedding' tab of the file "
+#~ "type configuration. Dolphin  shows files always in a separate viewer"
+#~ msgstr ""
+#~ "이 그룹에 속한 파일을 클릭할 때 Konqueror 파일 관리자가 어떤 동작을 할 지 "
+#~ "설정할 수 있습니다. Konqueror는 내장된 뷰어로 파일을 표시하거나 다른 별도"
+#~ "의 앱을 실행합니다. 파일 형식 설정의 '임베드' 탭에서 지정한 파일 형식의 설"
+#~ "정을 변경할 수 있습니다. Dolphin은 항상 별도의 뷰어를 사용합니다."
+
+#~ msgid "Left Click Action in Konqueror"
+#~ msgstr "Konqueror의 왼쪽 클릭 동작"
+
+#~ msgid "Ask whether to save to disk instead (only for Konqueror browser)"
+#~ msgstr "디스크에 저장할 것인지 물어보기 (Konqueror 브라우저 모드에서만)"
+
+#~ msgid ""
+#~ "Here you can configure what the Konqueror file manager will do when you "
+#~ "click on a file of this type. Konqueror can either display the file in an "
+#~ "embedded viewer, or start up a separate application. If set to 'Use "
+#~ "settings for G group', the file manager will behave according to the "
+#~ "settings of the group G to which this type belongs; for instance, 'image' "
+#~ "if the current file type is image/png. Dolphin always shows files in a "
+#~ "separate viewer."
+#~ msgstr ""
+#~ "이와 같은 형식의 파일을 클릭했을 때 Konqueror 파일 관리자에서 할 동작을 설"
+#~ "정합니다. Konqueror는 내장된 뷰어에서 파일을 표시하거나 다른 앱을 실행합니"
+#~ "다. 만약 '그룹 설정 사용'을 선택했다면 Konqueror는 이 형식이 들어 있는 그"
+#~ "룹의 설정을 따릅니다. 예를 들어 현재 파일 형식이 image/png 라면 'image' 그"
+#~ "룹의 동작을 실행합니다. Dolphin은 항상 별도의 뷰어를 사용합니다."
+
+#~ msgid "Use settings for '%1' group"
+#~ msgstr "'%1' 그룹의 설정 사용하기"
 
 #~ msgid ""
 #~ "<p><h1>File Associations</h1> This module allows you to choose which "

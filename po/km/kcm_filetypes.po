@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: filetypes\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2026-06-04 00:46+0000\n"
+"POT-Creation-Date: 2026-08-28 00:47+0000\n"
 "PO-Revision-Date: 2010-11-08 09:44+0700\n"
 "Last-Translator: Khoem Sokhem <khoemsokhem@khmeros.info>\n"
 "Language-Team: Khmer <support@khmeros.info>\n"
@@ -29,36 +29,7 @@ msgctxt "EMAIL OF TRANSLATORS"
 msgid "Your emails"
 msgstr "khoemsokhem@khmeros.info,​​​evannak@khmeros.info,piseth_dv@khmeros.info"
 
-#: filegroupdetails.cpp:22
-#, kde-format
-msgid "Left Click Action (only for Konqueror file manager)"
-msgstr "សកម្មភាព​ចុច​កណ្ដុរ​ឆ្វេង (សម្រាប់តែ  Konquero​ ជា​​​កម្មវិធី​គ្រប់គ្រង​ឯកសារr​)"
-
-#: filegroupdetails.cpp:26 filetypedetails.cpp:134
-#, kde-format
-msgid "Show file in embedded viewer"
-msgstr "បង្ហាញ​ឯកសារ​ក្នុង​កម្មវិធី​មើល​ដែល​បាន​បង្កប់"
-
-#: filegroupdetails.cpp:27 filetypedetails.cpp:135
-#, kde-format
-msgid "Show file in separate viewer"
-msgstr "បង្ហាញ​ឯកសារ​ក្នុង​កម្មវិធី​មើល​ដាច់​ដោយ​ឡែក"
-
-#: filegroupdetails.cpp:36
-#, kde-format
-msgid ""
-"Here you can configure what the Konqueror file manager will do when you "
-"click on a file belonging to this group. Konqueror can display the file in "
-"an embedded viewer or start up a separate application. You can change this "
-"setting for a specific file type in the 'Embedding' tab of the file type "
-"configuration. Dolphin  shows files always in a separate viewer"
-msgstr ""
-"នៅទីនេះ​អ្នកអាច​កំណត់​រចនាសម្ព័ន្ធ​ថា​ Konqueror ជា​កម្មវិធី​គ្រប់គ្រង​ឯកសារ​នឹង​​ធ្វើ​អ្វី​នៅពេល​អ្នក​ចុច​លើ​"
-"ឯកសារ​ជា​របស់​​ក្រុម​នេះ ។ Konqueror អាច​បង្ហាញ​ឯកសារ​នៅ​ក្នុង​កម្មវិធី​ដែលបានបង្កប់ ឬ​ចាប់ផ្ដើម​កម្មវិធី​"
-"ដោយ​ឡែក ។ អ្នក​អាច​ផ្លាស់ប្ដូរ​ការ​កំណត់​នេះ​សម្រាប់​ប្រភេទ​ឯកសារ​នៅ​ក្នុង​ផ្ទាំង 'បង្កប់' នៃ​ការ​កំណត់​"
-"រចនាសម្ព័ន្ធ​ប្រភេទ​ឯកសារ ។ ឌូហ្វីន​តែង​តែ​បង្ហាញ​​ក្នុង​កម្មវិធីមើល​ដោយ​ឡែក"
-
-#: filetypedetails.cpp:61
+#: filetypedetails.cpp:54
 #, kde-format
 msgid ""
 "This button displays the icon associated with the selected file type. Click "
@@ -66,12 +37,12 @@ msgid ""
 msgstr ""
 "ប៊ូតុង​នេះ​បង្ហាញ​រូបតំណាង​ទាក់ទាង​ជា​មួយ​ប្រភេទ​ឯកសារ​ដែល​បានជ្រើស ។ ចុច​លើ​វា ដើម្បី​ជ្រើស​រូបតំណាង​ផ្សេង ។"
 
-#: filetypedetails.cpp:67
+#: filetypedetails.cpp:60
 #, kde-format
 msgid "Filename Patterns"
 msgstr "លំនាំ​របស់​ឈ្មោះ​ឯកសារ"
 
-#: filetypedetails.cpp:79
+#: filetypedetails.cpp:72
 #, kde-format
 msgid ""
 "This box contains a list of patterns that can be used to identify files of "
@@ -83,32 +54,32 @@ msgstr ""
 "លំនាំ *.txt ត្រូវ​បាន​ភ្ជាប់​ជា​មួយ​ប្រភេទ​ឯកសារ 'text/plain' ឯកសារ​ទាំង​អស់​បញ្ចប់​ដោយ '.txt' ត្រូវ​"
 "បាន​ស្គាល់​ថា​ជា​ឯកសារ​អត្ថបទ​ធម្មតា ។"
 
-#: filetypedetails.cpp:87 filetypesview.cpp:86 kservicelistwidget.cpp:105
+#: filetypedetails.cpp:80 filetypesview.cpp:84 kservicelistwidget.cpp:105
 #, kde-format
 msgid "Add..."
 msgstr "បន្ថែម..."
 
-#: filetypedetails.cpp:92
+#: filetypedetails.cpp:85
 #, kde-format
 msgid "Add a new pattern for the selected file type."
 msgstr "បន្ថែម​លំនាំ​ថ្មី​មួយ សម្រាប់​ប្រភេទ​ឯកសារ​ដែល​បាន​ជ្រើស ។"
 
-#: filetypedetails.cpp:94 kservicelistwidget.cpp:119
+#: filetypedetails.cpp:87 kservicelistwidget.cpp:119
 #, kde-format
 msgid "Remove"
 msgstr "យក​ចេញ"
 
-#: filetypedetails.cpp:99
+#: filetypedetails.cpp:92
 #, kde-format
 msgid "Remove the selected filename pattern."
 msgstr "យក​លំនាំ​របស់​ឈ្មោះ​ឯកសារ​ដែល​បាន​ជ្រើស​ចេញ ។"
 
-#: filetypedetails.cpp:110
+#: filetypedetails.cpp:103
 #, kde-format
 msgid "Description:"
 msgstr "សេចក្ដី​ពិពណ៌នា ៖"
 
-#: filetypedetails.cpp:115
+#: filetypedetails.cpp:108
 #, kde-format
 msgid ""
 "You can enter a short description for files of the selected file type (e.g. "
@@ -118,69 +89,38 @@ msgstr ""
 "អ្នក​អាច​បញ្ចូល​សេចក្ដី​ពិពណ៌នា​ខ្លី​សម្រាប់​ឯកសារ​របស់​ប្រភេទ​ឯកសារ​ដែល​បានជ្រើស (ឧ.'ទំព័រ HTML') ។ "
 "សេចក្ដី​ពិពណ៌នា​នឹង​ត្រូវ​បាន​ប្រើ​ដោយ​កម្មវិធី​ផ្សេងៗ​ដូចជា Konqueror ដើម្បី​បង្ហាញ​មាតិកា​ថត ។"
 
-#: filetypedetails.cpp:129
-#, kde-format
-msgid "Left Click Action in Konqueror"
-msgstr "សកម្មភាព​ចុច​កណ្ដុរ​ឆ្វេង​នៅ​ក្នុង Konquero"
-
-#: filetypedetails.cpp:138
-#, kde-format
-msgid "Ask whether to save to disk instead (only for Konqueror browser)"
-msgstr "សួរ​ថាតើ​ត្រូវ​រក្សាទុក​ទៅថាស​ជំនួស​វិញ (សម្រាប់តែ​ Konqueror ជា​កម្មវិធី​រុករក​បណ្ដាញ)"
-
-#: filetypedetails.cpp:154
-#, kde-format
-msgid ""
-"Here you can configure what the Konqueror file manager will do when you "
-"click on a file of this type. Konqueror can either display the file in an "
-"embedded viewer, or start up a separate application. If set to 'Use settings "
-"for G group', the file manager will behave according to the settings of the "
-"group G to which this type belongs; for instance, 'image' if the current "
-"file type is image/png. Dolphin always shows files in a separate viewer."
-msgstr ""
-"នៅ​ទីនេះ​អ្នកអាច​កំណត់​រចនាសម្ព័ន្ធ​ថា​ Konqueror ជា​កម្មវិធី​គ្រប់គ្រង​ឯកសារ​នឹង​ធ្វើ​អ្វី នៅពេល​អ្នក​ចុច​លើ​"
-"ប្រភេទ​នេះ ។ Konqueror អាច​បង្ហាញ​ឯកសារ​នៅ​ក្នុង​កម្មវិធី​មើល​ដែល​បានបង្កប់ ឬ​ចាប់ផ្ដើម​កម្មវិធី​ដោយ​"
-"ឡែក ។ ប្រសិនបើ​កំណត់​ទៅ​ 'ប្រើ​ការ​កំណត់​សម្រាប់​ក្រុម G​' កម្មវិធី​គ្រប់គ្រង​ឯកសារ​​អនុវត្ត​ដោយ​យោង​តាម​ការ​កំណត់​"
-"នៃ​ក្រុម G ទៅ​ប្រភេទ​នៃ​ឯកសារ​នោះ  ឧទាហរណ៍ ប្រសិនបើ​ប្រភេទ​ឯកសារ​បច្ចុប្បន្ន​ជា image/png ។ ឌូហ្វីន​"
-"តែងតែ​បង្ហាញ​ឯកសារ​ក្នុង​កម្មវិធី​មើល​ដោយ​ឡែក ។"
-
-#: filetypedetails.cpp:167
+#: filetypedetails.cpp:128
 #, kde-format
 msgid "&General"
 msgstr "ទូទៅ"
 
-#: filetypedetails.cpp:168
+#: filetypedetails.cpp:129
 #, kde-format
 msgid "&Embedding"
 msgstr "ការ​បង្កប់"
 
-#: filetypedetails.cpp:209
+#: filetypedetails.cpp:170
 #, kde-format
 msgid "Add New Extension"
 msgstr "បន្ថែម​ផ្នែក​បន្ថែម​ថ្មី​"
 
-#: filetypedetails.cpp:209
+#: filetypedetails.cpp:170
 #, kde-format
 msgid "Extension:"
 msgstr "ផ្នែក​បន្ថែម ៖​"
 
-#: filetypedetails.cpp:328
+#: filetypedetails.cpp:203
 #, kde-format
 msgid "File type %1"
 msgstr "ប្រភេទ​ឯកសារ %1"
 
-#: filetypedetails.cpp:336
-#, kde-format
-msgid "Use settings for '%1' group"
-msgstr "ប្រើ​ការ​កំណត់​សម្រាប់​ក្រុម '%1'"
-
-#: filetypesview.cpp:57
+#: filetypesview.cpp:55
 #, fuzzy, kde-format
 #| msgid "Find file type or filename pattern"
 msgid "Search for file type or filename pattern..."
 msgstr "រក​ប្រភេទ​ឯកសារ ឬ​លំនាំ​ឈ្មោះ​ឯកសារ"
 
-#: filetypesview.cpp:63
+#: filetypesview.cpp:61
 #, kde-format
 msgid ""
 "Enter a part of a filename pattern, and only file types with a matching file "
@@ -190,12 +130,12 @@ msgstr ""
 "បញ្ចូល​ផ្នែក​​របស់​​លំនាំ​ឈ្មោះ​ឯកសារ ។ មាន​តែ​ប្រភេទ​ឯកសារ​ដែល​លំនាំ​របស់​វា​ផ្គូផ្គង​ប៉ុណ្ណោះ នឹង​​បង្ហាញ​នៅ​ក្នុង​"
 "បញ្ជី ។"
 
-#: filetypesview.cpp:71 multiapplydialog.cpp:27
+#: filetypesview.cpp:69 multiapplydialog.cpp:27
 #, kde-format
 msgid "Known Types"
 msgstr "ប្រភេទ​ដែល​ស្គាល់"
 
-#: filetypesview.cpp:77
+#: filetypesview.cpp:75
 #, kde-format
 msgid ""
 "Here you can see a hierarchical list of the file types which are known on "
@@ -207,32 +147,32 @@ msgstr ""
 "ដើម្បី​បន្លាយ​ប្រភេទ​មួយ ឬ​សញ្ញា '-' ដើម្បី​វេញ​វា ។ ជ្រើស​ប្រភេទ​ឯកសារ​មួយ (ឧ. text/html សម្រាប់​"
 "ឯកសារ HTML) ដើម្បី​មើល/កែសម្រួល​ព័ត៌មាន សម្រាប់​ប្រភេទ​ឯកសារ​នោះ ដោយ​ប្រើ​វត្ថុ​បញ្ជា​នៅ​ខាង​ស្ដាំ ។"
 
-#: filetypesview.cpp:91
+#: filetypesview.cpp:89
 #, kde-format
 msgid "Click here to add a new file type."
 msgstr "ចុច​ទីនេះ​ដើម្បី​បន្ថែម​ប្រភេទ​ឯកសារ​ថ្មី​មួយ ។"
 
-#: filetypesview.cpp:93 filetypesview.cpp:389
+#: filetypesview.cpp:91 filetypesview.cpp:368
 #, kde-format
 msgid "&Remove"
 msgstr "យក​ចេញ​"
 
-#: filetypesview.cpp:119
+#: filetypesview.cpp:111
 #, kde-format
 msgid "Select a file type by name or by extension"
 msgstr "ជ្រើស​ប្រភេទ​ឯកសារ​មួយ តាម​រយៈ​ឈ្មោះ ឬ​កន្ទុយ​ឯកសារ​"
 
-#: filetypesview.cpp:382
+#: filetypesview.cpp:361
 #, kde-format
 msgid "&Revert"
 msgstr "ដាក់​បញ្ច្រាស​"
 
-#: filetypesview.cpp:383
+#: filetypesview.cpp:362
 #, kde-format
 msgid "Revert this file type to its initial system-wide definition"
 msgstr "ដាក់​បញ្ច្រាស​ប្រភេទ​ឯកសារ​នេះ ទៅ​នឹង​ការ​កំណត់​ពេញ​ប្រព័ន្ធ​ដំបូង​របស់​វា"
 
-#: filetypesview.cpp:385
+#: filetypesview.cpp:364
 #, kde-format
 msgid ""
 "Click here to revert this file type to its initial system-wide definition, "
@@ -246,12 +186,12 @@ msgstr ""
 "ដោយ​អ្នក​អាច​សម្អាត​បញ្ជីលំនាំ​របស់​ពួកវា​បាន ដើម្បី​បង្រួម​ការ​ផ្លាស់ប្ដូរ​អប្បបរមា​របស់ពួកវា​ដែល​កំពុង​ប្រើ "
 "(ប៉ុន្តែ​ការ​កំណត់​ប្រភេទ​ឯកសារ​ពី​មាតិកា​​ឯកសារ​អាច​បញ្ចប់​ការ​ប្រើ​បាន) ។"
 
-#: filetypesview.cpp:390
+#: filetypesview.cpp:369
 #, kde-format
 msgid "Delete this file type definition completely"
 msgstr "លុប​កា​រកំណត់​ប្រភេទ​ឯកសារ​នេះ​ទាំង​ស្រុង"
 
-#: filetypesview.cpp:392
+#: filetypesview.cpp:371
 #, kde-format
 msgid ""
 "Click here to delete this file type definition completely. This is only "
@@ -495,6 +435,51 @@ msgid ""
 msgstr ""
 "វាយ​​ឈ្មោះ​របស់​ប្រភេទ​ឯកសារ ។ ឧទាហរណ៍ ប្រសិន​បើ​អ្នក​បាន​ជ្រើស 'រូបភាព' ជា​ប្រភេទ និង​អ្នក​វាយ "
 "'ផ្ទាល់ខ្លួន' ​នៅ​ទីនេះ ប្រភេទ​ឯកសារ 'រូបភាព/ផ្ទាល់ខ្លួន' នឹង​ត្រូវ​បាន​បង្កើត ។"
+
+#~ msgid "Left Click Action (only for Konqueror file manager)"
+#~ msgstr "សកម្មភាព​ចុច​កណ្ដុរ​ឆ្វេង (សម្រាប់តែ  Konquero​ ជា​​​កម្មវិធី​គ្រប់គ្រង​ឯកសារr​)"
+
+#~ msgid "Show file in embedded viewer"
+#~ msgstr "បង្ហាញ​ឯកសារ​ក្នុង​កម្មវិធី​មើល​ដែល​បាន​បង្កប់"
+
+#~ msgid "Show file in separate viewer"
+#~ msgstr "បង្ហាញ​ឯកសារ​ក្នុង​កម្មវិធី​មើល​ដាច់​ដោយ​ឡែក"
+
+#~ msgid ""
+#~ "Here you can configure what the Konqueror file manager will do when you "
+#~ "click on a file belonging to this group. Konqueror can display the file "
+#~ "in an embedded viewer or start up a separate application. You can change "
+#~ "this setting for a specific file type in the 'Embedding' tab of the file "
+#~ "type configuration. Dolphin  shows files always in a separate viewer"
+#~ msgstr ""
+#~ "នៅទីនេះ​អ្នកអាច​កំណត់​រចនាសម្ព័ន្ធ​ថា​ Konqueror ជា​កម្មវិធី​គ្រប់គ្រង​ឯកសារ​នឹង​​ធ្វើ​អ្វី​នៅពេល​អ្នក​ចុច​លើ​"
+#~ "ឯកសារ​ជា​របស់​​ក្រុម​នេះ ។ Konqueror អាច​បង្ហាញ​ឯកសារ​នៅ​ក្នុង​កម្មវិធី​ដែលបានបង្កប់ ឬ​ចាប់ផ្ដើម​"
+#~ "កម្មវិធី​ដោយ​ឡែក ។ អ្នក​អាច​ផ្លាស់ប្ដូរ​ការ​កំណត់​នេះ​សម្រាប់​ប្រភេទ​ឯកសារ​នៅ​ក្នុង​ផ្ទាំង 'បង្កប់' នៃ​ការ​"
+#~ "កំណត់​រចនាសម្ព័ន្ធ​ប្រភេទ​ឯកសារ ។ ឌូហ្វីន​តែង​តែ​បង្ហាញ​​ក្នុង​កម្មវិធីមើល​ដោយ​ឡែក"
+
+#~ msgid "Left Click Action in Konqueror"
+#~ msgstr "សកម្មភាព​ចុច​កណ្ដុរ​ឆ្វេង​នៅ​ក្នុង Konquero"
+
+#~ msgid "Ask whether to save to disk instead (only for Konqueror browser)"
+#~ msgstr "សួរ​ថាតើ​ត្រូវ​រក្សាទុក​ទៅថាស​ជំនួស​វិញ (សម្រាប់តែ​ Konqueror ជា​កម្មវិធី​រុករក​បណ្ដាញ)"
+
+#~ msgid ""
+#~ "Here you can configure what the Konqueror file manager will do when you "
+#~ "click on a file of this type. Konqueror can either display the file in an "
+#~ "embedded viewer, or start up a separate application. If set to 'Use "
+#~ "settings for G group', the file manager will behave according to the "
+#~ "settings of the group G to which this type belongs; for instance, 'image' "
+#~ "if the current file type is image/png. Dolphin always shows files in a "
+#~ "separate viewer."
+#~ msgstr ""
+#~ "នៅ​ទីនេះ​អ្នកអាច​កំណត់​រចនាសម្ព័ន្ធ​ថា​ Konqueror ជា​កម្មវិធី​គ្រប់គ្រង​ឯកសារ​នឹង​ធ្វើ​អ្វី នៅពេល​អ្នក​ចុច​"
+#~ "លើ​ប្រភេទ​នេះ ។ Konqueror អាច​បង្ហាញ​ឯកសារ​នៅ​ក្នុង​កម្មវិធី​មើល​ដែល​បានបង្កប់ ឬ​ចាប់ផ្ដើម​កម្មវិធី​"
+#~ "ដោយ​ឡែក ។ ប្រសិនបើ​កំណត់​ទៅ​ 'ប្រើ​ការ​កំណត់​សម្រាប់​ក្រុម G​' កម្មវិធី​គ្រប់គ្រង​ឯកសារ​​អនុវត្ត​ដោយ​យោង​តាម​"
+#~ "ការ​កំណត់​នៃ​ក្រុម G ទៅ​ប្រភេទ​នៃ​ឯកសារ​នោះ  ឧទាហរណ៍ ប្រសិនបើ​ប្រភេទ​ឯកសារ​បច្ចុប្បន្ន​ជា image/"
+#~ "png ។ ឌូហ្វីន​តែងតែ​បង្ហាញ​ឯកសារ​ក្នុង​កម្មវិធី​មើល​ដោយ​ឡែក ។"
+
+#~ msgid "Use settings for '%1' group"
+#~ msgstr "ប្រើ​ការ​កំណត់​សម្រាប់​ក្រុម '%1'"
 
 #~ msgid ""
 #~ "<p><h1>File Associations</h1> This module allows you to choose which "

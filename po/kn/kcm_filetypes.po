@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: filetypes\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2026-06-04 00:46+0000\n"
+"POT-Creation-Date: 2026-08-28 00:47+0000\n"
 "PO-Revision-Date: 2007-09-12 13:59+0530\n"
 "Last-Translator: Ramaprakasha <ramaprakash.b@gmail.com>\n"
 "Language-Team: Kannada\n"
@@ -28,42 +28,7 @@ msgctxt "EMAIL OF TRANSLATORS"
 msgid "Your emails"
 msgstr ""
 
-#: filegroupdetails.cpp:22
-#, kde-format
-msgid "Left Click Action (only for Konqueror file manager)"
-msgstr ""
-
-#: filegroupdetails.cpp:26 filetypedetails.cpp:134
-#, kde-format
-msgid "Show file in embedded viewer"
-msgstr "ಕಡತವನ್ನು ಹುದುಗಿಸಲ್ಪಟ್ಟ (ಎಂಬೆಡೆಡ್) ಪ್ರದರ್ಶಕದಲ್ಲಿ ತೋರಿಸು"
-
-#: filegroupdetails.cpp:27 filetypedetails.cpp:135
-#, kde-format
-msgid "Show file in separate viewer"
-msgstr "ಕಡತವನ್ನು ಅನ್ಯ ಪ್ರದರ್ಶಕದಲ್ಲಿ ತೋರಿಸು"
-
-#: filegroupdetails.cpp:36
-#, fuzzy, kde-format
-#| msgid ""
-#| "Here you can configure what the Konqueror file manager will do when you "
-#| "click on a file belonging to this group. Konqueror can display the file "
-#| "in an embedded viewer or start up a separate application. You can change "
-#| "this setting for a specific file type in the 'Embedding' tab of the file "
-#| "type configuration."
-msgid ""
-"Here you can configure what the Konqueror file manager will do when you "
-"click on a file belonging to this group. Konqueror can display the file in "
-"an embedded viewer or start up a separate application. You can change this "
-"setting for a specific file type in the 'Embedding' tab of the file type "
-"configuration. Dolphin  shows files always in a separate viewer"
-msgstr ""
-"ಈ ಸಮೂಹಕ್ಕೆ ಸೇರಿದ ಕಡತದ ಮೇಲೆ ನೀವು ಕ್ಲಿಕ್ ಮಾಡಿದಾಗ ಕಾಂಕರರ್ ಕಡತ ವ್ಯವಸ್ಥಾಪಕವು ಏನು "
-"ಮಾಡುತ್ತದೆ ಎನ್ನುವುದನ್ನು ಇಲ್ಲಿ ಸಂರಚಿಸಬಹುದು. ಕಾಂಕರರ್ ಈ ಕಡತವನ್ನು ಜೊತೆಗಿರುವ ಪ್ರದರ್ಶಕದಲ್ಲಿ "
-"ತೋರಿಸಬಹುದು ಅಥವಾ ಬೇರೆ ತಂತ್ರಾಂಶವನ್ನು ಆರಂಭಿಸಬಹುದು. 'ಹುದುಗಿಸುವಿಕೆ (ಎಂಬೆಡಿಂಗ್)' ಟ್ಯಾಬ್ "
-"ನಲ್ಲಿ ಒಂದು ನಿರ್ದಿಷ್ಟ ಕಡತ ಬಗೆಗೆ ಈ ಸಿದ್ಧತೆಯನ್ನು ಬದಲಾಯಿಸಬಹುದು."
-
-#: filetypedetails.cpp:61
+#: filetypedetails.cpp:54
 #, kde-format
 msgid ""
 "This button displays the icon associated with the selected file type. Click "
@@ -72,12 +37,12 @@ msgstr ""
 "ಈ ಗುಂಡಿಯು ಆಯ್ಕೆಯಾದ ಕಡತ ಬಗೆಗೆ ಒಡನಾಡಿಯಾಗಿರುವ ಚಿಹ್ನೆಯನ್ನು ತೋರಿಸುತ್ತದೆ. ಬೇರೆ "
 "ಚಿಹ್ನೆಯನ್ನು ಆರಿಸಲು ಇದರ ಮೇಲೆ ಅದುಮು."
 
-#: filetypedetails.cpp:67
+#: filetypedetails.cpp:60
 #, kde-format
 msgid "Filename Patterns"
 msgstr "ಕಡತನಾಮ ನಮೂನೆಗಳು"
 
-#: filetypedetails.cpp:79
+#: filetypedetails.cpp:72
 #, kde-format
 msgid ""
 "This box contains a list of patterns that can be used to identify files of "
@@ -89,33 +54,33 @@ msgstr ""
 "ಹೊಂದಿದೆ. ಉದಾ: *.txt ಎಂಬ ಮಾದರಿಯನ್ನು 'ಸರಳ ಪಠ್ಯ' ಎಂಬ ಕಡತ ಬಗೆಗೆ ನಿಯಮಿಸಲಾಗಿದೆ. '."
 "txt' ನಿಂದ ಕೊನೆಗೊಳ್ಳುವ ಎಲ್ಲಾ ಕಡತಗಳು ಸರಳ ಪಠ್ಯ ಕಡತಗಳೆಂದು ಗುರುತಿಸಲ್ಪಡುತ್ತವೆ."
 
-#: filetypedetails.cpp:87 filetypesview.cpp:86 kservicelistwidget.cpp:105
+#: filetypedetails.cpp:80 filetypesview.cpp:84 kservicelistwidget.cpp:105
 #, kde-format
 msgid "Add..."
 msgstr "ಸೇರಿಸು..."
 
-#: filetypedetails.cpp:92
+#: filetypedetails.cpp:85
 #, kde-format
 msgid "Add a new pattern for the selected file type."
 msgstr "ಆಯ್ದ ಕಡತ ಬಗೆಗೆ ಹೊಸ ನಮೂನೆಯನ್ನು ಸೇರಿಸು."
 
-#: filetypedetails.cpp:94 kservicelistwidget.cpp:119
+#: filetypedetails.cpp:87 kservicelistwidget.cpp:119
 #, kde-format
 msgid "Remove"
 msgstr "ತೆಗೆದುಹಾಕು"
 
-#: filetypedetails.cpp:99
+#: filetypedetails.cpp:92
 #, kde-format
 msgid "Remove the selected filename pattern."
 msgstr "ಆಯ್ದ ಕಡತನಾಮದ ನಮೂನೆಯನ್ನು ತೆಗೆದುಹಾಕು."
 
-#: filetypedetails.cpp:110
+#: filetypedetails.cpp:103
 #, fuzzy, kde-format
 #| msgid "Description"
 msgid "Description:"
 msgstr "ವಿವರಣೆ"
 
-#: filetypedetails.cpp:115
+#: filetypedetails.cpp:108
 #, kde-format
 msgid ""
 "You can enter a short description for files of the selected file type (e.g. "
@@ -125,78 +90,39 @@ msgstr ""
 "ಆಯ್ದ ಕಡತ ಬಗೆಗೆ ಚಿಕ್ಕ ವಿವರಣೆಯನ್ನು ಇಲ್ಲಿ ನಮೂದಿಸಬಹುದು (ಉದಾ: 'HTML ಪುಟ' ). ಈ "
 "ವಿವರಣೆಯನ್ನು ಕಾಂಕರರ್ ನಂತಹ ತಂತ್ರಾಂಶಗಳು ಕಡತಕೋಶದ ಒಳಪಿಡಿಯನ್ನು ತೋರಿಸಲು ಬಳಸುತ್ತವೆ."
 
-#: filetypedetails.cpp:129
-#, fuzzy, kde-format
-#| msgid "Left Click Action"
-msgid "Left Click Action in Konqueror"
-msgstr "ಎಡ ಕ್ಲಿಕ್ ಕ್ರಿಯೆ"
-
-#: filetypedetails.cpp:138
-#, fuzzy, kde-format
-#| msgid "Ask whether to save to disk instead"
-msgid "Ask whether to save to disk instead (only for Konqueror browser)"
-msgstr "ಬದಲಾಗಿ ಧೃಢ ಮುದ್ರಿಕೆಯಲ್ಲಿ ಉಳಿಸಲೇ ಎಂದು ಕೇಳು"
-
-#: filetypedetails.cpp:154
-#, fuzzy, kde-format
-#| msgid ""
-#| "Here you can configure what the Konqueror file manager will do when you "
-#| "click on a file of this type. Konqueror can display the file in an "
-#| "embedded viewer or start up a separate application. If set to 'Use "
-#| "settings for G group', Konqueror will behave according to the settings of "
-#| "the group G this type belongs to, for instance 'image' if the current "
-#| "file type is image/png."
-msgid ""
-"Here you can configure what the Konqueror file manager will do when you "
-"click on a file of this type. Konqueror can either display the file in an "
-"embedded viewer, or start up a separate application. If set to 'Use settings "
-"for G group', the file manager will behave according to the settings of the "
-"group G to which this type belongs; for instance, 'image' if the current "
-"file type is image/png. Dolphin always shows files in a separate viewer."
-msgstr ""
-"ಈ ಬಗೆಯ ಕಡತದ ಮೇಲೆ ಅದುಮಿದಾಗ ಕಾಂಕರರ್ ಕಡತ ವ್ಯವಸ್ಥಾಪಕವು ಏನು ಮಾಡುತ್ತದೆ ಎಂಬುದನ್ನು ಇಲ್ಲಿ "
-"ಸಂರಚಿಸಬಹುದು. ಕಾಂಕರರ್ ಕಡತವನ್ನು ಹುದುಸಲ್ಪಟ್ಟ ವೀಕ್ಷಕದಲ್ಲಿ ಪ್ರದರ್ಶಿಸಬಹುದು ಅಥವಾ ಅನ್ಯ "
-"ಅನ್ವಯವನ್ನು ಪ್ರಾರಂಭಿಸಬಹುದು. 'G ಬಳಗದ ಸಂಯೋಜನೆಗಳನ್ನು ಬಳಸು' ಎಂದು ಸಂರಚಿಸಿದರೆ ಕಾಂಕರರ್ G "
-"ಬಳಗದ ಸಂಯೋಜನೆಗಳಿಗೆ ಅನುಗುಣವಾಗಿ ವರ್ತಿಸುತ್ತದೆ."
-
-#: filetypedetails.cpp:167
+#: filetypedetails.cpp:128
 #, kde-format
 msgid "&General"
 msgstr "ಸಾ(&ಮ)ಮಾನ್ಯ"
 
-#: filetypedetails.cpp:168
+#: filetypedetails.cpp:129
 #, kde-format
 msgid "&Embedding"
 msgstr "(&ಹ) ಹುದುಗಿಸುವಿಕೆ (ಎಂಬೆಡಿಂಗ್)"
 
-#: filetypedetails.cpp:209
+#: filetypedetails.cpp:170
 #, kde-format
 msgid "Add New Extension"
 msgstr "ಹೊಸ ವಿಸ್ತರಣೆಯನ್ನು ಸೇರಿಸು"
 
-#: filetypedetails.cpp:209
+#: filetypedetails.cpp:170
 #, kde-format
 msgid "Extension:"
 msgstr "ವಿಸ್ತರಣೆ:"
 
-#: filetypedetails.cpp:328
+#: filetypedetails.cpp:203
 #, fuzzy, kde-format
 #| msgid "Edit File Type %1"
 msgid "File type %1"
 msgstr "ಕಡತ ಬಗೆ %1 ನ್ನು ಸಂಪಾದಿಸು"
 
-#: filetypedetails.cpp:336
-#, kde-format
-msgid "Use settings for '%1' group"
-msgstr "ಸಿದ್ಧತೆಗಳನ್ನು '%1' ಬಳಗದ ಮೇಲೆ ಉಪಯೋಗಿಸು"
-
-#: filetypesview.cpp:57
+#: filetypesview.cpp:55
 #, fuzzy, kde-format
 #| msgid "F&ind filename pattern:"
 msgid "Search for file type or filename pattern..."
 msgstr "(&ಹ) ಕಡತ ಹೆಸರುಗಳ ನಮೂನೆಯನ್ನು ಹುಡುಕು:"
 
-#: filetypesview.cpp:63
+#: filetypesview.cpp:61
 #, fuzzy, kde-format
 #| msgid ""
 #| "Enter a part of a filename pattern. Only file types with a matching file "
@@ -209,12 +135,12 @@ msgstr ""
 "ಕಡತ ಹೆಸರು ನಮೂನೆಯ ಒಂದು ಭಾಗವನ್ನು ನಮೂದಿಸು. ಕೇವಲ ಹೊಂದುವ ಕಡತ ನಮೂನೆಯಿರುವ ಕಡತಬಗೆಗಳು "
 "ಪಟ್ಟಿಯಲ್ಲಿ ಕಾಣಿಸಿಕೊಳ್ಳುತ್ತವೆ."
 
-#: filetypesview.cpp:71 multiapplydialog.cpp:27
+#: filetypesview.cpp:69 multiapplydialog.cpp:27
 #, kde-format
 msgid "Known Types"
 msgstr "ತಿಳಿದಿರುವ ಬಗೆಗಳು"
 
-#: filetypesview.cpp:77
+#: filetypesview.cpp:75
 #, kde-format
 msgid ""
 "Here you can see a hierarchical list of the file types which are known on "
@@ -227,33 +153,33 @@ msgstr ""
 "ಅದುಮು. ಕಡತ ಬಗೆಯ (ಉದಾ: HTML ಕಡತಗಳಿಗೆ ಪಠ್ಯ/html ) ಬಗ್ಗೆ ಮಾಹಿತಿಯನ್ನು ವೀಕ್ಷಿಸಲು/"
 "ಸಂಪಾದಿಸಲು ಆ ಕಡತ ಬಗೆಯ ಮೇಲೆ ಅದುಮು."
 
-#: filetypesview.cpp:91
+#: filetypesview.cpp:89
 #, kde-format
 msgid "Click here to add a new file type."
 msgstr "ಹೊಸ ಕಡತ ಬಗೆಯನ್ನು ಸೇರಿಸಲು ಇಲ್ಲಿ ಕ್ಲಿಕ್ ಮಾಡು."
 
-#: filetypesview.cpp:93 filetypesview.cpp:389
+#: filetypesview.cpp:91 filetypesview.cpp:368
 #, kde-format
 msgid "&Remove"
 msgstr "(&ತ) ತೆಗೆದುಹಾಕು"
 
-#: filetypesview.cpp:119
+#: filetypesview.cpp:111
 #, kde-format
 msgid "Select a file type by name or by extension"
 msgstr "ಕಡತ ಬಗೆಯನ್ನು ಹೆಸರಿನಿಂದ ಅಥವಾ ವಿಸ್ತರಣೆಯಿಂದ ಆರಿಸು"
 
-#: filetypesview.cpp:382
+#: filetypesview.cpp:361
 #, fuzzy, kde-format
 #| msgid "&Remove"
 msgid "&Revert"
 msgstr "(&ತ) ತೆಗೆದುಹಾಕು"
 
-#: filetypesview.cpp:383
+#: filetypesview.cpp:362
 #, kde-format
 msgid "Revert this file type to its initial system-wide definition"
 msgstr ""
 
-#: filetypesview.cpp:385
+#: filetypesview.cpp:364
 #, kde-format
 msgid ""
 "Click here to revert this file type to its initial system-wide definition, "
@@ -263,12 +189,12 @@ msgid ""
 "from file contents can still end up using them)."
 msgstr ""
 
-#: filetypesview.cpp:390
+#: filetypesview.cpp:369
 #, kde-format
 msgid "Delete this file type definition completely"
 msgstr ""
 
-#: filetypesview.cpp:392
+#: filetypesview.cpp:371
 #, kde-format
 msgid ""
 "Click here to delete this file type definition completely. This is only "
@@ -514,6 +440,66 @@ msgid ""
 "category and you type 'custom' here, the file type 'image/custom' will be "
 "created."
 msgstr ""
+
+#~ msgid "Show file in embedded viewer"
+#~ msgstr "ಕಡತವನ್ನು ಹುದುಗಿಸಲ್ಪಟ್ಟ (ಎಂಬೆಡೆಡ್) ಪ್ರದರ್ಶಕದಲ್ಲಿ ತೋರಿಸು"
+
+#~ msgid "Show file in separate viewer"
+#~ msgstr "ಕಡತವನ್ನು ಅನ್ಯ ಪ್ರದರ್ಶಕದಲ್ಲಿ ತೋರಿಸು"
+
+#, fuzzy
+#~| msgid ""
+#~| "Here you can configure what the Konqueror file manager will do when you "
+#~| "click on a file belonging to this group. Konqueror can display the file "
+#~| "in an embedded viewer or start up a separate application. You can change "
+#~| "this setting for a specific file type in the 'Embedding' tab of the file "
+#~| "type configuration."
+#~ msgid ""
+#~ "Here you can configure what the Konqueror file manager will do when you "
+#~ "click on a file belonging to this group. Konqueror can display the file "
+#~ "in an embedded viewer or start up a separate application. You can change "
+#~ "this setting for a specific file type in the 'Embedding' tab of the file "
+#~ "type configuration. Dolphin  shows files always in a separate viewer"
+#~ msgstr ""
+#~ "ಈ ಸಮೂಹಕ್ಕೆ ಸೇರಿದ ಕಡತದ ಮೇಲೆ ನೀವು ಕ್ಲಿಕ್ ಮಾಡಿದಾಗ ಕಾಂಕರರ್ ಕಡತ ವ್ಯವಸ್ಥಾಪಕವು ಏನು "
+#~ "ಮಾಡುತ್ತದೆ ಎನ್ನುವುದನ್ನು ಇಲ್ಲಿ ಸಂರಚಿಸಬಹುದು. ಕಾಂಕರರ್ ಈ ಕಡತವನ್ನು ಜೊತೆಗಿರುವ "
+#~ "ಪ್ರದರ್ಶಕದಲ್ಲಿ ತೋರಿಸಬಹುದು ಅಥವಾ ಬೇರೆ ತಂತ್ರಾಂಶವನ್ನು ಆರಂಭಿಸಬಹುದು. 'ಹುದುಗಿಸುವಿಕೆ "
+#~ "(ಎಂಬೆಡಿಂಗ್)' ಟ್ಯಾಬ್ ನಲ್ಲಿ ಒಂದು ನಿರ್ದಿಷ್ಟ ಕಡತ ಬಗೆಗೆ ಈ ಸಿದ್ಧತೆಯನ್ನು ಬದಲಾಯಿಸಬಹುದು."
+
+#, fuzzy
+#~| msgid "Left Click Action"
+#~ msgid "Left Click Action in Konqueror"
+#~ msgstr "ಎಡ ಕ್ಲಿಕ್ ಕ್ರಿಯೆ"
+
+#, fuzzy
+#~| msgid "Ask whether to save to disk instead"
+#~ msgid "Ask whether to save to disk instead (only for Konqueror browser)"
+#~ msgstr "ಬದಲಾಗಿ ಧೃಢ ಮುದ್ರಿಕೆಯಲ್ಲಿ ಉಳಿಸಲೇ ಎಂದು ಕೇಳು"
+
+#, fuzzy
+#~| msgid ""
+#~| "Here you can configure what the Konqueror file manager will do when you "
+#~| "click on a file of this type. Konqueror can display the file in an "
+#~| "embedded viewer or start up a separate application. If set to 'Use "
+#~| "settings for G group', Konqueror will behave according to the settings "
+#~| "of the group G this type belongs to, for instance 'image' if the current "
+#~| "file type is image/png."
+#~ msgid ""
+#~ "Here you can configure what the Konqueror file manager will do when you "
+#~ "click on a file of this type. Konqueror can either display the file in an "
+#~ "embedded viewer, or start up a separate application. If set to 'Use "
+#~ "settings for G group', the file manager will behave according to the "
+#~ "settings of the group G to which this type belongs; for instance, 'image' "
+#~ "if the current file type is image/png. Dolphin always shows files in a "
+#~ "separate viewer."
+#~ msgstr ""
+#~ "ಈ ಬಗೆಯ ಕಡತದ ಮೇಲೆ ಅದುಮಿದಾಗ ಕಾಂಕರರ್ ಕಡತ ವ್ಯವಸ್ಥಾಪಕವು ಏನು ಮಾಡುತ್ತದೆ ಎಂಬುದನ್ನು "
+#~ "ಇಲ್ಲಿ ಸಂರಚಿಸಬಹುದು. ಕಾಂಕರರ್ ಕಡತವನ್ನು ಹುದುಸಲ್ಪಟ್ಟ ವೀಕ್ಷಕದಲ್ಲಿ ಪ್ರದರ್ಶಿಸಬಹುದು ಅಥವಾ "
+#~ "ಅನ್ಯ ಅನ್ವಯವನ್ನು ಪ್ರಾರಂಭಿಸಬಹುದು. 'G ಬಳಗದ ಸಂಯೋಜನೆಗಳನ್ನು ಬಳಸು' ಎಂದು ಸಂರಚಿಸಿದರೆ "
+#~ "ಕಾಂಕರರ್ G ಬಳಗದ ಸಂಯೋಜನೆಗಳಿಗೆ ಅನುಗುಣವಾಗಿ ವರ್ತಿಸುತ್ತದೆ."
+
+#~ msgid "Use settings for '%1' group"
+#~ msgstr "ಸಿದ್ಧತೆಗಳನ್ನು '%1' ಬಳಗದ ಮೇಲೆ ಉಪಯೋಗಿಸು"
 
 #, fuzzy
 #~ msgid ""

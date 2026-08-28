@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kde-cli-tools\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2026-06-04 00:46+0000\n"
+"POT-Creation-Date: 2026-08-28 00:47+0000\n"
 "PO-Revision-Date: 2024-12-24 20:39+0530\n"
 "Last-Translator: kali <shreekantkalwar@gmail.com>\n"
 "Language-Team: Sanskrit <kde-i18n-doc@kde.org>\n"
@@ -29,36 +29,7 @@ msgctxt "EMAIL OF TRANSLATORS"
 msgid "Your emails"
 msgstr "skkalwar999@gmail.com"
 
-#: filegroupdetails.cpp:22
-#, kde-format
-msgid "Left Click Action (only for Konqueror file manager)"
-msgstr "Left Click Action (केवलं Konqueror सञ्चिकाप्रबन्धकस्य कृते)"
-
-#: filegroupdetails.cpp:26 filetypedetails.cpp:134
-#, kde-format
-msgid "Show file in embedded viewer"
-msgstr "एम्बेडेड् दर्शके सञ्चिकां दर्शयतु"
-
-#: filegroupdetails.cpp:27 filetypedetails.cpp:135
-#, kde-format
-msgid "Show file in separate viewer"
-msgstr "पृथक् दर्शके सञ्चिकां दर्शयतु"
-
-#: filegroupdetails.cpp:36
-#, kde-format
-msgid ""
-"Here you can configure what the Konqueror file manager will do when you "
-"click on a file belonging to this group. Konqueror can display the file in "
-"an embedded viewer or start up a separate application. You can change this "
-"setting for a specific file type in the 'Embedding' tab of the file type "
-"configuration. Dolphin  shows files always in a separate viewer"
-msgstr ""
-"अत्र भवान् अस्य समूहस्य सञ्चिकायां क्लिक् कृत्वा Konqueror सञ्चिकाप्रबन्धकः किं करिष्यति इति "
-"विन्यस्तुं शक्नोति । Konqueror सञ्चिकां एम्बेडेड् दर्शके प्रदर्शयितुं वा पृथक् अनुप्रयोगं आरभुं वा "
-"शक्नोति । सञ्चिकाप्रकारस्य विन्यासस्य 'Embedding' ट्याब् मध्ये विशिष्टसञ्चिकाप्रकारस्य कृते "
-"एतत् सेटिङ्ग् परिवर्तयितुं शक्नुवन्ति । डॉल्फिन् सर्वदा पृथक् दर्शके सञ्चिकाः दर्शयति"
-
-#: filetypedetails.cpp:61
+#: filetypedetails.cpp:54
 #, kde-format
 msgid ""
 "This button displays the icon associated with the selected file type. Click "
@@ -67,12 +38,12 @@ msgstr ""
 "एतत् बटन् चयनितसञ्चिकाप्रकारेण सह सम्बद्धं चिह्नं प्रदर्शयति । भिन्नं चिह्नं चिन्वितुं तस्मिन् "
 "नुदन्तु ।"
 
-#: filetypedetails.cpp:67
+#: filetypedetails.cpp:60
 #, kde-format
 msgid "Filename Patterns"
 msgstr "सञ्चिकानाम प्रतिमानाः"
 
-#: filetypedetails.cpp:79
+#: filetypedetails.cpp:72
 #, kde-format
 msgid ""
 "This box contains a list of patterns that can be used to identify files of "
@@ -84,32 +55,32 @@ msgstr ""
 "अस्ति । यथा, *.txt इति प्रतिमानं 'text/plain' इति सञ्चिकाप्रकारेण सह सम्बद्धम् अस्ति; "
 "'.txt' इत्यनेन समाप्ताः सर्वाणि सञ्चिकाः साधारणपाठसञ्चिकारूपेण ज्ञायन्ते ।"
 
-#: filetypedetails.cpp:87 filetypesview.cpp:86 kservicelistwidget.cpp:105
+#: filetypedetails.cpp:80 filetypesview.cpp:84 kservicelistwidget.cpp:105
 #, kde-format
 msgid "Add..."
 msgstr "संयोजयति..."
 
-#: filetypedetails.cpp:92
+#: filetypedetails.cpp:85
 #, kde-format
 msgid "Add a new pattern for the selected file type."
 msgstr "चयनितसञ्चिकाप्रकारस्य कृते नूतनं प्रतिरूपं योजयन्तु ।"
 
-#: filetypedetails.cpp:94 kservicelistwidget.cpp:119
+#: filetypedetails.cpp:87 kservicelistwidget.cpp:119
 #, kde-format
 msgid "Remove"
 msgstr "अपाकरोति"
 
-#: filetypedetails.cpp:99
+#: filetypedetails.cpp:92
 #, kde-format
 msgid "Remove the selected filename pattern."
 msgstr "चयनितं सञ्चिकानामप्रतिरूपं निष्कासयन्तु ।"
 
-#: filetypedetails.cpp:110
+#: filetypedetails.cpp:103
 #, kde-format
 msgid "Description:"
 msgstr "वर्णनम्‌:"
 
-#: filetypedetails.cpp:115
+#: filetypedetails.cpp:108
 #, kde-format
 msgid ""
 "You can enter a short description for files of the selected file type (e.g. "
@@ -119,69 +90,37 @@ msgstr ""
 "चयनितसञ्चिकाप्रकारस्य (उदा. 'HTML Page') सञ्चिकानां कृते लघुवर्णनं प्रविष्टुं शक्नुवन्ति । "
 "एतत् वर्णनं Konqueror इत्यादिभिः अनुप्रयोगैः निर्देशिकासामग्रीप्रदर्शनार्थं उपयुज्यते ।"
 
-#: filetypedetails.cpp:129
-#, kde-format
-msgid "Left Click Action in Konqueror"
-msgstr "Konqueror मध्ये Action इत्यत्र वाम क्लिक् कुर्वन्तु"
-
-#: filetypedetails.cpp:138
-#, kde-format
-msgid "Ask whether to save to disk instead (only for Konqueror browser)"
-msgstr "पृच्छन्तु यत् तस्य स्थाने डिस्क मध्ये रक्षितुं शक्यते वा (केवलं Konqueror ब्राउजर् कृते)"
-
-#: filetypedetails.cpp:154
-#, kde-format
-msgid ""
-"Here you can configure what the Konqueror file manager will do when you "
-"click on a file of this type. Konqueror can either display the file in an "
-"embedded viewer, or start up a separate application. If set to 'Use settings "
-"for G group', the file manager will behave according to the settings of the "
-"group G to which this type belongs; for instance, 'image' if the current "
-"file type is image/png. Dolphin always shows files in a separate viewer."
-msgstr ""
-"अत्र भवान् एतादृशप्रकारस्य सञ्चिकायां क्लिक् कृत्वा Konqueror सञ्चिकाप्रबन्धकः किं करिष्यति "
-"इति विन्यस्तुं शक्नोति । Konqueror सञ्चिकां एम्बेडेड् दर्शके प्रदर्शयितुं शक्नोति, अथवा पृथक् "
-"अनुप्रयोगं आरभुं शक्नोति । यदि 'G group कृते सेटिंग्स् उपयुज्यताम्' इति सेट् भवति तर्हि "
-"सञ्चिकाप्रबन्धकः G समूहस्य सेटिङ्ग्स् अनुसारं व्यवहारं करिष्यति यस्य एषः प्रकारः अस्ति; यथा, "
-"'image' यदि वर्तमानसञ्चिकाप्रकारः image/png अस्ति । डॉल्फिन् सर्वदा पृथक् दर्शके "
-"सञ्चिकाः दर्शयति ।"
-
-#: filetypedetails.cpp:167
+#: filetypedetails.cpp:128
 #, kde-format
 msgid "&General"
 msgstr "&सामान्य"
 
-#: filetypedetails.cpp:168
+#: filetypedetails.cpp:129
 #, kde-format
 msgid "&Embedding"
 msgstr "&एम्बेडिंग"
 
-#: filetypedetails.cpp:209
+#: filetypedetails.cpp:170
 #, kde-format
 msgid "Add New Extension"
 msgstr "New Extension योजयतु"
 
-#: filetypedetails.cpp:209
+#: filetypedetails.cpp:170
 #, kde-format
 msgid "Extension:"
 msgstr "विस्तार:"
 
-#: filetypedetails.cpp:328
+#: filetypedetails.cpp:203
 #, kde-format
 msgid "File type %1"
 msgstr "सञ्चिकाप्रकारः %1"
 
-#: filetypedetails.cpp:336
-#, kde-format
-msgid "Use settings for '%1' group"
-msgstr "'%1' समूहस्य कृते सेटिङ्ग्स् उपयुज्यताम्"
-
-#: filetypesview.cpp:57
+#: filetypesview.cpp:55
 #, kde-format
 msgid "Search for file type or filename pattern..."
 msgstr "सञ्चिकाप्रकारं वा सञ्चिकानामप्रतिरूपं वा अन्वेष्टुम्..."
 
-#: filetypesview.cpp:63
+#: filetypesview.cpp:61
 #, kde-format
 msgid ""
 "Enter a part of a filename pattern, and only file types with a matching file "
@@ -191,12 +130,12 @@ msgstr ""
 "सञ्चिकानामप्रतिमानस्य भागं प्रविशन्तु, केवलं सङ्गतसञ्चिकाप्रतिमानयुक्ताः सञ्चिकाप्रकाराः एव "
 "सूचीयां दृश्यन्ते । वैकल्पिकरूपेण सञ्चिकाप्रकारस्य नामस्य भागं यथा सूचीयां दृश्यते तथा प्रविशन्तु ।"
 
-#: filetypesview.cpp:71 multiapplydialog.cpp:27
+#: filetypesview.cpp:69 multiapplydialog.cpp:27
 #, kde-format
 msgid "Known Types"
 msgstr "ज्ञात प्रकार"
 
-#: filetypesview.cpp:77
+#: filetypesview.cpp:75
 #, kde-format
 msgid ""
 "Here you can see a hierarchical list of the file types which are known on "
@@ -209,32 +148,32 @@ msgstr ""
 "उपयोगेन तस्य सञ्चिकाप्रकारस्य सूचनां द्रष्टुं/सम्पादयितुं सञ्चिकाप्रकारं (उदा. HTML सञ्चिकानां "
 "कृते text/html) चिनोतु ।"
 
-#: filetypesview.cpp:91
+#: filetypesview.cpp:89
 #, kde-format
 msgid "Click here to add a new file type."
 msgstr "नूतनं सञ्चिकाप्रकारं योजयितुं अत्र क्लिक् कुर्वन्तु ।"
 
-#: filetypesview.cpp:93 filetypesview.cpp:389
+#: filetypesview.cpp:91 filetypesview.cpp:368
 #, kde-format
 msgid "&Remove"
 msgstr "&अपाकरोति"
 
-#: filetypesview.cpp:119
+#: filetypesview.cpp:111
 #, kde-format
 msgid "Select a file type by name or by extension"
 msgstr "नामेन वा विस्तारेण वा सञ्चिकाप्रकारं चिनोतु"
 
-#: filetypesview.cpp:382
+#: filetypesview.cpp:361
 #, kde-format
 msgid "&Revert"
 msgstr "&प्रत्यावर्तनम्"
 
-#: filetypesview.cpp:383
+#: filetypesview.cpp:362
 #, kde-format
 msgid "Revert this file type to its initial system-wide definition"
 msgstr "एतत् सञ्चिकाप्रकारं तस्य प्रारम्भिकप्रणालीव्यापीपरिभाषायां पुनः स्थापयन्तु"
 
-#: filetypesview.cpp:385
+#: filetypesview.cpp:364
 #, kde-format
 msgid ""
 "Click here to revert this file type to its initial system-wide definition, "
@@ -249,12 +188,12 @@ msgstr ""
 "उपयोगस्य सम्भावना न्यूनीकर्तुं (किन्तु सञ्चिकासामग्रीतः सञ्चिकाप्रकारस्य निर्धारणम् अद्यापि "
 "तान् उपयुज्य अन्ते भवितुम् अर्हति) ।"
 
-#: filetypesview.cpp:390
+#: filetypesview.cpp:369
 #, kde-format
 msgid "Delete this file type definition completely"
 msgstr "एतत् सञ्चिकाप्रकारस्य परिभाषां सम्पूर्णतया विलोपयन्तु"
 
-#: filetypesview.cpp:392
+#: filetypesview.cpp:371
 #, kde-format
 msgid ""
 "Click here to delete this file type definition completely. This is only "
@@ -499,3 +438,50 @@ msgstr ""
 "सञ्चिकाप्रकारस्य नाम टङ्कयन्तु । यथा, यदि भवान् 'image' इति श्रेणीरूपेण चिनोति तथा च "
 "भवान् अत्र 'custom' इति टङ्कयति तर्हि 'image/custom' इति सञ्चिकाप्रकारः निर्मितः "
 "भविष्यति ।"
+
+#~ msgid "Left Click Action (only for Konqueror file manager)"
+#~ msgstr "Left Click Action (केवलं Konqueror सञ्चिकाप्रबन्धकस्य कृते)"
+
+#~ msgid "Show file in embedded viewer"
+#~ msgstr "एम्बेडेड् दर्शके सञ्चिकां दर्शयतु"
+
+#~ msgid "Show file in separate viewer"
+#~ msgstr "पृथक् दर्शके सञ्चिकां दर्शयतु"
+
+#~ msgid ""
+#~ "Here you can configure what the Konqueror file manager will do when you "
+#~ "click on a file belonging to this group. Konqueror can display the file "
+#~ "in an embedded viewer or start up a separate application. You can change "
+#~ "this setting for a specific file type in the 'Embedding' tab of the file "
+#~ "type configuration. Dolphin  shows files always in a separate viewer"
+#~ msgstr ""
+#~ "अत्र भवान् अस्य समूहस्य सञ्चिकायां क्लिक् कृत्वा Konqueror सञ्चिकाप्रबन्धकः किं करिष्यति "
+#~ "इति विन्यस्तुं शक्नोति । Konqueror सञ्चिकां एम्बेडेड् दर्शके प्रदर्शयितुं वा पृथक् अनुप्रयोगं "
+#~ "आरभुं वा शक्नोति । सञ्चिकाप्रकारस्य विन्यासस्य 'Embedding' ट्याब् मध्ये "
+#~ "विशिष्टसञ्चिकाप्रकारस्य कृते एतत् सेटिङ्ग् परिवर्तयितुं शक्नुवन्ति । डॉल्फिन् सर्वदा पृथक् "
+#~ "दर्शके सञ्चिकाः दर्शयति"
+
+#~ msgid "Left Click Action in Konqueror"
+#~ msgstr "Konqueror मध्ये Action इत्यत्र वाम क्लिक् कुर्वन्तु"
+
+#~ msgid "Ask whether to save to disk instead (only for Konqueror browser)"
+#~ msgstr "पृच्छन्तु यत् तस्य स्थाने डिस्क मध्ये रक्षितुं शक्यते वा (केवलं Konqueror ब्राउजर् कृते)"
+
+#~ msgid ""
+#~ "Here you can configure what the Konqueror file manager will do when you "
+#~ "click on a file of this type. Konqueror can either display the file in an "
+#~ "embedded viewer, or start up a separate application. If set to 'Use "
+#~ "settings for G group', the file manager will behave according to the "
+#~ "settings of the group G to which this type belongs; for instance, 'image' "
+#~ "if the current file type is image/png. Dolphin always shows files in a "
+#~ "separate viewer."
+#~ msgstr ""
+#~ "अत्र भवान् एतादृशप्रकारस्य सञ्चिकायां क्लिक् कृत्वा Konqueror सञ्चिकाप्रबन्धकः किं "
+#~ "करिष्यति इति विन्यस्तुं शक्नोति । Konqueror सञ्चिकां एम्बेडेड् दर्शके प्रदर्शयितुं शक्नोति, "
+#~ "अथवा पृथक् अनुप्रयोगं आरभुं शक्नोति । यदि 'G group कृते सेटिंग्स् उपयुज्यताम्' इति सेट् भवति "
+#~ "तर्हि सञ्चिकाप्रबन्धकः G समूहस्य सेटिङ्ग्स् अनुसारं व्यवहारं करिष्यति यस्य एषः प्रकारः "
+#~ "अस्ति; यथा, 'image' यदि वर्तमानसञ्चिकाप्रकारः image/png अस्ति । डॉल्फिन् सर्वदा "
+#~ "पृथक् दर्शके सञ्चिकाः दर्शयति ।"
+
+#~ msgid "Use settings for '%1' group"
+#~ msgstr "'%1' समूहस्य कृते सेटिङ्ग्स् उपयुज्यताम्"

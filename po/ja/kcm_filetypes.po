@@ -12,7 +12,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: filetypes\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2026-06-04 00:46+0000\n"
+"POT-Creation-Date: 2026-08-28 00:47+0000\n"
 "PO-Revision-Date: 2024-02-23 15:31+0900\n"
 "Last-Translator: Ryuichi Yamada <ryuichi_ya220@outlook.jp>\n"
 "Language-Team: ja\n"
@@ -39,37 +39,7 @@ msgstr ""
 "kom@kde.gr.jp,shinobo@leo.bekkoame.ne.jp,shinsaku@users.sourcefoge.jp,"
 "tsuno@ngy.1st.ne.jp,ryuichi_ya220@outlook.jp"
 
-#: filegroupdetails.cpp:22
-#, kde-format
-msgid "Left Click Action (only for Konqueror file manager)"
-msgstr "左クリック時の動作 (Konqueror ファイルマネージャのみ)"
-
-#: filegroupdetails.cpp:26 filetypedetails.cpp:134
-#, kde-format
-msgid "Show file in embedded viewer"
-msgstr "組込みビューアでファイルを表示"
-
-#: filegroupdetails.cpp:27 filetypedetails.cpp:135
-#, kde-format
-msgid "Show file in separate viewer"
-msgstr "外部ビューアでファイルを表示"
-
-#: filegroupdetails.cpp:36
-#, kde-format
-msgid ""
-"Here you can configure what the Konqueror file manager will do when you "
-"click on a file belonging to this group. Konqueror can display the file in "
-"an embedded viewer or start up a separate application. You can change this "
-"setting for a specific file type in the 'Embedding' tab of the file type "
-"configuration. Dolphin  shows files always in a separate viewer"
-msgstr ""
-"<qt>このグループに属するファイルをクリックしたときの Konqueror ファイルマネー"
-"ジャの挙動を設定します。Konqueror の組込みビューアで表示することも、別のアプ"
-"リケーションを起動して表示することもできます。この設定は、各ファイルタイプの"
-"「組込み」タブでファイルタイプごとに変更できます。Dolphin の場合は、ファイル"
-"は常に別のビューアに表示されます。</qt>"
-
-#: filetypedetails.cpp:61
+#: filetypedetails.cpp:54
 #, kde-format
 msgid ""
 "This button displays the icon associated with the selected file type. Click "
@@ -78,12 +48,12 @@ msgstr ""
 "このボタンには選択したファイルタイプに関連付けられているアイコンが表示されま"
 "す。ボタンをクリックするとアイコンを変更できます。"
 
-#: filetypedetails.cpp:67
+#: filetypedetails.cpp:60
 #, kde-format
 msgid "Filename Patterns"
 msgstr "ファイル名パターン"
 
-#: filetypedetails.cpp:79
+#: filetypedetails.cpp:72
 #, kde-format
 msgid ""
 "This box contains a list of patterns that can be used to identify files of "
@@ -96,32 +66,32 @@ msgstr ""
 "tt> というファイルタイプに関連付けられています。これによってファイル名が "
 "<tt>.txt</tt> で終るファイルはすべてプレーンテキストと判断されます。</qt>"
 
-#: filetypedetails.cpp:87 filetypesview.cpp:86 kservicelistwidget.cpp:105
+#: filetypedetails.cpp:80 filetypesview.cpp:84 kservicelistwidget.cpp:105
 #, kde-format
 msgid "Add..."
 msgstr "追加..."
 
-#: filetypedetails.cpp:92
+#: filetypedetails.cpp:85
 #, kde-format
 msgid "Add a new pattern for the selected file type."
 msgstr "選択したファイルタイプに新しいパターンを追加します。"
 
-#: filetypedetails.cpp:94 kservicelistwidget.cpp:119
+#: filetypedetails.cpp:87 kservicelistwidget.cpp:119
 #, kde-format
 msgid "Remove"
 msgstr "削除"
 
-#: filetypedetails.cpp:99
+#: filetypedetails.cpp:92
 #, kde-format
 msgid "Remove the selected filename pattern."
 msgstr "選択したファイル名パターンを削除します。"
 
-#: filetypedetails.cpp:110
+#: filetypedetails.cpp:103
 #, kde-format
 msgid "Description:"
 msgstr "説明:"
 
-#: filetypedetails.cpp:115
+#: filetypedetails.cpp:108
 #, kde-format
 msgid ""
 "You can enter a short description for files of the selected file type (e.g. "
@@ -132,72 +102,39 @@ msgstr ""
 "ができます。これは Konqueror などのアプリケーションがフォルダの内容を表示する"
 "ときに使用します。"
 
-#: filetypedetails.cpp:129
-#, kde-format
-msgid "Left Click Action in Konqueror"
-msgstr "左クリック時の動作"
-
-#: filetypedetails.cpp:138
-#, kde-format
-msgid "Ask whether to save to disk instead (only for Konqueror browser)"
-msgstr "代わりにディスクに保存するかどうか尋ねる (Konqueror ブラウザのみ)"
-
-#: filetypedetails.cpp:154
-#, kde-format
-msgid ""
-"Here you can configure what the Konqueror file manager will do when you "
-"click on a file of this type. Konqueror can either display the file in an "
-"embedded viewer, or start up a separate application. If set to 'Use settings "
-"for G group', the file manager will behave according to the settings of the "
-"group G to which this type belongs; for instance, 'image' if the current "
-"file type is image/png. Dolphin always shows files in a separate viewer."
-msgstr ""
-"<qt>このグループに属するファイルをクリックしたときの Konqueror ファイルマネー"
-"ジャの挙動を設定します。Konqueror の組込みビューアで表示することも、別のアプ"
-"リケーションを起動して表示することもできます。「...グループの設定を使う」を選"
-"択すると Konqueror はそのファイルタイプが属するグループの設定に従って動作しま"
-"す。例えばファイルタイプが <tt>image/png</tt> であれば <tt>image</tt> グルー"
-"プの設定に従います。Dolphin の場合は、ファイルは常に別のビューアに表示されま"
-"す。</qt>"
-
-#: filetypedetails.cpp:167
+#: filetypedetails.cpp:128
 #, kde-format
 msgid "&General"
 msgstr "全般(&G)"
 
 # ACCELERATOR changed by translator
-#: filetypedetails.cpp:168
+#: filetypedetails.cpp:129
 #, kde-format
 msgid "&Embedding"
 msgstr "組込み(&B)"
 
-#: filetypedetails.cpp:209
+#: filetypedetails.cpp:170
 #, kde-format
 msgid "Add New Extension"
 msgstr "新しい拡張子を追加"
 
-#: filetypedetails.cpp:209
+#: filetypedetails.cpp:170
 #, kde-format
 msgid "Extension:"
 msgstr "拡張子:"
 
-#: filetypedetails.cpp:328
+#: filetypedetails.cpp:203
 #, kde-format
 msgid "File type %1"
 msgstr "ファイルタイプ %1"
 
-#: filetypedetails.cpp:336
-#, kde-format
-msgid "Use settings for '%1' group"
-msgstr "%1 グループの設定を使う"
-
 # 検索フィールドに表示されるテキスト
-#: filetypesview.cpp:57
+#: filetypesview.cpp:55
 #, kde-format
 msgid "Search for file type or filename pattern..."
 msgstr "ファイルタイプ/ファイル名パターンを検索..."
 
-#: filetypesview.cpp:63
+#: filetypesview.cpp:61
 #, kde-format
 msgid ""
 "Enter a part of a filename pattern, and only file types with a matching file "
@@ -208,12 +145,12 @@ msgstr ""
 "プのみがリストに表示されます。リストに表示されるファイルタイプの名前の一部を"
 "入力してもかまいません。"
 
-#: filetypesview.cpp:71 multiapplydialog.cpp:27
+#: filetypesview.cpp:69 multiapplydialog.cpp:27
 #, kde-format
 msgid "Known Types"
 msgstr "既知のタイプ"
 
-#: filetypesview.cpp:77
+#: filetypesview.cpp:75
 #, kde-format
 msgid ""
 "Here you can see a hierarchical list of the file types which are known on "
@@ -226,32 +163,32 @@ msgstr ""
 "リックするとカテゴリが閉じます。ファイルタイプ (例えば HTML については "
 "<tt>text/html</tt>) を選択して、パネルの右側で参照/編集してください。</qt>"
 
-#: filetypesview.cpp:91
+#: filetypesview.cpp:89
 #, kde-format
 msgid "Click here to add a new file type."
 msgstr "ここをクリックして新しいファイルタイプを追加します。"
 
-#: filetypesview.cpp:93 filetypesview.cpp:389
+#: filetypesview.cpp:91 filetypesview.cpp:368
 #, kde-format
 msgid "&Remove"
 msgstr "削除(&R)"
 
-#: filetypesview.cpp:119
+#: filetypesview.cpp:111
 #, kde-format
 msgid "Select a file type by name or by extension"
 msgstr "ファイルタイプを名前または拡張子で選択"
 
-#: filetypesview.cpp:382
+#: filetypesview.cpp:361
 #, kde-format
 msgid "&Revert"
 msgstr "戻す(&R)"
 
-#: filetypesview.cpp:383
+#: filetypesview.cpp:362
 #, kde-format
 msgid "Revert this file type to its initial system-wide definition"
 msgstr "このファイルタイプの定義をシステム全体の初期値に戻します"
 
-#: filetypesview.cpp:385
+#: filetypesview.cpp:364
 #, kde-format
 msgid ""
 "Click here to revert this file type to its initial system-wide definition, "
@@ -266,12 +203,12 @@ msgstr ""
 "ることはできます。(しかしファイルの内容からファイルタイプが判別された場合、最"
 "終的にはそれらが使用されます)"
 
-#: filetypesview.cpp:390
+#: filetypesview.cpp:369
 #, kde-format
 msgid "Delete this file type definition completely"
 msgstr "このファイルタイプの定義を完全に削除します"
 
-#: filetypesview.cpp:392
+#: filetypesview.cpp:371
 #, kde-format
 msgid ""
 "Click here to delete this file type definition completely. This is only "
@@ -511,3 +448,51 @@ msgid ""
 msgstr ""
 "ファイルタイプの名前を入力します。カテゴリに “image” を選択してここに "
 "“custom” と入力すると、image/custom というファイルタイプが生成されます。"
+
+#~ msgid "Left Click Action (only for Konqueror file manager)"
+#~ msgstr "左クリック時の動作 (Konqueror ファイルマネージャのみ)"
+
+#~ msgid "Show file in embedded viewer"
+#~ msgstr "組込みビューアでファイルを表示"
+
+#~ msgid "Show file in separate viewer"
+#~ msgstr "外部ビューアでファイルを表示"
+
+#~ msgid ""
+#~ "Here you can configure what the Konqueror file manager will do when you "
+#~ "click on a file belonging to this group. Konqueror can display the file "
+#~ "in an embedded viewer or start up a separate application. You can change "
+#~ "this setting for a specific file type in the 'Embedding' tab of the file "
+#~ "type configuration. Dolphin  shows files always in a separate viewer"
+#~ msgstr ""
+#~ "<qt>このグループに属するファイルをクリックしたときの Konqueror ファイルマ"
+#~ "ネージャの挙動を設定します。Konqueror の組込みビューアで表示することも、別"
+#~ "のアプリケーションを起動して表示することもできます。この設定は、各ファイル"
+#~ "タイプの「組込み」タブでファイルタイプごとに変更できます。Dolphin の場合"
+#~ "は、ファイルは常に別のビューアに表示されます。</qt>"
+
+#~ msgid "Left Click Action in Konqueror"
+#~ msgstr "左クリック時の動作"
+
+#~ msgid "Ask whether to save to disk instead (only for Konqueror browser)"
+#~ msgstr "代わりにディスクに保存するかどうか尋ねる (Konqueror ブラウザのみ)"
+
+#~ msgid ""
+#~ "Here you can configure what the Konqueror file manager will do when you "
+#~ "click on a file of this type. Konqueror can either display the file in an "
+#~ "embedded viewer, or start up a separate application. If set to 'Use "
+#~ "settings for G group', the file manager will behave according to the "
+#~ "settings of the group G to which this type belongs; for instance, 'image' "
+#~ "if the current file type is image/png. Dolphin always shows files in a "
+#~ "separate viewer."
+#~ msgstr ""
+#~ "<qt>このグループに属するファイルをクリックしたときの Konqueror ファイルマ"
+#~ "ネージャの挙動を設定します。Konqueror の組込みビューアで表示することも、別"
+#~ "のアプリケーションを起動して表示することもできます。「...グループの設定を"
+#~ "使う」を選択すると Konqueror はそのファイルタイプが属するグループの設定に"
+#~ "従って動作します。例えばファイルタイプが <tt>image/png</tt> であれば "
+#~ "<tt>image</tt> グループの設定に従います。Dolphin の場合は、ファイルは常に"
+#~ "別のビューアに表示されます。</qt>"
+
+#~ msgid "Use settings for '%1' group"
+#~ msgstr "%1 グループの設定を使う"

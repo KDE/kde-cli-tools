@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: filetypes\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2026-06-04 00:46+0000\n"
+"POT-Creation-Date: 2026-08-28 00:47+0000\n"
 "PO-Revision-Date: 2002-11-01 10:25SAST\n"
 "Last-Translator: Lwandle Mgidlana <lwandle@translate.org.za>\n"
 "Language-Team: Xhosa <xhosa@translate.org.za>\n"
@@ -29,43 +29,7 @@ msgctxt "EMAIL OF TRANSLATORS"
 msgid "Your emails"
 msgstr "lwandle@translate.org.za"
 
-#: filegroupdetails.cpp:22
-#, kde-format
-msgid "Left Click Action (only for Konqueror file manager)"
-msgstr ""
-
-#: filegroupdetails.cpp:26 filetypedetails.cpp:134
-#, kde-format
-msgid "Show file in embedded viewer"
-msgstr "Bonisa ifayile kumbonisi olungisiweyo"
-
-#: filegroupdetails.cpp:27 filetypedetails.cpp:135
-#, kde-format
-msgid "Show file in separate viewer"
-msgstr "Bonisa ifayile kumbonisi owahlukileyo"
-
-#: filegroupdetails.cpp:36
-#, fuzzy, kde-format
-#| msgid ""
-#| "Here you can configure what the Konqueror file manager will do when you "
-#| "click on a file belonging to this group. Konqueror can display the file "
-#| "in an embedded viewer or start up a separate application. You can change "
-#| "this setting for a specific file type in the 'Embedding' tab of the file "
-#| "type configuration."
-msgid ""
-"Here you can configure what the Konqueror file manager will do when you "
-"click on a file belonging to this group. Konqueror can display the file in "
-"an embedded viewer or start up a separate application. You can change this "
-"setting for a specific file type in the 'Embedding' tab of the file type "
-"configuration. Dolphin  shows files always in a separate viewer"
-msgstr ""
-"Apha ungaqwalasela ukuba angenza ntoni umphathi wefayile ye Konqueror xa u "
-"nqakraza kwifayile yelo qela. iKonqueror ingabonisa ifayile kumbonisi "
-"olungisiweyo okanye uqale isiceloesahlukileyo. Ungalutshintsha olu cwangciso "
-"kuhlobo oluthile lwefayile 'Kulingeselelo' lwesithuba soqwalaselo lohlobo "
-"lwefayile."
-
-#: filetypedetails.cpp:61
+#: filetypedetails.cpp:54
 #, kde-format
 msgid ""
 "This button displays the icon associated with the selected file type. Click "
@@ -74,12 +38,12 @@ msgstr ""
 "Eli qhosha libonisa i icon eyoyamaniswe nohlobo lwefayile ekhethiweyo. "
 "Nqakraza kuyo ukukhetha i icon eyahlukileyo."
 
-#: filetypedetails.cpp:67
+#: filetypedetails.cpp:60
 #, fuzzy, kde-format
 msgid "Filename Patterns"
 msgstr "Imilinganiselo Yegama lefayile"
 
-#: filetypedetails.cpp:79
+#: filetypedetails.cpp:72
 #, kde-format
 msgid ""
 "This box contains a list of patterns that can be used to identify files of "
@@ -92,33 +56,33 @@ msgstr ""
 "nohlobo lwefayile 'okubhaliweyo/okucacileyo' , zonke iifayile eziphelange '."
 "txt' zibonwa njengefayile ezi cacileyo zokubhaliweyo."
 
-#: filetypedetails.cpp:87 filetypesview.cpp:86 kservicelistwidget.cpp:105
+#: filetypedetails.cpp:80 filetypesview.cpp:84 kservicelistwidget.cpp:105
 #, kde-format
 msgid "Add..."
 msgstr "Yongeza..."
 
-#: filetypedetails.cpp:92
+#: filetypedetails.cpp:85
 #, kde-format
 msgid "Add a new pattern for the selected file type."
 msgstr "Yongeza umlinganiselo omtsha wohlobo olukhethiweyo lwefayile."
 
-#: filetypedetails.cpp:94 kservicelistwidget.cpp:119
+#: filetypedetails.cpp:87 kservicelistwidget.cpp:119
 #, kde-format
 msgid "Remove"
 msgstr ""
 
-#: filetypedetails.cpp:99
+#: filetypedetails.cpp:92
 #, fuzzy, kde-format
 msgid "Remove the selected filename pattern."
 msgstr "Susa umlinganiselo okhethiweyo wegama lefayile."
 
-#: filetypedetails.cpp:110
+#: filetypedetails.cpp:103
 #, fuzzy, kde-format
 #| msgid "Description"
 msgid "Description:"
 msgstr "Inkcazelo"
 
-#: filetypedetails.cpp:115
+#: filetypedetails.cpp:108
 #, kde-format
 msgid ""
 "You can enter a short description for files of the selected file type (e.g. "
@@ -129,78 +93,38 @@ msgstr ""
 "'Iphepha HTML'). Le nkcazelo izakusetyenziswa zizicelo ezinjenge Konqueror "
 "ukubonisa ulawulo lomxholo."
 
-#: filetypedetails.cpp:129
-#, fuzzy, kde-format
-#| msgid "Left Click Action"
-msgid "Left Click Action in Konqueror"
-msgstr "Intshukumo Yonqakrazo Lwasekohlo"
-
-#: filetypedetails.cpp:138
-#, kde-format
-msgid "Ask whether to save to disk instead (only for Konqueror browser)"
-msgstr ""
-
-#: filetypedetails.cpp:154
-#, fuzzy, kde-format
-#| msgid ""
-#| "Here you can configure what the Konqueror file manager will do when you "
-#| "click on a file of this type. Konqueror can display the file in an "
-#| "embedded viewer or start up a separate application. If set to 'Use "
-#| "settings for G group', Konqueror will behave according to the settings of "
-#| "the group G this type belongs to, for instance 'image' if the current "
-#| "file type is image/png."
-msgid ""
-"Here you can configure what the Konqueror file manager will do when you "
-"click on a file of this type. Konqueror can either display the file in an "
-"embedded viewer, or start up a separate application. If set to 'Use settings "
-"for G group', the file manager will behave according to the settings of the "
-"group G to which this type belongs; for instance, 'image' if the current "
-"file type is image/png. Dolphin always shows files in a separate viewer."
-msgstr ""
-"Apha ungaqwalasela ukuba umphathi wefayile ye Konqueror angenza ntoni xa "
-"unqakraza kwifayileyolu hlobo. i Konqueror ingabonisa ifayile kumboniseli "
-"olungisiweyo okanye qala isicelo esahlukileyo. Ukuba ucwangciselwe "
-"'Sebenzisa izicwangciso zeqelaG', iKonqueror izakuziphatha ngokwezicwangciso "
-"zeqela G olu hlobo loluka, umzekelo 'umfanekiso'ukuba uhlobo lwefayile "
-"yangoku lungu image/png."
-
-#: filetypedetails.cpp:167
+#: filetypedetails.cpp:128
 #, kde-format
 msgid "&General"
 msgstr "&Ngokubanzi"
 
-#: filetypedetails.cpp:168
+#: filetypedetails.cpp:129
 #, kde-format
 msgid "&Embedding"
 msgstr "&Iyalungisa"
 
-#: filetypedetails.cpp:209
+#: filetypedetails.cpp:170
 #, kde-format
 msgid "Add New Extension"
 msgstr "Yongeza Ulwandiso Olutsha"
 
-#: filetypedetails.cpp:209
+#: filetypedetails.cpp:170
 #, kde-format
 msgid "Extension:"
 msgstr "Ulwandiso:"
 
-#: filetypedetails.cpp:328
+#: filetypedetails.cpp:203
 #, fuzzy, kde-format
 #| msgid "Edit File Type %1"
 msgid "File type %1"
 msgstr "Hlela Udidi Lwefayile %1"
 
-#: filetypedetails.cpp:336
-#, kde-format
-msgid "Use settings for '%1' group"
-msgstr "Sebenzisa izicwangciso zeqela le '%1'"
-
-#: filetypesview.cpp:57
+#: filetypesview.cpp:55
 #, fuzzy, kde-format
 msgid "Search for file type or filename pattern..."
 msgstr "F&umana umlinganiselo wegama lefayile:"
 
-#: filetypesview.cpp:63
+#: filetypesview.cpp:61
 #, fuzzy, kde-format
 msgid ""
 "Enter a part of a filename pattern, and only file types with a matching file "
@@ -210,12 +134,12 @@ msgstr ""
 "Ngenisa inxenye yomlinganiselo wegama lefayile. Zintlobo zefayile kuphela "
 "ezinefayile ezithelekiseka nomlinganiselo ozakuvela kuluhlu."
 
-#: filetypesview.cpp:71 multiapplydialog.cpp:27
+#: filetypesview.cpp:69 multiapplydialog.cpp:27
 #, kde-format
 msgid "Known Types"
 msgstr "Iindidi Ezaziwayo"
 
-#: filetypesview.cpp:77
+#: filetypesview.cpp:75
 #, kde-format
 msgid ""
 "Here you can see a hierarchical list of the file types which are known on "
@@ -229,32 +153,32 @@ msgstr ""
 "HTML) ukubonisela/ukuhlela ulwazi lohlobo lwalo fayile olusebenzisa ulawulo "
 "olusekunene."
 
-#: filetypesview.cpp:91
+#: filetypesview.cpp:89
 #, kde-format
 msgid "Click here to add a new file type."
 msgstr "Nqakraza apha ukudibanisa uhlobo lwefayile olutsha."
 
-#: filetypesview.cpp:93 filetypesview.cpp:389
+#: filetypesview.cpp:91 filetypesview.cpp:368
 #, kde-format
 msgid "&Remove"
 msgstr ""
 
-#: filetypesview.cpp:119
+#: filetypesview.cpp:111
 #, kde-format
 msgid "Select a file type by name or by extension"
 msgstr "Khetha udidi lwefayile ngegama okanye ngolwandiso"
 
-#: filetypesview.cpp:382
+#: filetypesview.cpp:361
 #, kde-format
 msgid "&Revert"
 msgstr ""
 
-#: filetypesview.cpp:383
+#: filetypesview.cpp:362
 #, kde-format
 msgid "Revert this file type to its initial system-wide definition"
 msgstr ""
 
-#: filetypesview.cpp:385
+#: filetypesview.cpp:364
 #, kde-format
 msgid ""
 "Click here to revert this file type to its initial system-wide definition, "
@@ -264,12 +188,12 @@ msgid ""
 "from file contents can still end up using them)."
 msgstr ""
 
-#: filetypesview.cpp:390
+#: filetypesview.cpp:369
 #, kde-format
 msgid "Delete this file type definition completely"
 msgstr ""
 
-#: filetypesview.cpp:392
+#: filetypesview.cpp:371
 #, kde-format
 msgid ""
 "Click here to delete this file type definition completely. This is only "
@@ -519,6 +443,64 @@ msgid ""
 "category and you type 'custom' here, the file type 'image/custom' will be "
 "created."
 msgstr ""
+
+#~ msgid "Show file in embedded viewer"
+#~ msgstr "Bonisa ifayile kumbonisi olungisiweyo"
+
+#~ msgid "Show file in separate viewer"
+#~ msgstr "Bonisa ifayile kumbonisi owahlukileyo"
+
+#, fuzzy
+#~| msgid ""
+#~| "Here you can configure what the Konqueror file manager will do when you "
+#~| "click on a file belonging to this group. Konqueror can display the file "
+#~| "in an embedded viewer or start up a separate application. You can change "
+#~| "this setting for a specific file type in the 'Embedding' tab of the file "
+#~| "type configuration."
+#~ msgid ""
+#~ "Here you can configure what the Konqueror file manager will do when you "
+#~ "click on a file belonging to this group. Konqueror can display the file "
+#~ "in an embedded viewer or start up a separate application. You can change "
+#~ "this setting for a specific file type in the 'Embedding' tab of the file "
+#~ "type configuration. Dolphin  shows files always in a separate viewer"
+#~ msgstr ""
+#~ "Apha ungaqwalasela ukuba angenza ntoni umphathi wefayile ye Konqueror xa "
+#~ "u nqakraza kwifayile yelo qela. iKonqueror ingabonisa ifayile kumbonisi "
+#~ "olungisiweyo okanye uqale isiceloesahlukileyo. Ungalutshintsha olu "
+#~ "cwangciso kuhlobo oluthile lwefayile 'Kulingeselelo' lwesithuba "
+#~ "soqwalaselo lohlobo lwefayile."
+
+#, fuzzy
+#~| msgid "Left Click Action"
+#~ msgid "Left Click Action in Konqueror"
+#~ msgstr "Intshukumo Yonqakrazo Lwasekohlo"
+
+#, fuzzy
+#~| msgid ""
+#~| "Here you can configure what the Konqueror file manager will do when you "
+#~| "click on a file of this type. Konqueror can display the file in an "
+#~| "embedded viewer or start up a separate application. If set to 'Use "
+#~| "settings for G group', Konqueror will behave according to the settings "
+#~| "of the group G this type belongs to, for instance 'image' if the current "
+#~| "file type is image/png."
+#~ msgid ""
+#~ "Here you can configure what the Konqueror file manager will do when you "
+#~ "click on a file of this type. Konqueror can either display the file in an "
+#~ "embedded viewer, or start up a separate application. If set to 'Use "
+#~ "settings for G group', the file manager will behave according to the "
+#~ "settings of the group G to which this type belongs; for instance, 'image' "
+#~ "if the current file type is image/png. Dolphin always shows files in a "
+#~ "separate viewer."
+#~ msgstr ""
+#~ "Apha ungaqwalasela ukuba umphathi wefayile ye Konqueror angenza ntoni xa "
+#~ "unqakraza kwifayileyolu hlobo. i Konqueror ingabonisa ifayile kumboniseli "
+#~ "olungisiweyo okanye qala isicelo esahlukileyo. Ukuba ucwangciselwe "
+#~ "'Sebenzisa izicwangciso zeqelaG', iKonqueror izakuziphatha "
+#~ "ngokwezicwangciso zeqela G olu hlobo loluka, umzekelo 'umfanekiso'ukuba "
+#~ "uhlobo lwefayile yangoku lungu image/png."
+
+#~ msgid "Use settings for '%1' group"
+#~ msgstr "Sebenzisa izicwangciso zeqela le '%1'"
 
 #, fuzzy
 #~ msgid ""

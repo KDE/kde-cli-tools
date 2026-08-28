@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: filetypes\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2026-06-04 00:46+0000\n"
+"POT-Creation-Date: 2026-08-28 00:47+0000\n"
 "PO-Revision-Date: 2009-12-19 18:22+0100\n"
 "Last-Translator: Berend Ytsma <berendy@gmail.com>\n"
 "Language-Team: Frysk <kde-i18n-fry@kde.org>\n"
@@ -28,37 +28,7 @@ msgctxt "EMAIL OF TRANSLATORS"
 msgid "Your emails"
 msgstr "an3s_annema@planet.nl, berendy@bigfoot.com"
 
-#: filegroupdetails.cpp:22
-#, kde-format
-msgid "Left Click Action (only for Konqueror file manager)"
-msgstr "Lofter klik aksje (allinne foar Konqueror triem behearder)"
-
-#: filegroupdetails.cpp:26 filetypedetails.cpp:134
-#, kde-format
-msgid "Show file in embedded viewer"
-msgstr "Triem sjen litte yn ynbêde werjeftefinster"
-
-#: filegroupdetails.cpp:27 filetypedetails.cpp:135
-#, kde-format
-msgid "Show file in separate viewer"
-msgstr "Lit triem sjen yn apart skerm"
-
-#: filegroupdetails.cpp:36
-#, kde-format
-msgid ""
-"Here you can configure what the Konqueror file manager will do when you "
-"click on a file belonging to this group. Konqueror can display the file in "
-"an embedded viewer or start up a separate application. You can change this "
-"setting for a specific file type in the 'Embedding' tab of the file type "
-"configuration. Dolphin  shows files always in a separate viewer"
-msgstr ""
-"Hjir kinne jo ynstelle wat de triembehearder dwaan sil at jo op in triem "
-"klikke dy't ta dizze groep heart. Konqueror kin dizze triem sjen litte yn in "
-"ynbêde werjouwer of in aparte appikaasje starte. Jo kinne dizze ynstelling "
-"oanpasse foar in beskaat triemtype ûnder de flap \"Ynbêding\" yn de "
-"triemtype ynstelling. Dolfyn lit triemmen altyd yn in aparte werjouwer sjen."
-
-#: filetypedetails.cpp:61
+#: filetypedetails.cpp:54
 #, kde-format
 msgid ""
 "This button displays the icon associated with the selected file type. Click "
@@ -67,12 +37,12 @@ msgstr ""
 "Dizze knop lit it byldkaike sjen dat oerien komt mei it selektearre "
 "triemtype. Klik derop om in oar byldkaike te kiezen."
 
-#: filetypedetails.cpp:67
+#: filetypedetails.cpp:60
 #, kde-format
 msgid "Filename Patterns"
 msgstr "Triemnammepatroanen."
 
-#: filetypedetails.cpp:79
+#: filetypedetails.cpp:72
 #, kde-format
 msgid ""
 "This box contains a list of patterns that can be used to identify files of "
@@ -85,32 +55,32 @@ msgstr ""
 "ferbûn mei it triemtype 'tekst/plain'; alle triemmen dy't einigje op '.txt' "
 "wurde lykas teksttriemmen werkend."
 
-#: filetypedetails.cpp:87 filetypesview.cpp:86 kservicelistwidget.cpp:105
+#: filetypedetails.cpp:80 filetypesview.cpp:84 kservicelistwidget.cpp:105
 #, kde-format
 msgid "Add..."
 msgstr "Taheakje..."
 
-#: filetypedetails.cpp:92
+#: filetypedetails.cpp:85
 #, kde-format
 msgid "Add a new pattern for the selected file type."
 msgstr "Heakje in nij patroan ta foar it selektearre triemtype."
 
-#: filetypedetails.cpp:94 kservicelistwidget.cpp:119
+#: filetypedetails.cpp:87 kservicelistwidget.cpp:119
 #, kde-format
 msgid "Remove"
 msgstr "Fuortsmite"
 
-#: filetypedetails.cpp:99
+#: filetypedetails.cpp:92
 #, kde-format
 msgid "Remove the selected filename pattern."
 msgstr "Smyt it selektearre triemnammepatroan fuort."
 
-#: filetypedetails.cpp:110
+#: filetypedetails.cpp:103
 #, kde-format
 msgid "Description:"
 msgstr "Beskriuwing:"
 
-#: filetypedetails.cpp:115
+#: filetypedetails.cpp:108
 #, kde-format
 msgid ""
 "You can enter a short description for files of the selected file type (e.g. "
@@ -121,73 +91,38 @@ msgstr ""
 "type (bgl. 'Teksttriem'). Dizze omskriuwing wurdt brûkt troch programma's "
 "lykas Konqueror by it werjaan fan de ynhâld fan mappen."
 
-#: filetypedetails.cpp:129
-#, fuzzy, kde-format
-#| msgid "Left Click Action"
-msgid "Left Click Action in Konqueror"
-msgstr "Lofter mûsklik"
-
-#: filetypedetails.cpp:138
-#, kde-format
-msgid "Ask whether to save to disk instead (only for Konqueror browser)"
-msgstr ""
-"Freegje at it ek wat is om op skiif te bewarjen (allinne foar Konqueror "
-"blêder)"
-
-#: filetypedetails.cpp:154
-#, kde-format
-msgid ""
-"Here you can configure what the Konqueror file manager will do when you "
-"click on a file of this type. Konqueror can either display the file in an "
-"embedded viewer, or start up a separate application. If set to 'Use settings "
-"for G group', the file manager will behave according to the settings of the "
-"group G to which this type belongs; for instance, 'image' if the current "
-"file type is image/png. Dolphin always shows files in a separate viewer."
-msgstr ""
-"Hjir kinne jo ynstelle wat de triembehearder dwaan sil at jo op in triem fan "
-"dit type klikke. Konqueror kin dizze triem sjen litte yn in ynbêde werjouwer "
-"of in aparte tapassing starte. At jo de opsje \"Ynstelling fan groep brûke\" "
-"aktivearje, dan sil Konqueror de ynstellings fan de groep wêr ta dit "
-"triemtype heart brûke. Bygelyks de groep 'byld' at it aktuele triemtype "
-"'byld/png' is. Dolfyn lit triemmen altyd sjen yn in aparte werjouwer."
-
-#: filetypedetails.cpp:167
+#: filetypedetails.cpp:128
 #, kde-format
 msgid "&General"
 msgstr "&Algemien"
 
-#: filetypedetails.cpp:168
+#: filetypedetails.cpp:129
 #, kde-format
 msgid "&Embedding"
 msgstr "&Ynbêding"
 
-#: filetypedetails.cpp:209
+#: filetypedetails.cpp:170
 #, kde-format
 msgid "Add New Extension"
 msgstr "Nij taheaksel taheakje"
 
-#: filetypedetails.cpp:209
+#: filetypedetails.cpp:170
 #, kde-format
 msgid "Extension:"
 msgstr "Taheaksel:"
 
-#: filetypedetails.cpp:328
+#: filetypedetails.cpp:203
 #, kde-format
 msgid "File type %1"
 msgstr "Triemtype %1"
 
-#: filetypedetails.cpp:336
-#, kde-format
-msgid "Use settings for '%1' group"
-msgstr "Brûk ynstellings foar groep '%1'"
-
-#: filetypesview.cpp:57
+#: filetypesview.cpp:55
 #, fuzzy, kde-format
 #| msgid "Find file type or filename pattern"
 msgid "Search for file type or filename pattern..."
 msgstr "Tr&iemtypen of triemnammepatroan sykje"
 
-#: filetypesview.cpp:63
+#: filetypesview.cpp:61
 #, kde-format
 msgid ""
 "Enter a part of a filename pattern, and only file types with a matching file "
@@ -197,12 +132,12 @@ msgstr ""
 "Fier in diel fan in triemnammepatroan yn. Allinnich triemtypen dy't "
 "oerienkomme mei dit patroan ferskine dan yn de list."
 
-#: filetypesview.cpp:71 multiapplydialog.cpp:27
+#: filetypesview.cpp:69 multiapplydialog.cpp:27
 #, kde-format
 msgid "Known Types"
 msgstr "Bekende typen"
 
-#: filetypesview.cpp:77
+#: filetypesview.cpp:75
 #, kde-format
 msgid ""
 "Here you can see a hierarchical list of the file types which are known on "
@@ -215,32 +150,32 @@ msgstr ""
 "dizze wer op te tearen. Klik op de namme fan it triemtype (bgl. 'html' foar "
 "HTML-triemmen) om jo foarkar oangeande dat triemtype yn te stellen."
 
-#: filetypesview.cpp:91
+#: filetypesview.cpp:89
 #, kde-format
 msgid "Click here to add a new file type."
 msgstr "Klik hjirre om in nij triemtype ta te heakjen"
 
-#: filetypesview.cpp:93 filetypesview.cpp:389
+#: filetypesview.cpp:91 filetypesview.cpp:368
 #, kde-format
 msgid "&Remove"
 msgstr "&Fuortsmite"
 
-#: filetypesview.cpp:119
+#: filetypesview.cpp:111
 #, kde-format
 msgid "Select a file type by name or by extension"
 msgstr "Selektearje in triemtype by namme of taheaksel"
 
-#: filetypesview.cpp:382
+#: filetypesview.cpp:361
 #, kde-format
 msgid "&Revert"
 msgstr "&Weromdraaie"
 
-#: filetypesview.cpp:383
+#: filetypesview.cpp:362
 #, kde-format
 msgid "Revert this file type to its initial system-wide definition"
 msgstr "Dizze triemtype weromsette nei syn systeem-wide defenysje"
 
-#: filetypesview.cpp:385
+#: filetypesview.cpp:364
 #, kde-format
 msgid ""
 "Click here to revert this file type to its initial system-wide definition, "
@@ -255,12 +190,12 @@ msgstr ""
 "patroanlist leechje, om sa de kânsen fan it brûken te minimalisearjen(it kin "
 "noch stees barre dat triemtype ûntdekking fan triem ynhâld se dôchs brûke)."
 
-#: filetypesview.cpp:390
+#: filetypesview.cpp:369
 #, kde-format
 msgid "Delete this file type definition completely"
 msgstr "Dit triemtype definysje folslein wiskje"
 
-#: filetypesview.cpp:392
+#: filetypesview.cpp:371
 #, kde-format
 msgid ""
 "Click here to delete this file type definition completely. This is only "
@@ -512,6 +447,59 @@ msgstr ""
 "Fier de namme fan it triemtype yn. As foarbyld. as jo 'image' selektearje as "
 "kategory en jo type 'custum' yn, de triemtype 'image/custum'sil da n "
 "oanmakke wurde."
+
+#~ msgid "Left Click Action (only for Konqueror file manager)"
+#~ msgstr "Lofter klik aksje (allinne foar Konqueror triem behearder)"
+
+#~ msgid "Show file in embedded viewer"
+#~ msgstr "Triem sjen litte yn ynbêde werjeftefinster"
+
+#~ msgid "Show file in separate viewer"
+#~ msgstr "Lit triem sjen yn apart skerm"
+
+#~ msgid ""
+#~ "Here you can configure what the Konqueror file manager will do when you "
+#~ "click on a file belonging to this group. Konqueror can display the file "
+#~ "in an embedded viewer or start up a separate application. You can change "
+#~ "this setting for a specific file type in the 'Embedding' tab of the file "
+#~ "type configuration. Dolphin  shows files always in a separate viewer"
+#~ msgstr ""
+#~ "Hjir kinne jo ynstelle wat de triembehearder dwaan sil at jo op in triem "
+#~ "klikke dy't ta dizze groep heart. Konqueror kin dizze triem sjen litte yn "
+#~ "in ynbêde werjouwer of in aparte appikaasje starte. Jo kinne dizze "
+#~ "ynstelling oanpasse foar in beskaat triemtype ûnder de flap \"Ynbêding\" "
+#~ "yn de triemtype ynstelling. Dolfyn lit triemmen altyd yn in aparte "
+#~ "werjouwer sjen."
+
+#, fuzzy
+#~| msgid "Left Click Action"
+#~ msgid "Left Click Action in Konqueror"
+#~ msgstr "Lofter mûsklik"
+
+#~ msgid "Ask whether to save to disk instead (only for Konqueror browser)"
+#~ msgstr ""
+#~ "Freegje at it ek wat is om op skiif te bewarjen (allinne foar Konqueror "
+#~ "blêder)"
+
+#~ msgid ""
+#~ "Here you can configure what the Konqueror file manager will do when you "
+#~ "click on a file of this type. Konqueror can either display the file in an "
+#~ "embedded viewer, or start up a separate application. If set to 'Use "
+#~ "settings for G group', the file manager will behave according to the "
+#~ "settings of the group G to which this type belongs; for instance, 'image' "
+#~ "if the current file type is image/png. Dolphin always shows files in a "
+#~ "separate viewer."
+#~ msgstr ""
+#~ "Hjir kinne jo ynstelle wat de triembehearder dwaan sil at jo op in triem "
+#~ "fan dit type klikke. Konqueror kin dizze triem sjen litte yn in ynbêde "
+#~ "werjouwer of in aparte tapassing starte. At jo de opsje \"Ynstelling fan "
+#~ "groep brûke\" aktivearje, dan sil Konqueror de ynstellings fan de groep "
+#~ "wêr ta dit triemtype heart brûke. Bygelyks de groep 'byld' at it aktuele "
+#~ "triemtype 'byld/png' is. Dolfyn lit triemmen altyd sjen yn in aparte "
+#~ "werjouwer."
+
+#~ msgid "Use settings for '%1' group"
+#~ msgstr "Brûk ynstellings foar groep '%1'"
 
 #~ msgid ""
 #~ "<p><h1>File Associations</h1> This module allows you to choose which "

@@ -10,7 +10,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: filetypes\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2026-06-04 00:46+0000\n"
+"POT-Creation-Date: 2026-08-28 00:47+0000\n"
 "PO-Revision-Date: 2012-01-01 14:43+0100\n"
 "Last-Translator: Jean Cayron <jean.cayron@base.be>\n"
 "Language-Team: Walloon <linux-wa@walon.org>\n"
@@ -31,38 +31,7 @@ msgctxt "EMAIL OF TRANSLATORS"
 msgid "Your emails"
 msgstr "laurent.hendschel@skynet.be,pablo@walon.org,jean.cayron@gmail.com"
 
-#: filegroupdetails.cpp:22
-#, kde-format
-msgid "Left Click Action (only for Konqueror file manager)"
-msgstr "Accion avou l' clitch droet (ki pol manaedjeu des fitchîs Konqueror)"
-
-#: filegroupdetails.cpp:26 filetypedetails.cpp:134
-#, kde-format
-msgid "Show file in embedded viewer"
-msgstr "Håyner l' fitchî dins on ravalé håyneu"
-
-#: filegroupdetails.cpp:27 filetypedetails.cpp:135
-#, kde-format
-msgid "Show file in separate viewer"
-msgstr "Håyner l' fitchî en on separé håyneu"
-
-#: filegroupdetails.cpp:36
-#, kde-format
-msgid ""
-"Here you can configure what the Konqueror file manager will do when you "
-"click on a file belonging to this group. Konqueror can display the file in "
-"an embedded viewer or start up a separate application. You can change this "
-"setting for a specific file type in the 'Embedding' tab of the file type "
-"configuration. Dolphin  shows files always in a separate viewer"
-msgstr ""
-"Vaici vos ploz apontyî çou kel manaedjeu d' fitchî Konqueror frè cwand vos "
-"clitchroz so-z on fitchî di ç' groupe. Konqueror pout håyner l' fitchî dins "
-"on ravalé håyneu oudonbén enonder on programe a pårt. Vos ploz candjîz cisse "
-"tchuze po-z ene sôre di fitchî dinêye avou l' linwete 'Ravaler' oudonbén "
-"avou l' apontiaedje del sôre di fitchî. Dolphine mostere todi les fitchîs "
-"dins on håyneu a pårt"
-
-#: filetypedetails.cpp:61
+#: filetypedetails.cpp:54
 #, kde-format
 msgid ""
 "This button displays the icon associated with the selected file type. Click "
@@ -71,12 +40,12 @@ msgstr ""
 "Ci boton håyene l' imådjete elaxheye avou l' sôre di fitchî tchoezeye. "
 "Clitchîz so l' imådjete po ndè candjî."
 
-#: filetypedetails.cpp:67
+#: filetypedetails.cpp:60
 #, kde-format
 msgid "Filename Patterns"
 msgstr "Patron po les nos d' fitchîs:"
 
-#: filetypedetails.cpp:79
+#: filetypedetails.cpp:72
 #, kde-format
 msgid ""
 "This box contains a list of patterns that can be used to identify files of "
@@ -89,32 +58,32 @@ msgstr ""
 "l' sôre di fitchî 'text/plain' ; tos les fitchîs finixhant pas '.txt' sont "
 "ricnoxhous come des fitchîs tecse."
 
-#: filetypedetails.cpp:87 filetypesview.cpp:86 kservicelistwidget.cpp:105
+#: filetypedetails.cpp:80 filetypesview.cpp:84 kservicelistwidget.cpp:105
 #, kde-format
 msgid "Add..."
 msgstr "Radjouter..."
 
-#: filetypedetails.cpp:92
+#: filetypedetails.cpp:85
 #, kde-format
 msgid "Add a new pattern for the selected file type."
 msgstr "Radjoute on novea modele pol sôre di fitchî di tchoezi."
 
-#: filetypedetails.cpp:94 kservicelistwidget.cpp:119
+#: filetypedetails.cpp:87 kservicelistwidget.cpp:119
 #, kde-format
 msgid "Remove"
 msgstr "Oister"
 
-#: filetypedetails.cpp:99
+#: filetypedetails.cpp:92
 #, kde-format
 msgid "Remove the selected filename pattern."
 msgstr "Oister li patron d' nos d' fitchîs tchoezi."
 
-#: filetypedetails.cpp:110
+#: filetypedetails.cpp:103
 #, kde-format
 msgid "Description:"
 msgstr "Discrijhaedje:"
 
-#: filetypedetails.cpp:115
+#: filetypedetails.cpp:108
 #, kde-format
 msgid ""
 "You can enter a short description for files of the selected file type (e.g. "
@@ -125,71 +94,38 @@ msgstr ""
 "«Pådje waibe HTML»). Ci discrijhaedje la srè eployî pa des programes come "
 "Konqueror po espliker çou k' i gn a å dvins des ridants."
 
-#: filetypedetails.cpp:129
-#, kde-format
-msgid "Left Click Action in Konqueror"
-msgstr "Accion avou l' clitch droet dins Konqueror"
-
-#: filetypedetails.cpp:138
-#, kde-format
-msgid "Ask whether to save to disk instead (only for Konqueror browser)"
-msgstr "Dimander s' i fåt schaper sol deure plake (ki pol betchteu Konqueror)"
-
-#: filetypedetails.cpp:154
-#, kde-format
-msgid ""
-"Here you can configure what the Konqueror file manager will do when you "
-"click on a file of this type. Konqueror can either display the file in an "
-"embedded viewer, or start up a separate application. If set to 'Use settings "
-"for G group', the file manager will behave according to the settings of the "
-"group G to which this type belongs; for instance, 'image' if the current "
-"file type is image/png. Dolphin always shows files in a separate viewer."
-msgstr ""
-"Vos ploz chal apontyî çou kel manaedjeu d' fitchî d' Konqueror ferè cwand "
-"vos clitchroz so-z on fitchî di cisse sôre. Konqueror pout soeye-t i håyner "
-"l' fitchî dins on ravalé håyneu, soeye-t i enonder on programe a pårt. Sel "
-"tchuze 'Eployî les tchuzes pol groupe G' est metowe, li manaedjeu des "
-"fitchîs ferè sorlon les tchuzes do groupe G ki cisse sôre fwait pårteye, "
-"metans 'imådje' sel sôre do fitchî do moumint est imådje/png. Dolphin "
-"mostere todi les fitchîs dins èn ôte håyneu."
-
-#: filetypedetails.cpp:167
+#: filetypedetails.cpp:128
 #, kde-format
 msgid "&General"
 msgstr "&Djenerå"
 
-#: filetypedetails.cpp:168
+#: filetypedetails.cpp:129
 #, kde-format
 msgid "&Embedding"
 msgstr "&Ravaler"
 
-#: filetypedetails.cpp:209
+#: filetypedetails.cpp:170
 #, kde-format
 msgid "Add New Extension"
 msgstr "Radjouter ene nouve cawete"
 
-#: filetypedetails.cpp:209
+#: filetypedetails.cpp:170
 #, kde-format
 msgid "Extension:"
 msgstr "Cawete:"
 
-#: filetypedetails.cpp:328
+#: filetypedetails.cpp:203
 #, kde-format
 msgid "File type %1"
 msgstr "Sôre di fitchî %1"
 
-#: filetypedetails.cpp:336
-#, kde-format
-msgid "Use settings for '%1' group"
-msgstr "Eployî les apontiaedjes do groupe «%1»"
-
-#: filetypesview.cpp:57
+#: filetypesview.cpp:55
 #, fuzzy, kde-format
 #| msgid "Find file type or filename pattern"
 msgid "Search for file type or filename pattern..."
 msgstr "Trover sôre di fitchî oudonbén patron di no d' fitchî"
 
-#: filetypesview.cpp:63
+#: filetypesview.cpp:61
 #, kde-format
 msgid ""
 "Enter a part of a filename pattern, and only file types with a matching file "
@@ -200,12 +136,12 @@ msgstr ""
 "corespondant å patron. Vos savoz taper ene pårteye do no del sôre di fitchîz "
 "eto, s' il aparexhe el djivêye."
 
-#: filetypesview.cpp:71 multiapplydialog.cpp:27
+#: filetypesview.cpp:69 multiapplydialog.cpp:27
 #, kde-format
 msgid "Known Types"
 msgstr "Sôres di fitchîs di cnoxhowes"
 
-#: filetypesview.cpp:77
+#: filetypesview.cpp:75
 #, kde-format
 msgid ""
 "Here you can see a hierarchical list of the file types which are known on "
@@ -220,32 +156,32 @@ msgstr ""
 "les informåcions so cisse sôre di fitchîs la tot vs siervant des controles a "
 "droete."
 
-#: filetypesview.cpp:91
+#: filetypesview.cpp:89
 #, kde-format
 msgid "Click here to add a new file type."
 msgstr "Clitchîz chal po radjouter ene novele sôre di fitchî."
 
-#: filetypesview.cpp:93 filetypesview.cpp:389
+#: filetypesview.cpp:91 filetypesview.cpp:368
 #, kde-format
 msgid "&Remove"
 msgstr "&Oister"
 
-#: filetypesview.cpp:119
+#: filetypesview.cpp:111
 #, kde-format
 msgid "Select a file type by name or by extension"
 msgstr "Tchoezixhoz ene sôre di fitchîs pa s' no ou si cawete"
 
-#: filetypesview.cpp:382
+#: filetypesview.cpp:361
 #, kde-format
 msgid "&Revert"
 msgstr "&Rimete come divant"
 
-#: filetypesview.cpp:383
+#: filetypesview.cpp:362
 #, kde-format
 msgid "Revert this file type to its initial system-wide definition"
 msgstr "Rimete ci fitchî dins s' prumî definixha lådje come li sistinme"
 
-#: filetypesview.cpp:385
+#: filetypesview.cpp:364
 #, kde-format
 msgid ""
 "Click here to revert this file type to its initial system-wide definition, "
@@ -255,12 +191,12 @@ msgid ""
 "from file contents can still end up using them)."
 msgstr ""
 
-#: filetypesview.cpp:390
+#: filetypesview.cpp:369
 #, kde-format
 msgid "Delete this file type definition completely"
 msgstr "Disfacer ttafwaitmint c' definixha di sôre di fitchî"
 
-#: filetypesview.cpp:392
+#: filetypesview.cpp:371
 #, kde-format
 msgid ""
 "Click here to delete this file type definition completely. This is only "
@@ -484,6 +420,57 @@ msgid ""
 "category and you type 'custom' here, the file type 'image/custom' will be "
 "created."
 msgstr ""
+
+#~ msgid "Left Click Action (only for Konqueror file manager)"
+#~ msgstr ""
+#~ "Accion avou l' clitch droet (ki pol manaedjeu des fitchîs Konqueror)"
+
+#~ msgid "Show file in embedded viewer"
+#~ msgstr "Håyner l' fitchî dins on ravalé håyneu"
+
+#~ msgid "Show file in separate viewer"
+#~ msgstr "Håyner l' fitchî en on separé håyneu"
+
+#~ msgid ""
+#~ "Here you can configure what the Konqueror file manager will do when you "
+#~ "click on a file belonging to this group. Konqueror can display the file "
+#~ "in an embedded viewer or start up a separate application. You can change "
+#~ "this setting for a specific file type in the 'Embedding' tab of the file "
+#~ "type configuration. Dolphin  shows files always in a separate viewer"
+#~ msgstr ""
+#~ "Vaici vos ploz apontyî çou kel manaedjeu d' fitchî Konqueror frè cwand "
+#~ "vos clitchroz so-z on fitchî di ç' groupe. Konqueror pout håyner l' "
+#~ "fitchî dins on ravalé håyneu oudonbén enonder on programe a pårt. Vos "
+#~ "ploz candjîz cisse tchuze po-z ene sôre di fitchî dinêye avou l' linwete "
+#~ "'Ravaler' oudonbén avou l' apontiaedje del sôre di fitchî. Dolphine "
+#~ "mostere todi les fitchîs dins on håyneu a pårt"
+
+#~ msgid "Left Click Action in Konqueror"
+#~ msgstr "Accion avou l' clitch droet dins Konqueror"
+
+#~ msgid "Ask whether to save to disk instead (only for Konqueror browser)"
+#~ msgstr ""
+#~ "Dimander s' i fåt schaper sol deure plake (ki pol betchteu Konqueror)"
+
+#~ msgid ""
+#~ "Here you can configure what the Konqueror file manager will do when you "
+#~ "click on a file of this type. Konqueror can either display the file in an "
+#~ "embedded viewer, or start up a separate application. If set to 'Use "
+#~ "settings for G group', the file manager will behave according to the "
+#~ "settings of the group G to which this type belongs; for instance, 'image' "
+#~ "if the current file type is image/png. Dolphin always shows files in a "
+#~ "separate viewer."
+#~ msgstr ""
+#~ "Vos ploz chal apontyî çou kel manaedjeu d' fitchî d' Konqueror ferè cwand "
+#~ "vos clitchroz so-z on fitchî di cisse sôre. Konqueror pout soeye-t i "
+#~ "håyner l' fitchî dins on ravalé håyneu, soeye-t i enonder on programe a "
+#~ "pårt. Sel tchuze 'Eployî les tchuzes pol groupe G' est metowe, li "
+#~ "manaedjeu des fitchîs ferè sorlon les tchuzes do groupe G ki cisse sôre "
+#~ "fwait pårteye, metans 'imådje' sel sôre do fitchî do moumint est imådje/"
+#~ "png. Dolphin mostere todi les fitchîs dins èn ôte håyneu."
+
+#~ msgid "Use settings for '%1' group"
+#~ msgstr "Eployî les apontiaedjes do groupe «%1»"
 
 #~ msgid "KEditFileType"
 #~ msgstr "KAspougnîSôreFitchî"

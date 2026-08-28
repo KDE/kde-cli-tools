@@ -9,7 +9,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: filetypes\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2026-06-04 00:46+0000\n"
+"POT-Creation-Date: 2026-08-28 00:47+0000\n"
 "PO-Revision-Date: 2008-12-30 20:48+0200\n"
 "Last-Translator: Omer Ensari <oensari@gmail.com>\n"
 "Language-Team: Kurdish <ku@li.org>\n"
@@ -31,42 +31,7 @@ msgctxt "EMAIL OF TRANSLATORS"
 msgid "Your emails"
 msgstr "amedcj@gmail.com"
 
-#: filegroupdetails.cpp:22
-#, kde-format
-msgid "Left Click Action (only for Konqueror file manager)"
-msgstr ""
-
-#: filegroupdetails.cpp:26 filetypedetails.cpp:134
-#, kde-format
-msgid "Show file in embedded viewer"
-msgstr "Pelî di nîşandêra bicîbûyî de nîşan bide"
-
-#: filegroupdetails.cpp:27 filetypedetails.cpp:135
-#, kde-format
-msgid "Show file in separate viewer"
-msgstr "Pelî di nîşandêreke din de nîşan bide"
-
-#: filegroupdetails.cpp:36
-#, fuzzy, kde-format
-#| msgid ""
-#| "Here you can configure what the Konqueror file manager will do when you "
-#| "click on a file belonging to this group. Konqueror can display the file "
-#| "in an embedded viewer or start up a separate application. You can change "
-#| "this setting for a specific file type in the 'Embedding' tab of the file "
-#| "type configuration."
-msgid ""
-"Here you can configure what the Konqueror file manager will do when you "
-"click on a file belonging to this group. Konqueror can display the file in "
-"an embedded viewer or start up a separate application. You can change this "
-"setting for a specific file type in the 'Embedding' tab of the file type "
-"configuration. Dolphin  shows files always in a separate viewer"
-msgstr ""
-"Dikarî li virê diyar bikî ku dema li ser pelekê hat tikandin ka gerînendeyê "
-"pelan Konqueror dê çi bike. Konqueror dikare pelî di nîşandêreke bicîbûyî de "
-"an jî di nîşandêreke cuda de nîşan bide. Dikarî vê kiryayê ji bo dosyeyeke "
-"taybet ji beşa Bicîkirin biguherînî."
-
-#: filetypedetails.cpp:61
+#: filetypedetails.cpp:54
 #, kde-format
 msgid ""
 "This button displays the icon associated with the selected file type. Click "
@@ -75,12 +40,12 @@ msgstr ""
 "Ev bişkojk, îkona bi pelê cure yê vê hilbijartî ye nîşan dide. Ser de "
 "bitikîne û îkonê biguherîne. "
 
-#: filetypedetails.cpp:67
+#: filetypedetails.cpp:60
 #, kde-format
 msgid "Filename Patterns"
 msgstr "Qalibên NavêPelî"
 
-#: filetypedetails.cpp:79
+#: filetypedetails.cpp:72
 #, kde-format
 msgid ""
 "This box contains a list of patterns that can be used to identify files of "
@@ -92,33 +57,33 @@ msgstr ""
 "lîsteya qalibên ji bo minandinê hene. Mînak: ji bo deq/pexşan qalibê *.txt "
 "Hemû pelên bi niçika .txt dê wekî pelên deqî bên dîtin."
 
-#: filetypedetails.cpp:87 filetypesview.cpp:86 kservicelistwidget.cpp:105
+#: filetypedetails.cpp:80 filetypesview.cpp:84 kservicelistwidget.cpp:105
 #, kde-format
 msgid "Add..."
 msgstr "Têxe..."
 
-#: filetypedetails.cpp:92
+#: filetypedetails.cpp:85
 #, kde-format
 msgid "Add a new pattern for the selected file type."
 msgstr "Ji bo pelê hilbijartî qalibeke nû têxê."
 
-#: filetypedetails.cpp:94 kservicelistwidget.cpp:119
+#: filetypedetails.cpp:87 kservicelistwidget.cpp:119
 #, kde-format
 msgid "Remove"
 msgstr "Rakirin"
 
-#: filetypedetails.cpp:99
+#: filetypedetails.cpp:92
 #, kde-format
 msgid "Remove the selected filename pattern."
 msgstr "Qaliba pelê hilbijartî rake."
 
-#: filetypedetails.cpp:110
+#: filetypedetails.cpp:103
 #, fuzzy, kde-format
 #| msgid "Description"
 msgid "Description:"
 msgstr "Rave"
 
-#: filetypedetails.cpp:115
+#: filetypedetails.cpp:108
 #, kde-format
 msgid ""
 "You can enter a short description for files of the selected file type (e.g. "
@@ -129,78 +94,38 @@ msgstr ""
 "rave dê ji hêla sepanên wekî Konqueror ve ji bo nîşandana naveroka pelrêçan "
 "bê bikaranîn."
 
-#: filetypedetails.cpp:129
-#, fuzzy, kde-format
-#| msgid "Left Click Action"
-msgid "Left Click Action in Konqueror"
-msgstr "Çalakiya Tikandina Çepê"
-
-#: filetypedetails.cpp:138
-#, fuzzy, kde-format
-#| msgid "Ask whether to save to disk instead"
-msgid "Ask whether to save to disk instead (only for Konqueror browser)"
-msgstr "Bipirsa ka dê di dîskê de bê tomarkirin an na"
-
-#: filetypedetails.cpp:154
-#, fuzzy, kde-format
-#| msgid ""
-#| "Here you can configure what the Konqueror file manager will do when you "
-#| "click on a file of this type. Konqueror can display the file in an "
-#| "embedded viewer or start up a separate application. If set to 'Use "
-#| "settings for G group', Konqueror will behave according to the settings of "
-#| "the group G this type belongs to, for instance 'image' if the current "
-#| "file type is image/png."
-msgid ""
-"Here you can configure what the Konqueror file manager will do when you "
-"click on a file of this type. Konqueror can either display the file in an "
-"embedded viewer, or start up a separate application. If set to 'Use settings "
-"for G group', the file manager will behave according to the settings of the "
-"group G to which this type belongs; for instance, 'image' if the current "
-"file type is image/png. Dolphin always shows files in a separate viewer."
-msgstr ""
-"Dikarî li virê diyar bikî ku dema li ser pelekê hat tikandin ka gerînendeyê "
-"pelan Konqueror dê çi bike. Konqueror dikare pelî di nîşandêreke bicîbûyîde "
-"an jî di nîşandêreke cuda de nîşan bide. Heke Mîhengên Komê Bi Kar Bîne "
-"hatibe nîşankirin Konqueror dê li gorî mîhengên vê komê tev bigere. Mînak: "
-"ji bo pelên image/png dê mîhengên koma 'image' bên bikaranîn."
-
-#: filetypedetails.cpp:167
+#: filetypedetails.cpp:128
 #, kde-format
 msgid "&General"
 msgstr "&Giştî"
 
-#: filetypedetails.cpp:168
+#: filetypedetails.cpp:129
 #, kde-format
 msgid "&Embedding"
 msgstr "&Bicîbûyî"
 
-#: filetypedetails.cpp:209
+#: filetypedetails.cpp:170
 #, kde-format
 msgid "Add New Extension"
 msgstr "PêvekekeNû Têxê"
 
-#: filetypedetails.cpp:209
+#: filetypedetails.cpp:170
 #, kde-format
 msgid "Extension:"
 msgstr "Pêvek:"
 
-#: filetypedetails.cpp:328
+#: filetypedetails.cpp:203
 #, kde-format
 msgid "File type %1"
 msgstr "Cureyê Pelê %1 "
 
-#: filetypedetails.cpp:336
-#, kde-format
-msgid "Use settings for '%1' group"
-msgstr "Mîhengên ji bo koma '%1' bi kar bîne"
-
-#: filetypesview.cpp:57
+#: filetypesview.cpp:55
 #, fuzzy, kde-format
 #| msgid "F&ind file type or filename pattern:"
 msgid "Search for file type or filename pattern..."
 msgstr "Cureyê pelê an jî teşeyê navê pelê b&ibîne:"
 
-#: filetypesview.cpp:63
+#: filetypesview.cpp:61
 #, kde-format
 msgid ""
 "Enter a part of a filename pattern, and only file types with a matching file "
@@ -211,12 +136,12 @@ msgstr ""
 "navê pelê re hev digirin tê bên xuya kirin. An jî, parçeyek ji navê cure yê "
 "pelê têkevê wekî ku lîsteyê de xuya dike."
 
-#: filetypesview.cpp:71 multiapplydialog.cpp:27
+#: filetypesview.cpp:69 multiapplydialog.cpp:27
 #, kde-format
 msgid "Known Types"
 msgstr "Cureyên Nas"
 
-#: filetypesview.cpp:77
+#: filetypesview.cpp:75
 #, kde-format
 msgid ""
 "Here you can see a hierarchical list of the file types which are known on "
@@ -229,33 +154,33 @@ msgstr ""
 "kontrolên rastê cureyê pelê ku dixwazî lê binêrî/serast bikî (mînak: ji bo "
 "pelên HTML deq/html) hilbijêre."
 
-#: filetypesview.cpp:91
+#: filetypesview.cpp:89
 #, kde-format
 msgid "Click here to add a new file type."
 msgstr "Ji bo cureyekî nû ê pelan lê zêde bikîli ser virê bitikîne."
 
-#: filetypesview.cpp:93 filetypesview.cpp:389
+#: filetypesview.cpp:91 filetypesview.cpp:368
 #, kde-format
 msgid "&Remove"
 msgstr "&Rakirin"
 
-#: filetypesview.cpp:119
+#: filetypesview.cpp:111
 #, kde-format
 msgid "Select a file type by name or by extension"
 msgstr "Li gorî nav an jî niçikê cureyekî pelan hilbijêre"
 
-#: filetypesview.cpp:382
+#: filetypesview.cpp:361
 #, fuzzy, kde-format
 #| msgid "&Remove"
 msgid "&Revert"
 msgstr "&Rakirin"
 
-#: filetypesview.cpp:383
+#: filetypesview.cpp:362
 #, kde-format
 msgid "Revert this file type to its initial system-wide definition"
 msgstr ""
 
-#: filetypesview.cpp:385
+#: filetypesview.cpp:364
 #, kde-format
 msgid ""
 "Click here to revert this file type to its initial system-wide definition, "
@@ -265,12 +190,12 @@ msgid ""
 "from file contents can still end up using them)."
 msgstr ""
 
-#: filetypesview.cpp:390
+#: filetypesview.cpp:369
 #, kde-format
 msgid "Delete this file type definition completely"
 msgstr ""
 
-#: filetypesview.cpp:392
+#: filetypesview.cpp:371
 #, kde-format
 msgid ""
 "Click here to delete this file type definition completely. This is only "
@@ -513,6 +438,68 @@ msgstr ""
 "Navê cure yê pelê binivîse. Wekî mînak, heke te 'wêne' wekî kategorî "
 "hilbijartî ye û tu li vir 'taybet' binivîsî, cure yê pelê 'wêne/taybet' wê "
 "bê afirandin."
+
+#~ msgid "Show file in embedded viewer"
+#~ msgstr "Pelî di nîşandêra bicîbûyî de nîşan bide"
+
+#~ msgid "Show file in separate viewer"
+#~ msgstr "Pelî di nîşandêreke din de nîşan bide"
+
+#, fuzzy
+#~| msgid ""
+#~| "Here you can configure what the Konqueror file manager will do when you "
+#~| "click on a file belonging to this group. Konqueror can display the file "
+#~| "in an embedded viewer or start up a separate application. You can change "
+#~| "this setting for a specific file type in the 'Embedding' tab of the file "
+#~| "type configuration."
+#~ msgid ""
+#~ "Here you can configure what the Konqueror file manager will do when you "
+#~ "click on a file belonging to this group. Konqueror can display the file "
+#~ "in an embedded viewer or start up a separate application. You can change "
+#~ "this setting for a specific file type in the 'Embedding' tab of the file "
+#~ "type configuration. Dolphin  shows files always in a separate viewer"
+#~ msgstr ""
+#~ "Dikarî li virê diyar bikî ku dema li ser pelekê hat tikandin ka "
+#~ "gerînendeyê pelan Konqueror dê çi bike. Konqueror dikare pelî di "
+#~ "nîşandêreke bicîbûyî de an jî di nîşandêreke cuda de nîşan bide. Dikarî "
+#~ "vê kiryayê ji bo dosyeyeke taybet ji beşa Bicîkirin biguherînî."
+
+#, fuzzy
+#~| msgid "Left Click Action"
+#~ msgid "Left Click Action in Konqueror"
+#~ msgstr "Çalakiya Tikandina Çepê"
+
+#, fuzzy
+#~| msgid "Ask whether to save to disk instead"
+#~ msgid "Ask whether to save to disk instead (only for Konqueror browser)"
+#~ msgstr "Bipirsa ka dê di dîskê de bê tomarkirin an na"
+
+#, fuzzy
+#~| msgid ""
+#~| "Here you can configure what the Konqueror file manager will do when you "
+#~| "click on a file of this type. Konqueror can display the file in an "
+#~| "embedded viewer or start up a separate application. If set to 'Use "
+#~| "settings for G group', Konqueror will behave according to the settings "
+#~| "of the group G this type belongs to, for instance 'image' if the current "
+#~| "file type is image/png."
+#~ msgid ""
+#~ "Here you can configure what the Konqueror file manager will do when you "
+#~ "click on a file of this type. Konqueror can either display the file in an "
+#~ "embedded viewer, or start up a separate application. If set to 'Use "
+#~ "settings for G group', the file manager will behave according to the "
+#~ "settings of the group G to which this type belongs; for instance, 'image' "
+#~ "if the current file type is image/png. Dolphin always shows files in a "
+#~ "separate viewer."
+#~ msgstr ""
+#~ "Dikarî li virê diyar bikî ku dema li ser pelekê hat tikandin ka "
+#~ "gerînendeyê pelan Konqueror dê çi bike. Konqueror dikare pelî di "
+#~ "nîşandêreke bicîbûyîde an jî di nîşandêreke cuda de nîşan bide. Heke "
+#~ "Mîhengên Komê Bi Kar Bîne hatibe nîşankirin Konqueror dê li gorî mîhengên "
+#~ "vê komê tev bigere. Mînak: ji bo pelên image/png dê mîhengên koma 'image' "
+#~ "bên bikaranîn."
+
+#~ msgid "Use settings for '%1' group"
+#~ msgstr "Mîhengên ji bo koma '%1' bi kar bîne"
 
 #~ msgid ""
 #~ "<p><h1>File Associations</h1> This module allows you to choose which "

@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: filetypes\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2026-06-04 00:46+0000\n"
+"POT-Creation-Date: 2026-08-28 00:47+0000\n"
 "PO-Revision-Date: 2008-09-08 21:43+0300\n"
 "Last-Translator: Ihar Hrachyshka <ihar.hrachyshka@gmail.com>\n"
 "Language-Team: Belarusian Latin <i18n@mova.org>\n"
@@ -30,42 +30,7 @@ msgctxt "EMAIL OF TRANSLATORS"
 msgid "Your emails"
 msgstr "ihar.hrachyshka@gmail.com"
 
-#: filegroupdetails.cpp:22
-#, kde-format
-msgid "Left Click Action (only for Konqueror file manager)"
-msgstr ""
-
-#: filegroupdetails.cpp:26 filetypedetails.cpp:134
-#, kde-format
-msgid "Show file in embedded viewer"
-msgstr "Pakažy fajł u ŭnutranym prahladniku"
-
-#: filegroupdetails.cpp:27 filetypedetails.cpp:135
-#, kde-format
-msgid "Show file in separate viewer"
-msgstr "Pakažy fajł u asobnym prahladniku"
-
-#: filegroupdetails.cpp:36
-#, fuzzy, kde-format
-#| msgid ""
-#| "Here you can configure what the Konqueror file manager will do when you "
-#| "click on a file belonging to this group. Konqueror can display the file "
-#| "in an embedded viewer or start up a separate application. You can change "
-#| "this setting for a specific file type in the 'Embedding' tab of the file "
-#| "type configuration."
-msgid ""
-"Here you can configure what the Konqueror file manager will do when you "
-"click on a file belonging to this group. Konqueror can display the file in "
-"an embedded viewer or start up a separate application. You can change this "
-"setting for a specific file type in the 'Embedding' tab of the file type "
-"configuration. Dolphin  shows files always in a separate viewer"
-msgstr ""
-"Tut ty možaš vyznačyć, što budzie rabić prahrama „Konqueror”, kali ty "
-"kliknieš u fajł z hetaj hrupy. „Konqueror” moža pakazać fajł u ŭbudavanym "
-"prahladniku ci ŭklučyć asobnuju aplikacyju. Heta možna naładzić dla peŭnaha "
-"typu fajłaŭ u kartcy „Unutranaść” akna naładaŭ dla hetaha typu."
-
-#: filetypedetails.cpp:61
+#: filetypedetails.cpp:54
 #, kde-format
 msgid ""
 "This button displays the icon associated with the selected file type. Click "
@@ -74,12 +39,12 @@ msgstr ""
 "Hetaja knopka vyjaŭlaje ikonu, paviazanuju z vybranym typam fajłaŭ. Klikni ŭ "
 "jaje, kab vybrać inšuju ikonu."
 
-#: filetypedetails.cpp:67
+#: filetypedetails.cpp:60
 #, kde-format
 msgid "Filename Patterns"
 msgstr "Šablony nazvaŭ fajłaŭ"
 
-#: filetypedetails.cpp:79
+#: filetypedetails.cpp:72
 #, kde-format
 msgid ""
 "This box contains a list of patterns that can be used to identify files of "
@@ -91,33 +56,33 @@ msgstr ""
 "šablon „*.txt” paviazany z typam „text/plain”, tamu ŭsie fajły, u jakich "
 "nazvy skančajucca na „.txt”, raspaznajucca jak fajły čystaha tekstu."
 
-#: filetypedetails.cpp:87 filetypesview.cpp:86 kservicelistwidget.cpp:105
+#: filetypedetails.cpp:80 filetypesview.cpp:84 kservicelistwidget.cpp:105
 #, kde-format
 msgid "Add..."
 msgstr "Dadaj..."
 
-#: filetypedetails.cpp:92
+#: filetypedetails.cpp:85
 #, kde-format
 msgid "Add a new pattern for the selected file type."
 msgstr "Dadaj novy šablon dla vybranaha typu fajłaŭ."
 
-#: filetypedetails.cpp:94 kservicelistwidget.cpp:119
+#: filetypedetails.cpp:87 kservicelistwidget.cpp:119
 #, kde-format
 msgid "Remove"
 msgstr "Vydali"
 
-#: filetypedetails.cpp:99
+#: filetypedetails.cpp:92
 #, kde-format
 msgid "Remove the selected filename pattern."
 msgstr "Vydali vybrany šablon nazvaŭ fajłaŭ."
 
-#: filetypedetails.cpp:110
+#: filetypedetails.cpp:103
 #, fuzzy, kde-format
 #| msgid "Description"
 msgid "Description:"
 msgstr "Apisańnie"
 
-#: filetypedetails.cpp:115
+#: filetypedetails.cpp:108
 #, kde-format
 msgid ""
 "You can enter a short description for files of the selected file type (e.g. "
@@ -128,79 +93,38 @@ msgstr ""
 "(naprykład, „Staronka HTML”). Im buduć karystacca inšyja aplikacyi, siarod "
 "jakich „Konqueror”, kab vyjaŭlać źmieściva katalohaŭ."
 
-#: filetypedetails.cpp:129
-#, fuzzy, kde-format
-#| msgid "Left Click Action"
-msgid "Left Click Action in Konqueror"
-msgstr "Levy klik"
-
-#: filetypedetails.cpp:138
-#, fuzzy, kde-format
-#| msgid "Ask whether to save to disk instead"
-msgid "Ask whether to save to disk instead (only for Konqueror browser)"
-msgstr "Pytaj, ci treba zamiest zapisvać na dysk"
-
-#: filetypedetails.cpp:154
-#, fuzzy, kde-format
-#| msgid ""
-#| "Here you can configure what the Konqueror file manager will do when you "
-#| "click on a file of this type. Konqueror can display the file in an "
-#| "embedded viewer or start up a separate application. If set to 'Use "
-#| "settings for G group', Konqueror will behave according to the settings of "
-#| "the group G this type belongs to, for instance 'image' if the current "
-#| "file type is image/png."
-msgid ""
-"Here you can configure what the Konqueror file manager will do when you "
-"click on a file of this type. Konqueror can either display the file in an "
-"embedded viewer, or start up a separate application. If set to 'Use settings "
-"for G group', the file manager will behave according to the settings of the "
-"group G to which this type belongs; for instance, 'image' if the current "
-"file type is image/png. Dolphin always shows files in a separate viewer."
-msgstr ""
-"Tut ty možaš naładzić, što budzie rabić fajłavy kiraŭnik „Konqueror”, kali "
-"ty kliknieš u fajł takoha typu. „Konqueror” moža pakazać fajł u ŭnutranym "
-"prahladniku ci ŭklučyć asobnuju aplikacyju. Kali ŭklučanaja opcyja "
-"„Karystajsia naładami dla hrupy G”, to „Konqueror” budzie dziejničać pavodle "
-"praviłaŭ, vyznačanych dla hrupy „G”, jakoj naležyć hety fajł. Naprykład, dla "
-"typu „image/png” biarucca nałady dla „image” (vyjavaŭ)."
-
-#: filetypedetails.cpp:167
+#: filetypedetails.cpp:128
 #, kde-format
 msgid "&General"
 msgstr "&Hałoŭnaje"
 
-#: filetypedetails.cpp:168
+#: filetypedetails.cpp:129
 #, kde-format
 msgid "&Embedding"
 msgstr "&Unutreńnie"
 
-#: filetypedetails.cpp:209
+#: filetypedetails.cpp:170
 #, kde-format
 msgid "Add New Extension"
 msgstr "Dadańnie novaha pašyreńnia"
 
-#: filetypedetails.cpp:209
+#: filetypedetails.cpp:170
 #, kde-format
 msgid "Extension:"
 msgstr "Pašyreńnie:"
 
-#: filetypedetails.cpp:328
+#: filetypedetails.cpp:203
 #, kde-format
 msgid "File type %1"
 msgstr "Typ fajłaŭ „%1”"
 
-#: filetypedetails.cpp:336
-#, kde-format
-msgid "Use settings for '%1' group"
-msgstr "Karystajsia naładami dla hrupy „%1”"
-
-#: filetypesview.cpp:57
+#: filetypesview.cpp:55
 #, fuzzy, kde-format
 #| msgid "F&ind file type or filename pattern:"
 msgid "Search for file type or filename pattern..."
 msgstr "&Šukaj typ fajłaŭ ci šablon nazvaŭ:"
 
-#: filetypesview.cpp:63
+#: filetypesview.cpp:61
 #, kde-format
 msgid ""
 "Enter a part of a filename pattern, and only file types with a matching file "
@@ -211,12 +135,12 @@ msgstr ""
 "šablony, jakija adpaviadajuć upisanamu. Jašče možna ŭpisać častku nazvy "
 "fajłavaha typu."
 
-#: filetypesview.cpp:71 multiapplydialog.cpp:27
+#: filetypesview.cpp:69 multiapplydialog.cpp:27
 #, kde-format
 msgid "Known Types"
 msgstr "Viadomyja typy"
 
-#: filetypesview.cpp:77
+#: filetypesview.cpp:75
 #, kde-format
 msgid ""
 "Here you can see a hierarchical list of the file types which are known on "
@@ -229,33 +153,33 @@ msgstr ""
 "Kab prahladzieć ci źmianić źviestki dla peŭnaha fajłavaha typu, vybiery jaho "
 "ŭ śpisie (naprykład, „text/html” dla fajłaŭ HTML) i vykarystaj knopki sprava."
 
-#: filetypesview.cpp:91
+#: filetypesview.cpp:89
 #, kde-format
 msgid "Click here to add a new file type."
 msgstr "Klikni siudy, kab dadać novy typ fajłaŭ."
 
-#: filetypesview.cpp:93 filetypesview.cpp:389
+#: filetypesview.cpp:91 filetypesview.cpp:368
 #, kde-format
 msgid "&Remove"
 msgstr "&Vydali"
 
-#: filetypesview.cpp:119
+#: filetypesview.cpp:111
 #, kde-format
 msgid "Select a file type by name or by extension"
 msgstr "Vybiery typ fajłaŭ pavodle nazvy albo pašyreńnia"
 
-#: filetypesview.cpp:382
+#: filetypesview.cpp:361
 #, fuzzy, kde-format
 #| msgid "&Remove"
 msgid "&Revert"
 msgstr "&Vydali"
 
-#: filetypesview.cpp:383
+#: filetypesview.cpp:362
 #, kde-format
 msgid "Revert this file type to its initial system-wide definition"
 msgstr ""
 
-#: filetypesview.cpp:385
+#: filetypesview.cpp:364
 #, kde-format
 msgid ""
 "Click here to revert this file type to its initial system-wide definition, "
@@ -265,12 +189,12 @@ msgid ""
 "from file contents can still end up using them)."
 msgstr ""
 
-#: filetypesview.cpp:390
+#: filetypesview.cpp:369
 #, kde-format
 msgid "Delete this file type definition completely"
 msgstr ""
 
-#: filetypesview.cpp:392
+#: filetypesview.cpp:371
 #, kde-format
 msgid ""
 "Click here to delete this file type definition completely. This is only "
@@ -512,6 +436,69 @@ msgstr ""
 "Upišy nazvu fajłavaha typu. Naprykład, kali ty vybraŭ katehoryju "
 "„image” (vyjavy) i ŭpisaŭ siudy „custom” (asablivy), to budzie stvorany "
 "fajłavy typ „image/custom”."
+
+#~ msgid "Show file in embedded viewer"
+#~ msgstr "Pakažy fajł u ŭnutranym prahladniku"
+
+#~ msgid "Show file in separate viewer"
+#~ msgstr "Pakažy fajł u asobnym prahladniku"
+
+#, fuzzy
+#~| msgid ""
+#~| "Here you can configure what the Konqueror file manager will do when you "
+#~| "click on a file belonging to this group. Konqueror can display the file "
+#~| "in an embedded viewer or start up a separate application. You can change "
+#~| "this setting for a specific file type in the 'Embedding' tab of the file "
+#~| "type configuration."
+#~ msgid ""
+#~ "Here you can configure what the Konqueror file manager will do when you "
+#~ "click on a file belonging to this group. Konqueror can display the file "
+#~ "in an embedded viewer or start up a separate application. You can change "
+#~ "this setting for a specific file type in the 'Embedding' tab of the file "
+#~ "type configuration. Dolphin  shows files always in a separate viewer"
+#~ msgstr ""
+#~ "Tut ty možaš vyznačyć, što budzie rabić prahrama „Konqueror”, kali ty "
+#~ "kliknieš u fajł z hetaj hrupy. „Konqueror” moža pakazać fajł u ŭbudavanym "
+#~ "prahladniku ci ŭklučyć asobnuju aplikacyju. Heta možna naładzić dla "
+#~ "peŭnaha typu fajłaŭ u kartcy „Unutranaść” akna naładaŭ dla hetaha typu."
+
+#, fuzzy
+#~| msgid "Left Click Action"
+#~ msgid "Left Click Action in Konqueror"
+#~ msgstr "Levy klik"
+
+#, fuzzy
+#~| msgid "Ask whether to save to disk instead"
+#~ msgid "Ask whether to save to disk instead (only for Konqueror browser)"
+#~ msgstr "Pytaj, ci treba zamiest zapisvać na dysk"
+
+#, fuzzy
+#~| msgid ""
+#~| "Here you can configure what the Konqueror file manager will do when you "
+#~| "click on a file of this type. Konqueror can display the file in an "
+#~| "embedded viewer or start up a separate application. If set to 'Use "
+#~| "settings for G group', Konqueror will behave according to the settings "
+#~| "of the group G this type belongs to, for instance 'image' if the current "
+#~| "file type is image/png."
+#~ msgid ""
+#~ "Here you can configure what the Konqueror file manager will do when you "
+#~ "click on a file of this type. Konqueror can either display the file in an "
+#~ "embedded viewer, or start up a separate application. If set to 'Use "
+#~ "settings for G group', the file manager will behave according to the "
+#~ "settings of the group G to which this type belongs; for instance, 'image' "
+#~ "if the current file type is image/png. Dolphin always shows files in a "
+#~ "separate viewer."
+#~ msgstr ""
+#~ "Tut ty možaš naładzić, što budzie rabić fajłavy kiraŭnik „Konqueror”, "
+#~ "kali ty kliknieš u fajł takoha typu. „Konqueror” moža pakazać fajł u "
+#~ "ŭnutranym prahladniku ci ŭklučyć asobnuju aplikacyju. Kali ŭklučanaja "
+#~ "opcyja „Karystajsia naładami dla hrupy G”, to „Konqueror” budzie "
+#~ "dziejničać pavodle praviłaŭ, vyznačanych dla hrupy „G”, jakoj naležyć "
+#~ "hety fajł. Naprykład, dla typu „image/png” biarucca nałady dla "
+#~ "„image” (vyjavaŭ)."
+
+#~ msgid "Use settings for '%1' group"
+#~ msgstr "Karystajsia naładami dla hrupy „%1”"
 
 #~ msgid ""
 #~ "<p><h1>File Associations</h1> This module allows you to choose which "

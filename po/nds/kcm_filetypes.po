@@ -9,7 +9,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: filetypes\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2026-06-04 00:46+0000\n"
+"POT-Creation-Date: 2026-08-28 00:47+0000\n"
 "PO-Revision-Date: 2010-11-25 07:43+0100\n"
 "Last-Translator: Manfred Wiese <m.j.wiese@web.de>\n"
 "Language-Team: Low Saxon <kde-i18n-nds@kde.org>\n"
@@ -30,37 +30,7 @@ msgctxt "EMAIL OF TRANSLATORS"
 msgid "Your emails"
 msgstr "s_dibbern@web.de"
 
-#: filegroupdetails.cpp:22
-#, kde-format
-msgid "Left Click Action (only for Konqueror file manager)"
-msgstr "Linksklick-Akschoon (bloots för Konqueror as Dateipleger)"
-
-#: filegroupdetails.cpp:26 filetypedetails.cpp:134
-#, kde-format
-msgid "Show file in embedded viewer"
-msgstr "Datei mit inbett Kieker wiesen"
-
-#: filegroupdetails.cpp:27 filetypedetails.cpp:135
-#, kde-format
-msgid "Show file in separate viewer"
-msgstr "Datei mit anner Kieker wiesen"
-
-#: filegroupdetails.cpp:36
-#, kde-format
-msgid ""
-"Here you can configure what the Konqueror file manager will do when you "
-"click on a file belonging to this group. Konqueror can display the file in "
-"an embedded viewer or start up a separate application. You can change this "
-"setting for a specific file type in the 'Embedding' tab of the file type "
-"configuration. Dolphin  shows files always in a separate viewer"
-msgstr ""
-"Hier kannst Du instellen, wat de Dateipleger Konqueror deit, wenn Du op en "
-"Datei klickst, de dissen Koppel tohöört. Konqueror kann de Datei mit en "
-"inbett Kieker wiesen oder dor en anner Programm för opropen. Dat kannst Du "
-"för de enkelten Dateitypen op't Paneel \"Inbedden\" vun de Dateitypen-"
-"Instellen fastleggen. Dolphin wiest Dateien jümmers mit en besünner Kieker."
-
-#: filetypedetails.cpp:61
+#: filetypedetails.cpp:54
 #, kde-format
 msgid ""
 "This button displays the icon associated with the selected file type. Click "
@@ -69,12 +39,12 @@ msgstr ""
 "Disse Knoop wiest dat Lüttbild, dat den utsöchten Dateityp tohöört. Klick "
 "dor op, wenn Du en anner Lüttbild utsöken wullt."
 
-#: filetypedetails.cpp:67
+#: filetypedetails.cpp:60
 #, kde-format
 msgid "Filename Patterns"
 msgstr "Dateimuster"
 
-#: filetypedetails.cpp:79
+#: filetypedetails.cpp:72
 #, kde-format
 msgid ""
 "This box contains a list of patterns that can be used to identify files of "
@@ -87,32 +57,32 @@ msgstr ""
 "plain\", also höört all Dateien, vun de de Naam op \".txt\" endt, den Typ "
 "\"text/plain\" to."
 
-#: filetypedetails.cpp:87 filetypesview.cpp:86 kservicelistwidget.cpp:105
+#: filetypedetails.cpp:80 filetypesview.cpp:84 kservicelistwidget.cpp:105
 #, kde-format
 msgid "Add..."
 msgstr "Tofögen..."
 
-#: filetypedetails.cpp:92
+#: filetypedetails.cpp:85
 #, kde-format
 msgid "Add a new pattern for the selected file type."
 msgstr "En nieg Muster för den utsöchten Typ tofögen."
 
-#: filetypedetails.cpp:94 kservicelistwidget.cpp:119
+#: filetypedetails.cpp:87 kservicelistwidget.cpp:119
 #, kde-format
 msgid "Remove"
 msgstr "Wegmaken"
 
-#: filetypedetails.cpp:99
+#: filetypedetails.cpp:92
 #, kde-format
 msgid "Remove the selected filename pattern."
 msgstr "Dat utsöchte Dateimuster wegmaken."
 
-#: filetypedetails.cpp:110
+#: filetypedetails.cpp:103
 #, kde-format
 msgid "Description:"
 msgstr "Beschrieven:"
 
-#: filetypedetails.cpp:115
+#: filetypedetails.cpp:108
 #, kde-format
 msgid ""
 "You can enter a short description for files of the selected file type (e.g. "
@@ -123,72 +93,38 @@ msgstr ""
 "B. \"HTML-Siet\"). Disse Beschrieven warrt vun Programmen as Konqueror "
 "bruukt, üm Inholt vun Ornern to wiesen."
 
-#: filetypedetails.cpp:129
-#, kde-format
-msgid "Left Click Action in Konqueror"
-msgstr "Linksklick-Akschoon för Konqueror"
-
-#: filetypedetails.cpp:138
-#, kde-format
-msgid "Ask whether to save to disk instead (only for Konqueror browser)"
-msgstr ""
-"Fragen, wat Du ansteed op Fastplatt sekern wullt (bloots för Konqueror as "
-"Nettkieker)"
-
-#: filetypedetails.cpp:154
-#, kde-format
-msgid ""
-"Here you can configure what the Konqueror file manager will do when you "
-"click on a file of this type. Konqueror can either display the file in an "
-"embedded viewer, or start up a separate application. If set to 'Use settings "
-"for G group', the file manager will behave according to the settings of the "
-"group G to which this type belongs; for instance, 'image' if the current "
-"file type is image/png. Dolphin always shows files in a separate viewer."
-msgstr ""
-"Hier kannst Du instellen, wat de Dateipleger Konqueror deit, wenn Du op en "
-"Datei vun dissen Typ klickst. Konqueror kann de Datei mit en inbett Kieker "
-"wiesen oder dor en anner Programm för opropen. Is \"Instellen för Koppel "
-"bruken\" anmaakt, bruukt de Dateipleger de Instellen för den Koppel, den de "
-"Typ tohöört, a.B. \"image\", wenn de aktuelle Dateityp \"image/png\" is. "
-"Dolphin wiest Dateien jümmers mit en besünner Kieker."
-
-#: filetypedetails.cpp:167
+#: filetypedetails.cpp:128
 #, kde-format
 msgid "&General"
 msgstr "All&gemeen"
 
-#: filetypedetails.cpp:168
+#: filetypedetails.cpp:129
 #, kde-format
 msgid "&Embedding"
 msgstr "&Inbetten"
 
-#: filetypedetails.cpp:209
+#: filetypedetails.cpp:170
 #, kde-format
 msgid "Add New Extension"
 msgstr "Nieg Verwiedern tofögen"
 
-#: filetypedetails.cpp:209
+#: filetypedetails.cpp:170
 #, kde-format
 msgid "Extension:"
 msgstr "Verwiedern:"
 
-#: filetypedetails.cpp:328
+#: filetypedetails.cpp:203
 #, kde-format
 msgid "File type %1"
 msgstr "Dateityp %1"
 
-#: filetypedetails.cpp:336
-#, kde-format
-msgid "Use settings for '%1' group"
-msgstr "Instellen för \"%1\"-Koppel övernehmen"
-
-#: filetypesview.cpp:57
+#: filetypesview.cpp:55
 #, fuzzy, kde-format
 #| msgid "Find file type or filename pattern"
 msgid "Search for file type or filename pattern..."
 msgstr "Dateityp oder -muster söken"
 
-#: filetypesview.cpp:63
+#: filetypesview.cpp:61
 #, kde-format
 msgid ""
 "Enter a part of a filename pattern, and only file types with a matching file "
@@ -199,12 +135,12 @@ msgstr ""
 "mit en passen Muster. Du kannst ok en Deel vun en Dateityp sien Beteken "
 "ingeven, as se op de List steiht."
 
-#: filetypesview.cpp:71 multiapplydialog.cpp:27
+#: filetypesview.cpp:69 multiapplydialog.cpp:27
 #, kde-format
 msgid "Known Types"
 msgstr "Begäng Typen"
 
-#: filetypesview.cpp:77
+#: filetypesview.cpp:75
 #, kde-format
 msgid ""
 "Here you can see a hierarchical list of the file types which are known on "
@@ -218,33 +154,33 @@ msgstr ""
 "Du de Informatschonen för den utsöchten Dateityp (t.B. \"text/html\" för "
 "HTML-Dateien) ankieken oder bewerken."
 
-#: filetypesview.cpp:91
+#: filetypesview.cpp:89
 #, kde-format
 msgid "Click here to add a new file type."
 msgstr "Klick hier, wenn Du en niegen Dateityp tofögen wullt."
 
-#: filetypesview.cpp:93 filetypesview.cpp:389
+#: filetypesview.cpp:91 filetypesview.cpp:368
 #, kde-format
 msgid "&Remove"
 msgstr "&Wegmaken"
 
-#: filetypesview.cpp:119
+#: filetypesview.cpp:111
 #, kde-format
 msgid "Select a file type by name or by extension"
 msgstr "Dateityp na Naam oder Verwiedern utsöken"
 
-#: filetypesview.cpp:382
+#: filetypesview.cpp:361
 #, kde-format
 msgid "&Revert"
 msgstr "&Torüchdreihen"
 
-#: filetypesview.cpp:383
+#: filetypesview.cpp:362
 #, kde-format
 msgid "Revert this file type to its initial system-wide definition"
 msgstr ""
 "Dissen Dateityp op sien orginale Towiesen as \"Systeemwiet\" torüchsetten"
 
-#: filetypesview.cpp:385
+#: filetypesview.cpp:364
 #, kde-format
 msgid ""
 "Click here to revert this file type to its initial system-wide definition, "
@@ -259,12 +195,12 @@ msgstr ""
 "wohrschienlich nich bruukt (warrt de Dateityp över den Inholt fastslaan, mag "
 "dat aver liekers so kamen)."
 
-#: filetypesview.cpp:390
+#: filetypesview.cpp:369
 #, kde-format
 msgid "Delete this file type definition completely"
 msgstr "Dissen Dateityp heel wegdoon"
 
-#: filetypesview.cpp:392
+#: filetypesview.cpp:371
 #, kde-format
 msgid ""
 "Click here to delete this file type definition completely. This is only "
@@ -514,6 +450,56 @@ msgstr ""
 "Giff hier den Naam vun den Dateityp in. Wenn Du a.B. \"image\" as Kategorie "
 "utsöcht hest, un Du giffst hier \"egen\" in, warrt de Dateityp \"image/egen"
 "\" opstellt."
+
+#~ msgid "Left Click Action (only for Konqueror file manager)"
+#~ msgstr "Linksklick-Akschoon (bloots för Konqueror as Dateipleger)"
+
+#~ msgid "Show file in embedded viewer"
+#~ msgstr "Datei mit inbett Kieker wiesen"
+
+#~ msgid "Show file in separate viewer"
+#~ msgstr "Datei mit anner Kieker wiesen"
+
+#~ msgid ""
+#~ "Here you can configure what the Konqueror file manager will do when you "
+#~ "click on a file belonging to this group. Konqueror can display the file "
+#~ "in an embedded viewer or start up a separate application. You can change "
+#~ "this setting for a specific file type in the 'Embedding' tab of the file "
+#~ "type configuration. Dolphin  shows files always in a separate viewer"
+#~ msgstr ""
+#~ "Hier kannst Du instellen, wat de Dateipleger Konqueror deit, wenn Du op "
+#~ "en Datei klickst, de dissen Koppel tohöört. Konqueror kann de Datei mit "
+#~ "en inbett Kieker wiesen oder dor en anner Programm för opropen. Dat "
+#~ "kannst Du för de enkelten Dateitypen op't Paneel \"Inbedden\" vun de "
+#~ "Dateitypen-Instellen fastleggen. Dolphin wiest Dateien jümmers mit en "
+#~ "besünner Kieker."
+
+#~ msgid "Left Click Action in Konqueror"
+#~ msgstr "Linksklick-Akschoon för Konqueror"
+
+#~ msgid "Ask whether to save to disk instead (only for Konqueror browser)"
+#~ msgstr ""
+#~ "Fragen, wat Du ansteed op Fastplatt sekern wullt (bloots för Konqueror as "
+#~ "Nettkieker)"
+
+#~ msgid ""
+#~ "Here you can configure what the Konqueror file manager will do when you "
+#~ "click on a file of this type. Konqueror can either display the file in an "
+#~ "embedded viewer, or start up a separate application. If set to 'Use "
+#~ "settings for G group', the file manager will behave according to the "
+#~ "settings of the group G to which this type belongs; for instance, 'image' "
+#~ "if the current file type is image/png. Dolphin always shows files in a "
+#~ "separate viewer."
+#~ msgstr ""
+#~ "Hier kannst Du instellen, wat de Dateipleger Konqueror deit, wenn Du op "
+#~ "en Datei vun dissen Typ klickst. Konqueror kann de Datei mit en inbett "
+#~ "Kieker wiesen oder dor en anner Programm för opropen. Is \"Instellen för "
+#~ "Koppel bruken\" anmaakt, bruukt de Dateipleger de Instellen för den "
+#~ "Koppel, den de Typ tohöört, a.B. \"image\", wenn de aktuelle Dateityp "
+#~ "\"image/png\" is. Dolphin wiest Dateien jümmers mit en besünner Kieker."
+
+#~ msgid "Use settings for '%1' group"
+#~ msgstr "Instellen för \"%1\"-Koppel övernehmen"
 
 #~ msgid ""
 #~ "<p><h1>File Associations</h1> This module allows you to choose which "
