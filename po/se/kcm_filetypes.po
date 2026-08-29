@@ -426,12 +426,3 @@ msgid ""
 "category and you type 'custom' here, the file type 'image/custom' will be "
 "created."
 msgstr ""
-
-#~ msgid "Show file in embedded viewer"
-#~ msgstr "Čájet fiilla vuojuhuvvon čájeheaddjis"
-
-#~ msgid "Show file in separate viewer"
-#~ msgstr "Čájet fiilla sierra čájeheaddjis"
-
-#~ msgid "Use settings for '%1' group"
-#~ msgstr "Geavat heivehusaid «%1» joavkku várás"
