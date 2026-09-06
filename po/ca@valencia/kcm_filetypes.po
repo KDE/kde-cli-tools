@@ -3,10 +3,10 @@
 # This file is distributed under the license LGPL version 2.1 or
 # version 3 or later versions approved by the membership of KDE e.V.
 #
-# SPDX-FileCopyrightText: 1999, 2000, 2001, 2004, 2005, 2006 Sebastià Pla i Sanz <sps@sastia.com>
-# SPDX-FileCopyrightText: 2002, 2003, 2014, 2016, 2020 Antoni Bella Pérez <antonibella5@yahoo.com>
+# SPDX-FileCopyrightText: 1999-2001, 2004-2006 Sebastià Pla i Sanz <sps@sastia.com>
+# SPDX-FileCopyrightText: 2002-2003, 2014, 2016, 2020 Antoni Bella Pérez <antonibella5@yahoo.com>
 # SPDX-FileCopyrightText: 2005 Albert Astals Cid <aacid@kde.org>
-# SPDX-FileCopyrightText: 2007, 2008, 2009, 2010, 2012, 2013, 2014, 2015, 2017, 2019, 2021, 2022, 2023 Josep M. Ferrer <txemaq@gmail.com>
+# SPDX-FileCopyrightText: 2007-2010, 2012-2015, 2017, 2019, 2021-2023 Josep M. Ferrer <txemaq@gmail.com>
 # SPDX-FileCopyrightText: 2019 Alfredo Vicente <alviboi@gmail.com>
 msgid ""
 msgstr ""
@@ -457,53 +457,3 @@ msgstr ""
 "Teclegeu el nom del tipus de fitxer. Per exemple, si trieu la categoria "
 "«image» i ací introduïu «custom», es crearà el tipus de fitxer «image/"
 "custom»."
-
-#~ msgid "Left Click Action (only for Konqueror file manager)"
-#~ msgstr ""
-#~ "Acció per al clic esquerre (només per al gestor de fitxers Konqueror)"
-
-#~ msgid "Show file in embedded viewer"
-#~ msgstr "Mostra el fitxer en el visor incrustat"
-
-#~ msgid "Show file in separate viewer"
-#~ msgstr "Mostra el fitxer en un visor separat"
-
-#~ msgid ""
-#~ "Here you can configure what the Konqueror file manager will do when you "
-#~ "click on a file belonging to this group. Konqueror can display the file "
-#~ "in an embedded viewer or start up a separate application. You can change "
-#~ "this setting for a specific file type in the 'Embedding' tab of the file "
-#~ "type configuration. Dolphin  shows files always in a separate viewer"
-#~ msgstr ""
-#~ "Ací podreu configurar el que farà el gestor de fitxers Konqueror quan "
-#~ "cliqueu damunt d'un fitxer pertanyent a este grup. Konqueror pot mostrar-"
-#~ "vos el fitxer en un visor incrustat o iniciar una aplicació separada. "
-#~ "Podeu canviar esta configuració per a un tipus de fitxer específic en la "
-#~ "pestanya «Incrustat» de la configuració del tipus de fitxer. Dolphin "
-#~ "sempre mostrarà els fitxers en un visor separat"
-
-#~ msgid "Left Click Action in Konqueror"
-#~ msgstr "Acció de clic esquerre damunt Konqueror"
-
-#~ msgid "Ask whether to save to disk instead (only for Konqueror browser)"
-#~ msgstr "Pregunta si es guarda al disc (només per al navegador Konqueror)"
-
-#~ msgid ""
-#~ "Here you can configure what the Konqueror file manager will do when you "
-#~ "click on a file of this type. Konqueror can either display the file in an "
-#~ "embedded viewer, or start up a separate application. If set to 'Use "
-#~ "settings for G group', the file manager will behave according to the "
-#~ "settings of the group G to which this type belongs; for instance, 'image' "
-#~ "if the current file type is image/png. Dolphin always shows files in a "
-#~ "separate viewer."
-#~ msgstr ""
-#~ "Ací podeu configurar què farà el gestor de fitxers Konqueror quan cliqueu "
-#~ "damunt d'un fitxer d'este tipus. Konqueror pot mostrar el fitxer en un "
-#~ "visor incrustat, o iniciar una aplicació separada. Si s'establix a "
-#~ "«Utilitza la configuració per al grup G», el gestor de fitxers es "
-#~ "comportarà d'acord amb la configuració del grup G al qual pertany este "
-#~ "tipus. Per exemple «image», si el tipus de fitxer actual és image/png. "
-#~ "Dolphin sempre mostrarà els fitxers en un visor separat."
-
-#~ msgid "Use settings for '%1' group"
-#~ msgstr "Utilitza la configuració per al grup «%1»"
