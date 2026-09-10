@@ -2,7 +2,7 @@
 # Bulgarian translation of KDE.
 # This file is licensed under the GPL.
 #
-# $Id: kcm_filetypes.po 1744920 2026-08-28 01:30:48Z scripty $
+# $Id: kcm_filetypes.po 1746075 2026-09-10 01:32:43Z scripty $
 #
 # Zlatko Popov <zlatkopopov@fsa-bg.org>, 2007, 2008.
 # Yasen Pramatarov <yasen@lidneas.com>, 2009, 2011.
@@ -447,47 +447,3 @@ msgstr ""
 "Напишете името на вида файл. Например, ако изберете категория \"изображение"
 "\" и напишете \"потребителско\" ще бъде създаден вид файл \"изображение/"
 "потребителско\"."
-
-#~ msgid "Left Click Action (only for Konqueror file manager)"
-#~ msgstr "Действие на левия бутон (само за файловия манипулатор на Konqueror)"
-
-#~ msgid "Show file in embedded viewer"
-#~ msgstr "Показване с вградена програма за преглед"
-
-#~ msgid "Show file in separate viewer"
-#~ msgstr "Показване с отделна програма за преглед"
-
-#~ msgid ""
-#~ "Here you can configure what the Konqueror file manager will do when you "
-#~ "click on a file belonging to this group. Konqueror can display the file "
-#~ "in an embedded viewer or start up a separate application. You can change "
-#~ "this setting for a specific file type in the 'Embedding' tab of the file "
-#~ "type configuration. Dolphin  shows files always in a separate viewer"
-#~ msgstr ""
-#~ "Задаване поведението на файловия браузър при щракване върху файл, "
-#~ "принадлежащ на тази група. Браузърът може да покаже файла в стандартната "
-#~ "вградена програма за преглед или в отделна външна програма."
-
-#~ msgid "Left Click Action in Konqueror"
-#~ msgstr "Действие на левия бутон в Konqueror"
-
-#~ msgid "Ask whether to save to disk instead (only for Konqueror browser)"
-#~ msgstr "Предложение за запис на диска (само за браузъра на Konqueror)"
-
-#~ msgid ""
-#~ "Here you can configure what the Konqueror file manager will do when you "
-#~ "click on a file of this type. Konqueror can either display the file in an "
-#~ "embedded viewer, or start up a separate application. If set to 'Use "
-#~ "settings for G group', the file manager will behave according to the "
-#~ "settings of the group G to which this type belongs; for instance, 'image' "
-#~ "if the current file type is image/png. Dolphin always shows files in a "
-#~ "separate viewer."
-#~ msgstr ""
-#~ "Задаване поведението на файловия браузър при щракване върху файл, "
-#~ "принадлежащ към избрания вид. Браузърът може да покаже файла в "
-#~ "стандартната вградена програма за преглед или в отделна външна програма. "
-#~ "Може да укажете на браузъра да реагира по начин, подобен на групата, към "
-#~ "която принадлежи видът файл."
-
-#~ msgid "Use settings for '%1' group"
-#~ msgstr "Използване на настройките за „%1“"
