@@ -194,7 +194,7 @@
 >fitxer</parameter
 >. Si aquest fitxer és d'escriptura per a l'usuari actual, el &kdesu; executarà l'ordre com a aquest usuari. Si no fos d'escriptura, l'ordre seria executada com a l'usuari <parameter
 >usuari</parameter
-> (de manera predeterminada el root).</para>
+> (de manera predeterminada «root»).</para>
 <para
 >El paràmetre <parameter
 >fitxer</parameter
