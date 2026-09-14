@@ -156,7 +156,7 @@
 > i està a sobre de la llista de categories.</para>
 
 <para
->Simplement escriure la primera lletra del tipus &MIME; en el que esteu interessat. Les categories s'expandiran automàticament i tan sols es mostraran els tipus &MIME; que incloguin aquesta lletra.</para>
+>Simplement, escriviu la primera lletra del tipus &MIME; en el que esteu interessat. Les categories s'expandiran automàticament i tan sols es mostraran els tipus &MIME; que incloguin aquesta lletra.</para>
 
 <para
 >Aleshores podreu introduir un segon caràcter i els tipus &MIME; es restringiran als que continguin aquests dos caràcters.</para

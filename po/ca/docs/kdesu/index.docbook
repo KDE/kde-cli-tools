@@ -51,7 +51,7 @@
 <keyword
 >contrasenya</keyword>
 <keyword
->arrel</keyword>
+>root</keyword>
 </keywordset>
 
 </bookinfo>
@@ -239,7 +239,7 @@ does this really work?
 >fitxer</parameter
 >. Si aquest fitxer és d'escriptura per a l'usuari actual, el &kdesu; executarà l'ordre com a aquest l'usuari. Si no fos d'escriptura, l'ordre seria executada com a l'usuari <parameter
 >usuari</parameter
-> (de manera predeterminada el root).</para>
+> (de manera predeterminada «root»).</para>
 <para
 >El paràmetre <parameter
 >fitxer</parameter
@@ -437,7 +437,7 @@ does this really work?
 >root</systemitem
 > al d'un usuari normal (com ara vosaltres). Un intrús que aconsegueixi accés al vostre compte, podria aconseguir accés automàtic a <systemitem class="username"
 >root</systemitem
->. El &kdesu; intenta prevenir això. L'esquema de seguretat que s'utilitza és, en la meva opinió, raonablement segur i s'explica tot seguit.</para>
+>. El &kdesu; intenta prevenir això. L'esquema de seguretat que s'utilitza és, segons la meva opinió, raonablement segur i s'explica tot seguit.</para>
 
 <para
 >El &kdesu; utilitza un dimoni, anomenat <application
