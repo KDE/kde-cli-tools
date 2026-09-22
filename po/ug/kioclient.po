@@ -8,9 +8,9 @@ msgstr ""
 "Project-Id-Version: kioclient\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2026-01-24 00:44+0000\n"
-"PO-Revision-Date: 2026-05-30 17:16-0400\n"
+"PO-Revision-Date: 2026-09-22 18:03+0900\n"
 "Last-Translator: Abduqadir Abliz <sahranbay@gmail.com>\n"
-"Language-Team: Uyghur Computer Science Association <UKIJ@yahoogroups.com>\n"
+"Language-Team: Uyghur <kde-i18n-doc@kde.org>\n"
 "Language: ug\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -45,9 +45,6 @@ msgid ""
 "            # Opens a properties dialog of 'url'\n"
 "\n"
 msgstr ""
-"  %1 'url'\n"
-"            # «url» خاسلىق سۆزلەشكۈنى ئاچىدۇ\n"
-"\n"
 
 #: kioclient.cpp:65
 #, kde-format
@@ -61,14 +58,13 @@ msgid ""
 "            # 'url' can be the URL of a document, a *.desktop file,\n"
 "            # or an executable.\n"
 msgstr ""
-" %1 'url' ['mimetype']\n"
-"            # KDE غا مۇناسىۋەتلىك پىروگرامما ئارقىلىق «url» يەنى تور ئادرېسى "
-"كۆرسەتكەن پۈتۈكنى ئېچىشنى سىنايدۇ\n"
-"            # «mime تۈرى» ئۆزگەرگۈچىسىنى قىسقارتىشقا بولىدۇ، بۇ تۈرىنى "
-"ئۆزلۈكىدىن بايقايدۇ.\n"
-"            #  «url» يەنى تور ئادرېسى پۈتۈك بولسىمۇ ياكى *.desktop ھۆججەتنىڭ "
-"تور ئادرېسى بولسىمۇ بولىدۇ.\n"
-"            # ئىجراچان پىروگرامما ھۆججىتى بولسىمۇ بولىدۇ.\n"
+"  %1 'url' ['mimetype']\n"
+"            # Tries to open the document pointed to by 'url', in the "
+"application\n"
+"            # associated with it in KDE. You may omit 'mimetype'.\n"
+"            # In that case the mimetype is determined automatically.\n"
+"            # 'url' can be the URL of a document, a *.desktop file,\n"
+"            # or an executable.\n"
 
 #: kioclient.cpp:76
 #, kde-format
@@ -82,12 +78,10 @@ msgid ""
 "\n"
 msgstr ""
 "  %1 'src' 'dest'\n"
-"            # URL يەنى تور ئادرېسىنى «src» يەنى مەنبەدىن «dest» يەنى نىشانغا "
-"يۆتكەيدۇ.\n"
-"            #  «src» يەنى مەنبە تور ئادرېسى تىزىمى بولۇشى مۇمكىن.\n"
-"            #   «dest» يەنى نىشان بەلكىم «trash:/» بولغاندا ھۆججەتنى "
-"ئەخلەتخانىغا يۆتكەيدۇ.\n"
-"            #   يەنە قىسقا نەشرىدىكى «kioclient mv» نى ئىشلىتىشكىمۇ بولىدۇ.\n"
+"            # Moves the URL 'src' to 'dest'.\n"
+"            #   'src' may be a list of URLs.\n"
+"            #   'dest' may be \"trash:/\" to move the files to the trash.\n"
+"            #   The short version 'kioclient mv' is also available.\n"
 "\n"
 
 #: kioclient.cpp:86
@@ -101,10 +95,9 @@ msgid ""
 "\n"
 msgstr ""
 "  %1 ['src']\n"
-"            # تور ئادرېسى «src» يەنى مەنبەسىنى ئىشلەتكۈچى بەلگىلىگەن ئورۇنغا "
-"كۆچۈرىدۇ.\n"
-"            #  «src» يەنى مەنبە تور ئادرېسى تىزىمى بولۇشى مۇمكىن.\n"
-"            #   ئەگەر تەمىنلەنمىسە تور ئادرېسىنى تەلەپ قىلىدۇ.\n"
+"            # Copies the URL 'src' to a user-specified location.\n"
+"            #   'src' may be a list of URLs, if not present then\n"
+"            #   a URL will be requested.\n"
 "\n"
 
 #: kioclient.cpp:95
@@ -118,10 +111,9 @@ msgid ""
 "\n"
 msgstr ""
 "  %1 'src' 'dest'\n"
-"            # URL يەنى تور ئادرېسى «src» يەنى مەنبەسىنى «dest» يەنى نىشانغا "
-"كۆچۈرىدۇ.\n"
-"            #  «src» يەنى مەنبە تور ئادرېسى تىزىمى بولۇشى مۇمكىن.\n"
-"            #   يەنە قىسقا نەشرىدىكى «kioclient cp» نى ئىشلىتىشكىمۇ بولىدۇ.\n"
+"            # Copies the URL 'src' to 'dest'.\n"
+"            #   'src' may be a list of URLs.\n"
+"            #   The short version 'kioclient cp' is also available.\n"
 "\n"
 
 #: kioclient.cpp:104
@@ -132,10 +124,6 @@ msgid ""
 "            # Prints the contents of the file 'url' to the standard output\n"
 "\n"
 msgstr ""
-"  %1 'url'\n"
-"            # ھۆججەت «url» يەنى تور ئادرېسىنىڭ مەزمۇنىنى ئۆلچەملىك چىقىرىشقا "
-"باسىدۇ\n"
-"\n"
 
 #: kioclient.cpp:111
 #, kde-format
@@ -145,10 +133,6 @@ msgid ""
 "            # Lists the contents of the directory 'url' to stdout\n"
 "\n"
 msgstr ""
-"  %1 'url'\n"
-"            # قىسقۇچ تور ئادرېسى يەنى «url» نىڭ مەزمۇنىنى ئۆلچەملىك "
-"چىقىرىشقا باسىدۇ\n"
-"\n"
 
 #: kioclient.cpp:118
 #, kde-format
@@ -161,10 +145,9 @@ msgid ""
 "\n"
 msgstr ""
 "  %1 'url'\n"
-"            # URL يەنى تور ئادرېسىنى چىقىرىۋېتىدۇ.\n"
-"            #  «src» يەنى مەنبە تور ئادرېسى يەنى «URL» تىزىمى بولۇشى "
-"مۇمكىن.\n"
-"            #   يەنە قىسقا نەشرىدىكى «kioclient rm» نى ئىشلىتىشكىمۇ بولىدۇ.\n"
+"            # Removes the URL\n"
+"            #   'url' may be a list of URLs.\n"
+"            #   The short version 'kioclient rm' is also available.\n"
 "\n"
 
 #: kioclient.cpp:127
@@ -174,8 +157,6 @@ msgid ""
 "  %1 'url'\n"
 "            # Creates a directory at 'url'\n"
 msgstr ""
-"  %1 'url'\n"
-"            # تور ئادرېسى يەنى «url» ئورنىدا بىر مۇندەرىجە قۇرىدۇ\n"
 
 #: kioclient.cpp:134
 #, kde-format
@@ -185,10 +166,6 @@ msgid ""
 "            # Shows all of the available information for 'url'\n"
 "\n"
 msgstr ""
-"  %1 'url'\n"
-"            # تور ئادرېسى يەنى «» نىڭ ئىشلەتكىلى بولىدىغان بارلىق ئۇچۇرىنى "
-"كۆرسىتىدۇ\n"
-"\n"
 
 #: kioclient.cpp:141
 #, kde-format
@@ -198,9 +175,6 @@ msgid ""
 "            # Opens a basic application launcher\n"
 "\n"
 msgstr ""
-"  %1\n"
-"            # ئاساسىي پىروگرامما قوزغاتقۇچنى ئاچىدۇ\n"
-"\n"
 
 #: kioclient.cpp:147
 #, kde-format
@@ -215,10 +189,6 @@ msgid ""
 "             // with this MimeType\n"
 "\n"
 msgstr ""
-"  kioclient exec file:/home/weis/data/test.html\n"
-"             // بۇ Mime تۈرىگە باغلانغان كۆڭۈلدىكى پىروگراممىدا ھۆججەتنى "
-"ئاچىدۇ\n"
-"\n"
 
 #: kioclient.cpp:153
 #, kde-format
@@ -227,10 +197,6 @@ msgid ""
 "             // Opens URL with the default handler for ftp:// scheme\n"
 "\n"
 msgstr ""
-"  kioclient exec ftp://localhost/\n"
-"             // «ftp://» كېلىشىمىنى ئىشلىتىدىغان كۆڭۈلدىكى بىر تەرەپ قىلىش "
-"ئۇسۇلىدا تور ئادرېسىنى ئاچىدۇ \n"
-"\n"
 
 #: kioclient.cpp:157
 #, kde-format
@@ -239,9 +205,6 @@ msgid ""
 "             // Starts emacs\n"
 "\n"
 msgstr ""
-"  kioclient exec file:/root/Desktop/emacs.desktop\n"
-"             // emacs پىروگراممىسىنى قوزغىتىدۇ\n"
-"\n"
 
 #: kioclient.cpp:161
 #, kde-format
@@ -252,8 +215,8 @@ msgid ""
 "\n"
 msgstr ""
 "  kioclient exec .\n"
-"             // كۆڭۈلدىكى ھۆججەت باشقۇرغۇچتا نۆۋەتتىكى مۇندەرىجىنى ئاچىدۇ\n"
-"             // ئىنتايىن قولايلىق.\n"
+"             // Opens the current directory in the default\n"
+"             // file manager. Very convenient.\n"
 "\n"
 
 #: kioclient.cpp:179
@@ -277,8 +240,6 @@ msgid ""
 "Non-interactive use: no message boxes. If you don't want a graphical "
 "connection, use --platform offscreen"
 msgstr ""
-"غەيرى تەسىرلىشىشچان ئىشلىتىش: ئۇچۇر قۇتىسى يوق. ئەگەر گىرافىكىلىق باغلىنىشنى "
-"ئىشلەتمەيدىغان بولسىڭىز، ‪«--platform offscreen»‬ نى ئىشلىتىڭ"
 
 #: kioclient.cpp:195
 #, kde-format
@@ -308,7 +269,7 @@ msgstr "نىشان  URL"
 #: kioclient.cpp:202 kioclient.cpp:205
 #, kde-format
 msgid "url"
-msgstr "url"
+msgstr ""
 
 #: kioclient.cpp:207
 #, kde-format
@@ -357,7 +318,7 @@ msgstr "%1: گىرامماتىكىلىق خاتالىق، بۇيرۇق ‹%2› 
 #, kde-format
 msgctxt "@info:shell"
 msgid "%1: %2\n"
-msgstr "%1: %2\n"
+msgstr ""
 
 #~| msgid ""
 #~| "  kioclient openProperties 'url'\n"

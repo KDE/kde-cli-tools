@@ -8,9 +8,9 @@ msgstr ""
 "Project-Id-Version: kdesu\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2025-11-17 11:53+0000\n"
-"PO-Revision-Date: 2026-05-30 17:15-0400\n"
+"PO-Revision-Date: 2026-09-22 18:03+0900\n"
 "Last-Translator: Abduqadir Abliz <sahranbay@gmail.com>\n"
-"Language-Team: Uyghur Computer Science Association <UKIJ@yahoogroups.com>\n"
+"Language-Team: Uyghur <kde-i18n-doc@kde.org>\n"
 "Language: ug\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -31,7 +31,7 @@ msgstr "sahranbay@gmail.com, gheyret@gmail.com"
 #: kdesu.cpp:92
 #, kde-format
 msgid "KDE su"
-msgstr "KDE su"
+msgstr ""
 
 #: kdesu.cpp:94
 #, kde-format
@@ -46,7 +46,7 @@ msgstr "نەشر ھوقۇقى (c) 1998-2000 Geert Jansen، Pietro Iglio"
 #: kdesu.cpp:97
 #, kde-format
 msgid "Geert Jansen"
-msgstr "Geert Jansen"
+msgstr ""
 
 #: kdesu.cpp:97
 #, kde-format
@@ -56,7 +56,7 @@ msgstr "ئاسرىغۇچى"
 #: kdesu.cpp:98
 #, kde-format
 msgid "Pietro Iglio"
-msgstr "Pietro Iglio"
+msgstr ""
 
 #: kdesu.cpp:98
 #, kde-format
@@ -148,7 +148,7 @@ msgstr "بۇيرۇق «%1» نى ئىجرا قىلغىلى بولمىدى."
 #: kdesu.cpp:158
 #, kde-format
 msgid "Cannot execute command '%1'. It contains invalid characters."
-msgstr "بۇيرۇق «%1» نى ئىجرا قىلغىلى بولمىدى. ئۇنىڭدا ئىناۋەتسىز ھەرپ بار."
+msgstr "بۇيرۇق «%1» نى ئىجرا قىلغىلى بولمىدى. It contains invalid characters."
 
 #: kdesu.cpp:232
 #, kde-format
@@ -197,9 +197,6 @@ msgid ""
 "<b>root's</b> password below or click Ignore to continue with your current "
 "privileges."
 msgstr ""
-"مەزكۇر مەشغۇلات ئۈچۈن <b>ئالىي ئىشلەتكۈچى ئالدىنلىقى</b> كېرەك. شۇڭا "
-"<b>ئالىي ئىشلەتكۈچى</b> نىڭ ئىمىنى كىرگۈزۈڭ ياكى ‹پەرۋا قىلما› نى چېكىپ "
-"نۆۋەتتىكى ئىمتىيازدا داۋاملاشتۇرۇڭ."
 
 #: sudlg.cpp:42
 #, kde-format
@@ -207,8 +204,6 @@ msgid ""
 "The action you requested needs <b>root privileges</b>. Please enter "
 "<b>root's</b> password below."
 msgstr ""
-"مەزكۇر مەشغۇلات ئۈچۈن <b>ئالىي ئىشلەتكۈچى ئالدىنلىقى</b> كېرەك. شۇڭا "
-"<b>ئالىي ئىشلەتكۈچى</b> نىڭ ئىمىنى كىرگۈزۈڭ."
 
 #: sudlg.cpp:49
 #, kde-format
@@ -217,8 +212,6 @@ msgid ""
 "password for <b>%1</b> below or click Ignore to continue with your current "
 "privileges."
 msgstr ""
-"مەزكۇر مەشغۇلات ئۈچۈن باشقا ئىمتىياز كېرەك. شۇڭا <b>%1</b> نىڭ ئىمىنى "
-"كىرگۈزۈڭ ياكى ‹پەرۋا قىلما› نى چېكىپ نۆۋەتتىكى ئىمتىيازدا داۋاملاشتۇرۇڭ."
 
 #: sudlg.cpp:56
 #, kde-format
@@ -226,8 +219,6 @@ msgid ""
 "The action you requested needs additional privileges. Please enter the "
 "password for <b>%1</b> below."
 msgstr ""
-"مەزكۇر مەشغۇلات ئۈچۈن باشقا ئىمتىياز كېرەك. شۇڭا <b>%1</b> نىڭ ئىمىنى "
-"كىرگۈزۈڭ."
 
 #: sudlg.cpp:79
 #, kde-format

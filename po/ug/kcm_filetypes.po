@@ -8,9 +8,9 @@ msgstr ""
 "Project-Id-Version: filetypes\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2026-08-28 00:47+0000\n"
-"PO-Revision-Date: 2026-05-30 17:14-0400\n"
+"PO-Revision-Date: 2026-09-22 18:03+0900\n"
 "Last-Translator: Abduqadir Abliz <sahranbay@gmail.com>\n"
-"Language-Team: Uyghur Computer Science Association <UKIJ@yahoogroups.com>\n"
+"Language-Team: Uyghur <kde-i18n-doc@kde.org>\n"
 "Language: ug\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -34,8 +34,6 @@ msgid ""
 "This button displays the icon associated with the selected file type. Click "
 "on it to choose a different icon."
 msgstr ""
-"بۇ توپچە تاللانغان ھۆججەتكە ماسلاشتۇرۇلغان سىنبەلگىنى كۆرسىتىدۇ. باشقىنى "
-"تاللاش ئۈچۈن ئۇنى چېكىڭ."
 
 #: filetypedetails.cpp:60
 #, kde-format
@@ -50,10 +48,6 @@ msgid ""
 "file type 'text/plain'; all files ending in '.txt' are recognized as plain "
 "text files."
 msgstr ""
-"بۇ كۆزنەكچىدە تاللانغان تىپتىكى ھۆججەتلەرنى پەرق قىلىشقا ئىشلىتىدىغان "
-"ئەندىزە تىزىمى بار. مەسىلەن: ئەندىزە *.txt بولسا ھۆججەت تۈرى ‹text/plain› "
-"بولغان ھۆججەتلەرنى كۆرسىتىدۇ؛ ھۆججەت ئاتى ‹.txt› بولغان بارلىق ھۆججەتلەر "
-"ئادەتتە تېكىست ھۆججەتلىرى دەپ قارىلىدۇ."
 
 #: filetypedetails.cpp:80 filetypesview.cpp:84 kservicelistwidget.cpp:105
 #, kde-format
@@ -87,9 +81,6 @@ msgid ""
 "'HTML Page'). This description will be used by applications like Konqueror "
 "to display directory content."
 msgstr ""
-"تاللانغان ھۆججەت تىپنىڭ قىسقىچە چۈشەندۈرۈشى(‹HTML  بېتى› دېگەندەك) . بۇ "
-"چۈسەندۈرۈشى Konqueror دەك پىروگراممىلار مۇندەرىجە مەزمۇنىنى كۆرسەتكەندە "
-"ئىشلىتىلىدۇ."
 
 #: filetypedetails.cpp:128
 #, kde-format
@@ -128,9 +119,6 @@ msgid ""
 "pattern will appear in the list. Alternatively, enter a part of a file type "
 "name as it appears in the list."
 msgstr ""
-"ھۆججەت ئەندىزىسىنىڭ بىر بۆلىكىنى كىرگۈزۈڭ، شۇنىڭ بىلەن مۇشۇ ئەندىزىگە ماس "
-"كېلىدىغان ھۆججەتلەرلا تىزىمدا كۆرسىتىلىدۇ. يەنە ھۆججەت تۈرىنىڭ بىر بۆلىكىنى "
-"كىرگۈزسىمۇ بولۇۋېرىدۇ."
 
 #: filetypesview.cpp:69 multiapplydialog.cpp:27
 #, kde-format
@@ -145,11 +133,6 @@ msgid ""
 "collapse it. Select a file type (e.g. text/html for HTML files) to view/edit "
 "the information for that file type using the controls on the right."
 msgstr ""
-"بۇ يەردە سىستېمىڭىزدىكى مەلۇملۇق ھۆججەت تۈرىنىڭ تىزىمى كۆرسىتىلىدۇ. ‹+› "
-"بەلگىسىنى چەكسىڭىز شۇ گۇرۇپپىغا تەۋە ھەممىسى يېيىلىپ كۆرسىتىلىدۇ، ‹-› نى "
-"چەكسە يىغىلىدۇ. بىرەر ھۆججەت تۈرىنى(مەسىلەن: HTML ھۆججەتلىرى ئۈچۈن text/"
-"html)  تاللاپ ، ئوڭ تەرەپتىكى تاختىدىكى كۆرۈش/تەھرىرلەشنى بېسىپ مەشغۇلات "
-"قىلسىڭىزمۇ بولىدۇ."
 
 #: filetypesview.cpp:89
 #, kde-format
@@ -185,10 +168,6 @@ msgid ""
 "minimize the chances of them being used (but the file type determination "
 "from file contents can still end up using them)."
 msgstr ""
-"بۇ يەرنى چەڭسىڭىز بۇ تىپتىكى ھۆججەتنىڭ سىستېما مىقياسىدىكى ئېنىقلىمىسىنى "
-"ئەسلىگە قەيتۇرۇشقا بولىدۇ. دىققەت قىلىشقا ئەرزىيدىغىنى سىستېما مىقياسىدىكى "
-"ئېنىقلىمىسىنى ئۆچۈرۈشكە بولمايدۇ. ئۇنى قۇرۇق قالدۇرسىمۇ بولىدۇ(ئەگەر ھۆججەت "
-"مەزمۇنىغا ئاساسەن ھۆججەتنىڭ تىپىنى بەلگىلىيەلىسە شۇنى ئىشلىتىدۇ)"
 
 #: filetypesview.cpp:369
 #, kde-format
@@ -204,11 +183,6 @@ msgid ""
 "of them being used (but the file type determination from file contents can "
 "still end up using them)."
 msgstr ""
-"بۇ يەرنى چېكىپ بۇ ھۆججەت تۈرىنىڭ ئېنىقلىمىسىنى ئۆچۈرەلەيسىز. بۇ پەقەتلا "
-"ئىشلەتكۈچى بەلگىلىگەن ھۆججەت تۈرىغىلا ئىشلەيدۇ(ئۆچۈرگىلى بولىدۇ). سىستېما "
-"مىقياسىدىكى ھۆججەت تۈرىنىڭ ئېنىقلىمىسىنى ئۆچۈرگىلى بولمايدۇ.  ئۇنى قۇرۇق "
-"قالدۇرسىمۇ بولىدۇ(ئەگەر ھۆججەت مەزمۇنىغا ئاساسەن ھۆججەتنىڭ تىپىنى "
-"بەلگىلىيەلىسە شۇنى ئىشلىتىدۇ)"
 
 #: keditfiletype.cpp:114
 #, kde-format
@@ -231,12 +205,12 @@ msgstr "(c) 2000، KDE ئىجادىيەتچىلىرى"
 #: keditfiletype.cpp:119
 #, kde-format
 msgid "Preston Brown"
-msgstr "Preston Brown"
+msgstr ""
 
 #: keditfiletype.cpp:120
 #, kde-format
 msgid "David Faure"
-msgstr "David Faure"
+msgstr ""
 
 #: keditfiletype.cpp:126
 #, kde-format
@@ -266,7 +240,7 @@ msgstr "يېڭى ھۆججەت تۈرى %1 نى قۇرۇش"
 #: kservicelistwidget.cpp:46
 #, kde-format
 msgid "%1 (%2)"
-msgstr "%1 (%2)"
+msgstr ""
 
 #: kservicelistwidget.cpp:51
 #, kde-format
@@ -287,10 +261,6 @@ msgid ""
 "then the list is ordered by priority with the uppermost item taking "
 "precedence over the others."
 msgstr ""
-"بۇ تاللانغان ھۆججەت تۈرى بىلەن مۇناسىۋەتلەشتۈرۈلگەن پىروگراممىلارنىڭ "
-"تىزىمىدۇر. بۇ تىزىم Konqueror نىڭ «بۇنىڭدا ئېچىش…» دېگەن تىزىملىكى "
-"تاللانغاندا كۆرسىتىلىدۇ. ئەگەر بۇ ھۆججەت تۈرىغا بىردىن كۆپ پىروگرامما "
-"مۇناسىۋەتلەشتۈرۈلگەن بولسا مەرتىۋىسى بويىچە تىزىلىپ كۆرسىتىلىدۇ."
 
 #: kservicelistwidget.cpp:68
 #, kde-format
@@ -301,10 +271,6 @@ msgid ""
 "type, then the list is ordered by priority with the uppermost item taking "
 "precedence over the others."
 msgstr ""
-"بۇ تاللانغان ھۆججەت تۈرى بىلەن مۇناسىۋەتلەشتۈرۈلگەن پىروگراممىلارنىڭ "
-"تىزىمىدۇر. بۇ تىزىم Konqueror نىڭ «بۇنىڭدا ئالدىن كۆرۈش…» دېگەن تىزىملىكى "
-"تاللانغاندا كۆرسىتىلىدۇ. ئەگەر بۇ ھۆججەت تۈرىغا بىردىن كۆپ پىروگرامما "
-"مۇناسىۋەتلەشتۈرۈلگەن بولسا مەرتىۋىسى بويىچە تىزىلىپ كۆرسىتىلىدۇ."
 
 #: kservicelistwidget.cpp:80
 #, kde-format
@@ -319,10 +285,6 @@ msgid ""
 "only affects the selected application if the file type is\n"
 "associated with more than one application."
 msgstr ""
-"تاللانغان پىروگرامما ئالدىنلىقىنى ئۆستۈرۈپ، \n"
-"ئۇنى تىزىمنىڭ ئۈستىگە يۆتكەيدۇ. دىققەت: ئەگەر ھۆججەت \n"
-"تۈرىگە بىرنەچچە پىروگرامما ماسلاشتۇرۇلغان بولسا، بۇ پەقەت \n"
-"تاللانغان پىروگراممىغىلا تەسىر قىلىدۇ."
 
 #: kservicelistwidget.cpp:90
 #, kde-format
@@ -346,10 +308,6 @@ msgid ""
 "only affects the selected application if the file type is\n"
 "associated with more than one application."
 msgstr ""
-"تاللانغان پىروگرامما ئالدىنلىقىنى تۆۋەنلىتىپ، \n"
-"ئۇنى تىزىمنىڭ ئاستىغا يۆتكەيدۇ. دىققەت: ئەگەر ھۆججەت \n"
-"تىپىغا بىرنەچچە پىروگرامما ماسلاشتۇرۇلغان بولسا، بۇ پەقەت \n"
-"تاللانغان پىروگراممىغىلا تەسىر قىلىدۇ."
 
 #: kservicelistwidget.cpp:102
 #, kde-format
@@ -439,8 +397,6 @@ msgid ""
 "category and you type 'custom' here, the file type 'image/custom' will be "
 "created."
 msgstr ""
-"ھۆججەت تۈرىنىڭ ئاتىنى كىرگۈزۈڭ. مەسىلەن: ‹image› دېگەن تۈرنى تاللاپ، "
-"‹custom› نى كىرگۈزسىڭىز ‹image/custom› قۇرۇلىدۇ."
 
 #~ msgid "Left Click Action (only for Konqueror file manager)"
 #~ msgstr "سول چېكىش مەشغۇلاتى(پەقەتلا Konqueror ھۆججەت باشقۇرغۇچىسى ئۈچۈن)"
