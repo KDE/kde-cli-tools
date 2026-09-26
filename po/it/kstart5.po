@@ -1,9 +1,9 @@
 # translation of kstart.po to Italian
-# SPDX-FileCopyrightText: 2020, 2023 Paolo Zamponi <feus73@gmail.com>
 # Andrea Rizzi <rizzi@kde.org>, 2003, 2004, 2005.
 # Andrea Rizzi <rizzi@sns.it>, 2007.
 # Nicola Ruggero <nicola@nxnt.org>, 2009.
 # Federico Zenith <federico.zenith@member.fsf.org>, 2010.
+# SPDX-FileCopyrightText: 2020, 2023 Paolo Zamponi <feus73@gmail.com>
 msgid ""
 msgstr ""
 "Project-Id-Version: kstart\n"
