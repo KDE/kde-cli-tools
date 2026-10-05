@@ -134,7 +134,7 @@ msgstr "Тип файла %1"
 #: filetypesview.cpp:55
 #, kde-format
 msgid "Search for file type or filename pattern..."
-msgstr "Введите тип файла или расширение файла..."
+msgstr "Поиск по типу файла или шаблону имени…"
 
 #: filetypesview.cpp:61
 #, kde-format
