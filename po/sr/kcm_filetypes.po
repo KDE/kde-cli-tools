@@ -3,13 +3,14 @@
 # Toplica Tanaskovic <toptan@kde.org.yu>, 2003, 2004.
 # Chusslove Illich <caslav.ilic@gmx.net>, 2005, 2007, 2008, 2009, 2010, 2012, 2013, 2014, 2015, 2016, 2017.
 # Dalibor Djuric <daliborddjuric@gmail.com>, 2009, 2010.
+# Nemanja Hiršl <nemhirsl@gmail.com>, 2026.
 msgid ""
 msgstr ""
 "Project-Id-Version: kcm5_filetypes\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2026-08-28 00:47+0000\n"
-"PO-Revision-Date: 2017-09-28 17:58+0200\n"
-"Last-Translator: Chusslove Illich <caslav.ilic@gmx.net>\n"
+"PO-Revision-Date: 2026-10-06 10:30+0200\n"
+"Last-Translator: Nemanja Hiršl <nemhirsl@gmail.com>\n"
 "Language-Team: Serbian <kde-i18n-sr@kde.org>\n"
 "Language: sr\n"
 "MIME-Version: 1.0\n"
@@ -19,18 +20,18 @@ msgstr ""
 "%10>=2 && n%10<=4 && (n%100<10 || n%100>=20) ? 1 : 2;\n"
 "X-Accelerator-Marker: &\n"
 "X-Text-Markup: kde4\n"
-"X-Associated-UI-Catalogs: libkonq kio5\n"
+"X-Associated-UI-Catalogs: libkonq kio6\n"
 "X-Environment: kde\n"
 
 #, kde-format
 msgctxt "NAME OF TRANSLATORS"
 msgid "Your names"
-msgstr "Топлица Танасковић,Часлав Илић"
+msgstr "Топлица Танасковић,Часлав Илић,Немања Хиршл"
 
 #, kde-format
 msgctxt "EMAIL OF TRANSLATORS"
 msgid "Your emails"
-msgstr "toptan@kde.org.yu,caslav.ilic@gmx.net"
+msgstr "toptan@kde.org.yu,caslav.ilic@gmx.net,nemhirsl@gmail.com"
 
 #: filetypedetails.cpp:54
 #, kde-format
@@ -121,10 +122,9 @@ msgid "File type %1"
 msgstr "Тип фајла „%1“"
 
 #: filetypesview.cpp:55
-#, fuzzy, kde-format
-#| msgid "Find file type or filename pattern"
+#, kde-format
 msgid "Search for file type or filename pattern..."
-msgstr "Нађи тип фајла или образац имена"
+msgstr "Тражи тип фајла или образац имена фајла..."
 
 #: filetypesview.cpp:61
 #, kde-format
@@ -388,12 +388,12 @@ msgstr "Уклони изабрани програм са списка."
 #: kservicelistwidget.cpp:126 multiapplydialog.cpp:19
 #, kde-format
 msgid "Apply To..."
-msgstr ""
+msgstr "Примени на..."
 
 #: kservicelistwidget.cpp:131
 #, kde-format
 msgid "Apply the current preference order to other file types."
-msgstr ""
+msgstr "Примени текући редослед првенства на друге типове фајлова."
 
 #: kservicelistwidget.cpp:154
 #, kde-format
@@ -447,87 +447,3 @@ msgid ""
 msgstr ""
 "Унесите име за тип фајла. На пример, ако сте изабрали категорију ‘image’ и "
 "овде унели ‘custom’, настаће тип фајла ‘image/custom’."
-
-#~ msgid "Left Click Action (only for Konqueror file manager)"
-#~ msgstr "Радња левим кликом (само у К‑освајачу као менаџеру фајлова)"
-
-#~ msgid "Show file in embedded viewer"
-#~ msgstr "Прикажи фајл у угнежђеном приказивачу"
-
-#~ msgid "Show file in separate viewer"
-#~ msgstr "Прикажи фајл у издвојеном приказивачу"
-
-#~ msgid ""
-#~ "Here you can configure what the Konqueror file manager will do when you "
-#~ "click on a file belonging to this group. Konqueror can display the file "
-#~ "in an embedded viewer or start up a separate application. You can change "
-#~ "this setting for a specific file type in the 'Embedding' tab of the file "
-#~ "type configuration. Dolphin  shows files always in a separate viewer"
-#~ msgstr ""
-#~ "<qt>Овде можете подесити шта ће К‑освајач урадити када кликнете на фајл "
-#~ "који припада овој групи. К‑освајач може да прикаже фајл у угнежђеном "
-#~ "приказивачу или да покрене засебни програм. Ову поставку можете задати за "
-#~ "сваки тип фајла понаособ под језичком <i>Угнежђивање</i> у постави типова "
-#~ "фајлова. Делфин фајлове увек приказује у засебном приказивачу.</qt>"
-
-#~ msgid "Left Click Action in Konqueror"
-#~ msgstr "Радња левим кликом у К‑освајачу"
-
-#~ msgid "Ask whether to save to disk instead (only for Konqueror browser)"
-#~ msgstr "Питај да сачуваш на диск (само у К‑освајачу као прегледачу)"
-
-#~ msgid ""
-#~ "Here you can configure what the Konqueror file manager will do when you "
-#~ "click on a file of this type. Konqueror can either display the file in an "
-#~ "embedded viewer, or start up a separate application. If set to 'Use "
-#~ "settings for G group', the file manager will behave according to the "
-#~ "settings of the group G to which this type belongs; for instance, 'image' "
-#~ "if the current file type is image/png. Dolphin always shows files in a "
-#~ "separate viewer."
-#~ msgstr ""
-#~ "Овде можете да подесите шта ће К‑освајач урадити када кликнете на фајл "
-#~ "овог типа. К‑освајач може или да прикаже фајл у угнежђеном приказивачу "
-#~ "или да покрене засебни програм. Ако је постављено на „Користи поставке "
-#~ "групе „Г““, менаџер фајлова ће учинити како је подешено за групу Г којој "
-#~ "овај тип припада, нпр. групу ‘image’ ако је фајл типа ‘image/png’. Делфин "
-#~ "фајлове увек приказује у засебном приказивачу."
-
-#~ msgid "Use settings for '%1' group"
-#~ msgstr "Користи поставке групе „%1“"
-
-#~ msgid ""
-#~ "<p><h1>File Associations</h1> This module allows you to choose which "
-#~ "applications are associated with a given type of file. File types are "
-#~ "also referred to as MIME types (MIME is an acronym which stands for "
-#~ "\"Multipurpose Internet Mail Extensions\").</p><p> A file association "
-#~ "consists of the following: <ul><li>Rules for determining the MIME-type of "
-#~ "a file, for example the filename pattern *.png, which means 'all files "
-#~ "with names that end in .png', is associated with the MIME type \"image/png"
-#~ "\";</li> <li>A short description of the MIME-type, for example the "
-#~ "description of the MIME type \"image/png\" is simply 'PNG image';</li> "
-#~ "<li>An icon to be used for displaying files of the given MIME-type, so "
-#~ "that you can easily identify the type of file in a file manager or file-"
-#~ "selection dialog (at least for the types you use often);</li> <li>A list "
-#~ "of the applications which can be used to open files of the given MIME-"
-#~ "type -- if more than one application can be used then the list is ordered "
-#~ "by priority.</li></ul> You may be surprised to find that some MIME types "
-#~ "have no associated filename patterns; in these cases, KDE is able to "
-#~ "determine the MIME-type by directly examining the contents of the file.</"
-#~ "p>"
-#~ msgstr ""
-#~ "<qt><h1>Придружења фајловима</h1><p>У овом модулу можете одређивати који "
-#~ "ће програми бити придружени са којим типовима фајла. Типови фајла су "
-#~ "такође познати као МИМЕ типови (енг. за „вишенаменска интернет поштанска "
-#~ "проширења“).</p><p>Придружење се састоји из:</p><ul><li>правила за "
-#~ "утврђивање МИМЕ типа фајла; на пример, образац имена <tt>*.png</tt> значи "
-#~ "да ће сви фајлови са наставком <tt>.png</tt> бити придружени МИМЕ типу "
-#~ "<tt>image/png</tt>,</li><li>кратког описа МИМЕ типа; на пример, опис за "
-#~ "тип <tt>image/png</tt> је једноставно „ПНГ слика“,</li><li>иконице за "
-#~ "приказивање уз фајлове датог МИМЕ типа, како би се тип лако уочио при "
-#~ "прегледању у менаџеру фајлова или дијалогу за избор фајла (корисно "
-#~ "подесити бар за типове које често користите),</li><li>списка програма "
-#~ "којим се фајлови датог МИМЕ типа могу отворити; ако је то више програма, "
-#~ "редослед по списку одређује приоритет.</li></ul><p>Може вас изненадити "
-#~ "чињеница да неки МИМЕ типови немају придружене обрасце имена. У таквим "
-#~ "случајевима, КДЕ утврђује МИМЕ тип испитивањем самог садржаја фајла.</p></"
-#~ "qt>"
