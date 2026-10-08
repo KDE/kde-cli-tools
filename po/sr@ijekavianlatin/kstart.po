@@ -3,13 +3,14 @@
 # Toplica Tanaskovic <toptan@kde.org.yu>, 2003, 2004.
 # Chusslove Illich <caslav.ilic@gmx.net>, 2005, 2007, 2008, 2009, 2013, 2017.
 # Dalibor Djuric <dalibor.djuric@mozilla-srbija.org>, 2009.
+# Nemanja Hiršl <nemhirsl@gmail.com>, 2026.
 msgid ""
 msgstr ""
 "Project-Id-Version: kstart5\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2026-06-26 00:47+0000\n"
-"PO-Revision-Date: 2017-09-28 17:58+0200\n"
-"Last-Translator: Chusslove Illich <caslav.ilic@gmx.net>\n"
+"PO-Revision-Date: 2026-10-06 10:30+0200\n"
+"Last-Translator: Nemanja Hiršl <nemhirsl@gmail.com>\n"
 "Language-Team: Serbian <kde-i18n-sr@kde.org>\n"
 "Language: sr@ijekavianlatin\n"
 "MIME-Version: 1.0\n"
@@ -24,12 +25,12 @@ msgstr ""
 #, kde-format
 msgctxt "NAME OF TRANSLATORS"
 msgid "Your names"
-msgstr "Toplica Tanasković,Časlav Ilić"
+msgstr "Toplica Tanasković,Časlav Ilić,Nemanja Hiršl"
 
 #, kde-format
 msgctxt "EMAIL OF TRANSLATORS"
 msgid "Your emails"
-msgstr "toptan@kde.org.yu,caslav.ilic@gmx.net"
+msgstr "toptan@kde.org.yu,caslav.ilic@gmx.net,nemhirsl@gmail.com"
 
 #: kstart.cpp:77
 #, kde-format
@@ -39,7 +40,7 @@ msgstr "K‑pokret"
 #: kstart.cpp:79
 #, kde-format
 msgid "Utility to launch applications"
-msgstr ""
+msgstr "Alatka za pokretanje programa"
 
 #: kstart.cpp:81
 #, kde-format
@@ -67,117 +68,17 @@ msgid "Command to execute"
 msgstr "Naredba za izvršavanje"
 
 #: kstart.cpp:94
-#, fuzzy, kde-format
-#| msgid ""
-#| "Alternative to <command>: desktop file to start. D-Bus service will be "
-#| "printed to stdout"
+#, kde-format
 msgid "Alternative to <command>: desktop file name to start, e.g. org.kde.kate"
 msgstr ""
-"Alternativa naredbi: .desktop fajl za pokretanje. D‑Bus servis će biti "
-"ispisan na stdiz."
+"Alternativa naredbi: ime .desktop fajla za pokretanje, npr. org.kde.kate"
 
 #: kstart.cpp:97
-#, fuzzy, kde-format
-#| msgid "Optional URL to pass <desktopfile>, when using --service"
+#, kde-format
 msgid "Optional URL to pass to the application when using --application"
-msgstr "Opcioni URL za prosljeđivanje .desktop fajla, uz --service"
+msgstr "Opcioni URL koji se prosljeđuje programu uz --application"
 
 #: kstart.cpp:109
 #, kde-format
 msgid "No command specified"
 msgstr "Nema nijedne naredbe"
-
-#, fuzzy
-#~| msgid ""
-#~| "Alternative to <command>: desktop file to start. D-Bus service will be "
-#~| "printed to stdout"
-#~ msgid ""
-#~ "Alternative to <command>: desktop file path to start. D-Bus service will "
-#~ "be printed to stdout. Deprecated: use --application"
-#~ msgstr ""
-#~ "Alternativa naredbi: .desktop fajl za pokretanje. D‑Bus servis će biti "
-#~ "ispisan na stdiz."
-
-#~ msgid ""
-#~ "Utility to launch applications with special window properties \n"
-#~ "such as iconified, maximized, a certain virtual desktop, a special "
-#~ "decoration\n"
-#~ "and so on."
-#~ msgstr ""
-#~ "Alatka za pokretanje programa sa posebnim parametrima \n"
-#~ "prozora, kao što su ikonizovan, maksimizovan, na određenoj \n"
-#~ "virtuelnoj površi, sa posebnom dekoracijom, itd."
-
-#~ msgid "A regular expression matching the window title"
-#~ msgstr "Regularni izraz za poklapanje naslova prozora"
-
-#~ msgid ""
-#~ "A string matching the window class (WM_CLASS property)\n"
-#~ "The window class can be found out by running\n"
-#~ "'xprop | grep WM_CLASS' and clicking on a window\n"
-#~ "(use either both parts separated by a space or only the right part).\n"
-#~ "NOTE: If you specify neither window title nor window class,\n"
-#~ "then the very first window to appear will be taken;\n"
-#~ "omitting both options is NOT recommended."
-#~ msgstr ""
-#~ "Niz za poklapanje klase prozora (svojstvo „WM_CLASS“)\n"
-#~ "Klasa prozora se može saznati izvršavanjem\n"
-#~ "„xprop | grep WM_CLASS“ i klikom na prozor\n"
-#~ "(uzmite ili oba dijela razdvojena razmakom ili samo desni dio).\n"
-#~ "NAPOMENA: Ako ne zadate ni naslov ni klasu prozora,\n"
-#~ "biće uzet prvi prozor koji se pojavi.\n"
-#~ "Izostavljanje obe opcije NIJE preporučljivo."
-
-#~ msgid "Desktop on which to make the window appear"
-#~ msgstr "Površ na kojoj će se prozor pojaviti"
-
-#~ msgid ""
-#~ "Make the window appear on the desktop that was active\n"
-#~ "when starting the application"
-#~ msgstr ""
-#~ "Prozor treba da se pojavi na površi koja\n"
-#~ "je bila aktivna pri pokretanju programa"
-
-#~ msgid "Make the window appear on all desktops"
-#~ msgstr "Prozor treba da se pojavi na svim površima"
-
-#~ msgid "Iconify the window"
-#~ msgstr "Ikonifikuj prozor"
-
-#~ msgid "Maximize the window"
-#~ msgstr "Maksimizuj prozor"
-
-#~ msgid "Maximize the window vertically"
-#~ msgstr "Uspravno maksimizuj prozor"
-
-#~ msgid "Maximize the window horizontally"
-#~ msgstr "Vodoravno maksimizuj prozor"
-
-#~ msgid "Show window fullscreen"
-#~ msgstr "Prikaži prozor preko cijelog ekrana"
-
-#~ msgid ""
-#~ "The window type: Normal, Desktop, Dock, Toolbar, \n"
-#~ "Menu, Dialog, TopMenu or Override"
-#~ msgstr ""
-#~ "Tip prozora: normalni, površ, sidrište, traka \n"
-#~ "alatki, meni, dijalog, glavni meni ili potiskivanje"
-
-#~ msgid ""
-#~ "Jump to the window even if it is started on a \n"
-#~ "different virtual desktop"
-#~ msgstr ""
-#~ "Skoči na prozor iako je pokrenut na \n"
-#~ "na drugoj virtuelnoj površi"
-
-#~ msgid "Try to keep the window above other windows"
-#~ msgstr "Pokušaj da uvijek držiš prozor iznad drugih"
-
-#~ msgid "Try to keep the window below other windows"
-#~ msgstr "Pokušaj da uvijek držiš prozor ispod drugih"
-
-#~ msgid "The window does not get an entry in the taskbar"
-#~ msgstr "Prozor se ne pojavljuje u traci zadataka"
-
-#~ msgid "The window does not get an entry on the pager"
-#~ msgstr "Prozor se ne pojavljuje u listaču"

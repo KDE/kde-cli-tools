@@ -2,13 +2,14 @@
 # Chusslove Illich <caslav.ilic@gmx.net>, 2007, 2008, 2009, 2011, 2012, 2013, 2014, 2016.
 # Dalibor Djuric <dalibor.djuric@mozilla-srbija.org>, 2009.
 # Dalibor Djuric <daliborddjuric@gmail.com>, 2011.
+# Nemanja Hiršl <nemhirsl@gmail.com>, 2026.
 msgid ""
 msgstr ""
 "Project-Id-Version: kioclient\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2026-01-24 00:44+0000\n"
-"PO-Revision-Date: 2016-07-10 19:45+0200\n"
-"Last-Translator: Chusslove Illich <caslav.ilic@gmx.net>\n"
+"PO-Revision-Date: 2026-10-06 10:30+0200\n"
+"Last-Translator: Nemanja Hiršl <nemhirsl@gmail.com>\n"
 "Language-Team: Serbian <kde-i18n-sr@kde.org>\n"
 "Language: sr@ijekavian\n"
 "MIME-Version: 1.0\n"
@@ -23,12 +24,12 @@ msgstr ""
 #, kde-format
 msgctxt "NAME OF TRANSLATORS"
 msgid "Your names"
-msgstr "Часлав Илић"
+msgstr "Часлав Илић,Немања Хиршл"
 
 #, kde-format
 msgctxt "EMAIL OF TRANSLATORS"
 msgid "Your emails"
-msgstr "caslav.ilic@gmx.net"
+msgstr "caslav.ilic@gmx.net,nemhirsl@gmail.com"
 
 #: kioclient.cpp:56
 #, kde-format
@@ -41,32 +42,19 @@ msgstr ""
 
 # literal-segment: 'url'
 #: kioclient.cpp:58
-#, fuzzy, kde-format
-#| msgid ""
-#| "  kioclient openProperties 'url'\n"
-#| "            # Opens a properties menu\n"
-#| "\n"
+#, kde-format
 msgctxt "The argument is the command \"kioclient openProperties\""
 msgid ""
 "  %1 'url'\n"
 "            # Opens a properties dialog of 'url'\n"
 "\n"
 msgstr ""
-"  kioclient openProperties 'url'\n"
-"            # отвара мени својстава\n"
+"  %1 'url'\n"
+"            # Отвара дијалог својстава за УРЛ\n"
 "\n"
 
 #: kioclient.cpp:65
-#, fuzzy, kde-format
-#| msgid ""
-#| "  kioclient exec 'url' ['mimetype']\n"
-#| "            # Tries to open the document pointed to by 'url', in the "
-#| "application\n"
-#| "            #   associated with it in KDE. You may omit 'mimetype'.\n"
-#| "            #   In this case the mimetype is determined\n"
-#| "            #   automatically. Of course URL may be the URL of a\n"
-#| "            #   document, or it may be a *.desktop file.\n"
-#| "            #   'url' can be an executable, too.\n"
+#, kde-format
 msgctxt "The argument is the command \"kioclient exec\""
 msgid ""
 "  %1 'url' ['mimetype']\n"
@@ -77,12 +65,12 @@ msgid ""
 "            # 'url' can be the URL of a document, a *.desktop file,\n"
 "            # or an executable.\n"
 msgstr ""
-"  kioclient exec 'url' ['mimetip']\n"
-"            # покушава да отвори документ показан УРЛ‑ом, у програму\n"
-"            #   придруженом му у КДЕ‑у. МИМЕ тип се може изоставити,\n"
-"            #   у ком случају се одређује аутоматски. Наравно, УРЛ\n"
-"            #   може бити УРЛ документа, или *.desktop фајла.\n"
-"            #   УРЛ може бити и извршни фајл.\n"
+"  %1 'url' ['mimetip']\n"
+"            # Покушава да отвори документ на који показује УРЛ, у програму\n"
+"            # који му је придружен у КДЕ‑у. МИМЕ тип се може изоставити.\n"
+"            # У том случају МИМЕ тип се одређује аутоматски.\n"
+"            # УРЛ може бити УРЛ документа, *.desktop фајл\n"
+"            # или извршни фајл.\n"
 
 #: kioclient.cpp:76
 #, kde-format
@@ -95,15 +83,16 @@ msgid ""
 "            #   The short version 'kioclient mv' is also available.\n"
 "\n"
 msgstr ""
+"  %1 'izvor' 'odrediste'\n"
+"            # Премијешта УРЛ са извора на одредиште.\n"
+"            #   Извор може бити и списак УРЛ‑ова.\n"
+"            #   Одредиште може бити „trash:/“, за премијештање фајлова у "
+"смеће.\n"
+"            #   Доступна је и кратка верзија kioclient mv.\n"
+"\n"
 
 #: kioclient.cpp:86
-#, fuzzy, kde-format
-#| msgid ""
-#| "  kioclient download ['src']\n"
-#| "            # Copies the URL 'src' to a user-specified location'.\n"
-#| "            #   'src' may be a list of URLs, if not present then\n"
-#| "            #   a URL will be requested.\n"
-#| "\n"
+#, kde-format
 msgctxt "The argument is the command \"kioclient download\""
 msgid ""
 "  %1 ['src']\n"
@@ -112,18 +101,14 @@ msgid ""
 "            #   a URL will be requested.\n"
 "\n"
 msgstr ""
-"  kioclient download ['izvor']\n"
+"  %1 ['izvor']\n"
 "            # Копира УРЛ извора на кориснички задату локацију.\n"
 "            #   Извор може бити и списак УРЛ‑ова; ако није задат,\n"
 "            #   УРЛ ће бити затражен.\n"
 "\n"
 
 #: kioclient.cpp:95
-#, fuzzy, kde-format
-#| msgid ""
-#| "  kioclient copy 'src' 'dest'\n"
-#| "            # Copies the URL 'src' to 'dest'.\n"
-#| "            #   'src' may be a list of URLs.\n"
+#, kde-format
 msgctxt "The argument is the command \"kioclient copy\""
 msgid ""
 "  %1 'src' 'dest'\n"
@@ -132,48 +117,38 @@ msgid ""
 "            #   The short version 'kioclient cp' is also available.\n"
 "\n"
 msgstr ""
-"  kioclient copy 'izvor' 'odrediste'\n"
+"  %1 'izvor' 'odrediste'\n"
 "            # Копира УРЛ извора на одредиште.\n"
 "            #   Извор може бити и списак УРЛ‑ова.\n"
+"            #   Доступна је и кратка верзија kioclient cp.\n"
+"\n"
 
 #: kioclient.cpp:104
-#, fuzzy, kde-format
-#| msgid ""
-#| "  kioclient ls 'url'\n"
-#| "            # Lists the contents of the directory 'url' to stdout\n"
-#| "\n"
+#, kde-format
 msgctxt "The argument is the command \"kioclient cat\""
 msgid ""
 "  %1 'url'\n"
 "            # Prints the contents of the file 'url' to the standard output\n"
 "\n"
 msgstr ""
-"  kioclient ls 'url'\n"
-"            # Исписује садржај фасцикле УРЛ‑а на стдиз\n"
+"  %1 'url'\n"
+"            # Исписује садржај фајла УРЛ‑а на стандардни излаз\n"
 "\n"
 
 #: kioclient.cpp:111
-#, fuzzy, kde-format
-#| msgid ""
-#| "  kioclient ls 'url'\n"
-#| "            # Lists the contents of the directory 'url' to stdout\n"
-#| "\n"
+#, kde-format
 msgctxt "The argument is the command \"kioclient ls\""
 msgid ""
 "  %1 'url'\n"
 "            # Lists the contents of the directory 'url' to stdout\n"
 "\n"
 msgstr ""
-"  kioclient ls 'url'\n"
+"  %1 'url'\n"
 "            # Исписује садржај фасцикле УРЛ‑а на стдиз\n"
 "\n"
 
 #: kioclient.cpp:118
-#, fuzzy, kde-format
-#| msgid ""
-#| "  kioclient remove 'url'\n"
-#| "            # Removes the URL\n"
-#| "            #   'url' may be a list of URLs.\n"
+#, kde-format
 msgctxt "The argument is the command \"kioclient remove\""
 msgid ""
 "  %1 'url'\n"
@@ -182,25 +157,21 @@ msgid ""
 "            #   The short version 'kioclient rm' is also available.\n"
 "\n"
 msgstr ""
-"  kioclient remove 'url'\n"
+"  %1 'url'\n"
 "            # Уклања УРЛ\n"
-"            # (може се навести и списак УРЛ‑ова).\n"
+"            #   (може се навести и списак УРЛ‑ова).\n"
+"            #   Доступна је и кратка верзија kioclient rm.\n"
+"\n"
 
-# literal-segment: 'url'
 #: kioclient.cpp:127
-#, fuzzy, kde-format
-#| msgid ""
-#| "  kioclient openProperties 'url'\n"
-#| "            # Opens a properties menu\n"
-#| "\n"
+#, kde-format
 msgctxt "The argument is the command \"kioclient mkdir\""
 msgid ""
 "  %1 'url'\n"
 "            # Creates a directory at 'url'\n"
 msgstr ""
-"  kioclient openProperties 'url'\n"
-"            # отвара мени својстава\n"
-"\n"
+"  %1 'url'\n"
+"            # Прави фасциклу на УРЛ‑у\n"
 
 #: kioclient.cpp:134
 #, kde-format
@@ -210,6 +181,9 @@ msgid ""
 "            # Shows all of the available information for 'url'\n"
 "\n"
 msgstr ""
+"  %1 'url'\n"
+"            # Приказује све доступне податке о УРЛ‑у\n"
+"\n"
 
 #: kioclient.cpp:141
 #, kde-format
@@ -219,18 +193,17 @@ msgid ""
 "            # Opens a basic application launcher\n"
 "\n"
 msgstr ""
+"  %1\n"
+"            # Отвара основни покретач програма\n"
+"\n"
 
 #: kioclient.cpp:147
 #, kde-format
 msgid "*** Examples:\n"
-msgstr "*** Примери:\n"
+msgstr "*** Примјери:\n"
 
 #: kioclient.cpp:148
-#, fuzzy, kde-format
-#| msgid ""
-#| "  kioclient exec file:/home/weis/data/test.html\n"
-#| "             // Opens the file with default binding\n"
-#| "\n"
+#, kde-format
 msgid ""
 "  kioclient exec file:/home/weis/data/test.html\n"
 "             // Opens the file with the default application associated\n"
@@ -238,31 +211,24 @@ msgid ""
 "\n"
 msgstr ""
 "  kioclient exec file:/home/weis/data/test.html\n"
-"             # отвара фајл подразумијеваним програмом\n"
+"             # Отвара фајл подразумијеваним програмом придруженим\n"
+"             # овом МИМЕ типу\n"
 "\n"
 
 #: kioclient.cpp:153
-#, fuzzy, kde-format
-#| msgid ""
-#| "  kioclient exec ftp://localhost/\n"
-#| "             // Opens new window with URL\n"
-#| "\n"
+#, kde-format
 msgid ""
 "  kioclient exec ftp://localhost/\n"
 "             // Opens URL with the default handler for ftp:// scheme\n"
 "\n"
 msgstr ""
 "  kioclient exec ftp://localhost/\n"
-"             # отвара нови прозор са УРЛ‑ом\n"
+"             # Отвара УРЛ подразумијеваним руковаоцем за шему ftp://\n"
 "\n"
 
 # literal-segment: kioclient exec file:/root/Desktop/emacs.desktop
 #: kioclient.cpp:157
-#, fuzzy, kde-format
-#| msgid ""
-#| "  kioclient exec file:/root/Desktop/emacs.desktop\n"
-#| "             // Starts emacs\n"
-#| "\n"
+#, kde-format
 msgid ""
 "  kioclient exec file:/root/Desktop/emacs.desktop\n"
 "             // Starts emacs\n"
@@ -273,11 +239,7 @@ msgstr ""
 "\n"
 
 #: kioclient.cpp:161
-#, fuzzy, kde-format
-#| msgid ""
-#| "  kioclient exec .\n"
-#| "             // Opens the current directory. Very convenient.\n"
-#| "\n"
+#, kde-format
 msgid ""
 "  kioclient exec .\n"
 "             // Opens the current directory in the default\n"
@@ -285,7 +247,8 @@ msgid ""
 "\n"
 msgstr ""
 "  kioclient exec .\n"
-"             # отвара текућу фасциклу — врло згодно.\n"
+"             # Отвара текућу фасциклу подразумијеваним\n"
+"             # менаџером фајлова — врло згодно.\n"
 "\n"
 
 #: kioclient.cpp:179
@@ -301,7 +264,7 @@ msgstr "Алатка командне линије за мрежнопрозир
 #: kioclient.cpp:188
 #, kde-format
 msgid "Use message boxes and other native notifications"
-msgstr ""
+msgstr "Користи прозоре са порукама и друга изворна обавјештења"
 
 #: kioclient.cpp:191
 #, kde-format
@@ -310,7 +273,7 @@ msgid ""
 "connection, use --platform offscreen"
 msgstr ""
 "Неинтерактивна употреба: без прозора са порукама. Ако не желите графичку "
-"везу, употребите --platform offscreen."
+"везу, употријебите --platform offscreen."
 
 #: kioclient.cpp:195
 #, kde-format
@@ -377,7 +340,7 @@ msgstr "%1: Синтаксна грешка, превише аргумената
 #: kioclient.cpp:465
 #, kde-format
 msgid "Destination where to download the files"
-msgstr "Одредиште где треба преузети фајлове."
+msgstr "Одредиште гдје треба преузети фајлове."
 
 #: kioclient.cpp:512
 #, kde-format
@@ -389,82 +352,4 @@ msgstr "%1: Синтаксна грешка, непозната наредба �
 #, kde-format
 msgctxt "@info:shell"
 msgid "%1: %2\n"
-msgstr ""
-
-#, fuzzy
-#~| msgid ""
-#~| "  kioclient move 'src' 'dest'\n"
-#~| "            # Moves the URL 'src' to 'dest'.\n"
-#~| "            #   'src' may be a list of URLs.\n"
-#~ msgid ""
-#~ "  kioclient5 move 'src' 'dest'\n"
-#~ "            # Moves the URL 'src' to 'dest'.\n"
-#~ "            #   'src' may be a list of URLs.\n"
-#~ msgstr ""
-#~ "  kioclient move 'izvor' 'odrediste'\n"
-#~ "            # премијешта УРЛ са извора на одредиште.\n"
-#~ "            #   Извор може бити и списак УРЛ‑ова.\n"
-
-#~ msgid ""
-#~ "            #   'dest' may be \"trash:/\" to move the files\n"
-#~ "            #   to the trash.\n"
-#~ msgstr ""
-#~ "            #   Одредиште може бити trash:/, за премијештање\n"
-#~ "            #   фајлова у смеће.\n"
-#~ "\n"
-
-#, fuzzy
-#~| msgid ""
-#~| "            #   the short version kioclient mv\n"
-#~| "            #   is also available.\n"
-#~| "\n"
-#~ msgid ""
-#~ "            #   the short version kioclient5 mv\n"
-#~ "            #   is also available.\n"
-#~ "\n"
-#~ msgstr ""
-#~ "            #   Такође је доступна кратка верзија\n"
-#~ "            #   kioclient mv.\n"
-#~ "\n"
-
-#, fuzzy
-#~| msgid ""
-#~| "            #   the short version kioclient cp\n"
-#~| "            #   is also available.\n"
-#~| "\n"
-#~ msgid ""
-#~ "            #   the short version kioclient5 cp\n"
-#~ "            #   is also available.\n"
-#~ "\n"
-#~ msgstr ""
-#~ "            #   Такође је доступна кратка верзија\n"
-#~ "            #   kioclient cp.\n"
-#~ "\n"
-
-#, fuzzy
-#~| msgid ""
-#~| "  kioclient cat 'url'\n"
-#~| "            # Writes out the contents of 'url' to stdout\n"
-#~| "\n"
-#~ msgid ""
-#~ "  kioclient5 cat 'url'\n"
-#~ "            # Writes out the contents of 'url' to stdout\n"
-#~ "\n"
-#~ msgstr ""
-#~ "  kioclient cat 'url'\n"
-#~ "            # Исписује садржај УРЛ‑а на стдиз\n"
-#~ "\n"
-
-#, fuzzy
-#~| msgid ""
-#~| "            #   the short version kioclient rm\n"
-#~| "            #   is also available.\n"
-#~| "\n"
-#~ msgid ""
-#~ "            #   the short version kioclient5 rm\n"
-#~ "            #   is also available.\n"
-#~ "\n"
-#~ msgstr ""
-#~ "            #   Доступна је и кратка верзија\n"
-#~ "            #   kioclient rm.\n"
-#~ "\n"
+msgstr "%1: %2\n"
