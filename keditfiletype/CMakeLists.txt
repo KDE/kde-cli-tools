@@ -16,7 +16,6 @@ set(libfiletypes_SRCS
  mimetypewriter.cpp
  multiapplydialog.cpp
  newtypedlg.cpp
- kserviceselectdlg.cpp
 )
 
 ########### library ###############
@@ -32,7 +31,6 @@ target_link_libraries(libfiletypes
     KF6::ConfigCore
     KF6::IconThemes
     KF6::IconWidgets
-    KF6::Parts
     Qt::DBus
 )
 

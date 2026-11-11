@@ -36,18 +36,12 @@ FileTypeDetails::FileTypeDetails(QWidget *parent)
     m_mimeTypeLabel->setTextInteractionFlags(Qt::TextSelectableByMouse);
     topLayout->addWidget(m_mimeTypeLabel, 0, Qt::AlignCenter);
 
-    m_tabWidget = new QTabWidget(this);
-    topLayout->addWidget(m_tabWidget);
-
     QString wtstr;
-    // First tab - General
-    QWidget *firstWidget = new QWidget(m_tabWidget);
-    QVBoxLayout *firstLayout = new QVBoxLayout(firstWidget);
 
     QHBoxLayout *hBox = new QHBoxLayout();
-    firstLayout->addLayout(hBox);
+    topLayout->addLayout(hBox);
 
-    iconButton = new KIconButton(firstWidget);
+    iconButton = new KIconButton(this);
     iconButton->setIconType(KIconLoader::Desktop, KIconLoader::MimeType);
     connect(iconButton, &KIconButton::iconChanged, this, &FileTypeDetails::updateIcon);
     iconButton->setWhatsThis(
@@ -57,7 +51,7 @@ FileTypeDetails::FileTypeDetails(QWidget *parent)
     iconLabel = nullptr;
     hBox->addWidget(iconButton);
 
-    QGroupBox *gb = new QGroupBox(i18n("Filename Patterns"), firstWidget);
+    QGroupBox *gb = new QGroupBox(i18n("Filename Patterns"), this);
     hBox->addWidget(gb);
 
     hBox = new QHBoxLayout(gb);
@@ -95,14 +89,14 @@ FileTypeDetails::FileTypeDetails(QWidget *parent)
 
     gb->setFixedHeight(gb->minimumSizeHint().height());
 
-    description = new KLineEdit(firstWidget);
+    description = new KLineEdit(this);
     description->setClearButtonEnabled(true);
     connect(description, &QLineEdit::textChanged, this, &FileTypeDetails::updateDescription);
 
     QHBoxLayout *descriptionBox = new QHBoxLayout;
-    descriptionBox->addWidget(new QLabel(i18n("Description:"), firstWidget));
+    descriptionBox->addWidget(new QLabel(i18n("Description:"), this));
     descriptionBox->addWidget(description);
-    firstLayout->addLayout(descriptionBox);
+    topLayout->addLayout(descriptionBox);
 
     wtstr = i18n(
         "You can enter a short description for files of the selected"
@@ -110,23 +104,10 @@ FileTypeDetails::FileTypeDetails(QWidget *parent)
         " like Konqueror to display directory content.");
     description->setWhatsThis(wtstr);
 
-    serviceListWidget = new KServiceListWidget(KServiceListWidget::SERVICELIST_APPLICATIONS, firstWidget);
+    serviceListWidget = new KServiceListWidget(this);
     connect(serviceListWidget, &KServiceListWidget::changed, this, &FileTypeDetails::changed);
     connect(serviceListWidget, &KServiceListWidget::multiApply, this, &FileTypeDetails::multiApply);
-    firstLayout->addWidget(serviceListWidget, 5);
-
-    // Second tab - Embedding
-    QWidget *secondWidget = new QWidget(m_tabWidget);
-    QVBoxLayout *secondLayout = new QVBoxLayout(secondWidget);
-
-    embedServiceListWidget = new KServiceListWidget(KServiceListWidget::SERVICELIST_SERVICES, secondWidget);
-    //  embedServiceListWidget->setMinimumHeight( serviceListWidget->sizeHint().height() );
-    connect(embedServiceListWidget, &KServiceListWidget::changed, this, &FileTypeDetails::changed);
-    connect(embedServiceListWidget, &KServiceListWidget::multiApply, this, &FileTypeDetails::multiApply);
-    secondLayout->addWidget(embedServiceListWidget);
-
-    m_tabWidget->addTab(firstWidget, i18n("&General"));
-    m_tabWidget->addTab(secondWidget, i18n("&Embedding"));
+    topLayout->addWidget(serviceListWidget, 5);
 }
 
 void FileTypeDetails::updateRemoveButton()
@@ -213,7 +194,6 @@ void FileTypeDetails::setMimeTypeData(MimeTypeData *mimeTypeData, TypesListItem 
     removeExtButton->setEnabled(false);
 
     serviceListWidget->setMimeTypeData(mimeTypeData);
-    embedServiceListWidget->setMimeTypeData(mimeTypeData);
 
     for (const auto &pattern : mimeTypeData->patterns()) {
         // Unicode chars that mark the entire string as LtR, to prevent "*.foo" turning into "foo.*" in RtL languages
@@ -240,7 +220,6 @@ void FileTypeDetails::refresh()
 void FileTypeDetails::allowMultiApply(bool allow)
 {
     serviceListWidget->allowMultiApply(allow);
-    embedServiceListWidget->allowMultiApply(allow);
 }
 
 #include "moc_filetypedetails.cpp"

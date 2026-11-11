@@ -44,7 +44,7 @@ protected Q_SLOTS:
     void setDirty(bool state);
 
     void slotDatabaseChanged();
-    void multiApply(int type);
+    void multiApply();
 
 private:
     void readFileTypes();

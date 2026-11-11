@@ -21,7 +21,6 @@
 #include <KPropertiesDialog>
 
 // Local
-#include "kserviceselectdlg.h"
 #include "mimetypedata.h"
 
 KServiceListItem::KServiceListItem(const KService::Ptr &pService)
@@ -39,17 +38,8 @@ KServiceListItem::KServiceListItem(const KService::Ptr &pService)
     }
 }
 
-PluginListItem::PluginListItem(const KPluginMetaData &data)
-    : QListWidgetItem()
-    , metaData(data)
-{
-    setText(i18n("%1 (%2)", metaData.name(), metaData.pluginId()));
-    setIcon(QIcon::fromTheme(metaData.iconName()));
-}
-
-KServiceListWidget::KServiceListWidget(Kind kind, QWidget *parent)
-    : QGroupBox(kind == SERVICELIST_APPLICATIONS ? i18n("Application Preference Order") : i18n("Services Preference Order"), parent)
-    , m_kind(kind)
+KServiceListWidget::KServiceListWidget(QWidget *parent)
+    : QGroupBox(i18n("Application Preference Order"), parent)
     , m_mimeTypeData(nullptr)
     , m_allowMultiApply(false)
 {
@@ -60,16 +50,12 @@ KServiceListWidget::KServiceListWidget(Kind kind, QWidget *parent)
     lay->addWidget(servicesLB);
     connect(servicesLB, &QListWidget::itemDoubleClicked, this, &KServiceListWidget::editService);
 
-    QString wtstr = (kind == SERVICELIST_APPLICATIONS ? i18n("This is a list of applications associated with files of the selected"
-                                                             " file type. This list is shown in Konqueror's context menus when you select"
-                                                             " \"Open With...\". If more than one application is associated with this file type,"
-                                                             " then the list is ordered by priority with the uppermost item taking precedence"
-                                                             " over the others.")
-                                                      : i18n("This is a list of services associated with files of the selected"
-                                                             " file type. This list is shown in Konqueror's context menus when you select"
-                                                             " a \"Preview with...\" option. If more than one service is associated with this file type,"
-                                                             " then the list is ordered by priority with the uppermost item taking precedence"
-                                                             " over the others."));
+    const QString wtstr = i18n(
+        "This is a list of applications associated with files of the selected"
+        " file type. This list is shown in Konqueror's context menus when you select"
+        " \"Open With...\". If more than one application is associated with this file type,"
+        " then the list is ordered by priority with the uppermost item taking precedence"
+        " over the others.");
 
     setWhatsThis(wtstr);
     servicesLB->setWhatsThis(wtstr);
@@ -83,24 +69,22 @@ KServiceListWidget::KServiceListWidget(Kind kind, QWidget *parent)
     connect(servUpButton, &QAbstractButton::clicked, this, &KServiceListWidget::promoteService);
     btnsLay->addWidget(servUpButton);
 
-    servUpButton->setWhatsThis(kind == SERVICELIST_APPLICATIONS ? i18n("Assigns a higher priority to the selected\n"
-                                                                       "application, moving it up in the list. Note:  This\n"
-                                                                       "only affects the selected application if the file type is\n"
-                                                                       "associated with more than one application.")
-                                                                : i18n("Assigns a higher priority to the selected\n"
-                                                                       "service, moving it up in the list."));
+    servUpButton->setWhatsThis(
+        i18n("Assigns a higher priority to the selected\n"
+             "application, moving it up in the list. Note:  This\n"
+             "only affects the selected application if the file type is\n"
+             "associated with more than one application."));
 
     servDownButton = new QPushButton(i18n("Move &Down"), this);
     servDownButton->setIcon(QIcon::fromTheme(QStringLiteral("arrow-down")));
     servDownButton->setEnabled(false);
     connect(servDownButton, &QAbstractButton::clicked, this, &KServiceListWidget::demoteService);
     btnsLay->addWidget(servDownButton);
-    servDownButton->setWhatsThis(kind == SERVICELIST_APPLICATIONS ? i18n("Assigns a lower priority to the selected\n"
-                                                                         "application, moving it down in the list. Note: This \n"
-                                                                         "only affects the selected application if the file type is\n"
-                                                                         "associated with more than one application.")
-                                                                  : i18n("Assigns a lower priority to the selected\n"
-                                                                         "service, moving it down in the list."));
+    servDownButton->setWhatsThis(
+        i18n("Assigns a lower priority to the selected\n"
+             "application, moving it down in the list. Note: This \n"
+             "only affects the selected application if the file type is\n"
+             "associated with more than one application."));
 
     servNewButton = new QPushButton(i18n("Add..."), this);
     servNewButton->setIcon(QIcon::fromTheme(QStringLiteral("list-add")));
@@ -147,32 +131,16 @@ void KServiceListWidget::setMimeTypeData(MimeTypeData *mimeTypeData)
     servicesLB->setEnabled(false);
 
     if (m_mimeTypeData) {
-        if (m_kind == SERVICELIST_APPLICATIONS) {
-            const QStringList services = m_mimeTypeData->appServices();
-            if (services.isEmpty()) {
-                if (m_kind == SERVICELIST_APPLICATIONS) {
-                    servicesLB->addItem(i18nc("No applications associated with this file type", "None"));
-                }
-            } else {
-                for (const QString &service : services) {
-                    if (KService::Ptr pService = KService::serviceByStorageId(service)) {
-                        servicesLB->addItem(new KServiceListItem(pService));
-                    }
-                }
-                servicesLB->setEnabled(true);
-            }
+        const QStringList services = m_mimeTypeData->appServices();
+        if (services.isEmpty()) {
+            servicesLB->addItem(i18nc("No applications associated with this file type", "None"));
         } else {
-            const QStringList parts = m_mimeTypeData->embedParts();
-            if (parts.isEmpty()) {
-                servicesLB->addItem(new QListWidgetItem(i18nc("No components associated with this file type", "None"), nullptr, -1));
-            } else {
-                servicesLB->setEnabled(true);
-                for (const QString &partId : parts) {
-                    if (KPluginMetaData data(QStringLiteral("kf6/parts/") + partId); data.isValid()) {
-                        servicesLB->addItem(new PluginListItem(data));
-                    }
+            for (const QString &service : services) {
+                if (KService::Ptr pService = KService::serviceByStorageId(service)) {
+                    servicesLB->addItem(new KServiceListItem(pService));
                 }
             }
+            servicesLB->setEnabled(true);
         }
     }
 
@@ -244,36 +212,22 @@ void KServiceListWidget::addService()
         return;
     }
 
-    if (m_kind == SERVICELIST_APPLICATIONS) {
-        KOpenWithDialog dlg(m_mimeTypeData->name(), QString(), this);
-        dlg.setSaveNewApplications(true);
-        if (dlg.exec() != QDialog::Accepted) {
-            return;
-        }
-
-        KService::Ptr service = dlg.service();
-
-        Q_ASSERT(service);
-        if (!service) {
-            return; // Don't crash if KOpenWith wasn't able to create service.
-        }
-        if (m_mimeTypeData->appServices().contains(service->storageId())) {
-            return;
-        }
-        servicesLB->insertItem(0, new KServiceListItem(service));
-    } else {
-        KPartSelectDlg dlg(this);
-        if (dlg.exec() != QDialog::Accepted) {
-            return;
-        }
-        const bool valid = dlg.chosenPart().isValid();
-        Q_ASSERT(valid);
-        if (m_mimeTypeData->embedParts().contains(dlg.chosenPart().pluginId())) {
-            return;
-        }
-        auto item = new PluginListItem(dlg.chosenPart());
-        servicesLB->insertItem(0, item);
+    KOpenWithDialog dlg(m_mimeTypeData->name(), QString(), this);
+    dlg.setSaveNewApplications(true);
+    if (dlg.exec() != QDialog::Accepted) {
+        return;
     }
+
+    KService::Ptr service = dlg.service();
+
+    Q_ASSERT(service);
+    if (!service) {
+        return; // Don't crash if KOpenWith wasn't able to create service.
+    }
+    if (m_mimeTypeData->appServices().contains(service->storageId())) {
+        return;
+    }
+    servicesLB->insertItem(0, new KServiceListItem(service));
 
     // We inserted a new service at the beginning, if we had a None entry before, it must
     // be the second on in the element. Check the type to be sure of it
@@ -294,12 +248,6 @@ void KServiceListWidget::editService()
     }
     const int selected = servicesLB->currentRow();
     if (selected < 0) {
-        return;
-    }
-
-    // Only edit applications, not services as
-    // they don't have any parameters
-    if (m_kind != SERVICELIST_APPLICATIONS) {
         return;
     }
 
@@ -390,31 +338,19 @@ void KServiceListWidget::updatePreferredServices()
     for (unsigned int i = 0; i < count; i++) {
         const auto &item = servicesLB->item(i);
         Q_ASSERT(item->type() != -1);
-        if (m_kind == SERVICELIST_APPLICATIONS) {
-            auto sli = dynamic_cast<KServiceListItem *>(item);
-            if (!sli) { // Is a textual item like the default 'None' entry
-                continue;
-            }
-            sl.append(sli->storageId);
-        } else {
-            auto pluginItem = dynamic_cast<PluginListItem *>(item);
-            if (!pluginItem) { // Is a textual item like the default 'None' entry
-                continue;
-            }
-            sl.append(pluginItem->metaData.pluginId());
+        auto sli = dynamic_cast<KServiceListItem *>(item);
+        if (!sli) { // Is a textual item like the default 'None' entry
+            continue;
         }
+        sl.append(sli->storageId);
     }
     sl.removeDuplicates();
-    if (m_kind == SERVICELIST_APPLICATIONS) {
-        m_mimeTypeData->setAppServices(sl);
-    } else {
-        m_mimeTypeData->setEmbedParts(sl);
-    }
+    m_mimeTypeData->setAppServices(sl);
 }
 
 void KServiceListWidget::applyTo()
 {
-    Q_EMIT multiApply(m_kind);
+    Q_EMIT multiApply();
 }
 
 void KServiceListWidget::enableMoveButtons()
@@ -439,7 +375,7 @@ void KServiceListWidget::enableMoveButtons()
     }
 
     if (servEditButton) {
-        servEditButton->setEnabled(m_kind == SERVICELIST_APPLICATIONS);
+        servEditButton->setEnabled(true);
     }
 }
 
