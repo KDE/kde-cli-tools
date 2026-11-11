@@ -30,7 +30,6 @@
 
 // Local
 #include "filetypedetails.h"
-#include "kservicelistwidget.h"
 #include "multiapplydialog.h"
 #include "newtypedlg.h"
 #include "typeslisttreewidget.h"
@@ -162,7 +161,7 @@ void FileTypesView::readFileTypes()
     updateDisplay(nullptr);
 }
 
-void FileTypesView::multiApply(int type)
+void FileTypesView::multiApply()
 {
     auto *current = static_cast<TypesListItem *>(typesLV->currentItem());
     MultiApplyDialog d(current, m_itemList, widget());
@@ -171,16 +170,9 @@ void FileTypesView::multiApply(int type)
         bool changed = false;
 
         for (auto *item : d.selected()) {
-            if (type == KServiceListWidget::SERVICELIST_APPLICATIONS) {
-                if (item->mimeTypeData().appServices() != current->mimeTypeData().appServices()) {
-                    item->mimeTypeData().setAppServices(current->mimeTypeData().appServices());
-                    changed = true;
-                }
-            } else if (type == KServiceListWidget::SERVICELIST_SERVICES) {
-                if (item->mimeTypeData().embedParts() != current->mimeTypeData().embedParts()) {
-                    item->mimeTypeData().setEmbedParts(current->mimeTypeData().embedParts());
-                    changed = true;
-                }
+            if (item->mimeTypeData().appServices() != current->mimeTypeData().appServices()) {
+                item->mimeTypeData().setAppServices(current->mimeTypeData().appServices());
+                changed = true;
             }
         }
 

@@ -7,7 +7,7 @@
 #ifndef FILETYPEDETAILS_H
 #define FILETYPEDETAILS_H
 
-#include <QTabWidget>
+#include <QWidget>
 
 class KIconButton;
 class MimeTypeData;
@@ -52,7 +52,7 @@ protected:
 
 Q_SIGNALS:
     void changed(bool);
-    void multiApply(int kind);
+    void multiApply();
 
 protected Q_SLOTS:
     void updateIcon(const QString &icon);
@@ -67,9 +67,6 @@ private:
 
     QLabel *m_mimeTypeLabel;
 
-    QTabWidget *m_tabWidget;
-
-    // First tab - General
     KIconButton *iconButton;
     QLabel *iconLabel; // if icon cannot be changed
 
@@ -77,9 +74,6 @@ private:
     QPushButton *addExtButton, *removeExtButton;
     KLineEdit *description;
     KServiceListWidget *serviceListWidget;
-
-    // Second tab - Embedding
-    KServiceListWidget *embedServiceListWidget;
 };
 
 #endif

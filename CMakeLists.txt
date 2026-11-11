@@ -56,7 +56,6 @@ find_package(KF6 ${KF6_MIN_VERSION} REQUIRED COMPONENTS
     KIO
     Service
     WindowSystem
-    Parts
     CoreAddons
     OPTIONAL_COMPONENTS
     Su

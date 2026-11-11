@@ -79,8 +79,6 @@ public:
     void setPatterns(const QStringList &p);
     QStringList appServices() const;
     void setAppServices(const QStringList &dsl);
-    QStringList embedParts() const;
-    void setEmbedParts(const QStringList &dsl);
 
     const QMimeType &mimeType() const
     {
@@ -130,7 +128,6 @@ private:
     void initFromQMimeType();
     bool isMimeTypeDirty() const; // whether the mimetype definition file needs saving
     QStringList getAppOffers() const;
-    QStringList getPartOffers() const;
     void getMyServiceOffers() const;
     void syncServices();
     void saveServices(KConfigGroup &config, const QStringList &services);
@@ -139,15 +136,13 @@ private:
 
     QMimeType m_mimetype;
     bool m_bNewItem : 1;
-    mutable bool m_bFullInit : 1; // lazy init of m_appServices and m_embedServices
+    mutable bool m_bFullInit : 1; // lazy init of m_appServices
     bool m_isGroup : 1;
     bool m_appServicesModified : 1;
-    bool m_embedServicesModified : 1;
     bool m_userSpecifiedIconModified : 1;
     QString m_major, m_minor, m_comment, m_userSpecifiedIcon;
     QStringList m_patterns;
     mutable QStringList m_appServices;
-    mutable QStringList m_embedParts;
 };
 
 #endif /* MIMETYPEDATA_H */

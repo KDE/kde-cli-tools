@@ -9,7 +9,6 @@
 #include "mimetypewriter.h"
 #include <KApplicationTrader>
 #include <KConfigGroup>
-#include <KParts/PartLoader>
 #include <KProtocolManager>
 #include <KService>
 #include <KSharedConfig>
@@ -24,7 +23,6 @@ MimeTypeData::MimeTypeData(const QString &major)
     , m_bFullInit(true)
     , m_isGroup(true)
     , m_appServicesModified(false)
-    , m_embedServicesModified(false)
     , m_userSpecifiedIconModified(false)
     , m_major(major)
 {
@@ -37,7 +35,6 @@ MimeTypeData::MimeTypeData(const QMimeType &mime)
     , m_bFullInit(false)
     , m_isGroup(false)
     , m_appServicesModified(false)
-    , m_embedServicesModified(false)
     , m_userSpecifiedIconModified(false)
 {
     const QString mimeName = m_mimetype.name();
@@ -57,7 +54,6 @@ MimeTypeData::MimeTypeData(const QString &mimeName, bool)
     , m_bFullInit(false)
     , m_isGroup(false)
     , m_appServicesModified(false)
-    , m_embedServicesModified(false)
     , m_userSpecifiedIconModified(false)
 {
     const int index = mimeName.indexOf(QLatin1Char('/'));
@@ -175,21 +171,9 @@ QStringList MimeTypeData::getAppOffers() const
     return serviceIds;
 }
 
-QStringList MimeTypeData::getPartOffers() const
-{
-    QStringList servicesIds;
-    // We do not do any sorting, because KParts uses the order in which the entries are saved
-    const auto partOfferList = KParts::PartLoader::partsForMimeType(name());
-    for (const auto &metaData : partOfferList) {
-        servicesIds.append(metaData.pluginId());
-    }
-    return servicesIds;
-}
-
 void MimeTypeData::getMyServiceOffers() const
 {
     m_appServices = getAppOffers();
-    m_embedParts = getPartOffers();
     m_bFullInit = true;
 }
 
@@ -199,14 +183,6 @@ QStringList MimeTypeData::appServices() const
         getMyServiceOffers();
     }
     return m_appServices;
-}
-
-QStringList MimeTypeData::embedParts() const
-{
-    if (!m_bFullInit) {
-        getMyServiceOffers();
-    }
-    return m_embedParts;
 }
 
 bool MimeTypeData::isMimeTypeDirty() const
@@ -242,7 +218,7 @@ bool MimeTypeData::isMimeTypeDirty() const
 
 bool MimeTypeData::isServiceListDirty() const
 {
-    return !m_isGroup && (m_appServicesModified || m_embedServicesModified);
+    return !m_isGroup && m_appServicesModified;
 }
 
 bool MimeTypeData::isDirty() const
@@ -319,19 +295,6 @@ void MimeTypeData::syncServices()
         saveRemovedServices(removedApps, m_appServices, oldAppServices);
     }
 
-    KSharedConfig::Ptr kpartsProfile = KSharedConfig::openConfig(QStringLiteral("kpartsrc"), KConfig::NoGlobals);
-    const QStringList oldPartServices = getPartOffers();
-    if (oldPartServices != m_embedParts) {
-        KConfigGroup addedParts(kpartsProfile, "Added KDE Part Associations");
-        if (m_embedParts.isEmpty()) {
-            addedParts.deleteEntry(name());
-        } else {
-            addedParts.writeXdgListEntry(name(), m_embedParts);
-        }
-        KConfigGroup removedParts(kpartsProfile, "Removed KDE Part Associations");
-        saveRemovedServices(removedParts, m_embedParts, oldPartServices);
-    }
-
     // Clean out any kde-mimeapps.list which would take precedence any cancel our changes.
     const QString desktops = QString::fromLocal8Bit(qgetenv("XDG_CURRENT_DESKTOP"));
     const auto desktopsSplit = desktops.split(QLatin1Char(':'), Qt::SkipEmptyParts);
@@ -348,7 +311,6 @@ void MimeTypeData::syncServices()
     }
 
     m_appServicesModified = false;
-    m_embedServicesModified = false;
 }
 
 static QStringList collectStorageIds(const QStringList &services)
@@ -378,7 +340,7 @@ void MimeTypeData::saveRemovedServices(KConfigGroup &config, const QStringList &
     }
     for (const QString &oldService : oldServices) {
         if (!services.contains(oldService)) {
-            // The service was in m_appServices (or m_embedServices) but has been removed
+            // The service was in m_appServices but has been removed
             removedServiceList.append(oldService);
         }
     }
@@ -429,7 +391,7 @@ void MimeTypeData::refresh()
             // (e.g. using KOpenWithDialog, or keditfiletype + kcmshell filetypes)
             initFromQMimeType();
         }
-        if (!m_appServicesModified && !m_embedServicesModified) {
+        if (!m_appServicesModified) {
             m_bFullInit = false; // refresh services too
         }
     }
@@ -479,15 +441,6 @@ void MimeTypeData::setAppServices(const QStringList &dsl)
     }
     m_appServices = dsl;
     m_appServicesModified = true;
-}
-
-void MimeTypeData::setEmbedParts(const QStringList &dsl)
-{
-    if (!m_bFullInit) {
-        getMyServiceOffers(); // so that m_bFullInit is true
-    }
-    m_embedParts = dsl;
-    m_embedServicesModified = true;
 }
 
 QString MimeTypeData::icon() const

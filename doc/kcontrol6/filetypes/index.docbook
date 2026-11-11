@@ -150,14 +150,7 @@ the mouse.</para>
 <para>As soon as you have selected the &MIME; type, the current values of
 the &MIME; type will appear in the module window.</para>
 
-<para>You will notice the current values are split into two tabs:
-<guilabel>General</guilabel> and <guilabel>Embedding</guilabel></para>
-
-<variablelist>
-<varlistentry>
-<term><guilabel>General</guilabel></term>
-<listitem>
-<para>There are 4 properties for each &MIME; type in this tab:</para>
+<para>There are 4 properties for each &MIME; type:</para>
 
 <orderedlist>
 <listitem><para><guilabel>Mime Type Icon</guilabel> is the icon that
@@ -171,18 +164,6 @@ of the file type. This is for your benefit only.</para></listitem>
 determines which applications will be associated with the specified
 &MIME; type.</para></listitem>
 </orderedlist>
-</listitem>
-</varlistentry>
-
-<varlistentry>
-<term><guilabel>Embedding Tab</guilabel></term>
-<listitem>
-<para>The Embedding tab allows you to determine if a file will be
-viewed within a filemanager window, or by starting the
-application.</para>
-</listitem>
-</varlistentry>
-</variablelist>
 
 </sect3>
 
@@ -313,41 +294,6 @@ application to a lower position in the list, rather than deleting the
 application from the list entirely.  Once you have deleted an
 application, if your preferred application should become compromised,
 there will not be an application to view the data document.</para></tip>
-
-</sect3>
-
-<sect3 id="file-assoc-embedding">
-<title>Embedding</title>
-<para>These settings are valid only for &konqueror; used as file manager, &dolphin;
-is not able to use embedded views and opens a file always in the associated application.</para>
-<para>By clicking on the <guilabel>Embedding</guilabel> tab, you are
-presented with four radio buttons in the <guilabel>Left Click Action in Konqueror</guilabel>
-group.  These determine how the filemanager views the selected &MIME; type:</para>
-
-<variablelist>
-<varlistentry><term>Show file in embedded viewer</term>
-<listitem><para>If this is selected, the file will be shown <emphasis>within</emphasis> the filemanager window.</para></listitem></varlistentry>
-<varlistentry><term>Show file in separate viewer</term>
-<listitem><para>This will cause a separate window to be created when showing this &MIME; type.</para></listitem></varlistentry>
-<varlistentry><term>Use settings for 'application' group</term>
-<listitem><para>This will cause the &MIME; type to use the settings for the &MIME; type group.
-(if you are editing an audio &MIME; type, then the settings for the audio group are used).</para></listitem></varlistentry>
-<varlistentry><term>Ask whether to save to disk instead</term>
-<listitem><para>This setting applies only to &konqueror; in browser mode and determines
-if the file is shown in an embedded viewer or if you are asked to save the file to disk instead.</para></listitem></varlistentry>
-</variablelist>
-
-<para>Below this is a listbox labeled <guilabel>Services Preference
-Order</guilabel>.</para>
-
-<para>When you use a filemanager like &dolphin; or &konqueror;, you can
-<mousebutton>right</mousebutton> mouse click, and a menu will with an
-entry labeled <guimenuitem>Open with...</guimenuitem> will appear.  This box
-lists the applications that will appear, in the order they will
-appear, under this menu.</para>
-
-<para>You can use the <guibutton>Move Up</guibutton> and
-<guibutton>Move Down</guibutton> buttons to change the order.</para>
 
 </sect3>
 
