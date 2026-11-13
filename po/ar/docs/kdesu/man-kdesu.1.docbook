@@ -1,0 +1,379 @@
+<?xml version="1.0" ?>
+<!DOCTYPE refentry PUBLIC "-//KDE//DTD DocBook XML V4.5-Based Variant V1.1//EN" "dtd/kdedbx45.dtd" [
+<!ENTITY % Arabic "INCLUDE">
+]>
+
+<refentry lang="&language;">
+<refentryinfo>
+<title
+>دليل مستخدم كيدي</title>
+<author
+>&Lauri.Watts; &Lauri.Watts.mail;</author>
+<date
+>2010-09-18</date>
+<productname
+>بيئة سطح المكتب كيدي</productname>
+</refentryinfo>
+
+<refmeta>
+<refentrytitle
+><command
+>kdesu</command
+></refentrytitle>
+<manvolnum
+>1</manvolnum>
+</refmeta>
+
+<refnamediv>
+<refname
+><command
+>kdesu</command
+></refname>
+<refpurpose
+>يشغّل برنامجًا بصلاحيات مرتفعة</refpurpose>
+</refnamediv>
+
+<refsynopsisdiv>
+<cmdsynopsis
+><command
+>kdesu</command
+> <group choice="opt"
+><option
+>-c</option
+> <replaceable
+> أمر</replaceable
+></group
+> <group choice="opt"
+><option
+>-d</option
+></group
+> <group choice="opt"
+><option
+>-f</option
+> <replaceable
+> ملف</replaceable
+></group
+> <group choice="opt"
+><option
+>-i</option
+> <replaceable
+> اسم أيقونة</replaceable
+></group
+> <group choice="opt"
+><option
+>-n</option
+></group
+> <group choice="opt"
+><option
+>-p</option
+> <replaceable
+> أولوية</replaceable
+></group
+> <group choice="opt"
+><option
+>-r</option
+></group
+> <group choice="opt"
+><option
+>-s</option
+></group
+> <group choice="opt"
+><option
+>-t</option
+></group
+> <group choice="opt"
+><option
+>-u</option
+> <replaceable
+> مستخدم</replaceable
+></group
+> <group choice="opt"
+><option
+>--noignorebutton</option
+></group
+> <group choice="opt"
+><option
+>--attach</option
+> <replaceable
+> winid</replaceable
+></group
+> </cmdsynopsis>
+<cmdsynopsis
+><command
+>kdesu</command
+> <arg choice="opt"
+>خيارات كيدي العامة</arg
+> <arg choice="opt"
+>خيارات كيوت العامة</arg
+> </cmdsynopsis>
+</refsynopsisdiv>
+
+<refsect1>
+<title
+>الوصف</title>
+<para
+>&kdesu; هي واجهة رسومية أمامية لأمر &UNIX; <command
+>su</command
+> لبيئة سطح المكتب كيدي. تتيح لك تشغيل برنامج كمستخدم مختلف بإدخال كلمة مرور ذلك المستخدم. &kdesu; هو برنامج غير مميز؛ يستخدم أمر <command
+>su</command
+> الخاص بالنظام.</para>
+
+<para
+>&kdesu; لديه ميزة إضافية واحدة: يمكنه اختياريًا تذكر كلمات المرور لك. إذا كنت تستخدم هذه الميزة، فستحتاج فقط إلى إدخال كلمة المرور مرة واحدة لكل أمر.</para>
+
+<para
+>هذا البرنامج مصمم لبدء تشغيله من سطر الأوامر أو من ملفات <filename
+>.desktop</filename
+>.</para>
+
+<para
+>بما أن <command
+>kdesu</command
+> لم يعد مثبتًا في <userinput
+> $(kf5-config --prefix)</userinput
+>/bin بل في <userinput
+>kf5-config --path libexec</userinput
+> وبالتالي ليس في <envar
+>Path</envar
+> الخاص بك، يجب عليك استخدام <userinput
+>$(kf5-config --path libexec)<command
+>kdesu</command
+></userinput
+> لتشغيل <command
+>kdesu</command
+>.</para>
+</refsect1>
+
+<refsect1>
+<title
+>خيارات</title>
+
+<variablelist>
+<varlistentry>
+<term
+><option
+>-c <replaceable
+>أمر</replaceable
+></option
+></term>
+<listitem
+><para
+>يحدد هذا الأمر الذي سيُشغّل كجذر. يجب تمريره في وسيط واحد. لذا، على سبيل المثال، إذا أردت بدء مدير ملفات جديد، ستكتب في الموجه: <userinput
+>$(kf5-config --path libexec)<command
+>kdesu <option
+>-c <replaceable
+> &dolphin;</replaceable
+></option
+></command
+></userinput
+></para
+></listitem>
+</varlistentry>
+<varlistentry>
+<term
+><option
+>-d</option
+></term>
+<listitem
+><para
+>أظهر معلومات التنقيح.</para
+></listitem>
+</varlistentry>
+<varlistentry>
+<term
+><option
+>-f <replaceable
+>ملف</replaceable
+></option
+></term>
+<listitem
+><para
+>يتيح هذا الخيار استخدامًا فعالًا لـ &kdesu; في ملفات <filename
+>.desktop</filename
+>. يخبر &kdesu; بفحص الملف المحدد بواسطة <parameter
+>ملف</parameter
+>. إذا كان هذا الملف قابلًا للكتابة من قبل المستخدم الحالي، سينفذ &kdesu; الأمر كمستخدم حالي. إذا لم يكن قابلًا للكتابة، يُنفذ الأمر كمستخدم <parameter
+>مستخدم</parameter
+> (المبدئي هو الجذر).</para>
+<para
+>يُقيّم <parameter
+>ملف</parameter
+> هكذا: إذا بدأ <parameter
+>ملف</parameter
+> بـ <literal
+>/</literal
+>، يُؤخذ كاسم ملف مطلق. وإلا، يُؤخذ كاسم ملف تهيئة عام لـ &kde;.</para
+></listitem>
+</varlistentry>
+<varlistentry>
+<term
+><option
+>-i</option
+> <replaceable
+>اسم أيقونة</replaceable
+></term>
+<listitem
+><para
+>حدد الأيقونة لاستخدامها في حوار كلمة المرور. يمكنك تحديد الاسم فقط، دون أي امتداد.</para>
+</listitem>
+</varlistentry>
+
+<varlistentry>
+<term
+><option
+>-n</option
+></term>
+<listitem
+><para
+>لا تحتفظ بكلمة المرور. هذا يعطل خانة الاختيار <guilabel
+>احتفظ بكلمة المرور</guilabel
+> في حوار كلمة المرور.</para
+></listitem>
+</varlistentry>
+<varlistentry>
+<term
+><option
+>-p</option
+> <replaceable
+>أولوية</replaceable
+></term>
+<listitem>
+<para
+>اضبط قيمة الأولوية. الأولوية هي رقم عشوائي بين 0 و100، حيث 100 تعني أعلى أولوية، و0 تعني أدنى أولوية. المبدئي هو 50.</para>
+</listitem>
+</varlistentry>
+<varlistentry>
+<term
+><option
+>-r</option
+></term>
+<listitem
+><para
+>استخدم جدولة الوقت الفعلي.</para>
+</listitem>
+</varlistentry>
+
+<varlistentry>
+<term
+><option
+>-s</option
+></term>
+<listitem
+><para
+>أوقف برنامج خلفية kdesu. هذا هو برنامج الخلفية الذي يخبئ كلمات المرور الناجحة في الخلفية. قد تُعطل هذه الميزة أيضًا باستخدام <option
+>-n</option
+> عند تشغيل &kdesu; لأول مرة.</para
+></listitem>
+</varlistentry>
+<varlistentry>
+<term
+><option
+>-t</option
+></term>
+<listitem
+><para
+>فعّل الإخراج الطرفي. هذا يعطل حفظ كلمة المرور. هذا إلى حد كبير لأغراض التنقيح؛ إذا أردت تشغيل تطبيق وضع وحدة التحكم، استخدم أمر <command
+>su</command
+> القياسي بدلًا من ذلك.</para
+> </listitem>
+</varlistentry>
+<varlistentry>
+<term
+><option
+>-u</option
+> <replaceable
+>مستخدم</replaceable
+></term>
+<listitem
+><para
+>بينما الاستخدام الأكثر شيوعًا لـ &kdesu; هو تشغيل أمر كمستخدم فائق، يمكنك تقديم أي اسم مستخدم وكلمة مرور مناسبة.</para>
+</listitem>
+</varlistentry>
+
+<varlistentry>
+<term
+><option
+>--noignorebutton</option
+></term>
+<listitem
+><para
+>لا تعرض زر تجاهل.</para>
+</listitem>
+</varlistentry>
+
+<varlistentry>
+<term
+><option
+>--attach</option
+> <replaceable
+> winid</replaceable
+></term>
+<listitem
+><para
+>يجعل الحوار عابرًا لتطبيق X محدد بواسطة winid.</para>
+</listitem>
+</varlistentry>
+
+</variablelist>
+
+</refsect1>
+
+<refsect1>
+<title
+>انظر أيضًا</title>
+<para
+>su(1)</para>
+
+<para
+>وثائق المستخدم الأكثر تفصيلًا متاحة من <ulink url="help:/kdesu"
+>help:/kdesu</ulink
+> (إما أدخل هذا &URL; في &konqueror;، أو شغّل <userinput
+><command
+>khelpcenter</command
+> <parameter
+>help:/kdesu</parameter
+></userinput
+>).</para>
+
+</refsect1>
+
+<refsect1>
+<title
+>أمثلة</title>
+<para
+>شغّل <command
+>kfmclient</command
+> كمستخدم <systemitem class="username"
+>jim</systemitem
+>، وأظهر أيقونة &konqueror; في حوار كلمة المرور:</para>
+<screen
+><userinput
+>$(kf5-config --path libexec)<command
+>kdesu</command
+> <option
+>-u jim</option
+> <option
+>-i konqueror</option
+> <command
+>kfmclient</command
+></userinput
+></screen>
+
+</refsect1>
+
+<refsect1>
+<title
+>المؤلفون</title>
+<para
+>&kdesu; كُتب بواسطة &Geert.Jansen; &Geert.Jansen.mail; و <personname
+><firstname
+>Pietro</firstname
+><surname
+>Iglio</surname
+></personname
+> <email
+>iglio@fub.it</email
+>. </para>
+</refsect1>
+
+</refentry>

@@ -1,0 +1,562 @@
+<?xml version="1.0" ?>
+<!DOCTYPE article PUBLIC "-//KDE//DTD DocBook XML V4.5-Based Variant V1.1//EN"
+"dtd/kdedbx45.dtd" [
+<!ENTITY % addindex "IGNORE">
+<!ENTITY % Arabic "INCLUDE"
+> <!-- change language only here -->
+]>
+
+<article id="filetypes" lang="&language;">
+<articleinfo>
+
+<title
+>ارتباطات الملفّات</title>
+<authorgroup>
+<author
+>&Mike.McBride; &Mike.McBride.mail;</author>
+<othercredit role="translator"
+><firstname
+>زايد</firstname
+><surname
+>السعيدي</surname
+><affiliation
+><address
+><email
+>zayed.alsaidi@gmail.com</email
+></address
+></affiliation
+><contrib
+>التّرجمة العربيّة</contrib
+></othercredit
+> 
+</authorgroup>
+
+<date
+>2016-11-11</date>
+<releaseinfo
+>بلازما 5.8</releaseinfo>
+
+<keywordset>
+<keyword
+>كيدي</keyword>
+<keyword
+>إعدادات النظام</keyword>
+<keyword
+>ارتباط الملفات</keyword>
+<keyword
+>ارتباط</keyword>
+</keywordset>
+</articleinfo>
+<sect1 id="file-assoc">
+<title
+>ارتباطات الملفّات</title>
+
+<sect2 id="file-assoc-intro">
+<title
+>مقدمة</title>
+
+<para
+>من أبرز مزايا &kde; قدرته على مطابقة ملف بيانات مع تطبيقه آليًا. مثال ذلك، عند النقر على مستند &calligrawords; المفضل في مدير الملفات، يبدأ &kde; آليًا تشغيل &calligrawords; ويحمل ذلك الملف فيه لتتمكن من العمل عليه فورًا.</para>
+
+<para
+>في المثال أعلاه، ملف بيانات &calligrawords; <emphasis
+>مرتبط</emphasis
+> بتطبيق &calligrawords;. هذه الارتباطات بين الملفات أساسية لعمل &kde;.</para>
+
+<para
+>عند تثبيت &kde;، يُنشئ آليًا مئات الارتباطات بين الملفات والعديد من أنواع البيانات الأكثر شيوعًا. تستند هذه الارتباطات الأولية إلى البرامج الأكثر تضمينًا والتفضيلات الأكثر شيوعًا لدى المستخدمين.</para>
+
+<para
+>للأسف، لا يستطيع &kde;:</para>
+
+<itemizedlist>
+<listitem
+><para
+>التنبؤ بكل تركيبة ممكنة من البرامج وملفات البيانات</para
+></listitem>
+<listitem
+><para
+>الاستعداد لصيغ ملفات لم تُخترع بعد</para
+></listitem>
+<listitem
+><para
+>أو توقع التطبيق المفضل لكل مستخدم لصيغ ملفات معينة</para
+></listitem>
+</itemizedlist>
+
+<para
+>يمكنك تغيير ارتباطات الملفات الحالية أو إضافة ارتباطات جديدة باستخدام هذه الوحدة.</para>
+
+<para
+>يُسجل كل ارتباط ملف كنوع &MIME;. &MIME; اختصار لـ <quote
+>ملحقات البريد الإلكتروني متعددة الأغراض</quote
+>. يسمح للحاسوب بتحديد نوع الملف دون فتح وتحليل صيغة كل ملف.</para>
+
+</sect2>
+
+<sect2 id="file-assoc-use">
+<title
+>كيفية استخدام هذه الوحدة</title>
+
+<para
+>يمكنك بدء هذه الوحدة بفتح &systemsettings; واختيار <menuchoice
+><guimenu
+>التطبيقات</guimenu
+> <guimenuitem
+>ارتباطات الملفات</guimenuitem
+></menuchoice
+> في فئة <guilabel
+>التخصيص</guilabel
+>. بديلًا، يمكنك بدؤها بكتابة <command
+>kcmshell5 filetypes</command
+> من الطرفية أو &krunner;.</para>
+
+<para
+>تُنظم ارتباطات الملفات في عدة فئات، وستتوفر لديك على الأقل:</para>
+
+<orderedlist>
+<listitem
+><para
+>تطبيق</para
+></listitem>
+<listitem
+><para
+>صوت</para
+></listitem>
+<listitem
+><para
+>صورة</para
+></listitem>
+<listitem
+><para
+>مؤشرات الفهرسة</para
+></listitem>
+<listitem
+><para
+>رسالة</para
+></listitem>
+<listitem
+><para
+>متعدد الأجزاء</para
+></listitem>
+<listitem
+><para
+>نص</para
+></listitem>
+<listitem
+><para
+>فيديو</para
+></listitem>
+</orderedlist>
+
+<para
+>تُرتب جميع ارتباطات الملفات ضمن إحدى هذه الفئات.</para>
+
+<note
+><para
+>لا يوجد فرق وظيفي بين أي من الفئات. صُممت هذه الفئات للمساعدة في تنظيم ارتباطات الملفات، لكنها لا تغير الارتباطات بأي شكل. </para
+></note>
+
+<para
+>تُدرج الفئات في المربع الموسوم <guilabel
+>الأنواع المعروفة</guilabel
+>.</para>
+
+<para
+>يمكنك استكشاف كل فئة ورؤية ارتباطات الملفات ضمنها بمجرد النقر المزدوج على اسم الفئة. ستظهر لك قائمة بأنواع &MIME; المرتبطة تحت تلك الفئة.</para>
+
+<tip
+><para
+>يمكنك أيضًا البحث عن نوع &MIME; معين باستخدام مربع البحث. مربع البحث موسوم بـ <guilabel
+>ابحث عن نوع ملف أو نمط اسم ملف...</guilabel
+> ويقع فوق قائمة الفئات.</para>
+
+<para
+>اكتب ببساطة الحرف الأول من نوع &MIME; الذي يهمك. تُوسع الفئات آليًا، وتُعرض فقط أنواع &MIME; التي تحتوي ذلك الحرف.</para>
+
+<para
+>يمكنك بعد ذلك إدخال حرف ثانٍ، فتُحدد أنواع &MIME; بشكل أكبر لتشمل فقط الأنواع التي تحتوي هذين الحرفين.</para
+></tip>
+
+<sect3 id="file-assoc-use-add">
+<title
+>إضافة نوع MIME جديد</title>
+
+<para
+>إذا أردت إضافة نوع &MIME; جديد إلى ارتباطات ملفاتك، يمكنك النقر على الزر <guibutton
+>إضافة...</guibutton
+>. سيظهر مربع حوار صغير. تختار الفئة من القائمة المنسدلة الموسومة <guilabel
+>المجموعة:</guilabel
+>، وتكتب اسم &MIME; في الحقل الفارغ الموسوم <guilabel
+>اسم النوع:</guilabel
+>. انقر <guibutton
+>موافق</guibutton
+> لإضافة نوع &MIME; الجديد، أو انقر <guibutton
+>إلغاء</guibutton
+> لعدم إضافة أي نوع &MIME; جديد.</para>
+
+</sect3>
+
+<sect3 id="file-assoc-use-del">
+<title
+>إزالة نوع MIME</title>
+
+<para
+>إذا أردت إزالة نوع &MIME;، فحدد نوع &MIME; الذي تريد حذفه بالنقر مرة واحدة بالماوس على اسم نوع &MIME;. ثم انقر على الزر الموسوم <guibutton
+>إزالة</guibutton
+>. سيُحذف نوع &MIME; فورًا.</para>
+<para
+>يمكنك إزالة أنواع &MIME; الخاصة بك فقط.</para>
+
+</sect3>
+
+<sect3 id="file-assoc-use-edit">
+<title
+>تحرير خصائص نوع MIME</title>
+
+<para
+>قبل تحرير خاصية نوع &MIME;، يجب عليك أولًا تحديد نوع &MIME; المطلوب. تصفح الفئات ببساطة حتى تجد نوع &MIME; الذي تريد تحريره، ثم انقر عليه مرة واحدة بالماوس.</para>
+
+<para
+>بمجرد تحديد نوع &MIME;، ستظهر القيم الحالية لنوع &MIME; في نافذة الوحدة.</para>
+
+<para
+>ستلاحظ أن القيم الحالية مقسمة إلى لسانين: <guilabel
+>عام</guilabel
+> و<guilabel
+>تضمين</guilabel
+></para>
+
+<variablelist>
+<varlistentry>
+<term
+><guilabel
+>عامّ</guilabel
+></term>
+<listitem>
+<para
+>توجد 4 خصائص لكل نوع &MIME; في هذه اللوحة:</para>
+
+<orderedlist>
+<listitem
+><para
+><guilabel
+>أيقونة نوع MIME</guilabel
+> هي الأيقونة التي ستكون مرئية عند استخدام &dolphin; أو &konqueror; كمدير ملفات.</para
+></listitem>
+<listitem
+><para
+><guilabel
+>أنماط أسماء الملفات</guilabel
+> هو نمط بحث سيستخدمه &kde; لتحديد نوع &MIME;.</para
+></listitem>
+<listitem
+><para
+><guilabel
+>الوصف:</guilabel
+> هو وصف مختصر لنوع الملف. هذا لصالحك فقط.</para
+></listitem>
+<listitem
+><para
+><guilabel
+>ترتيب تفضيل التطبيقات</guilabel
+> يحدد التطبيقات التي ستُربط بنوع &MIME; المحدد.</para
+></listitem>
+</orderedlist>
+</listitem>
+</varlistentry>
+
+<varlistentry>
+<term
+><guilabel
+>لوحة التضمين</guilabel
+></term>
+<listitem>
+<para
+>تتيح لك لوحة التضمين تحديد ما إذا كان الملف سيُعرض داخل نافذة مدير الملفات، أو عن طريق تشغيل التطبيق.</para>
+</listitem>
+</varlistentry>
+</variablelist>
+
+</sect3>
+
+<sect3 id="file-assoc-use-icon">
+<title
+>تغيير الأيقونة</title>
+
+<para
+>لتغيير الأيقونة، ببساطة انقر على زر الأيقونة. سيظهر مربع حوار يعرض لك جميع الأيقونات المتاحة. ببساطة انقر مرة واحدة بالماوس على الأيقونة التي تختارها، ثم انقر <guibutton
+>موافق</guibutton
+>.</para>
+
+</sect3>
+
+<sect3 id="file-assoc-use-pattern">
+<title
+>تحرير أنماط نوع MIME</title>
+
+<para
+>المربع المسمى <guilabel
+>أنماط أسماء الملفات</guilabel
+> يحدد الملفات التي ستُضمن ضمن نوع &MIME; هذا.</para>
+
+<para
+>عادةً، تُحدد الملفات بناءً على لاحقتها. (أمثلة: الملفات التي تنتهي بـ <literal role="extension"
+>.wav</literal
+> هي ملفات صوتية تستخدم تنسيق WAV، والملفات التي تنتهي بـ <literal role="extension"
+>.c</literal
+> هي ملفات برامج مكتوبة بلغة C).</para>
+
+<para
+>يجب إدخال قناع اسم الملف في مربع التحرير والسرد هذا.</para>
+
+<para
+>العلامة النجمية (<literal
+>*</literal
+>) هي حرف بدل سيُستخدم مع كل قناع نوع &MIME; تقريبًا. مناقشة كاملة لأحرف البدل خارج نطاق هذا الدليل، لكن من المهم فهم أن العلامة النجمية (في هذا السياق) <quote
+>تطابق</quote
+> أي عدد من الأحرف. كمثال: <userinput
+>*.pdf</userinput
+> سيطابق <filename
+>Datafile.pdf</filename
+> و <filename
+>Graphics.pdf</filename
+> و <filename
+>User.pdf</filename
+>، لكن لن يطابق <filename
+>PDF</filename
+> أو <filename
+>Datafile.PDF</filename
+> أو <filename
+>.pdf</filename
+>.</para>
+
+<tip
+><para
+>من المفيد جدًا وجود أقنعة متعددة. واحد للأحرف الصغيرة، وآخر للأحرف الكبيرة، إلخ… سيساعد هذا في ضمان قدرة &kde; على تحديد نوع الملف بدقة أكبر.</para
+></tip>
+
+</sect3>
+
+<sect3 id="file-assoc-use-desc">
+<title
+>تحرير وصف نوع MIME</title>
+
+<para
+>يمكنك كتابة وصف مختصر لنوع &MIME; في مربع النص المسمى <guilabel
+>الوصف:</guilabel
+>. هذه التسمية لمساعدتك، لا تؤثر على وظيفة نوع &MIME;.</para>
+
+</sect3>
+
+<sect3 id="file-assoc-use-app">
+<title
+>تحرير ارتباطات التطبيقات</title>
+
+<para
+>توجد خمسة أزرار (<guibutton
+>نقل لأعلى</guibutton
+> و <guibutton
+>نقل لأسفل</guibutton
+> و <guibutton
+>إضافة...</guibutton
+> و <guibutton
+>تحرير...</guibutton
+> و <guibutton
+>إزالة</guibutton
+>) ومربع قائمة (الذي يسرد التطبيقات) تُستخدم لضبط التطبيقات.</para>
+
+<para
+>مربع القائمة يسرد جميع التطبيقات المرتبطة بنوع &MIME; محدد. القائمة بترتيب محدد. التطبيق العلوي هو أول تطبيق يُحاول. التطبيق التالي في القائمة هو الثاني، إلخ…</para>
+
+<note
+><para
+>ماذا تقصد بوجود أكثر من تطبيق لكل نوع &MIME;؟ لماذا هذا ضروري؟</para>
+
+<para
+>بدأنا بالقول إن &kde; يأتي مُضبطًا مسبقًا بمئات ارتباطات الملفات. الواقع أن كل نظام يُثبت عليه &kde; لديه مجموعة مختلفة من التطبيقات. بالسماح بارتباطات متعددة لكل نوع &MIME;، يمكن لـ &kde; الاستمرار في العمل عندما لا يكون تطبيق معين مثبتًا على النظام.</para>
+
+<para
+>على سبيل المثال:</para>
+<para
+>بالنسبة لنوع &MIME; <literal
+>pdf</literal
+>، يوجد تطبيقان مرتبطان بهذا النوع من الملفات. البرنامج الأول يُسمى &okular;. إذا لم يكن نظامك يحتوي على &okular; مثبتًا، فإن &kde; يبدأ تلقائيًا التطبيق الثاني &krita;. كما ترى، سيساعد هذا في الحفاظ على عمل &kde; بقوة أثناء إضافة وإزالة التطبيقات.</para
+></note>
+
+<para
+>لقد أثبتنا أن الترتيب مهم. يمكنك تغيير ترتيب التطبيقات بالنقر مرة واحدة بالماوس على التطبيق الذي تريد نقله، ثم النقر إما على <guibutton
+>نقل لأعلى</guibutton
+> أو <guibutton
+>نقل لأسفل</guibutton
+>. سيؤدي هذا إلى تحريك التطبيق المحدد حاليًا لأعلى أو لأسفل قائمة التطبيقات. </para>
+
+<para
+>يمكنك إضافة تطبيقات جديدة إلى القائمة بالنقر على الزر المسمى <guibutton
+>إضافة...</guibutton
+>. سيظهر مربع حوار. باستخدام مربع الحوار، يمكنك تحديد التطبيق الذي تريد استخدامه لنوع &MIME; هذا. انقر <guibutton
+>موافق</guibutton
+> عند الانتهاء، وسيُضاف التطبيق إلى القائمة الحالية.</para>
+
+<para
+>لتغيير خيارات تطبيق لنوع &MIME; معين، حدده في القائمة ثم اضغط على زر <guibutton
+>تحرير...</guibutton
+>. يفتح هذا حوارًا جديدًا بلوحات <guilabel
+>عام</guilabel
+> و <guilabel
+>أذون</guilabel
+> و <guilabel
+>تطبيق</guilabel
+> و <guilabel
+>تفاصيل</guilabel
+>. في لوحة <guilabel
+>تطبيق</guilabel
+> يمكنك تحرير <guilabel
+>الاسم:</guilabel
+> و <guilabel
+>الوصف:</guilabel
+> و <guilabel
+>تعليق:</guilabel
+>. في حقل <guilabel
+>الأمر:</guilabel
+> يمكنك وضع عدة عناصر نائبة بعد الأمر، والتي ستُستبدل بالقيم الفعلية عند تشغيل البرنامج الفعلي:</para>
+<itemizedlist>
+<listitem
+><para
+>‎%f - اسم ملف واحد</para
+></listitem>
+<listitem
+><para
+>‎%F - قائمة ملفات؛ تُستخدم للتطبيقات التي يمكنها فتح عدة ملفات محلية في وقت واحد</para
+></listitem>
+<listitem
+><para
+>‎%u - عنوان URL واحد</para
+></listitem>
+<listitem
+><para
+>%U - قائمة بعناوين &URL;</para
+></listitem>
+<listitem
+><para
+>%d - مجلد الملف المراد فتحه</para
+></listitem>
+<listitem
+><para
+>‎%D - قائمة مجلدات</para
+></listitem>
+<listitem
+><para
+>‎%i - الأيقونة</para
+></listitem>
+<listitem
+><para
+>‎%m - الأيقونة الصغيرة</para
+></listitem>
+<listitem
+><para
+>‎%c - التسمية التوضيحية</para
+></listitem>
+</itemizedlist>
+
+<para
+>يمكنك إزالة تطبيق (وبالتالي ضمان أن التطبيق لن يعمل أبدًا مع نوع &MIME; هذا) بالنقر مرة واحدة على اسم التطبيق، ثم النقر على زر <guibutton
+>إزالة</guibutton
+>.</para>
+
+<tip
+><para
+>من الجيد استخدام زري <guibutton
+>نقل لأعلى</guibutton
+> و <guibutton
+>نقل لأسفل</guibutton
+> لضبط التطبيق غير المرغوب فيه إلى موضع أقل في القائمة، بدلًا من حذف التطبيق من القائمة بالكامل. بمجرد حذف تطبيق، إذا أصبح تطبيقك المفضل معطلًا، فلن يكون هناك تطبيق لعرض مستند البيانات.</para
+></tip>
+
+</sect3>
+
+<sect3 id="file-assoc-embedding">
+<title
+>تضمين</title>
+<para
+>هذه الإعدادات صالحة فقط لـ &konqueror; المستخدم كمدير ملفات، و&dolphin; لا يستطيع استخدام العروض المضمنة ويفتح الملف دائمًا في التطبيق المرتبط.</para>
+<para
+>بالنقر على لسان <guilabel
+>التضمين</guilabel
+>، ستظهر لك أربعة أزرار دائرية في مجموعة <guilabel
+>إجراء النقر الأيسر في كونكيورر</guilabel
+>. تحدد هذه الأزرار كيفية عرض مدير الملفات لنوع &MIME; المحدد:</para>
+
+<variablelist>
+<varlistentry
+><term
+>أظهر الملف في عارض مضمن</term>
+<listitem
+><para
+>إذا تم اختيار هذا، سيُعرض الملف <emphasis
+>داخل</emphasis
+> نافذة مدير الملفات.</para
+></listitem
+></varlistentry>
+<varlistentry
+><term
+>أظهر الملف في عارض منفصل</term>
+<listitem
+><para
+>سيؤدي هذا إلى إنشاء نافذة منفصلة عند عرض نوع &MIME; هذا.</para
+></listitem
+></varlistentry>
+<varlistentry
+><term
+>استخدم إعدادات مجموعة 'التطبيق'</term>
+<listitem
+><para
+>سيؤدي هذا إلى استخدام نوع &MIME; لإعدادات مجموعة نوع &MIME;. (إذا كنت تعدل نوع &MIME; صوتي، فسيتم استخدام إعدادات المجموعة الصوتية).</para
+></listitem
+></varlistentry>
+<varlistentry
+><term
+>اسأل عما إذا كان سيتم الحفظ على القرص بدلًا من ذلك</term>
+<listitem
+><para
+>ينطبق هذا الإعداد فقط على &konqueror; في وضع المتصفح ويحدد ما إذا كان الملف سيُعرض في عارض مضمن أم سيُطلب منك حفظ الملف على القرص بدلًا من ذلك.</para
+></listitem
+></varlistentry>
+</variablelist>
+
+<para
+>أسفل هذا يوجد مربع قائمة معنون بـ <guilabel
+>ترتيب تفضيل الخدمات</guilabel
+>.</para>
+
+<para
+>عند استخدام مدير ملفات مثل &dolphin; أو &konqueror;، يمكنك النقر بزر الفأرة <mousebutton
+>الأيمن</mousebutton
+>، وستظهر قائمة تحتوي على إدخال معنون بـ <guimenuitem
+>افتح باستخدام...</guimenuitem
+>. يسرد هذا المربع التطبيقات التي ستظهر، بالترتيب الذي ستظهر به، ضمن هذه القائمة.</para>
+
+<para
+>يمكنك استخدام الزرين <guibutton
+>نقل لأعلى</guibutton
+> و<guibutton
+>نقل لأسفل</guibutton
+> لتغيير الترتيب.</para>
+
+</sect3>
+
+<sect3 id="file-assoc-use-done">
+<title
+>جعل التغييرات دائمة</title>
+
+<para
+>عند الانتهاء من إجراء أي تغييرات على أنواع &MIME;، يمكنك النقر على <guibutton
+>طبق</guibutton
+> لجعل تغييراتك دائمة، مع البقاء في هذه الوحدة.</para>
+
+</sect3>
+</sect2>
+
+</sect1>
+
+</article>
