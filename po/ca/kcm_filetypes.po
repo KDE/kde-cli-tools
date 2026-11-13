@@ -1,26 +1,26 @@
 # Translation of kcm_filetypes.po to Catalan
-# Copyright (C) 1999-2023 This_file_is_part_of_KDE
+# Copyright (C) 1999-2026 This_file_is_part_of_KDE
 # This file is distributed under the license LGPL version 2.1 or
 # version 3 or later versions approved by the membership of KDE e.V.
 #
 # SPDX-FileCopyrightText: 1999-2001, 2004-2006 Sebastià Pla i Sanz <sps@sastia.com>
 # SPDX-FileCopyrightText: 2002-2003, 2014, 2016, 2020 Antoni Bella Pérez <antonibella5@yahoo.com>
 # SPDX-FileCopyrightText: 2005 Albert Astals Cid <aacid@kde.org>
-# SPDX-FileCopyrightText: 2007-2010, 2012-2015, 2017, 2019, 2021-2023 Josep M. Ferrer <txemaq@gmail.com>
+# SPDX-FileCopyrightText: 2007-2010, 2012-2015, 2017, 2019, 2021-2023, 2026 Josep M. Ferrer <txemaq@gmail.com>
 # SPDX-FileCopyrightText: 2019 Alfredo Vicente <alviboi@gmail.com>
 msgid ""
 msgstr ""
 "Project-Id-Version: kde-cli-tools\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2026-08-28 00:47+0000\n"
-"PO-Revision-Date: 2023-05-16 11:33+0200\n"
+"PO-Revision-Date: 2026-11-12 09:39+0100\n"
 "Last-Translator: Josep M. Ferrer <txemaq@gmail.com>\n"
 "Language-Team: Catalan <kde-i18n-ca@kde.org>\n"
 "Language: ca\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Generator: Lokalize 20.12.0\n"
+"X-Generator: Lokalize 25.04.0\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
 "X-Accelerator-Marker: &\n"
 
@@ -46,7 +46,7 @@ msgstr ""
 #: filetypedetails.cpp:60
 #, kde-format
 msgid "Filename Patterns"
-msgstr "Patrons de fitxer"
+msgstr "Patrons de noms de fitxers"
 
 #: filetypedetails.cpp:72
 #, kde-format
@@ -226,15 +226,15 @@ msgstr ""
 #: keditfiletype.cpp:114
 #, kde-format
 msgid "File Type Editor"
-msgstr "Editor per als tipus de fitxer"
+msgstr "Editor de tipus de fitxers"
 
 #: keditfiletype.cpp:116
 #, kde-format
 msgid ""
 "KDE file type editor - simplified version for editing a single file type"
 msgstr ""
-"Editor per als tipus de fitxer del KDE: versió simplificada per a editar un "
-"sol tipus de fitxer"
+"Editor de tipus de fitxers de KDE: versió simplificada per a editar un sol "
+"tipus de fitxer"
 
 #: keditfiletype.cpp:118
 #, kde-format

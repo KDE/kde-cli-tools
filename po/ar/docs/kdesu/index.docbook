@@ -1,0 +1,515 @@
+<?xml version="1.0" ?>
+<!DOCTYPE book PUBLIC "-//KDE//DTD DocBook XML V4.5-Based Variant V1.1//EN"
+"dtd/kdedbx45.dtd" [
+  <!ENTITY kappname "&kdesu;">
+  <!ENTITY package "kdebase">
+  <!ENTITY % addindex "IGNORE">
+  <!ENTITY % Arabic "INCLUDE"
+> <!-- change language only here -->
+]>
+
+<book id="kdesu" lang="&language;">
+<bookinfo>
+
+<title
+>دليل &kdesu;</title>
+
+<authorgroup>
+<author
+>&Geert.Jansen; &Geert.Jansen.mail;</author>
+<othercredit role="translator"
+><firstname
+>زايد</firstname
+><surname
+>السعيدي</surname
+><affiliation
+><address
+><email
+>zayed.alsaidi@gmail.com</email
+></address
+></affiliation
+><contrib
+>التّرجمة العربيّة</contrib
+></othercredit
+> 
+</authorgroup>
+
+<copyright>
+<year
+>2000</year>
+<holder
+>&Geert.Jansen;</holder>
+</copyright>
+
+<legalnotice
+>&FDLNotice;</legalnotice>
+
+<date
+>2010-09-21</date>
+<releaseinfo
+>كِيدِي 4.5</releaseinfo>
+
+
+<abstract
+><para
+>&kdesu; هي واجهة رسومية أمامية لأمر <command
+>su</command
+> في &UNIX;.</para
+></abstract>
+
+<keywordset>
+<keyword
+>كيدي</keyword>
+<keyword
+>su</keyword>
+<keyword
+>كلمة السر</keyword>
+<keyword
+>جذر</keyword>
+</keywordset>
+
+</bookinfo>
+
+<chapter id="introduction">
+<title
+>مقدمة</title>
+
+<!-- from kdebase/runtime/kdesu/FAQ since rev 855297
+kdesu is a libexec program, so does not normally reside in your PATH.
+Use something like:
+<command
+>$(kf5-config - -path libexec)kdesu - - program_to_run
+
+https://bugs.kde.org/show_bug.cgi?id=194267
+"one needs to create a
+~/.kde/share/config/kdesurc file to tell KDE to use sudo instead of su."
+~/.kde/share/config/kdesurc
+[super-user-command]
+super-user-command=sudo
+does this really work?
+-->
+
+<para
+>مرحبًا بك في &kdesu;! &kdesu; هي واجهة رسومية أمامية لأمر <command
+>su</command
+> في &UNIX; لبيئة سطح المكتب كي. تتيح لك تشغيل برنامج كمستخدم مختلف بتزويد كلمة مرور ذلك المستخدم. &kdesu; برنامج غير مميز؛ يستخدم <command
+>su</command
+> الخاص بالنظام.</para>
+
+<para
+>تمتلك &kdesu; ميزة إضافية واحدة: يمكنها تذكر كلمات المرور لك. إذا كنت تستخدم هذه الميزة، فستحتاج فقط إلى إدخال كلمة المرور مرة واحدة لكل أمر. انظر <xref linkend="sec-password-keeping"/> لمزيد من المعلومات حول هذا وتحليل أمني.</para>
+
+<para
+>صُمم هذا البرنامج ليُشغل من سطر الأوامر أو من ملفات <filename
+>.desktop</filename
+>. على الرغم من أنه يطلب كلمة مرور <systemitem class="username"
+>الجذر</systemitem
+> باستخدام حوار &GUI;، إلا أنني أعتبره أكثر من كونه مادة لاصقة بين سطر الأوامر و&GUI; بدلًا من كونه برنامج &GUI; خالص.</para>
+
+<para
+>بما أن <command
+>kdesu</command
+> لم يعد مُثبتًا في <userinput
+> $(kf5-config --prefix)</userinput
+>/bin بل في <userinput
+>kf5-config --path libexec</userinput
+> وبالتالي ليس في <envar
+>المسار</envar
+> الخاص بك، يجب عليك استخدام  <userinput
+>$(kf5-config --path libexec)<command
+>kdesu</command
+></userinput
+> لتشغيل <command
+>kdesu</command
+>.</para>
+</chapter>
+
+<chapter id="using-kdesu">
+<title
+>استخدام &kdesu;</title>
+
+<para
+>استخدام &kdesu; سهل. الصيغة كالتالي:</para>
+
+<cmdsynopsis
+><command
+>kdesu</command
+> <group choice="opt"
+><option
+>-c</option
+> <replaceable
+> أمر</replaceable
+></group
+> <group choice="opt"
+><option
+>-d</option
+></group
+> <group choice="opt"
+><option
+>-f</option
+> <replaceable
+> ملف</replaceable
+></group
+> <group choice="opt"
+><option
+>-i</option
+> <replaceable
+> اسم أيقونة</replaceable
+></group
+> <group choice="opt"
+><option
+>-n</option
+></group
+> <group choice="opt"
+><option
+>-p</option
+> <replaceable
+> أولوية</replaceable
+></group
+> <group choice="opt"
+><option
+>-r</option
+></group
+> <group choice="opt"
+><option
+>-s</option
+></group
+> <group choice="opt"
+><option
+>-t</option
+></group
+> <group choice="opt"
+><option
+>-u</option
+> <replaceable
+> مستخدم</replaceable
+></group
+> <group choice="opt"
+><option
+>--noignorebutton</option
+></group
+> <group choice="opt"
+><option
+>--attach</option
+> <replaceable
+> winid</replaceable
+></group
+> </cmdsynopsis>
+<cmdsynopsis
+><command
+>kdesu</command
+> <arg choice="opt"
+>خيارات &kde; العامة</arg
+> <arg choice="opt"
+>خيارات &Qt; العامة</arg
+> </cmdsynopsis>
+
+<para
+>خيارات سطر الأوامر موضحة أدناه.</para>
+
+<variablelist>
+<varlistentry>
+<term
+><option
+>-c <replaceable
+>أمر</replaceable
+></option
+></term>
+<listitem
+><para
+>يحدد هذا الأمر الذي سيُشغل كجذر. يجب تمريره في وسيط واحد. لذا، على سبيل المثال، إذا أردت تشغيل مدير ملفات جديد، ستُدخل في الموجه: <userinput
+>$(kf5-config --path libexec)<command
+>kdesu <option
+>-c <replaceable
+> &dolphin;</replaceable
+></option
+></command
+></userinput
+></para
+></listitem>
+</varlistentry>
+<varlistentry>
+<term
+><option
+>-d</option
+></term>
+<listitem
+><para
+>اعرض معلومات التصحيح.</para
+></listitem>
+</varlistentry>
+<varlistentry>
+<term
+><option
+>-f <replaceable
+>ملف</replaceable
+></option
+></term>
+<listitem
+><para
+>يسمح هذا الخيار باستخدام فعال لـ &kdesu; في ملفات <filename
+>.desktop</filename
+>. يخبر &kdesu; بفحص الملف المحدد بواسطة <parameter
+>ملف</parameter
+>. إذا كان هذا الملف قابلًا للكتابة من قبل المستخدم الحالي، سينفذ &kdesu; الأمر كمستخدم حالي. إذا لم يكن قابلًا للكتابة، يُنفذ الأمر كمستخدم <parameter
+>مستخدم</parameter
+> (المبدئي هو الجذر).</para>
+<para
+><parameter
+>ملف</parameter
+> يُقيّم كالتالي: إذا بدأ <parameter
+>ملف</parameter
+> بـ <literal
+>/</literal
+>، يُؤخذ كاسم ملف مطلق. وإلا، يُؤخذ كاسم ملف تهيئة عام لـ &kde;.</para
+></listitem>
+</varlistentry>
+<varlistentry>
+<term
+><option
+>-i</option
+> <replaceable
+>اسم أيقونة</replaceable
+></term>
+<listitem
+><para
+>حدد الأيقونة لاستخدامها في حوار كلمة المرور. يمكنك تحديد الاسم فقط، دون أي امتداد.</para>
+<para
+>على سبيل المثال لتشغيل &konqueror; في وضع مدير الملفات وعرض أيقونة &konqueror; في حوار كلمة المرور:</para>
+<screen
+><userinput
+>$(kf5-config --path libexec)<command
+>kdesu</command
+>  <option
+>-i konqueror</option>
+<option
+>-c "konqueror --profile filemanagement"</option
+></userinput
+></screen>
+</listitem>
+</varlistentry>
+
+<varlistentry>
+<term
+><option
+>-n</option
+></term>
+<listitem
+><para
+>لا تحتفظ بكلمة المرور. يعطل هذا خانة الاختيار <guilabel
+>احتفظ بكلمة المرور</guilabel
+> في حوار كلمة المرور.</para
+></listitem>
+</varlistentry>
+<varlistentry>
+<term
+><option
+>-p</option
+> <replaceable
+>أولوية</replaceable
+></term>
+<listitem>
+<para
+>اضبط قيمة الأولوية. الأولوية هي رقم عشوائي بين 0 و100، حيث 100 تعني أعلى أولوية، و0 تعني أدنى أولوية. المبدئي هو 50.</para>
+</listitem>
+</varlistentry>
+<varlistentry>
+<term
+><option
+>-r</option
+></term>
+<listitem
+><para
+>استخدم جدولة الزمن الحقيقي.</para>
+</listitem>
+</varlistentry>
+
+<varlistentry>
+<term
+><option
+>-s</option
+></term>
+<listitem
+><para
+>أوقف خفيضة kdesu. انظر <xref linkend="sec-password-keeping"/>.</para
+></listitem>
+</varlistentry>
+<varlistentry>
+<term
+><option
+>-t</option
+></term>
+<listitem
+><para
+>فعّل مخرجات الطرفية. يعطل هذا حفظ كلمة المرور. هذا إلى حد كبير لأغراض التنقيح؛ إذا أردت تشغيل تطبيق وضع وحدة التحكم، استخدم <command
+>su</command
+> القياسي بدلًا من ذلك.</para
+> </listitem>
+</varlistentry>
+<varlistentry>
+<term
+><option
+>-u</option
+> <replaceable
+> مستخدم</replaceable
+></term>
+<listitem
+><para
+>بينما الاستخدام الأكثر شيوعًا لـ &kdesu; هو تشغيل أمر كمستخدم فائق، يمكنك تزويد أي اسم مستخدم وكلمة المرور المناسبة.</para>
+</listitem>
+</varlistentry>
+
+</variablelist>
+
+</chapter>
+
+<chapter id="Internals">
+<title
+>المكونات الداخلية</title>
+
+<sect1 id="x-authentication">
+<title
+>استيثاق X</title>
+
+<para
+>البرنامج الذي تنفذه سيعمل تحت معرف مستخدم الجذر ولن يكون له عمومًا سلطة الوصول إلى شاشة X الخاصة بك. تتجاوز &kdesu; هذا بإضافة كعكة استيثاق لشاشتك إلى ملف مؤقت <filename
+>.Xauthority</filename
+>. بعد خروج الأمر، يُزال هذا الملف. </para>
+
+<para
+>إذا لم تستخدم كعكات X، فأنت مسؤول عن نفسك. ستكتشف &kdesu; هذا ولن تُضيف كعكة ولكن سيتعين عليك التأكد من أن الجذر مسموح له بالوصول إلى شاشتك.</para>
+
+</sect1>
+
+<sect1 id="interface-to-su">
+<title
+>واجهة إلى <command
+>su</command
+></title>
+
+<para
+>تستخدم &kdesu; <command
+>su</command
+> الخاص بالنظام لاكتساب الامتيازات. في هذا القسم، أشرح تفاصيل كيف تفعل &kdesu; هذا. </para>
+
+<para
+>لأن بعض تطبيقات <command
+>su</command
+> (&ie; تلك من &RedHat;) لا ترغب في قراءة كلمة السر من <literal
+>stdin</literal
+>، ينشئ &kdesu; زوج pty/tty وينفذ <command
+>su</command
+> مع ربط واصفات ملفاته القياسية بالـ tty.</para>
+
+<para
+>لتنفيذ الأمر الذي اختاره المستخدم، بدلًا من صدفة تفاعلية، يستخدم &kdesu; الوسيط <option
+>-c</option
+> مع <command
+>su</command
+>. هذا الوسيط مفهوم من قبل كل صدفة أعرفها لذا يجب أن يعمل بشكل محمول. يمرر <command
+>su</command
+> هذا الوسيط <option
+>-c</option
+> إلى صدفة المستخدم الهدف، وتنفذ الصدفة البرنامج. مثال أمر: <command
+>su <option
+>root -c <replaceable
+>the_program</replaceable
+></option
+></command
+>.</para>
+
+<para
+>بدلًا من تنفيذ أمر المستخدم مباشرة مع <command
+>su</command
+>، ينفذ &kdesu; برنامجًا صغيرًا يسمى <application
+>kdesu_stub</application
+>. هذا البرنامج الصغير (الذي يعمل كمستخدم هدف)، يطلب بعض المعلومات من &kdesu; عبر قناة pty/tty (الإدخال القياسي والإخراج القياسي للبرنامج الصغير) ثم ينفذ برنامج المستخدم. المعلومات المنقولة هي: شاشة X، كعكة استيثاق X (إن توفرت)، <envar
+>PATH</envar
+> والأمر المراد تشغيله. سبب استخدام برنامج صغير هو أن كعكة X هي معلومات خاصة وبالتالي لا يمكن تمريرها عبر سطر الأوامر.</para>
+
+</sect1>
+
+<sect1 id="password-checking">
+<title
+>فحص كلمة السر</title>
+
+<para
+>سيتحقق &kdesu; من كلمة السر التي أدخلتها ويعطي رسالة خطأ إذا لم تكن صحيحة. يتم الفحص بتنفيذ برنامج اختبار: <filename
+>/bin/true</filename
+>. إذا نجح هذا، يُفترض أن كلمة السر صحيحة.</para>
+
+</sect1>
+
+<sect1 id="sec-password-keeping">
+<title
+>حفظ كلمة السر</title>
+
+<para
+>لراحتك، يطبق &kdesu; ميزة <quote
+>حفظ كلمة السر</quote
+>. إذا كنت مهتمًا بالأمن، يجب أن تقرأ هذه الفقرة.</para>
+
+<para
+>السماح لـ &kdesu; بتذكر كلمات السر يفتح ثغرة أمنية (صغيرة) في نظامك. بوضوح، لا يسمح &kdesu; لأي شخص غير معرف المستخدم الخاص بك باستخدام كلمات السر، ولكن، إذا تم ذلك دون حذر، سيخفض هذا مستوى أمن <systemitem class="username"
+>root</systemitem
+> إلى مستوى مستخدم عادي (أنت). المخترق الذي يخترق حسابك، سيحصل على وصول <systemitem class="username"
+>root</systemitem
+>. يحاول &kdesu; منع هذا. مخطط الأمن الذي يستخدمه، في رأيي على الأقل، آمن بشكل معقول ويُشرح هنا.</para>
+
+<para
+>يستخدم &kdesu; خفيًا، يسمى <application
+>kdesud</application
+>. يستمع الخفي إلى مقبس &UNIX; في <filename
+>/tmp</filename
+> للأوامر. وضع المقبس هو 0600 بحيث لا يمكن لغير معرف المستخدم الخاص بك الاتصال به. إذا كان حفظ كلمة السر مفعلًا، ينفذ &kdesu; الأوامر عبر هذا الخفي. يكتب الأمر وكلمة سر <systemitem class="username"
+>root</systemitem
+> إلى المقبس وينفذ الخفي الأمر باستخدام <command
+>su</command
+>، كما وُصف سابقًا. بعد هذا، لا يتم التخلص من الأمر وكلمة السر. بدلًا من ذلك، يتم الاحتفاظ بهما لمدة زمنية محددة. هذه هي قيمة المهلة من وحدة التحكم. إذا جاء طلب آخر لنفس الأمر خلال هذه الفترة الزمنية، لا يحتاج العميل إلى توفير كلمة السر. لمنع المخترقين الذين اخترقوا حسابك من سرقة كلمات السر من الخفي (مثلًا، بإرفاق مصحح)، يتم تثبيت الخفي كمجموعة-معرف nogroup. يجب أن يمنع هذا جميع المستخدمين العاديين (بما فيهم أنت) من الحصول على كلمات السر من عملية <application
+>kdesud</application
+>. أيضًا، يضبط الخفي متغير البيئة <envar
+>DISPLAY</envar
+> إلى القيمة التي كانت عليه عند بدئه. الشيء الوحيد الذي يمكن للمخترق فعله هو تنفيذ تطبيق على شاشتك.</para>
+
+<para
+>نقطة ضعف واحدة في هذا المخطط هي أن البرامج التي تنفذها ربما لم تُكتب مع مراعاة الأمن (مثل برامج setuid <systemitem class="username"
+>root</systemitem
+>). هذا يعني أنها قد تحتوي على تجاوزات سعة المخزن المؤقت أو مشاكل أخرى ويمكن للمخترق استغلالها.</para>
+
+<para
+>استخدام ميزة حفظ كلمة السر هو مقايضة بين الأمن والراحة. أشجعك على التفكير فيها وتقرير بنفسك إذا كنت تريد استخدامها أم لا.</para>
+
+</sect1>
+</chapter>
+
+<chapter id="Author">
+<title
+>المؤلف</title>
+
+<para
+>&kdesu;</para>
+
+<para
+>حقوق النشر 2000 &Geert.Jansen;</para>
+
+<para
+>&kdesu; كتب بواسطة &Geert.Jansen;. يعتمد إلى حد ما على &kdesu; الخاص بـ Pietro Iglio، الإصدار 0.3. اتفقت أنا وPietro على أنني سأحافظ على هذا البرنامج في المستقبل.</para>
+
+<para
+>يمكن الوصول إلى المؤلف عبر البريد الإلكتروني على &Geert.Jansen.mail;. يُرجى الإبلاغ عن أي أخطاء تجدها إليّ حتى أتمكن من إصلاحها. إذا كان لديك اقتراح، فلا تتردد في الاتصال بي.</para>
+
+<para
+>الترجمة: زايد السعيدي <email
+>zayed.alsaidi@gmail.com</email
+></para
+> &underFDL; &underArtisticLicense; </chapter>
+
+</book>
+<!--
+Local Variables:
+mode: sgml
+sgml-omittag: nil
+sgml-shorttag: t
+End:
+-->
+
