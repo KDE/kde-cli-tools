@@ -2,7 +2,7 @@
 # Translation of kstart.po to Slovenian
 # KDEBASE translation to Slovenian language.
 # Copyright (C) 2000, 2003, 2004, 2005, 2007 Free Software Foundation, Inc.
-# $Id: kstart.po 1739911 2026-06-26 01:29:57Z scripty $
+# $Id$
 # $Source$
 #
 # Roman Maurer <roman.maurer@hermes.si>, 2000.
