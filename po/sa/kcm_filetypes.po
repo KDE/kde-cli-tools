@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kde-cli-tools\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2026-08-28 00:47+0000\n"
+"POT-Creation-Date: 2026-11-17 01:09+0000\n"
 "PO-Revision-Date: 2024-12-24 20:39+0530\n"
 "Last-Translator: kali <shreekantkalwar@gmail.com>\n"
 "Language-Team: Sanskrit <kde-i18n-doc@kde.org>\n"
@@ -29,7 +29,7 @@ msgctxt "EMAIL OF TRANSLATORS"
 msgid "Your emails"
 msgstr "skkalwar999@gmail.com"
 
-#: filetypedetails.cpp:54
+#: filetypedetails.cpp:48
 #, kde-format
 msgid ""
 "This button displays the icon associated with the selected file type. Click "
@@ -38,12 +38,12 @@ msgstr ""
 "एतत् बटन् चयनितसञ्चिकाप्रकारेण सह सम्बद्धं चिह्नं प्रदर्शयति । भिन्नं चिह्नं चिन्वितुं तस्मिन् "
 "नुदन्तु ।"
 
-#: filetypedetails.cpp:60
+#: filetypedetails.cpp:54
 #, kde-format
 msgid "Filename Patterns"
 msgstr "सञ्चिकानाम प्रतिमानाः"
 
-#: filetypedetails.cpp:72
+#: filetypedetails.cpp:66
 #, kde-format
 msgid ""
 "This box contains a list of patterns that can be used to identify files of "
@@ -55,32 +55,32 @@ msgstr ""
 "अस्ति । यथा, *.txt इति प्रतिमानं 'text/plain' इति सञ्चिकाप्रकारेण सह सम्बद्धम् अस्ति; "
 "'.txt' इत्यनेन समाप्ताः सर्वाणि सञ्चिकाः साधारणपाठसञ्चिकारूपेण ज्ञायन्ते ।"
 
-#: filetypedetails.cpp:80 filetypesview.cpp:84 kservicelistwidget.cpp:105
+#: filetypedetails.cpp:74 filetypesview.cpp:83 kservicelistwidget.cpp:89
 #, kde-format
 msgid "Add..."
 msgstr "संयोजयति..."
 
-#: filetypedetails.cpp:85
+#: filetypedetails.cpp:79
 #, kde-format
 msgid "Add a new pattern for the selected file type."
 msgstr "चयनितसञ्चिकाप्रकारस्य कृते नूतनं प्रतिरूपं योजयन्तु ।"
 
-#: filetypedetails.cpp:87 kservicelistwidget.cpp:119
+#: filetypedetails.cpp:81 kservicelistwidget.cpp:103
 #, kde-format
 msgid "Remove"
 msgstr "अपाकरोति"
 
-#: filetypedetails.cpp:92
+#: filetypedetails.cpp:86
 #, kde-format
 msgid "Remove the selected filename pattern."
 msgstr "चयनितं सञ्चिकानामप्रतिरूपं निष्कासयन्तु ।"
 
-#: filetypedetails.cpp:103
+#: filetypedetails.cpp:97
 #, kde-format
 msgid "Description:"
 msgstr "वर्णनम्‌:"
 
-#: filetypedetails.cpp:108
+#: filetypedetails.cpp:102
 #, kde-format
 msgid ""
 "You can enter a short description for files of the selected file type (e.g. "
@@ -90,37 +90,27 @@ msgstr ""
 "चयनितसञ्चिकाप्रकारस्य (उदा. 'HTML Page') सञ्चिकानां कृते लघुवर्णनं प्रविष्टुं शक्नुवन्ति । "
 "एतत् वर्णनं Konqueror इत्यादिभिः अनुप्रयोगैः निर्देशिकासामग्रीप्रदर्शनार्थं उपयुज्यते ।"
 
-#: filetypedetails.cpp:128
-#, kde-format
-msgid "&General"
-msgstr "&सामान्य"
-
-#: filetypedetails.cpp:129
-#, kde-format
-msgid "&Embedding"
-msgstr "&एम्बेडिंग"
-
-#: filetypedetails.cpp:170
+#: filetypedetails.cpp:151
 #, kde-format
 msgid "Add New Extension"
 msgstr "New Extension योजयतु"
 
-#: filetypedetails.cpp:170
+#: filetypedetails.cpp:151
 #, kde-format
 msgid "Extension:"
 msgstr "विस्तार:"
 
-#: filetypedetails.cpp:203
+#: filetypedetails.cpp:184
 #, kde-format
 msgid "File type %1"
 msgstr "सञ्चिकाप्रकारः %1"
 
-#: filetypesview.cpp:55
+#: filetypesview.cpp:54
 #, kde-format
 msgid "Search for file type or filename pattern..."
 msgstr "सञ्चिकाप्रकारं वा सञ्चिकानामप्रतिरूपं वा अन्वेष्टुम्..."
 
-#: filetypesview.cpp:61
+#: filetypesview.cpp:60
 #, kde-format
 msgid ""
 "Enter a part of a filename pattern, and only file types with a matching file "
@@ -130,12 +120,12 @@ msgstr ""
 "सञ्चिकानामप्रतिमानस्य भागं प्रविशन्तु, केवलं सङ्गतसञ्चिकाप्रतिमानयुक्ताः सञ्चिकाप्रकाराः एव "
 "सूचीयां दृश्यन्ते । वैकल्पिकरूपेण सञ्चिकाप्रकारस्य नामस्य भागं यथा सूचीयां दृश्यते तथा प्रविशन्तु ।"
 
-#: filetypesview.cpp:69 multiapplydialog.cpp:27
+#: filetypesview.cpp:68 multiapplydialog.cpp:27
 #, kde-format
 msgid "Known Types"
 msgstr "ज्ञात प्रकार"
 
-#: filetypesview.cpp:75
+#: filetypesview.cpp:74
 #, kde-format
 msgid ""
 "Here you can see a hierarchical list of the file types which are known on "
@@ -148,32 +138,32 @@ msgstr ""
 "उपयोगेन तस्य सञ्चिकाप्रकारस्य सूचनां द्रष्टुं/सम्पादयितुं सञ्चिकाप्रकारं (उदा. HTML सञ्चिकानां "
 "कृते text/html) चिनोतु ।"
 
-#: filetypesview.cpp:89
+#: filetypesview.cpp:88
 #, kde-format
 msgid "Click here to add a new file type."
 msgstr "नूतनं सञ्चिकाप्रकारं योजयितुं अत्र क्लिक् कुर्वन्तु ।"
 
-#: filetypesview.cpp:91 filetypesview.cpp:368
+#: filetypesview.cpp:90 filetypesview.cpp:360
 #, kde-format
 msgid "&Remove"
 msgstr "&अपाकरोति"
 
-#: filetypesview.cpp:111
+#: filetypesview.cpp:110
 #, kde-format
 msgid "Select a file type by name or by extension"
 msgstr "नामेन वा विस्तारेण वा सञ्चिकाप्रकारं चिनोतु"
 
-#: filetypesview.cpp:361
+#: filetypesview.cpp:353
 #, kde-format
 msgid "&Revert"
 msgstr "&प्रत्यावर्तनम्"
 
-#: filetypesview.cpp:362
+#: filetypesview.cpp:354
 #, kde-format
 msgid "Revert this file type to its initial system-wide definition"
 msgstr "एतत् सञ्चिकाप्रकारं तस्य प्रारम्भिकप्रणालीव्यापीपरिभाषायां पुनः स्थापयन्तु"
 
-#: filetypesview.cpp:364
+#: filetypesview.cpp:356
 #, kde-format
 msgid ""
 "Click here to revert this file type to its initial system-wide definition, "
@@ -188,12 +178,12 @@ msgstr ""
 "उपयोगस्य सम्भावना न्यूनीकर्तुं (किन्तु सञ्चिकासामग्रीतः सञ्चिकाप्रकारस्य निर्धारणम् अद्यापि "
 "तान् उपयुज्य अन्ते भवितुम् अर्हति) ।"
 
-#: filetypesview.cpp:369
+#: filetypesview.cpp:361
 #, kde-format
 msgid "Delete this file type definition completely"
 msgstr "एतत् सञ्चिकाप्रकारस्य परिभाषां सम्पूर्णतया विलोपयन्तु"
 
-#: filetypesview.cpp:371
+#: filetypesview.cpp:363
 #, kde-format
 msgid ""
 "Click here to delete this file type definition completely. This is only "
@@ -259,22 +249,12 @@ msgstr "सञ्चिकाप्रकारं सम्पादयतु %
 msgid "Create New File Type %1"
 msgstr "नूतनसञ्चिकाप्रकारं %1 रचयन्तु"
 
-#: kservicelistwidget.cpp:46
-#, kde-format
-msgid "%1 (%2)"
-msgstr "%1 (%2)"
-
-#: kservicelistwidget.cpp:51
+#: kservicelistwidget.cpp:42
 #, kde-format
 msgid "Application Preference Order"
 msgstr "आवेदन वरीयता आदेश"
 
-#: kservicelistwidget.cpp:51
-#, kde-format
-msgid "Services Preference Order"
-msgstr "सेवाः प्राधान्यक्रमः"
-
-#: kservicelistwidget.cpp:63
+#: kservicelistwidget.cpp:54
 #, kde-format
 msgid ""
 "This is a list of applications associated with files of the selected file "
@@ -288,26 +268,12 @@ msgstr ""
 "भवति । यदि एकादशाधिकं अनुप्रयोगं अस्मिन् सञ्चिकाप्रकारेण सह सम्बद्धं भवति तर्हि सूची "
 "प्राथमिकतानुसारं क्रमिता भवति यत्र अन्येभ्यः उपरि सर्वोपरि द्रव्यं प्राधान्यं प्राप्नोति ।"
 
-#: kservicelistwidget.cpp:68
-#, kde-format
-msgid ""
-"This is a list of services associated with files of the selected file type. "
-"This list is shown in Konqueror's context menus when you select a \"Preview "
-"with...\" option. If more than one service is associated with this file "
-"type, then the list is ordered by priority with the uppermost item taking "
-"precedence over the others."
-msgstr ""
-"एषा चयनितसञ्चिकाप्रकारस्य सञ्चिकाभिः सह सम्बद्धानां सेवानां सूची अस्ति । यदा भवान् "
-"\"Preview with...\" विकल्पं चिनोति तदा एषा सूची Konqueror इत्यस्य सन्दर्भमेनूषु दर्शिता "
-"भवति । यदि एकादशाधिकाः सेवाः अस्मिन् सञ्चिकाप्रकारेण सह सम्बद्धाः सन्ति तर्हि सूची "
-"प्राथमिकतानुसारं क्रमिता भवति यत्र अन्येभ्यः उपरि सर्वोपरि द्रव्यं प्राधान्यं प्राप्नोति ।"
-
-#: kservicelistwidget.cpp:80
+#: kservicelistwidget.cpp:66
 #, kde-format
 msgid "Move &Up"
 msgstr "चाल & ऊपर"
 
-#: kservicelistwidget.cpp:86
+#: kservicelistwidget.cpp:73
 #, kde-format
 msgid ""
 "Assigns a higher priority to the selected\n"
@@ -320,21 +286,12 @@ msgstr ""
 "केवलं चयनितं अनुप्रयोगं प्रभावितं करोति यदि सञ्चिकाप्रकारः अस्ति\n"
 "एकादशाधिक-अनुप्रयोगैः सह सम्बद्धम् ।"
 
-#: kservicelistwidget.cpp:90
-#, kde-format
-msgid ""
-"Assigns a higher priority to the selected\n"
-"service, moving it up in the list."
-msgstr ""
-"चयनितस्य उच्चतरं प्राथमिकताम् अयच्छति\n"
-"सेवा, सूचीयां उपरि स्थापयन् ।"
-
-#: kservicelistwidget.cpp:93
+#: kservicelistwidget.cpp:78
 #, kde-format
 msgid "Move &Down"
 msgstr "Move &Down"
 
-#: kservicelistwidget.cpp:98
+#: kservicelistwidget.cpp:84
 #, kde-format
 msgid ""
 "Assigns a lower priority to the selected\n"
@@ -347,66 +304,41 @@ msgstr ""
 "केवलं चयनितं अनुप्रयोगं प्रभावितं करोति यदि सञ्चिकाप्रकारः अस्ति\n"
 "एकादशाधिक-अनुप्रयोगैः सह सम्बद्धम् ।"
 
-#: kservicelistwidget.cpp:102
-#, kde-format
-msgid ""
-"Assigns a lower priority to the selected\n"
-"service, moving it down in the list."
-msgstr ""
-"चयनितस्य कृते न्यूनतरं प्राथमिकताम् नियुङ्क्ते\n"
-"सेवा, सूचीयां अधः स्थापयन् ।"
-
-#: kservicelistwidget.cpp:110
+#: kservicelistwidget.cpp:94
 #, kde-format
 msgid "Add a new application for this file type."
 msgstr "अस्य सञ्चिकाप्रकारस्य कृते नूतनं अनुप्रयोगं योजयन्तु ।"
 
-#: kservicelistwidget.cpp:112
+#: kservicelistwidget.cpp:96
 #, kde-format
 msgid "Edit..."
 msgstr "सम्पादन..."
 
-#: kservicelistwidget.cpp:117
+#: kservicelistwidget.cpp:101
 #, kde-format
 msgid "Edit command line of the selected application."
 msgstr "चयनितस्य अनुप्रयोगस्य आदेशपङ्क्तिं सम्पादयन्तु ।"
 
-#: kservicelistwidget.cpp:124
+#: kservicelistwidget.cpp:108
 #, kde-format
 msgid "Remove the selected application from the list."
 msgstr "चयनितं अनुप्रयोगं सूचीतः निष्कासयन्तु।"
 
-#: kservicelistwidget.cpp:126 multiapplydialog.cpp:19
+#: kservicelistwidget.cpp:110 multiapplydialog.cpp:19
 #, kde-format
 msgid "Apply To..."
 msgstr "Apply To..."
 
-#: kservicelistwidget.cpp:131
+#: kservicelistwidget.cpp:115
 #, kde-format
 msgid "Apply the current preference order to other file types."
 msgstr "अन्यसञ्चिकाप्रकारेषु वर्तमानप्राथमिकताक्रमं प्रयोजयन्तु ।"
 
-#: kservicelistwidget.cpp:154
+#: kservicelistwidget.cpp:136
 #, kde-format
 msgctxt "No applications associated with this file type"
 msgid "None"
 msgstr "न कश्चित्"
-
-#: kservicelistwidget.cpp:167
-#, kde-format
-msgctxt "No components associated with this file type"
-msgid "None"
-msgstr "न कश्चित्"
-
-#: kserviceselectdlg.cpp:26
-#, kde-format
-msgid "Add Service"
-msgstr "सेवां योजयतु"
-
-#: kserviceselectdlg.cpp:30
-#, kde-format
-msgid "Select service:"
-msgstr "सेवां चिनोतु :"
 
 #: newtypedlg.cpp:25
 #, kde-format
@@ -438,6 +370,55 @@ msgstr ""
 "सञ्चिकाप्रकारस्य नाम टङ्कयन्तु । यथा, यदि भवान् 'image' इति श्रेणीरूपेण चिनोति तथा च "
 "भवान् अत्र 'custom' इति टङ्कयति तर्हि 'image/custom' इति सञ्चिकाप्रकारः निर्मितः "
 "भविष्यति ।"
+
+#~ msgid "&General"
+#~ msgstr "&सामान्य"
+
+#~ msgid "&Embedding"
+#~ msgstr "&एम्बेडिंग"
+
+#~ msgid "%1 (%2)"
+#~ msgstr "%1 (%2)"
+
+#~ msgid "Services Preference Order"
+#~ msgstr "सेवाः प्राधान्यक्रमः"
+
+#~ msgid ""
+#~ "This is a list of services associated with files of the selected file "
+#~ "type. This list is shown in Konqueror's context menus when you select a "
+#~ "\"Preview with...\" option. If more than one service is associated with "
+#~ "this file type, then the list is ordered by priority with the uppermost "
+#~ "item taking precedence over the others."
+#~ msgstr ""
+#~ "एषा चयनितसञ्चिकाप्रकारस्य सञ्चिकाभिः सह सम्बद्धानां सेवानां सूची अस्ति । यदा भवान् "
+#~ "\"Preview with...\" विकल्पं चिनोति तदा एषा सूची Konqueror इत्यस्य सन्दर्भमेनूषु "
+#~ "दर्शिता भवति । यदि एकादशाधिकाः सेवाः अस्मिन् सञ्चिकाप्रकारेण सह सम्बद्धाः सन्ति "
+#~ "तर्हि सूची प्राथमिकतानुसारं क्रमिता भवति यत्र अन्येभ्यः उपरि सर्वोपरि द्रव्यं प्राधान्यं "
+#~ "प्राप्नोति ।"
+
+#~ msgid ""
+#~ "Assigns a higher priority to the selected\n"
+#~ "service, moving it up in the list."
+#~ msgstr ""
+#~ "चयनितस्य उच्चतरं प्राथमिकताम् अयच्छति\n"
+#~ "सेवा, सूचीयां उपरि स्थापयन् ।"
+
+#~ msgid ""
+#~ "Assigns a lower priority to the selected\n"
+#~ "service, moving it down in the list."
+#~ msgstr ""
+#~ "चयनितस्य कृते न्यूनतरं प्राथमिकताम् नियुङ्क्ते\n"
+#~ "सेवा, सूचीयां अधः स्थापयन् ।"
+
+#~ msgctxt "No components associated with this file type"
+#~ msgid "None"
+#~ msgstr "न कश्चित्"
+
+#~ msgid "Add Service"
+#~ msgstr "सेवां योजयतु"
+
+#~ msgid "Select service:"
+#~ msgstr "सेवां चिनोतु :"
 
 #~ msgid "Left Click Action (only for Konqueror file manager)"
 #~ msgstr "Left Click Action (केवलं Konqueror सञ्चिकाप्रबन्धकस्य कृते)"

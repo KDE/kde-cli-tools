@@ -17,7 +17,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: filetypes\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2026-08-28 00:47+0000\n"
+"POT-Creation-Date: 2026-11-17 01:09+0000\n"
 "PO-Revision-Date: 2023-08-15 00:59+0300\n"
 "Last-Translator: George Stefanakis <george.stefanakis@gmail.com>\n"
 "Language-Team: Greek <kde-i18n-doc@kde.org>\n"
@@ -40,7 +40,7 @@ msgstr ""
 "sngeorgaras@otenet.gr, manolis@koppermind.homelinux.org, p_vidalis@hotmail."
 "com"
 
-#: filetypedetails.cpp:54
+#: filetypedetails.cpp:48
 #, kde-format
 msgid ""
 "This button displays the icon associated with the selected file type. Click "
@@ -49,12 +49,12 @@ msgstr ""
 "Αυτό το κουμπί εμφανίζει το συσχετισμένο με τον επιλεγμένο τύπο αρχείου "
 "εικονίδιο. Κάντε κλικ πάνω του για να επιλέξετε κάποιο άλλο εικονίδιο."
 
-#: filetypedetails.cpp:60
+#: filetypedetails.cpp:54
 #, kde-format
 msgid "Filename Patterns"
 msgstr "Μοτίβα ονόματος αρχείου"
 
-#: filetypedetails.cpp:72
+#: filetypedetails.cpp:66
 #, kde-format
 msgid ""
 "This box contains a list of patterns that can be used to identify files of "
@@ -67,32 +67,32 @@ msgstr ""
 "*.txt είναι συσχετισμένο με τον τύπο αρχείου 'text/plain', όλα τα αρχεία που "
 "τελειώνουν σε '.txt' αναγνωρίζονται σαν αρχεία απλού κειμένου."
 
-#: filetypedetails.cpp:80 filetypesview.cpp:84 kservicelistwidget.cpp:105
+#: filetypedetails.cpp:74 filetypesview.cpp:83 kservicelistwidget.cpp:89
 #, kde-format
 msgid "Add..."
 msgstr "Προσθήκη..."
 
-#: filetypedetails.cpp:85
+#: filetypedetails.cpp:79
 #, kde-format
 msgid "Add a new pattern for the selected file type."
 msgstr "Προσθήκη ενός νέου μοτίβου για τον επιλεγμένο τύπο αρχείου."
 
-#: filetypedetails.cpp:87 kservicelistwidget.cpp:119
+#: filetypedetails.cpp:81 kservicelistwidget.cpp:103
 #, kde-format
 msgid "Remove"
 msgstr "Αφαίρεση"
 
-#: filetypedetails.cpp:92
+#: filetypedetails.cpp:86
 #, kde-format
 msgid "Remove the selected filename pattern."
 msgstr "Σβήσιμο του επιλεγμένου μοτίβου ονόματος αρχείου."
 
-#: filetypedetails.cpp:103
+#: filetypedetails.cpp:97
 #, kde-format
 msgid "Description:"
 msgstr "Περιγραφή:"
 
-#: filetypedetails.cpp:108
+#: filetypedetails.cpp:102
 #, kde-format
 msgid ""
 "You can enter a short description for files of the selected file type (e.g. "
@@ -103,37 +103,27 @@ msgstr ""
 "(π.χ. 'Σελίδα HTML'). Αυτή η περιγραφή θα χρησιμοποιηθεί από εφαρμογές όπως "
 "ο Konqueror για την εμφάνιση των περιεχομένων των καταλόγων."
 
-#: filetypedetails.cpp:128
-#, kde-format
-msgid "&General"
-msgstr "&Γενικά"
-
-#: filetypedetails.cpp:129
-#, kde-format
-msgid "&Embedding"
-msgstr "&Ενσωμάτωση"
-
-#: filetypedetails.cpp:170
+#: filetypedetails.cpp:151
 #, kde-format
 msgid "Add New Extension"
 msgstr "Προσθήκη νέας κατάληξης"
 
-#: filetypedetails.cpp:170
+#: filetypedetails.cpp:151
 #, kde-format
 msgid "Extension:"
 msgstr "Κατάληξη:"
 
-#: filetypedetails.cpp:203
+#: filetypedetails.cpp:184
 #, kde-format
 msgid "File type %1"
 msgstr "Τύπος αρχείου %1"
 
-#: filetypesview.cpp:55
+#: filetypesview.cpp:54
 #, kde-format
 msgid "Search for file type or filename pattern..."
 msgstr "Αναζήτηση μοτίβου ονόματος ή τύπου αρχείου..."
 
-#: filetypesview.cpp:61
+#: filetypesview.cpp:60
 #, kde-format
 msgid ""
 "Enter a part of a filename pattern, and only file types with a matching file "
@@ -144,12 +134,12 @@ msgstr ""
 "ταιριάζουν θα εμφανιστούν στη λίστα. Εναλλακτικά, δώστε ένα μέρος ενός τύπου "
 "αρχείου, όπως εμφανίζεται στη λίστα."
 
-#: filetypesview.cpp:69 multiapplydialog.cpp:27
+#: filetypesview.cpp:68 multiapplydialog.cpp:27
 #, kde-format
 msgid "Known Types"
 msgstr "Γνωστοί τύποι"
 
-#: filetypesview.cpp:75
+#: filetypesview.cpp:74
 #, kde-format
 msgid ""
 "Here you can see a hierarchical list of the file types which are known on "
@@ -163,33 +153,33 @@ msgstr ""
 "αρχεία HTML) για να προβάλετε/επεξεργαστείτε τις πληροφορίες για αυτόν τον "
 "τύπο αρχείου χρησιμοποιώντας τα χειριστήρια στα δεξιά."
 
-#: filetypesview.cpp:89
+#: filetypesview.cpp:88
 #, kde-format
 msgid "Click here to add a new file type."
 msgstr "Κάντε κλικ εδώ για να προσθέσετε ένα νέο τύπο αρχείου."
 
-#: filetypesview.cpp:91 filetypesview.cpp:368
+#: filetypesview.cpp:90 filetypesview.cpp:360
 #, kde-format
 msgid "&Remove"
 msgstr "Α&φαίρεση"
 
-#: filetypesview.cpp:111
+#: filetypesview.cpp:110
 #, kde-format
 msgid "Select a file type by name or by extension"
 msgstr "Επιλέξτε έναν τύπο αρχείου με το όνομα ή την κατάληξή του"
 
-#: filetypesview.cpp:361
+#: filetypesview.cpp:353
 #, kde-format
 msgid "&Revert"
 msgstr "Ε&παναφορά"
 
-#: filetypesview.cpp:362
+#: filetypesview.cpp:354
 #, kde-format
 msgid "Revert this file type to its initial system-wide definition"
 msgstr ""
 "Επαναφορά αυτού του τύπου αρχείων στον αρχικό ορισμό του από το σύστημα"
 
-#: filetypesview.cpp:364
+#: filetypesview.cpp:356
 #, kde-format
 msgid ""
 "Click here to revert this file type to its initial system-wide definition, "
@@ -205,12 +195,12 @@ msgstr ""
 "ώστε να ελαχιστοποιηθεί η πιθανότητα χρήσης του (αν και ο καθορισμός τύπου "
 "αρχείου μέσω των περιεχομένων του μπορεί να συνεχίσει να τον επιλέγει)."
 
-#: filetypesview.cpp:369
+#: filetypesview.cpp:361
 #, kde-format
 msgid "Delete this file type definition completely"
 msgstr "Διαγραφή αυτού του ορισμού τύπου αρχείων"
 
-#: filetypesview.cpp:371
+#: filetypesview.cpp:363
 #, kde-format
 msgid ""
 "Click here to delete this file type definition completely. This is only "
@@ -281,22 +271,12 @@ msgstr "Επεξεργασία τύπου αρχείου %1"
 msgid "Create New File Type %1"
 msgstr "Δημιουργία νέου τύπου αρχείου %1"
 
-#: kservicelistwidget.cpp:46
-#, kde-format
-msgid "%1 (%2)"
-msgstr "%1 (%2)"
-
-#: kservicelistwidget.cpp:51
+#: kservicelistwidget.cpp:42
 #, kde-format
 msgid "Application Preference Order"
 msgstr "Σειρά προτίμησης εφαρμογών"
 
-#: kservicelistwidget.cpp:51
-#, kde-format
-msgid "Services Preference Order"
-msgstr "Σειρά προτίμησης υπηρεσιών"
-
-#: kservicelistwidget.cpp:63
+#: kservicelistwidget.cpp:54
 #, kde-format
 msgid ""
 "This is a list of applications associated with files of the selected file "
@@ -311,27 +291,12 @@ msgstr ""
 "συσχετισμένη με αυτόν τον τύπο αρχείου, τότε η λίστα ταξινομείται κατά "
 "προτεραιότητα με το κορυφαίο αντικείμενο να προηγείται των άλλων."
 
-#: kservicelistwidget.cpp:68
-#, kde-format
-msgid ""
-"This is a list of services associated with files of the selected file type. "
-"This list is shown in Konqueror's context menus when you select a \"Preview "
-"with...\" option. If more than one service is associated with this file "
-"type, then the list is ordered by priority with the uppermost item taking "
-"precedence over the others."
-msgstr ""
-"Αυτή είναι μια λίστα από εφαρμογές που είναι συσχετισμένες με αρχεία του "
-"επιλεγμένου τύπου αρχείου. Αυτή η λίστα εμφανίζεται στα σχετικά μενού του "
-"Konqueror όταν επιλέγετε \"Προεπισκόπηση με...\". Αν πάνω από μία υπηρεσία "
-"είναι συσχετισμένη με αυτόν τον τύπο αρχείου, τότε η λίστα ταξινομείται κατά "
-"προτεραιότητα με το κορυφαίο αντικείμενο να προηγείται των άλλων."
-
-#: kservicelistwidget.cpp:80
+#: kservicelistwidget.cpp:66
 #, kde-format
 msgid "Move &Up"
 msgstr "Μετακίνηση &πάνω"
 
-#: kservicelistwidget.cpp:86
+#: kservicelistwidget.cpp:73
 #, kde-format
 msgid ""
 "Assigns a higher priority to the selected\n"
@@ -344,21 +309,12 @@ msgstr ""
 "επηρεάζει την επιλεγμένη εφαρμογή μόνο, αν ο τύπος αρχείου\n"
 "είναι συσχετισμένος με πάνω από μία εφαρμογή."
 
-#: kservicelistwidget.cpp:90
-#, kde-format
-msgid ""
-"Assigns a higher priority to the selected\n"
-"service, moving it up in the list."
-msgstr ""
-"Δίνει μια υψηλότερη προτεραιότητα στην επιλεγμένη\n"
-"υπηρεσία, μετακινώντας την πιο πάνω στη λίστα."
-
-#: kservicelistwidget.cpp:93
+#: kservicelistwidget.cpp:78
 #, kde-format
 msgid "Move &Down"
 msgstr "Μετακίνηση &κάτω"
 
-#: kservicelistwidget.cpp:98
+#: kservicelistwidget.cpp:84
 #, kde-format
 msgid ""
 "Assigns a lower priority to the selected\n"
@@ -371,66 +327,41 @@ msgstr ""
 "επηρεάζει την επιλεγμένη εφαρμογή μόνο, αν ο τύπος αρχείου\n"
 "είναι συσχετισμένος με πάνω από μία εφαρμογή."
 
-#: kservicelistwidget.cpp:102
-#, kde-format
-msgid ""
-"Assigns a lower priority to the selected\n"
-"service, moving it down in the list."
-msgstr ""
-"Δίνει μια χαμηλότερη προτεραιότητα στην επιλεγμένη\n"
-"υπηρεσία, μετακινώντας την πιο κάτω στη λίστα."
-
-#: kservicelistwidget.cpp:110
+#: kservicelistwidget.cpp:94
 #, kde-format
 msgid "Add a new application for this file type."
 msgstr "Προσθήκη μιας νέας εφαρμογής για αυτόν τον τύπο αρχείου."
 
-#: kservicelistwidget.cpp:112
+#: kservicelistwidget.cpp:96
 #, kde-format
 msgid "Edit..."
 msgstr "Επεξεργασία..."
 
-#: kservicelistwidget.cpp:117
+#: kservicelistwidget.cpp:101
 #, kde-format
 msgid "Edit command line of the selected application."
 msgstr "Επεξεργασία της γραμμής εντολής για την επιλεγμένη εφαρμογή."
 
-#: kservicelistwidget.cpp:124
+#: kservicelistwidget.cpp:108
 #, kde-format
 msgid "Remove the selected application from the list."
 msgstr "Αφαίρεση της επιλεγμένης εφαρμογής από τη λίστα."
 
-#: kservicelistwidget.cpp:126 multiapplydialog.cpp:19
+#: kservicelistwidget.cpp:110 multiapplydialog.cpp:19
 #, kde-format
 msgid "Apply To..."
 msgstr "Εφαρμογή σε..."
 
-#: kservicelistwidget.cpp:131
+#: kservicelistwidget.cpp:115
 #, kde-format
 msgid "Apply the current preference order to other file types."
 msgstr "Εφαρμόστε την τρέχουσα σειρά προτίμησης σε άλλους τύπους αρχείων."
 
-#: kservicelistwidget.cpp:154
+#: kservicelistwidget.cpp:136
 #, kde-format
 msgctxt "No applications associated with this file type"
 msgid "None"
 msgstr "Κανένα"
-
-#: kservicelistwidget.cpp:167
-#, kde-format
-msgctxt "No components associated with this file type"
-msgid "None"
-msgstr "Κανένα"
-
-#: kserviceselectdlg.cpp:26
-#, kde-format
-msgid "Add Service"
-msgstr "Προσθήκη υπηρεσίας"
-
-#: kserviceselectdlg.cpp:30
-#, kde-format
-msgid "Select service:"
-msgstr "Επιλογή υπηρεσίας:"
 
 #: newtypedlg.cpp:25
 #, kde-format
@@ -462,6 +393,56 @@ msgstr ""
 "Δώστε το όνομα του τύπου του αρχείου. Αν για παράδειγμα, επιλέξετε το "
 "'image' ως κατηγορία και πληκτρολογήσετε εδώ το 'custom', θα δημιουργηθεί ο "
 "τύπος αρχείου 'image/custom'."
+
+#~ msgid "&General"
+#~ msgstr "&Γενικά"
+
+#~ msgid "&Embedding"
+#~ msgstr "&Ενσωμάτωση"
+
+#~ msgid "%1 (%2)"
+#~ msgstr "%1 (%2)"
+
+#~ msgid "Services Preference Order"
+#~ msgstr "Σειρά προτίμησης υπηρεσιών"
+
+#~ msgid ""
+#~ "This is a list of services associated with files of the selected file "
+#~ "type. This list is shown in Konqueror's context menus when you select a "
+#~ "\"Preview with...\" option. If more than one service is associated with "
+#~ "this file type, then the list is ordered by priority with the uppermost "
+#~ "item taking precedence over the others."
+#~ msgstr ""
+#~ "Αυτή είναι μια λίστα από εφαρμογές που είναι συσχετισμένες με αρχεία του "
+#~ "επιλεγμένου τύπου αρχείου. Αυτή η λίστα εμφανίζεται στα σχετικά μενού του "
+#~ "Konqueror όταν επιλέγετε \"Προεπισκόπηση με...\". Αν πάνω από μία "
+#~ "υπηρεσία είναι συσχετισμένη με αυτόν τον τύπο αρχείου, τότε η λίστα "
+#~ "ταξινομείται κατά προτεραιότητα με το κορυφαίο αντικείμενο να προηγείται "
+#~ "των άλλων."
+
+#~ msgid ""
+#~ "Assigns a higher priority to the selected\n"
+#~ "service, moving it up in the list."
+#~ msgstr ""
+#~ "Δίνει μια υψηλότερη προτεραιότητα στην επιλεγμένη\n"
+#~ "υπηρεσία, μετακινώντας την πιο πάνω στη λίστα."
+
+#~ msgid ""
+#~ "Assigns a lower priority to the selected\n"
+#~ "service, moving it down in the list."
+#~ msgstr ""
+#~ "Δίνει μια χαμηλότερη προτεραιότητα στην επιλεγμένη\n"
+#~ "υπηρεσία, μετακινώντας την πιο κάτω στη λίστα."
+
+#~ msgctxt "No components associated with this file type"
+#~ msgid "None"
+#~ msgstr "Κανένα"
+
+#~ msgid "Add Service"
+#~ msgstr "Προσθήκη υπηρεσίας"
+
+#~ msgid "Select service:"
+#~ msgstr "Επιλογή υπηρεσίας:"
 
 #~ msgid "Left Click Action (only for Konqueror file manager)"
 #~ msgstr ""

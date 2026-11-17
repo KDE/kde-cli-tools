@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: filetypes\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2026-08-28 00:47+0000\n"
+"POT-Creation-Date: 2026-11-17 01:09+0000\n"
 "PO-Revision-Date: 2023-06-05 11:08+0200\n"
 "Last-Translator: Vit Pelcak <vit@pelcak.org>\n"
 "Language-Team: Czech <kde-i18n-doc@kde.org>\n"
@@ -29,7 +29,7 @@ msgctxt "EMAIL OF TRANSLATORS"
 msgid "Your emails"
 msgstr "flidr@kky.zcu.cz,jfriedl@suse.cz"
 
-#: filetypedetails.cpp:54
+#: filetypedetails.cpp:48
 #, kde-format
 msgid ""
 "This button displays the icon associated with the selected file type. Click "
@@ -38,12 +38,12 @@ msgstr ""
 "Toto tlačítko zobrazuje ikonu asociovanou s vybraným typem souborů. Klikněte "
 "na ni ke zvolení nové ikony."
 
-#: filetypedetails.cpp:60
+#: filetypedetails.cpp:54
 #, kde-format
 msgid "Filename Patterns"
 msgstr "Vzory souborů"
 
-#: filetypedetails.cpp:72
+#: filetypedetails.cpp:66
 #, kde-format
 msgid ""
 "This box contains a list of patterns that can be used to identify files of "
@@ -56,32 +56,32 @@ msgstr ""
 "plain'; všechny soubory končící příponou '.txt' jsou asociovány jako prosté "
 "textové soubory."
 
-#: filetypedetails.cpp:80 filetypesview.cpp:84 kservicelistwidget.cpp:105
+#: filetypedetails.cpp:74 filetypesview.cpp:83 kservicelistwidget.cpp:89
 #, kde-format
 msgid "Add..."
 msgstr "Přidat..."
 
-#: filetypedetails.cpp:85
+#: filetypedetails.cpp:79
 #, kde-format
 msgid "Add a new pattern for the selected file type."
 msgstr "Přidat nový vzor pro vybraný typ souborů."
 
-#: filetypedetails.cpp:87 kservicelistwidget.cpp:119
+#: filetypedetails.cpp:81 kservicelistwidget.cpp:103
 #, kde-format
 msgid "Remove"
 msgstr "Odstranit"
 
-#: filetypedetails.cpp:92
+#: filetypedetails.cpp:86
 #, kde-format
 msgid "Remove the selected filename pattern."
 msgstr "Odstranit vybraný vzor souborů."
 
-#: filetypedetails.cpp:103
+#: filetypedetails.cpp:97
 #, kde-format
 msgid "Description:"
 msgstr "Popis:"
 
-#: filetypedetails.cpp:108
+#: filetypedetails.cpp:102
 #, kde-format
 msgid ""
 "You can enter a short description for files of the selected file type (e.g. "
@@ -92,37 +92,27 @@ msgstr ""
 "stránka'). Tento popis bude použit aplikacemi jako Konqueror při zobrazování "
 "obsahu adresáře."
 
-#: filetypedetails.cpp:128
-#, kde-format
-msgid "&General"
-msgstr "&Obecné"
-
-#: filetypedetails.cpp:129
-#, kde-format
-msgid "&Embedding"
-msgstr "Vsa&zení"
-
-#: filetypedetails.cpp:170
+#: filetypedetails.cpp:151
 #, kde-format
 msgid "Add New Extension"
 msgstr "Přidat novou příponu"
 
-#: filetypedetails.cpp:170
+#: filetypedetails.cpp:151
 #, kde-format
 msgid "Extension:"
 msgstr "Přípona:"
 
-#: filetypedetails.cpp:203
+#: filetypedetails.cpp:184
 #, kde-format
 msgid "File type %1"
 msgstr "Typ souboru %1"
 
-#: filetypesview.cpp:55
+#: filetypesview.cpp:54
 #, kde-format
 msgid "Search for file type or filename pattern..."
 msgstr "Hledat typ nebo vzor názvu souboru..."
 
-#: filetypesview.cpp:61
+#: filetypesview.cpp:60
 #, kde-format
 msgid ""
 "Enter a part of a filename pattern, and only file types with a matching file "
@@ -133,12 +123,12 @@ msgstr ""
 "které odpovídají tomuto vzoru. Alternativně můžete zadat část názvu typu "
 "souboru."
 
-#: filetypesview.cpp:69 multiapplydialog.cpp:27
+#: filetypesview.cpp:68 multiapplydialog.cpp:27
 #, kde-format
 msgid "Known Types"
 msgstr "Známé typy"
 
-#: filetypesview.cpp:75
+#: filetypesview.cpp:74
 #, kde-format
 msgid ""
 "Here you can see a hierarchical list of the file types which are known on "
@@ -152,32 +142,32 @@ msgstr ""
 "HTML soubory), jehož informace si přejete prohlédnout/upravit pomocí prvků "
 "na pravé straně."
 
-#: filetypesview.cpp:89
+#: filetypesview.cpp:88
 #, kde-format
 msgid "Click here to add a new file type."
 msgstr "Zde klikněte pro přidání nového typu souborů."
 
-#: filetypesview.cpp:91 filetypesview.cpp:368
+#: filetypesview.cpp:90 filetypesview.cpp:360
 #, kde-format
 msgid "&Remove"
 msgstr "Odst&ranit"
 
-#: filetypesview.cpp:111
+#: filetypesview.cpp:110
 #, kde-format
 msgid "Select a file type by name or by extension"
 msgstr "Zvolte typ souboru podle názvu nebo přípony"
 
-#: filetypesview.cpp:361
+#: filetypesview.cpp:353
 #, kde-format
 msgid "&Revert"
 msgstr "V&rátit"
 
-#: filetypesview.cpp:362
+#: filetypesview.cpp:354
 #, kde-format
 msgid "Revert this file type to its initial system-wide definition"
 msgstr "Vrátit tento typ souboru zpět na globální výchozí hodnoty"
 
-#: filetypesview.cpp:364
+#: filetypesview.cpp:356
 #, kde-format
 msgid ""
 "Click here to revert this file type to its initial system-wide definition, "
@@ -192,12 +182,12 @@ msgstr ""
 "jejich seznam vzorů, čímž zmenšíte pravděpodobnost jejich použití (ale "
 "určování typu souboru podle jeho obsahu je nakonec může použít)."
 
-#: filetypesview.cpp:369
+#: filetypesview.cpp:361
 #, kde-format
 msgid "Delete this file type definition completely"
 msgstr "Kompletně smazat tento popis typu souboru"
 
-#: filetypesview.cpp:371
+#: filetypesview.cpp:363
 #, kde-format
 msgid ""
 "Click here to delete this file type definition completely. This is only "
@@ -265,22 +255,12 @@ msgstr "Upravit typ souborů: %1"
 msgid "Create New File Type %1"
 msgstr "Vytvořit nový typ SOUBORŮ '%1'"
 
-#: kservicelistwidget.cpp:46
-#, kde-format
-msgid "%1 (%2)"
-msgstr "%1 (%2)"
-
-#: kservicelistwidget.cpp:51
+#: kservicelistwidget.cpp:42
 #, kde-format
 msgid "Application Preference Order"
 msgstr "Přednostní pořadí aplikací"
 
-#: kservicelistwidget.cpp:51
-#, kde-format
-msgid "Services Preference Order"
-msgstr "Přednostní pořadí služeb"
-
-#: kservicelistwidget.cpp:63
+#: kservicelistwidget.cpp:54
 #, kde-format
 msgid ""
 "This is a list of applications associated with files of the selected file "
@@ -295,27 +275,12 @@ msgstr ""
 "pak je tento seznam seřazen podle priority tak, že nejvýše zobrazená položka "
 "má přednost přede všemi."
 
-#: kservicelistwidget.cpp:68
-#, kde-format
-msgid ""
-"This is a list of services associated with files of the selected file type. "
-"This list is shown in Konqueror's context menus when you select a \"Preview "
-"with...\" option. If more than one service is associated with this file "
-"type, then the list is ordered by priority with the uppermost item taking "
-"precedence over the others."
-msgstr ""
-"Toto je seznam služeb asociovaných se soubory vybraného typu. Tento seznam "
-"je zobrazen v místní nabídce Konqueroru, když vyberete operaci \"Náhled "
-"pomocí...\". Je-li s tímto typem souborů asociována víc jak jedna služba, "
-"pak je tento seznam seřazen podle priority tak, že nejvýše zobrazená položka "
-"má přednost přede všemi."
-
-#: kservicelistwidget.cpp:80
+#: kservicelistwidget.cpp:66
 #, kde-format
 msgid "Move &Up"
 msgstr "Posunout &výše"
 
-#: kservicelistwidget.cpp:86
+#: kservicelistwidget.cpp:73
 #, kde-format
 msgid ""
 "Assigns a higher priority to the selected\n"
@@ -328,19 +293,12 @@ msgstr ""
 "pouze v případě, že je typ souboru asociován s více než\n"
 "jednou aplikací."
 
-#: kservicelistwidget.cpp:90
-#, kde-format
-msgid ""
-"Assigns a higher priority to the selected\n"
-"service, moving it up in the list."
-msgstr "Přiřadí vybrané službě vyšší prioritu a posune ji v seznamu nahoru."
-
-#: kservicelistwidget.cpp:93
+#: kservicelistwidget.cpp:78
 #, kde-format
 msgid "Move &Down"
 msgstr "Posunout &níže"
 
-#: kservicelistwidget.cpp:98
+#: kservicelistwidget.cpp:84
 #, kde-format
 msgid ""
 "Assigns a lower priority to the selected\n"
@@ -353,64 +311,41 @@ msgstr ""
 "pouze v případě, že je typ souboru asociován s více než\n"
 "jednou aplikací."
 
-#: kservicelistwidget.cpp:102
-#, kde-format
-msgid ""
-"Assigns a lower priority to the selected\n"
-"service, moving it down in the list."
-msgstr "Přiřadí vybrané službě nižší prioritu a posune ji v seznamu dolů."
-
-#: kservicelistwidget.cpp:110
+#: kservicelistwidget.cpp:94
 #, kde-format
 msgid "Add a new application for this file type."
 msgstr "Přidat novou aplikaci pro tento typ souborů."
 
-#: kservicelistwidget.cpp:112
+#: kservicelistwidget.cpp:96
 #, kde-format
 msgid "Edit..."
 msgstr "Upravit..."
 
-#: kservicelistwidget.cpp:117
+#: kservicelistwidget.cpp:101
 #, kde-format
 msgid "Edit command line of the selected application."
 msgstr "Upravit příkazový řádek vybrané aplikace."
 
-#: kservicelistwidget.cpp:124
+#: kservicelistwidget.cpp:108
 #, kde-format
 msgid "Remove the selected application from the list."
 msgstr "Odstranit vybranou aplikaci ze seznamu."
 
-#: kservicelistwidget.cpp:126 multiapplydialog.cpp:19
+#: kservicelistwidget.cpp:110 multiapplydialog.cpp:19
 #, kde-format
 msgid "Apply To..."
 msgstr "Použít na..."
 
-#: kservicelistwidget.cpp:131
+#: kservicelistwidget.cpp:115
 #, kde-format
 msgid "Apply the current preference order to other file types."
 msgstr "Použít aktuální pořadí předvoleb pro ostatní typy souborů."
 
-#: kservicelistwidget.cpp:154
+#: kservicelistwidget.cpp:136
 #, kde-format
 msgctxt "No applications associated with this file type"
 msgid "None"
 msgstr "Žádná"
-
-#: kservicelistwidget.cpp:167
-#, kde-format
-msgctxt "No components associated with this file type"
-msgid "None"
-msgstr "Žádné"
-
-#: kserviceselectdlg.cpp:26
-#, kde-format
-msgid "Add Service"
-msgstr "Přidat službu:"
-
-#: kserviceselectdlg.cpp:30
-#, kde-format
-msgid "Select service:"
-msgstr "Vybrat službu:"
 
 #: newtypedlg.cpp:25
 #, kde-format
@@ -441,6 +376,51 @@ msgid ""
 msgstr ""
 "Zadejte název typu souboru. Například pokud jste vybrali 'image' jako "
 "kategorii a zde zadáte 'custom', bude vytvořen typ souboru 'image/custom'."
+
+#~ msgid "&General"
+#~ msgstr "&Obecné"
+
+#~ msgid "&Embedding"
+#~ msgstr "Vsa&zení"
+
+#~ msgid "%1 (%2)"
+#~ msgstr "%1 (%2)"
+
+#~ msgid "Services Preference Order"
+#~ msgstr "Přednostní pořadí služeb"
+
+#~ msgid ""
+#~ "This is a list of services associated with files of the selected file "
+#~ "type. This list is shown in Konqueror's context menus when you select a "
+#~ "\"Preview with...\" option. If more than one service is associated with "
+#~ "this file type, then the list is ordered by priority with the uppermost "
+#~ "item taking precedence over the others."
+#~ msgstr ""
+#~ "Toto je seznam služeb asociovaných se soubory vybraného typu. Tento "
+#~ "seznam je zobrazen v místní nabídce Konqueroru, když vyberete operaci "
+#~ "\"Náhled pomocí...\". Je-li s tímto typem souborů asociována víc jak "
+#~ "jedna služba, pak je tento seznam seřazen podle priority tak, že nejvýše "
+#~ "zobrazená položka má přednost přede všemi."
+
+#~ msgid ""
+#~ "Assigns a higher priority to the selected\n"
+#~ "service, moving it up in the list."
+#~ msgstr "Přiřadí vybrané službě vyšší prioritu a posune ji v seznamu nahoru."
+
+#~ msgid ""
+#~ "Assigns a lower priority to the selected\n"
+#~ "service, moving it down in the list."
+#~ msgstr "Přiřadí vybrané službě nižší prioritu a posune ji v seznamu dolů."
+
+#~ msgctxt "No components associated with this file type"
+#~ msgid "None"
+#~ msgstr "Žádné"
+
+#~ msgid "Add Service"
+#~ msgstr "Přidat službu:"
+
+#~ msgid "Select service:"
+#~ msgstr "Vybrat službu:"
 
 #~ msgid "Left Click Action (only for Konqueror file manager)"
 #~ msgstr "Činnost levého kliknutí (pouze pro správce souborů Konqueror)"

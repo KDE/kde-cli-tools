@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: filetypes stable\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2026-08-28 00:47+0000\n"
+"POT-Creation-Date: 2026-11-17 01:09+0000\n"
 "PO-Revision-Date: 2005-11-22 11:27+0200\n"
 "Last-Translator: Frikkie Thirion <frikkie.thirion@deneloptronics.co.za>\n"
 "Language-Team: AFRIKAANS <AF@lia.org.za>\n"
@@ -26,7 +26,7 @@ msgctxt "EMAIL OF TRANSLATORS"
 msgid "Your emails"
 msgstr "frikkie.thirion@deneloptronics.co.za"
 
-#: filetypedetails.cpp:54
+#: filetypedetails.cpp:48
 #, kde-format
 msgid ""
 "This button displays the icon associated with the selected file type. Click "
@@ -35,12 +35,12 @@ msgstr ""
 "Hierdie knoppie vertoon die ikoon geassosieer met die gekose lêer tipe. "
 "Kliek op dit na kies 'n ander ikoon."
 
-#: filetypedetails.cpp:60
+#: filetypedetails.cpp:54
 #, kde-format
 msgid "Filename Patterns"
 msgstr "Lêernaam Patrone"
 
-#: filetypedetails.cpp:72
+#: filetypedetails.cpp:66
 #, kde-format
 msgid ""
 "This box contains a list of patterns that can be used to identify files of "
@@ -53,33 +53,33 @@ msgstr ""
 "geassosieer met die lêer tipe 'teks/eenvoudig'; alle lêers wat eindig in '."
 "txt' word herken as eenvoudig teks lêers."
 
-#: filetypedetails.cpp:80 filetypesview.cpp:84 kservicelistwidget.cpp:105
+#: filetypedetails.cpp:74 filetypesview.cpp:83 kservicelistwidget.cpp:89
 #, kde-format
 msgid "Add..."
 msgstr "Voeg by..."
 
-#: filetypedetails.cpp:85
+#: filetypedetails.cpp:79
 #, kde-format
 msgid "Add a new pattern for the selected file type."
 msgstr "Voeg by 'n nuwe patroon vir die gekose lêer tipe."
 
-#: filetypedetails.cpp:87 kservicelistwidget.cpp:119
+#: filetypedetails.cpp:81 kservicelistwidget.cpp:103
 #, kde-format
 msgid "Remove"
 msgstr ""
 
-#: filetypedetails.cpp:92
+#: filetypedetails.cpp:86
 #, kde-format
 msgid "Remove the selected filename pattern."
 msgstr "Verwyder die gekiesde lêernaam patroon."
 
-#: filetypedetails.cpp:103
+#: filetypedetails.cpp:97
 #, fuzzy, kde-format
 #| msgid "Description"
 msgid "Description:"
 msgstr "Beskrywing"
 
-#: filetypedetails.cpp:108
+#: filetypedetails.cpp:102
 #, kde-format
 msgid ""
 "You can enter a short description for files of the selected file type (e.g. "
@@ -90,39 +90,29 @@ msgstr ""
 "'HTML Page'). Hierdie beskrywing sal wees gebruik word deur programme hou "
 "van Konqueror na vertoon gids inhoud."
 
-#: filetypedetails.cpp:128
-#, kde-format
-msgid "&General"
-msgstr "Algemeen"
-
-#: filetypedetails.cpp:129
-#, kde-format
-msgid "&Embedding"
-msgstr "Inbed"
-
-#: filetypedetails.cpp:170
+#: filetypedetails.cpp:151
 #, kde-format
 msgid "Add New Extension"
 msgstr "Voeg by Nuwe Uitbreiding"
 
-#: filetypedetails.cpp:170
+#: filetypedetails.cpp:151
 #, kde-format
 msgid "Extension:"
 msgstr "Uitbreiding:"
 
-#: filetypedetails.cpp:203
+#: filetypedetails.cpp:184
 #, fuzzy, kde-format
 #| msgid "Edit File Type %1"
 msgid "File type %1"
 msgstr "Redigeer Lêer Tipe: %1"
 
-#: filetypesview.cpp:55
+#: filetypesview.cpp:54
 #, fuzzy, kde-format
 #| msgid "F&ind filename pattern:"
 msgid "Search for file type or filename pattern..."
 msgstr "Soek lêernaam patroon:"
 
-#: filetypesview.cpp:61
+#: filetypesview.cpp:60
 #, fuzzy, kde-format
 #| msgid ""
 #| "Enter a part of a filename pattern. Only file types with a matching file "
@@ -135,12 +125,12 @@ msgstr ""
 "Invoer 'n deel van 'n lêernaam patroon in. Slegs lêer tipes met 'n "
 "ooreenstemmende lêer patroon sal in die lys verskyn."
 
-#: filetypesview.cpp:69 multiapplydialog.cpp:27
+#: filetypesview.cpp:68 multiapplydialog.cpp:27
 #, kde-format
 msgid "Known Types"
 msgstr "Bekend Tipes"
 
-#: filetypesview.cpp:75
+#: filetypesview.cpp:74
 #, kde-format
 msgid ""
 "Here you can see a hierarchical list of the file types which are known on "
@@ -154,32 +144,32 @@ msgstr ""
 "besigtig/redigeer die informasie vir wat lêer tipe te gebruik die kontroles "
 "op die regterkant."
 
-#: filetypesview.cpp:89
+#: filetypesview.cpp:88
 #, kde-format
 msgid "Click here to add a new file type."
 msgstr "Kliek hier na voeg by 'n nuwe lêer tipe."
 
-#: filetypesview.cpp:91 filetypesview.cpp:368
+#: filetypesview.cpp:90 filetypesview.cpp:360
 #, kde-format
 msgid "&Remove"
 msgstr ""
 
-#: filetypesview.cpp:111
+#: filetypesview.cpp:110
 #, kde-format
 msgid "Select a file type by name or by extension"
 msgstr "Kies 'n lêer tipe deur naam of deur uitbreiding"
 
-#: filetypesview.cpp:361
+#: filetypesview.cpp:353
 #, kde-format
 msgid "&Revert"
 msgstr ""
 
-#: filetypesview.cpp:362
+#: filetypesview.cpp:354
 #, kde-format
 msgid "Revert this file type to its initial system-wide definition"
 msgstr ""
 
-#: filetypesview.cpp:364
+#: filetypesview.cpp:356
 #, kde-format
 msgid ""
 "Click here to revert this file type to its initial system-wide definition, "
@@ -189,12 +179,12 @@ msgid ""
 "from file contents can still end up using them)."
 msgstr ""
 
-#: filetypesview.cpp:369
+#: filetypesview.cpp:361
 #, kde-format
 msgid "Delete this file type definition completely"
 msgstr ""
 
-#: filetypesview.cpp:371
+#: filetypesview.cpp:363
 #, kde-format
 msgid ""
 "Click here to delete this file type definition completely. This is only "
@@ -258,22 +248,12 @@ msgstr "Redigeer Lêer Tipe: %1"
 msgid "Create New File Type %1"
 msgstr "Skep Nuwe Lêer Tipe: %1"
 
-#: kservicelistwidget.cpp:46
-#, kde-format
-msgid "%1 (%2)"
-msgstr "%1 (%2)"
-
-#: kservicelistwidget.cpp:51
+#: kservicelistwidget.cpp:42
 #, kde-format
 msgid "Application Preference Order"
 msgstr "Aansoek Voorkeur Volgorde"
 
-#: kservicelistwidget.cpp:51
-#, kde-format
-msgid "Services Preference Order"
-msgstr "Dienste Voorkeur Volgorde"
-
-#: kservicelistwidget.cpp:63
+#: kservicelistwidget.cpp:54
 #, kde-format
 msgid ""
 "This is a list of applications associated with files of the selected file "
@@ -288,33 +268,12 @@ msgstr ""
 "lêer tipe geassosieer is, sal die programme se prioriteit van bo na onder in "
 "die lys bepaal word."
 
-#: kservicelistwidget.cpp:68
-#, fuzzy, kde-format
-#| msgid ""
-#| "This is a list of services associated with files of the selected file "
-#| "type. This list is shown in Konqueror's context menus when you select a "
-#| "\"Preview with...\" option. If more than one application is associated "
-#| "with this file type, then the list is ordered by priority with the "
-#| "uppermost item taking precedence over the others."
-msgid ""
-"This is a list of services associated with files of the selected file type. "
-"This list is shown in Konqueror's context menus when you select a \"Preview "
-"with...\" option. If more than one service is associated with this file "
-"type, then the list is ordered by priority with the uppermost item taking "
-"precedence over the others."
-msgstr ""
-"Hierdie is 'n lys van dienste wat met die lêes van die gekose tipe "
-"geassosieer is. Hierdie lys sal in Konqueror se konteks kieslyste vertoon "
-"word wanneer jy \"Voorskou met...\"kies. As daar meer as een program met 'n "
-"lêer tipe geassosieer is, sal die programme se prioriteit van bo na onder in "
-"die lys bepaal word."
-
-#: kservicelistwidget.cpp:80
+#: kservicelistwidget.cpp:66
 #, kde-format
 msgid "Move &Up"
 msgstr "Beweeg Begin"
 
-#: kservicelistwidget.cpp:86
+#: kservicelistwidget.cpp:73
 #, kde-format
 msgid ""
 "Assigns a higher priority to the selected\n"
@@ -327,21 +286,12 @@ msgstr ""
 "slegs affekteer die gekose aansoek as die lêer tipe is\n"
 "geassosieer met meer as een aansoek."
 
-#: kservicelistwidget.cpp:90
-#, kde-format
-msgid ""
-"Assigns a higher priority to the selected\n"
-"service, moving it up in the list."
-msgstr ""
-"Ken toe 'n hoër prioriteit na die gekose\n"
-"diens, beweeg dit begin in die lys."
-
-#: kservicelistwidget.cpp:93
+#: kservicelistwidget.cpp:78
 #, kde-format
 msgid "Move &Down"
 msgstr "Beweeg Ondertoe"
 
-#: kservicelistwidget.cpp:98
+#: kservicelistwidget.cpp:84
 #, kde-format
 msgid ""
 "Assigns a lower priority to the selected\n"
@@ -354,68 +304,42 @@ msgstr ""
 "slegs affekteer die gekose aansoek as die lêer tipe is\n"
 "geassosieer met meer as een aansoek."
 
-#: kservicelistwidget.cpp:102
-#, kde-format
-msgid ""
-"Assigns a lower priority to the selected\n"
-"service, moving it down in the list."
-msgstr ""
-"Ken toe 'n sagter prioriteit na die gekose\n"
-"diens, beweeg dit ondertoe in die lys."
-
-#: kservicelistwidget.cpp:110
+#: kservicelistwidget.cpp:94
 #, kde-format
 msgid "Add a new application for this file type."
 msgstr "Voeg by 'n nuwe aansoek vir hierdie lêer tipe."
 
-#: kservicelistwidget.cpp:112
+#: kservicelistwidget.cpp:96
 #, kde-format
 msgid "Edit..."
 msgstr "Redigeer..."
 
-#: kservicelistwidget.cpp:117
+#: kservicelistwidget.cpp:101
 #, kde-format
 msgid "Edit command line of the selected application."
 msgstr "Redigeer opdrag lyn van die gekose aansoek."
 
-#: kservicelistwidget.cpp:124
+#: kservicelistwidget.cpp:108
 #, kde-format
 msgid "Remove the selected application from the list."
 msgstr "Verwyder die gekose aansoek van die lys."
 
-#: kservicelistwidget.cpp:126 multiapplydialog.cpp:19
+#: kservicelistwidget.cpp:110 multiapplydialog.cpp:19
 #, kde-format
 msgid "Apply To..."
 msgstr ""
 
-#: kservicelistwidget.cpp:131
+#: kservicelistwidget.cpp:115
 #, kde-format
 msgid "Apply the current preference order to other file types."
 msgstr ""
 
-#: kservicelistwidget.cpp:154
+#: kservicelistwidget.cpp:136
 #, fuzzy, kde-format
 #| msgid "None"
 msgctxt "No applications associated with this file type"
 msgid "None"
 msgstr "Geen"
-
-#: kservicelistwidget.cpp:167
-#, fuzzy, kde-format
-#| msgid "None"
-msgctxt "No components associated with this file type"
-msgid "None"
-msgstr "Geen"
-
-#: kserviceselectdlg.cpp:26
-#, kde-format
-msgid "Add Service"
-msgstr "Voeg diens by"
-
-#: kserviceselectdlg.cpp:30
-#, kde-format
-msgid "Select service:"
-msgstr "Kies die diens:"
 
 #: newtypedlg.cpp:25
 #, kde-format
@@ -444,6 +368,64 @@ msgid ""
 "category and you type 'custom' here, the file type 'image/custom' will be "
 "created."
 msgstr ""
+
+#~ msgid "&General"
+#~ msgstr "Algemeen"
+
+#~ msgid "&Embedding"
+#~ msgstr "Inbed"
+
+#~ msgid "%1 (%2)"
+#~ msgstr "%1 (%2)"
+
+#~ msgid "Services Preference Order"
+#~ msgstr "Dienste Voorkeur Volgorde"
+
+#, fuzzy
+#~| msgid ""
+#~| "This is a list of services associated with files of the selected file "
+#~| "type. This list is shown in Konqueror's context menus when you select a "
+#~| "\"Preview with...\" option. If more than one application is associated "
+#~| "with this file type, then the list is ordered by priority with the "
+#~| "uppermost item taking precedence over the others."
+#~ msgid ""
+#~ "This is a list of services associated with files of the selected file "
+#~ "type. This list is shown in Konqueror's context menus when you select a "
+#~ "\"Preview with...\" option. If more than one service is associated with "
+#~ "this file type, then the list is ordered by priority with the uppermost "
+#~ "item taking precedence over the others."
+#~ msgstr ""
+#~ "Hierdie is 'n lys van dienste wat met die lêes van die gekose tipe "
+#~ "geassosieer is. Hierdie lys sal in Konqueror se konteks kieslyste vertoon "
+#~ "word wanneer jy \"Voorskou met...\"kies. As daar meer as een program met "
+#~ "'n lêer tipe geassosieer is, sal die programme se prioriteit van bo na "
+#~ "onder in die lys bepaal word."
+
+#~ msgid ""
+#~ "Assigns a higher priority to the selected\n"
+#~ "service, moving it up in the list."
+#~ msgstr ""
+#~ "Ken toe 'n hoër prioriteit na die gekose\n"
+#~ "diens, beweeg dit begin in die lys."
+
+#~ msgid ""
+#~ "Assigns a lower priority to the selected\n"
+#~ "service, moving it down in the list."
+#~ msgstr ""
+#~ "Ken toe 'n sagter prioriteit na die gekose\n"
+#~ "diens, beweeg dit ondertoe in die lys."
+
+#, fuzzy
+#~| msgid "None"
+#~ msgctxt "No components associated with this file type"
+#~ msgid "None"
+#~ msgstr "Geen"
+
+#~ msgid "Add Service"
+#~ msgstr "Voeg diens by"
+
+#~ msgid "Select service:"
+#~ msgstr "Kies die diens:"
 
 #~ msgid "Show file in embedded viewer"
 #~ msgstr "Vertoon lêer in ingelegde kyker"

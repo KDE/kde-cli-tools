@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: filetypes\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2026-08-28 00:47+0000\n"
+"POT-Creation-Date: 2026-11-17 01:09+0000\n"
 "PO-Revision-Date: 2009-12-30 08:58+0530\n"
 "Last-Translator: Danishka Navin <danishka@gmail.com>\n"
 "Language-Team: Sinhala <danishka@gmail.com>\n"
@@ -27,7 +27,7 @@ msgctxt "EMAIL OF TRANSLATORS"
 msgid "Your emails"
 msgstr "danishka@gmail.com"
 
-#: filetypedetails.cpp:54
+#: filetypedetails.cpp:48
 #, kde-format
 msgid ""
 "This button displays the icon associated with the selected file type. Click "
@@ -35,12 +35,12 @@ msgid ""
 msgstr ""
 "මෙම බොත්තම තෝරාගත් ගොනුවට අදාල අයිකනය පෙන්වයි.වෙනස් අයිකනයක් තෝරාගැනීමට එය මත ක්ලික් කරන්න."
 
-#: filetypedetails.cpp:60
+#: filetypedetails.cpp:54
 #, kde-format
 msgid "Filename Patterns"
 msgstr "ගොනු නාම රටා"
 
-#: filetypedetails.cpp:72
+#: filetypedetails.cpp:66
 #, kde-format
 msgid ""
 "This box contains a list of patterns that can be used to identify files of "
@@ -52,32 +52,32 @@ msgstr ""
 "උදාහරණයක් ලෙස, *.txt රටාව 'text/plain' ගොනු වර්ගයට අදාල වේ; '.txt' ගෙන් අවසන් වන "
 "සියළු ගොනු සරල පෙළ ගොනු ලෙස හඳුනාගැනේ."
 
-#: filetypedetails.cpp:80 filetypesview.cpp:84 kservicelistwidget.cpp:105
+#: filetypedetails.cpp:74 filetypesview.cpp:83 kservicelistwidget.cpp:89
 #, kde-format
 msgid "Add..."
 msgstr "එක් කරන්න..."
 
-#: filetypedetails.cpp:85
+#: filetypedetails.cpp:79
 #, kde-format
 msgid "Add a new pattern for the selected file type."
 msgstr "තෝරාගත් ගොනු වර්ගයට නව රටාවක් එක් කරන්න."
 
-#: filetypedetails.cpp:87 kservicelistwidget.cpp:119
+#: filetypedetails.cpp:81 kservicelistwidget.cpp:103
 #, kde-format
 msgid "Remove"
 msgstr "ඉවත් කරන්න"
 
-#: filetypedetails.cpp:92
+#: filetypedetails.cpp:86
 #, kde-format
 msgid "Remove the selected filename pattern."
 msgstr "තෝරාගත් ගොනු නාම රටාව ඉවත් කරන්න"
 
-#: filetypedetails.cpp:103
+#: filetypedetails.cpp:97
 #, kde-format
 msgid "Description:"
 msgstr "විස්තරය"
 
-#: filetypedetails.cpp:108
+#: filetypedetails.cpp:102
 #, kde-format
 msgid ""
 "You can enter a short description for files of the selected file type (e.g. "
@@ -87,38 +87,28 @@ msgstr ""
 "ඔබට තෝරාගත් ගොනු වර්ගයට අදාල ගොණු සඳහා කෙටි විසතරයක් ඇතුළත් කල හැක (උදා. 'HTML පිටුවක්') "
 "මෙම තොරතුරු Konqueror වැනි භාවිත යෙදවුම් විසින් බහාළුම් අන්තර්ගත පෙන්වීම සඳහා යොදා ගනී."
 
-#: filetypedetails.cpp:128
-#, kde-format
-msgid "&General"
-msgstr "සාමාන්‍ය (&G)"
-
-#: filetypedetails.cpp:129
-#, kde-format
-msgid "&Embedding"
-msgstr "තිළැලෙමින් (&E)"
-
-#: filetypedetails.cpp:170
+#: filetypedetails.cpp:151
 #, kde-format
 msgid "Add New Extension"
 msgstr "නව දිගුව එක් කරන්න"
 
-#: filetypedetails.cpp:170
+#: filetypedetails.cpp:151
 #, kde-format
 msgid "Extension:"
 msgstr "දිගුව:"
 
-#: filetypedetails.cpp:203
+#: filetypedetails.cpp:184
 #, kde-format
 msgid "File type %1"
 msgstr "%1 ගොනු වර්‍ගය"
 
-#: filetypesview.cpp:55
+#: filetypesview.cpp:54
 #, fuzzy, kde-format
 #| msgid "Find file type or filename pattern"
 msgid "Search for file type or filename pattern..."
 msgstr "ගොනු වර්‍ග හෝ ගොනු නාම රටා සොයන්න"
 
-#: filetypesview.cpp:61
+#: filetypesview.cpp:60
 #, kde-format
 msgid ""
 "Enter a part of a filename pattern, and only file types with a matching file "
@@ -128,12 +118,12 @@ msgstr ""
 "ගොනු නාම රටාවේ කොටසක් එක් කරන්න, ගොණු රටාවට ගැලපෙන ගොණු වර්‍ග පමණක් පහත ලැයිස්තුවේ "
 "දැක්වේ. ඊට අමතරව, ලැයිස්තුගත වන විට ගොණු වර්‍ගයේ නමේ කොටසක් ඇතුළත් කරන්න."
 
-#: filetypesview.cpp:69 multiapplydialog.cpp:27
+#: filetypesview.cpp:68 multiapplydialog.cpp:27
 #, kde-format
 msgid "Known Types"
 msgstr "දන්නා වර්‍ග"
 
-#: filetypesview.cpp:75
+#: filetypesview.cpp:74
 #, kde-format
 msgid ""
 "Here you can see a hierarchical list of the file types which are known on "
@@ -146,32 +136,32 @@ msgstr ""
 "ගොනු සඳහා පෙළ/html හෝ දසුන/සකසන්න එම ගොනු වර්‍ගයට අදාල තොරතුරු දකුණේ ඇති පාලක මගින් "
 "සකසන්න."
 
-#: filetypesview.cpp:89
+#: filetypesview.cpp:88
 #, kde-format
 msgid "Click here to add a new file type."
 msgstr "නව ගොනු වර්‍ගයක් එක් කිරීම සඳහා මෙහි ක්ලික් කරන්න"
 
-#: filetypesview.cpp:91 filetypesview.cpp:368
+#: filetypesview.cpp:90 filetypesview.cpp:360
 #, kde-format
 msgid "&Remove"
 msgstr "ඉවත් කරන්න (&R)"
 
-#: filetypesview.cpp:111
+#: filetypesview.cpp:110
 #, kde-format
 msgid "Select a file type by name or by extension"
 msgstr "නාමයෙන් හෝ දිගුවෙන් ගොණු වර්‍ගයක් තෝරන්න"
 
-#: filetypesview.cpp:361
+#: filetypesview.cpp:353
 #, kde-format
 msgid "&Revert"
 msgstr "ආපසු යන්න (&R)"
 
-#: filetypesview.cpp:362
+#: filetypesview.cpp:354
 #, kde-format
 msgid "Revert this file type to its initial system-wide definition"
 msgstr "මෙම ගොනු වර්‍ගය එහි තනි පද්ධති-ව්‍යාප්ත හැඳින්වීමට ආපසු ගෙනයන්න"
 
-#: filetypesview.cpp:364
+#: filetypesview.cpp:356
 #, kde-format
 msgid ""
 "Click here to revert this file type to its initial system-wide definition, "
@@ -185,12 +175,12 @@ msgstr ""
 "කෙසේවුවත් ඔබට ඒවා භාවිතය අවම කිරීම සඳහා ඒවායේ රටා ලැයිස්තුව හිස් කල හැක (එහෙත් ගොනු අන්තර්‍"
 "ගතය මගින් ගොනු වර්‍ගය හඳුනාගැනීම් තවමත් භාවිතයේ තිබිය හැක)."
 
-#: filetypesview.cpp:369
+#: filetypesview.cpp:361
 #, kde-format
 msgid "Delete this file type definition completely"
 msgstr "මෙම ගොනු වර්ග හැදින්වීම සම්පූර්ණයෙන් මකාදමන්න"
 
-#: filetypesview.cpp:371
+#: filetypesview.cpp:363
 #, kde-format
 msgid ""
 "Click here to delete this file type definition completely. This is only "
@@ -256,22 +246,12 @@ msgstr "%1  ගොණු වර්ගය සකසන්න"
 msgid "Create New File Type %1"
 msgstr "%1 නව ගොණු වර්ගය සාදන්න"
 
-#: kservicelistwidget.cpp:46
-#, kde-format
-msgid "%1 (%2)"
-msgstr "%1 (%2)"
-
-#: kservicelistwidget.cpp:51
+#: kservicelistwidget.cpp:42
 #, kde-format
 msgid "Application Preference Order"
 msgstr "භාවිතයෙදවුම් අභිප්‍රේත පිළිවෙල"
 
-#: kservicelistwidget.cpp:51
-#, kde-format
-msgid "Services Preference Order"
-msgstr "සේවා අභිප්‍රේත පිළිවෙල"
-
-#: kservicelistwidget.cpp:63
+#: kservicelistwidget.cpp:54
 #, kde-format
 msgid ""
 "This is a list of applications associated with files of the selected file "
@@ -285,26 +265,12 @@ msgstr ""
 "වැඩි යෙදුම් ගණනක් සහයෝගී විට, ලැයිස්තුව ප්‍රමුඛතාව මත පෙළ ගැසෙන අතර ඉහළින්ම තැබෙන යෙදුට "
 "අනික්වාට වඩා වැඩි ප්‍රමුඛතාවක් හිමිවේ."
 
-#: kservicelistwidget.cpp:68
-#, kde-format
-msgid ""
-"This is a list of services associated with files of the selected file type. "
-"This list is shown in Konqueror's context menus when you select a \"Preview "
-"with...\" option. If more than one service is associated with this file "
-"type, then the list is ordered by priority with the uppermost item taking "
-"precedence over the others."
-msgstr ""
-"මෙය තෝරාගත් ගොනු වර්‍ගයේ ගොනු සමග සහයෝගී වන සේවා ලැයිස්තුවයි. Konqueror සන්දර්භ මෙනුවේ "
-"\"සමඟ පෙරදක්වන්න\" අභිප්‍රේතය තෝරාගත් විට මෙම ලැයිස්තුව දැක්වේ. මෙම ගොනු වර්‍ගයට එකකට වඩා "
-"වැඩි සේවා ගණනක් සහයෝගී විට, ලැයිස්තුව ප්‍රමුඛතාව මත පෙළ ගැසෙන අතර ඉහළින්ම තැබෙන සේවාවට "
-"අනික්වාට වඩා වැඩි ප්‍රමුඛතාවක් හිමිවේ."
-
-#: kservicelistwidget.cpp:80
+#: kservicelistwidget.cpp:66
 #, kde-format
 msgid "Move &Up"
 msgstr "ඉහළට ගෙනයන්න  (&U)"
 
-#: kservicelistwidget.cpp:86
+#: kservicelistwidget.cpp:73
 #, kde-format
 msgid ""
 "Assigns a higher priority to the selected\n"
@@ -317,21 +283,12 @@ msgstr ""
 "ගොනු වර්ගය එක් භාවිත යෙදවුමකට වඩා සහාය දක්වනෙනේ නම්\n"
 "පමණි."
 
-#: kservicelistwidget.cpp:90
-#, kde-format
-msgid ""
-"Assigns a higher priority to the selected\n"
-"service, moving it up in the list."
-msgstr ""
-"තෝරාගත් සේවාවට ඉහළ ප්‍රමුඛතාවක් දීම සඳහා\n"
-"එය ලැයිස්තුවේ ඉහළට ගෙනයන්න."
-
-#: kservicelistwidget.cpp:93
+#: kservicelistwidget.cpp:78
 #, kde-format
 msgid "Move &Down"
 msgstr "පහළට ගෙනයන්න (&D)"
 
-#: kservicelistwidget.cpp:98
+#: kservicelistwidget.cpp:84
 #, kde-format
 msgid ""
 "Assigns a lower priority to the selected\n"
@@ -344,66 +301,41 @@ msgstr ""
 "ගොනු වර්ගය එක් භාවිත යෙදවුමකට වඩා සහාය දක්වනෙනේ නම්\n"
 "පමණි."
 
-#: kservicelistwidget.cpp:102
-#, kde-format
-msgid ""
-"Assigns a lower priority to the selected\n"
-"service, moving it down in the list."
-msgstr ""
-"තෝරාගත් සේවාවට අඩු ප්‍රමුඛතාවක් දීම සඳහා\n"
-"එය ලැයිස්තුවේ පහළට ගෙනයන්න."
-
-#: kservicelistwidget.cpp:110
+#: kservicelistwidget.cpp:94
 #, kde-format
 msgid "Add a new application for this file type."
 msgstr "මෙම ගොනු වර්ගය සඳහා නව භාවිතයෙදවුමක් එක් කරන්න"
 
-#: kservicelistwidget.cpp:112
+#: kservicelistwidget.cpp:96
 #, kde-format
 msgid "Edit..."
 msgstr "සකසන්න..."
 
-#: kservicelistwidget.cpp:117
+#: kservicelistwidget.cpp:101
 #, kde-format
 msgid "Edit command line of the selected application."
 msgstr "තෝරාගත් භාවිත යෙදවුමේ විධානීය රේඛාව සකසන්න"
 
-#: kservicelistwidget.cpp:124
+#: kservicelistwidget.cpp:108
 #, kde-format
 msgid "Remove the selected application from the list."
 msgstr "තෝරාගත් භාවිතයෙදවුම ලැයිස්තුවෙන් ඉවත් කරන්න."
 
-#: kservicelistwidget.cpp:126 multiapplydialog.cpp:19
+#: kservicelistwidget.cpp:110 multiapplydialog.cpp:19
 #, kde-format
 msgid "Apply To..."
 msgstr ""
 
-#: kservicelistwidget.cpp:131
+#: kservicelistwidget.cpp:115
 #, kde-format
 msgid "Apply the current preference order to other file types."
 msgstr ""
 
-#: kservicelistwidget.cpp:154
+#: kservicelistwidget.cpp:136
 #, kde-format
 msgctxt "No applications associated with this file type"
 msgid "None"
 msgstr "කිසිවක් නැත"
-
-#: kservicelistwidget.cpp:167
-#, kde-format
-msgctxt "No components associated with this file type"
-msgid "None"
-msgstr "කිසිවක් නැත"
-
-#: kserviceselectdlg.cpp:26
-#, kde-format
-msgid "Add Service"
-msgstr "සේවාවක් එක් කරන්න"
-
-#: kserviceselectdlg.cpp:30
-#, kde-format
-msgid "Select service:"
-msgstr "සේවාව තෝරන්න"
 
 #: newtypedlg.cpp:25
 #, kde-format
@@ -434,6 +366,54 @@ msgid ""
 msgstr ""
 "ගොනු වර්ගයේ නාමය ලියන්න, උදාහරණයක් ලෙස ඔබ 'පිලිඹිබු' යන්න ප්‍රවර්ගය ලෙස තෝරාගත්තේ නම් හා "
 "මෙහි 'රුචි' ලෙස ලියුවේනම්, නව ගොනු වර්ගය 'පිළිඹිබු/රුචි' ලෙස සෑදේ."
+
+#~ msgid "&General"
+#~ msgstr "සාමාන්‍ය (&G)"
+
+#~ msgid "&Embedding"
+#~ msgstr "තිළැලෙමින් (&E)"
+
+#~ msgid "%1 (%2)"
+#~ msgstr "%1 (%2)"
+
+#~ msgid "Services Preference Order"
+#~ msgstr "සේවා අභිප්‍රේත පිළිවෙල"
+
+#~ msgid ""
+#~ "This is a list of services associated with files of the selected file "
+#~ "type. This list is shown in Konqueror's context menus when you select a "
+#~ "\"Preview with...\" option. If more than one service is associated with "
+#~ "this file type, then the list is ordered by priority with the uppermost "
+#~ "item taking precedence over the others."
+#~ msgstr ""
+#~ "මෙය තෝරාගත් ගොනු වර්‍ගයේ ගොනු සමග සහයෝගී වන සේවා ලැයිස්තුවයි. Konqueror සන්දර්භ මෙනුවේ "
+#~ "\"සමඟ පෙරදක්වන්න\" අභිප්‍රේතය තෝරාගත් විට මෙම ලැයිස්තුව දැක්වේ. මෙම ගොනු වර්‍ගයට එකකට "
+#~ "වඩා වැඩි සේවා ගණනක් සහයෝගී විට, ලැයිස්තුව ප්‍රමුඛතාව මත පෙළ ගැසෙන අතර ඉහළින්ම තැබෙන "
+#~ "සේවාවට අනික්වාට වඩා වැඩි ප්‍රමුඛතාවක් හිමිවේ."
+
+#~ msgid ""
+#~ "Assigns a higher priority to the selected\n"
+#~ "service, moving it up in the list."
+#~ msgstr ""
+#~ "තෝරාගත් සේවාවට ඉහළ ප්‍රමුඛතාවක් දීම සඳහා\n"
+#~ "එය ලැයිස්තුවේ ඉහළට ගෙනයන්න."
+
+#~ msgid ""
+#~ "Assigns a lower priority to the selected\n"
+#~ "service, moving it down in the list."
+#~ msgstr ""
+#~ "තෝරාගත් සේවාවට අඩු ප්‍රමුඛතාවක් දීම සඳහා\n"
+#~ "එය ලැයිස්තුවේ පහළට ගෙනයන්න."
+
+#~ msgctxt "No components associated with this file type"
+#~ msgid "None"
+#~ msgstr "කිසිවක් නැත"
+
+#~ msgid "Add Service"
+#~ msgstr "සේවාවක් එක් කරන්න"
+
+#~ msgid "Select service:"
+#~ msgstr "සේවාව තෝරන්න"
 
 #~ msgid "Show file in embedded viewer"
 #~ msgstr "ගොණුව තිළැලි දර්ශකයේ පෙන්වන්න"

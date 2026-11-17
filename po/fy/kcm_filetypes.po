@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: filetypes\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2026-08-28 00:47+0000\n"
+"POT-Creation-Date: 2026-11-17 01:09+0000\n"
 "PO-Revision-Date: 2009-12-19 18:22+0100\n"
 "Last-Translator: Berend Ytsma <berendy@gmail.com>\n"
 "Language-Team: Frysk <kde-i18n-fry@kde.org>\n"
@@ -28,7 +28,7 @@ msgctxt "EMAIL OF TRANSLATORS"
 msgid "Your emails"
 msgstr "an3s_annema@planet.nl, berendy@bigfoot.com"
 
-#: filetypedetails.cpp:54
+#: filetypedetails.cpp:48
 #, kde-format
 msgid ""
 "This button displays the icon associated with the selected file type. Click "
@@ -37,12 +37,12 @@ msgstr ""
 "Dizze knop lit it byldkaike sjen dat oerien komt mei it selektearre "
 "triemtype. Klik derop om in oar byldkaike te kiezen."
 
-#: filetypedetails.cpp:60
+#: filetypedetails.cpp:54
 #, kde-format
 msgid "Filename Patterns"
 msgstr "Triemnammepatroanen."
 
-#: filetypedetails.cpp:72
+#: filetypedetails.cpp:66
 #, kde-format
 msgid ""
 "This box contains a list of patterns that can be used to identify files of "
@@ -55,32 +55,32 @@ msgstr ""
 "ferbûn mei it triemtype 'tekst/plain'; alle triemmen dy't einigje op '.txt' "
 "wurde lykas teksttriemmen werkend."
 
-#: filetypedetails.cpp:80 filetypesview.cpp:84 kservicelistwidget.cpp:105
+#: filetypedetails.cpp:74 filetypesview.cpp:83 kservicelistwidget.cpp:89
 #, kde-format
 msgid "Add..."
 msgstr "Taheakje..."
 
-#: filetypedetails.cpp:85
+#: filetypedetails.cpp:79
 #, kde-format
 msgid "Add a new pattern for the selected file type."
 msgstr "Heakje in nij patroan ta foar it selektearre triemtype."
 
-#: filetypedetails.cpp:87 kservicelistwidget.cpp:119
+#: filetypedetails.cpp:81 kservicelistwidget.cpp:103
 #, kde-format
 msgid "Remove"
 msgstr "Fuortsmite"
 
-#: filetypedetails.cpp:92
+#: filetypedetails.cpp:86
 #, kde-format
 msgid "Remove the selected filename pattern."
 msgstr "Smyt it selektearre triemnammepatroan fuort."
 
-#: filetypedetails.cpp:103
+#: filetypedetails.cpp:97
 #, kde-format
 msgid "Description:"
 msgstr "Beskriuwing:"
 
-#: filetypedetails.cpp:108
+#: filetypedetails.cpp:102
 #, kde-format
 msgid ""
 "You can enter a short description for files of the selected file type (e.g. "
@@ -91,38 +91,28 @@ msgstr ""
 "type (bgl. 'Teksttriem'). Dizze omskriuwing wurdt brûkt troch programma's "
 "lykas Konqueror by it werjaan fan de ynhâld fan mappen."
 
-#: filetypedetails.cpp:128
-#, kde-format
-msgid "&General"
-msgstr "&Algemien"
-
-#: filetypedetails.cpp:129
-#, kde-format
-msgid "&Embedding"
-msgstr "&Ynbêding"
-
-#: filetypedetails.cpp:170
+#: filetypedetails.cpp:151
 #, kde-format
 msgid "Add New Extension"
 msgstr "Nij taheaksel taheakje"
 
-#: filetypedetails.cpp:170
+#: filetypedetails.cpp:151
 #, kde-format
 msgid "Extension:"
 msgstr "Taheaksel:"
 
-#: filetypedetails.cpp:203
+#: filetypedetails.cpp:184
 #, kde-format
 msgid "File type %1"
 msgstr "Triemtype %1"
 
-#: filetypesview.cpp:55
+#: filetypesview.cpp:54
 #, fuzzy, kde-format
 #| msgid "Find file type or filename pattern"
 msgid "Search for file type or filename pattern..."
 msgstr "Tr&iemtypen of triemnammepatroan sykje"
 
-#: filetypesview.cpp:61
+#: filetypesview.cpp:60
 #, kde-format
 msgid ""
 "Enter a part of a filename pattern, and only file types with a matching file "
@@ -132,12 +122,12 @@ msgstr ""
 "Fier in diel fan in triemnammepatroan yn. Allinnich triemtypen dy't "
 "oerienkomme mei dit patroan ferskine dan yn de list."
 
-#: filetypesview.cpp:69 multiapplydialog.cpp:27
+#: filetypesview.cpp:68 multiapplydialog.cpp:27
 #, kde-format
 msgid "Known Types"
 msgstr "Bekende typen"
 
-#: filetypesview.cpp:75
+#: filetypesview.cpp:74
 #, kde-format
 msgid ""
 "Here you can see a hierarchical list of the file types which are known on "
@@ -150,32 +140,32 @@ msgstr ""
 "dizze wer op te tearen. Klik op de namme fan it triemtype (bgl. 'html' foar "
 "HTML-triemmen) om jo foarkar oangeande dat triemtype yn te stellen."
 
-#: filetypesview.cpp:89
+#: filetypesview.cpp:88
 #, kde-format
 msgid "Click here to add a new file type."
 msgstr "Klik hjirre om in nij triemtype ta te heakjen"
 
-#: filetypesview.cpp:91 filetypesview.cpp:368
+#: filetypesview.cpp:90 filetypesview.cpp:360
 #, kde-format
 msgid "&Remove"
 msgstr "&Fuortsmite"
 
-#: filetypesview.cpp:111
+#: filetypesview.cpp:110
 #, kde-format
 msgid "Select a file type by name or by extension"
 msgstr "Selektearje in triemtype by namme of taheaksel"
 
-#: filetypesview.cpp:361
+#: filetypesview.cpp:353
 #, kde-format
 msgid "&Revert"
 msgstr "&Weromdraaie"
 
-#: filetypesview.cpp:362
+#: filetypesview.cpp:354
 #, kde-format
 msgid "Revert this file type to its initial system-wide definition"
 msgstr "Dizze triemtype weromsette nei syn systeem-wide defenysje"
 
-#: filetypesview.cpp:364
+#: filetypesview.cpp:356
 #, kde-format
 msgid ""
 "Click here to revert this file type to its initial system-wide definition, "
@@ -190,12 +180,12 @@ msgstr ""
 "patroanlist leechje, om sa de kânsen fan it brûken te minimalisearjen(it kin "
 "noch stees barre dat triemtype ûntdekking fan triem ynhâld se dôchs brûke)."
 
-#: filetypesview.cpp:369
+#: filetypesview.cpp:361
 #, kde-format
 msgid "Delete this file type definition completely"
 msgstr "Dit triemtype definysje folslein wiskje"
 
-#: filetypesview.cpp:371
+#: filetypesview.cpp:363
 #, kde-format
 msgid ""
 "Click here to delete this file type definition completely. This is only "
@@ -264,22 +254,12 @@ msgstr "Triemtype %1 bewurkje"
 msgid "Create New File Type %1"
 msgstr "Nij triemtype %1 oanmeitsje"
 
-#: kservicelistwidget.cpp:46
-#, kde-format
-msgid "%1 (%2)"
-msgstr "%1 (%2)"
-
-#: kservicelistwidget.cpp:51
+#: kservicelistwidget.cpp:42
 #, kde-format
 msgid "Application Preference Order"
 msgstr "Tapassings foar dit triemtype"
 
-#: kservicelistwidget.cpp:51
-#, kde-format
-msgid "Services Preference Order"
-msgstr "Tsjinsten foar dit triemtype"
-
-#: kservicelistwidget.cpp:63
+#: kservicelistwidget.cpp:54
 #, kde-format
 msgid ""
 "This is a list of applications associated with files of the selected file "
@@ -294,27 +274,12 @@ msgstr ""
 "triemtype, dan is de list oardere op prioriteit, wêrby de boppenste "
 "tapassing yn de list as earste keazen wurdt om de triem mei te iepenjen."
 
-#: kservicelistwidget.cpp:68
-#, kde-format
-msgid ""
-"This is a list of services associated with files of the selected file type. "
-"This list is shown in Konqueror's context menus when you select a \"Preview "
-"with...\" option. If more than one service is associated with this file "
-"type, then the list is ordered by priority with the uppermost item taking "
-"precedence over the others."
-msgstr ""
-"Dit is in list mei tsjinsten dy't ferbûn binne mei it selekteare triemtype. "
-"Dizze list is te sjen yn Konqueror's kontekstmenu's wannear't jo kieze foar "
-"in \"Printallyk mei...\" opsje. At der mear dan ien tsjinst ferbûn is mei "
-"dit triemtype, dan is de list oardere op prioriteit, wêrby de boppenste item "
-"foargiet foar alle oaren."
-
-#: kservicelistwidget.cpp:80
+#: kservicelistwidget.cpp:66
 #, kde-format
 msgid "Move &Up"
 msgstr "Omheech &ferpleatse"
 
-#: kservicelistwidget.cpp:86
+#: kservicelistwidget.cpp:73
 #, kde-format
 msgid ""
 "Assigns a higher priority to the selected\n"
@@ -328,21 +293,12 @@ msgstr ""
 "programma oft it triemtype besibbe\n"
 "is mei mear as ien programma."
 
-#: kservicelistwidget.cpp:90
-#, kde-format
-msgid ""
-"Assigns a higher priority to the selected\n"
-"service, moving it up in the list."
-msgstr ""
-"Jout in hegere prioriteit oan de selektearre tsjinst\n"
-"troch dizze heger in de list te setten."
-
-#: kservicelistwidget.cpp:93
+#: kservicelistwidget.cpp:78
 #, kde-format
 msgid "Move &Down"
 msgstr "Omleech fe&rpleatse"
 
-#: kservicelistwidget.cpp:98
+#: kservicelistwidget.cpp:84
 #, kde-format
 msgid ""
 "Assigns a lower priority to the selected\n"
@@ -356,66 +312,41 @@ msgstr ""
 "programma oft it triemtype besibbe\n"
 "is mei mear as ien programma."
 
-#: kservicelistwidget.cpp:102
-#, kde-format
-msgid ""
-"Assigns a lower priority to the selected\n"
-"service, moving it down in the list."
-msgstr ""
-"Jout in legere prioriteit oan de selektearre tsjinst\n"
-"troch dizze leger in de list te setten."
-
-#: kservicelistwidget.cpp:110
+#: kservicelistwidget.cpp:94
 #, kde-format
 msgid "Add a new application for this file type."
 msgstr "Heakje in nij programma ta foar dit triemtype."
 
-#: kservicelistwidget.cpp:112
+#: kservicelistwidget.cpp:96
 #, kde-format
 msgid "Edit..."
 msgstr "Bewurkje..."
 
-#: kservicelistwidget.cpp:117
+#: kservicelistwidget.cpp:101
 #, kde-format
 msgid "Edit command line of the selected application."
 msgstr "Pas de kommandorigel oan fan it selektearre programma."
 
-#: kservicelistwidget.cpp:124
+#: kservicelistwidget.cpp:108
 #, kde-format
 msgid "Remove the selected application from the list."
 msgstr "Smyt it selektearre programma út de list."
 
-#: kservicelistwidget.cpp:126 multiapplydialog.cpp:19
+#: kservicelistwidget.cpp:110 multiapplydialog.cpp:19
 #, kde-format
 msgid "Apply To..."
 msgstr ""
 
-#: kservicelistwidget.cpp:131
+#: kservicelistwidget.cpp:115
 #, kde-format
 msgid "Apply the current preference order to other file types."
 msgstr ""
 
-#: kservicelistwidget.cpp:154
+#: kservicelistwidget.cpp:136
 #, kde-format
 msgctxt "No applications associated with this file type"
 msgid "None"
 msgstr "Gjint"
-
-#: kservicelistwidget.cpp:167
-#, kde-format
-msgctxt "No components associated with this file type"
-msgid "None"
-msgstr "Gjint"
-
-#: kserviceselectdlg.cpp:26
-#, kde-format
-msgid "Add Service"
-msgstr "Tsjinst taheakje "
-
-#: kserviceselectdlg.cpp:30
-#, kde-format
-msgid "Select service:"
-msgstr "Tsjinst selektearje:"
 
 #: newtypedlg.cpp:25
 #, kde-format
@@ -447,6 +378,55 @@ msgstr ""
 "Fier de namme fan it triemtype yn. As foarbyld. as jo 'image' selektearje as "
 "kategory en jo type 'custum' yn, de triemtype 'image/custum'sil da n "
 "oanmakke wurde."
+
+#~ msgid "&General"
+#~ msgstr "&Algemien"
+
+#~ msgid "&Embedding"
+#~ msgstr "&Ynbêding"
+
+#~ msgid "%1 (%2)"
+#~ msgstr "%1 (%2)"
+
+#~ msgid "Services Preference Order"
+#~ msgstr "Tsjinsten foar dit triemtype"
+
+#~ msgid ""
+#~ "This is a list of services associated with files of the selected file "
+#~ "type. This list is shown in Konqueror's context menus when you select a "
+#~ "\"Preview with...\" option. If more than one service is associated with "
+#~ "this file type, then the list is ordered by priority with the uppermost "
+#~ "item taking precedence over the others."
+#~ msgstr ""
+#~ "Dit is in list mei tsjinsten dy't ferbûn binne mei it selekteare "
+#~ "triemtype. Dizze list is te sjen yn Konqueror's kontekstmenu's wannear't "
+#~ "jo kieze foar in \"Printallyk mei...\" opsje. At der mear dan ien tsjinst "
+#~ "ferbûn is mei dit triemtype, dan is de list oardere op prioriteit, wêrby "
+#~ "de boppenste item foargiet foar alle oaren."
+
+#~ msgid ""
+#~ "Assigns a higher priority to the selected\n"
+#~ "service, moving it up in the list."
+#~ msgstr ""
+#~ "Jout in hegere prioriteit oan de selektearre tsjinst\n"
+#~ "troch dizze heger in de list te setten."
+
+#~ msgid ""
+#~ "Assigns a lower priority to the selected\n"
+#~ "service, moving it down in the list."
+#~ msgstr ""
+#~ "Jout in legere prioriteit oan de selektearre tsjinst\n"
+#~ "troch dizze leger in de list te setten."
+
+#~ msgctxt "No components associated with this file type"
+#~ msgid "None"
+#~ msgstr "Gjint"
+
+#~ msgid "Add Service"
+#~ msgstr "Tsjinst taheakje "
+
+#~ msgid "Select service:"
+#~ msgstr "Tsjinst selektearje:"
 
 #~ msgid "Left Click Action (only for Konqueror file manager)"
 #~ msgstr "Lofter klik aksje (allinne foar Konqueror triem behearder)"

@@ -221,21 +221,7 @@
 >Daraufhin werden die aktuellen Einstellungen dieses &MIME;-Typs im Modulfenster angezeigt.</para>
 
 <para
->Die aktuellen Werte werden auf den beiden Karteikarten <guilabel
->Allgemein</guilabel
-> und <guilabel
->Einbetten</guilabel
-> angezeigt.</para>
-
-<variablelist>
-<varlistentry>
-<term
-><guilabel
->Allgemein</guilabel
-></term>
-<listitem>
-<para
->Jeder &MIME;-Typ hat vier Eigenschaften auf dieser Karteikarte:</para>
+>There are 4 properties for each &MIME; type:</para>
 
 <orderedlist>
 <listitem
@@ -263,20 +249,6 @@
 > legt fest, welche Programme diesem &MIME;-Typ zugeordnet werden.</para
 ></listitem>
 </orderedlist>
-</listitem>
-</varlistentry>
-
-<varlistentry>
-<term
-><guilabel
->Karteikarte Einbetten</guilabel
-></term>
-<listitem>
-<para
->Auf dieser Karteikarte wird festgelegt, ob dieser Dateityp innerhalb der Dateiverwaltung oder durch Starten der Anwendung angezeigt wird.</para>
-</listitem>
-</varlistentry>
-</variablelist>
 
 </sect3>
 
@@ -472,76 +444,6 @@
 >Nach unten</guibutton
 > an das Ende der Liste der Anwendungen zu stellen anstatt sie ganz zu löschen. Wenn die gewünschte Anwendung für diesen Typ einmal unerreichbar werden sollte, hat man so immer noch wenigstens eine Anwendung, um diesen &MIME;-Typ zu betrachten.</para
 ></tip>
-
-</sect3>
-
-<sect3 id="file-assoc-embedding">
-<title
->Einbetten</title>
-<para
->Diese Einstellungen werden nur von &konqueror; als Dateiverwaltung verwendet, &dolphin; kann keine eingebetteten Ansichten anzeigen und öffnet eine Datei immer mit der zugehörigen Anwendung.</para>
-<para
->Auf der Karteikarte <guilabel
->Einbetten</guilabel
-> wird eine Gruppe von vier Auswahlknöpfen mit dem Titel <guibutton
->Linksklick-Aktion in Konqueror</guibutton
-> angezeigt. Diese bestimmen, wie die Dateiverwaltung den &MIME;-Typ anzeigt:</para>
-
-<variablelist>
-<varlistentry
-><term
->Datei in eingebettetem Betrachter anzeigen</term>
-<listitem
-><para
->Wenn diese Option gewählt ist, wird die Datei <emphasis
->innerhalb</emphasis
-> des Dateiverwaltungs-Fensters angezeigt.</para
-></listitem
-></varlistentry>
-<varlistentry
-><term
->Datei in extra Betrachter anzeigen</term>
-<listitem
-><para
->Bei dieser Option wird zum Anzeigen dieses &MIME;-Typs ein eigenes Fenster erstellt.</para
-></listitem
-></varlistentry>
-<varlistentry
-><term
->Einstellung aus „Gruppe“ übernehmen</term>
-<listitem
-><para
->Diese Option sorgt dafür, dass die Einstellungen der jeweiligen Gruppe verwendet werden. (Wenn man einen Audio-&MIME;-Typ bearbeitet, werden die Einstellungen der Audio-Gruppe verwendet).</para
-></listitem
-></varlistentry>
-<varlistentry
-><term
->Nachfragen, ob stattdessen auf Festplatte gespeichert werden soll</term>
-<listitem
-><para
->Diese Einstellung wird nur von &konqueror; im Browser-Modus verwendet und bestimmt, ob eine Datei in einer eingebetteten Ansichten anzeigt wird oder nachgefragt wird, stattdessen auf Festplatte zu speichern.</para
-></listitem
-></varlistentry>
-</variablelist>
-
-<para
->Darunter befindet sich das Listenfeld <guilabel
->Rangfolge der zugeordneten Dienstprogramme</guilabel
->.</para>
-
-<para
->In einer Dateiverwaltung wie &konqueror; oder &dolphin; kann durch Klicken der <mousebutton
->rechten Maustaste</mousebutton
-> ein Kontextmenü geöffnet werden. Dieses enthält das Untermenü <guimenuitem
->Öffnen mit ...</guimenuitem
->. Das Listenfeld zeigt die Anwendungen in der Reihenfolge an, wie sie unter dem Menü dann erscheinen.</para>
-
-<para
->Die Reihenfolge kann mit den Knöpfen <guibutton
->Nach oben</guibutton
-> und <guibutton
->Nach unten</guibutton
-> verändert werden.</para>
 
 </sect3>
 

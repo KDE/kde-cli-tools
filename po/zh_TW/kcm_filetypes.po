@@ -15,7 +15,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: filetypes\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2026-08-28 00:47+0000\n"
+"POT-Creation-Date: 2026-11-17 01:09+0000\n"
 "PO-Revision-Date: 2023-05-28 16:36+0900\n"
 "Last-Translator: Kisaragi Hiu <mail@kisaragi-hiu.com>\n"
 "Language-Team: Chinese <zh-l10n@linux.org.tw>\n"
@@ -36,19 +36,19 @@ msgctxt "EMAIL OF TRANSLATORS"
 msgid "Your emails"
 msgstr "franklin@goodhorse.idv.tw"
 
-#: filetypedetails.cpp:54
+#: filetypedetails.cpp:48
 #, kde-format
 msgid ""
 "This button displays the icon associated with the selected file type. Click "
 "on it to choose a different icon."
 msgstr "這個按鈕顯示和選中的文件類型關聯的圖示. 按下它以選擇一個新的圖示."
 
-#: filetypedetails.cpp:60
+#: filetypedetails.cpp:54
 #, kde-format
 msgid "Filename Patterns"
 msgstr "檔案名稱樣式"
 
-#: filetypedetails.cpp:72
+#: filetypedetails.cpp:66
 #, kde-format
 msgid ""
 "This box contains a list of patterns that can be used to identify files of "
@@ -59,32 +59,32 @@ msgstr ""
 "這個方塊中包含了一系列可以用來識別這個檔案類型的樣式. 舉例而言, 樣式 *.txt 關"
 "聯於 'text/plain' 類型; 所有以 '.txt' 結束的檔名都會被當作純文字文件."
 
-#: filetypedetails.cpp:80 filetypesview.cpp:84 kservicelistwidget.cpp:105
+#: filetypedetails.cpp:74 filetypesview.cpp:83 kservicelistwidget.cpp:89
 #, kde-format
 msgid "Add..."
 msgstr "增加..."
 
-#: filetypedetails.cpp:85
+#: filetypedetails.cpp:79
 #, kde-format
 msgid "Add a new pattern for the selected file type."
 msgstr "為選中的文件類型添加一個新的樣式."
 
-#: filetypedetails.cpp:87 kservicelistwidget.cpp:119
+#: filetypedetails.cpp:81 kservicelistwidget.cpp:103
 #, kde-format
 msgid "Remove"
 msgstr "移除"
 
-#: filetypedetails.cpp:92
+#: filetypedetails.cpp:86
 #, kde-format
 msgid "Remove the selected filename pattern."
 msgstr "刪除選中的檔案名稱樣式。"
 
-#: filetypedetails.cpp:103
+#: filetypedetails.cpp:97
 #, kde-format
 msgid "Description:"
 msgstr "描述："
 
-#: filetypedetails.cpp:108
+#: filetypedetails.cpp:102
 #, kde-format
 msgid ""
 "You can enter a short description for files of the selected file type (e.g. "
@@ -94,37 +94,27 @@ msgstr ""
 "在這裡輸入選中的文件類型的簡要描述 (例如 'HTML 頁面'). 這個描述會被Konqueror "
 "這樣的應用用來顯示目錄內容."
 
-#: filetypedetails.cpp:128
-#, kde-format
-msgid "&General"
-msgstr "一般(&G)"
-
-#: filetypedetails.cpp:129
-#, kde-format
-msgid "&Embedding"
-msgstr "內嵌(&E)"
-
-#: filetypedetails.cpp:170
+#: filetypedetails.cpp:151
 #, kde-format
 msgid "Add New Extension"
 msgstr "新增副檔名"
 
-#: filetypedetails.cpp:170
+#: filetypedetails.cpp:151
 #, kde-format
 msgid "Extension:"
 msgstr "副檔名:"
 
-#: filetypedetails.cpp:203
+#: filetypedetails.cpp:184
 #, kde-format
 msgid "File type %1"
 msgstr "檔案型態 %1"
 
-#: filetypesview.cpp:55
+#: filetypesview.cpp:54
 #, kde-format
 msgid "Search for file type or filename pattern..."
 msgstr "搜尋檔案型態或檔名樣式…"
 
-#: filetypesview.cpp:61
+#: filetypesview.cpp:60
 #, kde-format
 msgid ""
 "Enter a part of a filename pattern, and only file types with a matching file "
@@ -134,12 +124,12 @@ msgstr ""
 "輸入檔案名稱的部分樣式。只有符合樣式的檔案才會出現在列表中。另外也可以輸入檔"
 "案型態名稱的一部份。"
 
-#: filetypesview.cpp:69 multiapplydialog.cpp:27
+#: filetypesview.cpp:68 multiapplydialog.cpp:27
 #, kde-format
 msgid "Known Types"
 msgstr "已知類型"
 
-#: filetypesview.cpp:75
+#: filetypesview.cpp:74
 #, kde-format
 msgid ""
 "Here you can see a hierarchical list of the file types which are known on "
@@ -150,32 +140,32 @@ msgstr ""
 "你可以看到在你系統上安裝的文件類型的分級列表. 按下 '+' 符號來展開類別, '-' 來"
 "收攏. 您選擇一個文件類型 (例如 text/html) 用右側的按鈕來編輯."
 
-#: filetypesview.cpp:89
+#: filetypesview.cpp:88
 #, kde-format
 msgid "Click here to add a new file type."
 msgstr "點選這裡新增加檔案類型"
 
-#: filetypesview.cpp:91 filetypesview.cpp:368
+#: filetypesview.cpp:90 filetypesview.cpp:360
 #, kde-format
 msgid "&Remove"
 msgstr "移除(&R)"
 
-#: filetypesview.cpp:111
+#: filetypesview.cpp:110
 #, kde-format
 msgid "Select a file type by name or by extension"
 msgstr "選擇依據檔案名稱或延伸檔名選擇檔案類別"
 
-#: filetypesview.cpp:361
+#: filetypesview.cpp:353
 #, kde-format
 msgid "&Revert"
 msgstr "返回(&R)"
 
-#: filetypesview.cpp:362
+#: filetypesview.cpp:354
 #, kde-format
 msgid "Revert this file type to its initial system-wide definition"
 msgstr "將此檔案型態返回原始的系統定義"
 
-#: filetypesview.cpp:364
+#: filetypesview.cpp:356
 #, kde-format
 msgid ""
 "Click here to revert this file type to its initial system-wide definition, "
@@ -188,12 +178,12 @@ msgstr ""
 "統檔案型態是不能刪除的，不過您可以將樣式清單清空，盡量避免被用到此型態（若是"
 "依據檔案內容來判斷，則還是有可能會使用此型態）。"
 
-#: filetypesview.cpp:369
+#: filetypesview.cpp:361
 #, kde-format
 msgid "Delete this file type definition completely"
 msgstr "完全刪除此檔案型態定義"
 
-#: filetypesview.cpp:371
+#: filetypesview.cpp:363
 #, kde-format
 msgid ""
 "Click here to delete this file type definition completely. This is only "
@@ -257,22 +247,12 @@ msgstr "編輯檔案類別 %1"
 msgid "Create New File Type %1"
 msgstr "建立新的檔案類別 %1"
 
-#: kservicelistwidget.cpp:46
-#, kde-format
-msgid "%1 (%2)"
-msgstr "%1 (%2)"
-
-#: kservicelistwidget.cpp:51
+#: kservicelistwidget.cpp:42
 #, kde-format
 msgid "Application Preference Order"
 msgstr "應用程式優先順序"
 
-#: kservicelistwidget.cpp:51
-#, kde-format
-msgid "Services Preference Order"
-msgstr "服務優先順序"
-
-#: kservicelistwidget.cpp:63
+#: kservicelistwidget.cpp:54
 #, kde-format
 msgid ""
 "This is a list of applications associated with files of the selected file "
@@ -285,24 +265,12 @@ msgstr ""
 "在 Konqueror 的快顯目錄中。如果有多於一個應用程式，這個列表會依據這邊的順序排"
 "列。"
 
-#: kservicelistwidget.cpp:68
-#, kde-format
-msgid ""
-"This is a list of services associated with files of the selected file type. "
-"This list is shown in Konqueror's context menus when you select a \"Preview "
-"with...\" option. If more than one service is associated with this file "
-"type, then the list is ordered by priority with the uppermost item taking "
-"precedence over the others."
-msgstr ""
-"這是關聯於檔案類別的服務之列表. 當您選擇 \"預覽方式\" 時, 這個列表會出現在 "
-"Konqueror 的內容目錄中。如果有多於一個服務, 這個列表會依據這邊的順序排列."
-
-#: kservicelistwidget.cpp:80
+#: kservicelistwidget.cpp:66
 #, kde-format
 msgid "Move &Up"
 msgstr "上移(&U)"
 
-#: kservicelistwidget.cpp:86
+#: kservicelistwidget.cpp:73
 #, kde-format
 msgid ""
 "Assigns a higher priority to the selected\n"
@@ -315,21 +283,12 @@ msgstr ""
 "注意: 如果檔案類別關聯於多個應用程式,\n"
 "這只會影響指定的應用程式."
 
-#: kservicelistwidget.cpp:90
-#, kde-format
-msgid ""
-"Assigns a higher priority to the selected\n"
-"service, moving it up in the list."
-msgstr ""
-"要提升指定服務的優先等級,\n"
-"請將之往上移動."
-
-#: kservicelistwidget.cpp:93
+#: kservicelistwidget.cpp:78
 #, kde-format
 msgid "Move &Down"
 msgstr "下移(&D)"
 
-#: kservicelistwidget.cpp:98
+#: kservicelistwidget.cpp:84
 #, kde-format
 msgid ""
 "Assigns a lower priority to the selected\n"
@@ -342,66 +301,41 @@ msgstr ""
 "注意: 如果檔案類別關聯於多個應用程式,\n"
 "這只會影響指定的應用程式."
 
-#: kservicelistwidget.cpp:102
-#, kde-format
-msgid ""
-"Assigns a lower priority to the selected\n"
-"service, moving it down in the list."
-msgstr ""
-"要降低指定服務的優先等級,\n"
-"請將之往下移動."
-
-#: kservicelistwidget.cpp:110
+#: kservicelistwidget.cpp:94
 #, kde-format
 msgid "Add a new application for this file type."
 msgstr "為這個文件類別添加新的應用程式."
 
-#: kservicelistwidget.cpp:112
+#: kservicelistwidget.cpp:96
 #, kde-format
 msgid "Edit..."
 msgstr "編輯..."
 
-#: kservicelistwidget.cpp:117
+#: kservicelistwidget.cpp:101
 #, kde-format
 msgid "Edit command line of the selected application."
 msgstr "編輯選定應用程式的命令列."
 
-#: kservicelistwidget.cpp:124
+#: kservicelistwidget.cpp:108
 #, kde-format
 msgid "Remove the selected application from the list."
 msgstr "刪除列表中選中的應用程式."
 
-#: kservicelistwidget.cpp:126 multiapplydialog.cpp:19
+#: kservicelistwidget.cpp:110 multiapplydialog.cpp:19
 #, kde-format
 msgid "Apply To..."
 msgstr "套用到…"
 
-#: kservicelistwidget.cpp:131
+#: kservicelistwidget.cpp:115
 #, kde-format
 msgid "Apply the current preference order to other file types."
 msgstr "套用目前的偏好排序到別的檔案類型。"
 
-#: kservicelistwidget.cpp:154
+#: kservicelistwidget.cpp:136
 #, kde-format
 msgctxt "No applications associated with this file type"
 msgid "None"
 msgstr "無"
-
-#: kservicelistwidget.cpp:167
-#, kde-format
-msgctxt "No components associated with this file type"
-msgid "None"
-msgstr "無"
-
-#: kserviceselectdlg.cpp:26
-#, kde-format
-msgid "Add Service"
-msgstr "新增服務"
-
-#: kserviceselectdlg.cpp:30
-#, kde-format
-msgid "Select service:"
-msgstr "選擇服務"
 
 #: newtypedlg.cpp:25
 #, kde-format
@@ -432,6 +366,53 @@ msgid ""
 msgstr ""
 "輸入檔案型態的名稱。例如，如果您要選擇「image」類別，而您在此輸入 custom，則"
 "會建立 'image/custom' 型態。"
+
+#~ msgid "&General"
+#~ msgstr "一般(&G)"
+
+#~ msgid "&Embedding"
+#~ msgstr "內嵌(&E)"
+
+#~ msgid "%1 (%2)"
+#~ msgstr "%1 (%2)"
+
+#~ msgid "Services Preference Order"
+#~ msgstr "服務優先順序"
+
+#~ msgid ""
+#~ "This is a list of services associated with files of the selected file "
+#~ "type. This list is shown in Konqueror's context menus when you select a "
+#~ "\"Preview with...\" option. If more than one service is associated with "
+#~ "this file type, then the list is ordered by priority with the uppermost "
+#~ "item taking precedence over the others."
+#~ msgstr ""
+#~ "這是關聯於檔案類別的服務之列表. 當您選擇 \"預覽方式\" 時, 這個列表會出現"
+#~ "在 Konqueror 的內容目錄中。如果有多於一個服務, 這個列表會依據這邊的順序排"
+#~ "列."
+
+#~ msgid ""
+#~ "Assigns a higher priority to the selected\n"
+#~ "service, moving it up in the list."
+#~ msgstr ""
+#~ "要提升指定服務的優先等級,\n"
+#~ "請將之往上移動."
+
+#~ msgid ""
+#~ "Assigns a lower priority to the selected\n"
+#~ "service, moving it down in the list."
+#~ msgstr ""
+#~ "要降低指定服務的優先等級,\n"
+#~ "請將之往下移動."
+
+#~ msgctxt "No components associated with this file type"
+#~ msgid "None"
+#~ msgstr "無"
+
+#~ msgid "Add Service"
+#~ msgstr "新增服務"
+
+#~ msgid "Select service:"
+#~ msgstr "選擇服務"
 
 #~ msgid "Left Click Action (only for Konqueror file manager)"
 #~ msgstr "左敲擊動作（只針對 Konqueror 檔案管理員）"

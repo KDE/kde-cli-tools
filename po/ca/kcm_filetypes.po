@@ -12,7 +12,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kde-cli-tools\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2026-08-28 00:47+0000\n"
+"POT-Creation-Date: 2026-11-17 01:09+0000\n"
 "PO-Revision-Date: 2026-11-12 09:39+0100\n"
 "Last-Translator: Josep M. Ferrer <txemaq@gmail.com>\n"
 "Language-Team: Catalan <kde-i18n-ca@kde.org>\n"
@@ -34,7 +34,7 @@ msgctxt "EMAIL OF TRANSLATORS"
 msgid "Your emails"
 msgstr "sps@sastia.com"
 
-#: filetypedetails.cpp:54
+#: filetypedetails.cpp:48
 #, kde-format
 msgid ""
 "This button displays the icon associated with the selected file type. Click "
@@ -43,12 +43,12 @@ msgstr ""
 "Aquest botó mostra la icona associada amb el tipus de fitxer seleccionat. "
 "Feu-hi clic per a triar una icona nova."
 
-#: filetypedetails.cpp:60
+#: filetypedetails.cpp:54
 #, kde-format
 msgid "Filename Patterns"
 msgstr "Patrons de noms de fitxers"
 
-#: filetypedetails.cpp:72
+#: filetypedetails.cpp:66
 #, kde-format
 msgid ""
 "This box contains a list of patterns that can be used to identify files of "
@@ -61,32 +61,32 @@ msgstr ""
 "associat amb el tipus de fitxer «text/plain», de manera que tots els fitxers "
 "que s'acabin en «.txt» seran reconeguts com a fitxers de text net."
 
-#: filetypedetails.cpp:80 filetypesview.cpp:84 kservicelistwidget.cpp:105
+#: filetypedetails.cpp:74 filetypesview.cpp:83 kservicelistwidget.cpp:89
 #, kde-format
 msgid "Add..."
 msgstr "Afegeix..."
 
-#: filetypedetails.cpp:85
+#: filetypedetails.cpp:79
 #, kde-format
 msgid "Add a new pattern for the selected file type."
 msgstr "Afegeix un patró nou per al tipus de fitxer seleccionat."
 
-#: filetypedetails.cpp:87 kservicelistwidget.cpp:119
+#: filetypedetails.cpp:81 kservicelistwidget.cpp:103
 #, kde-format
 msgid "Remove"
 msgstr "Elimina"
 
-#: filetypedetails.cpp:92
+#: filetypedetails.cpp:86
 #, kde-format
 msgid "Remove the selected filename pattern."
 msgstr "Elimina el patró de fitxer seleccionat."
 
-#: filetypedetails.cpp:103
+#: filetypedetails.cpp:97
 #, kde-format
 msgid "Description:"
 msgstr "Descripció:"
 
-#: filetypedetails.cpp:108
+#: filetypedetails.cpp:102
 #, kde-format
 msgid ""
 "You can enter a short description for files of the selected file type (e.g. "
@@ -97,37 +97,27 @@ msgstr ""
 "seleccionat (p. ex. «Pàgina HTML»). Aquesta descripció l'usaran aplicacions "
 "com ara el Konqueror, per a mostrar el contingut del directori."
 
-#: filetypedetails.cpp:128
-#, kde-format
-msgid "&General"
-msgstr "&General"
-
-#: filetypedetails.cpp:129
-#, kde-format
-msgid "&Embedding"
-msgstr "&Incrustat"
-
-#: filetypedetails.cpp:170
+#: filetypedetails.cpp:151
 #, kde-format
 msgid "Add New Extension"
 msgstr "Afegeix una extensió nova"
 
-#: filetypedetails.cpp:170
+#: filetypedetails.cpp:151
 #, kde-format
 msgid "Extension:"
 msgstr "Extensió:"
 
-#: filetypedetails.cpp:203
+#: filetypedetails.cpp:184
 #, kde-format
 msgid "File type %1"
 msgstr "Tipus de fitxer %1"
 
-#: filetypesview.cpp:55
+#: filetypesview.cpp:54
 #, kde-format
 msgid "Search for file type or filename pattern..."
 msgstr "Cerca pel tipus de fitxer o pel patró del nom de fitxer..."
 
-#: filetypesview.cpp:61
+#: filetypesview.cpp:60
 #, kde-format
 msgid ""
 "Enter a part of a filename pattern, and only file types with a matching file "
@@ -139,12 +129,12 @@ msgstr ""
 "Alternativament, introduïu una part del nom del tipus de fitxer tal com "
 "apareix a la llista."
 
-#: filetypesview.cpp:69 multiapplydialog.cpp:27
+#: filetypesview.cpp:68 multiapplydialog.cpp:27
 #, kde-format
 msgid "Known Types"
 msgstr "Tipus coneguts"
 
-#: filetypesview.cpp:75
+#: filetypesview.cpp:74
 #, kde-format
 msgid ""
 "Here you can see a hierarchical list of the file types which are known on "
@@ -158,34 +148,34 @@ msgstr ""
 "per a fitxers HTML) per a veure o editar la informació d'aquest tipus de "
 "fitxer usant els controls de la dreta."
 
-#: filetypesview.cpp:89
+#: filetypesview.cpp:88
 #, kde-format
 msgid "Click here to add a new file type."
 msgstr "Feu clic aquí per a afegir un tipus de fitxer nou."
 
-#: filetypesview.cpp:91 filetypesview.cpp:368
+#: filetypesview.cpp:90 filetypesview.cpp:360
 #, kde-format
 msgid "&Remove"
 msgstr "&Elimina"
 
-#: filetypesview.cpp:111
+#: filetypesview.cpp:110
 #, kde-format
 msgid "Select a file type by name or by extension"
 msgstr "Selecciona un tipus de fitxer per nom o per extensió"
 
-#: filetypesview.cpp:361
+#: filetypesview.cpp:353
 #, kde-format
 msgid "&Revert"
 msgstr "&Reverteix"
 
-#: filetypesview.cpp:362
+#: filetypesview.cpp:354
 #, kde-format
 msgid "Revert this file type to its initial system-wide definition"
 msgstr ""
 "Reverteix aquest tipus de fitxer a la seva definició inicial global del "
 "sistema"
 
-#: filetypesview.cpp:364
+#: filetypesview.cpp:356
 #, kde-format
 msgid ""
 "Click here to revert this file type to its initial system-wide definition, "
@@ -202,12 +192,12 @@ msgstr ""
 "determinació del tipus de fitxer a partir del contingut del fitxer encara "
 "els pot acabar utilitzant)."
 
-#: filetypesview.cpp:369
+#: filetypesview.cpp:361
 #, kde-format
 msgid "Delete this file type definition completely"
 msgstr "Suprimeix completament aquesta definició de tipus de fitxer"
 
-#: filetypesview.cpp:371
+#: filetypesview.cpp:363
 #, kde-format
 msgid ""
 "Click here to delete this file type definition completely. This is only "
@@ -276,22 +266,12 @@ msgstr "Edita el tipus de fitxer %1"
 msgid "Create New File Type %1"
 msgstr "Crea un tipus de fitxer nou %1"
 
-#: kservicelistwidget.cpp:46
-#, kde-format
-msgid "%1 (%2)"
-msgstr "%1 (%2)"
-
-#: kservicelistwidget.cpp:51
+#: kservicelistwidget.cpp:42
 #, kde-format
 msgid "Application Preference Order"
 msgstr "Ordre de preferència de l'aplicació"
 
-#: kservicelistwidget.cpp:51
-#, kde-format
-msgid "Services Preference Order"
-msgstr "Ordre de preferència dels serveis"
-
-#: kservicelistwidget.cpp:63
+#: kservicelistwidget.cpp:54
 #, kde-format
 msgid ""
 "This is a list of applications associated with files of the selected file "
@@ -306,27 +286,12 @@ msgstr ""
 "de fitxer, llavors la llista s'ordena per prioritat, on l'element de més "
 "amunt té la preferència davant dels altres."
 
-#: kservicelistwidget.cpp:68
-#, kde-format
-msgid ""
-"This is a list of services associated with files of the selected file type. "
-"This list is shown in Konqueror's context menus when you select a \"Preview "
-"with...\" option. If more than one service is associated with this file "
-"type, then the list is ordered by priority with the uppermost item taking "
-"precedence over the others."
-msgstr ""
-"Això és una llista de serveis associats amb fitxers del tipus de fitxer "
-"seleccionat. Aquesta llista es mostra als menús contextuals del Konqueror "
-"quan trieu l'opció «Vista prèvia amb...». Si s'associa més d'un servei amb "
-"aquest tipus de fitxer, llavors la llista s'ordena per prioritat, on "
-"l'element de més amunt té la preferència per sobre dels altres."
-
-#: kservicelistwidget.cpp:80
+#: kservicelistwidget.cpp:66
 #, kde-format
 msgid "Move &Up"
 msgstr "Mou am&unt"
 
-#: kservicelistwidget.cpp:86
+#: kservicelistwidget.cpp:73
 #, kde-format
 msgid ""
 "Assigns a higher priority to the selected\n"
@@ -339,21 +304,12 @@ msgstr ""
 "seleccionada si el tipus de fitxer està associat amb més d'una\n"
 "aplicació."
 
-#: kservicelistwidget.cpp:90
-#, kde-format
-msgid ""
-"Assigns a higher priority to the selected\n"
-"service, moving it up in the list."
-msgstr ""
-"Assigna una prioritat més alta al servei\n"
-"seleccionat, pujant-lo a la llista."
-
-#: kservicelistwidget.cpp:93
+#: kservicelistwidget.cpp:78
 #, kde-format
 msgid "Move &Down"
 msgstr "Mou a&vall"
 
-#: kservicelistwidget.cpp:98
+#: kservicelistwidget.cpp:84
 #, kde-format
 msgid ""
 "Assigns a lower priority to the selected\n"
@@ -366,66 +322,41 @@ msgstr ""
 "seleccionada si el tipus de fitxer està associat amb més d'una\n"
 "aplicació."
 
-#: kservicelistwidget.cpp:102
-#, kde-format
-msgid ""
-"Assigns a lower priority to the selected\n"
-"service, moving it down in the list."
-msgstr ""
-"Assigna una prioritat més baixa al servei\n"
-"seleccionat, baixant-lo a la llista."
-
-#: kservicelistwidget.cpp:110
+#: kservicelistwidget.cpp:94
 #, kde-format
 msgid "Add a new application for this file type."
 msgstr "Afegeix una aplicació nova per a aquest tipus de fitxer."
 
-#: kservicelistwidget.cpp:112
+#: kservicelistwidget.cpp:96
 #, kde-format
 msgid "Edit..."
 msgstr "Edita..."
 
-#: kservicelistwidget.cpp:117
+#: kservicelistwidget.cpp:101
 #, kde-format
 msgid "Edit command line of the selected application."
 msgstr "Edita la línia d'ordres de l'aplicació seleccionada."
 
-#: kservicelistwidget.cpp:124
+#: kservicelistwidget.cpp:108
 #, kde-format
 msgid "Remove the selected application from the list."
 msgstr "Elimina l'aplicació seleccionada de la llista."
 
-#: kservicelistwidget.cpp:126 multiapplydialog.cpp:19
+#: kservicelistwidget.cpp:110 multiapplydialog.cpp:19
 #, kde-format
 msgid "Apply To..."
 msgstr "Aplica a..."
 
-#: kservicelistwidget.cpp:131
+#: kservicelistwidget.cpp:115
 #, kde-format
 msgid "Apply the current preference order to other file types."
 msgstr "Aplica l'ordre actual de preferències a altres tipus de fitxers."
 
-#: kservicelistwidget.cpp:154
+#: kservicelistwidget.cpp:136
 #, kde-format
 msgctxt "No applications associated with this file type"
 msgid "None"
 msgstr "Cap"
-
-#: kservicelistwidget.cpp:167
-#, kde-format
-msgctxt "No components associated with this file type"
-msgid "None"
-msgstr "Cap"
-
-#: kserviceselectdlg.cpp:26
-#, kde-format
-msgid "Add Service"
-msgstr "Afegeix servei"
-
-#: kserviceselectdlg.cpp:30
-#, kde-format
-msgid "Select service:"
-msgstr "Servei seleccionat:"
 
 #: newtypedlg.cpp:25
 #, kde-format
@@ -458,6 +389,55 @@ msgstr ""
 "Teclegeu el nom del tipus de fitxer. Per exemple, si seleccioneu la "
 "categoria «image» i aquí introduïu «custom», es crearà el tipus de fitxer "
 "«image/custom»."
+
+#~ msgid "&General"
+#~ msgstr "&General"
+
+#~ msgid "&Embedding"
+#~ msgstr "&Incrustat"
+
+#~ msgid "%1 (%2)"
+#~ msgstr "%1 (%2)"
+
+#~ msgid "Services Preference Order"
+#~ msgstr "Ordre de preferència dels serveis"
+
+#~ msgid ""
+#~ "This is a list of services associated with files of the selected file "
+#~ "type. This list is shown in Konqueror's context menus when you select a "
+#~ "\"Preview with...\" option. If more than one service is associated with "
+#~ "this file type, then the list is ordered by priority with the uppermost "
+#~ "item taking precedence over the others."
+#~ msgstr ""
+#~ "Això és una llista de serveis associats amb fitxers del tipus de fitxer "
+#~ "seleccionat. Aquesta llista es mostra als menús contextuals del Konqueror "
+#~ "quan trieu l'opció «Vista prèvia amb...». Si s'associa més d'un servei "
+#~ "amb aquest tipus de fitxer, llavors la llista s'ordena per prioritat, on "
+#~ "l'element de més amunt té la preferència per sobre dels altres."
+
+#~ msgid ""
+#~ "Assigns a higher priority to the selected\n"
+#~ "service, moving it up in the list."
+#~ msgstr ""
+#~ "Assigna una prioritat més alta al servei\n"
+#~ "seleccionat, pujant-lo a la llista."
+
+#~ msgid ""
+#~ "Assigns a lower priority to the selected\n"
+#~ "service, moving it down in the list."
+#~ msgstr ""
+#~ "Assigna una prioritat més baixa al servei\n"
+#~ "seleccionat, baixant-lo a la llista."
+
+#~ msgctxt "No components associated with this file type"
+#~ msgid "None"
+#~ msgstr "Cap"
+
+#~ msgid "Add Service"
+#~ msgstr "Afegeix servei"
+
+#~ msgid "Select service:"
+#~ msgstr "Servei seleccionat:"
 
 #~ msgid "Left Click Action (only for Konqueror file manager)"
 #~ msgstr ""
