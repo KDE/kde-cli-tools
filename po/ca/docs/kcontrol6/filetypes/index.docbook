@@ -205,21 +205,7 @@
 >Tan aviat com l'hàgiu seleccionat, els valors actuals del tipus &MIME; apareixeran a la finestra del mòdul.</para>
 
 <para
->Observareu que els valors actuals estan dividits en dues pestanyes: <guilabel
->General</guilabel
-> i <guilabel
->Incrustat</guilabel
-></para>
-
-<variablelist>
-<varlistentry>
-<term
-><guilabel
->General</guilabel
-></term>
-<listitem>
-<para
->En aquesta pestanya hi ha 4 propietats per a cada tipus &MIME;:</para>
+>Hi ha 4 propietats per a cada tipus &MIME;:</para>
 
 <orderedlist>
 <listitem
@@ -247,20 +233,6 @@
 > determina quines aplicacions estan associades amb el tipus &MIME; especificat.</para
 ></listitem>
 </orderedlist>
-</listitem>
-</varlistentry>
-
-<varlistentry>
-<term
-><guilabel
->Pestanya Incrustat</guilabel
-></term>
-<listitem>
-<para
->La pestanya Incrustat permet determinar si un fitxer serà visualitzat a dintre d'una finestra del gestor de fitxers, o si s'engegarà l'aplicació.</para>
-</listitem>
-</varlistentry>
-</variablelist>
 
 </sect3>
 
@@ -454,74 +426,6 @@
 >Mou avall</guibutton
 > per a ajustar l'aplicació no desitjada cap a posicions de la llista amb menys prioritat, en comptes de suprimir-la per complet de la llista. Una vegada suprimida l'aplicació, si la vostra aplicació preferida es veiés compromesa, no n'hi hauria cap altra per a visualitzar les dades del document.</para
 ></tip>
-
-</sect3>
-
-<sect3 id="file-assoc-embedding">
-<title
->Incrustat</title>
-<para
->Aquesta configuració sols és vàlida per al &konqueror; quan s'utilitza com a gestor de fitxers. El &dolphin; no pot utilitzar vistes incrustades i sempre obre el fitxer a l'aplicació associada.</para>
-<para
->Fent clic a la pestanya <guilabel
->Incrustat</guilabel
->, se us presentaran quatre botons d'opció en el grup <guilabel
->Acció per al clic esquerre en el Konqueror</guilabel
->. Això determinarà el mode en què el gestor de fitxers visualitzarà el tipus &MIME; seleccionat:</para>
-
-<variablelist>
-<varlistentry
-><term
->Mostra el fitxer al visualitzador incrustat</term>
-<listitem
-><para
->Si seleccioneu aquesta opció, el fitxer serà mostrat a <emphasis
->dintre</emphasis
-> de la finestra del gestor de fitxers.</para
-></listitem
-></varlistentry>
-<varlistentry
-><term
->Mostra el fitxer en un visualitzador separat</term>
-<listitem
-><para
->Aquesta opció farà que es creï una finestra separada quan es mostri aquest tipus &MIME;.</para
-></listitem
-></varlistentry>
-<varlistentry
-><term
->Usa l'arranjament per al grup «application»</term>
-<listitem
-><para
->Aquesta opció ocasionarà que el tipus &MIME; empri la configuració per al grup del tipus &MIME;. (Si esteu editant un tipus &MIME; «audio», aleshores s'utilitzaran la configuració per al grup «audio»).</para
-></listitem
-></varlistentry>
-<varlistentry
-><term
->Pregunta si es desa al disc</term>
-<listitem
-><para
->Aquest paràmetre sols s'aplica al &konqueror; en el mode navegador i determina si el fitxer es mostrarà en un visualitzador incrustat, o al contrari, si s'ha de demanar per a desar el fitxer al disc.</para
-></listitem
-></varlistentry>
-</variablelist>
-
-<para
->A sota d'això hi ha un quadre de llista anomenat <guilabel
->Ordre de preferència dels serveis</guilabel
->.</para>
-
-<para
->Quan utilitzeu un gestor de fitxers com el &dolphin; o el &konqueror;, podreu fer clic amb el &BDR; i us apareixerà un menú amb una entrada anomenada <guimenuitem
->Obre amb...</guimenuitem
->. Aquest quadre de llista contindrà les aplicacions que apareixeran, en l'ordre d'aparició especificat en aquest menú.</para>
-
-<para
->Podeu utilitzar els botons <guibutton
->Mou amunt</guibutton
-> i <guibutton
->Mou avall</guibutton
-> per a canviar-ne l'ordre.</para>
 
 </sect3>
 

@@ -221,21 +221,7 @@
 >Logo que você tenha selecionado o tipo, os valores atuais do tipo &MIME; aparecerão na janela do módulo.</para>
 
 <para
->Você notará que os valores estão divididos em duas abas: <guilabel
->Geral</guilabel
-> e <guilabel
->Embutir</guilabel
-></para>
-
-<variablelist>
-<varlistentry>
-<term
-><guilabel
->Geral</guilabel
-></term>
-<listitem>
-<para
->Existem 4 propriedades para cada tipo &MIME; nesta aba:</para>
+>Existem 4 propriedades para cada tipo &MIME;:</para>
 
 <orderedlist>
 <listitem
@@ -263,20 +249,6 @@
 > determina quais aplicativos serão associados com o tipo &MIME; específico.</para
 ></listitem>
 </orderedlist>
-</listitem>
-</varlistentry>
-
-<varlistentry>
-<term
-><guilabel
->Aba Embutir</guilabel
-></term>
-<listitem>
-<para
->A aba Embutir permite que você determine se um arquivo será visualizado dentro da janela do gerenciador de arquivos ou iniciando o aplicativo.</para>
-</listitem>
-</varlistentry>
-</variablelist>
 
 </sect3>
 
@@ -472,76 +444,6 @@
 >Mover para baixo</guibutton
 >, para ajustar o aplicativo em uma posição inferior na lista, em vez de remover o aplicativo inteiramente da lista. Uma vez que você tenha removido o aplicativo, e seu aplicativo preferido fique comprometido, não existirá um aplicativo para visualizar o documento.</para
 ></tip>
-
-</sect3>
-
-<sect3 id="file-assoc-embedding">
-<title
->Embutir</title>
-<para
->Estas opções só são válidas quando o &konqueror; for usado como gerenciador de arquivos. O &dolphin; não é capaz de usar vistas embutidas e sempre abre um arquivo na aplicação associada a ele.</para>
-<para
->Ao clicar na aba <guilabel
->Embutir</guilabel
->, serão apresentados quatro botões de opção dentro da seção chamada <guilabel
->Ações do botão esquerdo do mouse no Konqueror</guilabel
->. Isto determina como o gerenciador de arquivos visualiza o tipo &MIME; selecionado:</para>
-
-<variablelist>
-<varlistentry
-><term
->Mostrar o arquivo em um visualizador embutido</term>
-<listitem
-><para
->Se isto estiver selecionado, o arquivo será mostrado <emphasis
->dentro</emphasis
-> da janela do gerenciador de arquivos.</para
-></listitem
-></varlistentry>
-<varlistentry
-><term
->Mostrar o arquivo em um visualizador separado</term>
-<listitem
-><para
->Isto fará com que uma janela separada seja criada, para mostrar este tipo &MIME;.</para
-></listitem
-></varlistentry>
-<varlistentry
-><term
->Usar as configurações do grupo 'application'</term>
-<listitem
-><para
->Isto fará com que o tipo &MIME; use as configurações para o grupo do tipo &MIME; (se você estiver editando um tipo &MIME; de áudio, então as configurações do grupo de áudio serão usadas).</para
-></listitem
-></varlistentry>
-<varlistentry
-><term
->Perguntar se deseja salvar no disco</term>
-<listitem
-><para
->Esta opção só se aplica ao &konqueror; no modo de navegador e determina se o arquivo é apresentado num visualizador incorporado ou se é pedido para salvar o arquivo no disco em alternativa.</para
-></listitem
-></varlistentry>
-</variablelist>
-
-<para
->Abaixo disto existe uma caixa de listagem chamada <guilabel
->Ordem de preferência de serviços</guilabel
->.</para>
-
-<para
->Quando usar um gerenciador de arquivos, como o &konqueror; ou o &dolphin;, você poderá clicar com o botão <mousebutton
->direito</mousebutton
-> para fazer aparecer um menu com um item chamado <guimenuitem
->Abrir com...</guimenuitem
->. Esta listagem exibe os aplicativos que aparecerão, na ordem indicada, neste menu.</para>
-
-<para
->Você pode usar os botões <guibutton
->Mover para cima</guibutton
-> e <guibutton
->Mover para baixo</guibutton
-> para modificar a ordem.</para>
 
 </sect3>
 

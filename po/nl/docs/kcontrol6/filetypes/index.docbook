@@ -205,21 +205,7 @@
 >Zo gauw u het &MIME;type heeft geselecteerd met de muis zullen de huidige waarden van het &MIME; type in het module venster verschijnen.</para>
 
 <para
->U zult merken dat de huidige waarden zijn verdeelt over twee tabbladen: <guilabel
->Algemeen</guilabel
-> en <guilabel
->Inbedden</guilabel
->.</para>
-
-<variablelist>
-<varlistentry>
-<term
-><guilabel
->Algemeen</guilabel
-></term>
-<listitem>
-<para
->Er zijn 4 eigenschappen voor ieder &MIME; type op dit tabblad:</para>
+>Er zijn 4 eigenschappen voor ieder &MIME;-type:</para>
 
 <orderedlist>
 <listitem
@@ -247,20 +233,6 @@
 > bepaalt welke toepassingen zullen worden geassocieerd met het aangegeven &MIME; type.</para
 ></listitem>
 </orderedlist>
-</listitem>
-</varlistentry>
-
-<varlistentry>
-<term
-><guilabel
->Inbedden tabblad</guilabel
-></term>
-<listitem>
-<para
->Het tabblad Inbedden geeft u de mogelijkheid om te bepalen of een bestand wordt getoond in een bestandsbeheerdervenster of door het starten van de toepassing.</para>
-</listitem>
-</varlistentry>
-</variablelist>
 
 </sect3>
 
@@ -456,76 +428,6 @@
 >Omlaag</guibutton
 > te gebruiken om een niet gewenste toepassing naar een lagere positie in de lijst te verplaatsen dan de toepassing compleet uit de lijst te verwijderen. Zo gauw u een toepasing heeft verwijderd zal zodra uw favoriete toepassing niet meer werkt (omdat het verwijderd is) er geen programma meer over zijn om het data document weer te geven.</para
 ></tip>
-
-</sect3>
-
-<sect3 id="file-assoc-embedding">
-<title
->Inbedden</title>
-<para
->Deze instellingen zijn alleen geldig voor &konqueror; als bestandsbeheerder, &dolphin; heeft geen ingebedde viewer en opent een bestand altijd in de geassocieerde applicatie.</para>
-<para
->Als u op het tabblad <guilabel
->Inbedden</guilabel
-> klikt dan ziet u vier radioknoppen in de groep <guilabel
->Linksklikactie in Konqueror</guilabel
->. Dit bepaalt hoe de bestandsbeheerder het geselecteerde &MIME;-type weergeeft.</para>
-
-<variablelist>
-<varlistentry
-><term
->Bestand tonen in ingebedde viewer.</term>
-<listitem
-><para
->Als dit is geselecteerd dan zal het bestand worden getoond <emphasis
->in</emphasis
-> het bestandsbeheerdervenster.</para
-></listitem
-></varlistentry>
-<varlistentry
-><term
->Bestand in een apart venster tonen</term>
-<listitem
-><para
->Dit heeft tot gevolg dat dit &MIME;-type in een eigen venster zal worden getoond.</para
-></listitem
-></varlistentry>
-<varlistentry
-><term
->Instellingen gebruiken voor de groep 'applicaties'</term>
-<listitem
-><para
->Dit heeft tot gevolg dat het &MIME;-type de instellingen voor de &MIME;-type groep zal gebruiken. Als u een audio MIME-type aan het bewerken bent dan worden de instellingen voor de audio MIME-type groep gebruikt.</para
-></listitem
-></varlistentry>
-<varlistentry
-><term
->Als alternatief vragen of u het op schijf wilt opslaan</term>
-<listitem
-><para
->Deze instelling is alleen van toepassing op &konqueror; in bladermodus en bepaalt of het bestand in een ingebedde viewer wordt getoond of, in plaats daarvan, dat u gevraagd wordt het bestand op schijf op te slaan.</para
-></listitem
-></varlistentry>
-</variablelist>
-
-<para
->Daaronder staat een lijstveld met de naam <guilabel
->Service Voorkeursvolgorde</guilabel
-></para>
-
-<para
->Wanneer u in een bestandsbeheerder zoals &konqueror; of &dolphin; bent dan kunt u met <mousebutton
->rechts</mousebutton
-> klikken een menu met een ingang met de naam <guimenuitem
->Openen met...</guimenuitem
-> laten verschijnen. Dit veld somt de toepassingen op die zullen verschijnen in de volgorde waarin ze zullen verschijnen in dit menu.</para>
-
-<para
->U kunt de <guibutton
->Omhoog</guibutton
-> en <guibutton
->Omlaag</guibutton
-> knoppen gebruiken om de volgorde aan te passen.</para>
 
 </sect3>
 
