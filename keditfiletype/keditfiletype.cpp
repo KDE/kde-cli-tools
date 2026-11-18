@@ -81,10 +81,6 @@ void FileTypeDialog::save()
         if (servicesDirty) {
             KBuildSycocaProgressDialog::rebuildKSycoca(this);
         }
-        // Trigger reparseConfiguration of filetypesrc in konqueror
-        QDBusMessage message =
-            QDBusMessage::createSignal(QStringLiteral("/KonqMain"), QStringLiteral("org.kde.Konqueror.Main"), QStringLiteral("reparseConfiguration"));
-        QDBusConnection::sessionBus().send(message);
     }
 }
 

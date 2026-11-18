@@ -372,11 +372,9 @@ void FileTypesView::save()
 {
     bool needUpdateMimeDb = false;
     bool needUpdateSycoca = false;
-    bool didIt = false;
     // first, remove those items which we are asked to remove.
     for (const QString &mime : std::as_const(removedList)) {
         MimeTypeWriter::removeOwnMimeType(mime);
-        didIt = true;
         needUpdateMimeDb = true;
         needUpdateSycoca = true; // remove offers for this mimetype
     }
@@ -391,7 +389,6 @@ void FileTypesView::save()
             if (tli->mimeTypeData().sync()) {
                 needUpdateMimeDb = true;
             }
-            didIt = true;
         }
     }
 
@@ -404,7 +401,6 @@ void FileTypesView::save()
             if (tli->mimeTypeData().sync()) {
                 needUpdateMimeDb = true;
             }
-            didIt = true;
         }
     }
 
@@ -417,16 +413,6 @@ void FileTypesView::save()
     }
     if (needUpdateSycoca) {
         KBuildSycocaProgressDialog::rebuildKSycoca(widget());
-    }
-
-    if (didIt) {
-        // Trigger reparseConfiguration of filetypesrc in konqueror
-        // TODO: the same for dolphin. Or we should probably define a global signal for this.
-        // Or a KGlobalSettings thing.
-        QDBusMessage message = QDBusMessage::createSignal(QStringLiteral("/KonqMain"), //
-                                                          QStringLiteral("org.kde.Konqueror.Main"),
-                                                          QStringLiteral("reparseConfiguration"));
-        QDBusConnection::sessionBus().send(message);
     }
 
     updateDisplay(typesLV->currentItem());
