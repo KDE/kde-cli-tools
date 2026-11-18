@@ -54,6 +54,8 @@ public:
     void setComment(const QString &c)
     {
         m_comment = c;
+        m_revertPending = false;
+        m_awaitingDatabase = false;
     }
 
     /**
@@ -107,6 +109,16 @@ public:
      */
     bool sync();
     /**
+     * Shows the system-wide definition (comment, icon, patterns) instead of the user's one.
+     * The user's definition is only removed on disk when the removal is saved, until then sync() does not write this type.
+     * Returns false if the system-wide definition could not be read.
+     */
+    bool revertToSystemDefinition();
+    /**
+     * Call when the user's definition was removed from disk. The next refresh() reads the definition from the database again.
+     */
+    void markRevertSaved();
+    /**
      * Update m_mimetype from the xml when Apply is pressed
      */
     void refresh();
@@ -140,7 +152,9 @@ private:
     bool m_isGroup : 1;
     bool m_appServicesModified : 1;
     bool m_userSpecifiedIconModified : 1;
-    QString m_major, m_minor, m_comment, m_userSpecifiedIcon;
+    bool m_revertPending : 1 = false; // showing the system-wide definition, the user's one is still on disk
+    bool m_awaitingDatabase : 1 = false; // the definition was saved, but m_mimetype is not updated yet
+    QString m_major, m_minor, m_comment, m_userSpecifiedIcon, m_fallbackIcon;
     QStringList m_patterns;
     mutable QStringList m_appServices;
 };

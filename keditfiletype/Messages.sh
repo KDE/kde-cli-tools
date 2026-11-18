@@ -1,2 +1,2 @@
 #! /usr/bin/env bash
-$XGETTEXT *.cpp -o $podir/kcm_filetypes.pot
+$XGETTEXT $(find . -name '*.cpp' -o -name '*.qml') -o $podir/kcm_filetypes.pot

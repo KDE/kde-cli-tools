@@ -8,14 +8,8 @@ add_definitions(-DTRANSLATION_DOMAIN=\"kcm_filetypes\")
 set(libfiletypes_SRCS
  filetypedetails.cpp
  kservicelistwidget.cpp
- typeslistitem.cpp
- typeslistitembase.cpp
- typeslistproxyitem.cpp
- typeslisttreewidget.cpp
  mimetypedata.cpp
  mimetypewriter.cpp
- multiapplydialog.cpp
- newtypedlg.cpp
 )
 
 ########### library ###############
@@ -36,14 +30,20 @@ target_link_libraries(libfiletypes
 
 ########### KCM ###############
 
-set(kcm_filetypes_SRCS filetypesview.cpp filetypesview.h)
-
-kcoreaddons_add_plugin(kcm_filetypes SOURCES ${kcm_filetypes_SRCS} INSTALL_NAMESPACE "plasma/kcms/systemsettings_qwidgets")
-
-kcmutils_generate_desktop_file(kcm_filetypes)
-target_link_libraries(kcm_filetypes
+kcmutils_add_qml_kcm(kcm_filetypes
+    SOURCES
+        filetypeskcm.cpp
+        filetypeskcm.h
+        filetypesmodel.cpp
+        filetypesmodel.h
+)
+target_link_libraries(kcm_filetypes PRIVATE
     libfiletypes
+    Qt::Quick
     KF6::KCMUtils
+    KF6::KCMUtilsQuick
+    KF6::KIOWidgets
+    KF6::Service
 )
 
 ########### command line utility ###############
