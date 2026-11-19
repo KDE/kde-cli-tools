@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: filetypes\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2026-11-17 01:09+0000\n"
+"POT-Creation-Date: 2026-11-19 01:09+0000\n"
 "PO-Revision-Date: 2009-05-10 10:45+0530\n"
 "Last-Translator: Kartik Mistry <kartik.mistry@gmail.com>\n"
 "Language-Team: Gujarati <kde-i18n-doc@kde.org>\n"
@@ -174,54 +174,54 @@ msgid ""
 "still end up using them)."
 msgstr ""
 
-#: keditfiletype.cpp:114
+#: keditfiletype.cpp:110
 #, fuzzy, kde-format
 #| msgid "File type %1"
 msgid "File Type Editor"
 msgstr "ફાઇલ પ્રકાર %1"
 
-#: keditfiletype.cpp:116
+#: keditfiletype.cpp:112
 #, kde-format
 msgid ""
 "KDE file type editor - simplified version for editing a single file type"
 msgstr "KDE ફાઇલ પ્રકાર સંપાદક - એક ફાઇલ પ્રકારમાં ફેરફાર કરવા માટેની સરળ આવૃત્તિ"
 
-#: keditfiletype.cpp:118
+#: keditfiletype.cpp:114
 #, kde-format
 msgid "(c) 2000, KDE developers"
 msgstr "(c) ૨૦૦૦, KDE ડેવલોપર્સ"
 
-#: keditfiletype.cpp:119
+#: keditfiletype.cpp:115
 #, kde-format
 msgid "Preston Brown"
 msgstr "પ્રિસ્ટન બ્રાઉન"
 
-#: keditfiletype.cpp:120
+#: keditfiletype.cpp:116
 #, kde-format
 msgid "David Faure"
 msgstr "ડેવિડ ફાઉરે"
 
-#: keditfiletype.cpp:126
+#: keditfiletype.cpp:122
 #, kde-format
 msgid "Makes the dialog transient for the window specified by winid"
 msgstr ""
 
-#: keditfiletype.cpp:128
+#: keditfiletype.cpp:124
 #, kde-format
 msgid "File type to edit (e.g. text/html)"
 msgstr "ફેરફાર કરવા માટેનો ફાઇલ પ્રકાર (દા.ત. text/html)"
 
-#: keditfiletype.cpp:159
+#: keditfiletype.cpp:155
 #, kde-format
 msgid "%1 File"
 msgstr "%1 ફાઇલ"
 
-#: keditfiletype.cpp:182
+#: keditfiletype.cpp:178
 #, kde-format
 msgid "Edit File Type %1"
 msgstr "ફાઇલ પ્રકાર ફેરફાર %1"
 
-#: keditfiletype.cpp:184
+#: keditfiletype.cpp:180
 #, kde-format
 msgid "Create New File Type %1"
 msgstr "નવો ફાઇલ પ્રકાર બનાવો %1"

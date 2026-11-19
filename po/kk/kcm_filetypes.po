@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: filetypes\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2026-11-17 01:09+0000\n"
+"POT-Creation-Date: 2026-11-19 01:09+0000\n"
 "PO-Revision-Date: 2013-05-15 04:53+0600\n"
 "Last-Translator: Sairan Kikkarin <sairan@computer.org>\n"
 "Language-Team: Kazakh <kde-i18n-doc@kde.org>\n"
@@ -199,54 +199,54 @@ msgstr ""
 "жарияланған файл түрі өшіруге келмейді. Оны пайдалануын болдырмау үшін үлгі "
 "тізімін тазалауға болады (бірақ файл мазмұнынан тану сонда да істей береді)."
 
-#: keditfiletype.cpp:114
+#: keditfiletype.cpp:110
 #, fuzzy, kde-format
 #| msgid "File type %1"
 msgid "File Type Editor"
 msgstr "%1 файл түрі"
 
-#: keditfiletype.cpp:116
+#: keditfiletype.cpp:112
 #, kde-format
 msgid ""
 "KDE file type editor - simplified version for editing a single file type"
 msgstr "KDE файл түрін өңдеуші - жеке файл түрін өңдейтін жеңілдеткен нұсқасы"
 
-#: keditfiletype.cpp:118
+#: keditfiletype.cpp:114
 #, kde-format
 msgid "(c) 2000, KDE developers"
 msgstr "(c) 2000, KDE жасаушылары"
 
-#: keditfiletype.cpp:119
+#: keditfiletype.cpp:115
 #, kde-format
 msgid "Preston Brown"
 msgstr "Preston Brown"
 
-#: keditfiletype.cpp:120
+#: keditfiletype.cpp:116
 #, kde-format
 msgid "David Faure"
 msgstr "David Faure"
 
-#: keditfiletype.cpp:126
+#: keditfiletype.cpp:122
 #, kde-format
 msgid "Makes the dialog transient for the window specified by winid"
 msgstr "winid бойынша анықталған терезенің диалогын өтпелі қылу"
 
-#: keditfiletype.cpp:128
+#: keditfiletype.cpp:124
 #, kde-format
 msgid "File type to edit (e.g. text/html)"
 msgstr "Өңдейтін файл түрі (мысалы, text/html)"
 
-#: keditfiletype.cpp:159
+#: keditfiletype.cpp:155
 #, kde-format
 msgid "%1 File"
 msgstr "%1 файлы"
 
-#: keditfiletype.cpp:182
+#: keditfiletype.cpp:178
 #, kde-format
 msgid "Edit File Type %1"
 msgstr "%1 файл түрін өңдеу"
 
-#: keditfiletype.cpp:184
+#: keditfiletype.cpp:180
 #, kde-format
 msgid "Create New File Type %1"
 msgstr "%1 жаңа файл түрін құру"

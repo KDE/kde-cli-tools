@@ -17,7 +17,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: filetypes\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2026-11-17 01:09+0000\n"
+"POT-Creation-Date: 2026-11-19 01:09+0000\n"
 "PO-Revision-Date: 2023-08-15 00:59+0300\n"
 "Last-Translator: George Stefanakis <george.stefanakis@gmail.com>\n"
 "Language-Team: Greek <kde-i18n-doc@kde.org>\n"
@@ -216,12 +216,12 @@ msgstr ""
 "πιθανότητα χρήσης τους (αν και ο καθορισμός τύπου αρχείου μέσω των "
 "περιεχομένων τους μπορεί να συνεχίσει να τους επιλέγει)."
 
-#: keditfiletype.cpp:114
+#: keditfiletype.cpp:110
 #, kde-format
 msgid "File Type Editor"
 msgstr "Επεξεργαστής τύπου αρχείου"
 
-#: keditfiletype.cpp:116
+#: keditfiletype.cpp:112
 #, kde-format
 msgid ""
 "KDE file type editor - simplified version for editing a single file type"
@@ -229,44 +229,44 @@ msgstr ""
 "Επεξεργαστής τύπου αρχείου του KDE - απλοποιημένη έκδοση για την επεξεργασία "
 "ενός τύπου αρχείου"
 
-#: keditfiletype.cpp:118
+#: keditfiletype.cpp:114
 #, kde-format
 msgid "(c) 2000, KDE developers"
 msgstr "(c) 2000, οι προγραμματιστές του KDE"
 
-#: keditfiletype.cpp:119
+#: keditfiletype.cpp:115
 #, kde-format
 msgid "Preston Brown"
 msgstr "Preston Brown"
 
-#: keditfiletype.cpp:120
+#: keditfiletype.cpp:116
 #, kde-format
 msgid "David Faure"
 msgstr "David Faure"
 
-#: keditfiletype.cpp:126
+#: keditfiletype.cpp:122
 #, kde-format
 msgid "Makes the dialog transient for the window specified by winid"
 msgstr ""
 "Το παράθυρο διαλόγου γίνεται ημιδιαφανές για το παράθυρο ορισμένο από το "
 "winid"
 
-#: keditfiletype.cpp:128
+#: keditfiletype.cpp:124
 #, kde-format
 msgid "File type to edit (e.g. text/html)"
 msgstr "Τύπος αρχείου για επεξεργασία (π.χ. text/html)"
 
-#: keditfiletype.cpp:159
+#: keditfiletype.cpp:155
 #, kde-format
 msgid "%1 File"
 msgstr "%1 Αρχείο"
 
-#: keditfiletype.cpp:182
+#: keditfiletype.cpp:178
 #, kde-format
 msgid "Edit File Type %1"
 msgstr "Επεξεργασία τύπου αρχείου %1"
 
-#: keditfiletype.cpp:184
+#: keditfiletype.cpp:180
 #, kde-format
 msgid "Create New File Type %1"
 msgstr "Δημιουργία νέου τύπου αρχείου %1"

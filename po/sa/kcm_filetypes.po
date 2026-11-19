@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kde-cli-tools\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2026-11-17 01:09+0000\n"
+"POT-Creation-Date: 2026-11-19 01:09+0000\n"
 "PO-Revision-Date: 2024-12-24 20:39+0530\n"
 "Last-Translator: kali <shreekantkalwar@gmail.com>\n"
 "Language-Team: Sanskrit <kde-i18n-doc@kde.org>\n"
@@ -198,53 +198,53 @@ msgstr ""
 "न्यूनीकर्तुं (किन्तु सञ्चिकासामग्रीतः सञ्चिकाप्रकारस्य निर्धारणम् अद्यापि तान् उपयुज्य अन्ते "
 "भवितुम् अर्हति) ।"
 
-#: keditfiletype.cpp:114
+#: keditfiletype.cpp:110
 #, kde-format
 msgid "File Type Editor"
 msgstr "सञ्चिकाप्रकार सम्पादकः"
 
-#: keditfiletype.cpp:116
+#: keditfiletype.cpp:112
 #, kde-format
 msgid ""
 "KDE file type editor - simplified version for editing a single file type"
 msgstr "KDE सञ्चिकाप्रकारस्य सम्पादकः - एकस्य सञ्चिकाप्रकारस्य सम्पादनार्थं सरलीकृतसंस्करणम्"
 
-#: keditfiletype.cpp:118
+#: keditfiletype.cpp:114
 #, kde-format
 msgid "(c) 2000, KDE developers"
 msgstr "(ग) 2000, केडीई विकासकाः"
 
-#: keditfiletype.cpp:119
+#: keditfiletype.cpp:115
 #, kde-format
 msgid "Preston Brown"
 msgstr "प्रेस्टन ब्राउन"
 
-#: keditfiletype.cpp:120
+#: keditfiletype.cpp:116
 #, kde-format
 msgid "David Faure"
 msgstr "डेविड फौरे"
 
-#: keditfiletype.cpp:126
+#: keditfiletype.cpp:122
 #, kde-format
 msgid "Makes the dialog transient for the window specified by winid"
 msgstr "winid द्वारा निर्दिष्टस्य विण्डो कृते संवादं क्षणिकं करोति"
 
-#: keditfiletype.cpp:128
+#: keditfiletype.cpp:124
 #, kde-format
 msgid "File type to edit (e.g. text/html)"
 msgstr "सम्पादनार्थं सञ्चिकाप्रकारः (उदा. text/html)"
 
-#: keditfiletype.cpp:159
+#: keditfiletype.cpp:155
 #, kde-format
 msgid "%1 File"
 msgstr "%1 सञ्चिका"
 
-#: keditfiletype.cpp:182
+#: keditfiletype.cpp:178
 #, kde-format
 msgid "Edit File Type %1"
 msgstr "सञ्चिकाप्रकारं सम्पादयतु %1"
 
-#: keditfiletype.cpp:184
+#: keditfiletype.cpp:180
 #, kde-format
 msgid "Create New File Type %1"
 msgstr "नूतनसञ्चिकाप्रकारं %1 रचयन्तु"
