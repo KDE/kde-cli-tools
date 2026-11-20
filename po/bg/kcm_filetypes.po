@@ -2,7 +2,7 @@
 # Bulgarian translation of KDE.
 # This file is licensed under the GPL.
 #
-# $Id: kcm_filetypes.po 1753610 2026-11-19 01:53:04Z scripty $
+# $Id: kcm_filetypes.po 1753717 2026-11-20 01:59:03Z scripty $
 #
 # Zlatko Popov <zlatkopopov@fsa-bg.org>, 2007, 2008.
 # Yasen Pramatarov <yasen@lidneas.com>, 2009, 2011.
@@ -378,52 +378,3 @@ msgstr ""
 "Напишете името на вида файл. Например, ако изберете категория \"изображение"
 "\" и напишете \"потребителско\" ще бъде създаден вид файл \"изображение/"
 "потребителско\"."
-
-#~ msgid "&General"
-#~ msgstr "О&бщи"
-
-#~ msgid "&Embedding"
-#~ msgstr "&Вграждане"
-
-#~ msgid "%1 (%2)"
-#~ msgstr "%1 (%2)"
-
-#~ msgid "Services Preference Order"
-#~ msgstr "Предпочитан ред за услугите"
-
-#~ msgid ""
-#~ "This is a list of services associated with files of the selected file "
-#~ "type. This list is shown in Konqueror's context menus when you select a "
-#~ "\"Preview with...\" option. If more than one service is associated with "
-#~ "this file type, then the list is ordered by priority with the uppermost "
-#~ "item taking precedence over the others."
-#~ msgstr ""
-#~ "Списък от вградени програми (услуги) асоциирани с избрания вид файл. Този "
-#~ "списък се показва в контекстното меню на браузъра, когато изберете "
-#~ "операцията \"Преглед с...\". Ако има повече от една вградена програма "
-#~ "(услуга) асоциирана с този вид файл, тогава редът в списъка задава реда "
-#~ "на показване в менюто."
-
-#~ msgid ""
-#~ "Assigns a higher priority to the selected\n"
-#~ "service, moving it up in the list."
-#~ msgstr ""
-#~ "Задава по-висок приоритет на избраната\n"
-#~ "услуга и я премества нагоре."
-
-#~ msgid ""
-#~ "Assigns a lower priority to the selected\n"
-#~ "service, moving it down in the list."
-#~ msgstr ""
-#~ "Задава по-нисък приоритет на избраната\n"
-#~ "услуга и я премества надолу."
-
-#~ msgctxt "No components associated with this file type"
-#~ msgid "None"
-#~ msgstr "Без"
-
-#~ msgid "Add Service"
-#~ msgstr "Добавяне на услуга"
-
-#~ msgid "Select service:"
-#~ msgstr "Избор на услуга:"
