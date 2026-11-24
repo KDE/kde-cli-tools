@@ -221,21 +221,7 @@
 >&MIME; türünü seçer seçmez, &MIME; türünün geçerli değeri modül penceresinde görünecektir.</para>
 
 <para
->Geçerli değerlerin iki sekmeye ayrıldığını göreceksiniz: <guilabel
->Genel</guilabel
-> ve <guilabel
->Gömülüm</guilabel
-></para>
-
-<variablelist>
-<varlistentry>
-<term
-><guilabel
->Genel</guilabel
-></term>
-<listitem>
-<para
->Bu sekmede her bir &MIME; türü için dört adet özellik vardır:</para>
+>Her bir &MIME; türü için dört adet özellik vardır:</para>
 
 <orderedlist>
 <listitem
@@ -263,20 +249,6 @@
 >, bu belirli &MIME; türüyle hangi uygulamaların ilişkilendirileceğini belirler.</para
 ></listitem>
 </orderedlist>
-</listitem>
-</varlistentry>
-
-<varlistentry>
-<term
-><guilabel
->Gömülüm Sekmesi</guilabel
-></term>
-<listitem>
-<para
->Gömülüm sekmesi, bir dosyanın dosya yöneticisi penceresinde görüntülenip görüntülenmeyeceğini veya uygulamanın hemen başlatılıp başlatılmayacağını belirlemenize izin verir.</para>
-</listitem>
-</varlistentry>
-</variablelist>
 
 </sect3>
 
@@ -472,76 +444,6 @@
 >Aşağı Taşı</guibutton
 > düğmelerini kullanarak konumlarını düşürmek her zaman daha iyi bir fikirdir. Bir uygulamayı listeden kaldırdıktan sonra yeğlediğiniz uygulama ileride bozulursa dosyanızı görüntülemek için bir uygulama olmayacaktır.</para
 ></tip>
-
-</sect3>
-
-<sect3 id="file-assoc-embedding">
-<title
->Gömülüm</title>
-<para
->Bu seçenekler yalnızca &konqueror; dosya yöneticisi olarak kullanılırsa geçerlidir; &dolphin; gömülü görünümleri kullanamaz ve dosyaları her zaman ilişkilendirilen uygulama ile açar.</para>
-<para
-><guilabel
->Gömülüm</guilabel
-> sekmesine tıklayarak <guilabel
->Konqueror’da Sol Tık Eylemi</guilabel
-> grubunda dört adet radyo düğmesi ile karşılaşırsınız. Bunlar, dosya yöneticisinin seçili &MIME; türünü nasıl görüntülediğini belirler:</para>
-
-<variablelist>
-<varlistentry
-><term
->Dosyayı gömülü görüntüleyicide göster</term>
-<listitem
-><para
->Bu seçiliyse dosya, dosya yöneticisi penceresinin <emphasis
->içinde</emphasis
-> gösterilir.</para
-></listitem
-></varlistentry>
-<varlistentry
-><term
->Dosyayı ayrı izleyicide göster</term>
-<listitem
-><para
->Bu, geçerli &MIME; türünü gösterirken ayrı bir pencerenin açılmasına neden olur.</para
-></listitem
-></varlistentry>
-<varlistentry
-><term
->“application” grubu için ayarları kullan</term>
-<listitem
-><para
->Bu, &MIME; türünün, &MIME; türü için olan ayarları kullanmasını sağlar. (Eğer bir ses &MIME; türünü düzenliyorsanız ses (audio) grubu için olan ayarlar kullanılır).</para
-></listitem
-></varlistentry>
-<varlistentry
-><term
->Diske kaydedilip kaydedilmeyeceğini sor</term>
-<listitem
-><para
->Bu ayar yalnızca &konqueror; tarayıcı kipinde ve dosyanın gömülü bir görüntüleyicide gösterilip gösterilmeyeceğini veya bunun yerine dosyayı diske kaydetmenizin istenip istenmediğini belirler.</para
-></listitem
-></varlistentry>
-</variablelist>
-
-<para
->Bunun altında, <guilabel
->Hizmetler Tercih Sırası</guilabel
-> ile etiketli bir liste kutusu vardır.</para>
-
-<para
->&dolphin; veya &konqueror; gibi bir dosya yöneticisi kullanıyorsanız <mousebutton
->sağ</mousebutton
-> tıklamanızda <guimenuitem
->Birlikte Aç…</guimenuitem
-> menü ögesi bulunur. Bu kutu, görünecek uygulamaları listeler ve görünecekleri sıra bu liste kutusundakiyle aynıdır.</para>
-
-<para
-><guibutton
->Yukarı Taşı</guibutton
-> ve <guibutton
->Aşağı Taşı</guibutton
-> düğmelerini kullanarak sıralamayı değiştirebilirsiniz.</para>
 
 </sect3>
 

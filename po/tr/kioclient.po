@@ -8,21 +8,21 @@
 # Ozan Çağlayan <ozan@pardus.org.tr>, 2010, 2013.
 # Ongun Kanat <ongun.kanat@gmail.com>, 2014.
 # Volkan Gezer <volkangezer@gmail.com>, 2017.
-# SPDX-FileCopyrightText: 2022, 2023, 2024, 2025 Emir SARI <emir_sari@icloud.com>
+# SPDX-FileCopyrightText: 2022-2026 Emir SARI <emir_sari@icloud.com>
 msgid ""
 msgstr ""
 "Project-Id-Version: kioclient\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2026-01-24 00:44+0000\n"
-"PO-Revision-Date: 2025-07-14 13:13+0300\n"
+"PO-Revision-Date: 2026-11-23 18:13+0300\n"
 "Last-Translator: Emir SARI <emir_sari@icloud.com>\n"
-"Language-Team: Turkish <kde-i18n-doc@kde.org>\n"
+"Language-Team: Turkish <kde-l10n-tr@kde.org>\n"
 "Language: tr\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n > 1);\n"
-"X-Generator: Lokalize 25.07.70\n"
+"X-Generator: Lokalize 26.08.2\n"
 
 #, kde-format
 msgctxt "NAME OF TRANSLATORS"
@@ -212,7 +212,7 @@ msgid ""
 "\n"
 msgstr ""
 "  kioclient exec file:/home/weis/data/test.html\n"
-"             // Dosyayı, bu MIME türü ile ilişkilendirilmiş öntanımlı\n"
+"             // Dosyayı, bu MIME türü ile ilişkilendirilmiş varsayılan\n"
 "             // uygulama ile açar\n"
 "\n"
 
@@ -224,7 +224,7 @@ msgid ""
 "\n"
 msgstr ""
 "  kioclient exec ftp://localhost/\n"
-"             // URL’yi, ftp:// scheme için öntanımlı işleyiciyle açar\n"
+"             // URL’yi, ftp:// scheme için varsayılan işleyiciyle açar\n"
 "\n"
 
 #: kioclient.cpp:157
@@ -247,7 +247,7 @@ msgid ""
 "\n"
 msgstr ""
 "  kioclient exec .\n"
-"             // Geçerli dizini öntanımlı dosya yöneticisinde açar.\n"
+"             // Geçerli dizini varsayılan dosya yöneticisinde açar.\n"
 "             // Çok kullanışlıdır.\n"
 "\n"
 

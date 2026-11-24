@@ -253,7 +253,7 @@ does this really work?
 >dosya</parameter
 > parametresiyle verilen dosyayı incelemesini söyler. Dosyaya geçerli kullanıcı tarafından yazılabiliyorsa &kdesu; komutu geçerli kullanıcı olarak yürütür. Aksi durumda, komut <parameter
 >kullanıcı</parameter
-> olarak yürütülür (öntanımlı olarak yönetici).</para>
+> olarak yürütülür (varsayılan olarak yönetici).</para>
 <para
 ><parameter
 >dosya</parameter
@@ -310,7 +310,7 @@ does this really work?
 ></term>
 <listitem>
 <para
->Öncelik değerini ayarlayın. Öncelik, 1–100 arasında herhangi bir numaradır; 100 en yüksek önceliği ve 0 ise en düşük önceliği belirtir. Öntanımlı değer 50’dir.</para>
+>Öncelik değerini ayarlayın. Öncelik, 1–100 arasında herhangi bir numaradır; 100 en yüksek önceliği ve 0 ise en düşük önceliği belirtir. Varsayılan değer 50’dir.</para>
 </listitem>
 </varlistentry>
 <varlistentry>
@@ -331,7 +331,7 @@ does this really work?
 ></term>
 <listitem
 ><para
->kdesu ardalan sürecini durdurun. Bkz. <xref linkend="sec-password-keeping"/>.</para
+>kdesu art alan sürecini durdurun. Bkz. <xref linkend="sec-password-keeping"/>.</para
 ></listitem>
 </varlistentry>
 <varlistentry>
@@ -459,22 +459,22 @@ does this really work?
 <para
 >&kdesu;, <application
 >kdesud</application
-> denen bir ardalan süreci kullanır. Süreç, komutlar için <filename
+> denen bir art alan süreci kullanır. Süreç, komutlar için <filename
 >/tmp</filename
-> içindeki bir &UNIX; yuvasını dinler. Yuvanın kipi 0600’dır; böylece yalnızca sizin kullanıcı kimliğiniz ona bağlanabilir. Parolayı tutma etkinleştirilmişse &kdesu; komutları bu ardalan süreci üzerinden yürütür. Komutu ve <systemitem class="username"
+> içindeki bir &UNIX; yuvasını dinler. Yuvanın kipi 0600’dır; böylece yalnızca sizin kullanıcı kimliğiniz ona bağlanabilir. Parolayı tutma etkinleştirilmişse &kdesu; komutları bu art alan süreci üzerinden yürütür. Komutu ve <systemitem class="username"
 >yönetici</systemitem
->’nin parolasını yuvaya yazar ve ardalan komutu daha önce açıklandığı üzere <command
+>’nin parolasını yuvaya yazar ve art alan komutu daha önce açıklandığı üzere <command
 >su</command
-> ile yürütür. Sonrasında komut ve parola atılmaz. Bunun yerine belirli bir süre tutulurlar. Bu, denetim modülündeki zaman aşımı değeridir. Bu süre içinde aynı komut için bir istek gelirse istemcinin parolayı sağlamasına gerek kalmaz. Deşicilerin ardalan sürecinden parolaları çıkarmasına engel olmak için (örneğin bir hata ayıklayıcı iliştirerek) ardalan süreci set-group-id nogroup olarak kurulmuştur. Bu, tüm normal kullanıcıların (sen de dahil olmak üzere) parolaları <application
+> ile yürütür. Sonrasında komut ve parola atılmaz. Bunun yerine belirli bir süre tutulurlar. Bu, denetim modülündeki zaman aşımı değeridir. Bu süre içinde aynı komut için bir istek gelirse istemcinin parolayı sağlamasına gerek kalmaz. Deşicilerin art alan sürecinden parolaları çıkarmasına engel olmak için (örneğin bir hata ayıklayıcı iliştirerek) art alan süreci set-group-id nogroup olarak kurulmuştur. Bu, tüm normal kullanıcıların (sen de dahil olmak üzere) parolaları <application
 >kdesud</application
-> sürecinden almasına engel olmalıdır. Ayrıca, ardalan süreci <envar
+> sürecinden almasına engel olmalıdır. Ayrıca, art alan süreci <envar
 >DISPLAY</envar
 > çevre değişkenini başlatıldığındaki değere geri ayarlar. Bir deşicinin yapabileceği tek şey ekranınızda bir program yürütmek olabilir.</para>
 
 <para
 >Bu şemadaki bir olası zayıf nokta ise yürüttüğünüz programların güvenlik temel alınarak yazılmamış olmasıdır (setuid <systemitem class="username"
 >yönetici</systemitem
-> programları gibi). Bu, önbellek taşmaları veya başka sorunların olabileceği ve bir deşicinin bunları kullanabileceği anlamına gelir.</para>
+> programları gibi). Bu, ön bellek taşmaları veya başka sorunların olabileceği ve bir deşicinin bunları kullanabileceği anlamına gelir.</para>
 
 <para
 >Parola tutma özelliği güvenlik ve konfor arasında bir feragattir. Buna göre kullanmak isteyip istemediğinizi bir düşünün.</para>
