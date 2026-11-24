@@ -194,7 +194,7 @@
 >dosya</parameter
 > parametresiyle verilen dosyayı incelemesini söyler. Dosyaya geçerli kullanıcı tarafından yazılabiliyorsa &kdesu; komutu geçerli kullanıcı olarak yürütür. Aksi durumda, komut <parameter
 >kullanıcı</parameter
-> olarak yürütülür (öntanımlı olarak yönetici).</para>
+> olarak yürütülür (varsayılan olarak yönetici).</para>
 <para
 ><parameter
 >dosya</parameter
@@ -239,7 +239,7 @@
 ></term>
 <listitem>
 <para
->Öncelik değerini ayarlayın. Öncelik, 1–100 arasında herhangi bir numaradır; 100 en yüksek önceliği ve 0 ise en düşük önceliği belirtir. Öntanımlı değer 50’dir.</para>
+>Öncelik değerini ayarlayın. Öncelik, 1–100 arasında herhangi bir numaradır; 100 en yüksek önceliği ve 0 ise en düşük önceliği belirtir. Varsayılan değer 50’dir.</para>
 </listitem>
 </varlistentry>
 <varlistentry>
@@ -260,7 +260,7 @@
 ></term>
 <listitem
 ><para
->kdesu ardalan sürecini durdurun. Bu, başarılı parolaları arka planda önbellekleyen ardalan sürecidir. Bu özellik aynı zamanda &kdesu;’nun ilk başlatılmasında <option
+>kdesu art alan sürecini durdurun. Bu, başarılı parolaları arka planda ön belleğe alan art alan sürecidir. Bu özellik aynı zamanda &kdesu;’nun ilk başlatılmasında <option
 >-n</option
 > ile de devre dışı bırakılabilir.</para
 ></listitem>
