@@ -11,7 +11,6 @@
 
 class KIconButton;
 class MimeTypeData;
-class TypesListItem;
 class QLabel;
 class QListWidget;
 class QGroupBox;
@@ -35,24 +34,20 @@ public:
     explicit FileTypeDetails(QWidget *parent = nullptr);
 
     /**
-     * Set a non-gui "mimetype data" to work on,
-     * and optionally a gui "treeview item", to update its icon if set.
+     * Set a non-gui "mimetype data" to work on.
      */
-    void setMimeTypeData(MimeTypeData *mimeTypeData, TypesListItem *item = nullptr);
+    void setMimeTypeData(MimeTypeData *mimeTypeData);
 
     /**
      * Called when ksycoca has changed
      */
     void refresh();
 
-    void allowMultiApply(bool allow);
-
 protected:
     void updateRemoveButton();
 
 Q_SIGNALS:
     void changed(bool);
-    void multiApply();
 
 protected Q_SLOTS:
     void updateIcon(const QString &icon);
@@ -63,7 +58,6 @@ protected Q_SLOTS:
 
 private:
     MimeTypeData *m_mimeTypeData;
-    TypesListItem *m_item; // can be 0, in keditfiletype!
 
     QLabel *m_mimeTypeLabel;
 

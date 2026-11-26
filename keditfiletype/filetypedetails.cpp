@@ -9,8 +9,11 @@
 
 // Qt
 #include <QButtonGroup>
+#include <QGroupBox>
 #include <QInputDialog>
 #include <QLabel>
+#include <QListWidget>
+#include <QPushButton>
 #include <QVBoxLayout>
 
 // KDE
@@ -22,12 +25,11 @@
 
 // Local
 #include "kservicelistwidget.h"
-#include "typeslistitem.h"
+#include "mimetypedata.h"
 
 FileTypeDetails::FileTypeDetails(QWidget *parent)
     : QWidget(parent)
     , m_mimeTypeData(nullptr)
-    , m_item(nullptr)
 {
     QVBoxLayout *topLayout = new QVBoxLayout(this);
     topLayout->setContentsMargins(0, 0, 0, 0);
@@ -106,7 +108,6 @@ FileTypeDetails::FileTypeDetails(QWidget *parent)
 
     serviceListWidget = new KServiceListWidget(this);
     connect(serviceListWidget, &KServiceListWidget::changed, this, &FileTypeDetails::changed);
-    connect(serviceListWidget, &KServiceListWidget::multiApply, this, &FileTypeDetails::multiApply);
     topLayout->addWidget(serviceListWidget, 5);
 }
 
@@ -122,10 +123,6 @@ void FileTypeDetails::updateIcon(const QString &icon)
     }
 
     m_mimeTypeData->setUserSpecifiedIcon(icon);
-
-    if (m_item) {
-        m_item->setIcon(icon);
-    }
 
     Q_EMIT changed(true);
 }
@@ -176,10 +173,9 @@ void FileTypeDetails::removeExtension()
     Q_EMIT changed(true);
 }
 
-void FileTypeDetails::setMimeTypeData(MimeTypeData *mimeTypeData, TypesListItem *item)
+void FileTypeDetails::setMimeTypeData(MimeTypeData *mimeTypeData)
 {
     m_mimeTypeData = mimeTypeData;
-    m_item = item; // can be 0
     Q_ASSERT(mimeTypeData);
     m_mimeTypeLabel->setText(i18n("File type %1", mimeTypeData->name()));
     if (iconButton) {
@@ -214,12 +210,7 @@ void FileTypeDetails::refresh()
 
     // Called when ksycoca has been updated -> refresh data, then widgets
     m_mimeTypeData->refresh();
-    setMimeTypeData(m_mimeTypeData, m_item);
-}
-
-void FileTypeDetails::allowMultiApply(bool allow)
-{
-    serviceListWidget->allowMultiApply(allow);
+    setMimeTypeData(m_mimeTypeData);
 }
 
 #include "moc_filetypedetails.cpp"

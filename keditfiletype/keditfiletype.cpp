@@ -29,7 +29,7 @@
 
 // Local
 #include "filetypedetails.h"
-#include "typeslistitem.h"
+#include "mimetypedata.h"
 
 FileTypeDialog::FileTypeDialog(MimeTypeData *mime)
     : QDialog(nullptr)

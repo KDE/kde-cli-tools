@@ -14,6 +14,7 @@
 #include <KSharedConfig>
 #include <QDebug>
 #include <QFileInfo>
+#include <QLocale>
 #include <QMimeDatabase>
 #include <QStandardPaths>
 #include <QXmlStreamReader>
@@ -154,9 +155,12 @@ bool MimeTypeData::isEssential() const
 
 void MimeTypeData::setUserSpecifiedIcon(const QString &icon)
 {
-    if (icon == m_userSpecifiedIcon) {
+    if (icon == m_userSpecifiedIcon && !m_revertPending) {
         return;
     }
+    m_revertPending = false;
+    m_awaitingDatabase = false;
+    m_fallbackIcon.clear();
     m_userSpecifiedIcon = icon;
     m_userSpecifiedIconModified = true;
 }
@@ -190,6 +194,9 @@ bool MimeTypeData::isMimeTypeDirty() const
     Q_ASSERT(!m_isGroup);
     if (m_bNewItem) {
         return true;
+    }
+    if (m_revertPending || m_awaitingDatabase) {
+        return false;
     }
 
     if (!m_mimetype.isValid()) {
@@ -259,6 +266,7 @@ bool MimeTypeData::sync()
             return false;
         }
         m_userSpecifiedIconModified = false;
+        m_awaitingDatabase = true;
         needUpdateMimeDb = true;
     }
 
@@ -383,10 +391,24 @@ void MimeTypeData::refresh()
     m_mimetype = db.mimeTypeForName(name());
     if (m_mimetype.isValid()) {
         if (m_bNewItem) {
-            qDebug() << "OK, created" << name();
             m_bNewItem = false; // if this was a new mimetype, we just created it
         }
-        if (!isMimeTypeDirty()) {
+        if (m_awaitingDatabase) {
+            // QMimeDatabase may still serve the removed user definition for a while. Keep showing the system-wide
+            // definition until the database agrees with it.
+            QStringList patterns = m_mimetype.globPatterns();
+            patterns.sort();
+            if (m_mimetype.iconName() != icon() || m_mimetype.comment() != m_comment || patterns != m_patterns) {
+                if (!m_appServicesModified) {
+                    m_bFullInit = false;
+                }
+                return;
+            }
+            m_userSpecifiedIcon.clear();
+            m_fallbackIcon.clear();
+            m_awaitingDatabase = false;
+        }
+        if (!m_revertPending && !isMimeTypeDirty()) {
             // Update from the xml, in case something was changed from out of this kcm
             // (e.g. using KOpenWithDialog, or keditfiletype + kcmshell filetypes)
             initFromQMimeType();
@@ -394,6 +416,84 @@ void MimeTypeData::refresh()
         if (!m_appServicesModified) {
             m_bFullInit = false; // refresh services too
         }
+    }
+}
+
+bool MimeTypeData::revertToSystemDefinition()
+{
+    if (m_isGroup || m_bNewItem) {
+        return false;
+    }
+    // The definitions of the user are in the writable location, the others are system-wide ones
+    const QString writableDir = QStandardPaths::writableLocation(QStandardPaths::GenericDataLocation);
+    QStringList files = QStandardPaths::locateAll(QStandardPaths::GenericDataLocation, QStringLiteral("mime/") + name().toLower() + QLatin1String(".xml"));
+    files.removeIf([&writableDir](const QString &file) {
+        return file.startsWith(writableDir + QLatin1Char('/'));
+    });
+    if (files.isEmpty()) {
+        return false;
+    }
+    QFile file(files.first());
+    if (!file.open(QFile::ReadOnly)) {
+        return false;
+    }
+
+    QMap<QString, QString> comments; // by language, the one without a language has an empty key
+    QStringList patterns;
+    QString icon;
+    QXmlStreamReader xml(&file);
+    if (!xml.readNextStartElement() || xml.name() != QLatin1String("mime-type")) {
+        return false;
+    }
+    while (xml.readNextStartElement()) {
+        const auto tag = xml.name();
+        if (tag == QLatin1String("comment")) {
+            const QString lang = xml.attributes().value(QStringLiteral("http://www.w3.org/XML/1998/namespace"), QStringLiteral("lang")).toString();
+            comments.insert(lang, xml.readElementText());
+        } else {
+            if (tag == QLatin1String("glob")) {
+                patterns.append(xml.attributes().value(QLatin1String("pattern")).toString());
+            } else if (tag == QLatin1String("icon")) {
+                icon = xml.attributes().value(QLatin1String("name")).toString();
+            }
+            xml.skipCurrentElement();
+        }
+    }
+    if (xml.hasError()) {
+        return false;
+    }
+
+    // Prefer the comment in the user's language, then the one without a language
+    QString comment = comments.value(QString());
+    const QStringList languages = QLocale().uiLanguages();
+    for (const QString &language : languages) {
+        const QString normalized = QString(language).replace(QLatin1Char('-'), QLatin1Char('_'));
+        const QString languageOnly = normalized.left(normalized.indexOf(QLatin1Char('_')));
+        if (comments.contains(normalized)) {
+            comment = comments.value(normalized);
+            break;
+        }
+        if (comments.contains(languageOnly)) {
+            comment = comments.value(languageOnly);
+            break;
+        }
+    }
+
+    m_comment = comment;
+    m_patterns = patterns;
+    m_patterns.sort();
+    m_userSpecifiedIcon = icon;
+    m_userSpecifiedIconModified = false;
+    m_fallbackIcon = QString(name()).replace(QLatin1Char('/'), QLatin1Char('-')); // what QMimeType uses if there is no icon
+    m_revertPending = true;
+    return true;
+}
+
+void MimeTypeData::markRevertSaved()
+{
+    if (m_revertPending) {
+        m_revertPending = false;
+        m_awaitingDatabase = true;
     }
 }
 
@@ -409,6 +509,8 @@ bool MimeTypeData::canUseGroupSetting() const
 
 void MimeTypeData::setPatterns(const QStringList &p)
 {
+    m_revertPending = false;
+    m_awaitingDatabase = false;
     m_patterns = p;
     // Sort them, since update-mime-database doesn't respect order (order of globs file != order of xml),
     // and this code says things like if (m_mimetype.patterns() == m_patterns).
@@ -447,6 +549,9 @@ QString MimeTypeData::icon() const
 {
     if (!m_userSpecifiedIcon.isEmpty()) {
         return m_userSpecifiedIcon;
+    }
+    if (!m_fallbackIcon.isEmpty()) {
+        return m_fallbackIcon;
     }
     if (m_mimetype.isValid()) {
         return m_mimetype.iconName();

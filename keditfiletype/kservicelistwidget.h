@@ -40,11 +40,8 @@ public:
 
     void setMimeTypeData(MimeTypeData *item);
 
-    void allowMultiApply(bool allow);
-
 Q_SIGNALS:
     void changed(bool);
-    void multiApply();
 
 protected Q_SLOTS:
     void promoteService();
@@ -52,7 +49,6 @@ protected Q_SLOTS:
     void addService();
     void editService();
     void removeService();
-    void applyTo();
     void enableMoveButtons();
 
 protected:
@@ -62,9 +58,7 @@ private:
     QListWidget *servicesLB;
     QPushButton *servUpButton, *servDownButton;
     QPushButton *servNewButton, *servEditButton, *servRemoveButton;
-    QPushButton *servApplyToButton;
     MimeTypeData *m_mimeTypeData;
-    bool m_allowMultiApply;
 };
 
 #endif
