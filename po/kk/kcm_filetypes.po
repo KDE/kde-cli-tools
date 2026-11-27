@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: filetypes\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2026-11-19 01:09+0000\n"
+"POT-Creation-Date: 2026-11-27 01:06+0000\n"
 "PO-Revision-Date: 2013-05-15 04:53+0600\n"
 "Last-Translator: Sairan Kikkarin <sairan@computer.org>\n"
 "Language-Team: Kazakh <kde-i18n-doc@kde.org>\n"
@@ -29,7 +29,7 @@ msgctxt "EMAIL OF TRANSLATORS"
 msgid "Your emails"
 msgstr "sairan@computer.org"
 
-#: filetypedetails.cpp:48
+#: filetypedetails.cpp:50
 #, kde-format
 msgid ""
 "This button displays the icon associated with the selected file type. Click "
@@ -38,12 +38,12 @@ msgstr ""
 "Бұл батырма таңдалған файл түріне тағайындалған таңбашасын көрсетеді. "
 "Басқасын тағайындау үшін осыны түртіңіз."
 
-#: filetypedetails.cpp:54
+#: filetypedetails.cpp:56
 #, kde-format
 msgid "Filename Patterns"
 msgstr "Файл атау үлгілері"
 
-#: filetypedetails.cpp:66
+#: filetypedetails.cpp:68
 #, kde-format
 msgid ""
 "This box contains a list of patterns that can be used to identify files of "
@@ -55,32 +55,32 @@ msgstr ""
 "тізімделеді. Мысалы, *.txt үлгісі 'text/plain' файл түріне сәйкес келеді де, "
 "'.txt' деп аяқталатын файлдар кәдімгі мәтін файлы деп саналады."
 
-#: filetypedetails.cpp:74 filetypesview.cpp:83 kservicelistwidget.cpp:89
+#: filetypedetails.cpp:76 kservicelistwidget.cpp:88
 #, kde-format
 msgid "Add..."
 msgstr "Қосу..."
 
-#: filetypedetails.cpp:79
+#: filetypedetails.cpp:81
 #, kde-format
 msgid "Add a new pattern for the selected file type."
 msgstr "Таңдалған файл түріне жаңа атау үлгісін қосу."
 
-#: filetypedetails.cpp:81 kservicelistwidget.cpp:103
+#: filetypedetails.cpp:83 kservicelistwidget.cpp:102
 #, kde-format
 msgid "Remove"
 msgstr "Өшіру"
 
-#: filetypedetails.cpp:86
+#: filetypedetails.cpp:88
 #, kde-format
 msgid "Remove the selected filename pattern."
 msgstr "Таңдалған атау үлгісін өшіру."
 
-#: filetypedetails.cpp:97
+#: filetypedetails.cpp:99
 #, kde-format
 msgid "Description:"
 msgstr "Сиптаттамасы:"
 
-#: filetypedetails.cpp:102
+#: filetypedetails.cpp:104
 #, kde-format
 msgid ""
 "You can enter a short description for files of the selected file type (e.g. "
@@ -91,113 +91,20 @@ msgstr ""
 "деп). Бұл сипаттама Konqueror секілді қолданбалар каталог мазмұнын "
 "көрсеткенде пайдаланады."
 
-#: filetypedetails.cpp:151
+#: filetypedetails.cpp:148
 #, kde-format
 msgid "Add New Extension"
 msgstr "Жаңа жұрнақты қосу"
 
-#: filetypedetails.cpp:151
+#: filetypedetails.cpp:148
 #, kde-format
 msgid "Extension:"
 msgstr "Жұрнағы:"
 
-#: filetypedetails.cpp:184
+#: filetypedetails.cpp:180
 #, kde-format
 msgid "File type %1"
 msgstr "%1 файл түрі"
-
-#: filetypesview.cpp:54
-#, fuzzy, kde-format
-#| msgid "Find file type or filename pattern"
-msgid "Search for file type or filename pattern..."
-msgstr "Файл түрін не атауының үлгісін іздеу"
-
-#: filetypesview.cpp:60
-#, kde-format
-msgid ""
-"Enter a part of a filename pattern, and only file types with a matching file "
-"pattern will appear in the list. Alternatively, enter a part of a file type "
-"name as it appears in the list."
-msgstr ""
-"Файл атауының үлгісінің бір бөлігін келтіріңіз. Тізімде бұған сәйкес "
-"келетіндер ғана көрсетіледі. Немесе файл түрінің бір бөлігін келтіріңіз."
-
-#: filetypesview.cpp:68 multiapplydialog.cpp:27
-#, kde-format
-msgid "Known Types"
-msgstr "Мәлім түрлері"
-
-#: filetypesview.cpp:74
-#, kde-format
-msgid ""
-"Here you can see a hierarchical list of the file types which are known on "
-"your system. Click on the '+' sign to expand a category, or the '-' sign to "
-"collapse it. Select a file type (e.g. text/html for HTML files) to view/edit "
-"the information for that file type using the controls on the right."
-msgstr ""
-"Мұнда жүйеңізге мәлім файл түрлері бұтақты тізімінде көрсетіледі. Санаттағы "
-"түрлерді көрсету үшін '+' белгісін түртіңіз, '-' белгісі бұтақты кайта "
-"жасыру үшін. Оң жақтағы тетіктерімен ақпаратын көру/өңдеу үшін файл түрін "
-"таңдаңыз (мысалы, HTML файлдар - text/html)."
-
-#: filetypesview.cpp:88
-#, kde-format
-msgid "Click here to add a new file type."
-msgstr "Жаңа файл түрін қосу үшін осында түртіңіз."
-
-#: filetypesview.cpp:90 filetypesview.cpp:360
-#, kde-format
-msgid "&Remove"
-msgstr "Ө&шіру"
-
-#: filetypesview.cpp:110
-#, kde-format
-msgid "Select a file type by name or by extension"
-msgstr "Файл түрін атау не жұрнағы бойынша таңдау"
-
-#: filetypesview.cpp:353
-#, kde-format
-msgid "&Revert"
-msgstr "Қ&айтару"
-
-#: filetypesview.cpp:354
-#, kde-format
-msgid "Revert this file type to its initial system-wide definition"
-msgstr "Осы файл түрінің тағайындауын бастапқы жүйе бойыншасына қайтару"
-
-#: filetypesview.cpp:356
-#, kde-format
-msgid ""
-"Click here to revert this file type to its initial system-wide definition, "
-"which undoes any changes made to the file type. Note that system-wide file "
-"types cannot be deleted. You can however empty their pattern list, to "
-"minimize the chances of them being used (but the file type determination "
-"from file contents can still end up using them)."
-msgstr ""
-"Осы файл түрінің тағайындауын бастапқы жүйе бойыншасына қайтару үшін осында "
-"түртіңіз, сонда бұл файл түрі үшін енгізілген бүкіл өзгерістерінің күші "
-"жойылады. Жүйе бойынша жарияланған файл түрі өшіруге келмейді. Оны "
-"пайдалануын болдырмау үшін үлгі тізімін тазалауға болады (бірақ файл "
-"мазмұнынан тану сонда да істей береді)."
-
-#: filetypesview.cpp:361
-#, kde-format
-msgid "Delete this file type definition completely"
-msgstr "Осы файл түрінің тағайындауын мүлдем өшіру"
-
-#: filetypesview.cpp:363
-#, kde-format
-msgid ""
-"Click here to delete this file type definition completely. This is only "
-"possible for user-defined file types. System-wide file types cannot be "
-"deleted. You can however empty their pattern list, to minimize the chances "
-"of them being used (but the file type determination from file contents can "
-"still end up using them)."
-msgstr ""
-"Осы файл түрінің тағайындауын мүлдем өшіру үшін осыны түртіңіз. Бұл тек қана "
-"пйдаланушы тағайндаған файл түрлері үшін істеуге болады.  Жүйе бойынша "
-"жарияланған файл түрі өшіруге келмейді. Оны пайдалануын болдырмау үшін үлгі "
-"тізімін тазалауға болады (бірақ файл мазмұнынан тану сонда да істей береді)."
 
 #: keditfiletype.cpp:110
 #, fuzzy, kde-format
@@ -256,7 +163,7 @@ msgstr "%1 жаңа файл түрін құру"
 msgid "Application Preference Order"
 msgstr "Қолданбалардың артықшылық реті"
 
-#: kservicelistwidget.cpp:54
+#: kservicelistwidget.cpp:53
 #, kde-format
 msgid ""
 "This is a list of applications associated with files of the selected file "
@@ -270,12 +177,12 @@ msgstr ""
 "көрсетіледі. Қарастырылып жатқан файл түріне бірнеше қолданба сәйкес "
 "қойылса, тізіміндегі реті қолданбаның артықшылығын белгілейді."
 
-#: kservicelistwidget.cpp:66
+#: kservicelistwidget.cpp:65
 #, kde-format
 msgid "Move &Up"
 msgstr "Ж&оғарға"
 
-#: kservicelistwidget.cpp:73
+#: kservicelistwidget.cpp:72
 #, kde-format
 msgid ""
 "Assigns a higher priority to the selected\n"
@@ -289,12 +196,12 @@ msgstr ""
 "таңдалған қолданбаға\n"
 "әсер етеді."
 
-#: kservicelistwidget.cpp:78
+#: kservicelistwidget.cpp:77
 #, kde-format
 msgid "Move &Down"
 msgstr "Төмен&ге"
 
-#: kservicelistwidget.cpp:84
+#: kservicelistwidget.cpp:83
 #, kde-format
 msgid ""
 "Assigns a lower priority to the selected\n"
@@ -308,71 +215,379 @@ msgstr ""
 "таңдалған қолданбаға\n"
 "әсер етеді."
 
-#: kservicelistwidget.cpp:94
+#: kservicelistwidget.cpp:93
 #, kde-format
 msgid "Add a new application for this file type."
 msgstr "Осы файл түрі үшін жаңа қолданбаны қосу."
 
-#: kservicelistwidget.cpp:96
+#: kservicelistwidget.cpp:95
 #, kde-format
 msgid "Edit..."
 msgstr "Өңдеу..."
 
-#: kservicelistwidget.cpp:101
+#: kservicelistwidget.cpp:100
 #, kde-format
 msgid "Edit command line of the selected application."
 msgstr "Таңдалған қолданбаның командасының жолын өңдеу."
 
-#: kservicelistwidget.cpp:108
+#: kservicelistwidget.cpp:107
 #, kde-format
 msgid "Remove the selected application from the list."
 msgstr "Таңдалған қолданбаны тізімнен өшіру."
 
-#: kservicelistwidget.cpp:110 multiapplydialog.cpp:19
-#, kde-format
-msgid "Apply To..."
-msgstr ""
-
-#: kservicelistwidget.cpp:115
-#, kde-format
-msgid "Apply the current preference order to other file types."
-msgstr ""
-
-#: kservicelistwidget.cpp:136
+#: kservicelistwidget.cpp:128 ui/FileTypeDetails.qml:242
 #, kde-format
 msgctxt "No applications associated with this file type"
 msgid "None"
 msgstr "Жоқ"
 
-#: newtypedlg.cpp:25
+#: ui/ApplyToDialog.qml:15
 #, kde-format
+msgctxt "@title:window"
+msgid "Apply To…"
+msgstr ""
+
+#: ui/FileTypeDetails.qml:19
+#, fuzzy, kde-format
+#| msgid "File type %1"
+msgctxt "@title"
+msgid "File Type Details"
+msgstr "%1 файл түрі"
+
+#: ui/FileTypeDetails.qml:24
+#, fuzzy, kde-format
+#| msgid "&Revert"
+msgctxt "@action:button"
+msgid "Revert"
+msgstr "Қ&айтару"
+
+#: ui/FileTypeDetails.qml:24 ui/FileTypeDetails.qml:132
+#: ui/FileTypeDetails.qml:353
+#, fuzzy, kde-format
+#| msgid "Remove"
+msgctxt "@action:button"
+msgid "Remove"
+msgstr "Өшіру"
+
+#: ui/FileTypeDetails.qml:26
+#, fuzzy, kde-format
+#| msgid ""
+#| "Click here to revert this file type to its initial system-wide "
+#| "definition, which undoes any changes made to the file type. Note that "
+#| "system-wide file types cannot be deleted. You can however empty their "
+#| "pattern list, to minimize the chances of them being used (but the file "
+#| "type determination from file contents can still end up using them)."
+msgctxt "@info:tooltip"
+msgid ""
+"Revert this file type to its initial system-wide definition, which undoes "
+"any changes made to the file type. Note that system-wide file types cannot "
+"be deleted. You can however empty their pattern list, to minimize the "
+"chances of them being used (but the file type determination from file "
+"contents can still end up using them)."
+msgstr ""
+"Осы файл түрінің тағайындауын бастапқы жүйе бойыншасына қайтару үшін осында "
+"түртіңіз, сонда бұл файл түрі үшін енгізілген бүкіл өзгерістерінің күші "
+"жойылады. Жүйе бойынша жарияланған файл түрі өшіруге келмейді. Оны "
+"пайдалануын болдырмау үшін үлгі тізімін тазалауға болады (бірақ файл "
+"мазмұнынан тану сонда да істей береді)."
+
+#: ui/FileTypeDetails.qml:27
+#, fuzzy, kde-format
+#| msgid ""
+#| "Click here to delete this file type definition completely. This is only "
+#| "possible for user-defined file types. System-wide file types cannot be "
+#| "deleted. You can however empty their pattern list, to minimize the "
+#| "chances of them being used (but the file type determination from file "
+#| "contents can still end up using them)."
+msgctxt "@info:tooltip"
+msgid ""
+"Delete this file type definition completely. This is only possible for user-"
+"defined file types. System-wide file types cannot be deleted. You can "
+"however empty their pattern list, to minimize the chances of them being used "
+"(but the file type determination from file contents can still end up using "
+"them)."
+msgstr ""
+"Осы файл түрінің тағайындауын мүлдем өшіру үшін осыны түртіңіз. Бұл тек қана "
+"пйдаланушы тағайндаған файл түрлері үшін істеуге болады.  Жүйе бойынша "
+"жарияланған файл түрі өшіруге келмейді. Оны пайдалануын болдырмау үшін үлгі "
+"тізімін тазалауға болады (бірақ файл мазмұнынан тану сонда да істей береді)."
+
+#: ui/FileTypeDetails.qml:51
+#, fuzzy, kde-format
+#| msgid "Select a file type by name or by extension"
+msgctxt "@info:placeholder"
+msgid "Select a file type to edit it"
+msgstr "Файл түрін атау не жұрнағы бойынша таңдау"
+
+#: ui/FileTypeDetails.qml:61
+#, fuzzy, kde-format
+#| msgid "Description:"
+msgctxt "@label:textbox"
+msgid "Description:"
+msgstr "Сиптаттамасы:"
+
+#: ui/FileTypeDetails.qml:71
+#, fuzzy, kde-format
+#| msgid "Add a new application for this file type."
+msgctxt "@info:tooltip"
+msgid "Change the icon of this file type"
+msgstr "Осы файл түрі үшін жаңа қолданбаны қосу."
+
+#: ui/FileTypeDetails.qml:81
+#, kde-format
+msgctxt "@info:placeholder"
+msgid "The '%1' file type"
+msgstr ""
+
+#: ui/FileTypeDetails.qml:82
+#, fuzzy, kde-format
+#| msgid "File type %1"
+msgctxt "@label"
+msgid "File type description"
+msgstr "%1 файл түрі"
+
+#: ui/FileTypeDetails.qml:89
+#, fuzzy, kde-format
+#| msgid "Filename Patterns"
+msgctxt "@title:group"
+msgid "Filename Patterns"
+msgstr "Файл атау үлгілері"
+
+#: ui/FileTypeDetails.qml:112
+#, kde-format
+msgctxt "@info no filename patterns for this file type"
+msgid "No patterns"
+msgstr ""
+
+#: ui/FileTypeDetails.qml:135
+#, fuzzy, kde-format
+#| msgid "Remove the selected filename pattern."
+msgctxt "@info:tooltip"
+msgid "Remove this filename pattern"
+msgstr "Таңдалған атау үлгісін өшіру."
+
+#: ui/FileTypeDetails.qml:150 ui/main.qml:44
+#, kde-format
+msgctxt "@action:button"
+msgid "Add…"
+msgstr ""
+
+#: ui/FileTypeDetails.qml:157
+#, fuzzy, kde-format
+#| msgid "Add a new pattern for the selected file type."
+msgctxt "@info:tooltip"
+msgid "Add a new pattern for the selected file type"
+msgstr "Таңдалған файл түріне жаңа атау үлгісін қосу."
+
+#: ui/FileTypeDetails.qml:175
+#, kde-format
+msgctxt "@info:placeholder"
+msgid "*.txt"
+msgstr ""
+
+#: ui/FileTypeDetails.qml:183
+#, kde-format
+msgctxt "@action:button"
+msgid "Add Pattern"
+msgstr ""
+
+#: ui/FileTypeDetails.qml:186
+#, fuzzy, kde-format
+#| msgid "Add a new pattern for the selected file type."
+msgctxt "@info:tooltip"
+msgid "Add this pattern to the selected file type"
+msgstr "Таңдалған файл түріне жаңа атау үлгісін қосу."
+
+#: ui/FileTypeDetails.qml:198
+#, fuzzy, kde-format
+#| msgid "Application Preference Order"
+msgctxt "@title:group"
+msgid "Application Preference Order"
+msgstr "Қолданбалардың артықшылық реті"
+
+#: ui/FileTypeDetails.qml:297
+#, kde-format
+msgctxt "@action:button"
+msgid "Reorder"
+msgstr ""
+
+#: ui/FileTypeDetails.qml:301
+#, fuzzy, kde-format
+#| msgid ""
+#| "Assigns a higher priority to the selected\n"
+#| "application, moving it up in the list. Note:  This\n"
+#| "only affects the selected application if the file type is\n"
+#| "associated with more than one application."
+msgctxt "@info:tooltip"
+msgid ""
+"Drag to change the priority of this application. Applications further up "
+"take precedence. Note: This only affects the application if the file type is "
+"associated with more than one application."
+msgstr ""
+"Таңдалған қолданбаның артықшылығын\n"
+"көтеру үшін оны тізімінде жоғарлату керек.\n"
+"Ескерту:  Бұл, файл түріне бірнеше қолданба сәйкес қойылса, тек қана "
+"таңдалған қолданбаға\n"
+"әсер етеді."
+
+#: ui/FileTypeDetails.qml:330
+#, kde-kuit-format
+msgctxt "@info"
+msgid "%1"
+msgstr ""
+
+#: ui/FileTypeDetails.qml:345
+#, kde-format
+msgctxt "@action:button"
+msgid "Edit…"
+msgstr ""
+
+#: ui/FileTypeDetails.qml:348
+#, kde-format
+msgctxt "@info:tooltip"
+msgid "Edit this application"
+msgstr ""
+
+#: ui/FileTypeDetails.qml:354
+#, fuzzy, kde-format
+#| msgid "Remove the selected application from the list."
+msgctxt "@info:tooltip"
+msgid "Remove this application from the preference order"
+msgstr "Таңдалған қолданбаны тізімнен өшіру."
+
+#: ui/FileTypeDetails.qml:371
+#, kde-format
+msgctxt "@action:button"
+msgid "Add Application…"
+msgstr ""
+
+#: ui/FileTypeDetails.qml:372
+#, fuzzy, kde-format
+#| msgid "Add a new application for this file type."
+msgctxt "@info:tooltip"
+msgid "Add a new application for this file type"
+msgstr "Осы файл түрі үшін жаңа қолданбаны қосу."
+
+#: ui/FileTypeDetails.qml:381
+#, kde-format
+msgctxt "@action:button"
+msgid "Apply To…"
+msgstr ""
+
+#: ui/FileTypeDetails.qml:382
+#, kde-format
+msgctxt "@info:tooltip"
+msgid "Apply the current preference order to other file types"
+msgstr ""
+
+#: ui/main.qml:45
+#, fuzzy, kde-format
+#| msgid "Click here to add a new file type."
+msgctxt "@info:tooltip"
+msgid "Add a new file type"
+msgstr "Жаңа файл түрін қосу үшін осында түртіңіз."
+
+#: ui/main.qml:93
+#, fuzzy, kde-format
+#| msgid ""
+#| "Enter a part of a filename pattern, and only file types with a matching "
+#| "file pattern will appear in the list. Alternatively, enter a part of a "
+#| "file type name as it appears in the list."
+msgctxt "@info:tooltip"
+msgid ""
+"Enter a part of a filename pattern, and only file types with a matching file "
+"pattern will appear in the list. Alternatively, enter a part of a file type "
+"name as it appears in the list."
+msgstr ""
+"Файл атауының үлгісінің бір бөлігін келтіріңіз. Тізімде бұған сәйкес "
+"келетіндер ғана көрсетіледі. Немесе файл түрінің бір бөлігін келтіріңіз."
+
+#: ui/main.qml:185
+#, kde-format
+msgctxt "@info:placeholder"
+msgid "No matching file types"
+msgstr ""
+
+#: ui/NewTypeDialog.qml:16
+#, fuzzy, kde-format
+#| msgid "Create New File Type"
+msgctxt "@title:window"
 msgid "Create New File Type"
 msgstr "Жаңа файл түрін құру"
 
-#: newtypedlg.cpp:30
-#, kde-format
-msgid "Group:"
-msgstr "Тобы:"
+#: ui/NewTypeDialog.qml:44
+#, fuzzy, kde-format
+#| msgid "File type %1"
+msgctxt "@label:textbox"
+msgid "File type:"
+msgstr "%1 файл түрі"
 
-#: newtypedlg.cpp:39
-#, kde-format
-msgid "Select the category under which the new file type should be added."
-msgstr "Жаңа файл түрі қай санатқа қосылатынын таңдаңыз."
-
-#: newtypedlg.cpp:44
-#, kde-format
-msgid "Type name:"
-msgstr "Түрінің атауы:"
-
-#: newtypedlg.cpp:50
-#, kde-format
+#: ui/NewTypeDialog.qml:45
+#, fuzzy, kde-format
+#| msgid ""
+#| "Type the name of the file type. For instance, if you selected 'image' as "
+#| "category and you type 'custom' here, the file type 'image/custom' will be "
+#| "created."
+msgctxt "@info"
 msgid ""
-"Type the name of the file type. For instance, if you selected 'image' as "
-"category and you type 'custom' here, the file type 'image/custom' will be "
-"created."
+"Select or type the category and the name of the new file type. For instance, "
+"'image' and 'custom' will create the file type 'image/custom'."
 msgstr ""
 "Файл түрінің атауын келтіріңіз. Мысалы, файлды 'image' санатына жатқызсаңыз, "
 "және түрін  'custom' десеңіз, 'image/custom' түрі құрылады."
+
+#: ui/NewTypeDialog.qml:56
+#, fuzzy, kde-format
+#| msgid "Group:"
+msgctxt "@label:listbox"
+msgid "Group"
+msgstr "Тобы:"
+
+#: ui/NewTypeDialog.qml:68
+#, fuzzy, kde-format
+#| msgid "Type name:"
+msgctxt "@info:placeholder"
+msgid "Type name"
+msgstr "Түрінің атауы:"
+
+#: ui/NewTypeDialog.qml:69
+#, fuzzy, kde-format
+#| msgid "Type name:"
+msgctxt "@label:textbox"
+msgid "Type name"
+msgstr "Түрінің атауы:"
+
+#, fuzzy
+#~| msgid "Find file type or filename pattern"
+#~ msgid "Search for file type or filename pattern..."
+#~ msgstr "Файл түрін не атауының үлгісін іздеу"
+
+#~ msgid "Known Types"
+#~ msgstr "Мәлім түрлері"
+
+#~ msgid ""
+#~ "Here you can see a hierarchical list of the file types which are known on "
+#~ "your system. Click on the '+' sign to expand a category, or the '-' sign "
+#~ "to collapse it. Select a file type (e.g. text/html for HTML files) to "
+#~ "view/edit the information for that file type using the controls on the "
+#~ "right."
+#~ msgstr ""
+#~ "Мұнда жүйеңізге мәлім файл түрлері бұтақты тізімінде көрсетіледі. "
+#~ "Санаттағы түрлерді көрсету үшін '+' белгісін түртіңіз, '-' белгісі "
+#~ "бұтақты кайта жасыру үшін. Оң жақтағы тетіктерімен ақпаратын көру/өңдеу "
+#~ "үшін файл түрін таңдаңыз (мысалы, HTML файлдар - text/html)."
+
+#~ msgid "&Remove"
+#~ msgstr "Ө&шіру"
+
+#~ msgid "Revert this file type to its initial system-wide definition"
+#~ msgstr "Осы файл түрінің тағайындауын бастапқы жүйе бойыншасына қайтару"
+
+#~ msgid "Delete this file type definition completely"
+#~ msgstr "Осы файл түрінің тағайындауын мүлдем өшіру"
+
+#~ msgid "Select the category under which the new file type should be added."
+#~ msgstr "Жаңа файл түрі қай санатқа қосылатынын таңдаңыз."
 
 #~ msgid "&General"
 #~ msgstr "&Жалпы"

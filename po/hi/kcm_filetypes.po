@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: filetypes\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2026-11-19 01:09+0000\n"
+"POT-Creation-Date: 2026-11-27 01:06+0000\n"
 "PO-Revision-Date: 2021-06-29 20:35+0530\n"
 "Last-Translator: Raghavendra Kamath <raghu@raghukamath.com>\n"
 "Language-Team: kde-hindi\n"
@@ -29,7 +29,7 @@ msgctxt "EMAIL OF TRANSLATORS"
 msgid "Your emails"
 msgstr "raviratlami@aol.in,"
 
-#: filetypedetails.cpp:48
+#: filetypedetails.cpp:50
 #, kde-format
 msgid ""
 "This button displays the icon associated with the selected file type. Click "
@@ -38,12 +38,12 @@ msgstr ""
 "यह बटन दिखाता है चुना गया फ़ाइल क़िस्म से सम्बद्ध प्रतीक. भिन्न प्रतीक चुनने के लिए इस पर "
 "क्लिक करें."
 
-#: filetypedetails.cpp:54
+#: filetypedetails.cpp:56
 #, kde-format
 msgid "Filename Patterns"
 msgstr "फ़ाइल-नाम पैटर्न"
 
-#: filetypedetails.cpp:66
+#: filetypedetails.cpp:68
 #, kde-format
 msgid ""
 "This box contains a list of patterns that can be used to identify files of "
@@ -52,32 +52,32 @@ msgid ""
 "text files."
 msgstr ""
 
-#: filetypedetails.cpp:74 filetypesview.cpp:83 kservicelistwidget.cpp:89
+#: filetypedetails.cpp:76 kservicelistwidget.cpp:88
 #, kde-format
 msgid "Add..."
 msgstr "जोड़ें..."
 
-#: filetypedetails.cpp:79
+#: filetypedetails.cpp:81
 #, kde-format
 msgid "Add a new pattern for the selected file type."
 msgstr "चुने गए फ़ाइल क़िस्म के लिए एक नया पैटर्न जोड़ें."
 
-#: filetypedetails.cpp:81 kservicelistwidget.cpp:103
+#: filetypedetails.cpp:83 kservicelistwidget.cpp:102
 #, kde-format
 msgid "Remove"
 msgstr "हटाएँ"
 
-#: filetypedetails.cpp:86
+#: filetypedetails.cpp:88
 #, kde-format
 msgid "Remove the selected filename pattern."
 msgstr "चुने गए फ़ाइलनाम पैटर्न को मिटाएँ"
 
-#: filetypedetails.cpp:97
+#: filetypedetails.cpp:99
 #, kde-format
 msgid "Description:"
 msgstr "वर्णन:"
 
-#: filetypedetails.cpp:102
+#: filetypedetails.cpp:104
 #, kde-format
 msgid ""
 "You can enter a short description for files of the selected file type (e.g. "
@@ -85,100 +85,20 @@ msgid ""
 "to display directory content."
 msgstr ""
 
-#: filetypedetails.cpp:151
+#: filetypedetails.cpp:148
 #, kde-format
 msgid "Add New Extension"
 msgstr "नया एक्सटेंशन जोड़ें"
 
-#: filetypedetails.cpp:151
+#: filetypedetails.cpp:148
 #, kde-format
 msgid "Extension:"
 msgstr "एक्सटेंशनः"
 
-#: filetypedetails.cpp:184
+#: filetypedetails.cpp:180
 #, kde-format
 msgid "File type %1"
 msgstr "फ़ाइल की किस्म %1"
-
-#: filetypesview.cpp:54
-#, fuzzy, kde-format
-#| msgid "Find file type or filename pattern"
-msgid "Search for file type or filename pattern..."
-msgstr "फ़ाइल टाइप या फ़ाइलनाम पैटर्न ढूंढें"
-
-#: filetypesview.cpp:60
-#, kde-format
-msgid ""
-"Enter a part of a filename pattern, and only file types with a matching file "
-"pattern will appear in the list. Alternatively, enter a part of a file type "
-"name as it appears in the list."
-msgstr ""
-"फ़ाइलनाम पैटर्न का कोई हिस्सा भरें. सिर्फ फ़ाइल क़िस्म जो फ़ाइल पैटर्न से मेल खाएंगे वही सूची "
-"में प्रकट होंगे. वैकल्पिक रूप से, फ़ाइल क़िस्म नाम का भाग भरें जो सूची में प्रकट हो रहा है."
-
-#: filetypesview.cpp:68 multiapplydialog.cpp:27
-#, kde-format
-msgid "Known Types"
-msgstr "ज्ञात क़िस्म"
-
-#: filetypesview.cpp:74
-#, kde-format
-msgid ""
-"Here you can see a hierarchical list of the file types which are known on "
-"your system. Click on the '+' sign to expand a category, or the '-' sign to "
-"collapse it. Select a file type (e.g. text/html for HTML files) to view/edit "
-"the information for that file type using the controls on the right."
-msgstr ""
-
-#: filetypesview.cpp:88
-#, kde-format
-msgid "Click here to add a new file type."
-msgstr "नया फ़ाइल क़िस्म जोड़ने के लिए यहाँ क्लिक करें."
-
-#: filetypesview.cpp:90 filetypesview.cpp:360
-#, kde-format
-msgid "&Remove"
-msgstr "मिटाएँ (&R)"
-
-#: filetypesview.cpp:110
-#, kde-format
-msgid "Select a file type by name or by extension"
-msgstr "फ़ाइल क़िस्म नाम या एक्सटेंशन से चुनें"
-
-#: filetypesview.cpp:353
-#, kde-format
-msgid "&Revert"
-msgstr "पूर्ववत करें (&R)"
-
-#: filetypesview.cpp:354
-#, kde-format
-msgid "Revert this file type to its initial system-wide definition"
-msgstr "इस फ़ाइल किस्म को इसके मूल तंत्र -वाइड परिभाषा में बहाल करें"
-
-#: filetypesview.cpp:356
-#, kde-format
-msgid ""
-"Click here to revert this file type to its initial system-wide definition, "
-"which undoes any changes made to the file type. Note that system-wide file "
-"types cannot be deleted. You can however empty their pattern list, to "
-"minimize the chances of them being used (but the file type determination "
-"from file contents can still end up using them)."
-msgstr ""
-
-#: filetypesview.cpp:361
-#, kde-format
-msgid "Delete this file type definition completely"
-msgstr "इस फ़ाइल क़िस्म परिभाषा को पूरी तरह मिटा दें"
-
-#: filetypesview.cpp:363
-#, kde-format
-msgid ""
-"Click here to delete this file type definition completely. This is only "
-"possible for user-defined file types. System-wide file types cannot be "
-"deleted. You can however empty their pattern list, to minimize the chances "
-"of them being used (but the file type determination from file contents can "
-"still end up using them)."
-msgstr ""
 
 #: keditfiletype.cpp:110
 #, fuzzy, kde-format
@@ -237,7 +157,7 @@ msgstr "नया फ़ाइल क़िस्म बनाएँ %1"
 msgid "Application Preference Order"
 msgstr "अनुप्रयोग प्राथमिकता अनुक्रम"
 
-#: kservicelistwidget.cpp:54
+#: kservicelistwidget.cpp:53
 #, kde-format
 msgid ""
 "This is a list of applications associated with files of the selected file "
@@ -247,12 +167,12 @@ msgid ""
 "precedence over the others."
 msgstr ""
 
-#: kservicelistwidget.cpp:66
+#: kservicelistwidget.cpp:65
 #, kde-format
 msgid "Move &Up"
 msgstr "ऊपर जाएं (&U)"
 
-#: kservicelistwidget.cpp:73
+#: kservicelistwidget.cpp:72
 #, kde-format
 msgid ""
 "Assigns a higher priority to the selected\n"
@@ -261,12 +181,12 @@ msgid ""
 "associated with more than one application."
 msgstr ""
 
-#: kservicelistwidget.cpp:78
+#: kservicelistwidget.cpp:77
 #, kde-format
 msgid "Move &Down"
 msgstr "नीचे जाएं (&D)"
 
-#: kservicelistwidget.cpp:84
+#: kservicelistwidget.cpp:83
 #, kde-format
 msgid ""
 "Assigns a lower priority to the selected\n"
@@ -279,69 +199,339 @@ msgstr ""
 "केवल चयनित अनुप्रयोग को प्रभावित करता है यदि \n"
 " फ़ाइल प्रकारएक से अधिक आवेदन के साथ सम्बद्ध हो।"
 
-#: kservicelistwidget.cpp:94
+#: kservicelistwidget.cpp:93
 #, kde-format
 msgid "Add a new application for this file type."
 msgstr "इस फ़ाइल क़िस्म के लिए एक नया अनुप्रयोग जोड़ें."
 
-#: kservicelistwidget.cpp:96
+#: kservicelistwidget.cpp:95
 #, kde-format
 msgid "Edit..."
 msgstr "संपादन..."
 
-#: kservicelistwidget.cpp:101
+#: kservicelistwidget.cpp:100
 #, kde-format
 msgid "Edit command line of the selected application."
 msgstr "चुने गए अनुप्रयोग का कमांडलाइन का संपादन करें"
 
-#: kservicelistwidget.cpp:108
+#: kservicelistwidget.cpp:107
 #, kde-format
 msgid "Remove the selected application from the list."
 msgstr "चुने गए अनुप्रयोग को सूची में से बाहर करें"
 
-#: kservicelistwidget.cpp:110 multiapplydialog.cpp:19
-#, kde-format
-msgid "Apply To..."
-msgstr ""
-
-#: kservicelistwidget.cpp:115
-#, kde-format
-msgid "Apply the current preference order to other file types."
-msgstr ""
-
-#: kservicelistwidget.cpp:136
+#: kservicelistwidget.cpp:128 ui/FileTypeDetails.qml:242
 #, kde-format
 msgctxt "No applications associated with this file type"
 msgid "None"
 msgstr "कुछ नहीं"
 
-#: newtypedlg.cpp:25
+#: ui/ApplyToDialog.qml:15
 #, kde-format
+msgctxt "@title:window"
+msgid "Apply To…"
+msgstr ""
+
+#: ui/FileTypeDetails.qml:19
+#, fuzzy, kde-format
+#| msgid "File type %1"
+msgctxt "@title"
+msgid "File Type Details"
+msgstr "फ़ाइल की किस्म %1"
+
+#: ui/FileTypeDetails.qml:24
+#, fuzzy, kde-format
+#| msgid "&Revert"
+msgctxt "@action:button"
+msgid "Revert"
+msgstr "पूर्ववत करें (&R)"
+
+#: ui/FileTypeDetails.qml:24 ui/FileTypeDetails.qml:132
+#: ui/FileTypeDetails.qml:353
+#, fuzzy, kde-format
+#| msgid "Remove"
+msgctxt "@action:button"
+msgid "Remove"
+msgstr "हटाएँ"
+
+#: ui/FileTypeDetails.qml:26
+#, kde-format
+msgctxt "@info:tooltip"
+msgid ""
+"Revert this file type to its initial system-wide definition, which undoes "
+"any changes made to the file type. Note that system-wide file types cannot "
+"be deleted. You can however empty their pattern list, to minimize the "
+"chances of them being used (but the file type determination from file "
+"contents can still end up using them)."
+msgstr ""
+
+#: ui/FileTypeDetails.qml:27
+#, kde-format
+msgctxt "@info:tooltip"
+msgid ""
+"Delete this file type definition completely. This is only possible for user-"
+"defined file types. System-wide file types cannot be deleted. You can "
+"however empty their pattern list, to minimize the chances of them being used "
+"(but the file type determination from file contents can still end up using "
+"them)."
+msgstr ""
+
+#: ui/FileTypeDetails.qml:51
+#, fuzzy, kde-format
+#| msgid "Select a file type by name or by extension"
+msgctxt "@info:placeholder"
+msgid "Select a file type to edit it"
+msgstr "फ़ाइल क़िस्म नाम या एक्सटेंशन से चुनें"
+
+#: ui/FileTypeDetails.qml:61
+#, fuzzy, kde-format
+#| msgid "Description:"
+msgctxt "@label:textbox"
+msgid "Description:"
+msgstr "वर्णन:"
+
+#: ui/FileTypeDetails.qml:71
+#, fuzzy, kde-format
+#| msgid "Add a new application for this file type."
+msgctxt "@info:tooltip"
+msgid "Change the icon of this file type"
+msgstr "इस फ़ाइल क़िस्म के लिए एक नया अनुप्रयोग जोड़ें."
+
+#: ui/FileTypeDetails.qml:81
+#, kde-format
+msgctxt "@info:placeholder"
+msgid "The '%1' file type"
+msgstr ""
+
+#: ui/FileTypeDetails.qml:82
+#, fuzzy, kde-format
+#| msgid "File type %1"
+msgctxt "@label"
+msgid "File type description"
+msgstr "फ़ाइल की किस्म %1"
+
+#: ui/FileTypeDetails.qml:89
+#, fuzzy, kde-format
+#| msgid "Filename Patterns"
+msgctxt "@title:group"
+msgid "Filename Patterns"
+msgstr "फ़ाइल-नाम पैटर्न"
+
+#: ui/FileTypeDetails.qml:112
+#, kde-format
+msgctxt "@info no filename patterns for this file type"
+msgid "No patterns"
+msgstr ""
+
+#: ui/FileTypeDetails.qml:135
+#, fuzzy, kde-format
+#| msgid "Remove the selected filename pattern."
+msgctxt "@info:tooltip"
+msgid "Remove this filename pattern"
+msgstr "चुने गए फ़ाइलनाम पैटर्न को मिटाएँ"
+
+#: ui/FileTypeDetails.qml:150 ui/main.qml:44
+#, kde-format
+msgctxt "@action:button"
+msgid "Add…"
+msgstr ""
+
+#: ui/FileTypeDetails.qml:157
+#, fuzzy, kde-format
+#| msgid "Add a new pattern for the selected file type."
+msgctxt "@info:tooltip"
+msgid "Add a new pattern for the selected file type"
+msgstr "चुने गए फ़ाइल क़िस्म के लिए एक नया पैटर्न जोड़ें."
+
+#: ui/FileTypeDetails.qml:175
+#, kde-format
+msgctxt "@info:placeholder"
+msgid "*.txt"
+msgstr ""
+
+#: ui/FileTypeDetails.qml:183
+#, kde-format
+msgctxt "@action:button"
+msgid "Add Pattern"
+msgstr ""
+
+#: ui/FileTypeDetails.qml:186
+#, fuzzy, kde-format
+#| msgid "Add a new pattern for the selected file type."
+msgctxt "@info:tooltip"
+msgid "Add this pattern to the selected file type"
+msgstr "चुने गए फ़ाइल क़िस्म के लिए एक नया पैटर्न जोड़ें."
+
+#: ui/FileTypeDetails.qml:198
+#, fuzzy, kde-format
+#| msgid "Application Preference Order"
+msgctxt "@title:group"
+msgid "Application Preference Order"
+msgstr "अनुप्रयोग प्राथमिकता अनुक्रम"
+
+#: ui/FileTypeDetails.qml:297
+#, kde-format
+msgctxt "@action:button"
+msgid "Reorder"
+msgstr ""
+
+#: ui/FileTypeDetails.qml:301
+#, fuzzy, kde-format
+#| msgid ""
+#| "Assigns a lower priority to the selected\n"
+#| "application, moving it down in the list. Note: This \n"
+#| "only affects the selected application if the file type is\n"
+#| "associated with more than one application."
+msgctxt "@info:tooltip"
+msgid ""
+"Drag to change the priority of this application. Applications further up "
+"take precedence. Note: This only affects the application if the file type is "
+"associated with more than one application."
+msgstr ""
+"चयनित अनुप्रयोग में कम प्राथमिकता \n"
+" प्रदान करता हैऔर सूची में नीचे ले जाता है। नोट: यह \n"
+"केवल चयनित अनुप्रयोग को प्रभावित करता है यदि \n"
+" फ़ाइल प्रकारएक से अधिक आवेदन के साथ सम्बद्ध हो।"
+
+#: ui/FileTypeDetails.qml:330
+#, kde-kuit-format
+msgctxt "@info"
+msgid "%1"
+msgstr ""
+
+#: ui/FileTypeDetails.qml:345
+#, kde-format
+msgctxt "@action:button"
+msgid "Edit…"
+msgstr ""
+
+#: ui/FileTypeDetails.qml:348
+#, kde-format
+msgctxt "@info:tooltip"
+msgid "Edit this application"
+msgstr ""
+
+#: ui/FileTypeDetails.qml:354
+#, fuzzy, kde-format
+#| msgid "Remove the selected application from the list."
+msgctxt "@info:tooltip"
+msgid "Remove this application from the preference order"
+msgstr "चुने गए अनुप्रयोग को सूची में से बाहर करें"
+
+#: ui/FileTypeDetails.qml:371
+#, kde-format
+msgctxt "@action:button"
+msgid "Add Application…"
+msgstr ""
+
+#: ui/FileTypeDetails.qml:372
+#, fuzzy, kde-format
+#| msgid "Add a new application for this file type."
+msgctxt "@info:tooltip"
+msgid "Add a new application for this file type"
+msgstr "इस फ़ाइल क़िस्म के लिए एक नया अनुप्रयोग जोड़ें."
+
+#: ui/FileTypeDetails.qml:381
+#, kde-format
+msgctxt "@action:button"
+msgid "Apply To…"
+msgstr ""
+
+#: ui/FileTypeDetails.qml:382
+#, kde-format
+msgctxt "@info:tooltip"
+msgid "Apply the current preference order to other file types"
+msgstr ""
+
+#: ui/main.qml:45
+#, fuzzy, kde-format
+#| msgid "Click here to add a new file type."
+msgctxt "@info:tooltip"
+msgid "Add a new file type"
+msgstr "नया फ़ाइल क़िस्म जोड़ने के लिए यहाँ क्लिक करें."
+
+#: ui/main.qml:93
+#, fuzzy, kde-format
+#| msgid ""
+#| "Enter a part of a filename pattern, and only file types with a matching "
+#| "file pattern will appear in the list. Alternatively, enter a part of a "
+#| "file type name as it appears in the list."
+msgctxt "@info:tooltip"
+msgid ""
+"Enter a part of a filename pattern, and only file types with a matching file "
+"pattern will appear in the list. Alternatively, enter a part of a file type "
+"name as it appears in the list."
+msgstr ""
+"फ़ाइलनाम पैटर्न का कोई हिस्सा भरें. सिर्फ फ़ाइल क़िस्म जो फ़ाइल पैटर्न से मेल खाएंगे वही सूची "
+"में प्रकट होंगे. वैकल्पिक रूप से, फ़ाइल क़िस्म नाम का भाग भरें जो सूची में प्रकट हो रहा है."
+
+#: ui/main.qml:185
+#, kde-format
+msgctxt "@info:placeholder"
+msgid "No matching file types"
+msgstr ""
+
+#: ui/NewTypeDialog.qml:16
+#, fuzzy, kde-format
+#| msgid "Create New File Type"
+msgctxt "@title:window"
 msgid "Create New File Type"
 msgstr "नया फ़ाइल क़िस्म तैयार करें"
 
-#: newtypedlg.cpp:30
+#: ui/NewTypeDialog.qml:44
+#, fuzzy, kde-format
+#| msgid "File type %1"
+msgctxt "@label:textbox"
+msgid "File type:"
+msgstr "फ़ाइल की किस्म %1"
+
+#: ui/NewTypeDialog.qml:45
 #, kde-format
-msgid "Group:"
+msgctxt "@info"
+msgid ""
+"Select or type the category and the name of the new file type. For instance, "
+"'image' and 'custom' will create the file type 'image/custom'."
+msgstr ""
+
+#: ui/NewTypeDialog.qml:56
+#, fuzzy, kde-format
+#| msgid "Group:"
+msgctxt "@label:listbox"
+msgid "Group"
 msgstr "समूहः"
 
-#: newtypedlg.cpp:39
-#, kde-format
-msgid "Select the category under which the new file type should be added."
-msgstr "चुनिये संवर्ग जहां पर नया फ़ाइल क़िस्म जोड़ा जाए."
-
-#: newtypedlg.cpp:44
-#, kde-format
-msgid "Type name:"
+#: ui/NewTypeDialog.qml:68
+#, fuzzy, kde-format
+#| msgid "Type name:"
+msgctxt "@info:placeholder"
+msgid "Type name"
 msgstr "नाम टाइप करें:"
 
-#: newtypedlg.cpp:50
-#, kde-format
-msgid ""
-"Type the name of the file type. For instance, if you selected 'image' as "
-"category and you type 'custom' here, the file type 'image/custom' will be "
-"created."
-msgstr ""
+#: ui/NewTypeDialog.qml:69
+#, fuzzy, kde-format
+#| msgid "Type name:"
+msgctxt "@label:textbox"
+msgid "Type name"
+msgstr "नाम टाइप करें:"
+
+#, fuzzy
+#~| msgid "Find file type or filename pattern"
+#~ msgid "Search for file type or filename pattern..."
+#~ msgstr "फ़ाइल टाइप या फ़ाइलनाम पैटर्न ढूंढें"
+
+#~ msgid "Known Types"
+#~ msgstr "ज्ञात क़िस्म"
+
+#~ msgid "&Remove"
+#~ msgstr "मिटाएँ (&R)"
+
+#~ msgid "Revert this file type to its initial system-wide definition"
+#~ msgstr "इस फ़ाइल किस्म को इसके मूल तंत्र -वाइड परिभाषा में बहाल करें"
+
+#~ msgid "Delete this file type definition completely"
+#~ msgstr "इस फ़ाइल क़िस्म परिभाषा को पूरी तरह मिटा दें"
+
+#~ msgid "Select the category under which the new file type should be added."
+#~ msgstr "चुनिये संवर्ग जहां पर नया फ़ाइल क़िस्म जोड़ा जाए."
 
 #~ msgid "&General"
 #~ msgstr "सामान्य (&G)"

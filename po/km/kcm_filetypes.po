@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: filetypes\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2026-11-19 01:09+0000\n"
+"POT-Creation-Date: 2026-11-27 01:06+0000\n"
 "PO-Revision-Date: 2010-11-08 09:44+0700\n"
 "Last-Translator: Khoem Sokhem <khoemsokhem@khmeros.info>\n"
 "Language-Team: Khmer <support@khmeros.info>\n"
@@ -29,7 +29,7 @@ msgctxt "EMAIL OF TRANSLATORS"
 msgid "Your emails"
 msgstr "khoemsokhem@khmeros.info,​​​evannak@khmeros.info,piseth_dv@khmeros.info"
 
-#: filetypedetails.cpp:48
+#: filetypedetails.cpp:50
 #, kde-format
 msgid ""
 "This button displays the icon associated with the selected file type. Click "
@@ -37,12 +37,12 @@ msgid ""
 msgstr ""
 "ប៊ូតុង​នេះ​បង្ហាញ​រូបតំណាង​ទាក់ទាង​ជា​មួយ​ប្រភេទ​ឯកសារ​ដែល​បានជ្រើស ។ ចុច​លើ​វា ដើម្បី​ជ្រើស​រូបតំណាង​ផ្សេង ។"
 
-#: filetypedetails.cpp:54
+#: filetypedetails.cpp:56
 #, kde-format
 msgid "Filename Patterns"
 msgstr "លំនាំ​របស់​ឈ្មោះ​ឯកសារ"
 
-#: filetypedetails.cpp:66
+#: filetypedetails.cpp:68
 #, kde-format
 msgid ""
 "This box contains a list of patterns that can be used to identify files of "
@@ -54,32 +54,32 @@ msgstr ""
 "លំនាំ *.txt ត្រូវ​បាន​ភ្ជាប់​ជា​មួយ​ប្រភេទ​ឯកសារ 'text/plain' ឯកសារ​ទាំង​អស់​បញ្ចប់​ដោយ '.txt' ត្រូវ​"
 "បាន​ស្គាល់​ថា​ជា​ឯកសារ​អត្ថបទ​ធម្មតា ។"
 
-#: filetypedetails.cpp:74 filetypesview.cpp:83 kservicelistwidget.cpp:89
+#: filetypedetails.cpp:76 kservicelistwidget.cpp:88
 #, kde-format
 msgid "Add..."
 msgstr "បន្ថែម..."
 
-#: filetypedetails.cpp:79
+#: filetypedetails.cpp:81
 #, kde-format
 msgid "Add a new pattern for the selected file type."
 msgstr "បន្ថែម​លំនាំ​ថ្មី​មួយ សម្រាប់​ប្រភេទ​ឯកសារ​ដែល​បាន​ជ្រើស ។"
 
-#: filetypedetails.cpp:81 kservicelistwidget.cpp:103
+#: filetypedetails.cpp:83 kservicelistwidget.cpp:102
 #, kde-format
 msgid "Remove"
 msgstr "យក​ចេញ"
 
-#: filetypedetails.cpp:86
+#: filetypedetails.cpp:88
 #, kde-format
 msgid "Remove the selected filename pattern."
 msgstr "យក​លំនាំ​របស់​ឈ្មោះ​ឯកសារ​ដែល​បាន​ជ្រើស​ចេញ ។"
 
-#: filetypedetails.cpp:97
+#: filetypedetails.cpp:99
 #, kde-format
 msgid "Description:"
 msgstr "សេចក្ដី​ពិពណ៌នា ៖"
 
-#: filetypedetails.cpp:102
+#: filetypedetails.cpp:104
 #, kde-format
 msgid ""
 "You can enter a short description for files of the selected file type (e.g. "
@@ -89,111 +89,20 @@ msgstr ""
 "អ្នក​អាច​បញ្ចូល​សេចក្ដី​ពិពណ៌នា​ខ្លី​សម្រាប់​ឯកសារ​របស់​ប្រភេទ​ឯកសារ​ដែល​បានជ្រើស (ឧ.'ទំព័រ HTML') ។ "
 "សេចក្ដី​ពិពណ៌នា​នឹង​ត្រូវ​បាន​ប្រើ​ដោយ​កម្មវិធី​ផ្សេងៗ​ដូចជា Konqueror ដើម្បី​បង្ហាញ​មាតិកា​ថត ។"
 
-#: filetypedetails.cpp:151
+#: filetypedetails.cpp:148
 #, kde-format
 msgid "Add New Extension"
 msgstr "បន្ថែម​ផ្នែក​បន្ថែម​ថ្មី​"
 
-#: filetypedetails.cpp:151
+#: filetypedetails.cpp:148
 #, kde-format
 msgid "Extension:"
 msgstr "ផ្នែក​បន្ថែម ៖​"
 
-#: filetypedetails.cpp:184
+#: filetypedetails.cpp:180
 #, kde-format
 msgid "File type %1"
 msgstr "ប្រភេទ​ឯកសារ %1"
-
-#: filetypesview.cpp:54
-#, fuzzy, kde-format
-#| msgid "Find file type or filename pattern"
-msgid "Search for file type or filename pattern..."
-msgstr "រក​ប្រភេទ​ឯកសារ ឬ​លំនាំ​ឈ្មោះ​ឯកសារ"
-
-#: filetypesview.cpp:60
-#, kde-format
-msgid ""
-"Enter a part of a filename pattern, and only file types with a matching file "
-"pattern will appear in the list. Alternatively, enter a part of a file type "
-"name as it appears in the list."
-msgstr ""
-"បញ្ចូល​ផ្នែក​​របស់​​លំនាំ​ឈ្មោះ​ឯកសារ ។ មាន​តែ​ប្រភេទ​ឯកសារ​ដែល​លំនាំ​របស់​វា​ផ្គូផ្គង​ប៉ុណ្ណោះ នឹង​​បង្ហាញ​នៅ​ក្នុង​"
-"បញ្ជី ។"
-
-#: filetypesview.cpp:68 multiapplydialog.cpp:27
-#, kde-format
-msgid "Known Types"
-msgstr "ប្រភេទ​ដែល​ស្គាល់"
-
-#: filetypesview.cpp:74
-#, kde-format
-msgid ""
-"Here you can see a hierarchical list of the file types which are known on "
-"your system. Click on the '+' sign to expand a category, or the '-' sign to "
-"collapse it. Select a file type (e.g. text/html for HTML files) to view/edit "
-"the information for that file type using the controls on the right."
-msgstr ""
-"នៅ​ទីនេះ អ្នក​អាច​ឃើញ​បញ្ជី​ឋានានុក្រម​របស់​ប្រភេទ​ឯកសារ ដែល​ស្គាល់ក្នុង​ប្រព័ន្ធ​របស់​អ្នក ។ ចុច​សញ្ញា '+' "
-"ដើម្បី​បន្លាយ​ប្រភេទ​មួយ ឬ​សញ្ញា '-' ដើម្បី​វេញ​វា ។ ជ្រើស​ប្រភេទ​ឯកសារ​មួយ (ឧ. text/html សម្រាប់​"
-"ឯកសារ HTML) ដើម្បី​មើល/កែសម្រួល​ព័ត៌មាន សម្រាប់​ប្រភេទ​ឯកសារ​នោះ ដោយ​ប្រើ​វត្ថុ​បញ្ជា​នៅ​ខាង​ស្ដាំ ។"
-
-#: filetypesview.cpp:88
-#, kde-format
-msgid "Click here to add a new file type."
-msgstr "ចុច​ទីនេះ​ដើម្បី​បន្ថែម​ប្រភេទ​ឯកសារ​ថ្មី​មួយ ។"
-
-#: filetypesview.cpp:90 filetypesview.cpp:360
-#, kde-format
-msgid "&Remove"
-msgstr "យក​ចេញ​"
-
-#: filetypesview.cpp:110
-#, kde-format
-msgid "Select a file type by name or by extension"
-msgstr "ជ្រើស​ប្រភេទ​ឯកសារ​មួយ តាម​រយៈ​ឈ្មោះ ឬ​កន្ទុយ​ឯកសារ​"
-
-#: filetypesview.cpp:353
-#, kde-format
-msgid "&Revert"
-msgstr "ដាក់​បញ្ច្រាស​"
-
-#: filetypesview.cpp:354
-#, kde-format
-msgid "Revert this file type to its initial system-wide definition"
-msgstr "ដាក់​បញ្ច្រាស​ប្រភេទ​ឯកសារ​នេះ ទៅ​នឹង​ការ​កំណត់​ពេញ​ប្រព័ន្ធ​ដំបូង​របស់​វា"
-
-#: filetypesview.cpp:356
-#, kde-format
-msgid ""
-"Click here to revert this file type to its initial system-wide definition, "
-"which undoes any changes made to the file type. Note that system-wide file "
-"types cannot be deleted. You can however empty their pattern list, to "
-"minimize the chances of them being used (but the file type determination "
-"from file contents can still end up using them)."
-msgstr ""
-"ចុច​ទីនេះ ដើម្បី​ដាក់​បញ្ច្រាស​ប្រភេទ​​ឯកសារ​នេះ​ទៅនឹង​កំណត់​​របស់​ប្រព័ន្ធ​ដំបូង​របស់​វា ដែល​ធ្វើវិញ​នូវកា​រផ្លាស់ប្ដូរ​"
-"ដែល​បាន​ចំពោះ​ប្រភេទ​ឯកសារ ។ ចំណាំថា​ប្រភេទ​​ឯកសារ​របស់​ប្រព័ន្ធ​មិនអាច​ត្រូវ​បានលុប​ទេ ។ ទោះជា​យ៉ាង​ណា​ក៏​"
-"ដោយ​អ្នក​អាច​សម្អាត​បញ្ជីលំនាំ​របស់​ពួកវា​បាន ដើម្បី​បង្រួម​ការ​ផ្លាស់ប្ដូរ​អប្បបរមា​របស់ពួកវា​ដែល​កំពុង​ប្រើ "
-"(ប៉ុន្តែ​ការ​កំណត់​ប្រភេទ​ឯកសារ​ពី​មាតិកា​​ឯកសារ​អាច​បញ្ចប់​ការ​ប្រើ​បាន) ។"
-
-#: filetypesview.cpp:361
-#, kde-format
-msgid "Delete this file type definition completely"
-msgstr "លុប​កា​រកំណត់​ប្រភេទ​ឯកសារ​នេះ​ទាំង​ស្រុង"
-
-#: filetypesview.cpp:363
-#, kde-format
-msgid ""
-"Click here to delete this file type definition completely. This is only "
-"possible for user-defined file types. System-wide file types cannot be "
-"deleted. You can however empty their pattern list, to minimize the chances "
-"of them being used (but the file type determination from file contents can "
-"still end up using them)."
-msgstr ""
-"ចុច​ទីនេះ ដើម្បី​លុប​ការ​កំណត់​ប្រភេទ​ទាំង​ស្រុង ។ វា​អាច​ប្រើ​បាន​សម្រាប់​តែ​ប្រភេទ​ឯកសារ​ដែល​កំណត់​ដោយ​អ្នកប្រើ​"
-"ប៉ុណ្ណោះ ។ ប្រភេទ​ឯកសារ​របស់​ប្រព័ន្ធ​មិនអាច​ត្រូវ​បានលុប​ទេ ។ ទោះ​ជា​យ៉ាង​ណា​ក៏ដោយ ​អ្នក​អាច​សម្អាត​បញ្ជី​លំនាំ​"
-"របស់​ពួកគេ​បាន​​ ដើម្បី​បង្រួម​ការ​ផ្លាស់ប្ដូរ​អប្បបរមា​របស់​ពួកវា​ដែលកំពុង​ត្រូវ​បានប្រើ (ប៉ុន្តែ​ការ​កំណត់​ប្រភេទ​"
-"ឯកសារ​ពី​មាតិការ​របស់​វា​អាច​បញ្ចប់​ការ​ប្រើ​) ។"
 
 #: keditfiletype.cpp:110
 #, fuzzy, kde-format
@@ -252,7 +161,7 @@ msgstr "បង្កើត​ប្រភេទ​ឯកសារ​ថ្មី
 msgid "Application Preference Order"
 msgstr "លំដាប់​ចំណូល​ចិត្ត​កម្មវិធី"
 
-#: kservicelistwidget.cpp:54
+#: kservicelistwidget.cpp:53
 #, kde-format
 msgid ""
 "This is a list of applications associated with files of the selected file "
@@ -266,12 +175,12 @@ msgstr ""
 "កម្មវិធី​ច្រើន​ជាង​មួយ​ត្រូវ​បាន​ភ្ជាប់​ជាមួយ​ប្រភេទ​ឯកសារ​នេះ នោះ​បញ្ជី​ត្រូវ​បាន​​តម្រៀប​តាម​អាទិភាព​ដោយ​ធាតុ​នៅ​"
 "លើ​គេបំផុត មាន​អាទិភាព​លើ​ធាតុ​ផ្សេង​ទៀត ។"
 
-#: kservicelistwidget.cpp:66
+#: kservicelistwidget.cpp:65
 #, kde-format
 msgid "Move &Up"
 msgstr "ផ្លាស់ទី​ឡើង​លើ"
 
-#: kservicelistwidget.cpp:73
+#: kservicelistwidget.cpp:72
 #, kde-format
 msgid ""
 "Assigns a higher priority to the selected\n"
@@ -284,12 +193,12 @@ msgstr ""
 "មាន​ឥទ្ធិពល​ចំពោះ​តែ​កម្មវិធី​ដែល​បាន​ជ្រើស​ប៉ុណ្ណោះ តែ​ក្នុង​ករណី​ប្រភេទ​ឯកសារ\n"
 "ត្រូវ​បាន​ភ្ជាប់​ជាមួយ​កម្មវិធី​ច្រើន​ជាង​មួយ ។"
 
-#: kservicelistwidget.cpp:78
+#: kservicelistwidget.cpp:77
 #, kde-format
 msgid "Move &Down"
 msgstr "ផ្លាស់ទី​ចុះ​ក្រោម"
 
-#: kservicelistwidget.cpp:84
+#: kservicelistwidget.cpp:83
 #, kde-format
 msgid ""
 "Assigns a lower priority to the selected\n"
@@ -302,71 +211,377 @@ msgstr ""
 "មាន​ឥទ្ធិពល​ចំពោះ​តែ​កម្មវិធី​ដែល​បាន​ជ្រើសប៉ុណ្ណោះ តែ​ក្នុង​ករណី​ប្រភេទ​ឯកសារ\n"
 "ត្រូវ​បាន​ភ្ជាប់​ជាមួយ​កម្មវិធី​ច្រើន​ជាង​មួយ ។"
 
-#: kservicelistwidget.cpp:94
+#: kservicelistwidget.cpp:93
 #, kde-format
 msgid "Add a new application for this file type."
 msgstr "បន្ថែម​កម្មវិធី​ថ្មី​សម្រាប់​ប្រភេទ​ឯកសារ​នេះ ។"
 
-#: kservicelistwidget.cpp:96
+#: kservicelistwidget.cpp:95
 #, kde-format
 msgid "Edit..."
 msgstr "កែសម្រួល..."
 
-#: kservicelistwidget.cpp:101
+#: kservicelistwidget.cpp:100
 #, kde-format
 msgid "Edit command line of the selected application."
 msgstr "កែសម្រួល​បន្ទាត់​បញ្ជា​របស់​កម្មវិធី​ដែល​បាន​ជ្រើស ។"
 
-#: kservicelistwidget.cpp:108
+#: kservicelistwidget.cpp:107
 #, kde-format
 msgid "Remove the selected application from the list."
 msgstr "យក​កម្មវិធី​ដែល​បាន​ជ្រើស​ចេញ​ពី​បញ្ជី ។"
 
-#: kservicelistwidget.cpp:110 multiapplydialog.cpp:19
-#, kde-format
-msgid "Apply To..."
-msgstr ""
-
-#: kservicelistwidget.cpp:115
-#, kde-format
-msgid "Apply the current preference order to other file types."
-msgstr ""
-
-#: kservicelistwidget.cpp:136
+#: kservicelistwidget.cpp:128 ui/FileTypeDetails.qml:242
 #, kde-format
 msgctxt "No applications associated with this file type"
 msgid "None"
 msgstr "គ្មាន"
 
-#: newtypedlg.cpp:25
+#: ui/ApplyToDialog.qml:15
 #, kde-format
+msgctxt "@title:window"
+msgid "Apply To…"
+msgstr ""
+
+#: ui/FileTypeDetails.qml:19
+#, fuzzy, kde-format
+#| msgid "File type %1"
+msgctxt "@title"
+msgid "File Type Details"
+msgstr "ប្រភេទ​ឯកសារ %1"
+
+#: ui/FileTypeDetails.qml:24
+#, fuzzy, kde-format
+#| msgid "&Revert"
+msgctxt "@action:button"
+msgid "Revert"
+msgstr "ដាក់​បញ្ច្រាស​"
+
+#: ui/FileTypeDetails.qml:24 ui/FileTypeDetails.qml:132
+#: ui/FileTypeDetails.qml:353
+#, fuzzy, kde-format
+#| msgid "Remove"
+msgctxt "@action:button"
+msgid "Remove"
+msgstr "យក​ចេញ"
+
+#: ui/FileTypeDetails.qml:26
+#, fuzzy, kde-format
+#| msgid ""
+#| "Click here to revert this file type to its initial system-wide "
+#| "definition, which undoes any changes made to the file type. Note that "
+#| "system-wide file types cannot be deleted. You can however empty their "
+#| "pattern list, to minimize the chances of them being used (but the file "
+#| "type determination from file contents can still end up using them)."
+msgctxt "@info:tooltip"
+msgid ""
+"Revert this file type to its initial system-wide definition, which undoes "
+"any changes made to the file type. Note that system-wide file types cannot "
+"be deleted. You can however empty their pattern list, to minimize the "
+"chances of them being used (but the file type determination from file "
+"contents can still end up using them)."
+msgstr ""
+"ចុច​ទីនេះ ដើម្បី​ដាក់​បញ្ច្រាស​ប្រភេទ​​ឯកសារ​នេះ​ទៅនឹង​កំណត់​​របស់​ប្រព័ន្ធ​ដំបូង​របស់​វា ដែល​ធ្វើវិញ​នូវកា​រផ្លាស់ប្ដូរ​"
+"ដែល​បាន​ចំពោះ​ប្រភេទ​ឯកសារ ។ ចំណាំថា​ប្រភេទ​​ឯកសារ​របស់​ប្រព័ន្ធ​មិនអាច​ត្រូវ​បានលុប​ទេ ។ ទោះជា​យ៉ាង​ណា​ក៏​"
+"ដោយ​អ្នក​អាច​សម្អាត​បញ្ជីលំនាំ​របស់​ពួកវា​បាន ដើម្បី​បង្រួម​ការ​ផ្លាស់ប្ដូរ​អប្បបរមា​របស់ពួកវា​ដែល​កំពុង​ប្រើ "
+"(ប៉ុន្តែ​ការ​កំណត់​ប្រភេទ​ឯកសារ​ពី​មាតិកា​​ឯកសារ​អាច​បញ្ចប់​ការ​ប្រើ​បាន) ។"
+
+#: ui/FileTypeDetails.qml:27
+#, fuzzy, kde-format
+#| msgid ""
+#| "Click here to delete this file type definition completely. This is only "
+#| "possible for user-defined file types. System-wide file types cannot be "
+#| "deleted. You can however empty their pattern list, to minimize the "
+#| "chances of them being used (but the file type determination from file "
+#| "contents can still end up using them)."
+msgctxt "@info:tooltip"
+msgid ""
+"Delete this file type definition completely. This is only possible for user-"
+"defined file types. System-wide file types cannot be deleted. You can "
+"however empty their pattern list, to minimize the chances of them being used "
+"(but the file type determination from file contents can still end up using "
+"them)."
+msgstr ""
+"ចុច​ទីនេះ ដើម្បី​លុប​ការ​កំណត់​ប្រភេទ​ទាំង​ស្រុង ។ វា​អាច​ប្រើ​បាន​សម្រាប់​តែ​ប្រភេទ​ឯកសារ​ដែល​កំណត់​ដោយ​អ្នកប្រើ​"
+"ប៉ុណ្ណោះ ។ ប្រភេទ​ឯកសារ​របស់​ប្រព័ន្ធ​មិនអាច​ត្រូវ​បានលុប​ទេ ។ ទោះ​ជា​យ៉ាង​ណា​ក៏ដោយ ​អ្នក​អាច​សម្អាត​បញ្ជី​លំនាំ​"
+"របស់​ពួកគេ​បាន​​ ដើម្បី​បង្រួម​ការ​ផ្លាស់ប្ដូរ​អប្បបរមា​របស់​ពួកវា​ដែលកំពុង​ត្រូវ​បានប្រើ (ប៉ុន្តែ​ការ​កំណត់​ប្រភេទ​"
+"ឯកសារ​ពី​មាតិការ​របស់​វា​អាច​បញ្ចប់​ការ​ប្រើ​) ។"
+
+#: ui/FileTypeDetails.qml:51
+#, fuzzy, kde-format
+#| msgid "Select a file type by name or by extension"
+msgctxt "@info:placeholder"
+msgid "Select a file type to edit it"
+msgstr "ជ្រើស​ប្រភេទ​ឯកសារ​មួយ តាម​រយៈ​ឈ្មោះ ឬ​កន្ទុយ​ឯកសារ​"
+
+#: ui/FileTypeDetails.qml:61
+#, fuzzy, kde-format
+#| msgid "Description:"
+msgctxt "@label:textbox"
+msgid "Description:"
+msgstr "សេចក្ដី​ពិពណ៌នា ៖"
+
+#: ui/FileTypeDetails.qml:71
+#, fuzzy, kde-format
+#| msgid "Add a new application for this file type."
+msgctxt "@info:tooltip"
+msgid "Change the icon of this file type"
+msgstr "បន្ថែម​កម្មវិធី​ថ្មី​សម្រាប់​ប្រភេទ​ឯកសារ​នេះ ។"
+
+#: ui/FileTypeDetails.qml:81
+#, kde-format
+msgctxt "@info:placeholder"
+msgid "The '%1' file type"
+msgstr ""
+
+#: ui/FileTypeDetails.qml:82
+#, fuzzy, kde-format
+#| msgid "File type %1"
+msgctxt "@label"
+msgid "File type description"
+msgstr "ប្រភេទ​ឯកសារ %1"
+
+#: ui/FileTypeDetails.qml:89
+#, fuzzy, kde-format
+#| msgid "Filename Patterns"
+msgctxt "@title:group"
+msgid "Filename Patterns"
+msgstr "លំនាំ​របស់​ឈ្មោះ​ឯកសារ"
+
+#: ui/FileTypeDetails.qml:112
+#, kde-format
+msgctxt "@info no filename patterns for this file type"
+msgid "No patterns"
+msgstr ""
+
+#: ui/FileTypeDetails.qml:135
+#, fuzzy, kde-format
+#| msgid "Remove the selected filename pattern."
+msgctxt "@info:tooltip"
+msgid "Remove this filename pattern"
+msgstr "យក​លំនាំ​របស់​ឈ្មោះ​ឯកសារ​ដែល​បាន​ជ្រើស​ចេញ ។"
+
+#: ui/FileTypeDetails.qml:150 ui/main.qml:44
+#, kde-format
+msgctxt "@action:button"
+msgid "Add…"
+msgstr ""
+
+#: ui/FileTypeDetails.qml:157
+#, fuzzy, kde-format
+#| msgid "Add a new pattern for the selected file type."
+msgctxt "@info:tooltip"
+msgid "Add a new pattern for the selected file type"
+msgstr "បន្ថែម​លំនាំ​ថ្មី​មួយ សម្រាប់​ប្រភេទ​ឯកសារ​ដែល​បាន​ជ្រើស ។"
+
+#: ui/FileTypeDetails.qml:175
+#, kde-format
+msgctxt "@info:placeholder"
+msgid "*.txt"
+msgstr ""
+
+#: ui/FileTypeDetails.qml:183
+#, kde-format
+msgctxt "@action:button"
+msgid "Add Pattern"
+msgstr ""
+
+#: ui/FileTypeDetails.qml:186
+#, fuzzy, kde-format
+#| msgid "Add a new pattern for the selected file type."
+msgctxt "@info:tooltip"
+msgid "Add this pattern to the selected file type"
+msgstr "បន្ថែម​លំនាំ​ថ្មី​មួយ សម្រាប់​ប្រភេទ​ឯកសារ​ដែល​បាន​ជ្រើស ។"
+
+#: ui/FileTypeDetails.qml:198
+#, fuzzy, kde-format
+#| msgid "Application Preference Order"
+msgctxt "@title:group"
+msgid "Application Preference Order"
+msgstr "លំដាប់​ចំណូល​ចិត្ត​កម្មវិធី"
+
+#: ui/FileTypeDetails.qml:297
+#, kde-format
+msgctxt "@action:button"
+msgid "Reorder"
+msgstr ""
+
+#: ui/FileTypeDetails.qml:301
+#, fuzzy, kde-format
+#| msgid ""
+#| "Assigns a higher priority to the selected\n"
+#| "application, moving it up in the list. Note:  This\n"
+#| "only affects the selected application if the file type is\n"
+#| "associated with more than one application."
+msgctxt "@info:tooltip"
+msgid ""
+"Drag to change the priority of this application. Applications further up "
+"take precedence. Note: This only affects the application if the file type is "
+"associated with more than one application."
+msgstr ""
+"ផ្ដល់​អាទិភាព​ខ្ពស់​ជាង​ទៅ​​កម្មវិធី​ដែល​បាន​ជ្រើស\n"
+"ដោយ​ផ្លាស់ទី​វា​ឡើង​លើ​ក្នុង​បញ្ជី ។ ចំណាំ ៖ អំពើ​នេះ \n"
+"មាន​ឥទ្ធិពល​ចំពោះ​តែ​កម្មវិធី​ដែល​បាន​ជ្រើស​ប៉ុណ្ណោះ តែ​ក្នុង​ករណី​ប្រភេទ​ឯកសារ\n"
+"ត្រូវ​បាន​ភ្ជាប់​ជាមួយ​កម្មវិធី​ច្រើន​ជាង​មួយ ។"
+
+#: ui/FileTypeDetails.qml:330
+#, kde-kuit-format
+msgctxt "@info"
+msgid "%1"
+msgstr ""
+
+#: ui/FileTypeDetails.qml:345
+#, kde-format
+msgctxt "@action:button"
+msgid "Edit…"
+msgstr ""
+
+#: ui/FileTypeDetails.qml:348
+#, kde-format
+msgctxt "@info:tooltip"
+msgid "Edit this application"
+msgstr ""
+
+#: ui/FileTypeDetails.qml:354
+#, fuzzy, kde-format
+#| msgid "Remove the selected application from the list."
+msgctxt "@info:tooltip"
+msgid "Remove this application from the preference order"
+msgstr "យក​កម្មវិធី​ដែល​បាន​ជ្រើស​ចេញ​ពី​បញ្ជី ។"
+
+#: ui/FileTypeDetails.qml:371
+#, kde-format
+msgctxt "@action:button"
+msgid "Add Application…"
+msgstr ""
+
+#: ui/FileTypeDetails.qml:372
+#, fuzzy, kde-format
+#| msgid "Add a new application for this file type."
+msgctxt "@info:tooltip"
+msgid "Add a new application for this file type"
+msgstr "បន្ថែម​កម្មវិធី​ថ្មី​សម្រាប់​ប្រភេទ​ឯកសារ​នេះ ។"
+
+#: ui/FileTypeDetails.qml:381
+#, kde-format
+msgctxt "@action:button"
+msgid "Apply To…"
+msgstr ""
+
+#: ui/FileTypeDetails.qml:382
+#, kde-format
+msgctxt "@info:tooltip"
+msgid "Apply the current preference order to other file types"
+msgstr ""
+
+#: ui/main.qml:45
+#, fuzzy, kde-format
+#| msgid "Click here to add a new file type."
+msgctxt "@info:tooltip"
+msgid "Add a new file type"
+msgstr "ចុច​ទីនេះ​ដើម្បី​បន្ថែម​ប្រភេទ​ឯកសារ​ថ្មី​មួយ ។"
+
+#: ui/main.qml:93
+#, fuzzy, kde-format
+#| msgid ""
+#| "Enter a part of a filename pattern, and only file types with a matching "
+#| "file pattern will appear in the list. Alternatively, enter a part of a "
+#| "file type name as it appears in the list."
+msgctxt "@info:tooltip"
+msgid ""
+"Enter a part of a filename pattern, and only file types with a matching file "
+"pattern will appear in the list. Alternatively, enter a part of a file type "
+"name as it appears in the list."
+msgstr ""
+"បញ្ចូល​ផ្នែក​​របស់​​លំនាំ​ឈ្មោះ​ឯកសារ ។ មាន​តែ​ប្រភេទ​ឯកសារ​ដែល​លំនាំ​របស់​វា​ផ្គូផ្គង​ប៉ុណ្ណោះ នឹង​​បង្ហាញ​នៅ​ក្នុង​"
+"បញ្ជី ។"
+
+#: ui/main.qml:185
+#, kde-format
+msgctxt "@info:placeholder"
+msgid "No matching file types"
+msgstr ""
+
+#: ui/NewTypeDialog.qml:16
+#, fuzzy, kde-format
+#| msgid "Create New File Type"
+msgctxt "@title:window"
 msgid "Create New File Type"
 msgstr "បង្កើត​ប្រភេទ​ឯកសារ​ថ្មី"
 
-#: newtypedlg.cpp:30
-#, kde-format
-msgid "Group:"
-msgstr "ក្រុម ៖"
+#: ui/NewTypeDialog.qml:44
+#, fuzzy, kde-format
+#| msgid "File type %1"
+msgctxt "@label:textbox"
+msgid "File type:"
+msgstr "ប្រភេទ​ឯកសារ %1"
 
-#: newtypedlg.cpp:39
-#, kde-format
-msgid "Select the category under which the new file type should be added."
-msgstr "ជ្រើស​ប្រភេទ​ខាង​ក្រោម ដែល​ប្រភេទ​ឯកសារ​ថ្មី​គួរ​ត្រូវ​បានបន្ថែម ។"
-
-#: newtypedlg.cpp:44
-#, kde-format
-msgid "Type name:"
-msgstr "ឈ្មោះ​ប្រភេទ ៖"
-
-#: newtypedlg.cpp:50
-#, kde-format
+#: ui/NewTypeDialog.qml:45
+#, fuzzy, kde-format
+#| msgid ""
+#| "Type the name of the file type. For instance, if you selected 'image' as "
+#| "category and you type 'custom' here, the file type 'image/custom' will be "
+#| "created."
+msgctxt "@info"
 msgid ""
-"Type the name of the file type. For instance, if you selected 'image' as "
-"category and you type 'custom' here, the file type 'image/custom' will be "
-"created."
+"Select or type the category and the name of the new file type. For instance, "
+"'image' and 'custom' will create the file type 'image/custom'."
 msgstr ""
 "វាយ​​ឈ្មោះ​របស់​ប្រភេទ​ឯកសារ ។ ឧទាហរណ៍ ប្រសិន​បើ​អ្នក​បាន​ជ្រើស 'រូបភាព' ជា​ប្រភេទ និង​អ្នក​វាយ "
 "'ផ្ទាល់ខ្លួន' ​នៅ​ទីនេះ ប្រភេទ​ឯកសារ 'រូបភាព/ផ្ទាល់ខ្លួន' នឹង​ត្រូវ​បាន​បង្កើត ។"
+
+#: ui/NewTypeDialog.qml:56
+#, fuzzy, kde-format
+#| msgid "Group:"
+msgctxt "@label:listbox"
+msgid "Group"
+msgstr "ក្រុម ៖"
+
+#: ui/NewTypeDialog.qml:68
+#, fuzzy, kde-format
+#| msgid "Type name:"
+msgctxt "@info:placeholder"
+msgid "Type name"
+msgstr "ឈ្មោះ​ប្រភេទ ៖"
+
+#: ui/NewTypeDialog.qml:69
+#, fuzzy, kde-format
+#| msgid "Type name:"
+msgctxt "@label:textbox"
+msgid "Type name"
+msgstr "ឈ្មោះ​ប្រភេទ ៖"
+
+#, fuzzy
+#~| msgid "Find file type or filename pattern"
+#~ msgid "Search for file type or filename pattern..."
+#~ msgstr "រក​ប្រភេទ​ឯកសារ ឬ​លំនាំ​ឈ្មោះ​ឯកសារ"
+
+#~ msgid "Known Types"
+#~ msgstr "ប្រភេទ​ដែល​ស្គាល់"
+
+#~ msgid ""
+#~ "Here you can see a hierarchical list of the file types which are known on "
+#~ "your system. Click on the '+' sign to expand a category, or the '-' sign "
+#~ "to collapse it. Select a file type (e.g. text/html for HTML files) to "
+#~ "view/edit the information for that file type using the controls on the "
+#~ "right."
+#~ msgstr ""
+#~ "នៅ​ទីនេះ អ្នក​អាច​ឃើញ​បញ្ជី​ឋានានុក្រម​របស់​ប្រភេទ​ឯកសារ ដែល​ស្គាល់ក្នុង​ប្រព័ន្ធ​របស់​អ្នក ។ ចុច​សញ្ញា "
+#~ "'+' ដើម្បី​បន្លាយ​ប្រភេទ​មួយ ឬ​សញ្ញា '-' ដើម្បី​វេញ​វា ។ ជ្រើស​ប្រភេទ​ឯកសារ​មួយ (ឧ. text/html "
+#~ "សម្រាប់​ឯកសារ HTML) ដើម្បី​មើល/កែសម្រួល​ព័ត៌មាន សម្រាប់​ប្រភេទ​ឯកសារ​នោះ ដោយ​ប្រើ​វត្ថុ​បញ្ជា​នៅ​ខាង​"
+#~ "ស្ដាំ ។"
+
+#~ msgid "&Remove"
+#~ msgstr "យក​ចេញ​"
+
+#~ msgid "Revert this file type to its initial system-wide definition"
+#~ msgstr "ដាក់​បញ្ច្រាស​ប្រភេទ​ឯកសារ​នេះ ទៅ​នឹង​ការ​កំណត់​ពេញ​ប្រព័ន្ធ​ដំបូង​របស់​វា"
+
+#~ msgid "Delete this file type definition completely"
+#~ msgstr "លុប​កា​រកំណត់​ប្រភេទ​ឯកសារ​នេះ​ទាំង​ស្រុង"
+
+#~ msgid "Select the category under which the new file type should be added."
+#~ msgstr "ជ្រើស​ប្រភេទ​ខាង​ក្រោម ដែល​ប្រភេទ​ឯកសារ​ថ្មី​គួរ​ត្រូវ​បានបន្ថែម ។"
 
 #~ msgid "&General"
 #~ msgstr "ទូទៅ"
