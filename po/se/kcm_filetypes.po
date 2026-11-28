@@ -263,11 +263,10 @@ msgstr ""
 
 #: ui/FileTypeDetails.qml:24 ui/FileTypeDetails.qml:132
 #: ui/FileTypeDetails.qml:353
-#, fuzzy, kde-format
-#| msgid "Remove"
+#, kde-format
 msgctxt "@action:button"
 msgid "Remove"
-msgstr "Váldde eret"
+msgstr ""
 
 #: ui/FileTypeDetails.qml:26
 #, kde-format
@@ -292,11 +291,10 @@ msgid ""
 msgstr ""
 
 #: ui/FileTypeDetails.qml:51
-#, fuzzy, kde-format
-#| msgid "Select a file type by name or by extension"
+#, kde-format
 msgctxt "@info:placeholder"
 msgid "Select a file type to edit it"
-msgstr "Vállje fiilašlája nama dahje dovddaldaga bokte"
+msgstr ""
 
 #: ui/FileTypeDetails.qml:61
 #, kde-format
@@ -305,11 +303,10 @@ msgid "Description:"
 msgstr ""
 
 #: ui/FileTypeDetails.qml:71
-#, fuzzy, kde-format
-#| msgid "Add a new application for this file type."
+#, kde-format
 msgctxt "@info:tooltip"
 msgid "Change the icon of this file type"
-msgstr "Lasit ođđa prográmma dán fiilašlája várás."
+msgstr ""
 
 #: ui/FileTypeDetails.qml:81
 #, kde-format
@@ -324,11 +321,10 @@ msgid "File type description"
 msgstr ""
 
 #: ui/FileTypeDetails.qml:89
-#, fuzzy, kde-format
-#| msgid "Filename Patterns"
+#, kde-format
 msgctxt "@title:group"
 msgid "Filename Patterns"
-msgstr "Filanamma minsttarat"
+msgstr ""
 
 #: ui/FileTypeDetails.qml:112
 #, kde-format
@@ -337,11 +333,10 @@ msgid "No patterns"
 msgstr ""
 
 #: ui/FileTypeDetails.qml:135
-#, fuzzy, kde-format
-#| msgid "Remove the selected filename pattern."
+#, kde-format
 msgctxt "@info:tooltip"
 msgid "Remove this filename pattern"
-msgstr "Váldde válljejuvvon fiilanammaminsttara eret."
+msgstr ""
 
 #: ui/FileTypeDetails.qml:150 ui/main.qml:44
 #, kde-format
@@ -350,11 +345,10 @@ msgid "Add…"
 msgstr ""
 
 #: ui/FileTypeDetails.qml:157
-#, fuzzy, kde-format
-#| msgid "Add a new pattern for the selected file type."
+#, kde-format
 msgctxt "@info:tooltip"
 msgid "Add a new pattern for the selected file type"
-msgstr "Lasit ođđa minsttara válljejuvvon fiilašlája várás."
+msgstr ""
 
 #: ui/FileTypeDetails.qml:175
 #, kde-format
@@ -369,18 +363,16 @@ msgid "Add Pattern"
 msgstr ""
 
 #: ui/FileTypeDetails.qml:186
-#, fuzzy, kde-format
-#| msgid "Add a new pattern for the selected file type."
+#, kde-format
 msgctxt "@info:tooltip"
 msgid "Add this pattern to the selected file type"
-msgstr "Lasit ođđa minsttara válljejuvvon fiilašlája várás."
+msgstr ""
 
 #: ui/FileTypeDetails.qml:198
-#, fuzzy, kde-format
-#| msgid "Application Preference Order"
+#, kde-format
 msgctxt "@title:group"
 msgid "Application Preference Order"
-msgstr "Oidojuvvon prográmmat"
+msgstr ""
 
 #: ui/FileTypeDetails.qml:297
 #, kde-format
@@ -389,22 +381,13 @@ msgid "Reorder"
 msgstr ""
 
 #: ui/FileTypeDetails.qml:301
-#, fuzzy, kde-format
-#| msgid ""
-#| "Assigns a higher priority to the selected\n"
-#| "application, moving it up in the list. Note:  This\n"
-#| "only affects the selected application if the file type is\n"
-#| "associated with more than one application."
+#, kde-format
 msgctxt "@info:tooltip"
 msgid ""
 "Drag to change the priority of this application. Applications further up "
 "take precedence. Note: This only affects the application if the file type is "
 "associated with more than one application."
 msgstr ""
-"Addá válljejuvvon prográmmii eanet ovdavuoru\n"
-"ja sirdá dan bajás listtus. Fuomáš ahte dát dušše\n"
-"guoská merkejuvvon prográmmii jos fiilašládjii\n"
-"leat čatnojuvvon eanet go okta prográmma."
 
 #: ui/FileTypeDetails.qml:330
 #, kde-kuit-format
@@ -425,11 +408,10 @@ msgid "Edit this application"
 msgstr ""
 
 #: ui/FileTypeDetails.qml:354
-#, fuzzy, kde-format
-#| msgid "Remove the selected application from the list."
+#, kde-format
 msgctxt "@info:tooltip"
 msgid "Remove this application from the preference order"
-msgstr "Váldde eret válljejuvvon prográmma listtus."
+msgstr ""
 
 #: ui/FileTypeDetails.qml:371
 #, kde-format
@@ -438,11 +420,10 @@ msgid "Add Application…"
 msgstr ""
 
 #: ui/FileTypeDetails.qml:372
-#, fuzzy, kde-format
-#| msgid "Add a new application for this file type."
+#, kde-format
 msgctxt "@info:tooltip"
 msgid "Add a new application for this file type"
-msgstr "Lasit ođđa prográmma dán fiilašlája várás."
+msgstr ""
 
 #: ui/FileTypeDetails.qml:381
 #, kde-format
@@ -457,11 +438,10 @@ msgid "Apply the current preference order to other file types"
 msgstr ""
 
 #: ui/main.qml:45
-#, fuzzy, kde-format
-#| msgid "Click here to add a new file type."
+#, kde-format
 msgctxt "@info:tooltip"
 msgid "Add a new file type"
-msgstr "Coahkkal dása lasihit ođđa fiilašlája."
+msgstr ""
 
 #: ui/main.qml:93
 #, kde-format
@@ -479,11 +459,10 @@ msgid "No matching file types"
 msgstr ""
 
 #: ui/NewTypeDialog.qml:16
-#, fuzzy, kde-format
-#| msgid "Create New File Type"
+#, kde-format
 msgctxt "@title:window"
 msgid "Create New File Type"
-msgstr "ráhkat ođđa fiilašlája"
+msgstr ""
 
 #: ui/NewTypeDialog.qml:44
 #, kde-format
@@ -500,44 +479,19 @@ msgid ""
 msgstr ""
 
 #: ui/NewTypeDialog.qml:56
-#, fuzzy, kde-format
-#| msgid "Group:"
+#, kde-format
 msgctxt "@label:listbox"
 msgid "Group"
-msgstr "Joavku:"
+msgstr ""
 
 #: ui/NewTypeDialog.qml:68
-#, fuzzy, kde-format
-#| msgid "Type name:"
+#, kde-format
 msgctxt "@info:placeholder"
 msgid "Type name"
-msgstr "Šládjanamma:"
+msgstr ""
 
 #: ui/NewTypeDialog.qml:69
-#, fuzzy, kde-format
-#| msgid "Type name:"
+#, kde-format
 msgctxt "@label:textbox"
 msgid "Type name"
-msgstr "Šládjanamma:"
-
-#~ msgid "Known Types"
-#~ msgstr "Dovddus šlájat"
-
-#~ msgid ""
-#~ "Here you can see a hierarchical list of the file types which are known on "
-#~ "your system. Click on the '+' sign to expand a category, or the '-' sign "
-#~ "to collapse it. Select a file type (e.g. text/html for HTML files) to "
-#~ "view/edit the information for that file type using the controls on the "
-#~ "right."
-#~ msgstr ""
-#~ "Dás oainnát hierarkálaš listu dovddus fiilašlájain du vuogádagas. "
-#~ "Coahkkal «+» mearkka vai viiddidit lági, dahje «-» mearkka vai máhccut "
-#~ "dan oktii. Vállje fiilašlája (omd. text/html HTML-fiillaid várás), de "
-#~ "sáhtát oaidnit dahje doaimmahit diedut dán fiilašlája várás čájeheamis "
-#~ "olggešbealde."
-
-#~ msgid "&Remove"
-#~ msgstr "&Váldde eret"
-
-#~ msgid "Select the category under which the new file type should be added."
-#~ msgstr "Vállje guđe kategoriai ođđa fiilašládja lasihuvvo."
+msgstr ""

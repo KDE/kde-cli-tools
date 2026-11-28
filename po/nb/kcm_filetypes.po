@@ -562,32 +562,3 @@ msgstr "Typenavn:"
 msgctxt "@label:textbox"
 msgid "Type name"
 msgstr "Typenavn:"
-
-#~ msgid "Known Types"
-#~ msgstr "Kjente typer"
-
-#~ msgid ""
-#~ "Here you can see a hierarchical list of the file types which are known on "
-#~ "your system. Click on the '+' sign to expand a category, or the '-' sign "
-#~ "to collapse it. Select a file type (e.g. text/html for HTML files) to "
-#~ "view/edit the information for that file type using the controls on the "
-#~ "right."
-#~ msgstr ""
-#~ "Her kan du se en hierarkisk liste over filtypene som er installert på "
-#~ "systemet ditt. Klikk på '+'-tegnet for å utvide en kategori eller for å "
-#~ "trekke den sammen. Velg en filtype (f.eks. text/html for HTML-filer) for "
-#~ "å redigere den ved hjelp av kontrollene til høyre."
-
-#~ msgid "&Remove"
-#~ msgstr "&Fjern"
-
-#~ msgid "Revert this file type to its initial system-wide definition"
-#~ msgstr ""
-#~ "Tilbakestill denne filtypen til sin opprinelige definisjon for hele "
-#~ "systemet"
-
-#~ msgid "Delete this file type definition completely"
-#~ msgstr "Slett denne filtypedefinisjonen fullstendig"
-
-#~ msgid "Select the category under which the new file type should be added."
-#~ msgstr "Velg hvilken kategori den nye fila skal legges til."
